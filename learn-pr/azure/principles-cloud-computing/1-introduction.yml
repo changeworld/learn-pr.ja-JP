@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: principles-cloud-computing.1-motivation
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.openlocfilehash: f24a8ee04a38f61ad063ad12f06c4829b7a43052
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447874"
+durationInMinutes: 4
+content: '[!include[](includes/1-introduction.md)]'

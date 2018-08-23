@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.1-introduction
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.openlocfilehash: 42d62816a169980461b2b00542c06926f6c8819f
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444067"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'
