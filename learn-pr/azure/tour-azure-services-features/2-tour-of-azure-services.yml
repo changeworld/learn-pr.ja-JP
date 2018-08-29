@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.2-tour-of-azure-services
+title: <span data-ttu-id="457b1-101">Azure サービスのツアー</span><span class="sxs-lookup"><span data-stu-id="457b1-101">Tour of Azure services</span></span>
+metadata:
+  title: <span data-ttu-id="457b1-102">Azure サービスのツアー</span><span class="sxs-lookup"><span data-stu-id="457b1-102">Tour of Azure services</span></span>
+  description: <span data-ttu-id="457b1-103">Azure サービスのツアー</span><span class="sxs-lookup"><span data-stu-id="457b1-103">Tour of Azure services</span></span>
+  ms.openlocfilehash: d1742181c44956272a5fe5c2a60171e770baa692
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40443034"
+durationInMinutes: 10
+content: '[!include[](includes/2-tour-of-azure-services.md)]'

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.7-blob-trigger
+title: <span data-ttu-id="3579a-101">BLOB の作成時に Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="3579a-101">Execute an Azure function when a blob is created</span></span>
+metadata:
+  title: <span data-ttu-id="3579a-102">BLOB の作成時に Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="3579a-102">Execute an Azure function when a blob is created</span></span>
+  description: <span data-ttu-id="3579a-103">BLOB の作成時に Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="3579a-103">Execute an Azure function when a blob is created</span></span>
+  ms.openlocfilehash: 0e1c85dbdaa61414d074dc1aea79989813fc0cd6
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447367"
+durationInMinutes: 10
+content: '[!include[](includes/7-blob-trigger.md)]'

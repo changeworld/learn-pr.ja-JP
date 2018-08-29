@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.3-timer-trigger
+title: <span data-ttu-id="b760f-101">タイマーを使用して Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="b760f-101">Execute an Azure function using a timer</span></span>
+metadata:
+  title: <span data-ttu-id="b760f-102">タイマーを使用して Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="b760f-102">Execute an Azure function using a timer</span></span>
+  description: <span data-ttu-id="b760f-103">タイマーを使用して Azure 関数を実行する</span><span class="sxs-lookup"><span data-stu-id="b760f-103">Execute an Azure function using a timer</span></span>
+  ms.openlocfilehash: 95524d7436e3b01adfcbb72dbca7a5c569994e80
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445449"
+durationInMinutes: 10
+content: '[!include[](includes/3-timer-trigger.md)]'

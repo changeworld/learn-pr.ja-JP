@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.5-how-to-choose-a-partition-key
+metadata:
+  title: <span data-ttu-id="451df-101">Azure Cosmos DB でパーティション キーを選択する方法は?</span><span class="sxs-lookup"><span data-stu-id="451df-101">How to choose a partition key in Azure Cosmos DB?</span></span>
+  description: <span data-ttu-id="451df-102">ニーズの増加に合わせてデータベースを拡張することを可能にする、パーティション キーを持つコレクションを作成する方法について学習します。</span><span class="sxs-lookup"><span data-stu-id="451df-102">Learn how to create a collection with a partition key that will enable your database to scale as your needs grow.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: f794bc162dfbef50438d3a523d0d9c52027621ec
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446048"
+title: <span data-ttu-id="451df-103">パーティション キーを選択する方法は?</span><span class="sxs-lookup"><span data-stu-id="451df-103">How to choose a partition key?</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/5-how-to-choose-a-partition-key.md)]'

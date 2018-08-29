@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: <span data-ttu-id="3ca5a-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="3ca5a-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="3ca5a-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="3ca5a-102">Knowledge check</span></span>
+  description: <span data-ttu-id="3ca5a-103">「Azure コンピューティングの概要」モジュールに関する知識チェック。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  ms.openlocfilehash: d7c3f166bab42dfd3ab34e11ce5f399e0375e6f7
+  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/23/2018
+  ms.locfileid: "42702658"
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="3ca5a-104">Azure コンピューティングの概要に関する知識チェック</span><span class="sxs-lookup"><span data-stu-id="3ca5a-104">Introduction to Azure compute knowledge check</span></span>
+  questions:
+  - content: <span data-ttu-id="3ca5a-105">少人数の天文学チームがあり、チームのメンバーは一流の天文学者やコンピューター プログラマーですが、サーバーや Web 管理については基本的な理解しかないものとします。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-105">Imagine that your astronomy team is small and that, while the members of your team are top notch astronomers and computer programmers, they have only a rudimentary understanding of server and web administration.</span></span> <span data-ttu-id="3ca5a-106">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="3ca5a-106">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="3ca5a-107">Azure Kubernetes Service (AKS)</span><span class="sxs-lookup"><span data-stu-id="3ca5a-107">Azure Kubernetes Service (AKS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3ca5a-108">Kubernetes には、コンテナー オーケストレーションに関する高度な知識が必要です。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-108">Kubernetes requires advanced knowledge about container orchestration.</span></span>
+    - content: <span data-ttu-id="3ca5a-109">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="3ca5a-109">Service Fabric</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3ca5a-110">天文学者の作業を、広範に、あるいはグローバルに分散する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-110">The work of the astronomers does not need to be widely or globally distributed.</span></span>
+    - content: <span data-ttu-id="3ca5a-111">App Service</span><span class="sxs-lookup"><span data-stu-id="3ca5a-111">App Service</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3ca5a-112">完全に管理されていて、アプリケーションをスケーリングするため、チームは特別なソフトウェアの作成に集中できます。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-112">Because it is fully managed and scales their applications, the team can focus on writing their specialized software.</span></span>
+  - content: <span data-ttu-id="3ca5a-113">天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるようなある天文学の計算に直面しているものとします。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-113">Imagine that your astronomy team has come up against certain astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="3ca5a-114">並列実行はあまり役に立たないようです。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-114">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="3ca5a-115">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="3ca5a-115">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="3ca5a-116">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="3ca5a-116">Cloud Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3ca5a-117">天文学のすべての計算を並列に実行できるわけではないので、VM を追加展開してもパフォーマンスを少し向上できるだけです。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-117">Not all of the astronomical calculations can be run in parallel so deploying additional VMs can only marginally improve performance.</span></span>
+    - content: <span data-ttu-id="3ca5a-118">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="3ca5a-118">Azure Batch</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="3ca5a-119">天文学のある種の計算には、スーパーコンピューター並みの機能が必要です。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-119">Certain astronomical calculations require supercomputer capabilities.</span></span>
+    - content: <span data-ttu-id="3ca5a-120">Container Instances</span><span class="sxs-lookup"><span data-stu-id="3ca5a-120">Container Instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="3ca5a-121">天文学のすべての計算を並列に実行できるわけではない可能性があるので、コンテナーを追加展開してもパフォーマンスを少し向上できるだけです。</span><span class="sxs-lookup"><span data-stu-id="3ca5a-121">It may be that not all of the astronomical calculations can be run in parallel so deploying additional containers can only marginally improve performance.</span></span>

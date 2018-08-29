@@ -1,0 +1,8 @@
+<span data-ttu-id="b1ff5-101">このモジュールでは、Azure Storage を使用する利点について説明しました。</span><span class="sxs-lookup"><span data-stu-id="b1ff5-101">In this module, you explored the benefits of using Azure Storage.</span></span> <span data-ttu-id="b1ff5-102">Azure Storage には以下のような特徴があります。</span><span class="sxs-lookup"><span data-stu-id="b1ff5-102">Azure storage provides the following features:</span></span>
+
+* <span data-ttu-id="b1ff5-103">Azure は構造化されたデータと構造化されていないデータ両方の格納をサポートします</span><span class="sxs-lookup"><span data-stu-id="b1ff5-103">Azure supports storing both structured and unstructured data</span></span>
+* <span data-ttu-id="b1ff5-104">Azure に格納されたデータはセキュリティで保護され、グローバルなコンプライアンス標準をサポートします</span><span class="sxs-lookup"><span data-stu-id="b1ff5-104">The data stored in Azure is secured and supports the global compliance standards</span></span>
+* <span data-ttu-id="b1ff5-105">Azure データ ストレージ オプションでは負荷分散、高可用性、および冗長性の機能を使用できます</span><span class="sxs-lookup"><span data-stu-id="b1ff5-105">There are load balancing, high availability, and redundancy capabilities available within Azure data storage options</span></span>
+* <span data-ttu-id="b1ff5-106">Azure Blob Storage などの機能を使用して、大量のデータをブラウザーに直接格納およびストリーミングできます</span><span class="sxs-lookup"><span data-stu-id="b1ff5-106">Large volumes of data can be stored and streamed directly to the browser using features such as Azure Blob Storage</span></span>
+
+<span data-ttu-id="b1ff5-107">Azure データ ストレージの機能により、大規模なグローバル アプリケーションまたはポータルをホストするのに理想的なプラットフォームになります。</span><span class="sxs-lookup"><span data-stu-id="b1ff5-107">The capabilities of Azure data storage, makes it an ideal platform for hosting any large global application or portal.</span></span>

@@ -1,0 +1,19 @@
+<span data-ttu-id="6fb69-101">Microsoft Azure の無料アカウントを作成し、そのアカウントを使用してログオンする方法を学習しました。</span><span class="sxs-lookup"><span data-stu-id="6fb69-101">You have now learned how to create a free account for Microsoft Azure and log on using that account.</span></span> <span data-ttu-id="6fb69-102">次に、Azure portal とそのカスタマイズ オプションの機能を確認しました。</span><span class="sxs-lookup"><span data-stu-id="6fb69-102">You then reviewed the features of the Azure portal and its customization options.</span></span> <span data-ttu-id="6fb69-103">最後に、ダッシュボードを作成し、カスタマイズして、共有しました。</span><span class="sxs-lookup"><span data-stu-id="6fb69-103">Finally, you created, customized, and shared a dashboard.</span></span>
+
+## <a name="further-learning"></a><span data-ttu-id="6fb69-104">今後の学習</span><span class="sxs-lookup"><span data-stu-id="6fb69-104">Further Learning</span></span>
+
+<span data-ttu-id="6fb69-105">Azure で提供されるものについて詳しくは、「[Azure ソリューション](https://azure.microsoft.com/solutions/)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fb69-105">For more information what Azure offers, see [Azure solutions](https://azure.microsoft.com/solutions/)</span></span>
+
+<span data-ttu-id="6fb69-106">すべての Azure サービスの一覧については、[すべてのサービス](https://docs.microsoft.com/azure/#pivot=products&panel=all)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fb69-106">For a full list of Azure services, see [All Services](https://docs.microsoft.com/azure/#pivot=products&panel=all).</span></span>
+
+<span data-ttu-id="6fb69-107">ページを下にスクロールしてすべてのサービスを表示するか、左側で次のようなサブセットをクリックします。</span><span class="sxs-lookup"><span data-stu-id="6fb69-107">Scroll down the page to see all the services, or click on the sub-sets to the left, such as:</span></span>
+
+* [<span data-ttu-id="6fb69-108">Compute</span><span class="sxs-lookup"><span data-stu-id="6fb69-108">Compute</span></span>](https://docs.microsoft.com/azure/#pivot=products&panel=Compute)
+* [<span data-ttu-id="6fb69-109">ネットワーク</span><span class="sxs-lookup"><span data-stu-id="6fb69-109">Networking</span></span>](https://docs.microsoft.com/azure/#pivot=products&panel=network)
+* [<span data-ttu-id="6fb69-110">Storage</span><span class="sxs-lookup"><span data-stu-id="6fb69-110">Storage</span></span>](https://docs.microsoft.com/azure/#pivot=products&panel=storage)
+
+<span data-ttu-id="6fb69-111">使用するコンピューティング サービスを決定する方法については、「[Azure コンピューティング サービスのデシジョン ツリー](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fb69-111">For help on deciding which compute service to use, see [Decision Tree for Azure compute services](https://docs.microsoft.com/azure/architecture/guide/technology-choices/compute-decision-tree).</span></span>
+
+<span data-ttu-id="6fb69-112">Azure サブスクリプションを Active Directory に関連付ける方法については、「[Azure サブスクリプションを Azure Active Directory に関連付けるまたは追加する方法](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fb69-112">To associate an Azure subscription to Active Directory, see [How to associate or add an Azure subscription to Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory) for how.</span></span>
+
+<span data-ttu-id="6fb69-113">Azure ダッシュボードの使用について詳しくは、「[プログラムによる Azure ダッシュボードの作成](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6fb69-113">For more information on working with Azure Dashboards, see [Programmatically create Azure Dashboards](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically).</span></span>

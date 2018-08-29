@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
+title: <span data-ttu-id="223a1-101">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="223a1-101">Create a Windows virtual machine on Azure</span></span>
+metadata:
+  title: <span data-ttu-id="223a1-102">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="223a1-102">Create a Windows virtual machine on Azure</span></span>
+  description: <span data-ttu-id="223a1-103">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="223a1-103">Create a Windows virtual machine on Azure</span></span>
+  ms.openlocfilehash: 0fa4a043b50181ecb8820cd506adb98ef14a2404
+  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "42614491"
+durationInMinutes: 5
+content: '[!include[](includes/2-create-a-windows-virtual-machine.md)]'

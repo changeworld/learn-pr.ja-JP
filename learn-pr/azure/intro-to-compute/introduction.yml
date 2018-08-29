@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.1-introduction
+title: <span data-ttu-id="adc1a-101">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="adc1a-101">Why use Azure compute?</span></span>
+metadata:
+  title: <span data-ttu-id="adc1a-102">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="adc1a-102">Why use Azure compute?</span></span>
+  description: <span data-ttu-id="adc1a-103">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="adc1a-103">Why use Azure compute?</span></span>
+  ms.openlocfilehash: d1c83f97ddd1863d37de1d4792c562070ea1bb98
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447531"
+durationInMinutes: 5
+content: '[!include[](includes/1-introduction.md)]'

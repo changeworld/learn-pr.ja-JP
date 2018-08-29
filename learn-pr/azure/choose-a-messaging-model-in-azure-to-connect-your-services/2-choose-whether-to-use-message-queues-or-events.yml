@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+title: <span data-ttu-id="fd8be-101">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-101">Choose whether to use messages or events</span></span>
+metadata:
+  title: <span data-ttu-id="fd8be-102">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="fd8be-103">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-103">Choose whether to use messages or events</span></span>
+  ms.openlocfilehash: 2b9296a8ace31b881fd937a37b832061c1050666
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444142"
+durationInMinutes: 10
+content: '[!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]'

@@ -1,0 +1,36 @@
+### YamlMime:Module
+uid: learn.manage-secrets-with-azure-key-vault
+title: Azure Key Vault を使用して Web アプリのシークレットを管理する
+summary: アプリケーションがジョブを実行するには、サービスのパスワード、接続文字列、およびその他のシークレット構成値が必要です。 シークレット値の保存と取り扱いはリスクが高く、使用のたびに漏えいの可能性が生じます。 Azure Key Vault を Azure App Service のマネージド サービス ID の機能と組み合わせることで、ソース管理や構成にシークレットを格納しなくても、ご使用の Azure Web アプリがシークレット構成値に簡単かつ安全にアクセスできるようになります。
+cardDescription: Azure Key Vault にシークレット構成値を安全に格納し、Azure Web アプリからマネージド サービス ID を使用してそれらに安全にアクセスします。
+iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+achievement: learn.manage-secrets-with-azure-key-vault.badge
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+metadata:
+  title: Azure Key Vault を使用して Web アプリのシークレットを管理する
+  description: このモジュールでは、Key Vault を作成し、そこにシークレットを格納する方法を学習します。 構成を行わなくても、コンテナーに安全にアクセスできるようにするため、マネージド サービス ID を使用するように Web アプリケーションを構成する方法について説明します。最後に、そのコンテナーからシークレットを取得する ASP.NET Core Web アプリケーションを実装します。
+  ms.openlocfilehash: ba109c56ec8d43e40ac534c1b28317542dd5e938
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444085"
+abstract: >
+  * Azure Key Vault を作成し、それを使用してシークレット構成値を格納します。
+
+  * マネージド サービス ID を使用して Azure App Service Web アプリからコンテナーへのセキュリティで保護されたアクセスを有効にします。
+
+  * そのコンテナーからシークレットを取得する ASP.NET Core Web アプリケーションを実装します。
+units:
+- learn.manage-secrets-with-azure-key-vault.1-introduction
+- learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
+- learn.manage-secrets-with-azure-key-vault.3-creating-vaults-storing-secrets
+- learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-service-identity
+- learn.manage-secrets-with-azure-key-vault.5-access-secrets-from-web-app
+- learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
+- learn.manage-secrets-with-azure-key-vault.7-summary

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.11-cleanup
+title: <span data-ttu-id="a2a01-101">まとめとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="a2a01-101">Summary and cleanup</span></span>
+metadata:
+  title: <span data-ttu-id="a2a01-102">まとめとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="a2a01-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="a2a01-103">このモジュールで使用したリソースをクリーンアップする</span><span class="sxs-lookup"><span data-stu-id="a2a01-103">Clean up the resources we used in this module</span></span>
+  ms.openlocfilehash: fc8e310be1430b16db2af5b9b2a902c0845edffd
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448410"
+interactive: bash
+durationInMinutes: 2
+content: '[!include[](includes/11-cleanup.md)]'

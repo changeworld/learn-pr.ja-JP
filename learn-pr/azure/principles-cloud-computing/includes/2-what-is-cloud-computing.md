@@ -1,0 +1,35 @@
+<span data-ttu-id="001d4-101">クラウド コンピューティングでは、従量課金制価格モデルを使用してインターネット経由でコンピューティング サービスが提供されます。</span><span class="sxs-lookup"><span data-stu-id="001d4-101">Cloud computing is the delivery of computing services over the internet using a pay-as-you-go pricing model.</span></span> <span data-ttu-id="001d4-102">提供されるコンピューティング サービスは、クラウド プロバイダーによって異なる傾向があります。</span><span class="sxs-lookup"><span data-stu-id="001d4-102">The computing services offered tend to vary by cloud provider.</span></span> <span data-ttu-id="001d4-103">ただし、通常は次の項目が含まれます。</span><span class="sxs-lookup"><span data-stu-id="001d4-103">However, typically they include:</span></span>
+
+- <span data-ttu-id="001d4-104">コンピューティング能力</span><span class="sxs-lookup"><span data-stu-id="001d4-104">Compute power</span></span>
+- <span data-ttu-id="001d4-105">Storage</span><span class="sxs-lookup"><span data-stu-id="001d4-105">Storage</span></span>
+- <span data-ttu-id="001d4-106">[アプリケーション]</span><span class="sxs-lookup"><span data-stu-id="001d4-106">Applications</span></span>
+- <span data-ttu-id="001d4-107">ネットワーク</span><span class="sxs-lookup"><span data-stu-id="001d4-107">Networking</span></span>
+- <span data-ttu-id="001d4-108">Analytics</span><span class="sxs-lookup"><span data-stu-id="001d4-108">Analytics</span></span>
+
+## <a name="what-is-a-cloud-provider"></a><span data-ttu-id="001d4-109">クラウド プロバイダーとは</span><span class="sxs-lookup"><span data-stu-id="001d4-109">What is a cloud provider?</span></span>
+
+<span data-ttu-id="001d4-110">クラウド プロバイダーは、クラウド コンピューティング サービスを提供し、作業を正常に実行するための物理的なハードウェアを備えた、サード パーティ会社です。</span><span class="sxs-lookup"><span data-stu-id="001d4-110">A cloud provider is a third-party company that provides cloud computing services and has the physical hardware to successfully execute your work.</span></span>
+
+## <a name="cloud-computing-services"></a><span data-ttu-id="001d4-111">クラウド コンピューティング サービス</span><span class="sxs-lookup"><span data-stu-id="001d4-111">Cloud computing services</span></span>
+
+<span data-ttu-id="001d4-112">クラウド コンピューティングは、小規模なスタートアップ企業であっても大企業であっても、より簡単かつ効率的に企業を運営することを目標としています。</span><span class="sxs-lookup"><span data-stu-id="001d4-112">The goal of cloud computing is to make it easier and more efficient to run a business, whether it's a small start-up or a large enterprise.</span></span> <span data-ttu-id="001d4-113">すべての企業は独自性を持ち、それぞれニーズが異なるため、それらのニーズを満たすために、クラウド コンピューティング プロバイダーは多岐にわたるサービスを提供しています。</span><span class="sxs-lookup"><span data-stu-id="001d4-113">Every business is unique and has different needs, and to meet those needs, cloud computing providers offer a wide range of services.</span></span>
+
+<span data-ttu-id="001d4-114">クラウド コンピューティングがどのようなものかを正確に把握するには、提供されるいくつかのサービスの基本を理解しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="001d4-114">To understand exactly what cloud computing is, you need to have a basic understanding of some of the services it provides.</span></span> <span data-ttu-id="001d4-115">ここでは、すべてのクラウド プロバイダーが提供する最も一般的な 2 つのサービスについて簡単に説明します。</span><span class="sxs-lookup"><span data-stu-id="001d4-115">Let's briefly discuss the two most common services that all cloud providers offer.</span></span>
+
+### <a name="compute-power"></a><span data-ttu-id="001d4-116">コンピューティング能力</span><span class="sxs-lookup"><span data-stu-id="001d4-116">Compute power</span></span>
+
+<span data-ttu-id="001d4-117">認識しているかどうかにかかわらず、誰もがコンピューティング能力を毎日使用しています。</span><span class="sxs-lookup"><span data-stu-id="001d4-117">Everyday you're using compute power whether you know it or not.</span></span> <span data-ttu-id="001d4-118">電子メールを送信したり、Web サイトを閲覧したり、モバイル デバイスで天気をチェックするたびに、バック グラウンドではハードウェアにより自動的にコンピューター処理が行われています。</span><span class="sxs-lookup"><span data-stu-id="001d4-118">If you're sending an email, browsing a website, or even checking the weather on your mobile device, there is hardware behind the scenes doing computer processing work on your behalf.</span></span> 
+
+<span data-ttu-id="001d4-119">クラウド コンピューティングを使用してソリューションをビルドするときは、リソースとニーズに基づいてどのような作業を行うかを柔軟に選択できます。</span><span class="sxs-lookup"><span data-stu-id="001d4-119">When you build solutions using cloud computing, you have the flexibility of choosing how you want work to be done based on your resources and needs.</span></span> <span data-ttu-id="001d4-120">たとえば、メンテナンスに対する制御と責任を高める場合は、Windows または Linux を実行している物理コンピューターに似ている仮想マシン (VM) を作成できます。</span><span class="sxs-lookup"><span data-stu-id="001d4-120">For example, if you want to have more control and responsibility over  maintenance, you could create a virtual machine (VM), which looks like a physical computer running Windows or Linux.</span></span> <span data-ttu-id="001d4-121">アプリケーションの動作にのみ関心があり、実行の方法や場所はあまり気にしない場合は、サーバーレス アプローチを使用できます。</span><span class="sxs-lookup"><span data-stu-id="001d4-121">If you are only interested in the behavior of the application and are less concerned about how or where it runs, you could use a serverless approach.</span></span>
+
+### <a name="storage"></a><span data-ttu-id="001d4-122">Storage</span><span class="sxs-lookup"><span data-stu-id="001d4-122">Storage</span></span>
+
+<span data-ttu-id="001d4-123">デバイスでは持続的にデータが収集されています。</span><span class="sxs-lookup"><span data-stu-id="001d4-123">Our devices are constantly collecting data.</span></span> <span data-ttu-id="001d4-124">たとえば、新しいアカウントを登録したり携帯電話で自撮りするとき、デバイスでデータが収集されます。</span><span class="sxs-lookup"><span data-stu-id="001d4-124">For example, they collect data when you register a new account or take a selfie with your phone.</span></span>
+
+<span data-ttu-id="001d4-125">データは、テキスト、画像、動画などのさまざまな形態とサイズで取得されます。</span><span class="sxs-lookup"><span data-stu-id="001d4-125">Data comes in all different shapes and sizes, including text, images, and video.</span></span> <span data-ttu-id="001d4-126">クラウド プロバイダーは、通常はすべてを処理できるサービスを提供します。</span><span class="sxs-lookup"><span data-stu-id="001d4-126">Cloud providers typically offer services that can handle all.</span></span> <span data-ttu-id="001d4-127">たとえば、テキストを格納する場合、ディスク上のファイルを使用できるほか、リレーショナル データベースを使用するなど、より構造化されたアプローチを採用することもできます。</span><span class="sxs-lookup"><span data-stu-id="001d4-127">For example, if you wanted to store text, you could use a file on disk or you could take a more structured approach like using a relational database.</span></span>
+
+## <a name="summary"></a><span data-ttu-id="001d4-128">まとめ</span><span class="sxs-lookup"><span data-stu-id="001d4-128">Summary</span></span>
+
+<span data-ttu-id="001d4-129">企業の持つニーズや要件はそれぞれ異なることを踏まえて、クラウド コンピューティングでは高い**柔軟性**と**コスト効率**が実現されます。</span><span class="sxs-lookup"><span data-stu-id="001d4-129">Every business has different needs and requirements, and because of that, cloud computing is **flexible** and **cost efficient**.</span></span> <span data-ttu-id="001d4-130">小規模なスタートアップ企業であっても大企業であっても、クラウド コンピューティングが役立ちます。</span><span class="sxs-lookup"><span data-stu-id="001d4-130">Whether your business is a small start-up or a large enterprise, cloud computing can help.</span></span>
+
+

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.3-how-azure-storage-meets-your-business-storage-needs
+title: <span data-ttu-id="8b4fe-101">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-101">How Azure storage can meet your business storage needs</span></span>
+metadata:
+  title: <span data-ttu-id="8b4fe-102">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-102">How Azure storage can meet your business storage needs</span></span>
+  description: <span data-ttu-id="8b4fe-103">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-103">How Azure storage can meet your business storage needs</span></span>
+  ms.openlocfilehash: 7a6817a6bb27293a33ba698924d2013ff96e78e2
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40443873"
+durationInMinutes: 10
+content: '[!include[](includes/3-how-azure-storage-meets-your-business-storage-needs.md)]'
