@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.create-cosmos-db-for-scale
+metadata:
+  title: スケーリングするようにビルドされた Azure Cosmos DB データベースを作成する
+  description: Azure Cosmos DB アカウントおよびデータベースの作成方法に加えて、アプリケーションの成長に合わせてスケーリングするようにビルドされたコレクションを作成する方法について説明します。
+  ms.openlocfilehash: be424d7fb9f4cac1acda8f371d1acb8b82b1f105
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445023"
+title: スケーリングするようにビルドされた Azure Cosmos DB データベースを作成する
+summary: スケーラブルな Azure Cosmos DB アカウント、データベース、およびコレクションをビルドする方法について説明します。
+abstract: このモジュールでは、Azure Cosmos DB を使用してスケーリングするようにビルドされた NoSQL データベースを作成します。 データベース スループットの測定およびパーティション分割の設定についても説明します。これらはグローバル データベース設計での基本的な概念です。 データベースの作成前および開発プロセスの早い段階で、このような概念を習得することにより、後で、増大するデータベースのニーズに合わせてスケール アップを行う必要が生じた場合に確実に対応することができます。
+cardDescription: Azure Cosmos DB アカウント、データベース、およびコレクションを作成する方法について説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.create-cosmos-db-for-scale.1-introduction
+- learn.create-cosmos-db-for-scale.2-create-an-account
+- learn.create-cosmos-db-for-scale.3-what-is-a-request-unit
+- learn.create-cosmos-db-for-scale.4-knowledge-check-what-is-a-request-unit
+- learn.create-cosmos-db-for-scale.5-how-to-choose-a-partition-key
+- learn.create-cosmos-db-for-scale.6-knowledge-check-how-to-choose-a-partition-key
+- learn.create-cosmos-db-for-scale.7-create-a-database-and-collection
+- learn.create-cosmos-db-for-scale.8-summary-cleanup
+achievement: learn.placeholder.badge

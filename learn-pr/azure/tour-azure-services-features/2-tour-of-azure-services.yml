@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.2-tour-of-azure-services
+title: Azure サービスのツアー
+metadata:
+  title: Azure サービスのツアー
+  description: Azure サービスのツアー
+  ms.openlocfilehash: d1742181c44956272a5fe5c2a60171e770baa692
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40443034"
+durationInMinutes: 10
+content: '[!include[](includes/2-tour-of-azure-services.md)]'

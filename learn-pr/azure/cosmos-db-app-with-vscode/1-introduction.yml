@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.1-introduction
+metadata:
+  title: はじめに
+  description: Visual Studio Code を使用して Azure Cosmos DB でデータの格納とクエリを行うアプリを作成する方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: f3c7bfe2022d045297679ef3cffd59638553dda2
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442265"
+title: はじめに
+durationInMinutes: 10
+content: '[!include[](includes/1-introduction.md)]'

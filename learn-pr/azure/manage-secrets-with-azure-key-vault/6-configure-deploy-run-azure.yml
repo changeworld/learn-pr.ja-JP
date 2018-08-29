@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
+title: Azure での構成、展開、実行
+metadata:
+  title: Azure での構成、展開、実行
+  description: Azure での構成、展開、実行
+  ms.openlocfilehash: 2877e343b38fce7016c15621f390db6343838e7d
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448026"
+durationInMinutes: 10
+interactive: bash
+content: '[!include[](includes/6-configure-deploy-run-azure.md)]'

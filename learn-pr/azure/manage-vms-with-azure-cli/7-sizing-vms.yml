@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.7-sizing-vms
+title: VM を適切なサイズに変更する
+metadata:
+  title: VM を適切なサイズに変更する
+  description: VM のサイズを割り当てられたワークロードに合わせて変更する方法について学習します
+  ms.openlocfilehash: e035e2f7e10635f74de027f242db58db2af1c96a
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445854"
+interactive: bash
+durationInMinutes: 4
+content: '[!include[](includes/7-sizing-vms.md)]'

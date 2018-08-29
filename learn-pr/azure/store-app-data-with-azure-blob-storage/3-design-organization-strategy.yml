@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
+title: ストレージの組織の戦略を設計する
+metadata:
+  title: ストレージの組織の戦略を設計する
+  description: ストレージの組織の戦略を設計する
+  ms.openlocfilehash: 945f645a8711b5c1985a6b2269f5ab2dd0d32a8c
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447537"
+durationInMinutes: 7
+content: '[!include[](includes/3-design-organization-strategy.md)]'

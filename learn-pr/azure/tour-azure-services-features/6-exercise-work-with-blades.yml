@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.6-exercise-work-with-blades
+title: 演習 - ブレードを使用する
+metadata:
+  title: 演習 - ブレードを使用する
+  description: 演習 - ブレードを使用する
+  ms.openlocfilehash: 65ff8f634e623a4a27b488644ee5ad149b4a3896
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446311"
+durationInMinutes: 10
+content: '[!include[](includes/6-exercise-work-with-blades.md)]'

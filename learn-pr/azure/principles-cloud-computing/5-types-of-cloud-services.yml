@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: principles-cloud-computing.5-types-of-cloud-services
+title: クラウド サービスの種類
+metadata:
+  title: クラウド サービスの種類
+  description: クラウド サービスの種類
+  ms.openlocfilehash: c55bafa11cfe4cded42f7e3e8be4d1974537b352
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444587"
+durationInMinutes: 10
+content: '[!include[](includes/5-types-of-cloud-services.md)]'

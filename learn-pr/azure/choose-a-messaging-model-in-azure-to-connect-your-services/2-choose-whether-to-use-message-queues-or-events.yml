@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+title: メッセージやイベントを使用するかどうかを選択する
+metadata:
+  title: メッセージやイベントを使用するかどうかを選択する
+  description: メッセージやイベントを使用するかどうかを選択する
+  ms.openlocfilehash: 2b9296a8ace31b881fd937a37b832061c1050666
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444142"
+durationInMinutes: 10
+content: '[!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]'

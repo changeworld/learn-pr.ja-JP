@@ -1,0 +1,31 @@
+### YamlMime:Module
+uid: learn.choose-messaging-model
+metadata:
+  title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
+  description: さまざまなコンピューター、サーバー、およびモバイル デバイスで実行されているコンポーネントから構成されるアプリケーションがあると、それらのコンポーネント間での通信の信頼性を高くすることは困難で、信頼性が低くなる可能性があります。 Azure ではより確実に通信できるテクノロジをいくつか提供しています。それは、ストレージ キュー、Event Hubs、Event Grid、Service Bus などです。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を示します。
+  ms.openlocfilehash: 65363cdb9a0f9db5158a780f0ac71e725727461e
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447306"
+title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
+summary: Azure の広範囲なオプションから適切なメッセージング テクノロジを選び、ご自分の分散アプリケーション内の通信を改善します。
+abstract: さまざまなコンピューター、サーバー、およびモバイル デバイスで実行されているコンポーネントから構成されるアプリケーションがあると、それらのコンポーネント間での通信の信頼性を高くすることは困難で、信頼性が低くなる可能性があります。 Azure ではより確実に通信できるテクノロジをいくつか提供しています。それは、ストレージ キュー、Event Hubs、Event Grid、Service Bus などです。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を示します。
+cardDescription: Azure の広範囲なオプションから適切なメッセージング テクノロジを選び、ご自分の分散アプリケーション内の通信を改善します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.choose-messaging-model.1-introduction
+- learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+- learn.choose-messaging-model.3-knowledge-check
+- learn.choose-messaging-model.4-choose-azure-storage-queues
+- learn.choose-messaging-model.5-exercise-create-a-storage-queue
+- learn.choose-messaging-model.6-choose-event-grid
+- learn.choose-messaging-model.7-choose-azure-event-hubs
+achievement: learn.choose-messaging-model.badge

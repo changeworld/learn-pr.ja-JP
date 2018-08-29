@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.4-query
+metadata:
+  title: .NET Core を使用して Azure Cosmos DB にクエリを実行する
+  description: .NET Core SDK を使用して、Azure Cosmos DB のデータにクエリを実行する方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: df16d9af01fd5f1442def898727ce97c654daab7
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448980"
+title: .NET Core SDK を使用したクエリ
+durationInMinutes: 10
+content: '[!include[](includes/4-query.md)]'

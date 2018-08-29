@@ -1,0 +1,30 @@
+### YamlMime:Module
+uid: learn.intro-to-compute
+title: Azure コンピューティングの概要
+summary: ユーザーは、Azure コンピューティングによって提供されるコンピューティング リソースを、分子レベルでの薬物効果のモデリング、マーケティング データのマイニング、ハイ エンドのビデオ レンダリング、望遠鏡から収集された天文データの分析といったタスクでの大量データ処理に、柔軟に適用できます。 このモジュールでは、Azure コンピューティング サービスの概要、そのオプション、および受講者が日常業務で遭遇する可能性のある問題を解決するためのその使用方法に関する提案について説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- solutions-architect
+- administrator
+products:
+- Azure
+metadata:
+  title: Azure コンピューティングの概要
+  description: ユーザーは、Azure コンピューティングによって提供されるコンピューティング リソースを、分子レベルでの薬物効果のモデリング、マーケティング データのマイニング、ハイ エンドのビデオ レンダリング、望遠鏡から収集された天文データの分析といったタスクでの大量データ処理に、柔軟に適用できます。 このモジュールでは、Azure コンピューティング サービスの概要、そのオプション、および受講者が日常業務で遭遇する可能性のある問題を解決するためのその使用方法に関する提案について説明します。
+  ms.openlocfilehash: 1f8987e808eaa7f2d906147faf17fe2a8edf76e4
+  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/23/2018
+  ms.locfileid: "42702495"
+abstract: このモジュールを終了すると、受講者は、Azure コンピューティングのオプションを理解し、自分のビジネス上の問題を解決するための適切なコンピューティング オプションを選択できるようになります
+units:
+- learn.intro-to-compute.1-introduction
+- learn.intro-to-compute.2-essential-azure-compute-concepts
+- learn.intro-to-compute.3-select-and-manage-compute-options
+- learn.intro-to-compute.4-knowledge-check
+- learn.intro-to-compute.5-summary
+achievement: learn.intro-to-compute.badge

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.2-essential-azure-compute-concepts
+title: Azure コンピューティングの重要な概念
+metadata:
+  title: Azure コンピューティングの重要な概念
+  description: Azure コンピューティングの重要な概念
+  ms.openlocfilehash: dbb07c04e8affac61bcc6adf4fa19a8fb467d548
+  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/23/2018
+  ms.locfileid: "42702723"
+durationInMinutes: 11
+content: '[!include[](includes/2-essential-azure-compute-concepts.md)]'

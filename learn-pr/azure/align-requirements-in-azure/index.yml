@@ -1,0 +1,30 @@
+### YamlMime:Module
+uid: learn.align-requirements-in-azure
+metadata:
+  title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整する
+  description: このモジュールでは、Azure でクラウドの種類とサービス モデルに合わせて要件を調整する方法について説明します。
+  ms.openlocfilehash: d0ecbb485b5354f763f86a57636ffef8518a65fb
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442325"
+title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整する
+summary: このモジュールでは、Azure でクラウドの種類とサービス モデルに合わせて要件を調整する方法について説明します。 (モジュール カードに表示されます)
+abstract: このモジュールでは、Azure でクラウドの種類とサービス モデルに合わせて要件を調整する方法について説明します。
+cardDescription: これはサンプル モジュールのカードの説明です (アチーブメント バッジに表示されます)
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- solutions-architect
+achievement: learn.placeholder.badge
+products:
+- Azure
+units:
+- learn.align-requirements-in-azure.1-introduction
+- learn.align-requirements-in-azure.2-public-private-hybrid
+- learn.align-requirements-in-azure.3-public-private-hybrid-quiz
+- learn.align-requirements-in-azure.4-iaas-paas-saas
+- learn.align-requirements-in-azure.5-iaas-paas-saas-quiz
+- learn.align-requirements-in-azure.6-summary

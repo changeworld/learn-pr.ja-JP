@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-service-identity
+title: マネージド サービス ID によるコンテナーの認証
+metadata:
+  title: マネージド サービス ID によるコンテナーの認証
+  description: マネージド サービス ID によるコンテナーの認証
+  ms.openlocfilehash: 1fc1fc3b0742748a11ab9527784d08abd5fc5c2c
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448284"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-authentication-with-managed-service-identity.md)]
+quiz:
+  title: '知識チェック: マネージド サービス ID'
+  questions:
+  - content: マネージド サービス ID (MSI) を使用した場合のアプリが Azure Key Vault の認証を受ける方法の変化
+    choices:
+    - content: このアプリは、シークレットの代わりに証明書を使用して認証します。
+      isCorrect: false
+      incorrectExplanation: アプリはシークレットまたは証明書を使用して Azure Active Directory から認証トークンを取得*できます*が、MSI を使用する場合は必要はありません。
+    - content: アプリの各ユーザーはパスワードを入力する必要があります。
+      isCorrect: false
+      incorrectExplanation: Key Vault の認証を受けるのは、アプリの個々のユーザーではなく*アプリ*です。 MSI を使用しても、アプリがユーザーからの認証を必須にするかどうかには影響しません。
+    - content: このアプリは、Azure Active Directory からではなく、MSI が提供するトークン サービスからトークンを取得します。
+      isCorrect: true
+      correctExplanation: MSI トークン サービスは、アプリの代理で Azure Active Directory からトークンを取得します。その結果、アプリは環境変数に挿入されたシークレット使用して認証を受けられるようになります。
+    - content: MSI ID は Key Vault によって管理され、自動的に認識および認証されます。
+      isCorrect: false
+      incorrectExplanation: Key Vault は ID を制御または管理しません。 ID は Azure Active Directory 内に存在します。
+  - content: 次のうち、MSI を使用してアプリが Key Vault の認証を受ける場合の主な利点を説明している文はどれですか。
+    choices:
+    - content: MSI によってアプリケーションのパフォーマンスが向上します。
+      isCorrect: false
+      incorrectExplanation: MSI はアプリケーションのパフォーマンスに影響がありません。
+    - content: MSI によって、構成でシークレットを処理する必要がなくなります。
+      isCorrect: true
+      correctExplanation: アプリは、実行時に環境変数に挿入されたシークレットを使用して MSI トークン サービスの認証を受けるので、シークレットを構成に保存する必要がなくなります。
+    - content: MSI ID には自動的に Key Vault のアクセス許可が付与されます。
+      isCorrect: false
+      incorrectExplanation: MSI ID を含むすべての ID には、コンテナー内のアクセス許可を明示的に付与する必要があります。
+    - content: MSI を使用すると、リモート サービスのパスワードを簡単に選択できます。
+      isCorrect: false
+      incorrectExplanation: MSI は、リモート サービスを使用するシークレットまたは認証ワークフローには影響しません。 MSI は、アプリが Key Vault の認証を受ける方法にのみ影響します。

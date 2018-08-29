@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-cosmos-db-for-scale.3-what-is-a-request-unit
+metadata:
+  title: Azure Cosmos DB 要求ユニットとは?
+  description: Azure Cosmos DB 内で要求ユニットを使用してスループットを割り当てる方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: 59395acde91a8986089a5480efc51f8a02dbd518
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442719"
+title: 要求ユニットとは?
+durationInMinutes: 8
+content: '[!include[](includes/3-what-is-a-request-unit.md)]'
