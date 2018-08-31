@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.6-summary
+metadata:
+  title: <span data-ttu-id="e4666-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="e4666-101">Summary</span></span>
+  description: <span data-ttu-id="e4666-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="e4666-102">Summary</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 9c000e9fc1ecf7ea34fe33ff64cf78d68bdec5fd
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252367"
+title: <span data-ttu-id="e4666-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="e4666-103">Summary</span></span>
+durationInMinutes: 3
+content: '[!include[](includes/6-summary.md)]'
