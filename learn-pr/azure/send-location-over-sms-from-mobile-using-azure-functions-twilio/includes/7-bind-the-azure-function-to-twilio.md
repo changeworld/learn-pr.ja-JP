@@ -33,7 +33,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
 
     Twilio アカウントを作成すると、メッセージの送信元として使用する電話番号が割り当てられます。 この電話番号は、Twilio の **[Phone Numbers]\(電話番号\)** ダッシュ ボードで確認できます。 Twilio サイトで、左側のメニューの下部にある省略記号を選択します。 次に、*[SUPER NETWORK]\(スーパー ネットワーク\) -> [Phone Numbers]\(電話番号\)* の順に選択します。 ピン アイコンを使用して、左側のメニューにこのダッシュ ボードをピン留めすることができます。 *[Manage Numbers]\(番号の管理\) -> [Active Numbers]\(有効な番号\)* の下に、Twilio 番号が表示されます。 番号からすべてのスペースを削除する必要があります。
 
-    ![Twilio 番号を検索する](../media/7-twilio-find-number.png)
+    ![Twilio 番号を検索する](../media-drafts/7-twilio-find-number.png)
 
     ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",
@@ -130,15 +130,15 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 4. **[Send Location]\(場所の送信\)** ボタンをクリックします。 SMS メッセージが正常に送信された場合は、Xamarin.Forms アプリに "Location sent successfully (場所が正常に送信されました)" というメッセージが表示されます。
 
-    ![場所が送信されたことを示す Xamarin.Forms アプリ](../media/7-ui-location-sent.png)
+    ![場所が送信されたことを示す Xamarin.Forms アプリ](../media-drafts/7-ui-location-sent.png)
 
 5. Azure 関数のコンソール ログに、作成されて送信されているメッセージが表示されます。 エラー (番号のフォーマットが正しくないなど) が発生した場合は、ここに記録されます。
 
-    ![メッセージが送信されたことを示す Azure 関数コンソール](../media/7-function-message-sent.png)
+    ![メッセージが送信されたことを示す Azure 関数コンソール](../media-drafts/7-function-message-sent.png)
 
 6. 自分の電話でメッセージを確認します。 メッセージに記載されたリンクに従って、自分の場所を確認します。
 
-    ![携帯電話で受信した SMS メッセージ](../media/7-message-received.png)
+    ![携帯電話で受信した SMS メッセージ](../media-drafts/7-message-received.png)
 
 ## <a name="summary"></a>まとめ
 

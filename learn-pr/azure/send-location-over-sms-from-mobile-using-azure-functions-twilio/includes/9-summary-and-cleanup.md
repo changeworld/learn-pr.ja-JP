@@ -10,17 +10,17 @@ Xamarin および Azure 関数と Twilio バインディングを使用してク
 
 3. リソース グループの作成に使用したサブスクリプションを展開します。 "ImHere" リソース グループを右クリックし、*[ポータルで開く]* を選択します。
 
-    ![Cloud Explorer ウィンドウからポータルでリソース グループを開く](../media/9-open-resource-group-in-portal.png)
+    ![Cloud Explorer ウィンドウからポータルでリソース グループを開く](../media-drafts/9-open-resource-group-in-portal.png)
 
 4. 必要な場合は、ブラウザーで Azure portal にログインします。
 
 5. ポータルで "ImHere" リソース グループが開きます。 **[リソース グループの削除]** ボタンをクリックします。
 
-    ![リソース グループを削除します](../media/9-delete-resource-group.png)
+    ![リソース グループを削除します](../media-drafts/9-delete-resource-group.png)
 
 6. リソース グループの名前を入力して削除を確認し、**[削除]** をクリックします。
 
-    ![リソース グループの名前を入力して、削除を確定します。](../media/9-confirm-delete-resource-group.png)
+    ![リソース グループの名前を入力して、削除を確定します。](../media-drafts/9-confirm-delete-resource-group.png)
 
 ## <a name="summary"></a>まとめ
 

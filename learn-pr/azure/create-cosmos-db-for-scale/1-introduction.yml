@@ -4,12 +4,12 @@ metadata:
   title: はじめに
   description: スケーリングのためにビルドされた Azure Cosmos DB データベースの作成方法を学習します。
   displayType: one-column
-  ms.openlocfilehash: b2e39959fa354c0e0bca213c843d5b158b51a3a5
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: ca28c61ef2d53a73ae9fcf609401a9ec22e3e251
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40449339"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179796"
 title: はじめに
-durationInMinutes: 10
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

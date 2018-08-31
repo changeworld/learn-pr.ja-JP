@@ -4,13 +4,12 @@ metadata:
   title: Azure Cosmos DB アカウントを作成する
   description: Azure portal で Azure Cosmos DB アカウントを作成する方法を説明します。
   displayType: one-column
-  interactive: azureportal
-  ms.openlocfilehash: 12c8776b76cb3733701079134ad6cee81de458d4
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 68852307738c2f4a6bf35a21f5e4e9e6f24a8ee0
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443534"
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141230"
 title: Azure portal で Azure Cosmos DB アカウントを作成する
 durationInMinutes: 10
 content: >
@@ -20,12 +19,10 @@ tasks:
   environment: azure
   hint: Azure Cosmos DB アカウントに一意の名前を付けたことを確認してください。
   azure:
-    resourceGroup: myResourceGroup
     location: eastus
 - action: exists
   environment: azure
   azure:
-    resourceGroup: groupA
     resource:
       type: Microsoft.Storage/storageAccounts
       name: docsproxyppea427

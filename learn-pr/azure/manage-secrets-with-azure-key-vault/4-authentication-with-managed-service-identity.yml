@@ -4,13 +4,13 @@ title: マネージド サービス ID によるコンテナーの認証
 metadata:
   title: マネージド サービス ID によるコンテナーの認証
   description: マネージド サービス ID によるコンテナーの認証
-  ms.openlocfilehash: 1fc1fc3b0742748a11ab9527784d08abd5fc5c2c
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 64615327ce06ac20d1e3026a547ce42093dcd89c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40448284"
-durationInMinutes: 2
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180017"
+durationInMinutes: 4
 content: >
   [!include[](includes/4-authentication-with-managed-service-identity.md)]
 quiz:

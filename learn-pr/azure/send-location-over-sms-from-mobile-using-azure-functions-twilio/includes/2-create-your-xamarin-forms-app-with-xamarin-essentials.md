@@ -14,7 +14,7 @@
 
 5. Click **OK**.
 
-    ![[新しいソリューション] ダイアログ](../media/2-new-solution-dialog.png)
+    ![[新しいソリューション] ダイアログ](../media-drafts/2-new-solution-dialog.png)
 
 6. **[New Cross Platform App]\(新しいクロス プラットフォーム アプリ\)** ダイアログで、*[空のアプリ]* テンプレートを選択します。
 
@@ -26,7 +26,7 @@
 
 9. Click **OK**.
 
-    ![新しいソリューションの構成ダイアログ](../media/2-configure-solution-dialog.png)
+    ![新しいソリューションの構成ダイアログ](../media-drafts/2-configure-solution-dialog.png)
 
 Visual Studio では 2 つのプロジェクト (`ImHere.UWP` という UWP アプリと `ImHere` という .NET 標準ライブラリ) が作成されます。 Xamarin.Forms アプリは 2 つの部分、つまり、1 つ以上のプラットフォーム固有のアプリ プロジェクトと 1 つ (またはそれ以上の) .NET 標準ライブラリで構成されます。 プラットフォーム固有のアプリ プロジェクトには、関連するプラットフォームでアプリを実行するために必要なプラットフォーム固有のコードが含まれます。 その後、これらのプロジェクトでは、クロスプラットフォームの .NET 標準ライブラリで定義されている Xamarin.Forms アプリが起動されます。 クロスプラットフォーム コードでアプリをビルドすると、実行時に、作成するすべてのユーザー インターフェイスが、関連するプラットフォーム固有の UI コンポーネントに変換されます。
 
@@ -44,7 +44,7 @@ UWP、Android、iOS プラットフォームでは、オペレーティング �
 
 5. **[インストール]** ボタンをクリックして、NuGet パッケージをインストールします。 続行するにはライセンスに同意する必要があります。
 
-    ![ソリューション内のすべてのプロジェクトへの Xamarin.Essentials NuGet パッケージの追加](../media/2-add-essentials-nuget.png)
+    ![ソリューション内のすべてのプロジェクトへの Xamarin.Essentials NuGet パッケージの追加](../media-drafts/2-add-essentials-nuget.png)
 
     > このモジュールをローカルで実行し、Android を対象とする場合は、追加のセットアップをいくつか行う必要があります。 詳細については、[Xamarin.Essentials の概要に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid)を参照してください。
 
@@ -54,11 +54,11 @@ UWP、Android、iOS プラットフォームでは、オペレーティング �
 
 2. ビルド構成を **[デバッグ]** に、プラットフォームを **[x86]** に、実行先のデバイスを **[ローカル コンピューター]** にそれぞれ設定します。
 
-    ![ローカル デバイスで実行する場合のデバッグ x86 構成の設定](../media/2-debug-configuration.png)
+    ![ローカル デバイスで実行する場合のデバッグ x86 構成の設定](../media-drafts/2-debug-configuration.png)
 
 3. アプリのデバッグを開始します。
 
-    ![実行中のアプリ](../media/2-debuging-app.png)
+    ![実行中のアプリ](../media-drafts/2-debuging-app.png)
 
 ## <a name="summary"></a>まとめ
 

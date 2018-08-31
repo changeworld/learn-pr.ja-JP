@@ -20,7 +20,7 @@ RDP 接続には RDP クライアントが必要です。 Microsoft では、次
 
 Windows 10 には RDP クライアントが含まれています。
 
-![Windows RDP クライアント](../images/2-rdp-client.PNG)
+![Windows RDP クライアント](../media-drafts/4-rdp-client.PNG)
 
 ## <a name="what-functionality-does-an-rdp-connection-support"></a>RDP 接続ではどのような機能がサポートされていますか?
 
