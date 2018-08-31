@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.2-essential-azure-compute-concepts
-title: <span data-ttu-id="48c94-101">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="48c94-101">Essential Azure compute concepts</span></span>
+title: <span data-ttu-id="85088-101">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="85088-101">Essential Azure compute concepts</span></span>
 metadata:
-  title: <span data-ttu-id="48c94-102">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="48c94-102">Essential Azure compute concepts</span></span>
-  description: <span data-ttu-id="48c94-103">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="48c94-103">Essential Azure compute concepts</span></span>
-  ms.openlocfilehash: dbb07c04e8affac61bcc6adf4fa19a8fb467d548
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  title: <span data-ttu-id="85088-102">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="85088-102">Essential Azure compute concepts</span></span>
+  description: <span data-ttu-id="85088-103">Azure コンピューティングの重要な概念</span><span class="sxs-lookup"><span data-stu-id="85088-103">Essential Azure compute concepts</span></span>
+  ms.openlocfilehash: 5a2f4916fb536fe35b070c570f31fbd6437ae8e0
+  ms.sourcegitcommit: bcd9fd78122da4fc1545c7923a5fc0cd0a8abe96
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702723"
-durationInMinutes: 11
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43152062"
+durationInMinutes: 5
 content: '[!include[](includes/2-essential-azure-compute-concepts.md)]'

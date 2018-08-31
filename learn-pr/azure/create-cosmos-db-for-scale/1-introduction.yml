@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.1-introduction
 metadata:
-  title: <span data-ttu-id="dafc3-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="dafc3-101">Introduction</span></span>
-  description: <span data-ttu-id="dafc3-102">スケーリングのためにビルドされた Azure Cosmos DB データベースの作成方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="dafc3-102">Learn how to create an Azure Cosmos DB database built to scale.</span></span>
+  title: <span data-ttu-id="2fa7c-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="2fa7c-101">Introduction</span></span>
+  description: <span data-ttu-id="2fa7c-102">スケーリングのためにビルドされた Azure Cosmos DB データベースの作成方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="2fa7c-102">Learn how to create an Azure Cosmos DB database built to scale.</span></span>
   displayType: one-column
-  ms.openlocfilehash: b2e39959fa354c0e0bca213c843d5b158b51a3a5
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: ca28c61ef2d53a73ae9fcf609401a9ec22e3e251
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40449339"
-title: <span data-ttu-id="dafc3-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="dafc3-103">Introduction</span></span>
-durationInMinutes: 10
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179796"
+title: <span data-ttu-id="2fa7c-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="2fa7c-103">Introduction</span></span>
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

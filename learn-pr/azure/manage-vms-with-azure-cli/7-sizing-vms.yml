@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.7-sizing-vms
-title: <span data-ttu-id="d56da-101">VM を適切なサイズに変更する</span><span class="sxs-lookup"><span data-stu-id="d56da-101">Sizing VMs properly</span></span>
+title: <span data-ttu-id="8fa91-101">VM を適切なサイズに変更する</span><span class="sxs-lookup"><span data-stu-id="8fa91-101">Sizing VMs properly</span></span>
 metadata:
-  title: <span data-ttu-id="d56da-102">VM を適切なサイズに変更する</span><span class="sxs-lookup"><span data-stu-id="d56da-102">Sizing VMs properly</span></span>
-  description: <span data-ttu-id="d56da-103">VM のサイズを割り当てられたワークロードに合わせて変更する方法について学習します</span><span class="sxs-lookup"><span data-stu-id="d56da-103">Learn how to size the VM to the assigned workload</span></span>
-  ms.openlocfilehash: e035e2f7e10635f74de027f242db58db2af1c96a
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="8fa91-102">VM を適切なサイズに変更する</span><span class="sxs-lookup"><span data-stu-id="8fa91-102">Sizing VMs properly</span></span>
+  description: <span data-ttu-id="8fa91-103">VM のサイズを割り当てられたワークロードに合わせて変更する方法について学習します</span><span class="sxs-lookup"><span data-stu-id="8fa91-103">Learn how to size the VM to the assigned workload</span></span>
+  ms.openlocfilehash: 5437c6486ae0ec9e8c739429453eaf3b2a8b1a7c
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445854"
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141774"
 interactive: bash
-durationInMinutes: 4
+durationInMinutes: 10
 content: '[!include[](includes/7-sizing-vms.md)]'

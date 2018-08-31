@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.provision-azure-sql-db.5-summary
+title: <span data-ttu-id="1bf84-101">まとめとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="1bf84-101">Summary and cleanup</span></span>
+metadata:
+  title: <span data-ttu-id="1bf84-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="1bf84-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="1bf84-103">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="1bf84-103">Summary and cleanup</span></span>
+  ms.openlocfilehash: eff94727f4e6d72001be0a9a383083e5e75b0ef1
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230198"
+durationInMinutes: 5
+content: '[!include[](includes/5-summary.md)]'

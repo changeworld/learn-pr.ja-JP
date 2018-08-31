@@ -1,31 +1,28 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.2-create-an-account
 metadata:
-  title: <span data-ttu-id="09ee1-101">Azure Cosmos DB アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="09ee1-101">Create an Azure Cosmos DB account</span></span>
-  description: <span data-ttu-id="09ee1-102">Azure portal で Azure Cosmos DB アカウントを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="09ee1-102">Learn how to create an Azure Cosmos DB account in the Azure portal.</span></span>
+  title: <span data-ttu-id="f84f5-101">Azure Cosmos DB アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="f84f5-101">Create an Azure Cosmos DB account</span></span>
+  description: <span data-ttu-id="f84f5-102">Azure portal で Azure Cosmos DB アカウントを作成する方法を説明します。</span><span class="sxs-lookup"><span data-stu-id="f84f5-102">Learn how to create an Azure Cosmos DB account in the Azure portal.</span></span>
   displayType: one-column
-  interactive: azureportal
-  ms.openlocfilehash: 12c8776b76cb3733701079134ad6cee81de458d4
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 68852307738c2f4a6bf35a21f5e4e9e6f24a8ee0
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443534"
-title: <span data-ttu-id="09ee1-103">Azure portal で Azure Cosmos DB アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="09ee1-103">Create an Azure Cosmos DB account in the portal</span></span>
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141230"
+title: <span data-ttu-id="f84f5-103">Azure portal で Azure Cosmos DB アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="f84f5-103">Create an Azure Cosmos DB account in the portal</span></span>
 durationInMinutes: 10
 content: >
   [!include[](includes/2-create-an-account.md)]
 tasks:
 - action: exists
   environment: azure
-  hint: <span data-ttu-id="09ee1-104">Azure Cosmos DB アカウントに一意の名前を付けたことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="09ee1-104">Please make sure that you have given the Azure Cosmos DB account a unique name.</span></span>
+  hint: <span data-ttu-id="f84f5-104">Azure Cosmos DB アカウントに一意の名前を付けたことを確認してください。</span><span class="sxs-lookup"><span data-stu-id="f84f5-104">Please make sure that you have given the Azure Cosmos DB account a unique name.</span></span>
   azure:
-    resourceGroup: myResourceGroup
     location: eastus
 - action: exists
   environment: azure
   azure:
-    resourceGroup: groupA
     resource:
       type: Microsoft.Storage/storageAccounts
       name: docsproxyppea427
