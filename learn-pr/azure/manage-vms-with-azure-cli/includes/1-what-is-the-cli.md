@@ -13,13 +13,14 @@ Azure CLI を使用することで、Jim はスクリプトを記述して、サ
 Azure CLI は、Azure リソースを管理するための、Microsoft のクロスプラットフォーム コマンド ライン ツールです。 このツールは、macOS、Linux、および Windows で使用できます。またはブラウザーで [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) を使用して使用できます。
 
 > [!IMPORTANT]
-> 現在使用できる Azure CLI ツールには、Azure CLI 1.0 と Azure CLI 2.0 の 2 つのバージョンがあります。 ここでは最新バージョンである Azure CLI 2.0 を使用します。1.0 用に記述されたレガシ スクリプトを実行している場合を除き、こちらを使用することをお勧めします。 Azure CLI 1.0 は、`azure` コマンドで始まり、Azure CLI 2.0 は、`az` コマンドで始まります。 
+> 現在使用できる Azure CLI ツールには、Azure CLI 1.0 と Azure CLI 2.0 の 2 つのバージョンがあります。 ここでは最新バージョンである Azure CLI 2.0 を使用します。レガシ スクリプトを実行する場合を除いて、こちらを使用することをお勧めします。 Azure CLI 1.0 は `azure` コマンドで始まり、Azure CLI 2.0 は `az` コマンドで始まります。 
 
-Azure CLI では、コマンドラインからまたはスクリプトで仮想マシンやディスクなどの Azure リソースを管理するのに役立ちます。 始めて、その機能を確認しましょう。
+Azure CLI では、コマンドラインからまたはスクリプトで仮想マシンやディスクなどの Azure リソースを管理するのに役立ちます。 では、どのようなことができるかを見ていきましょう。
 
 ## <a name="learning-objectives"></a>学習の目的
-> [!div class="checklist"]
-> * CLI を使用して Azure 仮想マシンを作成する
-> * CLI を使用して VM のサイズを変更する
-> * コマンドラインから VM の管理とクエリを行う
-> * VM にソフトウェアをインストールする
+このモジュールでは、次のことを行います。
+
+- CLI を使用して Azure 仮想マシンを作成します。
+- CLI を使用して VM のサイズを変更します。
+- VM の管理とクエリをコマンドラインから行います。
+- VM にソフトウェアをインストールします。

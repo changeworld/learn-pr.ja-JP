@@ -1,4 +1,4 @@
-仮想マシンのサイズは、予定の作業に合ったものにする必要があります。 メモリまたは CPU の量が適切でない VM は、負荷がかかると機能しなくなったり、非常に遅くなって効率的に実行できなくなったりします。 
+仮想マシンのサイズは、予定される作業に適したものであることが必要です。 VM のメモリの大きさや CPU が適切でない場合は、負荷を処理できなくなることや、動作が遅すぎて実用的ではなくなることがあります。 
 
 仮想マシンを作成するときに、_VM サイズ_値を指定することができます。この値によって、その VM に割り当てられるコンピューティング リソースの量が決まります。 これには、Azure から仮想マシンに使用できるようにする CPU、GPU、およびメモリが含まれます。
 
@@ -46,7 +46,7 @@ az vm list-sizes --location eastus --output table
                 64       3891200  Standard_M128m                      128           1047552                16384000
 ```
 
-VM を作成したときにサイズを指定しなかったので、Azure によって `Standard_DS1_v2`の既定の汎用サイズが選択されました。 ただし、`--size` パラメーターを使用して、`vm create` コマンドの一部としてサイズを指定できます。
+VM を作成したときにサイズを指定しなかったので、Azure によって `Standard_DS1_v2`の既定の汎用サイズが選択されました。 ただし、サイズは `vm create` コマンドの一部として `--size` パラメーターを使用して指定できます。 たとえば、次のコマンドを使用して 16 コアの仮想マシンを作成します。
 
 ```azurecli
 az vm create --resource-group ExerciseResources --name SampleVM \
@@ -54,7 +54,10 @@ az vm create --resource-group ExerciseResources --name SampleVM \
   --size "Standard_DS5_v2"
 ```
 
-## <a name="resizing-an-existing-vm"></a>既存の VM のサイズ変更
+> [!WARNING]
+> ご利用のサブスクリプション レベルに応じて、作成できるリソース数に[制限が課され](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits)、さらにそのリソースの合計サイズも制限されます。 たとえば、従量課金制サブスクリプションでの仮想 CPU 数の制限は **20** で、無料レベルの場合は **4** となっています。 Azure CLI には、これを超えたときに**クォータ超過**エラーで通知する機能があります。 アーキテクチャを作成するときにこのエラーが発生した場合は、有料サブスクリプションに関連付けられている制限の引き上げ (仮想 CPU の上限は 10,000 個) を申請することができます。申請は[オンラインで行います (無料)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quota-errors)。 
+
+## <a name="resizing-an-existing-vm"></a>既存の VM のサイズを変更する
 ワークロードが変化した場合や、作成時に正しくサイズが設定されなかった場合にも、既存の VM のサイズを変更することができます。 サイズ変更を要求する前に、VM が属するクラスター内で目的のサイズが使用できるかどうかを確認する必要があります。 これを行うには、`vm list-vm-resize-options` コマンドを使用します。
 
 ```azurecli

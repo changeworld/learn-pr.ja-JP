@@ -7,11 +7,11 @@
 ここでは、Azure PowerShell を使用して Azure リソースを管理する方法について説明します。 1 回限りのタスクには Azure PowerShell を対話形式で使用し、反復的なタスクはスクリプトを書いて自動化します。 
 
 ## <a name="learning-objectives"></a>学習の目的
-> [!div class="checklist"]
-> * Azure PowerShell が自分の Azure 管理タスク用の適切なツールかどうかを判断する
-> * Azure PowerShell を Linux、macOS、Windows にインストールする
-> * Azure PowerShell を使用して Azure サブスクリプションに接続する
-> * Azure PowerShell を使用して Azure リソースを作成する
+このモジュールでは、次のことを行います。
+- Azure PowerShell が自分の Azure 管理タスクに対して適切なツールかどうかを判断します。
+- Azure PowerShell を Linux、macOS、Windows にインストールします。
+- Azure PowerShell を使用して Azure サブスクリプションに接続します。
+- Azure PowerShell を使用して Azure のリソースを作成します。
 
 ## <a name="prerequisites"></a>前提条件
 - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験

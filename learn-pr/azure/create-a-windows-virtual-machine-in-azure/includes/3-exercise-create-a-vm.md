@@ -1,14 +1,10 @@
-この演習では、Azure で Windows 仮想マシンを作成します。
+別のシナリオを考えてみましょう。 あなたは、ある学校に所属しているとします。この学校では Windows 仮想マシンを使用してテスト環境を作成しています。学生はこの環境で Web アプリをインストールし、ドメインを構成し、Windows のサービスと機能を試しているので、学校のコンピューターに影響を与えることはありません。 教師は、この環境の VM に RDP を使用して接続し、学生の進捗状況を調べています。 このような環境を Azure でどのようにして構築するかを考えてみましょう。
 
-## <a name="motivation"></a>目的
-
-この演習の別のシナリオを考えてみましょう。 ここでは、所属する組織が学校であり、Windows 仮想マシンを使用して、学校のコンピューターに影響を与えることなく、学生が Web アプリをインストールし、ドメインを構成し、Windows のサービスと機能を確認するテスト環境を起動します。 教師は、RDP を使用してこれらの VM に接続し、学生の進捗状況を確認します。
-
-## <a name="create-a-windows-vm"></a>Windows VM の作成
+## <a name="create-a-windows-vm"></a>Windows VM を作成する
 
 Windows VM を作成するには、次の手順を完了します。
 
-1. [Azure portal](https://portal.azure.com) から Azure にログオンします。
+1. [Azure portal](https://portal.azure.com?azure-portal=true) から Azure にログオンします。
 
 1. Azure portal の左上隅にある **[リソースの作成]** をクリックします。
 

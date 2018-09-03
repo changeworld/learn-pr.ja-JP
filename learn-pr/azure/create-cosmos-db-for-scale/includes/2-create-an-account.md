@@ -6,9 +6,9 @@
 
 Azure Cosmos DB アカウントは、データベースの組織エンティティとして機能する Azure リソースです。 課金の目的で、使用状況が Azure サブスクリプションに接続されています。
 
-各 Azure Cosmos DB アカウントは、Azure Cosmos DB がサポートするいくつかのデータ モデルの 1 つに関連付けられており、アカウントを必要な数だけ作成できます。 
+各 Azure Cosmos DB アカウントは、Azure Cosmos DB がサポートするさまざまなデータ モデルの 1 つに関連付けられており、アカウントを必要な数だけ作成できます。 
 
-新しいアプリケーションを作成する場合は、SQL API が優先データ モデルとなります。 グラフやテーブルを使用するか、または MongoDB や Cassandra のデータを Azure に移行する場合は、追加のアカウントを作成し、関連するデータ モデルを選択します。
+SQL API は、新しいアプリケーションを作成する場合の優先データ モデルです。 グラフやテーブルを扱う場合や、MongoDB または Cassandra のデータを Azure に移行する場合は、追加のアカウントを作成して関連するデータ モデルを選択します。
 
 アカウントを作成する場合は、自分のアカウントを識別できるよう、わかりやすい ID を選択します。 また、データ センターとユーザーの間の待機時間を最小限に抑えるために、ユーザーに最も近い Azure リージョンでアカウントを作成します。
 
@@ -16,8 +16,7 @@ Azure Cosmos DB アカウントは、データベースの組織エンティテ�
 
 ## <a name="creating-an-azure-cosmos-db-account-in-the-portal"></a>ポータルで Azure Cosmos DB アカウントを作成する
 
-<!--TODO: Update portal link with one that routes to free Learning acct-->
-1. [Azure Portal](https://portal.azure.com/) にサインインします。
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 2. **[リソースの作成]** > **[データベース]** > **[Azure Cosmos DB]** の順にクリックします。
    
    ![Azure Portal の [データベース] ウィンドウ](../media/1-introduction/create-nosql-db-databases-json-tutorial-1.png)
@@ -34,11 +33,11 @@ Azure Cosmos DB アカウントは、データベースの組織エンティテ�
     Geo 冗長の有効化| 空白 | この設定では、データベースのレプリケート バージョンが 2 番目 (ペア) のリージョンに作成されます。 データベースは後でレプリケートできるので、ここでは空白のままにします。 
     仮想ネットワーク|Disabled|ここでは、仮想ネットワークを無効のままにします。 これは後で有効にすることができます。 
 
-4. **Create** をクリックしてください。
+4. **[作成]** をクリックします。
 
     ![Azure Cosmos DB の新しいアカウント ページ](../media/1-introduction/azure-cosmos-db-create-new-account.png)
 
-5. アカウントの作成には数分かかります。 ポータルで、デプロイ成功の通知が表示されるまで待ってから、通知をクリックします。 
+5. アカウントの作成には数分かかります。 ポータルにデプロイ成功の通知が表示されるまで待ち、その通知をクリックします。 
 
     ![通知アラート](../media/1-introduction/azure-cosmos-db-notification.png)
 

@@ -1,15 +1,5 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.sample-path.trophy
-  type: trophy
-  title: サンプル ラーニング パス トロフィー
-  summary: "\"サンプル ラーニング パス トロフィー\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.placeholder.trophy
-  type: trophy
-  iconUrl: http://via.placeholder.com/120x120
-  title: ラーニング パス プレースホルダー トロフィー
-  summary: サンプル ラーニング パス トロフィーの概要
 - uid: learn.placeholder.badge
   type: badge
   iconUrl: http://via.placeholder.com/120x120
@@ -45,65 +35,70 @@ achievements:
   title: Azure Functions を使用したサーバーレス ロジックの作成
   summary: Azure Functions を使用したサーバーレス ロジックの作成
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-web-app-with-azure-web-apps.badge
+- uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
   title: Azure Web Apps での Web アプリケーションのホストのバッジ
   summary: Azure Web Apps での Web アプリケーションのホストのバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行のバッジ
-  summary: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行のバッジの概要
+  title: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
+  summary: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
   title: Azure でのコンテナーの管理のトロフィー
   summary: "\"Azure でのコンテナーの管理\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-fundamentals.trophy
+- uid: learn.create-serverless-applications.trophy
+  type: trophy
+  title: サーバーレス アプリケーションの作成のトロフィー
+  summary: "\"サーバーレス アプリケーションの作成\" ラーニング パスのトロフィー"
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.administer-infrastructure-resources-in-azure.trophy
+  type: trophy
+  title: Azure でインフラストラクチャ リソースを管理するのトロフィー
+  summary: "\"Azure でインフラストラクチャ リソースを管理する\" ラーニング パスのトロフィー"
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.cloud-foundations.trophy
   type: trophy
   title: クラウドの基礎のトロフィー
   summary: "\"クラウドの基礎\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-architecture-foundations.trophy
+- uid: learn.connect-your-services-together.trophy
   type: trophy
-  title: Azure アーキテクチャの基礎のトロフィー
-  summary: "\"Azure アーキテクチャの基礎\" ラーニング パスのトロフィー。"
+  title: サービスの接続のトロフィー
+  summary: "\"サービスの接続\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
-  title: Azure での最適なソリューションの設計のトロフィー
-  summary: "\"Azure での最適なソリューションの設計\" ラーニング パスのトロフィー。"
+  title: Azure で最適なソリューションを設計するのトロフィー
+  summary: "\"Azure で最適なソリューションを設計する\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-backend-services-in-azure.trophy
+- uid: learn.prepare-to-develop-apps-on-azure.trophy
   type: trophy
-  title: Azure でのバックエンド サービスの作成のトロフィー
-  summary: "\"Azure でのバックエンド サービスの作成\" ラーニング パスのトロフィー。"
+  title: Azure でアプリを開発するための準備のトロフィー
+  summary: "\"Azure でアプリを開発するための準備\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-use-azure.trophy
+- uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: Azure を使用するための準備のトロフィー
-  summary: "\"Azure を使用するための準備\" ラーニング パスのトロフィー"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-managed-hosting.trophy
-  type: trophy
-  title: マネージド ホスティングを使った Azure への Web サイトの展開のトロフィー
-  summary: "\"マネージド ホスティングを使った Azure への Web サイトの展開\" ラーニング パスのトロフィー。"
+  title: Azure App Service で Web サイトをデプロイするのトロフィー
+  summary: "\"Azure App Service で Web サイトをデプロイする\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
-  title: Azure Cosmos DB での NoSQL データの使用のトロフィー
-  summary: "\"Azure Cosmos DB での NoSQL データの使用\" ラーニング パスのトロフィー。"
+  title: Azure Cosmos DB の NoSQL データを扱うのトロフィー
+  summary: "\"Azure Cosmos DB の NoSQL データを扱う\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-relational-data-in-azure.trophy
   type: trophy
-  title: Azure でのリレーショナル データの操作のトロフィー
-  summary: "\"Azure でのリレーショナル データの操作\" ラーニング パスのトロフィー。"
+  title: Azure でリレーショナル データを操作するのトロフィー
+  summary: "\"Azure でリレーショナル データを操作する\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-web-data-in-azure.trophy
+- uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: Azure での Web データのセキュリティ保護のトロフィー
-  summary: "\"Azure での Web データのセキュリティ保護\" ラーニング パスのトロフィー。"
+  title: クラウド データのセキュリティ保護のトロフィー
+  summary: "\"クラウド データのセキュリティ保護のトロフィー\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-data-in-azure.trophy
   type: trophy
@@ -129,6 +124,11 @@ achievements:
   type: badge
   title: メッセージング モデルの選択のバッジ
   summary: メッセージング モデルの選択のバッジの概要
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+  type: badge
+  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+  summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
@@ -160,10 +160,10 @@ achievements:
   title: SQL Serer のリレーショナル データを Azure SQL に移行する
   summary: SQL Serer のリレーショナル データを Azure SQL に移行する
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-apps-with-storage-queues.badge
+- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: アプリケーションと Azure ストレージ キューの間の通信のバッジ
-  summary: アプリケーションと Azure ストレージ キューの間の通信の概要
+  title: アプリケーションと Azure キュー ストレージの間の通信
+  summary: アプリケーションと Azure キュー ストレージの間の通信
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
@@ -199,7 +199,7 @@ achievements:
   type: badge
   title: Azure Key Vault を使用して Web アプリのシークレットを管理する
   summary: Azure Key Vault を使用して Web アプリのシークレットを管理する
-  iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
   title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
@@ -215,10 +215,10 @@ achievements:
   title: Azure CLI を使用して仮想マシンを管理する
   summary: Azure CLI を使用して仮想マシンを管理する
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-vm-hosting.trophy
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
   type: trophy
-  title: VM ホスティングを使った Azure への Web サイトのデプロイのトロフィー
-  summary: "\"VM ホスティングを使った Azure への Web サイトのデプロイ\" ラーニング パスのトロフィー。"
+  title: Azure Virtual Machines を使用して Web サイトをデプロイするのトロフィー
+  summary: "\"Azure Virtual Machines を使用して Web サイトをデプロイする\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
@@ -245,10 +245,15 @@ achievements:
   title: Visual Studio Code での Azure Cosmos DB アプリの作成
   summary: "\"Visual Studio Code での Azure Cosmos DB アプリの作成\" モジュールのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: Azure でのリソースの管理のトロフィー
+  summary: "\"Azure でのリソースの管理\" ラーニング パスのトロフィー。"
+  iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: f7775c5f422578b4f98ef8b6fcf2c8213e5e9bb4
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702340"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053932"
