@@ -1,14 +1,26 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: <span data-ttu-id="fd8be-101">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-101">Choose whether to use messages or events</span></span>
+title: <span data-ttu-id="27623-101">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="27623-101">Choose whether to use messages or events</span></span>
 metadata:
-  title: <span data-ttu-id="fd8be-102">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-102">Choose whether to use messages or events</span></span>
-  description: <span data-ttu-id="fd8be-103">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="fd8be-103">Choose whether to use messages or events</span></span>
-  ms.openlocfilehash: 2b9296a8ace31b881fd937a37b832061c1050666
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="27623-102">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="27623-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="27623-103">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="27623-103">Choose whether to use messages or events</span></span>
+  ms.openlocfilehash: 624a7b75f47e488d60f0e844d44439a79f5372fe
+  ms.sourcegitcommit: 7b28a1a9a27c714147d15a002099f774a59e07f3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40444142"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43113073"
 durationInMinutes: 10
-content: '[!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]'
+content: >
+  [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
+quiz:
+  title: <span data-ttu-id="27623-104">メッセージング モデル</span><span class="sxs-lookup"><span data-stu-id="27623-104">Messaging models</span></span>
+  questions:
+  - content: "<span data-ttu-id=\"27623-105\">分散アプリケーションには、ユーザーを認証する Web サービスがあります。</span><span class=\"sxs-lookup\"><span data-stu-id=\"27623-105\">In your distributed application you have a web service that authenticates users.</span></span> <span data-ttu-id=\"27623-106\">ユーザーがログオンすると、Web サービスは、ユーザーのすべてのコンピューターで実行されるデスクトップ アプリケーションと通信して、そのユーザーの状態を \"オンライン\" として表示する必要があります。</span><span class=\"sxs-lookup\"><span data-stu-id=\"27623-106\">When a user logs on, the web service must communicate with a desktop application that runs on all users' computers to display the status of that user as \"Online\".</span></span> <span data-ttu-id=\"27623-107\">true または false: これは分散アプリケーションのメッセージの例です。</span><span class=\"sxs-lookup\"><span data-stu-id=\"27623-107\">True or false: This is an example of a message in a distributed application.</span></span>"
+    choices:
+    - content: <span data-ttu-id="27623-108">True</span><span class="sxs-lookup"><span data-stu-id="27623-108">True</span></span>
+      incorrectExplanation: <span data-ttu-id="27623-109">これは分散アプリケーションのイベントの例です。</span><span class="sxs-lookup"><span data-stu-id="27623-109">Sorry, this is an example of an event in a distributed application.</span></span> <span data-ttu-id="27623-110">通信はすべてのサブスクライバーにルーティングされます。パブリッシャーは、その通信をサブスクライバーがどのように扱うかについて認識も好みも持つことはなく、サブスクライバーの数がどれだけあるかも認識しません。</span><span class="sxs-lookup"><span data-stu-id="27623-110">The communication is routed to all subscribers and the publisher has no knowledge or preference on how the communication is handled by a subscriber, nor even any knowledge of how many subscribers there are, if any.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="27623-111">False</span><span class="sxs-lookup"><span data-stu-id="27623-111">False</span></span>
+      correctExplanation: <span data-ttu-id="27623-112">正解です。</span><span class="sxs-lookup"><span data-stu-id="27623-112">Correct!</span></span> <span data-ttu-id="27623-113">これはイベント通知であり、これによって何らかのアクションがトリガーされます。</span><span class="sxs-lookup"><span data-stu-id="27623-113">This would be an event notification which would trigger an action.</span></span> <span data-ttu-id="27623-114">これは、イベントを使用する最適なケースです。</span><span class="sxs-lookup"><span data-stu-id="27623-114">This is a perfect case of using an event.</span></span>
+      isCorrect: true

@@ -1,254 +1,259 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.sample-path.trophy
-  type: trophy
-  title: <span data-ttu-id="4bdc7-101">サンプル ラーニング パス トロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-101">Sample Learning Path Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-102">"サンプル ラーニング パス トロフィー" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-102">Trophy for the 'Sample Learning Path Trophy' learning path.</span></span>
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.placeholder.trophy
-  type: trophy
-  iconUrl: http://via.placeholder.com/120x120
-  title: <span data-ttu-id="4bdc7-103">ラーニング パス プレースホルダー トロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-103">Learning Path Placeholder Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-104">サンプル ラーニング パス トロフィーの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-104">Sample Learning Path Trophy Summary</span></span>
 - uid: learn.placeholder.badge
   type: badge
   iconUrl: http://via.placeholder.com/120x120
-  title: <span data-ttu-id="4bdc7-105">モジュール プレースホルダー バッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-105">Module Placeholder Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-106">サンプル モジュール トロフィーの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-106">Sample Module Trophy Summary</span></span>
+  title: <span data-ttu-id="52983-101">モジュール プレースホルダー バッジ</span><span class="sxs-lookup"><span data-stu-id="52983-101">Module Placeholder Badge</span></span>
+  summary: <span data-ttu-id="52983-102">サンプル モジュール トロフィーの概要</span><span class="sxs-lookup"><span data-stu-id="52983-102">Sample Module Trophy Summary</span></span>
 - uid: learn.sample-module-cloudshell.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-107">CloudShell を使用するサンプル モジュールのバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-107">Sample Module with CloudShell Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-108">"CloudShell を使用するサンプル モジュール" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-108">Badge for the 'Sample module with CloudShell' module.</span></span>
+  title: <span data-ttu-id="52983-103">CloudShell を使用するサンプル モジュールのバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-103">Sample Module with CloudShell Badge</span></span>
+  summary: <span data-ttu-id="52983-104">"CloudShell を使用するサンプル モジュール" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="52983-104">Badge for the 'Sample module with CloudShell' module.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.build-a-serverless-web-app.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-109">サーバーレス Web アプリの構築のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-109">Build a serverless web app Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-110">"サーバーレス Web アプリの構築" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-110">Badge for the 'Build a serverless web app' module.</span></span>
+  title: <span data-ttu-id="52983-105">サーバーレス Web アプリの構築のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-105">Build a serverless web app Badge</span></span>
+  summary: <span data-ttu-id="52983-106">"サーバーレス Web アプリの構築" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="52983-106">Badge for the 'Build a serverless web app' module.</span></span>
   iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
 - uid: learn.cd-pipeline-github-to-azure-web-app.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-111">GitHub から Azure Web App への継続的デプロイの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-111">Create a continuous deployment pipeline from GitHub to your Azure Web App Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-112">GitHub から Azure Web App への継続的デプロイの作成のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-112">Create a continuous deployment pipeline from GitHub to your Azure Web App Badge Summary</span></span>
+  title: <span data-ttu-id="52983-107">GitHub から Azure Web App への継続的デプロイの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-107">Create a continuous deployment pipeline from GitHub to your Azure Web App Badge</span></span>
+  summary: <span data-ttu-id="52983-108">GitHub から Azure Web App への継続的デプロイの作成のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-108">Create a continuous deployment pipeline from GitHub to your Azure Web App Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.connect-app-to-azure-storage.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-113">Azure Storage へのアプリの接続</span><span class="sxs-lookup"><span data-stu-id="4bdc7-113">Connect an app to Azure Storage</span></span>
-  summary: <span data-ttu-id="4bdc7-114">Azure Storage へのアプリの接続</span><span class="sxs-lookup"><span data-stu-id="4bdc7-114">Connect an app to Azure Storage</span></span>
+  title: <span data-ttu-id="52983-109">Azure Storage へのアプリの接続</span><span class="sxs-lookup"><span data-stu-id="52983-109">Connect an app to Azure Storage</span></span>
+  summary: <span data-ttu-id="52983-110">Azure Storage へのアプリの接続</span><span class="sxs-lookup"><span data-stu-id="52983-110">Connect an app to Azure Storage</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-azure-storage-account.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-115">Azure Storage へのアプリの接続のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-115">Create an Azure storage account Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-116">Azure Storage へのアプリの接続のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-116">Create an Azure storage account Badge Summary</span></span>
+  title: <span data-ttu-id="52983-111">Azure Storage へのアプリの接続のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-111">Create an Azure storage account Badge</span></span>
+  summary: <span data-ttu-id="52983-112">Azure Storage へのアプリの接続のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-112">Create an Azure storage account Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-serverless-logic-with-functions.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-117">Azure Functions を使用したサーバーレス ロジックの作成</span><span class="sxs-lookup"><span data-stu-id="4bdc7-117">Create serverless logic with Azure Functions</span></span>
-  summary: <span data-ttu-id="4bdc7-118">Azure Functions を使用したサーバーレス ロジックの作成</span><span class="sxs-lookup"><span data-stu-id="4bdc7-118">Create serverless logic with Azure Functions</span></span>
+  title: <span data-ttu-id="52983-113">Azure Functions を使用したサーバーレス ロジックの作成</span><span class="sxs-lookup"><span data-stu-id="52983-113">Create serverless logic with Azure Functions</span></span>
+  summary: <span data-ttu-id="52983-114">Azure Functions を使用したサーバーレス ロジックの作成</span><span class="sxs-lookup"><span data-stu-id="52983-114">Create serverless logic with Azure Functions</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-web-app-with-azure-web-apps.badge
+- uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-119">Azure Web Apps での Web アプリケーションのホストのバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-119">Host a web application with Azure Web Apps Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-120">Azure Web Apps での Web アプリケーションのホストのバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-120">Host a web application with Azure Web Apps Badge Summary</span></span>
+  title: <span data-ttu-id="52983-115">Azure Web Apps での Web アプリケーションのホストのバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-115">Host a web application with Azure Web Apps Badge</span></span>
+  summary: <span data-ttu-id="52983-116">Azure Web Apps での Web アプリケーションのホストのバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-116">Host a web application with Azure Web Apps Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-121">Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-121">Publish an Azure Web App with Visual Studio for Windows or Mac Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-122">Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-122">Publish an Azure Web App with Visual Studio for Windows or Mac Badge Summary</span></span>
+  title: <span data-ttu-id="52983-117">Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行</span><span class="sxs-lookup"><span data-stu-id="52983-117">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
+  summary: <span data-ttu-id="52983-118">Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行</span><span class="sxs-lookup"><span data-stu-id="52983-118">Publish an Azure Web App with Visual Studio for Windows or Mac</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-123">Azure でのコンテナーの管理のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-123">Administer containers in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-124">"Azure でのコンテナーの管理" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-124">Trophy for the 'Administer containers in Azure' learning path</span></span>
+  title: <span data-ttu-id="52983-119">Azure でのコンテナーの管理のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-119">Administer containers in Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-120">"Azure でのコンテナーの管理" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-120">Trophy for the 'Administer containers in Azure' learning path</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-fundamentals.trophy
+- uid: learn.create-serverless-applications.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-125">クラウドの基礎のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-125">Cloud Fundamentals Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-126">"クラウドの基礎" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-126">Trophy for the 'Cloud Fundamentals' learning path.</span></span>
+  title: <span data-ttu-id="52983-121">サーバーレス アプリケーションの作成のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-121">Create serverless applications Trophy</span></span>
+  summary: <span data-ttu-id="52983-122">"サーバーレス アプリケーションの作成" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-122">Trophy for the 'Create serverless applications' learning path</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-architecture-foundations.trophy
+- uid: learn.administer-infrastructure-resources-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-127">Azure アーキテクチャの基礎のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-127">Azure architecture foundations Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-128">"Azure アーキテクチャの基礎" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-128">Trophy for the 'Azure architecture foundations' learning path.</span></span>
+  title: <span data-ttu-id="52983-123">Azure でインフラストラクチャ リソースを管理するのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-123">Administer infrastructure resources in Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-124">"Azure でインフラストラクチャ リソースを管理する" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-124">Trophy for the 'Administer infrastructure resources in Azure' learning path</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.cloud-foundations.trophy
+  type: trophy
+  title: <span data-ttu-id="52983-125">クラウドの基礎のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-125">Cloud Foundations Trophy</span></span>
+  summary: <span data-ttu-id="52983-126">"クラウドの基礎" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-126">Trophy for the 'Cloud Foundations' learning path.</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.connect-your-services-together.trophy
+  type: trophy
+  title: <span data-ttu-id="52983-127">サービスの接続のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-127">Connect your services together Trophy</span></span>
+  summary: <span data-ttu-id="52983-128">"サービスの接続" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-128">Trophy for the 'Connect your services together' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-129">Azure での最適なソリューションの設計のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-129">Architect great solutions in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-130">"Azure での最適なソリューションの設計" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-130">Trophy for the 'Architect great solutions in Azure' learning path.</span></span>
+  title: <span data-ttu-id="52983-129">Azure で最適なソリューションを設計するのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-129">Architect great solutions in Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-130">"Azure で最適なソリューションを設計する" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-130">Trophy for the 'Architect great solutions in Azure' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-backend-services-in-azure.trophy
+- uid: learn.prepare-to-develop-apps-on-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-131">Azure でのバックエンド サービスの作成のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-131">Create backend services in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-132">"Azure でのバックエンド サービスの作成" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-132">Trophy for the 'Create backend services in Azure' learning path.</span></span>
+  title: <span data-ttu-id="52983-131">Azure でアプリを開発するための準備のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-131">Prepare to develop apps on Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-132">"Azure でアプリを開発するための準備" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-132">Trophy for the 'Prepare to develop apps on Azure' learning path</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-use-azure.trophy
+- uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-133">Azure を使用するための準備のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-133">Prepare to use Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-134">"Azure を使用するための準備" ラーニング パスのトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-134">Trophy for the 'Prepare to use Azure' learning path</span></span>
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-managed-hosting.trophy
-  type: trophy
-  title: <span data-ttu-id="4bdc7-135">マネージド ホスティングを使った Azure への Web サイトの展開のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-135">Deploy a website to Azure with Managed Hosting Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-136">"マネージド ホスティングを使った Azure への Web サイトの展開" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-136">Trophy for the 'Deploy a website to Azure with Managed Hosting' learning path.</span></span>
+  title: <span data-ttu-id="52983-133">Azure App Service で Web サイトをデプロイするのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-133">Deploy a website with Azure App Service Trophy</span></span>
+  summary: <span data-ttu-id="52983-134">"Azure App Service で Web サイトをデプロイする" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-134">Trophy for the 'Deploy a website with Azure App Service' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-137">Azure Cosmos DB での NoSQL データの使用のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-137">Working with NoSQL data in Azure Cosmos DB Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-138">"Azure Cosmos DB での NoSQL データの使用" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-138">Trophy for 'Working with NoSQL data in Azure Cosmos DB' learning path.</span></span>
+  title: <span data-ttu-id="52983-135">Azure Cosmos DB の NoSQL データを扱うのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-135">Work with NoSQL data in Azure Cosmos DB Trophy</span></span>
+  summary: <span data-ttu-id="52983-136">"Azure Cosmos DB の NoSQL データを扱う" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-136">Trophy for 'Work with NoSQL data in Azure Cosmos DB' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-relational-data-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-139">Azure でのリレーショナル データの操作のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-139">Work with relational data in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-140">"Azure でのリレーショナル データの操作" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-140">Trophy for the 'Working with relational data in Azure' learning path.</span></span>
+  title: <span data-ttu-id="52983-137">Azure でリレーショナル データを操作するのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-137">Work with relational data in Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-138">"Azure でリレーショナル データを操作する" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-138">Trophy for the 'Working with relational data in Azure' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-web-data-in-azure.trophy
+- uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-141">Azure での Web データのセキュリティ保護のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-141">Secure your web data in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-142">"Azure での Web データのセキュリティ保護" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-142">Trophy for the 'Secure your web data in Azure' learning path.</span></span>
+  title: <span data-ttu-id="52983-139">クラウド データのセキュリティ保護のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-139">Secure your cloud data Trophy</span></span>
+  summary: <span data-ttu-id="52983-140">"クラウド データのセキュリティ保護のトロフィー" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-140">Trophy for the 'Secure your cloud data' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-data-in-azure.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-143">Azure へのデータの格納のトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-143">Store data in Azure Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-144">"Azure へのデータの格納" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-144">Trophy for the 'Store data in Azure' learning path.</span></span>
+  title: <span data-ttu-id="52983-141">Azure へのデータの格納のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-141">Store data in Azure Trophy</span></span>
+  summary: <span data-ttu-id="52983-142">"Azure へのデータの格納" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-142">Trophy for the 'Store data in Azure' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.automate-azure-tasks-with-powershell.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-145">PowerShell でのスクリプトを使用した Azure タスクの自動化のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-145">Automate Azure tasks using scripts with PowerShell Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-146">PowerShell でのスクリプトを使用した Azure タスクの自動化の概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-146">Automate Azure tasks using scripts with PowerShell Summary</span></span>
+  title: <span data-ttu-id="52983-143">PowerShell でのスクリプトを使用した Azure タスクの自動化のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-143">Automate Azure tasks using scripts with PowerShell Badge</span></span>
+  summary: <span data-ttu-id="52983-144">PowerShell でのスクリプトを使用した Azure タスクの自動化の概要</span><span class="sxs-lookup"><span data-stu-id="52983-144">Automate Azure tasks using scripts with PowerShell Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-azure-db-for-postgresql.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-147">Azure CLI による PostgreSQL DB サーバーの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-147">Create a PostgreSQL DB server via the Azure CLI Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-148">Azure CLI による PostgreSQL DB サーバーの作成の概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-148">Create a PostgreSQL DB server via the Azure CLI Summary</span></span>
+  title: <span data-ttu-id="52983-145">Azure CLI による PostgreSQL DB サーバーの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-145">Create a PostgreSQL DB server via the Azure CLI Badge</span></span>
+  summary: <span data-ttu-id="52983-146">Azure CLI による PostgreSQL DB サーバーの作成の概要</span><span class="sxs-lookup"><span data-stu-id="52983-146">Create a PostgreSQL DB server via the Azure CLI Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-linux-vm-in-azure.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-149">Azure での Linux 仮想マシンの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-149">Create a Linux virtual machine in Azure Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-150">Azure での Linux 仮想マシンの作成の概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-150">Create a Linux virtual machine in Azure Summary</span></span>
+  title: <span data-ttu-id="52983-147">Azure での Linux 仮想マシンの作成のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-147">Create a Linux virtual machine in Azure Badge</span></span>
+  summary: <span data-ttu-id="52983-148">Azure での Linux 仮想マシンの作成の概要</span><span class="sxs-lookup"><span data-stu-id="52983-148">Create a Linux virtual machine in Azure Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.choose-messaging-model.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-151">メッセージング モデルの選択のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-151">Choose messaging model Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-152">メッセージング モデルの選択のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-152">Choose messaging model Badge Summary</span></span>
+  title: <span data-ttu-id="52983-149">メッセージング モデルの選択のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-149">Choose messaging model Badge</span></span>
+  summary: <span data-ttu-id="52983-150">メッセージング モデルの選択のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-150">Choose messaging model Badge Summary</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+  type: badge
+  title: <span data-ttu-id="52983-151">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="52983-151">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
+  summary: <span data-ttu-id="52983-152">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="52983-152">Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-153">Azure 開発環境の準備のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-153">Prepare Azure development environment Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-154">Azure 開発環境の準備のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-154">Prepare Azure development environment Badge Summary</span></span>
+  title: <span data-ttu-id="52983-153">Azure 開発環境の準備のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-153">Prepare Azure development environment Badge</span></span>
+  summary: <span data-ttu-id="52983-154">Azure 開発環境の準備のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-154">Prepare Azure development environment Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-resources-with-azure-portal.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-155">Azure portal でのリソースの管理のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-155">Manage resources with Azure portal Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-156">Azure portal でのリソースの管理のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-156">Manage resources with Azure portal Badge Summary</span></span>
+  title: <span data-ttu-id="52983-155">Azure portal でのリソースの管理のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-155">Manage resources with Azure portal Badge</span></span>
+  summary: <span data-ttu-id="52983-156">Azure portal でのリソースの管理のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-156">Manage resources with Azure portal Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.explore-azure-services-for-web-devs.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-157">Web 開発者のための Azure サービスの探求のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-157">Explore Azure services for web developers Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-158">Web 開発者のための Azure サービスの探求のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-158">Explore Azure services for web developers Badge Summary</span></span>
+  title: <span data-ttu-id="52983-157">Web 開発者のための Azure サービスの探求のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-157">Explore Azure services for web developers Badge</span></span>
+  summary: <span data-ttu-id="52983-158">Web 開発者のための Azure サービスの探求のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-158">Explore Azure services for web developers Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.control-azure-services-with-cli.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-159">CLI を使用した Azure サービスの制御のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-159">Control Azure services with the CLI Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-160">CLI を使用した Azure サービスの制御のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-160">Control Azure services with the CLI Badge Summary</span></span>
+  title: <span data-ttu-id="52983-159">CLI を使用した Azure サービスの制御のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-159">Control Azure services with the CLI Badge</span></span>
+  summary: <span data-ttu-id="52983-160">CLI を使用した Azure サービスの制御のバッジの概要</span><span class="sxs-lookup"><span data-stu-id="52983-160">Control Azure services with the CLI Badge Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.azure-services-features.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-161">Azure サービスと機能のツアーのバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-161">Tour Azure services and features Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-162">Azure サービスと機能のツアーの概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-162">Tour Azure services and features Summary</span></span>
+  title: <span data-ttu-id="52983-161">Azure サービスと機能のツアーのバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-161">Tour Azure services and features Badge</span></span>
+  summary: <span data-ttu-id="52983-162">Azure サービスと機能のツアーの概要</span><span class="sxs-lookup"><span data-stu-id="52983-162">Tour Azure services and features Summary</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.migrate-sql-server-relational-data.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-163">SQL Serer のリレーショナル データを Azure SQL に移行する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-163">Migrate SQL serer relational data to Azure SQL</span></span>
-  summary: <span data-ttu-id="4bdc7-164">SQL Serer のリレーショナル データを Azure SQL に移行する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-164">Migrate SQL serer relational data to Azure SQL</span></span>
+  title: <span data-ttu-id="52983-163">SQL Serer のリレーショナル データを Azure SQL に移行する</span><span class="sxs-lookup"><span data-stu-id="52983-163">Migrate SQL serer relational data to Azure SQL</span></span>
+  summary: <span data-ttu-id="52983-164">SQL Serer のリレーショナル データを Azure SQL に移行する</span><span class="sxs-lookup"><span data-stu-id="52983-164">Migrate SQL serer relational data to Azure SQL</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-apps-with-storage-queues.badge
+- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-165">アプリケーションと Azure ストレージ キューの間の通信のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-165">Communicate between applications with an Azure storage queue Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-166">アプリケーションと Azure ストレージ キューの間の通信の概要</span><span class="sxs-lookup"><span data-stu-id="4bdc7-166">Communicate between applications with an Azure storage queue Summary</span></span>
+  title: <span data-ttu-id="52983-165">アプリケーションと Azure キュー ストレージの間の通信</span><span class="sxs-lookup"><span data-stu-id="52983-165">Communicate between applications with Azure queue storage</span></span>
+  summary: <span data-ttu-id="52983-166">アプリケーションと Azure キュー ストレージの間の通信</span><span class="sxs-lookup"><span data-stu-id="52983-166">Communicate between applications with an Azure queue storage</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-167">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-167">Create a Windows virtual machine in Azure</span></span>
-  summary: <span data-ttu-id="4bdc7-168">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-168">Create a Windows virtual machine in Azure</span></span>
+  title: <span data-ttu-id="52983-167">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="52983-167">Create a Windows virtual machine in Azure</span></span>
+  summary: <span data-ttu-id="52983-168">Azure で Windows 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="52983-168">Create a Windows virtual machine in Azure</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.choose-web-hosting.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-169">Azure で Web ホスティング オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-169">Choose a Web Hosting Option in Azure</span></span>
-  summary: <span data-ttu-id="4bdc7-170">Azure で Web ホスティング オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-170">Choose a Web Hosting Option in Azure</span></span>
+  title: <span data-ttu-id="52983-169">Azure で Web ホスティング オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="52983-169">Choose a Web Hosting Option in Azure</span></span>
+  summary: <span data-ttu-id="52983-170">Azure で Web ホスティング オプションを選択する</span><span class="sxs-lookup"><span data-stu-id="52983-170">Choose a Web Hosting Option in Azure</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.interactive-iot-deployments.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-171">Azure での対話型 IoT デプロイの操作</span><span class="sxs-lookup"><span data-stu-id="4bdc7-171">Working with interactive IoT deployments in Azure</span></span>
-  summary: <span data-ttu-id="4bdc7-172">Azure での対話型 IoT デプロイの操作</span><span class="sxs-lookup"><span data-stu-id="4bdc7-172">Working with interactive IoT deployments in Azure</span></span>
+  title: <span data-ttu-id="52983-171">Azure での対話型 IoT デプロイの操作</span><span class="sxs-lookup"><span data-stu-id="52983-171">Working with interactive IoT deployments in Azure</span></span>
+  summary: <span data-ttu-id="52983-172">Azure での対話型 IoT デプロイの操作</span><span class="sxs-lookup"><span data-stu-id="52983-172">Working with interactive IoT deployments in Azure</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.iot-for-ops.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-173">運用のための IoT Suite</span><span class="sxs-lookup"><span data-stu-id="4bdc7-173">IoT Suite for ops</span></span>
-  summary: <span data-ttu-id="4bdc7-174">運用のための IoT Suite</span><span class="sxs-lookup"><span data-stu-id="4bdc7-174">IoT Suite for ops</span></span>
+  title: <span data-ttu-id="52983-173">運用のための IoT Suite</span><span class="sxs-lookup"><span data-stu-id="52983-173">IoT Suite for ops</span></span>
+  summary: <span data-ttu-id="52983-174">運用のための IoT Suite</span><span class="sxs-lookup"><span data-stu-id="52983-174">IoT Suite for ops</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.web-app-with-mean-on-linux-vm.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-175">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-175">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
-  summary: <span data-ttu-id="4bdc7-176">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-176">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
+  title: <span data-ttu-id="52983-175">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="52983-175">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
+  summary: <span data-ttu-id="52983-176">Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する</span><span class="sxs-lookup"><span data-stu-id="52983-176">Build and run a web application with the MEAN stack on an Azure Linux virtual machine</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.optimize-web-app-with-redis.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-177">Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-177">Optimize your web applications by caching read-only data with Redis</span></span>
-  summary: <span data-ttu-id="4bdc7-178">Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-178">Optimize your web applications by caching read-only data with Redis</span></span>
+  title: <span data-ttu-id="52983-177">Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する</span><span class="sxs-lookup"><span data-stu-id="52983-177">Optimize your web applications by caching read-only data with Redis</span></span>
+  summary: <span data-ttu-id="52983-178">Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する</span><span class="sxs-lookup"><span data-stu-id="52983-178">Optimize your web applications by caching read-only data with Redis</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-secrets-with-azure-key-vault.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-179">Azure Key Vault を使用して Web アプリのシークレットを管理する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-179">Manage secrets in your web apps with Azure Key Vault</span></span>
-  summary: <span data-ttu-id="4bdc7-180">Azure Key Vault を使用して Web アプリのシークレットを管理する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-180">Manage secrets in your web apps with Azure Key Vault</span></span>
-  iconUrl: /learn/modules/manage-secrets-with-azure-key-vault/achievement/manage-secrets-with-azure-key-vault.svg
+  title: <span data-ttu-id="52983-179">Azure Key Vault を使用して Web アプリのシークレットを管理する</span><span class="sxs-lookup"><span data-stu-id="52983-179">Manage secrets in your web apps with Azure Key Vault</span></span>
+  summary: <span data-ttu-id="52983-180">Azure Key Vault を使用して Web アプリのシークレットを管理する</span><span class="sxs-lookup"><span data-stu-id="52983-180">Manage secrets in your web apps with Azure Key Vault</span></span>
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-181">ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-181">Secure your Azure resources with role-based access control (RBAC)</span></span>
-  summary: <span data-ttu-id="4bdc7-182">ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-182">Secure your Azure resources with role-based access control (RBAC)</span></span>
+  title: <span data-ttu-id="52983-181">ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="52983-181">Secure your Azure resources with role-based access control (RBAC)</span></span>
+  summary: <span data-ttu-id="52983-182">ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する</span><span class="sxs-lookup"><span data-stu-id="52983-182">Secure your Azure resources with role-based access control (RBAC)</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-183">Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信するのバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-183">Sending location information over SMS from your phone using Azure Functions and Twilio badge</span></span>
-  summary: <span data-ttu-id="4bdc7-184">"Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信する" モジュールのバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-184">Badge for 'Sending location information over SMS from your phone using Azure Functions and Twilio' module</span></span>
+  title: <span data-ttu-id="52983-183">Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信するのバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-183">Sending location information over SMS from your phone using Azure Functions and Twilio badge</span></span>
+  summary: <span data-ttu-id="52983-184">"Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信する" モジュールのバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-184">Badge for 'Sending location information over SMS from your phone using Azure Functions and Twilio' module</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-vms-with-azure-cli-data.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-185">Azure CLI を使用して仮想マシンを管理する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-185">Manage virtual machines with the Azure CLI</span></span>
-  summary: <span data-ttu-id="4bdc7-186">Azure CLI を使用して仮想マシンを管理する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-186">Manage virtual machines with the Azure CLI</span></span>
+  title: <span data-ttu-id="52983-185">Azure CLI を使用して仮想マシンを管理する</span><span class="sxs-lookup"><span data-stu-id="52983-185">Manage virtual machines with the Azure CLI</span></span>
+  summary: <span data-ttu-id="52983-186">Azure CLI を使用して仮想マシンを管理する</span><span class="sxs-lookup"><span data-stu-id="52983-186">Manage virtual machines with the Azure CLI</span></span>
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-to-azure-with-vm-hosting.trophy
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
   type: trophy
-  title: <span data-ttu-id="4bdc7-187">VM ホスティングを使った Azure への Web サイトのデプロイのトロフィー</span><span class="sxs-lookup"><span data-stu-id="4bdc7-187">Deploy a website to Azure with VM Hosting Trophy</span></span>
-  summary: <span data-ttu-id="4bdc7-188">"VM ホスティングを使った Azure への Web サイトのデプロイ" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-188">Trophy for the 'Deploy a website to Azure with VM Hosting' learning path.</span></span>
+  title: <span data-ttu-id="52983-187">Azure Virtual Machines を使用して Web サイトをデプロイするのトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-187">Deploy a website with Azure Virtual Machines Trophy</span></span>
+  summary: <span data-ttu-id="52983-188">"Azure Virtual Machines を使用して Web サイトをデプロイする" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-188">Trophy for the 'Deploy a website with Azure Virtual Machines' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-189">Azure Blob Storage に Web アプリケーション データを保存する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-189">Store web application data with Azure Blob Storage</span></span>
-  summary: <span data-ttu-id="4bdc7-190">Azure Blob Storage に Web アプリケーション データを保存する</span><span class="sxs-lookup"><span data-stu-id="4bdc7-190">Store web application data with Azure Blob Storage</span></span>
+  title: <span data-ttu-id="52983-189">Azure Blob Storage に Web アプリケーション データを保存する</span><span class="sxs-lookup"><span data-stu-id="52983-189">Store web application data with Azure Blob Storage</span></span>
+  summary: <span data-ttu-id="52983-190">Azure Blob Storage に Web アプリケーション データを保存する</span><span class="sxs-lookup"><span data-stu-id="52983-190">Store web application data with Azure Blob Storage</span></span>
   iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
 - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-191">Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にする</span><span class="sxs-lookup"><span data-stu-id="4bdc7-191">Enable reliable messaging for Big Data Applications using Azure Event Hubs</span></span>
-  summary: <span data-ttu-id="4bdc7-192">Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にするモジュール</span><span class="sxs-lookup"><span data-stu-id="4bdc7-192">Enable reliable messaging for Big Data Applications using Azure Event Hubs module</span></span>
+  title: <span data-ttu-id="52983-191">Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にする</span><span class="sxs-lookup"><span data-stu-id="52983-191">Enable reliable messaging for Big Data Applications using Azure Event Hubs</span></span>
+  summary: <span data-ttu-id="52983-192">Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にするモジュール</span><span class="sxs-lookup"><span data-stu-id="52983-192">Enable reliable messaging for Big Data Applications using Azure Event Hubs module</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.intro-to-compute.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-193">コンピューティングの概要のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-193">Introduction to Compute Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-194">"コンピューティングの概要" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-194">Badge for 'Introduction to Compute' module.</span></span>
+  title: <span data-ttu-id="52983-193">コンピューティングの概要のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-193">Introduction to Compute Badge</span></span>
+  summary: <span data-ttu-id="52983-194">"コンピューティングの概要" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="52983-194">Badge for 'Introduction to Compute' module.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.intro-to-data-in-azure.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-195">Azure でのデータの概要のバッジ</span><span class="sxs-lookup"><span data-stu-id="4bdc7-195">Introduction to data in Azure Badge</span></span>
-  summary: <span data-ttu-id="4bdc7-196">"Azure でのデータの概要" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-196">Badge for 'Introduction to data in Azure' module.</span></span>
+  title: <span data-ttu-id="52983-195">Azure でのデータの概要のバッジ</span><span class="sxs-lookup"><span data-stu-id="52983-195">Introduction to data in Azure Badge</span></span>
+  summary: <span data-ttu-id="52983-196">"Azure でのデータの概要" モジュールのバッジ。</span><span class="sxs-lookup"><span data-stu-id="52983-196">Badge for 'Introduction to data in Azure' module.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.cosmos-db-app-with-vscode.badge
   type: badge
-  title: <span data-ttu-id="4bdc7-197">Visual Studio Code での Azure Cosmos DB アプリの作成</span><span class="sxs-lookup"><span data-stu-id="4bdc7-197">Build an Azure Cosmos DB app in Visual Studio Code</span></span>
-  summary: <span data-ttu-id="4bdc7-198">"Visual Studio Code での Azure Cosmos DB アプリの作成" モジュールのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="4bdc7-198">Trophy for 'Build an Azure Cosmos DB app in Visual Studio Code' module.</span></span>
+  title: <span data-ttu-id="52983-197">Visual Studio Code での Azure Cosmos DB アプリの作成</span><span class="sxs-lookup"><span data-stu-id="52983-197">Build an Azure Cosmos DB app in Visual Studio Code</span></span>
+  summary: <span data-ttu-id="52983-198">"Visual Studio Code での Azure Cosmos DB アプリの作成" モジュールのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-198">Trophy for 'Build an Azure Cosmos DB app in Visual Studio Code' module.</span></span>
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: <span data-ttu-id="52983-199">Azure でのリソースの管理のトロフィー</span><span class="sxs-lookup"><span data-stu-id="52983-199">Manage resources in Azure trophy</span></span>
+  summary: <span data-ttu-id="52983-200">"Azure でのリソースの管理" ラーニング パスのトロフィー。</span><span class="sxs-lookup"><span data-stu-id="52983-200">Trophy for the 'Manage resources in Azure' learning path.</span></span>
   iconUrl: http://via.placeholder.com/120x120
 metadata:
-  ms.openlocfilehash: f7775c5f422578b4f98ef8b6fcf2c8213e5e9bb4
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702340"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053932"
