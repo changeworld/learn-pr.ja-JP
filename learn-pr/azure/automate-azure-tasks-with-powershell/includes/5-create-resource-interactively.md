@@ -29,7 +29,7 @@ Get-Help <cmdlet-name> -detailed
 1. リソース グループを作成します。
 1. 正常に作成できたことを確認します (下記参照)。
 
-![Azure PowerShell を使用して Azure にリソースを作成する手順](../media-drafts/5-create-resource-overview.png)
+![Azure PowerShell を使用して Azure にリソースを作成する手順](../media/5-create-resource-overview.png)
 
 各手順は異なるコマンドレットに対応しています。
 

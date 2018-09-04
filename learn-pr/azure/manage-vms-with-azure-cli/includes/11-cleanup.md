@@ -17,5 +17,5 @@ az group delete --name ExerciseResources --no-wait
 
 ## <a name="further-reading"></a>参考資料
 
-* [Azure CLI の概要](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-* [Azure CLI コマンド リファレンス](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)
+- [Azure CLI の概要](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
+- [Azure CLI コマンド リファレンス](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)

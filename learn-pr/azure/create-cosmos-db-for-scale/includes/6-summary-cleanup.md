@@ -6,13 +6,13 @@
 
 1. Azure Portal の左端で **[リソース グループ]** を選択し、作成したリソース グループを選択します。  
 
-    左側のメニューが折りたたまれている場合は、 ![展開ボタン](../media/5-create-a-database-and-collection/expand.png) をクリックして展開します。
+    左側のメニューが折りたたまれている場合は、 ![展開ボタン](../media-draft/6-expand.png) をクリックして展開します。
 
-   ![Azure ポータルのメトリック](../media/5-create-a-database-and-collection/delete-resources-select.png)
+   ![Azure ポータルのメトリック](../media-draft/6-resources-select.png)
 
-2. 新しいウィンドウでリソース グループを選択し、**[リソース グループの削除]** をクリックします。
+1. 新しいウィンドウでリソース グループを選択し、**[リソース グループの削除]** をクリックします。
 
-   ![Azure ポータルのメトリック](../media/5-create-a-database-and-collection/delete-resources.png)
+   ![Azure ポータルのメトリック](../media-draft/6-delete-resources.png)
 
-3. 新しいウィンドウで、削除するリソース グループの名前を入力し、**[削除]** をクリックします。
+1. 新しいウィンドウで、削除するリソース グループの名前を入力し、**[削除]** をクリックします。
 

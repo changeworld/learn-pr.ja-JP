@@ -5,9 +5,9 @@
 ## <a name="what-tools-are-available"></a>使用できるツール
 Azure には、次の 3 つの管理ツールがあります。 
 
-1. Azure portal 
-2. Azure CLI
-3. Azure PowerShell
+- Azure portal 
+- Azure CLI
+- Azure PowerShell
 
 いずれも管理できる機能はほぼ同じです。あるツールで実行できるタスクは、他の 2 つのツールでも同様に実行できます。 3 つのツールはすべてクロスプラットフォームであり、Windows、macOS、および Linux 上で動作します。 構文、設定要件、および自動化をサポートするかどうかは異なります。
 

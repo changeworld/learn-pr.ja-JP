@@ -33,7 +33,7 @@ VirtualMachine    PublicIPAddresses    PrivateIPAddresses
 SampleVM          168.61.54.62         10.0.0.4
 ```
 
-> [!NOTE]
+> [!TIP]
 > `--output` フラグの略式の構文として `-o` を使用していることに注目してください。 Azure CLI コマンドのほとんどのパラメーターは、単一のダッシュと文字に短縮できます。 たとえば、`--name` は `-n`に、`--resource-group` は `-g` に短縮できます。 これは入力するには便利ですが、スクリプトではわかりやすくするために完全なオプション名を使用することをお勧めします。 各コマンドの詳細については、ドキュメントで確認してください。
 
 ## <a name="getting-vm-details"></a>VM の詳細を取得する

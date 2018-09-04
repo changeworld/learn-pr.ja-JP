@@ -30,7 +30,8 @@ Event Hubs では、イベント ストリームと他の Azure サービスの�
 ## <a name="which-service-should-i-choose"></a>どのサービスを選択すべきか
 キューの選択と同様に、最初は、これらの 2 つのイベント配信サービスの間で選択を行うことは困難に思われます。 両者とも *At Least Once* セマンティクスをサポートしています。
 
-#### <a name="choose-event-hubs-if"></a>次の場合には、Event Hubs を選択します。
+#### <a name="choose-event-hubs-if"></a>次の場合には、Event Hubs を選択します。  
+
 - 多数の発行元の認証をサポートする必要がある。
 - Data Lake または BLOB ストレージにイベントのストリームを保存する必要がある。
 - イベント ストリームの集計または分析が必要である。
