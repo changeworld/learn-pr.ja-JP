@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.9-summary
+metadata:
+  title: まとめ
+  description: まとめ
+  displayType: one-column
+  ms.openlocfilehash: 79938e8ef9b8d30b4e7c1716f1a258a0e4591e3f
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43454916"
+title: まとめ
+durationInMinutes: 1
+content: '[!include[](includes/9-summary.md)]'

@@ -11,5 +11,5 @@
 az vm image list --location eastus --output table
 ```
 
-> [!NOTE]
+> [!TIP]
 > これらは、Azure で提供されている標準のイメージです。 固有の構成またはオペレーティング システムのあまり一般的ではないバージョンまたはディストリビューションに基づいて VM を作成するために、[独自のカスタム イメージを作成してアップロード](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images)することもできます。

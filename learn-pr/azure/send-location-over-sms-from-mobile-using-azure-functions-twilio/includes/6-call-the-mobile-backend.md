@@ -4,19 +4,19 @@
 
 1. `MainViewModel` を開きます。
 
-2. このクラスで、`client` という名前のプライベート `HttpClient` フィールドを追加します。 `System.Net.Http` 名前空間に参照を追加する必要があります。
+1. このクラスで、`client` という名前のプライベート `HttpClient` フィールドを追加します。 `System.Net.Http` 名前空間に参照を追加する必要があります。
 
     ```cs
     HttpClient client = new HttpClient();
     ```
 
-3. 関数の基本 URL に定数フィールドを追加します。 ローカルの Azure Functions ランタイムがリッスンしているアドレスにこれを設定します。 関数が Azure にデプロイされたら、この定数を Azure URL に変更できます。
+1. 関数の基本 URL に定数フィールドを追加します。 ローカルの Azure Functions ランタイムがリッスンしているアドレスにこれを設定します。 関数が Azure にデプロイされたら、この定数を Azure URL に変更できます。
 
     ```cs
     const string baseUrl = "http://localhost:7071";
     ```
 
-4. `SendLocation` メソッド内に、場所が見つかった後、場所とユーザーが入力した電話番号の一覧を利用して `PostData` の新しいインスタンスを作成します。 `ImHere.Data` 名前空間に対して using ディレクティブを追加する必要があります。
+1. `SendLocation` メソッド内に、場所が見つかった後、場所とユーザーが入力した電話番号の一覧を利用して `PostData` の新しいインスタンスを作成します。 `ImHere.Data` 名前空間に対して using ディレクティブを追加する必要があります。
 
     ```cs
     PostData postData = new PostData
@@ -29,16 +29,16 @@
 
     > これは、`Editor` コントロールの行ごとに 1 つ、電話番号が正しい形式で入力されていることを前提とします。 運用品質のアプリでは、これに対して検証が行われ、1 つまたは複数の電話番号が入力されたこと、形式が正しいことが確認されるでしょう。
 
-5. JSON として `PostData` をシリアル化する最も簡単な方法は、Newtonsoft.JSON NuGet パッケージを使用することです。 先の演習で Xamarin.Essentials を追加したときと同じ方法で `ImHere` プロジェクトにこの NuGet パッケージを追加します。
+1. JSON として `PostData` をシリアル化する最も簡単な方法は、Newtonsoft.JSON NuGet パッケージを使用することです。 先の演習で Xamarin.Essentials を追加したときと同じ方法で `ImHere` プロジェクトにこの NuGet パッケージを追加します。
 
-6. `JsonConvert` 静的クラスを使用して `PostData` を `string` にシリアル化します。 `Newtonsoft.Json` 名前空間に対して using ディレクティブを追加する必要があります。 JSON として Azure 関数に渡せるように、`StringContent` クラスにこの文字列をエンコードします。
+1. `JsonConvert` 静的クラスを使用して `PostData` を `string` にシリアル化します。 `Newtonsoft.Json` 名前空間に対して using ディレクティブを追加する必要があります。 JSON として Azure 関数に渡せるように、`StringContent` クラスにこの文字列をエンコードします。
 
     ```cs
     string data = JsonConvert.SerializeObject(postData);
     StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
     ```
 
-7. このデータを関数に送り、結果を取得します。
+1. このデータを関数に送り、結果を取得します。
 
    ```cs
     HttpResponseMessage result = await client.PostAsync($"{baseUrl}/api/SendLocation",
@@ -47,7 +47,7 @@
 
    Azure 関数は `/api/<function name>` の使用でアクセスされます。ローカル Functions ランタイムで選択されるポートが 7071 であると想定すると、`SendLocation` 関数には `http://localhost:7071/api/SendLocation` でアクセスできます。
 
-8. 結果に応じて、UI にメッセージが表示されます。
+1. 結果に応じて、UI にメッセージが表示されます。
 
     ```cs
     if (result.IsSuccessStatusCode)
@@ -94,11 +94,11 @@ async Task SendLocation()
 
 1. Azure 関数が引き続きローカルで実行されていること、ポートが `SendLocation` メソッドに一致することを確認します。
 
-2. UWP アプリをスタートアップ アプリとして設定し、実行します。 **[Send Location]\(場所の送信\)** ボタンをクリックします。 Functions ランタイム コンソールに出力が表示され、呼び出されている関数を確認できます。ログには生成された URL が表示されます。
+1. UWP アプリをスタートアップ アプリとして設定し、実行します。 **[Send Location]\(場所の送信\)** ボタンをクリックします。 Functions ランタイム コンソールに出力が表示され、呼び出されている関数を確認できます。ログには生成された URL が表示されます。
 
     ![呼び出されている関数の出力](../media-drafts/6-function-called.png)
 
-3. URL 生成をテストするには、それをコンソールからブラウザーに貼り付けます。 現在の場所が表示されるはずです。
+1. URL 生成をテストするには、それをコンソールからブラウザーに貼り付けます。 現在の場所が表示されるはずです。
 
 ## <a name="summary"></a>まとめ
 

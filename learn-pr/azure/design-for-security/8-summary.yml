@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.8-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: bb0ad48569c2da9968b1ca8d5a55cdff258fccdc
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366515"
+durationInMinutes: 1
+content: '[!include[](includes/8-summary.md)]'

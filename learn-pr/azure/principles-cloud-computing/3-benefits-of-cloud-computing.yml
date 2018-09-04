@@ -4,11 +4,11 @@ title: クラウド コンピューティングのメリット
 metadata:
   title: クラウド コンピューティングのメリット
   description: クラウド コンピューティングのメリット
-  ms.openlocfilehash: b5d9f2d1a9ae891f0a053d091b05b14fd2d83fdd
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 1ba6abecccb653683ef06a3e4b8408a84fa5b073
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447301"
-durationInMinutes: 5
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414710"
+durationInMinutes: 8
 content: '[!include[](includes/3-benefits-of-cloud-computing.md)]'
