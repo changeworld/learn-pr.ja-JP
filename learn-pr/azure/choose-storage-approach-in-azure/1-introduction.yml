@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.1-introduction
 metadata:
-  title: <span data-ttu-id="5604f-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="5604f-101">Introduction</span></span>
-  description: <span data-ttu-id="5604f-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="5604f-102">Introduction</span></span>
-  displayType: one-column
-  ms.openlocfilehash: bd07b26f8a54f3ce1f7034c5fe90e683f566fb15
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="59381-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="59381-101">Introduction</span></span>
+  description: <span data-ttu-id="59381-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="59381-102">Introduction</span></span>
+  ms.openlocfilehash: d612b3623cc8fc0258cef2a67c303524a75c9737
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252282"
-title: <span data-ttu-id="5604f-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="5604f-103">Introduction</span></span>
+  ms.locfileid: "43315929"
+title: <span data-ttu-id="59381-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="59381-103">Introduction</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

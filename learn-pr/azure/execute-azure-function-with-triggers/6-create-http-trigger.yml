@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: execute-azure-function-with-triggers.6-create-http-trigger
+title: <span data-ttu-id="6853e-101">HTTP トリガーを作成する</span><span class="sxs-lookup"><span data-stu-id="6853e-101">Create a HTTP Trigger</span></span>
+metadata:
+  title: <span data-ttu-id="6853e-102">HTTP トリガーを作成し、HTTP 要求を含む Azure Function を実行します</span><span class="sxs-lookup"><span data-stu-id="6853e-102">Create a HTTP Trigger and run an Azure Function with an HTTP request</span></span>
+  description: <span data-ttu-id="6853e-103">HTTP トリガーを作成する</span><span class="sxs-lookup"><span data-stu-id="6853e-103">Create a HTTP Trigger</span></span>
+  ms.openlocfilehash: 602dbe30f0c11865e58272ce4bfb8b684ebffe04
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42987281"
+durationInMinutes: 15
+content: '[!include[](includes/6-create-http-trigger.md)]'

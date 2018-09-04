@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.6-summary
+title: <span data-ttu-id="f3f9c-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="f3f9c-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="f3f9c-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="f3f9c-102">Summary</span></span>
+  description: <span data-ttu-id="f3f9c-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="f3f9c-103">Summary</span></span>
+  ms.openlocfilehash: 82859e4ac290f86688675b30bc0503f5b8c372ef
+  ms.sourcegitcommit: b85a83cbc1a0ae3e2681c4859e999a8296eb4e61
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43531348"
+durationInMinutes: 3
+content: '[!include[](includes/6-summary.md)]'
