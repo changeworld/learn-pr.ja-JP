@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.1-introduction
-title: <span data-ttu-id="0c71c-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="0c71c-101">Introduction</span></span>
+title: <span data-ttu-id="a521b-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="a521b-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="0c71c-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="0c71c-102">Introduction</span></span>
-  description: <span data-ttu-id="0c71c-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="0c71c-103">Introduction</span></span>
-  ms.openlocfilehash: d683f81e76eca17d6d3fdd13613dd6ce66ad34c4
-  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  title: <span data-ttu-id="a521b-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="a521b-102">Introduction</span></span>
+  description: <span data-ttu-id="a521b-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="a521b-103">Introduction</span></span>
+  ms.openlocfilehash: 956886b9213095307b6ebdccdfa8c78514b33cd9
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "42615787"
-durationInMinutes: 1
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728670"
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

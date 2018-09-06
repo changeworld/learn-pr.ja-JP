@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.2-upload-tagged-images
+title: <span data-ttu-id="8b8f0-101">タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="8b8f0-101">Upload tagged images</span></span>
+metadata:
+  title: <span data-ttu-id="8b8f0-102">タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="8b8f0-102">Upload tagged images</span></span>
+  description: <span data-ttu-id="8b8f0-103">タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="8b8f0-103">Upload tagged images</span></span>
+  ms.openlocfilehash: 86bd77343ab146cd18e0a5035a4ee54a690ed2b5
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230176"
+durationInMinutes: 5
+content: '[!include[](includes/2-upload-tagged-images.md)]'

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.1-introduction
+title: <span data-ttu-id="83780-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="83780-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="83780-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="83780-102">Introduction</span></span>
+  description: <span data-ttu-id="83780-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="83780-103">Introduction</span></span>
+  ms.openlocfilehash: e15c9c5edeb443ea9bf0146a85c98dc69093befc
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833038"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub
+title: <span data-ttu-id="c4492-101">演習 - イベント ハブを経由してメッセージを送受信するアプリケーションを構成する</span><span class="sxs-lookup"><span data-stu-id="c4492-101">Exercise - Configure applications to send or receive messages through an Event Hub</span></span>
+metadata:
+  title: <span data-ttu-id="c4492-102">演習 - イベント ハブを経由してメッセージを送受信するアプリケーションを構成する</span><span class="sxs-lookup"><span data-stu-id="c4492-102">Exercise - Configure applications to send or receive messages through an Event Hub</span></span>
+  description: <span data-ttu-id="c4492-103">演習 - イベント ハブを経由してメッセージを送受信するアプリケーションを構成する</span><span class="sxs-lookup"><span data-stu-id="c4492-103">Exercise - Configure applications to send or receive messages through an Event Hub</span></span>
+  ms.openlocfilehash: 07be67eb4f06fa18e8587ac769436ef497037baf
+  ms.sourcegitcommit: 1131013f5b019c82e7d004cdcdb8184fca1c66ed
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42924352"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub.md)]'

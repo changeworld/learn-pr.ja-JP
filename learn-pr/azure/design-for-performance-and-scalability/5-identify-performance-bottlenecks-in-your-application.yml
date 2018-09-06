@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+title: <span data-ttu-id="98cd6-101">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="98cd6-101">Identify performance bottlenecks in your application</span></span>
+metadata:
+  title: <span data-ttu-id="98cd6-102">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="98cd6-102">Identify performance bottlenecks in your application</span></span>
+  description: <span data-ttu-id="98cd6-103">このユニットでは、アプリケーションでのパフォーマンスのボトルネックを特定する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="98cd6-103">In this unit we'll discuss how to identify performance bottlenecks in your application</span></span>
+  ms.openlocfilehash: 0b5ab3a983a4b3dfc3a76c914b6a565f3ee7ed2c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180180"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
+quiz:
+  title: <span data-ttu-id="98cd6-104">知識チェック - アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="98cd6-104">Knowledge Check - Identify performance bottlenecks in your application</span></span>
+  questions:
+  - content: <span data-ttu-id="98cd6-105">次のうち、Application Insights の説明として最も適切なものはどれですか。</span><span class="sxs-lookup"><span data-stu-id="98cd6-105">Which of the following best describes Application Insights?</span></span>
+    choices:
+    - content: <span data-ttu-id="98cd6-106">Azure での監視ニーズの 1 つの窓</span><span class="sxs-lookup"><span data-stu-id="98cd6-106">A single pane of glass for our monitoring needs in Azure</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="98cd6-107">正常性エンドポイント監視パターンの実装</span><span class="sxs-lookup"><span data-stu-id="98cd6-107">An implementation of the health endpoint monitoring pattern</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="98cd6-108">インフラストラクチャ全体およびアプリケーション間でのログの収集を可能にするワークスペース</span><span class="sxs-lookup"><span data-stu-id="98cd6-108">A workspace to enable collection of logs across infrastructure and applications</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="98cd6-109">Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービス</span><span class="sxs-lookup"><span data-stu-id="98cd6-109">A service to monitor availability, performance, and usage of web applications</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="98cd6-110">カスタム ログとメトリックを追跡するために、Log Analytics を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="98cd6-110">You can use Log Analytics to track custom logs and metrics.</span></span>
+    choices:
+    - content: <span data-ttu-id="98cd6-111">True</span><span class="sxs-lookup"><span data-stu-id="98cd6-111">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="98cd6-112">False</span><span class="sxs-lookup"><span data-stu-id="98cd6-112">False</span></span>
+      isCorrect: false

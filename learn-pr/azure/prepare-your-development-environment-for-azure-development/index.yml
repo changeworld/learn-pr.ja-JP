@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.prepare-azure-dev-environment
+metadata:
+  title: Azure 開発用の開発環境を準備する
+  description: このモジュールでは、ローカルでご利用の開発用コンピューターに、お好みの開発環境をインストールする方法について説明します。
+  ms.openlocfilehash: cf5d63a79e2fb1763d1815ab5935e73c6ed5b33c
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42937987"
+title: Azure 開発用の開発環境を準備する
+summary: このモジュールでは、ローカルでご利用の開発用コンピューターに、お好みの開発環境をインストールする方法について説明します。
+abstract: このモジュールでは、ローカルでご利用の開発用コンピューターに、お好みの開発環境をインストールする方法について説明します。
+cardDescription: このモジュールでは、ローカルでご利用の開発用コンピューターに、お好みの開発環境をインストールする方法について説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.prepare-azure-dev-environment.1-introduction
+- learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.4-set-up-visual-studio
+- learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+- learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+- learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+- learn.prepare-azure-dev-environment.8-summary
+achievement: learn.prepare-azure-dev-environment.badge

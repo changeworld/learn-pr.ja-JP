@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.predict-costs-and-optimize-spending.6-summary
-title: <span data-ttu-id="9bbd9-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="9bbd9-101">Summary</span></span>
+title: <span data-ttu-id="625ef-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="625ef-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="9bbd9-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="9bbd9-102">Summary</span></span>
-  description: <span data-ttu-id="9bbd9-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="9bbd9-103">Summary</span></span>
-  ms.openlocfilehash: 130ed9263368f98265f431f66df82ba9e0b0c1de
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="625ef-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="625ef-102">Summary</span></span>
+  description: <span data-ttu-id="625ef-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="625ef-103">Summary</span></span>
+  ms.openlocfilehash: e821f83206c9a9b2083d432de0331593e8a5befe
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40448318"
-durationInMinutes: 1
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728483"
+durationInMinutes: 2
 content: '[!include[](includes/6-summary.md)]'

@@ -1,0 +1,29 @@
+### YamlMime:Module
+uid: learn.provision-azure-sql-db
+metadata:
+  title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
+  description: TBD
+  ms.openlocfilehash: bb31b897406ba79f232995d82531466cc5882307
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43229851"
+title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
+summary: TBD
+abstract: TBD
+cardDescription: TBD
+iconUrl: http://via.placeholder.com/120x120
+achievement: learn.placeholder.badge
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.provision-azure-sql-db.1-introduction
+- learn.provision-azure-sql-db.2-plan-your-database
+- learn.provision-azure-sql-db.3-create-your-database
+- learn.provision-azure-sql-db.4-connect-add-data
+- learn.provision-azure-sql-db.5-summary

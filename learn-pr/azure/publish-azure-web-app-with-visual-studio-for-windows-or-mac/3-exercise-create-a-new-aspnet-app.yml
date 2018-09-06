@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.3-exercise-create-a-new-aspnet-app
+title: <span data-ttu-id="508c0-101">演習 - 新しい ASP.NET アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="508c0-101">Exercise - Create a new ASP.NET app</span></span>
+metadata:
+  title: <span data-ttu-id="508c0-102">演習 - 新しい ASP.NET アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="508c0-102">Exercise - Create a new ASP.NET app</span></span>
+  description: <span data-ttu-id="508c0-103">演習 - 新しい ASP.NET アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="508c0-103">Exercise - Create a new ASP.NET app</span></span>
+  ms.openlocfilehash: 2dad0a2e3c52a8d56c812c3458c27afd7b94664b
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42822830"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-a-new-aspnet-app.md)]'

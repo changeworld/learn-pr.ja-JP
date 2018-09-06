@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.7-summary
-title: <span data-ttu-id="a09f1-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="a09f1-101">Summary</span></span>
+title: <span data-ttu-id="773d0-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="773d0-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="a09f1-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="a09f1-102">Summary</span></span>
-  description: <span data-ttu-id="a09f1-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="a09f1-103">Summary</span></span>
-  ms.openlocfilehash: 1711f3ee46f75d5eb7c9c83e21c14fab3ee0d878
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  title: <span data-ttu-id="773d0-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="773d0-102">Summary</span></span>
+  description: <span data-ttu-id="773d0-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="773d0-103">Summary</span></span>
+  ms.openlocfilehash: 21cdae7241a9aedeb0e0c4d6343a593b4b825565
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471324"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43827897"
 durationInMinutes: 1
 content: '[!include[](includes/7-summary.md)]'

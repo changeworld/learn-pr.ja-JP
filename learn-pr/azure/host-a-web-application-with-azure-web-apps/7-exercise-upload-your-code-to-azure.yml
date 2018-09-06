@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.7-exercise-upload-your-code-to-azure
+title: <span data-ttu-id="9c542-101">演習 - ASP.NET Core アプリケーションを Azure にアップロードする</span><span class="sxs-lookup"><span data-stu-id="9c542-101">Exercise - Upload your ASP.NET Core application to Azure</span></span>
+metadata:
+  title: <span data-ttu-id="9c542-102">演習 - ASP.NET Core アプリケーションを Azure にアップロードする</span><span class="sxs-lookup"><span data-stu-id="9c542-102">Exercise - Upload your ASP.NET Core application to Azure</span></span>
+  description: <span data-ttu-id="9c542-103">演習 - ASP.NET Core アプリケーションを Azure にアップロードする</span><span class="sxs-lookup"><span data-stu-id="9c542-103">Exercise - Upload your ASP.NET Core application to Azure</span></span>
+  ms.openlocfilehash: aeaeeec6a90d2c5c12711585f34e9a49f76a847e
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42821757"
+durationInMinutes: 20
+content: '[!include[](includes/7-exercise-upload-your-code-to-azure.md)]'

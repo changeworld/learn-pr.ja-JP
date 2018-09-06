@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.4-use-environment-variables
+interactive: bash
+metadata:
+  title: <span data-ttu-id="c51d6-101">環境変数の設定</span><span class="sxs-lookup"><span data-stu-id="c51d6-101">Set environment variables</span></span>
+  description: <span data-ttu-id="c51d6-102">Container Instances で環境変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="c51d6-102">Set environment variables in Contianer Instances.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 1911822589f7120ed0cddd9a1c807a76c045f75c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180767"
+title: <span data-ttu-id="c51d6-103">環境変数の設定</span><span class="sxs-lookup"><span data-stu-id="c51d6-103">Set environment variables</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/4-use-environment-variables.md)]'

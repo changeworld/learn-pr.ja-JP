@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.5-exercise-publish-an-asp.net-app-from-visual-studio
+title: <span data-ttu-id="ac203-101">演習 - Visual Studio から ASP.NET アプリを発行する</span><span class="sxs-lookup"><span data-stu-id="ac203-101">Exercise - Publish an ASP.NET app from Visual Studio</span></span>
+metadata:
+  title: <span data-ttu-id="ac203-102">演習 - Visual Studio から ASP.NET アプリを発行する</span><span class="sxs-lookup"><span data-stu-id="ac203-102">Exercise - Publish an ASP.NET app from Visual Studio</span></span>
+  description: <span data-ttu-id="ac203-103">演習 - Visual Studio から ASP.NET アプリを発行する</span><span class="sxs-lookup"><span data-stu-id="ac203-103">Exercise - Publish an ASP.NET app from Visual Studio</span></span>
+  ms.openlocfilehash: 27c12d16cabb951e6b582f8244aa2048af1a0b1a
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42820410"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-publish-an-asp.net-app-from-visual-studio.md)]'

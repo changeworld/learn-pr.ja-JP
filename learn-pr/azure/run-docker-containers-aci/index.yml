@@ -1,0 +1,31 @@
+### YamlMime:Module
+uid: learn.run-docker-containers-aci
+title: Azure Container Instances (ACI) で Docker コンテナーを実行する
+summary: Azure Container Instances (ACI) で Docker コンテナーを使用してコンテナー化されたアプリを実行する方法について説明します
+abstract: Azure Container Instances (ACI) で Docker コンテナーを実行する
+cardDescription: Azure Container Instances (ACI) で Docker コンテナーを使用してコンテナー化されたアプリを実行する方法について説明します
+iconUrl: ./images/bot.svg
+levels:
+- intermediate
+roles:
+- administrator
+products:
+- Docker
+- Azure Container Instances
+metadata:
+  title: Azure Container Instances (ACI) で Docker コンテナーを実行する
+  ms.openlocfilehash: 2d16a96a9f9d2d4ff5a4c4bf467a77295695dffe
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180821"
+units:
+- learn.run-docker-containers-aci.1-introduction
+- learn.run-docker-containers-aci.2-run-aci
+- learn.run-docker-containers-aci.3-restart-policy
+- learn.run-docker-containers-aci.4-use-environment-variables
+- learn.run-docker-containers-aci.5-use-data-volumes
+- learn.run-docker-containers-aci.6-troubleshoot-aci
+- learn.run-docker-containers-aci.7-knowledge-check
+achievement: learn.sample-module-cloudshell.badge

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.1-introduction
+title: <span data-ttu-id="b5049-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="b5049-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="b5049-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="b5049-102">Introduction</span></span>
+  description: <span data-ttu-id="b5049-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="b5049-103">Introduction</span></span>
+  ms.openlocfilehash: 0b6ae5b528ac0ba5a91b5fb6877bb7454544b527
+  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42910986"
+durationInMinutes: 1
+content: '[!include[](includes/1-introduction.md)]'

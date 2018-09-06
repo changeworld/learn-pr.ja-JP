@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.6-delete-env-summary
+title: <span data-ttu-id="c346f-101">Data Science VM を削除する</span><span class="sxs-lookup"><span data-stu-id="c346f-101">Delete the Data Science VM</span></span>
+metadata:
+  title: <span data-ttu-id="c346f-102">Data Science VM を削除する</span><span class="sxs-lookup"><span data-stu-id="c346f-102">Delete the Data Science VM</span></span>
+  description: <span data-ttu-id="c346f-103">Data Science VM を削除する</span><span class="sxs-lookup"><span data-stu-id="c346f-103">Delete the Data Science VM</span></span>
+  ms.openlocfilehash: a2ba4a48762d6cf56ef75168a065f527c401ef78
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228982"
+durationInMinutes: 5
+content: '[!include[](includes/6-delete-env-summary.md)]'

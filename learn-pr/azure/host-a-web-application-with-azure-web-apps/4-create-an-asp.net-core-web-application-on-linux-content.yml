@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.4-create-an-asp.net-core-web-application-on-linux-content
+title: <span data-ttu-id="52ad4-101">Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="52ad4-101">Create an ASP.NET Core application on Linux</span></span>
+metadata:
+  title: <span data-ttu-id="52ad4-102">Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="52ad4-102">Create an ASP.NET Core application on Linux</span></span>
+  description: <span data-ttu-id="52ad4-103">Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="52ad4-103">Create an ASP.NET Core application on Linux</span></span>
+  ms.openlocfilehash: 4495da085748a12b98524cd9fbf402ae4d7bf19f
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42822465"
+durationInMinutes: 10
+content: '[!include[](includes/4-create-an-asp.net-core-web-application-on-linux-content.md)]'

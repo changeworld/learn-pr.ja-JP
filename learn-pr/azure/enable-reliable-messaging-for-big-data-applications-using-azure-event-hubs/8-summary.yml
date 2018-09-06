@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.8-summary
+title: <span data-ttu-id="8cde0-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="8cde0-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="8cde0-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="8cde0-102">Summary</span></span>
+  description: <span data-ttu-id="8cde0-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="8cde0-103">Summary</span></span>
+  ms.openlocfilehash: 60a726bb642546158c99252db88ca9e9a8b73198
+  ms.sourcegitcommit: 1131013f5b019c82e7d004cdcdb8184fca1c66ed
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42924301"
+durationInMinutes: 3
+content: '[!include[](includes/8-summary.md)]'

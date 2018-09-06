@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
+title: <span data-ttu-id="dd2fa-101">Custom Vision Service プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="dd2fa-101">Create a Custom Vision Service project</span></span>
+metadata:
+  title: <span data-ttu-id="dd2fa-102">Custom Vision Service プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="dd2fa-102">Create a Custom Vision Service project</span></span>
+  description: <span data-ttu-id="dd2fa-103">Custom Vision Service プロジェクトを作成する</span><span class="sxs-lookup"><span data-stu-id="dd2fa-103">Create a Custom Vision Service project</span></span>
+  ms.openlocfilehash: 7bd6760f1072f15579acd70d6bdcbbad5f5ed760
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228180"
+durationInMinutes: 5
+content: '[!include[](includes/1-create-custom-vision-service-project.md)]'

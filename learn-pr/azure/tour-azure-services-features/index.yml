@@ -2,17 +2,17 @@
 uid: learn.azure-services-features
 metadata:
   title: Azure サービスと機能のツアー
-  description: Azure を使用するための最初の手順は、アカウントを作成することです。 アカウントは、ユーザーがプロビジョニングした Azure サービスを保持し、ID、請求、および基本設定など、ユーザーの個人設定を処理します。 アカウントを作成すると、Azure portal を使用して、使用可能なサービスを確認したり、自分のアプリケーションに必要なものを作成したりすることができます。 このモジュールでは、このオンボード プロセスについて説明します。Azure アカウントを作成し、Portal にログインして、いくつかの一般的なリソースの作成を実習します。
-  ms.openlocfilehash: a394343c38acc09385e562e58d2cef66b268a1a5
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  description: Azure を使用するための最初の手順は、アカウントを作成することです。 アカウントでは、ユーザーがプロビジョニングした Azure サービスを保持し、ID、請求、および基本設定など、ユーザーの個人設定を処理します。 アカウントを作成すると、Azure Portal を使用して、利用可能なサービスを確認したり、自分のアプリケーションに必要なものを作成したりすることができます。 このモジュールではオンボード プロセスについて説明します。Azure アカウントを作成し、Portal にログインして、いくつかの一般的なリソースの作成を実習します。
+  ms.openlocfilehash: 6c8bb65f42bfe7bf9b63ef23b3cddf113ebb573b
+  ms.sourcegitcommit: 246b615873952db4c4efa0000b64a7bfceff7c75
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40449113"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43156359"
 title: Azure サービスと機能のツアー
-summary: Azure アカウントを作成し、使用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
-abstract: Azure を使用するための最初の手順は、アカウントを作成することです。 アカウントは、ユーザーがプロビジョニングした Azure サービスを保持し、ID、請求、および基本設定など、ユーザーの個人設定を処理します。 アカウントを作成すると、Azure portal を使用して、使用可能なサービスを確認したり、自分のアプリケーションに必要なものを作成したりすることができます。 このモジュールでは、このオンボード プロセスについて説明します。Azure アカウントを作成し、Portal にログインして、いくつかの一般的なリソースの作成を実習します。
-cardDescription: Azure アカウントを作成し、使用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
+summary: Azure アカウントを作成し、利用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
+abstract: Azure を使用するための最初の手順は、アカウントを作成することです。 アカウントでは、ユーザーがプロビジョニングした Azure サービスを保持し、ID、請求、および基本設定など、ユーザーの個人設定を処理します。 アカウントを作成すると、Azure Portal を使用して、利用可能なサービスを確認したり、自分のアプリケーションに必要なものを作成したりすることができます。 このモジュールではオンボード プロセスについて説明します。Azure アカウントを作成し、Portal にログインして、いくつかの一般的なリソースの作成を実習します。
+cardDescription: Azure アカウントを作成し、利用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

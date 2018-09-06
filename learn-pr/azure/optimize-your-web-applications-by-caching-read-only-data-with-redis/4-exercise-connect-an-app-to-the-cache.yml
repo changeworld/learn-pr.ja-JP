@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.4-exercise-connect-an-app-to-the-cache
+title: <span data-ttu-id="51e32-101">演習 - キャッシュにアプリを接続する</span><span class="sxs-lookup"><span data-stu-id="51e32-101">Exercise - Connect an app to the cache</span></span>
+metadata:
+  title: <span data-ttu-id="51e32-102">演習 - キャッシュにアプリを接続する</span><span class="sxs-lookup"><span data-stu-id="51e32-102">Exercise - Connect an app to the cache</span></span>
+  description: <span data-ttu-id="51e32-103">演習 - キャッシュにアプリを接続する</span><span class="sxs-lookup"><span data-stu-id="51e32-103">Exercise - Connect an app to the cache</span></span>
+  ms.openlocfilehash: 6285dcc723c128805c5e68324ae5526485cd31ce
+  ms.sourcegitcommit: 92580185df76595daa4cf68a5311019c85fe7bf3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42874108"
+durationInMinutes: 10
+content: '[!include[](includes/4-exercise-connect-an-app-to-the-cache.md)]'

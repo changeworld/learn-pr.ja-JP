@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.6-summary
 metadata:
-  title: <span data-ttu-id="3e7c8-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="3e7c8-101">Summary</span></span>
-  description: <span data-ttu-id="3e7c8-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="3e7c8-102">Summary</span></span>
-  ms.openlocfilehash: cce5ba3085e6afca111953edccddc862695ed0ae
-  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  title: <span data-ttu-id="de6b2-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="de6b2-101">Summary</span></span>
+  description: <span data-ttu-id="de6b2-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="de6b2-102">Summary</span></span>
+  ms.openlocfilehash: d0051f7fd21fbb12ab1dfb64bc07bf73f7c9f61c
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43314620"
-title: <span data-ttu-id="3e7c8-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="3e7c8-103">Summary</span></span>
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790150"
+title: <span data-ttu-id="de6b2-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="de6b2-103">Summary</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'

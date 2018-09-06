@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm
+metadata:
+  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+  description: このモジュールでは、MEAN スタック (MongoDB、Express、AngularJS、および Node.js) の Web アプリケーションが自分に適しているどうかがわかります。 Azure でホストされている新しい Ubuntu Linux 仮想マシン上に単純な MEAN ベースの Web アプリケーションを設定する方法も説明します。
+  ms.openlocfilehash: 11a7ab8f88672269b0181e9dd33f98b50777a5cc
+  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/25/2018
+  ms.locfileid: "42927055"
+title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+summary: 新しい Azure の Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
+abstract: このモジュールでは、MEAN スタック (MongoDB、Express、AngularJS、および Node.js) の Web アプリケーションが自分に適しているどうかがわかります。 Azure でホストされている新しい Ubuntu Linux 仮想マシン上に単純な MEAN ベースの Web アプリケーションを設定する方法も説明します。
+cardDescription: 新しい Azure の Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.1-introduction
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.2-decide-if-mean-is-right-for-you
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.4-install-mongodb
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.5-exercise-install-mongodb
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.6-install-nodejs
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.7-exercise-install-nodejs
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.8-install-express
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.9-install-angularjs
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.10-exercise-create-a-simple-app-to-validate-the-installation
+- learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.11-summary
+achievement: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge

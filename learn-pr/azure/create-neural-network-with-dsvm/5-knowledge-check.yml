@@ -1,0 +1,81 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.5-knowledge-check
+title: <span data-ttu-id="db8fb-101">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="db8fb-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="db8fb-102">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="db8fb-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="db8fb-103">Tensorflow と Azure Data Science Virtual Machine を使用してニューラル ネットワークを構築するために必要な手順を理解しているかどうかを確認します。</span><span class="sxs-lookup"><span data-stu-id="db8fb-103">Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.</span></span>
+  ms.openlocfilehash: 50c8562c19b838f0b7414434c8d6ac4296969c00
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251651"
+durationInMinutes: 10
+content: <span data-ttu-id="db8fb-104">必須</span><span class="sxs-lookup"><span data-stu-id="db8fb-104">required</span></span>
+quiz:
+  title: <span data-ttu-id="db8fb-105">TensorFlow と Azure Data Science Virtual Machine を使用したニューラル ネットワークの構築</span><span class="sxs-lookup"><span data-stu-id="db8fb-105">Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="db8fb-106">Linux 以外のオペレーティング システムで Data Science VM を作成できますか?</span><span class="sxs-lookup"><span data-stu-id="db8fb-106">Can you create a Data Science VM with an operating system other than Linux?</span></span>
+    choices:
+    - content: <span data-ttu-id="db8fb-107">いいえ</span><span class="sxs-lookup"><span data-stu-id="db8fb-107">No</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-108">Data Science VM 用のオペレーティング システムには他のオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="db8fb-108">There are other options for operating systems for the Data Science VM.</span></span>
+    - content: <span data-ttu-id="db8fb-109">はい</span><span class="sxs-lookup"><span data-stu-id="db8fb-109">Yes</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="db8fb-110">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="db8fb-110">Great!</span></span> <span data-ttu-id="db8fb-111">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="db8fb-111">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="db8fb-112">Data Science VM とクライアントを接続するには、Azure Portal で何をコピーする必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="db8fb-112">What should be copied in the Azure Portal to use to connect to the Data Science VM with client?</span></span>
+    choices:
+    - content: <span data-ttu-id="db8fb-113">IP アドレス</span><span class="sxs-lookup"><span data-stu-id="db8fb-113">IP Address</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="db8fb-114">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="db8fb-114">Great!</span></span> <span data-ttu-id="db8fb-115">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="db8fb-115">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db8fb-116">サブスクリプション名</span><span class="sxs-lookup"><span data-stu-id="db8fb-116">Subscription name</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-117">VM への接続にサブスクリプション名は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-117">The subscription name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="db8fb-118">DNS 名</span><span class="sxs-lookup"><span data-stu-id="db8fb-118">DNS name</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-119">VM への接続に DNS 名は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-119">The DNS name isn't needed to connect to the VM.</span></span>
+    - content: <span data-ttu-id="db8fb-120">仮想ネットワーク/サブネット</span><span class="sxs-lookup"><span data-stu-id="db8fb-120">Virtual network/subnet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-121">VM への接続に仮想ネットワークまたはサブネットは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-121">The Virtual network or subnet isn't needed to connect to the VM.</span></span>
+  - content: <span data-ttu-id="db8fb-122">Data Science VM における転移学習の実行に必要なものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="db8fb-122">What do you need to perform transfer learning on the Data Science VM?</span></span>
+    choices:
+    - content: <span data-ttu-id="db8fb-123">大規模な GPU へのアクセス</span><span class="sxs-lookup"><span data-stu-id="db8fb-123">Access to a large GPU</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-124">GPU はイメージでの再トレーニングに適していますが、大規模な GPU は必要ではなく、また必須でもありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-124">While a GPU is great for retraining on images, it doesn't need to be large or required.</span></span>
+    - content: <span data-ttu-id="db8fb-125">Tensorflow のインストール</span><span class="sxs-lookup"><span data-stu-id="db8fb-125">Tensorflow installed</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-126">Tensorflow は Data Science VM に既にインストールされているため、再度インストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-126">Tensorflow is already installed in the Data Science VM so there's no need to install it again.</span></span>
+    - content: <span data-ttu-id="db8fb-127">事前トレーニング済みモデル</span><span class="sxs-lookup"><span data-stu-id="db8fb-127">Pre-trained model</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="db8fb-128">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="db8fb-128">Great!</span></span> <span data-ttu-id="db8fb-129">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="db8fb-129">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db8fb-130">非常に大規模なデータ セット</span><span class="sxs-lookup"><span data-stu-id="db8fb-130">A very large set of data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-131">事前トレーニング済みモデルを使用するために大規模なデータ セットは必要ありません。</span><span class="sxs-lookup"><span data-stu-id="db8fb-131">You don't need a large data set to use pre-trained models.</span></span>
+  - content: <span data-ttu-id="db8fb-132">Tensorflow モデルを視覚化するツールの名前は何ですか?</span><span class="sxs-lookup"><span data-stu-id="db8fb-132">What is the name of the tool to visualize Tensorflow models?</span></span>
+    choices:
+    - content: <span data-ttu-id="db8fb-133">Tensorview</span><span class="sxs-lookup"><span data-stu-id="db8fb-133">Tensorview</span></span>
+      isCorrect: false
+      incorrectExplanation: ''
+    - content: <span data-ttu-id="db8fb-134">Tensorvision</span><span class="sxs-lookup"><span data-stu-id="db8fb-134">Tensorvision</span></span>
+      isCorrect: false
+      incorrectExplanation: ''
+    - content: <span data-ttu-id="db8fb-135">Tensorpanel</span><span class="sxs-lookup"><span data-stu-id="db8fb-135">Tensorpanel</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="db8fb-136">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="db8fb-136">Great!</span></span> <span data-ttu-id="db8fb-137">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="db8fb-137">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db8fb-138">Tensorboard</span><span class="sxs-lookup"><span data-stu-id="db8fb-138">Tensorboard</span></span>
+      isCorrect: false
+      correctExplanation: ''
+  - content: <span data-ttu-id="db8fb-139">TkInter コードを実行して GUI でモデルをテストする場合、モデルから結果を取得するために呼び出す Python スクリプトの名前は何ですか?</span><span class="sxs-lookup"><span data-stu-id="db8fb-139">When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?</span></span>
+    choices:
+    - content: <span data-ttu-id="db8fb-140">retrain.py</span><span class="sxs-lookup"><span data-stu-id="db8fb-140">retrain.py</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-141">このスクリプトは、独自のイメージを使用してモデルを再トレーニングするために過去に使用されていました。</span><span class="sxs-lookup"><span data-stu-id="db8fb-141">This script was used earlier to retrain the model with our own images.</span></span>
+    - content: <span data-ttu-id="db8fb-142">classify.py</span><span class="sxs-lookup"><span data-stu-id="db8fb-142">classify.py</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-143">このスクリプトは、TkInter コードの配置先および実行元として使用されていました。</span><span class="sxs-lookup"><span data-stu-id="db8fb-143">This script was used to put the TkInter code into and run from.</span></span>
+    - content: <span data-ttu-id="db8fb-144">label_image.py</span><span class="sxs-lookup"><span data-stu-id="db8fb-144">label_image.py</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="db8fb-145">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="db8fb-145">ThGreat!</span></span> <span data-ttu-id="db8fb-146">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="db8fb-146">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="db8fb-147">results.py</span><span class="sxs-lookup"><span data-stu-id="db8fb-147">results.py</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="db8fb-148">このスクリプトは存在しないため、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="db8fb-148">This script wouldn't exist and would result in an error.</span></span>

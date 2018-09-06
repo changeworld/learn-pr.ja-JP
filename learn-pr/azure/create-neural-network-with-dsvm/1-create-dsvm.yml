@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.1-create-dsvm
+title: <span data-ttu-id="2bc94-101">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="2bc94-101">Create an Ubuntu Data Science VM</span></span>
+metadata:
+  title: <span data-ttu-id="2bc94-102">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="2bc94-102">Create an Ubuntu Data Science VM</span></span>
+  description: <span data-ttu-id="2bc94-103">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="2bc94-103">Create an Ubuntu Data Science VM</span></span>
+  ms.openlocfilehash: 5cae126517c9a068b74e7ba7b5a8ad46811ccf36
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43229163"
+durationInMinutes: 10
+content: '[!include[](includes/1-create-dsvm.md)]'
