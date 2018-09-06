@@ -4,11 +4,11 @@ title: 演習 - Web アプリケーションをホストする Ubuntu Linux VM �
 metadata:
   title: 演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する
   description: 演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する
-  ms.openlocfilehash: ae1df846a7688354cde08fc702c2a440bde2aea5
-  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.openlocfilehash: f45c77e12d0a7b209d9cef0c27a52c112d38c089
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/25/2018
-  ms.locfileid: "42927505"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791034"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app.md)]'

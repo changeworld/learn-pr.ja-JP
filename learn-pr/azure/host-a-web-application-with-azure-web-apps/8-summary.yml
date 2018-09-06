@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
-uid: learn.create-serverless-logic-with-functions.6-summary
+uid: learn.host-a-web-application-with-azure-web-apps.8-summary
 title: まとめ
 metadata:
   title: まとめ
   description: まとめ
-  ms.openlocfilehash: 3b982e928b18d84bb9d275df2647eb85eb493c25
+  ms.openlocfilehash: d23a24a9e3fecf48437651ddd2d39df6433a6d08
   ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43790932"
-durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+  ms.locfileid: "43792120"
+durationInMinutes: 5
+content: '[!include[](includes/8-summary.md)]'

@@ -4,11 +4,12 @@ title: Azure CLI をインストールして実行する
 metadata:
   title: Azure CLI をインストールして実行する
   description: さまざまなプラットフォーム上に Azure CLI をインストールする
-  ms.openlocfilehash: bd264bb10093fc5b4a3d60efcd6b4a9adc8a7740
-  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  zone_pivot_groups: platform
+  ms.openlocfilehash: 933b72e996f40657a0d3f3e2d7e8c2e23f2a9557
+  ms.sourcegitcommit: 9ad30c8c720645864a007a64612c70cce6406ce7
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42939933"
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43334102"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-install-and-run-the-azure-cli.md)]'

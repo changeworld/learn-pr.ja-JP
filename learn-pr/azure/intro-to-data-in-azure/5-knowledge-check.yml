@@ -2,17 +2,15 @@
 uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
   title: 知識チェック
-  description: 知識チェック。
-  displayType: one-column
-  ms.openlocfilehash: 17bf564f5105a01d15d0fd205c7d70e21d3a8082
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  description: 知識チェック
+  ms.openlocfilehash: 5956110e16d5e8479e149ee83abc6fbfda8787ad
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43251978"
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43414083"
 title: 知識チェック
 durationInMinutes: 5
-content: 知識チェック
 quiz:
   title: 知識チェック
   questions:

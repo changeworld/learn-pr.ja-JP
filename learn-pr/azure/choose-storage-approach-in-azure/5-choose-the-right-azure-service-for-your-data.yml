@@ -3,13 +3,12 @@ uid: learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for
 metadata:
   title: Azure Storage ソリューションを選択する
   description: Azure Storage ソリューションを選択する
-  displayType: one-column
-  ms.openlocfilehash: a17365aaf40328b1ee1f64147c90664613294a43
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.openlocfilehash: 219cbca9eee1517c3e3943ce0a671226f783685f
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252442"
+  ms.locfileid: "43314858"
 title: Azure Storage ソリューションを選択する
 durationInMinutes: 10
 content: '[!include[](includes/5-choose-the-right-azure-service-for-your-data.md)]'
