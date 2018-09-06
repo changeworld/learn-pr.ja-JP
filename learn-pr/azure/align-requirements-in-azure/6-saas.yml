@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.6-saas
-title: <span data-ttu-id="03628-101">サービスとしてのソフトウェア</span><span class="sxs-lookup"><span data-stu-id="03628-101">Software as a service</span></span>
+title: <span data-ttu-id="57252-101">サービスとしてのソフトウェア</span><span class="sxs-lookup"><span data-stu-id="57252-101">Software as a service</span></span>
 metadata:
-  title: <span data-ttu-id="03628-102">SaaS</span><span class="sxs-lookup"><span data-stu-id="03628-102">SaaS</span></span>
-  description: <span data-ttu-id="03628-103">サービスとしてのソフトウェアについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="03628-103">Learn about software as a service and if it might be the right choice for your application</span></span>
-  ms.openlocfilehash: 714a06ceb2e6c62fdcd77e9ee745c56d5f935725
-  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  title: <span data-ttu-id="57252-102">SaaS</span><span class="sxs-lookup"><span data-stu-id="57252-102">SaaS</span></span>
+  description: <span data-ttu-id="57252-103">サービスとしてのソフトウェアについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="57252-103">Learn about software as a service and if it might be the right choice for your application</span></span>
+  ms.openlocfilehash: 6e5bf58b57212ddfd81295a5905899d33e109950
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42821744"
-durationInMinutes: 3
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675390"
+durationInMinutes: 4
 content: '[!include[](includes/6-saas.md)]'

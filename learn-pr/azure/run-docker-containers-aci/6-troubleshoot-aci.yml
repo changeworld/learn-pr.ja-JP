@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.6-troubleshoot-aci
+interactive: bash
+metadata:
+  title: <span data-ttu-id="f6915-101">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f6915-101">Troubleshoot Azure Container Instances</span></span>
+  description: <span data-ttu-id="f6915-102">Azure Container Instances のトラブルシューティング。</span><span class="sxs-lookup"><span data-stu-id="f6915-102">Troubleshoot Azure Container Instances.</span></span>
+  ms.openlocfilehash: 001b41d67dc405e627156cecc5cf40107eb8d5ec
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458260"
+title: <span data-ttu-id="f6915-103">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="f6915-103">Troubleshoot Azure Container Instances</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/6-troubleshoot-aci.md)]'

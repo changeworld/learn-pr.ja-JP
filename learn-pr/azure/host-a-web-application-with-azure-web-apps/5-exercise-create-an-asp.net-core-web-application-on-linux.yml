@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.5-exercise-create-an-asp.net-core-web-application-on-linux
+title: <span data-ttu-id="2df35-101">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2df35-101">Exercise - Create an ASP.NET Core application on Linux</span></span>
+metadata:
+  title: <span data-ttu-id="2df35-102">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2df35-102">Exercise - Create an ASP.NET Core application on Linux</span></span>
+  description: <span data-ttu-id="2df35-103">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2df35-103">Exercise - Create an ASP.NET Core application on Linux</span></span>
+  ms.openlocfilehash: 1205619f0129555a08587fa142627e6d917e3fcb
+  ms.sourcegitcommit: 7cb102aab9e02ef52429d61a119a574c7ad3b2fb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43725513"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-create-an-asp.net-core-web-application-on-linux.md)]'

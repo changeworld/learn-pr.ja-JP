@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.1-introduction
-title: <span data-ttu-id="ab1d3-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab1d3-101">Introduction</span></span>
+title: <span data-ttu-id="4d4a1-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="4d4a1-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="ab1d3-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab1d3-102">Introduction</span></span>
-  description: <span data-ttu-id="ab1d3-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab1d3-103">Introduction</span></span>
-  ms.openlocfilehash: 15703b2c47dad65cfdf4ff672122ba9fb347eadf
-  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  title: <span data-ttu-id="4d4a1-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="4d4a1-102">Introduction</span></span>
+  description: <span data-ttu-id="4d4a1-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="4d4a1-103">Introduction</span></span>
+  ms.openlocfilehash: 4e1c4b251fc6ed7f20c7775b9a027424aa771d69
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43180114"
-durationInMinutes: 1
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43729078"
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

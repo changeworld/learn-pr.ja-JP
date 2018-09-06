@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.5-paas
-title: <span data-ttu-id="0455e-101">サービスとしてのプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="0455e-101">Platform as a service</span></span>
+title: <span data-ttu-id="17ac0-101">サービスとしてのプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="17ac0-101">Platform as a service</span></span>
 metadata:
-  title: <span data-ttu-id="0455e-102">PaaS</span><span class="sxs-lookup"><span data-stu-id="0455e-102">PaaS</span></span>
-  description: <span data-ttu-id="0455e-103">サービスとしてのプラットフォームについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="0455e-103">Learn about platform as a service and if it might be the right choice for your application</span></span>
-  ms.openlocfilehash: de0211db93a86617426def810d4bd41d959dec28
-  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  title: <span data-ttu-id="17ac0-102">PaaS</span><span class="sxs-lookup"><span data-stu-id="17ac0-102">PaaS</span></span>
+  description: <span data-ttu-id="17ac0-103">サービスとしてのプラットフォームについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="17ac0-103">Learn about platform as a service and if it might be the right choice for your application</span></span>
+  ms.openlocfilehash: 4d4f1b59fc07ac46e4ac099ce1a0a086a12bdb9b
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42820725"
-durationInMinutes: 3
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675561"
+durationInMinutes: 4
 content: '[!include[](includes/5-paas.md)]'

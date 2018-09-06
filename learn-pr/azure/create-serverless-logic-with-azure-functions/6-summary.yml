@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.6-summary
-title: <span data-ttu-id="58a42-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="58a42-101">Summary</span></span>
+title: <span data-ttu-id="1c75c-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="1c75c-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="58a42-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="58a42-102">Summary</span></span>
-  description: <span data-ttu-id="58a42-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="58a42-103">Summary</span></span>
-  ms.openlocfilehash: 609c719207e28977eed1a21f4e46904b32b739ea
-  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  title: <span data-ttu-id="1c75c-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="1c75c-102">Summary</span></span>
+  description: <span data-ttu-id="1c75c-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="1c75c-103">Summary</span></span>
+  ms.openlocfilehash: 3b982e928b18d84bb9d275df2647eb85eb493c25
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42939767"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790932"
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'
