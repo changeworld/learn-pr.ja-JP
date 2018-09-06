@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.2-create-a-web-app-in-the-azure-portal-content
+title: ポータルで Azure Web アプリを作成する
+metadata:
+  title: ポータルで Azure Web アプリを作成する
+  description: ポータルで Azure Web アプリを作成する
+  ms.openlocfilehash: 0a6237b0149d85d7b29db0a967a828bc347facf2
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154806"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-a-web-app-in-the-azure-portal-content.md)]'

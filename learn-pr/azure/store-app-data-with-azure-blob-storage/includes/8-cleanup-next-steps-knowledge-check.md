@@ -5,16 +5,14 @@
 Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 
 ```console
-az group delete --name blob-exercise-group
+az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Cloud Shell ストレージをクリーンアップするには、`rm -rf TODO` を使用して `TODO` ディレクトリを削除します。
+Cloud Shell ストレージをクリーンアップするには、`FileUploader` ディレクトリを削除します。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="further-reading"></a>参考資料
 
-**TODO cross-docset リンク?**
-
-* **ストレージ アカウント キーを安全に格納する**: シークレット構成値を格納するための最も堅牢なエンドツーエンド ソリューションは、Azure Key Vault です。 ASP.NET Core アプリケーションでの Key Vault の使用に関する詳細は、[こちら](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)をご覧ください。 または、App Service アプリケーション設定で接続文字列を安全に格納して、[ASP.NET Core Secret Manager ツール](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows)を使用して、開発者環境をサポートすることもできます。
+* **接続文字列のようにシークレットを安全に格納する**: シークレット構成値を格納するための最も堅牢なエンドツーエンド ソリューションは、Azure Key Vault です。 ASP.NET Core アプリケーションでの Key Vault の使用に関する詳細は、[こちら](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)をご覧ください。 または、App Service アプリケーション設定で接続文字列を安全に格納して、[ASP.NET Core Secret Manager ツール](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows)を使用して、開発者環境をサポートすることもできます。
 * [ASP.NET Core でのストリーミングによる大きいファイルのアップロード](https://docs.microsoft.com/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.1#uploading-large-files-with-streaming)
 * [BLOB の同時実行: AccessConditions と BLOB のリース](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)
 * [Shared Access Signature を使用して、Azure Storage オブジェクトへの制限付きアクセスを許可する](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

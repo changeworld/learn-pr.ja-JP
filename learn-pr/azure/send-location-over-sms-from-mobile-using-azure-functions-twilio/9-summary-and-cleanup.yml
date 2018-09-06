@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.9-summary-and-cleanup
+title: 概要とクリーンアップ
+metadata:
+  title: まとめとクリーンアップ
+  description: 概要または実行した手順と、クリーンアップした Azure リソースのクリーンアップ手順
+  ms.openlocfilehash: 61135f41f0ce1bd683e28a2921ec706b622cbf96
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791714"
+durationInMinutes: 2
+content: '[!include[](includes/9-summary-and-cleanup.md)]'

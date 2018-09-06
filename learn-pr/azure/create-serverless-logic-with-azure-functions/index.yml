@@ -2,15 +2,16 @@
 uid: learn.create-serverless-logic-with-functions
 metadata:
   title: Azure Functions を使用したサーバーレス ロジックの作成
-  description: 開発者は Azure Functions を使用して、インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックをホストできます。 Azure Functions は、組み込みのスケーラビリティを提供し、使用されているリソースに対してのみ料金を請求します。
-  ms.openlocfilehash: ef0431d820cf194d57de6ba834ad385bc747b4a9
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  description: Azure Functions を使用することにより、インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックをホストできます。
+  ms.openlocfilehash: 5ce601691540209ab97cb47ed687442b816a50e1
+  ms.sourcegitcommit: 5a41b7766cdac6f133d44a2e75635d56c43dfa64
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447191"
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43116206"
 title: Azure Functions を使用したサーバーレス ロジックの作成
-summary: 開発者は Azure Functions を使用して、インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックをホストできます。 Azure Functions は、組み込みのスケーラビリティを提供し、使用されているリソースに対してのみ料金を請求します。
+summary: >
+  開発者は Azure Functions を使用して、インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックをホストできます。  Functions では、組み込みのスケーラビリティが提供され、使用されているリソースに対してのみ料金が請求されます。
 abstract: サーバー インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックのホスト
 cardDescription: サーバー インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックのホスト
 iconUrl: http://via.placeholder.com/120x120
@@ -20,12 +21,13 @@ roles:
 - developer
 products:
 - Azure
+- serverless
+- Azure Functions
 units:
 - learn.create-serverless-logic-with-functions.1-introduction
 - learn.create-serverless-logic-with-functions.2-decide-if-serverless-computing-is-right-for-your-business-need
 - learn.create-serverless-logic-with-functions.3-create-an-azure-functions-app-in-the-azure-portal
-- learn.create-serverless-logic-with-functions.4-exercise-create-an-azure-functions-app
-- learn.create-serverless-logic-with-functions.5-creating-and-executing-an-azure-function
-- learn.create-serverless-logic-with-functions.6-exercise-creating-and-executing-an-azure-function
-- learn.create-serverless-logic-with-functions.7-summary
+- learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
+- learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
+- learn.create-serverless-logic-with-functions.6-summary
 achievement: learn.create-serverless-logic-with-functions.badge

@@ -4,14 +4,14 @@ metadata:
   title: 知識チェック
   description: 知識チェック。
   displayType: one-column
-  ms.openlocfilehash: 8e63c9e7886d767824571f78eda178b9bdfd65f3
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 17bf564f5105a01d15d0fd205c7d70e21d3a8082
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40441857"
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251978"
 title: 知識チェック
-durationInMinutes: 11
+durationInMinutes: 5
 content: 知識チェック
 quiz:
   title: 知識チェック
@@ -20,22 +20,22 @@ quiz:
     choices:
     - content: Azure Archive
       isCorrect: false
-      incorrectExplanation: Azure Archive は、監査やその他の頻繁でないアクティビティで必要になった場合のために、使用するデータの古いバージョンを保存するのに最適です。
-    - content: Azure SQL
+      incorrectExplanation: Azure Archive は、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。
+    - content: Azure SQL Database
       isCorrect: true
-      correctExplanation: 正解です。 Azure SQL では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。
+      correctExplanation: 正解です。 Azure SQL Database では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。
     - content: Azure Files
       isCorrect: false
-      incorrectExplanation: Azure Files は、クラウドでのファイル共有で使用します。 これでは、クラウドまたはオンプレミス デプロイにある Windows、Linux、および macOS に同時にマウントできます。
+      incorrectExplanation: Azure Files は、クラウドでのファイル共有で使用します。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
   - content: 販売ラーニング ポータルで使用されるシミュレーション ファイルのサイズが、かなり大きくなる場合があります。 Azure では、これらのファイルはどのようにサポートされますか?
     choices:
-    - content: Azure Blob Storage では、最大 8 TB までのファイル サイズをサポートします
+    - content: Azure Blob Storage では、最大 8 TB までのファイル サイズがサポートされます
       isCorrect: true
       correctExplanation: 正解です。 Azure Blob Storage では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
-    - content: Azure Files は、大きなファイルの格納およびストリーミングをサポートします
+    - content: Azure Files は、大きなファイルの格納およびストリーミングがサポートされます。
       isCorrect: false
-      incorrectExplanation: Azure Files は、クラウドでのファイル共有で使用します。 これでは、クラウドまたはオンプレミス デプロイにある Windows、Linux、および macOS に同時にマウントできます。
-    - content: Azure は、大きなファイルの格納およびストリーミングはサポートしていません
+      incorrectExplanation: Azure Files は、クラウドでのファイル共有に使用されます。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
+    - content: Azure では、大きなファイルの格納およびストリーミングはサポートされていません。
       isCorrect: false
       incorrectExplanation: Azure では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
   - content: Azure では、データの持続性と信頼性はどのようにサポートされますか?
@@ -43,9 +43,9 @@ quiz:
     - content: Azure のレプリケーション機能を使用してです。
       isCorrect: true
       correctExplanation: 正解です。 Azure には、自然災害からデータを保護するレプリケーション機能と、悪意のある攻撃からデータを保護する暗号化があります。
-    - content: ご自分のデータの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています
+    - content: データの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています。
       isCorrect: false
-      incorrectExplanation: 追加のサポートは不要です。Azure には、予期しないリスクや脅威からご利用のデータを保護する機能があります。
+      incorrectExplanation: 追加のサポートは不要です。Azure には、予期しないリスクや脅威からデータを保護する機能があります。
     - content: Azure には、組み込みの冗長性や暗号化機能はありません。
       isCorrect: false
-      incorrectExplanation: Azure には、リスクや脅威からご自分のデータを保護する機能が組み込まれています。
+      incorrectExplanation: Azure には、リスクや脅威からデータを保護するための機能が組み込まれています。

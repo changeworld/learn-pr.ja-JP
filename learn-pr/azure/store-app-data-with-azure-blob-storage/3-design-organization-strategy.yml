@@ -4,11 +4,43 @@ title: ストレージの組織の戦略を設計する
 metadata:
   title: ストレージの組織の戦略を設計する
   description: ストレージの組織の戦略を設計する
-  ms.openlocfilehash: 945f645a8711b5c1985a6b2269f5ab2dd0d32a8c
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 966865b137aaedc45906682cc58fc8a67e68a30c
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40447537"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43225712"
 durationInMinutes: 7
-content: '[!include[](includes/3-design-organization-strategy.md)]'
+content: >
+  [!include[](includes/3-design-organization-strategy.md)]
+quiz:
+  title: '知識チェック: Blob Storage'
+  questions:
+  - content: ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?
+    choices:
+    - content: バイト BLOB
+      isCorrect: false
+      incorrectExplanation: "\"バイト BLOB\" は、BLOB の種類ではありません。"
+    - content: ページ BLOB
+      isCorrect: false
+      incorrectExplanation: ページ BLOB は、仮想ハード ディスクに格納するために Azure Virtual Machine で使用されているような、大量のランダム アクセスの読み取りと書き込みのために設計されています。
+    - content: ブロック BLOB
+      isCorrect: true
+      correctExplanation: ブロック BLOB は通常、汎用ストレージのニーズに最適な選択肢です。
+    - content: 追加 BLOB
+      isCorrect: false
+      incorrectExplanation: 追加 BLOB では、新しいデータの追加のみがサポートされ、既存のデータの更新または削除はサポートされません。
+  - content: BLOB では、*非構造化*データ ストレージが提供されます。 *非構造化*が意味するものは何ですか?
+    choices:
+    - content: BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。
+      isCorrect: false
+      incorrectExplanation: "\"非構造化\" とは、ストレージ アカウント内の BLOB の組織ではなく、BLOB *内*のデータの性質を指します。"
+    - content: BLOB に格納できるデータの種類に制限はありません。
+      isCorrect: true
+      correctExplanation: BLOB によってデータにいかなる種類の構造も強制されることはありません。つまり、アプリではあらゆる種類のデータを BLOB に保存できます。
+    - content: BLOB には、JSON や XML などの構造化データを含めることはできません。
+      isCorrect: false
+      incorrectExplanation: BLOB には構造化データを含めることが*できます*が、それを操作する方法は BLOB ストレージにはありません。 BLOB コンテンツの構造を認識し、それらを適切に処理するのはアプリの役目です。
+    - content: BLOB からダウンロードしたデータは、ランダムに編成され、その意味を理解するには特殊なクライアント ライブラリが必要です。
+      isCorrect: false
+      incorrectExplanation: BLOB コンテンツのダウンロードを含むすべての BLOB 操作は、クライアント ライブラリがなくても、REST API を使用して直接操作することができます。 BLOB からダウンロードしたデータは、ランダムに編成されません。

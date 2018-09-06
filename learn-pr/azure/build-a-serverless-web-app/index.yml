@@ -1,8 +1,8 @@
 ### YamlMime:Module
 uid: learn.build-a-serverless-web-app
 title: サーバーレス Web アプリを構築する
-summary: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードでき、サーバーレス バックエンドを使用して自動的なタグ付けと画像の説明キャプションの格納を行う、シンプルな Web アプリケーションを展開します。
-cardDescription: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードでき、サーバーレス バックエンドを使用して自動的なタグ付けと画像の説明キャプションの格納を行う、シンプルな Web アプリケーションを展開します。
+summary: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードできる簡単な Web アプリケーションを展開します。 この Web アプリでは、サーバーレス バックエンドを使用して、自動的にタグを付け、画像を説明するキャプションを格納します。
+cardDescription: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードできる簡単な Web アプリケーションを展開します。 この Web アプリでは、サーバーレス バックエンドを使用して、自動的にタグを付け、画像を説明するキャプションを格納します。
 iconUrl: /learn/achievements/build-a-serverless-web-app.svg
 levels:
 - intermediate
@@ -18,15 +18,15 @@ products:
 - storageBlob
 metadata:
   title: サーバーレス Web アプリを構築する
-  description: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードでき、サーバーレス バックエンドを使用して自動的なタグ付けと画像の説明キャプションの格納を行う、シンプルな Web アプリケーションを展開します。
+  description: ユーザーが HTML ベースのユーザー インターフェイス (UI) を使用して画像をアップロードできる簡単な Web アプリケーションを展開します。 この Web アプリでは、サーバーレス バックエンドを使用して、自動的にタグを付け、画像を説明するキャプションを格納します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 995eaec0ef3669f7c5a31d25afbeed84fe0f1353
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.openlocfilehash: 5f47b534140d53c0734be359955b95d84e87d2c1
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702480"
-abstract: "このモジュールでは、次のことを行います。\n- 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。\n- Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。\n- Azure Functions を使用して、画像のサイズを変更します。\n- 画像のメタデータを Azure Cosmos DB に格納します。 \n- Cognitive Services Vision API を使用して、画像のキャプションを自動生成します。\n- Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護する。\n"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154962"
+abstract: "このモジュールでは、次のことを行います。\n> [!div class=\"checklist\"]\n> * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。\n> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。\n> * Azure Functions を使用して、画像のサイズを変更します。\n> * 画像のメタデータを Azure Cosmos DB に格納します。 \n> * Cognitive Services Computer Vision API を使用して、画像のキャプションを自動生成します。\n> * Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護します。\n"
 prerequisites: なし
 units:
 - learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage

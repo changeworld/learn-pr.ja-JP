@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.1-introduction
+metadata:
+  title: Azure Container Instances の概要
+  description: Azure Container Instances の概要。
+  ms.openlocfilehash: 2f29b541d3986b805a8b966a1aa49f5927975e25
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834003"
+title: Azure Container Instances の概要
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

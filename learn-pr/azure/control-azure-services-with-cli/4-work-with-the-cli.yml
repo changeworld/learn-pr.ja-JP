@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.4-work-with-the-cli
+title: Azure CLI を使用する
+metadata:
+  title: Azure CLI を使用する
+  description: コマンドの構造と、Azure CLI を使用するための構文について説明します
+  ms.openlocfilehash: ec5026852b4440c3e3ca91c2b5d78b82b9556171
+  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42939889"
+durationInMinutes: 5
+content: '[!include[](includes/4-work-with-the-cli.md)]'

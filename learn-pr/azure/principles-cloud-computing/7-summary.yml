@@ -4,11 +4,11 @@ title: まとめ
 metadata:
   title: まとめ
   description: まとめ
-  ms.openlocfilehash: 763ecfaaddf67720d89393af44b5aa1d904ad820
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 6d5ebd3a079b8609250e23efb329935a0a6a5fe9
+  ms.sourcegitcommit: c8d798ed14ad798f83559db0641c7cbc9728a7bf
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445810"
-durationInMinutes: 5
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43730677"
+durationInMinutes: 3
 content: '[!include[](includes/7-summary.md)]'

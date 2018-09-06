@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
+title: Custom Vision Service プロジェクトを作成する
+metadata:
+  title: Custom Vision Service プロジェクトを作成する
+  description: Custom Vision Service プロジェクトを作成する
+  ms.openlocfilehash: 7bd6760f1072f15579acd70d6bdcbbad5f5ed760
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228180"
+durationInMinutes: 5
+content: '[!include[](includes/1-create-custom-vision-service-project.md)]'

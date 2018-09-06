@@ -3,12 +3,12 @@ uid: learn.choose-storage-approach-in-azure.6-summary
 metadata:
   title: まとめ
   description: まとめ
-  ms.openlocfilehash: cce5ba3085e6afca111953edccddc862695ed0ae
-  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.openlocfilehash: d0051f7fd21fbb12ab1dfb64bc07bf73f7c9f61c
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43314620"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790150"
 title: まとめ
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'

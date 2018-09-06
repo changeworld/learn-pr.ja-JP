@@ -4,12 +4,43 @@ metadata:
   title: Azure Cosmos DB 要求ユニットとは?
   description: Azure Cosmos DB 内で要求ユニットを使用してスループットを割り当てる方法について説明します。
   displayType: one-column
-  ms.openlocfilehash: 59395acde91a8986089a5480efc51f8a02dbd518
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: d5c9095b41cce8f33e85d3ac184726298f2ff852
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40442719"
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252045"
 title: 要求ユニットとは?
 durationInMinutes: 8
-content: '[!include[](includes/3-what-is-a-request-unit.md)]'
+content: "[!include[](includes/3-what-is-a-request-unit.md)] \n"
+quiz:
+  title: 知識チェック
+  questions:
+  - content: Azure Cosmos DB アカウントを作成し、アプリケーションのニーズに応じてアカウントが確実に拡張するようにしたい場合、スループットとして設定する最小値は何ですか。
+    choices:
+    - content: 400 RU/秒
+      isCorrect: false
+      incorrectExplanation: 400 RU/秒は、Azure Cosmos DB に設定できる最小のスループットです。ただし、元のスループットとして 400 RU/秒を指定して作成されたデータベースは、自動スケーリングされません。
+    - content: 1000 RU/秒
+      isCorrect: true
+      correctExplanation: 正解です。 1000 RU/秒のスループットは、データベースの自動スケーリングを有効にする最小値です。
+    - content: 1400 RU/秒
+      isCorrect: false
+      incorrectExplanation: スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。
+    - content: 250,000 RU/秒
+      isCorrect: false
+      incorrectExplanation: スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。
+  - content: 4 KB のドキュメントを Azure Cosmos DB データベースに 100 回書き込み、4 KB のドキュメントを 500 回読み込むことを予定している場合、アカウントにレート制限が適用されないようにするには、何個の要求ユニットをプロビジョニングする必要がありますか。
+    choices:
+    - content: 400 RU/秒
+      isCorrect: false
+      incorrectExplanation: 残念ながら、このシナリオに対して 400 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
+    - content: 1000 RU/秒
+      isCorrect: false
+      incorrectExplanation: 残念ながら、このシナリオに対して 1000 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
+    - content: 1300 RU/秒
+      isCorrect: false
+      incorrectExplanation: 残念ながら、このシナリオに対して 1300 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
+    - content: 1400 RU/秒
+      isCorrect: true
+      correctExplanation: 正解です。 表は、このシナリオには最低 1350 RU/秒が必要であることを示しています。 レート制限が適用されないようにするには、1400 RU/秒をプロビジョニングする必要があります。なぜなら、1350 RU/秒よりも多く必要であり、要求ユニットは 100 の単位 (1300、1400、1500 など) でプロビジョニングされるからです。

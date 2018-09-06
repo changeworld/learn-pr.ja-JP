@@ -4,11 +4,11 @@ title: はじめに
 metadata:
   title: はじめに
   description: はじめに
-  ms.openlocfilehash: e19701e1118b9b2cdac1002f2b9269e04f5f4b87
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.openlocfilehash: 4bd002a4678e5a167039a1181970c291db54085c
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471847"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824922"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

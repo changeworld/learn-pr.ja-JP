@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.0-overview
+title: 概要
+metadata:
+  title: 概要
+  description: 概要
+  ms.openlocfilehash: 1751a0b2edb2912a309bd214e5853ac0b277a98d
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43227916"
+durationInMinutes: 5
+content: '[!include[](includes/0-overview.md)]'

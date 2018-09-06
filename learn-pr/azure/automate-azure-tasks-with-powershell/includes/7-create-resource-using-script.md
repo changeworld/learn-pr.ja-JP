@@ -16,7 +16,9 @@ PowerShell スクリプト ファイルには **.ps1** ファイル拡張子が�
 > [!TIP]
 > Windows で PowerShell スクリプトを記述する場合は、Windows PowerShell Integrated Scripting Environment (ISE) を使用できます。 このエディターでは、構文の色分けなどの機能と利用可能なコマンドレットの一覧が提供されます。
 >
->![Windows PowerShell ISE](../media-drafts/7-windows-powershell-ise-screenshot.png)
+次のスクリーンショットは、Windows PowerShell Integrated Scripting Environment (ISE) でサンプル スクリプトを使用して Azure に接続し、Azure で仮想マシンを作成する様子を示しています。
+
+>![仮想マシンを作成するためのスクリプトが編集ウィンドウで開かれている Windows PowerShell Integrated Scripting Environment のスクリーンショット。](../media/7-windows-powershell-ise-screenshot.png)
 
 スクリプトを記述したら、前にドットとバックスラッシュが付いたファイルの名前を渡して、PowerShell コマンド ラインから実行します。
 

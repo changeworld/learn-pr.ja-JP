@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.6-upload-your-code-to-azure-content
+title: ASP.NET Core アプリケーションを Azure にアップロードする
+metadata:
+  title: ASP.NET Core アプリケーションを Azure にアップロードする
+  description: ASP.NET Core アプリケーションを Azure にアップロードする
+  ms.openlocfilehash: 75b9bf0c6522f34dbe14327aa3c40bfe129caaa9
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42820957"
+durationInMinutes: 10
+content: '[!include[](includes/6-upload-your-code-to-azure-content.md)]'

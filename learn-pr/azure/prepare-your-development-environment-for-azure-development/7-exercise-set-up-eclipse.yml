@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+title: 演習 - Eclipse を設定する
+metadata:
+  title: 演習 - Eclipse を設定する
+  description: 演習 - Eclipse を設定する
+  ms.openlocfilehash: 9e608b723fbf86992d6e61a14890baaacb701dae
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938014"
+durationInMinutes: 15
+content: '[!include[](includes/7-exercise-set-up-eclipse.md)]'

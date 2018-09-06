@@ -17,7 +17,7 @@ az webapp create --name <your-unique-app-name> --plan keyvault-exercise-plan --r
 
 ### <a name="add-configuration-to-the-app"></a>アプリに構成を追加する
 
-Azure へのデプロイでは、App Service のベスト プラクティスに従い、構成ファイルではなくアプリケーションの設定に構成を配置します。
+Azure へのデプロイでは、App Service のベスト プラクティスに従い、構成ファイルではなくアプリケーションの設定に VaultName 構成を配置します。
 
 ```azurecli
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
@@ -48,7 +48,7 @@ az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-pri
 > [!NOTE]
 > `cd` で KeyVaultDemoApp ディレクトリに戻る必要があります (まだそうしていない場合)。
 
-```console
+```azurecli
 dotnet publish -o pub
 zip -j site.zip pub/*
 az webapp deployment source config-zip --src site.zip --name <your-unique-app-name> --resource-group keyvault-exercise-group

@@ -2,24 +2,24 @@
 uid: learn.work-with-nosql-data-in-azure-cosmos-db
 title: Azure Cosmos DB の NoSQL データを扱う
 summary: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
-cardDescription: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
-prerequisites: なし
+- azure
 metadata:
   title: Azure Cosmos DB の NoSQL データを扱う
   description: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
-  ms.openlocfilehash: 5680f9f239e886592e97d71d61227dd83771fdf4
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.openlocfilehash: 68ed557983cc64197b6ec7a0969b7da56ebc7d37
+  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40441990"
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42910237"
 modules:
 - learn.create-cosmos-db-for-scale
+- learn.cosmos-db-app-with-vscode
 achievement: learn.work-with-nosql-data-in-azure-cosmos-db.trophy

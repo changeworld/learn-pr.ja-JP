@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
+title: Azure 関数の作成と実行
+metadata:
+  title: Azure 関数の作成と実行
+  description: Azure 関数の作成と実行
+  ms.openlocfilehash: 2d77e4ad48789db0d19b05d543af58f342e7385c
+  ms.sourcegitcommit: 5a41b7766cdac6f133d44a2e75635d56c43dfa64
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43116166"
+durationInMinutes: 10
+content: '[!include[](includes/4-creating-and-executing-an-azure-function.md)]'

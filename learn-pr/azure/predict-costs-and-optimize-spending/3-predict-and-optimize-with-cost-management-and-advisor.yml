@@ -4,13 +4,13 @@ title: Cost Management と Azure Advisor で予測および最適化する
 metadata:
   title: Cost Management と Azure Advisor で予測および最適化する
   description: このユニットでは、Cost Management と Azure Advisor を使用して予測および最適化する方法を説明します
-  ms.openlocfilehash: 88e546cd9c7f44f147406d8d0e4f895b491f7818
-  ms.sourcegitcommit: d40bff88f60d5ddb3d875f788cafdd0c40069f23
+  ms.openlocfilehash: b49ee199391539f75bcea8cc1044d6df92e20f50
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "42615872"
-durationInMinutes: 10
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141570"
+durationInMinutes: 15
 content: >
   [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
 quiz:
@@ -26,7 +26,7 @@ quiz:
       isCorrect: true
   - content: Azure Cost Management では、_________ことができます。
     choices:
-    - content: 料金が支払われているサービスのこれまでの明細を確認する
+    - content: 料金が支払われているサービスのこれまでの内訳を確認する
       correctExplanation: これまでに支払われた料金の明細を分析し、設定されている予算との差異を追跡する
       isCorrect: true
     - content: 変更を行った場合のサービスのコストの見積もりを確認する

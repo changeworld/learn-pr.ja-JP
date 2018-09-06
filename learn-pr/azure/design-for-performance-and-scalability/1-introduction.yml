@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.1-introduction
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.openlocfilehash: 15703b2c47dad65cfdf4ff672122ba9fb347eadf
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43180114"
+durationInMinutes: 1
+content: '[!include[](includes/1-introduction.md)]'

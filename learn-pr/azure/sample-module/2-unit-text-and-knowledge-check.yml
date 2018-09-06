@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.sample-module-cloudshell.2-unit-text-and-knowledge-check
+metadata:
+  title: サンプル ユニット 2 - テキストと知識チェック
+  description: このユニットは、テキスト (ラボ コンポーネントなし) と知識チェックのサンプルです。
+  displayType: one-column
+  ms.openlocfilehash: 31eabba6df3fadbe946355aa47a10a9907ecb2a9
+  ms.sourcegitcommit: 92580185df76595daa4cf68a5311019c85fe7bf3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42873943"
+title: サンプル ユニット 2 - テキストと知識チェック
+durationInMinutes: 11
+content: >
+  [!include[](includes/2-unit-text-and-knowledge-check.md)]
+quiz:
+  title: テスト タイトル
+  questions:
+  - content: テストの最初の質問は?
+    choices:
+    - content: この答えは正解です。
+      correctExplanation: この答えが正解な理由
+      isCorrect: true
+    - content: この答えは不正解です。
+      incorrectExplanation: この答えが不正解な理由
+      isCorrect: false
+    - content: テストのためのマークダウン ファイル形式のブレーンストーミングを行います。 パート 2
+      isCorrect: false

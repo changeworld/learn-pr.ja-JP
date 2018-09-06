@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: データを分類する
+  description: データを分類する
+  displayType: one-column
+  ms.openlocfilehash: 361eb3c2315493975eea2c6bcab89b3baaa21913
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252543"
+title: データを分類する
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: データの分類
+  questions:
+  - content: オンライン小売りアプリケーションではユーザー データも格納され、それにはユーザーの配送先住所、過去の注文、およびプロフィール情報 (提供されている場合) が含まれます。 ユーザー データには、将来の特定のユーザー用に他のフィールドが含まれる場合があります。 このデータ セットをどのように分類しますか。
+    choices:
+    - content: 構造化
+      isCorrect: false
+      incorrectExplanation: すべてのユーザーの情報が同じわけではないので、構造化された形式でこのデータを格納するのは理想的ではありません。
+    - content: 半構造化
+      isCorrect: true
+      correctExplanation: 正解です。プロフィール情報を登録しないユーザーもおり、将来一部のユーザーに新しいフィールドを追加する可能性があるため、このユーザー データは半構造化されています。 これは、すべてのデータが同じスキーマに従うわけではなく、データの各部分が固有の構造を持つ可能性があることを示すので、半構造化されたデータです。
+    - content: 非構造化
+      isCorrect: false
+      incorrectExplanation: 非構造化形式のデータを処理するのは難しいので、非構造化データとしてユーザー データを格納することは推奨されません。
+  - content: 非構造化データに構造化されたメタデータを関連付けることはできますか。
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: 正解です。構造化されていないデータに、タイムスタンプ、場所スタンプ、デバイス ID などのメタデータを関連付けることができます。 メタデータを非構造化データに関連付けても、メイン エンティティの内部構造が構造化されていないという事実は変わりません。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: 残念ですが、正解ではありません。

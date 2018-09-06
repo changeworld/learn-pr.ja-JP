@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+title: Eclipse IDE for Java Developers を設定する
+metadata:
+  title: Eclipse IDE for Java Developers を設定する
+  description: Eclipse IDE for Java Developers を設定する
+  ms.openlocfilehash: 1ca19b91c7ca86a2fbeee3023cc3bb4da387ce4d
+  ms.sourcegitcommit: e364b61d89b547c49e271e6d168801011f7f4733
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/26/2018
+  ms.locfileid: "42938065"
+durationInMinutes: 5
+content: '[!include[](includes/6-set-up-eclipse-ide-for-java-developers.md)]'

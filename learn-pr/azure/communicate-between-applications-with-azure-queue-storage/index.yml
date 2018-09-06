@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.communicate-between-applications-with-azure-queue-storage
+metadata:
+  title: アプリケーションと Azure Queue Storage の間で通信する
+  description: Azure Queue Storage では、アプリケーションでメッセージを格納して取得できるクラウド ベースのキューが提供されます。 キューを使用すると、プロデューサーとコンシューマーが直接的な通信を使用するのではなく、キューを介してメッセージを受け渡す、疎結合のアーキテクチャを作成できます。 この方法を使用すると、需要が多いときやネットワーク帯域幅が低いときでも、メッセージはキューで待機するだけであって失われることがないので、回復性が向上します。 このモジュールでは、キューを作成する方法と、その後それを使用してメッセージを追加および取得する方法を示します。
+  ms.openlocfilehash: 016a574fa4c7a5b11e7b42c34647a592cec24247
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43155099"
+title: アプリケーションと Azure Queue Storage の間で通信する
+summary: Azure Queue Storage を使用して、クラウドにパブリッシュ サブスクライブ パターンを実装します。
+abstract: Azure Queue Storage では、アプリケーションでメッセージを格納して取得できるクラウド ベースのキューが提供されます。 キューを使用すると、プロデューサーとコンシューマーが直接的な通信を使用するのではなく、キューを介してメッセージを受け渡す、疎結合のアーキテクチャを作成できます。 この方法を使用すると、需要が多いときやネットワーク帯域幅が低いときでも、メッセージはキューで待機するだけであって失われることがないので、回復性が向上します。 このモジュールでは、キューを作成する方法と、その後それを使用してメッセージを追加および取得する方法を示します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.communicate-between-applications-with-azure-queue-storage.1-introduction
+- learn.communicate-between-applications-with-azure-queue-storage.2-create-the-azure-storage-infrastructure
+- learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
+- learn.communicate-between-applications-with-azure-queue-storage.4-identify-a-queue
+- learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
+- learn.communicate-between-applications-with-azure-queue-storage.6-how-to-programmatically-access-a-queue
+- learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
+- learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
+- learn.communicate-between-applications-with-azure-queue-storage.9-summary
+achievement: learn.communicate-between-applications-with-azure-queue-storage.badge

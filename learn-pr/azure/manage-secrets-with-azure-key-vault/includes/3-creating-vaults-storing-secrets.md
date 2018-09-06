@@ -1,9 +1,9 @@
 ## <a name="creating-key-vaults-for-your-applications"></a>アプリケーション用の Key Vault を作成する
 
-各アプリケーションに対し、使用する展開環境 (開発、テスト、運用など) ごとに個別のコンテナーを付与することをお勧めします。 アプリ全体でシークレットを共有するのは便利ですが、攻撃者がコンテナーへの読み取りアクセスを得た場合の影響は、コンテナー内のシークレットの数と共に高まります。
+ご利用のアプリケーションのデプロイ環境 (開発、テスト、運用など) ごとに、個別のコンテナーを作成することをお勧めします。 複数のアプリでシークレットを共有して使用することは可能ですが、攻撃者がコンテナーへの読み取りアクセスを得た場合の影響は、コンテナー内のシークレットの数と共に高まります。
 
 > [!TIP]
-> 異なる環境間でシークレットに同じ名前を使用する場合、アプリ内で変更する必要がある環境固有の構成は、コンテナー URL だけです。
+> 1 つのアプリケーションに対し、異なる環境間でシークレットに同じ名前を使用する場合、アプリ内で変更する必要がある環境固有の構成は、コンテナー URL だけです。
 
 コンテナーの作成には、初期構成は必要ありません。 ユーザー ID にはシークレット管理アクセス許可の完全なセットが自動的に付与され、すぐにシークレットの追加を開始することができます。 コンテナーを作成したら、シークレットの追加と管理は、Azure 管理インターフェイス (Azure portal、Azure CLI、Azure PowerShell など) から実行できます。 そのコンテナーを使用するようにアプリケーションを設定する場合、適切なアクセス許可を割り当てる必要があります。これについては次のユニットで説明します。
 
@@ -51,7 +51,7 @@ az keyvault create --name <your-unique-vault-name> --resource-group keyvault-exe
 シークレットを追加します。シークレットは **SecretPassword** という名前で、**reindeer_flotilla** の値を持ちます。
 
 ```azurecli
-az keyvault secret set --name SecretPassword --value open_sesame --vault-name <your-unique-vault-name>
+az keyvault secret set --name SecretPassword --value reindeer_flotilla --vault-name <your-unique-vault-name>
 ```
 
 コンテナー名をメモしておきます &mdash; すぐにもう一度必要になります。
