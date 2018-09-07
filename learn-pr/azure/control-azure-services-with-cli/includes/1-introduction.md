@@ -7,13 +7,16 @@ Azure portal は、1 つのタスクを実行したり、ご利用のリソー�
 このモジュールでは、Azure CLI を使用して Azure リソースを管理する方法を説明します。 
 
 ## <a name="learning-objectives"></a>学習の目的
+
 このモジュールでは、次のことを行います。
 
 - Linux、macOS、Windows 上に Azure CLI をインストールします。
 - Azure CLI を使用して Azure サブスクリプションに接続します。
 - Azure CLI を使用して Azure リソースを作成します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>前提条件  
+
 - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
 - リソース グループなど、Azure の基本的な概念に関する知識
 - Azure portal を使用した Azure リソースの管理経験
+- 
