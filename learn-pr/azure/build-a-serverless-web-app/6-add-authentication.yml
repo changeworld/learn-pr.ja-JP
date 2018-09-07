@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.6-add-authentication
-title: <span data-ttu-id="6ebd8-101">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6ebd8-101">Add authentication</span></span>
+title: <span data-ttu-id="6064d-101">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6064d-101">Add authentication</span></span>
 metadata:
-  title: <span data-ttu-id="6ebd8-102">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6ebd8-102">Add authentication</span></span>
-  description: <span data-ttu-id="6ebd8-103">認証を追加します。</span><span class="sxs-lookup"><span data-stu-id="6ebd8-103">Add authentication.</span></span>
-  ms.openlocfilehash: 8a64428f1a5406359e8ed8e146ba1a50ee787282
-  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  title: <span data-ttu-id="6064d-102">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6064d-102">Add authentication</span></span>
+  description: <span data-ttu-id="6064d-103">認証を追加します。</span><span class="sxs-lookup"><span data-stu-id="6064d-103">Add authentication.</span></span>
+  ms.openlocfilehash: ebcd5728f6df37347f072f652abf801cf2962f4e
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43154744"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790660"
 durationInMinutes: 8
 interactive: bash-editor
 content: '[!include[](includes/6-add-authentication.md)]'
