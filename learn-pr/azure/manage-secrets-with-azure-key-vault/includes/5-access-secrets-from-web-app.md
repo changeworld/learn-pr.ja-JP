@@ -81,14 +81,14 @@ namespace KeyVaultDemoApp
 }
 ```
 
-> [!NOTE]
+> [!TIP]
 > 編集が完了したら、必ず `Ctrl+S` でファイルを保存します。
 
 スターター コードからの唯一の変更は、`ConfigureAppConfiguration` の追加です。 ここでは、構成からコンテナー名を読み込み、それを使用して `AddAzureKeyVault` を呼び出します。
 
 次にコントローラー: `SecretTestController.cs` という `Controllers` フォルダーに新しいファイルを作成し、次のコードを貼り付けます。
 
-> [!NOTE]
+> [!TIP]
 > 新しいファイルを作成するには、シェルで `touch` コマンドを使用します。 例では `touch Controllers/SecretTestController.cs`が使用されます。 表示するには、エディターの [ファイル] ウィンドウの [更新] ボタンをクリックする必要があります。
 
 ```csharp

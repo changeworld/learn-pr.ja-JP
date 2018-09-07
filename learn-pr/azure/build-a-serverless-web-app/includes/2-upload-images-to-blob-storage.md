@@ -1,12 +1,3 @@
----
-zone_pivot_groups: dev-lang-csharp-javascript
-ms.openlocfilehash: 69bc512c02a30bc74ae82a3a43a083af635d89ba
-ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43154577"
----
 あなたが作成しているアプリケーションは、フォト ギャラリーです。 このアプリケーションでは、クライアント側 JavaScript を使用して API を呼び出し、画像をアップロードおよび表示します。 このモジュールでは、時間制限付き URL を生成して画像をアップロードするサーバーレス関数を使用して、API を作成します。 この Web アプリケーションでは、[Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) を使って Blob Storage に画像をアップロードするために、生成済み URL が使用されます。
 
 ## <a name="create-a-blob-storage-container-for-images"></a>画像用の Blob Storage コンテナーを作成する

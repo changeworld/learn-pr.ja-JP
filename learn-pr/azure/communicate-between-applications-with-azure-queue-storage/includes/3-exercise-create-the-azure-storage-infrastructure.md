@@ -8,14 +8,14 @@
 
 1. 右側の Cloud shell で選択肢が与えられている場合は、Bash を選択します。
 
-2. `az group create` の Azure CLI コマンドを使用して新しいリソース グループを作成します。 これに、**ExerciseResources** という名前を付け、自分から近い場所に配置します。 
+1. `az group create` の Azure CLI コマンドを使用して新しいリソース グループを作成します。 これに、**ExerciseResources** という名前を付け、自分から近い場所に配置します。 
     - 次の例では、場所として "eastus" を使用しています。
 
     ```azurecli
     az group create -n ExerciseResources --location eastus
     ```
         
-2. 次に、`az storage account create` のコマンドを使用して、実際のストレージ アカウントを作成します。 いくつかのパラメーターを指定する必要があります。
+1. 次に、`az storage account create` のコマンドを使用して、実際のストレージ アカウントを作成します。 いくつかのパラメーターを指定する必要があります。
 
 | パラメーター | 値 |
 |-----------|-------|

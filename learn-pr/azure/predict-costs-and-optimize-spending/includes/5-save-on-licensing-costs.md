@@ -60,7 +60,7 @@ Enterprise Agreement のお客様で、既に SQL Server ライセンスに投�
 
 このような場合、Azure Marketplace で Developer Edition 用の SQL Server イメージを見つけて、開発やテスト目的に使用することで、SQL Server にかかる追加コストを削減できます。 
 
-> [!NOTE]
+> [!TIP]
 > ライセンスについて詳しくは、[料金ガイダンスに関するドキュメント](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance)を参照してください。
 
 ## <a name="use-constrained-instance-sizes-for-database-workloads"></a>データベース ワークロードで制約付きインスタンス サイズを使用する 
