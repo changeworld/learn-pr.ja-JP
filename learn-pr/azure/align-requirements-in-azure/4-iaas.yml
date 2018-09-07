@@ -4,11 +4,11 @@ title: サービスとしてのインフラストラクチャ
 metadata:
   title: IaaS
   description: サービスとしてのインフラストラクチャについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します
-  ms.openlocfilehash: 987ba08b09e40b07e2b131f20c7c715371d2cab7
-  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.openlocfilehash: f78b53f74b0cba46ffb19bd76a5c8ecddd3691d0
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42822717"
-durationInMinutes: 3
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675714"
+durationInMinutes: 4
 content: '[!include[](includes/4-iaas.md)]'
