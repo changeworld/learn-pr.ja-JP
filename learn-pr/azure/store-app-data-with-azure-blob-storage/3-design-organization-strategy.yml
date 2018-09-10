@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-title: <span data-ttu-id="b02a4-101">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="b02a4-101">Design a storage organization strategy</span></span>
+title: <span data-ttu-id="2f4dc-101">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="2f4dc-101">Design a storage organization strategy</span></span>
 metadata:
-  title: <span data-ttu-id="b02a4-102">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="b02a4-102">Design a storage organization strategy</span></span>
-  description: <span data-ttu-id="b02a4-103">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="b02a4-103">Design a storage organization strategy</span></span>
-  ms.openlocfilehash: 966865b137aaedc45906682cc58fc8a67e68a30c
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="2f4dc-102">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="2f4dc-102">Design a storage organization strategy</span></span>
+  description: <span data-ttu-id="2f4dc-103">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="2f4dc-103">Design a storage organization strategy</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f38fea8367aeac95b8bd0593b2132f96989700f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43225712"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234106"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: '<span data-ttu-id="b02a4-104">知識チェック: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="b02a4-104">Knowledge check: Blob Storage</span></span>'
+  title: '<span data-ttu-id="2f4dc-104">知識チェック: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="2f4dc-104">Knowledge check: Blob Storage</span></span>'
   questions:
-  - content: <span data-ttu-id="b02a4-105">ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?</span><span class="sxs-lookup"><span data-stu-id="b02a4-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
+  - content: <span data-ttu-id="2f4dc-105">ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?</span><span class="sxs-lookup"><span data-stu-id="2f4dc-105">Which kind of blob is the best fit for most storage scenarios?</span></span>
     choices:
-    - content: <span data-ttu-id="b02a4-106">バイト BLOB</span><span class="sxs-lookup"><span data-stu-id="b02a4-106">Byte blobs</span></span>
+    - content: <span data-ttu-id="2f4dc-106">バイト BLOB</span><span class="sxs-lookup"><span data-stu-id="2f4dc-106">Byte blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-107">"バイト BLOB" は、BLOB の種類ではありません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-107">"Byte blobs" are not a type of blob.</span></span>
-    - content: <span data-ttu-id="b02a4-108">ページ BLOB</span><span class="sxs-lookup"><span data-stu-id="b02a4-108">Page blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-107">"バイト BLOB" は、BLOB の種類ではありません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-107">"Byte blobs" are not a type of blob.</span></span>
+    - content: <span data-ttu-id="2f4dc-108">ページ BLOB</span><span class="sxs-lookup"><span data-stu-id="2f4dc-108">Page blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-109">ページ BLOB は、仮想ハード ディスクに格納するために Azure Virtual Machine で使用されているような、大量のランダム アクセスの読み取りと書き込みのために設計されています。</span><span class="sxs-lookup"><span data-stu-id="b02a4-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
-    - content: <span data-ttu-id="b02a4-110">ブロック BLOB</span><span class="sxs-lookup"><span data-stu-id="b02a4-110">Block blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-109">ページ BLOB は、仮想ハード ディスクに格納するために Azure Virtual Machine で使用されているような、大量のランダム アクセスの読み取りと書き込みのために設計されています。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-109">Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.</span></span>
+    - content: <span data-ttu-id="2f4dc-110">ブロック BLOB</span><span class="sxs-lookup"><span data-stu-id="2f4dc-110">Block blobs</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b02a4-111">ブロック BLOB は通常、汎用ストレージのニーズに最適な選択肢です。</span><span class="sxs-lookup"><span data-stu-id="b02a4-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
-    - content: <span data-ttu-id="b02a4-112">追加 BLOB</span><span class="sxs-lookup"><span data-stu-id="b02a4-112">Append blobs</span></span>
+      correctExplanation: <span data-ttu-id="2f4dc-111">ブロック BLOB は通常、汎用ストレージのニーズに最適な選択肢です。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-111">Block blobs are usually the best choice for general-purpose storage needs.</span></span>
+    - content: <span data-ttu-id="2f4dc-112">追加 BLOB</span><span class="sxs-lookup"><span data-stu-id="2f4dc-112">Append blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-113">追加 BLOB では、新しいデータの追加のみがサポートされ、既存のデータの更新または削除はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
-  - content: <span data-ttu-id="b02a4-114">BLOB では、*非構造化*データ ストレージが提供されます。</span><span class="sxs-lookup"><span data-stu-id="b02a4-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="b02a4-115">*非構造化*が意味するものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="b02a4-115">What does *unstructured* mean?</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-113">追加 BLOB では、新しいデータの追加のみがサポートされ、既存のデータの更新または削除はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-113">Append blobs only support appending new data, not updating or deleting existing data.</span></span>
+  - content: <span data-ttu-id="2f4dc-114">BLOB では、*非構造化*データ ストレージが提供されます。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="2f4dc-115">*非構造化*が意味するものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="2f4dc-115">What does *unstructured* mean?</span></span>
     choices:
-    - content: <span data-ttu-id="b02a4-116">BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
+    - content: <span data-ttu-id="2f4dc-116">BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-117">"非構造化" とは、ストレージ アカウント内の BLOB の組織ではなく、BLOB *内*のデータの性質を指します。</span><span class="sxs-lookup"><span data-stu-id="b02a4-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
-    - content: <span data-ttu-id="b02a4-118">BLOB に格納できるデータの種類に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-117">"非構造化" とは、ストレージ アカウント内の BLOB の組織ではなく、BLOB *内*のデータの性質を指します。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-117">"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.</span></span>
+    - content: <span data-ttu-id="2f4dc-118">BLOB に格納できるデータの種類に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-118">There are no restrictions on the kinds of data you can store in blobs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="b02a4-119">BLOB によってデータにいかなる種類の構造も強制されることはありません。つまり、アプリではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="b02a4-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
-    - content: <span data-ttu-id="b02a4-120">BLOB には、JSON や XML などの構造化データを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-120">Blobs can't contain structured data, like JSON or XML.</span></span>
+      correctExplanation: <span data-ttu-id="2f4dc-119">BLOB によってデータにいかなる種類の構造も強制されることはありません。つまり、アプリではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-119">Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.</span></span>
+    - content: <span data-ttu-id="2f4dc-120">BLOB には、JSON や XML などの構造化データを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-120">Blobs can't contain structured data, like JSON or XML.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-121">BLOB には構造化データを含めることが*できます*が、それを操作する方法は BLOB ストレージにはありません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="b02a4-122">BLOB コンテンツの構造を認識し、それらを適切に処理するのはアプリの役目です。</span><span class="sxs-lookup"><span data-stu-id="b02a4-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
-    - content: <span data-ttu-id="b02a4-123">BLOB からダウンロードしたデータは、ランダムに編成され、その意味を理解するには特殊なクライアント ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="b02a4-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-121">BLOB には構造化データを含めることが*できます*が、それを操作する方法は BLOB ストレージにはありません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-121">Blobs *can* contain structured data, but Blob storage does not interact with it in any way.</span></span> <span data-ttu-id="2f4dc-122">BLOB コンテンツの構造を認識し、それらを適切に処理するのはアプリの役目です。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-122">It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.</span></span>
+    - content: <span data-ttu-id="2f4dc-123">BLOB からダウンロードしたデータは、ランダムに編成され、その意味を理解するには特殊なクライアント ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-123">Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="b02a4-124">BLOB コンテンツのダウンロードを含むすべての BLOB 操作は、クライアント ライブラリがなくても、REST API を使用して直接操作することができます。</span><span class="sxs-lookup"><span data-stu-id="b02a4-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="b02a4-125">BLOB からダウンロードしたデータは、ランダムに編成されません。</span><span class="sxs-lookup"><span data-stu-id="b02a4-125">Data downloaded from blobs is not organized randomly.</span></span>
+      incorrectExplanation: <span data-ttu-id="2f4dc-124">BLOB コンテンツのダウンロードを含むすべての BLOB 操作は、クライアント ライブラリがなくても、REST API を使用して直接操作することができます。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-124">All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library.</span></span> <span data-ttu-id="2f4dc-125">BLOB からダウンロードしたデータは、ランダムに編成されません。</span><span class="sxs-lookup"><span data-stu-id="2f4dc-125">Data downloaded from blobs is not organized randomly.</span></span>

@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.3-how-azure-storage-meets-your-business-storage-needs
-title: <span data-ttu-id="8b4fe-101">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-101">How Azure storage can meet your business storage needs</span></span>
+title: <span data-ttu-id="5b6c7-101">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="5b6c7-101">How Azure storage can meet your business storage needs</span></span>
 metadata:
-  title: <span data-ttu-id="8b4fe-102">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-102">How Azure storage can meet your business storage needs</span></span>
-  description: <span data-ttu-id="8b4fe-103">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="8b4fe-103">How Azure storage can meet your business storage needs</span></span>
-  ms.openlocfilehash: 7a6817a6bb27293a33ba698924d2013ff96e78e2
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="5b6c7-102">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="5b6c7-102">How Azure storage can meet your business storage needs</span></span>
+  description: <span data-ttu-id="5b6c7-103">Azure Storage がビジネス ストレージ ニーズを満たす方法</span><span class="sxs-lookup"><span data-stu-id="5b6c7-103">How Azure storage can meet your business storage needs</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3027b99a4d5e733749db212220564378e1e806a4
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443873"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237149"
 durationInMinutes: 10
 content: '[!include[](includes/3-how-azure-storage-meets-your-business-storage-needs.md)]'

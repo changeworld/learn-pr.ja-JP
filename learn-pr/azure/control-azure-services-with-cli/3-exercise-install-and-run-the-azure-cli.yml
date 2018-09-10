@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
-title: <span data-ttu-id="a1586-101">Azure CLI をインストールして実行する</span><span class="sxs-lookup"><span data-stu-id="a1586-101">Install and run the Azure CLI</span></span>
+title: <span data-ttu-id="794e5-101">Azure CLI をインストールして実行する</span><span class="sxs-lookup"><span data-stu-id="794e5-101">Install and run the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="a1586-102">Azure CLI をインストールして実行する</span><span class="sxs-lookup"><span data-stu-id="a1586-102">Install and run the Azure CLI</span></span>
-  description: <span data-ttu-id="a1586-103">さまざまなプラットフォーム上に Azure CLI をインストールする</span><span class="sxs-lookup"><span data-stu-id="a1586-103">Install the Azure CLI on various platforms</span></span>
+  title: <span data-ttu-id="794e5-102">Azure CLI をインストールして実行する</span><span class="sxs-lookup"><span data-stu-id="794e5-102">Install and run the Azure CLI</span></span>
+  description: <span data-ttu-id="794e5-103">さまざまなプラットフォーム上に Azure CLI をインストールする</span><span class="sxs-lookup"><span data-stu-id="794e5-103">Install the Azure CLI on various platforms</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
   zone_pivot_groups: platform
-  ms.openlocfilehash: 933b72e996f40657a0d3f3e2d7e8c2e23f2a9557
-  ms.sourcegitcommit: 9ad30c8c720645864a007a64612c70cce6406ce7
+  ms.openlocfilehash: f3b919086769e6691afc4c4eab451a074223afc0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43334102"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230247"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-install-and-run-the-azure-cli.md)]'

@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.0-overview
-title: <span data-ttu-id="94f09-101">概要</span><span class="sxs-lookup"><span data-stu-id="94f09-101">Overview</span></span>
+title: <span data-ttu-id="fa451-101">概要</span><span class="sxs-lookup"><span data-stu-id="fa451-101">Overview</span></span>
 metadata:
-  title: <span data-ttu-id="94f09-102">概要</span><span class="sxs-lookup"><span data-stu-id="94f09-102">Overview</span></span>
-  description: <span data-ttu-id="94f09-103">概要</span><span class="sxs-lookup"><span data-stu-id="94f09-103">Overview</span></span>
-  ms.openlocfilehash: 1751a0b2edb2912a309bd214e5853ac0b277a98d
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="fa451-102">概要</span><span class="sxs-lookup"><span data-stu-id="fa451-102">Overview</span></span>
+  description: <span data-ttu-id="fa451-103">概要</span><span class="sxs-lookup"><span data-stu-id="fa451-103">Overview</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 682e5dde05757759ac03e4290d44328680a31d4e
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43227916"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230016"
 durationInMinutes: 5
 content: '[!include[](includes/0-overview.md)]'

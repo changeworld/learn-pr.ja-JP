@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.3-service-models
-title: <span data-ttu-id="5ef93-101">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="5ef93-101">Cloud service models</span></span>
+title: <span data-ttu-id="39ee7-101">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="39ee7-101">Cloud service models</span></span>
 metadata:
-  title: <span data-ttu-id="5ef93-102">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="5ef93-102">Cloud service models</span></span>
-  description: <span data-ttu-id="5ef93-103">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="5ef93-103">Cloud service models</span></span>
-  ms.openlocfilehash: 4efdb0d5a03f7c0f1054feeffaae19cf579657fc
-  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  title: <span data-ttu-id="39ee7-102">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="39ee7-102">Cloud service models</span></span>
+  description: <span data-ttu-id="39ee7-103">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="39ee7-103">Cloud service models</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f759e9e96ce5074b5ecfad733b08f276e8de5c52
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43675646"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242742"
 durationInMinutes: 2
 content: '[!include[](includes/3-service-models.md)]'

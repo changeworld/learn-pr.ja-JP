@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.1-introduction
+title: <span data-ttu-id="abed8-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="abed8-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="abed8-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="abed8-102">Introduction</span></span>
+  description: <span data-ttu-id="abed8-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="abed8-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7cd52fd582ba72123c32ad3de2c464882817658f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231505"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

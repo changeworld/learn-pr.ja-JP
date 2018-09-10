@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.2-connect-to-dsvm
-title: <span data-ttu-id="79121-101">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-101">Connect to the Data Science VM</span></span>
+title: <span data-ttu-id="f2607-101">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="f2607-101">Connect to the Data Science VM</span></span>
 metadata:
-  title: <span data-ttu-id="79121-102">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-102">Connect to the Data Science VM</span></span>
-  description: <span data-ttu-id="79121-103">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-103">Connect to the Data Science VM</span></span>
-  ms.openlocfilehash: 7818ed0028d2d26a0663ec7a688099afd5523916
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="f2607-102">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="f2607-102">Connect to the Data Science VM</span></span>
+  description: <span data-ttu-id="f2607-103">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="f2607-103">Connect to the Data Science VM</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: dcecf848398967e4174db392a33d9036ed60da79
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791527"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244450"
 durationInMinutes: 5
 content: '[!include[](includes/2-connect-to-dsvm.md)]'

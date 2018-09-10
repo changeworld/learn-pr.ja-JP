@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-web-apps.8-summary
-title: <span data-ttu-id="1cba6-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="1cba6-101">Summary</span></span>
+title: <span data-ttu-id="64835-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="64835-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="1cba6-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="1cba6-102">Summary</span></span>
-  description: <span data-ttu-id="1cba6-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="1cba6-103">Summary</span></span>
-  ms.openlocfilehash: d23a24a9e3fecf48437651ddd2d39df6433a6d08
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="64835-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="64835-102">Summary</span></span>
+  description: <span data-ttu-id="64835-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="64835-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea9d22fade8d9eafc410b9d7ef7d2cc6d877a67a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836010"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44229703"
 durationInMinutes: 5
 content: '[!include[](includes/8-summary.md)]'

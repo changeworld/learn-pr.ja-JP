@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data
-title: <span data-ttu-id="073a9-101">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="073a9-101">Benefits of using Azure to store data</span></span>
+title: <span data-ttu-id="92c03-101">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="92c03-101">Benefits of using Azure to store data</span></span>
 metadata:
-  title: <span data-ttu-id="073a9-102">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="073a9-102">Benefits of using Azure to store data</span></span>
-  description: <span data-ttu-id="073a9-103">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="073a9-103">Benefits of using Azure to store data</span></span>
-  ms.openlocfilehash: 4b1e683f820f2e51e4e71711b97b2ef7efad68f8
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="92c03-102">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="92c03-102">Benefits of using Azure to store data</span></span>
+  description: <span data-ttu-id="92c03-103">Azure を使用してデータを格納する利点</span><span class="sxs-lookup"><span data-stu-id="92c03-103">Benefits of using Azure to store data</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a6d508b28d2f0af8f213c2e4d5c42b4bded57a8c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43251417"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233177"
 durationInMinutes: 5
 content: '[!include[](includes/2-benefits-of-using-azure-to-store-data.md)]'

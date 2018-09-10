@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.6-summary-cleanup
 metadata:
-  title: <span data-ttu-id="ca6bb-101">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="ca6bb-101">Summary and cleanup</span></span>
-  description: <span data-ttu-id="ca6bb-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="ca6bb-102">Summary and cleanup</span></span>
-  ms.openlocfilehash: a01c2889dd6487c3bb2fcbfec69384305a4be9c1
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="6edac-101">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="6edac-101">Summary and cleanup</span></span>
+  description: <span data-ttu-id="6edac-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="6edac-102">Summary and cleanup</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f4dd4e3e430f086c6cc112d65d089e03e1b3a10
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43792717"
-title: <span data-ttu-id="ca6bb-103">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="ca6bb-103">Summary and cleanup</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235109"
+title: <span data-ttu-id="6edac-103">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="6edac-103">Summary and cleanup</span></span>
 durationInMinutes: 2
 content: '[!include[](includes/6-summary-cleanup.md)]'

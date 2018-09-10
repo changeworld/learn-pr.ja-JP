@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.3-benefits-of-cloud-computing
-title: <span data-ttu-id="269f2-101">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="269f2-101">Benefits of cloud computing</span></span>
+title: <span data-ttu-id="8e3a1-101">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="8e3a1-101">Benefits of cloud computing</span></span>
 metadata:
-  title: <span data-ttu-id="269f2-102">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="269f2-102">Benefits of cloud computing</span></span>
-  description: <span data-ttu-id="269f2-103">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="269f2-103">Benefits of cloud computing</span></span>
-  ms.openlocfilehash: 1ba6abecccb653683ef06a3e4b8408a84fa5b073
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  title: <span data-ttu-id="8e3a1-102">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="8e3a1-102">Benefits of cloud computing</span></span>
+  description: <span data-ttu-id="8e3a1-103">クラウド コンピューティングのメリット</span><span class="sxs-lookup"><span data-stu-id="8e3a1-103">Benefits of cloud computing</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cd750a9065d5b01a2aa153910fd9f8b90478744c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414710"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236758"
 durationInMinutes: 8
 content: '[!include[](includes/3-benefits-of-cloud-computing.md)]'

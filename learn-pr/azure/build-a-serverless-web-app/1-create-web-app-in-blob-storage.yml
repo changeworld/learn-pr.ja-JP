@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage
-title: <span data-ttu-id="2931e-101">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="2931e-101">Create a web app in Azure Blob storage</span></span>
+title: <span data-ttu-id="60238-101">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="60238-101">Create a web app in Azure Blob storage</span></span>
 metadata:
-  title: <span data-ttu-id="2931e-102">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="2931e-102">Create a web app in Azure Blob storage</span></span>
-  description: <span data-ttu-id="2931e-103">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="2931e-103">Create a web app in Azure Blob storage</span></span>
-  ms.openlocfilehash: 49e0bc88e5f57f388b328497f8611b9a0773300a
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="60238-102">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="60238-102">Create a web app in Azure Blob storage</span></span>
+  description: <span data-ttu-id="60238-103">Azure Blob Storage で Web アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="60238-103">Create a web app in Azure Blob storage</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: eb7a82f2856f81635706572626fa47a0baf63f26
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791170"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236010"
 durationInMinutes: 10
 interactive: bash-editor
 content: '[!include[](includes/1-create-web-app-in-blob-storage.md)]'

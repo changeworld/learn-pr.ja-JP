@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.1-introduction
-title: <span data-ttu-id="86d54-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="86d54-101">Introduction</span></span>
+title: <span data-ttu-id="ab627-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab627-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="86d54-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="86d54-102">Introduction</span></span>
-  description: <span data-ttu-id="86d54-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="86d54-103">Introduction</span></span>
-  ms.openlocfilehash: 5ff849a89a66a3361595b4861288b7651f24b565
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="ab627-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab627-102">Introduction</span></span>
+  description: <span data-ttu-id="ab627-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="ab627-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 008b4b36bb314e44ed59cc7fad6ef3fb556bd85a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835310"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243677"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

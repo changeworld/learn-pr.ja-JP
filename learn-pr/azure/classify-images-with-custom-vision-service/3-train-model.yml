@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.3-train-model
-title: <span data-ttu-id="7791f-101">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="7791f-101">Train the model</span></span>
+title: <span data-ttu-id="2396d-101">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="2396d-101">Train the model</span></span>
 metadata:
-  title: <span data-ttu-id="7791f-102">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="7791f-102">Train the model</span></span>
-  description: <span data-ttu-id="7791f-103">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="7791f-103">Train the model</span></span>
-  ms.openlocfilehash: fdeeac99c1c61f8b3e88e6a420171ea42d522ffb
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="2396d-102">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="2396d-102">Train the model</span></span>
+  description: <span data-ttu-id="2396d-103">モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="2396d-103">Train the model</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3c73c23c9da66117d67fb9d7750f15dd0af347ec
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228033"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233103"
 durationInMinutes: 5
 content: '[!include[](includes/3-train-model.md)]'

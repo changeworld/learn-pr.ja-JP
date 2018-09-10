@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.1-introduction
+title: <span data-ttu-id="a5e14-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="a5e14-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="a5e14-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="a5e14-102">Introduction</span></span>
+  description: <span data-ttu-id="a5e14-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="a5e14-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: db31a5dc0a7e5b60f63c4fe72d9388720653b165
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239555"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'
