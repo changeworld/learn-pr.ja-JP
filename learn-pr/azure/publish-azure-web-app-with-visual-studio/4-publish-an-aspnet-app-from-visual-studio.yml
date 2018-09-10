@@ -4,11 +4,16 @@ title: Mac または PC で実行されている Visual Studio から ASP.NET �
 metadata:
   title: Mac または PC で実行されている Visual Studio から ASP.NET アプリを発行する
   description: Mac または PC で実行されている Visual Studio から ASP.NET アプリを発行する
-  ms.openlocfilehash: f1d3774d05ed6de6eccfa4375c0b13566fcbfe22
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d3bf390b49eb70a603e21675613a3f3a7e5b9f4a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836659"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231534"
 durationInMinutes: 5
 content: '[!include[](includes/4-publish-an-aspnet-app-from-visual-studio.md)]'

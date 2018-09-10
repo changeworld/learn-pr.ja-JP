@@ -4,11 +4,16 @@ title: モデルのテスト
 metadata:
   title: モデルのテスト
   description: モデルのテスト
-  ms.openlocfilehash: bf3cdde413da31f26efb7dcc6d2073e9881b1adb
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 35b276bd9c7f9e761e943f9884b834e71013fe4e
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43227905"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236894"
 durationInMinutes: 5
 content: '[!include[](includes/4-test-model.md)]'

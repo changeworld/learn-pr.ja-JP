@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
-uid: execute-azure-function-with-triggers.1-introduction
+uid: learn.execute-azure-function-with-triggers.1-introduction
 title: はじめに
 metadata:
   title: はじめに
   description: はじめに
-  ms.openlocfilehash: 42d62816a169980461b2b00542c06926f6c8819f
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 914750ba33b09cba04b4c949073847c602bf23fb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40444067"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44238849"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

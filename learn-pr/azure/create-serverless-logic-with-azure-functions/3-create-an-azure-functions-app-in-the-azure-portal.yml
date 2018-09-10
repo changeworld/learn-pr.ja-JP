@@ -4,11 +4,16 @@ title: Azure portal で関数アプリを作成する
 metadata:
   title: Azure portal で関数アプリを作成する
   description: Azure portal で関数アプリを作成する
-  ms.openlocfilehash: 552dc0a2bb4da8c78178148f4f25c0931ae37e5a
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1bfe3cac83634ead676c66dfd826ad93d863f046
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791204"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237557"
 durationInMinutes: 5
 content: '[!include[](includes/3-create-an-azure-functions-app-in-the-azure-portal.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.3-create-an-azure-account
+title: Azure アカウントのオプション
+metadata:
+  title: Azure アカウントのオプション
+  description: Azure アカウントのオプション
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bbf15fba11467d7a9d7646997836b412f30554f0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239280"
+durationInMinutes: 5
+content: '[!include[](includes/3-create-an-azure-account.md)]'

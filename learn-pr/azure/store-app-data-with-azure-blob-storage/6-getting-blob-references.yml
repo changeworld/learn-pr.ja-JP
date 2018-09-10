@@ -4,12 +4,17 @@ title: BLOB 参照の取得
 metadata:
   title: BLOB 参照の取得
   description: BLOB 参照の取得
-  ms.openlocfilehash: fe9d8d3308c82489c1d1447e1bd373620448ab78
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: dd299cbce77d9e644dac3659c964b9a926ccc355
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443002"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230859"
 durationInMinutes: 10
 interactive: bash-editor
 content: '[!include[](includes/6-getting-blob-references.md)]'

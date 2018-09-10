@@ -4,11 +4,16 @@ title: アプリを更新する
 metadata:
   title: アプリを更新する
   description: アプリを更新する
-  ms.openlocfilehash: c286ab84ccd88b125640c643f048e988063cbf7f
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f12c89dd5d8efc1767a2b7d6cd25be9a874675dc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835436"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244000"
 durationInMinutes: 5
 content: '[!include[](includes/6-update-your-app.md)]'

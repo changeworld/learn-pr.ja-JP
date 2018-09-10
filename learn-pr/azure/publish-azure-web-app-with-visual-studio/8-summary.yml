@@ -4,11 +4,16 @@ title: まとめ
 metadata:
   title: まとめ
   description: まとめ
-  ms.openlocfilehash: f5161fe0684eb6d148e6561542508dd67b4293b3
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 80c85f7d372aac815c8320f8931352ae77a26f23
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835982"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233585"
 durationInMinutes: 3
 content: '[!include[](includes/8-summary.md)]'

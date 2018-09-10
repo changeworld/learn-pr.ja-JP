@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.6-how-to-programmatically-access-a-queue
+title: プログラムでキューにアクセスする
+metadata:
+  title: プログラムでキューにアクセスする
+  description: プログラムでキューにアクセスする
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8e21f89791fb1c00dfc62dd5f5d71cf6142d8b7f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242317"
+durationInMinutes: 5
+content: '[!include[](includes/6-how-to-programmatically-access-a-queue.md)]'

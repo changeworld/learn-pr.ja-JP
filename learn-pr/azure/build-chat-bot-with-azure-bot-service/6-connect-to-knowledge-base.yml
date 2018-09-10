@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
+title: ボットをナレッジ ベースに接続する
+metadata:
+  title: ボットをナレッジ ベースに接続する
+  description: ボットをナレッジ ベースに接続する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9e9e2064a3650945ddb7389477a62fdbfd7e3ed0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233205"
+durationInMinutes: 10
+content: '[!include[](includes/6-connect-to-knowledge-base.md)'

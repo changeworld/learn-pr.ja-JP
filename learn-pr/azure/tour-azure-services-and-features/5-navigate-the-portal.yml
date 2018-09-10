@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.5-navigate-the-portal
+title: ポータルを操作する
+metadata:
+  title: ポータルを操作する
+  description: ポータルを操作する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 66a0741f91b9a7bf0198d13bf7fa693915344682
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230094"
+durationInMinutes: 10
+content: '[!include[](includes/5-navigate-the-portal.md)]'

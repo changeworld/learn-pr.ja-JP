@@ -4,11 +4,16 @@ title: Data Science VM に接続する
 metadata:
   title: Data Science VM に接続する
   description: Data Science VM に接続する
-  ms.openlocfilehash: 7818ed0028d2d26a0663ec7a688099afd5523916
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: dcecf848398967e4174db392a33d9036ed60da79
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791527"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244450"
 durationInMinutes: 5
 content: '[!include[](includes/2-connect-to-dsvm.md)]'

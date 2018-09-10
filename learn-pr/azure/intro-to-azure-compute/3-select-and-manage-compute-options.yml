@@ -4,11 +4,16 @@ title: コンピューティング オプションの選択および管理
 metadata:
   title: コンピューティング オプションの選択および管理
   description: コンピューティング オプションの選択および管理
-  ms.openlocfilehash: 3b54be616ca10336314f74640a2b505c6538373c
-  ms.sourcegitcommit: 0e0cc41b7669e7149541f34f3f24ba0e864ed07d
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7efbfb2caf77c949beb7b6a6f1e1c53ab7083e3c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/23/2018
-  ms.locfileid: "42702768"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235398"
 durationInMinutes: 7
 content: '[!include[](includes/3-select-and-manage-compute-options.md)]'

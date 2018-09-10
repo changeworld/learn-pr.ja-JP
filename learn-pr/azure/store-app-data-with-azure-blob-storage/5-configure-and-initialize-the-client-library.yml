@@ -4,12 +4,17 @@ title: クライアント ライブラリを構成して初期化する
 metadata:
   title: クライアント ライブラリを構成して初期化する
   description: クライアント ライブラリを構成して初期化する
-  ms.openlocfilehash: c7cc43321a9dc94f71e7689a47ca31e8fe7c774c
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8744fec530af1a6a8ff4d555b7945c37aa4338d6
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443821"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231811"
 durationInMinutes: 10
 interactive: bash-editor
 content: '[!include[](includes/5-configure-and-initialize-the-client-library.md)]'

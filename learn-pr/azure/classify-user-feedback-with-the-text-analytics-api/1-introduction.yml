@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.1-introduction
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.openlocfilehash: 49dba63febbf667d96f7e27ed8e1e71e4d230914
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258129"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

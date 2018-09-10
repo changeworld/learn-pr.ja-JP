@@ -3,12 +3,17 @@ uid: learn.intro-to-containers.4-container-images
 metadata:
   title: カスタム コンテナー イメージを作成する
   description: カスタム コンテナー イメージを作成します。
-  ms.openlocfilehash: 55ea5019557a2ebf11856a9a5391fc6834ac4fe6
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 494d022a4838448975cf69c8d5a4e089dfa1aa44
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43727123"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234191"
 title: カスタム コンテナー イメージを作成する
 durationInMinutes: 20
 content: '[!include[](includes/4-container-images.md)]'

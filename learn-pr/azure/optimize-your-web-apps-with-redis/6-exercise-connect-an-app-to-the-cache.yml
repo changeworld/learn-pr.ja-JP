@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.6-exercise-connect-an-app-to-the-cache
+title: キャッシュにアプリを接続する
+metadata:
+  title: キャッシュにアプリを接続する
+  description: キャッシュにアプリを接続する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 215a01f9a2ee377c554d34806f815b5295500343
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258338"
+interactive: bash
+durationInMinutes: 10
+content: '[!include[](includes/6-exercise-connect-an-app-to-the-cache.md)]'

@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: ネットワークのパフォーマンスを最適化する
+metadata:
+  title: ネットワークのパフォーマンスを最適化する
+  description: このユニットでは、アーキテクチャのネットワーク パフォーマンスを最適化する方法について説明します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 17e61feab838fa6c88befcd8164cd46b8b7b1dd2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231352"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: 知識チェック - ネットワーク パフォーマンスを最適化する
+  questions:
+  - content: ネットワーク待ち時間とは
+    choices:
+    - content: ネットワーク上で利用できるスループットの量
+      isCorrect: false
+      incorrectExplanation: ネットワーク スループットは容量の尺度であり、ネットワーク待ち時間とは異なります。
+    - content: 送信元から宛先に情報を送信するときの所要時間
+      isCorrect: true
+      correctExplanation: 送信元から宛先に情報を送信するときの所要時間はネットワーク待ち時間と呼ばれます。
+    - content: コンテンツ配信ネットワーク内の資産の TTL
+      isCorrect: false
+      incorrectExplanation: コンテンツ配信ネットワーク上の資産の TTL は、元のソースから更新される頻度に関係しており、ネットワーク待ち時間とは無関係です。
+    - content: オンプレミス ネットワークと Azure 間の専用回線
+      isCorrect: false
+      incorrectExplanation: ExpressRoute は、オンプレミス ネットワークと Azure 間の専用回線です。ExpressRoute により待ち時間を短縮できますが、用語の定義ではありません。
+  - content: Web アプリケーションが米国東部でホストされています。 次のうち、世界各地に存在するユーザーのネットワーク待ち時間を最もコスト効率よく最適化するものはどれですか?
+    choices:
+    - content: ユーザーごとに ExpressRoute をデプロイする
+      isCorrect: false
+      incorrectExplanation: ExpressRoute は、ユーザーごとではなく、ネットワークの場所に対してプロビジョニングされます。 その場所のユーザーのパフォーマンスが向上する可能性がありますが、その場所以外のユーザーは ExpressRoute を使用しないため、パフォーマンスに影響はありません。
+    - content: コンテンツ配信ネットワークを使用して、資産とコンテンツをユーザーに近い場所に配置する
+      isCorrect: true
+      correctExplanation: コンテンツ配信ネットワークを使用すると、エンド ユーザーに物理的に近い場所に資産がキャッシュされるので、資産の読み込み時間が短縮されます。 これにより、世界中のユーザーのネットワーク待ち時間がコスト効率よく短縮されます。
+    - content: Traffic Manager をパフォーマンス ルーティング モードで使用する
+      isCorrect: false
+      incorrectExplanation: Traffic Manager は、リソースへの接続に要する時間を短縮するのに役立つ DNS ロード バランサーですが、Web サービスを複数の場所に配置する必要があるので、この問題に対処する最もコスト効率の良い方法ではありません。
+    - content: 余分なユーザー負荷に対応するために、米国東部に追加のインスタンスをデプロイする
+      isCorrect: false
+      incorrectExplanation: インスタンスを追加すると、米国東部のサービスが処理できる負荷量が増加しますが、世界中に分散したユーザーのネットワーク待ち時間に対処するわけではありません。

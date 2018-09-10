@@ -3,12 +3,17 @@ uid: learn.intro-to-containers.2-configure-local
 metadata:
   title: ローカル コンテナー開発環境の構成
   description: ローカル コンテナー開発環境を構成します。
-  ms.openlocfilehash: f33047eb1295ea2dd44904a8e2ddb1d78b413682
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 365b86322b9585abcedd1a61fdcf91840bae48bf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43727905"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246720"
 title: ローカル コンテナー開発環境の構成
 durationInMinutes: 10
 content: '[!include[](includes/2-configure-local.md)]'

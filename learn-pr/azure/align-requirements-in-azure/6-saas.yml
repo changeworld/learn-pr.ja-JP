@@ -4,11 +4,16 @@ title: サービスとしてのソフトウェア
 metadata:
   title: SaaS
   description: サービスとしてのソフトウェアについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します
-  ms.openlocfilehash: 6e5bf58b57212ddfd81295a5905899d33e109950
-  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f939c648eb04d8ea1e56249ed75d7bcddd85941b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43675390"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242691"
 durationInMinutes: 4
 content: '[!include[](includes/6-saas.md)]'

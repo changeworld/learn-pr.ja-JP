@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 5ccd145785d006ae1d68437d6dd5b61a33c5589b
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44045205"
+durationInMinutes: 5
+content: '[!include[](includes/7-summary.md)]'

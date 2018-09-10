@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.1-introduction
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 78cb78a292d59f8819df98939ca8a7405d62a699
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244221"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

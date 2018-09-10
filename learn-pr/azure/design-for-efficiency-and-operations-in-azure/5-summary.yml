@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.5-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ba91c6c83b40789202e1ae0c9b7d0a4f95744fbf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246975"
+durationInMinutes: 5
+content: '[!include[](includes/5-summary.md)]'
