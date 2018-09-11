@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
+title: <span data-ttu-id="47d34-101">Azure Functions を使用して BLOB ストレージに画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="47d34-101">Upload images to Blob storage with Azure Functions</span></span>
+metadata:
+  title: <span data-ttu-id="47d34-102">Azure Functions を使用して BLOB ストレージに画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="47d34-102">Upload images to Blob storage with Azure Functions</span></span>
+  description: <span data-ttu-id="47d34-103">Azure Functions を使用して BLOB ストレージに画像をアップロードします。</span><span class="sxs-lookup"><span data-stu-id="47d34-103">Upload images to Blob storage with Azure Functions.</span></span>
+  ms.openlocfilehash: ae58614478ec7ef44836aae04b1c0314a5981139
+  ms.sourcegitcommit: 1697ef50de6fbaf39175872148e70d87d7d9bd13
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42890323"
+durationInMinutes: 15
+interactive: bash-editor
+content: '[!include[](includes/2-upload-images-to-blob-storage.md)]'

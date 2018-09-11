@@ -2,13 +2,13 @@
 uid: learn.manage-vms-with-azure-cli
 metadata:
   title: Azure CLI ツールを使用して仮想マシンを管理する
-  description: クロスプラットフォームの Azure CLI を使用して、Azure 内の仮想マシンに関連した他の管理タスクを作成、開始、停止、実行する方法を説明します。
-  ms.openlocfilehash: c4c651aca73f36e32f2c849ed968f3eb8bdfb393
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  description: クロスプラットフォームの Azure CLI を使用して Azure 内の仮想マシンの作成、開始、停止や仮想マシン関連のその他の管理タスクを実行する方法を学習します。
+  ms.openlocfilehash: 1564240b36b2fa28dd95f871553db0a7d9c137f9
+  ms.sourcegitcommit: a873d63b19d04cd5b6faa6380e562888dc4a6166
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40443636"
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43055405"
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -16,12 +16,16 @@ roles:
 - developer
 - administrator
 products:
-- Azure
+- azure
+- azure cli 2.0
+- azure virtual machines
 title: Azure CLI ツールを使用して仮想マシンを管理する
-summary: クロスプラットフォームの Azure CLI を使用して、Azure 内の仮想マシンに関連した他の管理タスクを作成、開始、停止、実行する方法を説明します。
-cardDescription: クロスプラットフォームの Azure CLI を使用して、Azure 内の仮想マシンに関連した他の管理タスクを作成、開始、停止、実行する方法を説明します。
+summary: クロスプラットフォームの Azure CLI を使用して Azure 内の仮想マシンの作成、開始、停止や仮想マシン関連のその他の管理タスクを実行する方法を学習します。
+cardDescription: クロスプラットフォームの Azure CLI を使用して Azure 内の仮想マシンの作成、開始、停止や仮想マシン関連のその他の管理タスクを実行する方法を学習します。
 abstract: >
-  * Azure CLI を使用した仮想マシンの作成
+  このモジュールでは、次のことを行います。
+
+  * Azure CLI を使用して仮想マシンを作成する
 
   * Azure CLI を使用して基本的な管理タスクを実行する
 

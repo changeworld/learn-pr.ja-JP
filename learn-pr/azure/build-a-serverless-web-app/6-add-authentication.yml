@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.6-add-authentication
+title: <span data-ttu-id="6ebd8-101">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6ebd8-101">Add authentication</span></span>
+metadata:
+  title: <span data-ttu-id="6ebd8-102">認証を追加する</span><span class="sxs-lookup"><span data-stu-id="6ebd8-102">Add authentication</span></span>
+  description: <span data-ttu-id="6ebd8-103">認証を追加します。</span><span class="sxs-lookup"><span data-stu-id="6ebd8-103">Add authentication.</span></span>
+  ms.openlocfilehash: 8a64428f1a5406359e8ed8e146ba1a50ee787282
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154744"
+durationInMinutes: 8
+interactive: bash-editor
+content: '[!include[](includes/6-add-authentication.md)]'

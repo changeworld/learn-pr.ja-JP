@@ -1,0 +1,60 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.7-knowledge-check
+title: <span data-ttu-id="21e76-101">知識の確認 - IaaS、PaaS、SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-101">Knowledge check - IaaS, PaaS & SaaS</span></span>
+metadata:
+  title: <span data-ttu-id="21e76-102">知識の確認 - IaaS、PaaS、SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-102">Knowledge check - IaaS, PaaS & SaaS</span></span>
+  description: <span data-ttu-id="21e76-103">知識の確認 - IaaS、PaaS、SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-103">Knowledge check - IaaS, PaaS & SaaS</span></span>
+  ms.openlocfilehash: 89b732ce3ec1a229e057799df1ab24e4f8cee520
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252495"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="21e76-104">知識の確認 - IaaS、PaaS、SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-104">Knowledge check - IaaS, PaaS & SaaS</span></span>
+  questions:
+  - content: <span data-ttu-id="21e76-105">次のシナリオの場合、使用するのに最適なクラウド サービス モデルとは?</span><span class="sxs-lookup"><span data-stu-id="21e76-105">Given the following scenario, what the best the cloud service model to use?</span></span> <span data-ttu-id="21e76-106">短期プロジェクトのために、SQL Server データベースが必要です。</span><span class="sxs-lookup"><span data-stu-id="21e76-106">A SQL Server database is needed for a short-term project.</span></span> <span data-ttu-id="21e76-107">IT 部門には、パフォーマンス要件またはデプロイするためのリソースを満たしている利用可能なハードウェアがありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-107">The IT department does not have available hardware that meets the performance requirements or resources to deploy it.</span></span> <span data-ttu-id="21e76-108">プロジェクトは、次の週に始まります。</span><span class="sxs-lookup"><span data-stu-id="21e76-108">The project starts next week.</span></span> <span data-ttu-id="21e76-109">プロジェクトが終了すると、データベースは必要なくなります。</span><span class="sxs-lookup"><span data-stu-id="21e76-109">Once the project is over, the database is no longer needed.</span></span>
+    choices:
+    - content: <span data-ttu-id="21e76-110">IaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-110">IaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-111">仮想マシンを作成して、SQL Server をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="21e76-111">You could create a virtual machine and install SQL Server.</span></span> <span data-ttu-id="21e76-112">しかし、データベースはすぐに必要です。</span><span class="sxs-lookup"><span data-stu-id="21e76-112">However, the database is needed quickly.</span></span> <span data-ttu-id="21e76-113">誰かがプロジェクト用に SQL Database をインストールして管理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="21e76-113">Someone would need to install and maintain the SQL database for the project.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="21e76-114">PaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-114">PaaS</span></span>
+      correctExplanation: <span data-ttu-id="21e76-115">直ちに必要で、利用できるハードウェアがなく、短期であるため、PaaS が最適なオプションです。</span><span class="sxs-lookup"><span data-stu-id="21e76-115">Because of the immediate need, no available hardware, and short lifetime, PaaS is the best option.</span></span> <span data-ttu-id="21e76-116">たとえば、ソリューションとして Azure SQL Database を使用できます。</span><span class="sxs-lookup"><span data-stu-id="21e76-116">For example, you could use Azure SQL Database for the solution.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="21e76-117">SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-117">SaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-118">要件は、サービスとして提供される SQL Database です。</span><span class="sxs-lookup"><span data-stu-id="21e76-118">The requirement is a SQL database delivered as a service.</span></span> <span data-ttu-id="21e76-119">SaaS はこのシナリオには適用されません。</span><span class="sxs-lookup"><span data-stu-id="21e76-119">SaaS would not apply for this scenario.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="21e76-120">次のシナリオの場合のクラウド サービス モデルとは? </span><span class="sxs-lookup"><span data-stu-id="21e76-120">Given the following scenario, what is the cloud service model?</span></span> <span data-ttu-id="21e76-121">クラウド内でいくつかの仮想マシンを作成します。</span><span class="sxs-lookup"><span data-stu-id="21e76-121">You create several virtual machines in the cloud.</span></span> <span data-ttu-id="21e76-122">VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。</span><span class="sxs-lookup"><span data-stu-id="21e76-122">The VMs are networked together using a virtual network.</span></span> <span data-ttu-id="21e76-123">VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="21e76-123">The VMs have access to x-ray image files in cloud storage.</span></span> <span data-ttu-id="21e76-124">1 つの仮想マシンは、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。</span><span class="sxs-lookup"><span data-stu-id="21e76-124">One virtual machine is a web server that hosts a website exposed to the internet for customers to access their records.</span></span> <span data-ttu-id="21e76-125">画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。</span><span class="sxs-lookup"><span data-stu-id="21e76-125">There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.</span></span>
+    choices:
+    - content: <span data-ttu-id="21e76-126">IaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-126">IaaS</span></span>
+      correctExplanation: <span data-ttu-id="21e76-127">このシナリオで使用されるリソースはすべて、IaaS を使用して実装できます。</span><span class="sxs-lookup"><span data-stu-id="21e76-127">All the resources used in this scenario can be implemented using IaaS.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="21e76-128">PaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-128">PaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-129">ソリューションの一部のみを PaaS を使用して実装できます。</span><span class="sxs-lookup"><span data-stu-id="21e76-129">Only part of the solution could be implemented using PaaS.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="21e76-130">SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-130">SaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-131">これはカスタム ソリューションのため、この機能を提供する SaaS サービスはないと推測されます。</span><span class="sxs-lookup"><span data-stu-id="21e76-131">Since this is a custom solution, we can assume there isn't a SaaS offering that delivers this functionality.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="21e76-132">次のシナリオの場合に最適なクラウド サービス モデルとは? </span><span class="sxs-lookup"><span data-stu-id="21e76-132">Given the following scenario, what is the best cloud service model?</span></span> <span data-ttu-id="21e76-133">小さなスタートアップ企業を設立します。</span><span class="sxs-lookup"><span data-stu-id="21e76-133">You create a small start-up company.</span></span> <span data-ttu-id="21e76-134">共同作業を行う必要がある従業員が少数います。</span><span class="sxs-lookup"><span data-stu-id="21e76-134">You have a handful of employees who need to collaborate.</span></span> <span data-ttu-id="21e76-135">従業員は電子メール、予定表のスケジュール、およびドキュメントを保存する場所が必要です。</span><span class="sxs-lookup"><span data-stu-id="21e76-135">They need email, calendar scheduling, and somewhere to store documents.</span></span> <span data-ttu-id="21e76-136">チームは技術職ですが、ソリューションを実装および管理するための時間やハードウェアはありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-136">The team is technical but do not have the time or hardware to implement and manage a solution.</span></span>
+    choices:
+    - content: <span data-ttu-id="21e76-137">IaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-137">IaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-138">仮想マシンを使ってコラボレーション ソフトウェアをインストールすることで機能を得ることができますが、インストールや管理を行うには時間がかかります。</span><span class="sxs-lookup"><span data-stu-id="21e76-138">While you could achieve the functionality using virtual machines and installing collaboration software, this would take time to install and manage.</span></span> <span data-ttu-id="21e76-139">チームにはこのオプションを使うための時間がありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-139">The team does not have time to use this option.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="21e76-140">PaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-140">PaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-141">チームには、要件を満たす PaaS ソリューションを作成する時間がありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-141">The team does not have time to create a PaaS solution to meet the requirements.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="21e76-142">SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-142">SaaS</span></span>
+      correctExplanation: <span data-ttu-id="21e76-143">Office 365 などの SaaS ソリューションが、コラボレーションの要件に最適なソリューションです。</span><span class="sxs-lookup"><span data-stu-id="21e76-143">A SaaS solution such as Office 365 would be a good solution for the collaboration requirements.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="21e76-144">次のシナリオの場合のクラウド サービス モデルとは? </span><span class="sxs-lookup"><span data-stu-id="21e76-144">Given the following scenario, what is the cloud service model?</span></span> <span data-ttu-id="21e76-145">お客様の組織にはデータセンターが 2 か所あります。</span><span class="sxs-lookup"><span data-stu-id="21e76-145">You have two datacenters in your organization.</span></span> <span data-ttu-id="21e76-146">一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。</span><span class="sxs-lookup"><span data-stu-id="21e76-146">One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement.</span></span> <span data-ttu-id="21e76-147">もう一方のデータセンターからそのデータベースにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="21e76-147">You want to access the database from the other datacenter.</span></span> <span data-ttu-id="21e76-148">2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。</span><span class="sxs-lookup"><span data-stu-id="21e76-148">You create a VPN using a cloud provider to connect the two datacenters.</span></span>
+    choices:
+    - content: <span data-ttu-id="21e76-149">IaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-149">IaaS</span></span>
+      correctExplanation: <span data-ttu-id="21e76-150">このソリューションを実装するには、IaaS VPN を使用できます。</span><span class="sxs-lookup"><span data-stu-id="21e76-150">You can use an IaaS VPN to implement this solution.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="21e76-151">PaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-151">PaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-152">VPN はインフラストラクチャ リソースです。</span><span class="sxs-lookup"><span data-stu-id="21e76-152">VPN is an infrastructure resource.</span></span> <span data-ttu-id="21e76-153">VPN は PaaS ソリューションではありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-153">VPN is not a PaaS solution.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="21e76-154">SaaS</span><span class="sxs-lookup"><span data-stu-id="21e76-154">SaaS</span></span>
+      incorrectExplanation: <span data-ttu-id="21e76-155">VPN はインフラストラクチャ リソースです。</span><span class="sxs-lookup"><span data-stu-id="21e76-155">VPN is an infrastructure resource.</span></span> <span data-ttu-id="21e76-156">VPN は SaaS ソリューションではありません。</span><span class="sxs-lookup"><span data-stu-id="21e76-156">VPN is not a SaaS solution.</span></span>
+      isCorrect: false

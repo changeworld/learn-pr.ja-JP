@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.5-add-captions-with-computer-vision
+title: <span data-ttu-id="55c52-101">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="55c52-101">Add image captions with Cognitive Services Computer Vision</span></span>
+metadata:
+  title: <span data-ttu-id="55c52-102">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="55c52-102">Add image captions with Cognitive Services Computer Vision</span></span>
+  description: <span data-ttu-id="55c52-103">Cognitive Services Computer Vision を使用して画像のキャプションを追加します。</span><span class="sxs-lookup"><span data-stu-id="55c52-103">Add image captions with Cognitive Services Computer Vision.</span></span>
+  ms.openlocfilehash: c871e1aa05440b3f61c78eddbbc5a48ebddcf26a
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154050"
+durationInMinutes: 9
+interactive: bash-editor
+content: '[!include[](includes/5-add-captions-with-computer-vision.md)]'

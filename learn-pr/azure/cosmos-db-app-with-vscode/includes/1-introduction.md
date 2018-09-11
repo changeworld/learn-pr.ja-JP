@@ -1,0 +1,13 @@
+<span data-ttu-id="74c94-101">オンライン小売業者のストレージを管理しているとします。</span><span class="sxs-lookup"><span data-stu-id="74c94-101">Imagine you're managing storage for an online retailer.</span></span> <span data-ttu-id="74c94-102">ユーザーおよび製品データを作成、更新、削除するためのツールが必要です。</span><span class="sxs-lookup"><span data-stu-id="74c94-102">You need tools to create, update, and delete your user and product data.</span></span> <span data-ttu-id="74c94-103">Azure Cosmos DB では、.NET、.NET Core、Java、Node、および Python 用の SDK が提供されています。</span><span class="sxs-lookup"><span data-stu-id="74c94-103">Azure Cosmos DB provides SDKs for .NET, .NET Core, Java, Node, and Python.</span></span>
+
+<span data-ttu-id="74c94-104">このモジュールでは、Visual Studio Code で .NET Core コンソール アプリケーションをビルドして、C# を使用してユーザー レコードの作成、更新、削除、データのクエリを行い、ストアド プロシージャを実行します。</span><span class="sxs-lookup"><span data-stu-id="74c94-104">In this module, you will build a .NET Core console application in Visual Studio Code to create, update, and delete user records, query your data, and perform stored procedures using C#.</span></span>
+
+<span data-ttu-id="74c94-105">Visual Studio には、Azure Cosmos DB 用に便利な拡張機能があるので、前のモジュールで作成したデータベース、コレクション、およびドキュメントを簡単に確認できます。また、この拡張機能を使用して新しいリソースを作成し、Azure portal ポータルを開くことなく接続文字列をコピーすることもできます。</span><span class="sxs-lookup"><span data-stu-id="74c94-105">Visual Studio has a convenient extension for Azure Cosmos DB so you can easily see the database, collection, and documents you created in the previous modules, plus you can create new resources using the extension, and copy your connection string without having to open the Azure portal.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="74c94-106">学習の目的</span><span class="sxs-lookup"><span data-stu-id="74c94-106">Learning objectives</span></span>
+
+<span data-ttu-id="74c94-107">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="74c94-107">In this module, you will:</span></span>  
+
+- <span data-ttu-id="74c94-108">Azure Cosmos DB でデータの格納とクエリを行うアプリケーションを作成します。</span><span class="sxs-lookup"><span data-stu-id="74c94-108">Create an application to store and query data in Azure Cosmos DB.</span></span>
+- <span data-ttu-id="74c94-109">Visual Studio Code で統合ターミナルを使用してコンソール アプリケーションをすばやく作成します。</span><span class="sxs-lookup"><span data-stu-id="74c94-109">Use the Integrated Terminal in Visual Studio code to quickly create a console application</span></span>
+- <span data-ttu-id="74c94-110">Visual Studio Code 用 Azure Cosmos DB 拡張機能を利用して Azure Cosmos DB の機能を追加します。</span><span class="sxs-lookup"><span data-stu-id="74c94-110">Add Azure Cosmos DB functionality with the help of the Azure Cosmos DB extension for Visual Studio Code.</span></span>

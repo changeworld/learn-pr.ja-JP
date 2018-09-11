@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+title: <span data-ttu-id="8c3cb-101">Cost Management と Azure Advisor で予測および最適化する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-101">Predict and optimize with Cost Management and Azure Advisor</span></span>
+metadata:
+  title: <span data-ttu-id="8c3cb-102">Cost Management と Azure Advisor で予測および最適化する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-102">Predict and optimize with Cost Management and Azure Advisor</span></span>
+  description: <span data-ttu-id="8c3cb-103">このユニットでは、Cost Management と Azure Advisor を使用して予測および最適化する方法を説明します</span><span class="sxs-lookup"><span data-stu-id="8c3cb-103">In this unit, we'll discuss how to predict and optimize with Cost Management and Azure Advisor</span></span>
+  ms.openlocfilehash: b49ee199391539f75bcea8cc1044d6df92e20f50
+  ms.sourcegitcommit: 81cb0c300be030565fb0b7c5b57413c4a2aa5410
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/28/2018
+  ms.locfileid: "43141570"
+durationInMinutes: 15
+content: >
+  [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
+quiz:
+  title: <span data-ttu-id="8c3cb-104">Cost Management と Azure Advisor で予測および最適化する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-104">Predict and optimize with Cost Management and Azure Advisor</span></span>
+  questions:
+  - content: <span data-ttu-id="8c3cb-105">Azure Advisor では、コストについての推奨事項だけが提供されます。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-105">Azure Advisor provides recommendations on cost only.</span></span>
+    choices:
+    - content: <span data-ttu-id="8c3cb-106">True</span><span class="sxs-lookup"><span data-stu-id="8c3cb-106">True</span></span>
+      incorrectExplanation: <span data-ttu-id="8c3cb-107">Azure Advisor では、高可用性、セキュリティ、パフォーマンス、コストについての推奨事項が示されます。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-107">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="8c3cb-108">False</span><span class="sxs-lookup"><span data-stu-id="8c3cb-108">False</span></span>
+      correctExplanation: <span data-ttu-id="8c3cb-109">Azure Advisor では、高可用性、セキュリティ、パフォーマンス、コストについての推奨事項が示されます。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-109">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="8c3cb-110">Azure Cost Management では、_________ことができます。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-110">Azure Cost Management allows you to _________.</span></span>
+    choices:
+    - content: <span data-ttu-id="8c3cb-111">料金が支払われているサービスのこれまでの内訳を確認する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-111">See historical breakdowns of what services you are spending your money on.</span></span>
+      correctExplanation: <span data-ttu-id="8c3cb-112">これまでに支払われた料金の明細を分析し、設定されている予算との差異を追跡する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-112">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="8c3cb-113">変更を行った場合のサービスのコストの見積もりを確認する</span><span class="sxs-lookup"><span data-stu-id="8c3cb-113">See estimates of what your services might cost if you make a change.</span></span>
+      incorrectExplanation: <span data-ttu-id="8c3cb-114">コストを見積もるには、Azure 料金計算ツールを使用します。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-114">To see cost estimates, you use the Azure pricing calculator.</span></span> <span data-ttu-id="8c3cb-115">Cost Management により、これまでに支払われた料金の明細が分析され、設定されている予算との差異が追跡されます。</span><span class="sxs-lookup"><span data-stu-id="8c3cb-115">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: false

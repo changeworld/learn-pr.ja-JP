@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.3-service-models
+title: <span data-ttu-id="cfee4-101">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="cfee4-101">Cloud service models</span></span>
+metadata:
+  title: <span data-ttu-id="cfee4-102">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="cfee4-102">Cloud service models</span></span>
+  description: <span data-ttu-id="cfee4-103">クラウド サービス モデル</span><span class="sxs-lookup"><span data-stu-id="cfee4-103">Cloud service models</span></span>
+  ms.openlocfilehash: 4cfd2d12b1985194bbdf8dc76daf8a523f378745
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42820481"
+durationInMinutes: 5
+content: '[!include[](includes/3-service-models.md)]'

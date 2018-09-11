@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.connect-app-to-azure-storage
+metadata:
+  title: Azure Storage へのアプリの接続
+  description: Azure Storage は、使用するアプリケーション データを、データの種類に関係なく格納する柔軟でシンプルな方法です。 このモジュールでは、.NET Core コンソール アプリケーションを作成し、クライアント ライブラリを使用して Azure Storage に接続する方法を示します。
+  ms.openlocfilehash: 103e84360f6fa44929577ee27933a5a35c8bd72b
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228885"
+title: Azure Storage へのアプリの接続
+summary: .NET Core コンソール アプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+abstract: Azure Storage は、使用するアプリケーション データを、データの種類に関係なく格納する柔軟でシンプルな方法です。 このモジュールでは、.NET Core コンソール アプリケーションを作成し、クライアント ライブラリを使用して Azure Storage に接続する方法を示します。
+cardDescription: .NET Core コンソール アプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+units:
+- learn.connect-app-to-azure-storage.1-introduction
+- learn.connect-app-to-azure-storage.2-prepare-your-app-and-azure-storage-account
+- learn.connect-app-to-azure-storage.3-exercise-create-your-app-and-azure-storage-account
+- learn.connect-app-to-azure-storage.4-interact-with-azure-storage-apis
+- learn.connect-app-to-azure-storage.5-exercise-add-the-azure-storage-nuget-package
+- learn.connect-app-to-azure-storage.6-connect-to-your-azure-storage-account
+- learn.connect-app-to-azure-storage.7-exercise-add-azure-storage-configuration-to-your-app
+- learn.connect-app-to-azure-storage.8-initialize-the-storage-account-model
+- learn.connect-app-to-azure-storage.9-exercise-connect-with-your-azure-storage-configuration
+- learn.connect-app-to-azure-storage.10-knowledge-check
+- learn.connect-app-to-azure-storage.11-summary
+achievement: learn.connect-app-to-azure-storage.badge

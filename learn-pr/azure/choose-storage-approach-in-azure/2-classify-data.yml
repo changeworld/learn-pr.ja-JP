@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: <span data-ttu-id="134a7-101">データを分類する</span><span class="sxs-lookup"><span data-stu-id="134a7-101">Classify your data</span></span>
+  description: <span data-ttu-id="134a7-102">データを分類する</span><span class="sxs-lookup"><span data-stu-id="134a7-102">Classify your data</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 361eb3c2315493975eea2c6bcab89b3baaa21913
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252543"
+title: <span data-ttu-id="134a7-103">データを分類する</span><span class="sxs-lookup"><span data-stu-id="134a7-103">Classify your data</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: <span data-ttu-id="134a7-104">データの分類</span><span class="sxs-lookup"><span data-stu-id="134a7-104">Classifying your data</span></span>
+  questions:
+  - content: <span data-ttu-id="134a7-105">オンライン小売りアプリケーションではユーザー データも格納され、それにはユーザーの配送先住所、過去の注文、およびプロフィール情報 (提供されている場合) が含まれます。</span><span class="sxs-lookup"><span data-stu-id="134a7-105">Your online retail application also stores user data, which includes the users' shipping addresses, previous orders, and profile information if they're provided it.</span></span> <span data-ttu-id="134a7-106">ユーザー データには、将来の特定のユーザー用に他のフィールドが含まれる場合があります。</span><span class="sxs-lookup"><span data-stu-id="134a7-106">The user data may contain other fields for certain users in the future.</span></span> <span data-ttu-id="134a7-107">このデータ セットをどのように分類しますか。</span><span class="sxs-lookup"><span data-stu-id="134a7-107">How would you classify this data set?</span></span>
+    choices:
+    - content: <span data-ttu-id="134a7-108">構造化</span><span class="sxs-lookup"><span data-stu-id="134a7-108">Structured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="134a7-109">すべてのユーザーの情報が同じわけではないので、構造化された形式でこのデータを格納するのは理想的ではありません。</span><span class="sxs-lookup"><span data-stu-id="134a7-109">Storing this data in a structured format would not be ideal as not all of the users have the same information.</span></span>
+    - content: <span data-ttu-id="134a7-110">半構造化</span><span class="sxs-lookup"><span data-stu-id="134a7-110">Semi-structured</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="134a7-111">正解です。プロフィール情報を登録しないユーザーもおり、将来一部のユーザーに新しいフィールドを追加する可能性があるため、このユーザー データは半構造化されています。</span><span class="sxs-lookup"><span data-stu-id="134a7-111">Correct, this user data is semi-structured because not all users have profile informaiton, and you may add additional fields to some users in the future.</span></span> <span data-ttu-id="134a7-112">これは、すべてのデータが同じスキーマに従うわけではなく、データの各部分が固有の構造を持つ可能性があることを示すので、半構造化されたデータです。</span><span class="sxs-lookup"><span data-stu-id="134a7-112">This indicates the data does not all adhere to the same schema, and each piece of data may have a unique organization, so it is semi-structured.</span></span>
+    - content: <span data-ttu-id="134a7-113">非構造化</span><span class="sxs-lookup"><span data-stu-id="134a7-113">Unstructured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="134a7-114">非構造化形式のデータを処理するのは難しいので、非構造化データとしてユーザー データを格納することは推奨されません。</span><span class="sxs-lookup"><span data-stu-id="134a7-114">Storing the user data as unstructured data would not be recommended as it would be difficult to work with the data in an unstructured format.</span></span>
+  - content: <span data-ttu-id="134a7-115">非構造化データに構造化されたメタデータを関連付けることはできますか。</span><span class="sxs-lookup"><span data-stu-id="134a7-115">Can unstructured data have some structured meta-data accompanied with it?</span></span>
+    choices:
+    - content: <span data-ttu-id="134a7-116">はい</span><span class="sxs-lookup"><span data-stu-id="134a7-116">Yes</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="134a7-117">正解です。構造化されていないデータに、タイムスタンプ、場所スタンプ、デバイス ID などのメタデータを関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="134a7-117">Correct, unstructured data can have associated metadata such as a timestamp, a location stamp, or a device ID just to name a few.</span></span> <span data-ttu-id="134a7-118">メタデータを非構造化データに関連付けても、メイン エンティティの内部構造が構造化されていないという事実は変わりません。</span><span class="sxs-lookup"><span data-stu-id="134a7-118">Having metadata associated with the unstructured data does not change the fact that the internal structure of the main entity is unstructured.</span></span>
+    - content: <span data-ttu-id="134a7-119">いいえ</span><span class="sxs-lookup"><span data-stu-id="134a7-119">No</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="134a7-120">残念ですが、正解ではありません。</span><span class="sxs-lookup"><span data-stu-id="134a7-120">Sorry, that's not the correct answer.</span></span>
