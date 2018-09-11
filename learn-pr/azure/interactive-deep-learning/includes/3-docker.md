@@ -1,0 +1,16 @@
+## <a name="docker"></a><span data-ttu-id="ad4b1-101">Docker</span><span class="sxs-lookup"><span data-stu-id="ad4b1-101">Docker</span></span>
+
+![Docker のロゴ](../media/3-image1.PNG)
+
+<span data-ttu-id="ad4b1-103">Docker を使用すると、開発者は、ほとんどどこでも実行できる軽量で、ポータブルな、自己完結型のコンテナーとしてアプリケーションを簡単にパック、出荷、実行できます。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-103">Docker enables developers to easily pack, ship, and run any  application as a lightweight, portable, self-sufficient container, which can run virtually anywhere.</span></span> <span data-ttu-id="ad4b1-104">DSVM の基本イメージに最も一般的なディープ ラーニング フレームワークが事前インストールされている場合、Docker などのコンテナー化クライアントが必要なのはなぜでしょうか。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-104">If the DSVM base image comes with the most popular deep learning frameworks pre-installed, why is there a need for containerization clients such as Docker?</span></span>
+
+<span data-ttu-id="ad4b1-105">多くの場合、開発者はディープ ラーニング タスクを実行しようとすると、次のような依存関係の悪夢に直面します。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-105">Often when attempting to run deep learning tasks developers find themselves facing dependency nightmares, such as:</span></span> 
+
+- <span data-ttu-id="ad4b1-106">カスタム パッケージ作成の必要性 - ディープ ラーニングの研究者は、Git Hub にコードを発行するときに運用環境についてあまり考えない傾向があります。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-106">Having to build custom packages - Deep learning researchers tend to think less about production when they publish code to Git Hub.</span></span> <span data-ttu-id="ad4b1-107">研究者は、自分の開発環境でパッケージが動けば、通常、他のユーザーもできるものと単純に思い込みます。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-107">If they can get a package working on their own development environment, they often just assume that others will be able to do so as well.</span></span>
+- <span data-ttu-id="ad4b1-108">GPU ドライバーのバージョン管理 - CUDA は、Nvidia によって開発された並列コンピューティング プラットフォームおよびアプリケーション プログラミング インターフェイス (API) です。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-108">GPU driver versioning - CUDA is a parallel computing platform and application programming interface (API) developed by Nvidia.</span></span> <span data-ttu-id="ad4b1-109">ソフトウェア開発者やソフトウェア エンジニアはそれにより、CUDA 対応のグラフィックス処理装置 (GPU) を汎用処理に使用することができます。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-109">It allows software developers and software engineers to use a CUDA-enabled graphics processing unit (GPU) for general-purpose processing.</span></span> <span data-ttu-id="ad4b1-110">特定のバージョンの Tensorflow は 9.1 より後の CUDA のバージョンでは動作しませんが、PyTorch などの他のフレームワークでは新しいバージョンの CUDA の方がパフォーマンスが向上するようです。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-110">Certain versions of Tensorflow will not work with versions of CUDA above 9.1 but other frameworks such as PyTorch seem to perform better with later versions of CUDA.</span></span>
+
+<span data-ttu-id="ad4b1-111">これらの問題を回避し、コードの使いやすさを向上させるには、Docker またはその GPU バリエーションの Nvidia-Docker を使用して、ディープ ラーニング プロジェクトを管理および実行できます。</span><span class="sxs-lookup"><span data-stu-id="ad4b1-111">To get around these issues and to increase the usability of code, you can use Docker or its GPU variant Nvidia-Docker to manage and run deep learning projects.</span></span> 
+
+<!--Quiz 
+What is CUDA? 
+What versioning issues do deep learning engineers deal with? -->

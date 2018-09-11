@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.4-validate-your-connection
+title: <span data-ttu-id="17f5c-101">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="17f5c-101">Validate your connection and data flow</span></span>
+metadata:
+  title: <span data-ttu-id="17f5c-102">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="17f5c-102">Validate your connection and data flow</span></span>
+  description: <span data-ttu-id="17f5c-103">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="17f5c-103">Validate your connection and data flow</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5c74ae5fdf898a028701e808126cf362a28fb776
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243524"
+durationInMinutes: 12
+content: '[!include[](includes/4-validate-your-connection.md)]'

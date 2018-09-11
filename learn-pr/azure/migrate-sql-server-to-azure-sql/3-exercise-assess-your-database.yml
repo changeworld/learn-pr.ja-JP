@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.3-exercise-assess-your-database
+title: <span data-ttu-id="0adf0-101">データベースを評価する</span><span class="sxs-lookup"><span data-stu-id="0adf0-101">Assessing your database</span></span>
+metadata:
+  title: <span data-ttu-id="0adf0-102">データベースを評価する</span><span class="sxs-lookup"><span data-stu-id="0adf0-102">Assessing your database</span></span>
+  description: <span data-ttu-id="0adf0-103">データベースを評価する</span><span class="sxs-lookup"><span data-stu-id="0adf0-103">Assessing your database</span></span>
+  ms.openlocfilehash: 0fe2707404e69d91504f877ca7ed281da0100752
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833019"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-assess-your-database.md)]'
