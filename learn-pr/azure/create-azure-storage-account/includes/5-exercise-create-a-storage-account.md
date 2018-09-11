@@ -1,102 +1,107 @@
-In this unit, you will use the Azure portal to create a storage account that is appropriate for a fictitious southern California surf report web app.
+この演習では、Azure portal を使用して、南カリフォルニアの架空のサーフィン レポート Web App に適したストレージ アカウントを作成します。
 
-The surf report site lets users upload photos and videos of their local beach conditions. Viewers will use the content to help them choose the beach with the best surfing conditions. Your list of design and feature goals is:
+## <a name="design-goals"></a>デザインの目標
 
-- Video content must load quickly
-- The site must handle unexpected spikes in upload volume
-- Outdated content will be removed as surf conditions change so the site always shows current conditions
+このサーフィン レポート サイトでは、ユーザーが現地のビーチの状態の写真とビデオをアップロードすることができる。 表示するユーザーは、そのコンテンツを使って、サーフィンに最適な状態のビーチを選ぶことができる。 デザインと機能の目標は次のとおりです。
 
-You decide on an implementation that buffers uploaded content in an Azure Queue for processing and then moves it into an Azure Blob for storage. You need a storage account that can hold both queues and blobs while delivering low-latency access to your content.
+- ビデオ コンテンツはすばやく読み込まれる必要がある
+- このサイトではアップロード ボリュームの予期しない上昇を処理する必要がある
+- サーフィンの状態が変更されると、古くなったコンテンツは削除されるため、サイトでは常に現在の状態が示される
 
-## Use the Azure portal to create a storage account
+処理用の Azure キューでアップロードされたコンテンツをバッファー処理し、ストレージ用の Azure BLOB に移動する実装に決めます。 コンテンツに対して待機時間の短いアクセスを提供しながら、キューと BLOB の両方を保持できるストレージ アカウントが必要です。
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+## <a name="exercise-steps"></a>演習の手順
 
-1. In the top left of the Azure Portal, select **Create a resource**.
+### <a name="launch-the-blade"></a>ブレードを起動する
 
-1. In the selection panel that appears, select **Storage**.
+1. ご利用の Web ブラウザーから [Azure portal](https://portal.azure.com?azure-portal=true) に移動し、ご自分のアカウントでサインインします。
 
-1. On the right side of that pane, select **Storage account - blob, file, table, queue**.
+1. 左サイドバーで **[リソースの作成]** を選択します。
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Storage category and Storage account option highlighted.](..\media\5-portal-storage-select.png)
+1. Azure Marketplace で **[ストレージ]** 見出しを選択します。
 
-### Configure the basic options
+1. **[ストレージ アカウント]** を選択します。 ポータルに **[ストレージ アカウントを作成する]** ブレードが表示されます。
 
-Under **PROJECT DETAILS**:
+### <a name="configure-the-basic-options"></a>基本的なオプションを構成する
 
-1. Select the appropriate **Subscription**.
+1. ブレードの上部で **[基本]** タブを選択します。
 
-1. Select the existing Resource Group <rgn>[Sandbox resource group name]</rgn> from the drop-down list.
+1. **[サブスクリプション]**: ご使用のサブスクリプションのいずれかを選択します。
 
-    > [!NOTE]
-    > This free Resource Group has been provided by Microsoft as part of the learning experience. When you create an account for a real application, you will want to create a new Resource Group in your subscription to hold all the resources for the app.
+1. **[リソース グループ]**: 「**SurfReportResourceGroup**」という名前の新しいリソース グループを作成します。
 
-Under **INSTANCE DETAILS**:
+1. **[ストレージ アカウント名]**: グローバルに一意の値 (`surfreport` + イニシャル + 数字など) を入力します。
 
-1. Enter a **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long and can contain only lowercase letters and numbers.
+ 1. **[場所]**: **[米国西部]** を選択します。
 
-1. Select a **Location** near to you. 
+    根拠: このアプリケーションは、南カリフォルニアのユーザーを想定しています。 ビデオを読み込むときの待機時間を最小限に抑えるには、BLOB をこれらのユーザーの近くでホストする必要があります。そのため、**[米国西部]** が最適な選択になります。
 
-1. Leave the **Deployment model** as _Resource manager_. This is the preferred model for all resource deployments in Azure and allows you to group all the related resources for your app into a _resource group_ for easier management.
+1. **[デプロイ モデル]**: **[Resource Manager]** を選択します。
+    
+    根拠: リソース グループを使用して、このアプリケーション用の Web App、ストレージ アカウントなどを管理できるようにするため、**[Resource Manager]** が適しています。
 
-1. Select _Standard_ for the **Performance** option. This decides the type of disk storage used to hold the data in the Storage account. Standard uses traditional hard disks, and Premium uses solid-state drives (SSD) for faster access. However, remember that Premium only supports _page blobs_ and you will need block blobs for your videos, and a queue for buffering - both of which are only available with the _Standard_ option.
+1. **[パフォーマンス]**: **[Standard]** を選択します。
 
-1. Select _StorageV2 (general purpose v2)_ for the **Account kind**. This provides access to the latest features and pricing. In particular, Blob storage accounts have more options available with this account type. You need a mix of blobs and a queue, so the _Blob storage_ option will not work. For this application, there would be no benefit to choosing a _Storage (general purpose v1)_ account, since that would limit the features you could access and would be unlikely to reduce the cost of your expected workload.
+    根拠: **[Premium]** オプションでは、ページ BLOB に対してストレージ アカウントを制限するため、このオプションを使用することはできません。 どちらも **[Standard]** オプションでのみ利用できる、ビデオ用のブロック BLOB とバッファリング用のキューが必要です。
 
-1. Leave the **Replication** as _Locally-redundant storage (LRS)_. Data in Azure storage accounts are always replicated to ensure high availability - this option lets you choose how far away the replication occurs to match your durability requirements. In our case, the images and videos quickly become out-of-date and are removed from the site. This means there is little value to paying extra for global redundancy. If a catastrophic event results in data loss, you can restart the site with fresh content from your users.
+1. **[アカウントの種類]**: **[StorageV2 (汎用 v2)]** を選択します。
 
-1. Set the **Access tier** to _Hot_. This setting is only used for Blob storage. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value - when you create a Blob, you can set a different value for the data. In our case, we want the videos to load quickly, so you will use the high-performance option for your blobs.
+    根拠: ここでは **[StorageV2 (汎用 v2)]** が最適な選択です。 BLOB とキューを組み合わせる必要があるため、**[BLOB ストレージ]** オプションは使用できません。 このアプリケーションでは、アクセスできる機能が制限され、予想されるワークロードのコストを削減できる可能性が低いため、**[Storage (汎用 v1)]** アカウントを選択してもメリットはありません。
+
+1. **[レプリケーション]**: **[ローカル冗長ストレージ (LRS)]** を選択します。
+
+    根拠: イメージとビデオはすぐに古くなり、サイトから削除されます。 つまり、グローバルな冗長性のために追加料金を払う価値がほとんどないということです。 致命的な障害でデータを失った場合は、ユーザーからの最新コンテンツでサイトを再開することができます。
+
+1. **[アクセス層 (既定)]**: **[ホット]** を選択します。
    
-The following screenshot shows the completed settings for the **Basics** tab. Note that the resource group, subscription, and name will have different values.
+    根拠: ビデオをすばやく読み込む必要があるため、BLOB に高パフォーマンス オプションを使用します。
+   
+次のスクリーンショットは、**[基本]** タブの設定が完了したことを示しています。
 
-![Screenshot of a Create a storage account blade with the **Basics** tab selected.](../media-drafts/5-create-storage-account-basics.png)
+![**[基本]** タブが選択されている [ストレージ アカウントを作成する] ブレードのスクリーンショット。](../media-drafts/5-create-storage-account-basics.png)
 
-### Configure the advanced options
+### <a name="configure-the-advanced-options"></a>詳細オプションを構成する
 
-1. Click the **Next: Advanced >** button to move to the **Advanced** tab, or select the **Advanced** tab at the top of the screen.
+1. ブレードの上部で **[詳細]** タブを選択します。
 
-1. The **Secure transfer required** setting controls whether **HTTP** can be used for the REST APIs used to access data in the Storage account. Setting this option to _Enabled_ will force all clients to use SSL (**HTTPS**). Most of the time you will want to set this to _Enabled_ as using HTTPS over the network is considered a best practice.
+1. **[安全な転送が必須]**: **[有効]** を選択します。
 
-    > [!WARNING]
-    > If this option is enabled, it will enforce some additional restrictions. Azure files service connections without encryption will fail, including scenarios using SMB 2.1 or 3.0 on Linux. Because Azure storage doesn’t support SSL for custom domain names, this option cannot be used with a custom domain name.
+    根拠: 一般的にネットワーク全体で HTTP を使用することが、ベスト プラクティスと見なされます。
 
-1. Set the **Virtual networks** option to _None_. This option allows you to isolate the storage account on an Azure virtual network. We want to use public Internet access. Our content is public facing and you need to allow access from public clients.
+1. **[仮想ネットワーク]**: **[無効]** を選択します。
 
-1. Leave the **Data Lake Storage Gen2** option as _Disabled_. This is for big-data applications that aren't relevant to this module.
+    根拠: コンテンツは一般向けであり、パブリック コンテンツからのアクセスを許可する必要があります。
 
-The following screenshot shows the completed settings for the **Advanced** tab.
+次のスクリーンショットは、**[詳細]** タブの設定が完了したことを示しています。
 
-![Screenshot of an Create a storage account blade with the **Advanced** tab selected.](../media-drafts/5-create-storage-account-advanced.png)
+![**詳細** タブが選択されている [ストレージ アカウントを作成する] ブレードのスクリーンショット。](../media-drafts/5-create-storage-account-advanced.png)
 
-### Create
+### <a name="create"></a>作成
 
-1. You can explore the **Tags** settings if you like. This lets you associate key/value pairs to the account for your categorization and is a feature available to any Azure resource.
+1. ブレードの下部にある **[確認および作成]** ボタンをクリックします。
 
-1. Click **Review + create** to review the settings. This will do a quick validation of your options to make sure all the required fields are selected. If there are issues, they'll be reported here. Once you've reviewed the settings, click **Create** to provision the storage account.
+1. 次の画面で、ブレードの下部にある **[作成]** をクリックします。
 
-It will take a few minutes to deploy the account. While Azure is working on that, let's explore the APIs we'll use with this account.
+1. リソースが作成されるまで待機します。
 
-### Verify
+### <a name="verify"></a>確認
 
-1. Select the **Storage accounts** link in the left sidebar.
+1. 左サイドバーで **[ストレージ アカウント]** リンクを選択します。
 
-1. Locate the new storage account in the list to verify that creation succeeded.
+1. 一覧で新しいストレージ アカウントを見つけて、作成が成功したことを確認します。
 
-<!-- Cleanup sandbox -->
-[!include[](../../../includes/azure-sandbox-cleanup.md)]
+### <a name="clean-up"></a>クリーンアップ
 
-When you are working in your own subscription, you can the following steps in the Azure portal to delete the resource group and all associated resources.
+1. 左サイドバーで **[リソース グループ]** リンクを選択します。
 
-1. Select the **Resource groups** link in the left sidebar.
+1. 一覧で **[SurfReportResourceGroup]** を見つけます。
 
-1. Locate the resource group you created in the list.
+1. **[SurfReportResourceGroup]** エントリを右クリックして、コンテキスト メニューから **[リソース グループの削除]** を選択します。
 
-1. Right-click on the resource group entry and select **Delete resource group** from the context menu. You can also click the "..." menu element on the right side of the entry to get to the same context menu.
+1. 確認フィールドにリソース グループ名を入力します。
 
-1. Type the resource group name into the confirmation field.
+1. **[削除]** ボタンをクリックします。
 
-1. Click the **Delete** button.
+## <a name="summary"></a>まとめ
 
-## Summary
-
-You created a storage account with settings driven by your business requirements. For example, you might have selected a West US datacenter because your customers were primarily located in southern California. This is a typical flow: first analyze your data and goals, and then configure the storage account options to match.
+お客様のビジネス要件による設定でストレージ アカウントを作成しました。 たとえば、顧客の所在地が主に南カリフォルニアのため、米国西部のデータセンターを選択しています。 これが一般的なフローです。まず、ご自分のデータと目標を分析し、条件に合うストレージ アカウントのオプションを構成します。

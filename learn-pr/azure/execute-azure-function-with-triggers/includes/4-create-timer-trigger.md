@@ -1,85 +1,84 @@
-In this unit, we create an Azure function that's invoked every 20 seconds using a timer trigger.
+この演習では、タイマー トリガーを使用して 20 秒ごとに呼び出される Azure 関数を作成します。
 
-## Create an Azure function
+## <a name="create-an-azure-function"></a>Azure 関数を作成する
 
-Let’s start by creating an Azure Function in the portal.
+ポータルで Azure 関数を作成することから始めましょう。
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. In the left navigation, select **Create a resource**.
+1. 左側のナビゲーションで、**[リソースの作成]** を選択します。
 
-1. Select **Compute**.
+1. **[コンピューティング]** を選択します。
 
-1. Locate and select **Function App**. You can also optionally use the search bar to locate the template.
+1. **[Function App]** を検索して選択します。 必要に応じて検索バーを使用してテンプレートを検索することもできます。
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Function App highlighted.](../media/4-click-function-app.png)
+    ![Function App を選択する](../media-drafts/4-click-function-app.png)
 
-1. Enter a unique **App name**.
+1. 一意の**アプリ名**を入力します。
 
-1. Select a **Subscription**.
+1. **サブスクリプション**を選択します。
 
-1. Create a new **Resource Group**.
+1. 新しい**リソース グループ**を作成します。
 
-1. Choose **Windows** as your **OS**.
+1. 使用する **OS** として **[Windows]** を選択します。
 
-1. Choose **Consumption Plan** for your **Hosting Plan**. You're charged for each execution of your function. Resources are automatically allocated based on your application workload.
+1. 使用する**ホスティング プラン**には、**[従量課金プラン]** を選択します。 ご利用の関数を実行するたびに課金されます。 ご利用のアプリケーション ワークロードに基づいてリソースが自動的に割り当てられます。
 
-1. Select a **Location**.
+1. **[場所]** を選択します。
 
-1. Create a new **Storage** account, you can change the name if you like - it will default to a variation of the App name
+1. 新しい**ストレージ** アカウントを作成します。既定はアプリ名のバリエーションですが、名前は任意で変更することができます。
 
-1. Turn off **Application Insights**.
+1. **[Application Insights]** をオフにします。
 
-1. Select **Create**. This will take a few minutes to complete, you can watch the **Notifications** icon in the toolbar area - once it has finished creating the resource it will have a button there to open it in the Azure Portal.
+1. **[作成]** を選択します。 これの完了には数分かかります。リソースの作成が完了すると、ツールバー領域の **[通知]** アイコンには、Azure Portal で開くためのボタンが作成されることが確認できます。
 
-## Create a timer trigger
+## <a name="create-a-timer-trigger"></a>タイマー トリガーを作成する
 
-Now we're going to create a timer trigger inside our Azure function.
+ここで、Azure 関数内にタイマー トリガーを作成します。
 
-1. After the Azure function is created, select **All resources** from the left navigation.
+1. Azure 関数が作成されたら、左側のナビゲーションから **[すべてのリソース]** を選択します。
 
-1. Locate and select your Azure function.
+1. 使用する Azure 関数を検索し、選択します。
 
-1. On the new blade, point to **Functions** and select the plus (+) icon.
+1. 新しいブレード上で、**[関数]** をポイントし、プラス (+) アイコンを選択します。
 
-    ![Screenshot of the Azure portal showing a Functions App blade with the add (+) button of the Functions sub-menu highlighted.](../media/4-hover-function.png)
+    ![[関数] をポイントし、プラスを選択する](../media-drafts/4-hover-function.png)
 
-1. Select **Timer**.
+1. **[タイマー]** を選択します。
 
-1. Select **CSharp** as the language.
+1. 言語として **[CSharp]** を選択します。
 
-1. Select **Create this function**.
+1. **[この関数を作成する]** をクリックします。
 
-## Configure the timer trigger
+## <a name="configure-the-timer-trigger"></a>タイマー トリガーを構成する
 
-We have an Azure function with logic to print a message to the log window. We're going to set the schedule of the timer to execute every 20 seconds.
+ログ ウィンドウにメッセージを出力するロジックが備わった Azure 関数があります。 20 秒ごとに実行されるようにタイマーのスケジュールを設定することにします。
 
-1. Select **Integrate**.
+1. **[統合]** を選択します。
 
-1. Enter the following value into the **Schedule** box:
+1. **[スケジュール]** ボックスに次の値を入力します。
 
-    ```log
+    ```
     */20 * * * * *
     ```
 
-1. Select **Save**.
+1. **[保存]** を選択します。
 
-## Start the timer
+## <a name="start-the-timer"></a>タイマーを開始する
 
-Now that we've configured the timer, we're ready to start it.
+これで、タイマーは構成されましたので、いつでも開始することができます。
 
-1. Select **TimerTriggerCSharp1**.
+1. **[TimerTriggerCSharp1]** を選択します。 
 
     > [!NOTE]
-    > **TimerTriggerCSharp1** is a default name. It's automatically selected when you create the trigger.
+    > **[TimerTriggerCSharp1]** は既定の名前です。 これは、トリガーを作成するとき自動的に選択されます。
 
-1. Select **Run**.
+1. **[実行]** を選択します。 
 
-At this point, you should see a message every 20 seconds in the log window.
+この時点では、ログ ウィンドウに 20 秒ごとにメッセージが表示されるはずです。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>クリーンアップ
 
-To ensure that you aren't charged for this function, above the log window, select **Pause** to stop the timer.
+この関数に対して課金されないようにするには、ログ ウィンドウの上にある **[一時停止]** を選択してタイマーを停止します。
 
-![Screenshot of the Azure portal showing a Functions App's Logs output panel with the Pause button highlighted.](../media/4-pause-timer.png)
+![一時停止](../media-drafts/4-pause-timer.png)

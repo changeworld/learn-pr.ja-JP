@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+title: Windows または macOS 上で Visual Studio を設定する
+metadata:
+  title: Windows または macOS 上で Visual Studio を設定する
+  description: Windows または macOS 上で Visual Studio を設定する
+  ms.openlocfilehash: de7ead090fa19acd4577b4bf3345237e28db4cc0
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458759"
+durationInMinutes: 15
+content: '[!include[](includes/5-exercise-set-up-visual-studio.md)]'

@@ -1,17 +1,16 @@
-Most organizations have diverse requirements for their cloud-hosted data. For example, you might need to store data in a specific region, or you might require separate billing for different data categories. Azure storage accounts let you formalize these types of policies and apply them to your Azure data.
+ほとんどの組織には、クラウドでホストされるデータに関してさまざまな要件があります。 たとえば、特定のリージョンにデータを格納したり、データ カテゴリ別に請求処理を分けたりすることが、必要になる場合があります。 Azure ストレージ アカウントでは、この種のポリシーを形式化して、Azure のデータに適用できます。
 
-Suppose you work at a chocolate manufacturer that produces baking ingredients such as cocoa powder and chocolate chips. You market your products to grocery stores who then sell them to consumers.
+ココア パウダーやチョコレート チップなどの材料を製造するチョコレート メーカーで働いているものとします。 製品を食料品店に販売し、店はそれを消費者に売っています。
 
-Your formulations and manufacturing processes are trade secrets. The spreadsheets, documents, and instructional videos that capture this information are critical to your business and require geographically-redundant storage. This data is primarily accessed from your main factory, so you would like to store it in a nearby datacenter. The expense for this storage needs to be billed to the manufacturing department.
+成分と製造プロセスは企業秘密です。 この情報を収めたスプレッドシート、ドキュメント、説明ビデオは、ビジネスに不可欠であり、geo 冗長ストレージを必要とします。 このデータは主として主工場からアクセスされるので、近くのデータ センターに格納したいと考えています。 このストレージの費用は、製造部門に請求される必要があります。
 
-You also have a sales group that creates cookie recipes and baking videos to promote your products to consumers. Your priority for this data is low cost, rather than redundancy or location. This storage must be billed to the sales team.
+消費者に製品を売り込むためにクッキーのレシピや調理ビデオを作成している販売グループもがあります。 このデータに対する優先順位は、冗長性や場所より、低コストであることです。 このストレージは、販売チームに請求する必要があります。
 
-Here, you will see how to handle these types of business requirements by creating multiple Azure storage accounts. Each storage account will have the appropriate settings for the data it holds.
+ここでは、複数の Azure ストレージ アカウントを作成してこの種のビジネス要件を処理する方法を示します。 各ストレージ アカウントには、保持しているデータに適した設定があります。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
-
- - Decide how many storage accounts you need for your project.
- - Determine the appropriate settings for each storage account.
- - Create a storage account using the Azure portal.
+このモジュールでは、次のことを行います。
+ - ご自分のプロジェクトに必要なストレージ アカウントの数を決定する
+ - 各ストレージ アカウントの適切な設定を決定する
+ - Azure portal を使用してストレージ アカウントを作成する

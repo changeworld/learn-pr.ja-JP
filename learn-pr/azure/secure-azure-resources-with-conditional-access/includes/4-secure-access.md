@@ -1,29 +1,29 @@
-In the previous exercise, we enabled trial licenses, created a directory, created a user, and created a group to test our solution. In this unit, we will create our conditional access rule to require Azure Multi-Factor Authentication for the Azure portal.
+前の演習では、試用版ライセンスを有効にし、ソリューションをテストするためにディレクトリの作成、ユーザーの作成、グループの作成を行いました。 この演習では、Azure portal に対して Azure Multi-Factor Authentication を必須にする条件付きアクセス規則を作成します。
 
-## Enable conditional access-based Multi-Factor Authentication
+## <a name="enable-conditional-access-based-multi-factor-authentication"></a>条件付きアクセスベースの Multi-Factor Authentication を有効にする
 
-Conditional access allows administrators to configure when they do or do not want something to happen. They can use multiple rules in parallel to grant or deny access to resources. Here's the rule that we need to create:
+条件付きアクセスを使用すると、管理者は、何かを発生させたい場合と発生させたくない場合を構成することができます。 複数の規則を同時に使用して、リソースへのアクセスを許可または拒否することができます。 作成する必要がある規則は次のとおりです。
 
-**When accessing the Azure portal - Require multi-factor authentication**
+**Azure portal へのアクセス時 - 多要素認証を要求**
 
-The steps that follow will walk you through the process to create a conditional access rule to require users to perform multi-factor authentication when they access the Azure portal.
+この後に示す手順では、Azure portal へのアクセス時に多要素認証の実行をユーザーに要求する、条件付きアクセス規則の作成プロセスについて説明します。
 
-1. Browse to **Azure Active Directory** > **Conditional access**.
+1. **[Azure Active Directory]** > **[条件付きアクセス]** の順に移動します。
 
-1. Click **New policy**.
+1. **[新しいポリシー]** をクリックします。
 
-1. Name the policy **Require MFA for Azure portal**.
+1. ポリシーに「**Azure portal に MFA を要求**」という名前を付けます。
 
-1. Under **Assignments** > **Users and groups**, select **Users and groups**. Select the group that we created **CA-MFA-AzurePortal**. and click **Done**.
+1. **[割り当て]** > **[ユーザーとグループ]** で、**[ユーザーとグループ]** を選択します。 作成したグループ **CA-MFA-AzurePortal** を選択します。 **[完了]** をクリックします。
 
-1. Under **Cloud apps** > **Select apps**, select **Microsoft Azure Management**.
+1. **[クラウド アプリ]** > **[アプリを選択]** で、**[Microsoft Azure Management]** を選択します。
 
-1. Under **Access controls** > **Grant**, select **Require multi-factor authentication**.
+1. **[アクセス制御]** > **[許可]** で、**[多要素認証を要求する]** を選択します。
 
-1. Set **Enable policy** to **On**.
+1. **[ポリシーの有効化]** を **[オン]** に設定します。
 
-1. Click **Create**.
+1. **[作成]** をクリックします。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to create a conditional access rule. The rule requires Multi-Factor Authentication when accessing the Azure portal.
+このユニットでは、条件付きアクセス規則を作成する方法について説明しました。 その規則では、Azure portal へのアクセス時に Multi-Factor Authentication を要求します。

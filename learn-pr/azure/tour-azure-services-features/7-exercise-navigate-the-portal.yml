@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-services-features.7-exercise-navigate-the-portal
+title: Azure portal を使用する
+metadata:
+  title: Azure portal を使用する
+  description: Azure portal を使用する
+  ms.openlocfilehash: 345d2cb28eeea7d9f7c3d697bc2e40c3e5168fdc
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458335"
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-navigate-the-portal.md)]'

@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
-uid: learn.execute-azure-function-with-triggers.4-create-timer-trigger
-title: Create a timer trigger
+uid: execute-azure-function-with-triggers.4-create-timer-trigger
+title: タイマー トリガーを作成する
 metadata:
-  title: Create a timer trigger
-  description: Create a timer trigger
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: タイマー トリガーを作成する
+  description: タイマー トリガーを作成する
+  ms.openlocfilehash: a63a07d0525b124f99f06059072a4f9a670db82f
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43412841"
 durationInMinutes: 15
-content: |
-  [!include[](includes/4-create-timer-trigger.md)]
+content: '[!include[](includes/4-create-timer-trigger.md)]'

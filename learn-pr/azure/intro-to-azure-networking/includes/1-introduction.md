@@ -1,15 +1,15 @@
-You manage IT infrastructure for a growing e-commerce site. Business ia strong and your datacenter is starting to struggle to keep up with demand from your users. Your service fails when too many users connect at the same time. Plus, you face more scheduled and unscheduled maintenance windows than you'd like. 
+あなたは、成長中の e コマース サイトの IT インフラストラクチャを管理しています。 ビジネスは堅調で、データ センターは、ユーザーからの要求に応えるのが難しくなってきています。 同時に多くのユーザーが接続すると、サービスが停止します。 さらに、予定されたおよび予定外のメンテナンス期間が想定以上に増えているという問題にも直面しています。 
 
-Because your site is based in northern California, you also find that network delay is especially bad for users located in other regions, such as Europe and Asia.
+サイトは北カリフォルニアにベースを置いているため、ネットワークの遅延の問題もあります。特に、ヨーロッパやアジアなどの他のリージョンにいるユーザーに対しては、遅延が顕著になっています。
 
-You decide to move your e-commerce site to the cloud to help save costs. But how can Azure help make your site run better?
+あなたは、コストを節約するため、e コマース サイトをクラウドに移行することを決めました。 しかし、サイトをよりよく実行するために、Azure はどのように役に立つのでしょうか?
 
-Managing networks on Azure isn't entirely different from managing on-premises networks. 
+Azure でネットワークを管理することは、オンプレミス ネットワークで管理するのとはまったく異なります。 
 
-## Learning objectives
+## <a name="learing-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを学習します。
 
-- Learn how an Azure virtual network provides secure network communication among resources such as virtual machines and other networks
-- Learn what high availability and resiliency mean and how Azure Load Balancer can increase resiliency within a single geographic region
-- Learn what latency is and how Traffic Manager helps reduce network latency and provides resiliency across geographic locations
+- Azure の仮想ネットワークにより、仮想マシンとその他のネットワークなどのリソース間にセキュリティで保護されたネットワーク通信がどのように提供されているかについて
+- 高可用性と回復性の意味について、および Azure Load Balancer により 1 つの地理的リージョン内でどのように回復性が向上されるかについて
+- 待ち時間について、および Traffic Manager がネットワークの待ち時間を短縮し、地理的な場所全体の回復性を提供するのに役立つかについて

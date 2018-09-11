@@ -1,79 +1,79 @@
-Organizations often have multiple storage accounts to let them implement different sets of requirements. In the chocolate-manufacturer example, there would be one storage account for the private business data and one for the consumer-facing files. Here, you will learn the policy factors that are controlled by a storage account, which will help you decide how many accounts you need.
+組織には、さまざまな要件のセットを実装できるように、複数のストレージ アカウントがある場合があります。 チョコレート メーカーの例では、プライベート ビジネス データのためにストレージ アカウントが 1 つあり、顧客用のファイルに使用するストレージ アカウントが 1 つあります。 ここでは、ストレージ アカウントによって制御されるポリシーの要素を学習します。これは、必要なアカウントの数を決定するのに役立ちます。
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Azure Storage とは
 
-Azure provides many ways to store your data. There are multiple database options like Azure SQL, Cosmos DB, Azure Tables, etc. Azure offers multiple ways to store messages, such as Azure Queues and Event Hubs. You can even store loose files using options like Azure Files and Azure Blobs.
+Azure では、お客様のデータを保存する多くの方法が提供されています。 Azure SQL、Cosmos DB、Azure テーブルなどの複数のデータベース オプションがあります。これにより、Azure キューや Event Hubs などのメッセージを保存する複数の方法が提供されます。 Azure Files や Azure BLOB などのオプションを使用して、ルーズ ファイルを保存することもできます。
 
-Azure selected four of these data services and placed them together under the name _Azure Storage_. The four services are: Azure Blobs, Azure Files, Azure Queues, and Azure Tables. The following illustration shows the elements of Azure Storage.
+Azure では、これらの 4 つのデータ サービスが選ばれ、_Azure Storage_ という名前の下にまとめて配置されています。 この 4 つのサービスは、Azure BLOB、Azure Files、Azure キュー、Azure テーブルです。 次の図は、Azure Storage の要素を示しています。
 
-![Illustration listing the Azure data services that are part of Azure Storage.](../media-drafts/2-azure-storage.png)
+![Azure Storage の一部である Azure データ サービスを一覧する図。](../media-drafts/2-azure-storage.png)
 
-These four were given special treatment because they are all primitive, cloud-based storage services and are often used together in the same application.
+これらの 4 つはすべてプリミティブなクラウド ベースのストレージ サービスであり、同じアプリケーションで一緒に使用されることが多いため、特別な処理方法が指定されています。
 
-## What is a storage account?
+## <a name="what-is-a-storage-account"></a>ストレージ アカウントとは
 
-A _storage account_ is a container that groups a set of Azure Storage services together. Only data services from Azure Storage can be included in a storage account (Azure Blobs, Azure Files, Azure Queues, and Azure Tables). The following illustration shows a storage account containing several data services.
+_ストレージ アカウント_は、Azure Storage サービスのセットをまとめてグループ化するコンテナーです。 Azure Storage からのデータ サービスのみが、ストレージ アカウント (Azure BLOB、Azure Files、Azure キュー、Azure テーブル) に含まれる可能性があります。 次の図は、複数のデータ サービスを含むストレージを示しています。
 
-![Illustration of an Azure storage account containing a mixed collection of data services.](../media-drafts/2-what-is-a-storage-account.png)
+![データ サービスの異種コレクションが含まれる Azure ストレージ アカウントの図。](../media-drafts/2-what-is-a-storage-account.png)
 
-Combining data services into a storage account lets you manage them as a group. The settings you specify when you create the account, or any that you change after creation, are applied to everything in the account. Deleting the storage account deletes all of the data stored inside it.
+データ サービスをストレージ アカウントに組み合わせると、グループとして管理できます。 アカウントを作成するタイミングを指定する設定、または作成後に変更した内容は、そのアカウント内のすべてに適用されます。 ストレージ アカウントを削除すると、そこに含まれる格納データはすべて削除されます。
 
-A storage account is an Azure resource and is included in a resource group. The following illustration shows an Azure subscription containing multiple resource groups, where each group contains one or more storage accounts.
+ストレージ アカウントは Azure リソースであり、リソース グループに含まれます。 次の図は、複数のリソース グループを含む Azure サブスクリプションを示しています。各グループには 1 つまたは複数のストレージ アカウントが含まれます。
 
-![Illustration of an Azure subscription containing multiple resource groups and storage accounts.](../media-drafts/2-resource-groups-and-storage-accounts.png)
+![複数のリソース グループとストレージ アカウントを含む Azure サブスクリプションの図。](../media-drafts/2-resource-groups-and-storage-accounts.png)
 
-Other Azure data services like Azure SQL and Cosmos DB are managed as independent Azure resources and cannot be included in a storage account. The following illustration shows a typical arrangement: Blobs, Files, Queues, and Tables are inside storage accounts, while other services are not.
+Azure SQL や Cosmos DB などのその他の Azure データ サービスは、独立した Azure リソースとして管理され、ストレージ アカウントに含めることはできません。 次の図は、一般的な配置を示しています。BLOB、Files、キュー、テーブルは、ストレージ アカウント内にありますが、その他のサービスはありません。
 
-![Illustration of an Azure subscription showing some data services that cannot be placed in a storage account.](../media-drafts/2-typical-subscription-organization.png)
+![ストレージ アカウント内に配置できない一部のデータ サービスを示す Azure サブスクリプションの図。](../media-drafts/2-typical-subscription-organization.png)
 
-## Storage account settings
+## <a name="storage-account-settings"></a>ストレージ アカウントの設定
 
-A storage account defines a policy that applies to all the storage services in the account. For example, you could specify that all the contained services will be stored in the West US datacenter, accessible only over https, and billed to the sales department's subscription.
+ストレージ アカウントでは、アカウント内のストレージ サービスのすべてに適用するポリシーを定義します。 たとえば、含まれるサービスがすべて米国西部のデータセンターに保存され、https 経由でのみアクセス可能で、販売部門のサブスクリプションに請求されるように指定することができます。
 
-The settings that are controlled by a storage account are:
+ストレージ アカウントによって制御される設定は、次のとおりです。
 
-- **Subscription**: The Azure subscription that will be billed for the services in the account.
+- **[サブスクリプション]**: アカウントのサービスに対して請求される Azure サブスクリプション。
 
-- **Location**: The datacenter that will store the services in the account.
+- **[場所]**: アカウントのサービスを保存するデータセンター。
 
-- **Performance**: Determines the data services you can have in your storage account and the type of the underlying hardware disk. **Standard** allows you to have any data service (Blob, File, Queue, Table) and uses magnetic disk drives. **Premium** limits you to one specific type of blob called a _page blob_ and uses solid-state drives for storage.
+- **[パフォーマンス]**: ご利用のストレージ アカウントで所有できるデータ サービスと基になるハードウェア ディスクの種類を決定します。 **[Standard]** では、任意のデータ サービス (BLOB、File、キュー、テーブル) を所有し、磁気ディスク ドライブを使用できます。 **[Premium]** では、_[ページ BLOB]_ と呼ばれる 1 つの特定の BLOB の種類に制限され、ストレージにソリッドステート ドライブを使用します。
 
-- **Replication**: Determines the strategy used to make copies of your data to protect against hardware failure or natural disaster. At a minimum, Azure will automatically maintain a copy of your data within the datacenter associated with the storage account. This is called locally-redundant storage (LRS), and guards against hardware failure but does not protect you from an event that incapacitates the entire datacenter. You can upgrade to one of the other options such as geo-redundant storage (GRS) to get replication at other datacenters across the world.
+- **[レプリケーション]**: ご利用のデータのコピーを作成し、ハードウェアの障害や自然災害から保護するために使用する戦略を決定します。 少なくとも、Azure ではストレージ アカウントに関連付けられているデータセンター内のデータのコピーを自動的に保持します。 これはローカル冗長ストレージ (LRS) と呼ばれ、ハードウェアの障害から保護しますが、データセンター全体を機能させなくするイベントから保護することはありません。 冗長ストレージ (GRS) などのその他のオプションのいずれかにアップグレードして、世界中のその他のデータセンターでレプリケーションを取得できます。
 
-- **Access tier**: Controls how quickly you will be able to access the blobs in this storage account. Hot gives quicker access than Cool, but at increased cost. This applies only to blobs, and serves as the default value for new blobs.
+- **[アクセス層]**: このストレージ アカウントで BLOB にすばやくアクセスする方法を制御します。 ホットでは、クールよりも速いアクセスを提供しますが、コストは増加します。 これは、BLOB にのみ適用され、新しい BLOB の既定値として機能します。
 
-- **Secure transfer required**: A security feature that determines the supported protocols for access: enabled requires https, while disabled allows http.
+- **[安全な転送が必須]**: アクセスにサポートされるプロトコルを決定するセキュリティ機能。有効では https が必須で、無効では http を許可します。
 
-- **Virtual networks**: A security feature that allows inbound access requests only from the virtual network(s) you specify.
+- **[仮想ネットワーク]**: 指定した仮想ネットワークからの受信アクセス要求のみを許可するセキュリティ機能。
 
-## How many storage accounts do you need?
+## <a name="how-many-storage-accounts-do-you-need"></a>必要なストレージ アカウントの数
 
-A storage account represents a collection of settings like location, replication strategy, subscription, etc. You need one storage account for every group of settings that you want to apply to your data. The following illustration shows two storage accounts that differ in one setting; that one difference is enough to require separate storage accounts.
+ストレージ アカウントは、場所、レプリケーション戦略、サブスクリプションなどの設定のコレクションを表します。ご自分のデータに適用するすべてのグループの設定に対して、ストレージ アカウントが 1 つ必要です。 次の図では、1 つの設定が異なるストレージ アカウントを 2 つ示しています。個別のストレージ アカウントを必要とすることが、違いの 1 つです。
 
-![Illustration showing two storage accounts with different settings.](../media-drafts/2-multiple-storage-accounts.png)
+![さまざまな設定と 2 つのストレージ アカウントを示す図。](../media-drafts/2-multiple-storage-accounts.png)
 
-The number of storage accounts you need is typically determined by your data diversity, cost sensitivity, and tolerance for management overhead.
+通常、必要なストレージ アカウントの数は、データの多様性、価格感受性、管理オーバーヘッドの許容範囲によって決定されます。
 
-### Data diversity
+### <a name="data-diversity"></a>データの多様性
 
-Organizations often generate data that differs in where it is consumed, how sensitive it is, which group pays the bills, etc. Diversity along any of these vectors can lead to multiple storage accounts. Let's consider two examples:
+組織では、使用する場所、秘密度、請求を支払うグループなどが異なるデータを生成することが多いです。これらのベクターのいずれかの間の多様性によって、複数のストレージ アカウントになる可能性があります。 次の 2 つの例を考えてみましょう。
 
-1. Do you have data that is specific to a country or region? If so, you might want to locate it in a datacenter in that country for performance or compliance reasons. You will need one storage account for each location.
+1. 国またはリージョンに固有のデータはありますか?  ある場合は、パフォーマンスまたはコンプライアンス上の理由から、その国でデータセンターを見つける必要がある可能性があります。 場所ごとにストレージ アカウントが 1 つ必要です。
 
-1. Do you have some data that is proprietary and some that is for public consumption? If so, you could enable virtual networks for the proprietary data and not for the public data. This will also require separate storage accounts.
+1. 専用のデータや公開用のデータはありますか?  ある場合は、専用データに対して仮想ネットワークを有効にして、パブリック データに対してデータを防ぐことができます。 また、これには個別のストレージ アカウントも必要です。
 
-In general, increased diversity means an increased number of storage accounts.
+一般に、増加した多様性は、ストレージ アカウントの数が増えることを意味します。
 
-### Cost sensitivity
+### <a name="cost-sensitivity"></a>価格感受性
 
-A storage account by itself has no financial cost; however, the settings you choose for the account do influence the cost of services in the account. Geo-redundant storage costs more than locally-redundant storage. Premium performance and the Hot access tier increase the cost of blobs.
+ストレージ アカウント自体に財務費用はかかりませんが、そのアカウント用に選択した設定がアカウントのサービス コストに影響します。 geo 冗長ストレージは、ローカルの冗長ストレージよりコストが高いです。 Premium パフォーマンスとホット アクセス層では、BLOB のコストが増加します。
 
-You can use multiple storage accounts to reduce costs. For example, you could partition your data into critical and non-critical categories. You could place your critical data into a storage account with geo-redundant storage and put your non-critical data in a different storage account with locally-redundant storage.
+コストを削減するために、複数のストレージ アカウントを使用することができます。 たとえば、重要なカテゴリと一般カテゴリにデータをパーティション分割することができます。 冗長ストレージを使ってストレージ アカウントに重要なデータを配置し、ローカル冗長ストレージを使って別のストレージ アカウントに一般データを配置できます。
 
-### Tolerance for management overhead
+### <a name="tolerance-for-management-overhead"></a>管理オーバーヘッドの許容範囲
 
-Each storage account requires some time and attention from an administrator to create and maintain. It also increases complexity for anyone who adds data to your cloud storage; everyone in this role needs to understand the purpose of each storage account so they add new data to the correct account.
+ストレージ アカウントごとに作成および保持するため、管理者の時間と注意が必要です。 また、お客様のクラウド ストレージにデータを追加するユーザーには、複雑さも増えます。このロールのすべてのユーザーが、新しいサービスを正しいアカウントに追加できるように、各ストレージ アカウントの目的を理解する必要があります。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Storage accounts are a powerful tool to help you get the performance and security you need while minimizing costs. A typical strategy is to start with an analysis of your data and create partitions that share characteristics like location, billing, replication strategy, etc., and then create one storage account for each partition.
+ストレージ アカウントは、コストを最小限に抑えながら、必要なパフォーマンスとセキュリティを得ることができる強力なツールです。 通常の戦略は、データの分析から始まり、場所、課金、レプリケーション戦略などの特性を共有するパーティションを作成して、パーティションごとにストレージ アカウントを 1 つ作成します。

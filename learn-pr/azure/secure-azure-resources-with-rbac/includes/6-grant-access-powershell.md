@@ -1,28 +1,28 @@
-Using the **Access control (IAM)** blade in the Azure portal has been working fine, but you are getting several permission requests each day. To keep up with the access management tasks, you decide to use PowerShell to help automate some of the steps.
+これまで Azure portal の **[アクセス制御 (IAM)]** ブレードを使用することで十分に対応できていましたが、毎日複数のアクセス許可要求を受け取るようになってきました。 アクセス管理タスクをこなすため、あなたは PowerShell を使用して一部の手順を自動化することにしました。
 
-## Open Cloud Shell PowerShell
+## <a name="open-cloud-shell-powershell"></a>Cloud Shell PowerShell を開く
 
-1. Make sure you are still signed in to the Azure portal as **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com**. You can find the username and password on the **Resources** tab at the top of this window.
+1. Azure portal に **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com** としてサインインしていることを確認します。 ユーザー名とパスワードは、このウィンドウの上部にある **[リソース]** タブで見つかります。
 
-1. At the top of the portal, click **Cloud Shell** to open the Cloud Shell pane.
+1. ポータルの上部で、**[Cloud Shell]** をクリックして、[Cloud Shell] ウィンドウを開きます。
 
-    ![Cloud Shell button](../media-draft/6-cloud-shell-button.png)
+    ![[Cloud Shell] ボタン](../media-draft/6-cloud-shell-button.png)
 
-1. In the upper left of the Cloud Shell pane, make sure it is set to **PowerShell**. If it is set to **Bash**, change it to **PowerShell**.
+1. 左上の [Cloud Shell] ウィンドウで、Cloud Shell が **[PowerShell]** に設定されていることを確認します。 **[Bash]** に設定されている場合は、**[PowerShell]** に変更します。
 
-    It might take a few moments to load. When finished, it will look similar to the following:
+    読み込みにしばらく時間がかかる場合があります。 完了すると、次のようになります。
 
     ![Cloud Shell PowerShell](../media-draft/6-cloud-shell-powershell.png)
 
-## Grant access
+## <a name="grant-access"></a>アクセス権を付与する
 
-To grant access to a user using Azure PowerShell, you use the [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) command. You must specify the security principal, role definition, and scope.
+Azure PowerShell を使用してユーザーにアクセス権を付与するには、[New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) コマンドを使用します。 セキュリティ プリンシパル、ロールの定義、およびスコープを指定する必要があります。
 
-Follow these steps to assign the Virtual Machine Contributor role to the **LabUser-_XXXXXXX_** user at the resource group scope.
+次の手順に従って、Virtual Machine Contributor ロールをリソース グループ スコープで **LabUser-_XXXXXXX_** ユーザーに割り当てます。
 
-1. On the **Resources** tab at the top of this window, copy the **Grant access PowerShell** command.
+1. このウィンドウの上部の **[リソース]** タブで、**Grant access PowerShell** コマンドをコピーします。
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command and the output:
+1. コマンドを PowerShell ウィンドウに貼り付け、Enter キーを押して実行します。 コマンドと出力の例を次に示します。
 
     ```Example
     PS Azure:\> New-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -40,17 +40,17 @@ Follow these steps to assign the Virtual Machine Contributor role to the **LabUs
     CanDelegate        : False
     ```
 
-    The output shows that the Virtual Machine Contributor role has been assigned to LabUser-_XXXXXXX_ at the FirstUpConsultantsRG1-_XXXXXXX_ scope.
+    出力には、Virtual Machine Contributor ロールが FirstUpConsultantsRG1-_XXXXXXX_ スコープで LabUser-_XXXXXXX_ に割り当てられたことが示されます。
 
-## List access
+## <a name="list-access"></a>アクセス権を一覧表示する
 
-To verify the access for the resource group, you use the [Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) command to list the role assignments.
+リソース グループのアクセス権を確認するには、[Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) コマンドを使用して、ロールの割り当てを一覧表示します。
 
-Follow these steps to list all the role assignments for the **LabUser-XXXXXXX** user at the resource group scope.
+次の手順に従って、リソース グループ スコープで **LabUser-XXXXXXX** ユーザーに対するすべてのロールの割り当てを一覧表示します。
 
-1. On the **Resources** tab at the top of this window, copy the **List access PowerShell** command.
+1. このウィンドウの上部の **[リソース]** タブで、**List access PowerShell** コマンドをコピーします。
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command and the output.
+1. コマンドを PowerShell ウィンドウに貼り付け、Enter キーを押して実行します。 コマンドと出力の例を次に示します。
 
     ```Example
     PS Azure:\> Get-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -67,21 +67,21 @@ Follow these steps to list all the role assignments for the **LabUser-XXXXXXX** 
     CanDelegate        : False
     ```
 
-    The output shows that the Virtual Machine Contributor role has been assigned to LabUser-_XXXXXXX_ at the FirstUpConsultantsRG1-_XXXXXXX_ scope.
+    出力には、Virtual Machine Contributor ロールが FirstUpConsultantsRG1-_XXXXXXX_ スコープで LabUser-_XXXXXXX_ に割り当てられたことが示されます。
 
-    If you refresh the **Access control (IAM)** blade for the resource group in the Azure portal, this is how the role assignment looks:
+    Azure portal でリソース グループの **[アクセス制御 (IAM)]** ブレードを更新すると、ロールの割り当てはこのようになります。
 
-    ![Role assignments for a user at resource group scope](../media-draft/6-cloud-shell-access-control.png)
+    ![リソース グループ スコープでのユーザーのロールの割り当て](../media-draft/6-cloud-shell-access-control.png)
 
-## Remove access
+## <a name="remove-access"></a>アクセス権を削除する
 
-To remove access for users, groups, and applications, you use [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) to remove a role assignment.
+ユーザー、グループ、アプリケーションのアクセス権を削除するには、[Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) を使用して、ロールの割り当てを削除します。
 
-Follow these steps to remove the Virtual Machine Contributor role assignment for the **LabUser-_XXXXXX_** user at the resource group scope.
+次の手順に従ってリソース グループ スコープでの **LabUser-_XXXXXX_** ユーザーへの Virtual Machine Contributor ロールの割り当てを削除します。
 
-1. On the **Resources** tab at the top of this window, copy the **Remove access PowerShell** command.
+1. このウィンドウの上部の **[リソース]** タブで、**Remove access PowerShell** コマンドをコピーします。
 
-1. Paste the command into the PowerShell pane and press the Enter key to run it. The following shows an example command.
+1. コマンドを PowerShell ウィンドウに貼り付け、Enter キーを押して実行します。 コマンドの例を次に示します。
 
     ```Example
     PS Azure:\> Remove-AzureRmRoleAssignment -SignInName LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com `
@@ -89,11 +89,11 @@ Follow these steps to remove the Virtual Machine Contributor role assignment for
       -ResourceGroupName "FirstUpConsultantsRG1-XXXXXXX"
     ```
 
-1. In the PowerShell pane, click the close (**X**) button to close the pane.
+1. PowerShell ウィンドウで閉じる (**[X]**) ボタンをクリックして、ウィンドウを閉じます。
 
-    ![Cloud Shell close button](../media-draft/6-cloud-shell-close.png)
+    ![Cloud Shell の閉じるボタン](../media-draft/6-cloud-shell-close.png)
 
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell. In the next unit, you learn how to view the RBAC changes over time.
+このユニットでは、Azure PowerShell を使用してリソース グループ内に仮想マシンを作成して管理するために、ユーザーにアクセス権を付与する方法について学習しました。 次のユニットでは、時間の経過と共に、RBAC の変更を表示する方法について学習します。

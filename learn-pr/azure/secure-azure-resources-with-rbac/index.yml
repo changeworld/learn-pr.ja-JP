@@ -1,31 +1,25 @@
 ### YamlMime:Module
 uid: learn.secure-azure-resources-with-rbac
 metadata:
-  title: Secure your Azure resources with role-based access control (RBAC)
-  description: Role-based access control (RBAC) is a system that provides fine-grained access management of resources in Azure. Using RBAC, you can segregate duties within your team and grant only the amount of access to users that they need to perform their jobs. This module shows you how to use RBAC to manage access to resources in Azure.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Secure your Azure resources with role-based access control (RBAC)
-summary: Learn how to use RBAC to manage access to resources in Azure.
-abstract: |
-  In this module, you will:
-  - Verify access to resources for yourself and others
-  - Grant access to resources
-  - View activity logs of RBAC changes
-prerequisites: |
-  - Knowledge of basic Azure concepts, such as the Azure portal and resource groups
-#TODO: Update icon URL with real image 
+  title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+  description: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
+  ms.openlocfilehash: 83cc58636ac7e4b7e779d20deb86a48252b4e795
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43455637"
+title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+summary: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
+abstract: ロールベースのアクセス制御 (RBAC) は、Azure のリソースのアクセス権を詳細に管理できるシステムです。 RBAC を使用して、チーム内で職務を分離し、職務に必要なアクセス許可のみをユーザーに付与します。 このモジュールでは、RBAC を使用して Azure 内のリソースへのアクセスを管理する方法を示します。
+cardDescription: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - administrator
-products: 
-- azure
+products:
+- Azure
 units:
 - learn.secure-azure-resources-with-rbac.1-introduction
 - learn.secure-azure-resources-with-rbac.2-rbac-overview

@@ -1,17 +1,17 @@
-Securing your Azure resources, such as virtual machines, websites, networks, and storage, is a critical function for any organization using the cloud. You want to ensure that your data and assets are protected, but still grant your employees and partners the access they need to perform their jobs. Role-based access control (RBAC) is an authorization system in Azure that helps you manage who has access to Azure resources, what they can do with those resources, and where they have access.
+仮想マシン、Web サイト、ネットワーク、およびストレージなどの Azure リソースをセキュリティで保護することは、クラウドを利用するすべての組織にとって重要な機能です。 データと資産を確実に保護しつつ、従業員やパートナーに業務の遂行に必要なアクセス権を付与する必要があります。 ロールベースのアクセス制御 (RBAC) は、Azure のリソースにアクセスできるユーザー、そのユーザーがそれらのリソースに対して実行できること、そのユーザーがアクセスできる領域を管理するのに役立つ、Azure の承認システムです。
 
-As an example, suppose you work for First Up Consultants, which is an engineering firm that specializes in circuit and electrical design. They've moved their workloads and assets to Azure to make collaboration easier across several offices and other companies. You work in the IT department at First Up Consultants, where you are responsible for keeping the company's assets secure, but still allowing users to access the resources they need. You've heard that RBAC can help you manage resources in Azure.
+例として、あなたは、回路と電気設計を専門とするエンジニアリング会社である First Up Consultants に勤務しているとします。 複数のオフィスや他の企業とのコラボレーションを容易にするため、会社はワークロードと資産を Azure に移行しています。 あなたは First Up Consultants の IT 部門に勤務しており、会社の資産の安全を確保しつつ、ユーザーが必要なリソースにアクセスできるようにする責任を担っています。 あなたは、Azure でリソースを管理するのに RBAC が役立つと聞いたことがあります。
 
-In this module, you will learn how to use role-based access control (RBAC) to manage access to resources in Azure.
+このモジュールでは、ロールベースのアクセス制御 (RBAC) を使用して、Azure のリソースへのアクセスを管理する方法を学習します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Verify access to resources for yourself and others
-- Grant access to resources
-- View activity logs of RBAC changes
+- 自分や他のユーザーのリソースへのアクセスを確認する
+- リソースへのアクセス権を付与する
+- RBAC の変更のアクティビティ ログを表示する
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Knowledge of basic Azure concepts, such as the Azure portal and resource groups
+- Azure portal やリソース グループなど、Azure の基本的な概念に関する知識

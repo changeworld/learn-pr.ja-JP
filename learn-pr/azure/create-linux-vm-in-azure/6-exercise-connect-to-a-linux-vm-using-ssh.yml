@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.6-exercise-connect-to-a-linux-vm-using-ssh
+title: 演習 - SSH を使用して Linux 仮想マシンに接続する
+metadata:
+  title: 演習 - SSH を使用して Linux 仮想マシンに接続する
+  description: 演習 - SSH を使用して Linux 仮想マシンに接続する
+  ms.openlocfilehash: ef01afb473e7a5856da74a1ab7bb62ec19296606
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498156"
+durationInMinutes: 15
+interactive: bash
+content: '[!include[](includes/6-exercise-connect-to-a-linux-vm-using-ssh.md)]'

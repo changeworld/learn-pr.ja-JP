@@ -1,50 +1,53 @@
-In this unit, we're going to create an Azure function that accepts an HTTP request with a single string. The function returns a string back to the caller to represent success or failure.
+この演習では、単一の文字列を含む HTTP 要求を受け取る Azure 関数を作成します。 この関数では、成功または失敗を表す文字列が呼び出し元に返されます。
 
-## Create an HTTP trigger
+## <a name="create-an-http-trigger"></a>HTTP トリガーを作成する
 
-Let's continue using our existing Azure Functions application and add an HTTP trigger.
+既存の Azure Functions アプリケーションを引き続き使用し、HTTP トリガーを追加してみましょう。
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Point to **Functions** and select the plus (+) icon.
+1. **[関数]** をポイントし、プラス (+) アイコンを選択します。
 
-1. Select **HTTP trigger**.
+    ![[関数] をポイントし、プラス ホバーを選択する](../media-drafts/4-hover-function.png)
 
-1. Select **C#** as the language.
+1. **[HTTP トリガー]** を選択します。
 
-1. Leave the **Name** set to the default value.
+1. 言語として **[C#]** を選択します。 
 
-1. Set the **Authorization level** to **Anonymous**.
+1. **[名前]** は既定値のままにします。
 
-1. Select **Create**.
+1. **[承認レベル]** を **[匿名]** に設定します。
 
-1. Take a quick look at the auto-generated code to get an idea about what's going on. The *req* parameter represents the incoming request and contains a *name* parameter. We check to see if *name* has a value. If it does, we return a greeting. Otherwise, we return an error message.
+1. **[作成]** を選択します。
 
-## Get your function URL
+1. 自動生成されたコードを見て、実行されている処理を確認しましょう。 *req* パラメーターは着信要求を表し、*name* パラメーターを含みます。 *name* に値があるかどうかを確認します。 ある場合はあいさつを返します。 ない場合は、エラー メッセージを返します。
 
-Now that we've created the HTTP trigger, let's get the function URL so we can begin to make a request.
+## <a name="get-your-function-url"></a>関数の URL を取得する
 
-1. Select your HTTP trigger to open the code screen.
+HTTP トリガーを作成したので、要求を開始できるように関数の URL を取得してみましょう。
 
-1. To the right of **Run**, select **Get function URL**.
+1. HTTP トリガーを選択してコード画面を開きます。
 
-1. Select **Copy**.
+1. **[実行]** の右側にある **[関数の URL の取得]** を選択します。
 
-1. Select **Run** to start your function.
+1. **[コピー]** を選択します。
 
-## Issue a GET request to your HTTP trigger
+1. **[実行]** を選択して関数を開始します。
 
-We now have our function URL copied to our clipboard. Let's issue a GET request to see if we get a response.
+## <a name="issue-a-get-request-to-your-http-trigger"></a>HTTP トリガーに対して GET 要求を発行する
 
-1. Open a new tab in your web browser.
+関数 URL はクリップボードにコピーされている状態です。 GET 要求を発行して、応答があるかどうかを確認しましょう。
 
-1. Paste the URL into the address bar.
+1. Web ブラウザーで新しいタブを開きます。
 
-1. Add a query string parameter called *name* with your name for example `.../api/HttpTriggerCSharp1?name=Jesse`
+1. アドレス バーに URL を貼り付けます。
 
-1. Select ENTER to submit the request.
+1. たとえば、`.../api/HttpTriggerCSharp1?name=Jesse` のように、*name* という名前のクエリ文字列パラメーターを追加します。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+1. Enter キーを押して要求を送信します。
 
-To ensure that you aren't charged for this function, select **Pause** above the log window.
+## <a name="clean-up"></a>クリーンアップ
+
+この関数に対して課金されないように、ログ ウィンドウの上にある **[一時停止]** を選択します。
+
+![一時停止](../media-drafts/4-pause-timer.png)

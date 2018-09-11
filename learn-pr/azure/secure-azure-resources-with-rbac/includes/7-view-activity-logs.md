@@ -1,44 +1,44 @@
-First Up Consultants reviews role-based access control (RBAC) changes quarterly for auditing and troubleshooting purposes. You know that changes get logged in [Azure Activity Log](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs). Your manager has asked if you can generate a report of the role assignment and custom role changes for the last month.
+"First Up Consultants" では、監査とトラブルシューティングの目的で、ロール ベースのアクセス制御 (RBAC) の変更内容を四半期ごとに確認します。 変更は [Azure アクティビティ ログ](/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)に記録されます。 マネージャーから、先月のロールの割り当てとカスタム ロールの変更に関するレポートを生成できるかどうかを確認されたとします。
 
-## View activity logs
+## <a name="view-activity-logs"></a>アクティビティ ログの表示
 
-The easiest way to get started is to view the activity logs with the Azure portal.
+作業を開始する最も簡単な方法は、Azure portal でアクティビティ ログを表示することです。
 
-1. Click **All services** and then find **Activity log**.
+1. **[すべてのサービス]** をクリックして、**[アクティビティ ログ]** を見つけます。
 
-    ![Activity logs using the portal](../media-draft/7-all-services-activity-log.png)
+    ![ポータルを使用したアクティビティ ログ](../media-draft/7-all-services-activity-log.png)
 
-1. Click **Activity log**.
+1. **[アクティビティ ログ]** をクリックします。
 
-    ![Activity logs using the portal](../media-draft/7-activity-log-portal.png)
+    ![ポータルを使用したアクティビティ ログ](../media-draft/7-activity-log-portal.png)
 
-1. Set the **Timespan** filter to **Last month**.
+1. **[期間]** フィルターに **[先月]** を設定します。
 
-1. Set the **Event category** filter to **Administrative**.
+1. **[イベント カテゴリ]** フィルターに **[管理]** を設定します。
 
-1. In the **Operation** filter, type **role** to filter the list.
+1. **[操作]** フィルターに、「**role**」と入力して一覧をフィルター処理します。
 
-1. Select the following RBAC operations:
+1. 次の RBAC 操作を選択します。
 
-    - Create role assignment (roleAssignments)
-    - Delete role assignment (roleAssignments)
-    - Create or update custom role definition (roleDefinitions)
-    - Delete custom role definition (roleDefinitions)
+    - ロール割り当ての作成 (roleAssignments)
+    - ロール割り当ての削除 (roleAssignments)
+    - カスタムのロールの定義を作成または更新 (roleDefinitions)
+    - カスタムのロールの定義を削除 (roleDefinitions)
 
-    ![Operation filter](../media-draft/7-operation-filter.png)
+    ![[操作] フィルター](../media-draft/7-operation-filter.png)
 
-1. Click **Apply** to apply your filters.
+1. **[適用]** をクリックしてフィルターを適用します。
 
-    You'll see all the role assignment and role definition operations for the last month. It also includes a link to download the activity log as a CSV file.
+    先月のロール割り当てとロールの定義の操作がすべて表示されます。 また、アクティビティ ログを CSV ファイルとしてダウンロードするためのリンクも含まれています。
 
-    ![RBAC activity logs](../media-draft/7-activity-log-portal-filter.png)
+    ![RBAC のアクティビティ ログ](../media-draft/7-activity-log-portal-filter.png)
 
-## End lab
+## <a name="end-lab"></a>ラボの終了
 
-1. To end the lab, click the hamburger menu in the upper-right corner of this window and then click **End**.
+1. ラボを終了するには、このウィンドウの右上隅にあるハンバーガー メニューをクリックして、**[終了]** をクリックします。
 
-1. Click **Yes, end my lab**.
+1. **[Yes, end my lab]\(はい、ラボを終了します\)** をクリックします。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.
+このユニットでは、Azure アクティビティ ログを使用して、ポータルで RBAC の変更を一覧表示し、シンプルなレポートを生成する方法について学習しました。

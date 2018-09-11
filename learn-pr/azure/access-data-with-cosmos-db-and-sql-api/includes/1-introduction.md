@@ -1,17 +1,17 @@
-Adding data and querying data in your database should be straightforward. 
+ご利用のデータベースにデータを追加し、データをクエリするのは簡単です。 
 
-Imagine you work for an online clothing retailer and you need to add inventory data to your e-commerce database in Azure Cosmos DB. Once the data is in the database, you can query it by using familiar SQL queries (yes, just like the ones you use in SQL Server) and perform complex operations by using stored procedures and user-defined functions (UDFs).
+オンラインの自動車部品販売店で仕事をしていて、Azure Cosmos DB にあるご利用の e コマース データベースに部品データを追加する必要があるとします。 データがそのデータベースにあるときは、使い慣れた SQL クエリを使用してデータをクエリし (SQL Server で使用するものと同様)、ストアド プロシージャとユーザー定義関数を使用することによって複雑な操作を実行できます。
 
-Azure Cosmos DB provides a Data Explorer in the Azure portal that you can use to perform all these operations: adding data, modifying data, and creating and running stored procedures. The Data Explorer can be used in the Azure portal or it can be undocked and used in a standalone web browser, providing additional space to work with your data.
+Azure Cosmos DB では、Azure portal でデータ エクスプローラーを提供します。これを使用すると、データの追加、データの変更、およびストアド プロシージャの作成と実行といった操作をすべて実行できます。 データ エクスプローラーは、Azure portal で使用したり、ドッキングを解除し、ご自分のデータを操作するために追加の領域を提供することで、スタンドアロンの Web ブラウザーで使用したりすることができます。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
+- データ エクスプローラーで製品カタログのドキュメントを作成する
+- Azure Cosmos DB クエリを実行する
+- ストアド プロシージャを使用することによって、ご自分のドキュメントで操作を作成して実行する
 
-- Create product catalog documents in the Data Explorer
-- Perform Azure Cosmos DB queries
-- Create and run operations on your documents by using stored procedures
+## <a name="prerequisites"></a>前提条件
 
-## Prerequisites
-
-- Have an understanding of databases and queries
+- データベースとクエリを理解している
+- "スケールのために組み込まれた Azure Cosmos DB データベースを作成する" モジュールで作成された、Azure Cosmos DB アカウント、データベース、およびコレクション

@@ -1,49 +1,49 @@
-Previously, you saw how **Azure Load Balancer** helps you achieve high availability and minimize downtime.
+以前に、高可用性を実現し、ダウンタイムを最小限に抑えるのに **Azure Load Balancer** がどのように役立つかについて説明しました。
 
-Although your e-commerce site is more highly available, it doesn't solve the issue of latency or create resiliency across geographic regions.
+あなたの e コマース サイトの可用性はさらに向上しましたが、それによって待機時間の問題が解決したり、地理的リージョン全体での回復性が高くなったりするわけではありません。
 
-How can you make your site, which is located in the United States, load faster for users located in Europe or Asia?
+ヨーロッパやアジアのユーザーのために、米国にあるサイトの読み込みを高速化するにはどうすればよいですか?
 
-## What is network latency?
+## <a name="what-is-network-latency"></a>ネットワーク待ち時間とは何ですか?
 
-_Latency_ refers to the time it takes for data to travel over the network. Latency is typically measured in milliseconds.
+_待ち時間_は、ネットワーク経由でデータが送信されるのにかかる時間を指します。 通常、待ち時間はミリ秒単位で測定されます。
 
-Compare latency to bandwidth. Bandwidth refers to the amount of data that can fit on the connection. Latency refers to the time it takes for that data to reach its destination.
+待ち時間を帯域幅と比較します。 帯域幅は、その接続に収めることができるデータ量を指します。 待ち時間は、データが送信先に到達するまでにかかる時間を指します。
 
-Factors such as the type of connection you use and how your application is designed can affect latency. But perhaps the biggest factor is distance.
+使用する接続の種類やアプリケーションの設計方法などの要因が、待ち時間に影響する場合もありますが、 最も大きな要因は距離です。
 
-Think about your e-commerce site on Azure, which is in the East US region. It would typically take less time to transfer data to Atlanta (a distance of around 400 miles) than to transfer data to London (a distance of around 4,000 miles).
+米国東部リージョンに配置されている Azure にあるあなたの e コマース サイトについて考えてみましょう。 通常、アトランタ (約 640 キロメートルの距離) にデータを転送する時間は、ロンドン (約 6,400 キロメートル) にデータを転送する時間よりも短くて済みます。
 
-Your e-commerce site delivers standard HTML, CSS, JavaScript, and images. The network latency for many files can add up. How can you reduce latency for users located far away geographically?
+あなたの e コマース サイトでは、標準的な HTML、CSS、JavaScript、およびイメージを配信しています。 ファイルが増えるほどネットワーク待ち時間は長くなる可能性があります。 地理的に遠く離れた場所にいるユーザーへの待ち時間を短くするには、どうすればよいですか?
 
-## Scale out to different regions
+## <a name="scale-out-to-different-regions"></a>異なるリージョンへのスケール アウト
 
-Recall that Azure provides data centers in regions across the globe.
+Azure では、世界中のさまざまなリージョンでデータ センターを提供していることを思い出してください。
 
-Think about the cost of building a data center. Equipment costs aren't the only factor. You need to provide the power, cooling, and personnel to keep your systems running at each location. It might be prohibitively expensive to replicate your entire data center. But doing so with Azure can cost much less, because Azure already has the equipment and personnel in place.
+データ センターを構築するコストについて考えてみましょう。 機器のコストだけではありません。電源、冷却装置、および各場所でシステムを常に稼働させるための人員を提供する必要があります。 データ センター全体をレプリケートするには、多額のコストがかかる場合があります。 しかし、Azure には既に機器と人員が用意されているため、Azure を使用すれば、ずっと少ないコストでこれを行うことができます。
 
-One way to reduce latency is to provide exact copies of your service in more than one region. HThe following illustration shows an example of global deployment.
+待ち時間を短縮する 1 つの方法は、サービスの正確なコピーを複数のリージョンに提供することです。 ダイアグラムを次に示します。
 
-![An illustration showing a world map with three Azure data centers highlighted. Each data center is labelled with a unique domain name.](../media/4-global-deployment.png)
+![米国東部、北ヨーロッパ、および東アジア リージョンで実行されている e コマース サイト](../media-draft/global-deployment.png)
 
-The diagram shows your e-commerce site running in three Azure regions: East US, North Europe, and East Asia. Notice the DNS name for each. How can you connect users to the service that's closest geographically, but under the contoso.com domain?
+図では、Azure の 3 つのリージョン (米国東部、北ヨーロッパ、および東アジア) で実行されている e コマース サイトが示されています。 それぞれの DNS 名に注目してください。 contoso.com ドメインの下で、地理的に最も近いサービスにユーザーを接続させるにはどうすればよいですか?
 
-## Use Traffic Manager to route users to the closest endpoint
+## <a name="use-traffic-manager-to-route-users-to-the-closest-endpoint"></a>Traffic Manager を使用して最も近いエンドポイントにユーザーをルーティングする
 
-One answer is **Azure Traffic Manager**. Traffic Manager uses the DNS server that's closest to the user to direct user traffic to a globally distributed endpoint. The following illustration shows the role of the Traffic Manager.
+**Traffic Manager** は 1 つの答えです。 Traffic Manager は、ユーザーに最も近い DNS サーバーを使用して、ユーザー トラフィックを世界中に分散されたエンドポイントに送信します。 ダイアグラムを次に示します。
 
-![An illustration showing Azure Traffic Manager routing a user request to the nearest data center. ](../media/4-traffic-manager.png)
+![Traffic Manager を使用して、イタリアのユーザーを最も近いエンドポイントに送信する](../media-draft/traffic-manager.png)
 
-Traffic Manager doesn't see the traffic that's passed between the client and server. Rather, it directs the client web browser to a preferred endpoint. Traffic Manager can route traffic in a few different ways, such as to the endpoint with the lowest latency.
+Traffic Manager では、クライアントとサーバー間を通過するトラフィックを認識することはありません。 代わりに、クライアントの Web ブラウザーを優先エンドポイントに送信します。 Traffic Manager は、待ち時間が最も短いエンドポイントなど、いくつかの異なる方法でトラフィックをルーティングすることができます。
 
-Although not shown here, this setup could also include your on-premises deployment running in California. You can connect Traffic Manager to your own on-premises networks, enabling you to maintain your existing data center investments. Or you can move your application entirely to the cloud. The choice is yours.
+ここには示されていませんが、このセットアップには、カリフォルニアで実行されているオンプレミス デプロイも含めることができます。 Traffic Manager を自分のオンプレミス ネットワークに接続して、既存のデータ センターへの投資を維持することができます。 または、アプリケーションを完全にクラウドに移行することもできます。 選ぶのはあなた自身です。
 
-## Compare Load Balancer to Traffic Manager
+## <a name="compare-azure-load-balancer-to-traffic-manager"></a>Azure Load Balancer と Traffic Manager を比較する
 
-Azure Load Balancer distributes traffic within the same region to make your services more highly available and resilient. Traffic Manager works at the DNS level, and directs the client to a preferred endpoint. This endpoint can be to the region that's closest to your user.
+Azure Load Balancer は、サービスの可用性と回復性をより高めるため、同じリージョン内でトラフィックを分散させます。 Traffic Manager は、DNS レベルで動作し、優先エンドポイントにクライアントを送信します。 このエンドポイントは、ユーザーに最も近いリージョンにすることができます。
 
-Load Balancer and Traffic Manager both help make your services more resilient, but in slightly different ways. When Load Balancer detects an unresponsive VM, it directs traffic to other VMs in the pool. Traffic Manager monitors the health of your endpoints. In contrast, when Traffic Manager finds an unresponsive endpoint, it directs traffic to the next closest endpoint that is responsive.
+Azure Load Balancer と Traffic Manager はどちらもサービスの回復性を高めるのに役立ちますが、その方法は若干異なります。 Azure Load Balancer では、応答していない VM を検出すると、プール内の別の VM にトラフィックを送信します。 Traffic Manager は、エンドポイントの正常性を監視します。 これに対し、Traffic Manager が応答していないエンドポイントを検出すると、次に最も近い応答しているエンドポイントにトラフィックを送信します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Geographic distance is one of the biggest factors that contributes to latency. With Traffic Manager in place, you can host exact copies of your service in multiple geographic regions. That way, users in the United States, Europe, and Asia will all have a good experience using your e-commerce site.
+地理的な距離は、待ち時間に影響する最も大きな要因の 1 つです。 Traffic Manager を配置すると、サービスの正確なコピーを複数の地理的リージョンでホストすることができます。 これにより、米国、ヨーロッパ、およびアジアのユーザーすべてが、あなたの e コマース サイトの使用に対して良好なエクスペリエンスを持つことができます。

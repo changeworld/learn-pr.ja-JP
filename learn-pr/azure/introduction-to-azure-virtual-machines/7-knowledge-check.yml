@@ -1,0 +1,36 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.openlocfilehash: 2a983a8e134e15a3ca89277e162750362d34c2b7
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477194"
+durationInMinutes: 3
+quiz:
+  title: Azure 仮想マシン
+  questions:
+  - content: 仮想マシンでネットワーク アプライアンスを実行するとします。 どのワークロード オプションを選択しますか?
+    choices:
+    - content: 汎用
+      isCorrect: false
+    - content: コンピューティング最適化
+      isCorrect: true
+    - content: メモリ最適化
+      isCorrect: false
+    - content: ストレージ最適化
+      isCorrect: false
+  - content: 既存の Azure 仮想マシンのコピーをデプロイするとします。 ジョブを完了するためにどのオプションを選択しますか?
+    choices:
+    - content: PowerShell
+      isCorrect: false
+    - content: Resource Manager テンプレート
+      isCorrect: true
+    - content: Azure CLI
+      isCorrect: false
+    - content: Azure クライアント SDK
+      isCorrect: false

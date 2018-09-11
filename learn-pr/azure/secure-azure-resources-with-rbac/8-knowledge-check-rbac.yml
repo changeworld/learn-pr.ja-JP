@@ -1,66 +1,68 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
 metadata:
-  title: Knowledge check - Using RBAC
-  description: Knowledge check - Using RBAC
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check - Using RBAC
+  title: 知識チェック - RBAC を使用する
+  description: 知識チェック - RBAC を使用する
+  displayType: one-column
+  ms.openlocfilehash: 6888c6b1d676f0bc3066cce4c92d0202984c2b52
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43479202"
+title: 知識チェック - RBAC を使用する
 durationInMinutes: 5
+content: 知識チェック - RBAC を使用する
 quiz:
-  title: Knowledge check - Using RBAC
+  title: 知識チェック - RBAC を使用する
   questions:
-  - content: 'What is the name of the blade in the Azure portal where you grant access?'
+  - content: アクセス権を付与する、Azure portal のブレードの名前は何ですか?
     choices:
-    - content: Azure resources
+    - content: Azure リソース
       isCorrect: false
-      correctExplanation: You can't assign roles on the Azure resources blade, but you can see what roles are assigned to yourself or the selected user.
+      correctExplanation: '[Azure リソース] ブレードでは、ロールを割り当てることはできませんが、自分または選択したユーザーに割り当てられているロールを確認することができます。'
     - content: Azure Active Directory
       isCorrect: false
-      incorrectExplanation: You can't assign roles on the Azure Active Directory blade, but you can access the Azure Active Directory features on this blade.
-    - content: All users
+      incorrectExplanation: '[Azure Active Directory] ブレードでは、ロールを割り当てることはできませんが、このブレードで Azure Active Directory 機能にアクセスできます。'
+    - content: すべてのユーザー
       isCorrect: false
-      correctExplanation: You can't assign roles on the All users blade. This blade lists all the users for the selected directory.
-    - content: Access control (IAM)
+      correctExplanation: '[すべてのユーザー] ブレードでは、ロールを割り当てることはできません。 このブレードには、選択したディレクトリのすべてのユーザーが一覧表示されます。'
+    - content: アクセス制御 (IAM)
       isCorrect: true
-      correctExplanation: Correct! You assign roles on the Access control (IAM) blade. This blade appears in several areas in the portal.
-  - content: 'To grant a user access to Azure resources, you create a role assignment.'
+      correctExplanation: 正解です。 [アクセス制御 (IAM)] ブレードでロールを割り当てます。 このブレードは、ポータル内の複数の領域に表示されます。
+  - content: Azure リソースへのアクセス権をユーザーに付与するには、ロールの割り当てを作成します。
     choices:
-    - content: 'True'
+    - content: ○
       isCorrect: true
-      correctExplanation: Correct! A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
-    - content: 'False'
+      correctExplanation: 正解です。 ロールの割り当ては、アクセス権を付与する目的のため、特定のスコープで、ロールをサービス プリンシパルにバインドするプロセスです。
+    - content: ×
       isCorrect: false
-      incorrectExplanation: A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
-  - content: 'What role enables you to grant access to others?'
+      incorrectExplanation: ロールの割り当ては、アクセス権を付与する目的のため、特定のスコープで、ロールをサービス プリンシパルにバインドするプロセスです。
+  - content: 他のユーザーにアクセス権を付与できるのは、どのロールですか?
     choices:
-    - content: Virtual Machine Contributor
+    - content: 'Virtual Machine Contributor '
       isCorrect: false
-      correctExplanation: The Virtual Machine Contributor role allows you to manage virtual machines, but you can't grant access to others.
-    - content: User Access Administrator
+      correctExplanation: Virtual Machine Contributor ロールでは、仮想マシンを管理することはできますが、他のユーザーにアクセス権を付与することはできません。
+    - content: ユーザー アクセス管理者
       isCorrect: true
-      incorrectExplanation: Correct! The User Access Administrator role and also the Owner role allow you to grant access to others.
-    - content: Contributor
+      incorrectExplanation: 正解です。 ユーザー アクセス管理者ロールと所有者ロールが、他のユーザーにアクセス権を付与できます。
+    - content: 共同作成者
       isCorrect: false
-      correctExplanation: The Contributor role allows you to manage all resources, but you can't grant access to others.
-    - content: Reader
+      correctExplanation: 共同作成者ロールでは、すべてのリソースを管理することはできますが、他のユーザーにアクセス権を付与することはできません。
+    - content: 閲覧者
       isCorrect: false
-      correctExplanation: The Reader role allows you to read all resources, but you can't grant access to others.
-  - content: 'A developer needs full access to a resource group. If you are following least-privilege best practices, what scope should you specify?'
+      correctExplanation: 閲覧者ロールでは、すべてのリソースを読み取ることはできますが、他のユーザーにアクセス権を付与することはできません。
+  - content: 開発者には、リソース グループへのフル アクセスが必要です。 最小限の特権のベスト プラクティスに従っている場合、どのスコープを指定する必要がありますか?
     choices:
-    - content: Resource group
+    - content: リソース グループ
       isCorrect: true
-      correctExplanation: Correct! Following least-privilege best practices, you just grant the access the user needs to do their job. In this case, you should set the scope to just the resource group.
-    - content: Subscription
+      correctExplanation: 正解です。 最小限の特権のベスト プラクティスに従って、ユーザーが自分の業務を遂行するのに必要なアクセス権のみを付与します。 この場合、リソース グループだけにスコープを設定する必要があります。
+    - content: サブスクリプション
       isCorrect: false
-      incorrectExplanation: A subscription scope would grant the developer access, but it would be broader than what they need.
-    - content: Resource
+      incorrectExplanation: サブスクリプション スコープでは、開発者のアクセス権が付与されますが、必要以上に広範になる場合があります。
+    - content: リソース
       isCorrect: false
-      correctExplanation: A resource scope would not grant the developer the access they require.
-    - content: User
+      correctExplanation: リソース スコープでは、開発者に必要なアクセス権が付与されません。
+    - content: ユーザー
       isCorrect: false
-      correctExplanation: User is not a scope.
+      correctExplanation: ユーザーはスコープではありません。

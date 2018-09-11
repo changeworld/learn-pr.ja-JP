@@ -1,61 +1,49 @@
-You decide to deploy Azure AD and use conditional access policies that Azure require Multi-Factor Authentication when anyone accesses the Azure portal. You need to create a directory and get temporary licenses in place.
+あなたは、Azure AD をデプロイし、Azure portal にアクセスする際に、Azure によって多要素認証を要求する条件付きアクセス ポリシーを使用することを決めました。 あなたは、ディレクトリを作成し、一時的なライセンスを取得する必要があります。
 
-## Create a directory
-We will create a new directory for First Up Consultants where we can test without fear of impacting production users.
+## <a name="create-a-directory"></a>ディレクトリを作成する
+運用環境ユーザーに影響を与えることなくテストできる、First Up Consultants 用の新しいディレクトリを作成します。
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/) にサインインします。
+1. 左側のナビゲーション ウィンドウで、**[リソースの作成]** > **[Identity]** > **[Azure Active Directory]** の順にクリックします。
+1. **[ディレクトリの作成]** ブレードで、**[組織名]** と **[初期ドメイン名]** に次の値を指定します。
 
-1. In the left navigation pane, click **Create a resource** > **Identity** > **Azure Active Directory**.
+   1. 組織名: `First Up Consultants`。
+   1. 初期ドメイン名: `firstupconsultants<XXXX>.onmicrosoft.com`。
 
-1. In the **Create directory** blade, provide the following values for the **Organization name** and **Initial domain name**:
+1. ディレクトリが作成されるのを待ちます。 リンクをクリックして、新しいディレクトリに切り替えるか、ウィンドウの上部にある **[ディレクトリおよびサブスクリプションのフィルター]** をクリックして、新しく作成されたディレクトリを選択します。
 
-   1. ORGANIZATION NAME: `First Up Consultants`.
-   1. INITIAL DOMAIN NAME: `firstupconsultants<XXXX>.onmicrosoft.com`.
+## <a name="get-trial-licenses"></a>試用版ライセンスを取得する
 
-1. Wait for the directory to be created. Click the link to switch to the new directory, or click the **Directory and subscription filter** at the top of the window and then choose the newly created directory.
+条件付きアクセスや多要素認証などの機能を使用するには、少なくとも試用版ライセンスが必要です。 次の手順は、試用版ライセンスを有効にする方法を説明します。
 
-## Get trial licenses
+1. Azure AD の **[概要]** ウィンドウで、**無料試用版を開始する**ためのリンクをクリックします。
+1. **[Azure AD Premium P2]** 項目の下で、**[無料試用版]**、**[アクティブ化]** の順にクリックします。
 
-In order for you to use features like conditional access and Multi-Factor Authentication, you will need at least a trial license. The following steps walk you through how to enable a trial license:
+## <a name="create-a-test-user"></a>テスト ユーザーを作成する
 
-1. In the Azure AD **Overview** pane, click the **Start a free trial** link.
+ユーザーを使ってこれをテストする必要があります。 Isabella Simonsen (別のチームのメンバー) が、あなたに協力することを申し出てくれました。ディレクトリ内に彼女のアカウントが必要になるため、彼女のアカウントを作成する手順を行います。
 
-1. Under the item **Azure AD Premium P2**, click **Free trial**, and then click **Activate**.
-
-## Create a test user
-
-We're going to need to test this out with a user. Isabella Simonsen (another member of your team) has volunteered to help you out. She will need an account in the directory, so we will go through the steps to create her account.
-
-1. Browse to **Azure Active Directory** > **Users** > **All users**.
-
-1. Click **New user**.
-
-1. Create a user named **Isabella Simonsen** with a user name of:
+1. **[Azure Active Directory]** > **[ユーザー]** > **[すべてのユーザー]** の順に移動します。
+1. **[新しいユーザー]** をクリックします。
+1. ユーザー名が **Isabella Simonsen** という名前のユーザー名を作成します。
 
    * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
 
-1. Check the box to **Show Password** for the user. Make a note of the password so you can use it later when testing.
+1. このユーザーの **[パスワードを表示]** チェック ボックスをオンにします。 後でテストするときに使用できるように、パスワードをメモします。
+1. **[作成]** をクリックします。
 
-1. Click **Create**.
+## <a name="create-a-pilot-group"></a>パイロット グループを作成する
 
-## Create a pilot group
+作成するポリシーをユーザーのグループに割り当てますが、このポリシーを割り当てるグループを作成する必要があります。 次の手順に従って、パイロット デプロイのためのセキュリティ グループを作成します。
 
-We will be assigning the policy that we create to a group of users, but we need to create a group for this policy. The following steps help you create a security group for the pilot deployment.
+1. **[Azure Active Directory]** > **[グループ]** > **[すべてのグループ]** の順に移動します。
+1. **[新しいグループ]** をクリックします。
+1. グループの種類: **セキュリティ**。
+1. グループ名: **CA-MFA-AzurePortal**。
+1. メンバーシップの種類: **割り当て済み**。
+1. 前の手順で作成したユーザーを選択して、**[選択]** を選択します。
+1. **[作成]** をクリックします。
 
-1. Browse to **Azure Active Directory** > **Groups** > **All groups**.
+## <a name="summary"></a>まとめ
 
-1. Click **New group**.
-
-1. Group type **Security**.
-
-1. Group name **CA-MFA-AzurePortal**.
-
-1. Membership type **Assigned**.
-
-1. Select the user that we created in the previous step, and choose **Select**.
-
-1. Click **Create**.
-
-## Summary
-
-In this unit, you learned how to create a trial licensed directory, a test user, and a pilot group in the Azure portal.
+このユニットでは、Azure portal で試用版ライセンスのディレクトリ、テスト ユーザー、およびパイロット グループを作成する方法を学習しました。

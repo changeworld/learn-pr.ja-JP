@@ -1,23 +1,23 @@
-In the previous exercises, we gathered a basic understanding of Azure AD. We created a directory, created a user and group, and then created a conditional access rule that requires Azure Multi-Factor Authentication when accessing the Azure portal.
+前の演習では、Azure AD の基本を理解しました。 ディレクトリを作成し、ユーザーとグループを作成した後、Azure portal へのアクセス時に Azure Multi-Factor Authentication を要求する条件付きアクセス規則を作成しました。
 
-Now, we'll test if we can access our resources.
+次に、リソースにアクセスできるかどうかをテストします。
 
-## Test access to resources
+## <a name="test-access-to-resources"></a>リソースへのアクセスをテストする
 
-You know that your users will sign in and access all their SaaS applications using the MyApps portal, so this is what we'll test.
+サインインしたユーザーが、MyApps ポータルを使用してすべての SaaS アプリケーションにアクセスすることをあなたは知っています。
 
-1. Open an InPrivate browser window.
+1. InPrivate ブラウザー ウィンドウを開きます。
 
-1. Browse to https://myapps.microsoft.com.
+1. https://myapps.microsoft.com を参照します。
 
-1. Sign in as the user that we created in Unit 2.
+1. ユニット 2 で作成したユーザーとしてサインインします。
 
-   * Notice that you're signed in to the portal without requiring Multi-Factor Authentication.
+   * 多要素認証を必要とせず、ポータルにサインインできたことに注目してください。
 
-1. In the same browser window, browse to https://portal.azure.com.
+1. 同じブラウザー ウィンドウで https://portal.azure.com を参照します。
 
-   * Notice that you're now required to provide more information to keep your account secure. This interrupt is Azure Multi-Factor Authentication kicking in because of the conditional access policy we created. You can stop at this point and close the browser window.
+   * 今度は、アカウントの安全を確保するために追加の情報入力が要求されることに注意してください。 この要求は、作成した条件付きアクセス ポリシーによって、Azure Multi-Factor Authentication が適用されたことによるものです。 この時点で作業を終了し、ブラウザー ウィンドウを閉じることができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using Azure PowerShell. In the next unit, you look at how to create a custom role and define your own permissions.
+このユニットでは、Azure PowerShell を使用してリソース グループ内に仮想マシンを作成して管理するために、ユーザーにアクセス権を付与する方法について学習しました。 次のユニットでは、カスタム ロールを作成して独自のアクセス許可を定義する方法について説明します。

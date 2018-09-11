@@ -1,40 +1,40 @@
-The storage account settings we've already covered apply to the data services in the account. Here, we will discuss the three settings that apply to the account itself, rather than to the data stored in the account:
+既に説明したストレージ アカウントの設定は、アカウント内のデータ サービスに適用されます。 ここでは、アカウントに格納されるデータではなく、アカウント自体に適用される 3 つの設定について説明します。
 
-- Name
-- Deployment model
-- Account kind
+- 名前
+- デプロイ モデル
+- アカウントの種類
 
-These settings impact how you manage your account and the cost of the services within it.
+これらの設定は、アカウントの管理方法と、アカウント内のサービスのコストに影響を与えます。
 
-## Name
+## <a name="name"></a>名前
 
-Each storage account has a name. The name must be globally unique, use only lowercase letters and digits and be between 3 and 24 characters.
+各ストレージ アカウントには名前があります。 名前はグローバルに一意である必要があります。 名前の長さは 3 - 24 文字でなければならず、使用できるのは小文字と数字のみです。
 
-## Deployment model
+## <a name="deployment-model"></a>デプロイ モデル
 
-A _deployment model_ is the system Azure uses to organize your resources. It defines the API that you use to create, configure, and manage those resources. Azure provides two deployment models:
+"_デプロイ モデル_" は、Azure でリソースを編成するために使用されるシステムです。 これらのリソースの作成、構成、管理に使用する API が定義されています。 Azure では、2 種類のデプロイ モデルが提供されています。
 
-- **Resource Manager**: the current model that uses the Azure Resource Manager API
-- **Classic**: a legacy offering that uses the Azure Service Management API
+- **Resource Manager**: Azure Resource Manager (ARM) API を使用する現在のモデル
+- **クラシック**: Azure サービス管理 (ASM) API を使用するレガシ オファリング。
 
-The decision on which one to choose is usually easy, because most Azure resources only work with Resource Manager. However, storage accounts, virtual machines, and virtual networks support both, so you must choose one or the other when you create your storage account.
+ほとんどの Azure リソースは Resource Manager でのみ動作するので、選択するものの決定はたいていは簡単です。 ただし、ストレージ アカウント、仮想マシン、仮想ネットワークは両方をサポートします。 つまり、ストレージ アカウントを作成するときに、どちらか一方を選択する必要があります。
 
-The key feature difference between the two models is their support for grouping. The Resource Manager model adds the concept of a _resource group_, which is not available in the classic model. A resource group lets you deploy and manage a collection of resources as a single unit.
+2 つのモデルの重要な機能の違いは、グループ化のサポートです。 Resource Manager モデルで追加された "_リソース グループ_" の概念は、クラシック モデルでは使用できません。 リソース グループを使用すると、リソースのコレクションを 1 つの単位として展開および管理することができます。
 
-Microsoft recommends that you use **Resource Manager** for all new resources.
+すべての新しいリソースには Resource Manager を使用することをお勧めします。
 
-## Account kind
+## <a name="account-kind"></a>アカウントの種類
 
-Storage account _kind_ is a set of policies that determine which data services you can include in the account and the pricing of those services. There are three kinds of storage accounts:
+ストレージ アカウントの "_種類_" とは、アカウントに含めることができるデータ サービスを決定するポリシーのセットと、それらのサービスの価格です。 ストレージ アカウントには、次の 3 種類があります。
 
-- **StorageV2 (general purpose v2)**: the current offering that supports all storage types and all of the latest features
-- **Storage (general purpose v1)**: a legacy kind that supports all storage types but may not support all features
-- **Blob storage**: a legacy kind that allows only block blobs and append blobs
+- **StorageV2 (汎用 v2)**: すべてのストレージの種類とすべての最新の機能をサポートしている現在のオファリング
+- **Storage (汎用 v1)**: すべてのストレージの種類をサポートしていますが、すべての機能はサポートしていない場合がある、従来の種類
+- **BLOB ストレージ**: ブロック BLOB と追加 BLOB のみを使用できる従来の種類。
 
-Microsoft recommends that you use the **General-purpose v2** option for new storage accounts.
+新しいストレージ アカウントには汎用 v2 を使用することをお勧めします。
 
-There are a few special cases that can be exceptions to this rule. For example, pricing for transactions is lower in general purpose v1, which would allow you to slightly reduce costs if that matches your typical workload.
+このルールの例外になる場合がある特別なケースがいくつかあります。 たとえば、トランザクションの料金は汎用 v1 の方が安く、一般的なワークロードに合う場合はコストを若干削減できます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-The core advice here is to choose the **Resource Manager** deployment model and the **StorageV2 (general purpose v2)** account kind for all your storage accounts. The other options still exist primarily to allow existing resources to continue operation. For new resources, there are few reasons to consider the other choices.
+ここでの主要なアドバイスは、すべてのストレージ アカウントで **Resource Manager** デプロイ モデルと **StorageV2 (汎用 v2)** アカウントの種類を選択するということです。 他のオプションは、主に、既存のリソースの運用を続けられるようにするために存在します。 新しいリソースの場合は、他の選択肢を検討する理由はほとんどありません。

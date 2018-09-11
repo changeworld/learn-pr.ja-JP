@@ -1,27 +1,27 @@
-The online retailer that you work for plans to expand to a new geographical area soon. This move will increase your customer base and transaction volume. You must ensure that your database is equipped to handle expansion whenever required.
+勤務しているオンライン小売業者では、間もなく新しい地理的地域に拡張することが計画されています。 この動きにより、顧客ベースおよびトランザクション ボリュームが増大します。 必要なときはいつでも拡張に確実に対処できるようにデータベースの備えを整えておく必要があります。
 
-Having a partition strategy ensures that when your database needs to grow, it can do so easily and continue to perform efficient queries and transactions.
+パーティション戦略を使用すれば、ご利用のデータベースを拡大する必要が生じたとき、それを容易に実施し、クエリおよびトランザクションを引き続き効率的に実行できるようにすることができます。
 
-## What is a partition strategy?
+## <a name="what-is-a-partition-strategy"></a>パーティション戦略とは?
 
-If you continue to add new data to a single server or a single partition, it will eventually run out of space. To prepare for this, you need a partitioning strategy to **scale out** instead of up. Scaling out is also called horizontal scaling, and it enables you to add more partitions to your database as your application needs them.
+単一のサーバーまたは単一のパーティションに新しいデータを追加し続けた場合、最終的にそれらは容量不足になります。 これに備えるには、スケール アップではなく**スケール アウト**を行うためにパーティション戦略が必要です。 スケール アウトは水平方向のスケーリングとも呼ばれています。このスケーリングでは、アプリケーションでさらにパーティションが必要になったときに、ご利用のデータベースにそれらのパーティションを追加することができます。
 
-The partition and scale-out strategy in Azure Cosmos DB is driven by the partition key, which is a value set when you create a collection. Once the partition key is set, it cannot be changed without recreating the collection, so selecting the right partition key is an important decision to make early in your development process.  
+Azure Cosmos DB でのパーティションおよびスケール アウト戦略は、コレクション作成時に設定される値であるパーティション キーによって主導されます。 パーティション キーはいったん設定すると、コレクションを作成し直さない限り変更することはできません。このため、適切なパーティション キーを選択することは、開発プロセスの早い段階で行うべき重要な決定事項となります。  
 
-In this unit, you will learn how to choose a partition key that's right for your scenario and will take advantage of the autoscaling that Azure Cosmos DB can do for you.
+このユニットでは、ご自分のシナリオに適しているパーティション キーを選択する方法を学習し、Azure Cosmos DB によって自動的に実行される自動スケールを活用します。
 
-## Partition key basics
+## <a name="partition-key-basics"></a>パーティション キーの基礎
 
-A partition key represents a value in your database that's frequently queried. In our online retail scenario, using the `userID` or `productId` value as the partition key is a good choice because it will be unique and likely used to lookup records. `userID` is a good choice, as your application frequently needs to retrieve the personalization settings, shopping cart, order history, and profile information for the user, just to name a few. `productId` is also a good choice, as your application needs to query inventory levels, shipping costs, color options, warehouse locations, and more.
+パーティション キーは、クエリ対象となる頻度が高いご利用のデータベース内の値を表します。 このオンライン小売シナリオでは、`UserID` または `ProductID` の値をパーティション キーとして使用するのが適切です。これらの値は一意であり、レコードのルックアップに使用される可能性が高いからです。 `UserID` が適しているのは、個人用設定、ショッピング カート、注文履歴、ユーザーのプロファイル情報などをアプリケーションで頻繁に取得する必要がある場合です。 `ProductID` が適しているのは、在庫レベル、運送費、色のオプション、倉庫の場所などに対してアプリケーションでクエリを実行する必要がある場合です。
 
-A partition key should aim to distribute operations across the database. You want to distribute requests to avoid hot partitions. A hot partition is a single partition that receives many more requests than the others, which can create a throughput bottleneck. For example, for your e-commerce application, the current time would be a poor choice of partition key, because all the incoming data would go to a single partition key. `userID` or `productId` would be better, as all the users on your site would likely be adding and updating their shopping cart or profile information at about the same frequency, which distributes the reads and writes across all the user partitions. Likewise, updates to product data would also likely be evenly distributed, making `productId` a good partition key choice.
+パーティション キーでは、演算をデータベース全体に分散することを目指す必要があります。 要求を分散するのは、ホット パーティションを回避するためです。 ホット パーティションとは、他のパーティションよりもはるかに多くの要求を受信している単一のパーティションです。これによってスループットのボトルネックが作成される可能性があります。 たとえば、ご利用の e コマース アプリケーションにおいて、現在の時刻はパーティションキーとして適切ではありません。それは、すべての受信データが単一のパーティション キーに送られるからです。 それよりも、`UserID` または `ProductID` の方が適切です。サイト上のユーザーが自分のショッピング カートやプロファイル情報を追加または更新する頻度はどのユーザーでもほぼ同じである可能性が高く、したがって読み取りと書き込みがすべてのユーザー パーティションに分散されるからです。 同様に、製品データに対する更新も均等に分散される可能性が高いため、`ProductID` が適切なパーティション キーとなります。
 
-Each partition key has a maximum storage space of 10 GB, which is the size of one physical partition in Azure Cosmos DB. So, if your single `userID` or `productId` record is going to be larger than 10 GB, think about using a composite key instead so that each record is smaller. An example of a composite key would be `userID-date`, which would look like **CustomerName-08072018**. This composite key approach would enable you to create a new partition for each day a user visited the site.
+各パーティション キーの最大ストレージ スペースは 10 GB です。これは、Azure Cosmos DB 内の 1 つの物理パーティションのサイズとなります。 このため、`UserID` または `ProductID` のレコード 1 つのサイズが 10 GB を超える場合は、代わりに複合キーを使用して各レコードのサイズを小さくすることを検討します。 複合キーの例としては `UserID-date` があり、値は **CustomerName-08072018** などとなります。 この複合キー アプローチを使用すると、ユーザーがサイトを訪問した日ごとに新しいパーティションを作成することができます。
 
-## Best practices
+## <a name="best-practices"></a>ベスト プラクティス
 
-When you're trying to determine the right partition key and the solution isn't obvious, here are a few tips to keep in mind.
+適切なパーティション キーを決めようとしているが、明らかな答えが得られない場合、留意すべきいくつかのヒントを次に示します。
 
-- Don’t be afraid of having too many partition keys. The more partition keys you have, the more scalability you have.
-- To determine the best partition key for a read-heavy workload, review the top three to five queries you plan on using. The value most frequently included in the WHERE clause is a good candidate for the partition key.
-- For write-heavy workloads, you'll need to understand the transactional needs of your workload, because the partition key is the scope of multi-document transactions.
+- パーティション キーの数が多すぎても心配しないでください。 使用するパーティション キーの数が多いほど、拡張性が高くなります。
+- 読み取り負荷の高いワークロード用に最適なパーティション キーを決定するには、使用するつもりでいるクエリのうち上位 3 番目から 5 番目を確認します。 WHERE 句に最も頻繁に含まれている値は、パーティション キーの候補として適切です。
+- 書き込み負荷の高いワークロードの場合、パーティション キーは複数ドキュメント トランザクションのスコープになるため、ご利用のワークロードのトランザクション上のニーズを理解することが必要です。

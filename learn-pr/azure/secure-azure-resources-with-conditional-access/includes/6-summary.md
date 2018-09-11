@@ -1,3 +1,3 @@
-In this module, you created a directory and enabled Azure Multi-Factor Authentication using a conditional access rule. You can now create additional conditional access policies for this or other Azure resources.
+このモジュールでは、ディレクトリを作成し、条件付きアクセス規則を使用して Azure Multi-Factor Authentication を有効にしました。 これで、この Azure リソースまたは他の Azure リソースを対象にした追加の条件付きアクセス ポリシーを作成できるようになりました。
 
-For more information, check out our documentation at [https://aka.ms/AzureADDocs](https://aka.ms/AzureADDocs).
+詳細については、 https://aka.ms/AzureADDocs にあるドキュメントを参照してください。

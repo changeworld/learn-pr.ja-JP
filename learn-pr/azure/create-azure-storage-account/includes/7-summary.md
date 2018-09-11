@@ -1,5 +1,5 @@
-Storage accounts let you create a group of data management rules and apply them all at once to a group of Azure Blobs, Azure Files, Azure Queues, and Azure Tables. 
+ストレージ アカウントを使用すると、データ管理ルールのグループを作成し、Azure BLOB、Azure Files、Azure キュー、Azure テーブルのグループに一度にまとめて適用できます。 
 
-If you tried to achieve the same thing without storage accounts, it would be tedious and error-prone. For example, what are the chances that you could successfully apply the exact same ruleset to thousands of blobs?
+ストレージ アカウントを使用しないで同じことを実現しようとすると、面倒で、エラーが発生しやすくなります。 たとえば、何千もの BLOB にまったく同じルール セットを間違わずに適用できる可能性はどれくらいだと思いますか。
 
-Instead, you capture the rules in the settings for a storage account, and those rules are automatically applied to every data service in the account.
+代わりに、ストレージ アカウントに対する設定でルールを指定すると、そのアカウント内のすべてのデータ サービスにルールが自動的に適用されます。

@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.5-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: "Review what you've learned and discover how to learn more."
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: まとめ
+  description: 学習したことを確認し、さらなる学習方法を見つけます。
+  ms.openlocfilehash: ed944fc5dceb2d60035f2bfb2e8d5ff22093f3af
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477811"
 durationInMinutes: 3
-content: |
-  [!include[](includes/5-summary.md)]
+content: '[!include[](includes/5-summary.md)]'

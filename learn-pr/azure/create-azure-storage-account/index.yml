@@ -1,29 +1,27 @@
 ### YamlMime:Module
 uid: learn.create-azure-storage-account
 metadata:
-  title: Create an Azure storage account
-  description: Azure storage accounts give you a powerful way to organize your data in the cloud. You create logical groups of related data and apply a single policy on billing, access, storage location, etc. to all the items in the group. Here, you will use Azure storage accounts to group and manage your Azure blobs, files, queues, and tables.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Create an Azure storage account
-summary: Create an Azure storage account with the correct options for your business needs.
-abstract: | 
-  In this module, you will:
-  - Decide how many storage accounts you need for your project
-  - Determine the appropriate settings for each storage account
-  - Create a storage account using the Azure portal
-prerequisites: |
-  - Experience with the Azure portal
-  - Familiarity with the Azure data services Blobs, Files, Queues, and Tables
-#TODO: Update icon URL with real image 
+  title: Azure ストレージ アカウントを作成する
+  description: Azure ストレージ アカウントでは、クラウド内のデータを整理する強力な方法を提供します。 関連するデータの論理グループを作成し、課金、アクセス、ストレージの場所などの 1 つのポリシーを、グループ内のすべての項目に適用します。 ここでは、Azure ストレージ アカウントを使用して、ご自分の Azure BLOB、File、キュー、テーブルをグループ化し、管理します。
+  ms.openlocfilehash: ece1fe0d086ff505c8022224469a8b7cdb0d2c87
+  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43471546"
+title: Azure ストレージ アカウントを作成する
+summary: ビジネス要件に適したオプションで Azure ストレージ アカウントを作成します。
+abstract: "このモジュールでは、次のことを行います。\n- ご自分のプロジェクトに必要なストレージ アカウントの数を決定する\n- 各ストレージ アカウントの適切な設定を決定する\n- Azure portal を使用してストレージ アカウントを作成する\n  \n"
+prerequisites: >
+  - Azure サブスクリプション
+
+  - Azure portal の操作性
+
+  - Azure データ サービスの Azure BLOB、Files、キュー、テーブルに精通する
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - developer
 products:
 - azure

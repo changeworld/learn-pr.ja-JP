@@ -1,64 +1,50 @@
-There are three different cloud deployment models. A cloud deployment model defines where your data is stored and how your customers interact with it – how do they get to it, and where do the applications run? It also depends on how much of your own infrastructure you want or need to manage.
+クラウドには 3 種類のデプロイ モデルがあります。 クラウドのデプロイ モデルでは、データが格納される場所、顧客がデータとやり取りする方法、顧客がデータを取得する方法、アプリケーションが実行される場所が定義されています。 また、モデルは、管理する、または管理する必要がある独自のインフラストラクチャの量によっても異なります。
 
-Here, you'll explore the different types of deployment methods for your cloud computing resources
+ここでは、クラウド コンピューティング リソースに対するさまざまなタイプのデプロイ方法について説明します。 
 
-<!-- TODO: Verify video -->
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2yEv7]
+## <a name="public-cloud"></a>パブリック クラウド
 
-:::row:::
-    :::column:::
-        ![Public Cloud Icon](../media/4-public-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Public cloud**
+これは、最も一般的なデプロイ モデルです。 この場合は、管理したり最新状態に維持するローカル ハードウェアはありません。すべてのものはクラウド プロバイダーのハードウェア上で実行されます。 場合によっては、他のクラウド ユーザーとコンピューティング リソースを共有することによって、コストをさらに節約できます。 
 
-This is the most common deployment model. In this case, you have no local hardware to manage or keep up-to-date – everything runs on your cloud provider’s hardware. In some cases, you can save additional costs by sharing computing resources with other cloud users.
+### <a name="advantages"></a>長所
 
-Some advantages of the public cloud are:
+- 高い拡張性 – スケーリングのために新しいサーバーを購入する必要はありません
+- 従量課金制の価格 – 使用量に対してのみ料金を支払います
+- ユーザーに、ハードウェアのメンテナンスや更新に関する責任はありません
 
-- High scalability – you don’t have to buy a new server in order to scale
-- Pay-as-you-go pricing – you pay only for what you use
-- You’re not responsible for maintenance or updates of the hardware
-        :::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Private Cloud Icon](../media/4-private-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Private cloud**
+### <a name="disadvantages"></a>短所
 
-In a private cloud, you create a cloud environment in your own data center and provide self-service access to compute resources to users in your organization. This offers a simulation of a public cloud to your users, but you remain completely responsible for the purchase and maintenance of the hardware and software services you provide.
+- より高いセキュリティ脅威
+- 共有ハードウェア
 
-Some reasons teams move away from the private cloud are:
+## <a name="private-cloud"></a>プライベート クラウド
 
-- You have to purchase the hardware for startup and maintenance
-- Private clouds require IT skills and expertise that's hard to come by
-:::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Hybrid Cloud Icon](../media/4-hybrid-cloud.png)
-    :::column-end:::
-	:::column span="3":::
-        **Hybrid cloud**
+これは、通常、会社がサポートするローカル データ センターのことです。 クラウドで実行しているサービスへの接続はありません。 このモデルの例は、クラウドに何も移行しておらず、移行の計画もない会社です。
 
-A hybrid cloud combines public and private clouds, allowing you to run your applications in the most appropriate location. For example, you could host a web site in the public cloud and link it to a highly secure database hosted in your private cloud (or on-premises data center).
+### <a name="advantages"></a>長所
 
-This is helpful when you have some things that cannot be put in the cloud, maybe for legal reasons. For example, you may have data that cannot be exposed publicly (such as medical data). Another example is one or more applications that run on old hardware that can’t be updated. In this case, you can keep the old system running locally, and connect it to the public cloud for authorization or storage.
+- すべてのものが会社のネットワーク内にあるため、セキュリティが向上します
+- 非共有ハードウェア/リソース
 
-Some advantages of a hybrid cloud versus a private cloud are:
+### <a name="disadvantages"></a>短所
 
-- You can keep any systems running and accessible that use out-of-date hardware or an out-of-date operating system
-- You have flexibility with what you run locally versus in the cloud
+- 初期構築時およびメンテナンス時に、ハードウェアを購入する必要があります
+- IT の専門知識が必要です
 
-Some concerns you'll need to watch out for are:
+## <a name="hybrid-cloud"></a>ハイブリッド クラウド
 
-- It can be more expensive than selecting one deployment model
-- It can be more complicated to set up and manage
-    :::column-end:::
-:::row-end:::
+これは、会社でサポートされているローカル データ センターとパブリック クラウドの組み合わせです。 2 つのクラウドは接続されていて、データをやり取りすることができます。 これは、法的な理由などのために、クラウドに置くことができないものがある場合に便利です。 たとえば、パブリックに公開できないデータが存在することがあります (医療データなど)。 あるいは、更新できない古いハードウェア上でアプリケーションが実行されている場合もあります。 この場合は、古いシステムはローカルで実行したままにして、承認やストレージのためにパブリック クラウドにそれを接続できます。
 
-## Summary
+### <a name="advantages"></a>長所
 
-Cloud computing is flexible and gives you the ability to choose how you want to deploy it. The cloud deployment model you choose depends on your budget, and on your security, scalability, and maintenance needs.
+- 古くなったハードウェアやオペレーティング システムを使用しているシステムを実行させ、アクセスできるようにしておくことができます
+- ローカルまたはクラウドのどちらか適した方で実行できる柔軟性
+
+### <a name="disadvantages"></a>短所
+
+- 1 つのデプロイ モデルを選択するよりコストがかかることがあります
+- セットアップと管理の複雑さが増します
+
+## <a name="summary"></a>まとめ
+
+クラウド コンピューティングには柔軟性があり、デプロイする方法を選択できます。 デプロイする方法は、通常は予算のほか、セキュリティ、スケーラビリティ、およびメンテナンスのニーズによって決まります。

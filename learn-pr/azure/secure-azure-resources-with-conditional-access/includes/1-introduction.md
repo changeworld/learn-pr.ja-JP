@@ -1,16 +1,17 @@
-Azure Multi-Factor Authentication has traditionally been deployed like a hammer by IT departments, enabled for every user for every authentication. When the feature is integrated with conditional access, Azure Multi-Factor Authentication becomes a razor-sharp scalpel that allows you to specify which apps and circumstances require it.
+Azure Multi-Factor Authentication は、すべてのユーザーにすべての認証を有効にするため、IT 部門によって従来からデプロイされています。 この機能と条件付きアクセスを統合すると、Azure Multi-Factor Authentication は非常に強力なツールとなり、それを必要とするアプリと状況を指定できるようになります。
 
-Imagine that you work for First Up Consultants, an engineering firm that specializes in circuit and electrical design. They're moving their on-premises workloads to Azure. Your manager in the IT department is responsible for keeping the company’s assets secure. The admin wants you to make sure that any time an administrator accesses the Azure portal, they've performed multi-factor authentication. The admin has tasked you with enabling this functionality and testing it. You'll use Azure AD, conditional access, and Azure Multi-Factor Authentication.
+あなたは、回路と電気設計を専門とするエンジニアリング会社である First Up Consultants に勤務しているとします。 会社では、オンプレミス ワークロードを Azure に移行しています。 IT 部門でのあなたの上司が、会社の資産を保護する責任を負っています。 あなたは管理者から、Azure portal に管理者がアクセスするときは常に、多要素認証を実行するように依頼されました。 あなたは、管理者からこの機能を有効にしてそれをテストする仕事を課されました。 あなたは、Azure AD、条件付きアクセス、Azure Multi-Factor Authentication を使用します。
 
-In this module, you will learn how to use conditional access along with Azure Multi-Factor Authentication to secure access to the Azure portal.
+このモジュールでは、条件付きアクセスと Azure Multi-Factor Authentication を使用して、Azure portal へのアクセスをセキュリティで保護する方法を学習します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
+- テスト ユーザーと使用グループを作成する
+- Multi-Factor Authentication を必要とする条件付きアクセス ポリシーを有効にする
 
-- Create a test user and a user group.
-- Enable a conditional access policy that requires Multi-Factor Authentication (MFA).
+## <a name="prerequisites"></a>前提条件
 
-## Prerequisites
-
-- Knowledge of basic Azure concepts, such as resource groups and subscriptions.
+- リソース グループやサブスクリプションなど、Azure の基本的な概念に関する知識
+- Azure サブスクリプションへのアクセス
+- ディレクトリを作成するためのアクセス許可

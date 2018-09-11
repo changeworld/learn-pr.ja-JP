@@ -1,3 +1,3 @@
-You learned just a few ways Azure networking can help reduce latency and make your apps and services more highly available. 
+Azure のネットワークを使用することで、待ち時間を短縮し、アプリとサービスの可用性を高めることができるいくつかの方法について学習しました。 
 
-With load balancing and global distribution in place, your e-commerce site is ready for the world. Users reach the domain that's closest geographically. Each domain has failover built in, helping every user have a great experience. The numbers are already showing increased traffic, and business is booming.
+負荷分散とグローバル分散を配置して、あなたの e コマース サイトを世界に向けて公開する準備が整いました。 ユーザーは、地理的に最も近いドメインに到達します。 すべてのユーザーがすばらしいエクスペリエンスを得られるように、各ドメインにはフェールオーバーが組み込まれています。 トラフィックが増加し、業績が伸びていることが既に数値に表れています。

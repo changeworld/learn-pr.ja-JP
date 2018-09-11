@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.2-rbac-overview
 metadata:
-  title: What is RBAC?
-  description: Learn what role-based access control (RBAC) is and how it works.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: What is RBAC?
+  title: RBAC とは
+  description: ロールベースのアクセス制御 (RBAC) とはどういうもので、どのように動作するのかについて学習します。
+  displayType: one-column
+  ms.openlocfilehash: ed8e191ea46a0e2097faaf114d34ebfe4bc10bc8
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43455077"
+title: RBAC とは
 durationInMinutes: 10
-content: |
-  [!include[](includes/2-rbac-overview.md)]
+content: '[!include[](includes/2-rbac-overview.md)]'

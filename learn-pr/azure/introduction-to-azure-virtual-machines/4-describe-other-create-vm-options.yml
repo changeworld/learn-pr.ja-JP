@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
+title: Azure 仮想マシンを作成および管理するためのオプションについて説明する
+metadata:
+  title: Azure 仮想マシンを作成および管理するためのオプションについて説明する
+  description: Azure 仮想マシンを作成および管理するためのオプションについて説明する
+  ms.openlocfilehash: 5964514a9cea338764e7bfde2ea1f8f99e68febd
+  ms.sourcegitcommit: ee277f4207efa50a4f7c657b47725be7f8c45489
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43475643"
+durationInMinutes: 10
+content: '[!include[](includes/4-describe-other-create-vm-options.md)]'

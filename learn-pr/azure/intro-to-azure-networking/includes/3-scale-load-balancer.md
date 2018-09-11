@@ -1,76 +1,76 @@
-You now have your site up and running on Azure. How can you help ensure your site is running 24/7?
+現在あなたのサイトは、Azure で実行されています。 毎日 24 時間、サイトが確実に稼働するようにするにはどうすればよいですか?
 
-For example, what happens when you need to do weekly maintenance? Your service will still be unavailable during your maintenance window. And because your site reaches users all over the world, there's no good time to take down your systems for maintenance. You may also run into performance issues if too many users connect at the same time.
+たとえば、毎週のメンテナンスを行う必要がある場合は、どうなりますか? メンテナンス期間中、サービスは使用できなくなります。 また、あなたのサイトのユーザーは世界中にいるため、メンテナンスのためにシステムを停止するのに都合のよい時間帯はありません。 同時に接続するユーザーが多すぎると、パフォーマンスの問題も発生します。
 
-## What are availability and high availability?
+## <a name="what-are-availability-and-high-availability"></a>耐久性と高可用性とは何ですか?
 
-_Availability_ refers to how long your service is up and running without interruption. _High availability_, or _highly available_, refers to a service that's up and running for a long period of time.
+_可用性_とは、サービスが中断なく稼働する長さを指します。 _高可用性_は _、_ 長期間稼働するサービスを指します。
 
-Think of a social media or news site that you visit daily. Can you always access the site, or do you often see error messages like "503 Service Unavailable"? You know how frustrating it is when you can't access the information you need.
+あなたが毎日アクセスしているソーシャル メディアやニュース サイトを考えてみてください。 そのサイトには常にアクセスできますか、それとも "503 サービス利用不可" などのエラー メッセージが頻繁に表示されますか? 必要な情報にアクセスできないことがどれほどいら立たしいことかはおわかりでしょう。
 
-You may have heard terms like "five nines availability." Five nines availability means that the service is guaranteed to be running 99.999 percent of the time. Although it's difficult to achieve 100 percent availability, many teams strive for at least five nines.
+"ファイブ ナインの可用性" などの言葉を聞いたことがあるかもしれません。 ファイブ ナインの可用性とは、サービスが 99.999% の時間実行されることを保証することを意味しています。 100% の可用性を実現するのは困難ですが、多くのチームが少なくともファイブ ナインの実現に努めています。
 
-## What is resiliency?
+## <a name="what-is-resiliency"></a>回復性とは何ですか?
 
-_Resiliency_ refers to a system's ability to stay operational during abnormal conditions.
+_回復性_は、異常な状態でシステムが機能を維持できる能力を指します。
 
-These conditions include:
+異常な状態には次のようなものがあります。
 
-- Natural disasters.
-- System maintenance, both planned and unplanned, including software updates and security patches.
-- Spikes in traffic to your site.
-- Threats made by malicious parties, such as distributed denial of service, or DDoS, attacks.
+- 自然災害
+- ソフトウェアの更新やセキュリティ パッチの適用を含む、計画的および計画外のシステム メンテナンス
+- サイトへのトラフィックの急増
+- 分散型サービス拒否 (DDoS) 攻撃など、悪意のある第三者による脅威
 
-Imagine your marketing team wants to have a flash sale to promote a line of new products. You might expect a huge spike in traffic during this time. This spike could overwhelm your processing system, causing it to slow down or halt, disappointing your users. You may have experienced this disappointment for yourself. Have you ever wanted tickets for an event only to find the website wasn't responding?
+あなたが所属するマーケティング チームでは、新製品の販売促進のためのフラッシュ セールを計画しているとします。 あなたはこの期間にトラフィックが急増することを予想しています。 この急増がシステムの処理能力を上回ると、システムが遅くなったり停止したりして、ユーザーを失望させる恐れがあります。 あなた自分、こうした失望を味わった経験があるでしょう。 イベントのチケットが欲しかったのに、Web サイトが応答しなかったことはありますか?
 
-## What is a load balancer?
+## <a name="what-is-a-load-balancer"></a>ロード バランサーとは何ですか?
 
-A _load balancer_ distributes traffic evenly among each system in a pool. A load balancer can help you achieve both high availability and resiliency.
+_ロード バランサー_は、プール内の各システムにトラフィックを均等に分散させます。 ロード バランサーは、高可用性と回復性の両方を実現するのに役立ちます。
 
-Say you start by adding additional VMs, each configured identically, to each tier. The idea is to have additional systems ready, in case one goes down or is serving too many users at the same time.
+たとえば、それぞれ同じように構成された VM を各階層に追加することから始めるとします。 この考えは、1 つがダウンした場合、または同時にサービスを提供するユーザーの数が多すぎる場合に、追加のシステムを準備することです。
 
-The problem here is that each VM would have its own IP address. Plus, you don't have a way to distribute traffic in case one system goes down or is busy. How do you connect your VMs so that they appear to the user as one system?
+ここでの問題は、VM ごとに独自の IP アドレスがあることです。 さらに、1 つのシステムがダウンまたはビジー状態になったときに、トラフィックを分散させる方法がないことです。 ユーザーからは 1 つのシステムと見えるように VM を接続するにはどうすればよいですか?
 
-The answer is to use a load balancer to distribute traffic. The load balancer becomes the entry point to the user. The user doesn't know (or need to know) which system the load balancer chooses to receive the request.
+答えは、ロード バランサーを使用してトラフィックを分散させることです。 ロード バランサーは、ユーザーへのエントリ ポイントになります。 ロード バランサーが要求を受信するのにどのシステムを選ぶかは、ユーザーにはわかりません (知る必要はありません)。
 
-The following illustration shows the role of a load balancer.
+ダイアグラムを次に示します。
 
-![An illustration showing the web tier of a three-tier architecture. The web tier has multiple virtual machines to service user requests. There is a load balancer that distributes user requests among the virtual machines.](../media/3-load-balancer.png)
+![仮想マシン間で負荷を分散する](../media-draft/load-balancer.png)
 
-You see that the load balancer receives the user's request. The load balancer directs the request to one of the VMs in the web tier. If a VM is unavailable or stops responding, the load balancer stops sending traffic to it. The load balancer then directs traffic to one of the responsive servers.
+ロード バランサーが、ユーザーの要求を受信しているのがわかります。 ロード バランサーは、要求を Web 層内のいずれかの VM に要求を送信します。 VM が使用できない、または応答を停止している場合は、ロード バランサーはその VM へのトラフィックの送信を停止します。 次にロード バランサーは、応答しているサーバーのいずれかにトラフィックを送信します。
 
-Load balancing enables you to run maintenance tasks without interrupting service. For example, you can stagger the maintenance window for each VM. During the maintenance window, the load balancer detects that the VM is unresponsive, and directs traffic to other VMs in the pool.
+負荷分散することで、サービスを中断せずにメンテナンス タスクを実行することができます。 たとえば、メンテナンス期間が重ならないように VM ごとに調整することができます。 メンテナンス期間中は、ロード バランサーが VM が応答していないことを検出して、プール内の他の VM にトラフィックを送信します。
 
-For your e-commerce site, the app and data tiers can also have a load balancer. It all depends on what your service requires.
+あなたの e コマース サイトの場合、アプリ層とデータ層にもロード バランサーを配置することができます。 これは提供するサービスの必要性に応じて決まります。
 
-## What is Azure Load Balancer?
+## <a name="what-is-azure-load-balancer"></a>Azure Load Balancer とは何ですか?
 
-Azure Load Balancer is a load balancer service that Microsoft provides.
+Azure Load Balancer は、Microsoft が提供するロード バランサー サービスです。
 
-You can manually configure load balancer software on a virtual machine. The downside is that you now have an additional system that you need to maintain. If your load balancer goes down or needs routine maintenance, you're back to your original problem.
+仮想マシンにロード バランサー ソフトウェアを手動で構成できます。 欠点は、メンテナンスする必要があるシステムが増えることです。 ロード バランサーがダウンしたり定期的なメンテナンスが必要になったりすると、元の問題に戻ります。
 
-Instead, you can use Azure Load Balancer because there's no infrastructure or software for you to maintain. Azure takes care of maintenance for you.
+代わりに、Azure Load Balancer を使用することができます。Azure によりインフラストラクチャやソフトウェアのメンテナンスが行われるため、自分で行う必要がないためです。
 
-The following illustration shows  the role of Azure load balancers in a multi-tier architecture.
+各階層に複数の VM を示す図を次に示します。 各階層には、トラフィックをプール内の VM 間に分散させる Azure Load Balancer が含まれています。
 
-![An illustration showing the web tier of a three-tier architecture. The web tier has multiple virtual machines to service user requests. There is a load balancer that distributes user requests among the virtual machines.](../media/3-azure-load-balancer.png)
+![Azure Load Balancer を使用して仮想マシン間で負荷を分散する](../media-draft/azure-load-balancer.png)
 
-## What about DNS?
+## <a name="what-about-dns"></a>DNS とは何ですか?
 
-DNS, or Domain Name System, is a way to map user-friendly names to their IP addresses. You can think of DNS as the phonebook of the internet.
+ドメイン ネーム システム (DNS) は、わかりやすい名前をその IP アドレスにマップする方法です。 DNS は、インターネットの電話帳として考えることができます。
 
-For example, your domain name, contoso.com, might map to the IP address of the load balancer at the web tier, 40.65.106.192.
+たとえば、ドメイン名 contoso.com を Web 層のロード バランサーの IP アドレス 40.65.106.192 にマップできます。
 
-You can bring your own DNS server or use Azure DNS, a hosting service for DNS domains that runs on Azure infrastructure.
+独自の DNS サーバーを導入することも、Azure DNS (Azure インフラストラクチャで実行される DNS ドメインのホスティング サービス) を使用することもできます。
 
-The following illustration shows Azure DNS. When the user navigates to contoso.com, Azure DNS routes traffic to the load balancer.
+Azure DNS を示す図を次に示します。 ユーザーが contoso.com に移動すると、Azure DNS によってトラフィックがロード バランサーにルーティングされます。
 
-![An illustration showing the Azure domain name system positioned in front of the load balancer.](../media/3-dns.png)
+![Azure DNS を使用して DNS 名を割り当てる](../media-draft/dns.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-With load balancing in place, your e-commerce site is now more highly available and resilient. When you perform maintenance or receive an uptick in traffic, your load balancer can distribute traffic to another available system.
+負荷分散を配置することで、あなたの e コマース サイトの可用性と回復力がさらに向上しました。 メンテナンスを実行したり、トラフィックが増加すると、ロード バランサーによってトラフィックを別の使用可能なシステムに分散させることができます。
 
-Although you can configure your own load balancer on a VM, Azure Load Balancer reduces upkeep because there's no infrastructure or software to maintain.
+VM に独自のロード バランサーを構成することもできますが、**Azure Load Balancer** を使用すると、メンテナンスするインフラストラクチャやソフトウェアがないため、維持費を削減できます。
 
-DNS maps user-friendly names to their IP addresses, much like how a phonebook maps names of people or businesses to phone numbers. You can bring your own DNS server, or use Azure DNS.
+DNS は、わかりやすい名前をその IP アドレスにマップします。これは、電話帳で人名または企業名を電話番号にマップする方法とよく似ています。 独自の DNS サーバーを導入することも、Azure DNS を使用することもできます。

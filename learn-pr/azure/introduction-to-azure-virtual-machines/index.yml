@@ -1,0 +1,32 @@
+### YamlMime:Module
+uid: learn.introduction-to-azure-virtual-machines
+metadata:
+  title: Azure Virtual Machines の概要
+  description: VM を作成する前に行う決定、VM を作成および管理するためのオプション、VM を管理するために使用する拡張機能とサービスについて学習します。
+  ms.openlocfilehash: 7b567e7336251009b6f07684697a3afd3c441422
+  ms.sourcegitcommit: ee277f4207efa50a4f7c657b47725be7f8c45489
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43475562"
+title: Azure Virtual Machines の概要
+summary: VM を作成する前に行う決定、VM を作成および管理するためのオプション、VM を管理するために使用する拡張機能とサービスについて学習します。
+abstract: このモジュールで学習する内容は次のとおりです。- 仮想マシンを作成する前に決定する必要があること (サイズ、ディスクの数、OS など) -ポータル、CLI、PowerShell を使って Azure で仮想マシンを作成および管理するためのオプション - 仮想マシンの管理を容易にするために使用できる拡張機能とサービス
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- administrator
+- developer
+products:
+- Azure
+units:
+- learn.introduction-to-azure-virtual-machines.1-introduction
+- learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
+- learn.introduction-to-azure-virtual-machines.3-create-a-vm
+- learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
+- learn.introduction-to-azure-virtual-machines.5-high-availability
+- learn.introduction-to-azure-virtual-machines.6-backup-services
+- learn.introduction-to-azure-virtual-machines.7-knowledge-check
+- learn.introduction-to-azure-virtual-machines.8-summary
+achievement: learn.introduction-to-azure-virtual-machines.badge

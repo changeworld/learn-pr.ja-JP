@@ -1,20 +1,20 @@
-There are several tools that create a storage account. You typically choose based on if you want a GUI and whether you need automation.
+ストレージ アカウントを作成するいくつかのツールがあります。 通常は、GUI を使用したいかどうか、および自動化する必要があるかどうかに基づいて選択します。
 
-## Available tools
+## <a name="available-tools"></a>使用可能なツール
 
-The available tools are:
+以下のツールを使用できます。
 
-- Azure Portal
-- Azure CLI (Command-line interface)
+- ポータル
+- コマンド ライン インターフェイス (CLI)
 - Azure PowerShell
-- Management client libraries
+- 管理クライアント ライブラリ
 
-The portal provides a GUI with explanations for each setting. This makes it easy to use and helpful for learning about the options.
+ポータルの GUI では、各設定にツールヒントが表示されます。 これにより、使いやすく、オプションについての詳細の学習に役立ちます。
 
-The other tools all support automation. The Azure CLI and Azure PowerShell let you write scripts, while the management libraries allow you to incorporate the creation into a client app.
+他のツールをすべて自動化をサポートしています。 CLI と Azure PowerShell を使用するとスクリプトを記述でき、管理ライブラリでは作成をクライアント アプリに組み込むことができます。
 
-## How to choose a tool
+## <a name="how-to-choose-a-tool"></a>ツールを選択する方法
 
-Storage accounts are typically based on an analysis of your data, so they tend to be relatively stable. This means that storage-account creation is usually a one-time operation done at the start of a project. For one-time activities, the portal is the most common choice.
+ストレージ アカウントは通常はデータの分析に基づいているので、比較的安定している傾向があります。 つまり、ストレージ アカウントの作成は、通常、プロジェクトの開始時に 1 回だけ行う操作です。 1 回限りのアクティビティの場合は、ポータルが最も一般的な選択肢です。
 
-In the rare cases where you need automation, the decision is between a programmatic API or a scripting solution. Scripts are typically faster to create and less work to maintain because there is no need for an IDE, NuGet packages, or build steps. If you have an existing client application, the management libraries might be an attractive choice; otherwise, scripts will likely be a better option.
+まれに自動化が必要な場合は、プログラミング可能な API かスクリプト ソリューションを選択します。 一般に、IDE、NuGet パッケージ、またはビルド ステップが必要ないため、スクリプトの方が短時間で作成でき、メンテナンス作業も少なくて済みます。 既存のクライアント アプリケーションがある場合は、管理ライブラリが有力な選択肢になる可能性があります。それ以外の場合、スクリプトの方が適切なオプションです。

@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.3-choose-your-account-settings
-title: Choose your account settings
+title: アカウント設定を選択する
 metadata:
-  title: Choose your account settings
-  description: Choose your account settings
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: アカウント設定を選択する
+  description: アカウント設定を選択する
+  ms.openlocfilehash: 2b4b0b6fa5cf2ea927065e28f0e634d4719a5c8b
+  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43471548"
 durationInMinutes: 7
-content: |
-  [!include[](includes/3-choose-your-account-settings.md)]
+content: '[!include[](includes/3-choose-your-account-settings.md)]'

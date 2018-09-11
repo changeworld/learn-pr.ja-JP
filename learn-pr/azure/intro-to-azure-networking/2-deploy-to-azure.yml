@@ -1,40 +1,40 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.2-deploy-to-azure
-title: Deploy your site to Azure
+title: サイトを Azure にデプロイする
 metadata:
-  title: Deploy your site to Azure
-  description: See what a basic three-tier application might look like on Azure.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: サイトを Azure にデプロイする
+  description: Azure での基本的な 3 層アプリケーションがどのようなものかをご覧ください。
+  ms.openlocfilehash: 3bbacd16929ffb05448a2d3e60cd37c637275229
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477616"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
-  title: 'Knowledge Check: Deploy your site to Azure'
+  title: '知識チェック: サイトを Azure にデプロイする'
   questions:
-  - content: 'What is an Azure _region_?'
+  - content: Azure _リージョン_とは何ですか?
     choices:
-    - content: 'An Azure data center within a specific geographic location.'
+    - content: 特定の地理的な場所内にある Azure データ センター。
       isCorrect: true
-      correctExplanation: 'Azure regions help you deliver your apps and services closest to your users. West US and North Europe are examples.'
-    - content: 'A way of breaking networks into smaller networks.'
+      correctExplanation: Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。 米国西部と北ヨーロッパはその例です。
+    - content: ネットワークをより小さなネットワークに分割する方法です。
       isCorrect: false
-      incorrectExplanation: 'Azure networks are broken into _subnets_.'
-    - content: 'Firewall rules which define what traffic can flow in and out of Azure.'
+      incorrectExplanation: Azure のネットワークは、_サブネット_に分割されています。
+    - content: Azure に出入りできるトラフィックを定義するファイアウォール規則。
       isCorrect: false
-      incorrectExplanation: 'You use _network security groups_ to define firewall rules.'
-  - content: 'Which of the following is true about virtual networks?'
+      incorrectExplanation: _ネットワーク セキュリティ グループ_を使用して、ファイアウォール規則を定義します。
+  - content: 仮想ネットワークについて正しいのは、次のうちどれですか?
     choices:
-    - content: 'You configure virtual networks through software.'
+    - content: 仮想ネットワークは、ソフトウェアを介して構成します。
       isCorrect: true
-      correctExplanation: 'Software enables you to treat a virtual network just like your own network. Azure maintains the physical hardware for you.'
-    - content: 'A virtual network accepts network traffic on all ports. You configure the firewall through virtual machines.'
+      correctExplanation: ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。 物理ハードウェアは、Azure によってメンテナンスされます。
+    - content: 仮想ネットワークは、すべてのポートでネットワーク トラフィックを受け入れます。 ファイアウォールは、仮想マシンを通じて構成します。
       isCorrect: false
-      incorrectExplanation: 'You can associate your virtual network with a network security group, which acts as a cloud-level firewall.'
-    - content: 'Virtual networks are always reachable from the internet.'
+      incorrectExplanation: 仮想ネットワークをネットワーク セキュリティ グループと関連付けることで、クラウド レベルのファイアウォールとして機能させることができます。
+    - content: 仮想ネットワークはインターネットから常に到達可能です。
       isCorrect: false
-      incorrectExplanation: 'Although a virtual network is reachable from the internet by default, you configure which networks, including private networks, can reach yours.'
+      incorrectExplanation: 既定では、仮想ネットワークはインターネットから常に到達可能になっていますが、プライベート ネットワークなど、自分のネットワークに到達できるネットワークを構成することができます。

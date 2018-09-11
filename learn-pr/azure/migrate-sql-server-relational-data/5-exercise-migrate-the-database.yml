@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.5-exercise-migrate-the-database
+title: 演習 - データを移行する
+metadata:
+  title: 演習 - データを移行する
+  description: 演習 - データを移行する
+  ms.openlocfilehash: 6a34040558aadb0723fbc5420356a115acef6993
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43460566"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-migrate-the-database.md)]'

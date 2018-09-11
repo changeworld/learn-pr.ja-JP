@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
-uid: learn.execute-azure-function-with-triggers.8-create-blob-trigger
-title: Create a Blob trigger
+uid: execute-azure-function-with-triggers.8-create-blob-trigger
+title: BLOB トリガーを作成する
 metadata:
-  title: Create a Blob trigger
-  description: Create a Blob trigger and run an Azure Function when a blob is created
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: BLOB トリガーを作成する
+  description: BLOB トリガーを作成し、BLOB の作成時に Azure 関数を実行します
+  ms.openlocfilehash: 072605121862409f2761d147c5cc2d36b8b72d8b
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43413225"
 durationInMinutes: 15
-content: |
-  [!include[](includes/8-create-blob-trigger.md)]
+content: '[!include[](includes/8-create-blob-trigger.md)]'

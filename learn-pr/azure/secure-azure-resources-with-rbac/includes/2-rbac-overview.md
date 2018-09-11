@@ -1,78 +1,78 @@
-Suppose you need to manage access to resources in Azure for the developer, engineering, and marketing teams. You’ve started to receive access requests, and you need to quickly come up to speed on how access management for resources works in Azure.
+開発者、エンジニアリング、およびマーケティング チームに対して、Azure 内のリソースへのアクセス許可を管理する必要があるとします。 アクセス権の要求を受け取り始めており、Azure 内でリソースに対するアクセス管理が機能する方法のスピードに追い付く必要があります。
 
-## What is RBAC?
+## <a name="what-is-rbac"></a>RBAC とは何ですか?
 
-Role-based access control (RBAC) is an authorization system built on [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) that provides fine-grained access management of resources in Azure. Azure has lots of resources, but a few examples include virtual machines, websites, networks, and storage.
+ロールベースのアクセス制御 (RBAC) は、[Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) 上に構築された承認システムであり、Azure 内のリソースに対するアクセスをきめ細かく管理できます。 Azure には多くのリソースがありますが、例は少しで、仮想マシン、Web サイト、ネットワーク、ストレージなどが用意されています。
 
-## What can I do with RBAC?
+## <a name="what-can-i-do-with-rbac"></a>RBAC でできることは何ですか?
 
-RBAC allows you grant access to single users or user groups to Azure resources that you control.
+RBAC を使用すると、制御する Azure リソースに対し、1 人のユーザーまたはユーザー グループにアクセス許可を付与できます。
 
-Here are some examples:
-- Allow one user to manage virtual machines in a subscription and another user to manage virtual networks
-- Allow a database administrator group to manage SQL databases in a subscription
-- Allow a user to manage all resources in a resource group, such as virtual machines, websites, and subnets
-- Allow an application to access all resources in a resource group
+次に例をいくつか示します。
+- あるユーザーにサブスクリプション内の仮想マシンの管理を許可し、別のユーザーに仮想ネットワークの管理を許可します
+- データベース管理者グループにサブスクリプション内の SQL データベースの管理を許可します
+- あるユーザーに、仮想マシン、Web サイト、サブネットなど、リソース グループ内のすべてのリソースの管理を許可します
+- あるアプリケーションに、リソース グループ内のすべてのリソースへのアクセスを許可します
 
-## RBAC in the Azure portal
+## <a name="rbac-in-the-azure-portal"></a>Azure portal での RBAC
 
-In several areas in the Azure portal, you'll see a blade named **Access control (IAM)**, also known as identity and access management. On this blade, you can see who has access to that area and their role. Using this same blade, you can grant or remove access.
+Azure portal のいくつかの領域に、**[アクセス制御 (IAM)]** という名前のブレードが表示されます。これは、ID やアクセス管理とも呼ばれます。 このブレードでは、その領域へのアクセス権を持つユーザーとそのロールを確認できます。 この同じブレードを使用して、アクセス許可を付与または削除できます。
 
-The following shows an example of the Access control (IAM) blade for a resource group. In this example, Alain Charon has been assigned the Backup Operator role on this resource group.
+リソース グループに対する [アクセス制御 (IAM)] ブレードの例を次に示します。 この例で、Alain Charon には、このリソース グループのバックアップ オペレーター ロールが割り当てられています。
 
-![Access control (IAM) in the Azure portal](../media-draft/2-resource-group-access-control.png)
+![Azure portal の [アクセス制御 (IAM)]](../media-draft/2-resource-group-access-control.png)
 
-## How does RBAC work?
+## <a name="how-does-rbac-work"></a>RBAC のしくみ
 
-You control access to resources using RBAC by creating role assignments, which control how permissions are enforced. To create a role assignment, you need three elements: a security principal, a role definition, and a scope. You can think of these elements as "who," "what," and "where."
+ロールの割り当てを作成することによって、RBAC を使用してリソースへのアクセスを制御します。これは、アクセス許可を適用する方法を制御します。 ロールの割り当てを作成するには、次の 3 つの要素が必要です。セキュリティ プリンシパル、ロールの定義、スコープです。 これらの要素を "だれが"、"何を"、"どこで" として考えることができます。
 
-### 1. Security principal (who)
+### <a name="1-security-principal-who"></a>1.セキュリティ プリンシパル (だれが)
 
-A *security principal* is just a fancy name for a user, group, or application that you want to grant access to.
+*セキュリティ プリンシパル*は、アクセス許可を付与するユーザー、グループ、またはアプリケーションへの単に装飾的な名前です。
 
-![Security principal](../media-draft/2-rbac-security-principal.png)
+![セキュリティ プリンシパル](../media-draft/2-rbac-security-principal.png)
 
-### 2. Role definition (what you can do)
+### <a name="2-role-definition-what-you-can-do"></a>2.ロールの定義 (実行できること)
 
-A *role definition* is a collection of permissions. It's sometimes just called a role. A role definition lists the permissions that can be performed, such as read, write, and delete. Roles can be high-level, like Owner, or specific, like Virtual Machine Contributor.
+*ロール定義*は、アクセス許可のコレクションです。 単にロールと呼ばれることもあります。 ロール定義には、実行できるアクセス許可 (読み取り、書き込み、削除など) が一覧表示されます。 ロールは、所有者のように高レベルにすることも、Virtual Machine Contributor のように限定することもできます。
 
-![Role definition](../media-draft/2-rbac-role-definition.png)
+![ロールの定義](../media-draft/2-rbac-role-definition.png)
 
-Azure includes several [built-in roles](/azure/role-based-access-control/built-in-roles) that you can use. The following lists four fundamental built-in roles:
+Azure には、ユーザーが使用できる複数の[組み込みロール](/azure/role-based-access-control/built-in-roles)があります。 4 つの基本的な組み込みロールを次に示します。
 
-- Owner - Has full access to all resources, including the right to delegate access to others.
-- Contributor - Can create and manage all types of Azure resources, but can’t grant access to others.
-- Reader - Can view existing Azure resources.
-- User Access Administrator - Lets you manage user access to Azure resources.
+- 所有者 - 他のユーザーにアクセス許可を委任する権限を含め、すべてのリソースへのフル アクセス権を持ちます。
+- 共同作成者 - Azure リソースのすべてのタイプを作成および管理できますが、他のユーザーにアクセス許可を付与することはできません。
+- 閲覧者 - 既存の Azure リソースを表示できます。
+- ユーザー アクセス管理者 - ユーザーが Azure リソースへのユーザー アクセスを管理できるようにします。
 
-If the built-in roles don't meet the specific needs of your organization, you can create your own [custom roles](/azure/role-based-access-control/custom-roles).
+組み込みロールが組織の特定のニーズを満たさない場合は、独自の[カスタム ロール](/azure/role-based-access-control/custom-roles)を作成することができます。
 
-### 3. Scope (where)
+### <a name="3-scope-where"></a>3.スコープ (どこで)
 
-*Scope* is where the access applies to. This is helpful if you want to make someone a Website Contributor, but only for one resource group.
+*スコープ*は、アクセス許可が適用される場所です。 これは、1 つのリソース グループについてのみ、あるユーザーを Web サイトの共同作成者として指定する場合に便利です。
 
-In Azure, you can specify a scope at multiple levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship. When you grant access at a parent scope, those permissions are inherited by the child scopes. For example, if you assign the Contributor role to a group at the subscription scope, that role is inherited by all resource groups and resources in the subscription.
+Azure では、複数のレベル (管理グループ、サブスクリプション、リソース グループ、リソース) でスコープを指定できます。 スコープは親子関係で構造化されています。 親スコープでアクセス権を付与すると、それらのアクセス許可が子スコープに継承されます。 たとえば、サブスクリプション スコープで共同作成者ロールをグループに割り当てる場合、そのロールはサブスクリプション内のすべてのリソース グループとリソースに継承されます。
 
-![Scope](../media-draft/2-rbac-scope.png)
+![スコープ](../media-draft/2-rbac-scope.png)
 
-### Role assignment
+### <a name="role-assignment"></a>ロールの割り当て
 
-Once you have determined the who, what, and where, you can combine those elements to grant access. A *role assignment* is the process of binding a role to a security principal at a particular scope, for the purpose of granting access. To grant access, you create a role assignment. To revoke access, you remove a role assignment.
+だれが、何を、どこで、を決定すると、アクセス許可を付与するそれらの要素を結合させることができます。 *ロールの割り当て*は、アクセスの許可を目的として、特定のスコープでサービス プリンシパルにロールをバインドするプロセスです。 アクセス権を付与するには、ロールの割り当てを作成します。 アクセス権を削除するには、ロールの割り当てを削除します。
 
-The following example shows how the Marketing group has been assigned the Contributor role at the sales resource group scope.
+この例では、マーケティング グループが、どのように営業リソース グループ スコープで共同作成者ロールを割り当てられているかを示しています。
 
-![Role assignment](../media-draft/2-rbac-overview.png)
+![ロールの割り当て](../media-draft/2-rbac-overview.png)
 
-## RBAC is allow-only with no deny
+## <a name="rbac-is-allow-only-with-no-deny"></a>RBAC は許可専用で、拒否はありません
 
-Currently, RBAC is an allow-only model with no deny. What this means is that when you are assigned a role, RBAC allows you to perform certain actions, such as read, write, or delete. RBAC does not explicitly deny access. So, if one role assignment grants you read permissions to a resource group and different role assignment grants you write permissions to the same resource group, you will have write permissions on that resource group.
+現在、RBAC は拒否のない、許可専用モデルです。 つまり、これはロールを割り当てられたときに、RBAC では読み取り、書き込み、削除などの特定のアクションを実行できるということです。 RBAC では、明示的にアクセスを拒否することはありません。 そのため、1 つのロールの割り当てによってあるリソース グループへの読み取りアクセス許可が付与されていて、別のロールの割り当てによって同じリソース グループへの書き込みアクセス許可が付与されている場合、ユーザーはそのリソース グループで書き込みアクセス許可を持つことになります。
 
-RBAC has something called `NotActions` permissions. `NotActions` is not a deny rule – it is simply a convenient way to create a set of allowed permissions when specific permissions need to be excluded.
+RBAC には、`NotActions` アクセス許可と呼ばれるものがあります。 `NotActions` は拒否ルールとは異なり、特定のアクセス許可を除外する必要があるときに、許可の対象となる一連のアクセス許可を作成しやすくすることを目的としたものに過ぎません。
 
-## Other roles in Azure
+## <a name="other-roles-in-azure"></a>Azure のその他のロール
 
-As you work with Azure, you might encounter other roles, such as Global Administrator, Account Administrator, and several others. Many of these other roles are used for Azure Active Directory administration, such as creating users, resetting passwords, managing user licenses, and managing domains. There's more information that you can read if you want to learn the details, but the important thing to remember is that RBAC roles are used to manage access to Azure resources.
+Azure を操作するときに、全体管理者、アカウント管理者などのその他のロールが表示される可能性があります。 このようなその他のロールの多くは、ユーザーの作成、パスワードのリセット、ユーザー ライセンスの管理、ドメインの管理など、Azure Active Directory 管理に使用されます。 詳しく学習する必要がある場合は、参照できる詳細情報がありますが、RBAC ロールは Azure リソースへのアクセスを管理するために使用されるということを覚えておくことが重要です。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned the basics of how RBAC works. Now that you have the RBAC fundamentals out of the way, you can get your hands dirty by starting to use RBAC. The easiest way to get started is to use the Azure portal. The rest of this module has you perform hands-on exercises related to RBAC.
+このユニットでは、RBAC のしくみの基本について学習しました。 これで、RBAC の基礎を理解できたので、RBAC の使用を始めることができます。 作業を開始するには、Azure portal を使用するのが最も簡単です。 このモジュールの残りで、RBAC に関連する実践的な演習を行えます。

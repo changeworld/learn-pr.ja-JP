@@ -1,21 +1,20 @@
-Azure Active Directory (Azure AD) is not just a domain controller in the cloud. Azure AD is a multi-tenant, cloud-based directory and identity management service. It combines core directory services, application access management, and identity protection into a single solution. Azure AD can work in concert with an existing Windows Server Active Directory environment by way of Azure AD Connect, which allows you to utilize existing on-premises identity investments.
+Azure Active Directory (Azure AD) は、クラウド内の単なるドメイン コントローラーではありません。 Azure AD は、マルチテナントに対応したクラウド ベースのディレクトリと ID の管理サービスです。 主要なディレクトリ サービス、アプリケーション アクセス管理、および ID 保護を 1 つのソリューションに結合します。 Azure AD は、既存のオンプレミス ID への投資を活用することができる Azure AD Connect を使用して、既存の Windows Server Active Directory 環境と連携して機能できます。
 
-Azure AD comes in four editions. For this exercise, we will only focus on features in the Azure AD Premium P1 and P2 editions.
+Azure AD には、4 つのエディションがあります。 この演習では、Azure AD Premium P1 と P2 のエディションの機能のみを取り上げます。
 
-In this module, we will create an Azure AD directory where all of our users and groups will live, similar to an on-premises directory.
+このモジュールでは、すべてのユーザーとグループがオンプレミスのディレクトリと同様に存在する Azure AD ディレクトリを作成します。
 
-When we create the directory, our account will automatically be made a global administrator. Accounts with global administrator rights should be regulated, as they have full access to all Azure AD administrative features. You can have more than one global administrator, but only global administrators can assign any of the other administrator roles to users.
+ディレクトリを作成すると、作成者のアカウントが自動的に全体管理者になります。 全体管理者権限を持つアカウントは、すべての Azure AD 管理機能へのフル アクセス権を持つため、制限する必要があります。 複数の全体管理者を置くこともできますが、他の管理者ロールをユーザーに割り当てることができるのは全体管理者に限られます。
 
-## How can Azure AD help you protect access to applications?
+## <a name="how-can-azure-ad-help-you-protect-access-to-applications"></a>Azure AD はどのようにアプリケーションへのアクセス保護に役立ちますか?
 
-Azure AD Premium includes features like Multi-Factor Authentication and conditional access policies. When these features are used together, they provide the most granularity when protecting access to applications.
+Azure AD Premium には、Multi-Factor Authentication や条件付きアクセス ポリシーなどの機能が含まれています。 これらの機能を一緒に使用すると、アプリケーションへのアクセスを保護するときに最高の粒度が提供されます。
 
-A conditional access policy consists of:
+条件付きアクセス ポリシーは、次のもので構成されます。
+   * ユーザーまたはグループ
+   * これらがアクセスしようとするアプリケーション
+   * Multi-Factor Authentication など、該当するコントロール
 
-- Users or groups
-- Applications they're attempting to access
-- Controls to be fulfilled, such as Multi-Factor Authentication
+## <a name="summary"></a>まとめ
 
-## Summary
-
-In this unit, you learned the basics of what Azure AD is and what features are available to secure access to applications. Now that you have the fundamentals out of the way, lets get started with Azure AD. The rest of this module provides hands-on exercises to allow you to enable and test Multi-Factor Authentication using conditional access.
+このユニットでは、Azure AD の基本と、アプリケーションへのアクセスをセキュリティで保護するために使用できる機能について学習しました。 基礎を身につけたので、Azure AD を使ってみましょう。 このモジュールの残りの部分では、条件付きアクセスを使用して Multi-Factor Authentication をテストできるようにする実践的な演習を提供します。

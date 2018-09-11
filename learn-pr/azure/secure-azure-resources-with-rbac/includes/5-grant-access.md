@@ -1,51 +1,51 @@
-A co-worker named Alain at First Up Consultants needs the ability to create and manage virtual machines for a project he is working on. Your manager has asked that you handle this request. Using the best practice to grant users the least privileges to get their work done, you decide to create a new resource group and assign Alain the Virtual Machine Contributor role.
+Alain は、First Up Consultants でのあなたの同僚です。彼は自分が取り組んでいるプロジェクトに仮想マシンを作成して管理する能力を必要としています。 あなたは上司から、この要求に対処するように指示されています。 あなたは、ユーザーが作業を完了するために必要な最小限の特権を付与するベスト プラクティスを使用して、新しいリソース グループを作成し、Alain に Virtual Machine Contributor ロールを割り当てることにしました。
 
-## Sign in to the Azure portal
+## <a name="sign-in-to-the-azure-portal"></a>Azure portal にサインインする
 
-- Make sure you are still signed in to the Azure portal as **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com**. You can find the username and password on the **Resources** tab at the top of this window.
+- Azure portal に **LabAdmin-_XXXXXXX_@_xxxxxxxxxxxx_.onmicrosoft.com** としてサインインしていることを確認します。 ユーザー名とパスワードは、このウィンドウの上部にある **[リソース]** タブで見つかります。
 
-## Grant access
+## <a name="grant-access"></a>アクセス権を付与する
 
-Follow these steps to assign the Virtual Machine Contributor role to a user at the resource group scope.
+次の手順に従って、Virtual Machine Contributor ロールをリソース グループ スコープでユーザーに割り当てます。
 
-1. In the navigation list, click **Resource groups**.
+1. ナビゲーション リストで、**[リソース グループ]** をクリックします。
 
-1. Find and click the **FirstUpConsultantsRG1-_XXXXXXX_** resource group.
+1. **FirstUpConsultantsRG1-_XXXXXXX_** リソース グループを見つけてクリックします。
 
-   ![Resource group list](../media-draft/5-resource-groups.png)
+   ![リソース グループ リスト](../media-draft/5-resource-groups.png)
 
-1. Click **Access control (IAM)** to see the current list of role assignments.
+1. **[アクセス制御 (IAM)]** をクリックすると、ロールの割り当ての現在の一覧が表示されます。
 
-   ![Access control (IAM) blade for resource group](../media-draft/5-resource-group-access-control.png)
+   ![リソース グループの [アクセス制御 (IAM)] ブレード](../media-draft/5-resource-group-access-control.png)
 
-1. At the top, click **Add** to open the **Add permissions** pane.
+1. 上部で、**[追加]** をクリックして **[アクセス許可の追加]** ウィンドウを開きます。
 
-   ![Add permissions pane](../media-draft/5-add-permissions.png)
+   ![[アクセス許可の追加] ウィンドウ](../media-draft/5-add-permissions.png)
 
-1. In the **Role** drop-down list, select **Virtual Machine Contributor**.
+1. **[ロール]** ドロップダウン リストで、**[Virtual Machine Contributor]** を選択します。
 
-1. In the **Select** list, select **LabUser-_XXXXXXX_**.
+1. **[選択]** リストで、**LabUser-_XXXXXXX_** を選択します。
 
-   ![Add permissions pane completed](../media-draft/5-add-permissions-save.png)
+   ![完成した [アクセス許可の追加] ウィンドウ](../media-draft/5-add-permissions-save.png)
 
-1. Click **Save** to create the role assignment.
+1. **[保存]** をクリックして、ロールの割り当てを作成します。
 
-   After a few moments, the **LabUser-_XXXXXXX_** user is assigned the Virtual Machine Contributor role at the **FirstUpConsultantsRG1-_XXXXXXX_** resource group scope. The user can now create and manage virtual machines just within this resource group.
+   しばらくすると、**LabUser-_XXXXXXX_** ユーザーに、Virtual Machine Contributor ロールが **FirstUpConsultantsRG1-_XXXXXXX_** リソース グループ スコープで割り当てられます。 これでそのユーザーは、このリソース グループ内だけで仮想マシンの作成と管理ができるようになりました。
 
-   ![Virtual Machine Contributor role assignment](../media-draft/5-vm-contributor-assignment.png)
+   ![Virtual Machine Contributor ロールの割り当て](../media-draft/5-vm-contributor-assignment.png)
 
-## Remove access
+## <a name="remove-access"></a>アクセス権を削除する
 
-In RBAC, to remove access, you remove a role assignment.
+RBAC では、アクセス権を削除するにはロールの割り当てを削除する必要があります。
 
-1. In the list of role assignments, select the **LabUser-_XXXXXXX_** user with the Virtual Machine Contributor role.
+1. ロールの割り当ての一覧で、Virtual Machine Contributor ロールを持つ **LabUser-_XXXXXXX_** ユーザーを選択します。
 
-1. Click **Remove**.
+1. **[削除]** をクリックします。
 
-   ![Remove role assignment message](../media-draft/5-remove-role-assignment.png)
+   ![ロールの割り当ての削除メッセージ](../media-draft/5-remove-role-assignment.png)
 
-1. In the **Remove role assignments** message that appears, click **Yes**.
+1. **ロールの割り当ての削除**メッセージが表示されたら、**[はい]** をクリックします。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to grant a user access to create and manage virtual machines in a resource group using the Azure portal. In the next unit, you look at how to grant access using PowerShell.
+このユニットでは、Azure portal を使用してリソース グループ内に仮想マシンを作成して管理するために、ユーザーにアクセス権を付与する方法について学習しました。 次のユニットでは、PowerShell を使用してアクセス権を付与する方法を説明します。

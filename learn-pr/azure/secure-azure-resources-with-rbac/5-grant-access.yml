@@ -1,17 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.5-grant-access
 metadata:
-  title: Grant access using RBAC and the Azure portal
-  description: Learn how to grant a user access to create and manage virtual machines in a resource group using the Azure portal.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Grant access using RBAC and the Azure portal
-#TODO: Update labID
-#labId: 1234
+  title: RBAC と Azure portal を使用してアクセス権を付与する
+  description: Azure portal を使用してリソース グループ内に仮想マシンを作成して管理するためのアクセス権をユーザーに付与する方法について学習します。
+  displayType: one-column
+  ms.openlocfilehash: a2e4aa48292ea8b1535d9a61e643ca5cdfe3abcb
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43455120"
+title: RBAC と Azure portal を使用してアクセス権を付与する
+labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-grant-access.md)]
+content: '[!include[](includes/5-grant-access.md)]'
