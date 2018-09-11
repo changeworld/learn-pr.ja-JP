@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
+title: Azure VPN Gateway を調べる
+metadata:
+  title: Azure VPN Gateway を調べる
+  description: Azure VPN Gateway を調べる
+  ms.openlocfilehash: fed82960fbd61bfa2accf398c90629635cfedd9f
+  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43544694"
+durationInMinutes: 10
+content: '[!include[](includes/4-explore-azure-vpn-gateway.md)]'

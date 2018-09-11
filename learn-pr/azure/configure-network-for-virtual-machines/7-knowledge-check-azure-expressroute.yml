@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.openlocfilehash: b44cec1812fc141ac7115fee02f2ab79e5d65720
+  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43544657"
+durationInMinutes: 3
+quiz:
+  title: 知識チェック - Azure ExpressRoute
+  questions:
+  - content: 次のプロトコルのうち、Azure ExpressRoute の動的ルーティングを提供するものはどれですか。
+    choices:
+    - content: IPVPN
+      isCorrect: false
+    - content: PPTP
+      isCorrect: false
+    - content: IPsec
+      isCorrect: false
+    - content: BCP
+      isCorrect: true
+    - content: S-key
+      isCorrect: false
+  - content: 次のピアリングの種類のうち、クラウドベースの SaaS サービスへの接続をサポートしているものはどれですか。
+    choices:
+    - content: Azure プライベート
+      isCorrect: false
+    - content: Azure パブリック
+      isCorrect: false
+    - content: Microsoft
+      isCorrect: true
+    - content: Office 365
+      isCorrect: false
+    - content: 動的
+      isCorrect: false
