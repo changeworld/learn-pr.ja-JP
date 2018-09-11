@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.4-deploy-fixes-and-migrate-the-database
+title: データベースを移行する - パート 1
+metadata:
+  title: データベースを移行する - パート 1
+  description: データベースを移行する - パート 1
+  ms.openlocfilehash: 7a2384c9174444c4ec5e78e68844d5608be98dcc
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833050"
+durationInMinutes: 5
+content: '[!include[](includes/4-deploy-fixes-and-migrate-the-database.md)]'

@@ -1,6 +1,7 @@
 このモジュールでは、Azure Key Vault でアプリのシークレット構成をセキュリティ保護しました。 このアプリ コードでは、マネージド サービス ID を使用してコンテナーへの認証が行われ、起動時にコンテナーから ASP.NET Core の構成システムにシークレットが自動的に読み込まれます。
 
-## <a name="cleanup"></a>クリーンアップ
+## <a name="clean-up"></a>クリーンアップ
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
 Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 

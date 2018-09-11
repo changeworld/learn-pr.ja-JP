@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
+metadata:
+  title: Cosmos DB データベースとコレクションを設定する
+  description: Cosmos DB データベースとコレクションを設定する
+  ms.openlocfilehash: b66002b9e197e4f5edb5a2a45b930d4e87b1b937
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795387"
+title: Cosmos DB データベースとコレクションを設定する
+durationInMinutes: 5
+interactive: bash
+content: '[!include[](includes/2-setup-cosmosdb.md)]'

@@ -1,0 +1,55 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.openlocfilehash: 1a5c1fe6d9806846351614beaabe412465e4b0a6
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834027"
+durationInMinutes: 5
+quiz:
+  title: 知識チェック
+  questions:
+  - content: コンテナー インスタンスに再起動ポリシーが構成されていない場合、既定で設定されるポリシーは何ですか?
+    choices:
+    - content: Always
+      correctExplanation: 再起動ポリシー **Always** が既定で設定されます。
+      isCorrect: true
+    - content: Never
+      isCorrect: false
+      incorrectExplanation: 再起動ポリシー **Always** が既定で設定されます。
+    - content: OnFailure
+      isCorrect: false
+      incorrectExplanation: 再起動ポリシー **Always** が既定で設定されます。
+  - content: 次のうち正しくないものはどれですか?
+    choices:
+    - content: 既定では、環境変数の値は Azure portal と Azure CLI 出力で確認できます。
+      incorrectExplanation: 環境変数の値は Azure portal と Azure CLI 出力で確認できます。
+      isCorrect: false
+    - content: 環境変数は、セキュリティで保護された環境変数に変換できます。
+      isCorrect: true
+      correctExplanation: 環境変数は、セキュリティで保護された環境変数に変換できません。 そのためには、コンテナー インスタンスを再作成する必要があります。
+    - content: セキュリティで保護された環境変数の値は、Azure portal と Azure CLI 出力には表示されません。
+      incorrectExplanation: セキュリティで保護された環境変数の値は、Azure portal と Azure CLI 出力には表示されません。
+      isCorrect: false
+    - content: 環境変数を使用して、接続文字列やその他のアプリケーション情報を Azure コンテナー インスタンスに渡すことができます。
+      incorrectExplanation: 環境変数を使用して、接続文字列やその他のアプリケーション情報を Azure コンテナー インスタンスに渡すことができます。
+      isCorrect: false
+  - content: どのトラブルシューティング コマンドを使用すると、コンテナー起動イベントを表示できますか?
+    choices:
+    - content: az container logs
+      incorrectExplanation: ログのプルでは、ログのみが表示されます。
+      isCorrect: false
+    - content: az container attach
+      isCorrect: true
+      correctExplanation: az container attach では、コンテナーのイベントとログが表示されます。
+    - content: az container events
+      incorrectExplanation: これは、Azure CLI に有効なコマンドではありません。
+      isCorrect: false
+    - content: az container exec
+      incorrectExplanation: az container exec は、コンテナー インスタンスでコマンドを実行するために使用されます。
+      isCorrect: false

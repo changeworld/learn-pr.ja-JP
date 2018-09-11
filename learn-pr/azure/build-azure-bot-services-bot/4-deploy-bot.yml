@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.4-deploy-bot
+title: Visual Studio Code を使用したボットのデプロイ
+metadata:
+  title: Visual Studio Code を使用したボットのデプロイ
+  description: Visual Studio Code を使用したボットのデプロイ
+  ms.openlocfilehash: 9014700b5d596f9c70f5c9d9c4ee831e32a218cf
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795205"
+durationInMinutes: 5
+content: '[!include[](includes/4-deploy-bot.md)'

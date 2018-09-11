@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.5-extract-printed-text
+interactive: bash
+title: イメージから印刷されたテキストを抽出する
+metadata:
+  title: イメージから印刷されたテキストを抽出する
+  description: イメージから印刷されたテキストを抽出する
+  ms.openlocfilehash: ac4116a83be7fdfd32e14e22f5f13dde00f622ff
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833127"
+durationInMinutes: 10
+content: '[!include[](includes/5-extract-printed-text.md)]'

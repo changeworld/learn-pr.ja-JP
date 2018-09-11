@@ -2,7 +2,9 @@
 
 Azure PowerShell は、PowerShell の経験を持つ管理者にとって、適切な自動化の選択肢です。 簡潔な構文と強力なスクリプト言語の組み合わせは、PowerShell を初めて使う場合であっても、検討に値します。 エラーが発生しやすく時間がかかるタスクを対象にしたこのレベルの自動化は、管理時間の削減と品質の向上につながります。
 
-## <a name="cleanup"></a>クリーンアップ
+## <a name="clean-up-your-resources"></a>リソースをクリーンアップする
+<!---TODO: Do we need to include cleanup for the free education tier?--->
+
 プロビジョニングが済んで実行中の VM は、サブスクリプションに対してコストが発生します。 不要な課金を回避するため、必要のない VM は削除する必要があります。 Azure サブスクリプションをクリーンアップする最も簡単な方法は、関連付けられたリソース グループを削除することです。それにより、グループ内のすべての VM も削除されます。 これは PowerShell で行うことができます。 完了したら、次の Azure PowerShell コマンドレットを実行してください。
 
 ```powershell
