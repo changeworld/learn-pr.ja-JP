@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.sample-path
+title: サンプル ラーニング パス
+summary: これはサンプル ラーニング パスの概要です
+cardDescription: これはサンプル ラーニング パスのカードの説明です
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- Azure
+prerequisites: これはサンプル ラーニング パスのカードの前提条件テキストです
+metadata:
+  title: サンプル ラーニング パス ページのタイトル
+  description: サンプル ラーニング パス ページの説明
+  ms.openlocfilehash: 6107095cd1199017beee64d34b0c6470188acb1d
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445956"
+modules:
+- learn.sample-module-cloudshell
+achievement: learn.sample-path.trophy

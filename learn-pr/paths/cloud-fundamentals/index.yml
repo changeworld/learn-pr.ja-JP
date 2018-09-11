@@ -1,0 +1,29 @@
+### YamlMime:LearningPath
+uid: learn.cloud-fundamentals
+title: クラウドの基礎
+summary: クラウドに関心があっても、その機能についてははっきりしないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
+cardDescription: クラウドに関心があっても、その機能についてははっきりしないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- solutions-architect
+- administrator
+products:
+- Azure
+prerequisites: クラウドに関心があっても、その機能についてははっきりしないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
+metadata:
+  title: クラウドの基礎
+  description: クラウドに関心があっても、その機能についてははっきりしないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
+  ms.openlocfilehash: cf6ba296731c002c1d09e833e57cbd00f12fe7a9
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40444950"
+modules:
+- learn.automate-azure-tasks-with-powershell
+- learn.control-azure-services-with-cli
+- principles-cloud-computing
+achievement: learn.cloud-fundamentals.trophy
