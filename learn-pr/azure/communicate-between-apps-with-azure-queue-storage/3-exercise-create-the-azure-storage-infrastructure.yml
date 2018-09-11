@@ -9,12 +9,13 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 09ed2b546a1abd4007070f14bca8248842cf6be6
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 134c7fda74ac046a89ebc45f0706794f66ce0423
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44239376"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310597"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-the-azure-storage-infrastructure.md)]'

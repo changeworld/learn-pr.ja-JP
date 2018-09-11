@@ -10,12 +10,13 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   zone_pivot_groups: dev-lang-csharp-javascript
-  ms.openlocfilehash: fc60b9e975dbd76fa90a087eeb19494805683edf
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 744fed3cd3989012c289c6255818479a6f1f7d2b
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44239325"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310291"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 15
 content: '[!include[](includes/10-exercise-connect-with-your-azure-storage-configuration.md)]'

@@ -10,12 +10,13 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   zone_pivot_groups: dev-lang-csharp-javascript
-  ms.openlocfilehash: d6c6e6e4d919e77b644a73fe89304b4934f55058
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 9ed11b520e16ccaf47e786ff5a63272921f4bf90
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248148"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307673"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/8-exercise-add-azure-storage-configuration-to-your-app.md)]'
