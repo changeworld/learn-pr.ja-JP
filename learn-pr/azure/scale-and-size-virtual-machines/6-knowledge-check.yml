@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.6-knowledge-check
+title: "Knowledge check: Scale and size virtual machines"
+durationInMinutes: 3
+
+metadata:
+  title: "Knowledge check: Scale and size virtual machines"
+  description: Questions about scaling and sizing virtual machines in Azure.
+
+quiz:
+  title: "Knowledge check: Scale and size virtual machines"
+  questions:
+ 
+  - content: "True or false: when using virtual machine scale sets with autoscale, the autoscale rules can be configured to change the _size_ of the virtual machines in your scale set."
+    choices:
+    - content: "True"
+      isCorrect: false
+    - content: "False"
+      isCorrect: true
+      correctExplanation: "Autoscale changes the number of instances in your scale set, it does not change the size of the instances."
+
+  - content: "What is typically the most important criterion to use when choosing a _type_ for your virtual machine?"
+    choices:
+    - content: "Your workload; that is, the kind of operations you expect the virtual machine to perform most often."
+      isCorrect: true
+      correctExplanation: "Virtual machine _type_ describes the mix of CPU, GPU, memory, storage, and networking bandwidth allocated to a VM. Your goal is to find the best match of resources for your workload."
+    - content: "The brand of the underlying hardware."
+      isCorrect: false
+    - content: "The operating systems and images that the type supports."
+      isCorrect: false
+       
+  - content: "Suppose you work for a government department responsible for severe-weather alerts. You can achieve the performance you need using one large VM or two small VMs with a load balancer. Which configuration is likely to be a better choice?"
+    choices:
+    - content: "One VM"
+      isCorrect: false
+    - content: "Two VMs and a load balancer"
+      isCorrect: true
+      correctExplanation: "Multiple VMs is appropriate because it provides redundancy. If one of the VMs crashes, the other can continue to service requests."

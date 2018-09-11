@@ -1,0 +1,55 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: Knowledge check
+metadata:
+  title: Knowledge check
+  description: Knowledge check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 5
+quiz:
+  title: 'Knowledge Check'
+  questions:
+  - content: 'If a restart policy is not configured for a container instance, what policy is set by default?'
+    choices:
+    - content: Always
+      correctExplanation: The restart policy **Always** is set by default.
+      isCorrect: true
+    - content: Never
+      isCorrect: false
+      incorrectExplanation: The restart policy **Always** is set by default.
+    - content: OnFailure
+      isCorrect: false
+      incorrectExplanation: The restart policy **Always** is set by default.
+  - content: 'Which of the following is not correct?'
+    choices:
+    - content: By default, the values of an environment variable can be seen in the Azure portal and the Azure CLI output.
+      incorrectExplanation: Environment variable values can be seen in the Azure portal and the Azure CLI output.
+      isCorrect: false
+    - content: Environment variables can be converted to secured environment variables.
+      isCorrect: true
+      correctExplanation: Environment variables cannot be converted to secured environment variables. In order to do so, the container instance needs to be re-created.
+    - content: Secured environment variables hide values from the Azure portal and the Azure CLI output.
+      incorrectExplanation: Secured environment variables do hide values from the Azure portal and the Azure CLI output.
+      isCorrect: false
+    - content: Environment variables can be used to pass connection strings and other application information to an Azure container instance.
+      incorrectExplanation: Environment variables can be used to pass connection strings and other application information to an Azure container instance.
+      isCorrect: false
+  - content: 'Which troubleshooting command can be used to see container startup events?'
+    choices:
+    - content: az container logs
+      incorrectExplanation: Pulling logs only shows the logs.
+      isCorrect: false
+    - content: az container attach
+      isCorrect: true
+      correctExplanation: az container attach shows container events and logs.
+    - content: az container events
+      incorrectExplanation: This is not a valid command for the Azure CLI.
+      isCorrect: false
+    - content: az container exec
+      incorrectExplanation: az container exec is used to run a command on a container instance.
+      isCorrect: false

@@ -1,0 +1,41 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+metadata:
+  title: Query types 
+  description: Learn what kinds of queries you can use in Azure Cosmos DB to retrieve your data.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Query types
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-query-types.md)]
+#TODO: The quiz isn't displaying properly
+quiz:
+  title: 'Quiz Title'
+  questions:
+  - content: 'What is the only required clause in a SQL query?'
+    choices:
+    - content: "SELECT"
+      isCorrect: true
+      incorrectExplanation: "Correct! SELECT is the only required clause in a query."
+    - content: FROM
+      isCorrect: false
+      correctExplanation: "No, FROM is an optional clause in a SQL query."
+    - content: "WHERE"
+      isCorrect: false
+      incorrectExplanation: "No, WHERE is an optional clause in a SQL query.
+  - content: 'Which query would you use to get an ordered list of products IDs and product descriptions, starting with the largest product ID and ending with the smallest product ID?"
+    choices:
+    - content: "SELECT p.productId FROM Products p ORDER BY p.productId ASC"
+      isCorrect: false
+      incorrectExplanation: "No, this would only return the product IDs in ascending order."
+    - content: "SELECT p.id FROM Products p ORDER BY p.productId DESC"
+      isCorrect: false
+      incorrectExplanation: "No, this would only return the ID in descending order"
+    - content: "SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC"
+      isCorrect: true
+      incorrectExplanation: "Correct, this would return both the product ID and product description in ascending order."

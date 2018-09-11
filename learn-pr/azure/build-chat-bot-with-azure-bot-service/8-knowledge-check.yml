@@ -1,0 +1,114 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: Check your knowledge
+metadata:
+  title: Check your knowledge
+  description: Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+quiz:
+  title: Building neural networks with TensorFlow and the Azure Data Science Virtual Machine
+  questions:
+  - content: "When the Azure web app bot was deployed, what all was created?"
+    choices:
+    - content: "A bot service"
+      isCorrect: false
+      incorrectExplanation: "A bot service was created, but something else was, too."
+    - content: "A web app"
+      isCorrect: false
+      incorrectExplanation: "A web app was created, but something else was, too."
+    - content: "A bot service and web app"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the module."
+    - content: "Nothing got deployed yet"
+      isCorrect: false
+      incorrectExplanation: "A deployment happened by this step."
+  - content: "What is QnA Maker used to create?"
+    choices:
+    - content: "A service that takes in a set of questions and answers"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "A service to answer questions"
+      isCorrect: false
+      incorrectExplanation: "It helps answer questions, but that's not all QnA Maker can do."
+    - content: "A service that generates new answers to questions"
+      isCorrect: false
+      incorrectExplanation: "QnA Maker doesn't generate new answers, but it does give answers it knows about."
+    - content: "A bot"
+      isCorrect: false
+      incorrectExplanation: "QnA Maker can be associated with a bot, but it doesn't create one."
+  - content: "What ways can you populate your knowledge base in QnA Maker?"
+    choices:
+    - content: "Can only manually populate your knowledge base"
+      isCorrect: false
+      incorrectExplanation: "You could manually populate the knowledge base, but there are other ways."
+    - content: "With a text file"
+      isCorrect: false
+      incorrectExplanation: "A text file isn't the only way to populate the knowledge base."
+    - content: "With a URL"
+      isCorrect: false
+      incorrectExplanation: "A URL isn't the only way to populate the knowledge base."
+    - content: "With a text file or URL"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
+  - content: "What step(s) are needed to use QnA Maker in your applications?"
+    choices:
+    - content: "Save"
+      isCorrect: false
+      incorrectExplanation: "You do need to save, but other steps are needed."
+    - content: "Save and train"
+      isCorrect: false
+      incorrectExplanation: "Training is important, but what else do you need to consume the service?"
+    - content: "Save, train, and publish"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "Publish"
+      isCorrect: false
+      incorrectExplanation: "Unfortunately, you can't just go straight to publishing."
+  - content: "Other than the bot framework packages, what other package is needed to build and consume RESTful services?"
+    choices:
+    - content: "restify"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "express"
+      isCorrect: false
+      incorrectExplanation: "Express is used to as a full web framework, not to just create RESTful services."
+    - content: "swagger"
+      isCorrect: false
+      incorrectExplanation: "Swagger is used to specify, build, and test your APIs, not just to create RESTful services."
+    - content: "babel"
+      isCorrect: false
+      incorrectExplanation: "Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax."
+  - content: "In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?"
+    choices:
+    - content: "All app service settings"
+      isCorrect: false
+      incorrectExplanation: "This setting allows you to change settings on the app service associated with the web app."
+    - content: "Application settings"
+      isCorrect: true
+      correctExplanation: "Great! Proceed to the next part of the lab."
+    - content: "Build"
+      isCorrect: false
+      incorrectExplanation: "This section allows you to view and get the code for the bot."
+    - content: "Channels"
+      isCorrect: false
+      incorrectExplanation: "This section allows you to hook the bot up to different services to interact with the bot."
+  - content: "If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?"
+    choices:
+    - content: "All app service settings"
+      isCorrect: false
+      incorrectExplanation: "This setting allows you to change."
+    - content: "Application settings"
+      isCorrect: false
+      incorrectExplanation: "This setting allows you to specify specific settings for the web application."
+    - content: "Build"
+      isCorrect: false
+      incorrectExplanation: "This section allows you to view and get the code for the bot."
+    - content: "Channels"
+      isCorrect: true
+      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."

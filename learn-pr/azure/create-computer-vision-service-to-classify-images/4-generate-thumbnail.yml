@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.4-generate-thumbnail
+title: Generating thumbnails
+metadata:
+  title: Generating thumbnails
+  description: Generating thumbnails
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-generate-thumbnail.md)]

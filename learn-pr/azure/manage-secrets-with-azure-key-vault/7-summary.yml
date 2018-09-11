@@ -1,0 +1,60 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.7-summary
+title: Summary
+metadata:
+  title: Summary
+  description: Summary
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 'Knowledge check: Azure Key Vault'
+  questions:
+  - content: Which of the following is **not** a primary benefit of Azure Key Vault?
+    choices:
+    - content: Secure storage of private user information.
+      isCorrect: true
+      correctExplanation: Key Vault is intended for storing application secrets, not user secrets.
+    - content: Synchronizing application secrets among multiple instances of an application.
+      isCorrect: false
+      incorrectExplanation: Key Vault does enable multiple instances of applications to access the same secrets by storing them centrally.
+    - content: Reducing the need for application developers to directly handle application secrets. 
+      isCorrect: false
+      incorrectExplanation: Reducing hands-on interaction with secrets is a primary benefit of Key Vault and increases security.
+    - content: Controlling access to application secrets with assignable permissions.
+      isCorrect: false
+      incorrectExplanation: Key Vault's access control policies increase secret security by limiting access to secrets.
+  - content: Which of these statements best describes Key Vault's authentication and authorization process?
+    choices:
+    - content: Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.
+      isCorrect: false
+      incorrectExplanation: Key Vault authentication does not use usernames and passwords, and applications should authenticate with their own identities, not the identity of a person.
+    - content: Applications and users authenticate to a vault with a Microsoft Account and are authorized to access specific secrets.
+      isCorrect: false
+      incorrectExplanation: Key Vault authentication does not use Microsoft Accounts, and access policies do not offer control over individual secrets in a vault.
+    - content: Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform different actions on all secrets in the vault.
+      isCorrect: true
+      correctExplanation: All authentication to Key Vault uses Azure Active Directory identities, and access policies are based on actions that apply to every secret in the vault.
+    - content: Applications authenticate to a vault using the usernames and passwords of users who sign in to the web app, and are granted access to secrets owned by those users.
+      isCorrect: false
+      incorrectExplanation: Users of an app should not have access to an application's Key Vault, and vaults should not be used to store user secrets.
+  - content: How does Key Vault help protect your secrets after they have been loaded by your app?
+    choices:
+    - content: Key Vault automatically generates new secret values each time you load a secret so they can never be reused.
+      isCorrect: false
+      incorrectExplanation: Key Vault does not automatically generate new secret values.
+    - content: The Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.
+      isCorrect: false
+      incorrectExplanation: This is not a feature of the Key Vault client library.
+    - content: Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they are used.
+      isCorrect: false
+      incorrectExplanation: Secret values returned to your app from a vault are not encrypted.
+    - content: It doesn't &mdash; secrets are unprotected once they are loaded by your application.
+      isCorrect: true
+      correctExplanation: Once secrets have been loaded by an app, they are unprotected. Take care not to log them, store them or return them in client responses in your application code.  

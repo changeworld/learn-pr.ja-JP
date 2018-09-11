@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.2-deploy-to-azure
+title: Deploy your site to Azure
+metadata:
+  title: Deploy your site to Azure
+  description: See what a basic three-tier application might look like on Azure.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 7
+content: |
+  [!include[](includes/2-deploy-to-azure.md)]
+quiz:
+  title: 'Knowledge Check: Deploy your site to Azure'
+  questions:
+  - content: 'What is an Azure _region_?'
+    choices:
+    - content: 'An Azure data center within a specific geographic location.'
+      isCorrect: true
+      correctExplanation: 'Azure regions help you deliver your apps and services closest to your users. West US and North Europe are examples.'
+    - content: 'A way of breaking networks into smaller networks.'
+      isCorrect: false
+      incorrectExplanation: 'Azure networks are broken into _subnets_.'
+    - content: 'Firewall rules which define what traffic can flow in and out of Azure.'
+      isCorrect: false
+      incorrectExplanation: 'You use _network security groups_ to define firewall rules.'
+  - content: 'Which of the following is true about virtual networks?'
+    choices:
+    - content: 'You configure virtual networks through software.'
+      isCorrect: true
+      correctExplanation: 'Software enables you to treat a virtual network just like your own network. Azure maintains the physical hardware for you.'
+    - content: 'A virtual network accepts network traffic on all ports. You configure the firewall through virtual machines.'
+      isCorrect: false
+      incorrectExplanation: 'You can associate your virtual network with a network security group, which acts as a cloud-level firewall.'
+    - content: 'Virtual networks are always reachable from the internet.'
+      isCorrect: false
+      incorrectExplanation: 'Although a virtual network is reachable from the internet by default, you configure which networks, including private networks, can reach yours.'

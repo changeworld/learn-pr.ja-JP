@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-deep-learning-101
+title: Knowledege Check
+metadata:
+  title: Knowledege Check
+  description: Deep learning 101 Knowledege Check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 2
+content: Answer the following to continue
+quiz:
+  title: 'Deep Learning 101 Quiz'
+  questions:
+  - content: 'What is one of the main differences between traditional machine learning and deep learning?'
+    choices:
+    - content: In deep learning we only use linear models where as in traditonal machine learning we use all kinds of models graph, algebraic and probablistic.
+      isCorrect: false
+    - content: In traditional machine learning features are hand picked in deep learning they are hand picked and learned.
+      isCorrect: true
+      correctExplanation: In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.
+    - content: Deep learning is modeled after the brain and traditional machine learning is modeled after the heart.
+      isCorrect: false
+  - content: 'What is the purpose of the DSVM?'
+    choices:
+    - content: The DSVMs are the only way to interact with machine learning on Azure.
+      isCorrect: false
+    - content: DSVMs are prebuilt images that provide support for the most popular data science and machine learning frameworks.
+      isCorrect: true
+      correctExplanation: DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.
+    - content: Unlike the Deep Learning Virtual Machine image DSVMs can only be used for traditional data science.
+      isCorrect: false
+  - content: 'Why are GPUs often used for deep learning?'
+    choices:
+    - content: The matrix algebra in deep learning requires lots of parallel computation and GPUs make the viable.
+      correctExplanation: The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.
+      isCorrect: true
+    - content: GPUs ensure that deep learning models converge during gradient decent.
+      isCorrect: false
+    - content: GPUs are needed to evaluate a loss function. 
+      isCorrect: false
+  - content: 'What is the difference between an N-Series and D-Series machines on Azure?'
+    choices:
+    - content: D series are for deep learning where as N series are for Normal compute.
+      isCorrect: false
+    - content: D series are for general compute where as N series contain GPUs.
+      isCorrect: true
+    - content: D series are for high preformance compute where as N series contain GPUs.
+      isCorrect: false

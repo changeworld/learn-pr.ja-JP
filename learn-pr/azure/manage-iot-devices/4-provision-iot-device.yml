@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+# Unit uids are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
+uid: learn.manage-iot-devices.4-provision-iot-device
+metadata:
+  title: Provision your IoT device
+  description: This is a sample of "text-only" content (no lab or knowledge check components).
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Provision your IoT device
+durationInMinutes: 11
+content: |
+  [!include[](includes/4-provision-iot-device.md)]

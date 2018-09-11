@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.5-matching-faces-to-emojis
+metadata:
+  title: Matching faces to emojis
+  description: learn about the rest of the code that we will use to map a face to an emoji.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Matching faces to emojis
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-matching-faces-to-emojis.md)]

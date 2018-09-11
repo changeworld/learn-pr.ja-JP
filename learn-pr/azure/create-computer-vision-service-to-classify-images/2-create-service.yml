@@ -1,0 +1,30 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.2-create-service
+title: Creating a Computer Vision service
+metadata:
+  title: Creating a Computer Vision service
+  description: Creating a Computer Vision service
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-create-service.md)]
+# tasks:
+# - action: exists
+#   environment: azure
+#   hint: 'Please make sure that you have created the "ComputerVisionService" within the resource group "ComputerVisionRG" in the "westus2" location'
+#   azure:
+#     resourceGroup: ComputerVisionRG
+#     resource: 
+#       type: Microsoft.CognitiveServices/accounts
+#       kind: ComputerVision
+#       name: ComputerVisionService
+#       location: westus2
+#       properties: 
+#         provisioningState: Succeeded

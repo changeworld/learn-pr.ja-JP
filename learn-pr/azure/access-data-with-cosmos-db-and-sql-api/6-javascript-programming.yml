@@ -1,0 +1,33 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
+metadata:
+  title: Run complex operations on your data
+  description: Learn how to perform complex operations by using stored procedures and user defined functions (UDFs) in the Azure portal.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+# TODO:Add Azure Portal Interactivity
+# interactive: azure-portal
+azureSandbox: true
+title: Run complex operations on your data
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-javascript-programming.md)]
+tasks:
+- action: exists
+  environment: azure
+  hint: 'Please make sure that you have created a stored procedure named "HelloWorld" and "CreateDocument", and a UDF named "Discount".'
+  #TODO: Not exactly sure how to do this
+  azure:
+    location: eastus
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Storage/storageAccounts
+      name: docsproxyppea427
+      tags:
+        triplecrown: true

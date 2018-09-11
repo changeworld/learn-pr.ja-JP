@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: principles-cloud-computing.6-knowledge-check
+metadata:
+  title: Check your knowledge
+  description: Check your knowledge
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Check your knowledge
+durationInMinutes: 3
+quiz:
+  title: Knowledge check
+  questions:
+  - content: You're moving to the cloud. You have legacy applications that require specialized mainframe hardware, but you don't want to own the hardware that runs your newer applications. Which cloud deployment model might you choose? 
+    choices:
+    - content: 'Public cloud'
+      incorrectExplanation: Public clouds typically provide modern, commodity hardware. You need a solution that supports both modern hardware and your specialized mainframe hardware.
+      isCorrect: false
+    - content: 'Private cloud'
+      incorrectExplanation: With a private cloud, you own and operate all your hardware on-premises. 
+      isCorrect: false
+    - content: 'Hybrid cloud'
+      correctExplanation: A hybrid cloud is a public and private cloud combined. You can build your new applications on hardware you rent from the public cloud, while maintaining your specialized mainframe hardware on-premesis.
+      isCorrect: true
+  - content: You're building an application and you want to get it to your users as fast as possible. You don't want to worry about managing the underlying hardware or software, you just want to focus on building, testing, and deploying. Which cloud service type is best for you?
+    choices:
+    - content: 'Infrastructure as a service'
+      incorrectExplanation: With infrastructure as a service, you're responsible for managing the hardware and software. This includes tasks like performing system updates on virtual machines.
+      isCorrect: false
+    - content: 'Platform as a service'
+      correctExplanation: The goal of platform as a service is to help you create an application as fast as possible. The IT management tasks are done for you, so you can focus on writing code.
+      isCorrect: true
+    - content: 'Software as a service'
+      incorrectExplanation: With software as a service, you use an existing application through a web browser or software application.
+      isCorrect: false

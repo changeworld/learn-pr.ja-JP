@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: Identity management
+metadata:
+  title: Identity management
+  description: In this unit we'll discuss how to protect your identities
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 5
+content: |
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: 'Knowledge Check - Identity management'
+  questions:
+  - content: 'Which of the following is not a factor in multi-factor authentication?'
+    choices:
+    - content: 'A thumbprint scanner on a mobile device'
+      isCorrect: false
+      incorrectExplanation: 'Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.'
+    - content: 'A token generated from the Azure Authenticator application'
+      isCorrect: false
+      incorrectExplanation: 'Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.'
+    - content: 'A password'
+      isCorrect: false
+      incorrectExplanation: 'Passwords can be used as factors in multi-factor authentication.'
+    - content: 'Your shoe size'
+      isCorrect: true
+      correctExplanation: 'Your shoe size is not something that can be used in multi-factor authentication.'
+  - content: 'Which of the following is NOT a benefit SSO provides?'
+    choices:
+    - content: 'Increased complexity assigning permissions to users'
+      isCorrect: true
+      correctExplanation: 'SSO can reduce the complexity needed to assign permissions to users.'
+    - content: 'Fewer IDs and passwords for users to remember'
+      isCorrect: false
+      incorrectExplanation: 'Fewer IDs and passwords for users to remember is a key benefit of SSO.'
+    - content: 'Lower adminmistration effort when users change roles or leave an organization'
+      isCorrect: false
+      incorrectExplanation: 'SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization. This is a key benefit of SSO.'
+    - content: 'Ensures a consistent password policy across applications'
+      isCorrect: false
+      incorrectExplanation: 'By using SSO, users have a single password policy for all accounts. This is a key benefit of SSO.'

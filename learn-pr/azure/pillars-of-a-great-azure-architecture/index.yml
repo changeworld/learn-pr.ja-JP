@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.pillars-of-a-great-azure-architecture
+metadata:
+  title: Pillars of a great Azure architecture
+  description: Learn how to make your architecture a success on Azure
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Pillars of a great Azure architecture
+summary: You want to build great things on Azure, but you’re not sure exactly what that means. There is a wealth of tools and services at your disposal on Azure, but what’s important to make sure you’re successful? How do you instill confidence in your customers that their data is secure? Could your architecture handle a spike in traffic if a media report goes viral? Could your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible? Using key principles throughout your architecture regardless of technology choice, can help you design, build, and continuously improve your architecture.
+abstract: |
+  In this module, you will:
+  - Identify key pillars for architecting a solution in the cloud
+  - Apply key principles for creating a solid architectural foundation
+prerequisites: None
+#TODO: Update icon URL with real image
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+units:
+- learn.pillars-of-a-great-azure-architecture.1-introduction
+- learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+- learn.pillars-of-a-great-azure-architecture.3-design-for-security
+- learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+- learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+- learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+- learn.pillars-of-a-great-azure-architecture.7-summary
+achievement: learn.pillars-of-a-great-azure-architecture.badge

@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.secure-access-azure-ad-multi-factor-authentication
+metadata:
+  title: Secure your Azure resources with conditional access
+  description: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Secure your Azure resources with conditional access
+summary: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
+abstract: |
+  In this module, you will:
+  - Create a test user and a user group
+  - Enable a conditional access policy that requires Multi-Factor Authentication (MFA)
+prerequisites: |
+  - Knowledge of basic Azure concepts, such as resource groups and subscriptions
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels: 
+- intermediate
+roles: 
+- administrator
+products: 
+- azure-active-directory
+units:
+- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

@@ -1,0 +1,37 @@
+### YamlMime:Module
+uid: learn.intro-to-containers
+metadata:
+  title: Introduction to containers on Azure
+  description: Learn about creating and using containers on Azure.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Introduction to containers on Azure
+summary: Learn about creating and using containers on Azure.
+abstract: | 
+  In this module, you will:
+  - Prepare a local container development environment
+  - Learn basic Docker operations
+  - Run, list, and delete containers
+  - Create a custom container images
+  - Push container images to a public container registry and run containers from these images
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.intro-to-containers.1-introduction
+- learn.intro-to-containers.2-configure-local
+- learn.intro-to-containers.3-basic-operations
+- learn.intro-to-containers.4-container-images
+- learn.intro-to-containers.5-knowledge-check
+- learn.intro-to-containers.6-summary
+achievement: learn.intro-to-containers.badge

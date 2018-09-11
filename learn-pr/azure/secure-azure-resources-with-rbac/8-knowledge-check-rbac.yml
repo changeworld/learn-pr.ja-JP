@@ -1,0 +1,66 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
+metadata:
+  title: Knowledge check - Using RBAC
+  description: Knowledge check - Using RBAC
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Knowledge check - Using RBAC
+durationInMinutes: 5
+quiz:
+  title: Knowledge check - Using RBAC
+  questions:
+  - content: 'What is the name of the blade in the Azure portal where you grant access?'
+    choices:
+    - content: Azure resources
+      isCorrect: false
+      correctExplanation: You can't assign roles on the Azure resources blade, but you can see what roles are assigned to yourself or the selected user.
+    - content: Azure Active Directory
+      isCorrect: false
+      incorrectExplanation: You can't assign roles on the Azure Active Directory blade, but you can access the Azure Active Directory features on this blade.
+    - content: All users
+      isCorrect: false
+      correctExplanation: You can't assign roles on the All users blade. This blade lists all the users for the selected directory.
+    - content: Access control (IAM)
+      isCorrect: true
+      correctExplanation: Correct! You assign roles on the Access control (IAM) blade. This blade appears in several areas in the portal.
+  - content: 'To grant a user access to Azure resources, you create a role assignment.'
+    choices:
+    - content: 'True'
+      isCorrect: true
+      correctExplanation: Correct! A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
+    - content: 'False'
+      isCorrect: false
+      incorrectExplanation: A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
+  - content: 'What role enables you to grant access to others?'
+    choices:
+    - content: Virtual Machine Contributor
+      isCorrect: false
+      correctExplanation: The Virtual Machine Contributor role allows you to manage virtual machines, but you can't grant access to others.
+    - content: User Access Administrator
+      isCorrect: true
+      incorrectExplanation: Correct! The User Access Administrator role and also the Owner role allow you to grant access to others.
+    - content: Contributor
+      isCorrect: false
+      correctExplanation: The Contributor role allows you to manage all resources, but you can't grant access to others.
+    - content: Reader
+      isCorrect: false
+      correctExplanation: The Reader role allows you to read all resources, but you can't grant access to others.
+  - content: 'A developer needs full access to a resource group. If you are following least-privilege best practices, what scope should you specify?'
+    choices:
+    - content: Resource group
+      isCorrect: true
+      correctExplanation: Correct! Following least-privilege best practices, you just grant the access the user needs to do their job. In this case, you should set the scope to just the resource group.
+    - content: Subscription
+      isCorrect: false
+      incorrectExplanation: A subscription scope would grant the developer access, but it would be broader than what they need.
+    - content: Resource
+      isCorrect: false
+      correctExplanation: A resource scope would not grant the developer the access they require.
+    - content: User
+      isCorrect: false
+      correctExplanation: User is not a scope.

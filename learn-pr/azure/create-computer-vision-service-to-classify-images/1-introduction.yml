@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.1-intro
+title: What is Azure Computer Vision?
+metadata:
+  title: What is Azure Computer Vision?
+  description: What is Azure Computer Vision?
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/1-introduction.md)]

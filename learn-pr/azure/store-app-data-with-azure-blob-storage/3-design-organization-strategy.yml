@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
+title: Design a storage organization strategy
+metadata:
+  title: Design a storage organization strategy
+  description: Design a storage organization strategy
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 7
+content: |
+  [!include[](includes/3-design-organization-strategy.md)]
+quiz:
+  title: 'Knowledge check: Blob Storage'
+  questions:
+  - content: Which kind of blob is the best fit for most storage scenarios?
+    choices:
+    - content: Byte blobs
+      isCorrect: false
+      incorrectExplanation: '"Byte blobs" are not a type of blob.'
+    - content: Page blobs
+      isCorrect: false
+      incorrectExplanation: Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.
+    - content: Block blobs
+      isCorrect: true
+      correctExplanation: Block blobs are usually the best choice for general-purpose storage needs.
+    - content: Append blobs
+      isCorrect: false
+      incorrectExplanation: Append blobs only support appending new data, not updating or deleting existing data.
+  - content: Blobs provide *unstructured* data storage. What does *unstructured* mean?
+    choices:
+    - content: Blobs can't be organized or named, they are only collections of bytes.
+      isCorrect: false
+      incorrectExplanation: '"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.'
+    - content: There are no restrictions on the kinds of data you can store in blobs.
+      isCorrect: true
+      correctExplanation: Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.
+    - content: Blobs can't contain structured data, like JSON or XML.
+      isCorrect: false
+      incorrectExplanation: Blobs *can* contain structured data, but Blob storage does not interact with it in any way. It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.
+    - content: Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.
+      isCorrect: false
+      incorrectExplanation: All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library. Data downloaded from blobs is not organized randomly.

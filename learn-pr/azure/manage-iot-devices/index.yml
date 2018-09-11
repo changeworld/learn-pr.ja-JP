@@ -1,0 +1,33 @@
+### YamlMime:Module
+uid: learn.manage-iot-devices
+metadata:
+  title: Learn how to manage IoT devices as an IT Admin
+  description: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Learn how to manage IoT devices as an IT Admin
+summary: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
+abstract: | 
+ In this module, you will:
+  - TBD
+  - TBD
+# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
+iconUrl: http://via.placeholder.com/120x120
+# Review the Docs Contributor Guide for level, role, and product options
+levels: 
+- beginner
+roles: 
+- administrator
+products: 
+- azure
+# Listing of all of the unit uids, in the order they should be displayed to the user in
+units:
+- learn.manage-iot-devices.1-intro-to-ops-in-iot
+- learn.manage-iot-devices.2-raspberry-pi-emulator
+- learn.manage-iot-devices.3-connect-device
+- learn.manage-iot-devices.4-provision-iot-device
+- learn.manage-iot-devices.5-summary
+achievement: learn.manage-iot-devices.badge

@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.6-extract-handwritten-text
+title: Extracting handwritten text from images
+metadata:
+  title: Extracting handwritten text from images
+  description: Extracting handwritten text from images
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-extract-handwritten-text.md)]

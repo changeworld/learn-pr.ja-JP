@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+metadata:
+  title: Summary
+  description: Summary
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Summary
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 'Knowledge Check: Azure Active Directory and conditional access'
+  questions:
+  - content: 'Azure AD is just an AD DS domain controller running in Azure.'
+    choices: 
+    - content: 'True'
+      isCorrect: false
+      incorrectExplanation: While Azure AD performs many of the same functions as traditional AD DS, it's a cloud-based multi-tenant, directory, and identity management service.
+    - content: 'False'
+      isCorrect: true
+      correctExplanation: Correct! AD DS is a server role on Windows Server. Azure AD is a cloud-based multi-customer public directory service.
+  - content: 'What three items should exist in a successful conditional access policy?'
+    choices: 
+    - content: 'User or group, application, time of day'
+      isCorrect: false
+      correctExplanation: Time of day is not an option that's available in conditional access rules.
+    - content: 'User or group, application, control to be enforced'
+      isCorrect: true
+      incorrectExplanation: Correct! Selecting these three items will create self-contained functional conditional access rules.
+    - content: 'User or group, Linux OS, control to be enforced'
+      isCorrect: false
+      correctExplanation: While you can target some device platforms, Linux isn't currently supported.
+  - content: 'How would you modify the conditional access rule that we created to require Multi-Factor Authentication for all users?'
+    choices: 
+    - content: 'Under **Access Controls** > **Session**, select **Use application-enforced restrictions**.'
+      isCorrect: false
+      correctExplanation: Sorry, that option won't modify the rule appropriately.
+    - content: 'Change the user and group assignment from **Select users and groups** to **All users**.'
+      isCorrect: true
+      incorrectExplanation: Correct! Selecting all users will make this policy apply to any user who triggers this conditional access rule. It's suggested that you create a group and add it to the exclude list for instances where users may need to bypass Multi-Factor Authentication due to lost or forgotten methods.

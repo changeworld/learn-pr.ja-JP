@@ -1,0 +1,18 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.4-deploy-bot
+title: Deploy a bot with Visual Studio Code
+metadata:
+  title: Deploy a bot with Visual Studio Code
+  description: Deploy a bot with Visual Studio Code
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+# TODO: Consider Azure Portal Interactivity
+# interactive: azure-portal
+azureSandbox: true
+durationInMinutes: 5
+content: |
+  [!include[](includes/4-deploy-bot.md)

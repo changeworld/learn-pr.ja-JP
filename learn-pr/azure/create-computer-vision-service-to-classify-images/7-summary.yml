@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: Summary and knowledge check
+metadata:
+  title: Summary and knowledge check
+  description: Summary and knowledge check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 'Computer Vision quiz'
+  questions:
+  - content: "What kind of famous images won't be identified with Computer Vision?"
+    choices:
+    - content: 'Landmarks '
+      isCorrect: false
+    - content: 'Celebrities'
+      isCorrect: false
+    - content: 'Movies'
+      isCorrect: true
+  - content: 'Which visual features can we elect to receive when analyzing images?'
+    choices:
+    - content: 'Shapes'
+      isCorrect: true
+    - content: 'Image categorization'
+      isCorrect: false
+    - content: 'Tags'
+      isCorrect: false
+    - content: 'Textual description'
+      isCorrect: false
+    - content: 'Faces'
+      isCorrect: false
+    - content: 'Colors'
+      isCorrect: false
+    - content: 'Adult and suggestive content'
+      isCorrect: false
+  - content: 'What does smart cropping do?'
+    choices:
+    - content: 'Crops pictures from the top left'
+      isCorrect: false
+    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
+      isCorrect: true

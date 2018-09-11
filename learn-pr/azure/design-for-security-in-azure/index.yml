@@ -1,0 +1,40 @@
+### YamlMime:Module
+uid: learn.design-for-security
+metadata:
+  title: Design for security in Azure
+  description: Security is arguably the most important aspect of any architecture. From financial institutions handling millions of dollars in transactions a day, to  health care organizations dealing with sensitive patient records, ensuring that your environment and data are secure is critical to the success of your business. In this module, we’ll talk through key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Design for security in your cloud infrastructure
+summary: Review key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
+abstract:  | 
+  In this module, you will:
+  - Learn how to take a defense in depth approach to securing your architecture
+  - Learn how to protect your identities
+  - Learn what technologies are available to protect your Azure infrastructure
+  - Learn how and where to use encryption to secure your data
+  - Learn how to protect your architecture at the network level
+  - Learn how to leverage application security best practices to integrate security into your application
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+units:
+- learn.design-for-security.1-introduction
+- learn.design-for-security.2-defense-in-depth
+- learn.design-for-security.3-identity-management
+- learn.design-for-security.4-infrastructure-protection
+- learn.design-for-security.5-encryption
+- learn.design-for-security.6-network-security
+#TODO: Add - learn.design-for-security.7-application-security
+- learn.design-for-security.8-summary
+achievement: learn.design-for-security.badge

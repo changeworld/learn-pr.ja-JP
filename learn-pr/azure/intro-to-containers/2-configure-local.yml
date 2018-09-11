@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.2-configure-local
+metadata:
+  title: Configure a local container development environment
+  description: Configure a local container development environment.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Configure a local container development environment
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-configure-local.md)]

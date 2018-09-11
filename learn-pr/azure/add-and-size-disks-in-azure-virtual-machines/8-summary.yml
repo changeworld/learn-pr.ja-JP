@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.8-summary
+title: Summary
+metadata:
+  title: Summary
+  description: Summary
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+content: |
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 'Knowledge check: Add and size disks in Azure virtual machines'
+  questions:
+  - content: Virtual hard drive files (VHDs) are stored in which of the following types of blobs in Azure Storage?
+    choices: 
+    - content: Block Blobs
+      isCorrect: false
+      incorrectExplanation: Block blobs let you upload large blobs efficiently but are not optimized for random read and write operations.
+    - content: Append Blobs
+      isCorrect: false
+      incorrectExplanation: An append blob is comprised of blocks and is optimized for append operations.
+    - content: Page Blobs
+      isCorrect: true
+      correctExplanation: Page blobs are a collection of 512-byte pages optimized for random read and write operations. VHDs are backed by page blobs in Azure Storage.
+  - content: Which of the following data replication strategies is the only option supported by a premium storage account?
+    choices: 
+    - content: Read-access geo-redundant storage (RA-GRS)
+      isCorrect: false
+      incorrectExplanation: A premium storage account doesn't support RA_GRS.
+    - content: Locally redundant storage (LRS)
+      isCorrect: true
+      correctExplanation: A premium storage account supports only locally redundant storage as the replication option. Locally redundant storage keeps three copies of the data within a single region. For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup. You also must use a geo-redundant storage (GRS) account as the backup vault. 
+    - content: Geo-redundant storage (GRS)
+      isCorrect: false
+      incorrectExplanation: A premium storage account doesn't support GRS.
+    - content: Zone-redundant storage (ZRS)
+      isCorrect: false
+      incorrectExplanation: A premium storage account doesn't support ZRS.
+  - content: You manage your company's Azure infrastructure.  This fiscal year you decide to migrate to managed disks. Azure managed disks simplifies disk management for your VMs by managing the storage accounts associated with the VM disks. All you need to do is specify the type and size of disk you need. Which of the following disk types is available only for managed disks? 
+    choices: 
+    - content: Standard solid-state drives (SSDs)
+      isCorrect: true
+      correctExplanation:  When you use managed disks, you can choose a third type of disk - standard SSDs. This disk type sits between standard HDDs and premium SSDs from a performance and cost perspective.
+    - content: Standard hard disk drives (HDDs)
+      isCorrect: false
+      incorrectExplanation: Standard HDDs are availale in both managed and unmanaged disks.
+    - content: Premium solid-state drives (SSDs)
+      isCorrect: false
+      incorrectExplanation: Premium SSDs are available in both managed and unmanaged disks.

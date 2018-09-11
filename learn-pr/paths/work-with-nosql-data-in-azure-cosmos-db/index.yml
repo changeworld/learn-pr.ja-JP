@@ -1,0 +1,29 @@
+### YamlMime:LearningPath
+uid: learn.work-with-nosql-data-in-azure-cosmos-db
+metadata:
+  title: Work with NoSQL data in Azure Cosmos DB
+  description: NoSQL provides an alternative database model to SQL that is highly available and extremely efficient for certain types of data. Learn how to use Azure Cosmos DB to store your application data, replicate it across instances, and optimize your data access.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Work with NoSQL data in Azure Cosmos DB
+summary: NoSQL provides an alternative database model to SQL that is highly available and extremely efficient for certain types of data. Learn how to use Azure Cosmos DB to store your application data, replicate it across instances, and optimize your data access.
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+modules:
+- learn.create-cosmos-db-for-scale
+- learn.access-data-with-cosmos-db-and-sql-api
+- learn.cosmos-db-app-with-vscode
+#TODO: Add - learn.monitor-azure-cosmos-db (POST-IGNITE)
+#TODO: Add - learn.distribute-data-globally-with-cosmos-db (POST-IGNITE)
+achievement: learn.work-with-nosql-data-in-azure-cosmos-db.trophy

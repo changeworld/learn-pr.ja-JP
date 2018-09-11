@@ -1,0 +1,29 @@
+### YamlMime:LearningPath
+uid: learn.architect-great-solutions-in-azure
+metadata:
+  title: Architect great solutions in Azure
+  description: Learn how to design and build secure, scalable, performant solutions in Azure by examining the core principles found in every good architecture.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Architect great solutions in Azure
+summary: Learn how to design and build secure, scalable, performant solutions in Azure by examining the core principles found in every good architecture.
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels: 
+- beginner
+roles: 
+- solution-architect
+products: 
+- azure
+modules:
+- learn.pillars-of-a-great-azure-architecture
+- learn.design-for-security
+- learn.design-for-performance-and-scalability
+- learn.design-for-efficiency-and-operations
+- learn.design-for-availability-and-recoverability
+achievement: learn.architect-great-solutions-in-azure.trophy

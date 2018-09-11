@@ -1,0 +1,34 @@
+### YamlMime:Module
+uid: learn.design-for-availability-and-recoverability
+metadata:
+  title: Design for availability and recoverability in Azure
+  description: Make your Azure architecture highly available and able to recover from failures
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Design for availability and recoverability
+summary: If you were to lose one or more components of your infrastructure, could your architecture handle it? If you experience a loss of data or identify data corruption, could you recover the data? Do you know what your requirements are to your customers for system availability and disaster recovery? Learn how to incorporate availability and recoverability into your architecture.
+abstract: |
+  In this module, you will:
+    - Leverage Azure services to design a highly available application
+    - Incorporate Azure disaster recovery capabilities into your architecture
+    - Back up and restore on Azure to protect your application from data loss or corruption
+prerequisites: None
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- solution-architect
+#TODO: Update achievement
+achievement: learn.placeholder.badge
+products:
+- azure
+units:
+- learn.design-for-availability-and-recoverability.1-introduction
+- learn.design-for-availability-and-recoverability.2-high-availability
+- learn.design-for-availability-and-recoverability.3-disaster-recovery
+- learn.design-for-availability-and-recoverability.4-backup-and-restore
+- learn.design-for-availability-and-recoverability.5-summary

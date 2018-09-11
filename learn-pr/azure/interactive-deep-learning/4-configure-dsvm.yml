@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4-configure-dsvm
+title: Configure DSVM
+metadata:
+  title: Configure the Data Science Virtual Machine for Deep Learning
+  description: Configure the Data Science Virtual Machine for Deep Learning
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+interactive: bash
+azureSandbox: true
+durationInMinutes: 30
+content: |
+  [!include[](includes/4-configure-dsvm.md)]

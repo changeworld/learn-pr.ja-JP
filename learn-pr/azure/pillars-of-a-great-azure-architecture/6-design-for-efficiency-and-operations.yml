@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+title: Design for efficiency and operations
+metadata:
+  title: Design for efficiency and operations
+  description: Design for efficiency and operations
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-design-for-efficiency-and-operations.md)]
+quiz:
+  title: 'Knowledge check - Design for efficiency and operations'
+  questions:
+  - content: 'What are the benefits of a pay-as-you-go cost model?'
+    choices:
+    - content: 'Full transparency into the costs of your resources'
+      isCorrect: false
+      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
+    - content: 'The flexibility to adjust your resources and costs to match demand'
+      isCorrect: false
+      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
+    - content: 'Reduced risk when evaluating new tools and technologies'
+      isCorrect: false
+      incorrectExplanation: 'This is a benefit that comes with a pay-as-you-go cost model, but is not the only correct choice.'
+    - content: 'All of the above are benefits of a pay-as-you-go cost model'
+      isCorrect: true
+      correctExplanation: 'All of the above are benefits of a pay-as-you-go cost model'
+  - content: 'Which of the following is an example of improving operational efficiency?'
+    choices:
+    - content: 'Automating the deployment of infrastructure'
+      isCorrect: true
+      correctExplanation: 'Automating the deployment of infrastructure is a great example of improving your operational efficiency.'
+    - content: 'Moving serivces from PaaS to IaaS'
+      isCorrect: false
+      incorrectExplanation: 'Moving services fro PaaS to IaaS can be seen as a step backwards in operational efficiency, as PaaS services typically come with reduced operational costs.'
+    - content: 'Documenting manual steps for the deployment of infrastructure'
+      isCorrect: false
+      incorrectExplanation: 'Documentation is important with any architecture, but operational improvement comes with automating the manual activities as opposed to simply documenting them.'
+    - content: 'Maintaining multiple logging systems'
+      isCorrect: false
+      incorrectExplanation: 'Maintaing multiple logging systems comes with increased operational overhead and a reduced ability to correlate events and metrics across the logging systems. Centralizing on a single loggin system can improve operational efficiency.'

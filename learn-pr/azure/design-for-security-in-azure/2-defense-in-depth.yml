@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: Defense in depth
+metadata:
+  title: Defense in depth
+  description: In this unit we'll discuss how to practice defense in depth
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 5
+content: |
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: 'Knowledge Check - Defense in depth'
+  questions:
+  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
+    choices:
+    - content: 'Deallocating virtual machines when not in use'
+      isCorrect: false
+      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
+    - content: 'Setting up alerts for CPU percentage exceeds 90%'
+      isCorrect: false
+      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
+    - content: 'Storing connection strings in a configuration file'
+      isCorrect: false
+      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
+    - content: 'Enforcing MFA for all administrative level accounts'
+      isCorrect: true
+      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
+  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
+    choices:
+    - content: 'True'
+      isCorrect: false
+      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+    - content: 'False'
+      isCorrect: true
+      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'

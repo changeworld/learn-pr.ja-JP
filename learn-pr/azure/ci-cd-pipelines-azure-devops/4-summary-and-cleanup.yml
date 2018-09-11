@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.ci-cd-pipelines-azure-devops.4-summary-and-cleanup
+title: Summary and cleanup
+metadata:
+  title: Summary and cleanup
+  description: A summary or the steps taken and cleanup instructions to clean up the provisioned Azyre resources.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 2
+content: |
+  [!include[](includes/4-summary-and-cleanup.md)]
+  

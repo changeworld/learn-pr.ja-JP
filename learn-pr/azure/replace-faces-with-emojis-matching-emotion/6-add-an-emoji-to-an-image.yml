@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.6-add-an-emoji-to-an-image
+metadata:
+  title: Add an emoji to an image
+  description: Learn how to use the `Jimp` library to manipulate images and specifically to learn how to layer an emoji over a face and save that image back out to disk.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Add an emoji to an image
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-add-an-emoji-to-an-image.md)]

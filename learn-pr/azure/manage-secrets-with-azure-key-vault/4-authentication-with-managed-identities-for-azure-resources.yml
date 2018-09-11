@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+title: Vault authentication with managed identities for Azure resources
+metadata:
+  title: Vault authentication with managed identities for Azure resources
+  description: Vault authentication with managed identities for Azure resources
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 4
+content: |
+  [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
+quiz:
+  title: 'Knowledge check: Managed identities for Azure resources'
+  questions:
+  - content: How does using managed identities for Azure resources change the way an app authenticates to Azure Key Vault?
+    choices:
+    - content: The app uses a certificate to authenticate instead of a secret.
+      isCorrect: false
+      incorrectExplanation: Apps *can* use secrets or certificates to get authentication tokens from Azure Active Directory, but with managed identities they don't have to. 
+    - content: Each user of the app must enter a password.
+      isCorrect: false
+      incorrectExplanation: It is the *app* that authenticates to Key Vault, not individual users of the app. Use of a managed identity does not impact whether or not your app requires authentication from your users.
+    - content: The app gets tokens from a token service powered by the managed identities feature instead of from Azure Active Directory.
+      isCorrect: true
+      correctExplanation: The managed identities token service gets tokens from Azure Active Directory on behalf of your app, and allows your app to authenticate with a secret injected into its envirionment variables.
+    - content: Managed identities are automatically recognized by Key Vault and authenticated automatically.
+      isCorrect: false
+      incorrectExplanation: Key Vault does not control or manage identities. Identities exist within Azure Active Directory.
+  - content: Which one of these statements describes a primary benefit of using managed identities for Azure resources to authenticate an app to Key Vault?
+    choices:
+    - content: Using managed identities improves application performance.
+      isCorrect: false
+      incorrectExplanation: Use of managed identities for Azure resources has no effect on your application's performance.
+    - content: Managed identities eliminate the need to handle secrets in configuration.
+      isCorrect: true
+      correctExplanation: Your app authenticates to the managed identities token service with a secret injected into its environment variables at runtime, eliminating the need to store secrets in configuration.
+    - content: Managed identities are automatically granted Key Vault permissions.
+      isCorrect: false
+      incorrectExplanation: All identities, including managed identities, must be explicitly granted permissions within a vault.
+    - content: Managed identities make it easier to choose passwords for remote services.
+      isCorrect: false
+      incorrectExplanation: The managed identities feature has no effect on your secrets or authentication workflows with remote services. Using a managed identity only impacts how your app authenticates to Key Vault.

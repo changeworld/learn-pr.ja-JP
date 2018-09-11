@@ -1,0 +1,9 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+title: Exercise - Resize a virtual machine
+metadata:
+  title: Exercise - Resize a virtual machine
+  description: Exercise - Resize a virtual machine
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-exercise-resize-a-virtual-machine.md)]

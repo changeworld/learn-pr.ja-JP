@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.caching-and-performance-azure-storage-and-disks.7-summary
+title: Summary
+metadata:
+  title: Summary
+  description: Summary
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 'Knowledge check: Caching and performance in Azure storage disks'
+  questions:
+  - content: You have deployed your web server to a VM configured with Premium Storage, i.e. SSDs. You want to move log files to a new disk. Which caching option is a good choice for this write-heavy operation ?
+    choices: 
+    - content: Read-only
+      isCorrect: false
+      incorrectExplanation: Read-only caching works well for data disks, including TempDB data. However, this caching does not improve performance of write-heavy operations such as writing log files and may, in fact, cause a slight decrease in performance.  
+    - content: Read/write
+      isCorrect: false
+      incorrectExplanation: This is a good option if your app properly handles writing cached data to persistent disks when needed.
+    - content: None
+      isCorrect: true
+      correctExplanation: For write-heavy operations, have no cacign enabled can offer best performance. If this disk is dedicated to your log files, thsi is probably the best choice. 
+  - content: For which type of disk does Azure restart the VM in order to change caching type?
+    choices: 
+    - content: Data 
+      isCorrect: false
+      incorrectExplanation: Changing the cache setting of an data disk detaches and reattaches the target disk. Your VM is not restarted.
+    - content: Operating system (OS)
+      isCorrect: true
+      correctExplanation: Changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is restarted.
+    - content: Temporary
+      isCorrect: false
+      incorrectExplanation:  You can't change caching options on a temporary disk.
+    - content: Zone-redundant storage (ZRS)
+      isCorrect: false
+      incorrectExplanation: A premium storage account doesn't support ZRS.
+  - content: You are using Azure PowerShell to make some changes to your VM, represented locally by a virtual machine object that you call $myVM. You've made some updates to the virtual machien object in PowerShell, but now it's time to make those changes to the actual VM. Which of the following PowerShell cmdlets updates the state of an Azure virtual machine to the state of a virtual machine object? 
+    choices: 
+    - content: Update-AzureRmVM
+      isCorrect: true
+      correctExplanation:  This cmdlet updates the state of an Azure virtual machine to the state of a virtual machine object.
+    - content: Set-AzureRmVM
+      isCorrect: false
+      incorrectExplanation: This cmdlet marks a virtual machine as generalized.
+    - content: New-AzureRmVM
+      isCorrect: false
+      incorrectExplanation: This cmdlet is used to create a new virtual machine.

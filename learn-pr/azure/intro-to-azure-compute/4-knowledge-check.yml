@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: Knowledge check
+metadata:
+  title: Knowledge check
+  description: Knowledge check for the 'Introduction to Azure compute' module.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 2
+content: |
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+    title: Introduction to Azure compute knowledge check
+    questions:
+    - content: "Imagine that your astronomy team is small and that, while the members of your team are top notch astronomers and computer programmers, they have only a rudimentary understanding of server and web administration. Which of the following options should you choose?"
+      choices:
+      - content: "Azure Kubernetes Service (AKS)"
+        isCorrect: false
+        incorrectExplanation: "Kubernetes requires advanced knowledge about container orchestration."
+      - content: "Service Fabric"
+        isCorrect: false
+        incorrectExplanation: "The work of the astronomers does not need to be widely or globally distributed."
+      - content: "App Service"
+        isCorrect: true
+        correctExplanation: "Because it is fully managed and scales their applications, the team can focus on writing their specialized software."
+    - content: "Imagine that your astronomy team has come up against certain astronomical calculations that are taking hours and even days to complete. Parallel execution does not seem to help much. Which of the following options should you choose?"
+      choices:
+      - content: "Cloud Services"
+        isCorrect: false
+        incorrectExplanation: "Not all of the astronomical calculations can be run in parallel so deploying additional VMs can only marginally improve performance."
+      - content: "Azure Batch"
+        isCorrect: true
+        correctExplanation: "Certain astronomical calculations require supercomputer capabilities."
+      - content: "Container Instances"
+        isCorrect: false
+        incorrectExplanation: "It may be that not all of the astronomical calculations can be run in parallel so deploying additional containers can only marginally improve performance."

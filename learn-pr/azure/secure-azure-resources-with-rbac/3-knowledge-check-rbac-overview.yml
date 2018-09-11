@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
+metadata:
+  title: Knowledge check - What is RBAC?
+  description: Knowledge check - What is RBAC?
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Knowledge check - What is RBAC?
+durationInMinutes: 3
+quiz:
+  title: Knowledge check - What is RBAC?
+  questions:
+  - content: 'A role in Azure is a collection of permissions.'
+    choices:
+    - content: 'True'
+      isCorrect: true
+      correctExplanation: Correct! A role in Azure is a collection of permissions with a name that you can assign to a user, group, or application.
+    - content: 'False'
+      isCorrect: false
+      incorrectExplanation: A role in Azure is a collection of permissions with a name that you can assign to a user, group, or application.
+  - content: 'What are the three elements that make up a role assignment?'
+    choices:
+    - content: User, group, and application
+      isCorrect: false
+      correctExplanation: User, group, and application are security principals.
+    - content: Security principal, role, and scope
+      isCorrect: true
+      incorrectExplanation: Correct! A role assignment is the process of binding a role to a security principal at a particular scope for the purpose of granting access.
+    - content: Management group, subscription, and resource group
+      isCorrect: false
+      correctExplanation: Management group, subscription, and resource group are ways to organize your Azure resources and represent scopes.
+    - content: Owner, Contributor, and Reader
+      isCorrect: false
+      correctExplanation: Owner, Contributor, and Reader are built-in roles in Azure.
+  - content: 'What is the inheritance order for scope in Azure?'
+    choices:
+    - content: Management group, resource group, subscription, resource
+      isCorrect: false
+      correctExplanation: This is not the correct order.
+    - content: Management group, subscription, resource group, resource
+      isCorrect: true
+      incorrectExplanation: Correct!
+    - content: Subscription, management group, resource group, resource
+      isCorrect: false
+      correctExplanation: This is not the correct order.
+    - content: Subscription, resource group, management group, resource
+      isCorrect: false
+      correctExplanation: This is not the correct order.

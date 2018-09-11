@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: principles-cloud-computing
+metadata:
+  title: Principles of cloud computing
+  description: Explore the core concepts of cloud computing and how it can help your business.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Principles of cloud computing
+summary: Explore the core concepts of cloud computing and how it can help your business.
+abstract:  | 
+  In this module, you will:
+  - Explore common cloud computing services
+  - Explore the benefits of cloud computing
+  - Decide which cloud deployment model is best for you
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels: 
+- beginner
+roles: 
+- administrator
+- business-analyst
+- business-user
+- developer
+- solution-architect
+products:
+- azure
+- azure-portal
+- azure-resource-manager
+units:
+- principles-cloud-computing.1-motivation
+- principles-cloud-computing.2-what-is-cloud-computing
+- principles-cloud-computing.3-benefits-of-cloud-computing
+- principles-cloud-computing.4-cloud-deployment-models
+- principles-cloud-computing.5-types-of-cloud-services
+- principles-cloud-computing.6-knowledge-check
+- principles-cloud-computing.7-summary
+achievement: learn.principles-cloud-computing.badge

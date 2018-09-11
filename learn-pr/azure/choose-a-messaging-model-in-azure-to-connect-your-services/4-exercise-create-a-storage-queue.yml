@@ -1,0 +1,18 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.4-exercise-create-a-storage-queue
+title: Create a storage queue
+metadata:
+  title: Create a storage queue
+  description: Create a storage queue
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+# TODO: Consider Azure Portal Interactivity
+# interactive: azure-portal
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-exercise-create-a-storage-queue.md)]

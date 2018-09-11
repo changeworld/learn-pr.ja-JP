@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
+title: Protect your data with backup and restore
+metadata:
+  title: Protect your data with backup and restore
+  description: Protect your data with backup and restore
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 15
+content: |
+  [!include[](includes/4-backup-and-restore.md)]
+quiz:
+  title: 'Knowledge Check - Protect your data with backup and restore'
+  questions:
+  - content: 'It is important to test restores regularly because:'
+    choices:
+    - content: 'It allows you to validate the integrity of your backups.'
+      isCorrect: false
+      incorrectExplanation: 'Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.'
+    - content: 'It allows you to become familiar with the restoration process.'
+      isCorrect: false
+      incorrectExplanation: 'Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.'
+    - content: 'It can help you to identify gaps in your backup and restore processes.'
+      isCorrect: false
+      incorrectExplanation: 'Testing restores regularly does allow you to identify gaps in your backup and restore processes, but this is not the only correct choice.'
+    - content: 'All of the above.'
+      isCorrect: true
+      correctExplanation: 'All of the above are excellent reasons to regularly test the restoration of your backups.'
+  - content: 'Which of the following does not include automatic regular backup of data?'
+    choices:
+    - content: 'Azure Blob storage'
+      isCorrect: true
+      correctExplanation: 'Azure Blob storage does not include automatic backups of your data. You will need to implement backups through other methods.'
+    - content: 'Azure Cosmos DB'
+      isCorrect: false
+      incorrectExplanation: 'Azure Cosmos DB does include fully automated, regular backups of your data.'
+    - content: 'Azure SQL Database'
+      isCorrect: false
+      incorrectExplanation: 'Azure SQL Database does include fully automated, regular backups of your data.'

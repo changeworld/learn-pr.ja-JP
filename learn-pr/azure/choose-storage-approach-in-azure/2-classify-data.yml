@@ -1,0 +1,37 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: Classify your data
+  description: Classify your data
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Classify your data
+durationInMinutes: 10
+content: |
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: 'Classifying your data'
+  questions:
+  - content: "Your online retail application also stores user data, which includes the users' shipping addresses, previous orders, and profile information if they're provided it. The user data may contain other fields for certain users in the future. How would you classify this data set?"
+    choices:
+    - content: "Structured"
+      isCorrect: false
+      incorrectExplanation: "Storing this data in a structured format would not be ideal, as not all of the users have the same information."
+    - content: "Semi-structured"
+      isCorrect: true
+      correctExplanation: "Correct, this user data is semi-structured, because not all users have profile informaiton, and you may add additional fields to some users in the future. This indicates the data does not all adhere to the same schema, and each piece of data may have a unique organization, so it is semi-structured."
+    - content: "Unstructured"
+      isCorrect: false
+      incorrectExplanation: "Storing the user data as unstructured data would not be recommended as it would be difficult to work with the data in an unstructured format."
+  - content: "Can unstructured data have some structured metadata accompanied with it?"
+    choices:
+    - content: "Yes"
+      isCorrect: true
+      correctExplanation: "Correct, unstructured data can have associated metadata, such as a timestamp, a location stamp, or a device ID just to name a few. Having metadata associated with the unstructured data does not change the fact that the internal structure of the main entity is unstructured."
+    - content: "No"
+      isCorrect: false
+      incorrectExplanation: "Sorry, that's not the correct answer."

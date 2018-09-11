@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.3-docker
+title: Docker + Deep Learning
+metadata:
+  title: Docker + Deep Learning
+  description: Docker + Deep Learning
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 2
+content: |
+  [!include[](includes/3-docker.md)]

@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.5-knowledge-check
+metadata:
+  title: Knowledge check
+  description: Knowledge check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Knowledge check
+durationInMinutes: 5
+quiz:
+  title: Knowledge check
+  questions:
+  - content: Your online learning portal needs to keep a record of each user's physical address and their email address. Which Azure features will let you manage this information well?
+    choices:
+    - content: Azure Archive 
+      isCorrect: false
+      incorrectExplanation: Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities. 
+    - content: Azure SQL Database
+      isCorrect: true
+      correctExplanation: Correct! Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.
+    - content: Azure Files
+      isCorrect: false
+      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
+  - content: The simulation files used by the sales learning portals can grow to significantly large sizes. How will Azure support these files?
+    choices:
+    - content: Azure Blob storage can support files up to 8 TB in size
+      isCorrect: true
+      correctExplanation: Correct! Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.
+    - content:  Azure Files can support storing and streaming of large files.
+      isCorrect: false
+      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
+    - content: Azure does not support storing and streaming of large files.
+      isCorrect: false
+      incorrectExplanation: Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.
+  - content: How does Azure support durability and reliability of data?
+    choices:
+    - content: Through Azure replication capabilities.
+      isCorrect: true
+      correctExplanation: Correct! Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.
+    - content:  You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.
+      isCorrect: false
+      incorrectExplanation: You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.
+    - content: Azure does not have in-built redundancy and encryption features.
+      isCorrect: false
+      incorrectExplanation: Azure comes with in-built capabilities for protecting your data against risks and threats.

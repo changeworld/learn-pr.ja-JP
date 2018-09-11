@@ -1,0 +1,80 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+title: Knowledge check
+metadata:
+  title: Knowledge check
+  description: Knowledge check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 3
+quiz:
+  title: 'Knowledge check - Azure ExpressRoute'
+  questions:
+  - content: 'Which of the following protocols provides dynamic routing for Azure ExpressRoute?'
+    choices:
+    - content: IPVPN
+      isCorrect: false
+    - content: PPTP
+      isCorrect: false
+    - content: IPsec
+      isCorrect: false
+    - content: "BCP"
+      isCorrect: true
+    - content: "S-key"
+      isCorrect: false
+  # - content: 'Which of the following are Azure ExpressRoute circuits? Select three answers.'
+  #   choices:
+  #   - content: "Azure public"
+  #     isCorrect: true
+  #   - content: "Microsoft public"
+  #     isCorrect: false
+  #   - content: "Azure private"
+  #     isCorrect: true
+  #   - content: "Microsoft private"
+  #     isCorrect: false
+  #   - content: "Microsoft"
+  #     isCorrect: true
+  # - content: 'Which of the following are methods for connecting to Azure ExpressRoute? Select three answers.'
+  #   choices:
+  #   - content: IP VPN network
+  #     isCorrect: true
+  #   - content: Site-to-site VPN
+  #     isCorrect: false
+  #   - content: Virtual cross-connection through an Ethernet exchange
+  #     isCorrect: true
+  #   - content: Managed Layer 3 point-to-site connection
+  #     isCorrect: false
+  #   - content: Point-to-point Ethernet connection
+  #     isCorrect: true
+  # - content: 'Which of the following are supported ExpressRoute bandwidths? Select five answers.'
+  #   choices:
+  #   - content: 50 Mbps
+  #     isCorrect: true
+  #   - content: 100 Mbps
+  #     isCorrect: true
+  #   - content: 250 Mbps
+  #     isCorrect: false
+  #   - content: 500 Mbps
+  #     isCorrect: true
+  #   - content: 1 Gbps
+  #     isCorrect: true
+  #   - content: 1.25 Gbps
+  #     isCorrect: false
+  #   - content: 2 Gbps
+  #     isCorrect: true
+  - content: 'Which peering type supports connections to cloud-based SaaS offerings?'
+    choices:
+    - content: Azure private
+      isCorrect: false
+    - content: Azure public
+      isCorrect: false
+    - content: Microsoft
+      isCorrect: true
+    - content: Office 365
+      isCorrect: false
+    - content: Dynamic
+      isCorrect: false

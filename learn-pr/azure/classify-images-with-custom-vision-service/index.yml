@@ -1,0 +1,38 @@
+### YamlMime:Module
+uid: learn.classify-images-with-custom-vision-services
+metadata:
+  title: Classify images with the Microsoft Custom Vision Service
+  description: Train the Microsoft Custom Vision Service with a collection of flower images, and it can tell you whether the next image includes a flower — or even what type of flower it is.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Classify images with the Microsoft Custom Vision Service
+summary: Train the Custom Vision Service with a collection of flower images, so it can tell you whether the next image includes a flower — or even what type of flower it is.
+abstract:  | 
+  In this module, you will:
+  - Create a Custom Vision Service project 
+  - Train a Custom Vision Service model with tagged images  
+  - Test a Custom Vision Service model 
+  - Create apps that leverage Custom Vision Service models by calling REST APIs
+prerequisites: None
+#TODO: Update icon URL with real image 
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.classify-images-with-custom-vision-services.0-introduction
+- learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
+- learn.classify-images-with-custom-vision-services.2-upload-tagged-images
+- learn.classify-images-with-custom-vision-services.3-train-model
+- learn.classify-images-with-custom-vision-services.4-test-model
+- learn.classify-images-with-custom-vision-services.5-build-app
+- learn.classify-images-with-custom-vision-services.6-classify-images
+- learn.classify-images-with-custom-vision-services.7-knowledge-check
+achievement: learn.classify-images-with-custom-vision-services.badge 

@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.3q-docker
+title: Knowledege Check
+metadata:
+  title: Knowledege Check
+  description: Docker + Deep Learning Knowledege Check
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 2
+content: Answer the following to continue
+quiz:
+  title: 'Docker Deep Learning Quiz'
+  questions:
+  - content: 'What is CUDA?'
+    choices:
+    - content: CUDA is a parallel computing platform and API.
+      isCorrect: true
+    - content: CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.
+      isCorrect: false
+    - content: CUDA is a deep learning architecture used for image classification.
+      isCorrect: false
+  - content: 'What is docker?'
+    choices:
+    - content: Docker is a framework for training neural networks.
+      isCorrect: false
+    - content: Docker is an open platform distributed applications.
+      correctExplanation: Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.
+      isCorrect: true
+    - content: Docker is a platform for webapps.
+      isCorrect: false
+  - content: 'What is the main difference between Nvidia-Docker and Docker?'
+    choices:
+    - content: Docker runs on windows and Nvidia-Docker runs only on linux.
+      isCorrect: false
+      incorrectExplanation: While this answer is correct, it is not the main difference.
+    - content: Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs
+      isCorrect: true
+    - content: Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.
+      isCorrect: false
+  - content: 'What is one of the main dependency challenges faced when using the DSVM?'
+    choices:
+    - content: The DSVM is sandboxed and doesn't provide direct support for installing new packages.
+      incorrectExplanation: DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.
+      isCorrect: false
+    - content: The DSVM only supports CNTK and Cognitive Service dependencies.
+      incorrectExplanation: DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.
+      isCorrect: false
+    - content: Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages
+      isCorrect: true

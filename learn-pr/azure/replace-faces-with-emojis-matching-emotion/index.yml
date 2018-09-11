@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.the-mojifier
+metadata:
+  title: The Mojifier - Create a bot to replace people's faces with emojis matching their emotion
+  description: Learn how to get images, calculate emotion, match emotions to emojis, and replace faces with emoji.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: The Mojifier - Create a bot to replace people's faces with emojis matching their emotion
+summary: Learn how to get images, calculate emotion, match emotions to emojis, and replace faces with emoji.
+abstract: | 
+ In this module, you will:
+  - TBD
+  - TBD
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.the-mojifier.1-introduction
+- learn.the-mojifier.2-setup
+- learn.the-mojifier.3-conceptual-overview
+- learn.the-mojifier.4-calibrate-emojis
+- learn.the-mojifier.5-matching-faces-to-emojis
+- learn.the-mojifier.6-add-an-emoji-to-an-image
+- learn.the-mojifier.7-create-the-mojifyimage-azure-function
+- learn.the-mojifier.8-create-the-respondtoslackcommand-function
+- learn.the-mojifier.9-integrate-with-slack
+- learn.the-mojifier.10-deploy-to-azure
+achievement: learn.the-mojifier.badge

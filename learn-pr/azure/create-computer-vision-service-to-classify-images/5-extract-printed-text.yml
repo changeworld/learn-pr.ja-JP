@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.5-extract-printed-text
+title: Extracting printed text from images
+metadata:
+  title: Extracting printed text from images
+  description: Extracting printed text from images
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+interactive: bash
+azureSandbox: true
+content: |
+  [!include[](includes/5-extract-printed-text.md)]

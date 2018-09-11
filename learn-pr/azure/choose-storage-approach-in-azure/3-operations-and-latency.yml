@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
+metadata:
+  title: Determine operational needs
+  description: Determine operational needs
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Determine operational needs
+durationInMinutes: 10
+content: |
+  [!include[](includes/3-operations-and-latency.md)]
+quiz:
+  title: 'Knowledge check'
+  questions:
+  - content: "How would you classify the operational needs of a database that stored user data for your online retail application. The data set would contain shipping preferences, previous orders, and profile information to display on product reviews."
+    choices:
+    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on every property."
+      isCorrect: true
+      correctExplanation: "Users will create and update their user data frequently, and the application will update their order information in their user data. Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code. So be sure to remember all the users of your data, not just your end customer, when it comes to listing requirements."
+    - content: "The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on a limited set of properties."
+      isCorrect: false
+      correctExplanation: "Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code, so all properties should be indexed an queryable."
+    - content: "The application can support slow retrieval times and read-only operations."
+      isCorrect: false
+      incorrectExplanation: "Customers will be creating and updating their own profile information, so the user data needs to be read-write."

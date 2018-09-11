@@ -1,0 +1,35 @@
+### YamlMime:Module
+uid: learn.interactive-deep-learning
+metadata:
+  title: Interactive Deep Learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine!
+  description: Learn to train deep learning models with Juypter, PyTorch and Data Science Virtual Machine.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Interactive Deep Learning with Jupyter, Docker and PyTorch on the Data Science Virtual Machine!
+summary: Learn to train deep learning models with Juypter, PyTorch and Data Science Virtual Machine.
+abstract: |
+  In this module, you will:
+  - Walk through the process of setting up a Data Science Virtual Machine on Azure
+  - Run a Jupyter notebook through Docker to enable more seamless interaction with custom deep learning environments with PyTorch
+prerequisites: None
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+units:
+- learn.interactive-deep-learning.1-introduction
+- learn.interactive-deep-learning.2-deep-learning-101
+- learn.interactive-deep-learning.2q-deep-learning-101
+- learn.interactive-deep-learning.3-docker
+- learn.interactive-deep-learning.3q-docker
+- learn.interactive-deep-learning.4-configure-dsvm
+- learn.interactive-deep-learning.5-train-your-first-deep-learning-model
+- learn.interactive-deep-learning.6-cleanup
+achievement: learn.interactive-deep-learning.badge

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.4-calibrate-emojis
+metadata:
+  title: Calibrating Emojis
+  description: Learn how to fine-tune your face to work as data for the Face API.
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Calibrating emojis
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-calibrate-emojis.md)]

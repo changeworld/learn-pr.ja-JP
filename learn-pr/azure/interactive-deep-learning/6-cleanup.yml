@@ -1,0 +1,17 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.6-cleanup
+title: Clean Up DSVM Resources
+metadata:
+  title: Clean Up DSVM Resources
+  description: Clean Up DSVM Resources
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 1
+interactive: bash
+azureSandbox: true
+content: |
+  [!include[](includes/6-cleanup.md)]

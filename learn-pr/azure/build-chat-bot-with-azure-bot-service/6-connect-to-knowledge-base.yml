@@ -1,0 +1,18 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
+title: Connect the bot to the knowledge base
+metadata:
+  title: Connect the bot to the knowledge base
+  description: Connect the bot to the knowledge base
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+# TODO: Consider Azure Portal Interactivity
+# interactive: azure-portal
+azureSandbox: true
+durationInMinutes: 10
+content: |
+  [!include[](includes/6-connect-to-knowledge-base.md)

@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
+title: Save on licensing costs
+metadata:
+  title: Save on licensing costs 
+  description: Save on licensing costs.
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/5-save-on-licensing-costs.md)]
+quiz:
+    title: "Save on licensing costs"
+    questions:
+    - content: "If you already have Windows Server licenses, you have to pay for them again on Azure."
+      choices:
+      - content: "True"
+        incorrectExplanation: "Under certain circumstances, you can utilize the hybrid benefit for Windows Sever and pay only the Linux rate."
+        isCorrect: false
+      - content: "False"
+        correctExplanation: "Under certain circumstances, you can utilize the hybrid benefit for Windows Sever and pay only the Linux rate."
+        isCorrect: true
+    - content: "Azure has money-saving options for test and development servers."
+      choices:
+      - content: "True"
+        correctExplanation: "Yes, the Azure Enterprise Dev/Test and Azure Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription."
+        isCorrect: true
+      - content: "False"
+        incorrectExplanation: "The Enterprise Dev/Test and Pay-As-You-Go Dev/Test benefits give you several discounts, most notably for Windows workloads, eliminating license charges and billing you only at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription."
+        isCorrect: false

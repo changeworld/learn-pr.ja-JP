@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+title: Identify performance bottlenecks in your application
+metadata:
+  title: Identify performance bottlenecks in your application
+  description: In this unit we'll discuss how to identify performance bottlenecks in your application
+  ms.date: 09/24/2018
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 5
+content: |
+  [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
+quiz:
+  title: 'Knowledge Check - Identify performance bottlenecks in your application'
+  questions:
+  - content: 'Which of the following best describes Application Insights?'
+    choices:
+    - content: 'A single pane of glass for our monitoring needs in Azure'
+      isCorrect: false
+      incorrectExplanation: 'While Application Insights can provide a wealth of data on your application performance, is it not a comprehensive Azure monitoring solution.'
+    - content: 'An implementation of the health endpoint monitoring pattern'
+      isCorrect: false
+      incorrectExplanation: 'The health endpoint monitoring pattern focuses on monitoring endpoints exposed by your application for overall health.'
+    - content: 'A workspace to enable collection of logs across infrastructure and applications'
+      isCorrect: false
+      incorrectExplanation: 'Log Analytics is a workspace that enables the collection of logs across infrastructure and applictions.'
+    - content: 'A service to monitor availability, performance, and usage of web applications'
+      isCorrect: true
+      correctExplanation: 'Application Insights is a service to monitor availability, performance, and usage of web applications.'
+  - content: 'You can use Log Analytics to track custom logs and metrics.'
+    choices:
+    - content: 'True'
+      isCorrect: true
+      correctExplanation: 'For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.'
+    - content: 'False'
+      isCorrect: false
+      incorrectExplanation: 'For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.'
