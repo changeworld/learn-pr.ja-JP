@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.provision-azure-sql-db.5-summary
-title: Summary and cleanup
+title: 概要とクリーンアップ
 metadata:
-  title: Summary and cleanup
-  description: Summary and cleanup
+  title: 概要とクリーンアップ
+  description: 概要とクリーンアップ
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246312"
 durationInMinutes: 5
-content: |
-  [!include[](includes/5-summary.md)]
+content: '[!include[](includes/5-summary.md)]'

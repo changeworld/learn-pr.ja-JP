@@ -8,11 +8,11 @@
 
 3. プロジェクトに "ImHere.Functions" という名前を付け、**[OK]** をクリックします。
 
-    ![[新しいプロジェクトの追加] ダイアログ](../media/5-add-new-functions-project.png)
+    ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-functions-project.png)
 
 4. **[新しいプロジェクト]** 構成ダイアログで、Functions のバージョンは *[Azure Functions v1 (.NET Framework)]* に設定されているままにします。 *[Http トリガー]* を選択し、ストレージ アカウントを *[ストレージ エミュレーター]* に設定されているままにし、アクセス権を *[匿名]* に設定します。 次に、 **[OK]** をクリックします
 
-    ![Azure 関数のプロジェクト構成ダイアログ](../media/5-configure-trigger.png)
+    ![Azure 関数のプロジェクト構成ダイアログ](../media-drafts/5-configure-trigger.png)
 
 新しいプロジェクトが作成され、`Function1` という名前の既定の関数が与えられます。
 
@@ -52,7 +52,7 @@ Azure Functions プロジェクトは `Function1` という名前のシングル
 
 3. プロジェクトに "ImHere.Data" という名前を付け、**[OK]** をクリックします。
 
-    ![[新しいプロジェクトの追加] ダイアログ](../media/5-add-new-net-standard-project.png)
+    ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-net-standard-project.png)
 
 4. 自動生成された "Class1.cs" ファイルを削除します。
 
@@ -71,7 +71,7 @@ Azure Functions プロジェクトは `Function1` という名前のシングル
 
 7. プロジェクトを右クリックし、*[追加]、[参照]* を選択して、このプロジェクトの参照を `ImHere.Functions` プロジェクトと `ImHere` プロジェクトの両方に追加します。左側にあるツリーから *[プロジェクト]* を選択し、*ImHere.Data* の隣にあるボックスをオンにします。
 
-    ![プロジェクト参照を構成する](../media/5-configure-project-references.png)
+    ![プロジェクト参照を構成する](../media-drafts/5-configure-project-references.png)
 
 ## <a name="read-the-data-sent-to-the-function"></a>関数に送信されたデータを読み込む
 
@@ -127,7 +127,7 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 2. *[デバッグ]* メニューから *[デバッグなしで開始]* を選択します。 ローカル Azure Functions ランタイムはコンソール ウィンドウ内で起動し、関数を開始し、`localhost` で利用できるポートをリッスンします。
 
-    ![ローカルで実行される Azure 関数](../media/5-function-running-locally.png)
+    ![ローカルで実行される Azure 関数](../media-drafts/5-function-running-locally.png)
 
 3. 関数がリッスンしているポートをメモします。 これは次の演習でモバイル アプリをテストするために必要になります。 上記の図で、関数はポート **7071** でリッスンしています。
 

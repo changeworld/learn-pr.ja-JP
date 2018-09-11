@@ -1,1 +1,1 @@
-In this module, you prepared your development environment by installing an appropriate integrated development environment (IDE) for your needs. You also installed the Azure toolkit within that IDE, to streamline the publishing of content directly to the various Azure services.
+このモジュールでは、ニーズに応じた適切な統合開発環境 (IDE) をインストールすることによって、開発環境を準備しました。 また、さまざまな Azure サービスへのコンテンツの直接的な発行を効率化するため、その IDE 内に Azure ツールもインストールしました。

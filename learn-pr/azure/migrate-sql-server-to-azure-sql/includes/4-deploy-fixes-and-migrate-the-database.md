@@ -1,25 +1,25 @@
-You have assessed your on-premises database to check its compatibility and feature parity against the Azure SQL database. Because the customer base for your online bicycle retail business is limited to one geographical location, you can afford to take your database offline during an off-peak time, for example, the early morning hours.
+オンプレミスのデータベースを評価し、Azure SQL Database に対する互換性と機能パリティを確認しました。 オンライン自転車小売りビジネスの顧客ベースは 1 つの地理的な場所に限定されているため、早朝などの客が少ない時間帯にデータベースをオフラインにしても問題ありません。
 
-The best approach for database migration in this scenario is to use the Data Migration Assistant, which provides a wizard to guide you through migration steps. In this unit, we'll discuss how the Data Migration Assistant carries out the actual migration.
+このシナリオでのデータベース移行に最適な方法は、移行手順を案内するウィザードが提供される Data Migration Assistant を使用することです。 このユニットでは、Data Migration Assistant において実際の移行がどのように行われるのかを説明します。
 
-## Migrate the Database Using Data Migration Assistant
+## <a name="migrate-the-database-using-data-migration-assistant"></a>Data Migration Assistant を使用してデータベースを移行する
 
-When using the Data Migration Assistant to migrate your database, choose a time frame when there is a zero or minimum transactional activity on your database.
+Data Migration Assistant を使用してデータベースを移行するときは、データベースのトランザクション アクティビティがまったくないか、または最小限の時間帯を選択します。
 
-Before starting with the migration process, fix any errors identified during the assessment stage. The assessment report details the fixes that must be made before proceeding with the actual migration.
+移行プロセスを始める前に、評価ステージの間に明らかになったエラーを修正します。 評価レポートでは、実際の移行に進む前に行う必要がある修正について詳しく説明されています。
 
-To reduce the total time taken for a migration, you can change the performance level of the target Azure SQL Database for the period of migration. You can increase the performance to a higher level, such as P15, to reduce the downtime caused by migration. However, to reduce costs, ensure that you return the performance level to its previous value after the migration.
+移行にかかる総所要時間を減らすには、移行の間だけターゲット Azure SQL Database のパフォーマンス レベルを変更できます。 パフォーマンスを P15 などの高いレベルに上げると、移行によるダウンタイムを短縮できます。 ただし、コストがかからないように、移行後はパフォーマンス レベルを前の値に戻すことを忘れないでください。
 
-The actual migration process involves the following steps:
+実際の移行プロセスには、次の手順が含まれます。
 
-1. Creating an empty Azure SQL Database.
+1. 空の Azure SQL Database の作成。
 
-1. Creating a new migration project.
+1. 新しい移行プロジェクトの作成。
 
-1. Defining the source and target servers and databases.
+1. ソースおよびターゲットのサーバーとデータベースの定義。
 
-1. Selecting the objects to migrate. You don't need to migrate all the objects, however, ensure that you do not leave any dependent objects. For example, if a SQL view accesses a table, and you're migrating the view, ensure that you also migrate the table.
+1. 移行するオブジェクトの選択。 すべてのオブジェクトを移行する必要はありませんが、依存オブジェクトが残っていないことを確認してください。 たとえば、ビューがテーブルにアクセスしていて、ビューを移行する場合は、テーブルも忘れずに移行します。
 
-1. Deploying the schema. This migrates the structure of the database, but not the data.
+1. スキーマの展開。 これによりデータベースの構造が移行されます、データは移行されません。
 
-1. Migrating the data. This migrates the contents of the tables in the database and is the most time-consuming step.
+1. データの移行。 これにより、データベース内のテーブルの内容が移行され、最も時間のかかるステップです。

@@ -1,13 +1,14 @@
-Azure provides Storage Service Encryption (SSE) and Azure Disk Encryption (ADE) to secure Azure VM disks. These technologies work together to provide strong 256-bit encryption, as part of a defense-in-depth approach for the protection of Azure VM disks. It's required that you complete the Azure Disk Encryption prerequisites to enable disk encryption. The Azure Disk Encryption prerequisites configuration script can automate this process. When enabling encryption on new VMs, you can use an Azure Resource Manager template. This ensures that your data is encrypted at the point of deployment, leaving no vulnerabilities.
+Azure では、Azure VM のディスクをセキュリティで保護するために、Storage Service Encryption (SSE) と Azure Disk Encryption (ADE) が用意されています。 これらのテクノロジが連携して、Azure VM ディスクを保護するための多層防御アプローチの一部として、強力な 256 ビット暗号化を提供します。 ディスクの暗号化を有効にするには、Azure Disk Encryption の前提条件が満たされている必要があります。 Azure Disk Encryption の前提条件構成スクリプトを使用すると、このプロセスを自動化できます。 新しい VM で暗号化を有効にするときは、ARM テンプレートを使用することにより、展開の時点で確実にデータを暗号化し、脆弱性が残らないようにできます。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-Running Azure VMs, and the associated storage, incurs costs against your subscription. You'll want to remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you are finished with this module, run the following Azure PowerShell cmdlet:
+## <a name="cleanup"></a>クリーンアップ
+<!---TODO: Do we need to include cleanup for the free education tier?--->
+
+Azure VM および関連するストレージを実行すると、サブスクリプションに対してコストがかかります。 不要な課金を回避するために不要なリソースを削除したいと思うでしょう。 ご利用の Azure サブスクリプションをクリーンアップする最も簡単な方法は、リソース グループを削除することです。これにより、グループ内のすべてのリソースも削除されます。 このモジュールが終了したら、次の Azure PowerShell コマンドレットを実行します。
 
    ```powershell
    Remove-AzureRmResourceGroup -Name moneyapprg
    ```
 
-When you are asked to confirm the deletion, answer **Yes**. The command may take several minutes to complete as resources are deleted. 
+削除の確認を求められたら、**[はい]** と答えます。 リソースが削除済みとなってコマンドが完了するまで、数分かかる場合があります。 
 
-If you get a deletion failed message, you may need to remove locks on the key vault before you can delete the resource group.
+削除失敗のメッセージが表示される場合、リソース グループを削除するには、キー コンテナーに対するロックを削除することが必要な場合があります。

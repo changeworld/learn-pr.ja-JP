@@ -1,108 +1,109 @@
-Recall that our goal is to move an existing Linux server running Apache to Azure. We'll start by creating an Ubuntu Linux server.
+目標は、Apache を実行している既存の Linux サーバーを Azure に移動することであることを思い出してください。 最初に、Ubuntu Linux サーバーを作成します。
 
-## Create a new Linux virtual machine
+## <a name="create-a-new-linux-virtual-machine"></a>新しい Linux 仮想マシンを作成する
 
-We can create Linux VMs with the Azure portal, the Azure CLI, or Azure PowerShell. The easiest approach when you are starting with Azure is to use the portal because it walks you through the required information and provides hints and helpful messages during the creation:
+Linux VM の作成は、Azure portal、Azure CLI、または Azure PowerShell で行うことができます。 Azure で始めたときの最も簡単な方法は、ポータルを使用することです。そうすれば、作成の間に、必要な情報が順番に示され、ヒントと有用なメッセージが提供されます。
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Click **Create a resource** in the upper-left corner of the Azure portal.
+1. Azure portal の左上隅にある **[リソースの作成]** をクリックします。
 
-1. In the search box, enter  **Ubuntu Server** to see the different versions available. Select **Ubuntu Server 18.04** from the presented list.
+1. 検索ボックスに「**Ubuntu Server**」と入力し、使用できるバージョンを表示します。 表示された一覧から **Ubuntu Server 18.04** を選択します。
 
-1. Click the **Create** button to start configuring the VM.
+1. **[作成]** ボタンをクリックして、VM の構成を始めます。
 
-## Configure the VM settings
+## <a name="configure-the-vm-settings"></a>VM 設定を構成する
 
-The VM creation experience in the portal is presented in a **wizard** format to walk you through all the configuration areas for the VM. Clicking the **Next** button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each part.
+ポータルでの VM 作成エクスペリエンスは "ウィザード" の形式で提示され、VM のすべての構成領域が順番に示されます。 [次へ] ボタンをクリックすると、次の構成可能なセクションに移動します。 ただし、上部に並んでいるタブで各部分が示されており、自由にセクション間を移動できます。
 
-![Screenshot of the Azure portal showing the initial Create a virtual machine blade for an Ubuntu Server machine.](../media/3-azure-portal-create-vm.png)
+![Azure portal で仮想マシンを作成する](../media-drafts/3-azure-portal-create-vm.png)
 
-Once you fill in all the required options (identified with red stars), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+必須のオプション (赤い星で示されたもの) をすべて入力したら、残りのウィザード エクスペリエンスをスキップし、下部にある **[確認および作成]** ボタンをクリックして VM の作成を始めることができます。
 
-We'll start with the **Basics** section.
+最初は **[基本]** セクションです。
 
-### Configure basic VM settings
+### <a name="configure-basic-vm-settings"></a>VM の基本設定を構成する
 
-1. Select the **Subscription** that should be billed for VM hours.
+1. VM 時間の請求対象である **[サブスクリプション]** を選択します。
 
-1. For **Resource group**, select **Create new** and give the resource group the name **ExerciseResources**.
+1. **[リソース グループ]** で **[新規作成]** を選択し、リソース グループに「**ExerciseResources**」という名前を付けます。
 
-> [!NOTE]  
-> As you change settings and tab out of each field, Azure will validate each value automatically and place a green check mark next to it when it's good. You can hover over error indicators to get more information on issues it discovers.
+> [!NOTE]
+> 設定を変更してフィールドから移動すると、各値が自動的に検証されて、問題がない場合は横に緑色のチェック マークが表示されます。 エラー インジケーターをポイントすると、検出された問題についての詳細が表示されます。
 
-1. In the **INSTANCE DETAILS** section, enter a name for your web server VM, such as **test-web-eus-vm1**. This indicates the environment (**test**), the role (**web**), location (**East US**), service (**vm**), and instance number (**1**).
-    - It's a best practice to standardize your resource names, so you can quickly identify their purpose. Linux VM names must be between 1 and 64 characters and be comprised of numbers, letters, and dashes.
+1. **[インスタンスの詳細]** セクションで、Web サーバー VM の名前を入力します (例: test-web-eus-vm1)。 この名前は、環境 ("test")、ロール ("web")、場所 ("East US")、サービス ("vm")、インスタンス番号 ("1") を示します。
+    - 目的を簡単に識別できるように、リソース名を標準化するのがベスト プラクティスです。 Linux VM の名前は、1 ～ 64 文字の範囲で、数字、文字、ダッシュで構成されている必要があります。
 
-1. Select a region close to you; we've chosen **East US**.
+1. 近くのリージョンを選択します (ここでは米国東部)。
 
-1. Leave **Availability options** as **None**. This option is used to ensure the VM is highly available by grouping multiple VMs together as a set to deal with planned or unplanned maintenance events or outages.
+1. **[Availability options]\(可用性オプション\)** は [なし] のままにします。 このオプションは、複数の VM をグループ化して計画的または計画外のメンテナンス イベントや停止に対処することで、VM を高可用性にするために使用されます。
 
-1. Ensure that the image is set to **Ubuntu Server 18.04 LTS**. You can open the drop-down list to see all the options available.
+1. イメージが "Ubuntu Server 18.04 LTS" に設定されていることを確認します。 ドロップダウン リストを開いて、使用可能なすべてのオプションを確認できます。
 
-1. The **Size** field is not directly editable and has a **DS2_v3** default size, which is one of the general-purpose computing selections. This choice is perfect for a public web server, but click the **Change size** link to explore other VM sizes. The resulting dialog allows you to filter based on **# of CPUs**, **Name**, and **Disk Type**. Select the same **DS2_v3** choice, which gives you two vCPUs with 8 GB of RAM.
+1. **[サイズ]** フィールドを直接編集することはできず、汎用コンピューティングの選択肢の 1 つである既定サイズ **[DS2_v3]** になっています。 この選択はパブリック Web サーバーに最適ですが、**[Change size]\(サイズの変更\)** リンクをクリックして他の VM サイズを調べます。 結果のダイアログでは、CPU の数、名前、ディスクの種類に基づいてフィルター処理できます。 2 個の vCPU と 8 GB の RAM を提供する同じ **[DS2_v3]** を選択します。
 
     > [!TIP]
-    > You can also slide the view to the left to get back to the VM settings as it opened a new window off to the right and slid the window over to view it.
+    > ビューを左側にスライドして新しいウィンドウを開いたときの VM 設定に戻し、ウィンドウをスライドしてそれを表示することもできます。
 
-1. In the **ADMINISTRATOR ACCESS** section, select the SSH public key option for **Authentication type**.
+1. **[ADMINISTRATOR ACCESS]\(管理者アクセス\)** セクションで、**[認証の種類]** に対して SSH 公開キー オプションを選択します。
 
-1. Enter a **username** you'll use to sign in with SSH.
+1. SSH でサインインするために使用する**ユーザー名**を入力します。
 
-1. Copy the SSH key from your public key file and paste it into the **SSH public key** field.
+1. 公開キー ファイルから SSH キーをコピーして、**[SSH 公開キー]** フィールドに貼り付けます。
 
 > [!IMPORTANT]
-> When you copy the public key into the Azure portal, make sure not to add any additional whitespace or linefeed characters.
+> Azure portal に公開キーをコピーするときは、余分な空白文字や改行文字が追加されないように注意してください。
 
-1. In the **INBOUND PORT RULES** section, open the list and uncheck **None**. Since this is a Linux VM, we want to be able to access the VM using SSH remotely. Scroll the list if necessary until you find **ssh (22)** and select it. As the note in the UI indicates, we can also adjust the network ports after we create the VM.
+1. **[受信ポートの規則]** セクションで一覧を開き、[なし] を "_オフにします_"。 これは Linux VM なので、リモートで SSH を使用して VM にアクセスできるようにします。 必要に応じて一覧をスクロールし、ssh (22) を見つけて選択します。 UI の注意事項が示すとおり、VM を作成した後でネットワーク ポートを調整することもできます。
 
-    ![Screenshot of the Azure portal showing the administrator account and inbound port settings as described to open up a Linux VM for SSH access.](../media/3-open-ports.png) 
+    ![Linux VM で SSH アクセス用のポートを開く](../media-drafts/3-open-ports.png)
 
-## Configure disks for the VM
+## <a name="configure-disks-for-the-vm"></a>VM 用にディスクを構成する
 
-1. Click **Next** to move to the **Disks** section.
+1. **[次へ]** をクリックして、[ディスク] セクションに移動します。
 
-    ![Screenshot of the Azure portal showing the Disks section of the Create a virtual machine blade.](../media/3-configure-disks.png) 
+    ![VM 用にディスクを構成する](../media-drafts/3-configure-disks.png)
 
-1. Choose **Premium SSD** for the **OS disk type**.
+1. **[OS ディスクの種類]** で [Premium SSD] を選択します。
 
-1. Use managed disks, so we don't have to work with storage accounts. You can flip the switch in the GUI to see the difference in information that Azure needs if you like.
+1. マネージド ディスクを使用するので、ストレージ アカウントを使用する必要はありません。 GUI でスイッチを切り替えて、Azure で必要な情報の違いを確認できます。
 
-### Create a data disk
+### <a name="create-a-data-disk"></a>データ ディスクを作成する
 
-Recall that we will get an OS disk (/dev/sda) and a temporary disk (/dev/sdb). Let's add a data disk as well:
+OS ディスク (/dev/sda) と一時ディスク (/dev/sda) を使用することを思い出してください。 データ ディスクも追加してみましょう。
 
-1. Click the **Create and attach a new disk** link in the **DATA DISKS** section.
+1. **[データ ディスク]** セクションで **[Create and attach a new disk]\(新しいディスクの作成とアタッチ\)** リンクをクリックします。
 
-    ![Screenshot of the Azure portal showing the Create a new disk blade.](../media/3-add-data-disk.png) 
+    ![ポータルで VM 用のデータ ディスクを作成する](../media-drafts/3-add-data-disk.png)
 
-1. You can take all the defaults: Premium SSD, 1023 GB, and **None** (empty disk), although notice that here is where we could use a snapshot or Azure Blob storage to create a VHD.
+1. すべての既定値を使用できます (Premium SSD、1023 GB、および "なし" (空のディスク))。ただし、ここではスナップショットまたは Storage BLOB を使用して VHD を作成することに注意してください。
 
-1. Click **OK** to create the disk and go back to the **DATA DISKS** section.
+1. **[OK]** をクリックしてディスクを作成し、**[データ ディスク]** セクションに戻ります。
 
-1. There should now be a new disk in the first row.
+1. 最初の行に新しいディスクが表示されるはずです。
 
-    ![Screenshot of the Azure portal showing the newly created data disk line for the VM creation process.](../media/3-new-disk.png) 
+    ![VM の新しいディスク](../media-drafts/3-new-disk.png)
 
-## Configure the network
+## <a name="configure-the-network"></a>ネットワークを構成する
 
-1. Click **Next** to move to the **Networking** section.
+1. **[次へ]** をクリックして、[ネットワーク] セクションに移動します。
 
-1. In a production system where we already have other components, we'd want to utilize an _existing_ virtual network. That way, our VM can communicate with the other cloud services in our solution. If there isn't one defined in this location yet, we can create it here and configure the:
-    - **Address space**: The overall IPV4 space available to this network.
-    - **Subnet range**: The first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created, you can add additional subnets.
+1. 既に他のコンポーネントがある運用システムでは、"_既存の_" 仮想ネットワークを利用します。 そうすれば、VM はソリューション内の他のクラウド サービスと通信できます。 この場所でまだ定義されていない場合は、ここで作成して構成できます。
 
-> [!NOTE]  
-> By default, Azure will create a virtual network, network interface, and public IP for your VM. It's not trivial to change the networking options after the VM has been created, so always double-check the network assignments on services you create in Azure.
+    - **[アドレス空間]**: このネットワークに使用できる IPV4 空間全域。
+    - **[Subnet range]\(サブネット範囲\)**: アドレス空間を分割する最初のサブネット。定義されているアドレス空間内に収まる必要があります。 VNet が作成された後、別のサブネットを追加できます。
 
-## Finish configuring the VM and create the image
+> [!NOTE]
+> 既定では、Azure によって VM 用に仮想ネットワーク、ネットワーク インターフェイス、パブリック IP が作成されます。 VM が作成された後でネットワーク オプションを変更するのは簡単ではないので、Azure で作成するサービスでのネットワーク割り当てを常に再確認してください。
 
-The rest of the options have reasonable defaults, and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an `(i)` icon next to them that will show a help bubble to explain the option. This is a great way to learn about the various options you can use to configure the VM:
+## <a name="finish-configuring-the-vm-and-create-the-image"></a>VM の構成を完了してイメージを作成する
 
-1. Click the **Review + create** button at the bottom of the panel.
+残りのオプションは既定値で問題ないので、どれも変更する必要はありません。 そうしたければ、他のタブを調べてもかまいません。 個々のオプションの横には `(i)` アイコンがあり、オプションを説明するヘルプ バブルが表示されます。 これは、VM の構成に使用できるさまざまなオプションについて学習するのによい方法です。
 
-1. The system will validate your options and give you details about the VM being created.
+1. パネルの下部にある **[確認および作成]** ボタンをクリックします。
 
-1. Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+1. システムによってオプションが検証され、作成される VM についての詳細が表示されます。
 
-While that's deploying, let's look at what we can do with this VM.
+1. **[作成]** をクリックして VM を作成し、展開します。 Azure ダッシュボードにはデプロイされている VM が表示されます。 これには数分かかる場合があります。
+
+展開が行われている間に、この VM でできることを見てみましょう。

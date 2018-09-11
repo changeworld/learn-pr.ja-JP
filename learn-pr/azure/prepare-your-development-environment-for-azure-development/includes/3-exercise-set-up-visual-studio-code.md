@@ -7,15 +7,20 @@
 ### <a name="windows"></a>Windows
 
 1. Windows 用 Visual Studio Code インストーラーをダウンロードします。
-2. インストーラーを実行します。 この操作に長い時間はかかりません。
-3. インストール フォルダーに移動して VS Code を開きます (64 ビット マシンの場合、既定のパスは C:\Program Files\Microsoft VS Code です)。
+
+1. インストーラーを実行します。 この操作に長い時間はかかりません。
+
+1. インストール フォルダーに移動して VS Code を開きます (64 ビット マシンの場合、既定のパスは C:\Program Files\Microsoft VS Code です)。
 
 ### <a name="macos"></a>macOS
 
 1. macOS 用 Visual Studio Code をダウンロードします。
-2. ダウンロードしたアーカイブをダブルクリックして内容を展開します。
-3. Visual Studio Code.app を Applications フォルダーにドラッグし、Launchpad で使用できるようにします。
-4. アイコンを右クリックし、[オプション] > [Dock に追加] の順に選択し、Dock に VS Code を追加します。
+
+1. ダウンロードしたアーカイブをダブルクリックして内容を展開します。
+
+1. Visual Studio Code.app を Applications フォルダーにドラッグし、Launchpad で使用できるようにします。
+
+1. アイコンを右クリックし、[オプション] > [Dock に追加] の順に選択し、Dock に VS Code を追加します。
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian と Ubuntu
 
@@ -66,8 +71,10 @@
 VS Code のインストールが完了したら開きます。
 
 1. [拡張機能] タブに移動します。
-2. Azure App Service を検索します。
-3. [インストール] をクリックします。
+
+1. Azure App Service を検索します。
+
+1. [インストール] をクリックします。
 
     次のスクリーン ショットは、Visual Studio Code 拡張機能の検索結果から選択した Azure App Service 拡張機能を示しています。
 

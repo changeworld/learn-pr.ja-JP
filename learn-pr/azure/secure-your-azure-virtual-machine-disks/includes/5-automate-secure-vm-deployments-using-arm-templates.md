@@ -1,29 +1,29 @@
-Suppose your company is deploying several servers as part of their cloud transition. VM disks must be encrypted during the deployment, so there's no time when the disks are vulnerable. You want to automate this process, and have to modify the Azure Resource Manager templates to automatically enable encryption.
+会社がクラウド移行の一環としていくつかのサーバーをデプロイしているとします。 デプロイ時には VM ディスクを暗号化する必要があるため、ディスクが攻撃を受けやすくなることはありません。 このプロセスを自動化して、暗号化を自動的に有効化するように Azure Resource Manager (ARM) テンプレートを変更することをお勧めします。
 
-Here, we'll look at how to use an Azure Resource Manager template to automatically enable encryption for new Windows VMs.
+ここで、ARM テンプレートを使用して、新しい Windows VM で暗号化を自動的に有効化する方法を説明します。
 
-## What are Azure Resource Manager templates?
+## <a name="what-are-arm-templates"></a>ARM テンプレートとは
 
-These templates are JSON files used to define a resource to deploy to Azure, such as a virtual machine. You can write them from scratch, and for some Azure resources, including VMs, you can use the Azure portal to generate them. You'll need to complete the required information for a manual VM deployment, but instead of deploying the VM to Azure, you save the template.
+ARM テンプレートは、仮想マシンなど、Azure にデプロイするリソースを定義するために使用される JSON ファイルです。 新規作成することも、VM など一部の Azure リソースについては、Azure Portal を使用して生成できます。 手動の VM デプロイでは必須情報を入力する必要がありますが、VM を Azure にデプロイする代わりに、テンプレートを保存します。
 
-There are example templates available in GitHub.
+GitHub でサンプル テンプレートを入手できます。
 
-## Using GitHub templates
+## <a name="using-github-templates"></a>GitHub のテンプレートの使用
 
-GitHub has a template for enabling encryption called the **Enable encryption on a running Windows VM ARM**. You can find it in the [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates) repository. The readme page for the template provides a **Deploy to Azure** button that then opens the template in the Azure portal.
+GitHub には、**実行中の Windows VM ARM での暗号化の有効化**と呼ばれる、暗号化を有効にするためのテンプレートがあります。 これは、[Azure クイック スタート テンプレート](https://github.com/Azure/azure-quickstart-templates) リポジトリにあります。 テンプレートの readme ページには [Azure に配置する] ボタンがあり、これを使用すると Azure Portal にテンプレートが開きます。
 
-The template enables you to deploy a Windows Server VM, with encryption pre-enabled. Before using the template, you must make sure that all of the encryption prerequisites are in place. You'll also need the configuration information that is provided by the prerequisites script, such as Azure Active Directory Client ID and Azure Active Directory Client Secret.
+テンプレートを使用すると、暗号化が事前に有効化された Windows Server VM がデプロイされます。 テンプレートを使用する前に、暗号化の前提条件がすべて揃っていることを確認する必要があります。 前提条件スクリプトによって提供される構成情報 (AAD クライアント ID や AAD クライアント シークレットなど) も必要になります。
 
-You create a new VM by entering the required information on the template. You then initiate deployment by clicking **Purchase** (the cost is typically the normal Azure compute charge).
+テンプレートに必要な情報を入力して新しい VM を作成します。 **[購入]** をクリックすると、デプロイが開始します (通常、コストは標準の Azure コンピューティング料金)。
 
-## Deploy an encrypted VM by using a template
+## <a name="deploy-an-encrypted-vm-by-using-a-template"></a>暗号化された VM をテンプレートを使用してデプロイする
 
-The main steps involved in deploying an encrypted VM using a template are:
+暗号化された VM をテンプレートを使用してデプロイする主な手順は次のとおりです。
 
-1. Access and run the **Enable encryption on a running Windows VM ARM** template from GitHub.
+1. GitHub の**実行中の Windows VM ARM での暗号化の有効化**テンプレートにアクセスして実行します。
 
-1. Add the required details in the script configuration page.
+1. スクリプトの構成ページに必須の詳細を追加します。
 
-1. Deploy a new VM using the script by clicking **Purchase**.
+1. **[購入]** をクリックし、スクリプトを使用して新しい VM をデプロイします。
 
-1. Use the Azure portal to verify disk encryption status.
+1. Azure Portal を使用してディスク暗号化の状態を確認します。

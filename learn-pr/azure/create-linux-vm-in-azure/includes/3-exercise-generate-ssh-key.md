@@ -19,10 +19,10 @@ SSH キー ペアを使用すると、パスワードを使用せずに Linux �
 
 ## <a name="create-the-ssh-key-pair"></a>SSH キー ペアを作成する
 
-Linux、Windows 10、macOS では、組み込みの `ssh-keygen` コマンドを使用して、SSH の公開キー ファイルと秘密キー ファイルを生成できます。 
+Linux、Windows 10、および macOS では、組み込みの `ssh-keygen` コマンドを使用して、SSH の公開キー ファイルと秘密キー ファイルを生成できます。 
 
 > [!TIP]
-> Windows 10 の Fall Creators Update には、SSH クライアントが含まれています。 以前のバージョンの Windows では、追加のソフトウェアが必要です。Windows で SSH を使用する予定の場合、[詳細についてはドキュメントを参照してください](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows)。 また、Windows 用の Linux サブシステムをインストールして、同様の機能を実現することもできます。
+> Windows 10 の **Fall Creators Update** には、SSH クライアントが含まれています。 以前のバージョンの Windows では、SSH を使用するために追加のソフトウェアが必要です。[詳細についてはドキュメントを参照してください](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows)。または、Windows 用の Linux サブシステムをインストールして、同様の機能を実現することもできます。
 
 > [!NOTE]
 > ここでは、生成されたキーを Azure のプライベート ストレージ アカウントに保存する Azure Cloud Shell を使用します。 これらのコマンドは、必要に応じてローカルのシェルに直接入力することもできます。 この方法を採用する場合は、ローカルのセッションを反映するようにこのモジュール全体の手順を調整する必要があります。

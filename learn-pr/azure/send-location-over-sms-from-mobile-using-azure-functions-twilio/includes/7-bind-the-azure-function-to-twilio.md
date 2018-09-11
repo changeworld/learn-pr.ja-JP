@@ -1,4 +1,4 @@
-この時点で、モバイル アプリは完了し、データを逆シリアル化できる Azure 関数にユーザーの場所と電話番号の一覧が送信されます。 この演習では、Azure 関数を Twilio にバインドして SMS メッセージを送信します。
+この時点で、モバイル アプリは完成しており、データを逆シリアル化できる Azure 関数にユーザーの場所と電話番号の一覧を送信できます。 この演習では、Azure 関数を Twilio にバインドして SMS メッセージを送信します。
 
 Azure Functions は、他のサービス: Azure のサービスまたはサード パーティのサービスのどちらかに接続できます。 バインディングと呼ばれるこれらの接続には、入力バインディングと出力バインディングの 2 つの形式があります。 入力バインディングでは、関数にデータを提供し、出力バインディングでは、関数からデータを取得して別のサービスに送信します。 バインディングについては、[Azure Functions のバインディングに関するドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)をご覧ください。
 
@@ -10,9 +10,9 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
 
 1. ローカルの Azure Functions ランタイムが前の演習から引き続き実行されている場合は、これを停止します。
 
-2. `ImHere.Functions` プロジェクトに "Microsoft.Azure.WebJobs.Extensions.Twilio" NuGet パッケージを追加します。 この NuGet パッケージには、バインディングに関連するクラスが含まれています。
+1. `ImHere.Functions` プロジェクトに "Microsoft.Azure.WebJobs.Extensions.Twilio" NuGet パッケージを追加します。 この NuGet パッケージには、バインディングに関連するクラスが含まれています。
 
-3. `messages` という名前の静的な `SendLocation` クラスで、静的な `Run` メソッドに新しいパラメーターを追加します。 このパラメーターの型は `ICollector<SMSMessage>` となります。 `Twilio` 名前空間に対して using ディレクティブを追加する必要があります。
+1. `messages` という名前の静的な `SendLocation` クラスで、静的な `Run` メソッドに新しいパラメーターを追加します。 このパラメーターの型は `ICollector<SMSMessage>` となります。 `Twilio` 名前空間に対して using ディレクティブを追加する必要があります。
 
     ```cs
     [FunctionName("SendLocation")]
@@ -23,7 +23,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
                                                       TraceWriter log)
     ```
 
-4. 新しい `messages` パラメーターを `TwilioSms` 属性で装飾します。 この属性には、設定する必要がある 3 つのパラメーターが含まれます。
+1. 新しい `messages` パラメーターを `TwilioSms` 属性で装飾します。 この属性には、設定する必要がある 3 つのパラメーターが含まれます。
 
     | Setting      |  値   | 説明                                        |
     | --- | --- | ---|
@@ -41,7 +41,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
                From = "+1xxxxxxxxx")]ICollector<SMSMessage> messages,
     ```
 
-5. 関数アプリ設定は、`local.settings.json` ファイル内にローカルで構成できます。 `TwilioSMS` 属性に渡された設定名を使用して、この JSON ファイルに Twilio アカウント SID と認証トークンを追加します。
+1. 関数アプリ設定は、`local.settings.json` ファイル内にローカルで構成できます。 `TwilioSMS` 属性に渡された設定名を使用して、この JSON ファイルに Twilio アカウント SID と認証トークンを追加します。
 
     ```json
     {
@@ -79,7 +79,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
 
     メッセージには、送信先の電話番号と、ユーザーの場所から作成された Google Maps URL を含む本文が必要です。
 
-2. 各メッセージを記録してから、`messages` コレクションに追加します。
+1. 各メッセージを記録してから、`messages` コレクションに追加します。
 
     ```cs
     foreach (string toNo in data.ToNumbers)
@@ -124,19 +124,19 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. `ImHere.Functions` アプリをスタートアップ プロジェクトとして設定し、デバッグなしで起動します。
 
-2. `ImHere.UWP` アプリをスタートアップ プロジェクトとして設定し、実行します。
+1. `ImHere.UWP` アプリをスタートアップ プロジェクトとして設定し、実行します。
 
-3. Xamarin.Forms アプリに自分自身の電話番号を国際フォーマット (+\<国コード\>\<電話番号\>) で入力します。 Twilio 試用版アカウントでは、検証済みの電話番号にのみメッセージを送信できます。そのためここでは、有料アカウントにアップグレードするか、他の番号を認証しない限り、自分自身にしかメッセージを送信できません。
+1. Xamarin.Forms アプリに自分自身の電話番号を国際フォーマット (+\<国コード\>\<電話番号\>) で入力します。 Twilio 試用版アカウントでは、検証済みの電話番号にのみメッセージを送信できます。そのためここでは、有料アカウントにアップグレードするか、他の番号を認証しない限り、自分自身にしかメッセージを送信できません。
 
-4. **[Send Location]\(場所の送信\)** ボタンをクリックします。 SMS メッセージが正常に送信された場合は、Xamarin.Forms アプリに "Location sent successfully (場所が正常に送信されました)" というメッセージが表示されます。
+1. **[Send Location]\(場所の送信\)** ボタンをクリックします。 SMS メッセージが正常に送信された場合は、Xamarin.Forms アプリに "Location sent successfully" (場所が正常に送信されました) というメッセージが表示されます。
 
     ![場所が送信されたことを示す Xamarin.Forms アプリ](../media-drafts/7-ui-location-sent.png)
 
-5. Azure 関数のコンソール ログに、作成されて送信されているメッセージが表示されます。 エラー (番号のフォーマットが正しくないなど) が発生した場合は、ここに記録されます。
+1. Azure 関数のコンソール ログに、作成されて送信されているメッセージが表示されます。 エラー (番号のフォーマットが正しくないなど) が発生した場合は、ここに記録されます。
 
     ![メッセージが送信されたことを示す Azure 関数コンソール](../media-drafts/7-function-message-sent.png)
 
-6. 自分の電話でメッセージを確認します。 メッセージに記載されたリンクに従って、自分の場所を確認します。
+1. 自分の電話でメッセージを確認します。 メッセージに記載されたリンクに従って、自分の場所を確認します。
 
     ![携帯電話で受信した SMS メッセージ](../media-drafts/7-message-received.png)
 

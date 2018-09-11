@@ -1,41 +1,41 @@
-Visual Studio Code is a popular choice for developing applications for Azure. The integrated development environment (IDE) is lightweight, taking up only megabytes of storage space, versus gigabytes for some IDEs. VS Code is cross platform; it works on Windows, Linux, and macOS. And it's flexible. You can use Visual Studio Code to deploy your apps through the Azure CLI or Azure App Service, or by using a Docker container image. You can even deploy your apps by using Azure Functions with the serverless approach. 
+Visual Studio Code は、Azure 用アプリケーションの開発によく使用されます。 統合開発環境 (IDE) は軽量で、一部の IDE は数ギガバイトの記憶域を占有するものがあるのに対して、これは数メガバイトしか占有しません。 VS Code はクロス プラットフォームで、Windows、Linux、macOS で動作します。 柔軟性も備えています。 Visual Studio Code を使用すると、Azure CLI または Azure App Service を介して、または Docker コンテナー イメージを使用して、アプリをデプロイできます。 Azure Functions とサーバーレス アプローチを使用して、アプリをデプロイすることもできます。 
 
-## Visual Studio Code
+## <a name="visual-studio-code"></a>Visual Studio Code
 
-Visual Studio Code, or just VS Code, is a powerful, yet lightweight editor. It supports most programming languages, hundreds in fact, and it is designed to connect to cloud services.
+Visual Studio Code (または単に VS Code) は、強力でありながら軽量なエディターです。 ほとんど (実際には数百) のプログラミング言語をサポートし、クラウド サービスに接続するために設計されています。
 
-With a focus on cross-platform support (runs on Windows, Linux, and macOS) and providing a portable agile experience, the base installation of VS Code contains an editor that recognizes an ever-growing coverage of programming language syntax highlighting. However, there is no compiler. Compilation is meant to take place in the cloud, or via an extension.
+クロス プラットフォーム (Windows、Linux、macOS で実行) のサポートと、ポータブル アジャイル エクスペリエンスを提供することに重点を置いた VS Code の基本インストールには、絶えず拡大するプログラミング言語構文の強調表示の範囲を認識するエディターが含まれています。 ただし、コンパイラはありません。 コンパイルは、クラウドで、または拡張機能を使用して実行されます。
 
-You get great built-in support for source control using a Git source control manager (SCM), which does mean you need to install the Git framework first.
+Git ソース管理マネージャー (SCM) を使用すると、ソース管理用の優れた組み込みのサポートが得られるため、Git フレームワークを先にインストールする必要があります。
 
-## Extension model
+## <a name="extension-model"></a>拡張機能モデル
 
-One of the most powerful features of VS Code is the extension model. It allows third-party functionality to run as an integrated part of the VS Code IDE, and extend the capabilities of the IDE in almost any way imaginable.
+VS Code の最も強力な機能の 1 つが、拡張機能モデルです。 これによりサード パーティの機能を VS Code IDE の統合の一部として実行することができ、考えられるほとんどの方法で IDE の機能を拡張できます。
 
-An extension is written in either TypeScript or JavaScript, and can even be developed in VS Code itself. You can use Yeoman to scaffold an extension. All of these support IntelliSense, code navigation, and a full debugging experience.
+拡張機能は、JavaScript または TypeScript のいずれかで記述されます。また、VS Code 自体でも開発できます。 Yeoman を使用して、拡張機能をスキャフォールディングすることができます。 これらすべてで IntelliSense、コード ナビゲーション、および完全なデバッグ エクスペリエンスをサポートしています。
 
-There are three general categories of extensions for VS Code: Extensions, Language Servers, and Debugger. The latter two have additional protocols that allow them to provide specialized functionality, either across languages in the editor, or to hook into the debug experience.
+VS Code の拡張機能の一般的なカテゴリには、拡張機能、言語サーバー、デバッガーの 3 つがあります。 後者の 2 つのカテゴリには、エディターの言語全体に、またはデバッグ エクスペリエンスに接続するために特化された機能を提供できるようにする追加のプロトコルがあります。
 
-The extensions available in the Extension Marketplace include language support for Python, Go, C++, and many others. The extensions also include code formatting tools, such as linters, tools for cloud connectivity such as Azure, new themes, code formatters, and snippet libraries. All of these extensions are available on the [VS Code Marketplace](https://marketplace.visualstudio.com/).
+Extension Marketplace で入手できる拡張機能には、Python、Go、C++ などのさまざまな言語サポートが含まれます。 拡張機能には、リンターなどのコードの書式設定ツール、Azure などのクラウド接続用のツール、新しいテーマ、コード フォーマッタ、およびスニペット ライブラリなども含まれます。 これらの拡張機能はすべて、[VS Code Marketplace](https://marketplace.visualstudio.com/) で入手できます。
 
-## Azure extensions
+## <a name="azure-extensions"></a>Azure 拡張機能
 
-Many of the extensions target Azure features and products, with more being added all the time. They target areas such as Docker support, subscription management, tooling for the Azure CLI, database access, Azure Storage API integration, and general Azure extension.
+拡張機能の多くが Azure の機能と製品をターゲットとしており、常に追加されています。 これらは Docker サポート、サブスクリプション管理、Azure CLI のツール、データベース アクセス、Azure Storage API の統合、および一般的な Azure 拡張機能などの領域をターゲットとしています。
 
-Each Azure extension adds a set of VS Code features that makes your development with Azure integration points easier and more efficient.
+Azure 拡張機能ごとに、Azure 統合ポイントを使用した開発をより簡単かつ効率的にする VS Code の一連の機能が追加されます。
 
-## Getting VS Code and preparing for Azure development
+## <a name="getting-vs-code-and-preparing-for-azure-development"></a>VS Code を取得してAzure 開発の準備をする
 
-There are three different platforms on which VS Code is supported: Windows, macOS, and Linux. While they all are installed from a downloadable file, they do differ in the setup.
+VS Code は、Windows、macOS、Linux の 3 つの異なるプラットフォームでサポートされています。 これらはすべてダウンロード可能なファイルからインストールされますが、セットアップが異なります。
 
-To get VS Code running on Windows, download the file for your version of Windows (32-bit or 64-bit), and install like any other Windows application.
+Windows で実行されている VS Code を取得するには、Windows のご使用のバージョン (32 ビットまたは 64 ビット) のファイルをダウンロードして、他の Windows アプリケーションと同じようにインストールします。
 
-For macOS, you also download the file and expand the contents. It is recommended to add VS Code to the LaunchPad and the Dock.
+macOS の場合も、ファイルをダウンロードしてコンテンツを展開します。 LaunchPad と Dock に VS Code を追加することをお勧めします。
 
-Linux is a bit more complex, depending on your distribution of choice. Either you need to download and install VS Code on Debian and Ubuntu, or you need to use the Yum repository on RHEL, Fedora, CentOS, openSUSE, or SLE. For other distributions, there may be less supported community editions available as well.
+Linux は、選択したディストリビューションによっては少し複雑になります。 VS Code をダウンロードして Debian と Ubuntu にインストールするか、RHEL、Fedora、CentOS、openSUSE、または SLE で Yum リポジトリを使用する必要があります。 その他のディストリビューションでは、サポートされる範囲が少々狭いコミュニティ エディションも使用できる場合があります。
 
-To get VS Code ready for Azure development on any platform, use the Extension Marketplace to install the necessary Azure extensions. If you are working with App Service, use the App Service extension. If you work with Node.js, then you need the Node Pack for Azure.
+任意のプラットフォームで Azure 開発用に VS Code を準備するには、Extension Marketplace を使用して必要な Azure 拡張機能をインストールします。 App Service を使用している場合は、App Service の拡張機能を使用します。 Node.js を使用する場合は、Azure 用の Node Pack が必要です。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-VS Code is a perfect companion for developing and creating applications for Azure. The lightweight, cross-platform IDE, paired with an extensive range of extensions to improve both efficiency and robustness of apps, makes VS Code ideal for Azure development.
+VS Code は、Azure 向けのアプリケーションの開発と作成のための完璧なコンパニオンです。 軽量でクロスプラットフォーム対応の IDE と、アプリの堅牢性と効率性の両方を向上させる幅広い拡張機能を組み合わせることで、VS Code は Azure の開発に最適なものになります。

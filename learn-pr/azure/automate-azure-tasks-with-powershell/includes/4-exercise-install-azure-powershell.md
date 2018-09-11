@@ -51,7 +51,7 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
 1. PowerShell Core をインストールします。
 
     ```bash
-    brew cask install powershell
+    brew cask installs powershell
     ```
 
 1. PowerShell Core を起動して、正常にインストールされたことを確認します。
@@ -84,7 +84,7 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
 5. PSGallery からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
 
 > [!NOTE]
-> Azure Powershell モジュールの何らかのバージョンが既にインストールされていることを示すエラー メッセージが表示された場合は、次のコマンドを実行して "_最新_" のバージョンに更新できます。
+> Azure PowerShell モジュールの何らかのバージョンが既にインストールされていることを示すエラー メッセージが表示された場合は、次のコマンドを実行して "_最新_" のバージョンに更新できます。
 > 
 > `Update-Module -Name AzureRM`
 > 
@@ -108,4 +108,4 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
 1. **PSGallery** からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
 
 ## <a name="summary"></a>まとめ
-Azure PowerShell を使用して Azure リソースを管理できるように、ローカル コンピューターをセットアップしました。 Azure PowerShell をローカルに使用して、コマンドを入力したりスクリプトを実行したりできるようになりました。 入力したコマンドは、Azure PowerShell によって Azure データセンターに転送され、Azure サブスクリプションの内部で実行されます。
+Azure PowerShell を使用して Azure のリソースを管理できるようにローカル コンピューターをセットアップしました。 Azure PowerShell をローカルで使用して、コマンドを入力したりスクリプトを実行したりできるようになりました。 入力したコマンドは、Azure PowerShell によって Azure データセンターに転送され、Azure サブスクリプションの内部で実行されます。

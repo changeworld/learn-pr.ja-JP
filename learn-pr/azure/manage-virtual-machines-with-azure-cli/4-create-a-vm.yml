@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.4-create-a-vm
-title: Create a virtual machine
+title: 仮想マシンの作成
 metadata:
-  title: Create a virtual machine
-  description: Use the Azure CLI to create a new VM
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 仮想マシンの作成
+  description: Azure CLI を使用して新しい VM を作成する
+  ms.openlocfilehash: a6827d90bc4e5f30776daf45fa7aebccee190857
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834825"
 interactive: bash
-azureSandbox: true
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-create-a-vm.md)]
+content: '[!include[](includes/4-create-a-vm.md)]'

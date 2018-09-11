@@ -1,26 +1,26 @@
-Now that we have a Linux VM in Azure, the next thing you’ll want to do is configure it for the tasks we want to move to Azure.
+Azure に Linux VM を作成したので、次に Azure に移行するタスク用に VM を構成します。
 
-Unless you’ve set up a site-to-site VPN to Azure, your Azure VMs won’t be accessible from your local network. If you’re just getting started with Azure, it’s unlikely that you have a working site-to-site VPN. So how can you connect to the virtual machine?
+Azure に対してサイト間 VPN を設定していない場合、Azure VM にはローカル ネットワークからアクセスできません。 Azure を使い始めたばかりの場合は、きっとサイト間 VPN を設定していないでしょう。 それでは、どうすれば仮想マシンに接続できるでしょうか。
 
-## Azure VM IP addresses
+## <a name="azure-virtual-machines-ip-addresses"></a>Azure 仮想マシンの IP アドレス
 
-As we saw a moment ago, Azure VMs communicate on a virtual network. They can also have an optional public IP address assigned to them. With a public IP, we can interact with the VM over the Internet. Alternatively, we can set up a virtual private network (VPN) that connects our on-premises network to Azure - letting us securely connect to the VM without exposing a public IP. This approach is covered in another module and is fully documented if you are interested in exploring that option.
+少し前に説明したように、Azure VM は仮想ネットワーク経由で通信します。 必要に応じてパブリック IP アドレスを VM に割り当てることもできます。 パブリック IP を使用すると、インターネット経由で VM と対話できます。 または、オンプレミスのネットワークを Azure に接続する仮想プライベート ネットワーク (VPN) を設定できます。そうすれば、パブリック IP アドレスを公開することなく、安全に VM に接続できます。 そのオプションを調べてみたい場合は、別のモジュールでこのアプローチが取り上げられており、詳細なドキュメントもあります。
 
-One thing to be aware of with public IP addresses in Azure is they are often dynamically allocated. That means the IP address can change over time - for VMs, this happens when the VM is restarted. You can pay more to assign static addresses if you want to connect directly to an IP address instead of a name and need to ensure that the IP address will not change.
+Azure でのパブリック IP アドレスに関して注意すべき 1 つの点は、多くの場合、それが動的に割り当てられることです。 つまり、時間が経つと IP アドレスが変わる可能性があります。VM の場合、これは VM の再起動時に行われます。 名前ではなく IP アドレスに直接接続し、IP アドレスが変化しないようにしたい場合は、静的アドレスを割り当てることができます。
 
-## Connect to an Azure Linux VM with SSH
+## <a name="connect-to-an-azure-linux-virtual-machines-with-ssh"></a>SSH を使用して Azure の Linux 仮想マシンに接続する
 
-Connecting to a VM in Azure using SSH is straightforward. In the Azure portal, open the properties of your VM, and at the top, click **Connect**. This will show you the IP addresses assigned to the VM along with all the login details for SSH. 
+SSH を使用して Azure の VM に簡単に接続できます。 Azure portal で、VM のプロパティを開き、一番上にある **[接続]** をクリックします。 VM に割り当てられている IP アドレスと、SSH に関するログインの詳細がすべて表示されます。 
 
-![Screenshot of the Azure portal showing the Connect to a virtual machine blade configured to connect via SSH to the newly created Linux VM.](../media/5-connect-ssh.png)
+![Linux VM に関する SSH 接続の詳細](../media-drafts/5-connect-ssh.png)
 
-With these details, we can use the following command to get into our Linux VM:
+これらの詳細がわかれば、次のコマンドを使用して Linux VM に接続できます。
 
 ```bash
 ssh jim@137.117.101.249
 ```
 
-The first time we connect, SSH will ask us about authenticating against an unknown host. SSH is telling you that you've never connected to this server before. If that's true, then it's perfectly normal, and you can respond with **yes** to save the fingerprint of the server in the known host file:
+初めて接続すると、SSH から不明なホストに対する認証について尋ねられます。 SSH は、ユーザーがこれまでこのサーバーに接続していないことを示します。 それが正しい場合、それはまったく普通のことであり、"yes" と応答してサーバーのフィンガープリントを既知のホスト ファイルに保存できます。
 
 ```output
 The authenticity of host '137.117.101.249 (137.117.101.249)' can't be established.
@@ -29,19 +29,19 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '137.117.101.249' (ECDSA) to the list of known hosts.
 ```
 
-## Transferring files to the VM
+## <a name="transferring-files-to-the-vm"></a>VM にファイルを転送する
 
-Another common task is to copy local files or data from one server to another. In our case, we'll eventually want to copy our website data up to our Azure VM. With Linux VMs and SSH, we can use the `scp` command. The command is similar to copying local files with `cp`, except you'll have to specify the remote user and host in your command.
+もう 1 つの一般的なタスクは、あるサーバーから別のサーバーにローカル ファイルまたはデータをコピーすることです。 ここでは、最終的に、Web サイトのデータを Azure VM にコピーします。 Linux VM と SSH では、`scp` コマンドを使用できます。 コマンドは `cp` でのローカル ファイルのコピーに似ていますが、リモート ユーザーとホストをコマンドで指定する必要がある点が異なります。 
 
-For example, to copy `somefile.txt` from our current directory to `~/folder` on a Linux machine with the IP address `192.168.1.25`, you can type:
+たとえば、IP アドレスが `192.168.1.25` である Linux マシン上の `~/folder` に現在のディレクトリから `somefile.txt` をコピーするには、次のように入力できます。
 
 ```bash
 scp somefile.txt someuser@192.168.1.25:~/folder/
 ```
 
-This will authenticate as `someuser` on the remote system, prompting for a password, or using your SSH private key. That user will need to have write permissions to `~/folder/` on the destination server.
+これはリモート システム上で `someuser` として認証され、パスワードの入力を求められるか、またはユーザーの SSH 秘密キーが使用されます。 そのユーザーは、コピー先サーバー上の `~/folder/` に対する書き込みアクセス許可を持っている必要があります。
 
 > [!WARNING]
-> `scp` will do local file copies if you don't get the command line quite right. The most common missing piece is the destination folder.
+> コマンド ラインに正確に入力しないと、`scp` はローカル ファイルのコピーを行います。 指定し忘れることが最も多い部分は、コピー先のフォルダーです。
 
-Let's try using SSH to connect to our running Linux VM.
+SSH を使用して、実行中の Linux VM に接続してみましょう。

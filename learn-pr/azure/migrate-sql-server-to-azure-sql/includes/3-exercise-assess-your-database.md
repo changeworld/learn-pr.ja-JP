@@ -1,68 +1,70 @@
-In this unit, you'll assess an existing database using the Data Migration Assistant and review any features used in the local SQL Server instance that aren't currently supported by Azure SQL Database.
+このユニットでは、Data Migration Assistant を使用して既存のデータベースを評価し、現在、Azure SQL Database でサポートされていないローカルの SQL Server インスタンスで使用される機能を確認します。
 
-## Setup
+## <a name="setup"></a>セットアップ
 
-1. [Install the **Data Migration Assistant**](https://www.microsoft.com/download/details.aspx?id=53595) if you haven't done so already.
+1. まだインストールしていない場合は、[**Data Migration Assistant** をインストール](https://www.microsoft.com/download/details.aspx?id=53595)します。
 
-1. You'll need a SQL Server instance running, ensure you have connection details available.
+1. SQL Server インスタンスを実行している必要であり、接続の詳細を利用できることを確認します。
 
-<!-- TODO: replace with an LOD VM -->
+<!-- 1. [**** likely replace with an LOD VM *****] TODO: -->
 
-1. Open a browser and navigate to https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017.
+1. インターネット ブラウザーを起動して、 https://docs.microsoft.com/sql/samples/adventureworks-install-configure?view=sql-server-2017 に移動します。
 
-1. In **OLTP downloads**, click **AdventureWorks2008R2.bak** and save it to your local machine.
+1. 「**OLTP downloads**」(OLTP のダウンロード) で **AdventureWorks2008R2.bak** をクリックして、お使いローカル コンピューターに保存します。
 
-1. In Management Studio, restore *AdventureWorks 2008R2* to your default instance.
+1. Management Studio で、*AdventureWorks 2008R2* を既定のインスタンスに復元します。
 
-## Create an assessment
+## <a name="create-an-assessment"></a>評価を作成する
 
-1. Start the **Microsoft Data Migration Assistant**.
+1. **Microsoft Data Migration Assistant** を起動します。
 
-1. In the app's left-hand navigation, click __+__ to create a new Data Migration Assistant project.
+1. アプリの左側にあるナビゲーションで、__[+]__ をクリックして新しい DMA プロジェクトを作成します。
 
-1. Specify the following options:
+1. 次のオプションを指定します。
 
-    - **Project type** - Select *Assessment*
-    - **Project name** - Enter a name for your project - for example, "Bicycle DB Assessment"
-    - **Source server type** - Select *SQL Server*
-    - **Target server type** - Select *Azure SQL Database*
+    - **[プロジェクトの種類]** - *[評価]* を選択します
+    - **[プロジェクト名]** - プロジェクトの名前を入力します (例: "Bicycle DB Assessment")
+    - **[Source server type]\(ソース サーバーの種類\)** - *[SQL Server]* を選択します
+    - **[Target server type]\(対象サーバーの種類\)** - *[Azure SQL Database]* を選択します
 
-1. Click **Create**.
-    ![Screenshot showing the described configuration in the Data Migration Assistant for your AdventureWorks SQL Server data.](../media-draft/3-create-assessment.png)
+1. **[作成]** をクリックします。
+    ![Data Migration Assistant でご利用の AdventureWorks SQL Server データに対して記述された構成を示すスクリーンショット。](../media-draft/3-create-assessment.png)
 
-1. Select the assessment report type - check both:
-    - Check database compatibility
-    - Check feature parity
+1. 評価レポートの種類を選択します。次の両方をオンにします。
+    - データベースの互換性を確認します
+    - 機能パリティを確認します
 
-1. Click **Next**.
+1. **[次へ]** をクリックします。
 
-## Add databases to assess
+## <a name="add-databases-to-assess"></a>評価するデータベースを追加する
 
-1. If **Connect to a Server** is not showing on the right-hand side, click **Add Sources** to open the connection menu.
+1. **[ソースの追加]** をクリックして接続メニューを開きます。
 
-1. Do the following:
-    - Enter your existing SQL server instance name
-    - Select the **Authentication** type
-    - Specify the connection properties for your server
+1. 以下の手順を実行します。
 
-1. Click **Connect**.
+    - 既存の SQL Server インスタンスの名前を入力します
+    - **[認証]** の種類を選択します
+    - サーバーの接続プロパティを指定します
 
-1. In **Add sources**, select the databases to assess. For this exercise, select **AdventureWorks2008R2**.
+1. **[接続]** をクリックします。
 
-1. Click **Add**.
+1. **[ソースの追加]** で、評価するデータベースを選択します。 この演習では、**AdventureWorks2008R2** を選択します。
+
+1. **[追加]** をクリックします。
     > [!NOTE]
-    > To add databases from multiple SQL Server instances, use the **Add Sources** button. To remove multiple databases, hold the SHIFT+CTRL keys to select the databases you want to remove, then click **Remove Sources**.
+    > 複数の SQL Server インスタンスからデータベースを追加するには、**[ソースの追加]** ボタンを使用します。 複数のデータベースを削除するには、Shift + Ctrl キーを押しながら削除するデータベースを選択して、**[ソースの削除]** をクリックします。
 
-1. Click **Start Assessment**.
+1. **[評価の開始]** をクリックします。
 
-## View results
+## <a name="view-results"></a>結果を表示する
 
-If there are multiple databases, the results for each database appears as soon as it is available. You don't need to wait for all database assessments to complete.
+複数のデータベースがある場合、各データベースの結果は利用できるようになるとすぐに表示されます。 すべてのデータベースの評価が完了するまで待機する必要はありません。
 
-1. Once the assessment for **AdventureWorks** is complete, click** Compatibility issues** and **SQL Server feature parity** radio buttons to view the results.
-    - The SQL Server feature parity category lists features that might not be fully supported and steps to remedy these issues. Feature parity issues will not stop a migration.
-    - The Compatibility issues category lists features that would block a migration and steps to remedy these issues.
+1. **AdventureWorks** の評価が完了したら、**[互換性の問題]** と **[機能に関する推奨事項]** をクリックして結果を表示します。
 
-## Summary
+    - SQL Server の機能パリティ カテゴリには、完全にサポートされない可能性がある機能とこれらの問題を解決するための手順が一覧表示されます。 機能パリティの問題では、移行は停止されません。
+    - 互換性の問題カテゴリには、移行を妨げる機能とこれらの問題を解決するための手順が一覧されます。
 
-In this unit, you assessed a locally installed SQL Server database to verify if any features would be unavailable when you migrate the database to Azure SQL Database.
+## <a name="summary"></a>まとめ
+
+このユニットでは、ローカルにインストールされた SQL Server データベースを評価して、データベースを Azure SQL Database に移行したときに、利用できない機能があるかどうかを検証しました。

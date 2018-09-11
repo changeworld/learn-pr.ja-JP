@@ -1,30 +1,30 @@
 ### YamlMime:ModuleUnit
 uid: learn.migrate-sql-server-relational-data.6-knowledge-check-deploy-fixes-and-migrate-the-database
 metadata:
-  title: Knowledge check
-  description: Knowledge check
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check
+  title: 知識チェック
+  description: 知識チェック
+  ms.openlocfilehash: f2f28b50832540bb1e767a64256ba7996c1494e7
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833103"
+title: 知識チェック
 durationInMinutes: 5
 quiz:
-  title: Knowledge check - deploy fixes and migrate the database
+  title: 知識チェック - 修正プログラムを展開してデータベースを移行する
   questions:
-  - content: 'If you need to use your database during the migration process, which of the following migration methods is most suitable?'
+  - content: 移行プロセスの間にデータベースを使用する必要がある場合、次のどの移行方法が最も適していますか。
     choices:
-    - content: Backup your on-premises database and restore it to Azure.
+    - content: オンプレミスのデータベースをバックアップし、Azure に復元します。
       isCorrect: false
-      incorrectExplanation:  This method would not migrate the most recent changes that were made after you backed-up your on-premises database.
-    - content: Use the Data Migration Assistant.
+      incorrectExplanation: この方法では、オンプレミスのデータベースをバックアップした後で行われた最新の変更が移行されません。
+    - content: Data Migration Assistant を使用します。
       isCorrect: false
-      incorrectExplanation: Data Migration Assistant requires you to take your database offline, which is not possible in this scenario.
-    - content: Use replication.
+      incorrectExplanation: Data Migration Assistant ではデータベースをオフラインにする必要があり、このシナリオでは不可能です。
+    - content: レプリケーションを使用します。
       isCorrect: true
-      correctExplanation:  Correct! If you need your database up and running while migration, you must use transactional replication method.
-    - content: Script your database in Transact SQL and run this against the Azure SQL Database.
+      correctExplanation: 正解です。 移行の間にデータベースを稼働させておく必要がある場合は、トランザクション レプリケーションの方法を使用する必要があります。
+    - content: Transact SQL でデータベースのスクリプトを作成し、これを Azure SQL Database に対して実行します。
       isCorrect: false
-      incorrectExplanation: That's incorrect! Please try again.
+      incorrectExplanation: 正しくありません。 やり直してください。

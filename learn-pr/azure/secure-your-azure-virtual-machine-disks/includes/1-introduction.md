@@ -1,17 +1,17 @@
-Suppose you work for a warehouse company that's transitioning to the cloud. Currently, you use a hybrid environment consisting of on-premises Windows servers, Azure Virtual Machines (VMs), and Azure Active Directory. Your company has developed a custom in-house business-to-business (B2B) infrastructure, supporting secure order management with your suppliers. Some of your suppliers use Linux servers, and you run several Linux servers in Azure to support these suppliers.
+あなたはクラウドに移行中のウェアハウス企業で働いているものとします。 現在は、オンプレミスの Windows サーバー、Azure 仮想マシン (VM)、Azure Active Directory (AD) で構成されるハイブリッド環境を使用しています。 あなたの会社では、サプライヤーとの間のセキュリティで保護された注文管理をサポートする、カスタム社内企業間 (B2B) インフラストラクチャを開発してあります。 一部のサプライヤーは Linux サーバーを使用しており、Azure で複数の Linux サーバーを実行してこれらのサプライヤーをサポートしています。
 
-Your security policies mandate that data must be encrypted using your own encryption keys, and that your company is responsible for managing these keys.
+セキュリティ ポリシーでは、データは独自の暗号化キーを使用して暗号化されていること、および会社がこれらのキーの管理に責任を持つことが、要求されています。
 
-Your admin team already uses PowerShell for on-premises server management. You'll deploy and test many Azure VMs, and intend to use Azure Resource Manager templates to automate this process.
+管理チームは、オンプレミス サーバーの管理に PowerShell を既に使用しています。 あなたは、多数の Azure VM を展開してテストする予定であり、ARM テンプレートを使用してこのプロセスを自動化するつもりです。
 
-Here, we'll look at the types of protection available for VM disks, so you can decide if Azure Disk Encryption (ADE) is the best choice for a given scenario. We'll then enable ADE on existing VM disks, and use templates to enable ADE for new VM deployments.
+ここでは、Azure Disk Encryption (ADE) が特定のシナリオに最適な選択肢かどうかを判断できるように、VM のディスクに対して使用可能な保護の種類を見ていきます。 その後、既存の VM ディスクで ADE を有効にし、テンプレートを使用して新しい VM の展開で ADE を有効にします。
 
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Determine which encryption method is best for your VM
-- Encrypt existing VM disks using the Azure portal
-- Encrypt existing VM disks using PowerShell
-- Modify Azure Resource Manager templates to automate disk encryption on new VMs
+- 特定の VM に最適な暗号化方法を決定します
+- Azure portal を使用して既存の VM ディスクを暗号化します
+- PowerShell を使用して既存の VM ディスクを暗号化します
+- ARM テンプレートを変更して、新しい VM でのディスクの暗号化を自動化します

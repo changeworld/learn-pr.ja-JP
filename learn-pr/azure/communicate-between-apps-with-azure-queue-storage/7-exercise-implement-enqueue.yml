@@ -1,17 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
-title: Add a message to the queue
+title: メッセージをキューに追加する
 metadata:
-  title: Add a message to the queue
-  description: Add a message to the queue
+  title: メッセージをキューに追加する
+  description: メッセージをキューに追加する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: faf2ae1c8b6acc84940fdbd9fab4d3fe2bc7b69c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242266"
 interactive: bash-editor
-azureSandbox: true
 durationInMinutes: 10
-content: |
-  [!include[](includes/7-exercise-implement-enqueue.md)]
+content: '[!include[](includes/7-exercise-implement-enqueue.md)]'

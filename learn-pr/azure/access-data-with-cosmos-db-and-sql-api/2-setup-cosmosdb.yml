@@ -1,18 +1,15 @@
 ### YamlMime:ModuleUnit
-# Unit UIDs are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
 uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
 metadata:
-  title: Setup your Cosmos DB database and collection
-  description: Setup your Cosmos DB database and collection
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Setup your Cosmos DB database and collection
+  title: Cosmos DB データベースとコレクションを設定する
+  description: Cosmos DB データベースとコレクションを設定する
+  ms.openlocfilehash: b66002b9e197e4f5edb5a2a45b930d4e87b1b937
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795387"
+title: Cosmos DB データベースとコレクションを設定する
 durationInMinutes: 5
 interactive: bash
-azureSandbox: true
-content: |
-  [!include[](includes/2-setup-cosmosdb.md)]
+content: '[!include[](includes/2-setup-cosmosdb.md)]'

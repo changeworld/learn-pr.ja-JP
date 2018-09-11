@@ -1,69 +1,69 @@
-Distributed applications use queues, such as Service Bus queues, as temporary storage locations for messages that are awaiting delivery to a destination component. To send and receive messages through a queue, you must write code in the source and destination components.
+分散アプリケーションでは、Service Bus キューなどのキューを、送信先コンポーネントへの配信を待機しているメッセージのための一時保管場所として使用します。 キューを介してメッセージを送受信するには、送信元コンポーネントと送信先コンポーネントでコードを記述する必要があります。
 
-Consider the Contoso Slices application. The customer places the order through a website or mobile app. Because websites and mobile apps run on customer devices, there is really no limit to how many orders could come in at once. By having the mobile app and website deposit the orders in a queue, we can allow the back-end component (a web app) to process orders from that queue at its own pace.
+Contoso Slices アプリケーションについて考えます。 顧客は Web サイトまたはモバイル アプリを使用して注文します。 これらは顧客のデバイス上で実行されるため、一度に送られてくる注文件数に制限はありません。 モバイル アプリと Web サイトでキューに注文をためることで、バックエンド コンポーネント (Web アプリ) は自分のペースでそのキューから注文を処理することができます。
 
-The Contoso Slices application actually has several steps to handle a new order. But all of them are dependent on first authorizing payment, so we decide to use a queue. Our receiving component's first job will be processing the payment.
+Contoso Slices アプリケーションは実際には複数のステップで新しい注文を処理します。 ただし、そのすべては最初の支払いの承認に依存するので、キューを使用することに決めます。 受信コンポーネントの最初のジョブは、支払いの処理です。
 
-In the mobile app and website, Contoso needs to write code that adds a message to the queue. In the back-end web app, they'll write code that picks up messages from the queue.
+モバイル アプリと Web サイトでは、キューにメッセージを追加するコードを記述する必要があります。 バックエンドの Web アプリでは、キューからメッセージを取り出すコードを記述します。
 
-Here, you will learn how to write that code.
+ここでは、そのコードを記述する方法を学習します。
 
-## The Microsoft.Azure.ServiceBus NuGet package
+## <a name="the-microsoftazureservicebus-nuget-package"></a>Microsoft.Azure.ServiceBus NuGet パッケージ
 
-To make it easy to write code that sends and receives messages through Service Bus, Microsoft provides a library of .NET classes, which you can use in any .NET Framework language to interact with a Service Bus queue, topic, or relay. You can include this library in your application by adding the **Microsoft.Azure.ServiceBus** NuGet package.
+Service Bus を通してメッセージを送受信するコードを簡単に記述できるように、.NET クラスのライブラリが用意されています。このライブラリを任意の .NET Framework 言語で使用して、Service Bus のキュー、トピック、リレーと対話できます。 **Microsoft.Azure.ServiceBus** NuGet パッケージを追加することで、アプリケーションにこのライブラリを組み込むことができます。
 
-The most important class in this library for queues is the `QueueClient` class. You must start by instantiating this class both in sending and receiving components.
+キューに関してこのライブラリで最も重要なクラスは、`QueueClient` クラスです。 最初に、送信と受信両方のコンポーネントで、このクラスをインスタンス化する必要があります。
 
-## Connection strings and keys
+## <a name="connection-strings-and-keys"></a>接続文字列とキー
 
-Source components and destination components both need two pieces of information to connect to a queue in a Service Bus namespace:
+Service Bus 名前空間内のキューに接続するには、送信元コンポーネントと送信先コンポーネントの両方に 2 つの情報が必要です。
 
-- The location of the Service Bus namespace, also known as an **endpoint**. The location is specified as a fully qualified domain name within the **servicebus.windows.net** domain. For example: **pizzaService.servicebus.windows.net**.
-- An access key. Service Bus restricts access to queues, topics, and relays by requiring an access key.
+- Service Bus 名前空間の場所。 **エンドポイント**とも呼ばれます。 場所は、**servicebus.windows.net** ドメイン内の完全修飾ドメイン名で指定されます。 例: **pizzaService.servicebus.windows.net**。
+- アクセス キー。 Service Bus では、アクセス キーを要求することによってキュー、トピック、リレーへのアクセスが制限されます。
 
-Both of these pieces of information are provided to the `QueueClient` object in the form of a connection string. You can obtain the correct connection string for your namespace from the Azure portal.
+両方の情報は、接続文字列の形式で `QueueClient` オブジェクトに提供されます。 名前空間に対する正しい接続文字列は、Azure portal から取得できます。
 
-## Calling methods asynchronously
+## <a name="calling-methods-asynchronously"></a>メソッドの非同期呼び出し
 
-The queue in Azure may be located thousands of miles away from sending and receiving components. Even if it is physically close, slow connections and bandwidth contention may cause delays when a component calls a method on the queue. For this reason, the Service Bus client library makes `async` methods available for interacting with the queues. We'll use these methods to avoid blocking a thread while waiting for calls to complete.
+Azure のキューは、送信側と受信側のコンポーネントから何千キロも離れた場所に存在する可能性があります。 物理的に近くても、遅い接続や帯域幅の競合のため、コンポーネントがキューのメソッドを呼び出したときに遅延が発生することがあります。 このため、serviceBus クライアント ライブラリではキューとの対話に `async` メソッドを使用できるようになっています。 ここでは、これらのメソッドを使用して、呼び出しが完了するのを待つ間にスレッドがブロックされるのを防ぎます。
 
-When sending a message to a queue, for example, use the `QueueClient.SendAsync()` method with the `await` keyword.
+たとえば、キューにメッセージを送信するときは、`await` キーワードを指定して `QueueClient.SendAsync()` メソッドを使用します。
 
-## Write code that sends to queues 
+## <a name="write-code-that-sends-to-queues"></a>キューに送信するコードを記述する 
 
-In any sending or receiving component, you should add the following `using` statements to any code file that calls a Service Bus queue:
+すべての送信または受信コンポーネントで、Service Bus キューを呼び出すコード ファイルに次の using ステートメントを追加する必要があります。
 
-```C#
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Azure.ServiceBus;
-```
+    ```C#
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.ServiceBus;
+    ```
 
-Next, create a new `QueueClient` object and pass it the connection string and the name of the queue:
+次に、新しい `QueueClient` オブジェクトを作成し、接続文字列とキューの名前を渡します。
 
-```C#
-queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
-```
+    ```C#
+    queueClient = new QueueClient(TextAppConnectionString, "PrivateMessageQueue");
+    ```
 
-You can send a message to the queue by calling the `QueueClient.SendAsync()` method and passing the message in the form of a UTF-8 encoded string:
+`QueueClient.SendAsync()` メソッドを呼び出して、UTF8 エンコード文字列の形式でメッセージを渡すことにより、キューにメッセージを送信できます。
 
-```C#
-string message = "Sure would like a large pepperoni!";
-var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
-await queueClient.SendAsync(encodedMessage);
-```
+    ```C#
+    string message = "Sure would like a large pepperoni!";
+    var encodedMessage = new Message(Encoding.UTF8.GetBytes(message));
+    await queueClient.SendAsync(encodedMessage);
+    ```
 
-## Receive messages from queue
+## <a name="receive-messages-from-queue"></a>キューからメッセージを受信する
 
-To receive messages, you must first register a message handler - this is the method in your code that will be invoked when a message is available on the queue.
+メッセージを受信するには、最初にメッセージ ハンドラーを登録する必要があります。メッセージ ハンドラーはコード内のメソッドであり、キューでメッセージが利用可能になると呼び出されます。
 
-```C#
-queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
-```
+    ```C#
+    queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
+    ```
 
-Do your processing work. Then, within the message handler, call the `QueueClient.CompleteAsync()` method to remove the message from the queue:
+必要な処理を行います。 その後、メッセージ ハンドラー内で、`QueueClient.CompleteAsync()` メソッドを呼び出してキューからメッセージを削除します。
 
-```C#
-await queueClient.CompleteAsync(message.SystemProperties.LockToken);
-```
+    ```C#
+    await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+    ```
     

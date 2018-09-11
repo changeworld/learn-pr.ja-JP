@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.migrate-sql-server-relational-data.5-exercise-migrate-the-database
-title: Migrate your database - Part 2
+title: データベースを移行する - パート 2
 metadata:
-  title: Migrate your database - Part 2
-  description: Migrate your database - Part 2
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: データベースを移行する - パート 2
+  description: データベースを移行する - パート 2
+  ms.openlocfilehash: 02cd284b1a17d84eb9590b22857b3f1658894383
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833026"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-exercise-migrate-the-database.md)]
+content: '[!include[](includes/5-exercise-migrate-the-database.md)]'

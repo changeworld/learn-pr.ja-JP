@@ -1,16 +1,16 @@
-Now that you've learned about what kinds of queries you can create, let's use the Data Explorer in the Azure portal to retrieve and filter your product data.
+作成できるクエリの種類について学習しましたので、Azure portal でデータ エクスプローラーを使用して、ご自分の製品データを取得およびフィルター処理してみましょう。
 
-In your Data Explorer window, note that by default, the query on the **Document** tab is set to `SELECT * FROM c`. This default query retrieves and displays all documents in the collection.
+データ エクスプローラー ウィンドウでは、既定で、**[ドキュメント]** タブのクエリが `SELECT * FROM c` に設定されています。 この既定のクエリでは、コレクション内のすべてのドキュメントが取得されて表示されます。
 
-![Default query in Data Explorer is SELECT * FROM c](../media/5-azure-cosmosdb-data-explorer-query.png)
+![データ エクスプローラーの既定のクエリは、"SELECT * FROM c" です](../media-draft/5-azure-cosmosdb-data-explorer-query.png)
 
-## Create a new query
+## <a name="create-a-new-query"></a>新しいクエリを作成する
 
-1. In Data Explorer, click the **New SQL Query** tab. Note that the default query on the new  **Query 1** tab is `SELECT * from c`, and then click **Execute Query**. This query returns all results in the database.
+1. データ エクスプローラーで、**[新しい SQL クエリ]** タブをクリックします。新しい **[クエリ 1]** タブ上の既定のクエリが `SELECT * from c` になっていることを確認し、**[クエリの実行]** をクリックします。 このクエリでは、そのデータベースの結果がすべて返されます。
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-edit-query.png)
+    ![ORDER BY c._ts DESC を追加し [フィルタの適用] をクリックすることで既定のクエリを変更する](../media-draft/5-azure-cosmosdb-data-explorer-edit-query.png)
 
-2. Now, let's run some of the queries discussed in the previous unit. On the query tab, delete `SELECT * from c`, copy and paste the following query, and then click **Execute Query**:
+2. 前のユニットで説明したクエリの一部を実行してみましょう。 クエリ タブで、`SELECT * from c` を削除し、次のクエリをコピーして貼り付け、**[クエリの実行]** をクリックします。
 
     ```
     SELECT *
@@ -18,11 +18,11 @@ In your Data Explorer window, note that by default, the query on the **Document*
     WHERE p.id ="1"
     ```
 
-    The results return the product whose `productId` is 1.
+    結果には、`productId` が 1 の製品が返されます。
 
-    ![Change the default query by adding ORDER BY c._ts DESC and clicking Apply Filter](../media/5-azure-cosmosdb-data-explorer-query-by-id.png)
+    ![ORDER BY c._ts DESC を追加し [フィルタの適用] をクリックすることで既定のクエリを変更する](../media-draft/5-azure-cosmosdb-data-explorer-query-by-id.png)
 
-3. Delete the previous query, copy and paste the following query, and click **Execute Query**. This query returns the price, description, and product ID for all products, ordered by price, in ascending order.
+3. 前のクエリを削除し、次のクエリをコピーして貼り付け、**[クエリの実行]** をクリックします。 このクエリでは、すべての製品の価格、説明、および製品 ID が、価格の昇順に並べ替えられて返されます。
  
     ```
     SELECT p.price, p.description, p.productId
@@ -30,6 +30,6 @@ In your Data Explorer window, note that by default, the query on the **Document*
     ORDER BY p.price ASC
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You have now completed some basic queries on your data in Azure Cosmos DB. 
+これで、Azure Cosmos DB のデータで基本的なクエリを完成させました。 

@@ -1,17 +1,17 @@
-Modern applications frequently consist of multiple parts running on separate computers and devices, which are in locations around the world. Complex networks with varying reliability and speed can be between these components. A fundamental challenge with these distributed applications is how to communicate reliably between the components.
+最新のアプリケーションは、世界各地に存在する個別のコンピューターやデバイスで実行される複数の部分で構成されていることがよくあります。 信頼性と速度の異なる複雑なネットワークが、これらのコンポーネントの間に存在する可能性があります。 このような分散アプリケーションの基本的な課題は、コンポーネントの間で信頼性の高い通信を行う方法です。
 
-Suppose you are a cloud developer for Contoso Slices, a global pizza delivery chain. Your employer is upgrading their technology so that users can place orders from the web or their mobile apps. Those orders will be sent to the user's preferred storefront location, where employees will make the pizza. As the dough is rolled out, pizza put in oven, boxed, and put on a delivery vehicle, updates are sent to the user's mobile app. The users even receive location updates as the delivery driver heads toward them. 
+あなたは、世界的なピザ配達チェーンである Contoso Slices のクラウド開発者であるものとします。 会社は、ユーザーが Web またはモバイル アプリから注文できるようにテクノロジをアップグレードしています。 注文はユーザーが指定した店の場所に送られ、そこで従業員がピザを作ります。 生地が延ばされ、ピザが焼き窯に入れられ、ボックスに収められて、配達車両に積み込まれると、更新情報がユーザーのモバイル アプリに送信されます。 配達ドライバーが家に向かっている間、ユーザーは場所の更新を受け取ります。 
 
-Contoso Slices previously created an online ordering system that immediately stored order data in a SQL Server database. Each store had to remember to manually refresh the "web orders" page to find out if they had new orders. In addition, during peak pizza times like televised sporting events, the system would frequently get deadlock exceptions and timeouts. Finally, the previous system lacked central payment processing or any kind of status updates for the user.
+Contoso Slices がかつて作成したオンライン注文システムでは、注文データは SQL Server データベースにすぐに格納されました。 各店では、忘れずに "Web 注文" ページを手動で更新し、新しい注文があったかどうかを確認する必要がありました。 さらに、テレビでスポーツ イベントが放送される場合など、ピザの注文が増加するときには、システムで頻繁にデッドロック例外とタイムアウトが発生しました。 最後に、以前のシステムには、支払いの集中処理やユーザー向けの状態更新の機能がありませんでした。
 
-For this new, more ambitious project, Contoso hired a cloud architect and plans to use a decoupled architecture. 
+この新しい意欲的なプロジェクトでは、Contoso はクラウド アーキテクトを採用し、分離アーキテクチャを使用する計画です。 
 
-In this module, we'll learn how Azure Service Bus can help build an application that stays reliable during peak demand. We'll also see how Azure Service Bus helps make it easy to add functionality to our applications. Along the way, we'll be writing the C# code necessary to put these lessons to work. Here, you will see how to use Azure Service Bus topics and queues in a distributed architecture to ensure reliable communications even at times of high demand. You will also write C# code that communicates through Service Bus.
+このモジュールでは、注文が最も多くなる時間帯でも信頼性が保たれるアプリケーションを構築するのに Azure Service Bus がどのように役立つのかを学習します。 また、Azure Service Bus によりアプリケーションへの機能の追加が簡単になることも見ていきます。 その過程で、これらのレッスンの機能を動くようにするために必要な C# コードを記述します。 ここでは、Azure Service Bus のトピックとキューを分散アーキテクチャで使用して、需要が高くなっても信頼性の高い通信を保証する方法を説明します。 Service Bus 経由で通信する C# コードも記述します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
-- Choose whether to use Service Bus queues, topics, or relays to communicate in a distributed application
-- Configure an Azure Service Bus namespace in an Azure subscription
-- Create a Service Bus **topic** and use it to send and receive messages
-- Create a Service Bus **queue** and use it to send and receive messages
+このモジュールでは、次のことを行います。
+- 分散アプリケーションでの通信に Service Bus のキュー、トピック、またはリレーを使用するかどうかを選択する
+- Azure サブスクリプションで Azure Service Bus の名前空間を構成する
+- Service Bus の**トピック**を作成し、それを使用してメッセージを送受信する
+- Service Bus の**キュー**を作成し、それを使用してメッセージを送受信する

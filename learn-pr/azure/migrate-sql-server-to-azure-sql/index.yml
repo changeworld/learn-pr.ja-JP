@@ -1,23 +1,26 @@
 ### YamlMime:Module
 uid: learn.migrate-sql-server-relational-data
 metadata:
-  title: Migrate your SQL data to Azure SQL using Microsoft Data Migration Assistant
-  description: In this module, you will migrate a SQL Server database to an Azure SQL Database. You will learn about the choices available to you along with the advantages of each approach. You will also assess your SQL Server database and then migrate the database to an Azure SQL Database.
+  title: SQL Serer リレーショナル データを Azure SQL に移行する
+  description: このモジュールでは、SQL Server データベースを Azure SQL Database に移行します。 それぞれの手法を活用すると共に、利用できる選択肢について学習します。 また、ご使用の SQL Server データベースにアクセスして、そのデータベースを Azure SQL Database に移行します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Migrate your SQL data to Azure SQL using Microsoft Data Migration Assistant
-summary: In this module, you will learn how the Data Migration Assistant (DMA) provides assessments of your on-premises SQL Server databases and can migrate them to an Azure SQL Database.
-abstract: |
-  In this module, you will:
-  - Assess your SQL Server database for migration
-  - Analyze and fix your database before migration
-  - Migrate your database using the Microsoft Data Migration Assistant
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 59b4be0e9c2103cc726074de29842a362668fb85
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834106"
+title: SQL Serer リレーショナル データを Azure SQL に移行する
+summary: このモジュールでは、Data Migration Assistant (DMA) でどのようにオンプレミスの SQL Server データベースの評価が提供され、データベースを Azure SQL Database に移行できるかについて学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 移行について SQL Server データベースを評価します。
+
+  - 移行の前にデータベースを分析して修正します。
+
+  - Microsoft Data Migration Assistant を使用してデータベースを移行します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

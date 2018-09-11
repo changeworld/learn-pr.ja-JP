@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-title: Design a storage organization strategy
+title: ストレージの組織の戦略を設計する
 metadata:
-  title: Design a storage organization strategy
-  description: Design a storage organization strategy
+  title: ストレージの組織の戦略を設計する
+  description: ストレージの組織の戦略を設計する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 2f38fea8367aeac95b8bd0593b2132f96989700f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234106"
 durationInMinutes: 7
-content: |
+content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: 'Knowledge check: Blob Storage'
+  title: '知識チェック: Blob Storage'
   questions:
-  - content: Which kind of blob is the best fit for most storage scenarios?
+  - content: ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?
     choices:
-    - content: Byte blobs
+    - content: バイト BLOB
       isCorrect: false
-      incorrectExplanation: '"Byte blobs" are not a type of blob.'
-    - content: Page blobs
+      incorrectExplanation: "\"バイト BLOB\" は、BLOB の種類ではありません。"
+    - content: ページ BLOB
       isCorrect: false
-      incorrectExplanation: Page blobs are designed for high volumes of random-access reads and writes, such as when used by an Azure Virtual Machine to store a virtual hard disk.
-    - content: Block blobs
+      incorrectExplanation: ページ BLOB は、仮想ハード ディスクに格納するために Azure Virtual Machine で使用されているような、大量のランダム アクセスの読み取りと書き込みのために設計されています。
+    - content: ブロック BLOB
       isCorrect: true
-      correctExplanation: Block blobs are usually the best choice for general-purpose storage needs.
-    - content: Append blobs
+      correctExplanation: ブロック BLOB は通常、汎用ストレージのニーズに最適な選択肢です。
+    - content: 追加 BLOB
       isCorrect: false
-      incorrectExplanation: Append blobs only support appending new data, not updating or deleting existing data.
-  - content: Blobs provide *unstructured* data storage. What does *unstructured* mean?
+      incorrectExplanation: 追加 BLOB では、新しいデータの追加のみがサポートされ、既存のデータの更新または削除はサポートされません。
+  - content: BLOB では、*非構造化*データ ストレージが提供されます。 *非構造化*が意味するものは何ですか?
     choices:
-    - content: Blobs can't be organized or named, they are only collections of bytes.
+    - content: BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。
       isCorrect: false
-      incorrectExplanation: '"Unstructured" refers to the nature of the data *in* blobs, not organization of the blobs within a storage account.'
-    - content: There are no restrictions on the kinds of data you can store in blobs.
+      incorrectExplanation: "\"非構造化\" とは、ストレージ アカウント内の BLOB の組織ではなく、BLOB *内*のデータの性質を指します。"
+    - content: BLOB に格納できるデータの種類に制限はありません。
       isCorrect: true
-      correctExplanation: Blobs do not impose any kind of structure on your data, meaning your apps can store any kind of data in blobs.
-    - content: Blobs can't contain structured data, like JSON or XML.
+      correctExplanation: BLOB によってデータにいかなる種類の構造も強制されることはありません。つまり、アプリではあらゆる種類のデータを BLOB に保存できます。
+    - content: BLOB には、JSON や XML などの構造化データを含めることはできません。
       isCorrect: false
-      incorrectExplanation: Blobs *can* contain structured data, but Blob storage does not interact with it in any way. It is your app's responsibility to recognize the structure of blob contents and handle them appropriately.
-    - content: Data downloaded from blobs in is organized randomly and requires a special client library to make sense of it.
+      incorrectExplanation: BLOB には構造化データを含めることが*できます*が、それを操作する方法は BLOB ストレージにはありません。 BLOB コンテンツの構造を認識し、それらを適切に処理するのはアプリの役目です。
+    - content: BLOB からダウンロードしたデータは、ランダムに編成され、その意味を理解するには特殊なクライアント ライブラリが必要です。
       isCorrect: false
-      incorrectExplanation: All blob manipulation, including downloading blob contents, can be accomplished by directly using the REST API without any client library. Data downloaded from blobs is not organized randomly.
+      incorrectExplanation: BLOB コンテンツのダウンロードを含むすべての BLOB 操作は、クライアント ライブラリがなくても、REST API を使用して直接操作することができます。 BLOB からダウンロードしたデータは、ランダムに編成されません。

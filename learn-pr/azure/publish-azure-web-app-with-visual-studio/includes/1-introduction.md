@@ -1,19 +1,19 @@
-Imagine you're a software developer for a ski resort. You are launching a new application which will let users view trail maps and purchase lift tickets on your website or their mobile phones. You want to create an ASP.NET web application to complement and advertise the app. Being a Visual Studio developer, you want to use it to create, deploy, and manage your new site.
+スキー場向けのソフトウェアの開発者であると想定してください。 あなたは、ユーザーが Web サイトや携帯電話でトレイル マップを表示したりリフト券を購入したりできる新しいアプリケーションの開発に着手しています。 このアプリを補完および公開する ASP.NET Web アプリケーションを作成したいと考えています。 Visual Studio の開発者であるあなたは、Visual Studio を使用して新しいサイトを作成、デプロイ、および管理したいと考えています。
 
-Visual Studio and Azure App Service provide a powerful mechanism for creating, publishing, and maintaining web apps in Azure. Here, you will learn how to use the publishing features built in to Visual Studio to deploy and manage ASP.NET web applications hosted on Azure.
+Visual Studio と Azure App Service は、Azure で Web アプリを作成、発行、および保守するための強力なメカニズムを提供します。 ここでは、Visual Studio に組み込まれている発行機能を使用して、Azure でホストされる ASP.NET Web アプリケーションをデプロイおよび管理する方法を学習します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Create an ASP.NET web app in Visual Studio 2017 for PC or Mac
-- Publish an ASP.NET web app to Azure with Visual Studio 2017
-- Update an ASP.NET application in Azure using Visual Studio for PC or Mac
+- PC または Mac 向けの Visual Studio 2017 で ASP.NET Web アプリを作成します。
+- Visual Studio 2017 で Azure に ASP.NET Web アプリを発行します。
+- PC または Mac 向けの Visual Studio を使用して、Azure で ASP.NET アプリケーションを更新します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Knowledge of the Azure cloud environment
-- Familiarity with the Visual Studio user interface
-- Familiarity with web app concepts
-- Basic programming knowledge
-- Basic HTML knowledge
+- Azure クラウド環境の知識があること
+- Visual Studio のユーザー インターフェイスを熟知していること
+- Web アプリの概念を熟知していること
+- 基本的なプログラミングの知識があること
+- 基本的な HTML の知識があること

@@ -1,35 +1,34 @@
-Your banking company handles highly sensitive customer information and wants you to ensure your disks are encrypted at all times, including VM disk deployment. You've been tasked to automate a secure VM deployment to safeguard your company's data.
+あなたの銀行は機密性の高い顧客情報を扱っており、あなたは自分が使用しているディスク (VM ディスクの展開を含む) を常に暗号化するように要求されています。 あなたは、会社のデータを保護するためにセキュリティで保護された VM の展開を自動化する作業を任されています。
 
-In this unit, you'll use an Azure Resource Manager template to automatically enable encryption for new Windows VMs.
+このユニットでは、ARM テンプレートを使用して、新しい Windows VM の暗号化を自動的に有効にします。
 
-## Configure and deploy a new VM using an Azure Resource Manager template
+## <a name="configure-and-deploy-a-new-vm-using-an-arm-template"></a>ARM テンプレートを使用して新しい VM を構成および展開する
 
-1. Go to the [Resource Manager template on GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image), and then click **Deploy to Azure**.
-1. In the Azure portal, on the **Azure quickstart template** blade, under **Resource Group**, select **Use existing**. In the list, select **moneyapprg**.
-1. In the **SETTINGS** section, enter the following information:
+1. [GitHub の Resource Manager テンプレート](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-create-new-vm-gallery-image)に移動し、**[Deploy to Azure]\(Azure に展開\)** をクリックします。
+1. Azure portal の **[Azure クイックスタート テンプレート]** ブレードで、**[リソース グループ]** の **[既存のものを使用]** を選択し、一覧から **moneyapprg** を選択します。
+1. **[設定]** セクションで、次の情報を入力します。
 
-   - Vm Name: **moneyappsvr02**
-   - **Admin Username**: Same as you used in the previous exercise.
-   - **Admin Password**: Same as you used in the previous exercise.
-   - **New Storage Account Name**: Enter a unique name.
-   - **Vm Size**: Replace with the same size that you used in the previous exercise, such as **Standard_B1s** (as you are using the same Azure region, ensuring that size is available in your current region).
-   - **Virtual Network Name**: **moneyapprg-vnet**
-   - **Subnet Name**: **default**
-   - **AAD Client ID**: Copy from the information you pasted to Notepad.
-   - **AAD Client Secret**: Copy from the information you pasted to Notepad.
-   - **Key Vault Name**: **moneyappkv**
-   - **Key Vault Resource Group**: **moneyapprg**
-   - **Key Encryption Key URL**: Copy from the information you pasted to Notepad.
-1. Select the **I agree to the terms and conditions** check box, and then click **Purchase**.
+   - VM 名: **moneyappsvr02**
+   - **管理者ユーザー名**: 前の演習で使用したものと同じ
+   - **管理者パスワード**: 前の演習で使用したものと同じ
+   - **新しいストレージ アカウント名**: 一意の名前を入力します
+   - **VM サイズ**: **Standard_B1s** など、前の演習で使用したものと同じサイズに置き換えます (同じ Azure リージョンを使用しているので、現在のリージョンでそのサイズを使用できることを確認します)
+   - **仮想ネットワーク名**: **moneyapprg-vnet**
+   - **サブネット名**: **既定値**
+   - **AAD クライアント ID**: メモ帳に貼り付けた情報からコピーします
+   - **AAD クライアント シークレット**: メモ帳に貼り付けた情報からコピーします
+   - **キー コンテナー名**: **moneyappkv**
+   - **キー コンテナー リソース グループ**: **moneyapprg**
+   - **キー暗号化のキーの URL**: メモ帳に貼り付けた情報からコピーします
+   - **[上記のご契約条件に同意します]** チェック ボックスをオンにし、**[購入]** をクリックします。
+1. 展開が完了するまで最大で 5 ～ 10 分かかる場合があります。
 
-The deployment may take 5-10 minutes to complete.
+## <a name="verify-encryption-status-of-new-vm"></a>新しい VM の暗号化の状態を確認する
 
-## Verify encryption status of new VM
+1. Azure portal のサイドバーで、**[仮想マシン]** をクリックします。
 
-1. In the sidebar of the Azure portal, click **Virtual machines**.
+1. **[仮想マシン]** ブレードで、**moneyappsvr02** をクリックします。
 
-1. On the **Virtual machines** blade, click **moneyappsvr02**.
+1. **[仮想マシン]** ブレードの **[設定]** で、**[ディスク]** をクリックします。
 
-1. On the **Virtual machine** blade, under **SETTINGS**, click **Disks**.
-
-1. On the **Disks** blade, notice the OS disk encryption status is **Enabled**.
+1. **[ディスク]** ブレードで、OS ディスクの暗号化状態が **[有効]** であることを確認します。

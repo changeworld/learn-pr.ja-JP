@@ -1,36 +1,34 @@
-You've successfully created a cross-platform mobile app using Xamarin and an Azure function with a Twilio binding.
+Xamarin および Azure 関数と Twilio バインディングを使用してクロスプラットフォーム モバイル アプリを正しく作成できました。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-When you're done working with this Azure Functions application, you can delete all resources created during the tutorial from the Azure portal.
+この Azure Functions アプリケーションの作業が終わったら、チュートリアルの間に作成したすべてのリソースを、Azure portal を使用して削除できます。
 
-1. From Visual Studio, select *View->Cloud Explorer*.
+1. Visual Studio で、*[表示] > [Cloud Explorer]* を選択します。
 
-1. From the drop-down at the top of this panel, select *Resource Groups*.
+1. このパネルの上部にあるドロップダウン リストから、*[リソース グループ]* を選択します。
 
-1. Expand the subscription that you used to create the resource group. Right-click on the "ImHere" resource group and select *Open in Portal*.
+1. リソース グループの作成に使用したサブスクリプションを展開します。 "ImHere" リソース グループを右クリックし、*[ポータルで開く]* を選択します。
 
-    ![Open the resource group in the portal from the cloud explorer window](../media-drafts/9-open-resource-group-in-portal.png)
+    ![Cloud Explorer ウィンドウからポータルでリソース グループを開く](../media-drafts/9-open-resource-group-in-portal.png)
 
-1. Log into the Azure portal in your browser, if necessary.
+1. 必要な場合は、ブラウザーで Azure portal にログインします。
 
-1. The portal will open on the "ImHere" resource group. Click the **Delete Resource Group** button.
+1. ポータルで "ImHere" リソース グループが開きます。 **[リソース グループの削除]** ボタンをクリックします。
 
-    ![Delete the resource group](../media-drafts/9-delete-resource-group.png)
+    ![リソース グループを削除します](../media-drafts/9-delete-resource-group.png)
 
-1. Enter the name of the resource group to confirm the deletion and click **Delete**.
+1. リソース グループの名前を入力して削除を確認し、**[削除]** をクリックします。
 
-    ![Enter the resource group name to confirm the deletion](../media-drafts/9-confirm-delete-resource-group.png)
+    ![リソース グループの名前を入力して、削除を確定します。](../media-drafts/9-confirm-delete-resource-group.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this module, you learned how to:
-
-- Create a cross-platform Xamarin.Forms app that uses Xamarin.Essentials.
-- Create a cross-platform UI using XAML with application logic in a ViewModel, as well as bind properties in a ViewModel to the UI.
-- Detect the user's location.
-- Create an Azure Function with an HTTP trigger and run it locally.
-- Call an Azure Function from a mobile app, passing data as JSON.
-- Bind an Azure Function to Twilio to send an SMS message.
-- Publish an Azure Function to Azure.
+このモジュールでは、次の方法を説明しました。
+- Xamarin.Essentials を使用するクロスプラットフォームの Xamarin.Forms アプリを作成しました。
+- ViewModel のアプリケーション ロジックを含む XAML を使用してクロスプラットフォームの UI を作成し、UI に ViewModel のプロパティをバインドしました。
+- ユーザーの場所を検出しました。
+- HTTP トリガーを含む Azure 関数を作成し、ローカルで実行しました。
+- モバイル アプリから Azure 関数を呼び出し、JSON としてデータを渡しました。
+- Azure 関数を Twilio にバインドして SMS メッセージを送信しました。
+- Azure 関数を Azure に発行しました。

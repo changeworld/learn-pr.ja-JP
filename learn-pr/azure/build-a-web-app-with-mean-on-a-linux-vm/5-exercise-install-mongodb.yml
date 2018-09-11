@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.5-exercise-install-mongodb
-title: Exercise - Install MongoDB
+title: 演習 - MongoDB をインストールする
 metadata:
-  title: Exercise - Install MongoDB
-  description: Exercise - Install MongoDB
+  title: 演習 - MongoDB をインストールする
+  description: 演習 - MongoDB をインストールする
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 6c274f437845deff68237991cca49ffd9a1c6d3a
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235585"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-exercise-install-mongodb.md)]
+content: '[!include[](includes/5-exercise-install-mongodb.md)]'

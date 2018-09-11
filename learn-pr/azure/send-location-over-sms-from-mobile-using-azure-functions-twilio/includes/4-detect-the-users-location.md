@@ -6,7 +6,7 @@
 
 1. `ImHere.UWP` アプリ プロジェクトで、`Package.appxmanifest` ファイルを開きます。
 
-2. **[機能]** タブに移動して、*位置情報*機能をオンにします。
+1. **[機能]** タブに移動して、*位置情報*機能をオンにします。
 
     ![UWP の [機能] タブ](../media-drafts/4-uwp-location-capability.png)
 
@@ -18,13 +18,13 @@
 
 1. `ImHere` .NET 標準プロジェクトで `MainViewModel` クラスを開きます。
 
-2. `SendLocation` メソッドで、`Xamarin.Essentials` 名前空間の `Geolocation` クラスに対して `GetLastKnownLocationAsync` 静的メソッドを呼び出します。
+1. `SendLocation` メソッドで、`Xamarin.Essentials` 名前空間の `Geolocation` クラスに対して `GetLastKnownLocationAsync` 静的メソッドを呼び出します。
 
     ```cs
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
-3. ユーザーの場所が見つかった場合は、その場所で `Message` プロパティを更新します。
+1. ユーザーの場所が見つかった場合は、その場所で `Message` プロパティを更新します。
 
     ```cs
     if (location != null)
@@ -51,7 +51,7 @@ async Task SendLocation()
 
 ![ユーザーの場所を示す実行中のアプリ](../media-drafts/4-running-app-showing-location.png)
 
-> このアプリでは最新の場所を使用します。 運用品質アプリで、タイムアウトを設定して現在の正確な場所を取得する必要があります。時間内に見つからない場合は、最新の場所にフォールバックします。 これを行う方法の詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)を参照してください。このアプリではエラー処理は行われません。 運用品質アプリで、発生した例外を処理する必要があります。たとえば、場所を使用できなかった場合や、例外がスローされた場合です。
+> このアプリでは最新の場所を使用します。 運用品質アプリで、タイムアウトを設定して現在の正確な場所を取得する必要があります。時間内に見つからない場合は、最新の場所にフォールバックします。 これを行う方法の詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)を参照してください。このアプリではエラー処理は行われません。 運用品質のアプリでは、場所を使用できなかった場合など、発生した例外を処理する必要があります。
 
 ## <a name="summary"></a>まとめ
 

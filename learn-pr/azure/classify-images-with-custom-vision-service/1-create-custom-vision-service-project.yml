@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.1-create-custom-vision-service-project
-title: Create a Custom Vision Service project
+title: Custom Vision Service プロジェクトを作成する
 metadata:
-  title: Create a Custom Vision Service project
-  description: Create a Custom Vision Service project
+  title: Custom Vision Service プロジェクトを作成する
+  description: Custom Vision Service プロジェクトを作成する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: f6c0c87ebcdc20a86ea6ffb838797224029b7e09
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239648"
 durationInMinutes: 5
-content: |
-  [!include[](includes/1-create-custom-vision-service-project.md)]
+content: '[!include[](includes/1-create-custom-vision-service-project.md)]'

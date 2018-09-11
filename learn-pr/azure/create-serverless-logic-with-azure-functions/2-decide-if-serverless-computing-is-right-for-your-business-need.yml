@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.2-decide-if-serverless-computing-is-right-for-your-business-need
-title: Decide if serverless computing is right for your business needs
+title: サーバーレス コンピューティングが、自分のビジネス ニーズに適しているかどうかを判断する
 metadata:
-  title: Decide if serverless computing is right for your business needs
-  description: Decide if serverless computing is right for your business needs
+  title: サーバーレス コンピューティングが、自分のビジネス ニーズに適しているかどうかを判断する
+  description: サーバーレス コンピューティングが、自分のビジネス ニーズに適しているかどうかを判断する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 830da6d32ff345b85dee049d3d6b50ca19114546
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237234"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-decide-if-serverless-computing-is-right-for-your-business-need.md)]
+content: '[!include[](includes/2-decide-if-serverless-computing-is-right-for-your-business-need.md)]'

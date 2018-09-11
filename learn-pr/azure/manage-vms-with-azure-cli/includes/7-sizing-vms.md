@@ -55,7 +55,7 @@ az vm create --resource-group ExerciseResources --name SampleVM \
 ```
 
 > [!WARNING]
-> ご利用のサブスクリプション レベルに応じて、作成できるリソース数に[制限が課され](https://docs.microsoft.com/en-us/azure/azure-subscription-service-limits)、さらにそのリソースの合計サイズも制限されます。 たとえば、従量課金制サブスクリプションでの仮想 CPU 数の制限は **20** で、無料レベルの場合は **4** となっています。 Azure CLI には、これを超えたときに**クォータ超過**エラーで通知する機能があります。 アーキテクチャを作成するときにこのエラーが発生した場合は、有料サブスクリプションに関連付けられている制限の引き上げ (仮想 CPU の上限は 10,000 個) を申請することができます。申請は[オンラインで行います (無料)](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quota-errors)。 
+> ご利用のサブスクリプション レベルに応じて、作成できるリソース数に[制限が課され](https://docs.microsoft.com/azure/azure-subscription-service-limits)、さらにそのリソースの合計サイズも制限されます。 たとえば、従量課金制サブスクリプションでの仮想 CPU 数の制限は **20** で、無料レベルの場合は **4** となっています。 Azure CLI には、これを超えたときに**クォータ超過**エラーで通知する機能があります。 アーキテクチャを作成するときにこのエラーが発生した場合は、有料サブスクリプションに関連付けられている制限の引き上げ (仮想 CPU の上限は 10,000 個) を申請することができます。申請は[オンラインで行います (無料)](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quota-errors)。 
 
 ## <a name="resizing-an-existing-vm"></a>既存の VM のサイズを変更する
 ワークロードが変化した場合や、作成時に正しくサイズが設定されなかった場合にも、既存の VM のサイズを変更することができます。 サイズ変更を要求する前に、VM が属するクラスター内で目的のサイズが使用できるかどうかを確認する必要があります。 これを行うには、`vm list-vm-resize-options` コマンドを使用します。

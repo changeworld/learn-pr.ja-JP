@@ -4,15 +4,14 @@ metadata:
   title: 自分の知識をチェックする
   description: 自分の知識をチェックする
   displayType: one-column
-  ms.openlocfilehash: 1aaf806a4ddb9f81c850a1b3001be824403e29a7
-  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
+  ms.openlocfilehash: 4e9c2a54209bec5caf81ac2d41ad00b58146244c
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42981305"
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179847"
 title: 自分の知識をチェックする
 durationInMinutes: 2
-content: クラウド コンピューティングのメリットを理解しているかどうか、試してみましょう。
 quiz:
   title: 知識チェック
   questions:

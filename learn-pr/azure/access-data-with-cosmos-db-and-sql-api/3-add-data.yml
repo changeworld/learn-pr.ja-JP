@@ -1,26 +1,22 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.3-add-data
 metadata:
-  title: Add data by using the portal
-  description: Learn how to add data to Azure Cosmos DB by using the Azure portal
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO:Add Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
-title: Add data by using the portal
+  title: ポータルを使用してデータを追加する
+  description: Azure Portal を使用して Azure Cosmos DB にデータを追加する方法について説明します
+  ms.openlocfilehash: 462deb7fff8c308a1dbb454a756393924950002f
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795382"
+title: ポータルを使用してデータを追加する
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/3-add-data.md)]
 tasks:
 - action: exists
   environment: azure
-  #TODO: Need to figure out the validation task?
-  hint: 'Please make sure that you have created two documents in the Azure Cosmos DB database'
+  hint: Azure Cosmos DB データベースでドキュメントを 2 つ作成していることを確認してください。
   azure:
     location: eastus
 - action: exists

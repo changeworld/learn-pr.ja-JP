@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.7-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 54807e5fe1a51aa68ffbfc11b111fa63e389751e
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43730284"
 durationInMinutes: 3
-content: |
-  [!include[](includes/7-summary.md)]
+content: '[!include[](includes/7-summary.md)]'

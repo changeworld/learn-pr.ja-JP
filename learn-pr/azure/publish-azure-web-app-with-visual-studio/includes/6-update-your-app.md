@@ -1,55 +1,55 @@
-You've successfully created your web app and published it to Azure, but what happens when you want to make changes? Visual Studio will remember where the app is published, which makes updating and changing your app a two-click process.
+Web アプリの作成と Azure への発行は問題なくできましたが、変更したいときはどうなるのでしょうか。 Visual Studio ではアプリの発行先が記憶されているので、2 回クリックするだけでアプリの更新や変更を行うことができます。
 
-## Explore the project structure
+## <a name="explore-the-project-structure"></a>プロジェクトの構造を調べる
 
-We've created an ASP.NET web app in Visual Studio, and now you will need to edit and customize your website. Let's explore the project structure to see what Visual Studio has created for us.
+Visual Studio での ASP.NET Web アプリの作成が済んだので、今度は Web サイトを編集したりカスタマイズしたりする必要があります。 プロジェクトの構造を調べて、Visual Studio によってどのようなものが作成されたのかを見てみましょう。
 
-### Dependencies
+### <a name="dependencies"></a>依存関係
 
-Dependencies include the ASP.NET internals to get your app up and running. Unless you are adding specific third-party packages, you won't need to spend much time in this folder.
+依存関係には、アプリを稼働させるための ASP.NET の内部構造が含まれます。 特定のサード パーティ製パッケージを追加していない場合、このフォルダーに多くの時間を費やす必要はありません。
 
-### Properties
+### <a name="properties"></a>プロパティ
 
-The properties folder contains configuration data for where you are hosting your web app. If you expand the **PublishProfiles** folder now, you should see the URL for the Alpine Ski Hill site. Each publishing profile is an .xml file containing publishing configuration information such as the Azure address that Visual Studio uses to upload your files.
+プロパティ フォルダーには、Web アプリをホストしている場所についての構成データが含まれます。 **PublishProfiles** フォルダーを展開すると、Alpine Ski Hill サイトの URL が表示されます。 各発行プロファイルは .xml ファイルであり、Visual Studio がファイルのアップロードに使用する Azure のアドレスなど、発行の構成情報が含まれます。
 
-### wwwroot
+### <a name="wwwroot"></a>wwwroot
 
-The wwwroot file contains all of your static assets for your site, such as the .css, .js, images, and .lib files. When you are ready to style and add more functionality to your site, you will work in here.
+wwwroot ファイルには、.css、.js、イメージ、.lib ファイルなど、サイトのすべての静的資産が含まれます。 サイトのスタイルを設定したり、サイトに機能を追加したりする準備ができたら、ここで作業します。
 
-### Pages
+### <a name="pages"></a>ページ
 
-The **Pages** folder includes _**Razor**_ templates for the pages of your site.
-Razor is a syntax that is built up around HTML, which has special conventions for displaying data and executing logic on your site.
+**[ページ]** フォルダーには、サイトのページ用の _**Razor**_ テンプレートが含まれます。
+Razor は HTML を基にして作成されている構文であり、サイトでのデータの表示とロジックの実行のための特別な規則を備えています。
 
-Each page in your site is represented with two code files:
+サイト内の各ページは、2 つのコード ファイルで表されます。
 
-- The first is a `.cshtml` file, which is the Razor markup file. This file includes your display HTML and some C# logic.
+- 1 つ目の `.cshtml` ファイルは、Razor マークアップ ファイルです。 このファイルには、表示用の HTML と若干の C# ロジックが含まれます。
 
-- The second file is a `.cs` file, which is the C# code-behind that includes `PageModel` class. This file allows you to intercept HTTP requests and do some processing on that request before passing off any data to the Razor file.
+- 2 つ目の `.cs` ファイルは、`PageModel` クラスを含む C# コードビハインドです。 このファイルでは、HTTP 要求をインターセプトして、Razor ファイルにデータが渡される前に要求に対して何らかの処理を行うことができます。
 
-### appsetting.json
+### <a name="appsettingjson"></a>appsetting.json
 
-This is a configuration file for ASP.NET.
+これは、ASP.NET 用の構成ファイルです。
 
-### bundleconfig.json
+### <a name="bundleconfigjson"></a>bundleconfig.json
 
-The bundleconfig.json is preprocessing configuration. This file is making your .css and .js files smaller when they are published.
+bundleconfig.json では構成の前処理が行われます。 このファイルにより、発行されるときの .css ファイルと .js ファイルが小さくなります。
 
-### Program.cs and Startup.cs
+### <a name="programcs-and-startupcs"></a>Program.cs、Startup.cs
 
-Program.cs and Startup.cs configure and launch your web host for your site.
+Program.cs と Startup.cs では、サイトに対する Web ホストの構成と起動が行われます。
 
-## Updating your website using Razor
+## <a name="updating-your-website-using-razor"></a>Razor を使用して Web サイトを更新する
 
-We will want to make some basic changes to our website. In order to do this, you will need to have a basic understanding of how to leverage the Razor templates to customize your web app.
+Web サイトに対していくつかの基本的な変更を行います。 これを行うには、Razor テンプレートを使用して Web アプリをカスタマイズする方法を基本的に理解している必要があります。
 
-## What is Razor?
+## <a name="what-is-razor"></a>Razor とは
 
-Razor is an ASP.NET syntax used to create dynamic web pages with C#. When a server reads a Razor page, the C# code is run before it renders the HTML. This allows you to generate dynamic content quickly.
+Razor は、C# で動的な Web ページを作成するために使用される ASP.NET 構文です。 サーバーで Razor ページが読み取られると、HTML をレンダリングする前に、C# コードが実行されます。 これにより、動的なコンテンツをすばやく生成できます。
 
-Razor uses `@` directives to tell ASP.NET how to process a page.
+Razor では、`@` ディレクティブを使用してページの処理方法を ASP.NET に伝えます。
 
-For example, take a look at the code in the `Contact.cshtml` page:
+例として、`Contact.cshtml` ページのコードを見てください。
 
 ```aspx-csharp
 @page
@@ -62,21 +62,22 @@ For example, take a look at the code in the `Contact.cshtml` page:
 ...
 ```
 
-- The `@page` directive is telling ASP.NET to process this file as a Razor page.
-- The `@model` directive is telling ASP.NET to tie this Razor page with a C# class called `ContactModel`.
+たとえば、`@page` ディレクティブは、Razor ページとしてこのファイルを処理するよう ASP.NET に指示します。
+`@model` ディレクティブは、この Razor ページを `ContactModel` という名前の C# クラスと結び付けるよう ASP.NET に指示します。
 
-Razor also uses the `@` symbol to transition between code and HTML. If you look at the snippet above, you'll notice `@{ ... }`. This is a **Razor code block**. It's code which is _executed but not rendered_.
+Razor では、コードと HTML の切り替えのためにも `@` 記号が使用されます。
+たとえば、上のスニペットを見ると、`@{ ... }` があることがわかります。 これは **Razor コード ブロック**です。 このコードは、"_実行されますが、レンダリングはされません_"。
 
-To render the output of a code statement, we use the `@` in front of a C# expression. We have two examples of that in the code block above in the `<h2>` and `<h3>` tags.
+コード ステートメントの出力をレンダリングするには、C# 式の前に `@` を付けます。 上記のコード ブロックの `<h2>` タグと `<h3>` タグに、それの 2 つの例があります。
 
-## Publish your updates
+## <a name="publish-your-updates"></a>更新を発行する
 
-Once you've made the changes to your website, you will want to publish them to Azure. This process is similar to how we initially published.
+Web サイトを変更した後は、それを Azure に発行します。 このプロセスは、最初に発行したときの方法と似ています。
 
-1. Right-click the project in Solution Explorer.
+1. ソリューション エクスプローラーで、プロジェクトを右クリックします。
 
-1. Now you should see the name of your website followed by Web Deploy. If you had named your website AlpineSkiHouse42, you would see **AlpineSkiHouse42 - Web Deploy** in the available options. Select that and your site will update in Azure.
+1. 後に "Web 配置" が付いた Web サイトの名前が表示されます。 たとえば、Web サイトの名前を AlpineSkiHouse42 にした場合、使用可能なオプションに "**AlpineSkiHouse42 - Web 配置**" と表示されます。 それを選択すると、Azure でサイトが更新されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Creating and publishing a website are just the first steps in creating a good website. Once you start to add content, you'll need to update your site. Once you've initially published your site to Azure, you can update at any time from the Solution Explorer.
+Web サイトの作成と発行は、優れた Web サイトを作成する最初のステップに過ぎません。 コンテンツの追加を始めたら、サイトを更新する必要があります。 最初にサイトを Azure に発行した後は、ソリューション エクスプローラーでいつでも更新できます。

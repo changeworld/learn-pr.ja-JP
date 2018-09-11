@@ -1,51 +1,51 @@
-Suppose your company's trading partners have security policies who require their trading data is protected with strong encryption. You use a B2B application that runs on your Windows servers, and stores data on the server data disk. Now that you're transitioning to the cloud, you need to demonstrate to your trading partners that data stored on your Azure VMs cannot be accessed by unauthorized users, devices, or applications. You need to decide on a strategy for implementing encryption of your B2B data.
+会社の取引先のセキュリティ ポリシーにより、取引データを強力な暗号化で保護することが求められているとします。 Windows サーバーで稼働する B2B アプリケーションを使用して、サーバーのデータ ディスクにデータを格納してます。 現在、クラウドへの移行にあたって、権限のないユーザー、デバイス、アプリケーションは Azure VM に格納されるデータにアクセスできないことを、取引先に説明する必要があります。 B2B データの暗号化を実装する戦略を決定する必要があります。
 
-Your audit requirements dictate that your encryption keys be managed in-house, and not by any third party. you're also concerned that the performance and manageability of your Azure-based servers is maintained. So before you implement encryption, you want to be sure that there won't be a performance hit.
+監査要件では、暗号化キーをサードパーティではなく社内で管理することが定められています。 また、Azure ベースのサーバーのパフォーマンスと管理性を維持することも重要です。 暗号化を実装する前に、パフォーマンスへの影響がないことを確認することをお勧めします。
 
-## What is encryption?
+## <a name="what-is-encryption"></a>暗号化とは
 
-Encryption is about converting meaningful information into something that appears meaningless, such as a random sequence of letters and numbers. The process of encryption uses some form of **key** as part of the algorithm that creates the encrypted data. A key is also needed to perform the decryption. Keys may be **_symmetric_**, where the same key is used for encryption and decryption, or **_asymmetric_**, where different keys are used. An example of the latter is the **public-private** key pairs used in digital certificates.
+暗号化とは、意味がある情報を、文字や数字のランダムなシーケンスのような無意味に見えるものに変換することです。 暗号化のプロセスでは、暗号化されたデータを作成するアルゴリズムの一部として**キー**という形式を使用します。キーは復号化を実行するためにも必要になります。 キーには、暗号化と復号化に同じキーが使用される**_対称_** と、デジタル証明書で使用される**公開/秘密**キー ペアのように、異なるキーが使用される**_非対称_** があります。
 
-### Symmetric encryption
+### <a name="symmetric-encryption"></a>対称暗号化
 
-Algorithms that use symmetric keys, such as Advanced Encryption Standard (AES), are typically faster than public key algorithms, and are often used for protecting large data stores. Because there's only one key, procedures must be in place to prevent the key from becoming publicly known.
+Advanced Encryption Standard (AES) など、対称キーを使用するアルゴリズムは、通常は公開キー アルゴリズムよりも高速で、大容量データ ストアを保護するためによく使用されます。 キーが 1 つしかないため、キーが公開されないようにするための措置を取る必要があります。
 
-### Asymmetric encryption
+### <a name="asymmetric-encryption"></a>非対称暗号化
 
-With asymmetric algorithms, only the private key member of the pair must be kept private and secure; as its name suggests, the public key can be made available to anyone without compromising the encrypted data. The downside of public key algorithms, however, is that they're much slower than symmetric algorithms, and cannot be used to encrypt large amounts of data.
+非対称暗号化では、ペアの秘密キーのみを秘密にするように保護する必要があります。名前からわかるように、公開キーは誰に知らせても、暗号化されたデータが漏えいすることはありません。 ただし、公開キー アルゴリズムのデメリットは、対称アルゴリズムよりも速度がかなり遅いことです。大容量のデータを暗号化するためには使用できません。
 
-## Key management
+## <a name="key-management"></a>キー管理
 
-In Azure, your encryption keys can either be managed by either Microsoft or the customer. Often the demand for customer-managed keys comes from organizations that need to demonstrate compliance with HIPAA, or other regulations. Such compliance may require that access to keys is logged, and that regular key changes are made and recorded.
+Azure では、暗号化キーを Microsoft で管理することも、ユーザーが管理することもできます。 ユーザー管理キーの需要があるのは、HIPAA または他の規制へのコンプライアンスを明示する必要がある組織です。 このようなコンプライアンスでは、キーへのアクセスのログを記録すること、定期的にキーを変更して記録することが求められる場合があります。
 
-## Azure disk encryption technologies
+## <a name="azure-disk-encryption-technologies"></a>Azure ディスクの暗号化テクノロジ
 
-The main encryption-based disk protection technologies for Azure VMs are:
+Azure VM の暗号化ベースの主要なディスク保護テクノロジは次のとおりです。
 
 - Storage Service Encryption (SSE)
 - Azure Disk Encryption (ADE)
 
-### Storage Service Encryption
+### <a name="storage-service-encryption"></a>Storage Service Encryption
 
-Azure Storage Service Encryption (SSE) is an encryption service built into Azure that it used to protect data at rest. The Azure storage platform automatically encrypts data before it's stored to several storage services, including Azure Managed Disks. Encryption is enabled by default using 256-bit AES encryption, and is managed by the storage account administrator.
+Azure Storage Service Encryption (SSE) は、保存データを保護するために Azure に組み込まれている暗号化サービスです。 Azure ストレージ プラットフォームは、自動的にデータを暗号化してから、Azure Managed Disks などいくつかのストレージ サービスに格納します。 256 ビット AES 暗号化を使用する暗号化が既定で有効になっており、ストレージ アカウント管理者によって管理されます。
 
-### Azure Disk Encryption
+### <a name="azure-disk-encryption"></a>Azure Disk Encryption
 
-Azure Disk Encryption (ADE) is managed by the VM owner. It controls the encryption of Windows and Linux VM-controlled disks, using **BitLocker** on Windows VMs and **DM-Crypt** on Linux VMs. BitLocker Drive Encryption is a data protection feature that integrates with the operating system, and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers. Similarly, DM-Crypt encrypts data at rest for Linux before writing to storage.
+Azure Disk Encryption (ADE) は、VM 所有者によって管理されます。これは、Windows VM では **BitLocker** を使用し、Linux VM では **DM-Crypt** を使用して、Windows や Linux VM で制御されるディスクの暗号化を制御します。 BitLocker ドライブ暗号化は、オペレーティング システムに統合されたデータ保護機能です。コンピューターの紛失、盗難、不適切な廃棄による、データの窃盗や公表の脅威に対処します。 同様に、DM-Crypt は Linux 用に保存データを暗号化してから、ストレージに書き込みます。
 
-ADE ensures that all data on VM disks are encrypted at rest in Azure storage, and ADE is required for VMs backed up to the Recovery Vault.
+ADE により、VM ディスク上のすべてのデータは Azure ストレージで保存時に暗号化されることが保証されます。ADE は Recovery コンテナーにバックアップされる VM では必須です。
 
-With ADE, VMs boot under customer-controlled keys and policies. ADE is integrated with Azure Key Vault for the management of these disk-encryption keys and secrets.
+VM は、ユーザー管理のキーとポリシーにおいて、ADE を使用して起動します。 ADE は、これらのディスク暗号化キーとシークレットを管理するために Azure Key Vault と統合されています。
 
 > [!NOTE] 
-> ADE does not support the encryption of Basic tier VMs, and you cannot use an on-premises Key Management Service (KMS) with ADE.
+> ADE では、Basic レベルの VM の暗号化はサポートされません。また、オンプレミスのキー管理サービス (KMS) を ADE で使用することはできません。
 
-## When to use encryption?
+## <a name="when-to-use-encryption"></a>暗号化を使用するとき
 
-Computer data is at risk when it's in transit (transmitted across the internet or other network), and when it's at rest (saved to a storage device). The at-rest scenario is the primary concern when protecting data on Azure VM disks. For example, someone might download the Virtual Hard Disk (VHD) file associated with an Azure VM, and save it on their laptop. If the VHD is not encrypted, the contents of the VHD are potentially accessible to anyone who can mount the VHD file on their computer.
+コンピューターのデータが危険にさらされるのは、送信中 (インターネットまたは他のネットワークで送信されるとき) と保存時 (ストレージ デバイスに保存されるとき) です。 保存時のシナリオは、Azure VM ディスク上のデータを保護する際に最もよく考慮する必要があります。 たとえば、あるユーザーが Azure VM に関連付けられている仮想ハード ディスク (VHD) ファイルをダウンロードして、自分のノート PC に保存するとします。 VHD が暗号化されていない場合は、VHD を自分のコンピューターにマウントできれば、だれでも内容にはアクセスできるようになります。
 
-For operating system (OS) disks, data such as passwords are encrypted automatically, so even if the VHD is not itself encrypted, it's not easy for such information to be accessed. Applications may also automatically encrypt their own data. However, even with such protections, if someone with malicious intent were to gain access to a data disk, and the disk itself was not encrypted, they might then be in a position to exploit any known weaknesses in that application's data protection. With disk encryption in place, such exploits are not possible.
+オペレーティング システム (OS) ディスクの場合、パスワードなどのデータは自動的に暗号化されます。したがって、VHD そのものが暗号化されていない場合でも、そのような情報へのアクセスは容易ではありません。 アプリケーションでも、それぞれのデータが自動的に暗号化されることがあります。 ただし、そのような保護があっても、悪意のある人物がデータ ディスクにアクセスできたとき、ディスクそのものが暗号化されていない場合には、そのアプリケーションで明らかになっているデータ保護の弱点を悪用することができます。 ディスク暗号化を設定すれば、そのような悪用は不可能になります。
 
-Storage Service Encryption (SSE) is part of Azure itself, and there should be no noticeable performance impact on the VM disk IO when using SSE. Managed disks with SSE are now the default, and there should be no reason to change it. Azure Disk Encryption (ADE) makes use of VM operating system tools (BitLocker and DM-Crypt), so the VM itself has to do some work when encryption or decryption on VM disks is being performed. The impact of this additional VM CPU activity is typically negligible, except in certain situations. For instance, if you have a CPU-intensive application, there may be a case for leaving the OS disk unencrypted to maximize performance. In a situation such as this, you can store application data on a separate encrypted data disk, getting you the performance you need without compromising security.
+Storage Service Encryption (SSE) は Azure の一部であり、SSE を使用しても、VM ディスクの IO のパフォーマンスに大きな影響はありません。現在、SSE を含むマネージド ディスクは既定となっており、変更する理由はありません。 Azure Disk Encryption (ADE) は VM オペレーティング システムのツール (BitLocker と DM-Crypt) を利用します。したがって、VM ディスクに対して暗号化または復号化が実行されているとき、VM そのものがなんらかの処理を行う必要があります。 特定の状況を除き、通常、VM CPU のこのような追加アクティビティの影響はごくわずかです。 たとえば、CPU 負荷の高いアプリケーションがある場合は、OS ディスクを暗号化せずにパフォーマンスを最適化するケースもあります。 そのような状況では、アプリケーション データを暗号化された別のデータ ディスクに格納すると、セキュリティを損なわずに必要なパフォーマンスを得ることができます。
 
-Azure provides two complementary encryption technologies that are used to secure Azure VM disks. These technologies, SSE and ADE, encrypt at different layers, and serve different purposes. Both use AES 256-bit encryption. Using both technologies provides a defence-in-depth protection against unauthorized access to your Azure storage, and to specific VHDs.
+Azure によって、2 つの補完的な暗号化テクノロジが提供され、Azure VM ディスクを保護するために使用されます。 これらのテクノロジ SSE および ADE は、異なるレイヤーで暗号化を行い、異なる目的を達成します。いずれも AES 256 ビット暗号化を使用します。 両方のテクノロジを使用すると、Azure ストレージや特定の VHD への不正アクセスに対して多重の保護が提供されます。

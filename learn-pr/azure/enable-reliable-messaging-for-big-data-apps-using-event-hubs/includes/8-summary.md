@@ -1,25 +1,24 @@
-Azure Event Hubs provides big data applications the capability to process large volume of data. It also has the ability to scale out during exceptionally high- demand periods as and when required. Azure Event Hubs decouple the sending and receiving messages to manage the data processing. This helps eliminate the risk of overwhelming consumer application and data loss due to any unplanned interruptions.
+Azure Event Hubs を使用すると、大量のデータを処理する機能を備えたビッグ データ アプリケーションを実現することができます。 Azure Event Hubs には、需要が著しく高い期間中に必要に応じてスケール アウトする機能もあります。 Azure Event Hubs では、データ処理を管理するために送信メッセージと受信メッセージが分離されます。 これは、予期しない中断が原因でコンシューマー アプリケーションが過負荷状態になったりデータ損失が発生したりするリスクを排除するのに役立ちます。
 
-In this module, you've seen how to deploy Azure Event Hubs as part of an event processing solution. 
-You learned how to:
+このモジュールでは、イベント処理ソリューションの一部として Azure Event Hubs をデプロイする方法を説明しました。 以下の方法について学習しました。
 
-- Use the Azure CLI commands to create an Event Hubs namespace and an event hub in that namespace. 
-- Configure sender and receiver applications to send and receive messages through the event hub.
-- Use the Azure portal to view your event hub status and performance.
+- Azure CLI コマンドを使用して、Event Hubs 名前空間を作成し、さらにその名前空間内にイベント ハブを作成する。 
+- そのイベント ハブを通してメッセージを送受信するように送信側アプリケーションと受信側アプリケーションを構成する。
+- Azure portal を使用してご利用のイベント ハブの状態とパフォーマンスを表示する。
 
-## Clean up 
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>クリーンアップ 
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-The resources you've used for your event hub testing will incur costs against your subscription. When you've have finished with the event hub, remember to remove these resources in order to avoid unnecessary charges.
+ご利用のイベント ハブのテストに使用したリソースには、サブスクリプションに対してコストが発生します。 イベント ハブでの作業が完了したら、不要なコストがかからないようにそれらのリソースを必ず削除してください。
 
-Because you create the hub, namespace, and storage in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. 
+ハブ、名前空間、およびストレージを同じリソースグループ内で作成したので、Azure サブスクリプションをクリーンアップする最も簡単な方法は、リソース グループを削除することです。これにより、そのすべてのコンテンツが削除されます。 
 
-Run the following command to remove the resource group, namespace, storage account, and all related resources. Replace `myResourceGroup` with the name of the resource group you created:
+次のコマンドを実行して、リソース グループ、名前空間、ストレージ アカウント、およびすべての関連リソースを削除します。 `myResourceGroup` は、作成したリソース グループの名前に置き換えます。
 
 ```azurecli
 az group delete --resource-group myResourceGroup
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+削除の確認を求められたら、**[はい]** と答えます。
 
-The command may take several minutes to complete as resources are deleted.
+リソースが削除済みとなってコマンドが完了するまで、数分かかる場合があります。

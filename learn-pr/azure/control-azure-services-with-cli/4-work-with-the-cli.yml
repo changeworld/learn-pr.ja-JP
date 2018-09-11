@@ -4,11 +4,16 @@ title: Azure CLI を使用する
 metadata:
   title: Azure CLI を使用する
   description: コマンドの構造と、Azure CLI を使用するための構文について説明します
-  ms.openlocfilehash: ec5026852b4440c3e3ca91c2b5d78b82b9556171
-  ms.sourcegitcommit: 526b39347ae023619cc4c4add68eff971510e523
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ff3b711c5d58bf5ccc7bc1317a48fc4fc025f800
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42939889"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243303"
 durationInMinutes: 5
 content: '[!include[](includes/4-work-with-the-cli.md)]'

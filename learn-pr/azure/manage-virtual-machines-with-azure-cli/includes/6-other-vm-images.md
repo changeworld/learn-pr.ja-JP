@@ -1,15 +1,15 @@
-We used `Debian` for the image to create the virtual machine. Azure has several standard VM images you can use to create a virtual machine. 
+仮想マシンを作成するためのイメージに `Debian` を使用しました。 Azure には、仮想マシンの作成に使用できる標準的な VM イメージがいくつか用意されています。 
 
-You can get a list of the available images using the `az vm image list --output table` command. This will output the most popular images that are part of an offline list built into the Azure CLI. However, there are _hundreds_ of image options available in the Azure Marketplace. 
+`az vm image list --output table` コマンドを使用して、使用可能なイメージのリストを取得することができます。 このコマンドを使用すると、Azure CLI に組み込まれているオフラインのリストの一部である最も一般的なイメージが出力されます。 ただし、Azure Marketplace には、_数百_の使用可能なイメージ オプションがあります。 
 
 > [!TIP]
-> You can get a full list by adding the `--all` flag to the command. Since the list of images in the Marketplace is very large, it is helpful to filter the list with the `--publisher` or `–-offer` options.
+> 完全なリストを取得するには、コマンドに `--all` フラグを追加します。 Marketplace のイメージのリストは非常に大きいので、`--publisher` または `–-offer` のオプション使用して、リストをフィルター処理すると便利です。
 
-Some images are only available in certain locations. Try adding the `--location [location]` flag to the command to scope the results to ones available in the region where you want to create the virtual machine. For example, type the following into Azure Cloud Shell to get a list of images available in the `eastus` region.
+一部のイメージは、特定の場所でのみ使用可能です。 コマンドに `--location [location]` フラグを追加して、仮想マシンを作成するリージョンで使用可能なものに結果を絞り込んでみましょう。 たとえば、Azure Cloud Shell に次を入力して、`eastus` リージョンで使用できるイメージのリストを取得します。
 
 ```azurecli
 az vm image list --location eastus --output table
 ```
 
 > [!TIP]
-> These are the standard images that are provided by Azure. Keep in mind that you can also [create and upload your own custom images](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images) to create VMs based on unique configurations or less common versions or distributions of an operating system.
+> これらは、Azure で提供されている標準のイメージです。 固有の構成またはオペレーティング システムのあまり一般的ではないバージョンまたはディストリビューションに基づいて VM を作成するために、[独自のカスタム イメージを作成してアップロード](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-custom-images)することもできます。

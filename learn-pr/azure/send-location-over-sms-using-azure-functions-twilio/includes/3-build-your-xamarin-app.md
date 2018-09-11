@@ -1,32 +1,32 @@
-At this point, the mobile app is a simple "Hello World" app. In this unit, you add the UI and some basic application logic.
+この時点で、モバイル アプリはシンプルな "Hello World" アプリです。 このユニットでは、UI といくつかの基本的なアプリケーション ロジックを追加します。
 
-The UI for the app will consist of:
+アプリの UI は次のもので構成されています。
 
-- A text-entry control to enter some phone numbers.
-- A button to send your location to those numbers using an Azure function.
-- A label that will show a message to the user of the current status, such as the location being sent and location sent successfully.
+- 電話番号を入力するためのテキスト入力コントロール。
+- Azure 関数を使用してこれらの番号に場所を送信するボタン。
+- 現在の状態 (送信されている場所、正常に送信された場所など) についてのメッセージをユーザーに表示するラベル。
 
-Xamarin.Forms supports a design pattern called Model-View-ViewModel (MVVM). You can read more about MVVM in the [Xamarin MVVM docs](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm), but the essence of it is, each page (View) has a ViewModel that exposes properties and behavior.
+Xamarin.Forms では、Model-View-ViewModel (MVVM) と呼ばれる設計パターンがサポートされています。 MVVM について詳しくは、[Xamarin MVVM ドキュメント](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)をご覧ください。MVVM の最も重要な点は、各ページ (View) がプロパティと動作を公開する ViewModel を持っていることです。
 
-ViewModel properties are 'bound' to components on the UI by name, and this binding synchronizes data between the View and ViewModel. For example, a `string` property on a ViewModel called `Name` could be bound to the `Text` property of a text-entry control on the UI. The text-entry control shows the value in the `Name` property and, when the user changes the text in the UI, the `Name` property is updated. If the value of the `Name` property is changed in the ViewModel, an event is raised to tell the UI to update.
+ViewModel のプロパティは名前によって UI に "バインド" されており、このバインドによって View と ViewModel の間でデータが同期されます。 たとえば、ViewModel の `Name` という名前の `string` プロパティを、UI のテキスト入力コントロールの `Text` プロパティにバインドすることができます。 テキスト入力コントロールには `Name` プロパティの値が表示され、ユーザーが UI のテキストを変更すると、`Name` プロパティが更新されます。 ViewModel で `Name` プロパティの値が変化すると、UI を更新するためのイベントが発生します。
 
-ViewModel behavior is exposed as command properties, a command being an object that wraps an action that is executed when the command is invoked. These commands are bound by name to controls like buttons, and tapping a button will invoke the command.
+ViewModel の動作はコマンドのプロパティとして公開されます。コマンドは、コマンドが呼び出されたときに実行されるアクションをラップするオブジェクトです。 これらのコマンドはボタンなどのコントロールに名前によってバインドされ、ボタンをタップするとコマンドが呼び出されます。
 
-## Create a base ViewModel
+## <a name="create-a-base-viewmodel"></a>基底 ViewModel を作成する
 
-ViewModels all implement the `INotifyPropertyChanged` interface. This interface has a single event, `PropertyChanged`, which is used to notify the UI of any updates. This event has event args that contain the name of the property that has changed. It's common practice to create a base ViewModel class implementing this interface and providing some helper methods.
+すべての ViewModel で `INotifyPropertyChanged` インターフェイスが実装されています。 このインターフェイスの単一のイベント `PropertyChanged` は、UI に更新を通知するために使用されます。 このイベントには、変更されたプロパティの名前を含むイベント引数があります。 このインターフェイスを実装していくつかのヘルパー メソッドを提供する基底 ViewModel クラスを作成するのが一般的な方法です。
 
-1. Create a new class in the `ImHere` .NET standard project called `BaseViewModel` by right-clicking on the project, and then selecting *Add->Class...*. Name the new class "BaseViewModel" and click **Add**.
+1. プロジェクトを右クリックし、*[追加] > [クラス]* の順に選択して、`BaseViewModel` という名前の `ImHere` .NET 標準プロジェクトに新しいクラスを作成します。新しいクラスの名前を "BaseViewModel" にして、**[追加]** をクリックします。
 
-1. Make the class `public` and derive from `INotifyPropertyChanged`. You'll need to add a using directive for `System.ComponentModel`.
+1. クラスを `public` にして、`INotifyPropertyChanged` から派生します。 `System.ComponentModel` に using ディレクティブを追加する必要があります。
 
-1. Implement the `INotifyPropertyChanged` interface by adding the `PropertyChanged` event:
+1. `PropertyChanged` イベントを追加することで `INotifyPropertyChanged` インターフェイスを実装します。
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-1. The common pattern for ViewModel properties is to have a public property with a private backing field. In the property setter, the backing field is checked against the new value. If the new value is different to the backing field, the backing field is updated and the `PropertyChanged` event is raised. This logic is easy to factor out into a method, so add the `Set` method. You'll need to add a using directive for the `System.Runtime.CompilerServices` namespace.
+1. ViewModel のプロパティの一般的なパターンでは、プライベート バッキング フィールドを持つパブリック プロパティを使用します。 プロパティ セッターで、新しい値に対してバッキング フィールドが確認されます。 新しい値がバッキング フィールドと異なる場合、バッキング フィールドが更新されて、`PropertyChanged` イベントが発生します。 このロジックを簡単に抽出して `Set` メソッドとして追加できます。 `System.Runtime.CompilerServices` 名前空間に対して using ディレクティブを追加する必要があります。
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -37,9 +37,9 @@ ViewModels all implement the `INotifyPropertyChanged` interface. This interface 
     }
     ```
 
-    This method takes a reference to the backing field, the new value, and the property name. If the field hasn't changed, the method returns, otherwise, the field is updated and the `PropertyChanged` event is raised. The `propertyName` parameter on the `Set` method is a default parameter and is marked with the `CallerMemberName` attribute. When this method is called from a property setter, this parameter is normally left as the default value. The compiler will then automatically set the parameter value to be the name of the calling property.
+    このメソッドは、バッキング フィールド、新しい値、プロパティ名への参照を受け取ります。 フィールドが変更されていない場合、メソッドは戻ります。変更されている場合は、フィールドが更新されて `PropertyChanged` イベントが発生します。 `Set` メソッドの `propertyName` パラメーターは既定のパラメーターであり、`CallerMemberName` 属性でマークされています。 このメソッドがプロパティ セッターから呼び出されるとき、このパラメーターは通常は既定値のままにされます。 コンパイラによって、呼び出し元プロパティの名前がパラメーターの値に自動的に設定されます。
 
-The full code for this class is below.
+このクラスの完全なコードは次のとおりです。
 
 ```cs
 using System.ComponentModel;
@@ -61,15 +61,15 @@ namespace ImHere
 }
 ```
 
-## Create a ViewModel for the page
+## <a name="create-a-viewmodel-for-the-page"></a>ページの ViewModel を作成する
 
-The `MainPage` will have a text-entry control for phone numbers and a label to display a message. These controls will be bound to properties on a ViewModel.
+`MainPage` には、電話番号のためのテキスト入力コントロールとメッセージ表示用のラベルがあります。 これらのコントロールは、ViewModel のプロパティにバインドされています。
 
-1. Create a class called `MainViewModel` in the `ImHere` .NET standard project.
+1. `ImHere` .NET 標準プロジェクトに `MainViewModel` というクラスを作成します。
 
-1. Make this class public and derive from `BaseViewModel`.
+1. このクラスを public にして、`BaseViewModel` から派生します。
 
-1. Add two `string` properties, `PhoneNumbers` and `Message`, each with a backing field. In the property setter, use the base class `Set` method to update the value and raise the `PropertyChanged` event.
+1. それぞれバッキング フィールドを備えた 2 つの `string` プロパティ `PhoneNumbers` と `Message` を追加します。 プロパティ セッターで、基底クラスの `Set` メソッドを使用して値を更新し、`PropertyChanged` イベントを発生させます。
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ The `MainPage` will have a text-entry control for phone numbers and a label to d
     }
    ```
 
-1. Add a read-only command property called `SendLocationCommand`. This command will have a type of `ICommand` from the `System.Windows.Input` namespace.
+1. 読み取り専用のコマンド プロパティ `SendLocationCommand` を追加します。 このコマンドは `System.Windows.Input` 名前空間の `ICommand` 型です。
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-1. Add a constructor to the class, and in this constructor, initialize the `SendLocationCommand` as a new `Command` from the `Xamarin.Forms` namespace. The constructor for this command takes an `Action` to run when the command is invoked, so create an `async` method called `SendLocation` and pass a lambda function that `await`s this call to the constructor. The body of the `SendLocation` method will be implemented in later units in this module. You'll need to add a using directive for the `System.Threading.Tasks` namespace to be able to return a `Task`.
+1. クラスにコンストラクターを追加し、このコンストラクターで `SendLocationCommand` を `Xamarin.Forms` 名前空間の新しい `Command` として初期化します。 このコマンドのコンストラクターはコマンドが呼び出されたときに実行する `Action` を受け取るので、`SendLocation` という名前の `async` メソッドを作成し、この呼び出しを `await` するラムダ関数をコンストラクターに渡します。 `SendLocation` メソッドの本体は、このモジュールの後のユニットで実装します。 `System.Threading.Tasks` 名前空間に対して using ディレクティブを追加し、`Task` を戻すことができるようにする必要があります。
 
     ```cs
     public MainViewModel()
@@ -106,7 +106,7 @@ The `MainPage` will have a text-entry control for phone numbers and a label to d
     }
     ```
 
-The code for this class is shown below.
+このクラスのコードは次のとおりです。
 
 ```cs
 using System.Threading.Tasks;
@@ -145,15 +145,15 @@ namespace ImHere
 }
 ```
 
-## Create the user interface
+## <a name="create-the-user-interface"></a>ユーザー インターフェイスを作成する
 
-Xamarin.Forms UIs can be built using XAML.
+Xamarin.Forms UI は XAML を使用して作成できます。
 
-1. Open the `MainPage.xaml` file from the `ImHere` project. The page will open in the XAML editor.
+1. `ImHere` プロジェクトから `MainPage.xaml` ファイルを開きます。 XAML エディターでページが開きます。
 
-    NOTE - The `ImHere.UWP` project also contains a file called `MainPage.xaml`. Make sure you're editing the one in the .NET standard library.
+    注 - `ImHere.UWP` プロジェクトにも `MainPage.xaml` という名前のファイルが含まれています。 .NET 標準ライブラリのものを編集していることを確認してください。
 
-1. Before you can bind controls to properties on a ViewModel, you have to set an instance of the ViewModel as the binding context of the page. Add the following XAML inside the top-level `ContentPage`.
+1. ViewModel のプロパティにコントロールをバインドする前に、ページのバインディング コンテキストとして ViewModel のインスタンスを設定する必要があります。 最上位レベルの `ContentPage` の中に次の XAML を追加します。
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ Xamarin.Forms UIs can be built using XAML.
     </ContentPage.BindingContext>
     ```
 
-1. Delete the contents of the `StackLayout` and add some padding inside it to help make the UI look better.
+1. `StackLayout` の内容を削除し、UI の見た目がよくなるように何かパディングを追加します。
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-1. Add an `Editor` control that the user can use to add phone numbers to the `StackLayout`, with a `Label` above to describe what the entry control is for. `StackLayout`'s stack child controls either horizontally or vertically in the order in which the controls are added, so adding the `Label` first will put it above the `Editor`. `Editor` controls are multi-line entry controls, allowing the user to enter multiple phone numbers, one per line.
+1. ユーザーが `StackLayout` に電話番号を追加するのに使用できる `Editor` コントロールを追加します。上の `Label` では、入力コントロールの用途を説明します。 `StackLayout` では子コントロールが追加された順序で水平方向または垂直方向に配置されるので、`Label` を最初に追加すると `Editor` の上に配置されます。 `Editor` コントロールは複数行入力コントロールであり、ユーザーは 1 行に 1 つずつ、複数の電話番号を入力できます。
 
     ```xml
     <StackLayout Padding="20">
@@ -177,25 +177,25 @@ Xamarin.Forms UIs can be built using XAML.
     </StackLayout>
     ```
 
-    The `Text` property on the `Editor` is bound to the `PhoneNumbers` property on the `MainViewModel`. The syntax for binding is to set the property value to `"{Binding <property name>}"`. The curly braces will tell the XAML compiler that this value is special and should be treated differently from a simple `string`.
+    `Editor` の `Text` プロパティは、`MainViewModel` の `PhoneNumbers` プロパティにバインドされます。 プロパティの値を `"{Binding <property name>}"` に設定するのがバインドの構文です。 中かっこにより、この値は特別であり、シンプルな `string` とは異なる方法で扱う必要があることを XAML コンパイラに指示します。
 
-1. Add a `Button` to send the user's location below the `Editor`.
+1. ユーザーの場所を送信するための `Button` を、`Editor` の下に追加します。
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
             Command="{Binding SendLocationCommand}" />
     ```
 
-    The `Command` property is bound to the `SendLocationCommand` command on the ViewModel. When the button is tapped, the command will be executed.
+    `Command` プロパティは、ViewModel の `SendLocationCommand` コマンドにバインドされています。 ボタンをタップすると、コマンドが実行されます。
 
-1. Add a `Label` to show the status message below the `Button`.
+1. ステータス メッセージを表示する `Label` を、`Button` の下に追加します。
 
     ```xml
     <Label Text="{Binding Message}"
            HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
     ```
 
-The full code for this page is below.
+このページの完全なコードは次のとおりです。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -217,10 +217,10 @@ The full code for this page is below.
 </ContentPage>
 ```
 
-Run the app to see the new UI. If you want to validate the bindings at this point, you can do so by adding breakpoints to the properties or the `SendLocation` method.
+アプリを実行して新しい UI を表示します。 この時点でバインドを検証する場合は、プロパティまたは `SendLocation` メソッドにブレークポイントを追加することによって行うことができます。
 
-![The new app UI](../media-drafts/3-new-ui.png)
+![アプリの新しい UI](../media-drafts/3-new-ui.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to create the UI for the app using XAML, along with a ViewModel to handle the applications logic. You also learned how to bind the ViewModel to the UI. In the next unit, you add location lookup to the ViewModel.
+このユニットでは、XAML を使用してアプリの UI を作成する方法、およびアプリケーションのロジックを処理する ViewModel を作成する方法について説明しました。 ViewModel を UI にバインドする方法も学習しました。 次のユニットでは、ViewModel に場所の参照を追加します。

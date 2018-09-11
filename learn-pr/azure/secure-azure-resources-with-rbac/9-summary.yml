@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-azure-resources-with-rbac.9-summary
 metadata:
-  title: Summary
-  description: Summary
+  title: まとめ
+  description: まとめ
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Summary
+  ms.openlocfilehash: 3c3656f51d0f112cda19bfa76109338fb60b6047
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235269"
+title: まとめ
 durationInMinutes: 2
-content: |
-  [!include[](includes/9-summary.md)]
+content: '[!include[](includes/9-summary.md)]'

@@ -1,62 +1,62 @@
-In this unit, you will install Visual Studio Code and the Azure App Service extension, which will get you ready to develop for Microsoft Azure and to deploy a web app.
+このユニットでは、Visual Studio Code と Azure App Service 拡張機能をインストールします。これで、Microsoft Azure 向けに Web アプリを開発し、デプロイする準備が整います。
 
-## Exercise steps
+## <a name="exercise-steps"></a>演習の手順
 
-First, identify which operating system you are using, and follow the steps in the appropriate section below to install Visual Studio Code.
+まず、使用しているオペレーティング システムを特定し、以下の適切なセクションの手順に従って Visual Studio Code をインストールします。
 
-### Windows
+### <a name="windows"></a>Windows
 
-1. Download the Visual Studio Code installer for Windows.
+1. Windows 用 Visual Studio Code インストーラーをダウンロードします。
 
-1. Run the installer. This won't take long.
+1. インストーラーを実行します。 この操作に長い時間はかかりません。
 
-1. Open VS Code by navigating to the installation folder (the default path is C:\Program Files\Microsoft VS Code for a 64-bit machine).
+1. インストール フォルダーに移動して VS Code を開きます (64 ビット マシンの場合、既定のパスは C:\Program Files\Microsoft VS Code です)。
 
-### macOS
+### <a name="macos"></a>macOS
 
-1. Download Visual Studio Code for macOS.
+1. macOS 用 Visual Studio Code をダウンロードします。
 
-1. Double-click on the downloaded archive to expand the contents.
+1. ダウンロードしたアーカイブをダブルクリックして内容を展開します。
 
-1. Drag Visual Studio Code.app to the Applications folder, making it available in the Launchpad.
+1. Visual Studio Code.app を Applications フォルダーにドラッグし、Launchpad で使用できるようにします。
 
-1. Add VS Code to your Dock by right-clicking on the icon, and choosing Options > Keep in Dock.
+1. アイコンを右クリックし、[オプション] > [Dock に追加] の順に選択し、Dock に VS Code を追加します。
 
-### Linux – Debian and Ubuntu
+### <a name="linux--debian-and-ubuntu"></a>Linux - Debian と Ubuntu
 
-1. Download and install the [.deb package (64-bit)](https://go.microsoft.com/fwlink/?LinkID=760868), either through the graphical software center, if it's available, or through the command line (replacing `<file>` with the .deb filename you downloaded):
+1. グラフィカル ソフトウェア センター (使用できる場合) またはコマンド ラインを使用して [.deb package (64 ビット)](https://go.microsoft.com/fwlink/?LinkID=760868) をダウンロードしてインストールします (`<file>` はダウンロードした .deb ファイル名で置き換えます)。
 
     ```bash
     sudo dpkg -i <file>.deb
     sudo apt-get install -f # Install dependencies
     ```
 
-### Linux – RHEL, Fedora, and CentOS
+### <a name="linux--rhel-fedora-and-centos"></a>Linux - RHEL、Fedora、および CentOS
 
-1. Use the following script to install the key and repository:
+1. 次のスクリプトを使用して、キーとリポジトリをインストールします。
 
     ```bash
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
     ```
 
-1. Update the package cache, and install the package by using dnf (Fedora 22 and above):
+1. パッケージ キャッシュを更新し、dnf (Fedora 22 以降) を使用してパッケージをインストールします。
 
     ```bash
     dnf check-update
     sudo dnf install code
     ```
 
-### Linux – openSUSE and SLE
+### <a name="linux--opensuse-and-sle"></a>Linux - openSUSE と SLE
 
-1. The yum repository also works for openSUSE and SLE based systems. The following script will install the key and repository:
+1. yum リポジトリは、openSUSE と SLE ベースのシステムでも機能します。 次のスクリプトで、キーとリポジトリをインストールします。
 
     ```bash
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/zypp/repos.d/vscode.repo'
     ```
 
-1. Update the package cache and install the package by using:
+1. パッケージ キャッシュを更新し、以下を使用してパッケージをインストールします。
 
     ```bash
     sudo zypper refresh
@@ -64,20 +64,20 @@ First, identify which operating system you are using, and follow the steps in th
     ```
 
 > [!NOTE]
-> For further details about installing or updating VS Code on various Linux distributions, please see the [Running VS Code on Linux documentation](https://code.visualstudio.com/docs/setup/linux).
+> さまざまな Linux ディストリビューションで VS Code をインストールまたは更新する方法の詳細については、[Linux 上で VS Code を実行する方法に関するドキュメント](https://code.visualstudio.com/docs/setup/linux)を参照してください。
 
-## Install Azure App Service extension
+## <a name="install-azure-app-service-extension"></a>Azure App Service 拡張機能をインストールする
 
-Once you have installed VS Code, open it.
+VS Code のインストールが完了したら開きます。
 
-1. Go to the Extensions tab.
+1. [拡張機能] タブに移動します。
 
-1. Search for Azure App Service.
+1. Azure App Service を検索します。
 
-1. Click Install.
+1. [インストール] をクリックします。
 
-    The following screenshot shows the Azure App Service extension selected from the Visual Studio Code extension search results.
+    次のスクリーン ショットは、Visual Studio Code 拡張機能の検索結果から選択した Azure App Service 拡張機能を示しています。
 
-    ![Screenshot of VS Code showing the Extensions tab with the Azure App Service extension highlighted in the search results.](../media/3-install-azure-extension.png)
+    ![[拡張機能] タブが表示され、検索結果で Azure App Service 拡張機能が強調表示されている VS Code のスクリーンショット。](../media/3-install-azure-extension.png)
 
-This will install the extension. You will be ready to connect to your Azure subscription, and develop for and deploy your web, mobile, or API app to an Azure App Service.
+これで、拡張機能がインストールされます。 Azure サブスクリプションに接続し、Web、モバイル、または API アプリを開発して Azure App Service にデプロイする準備が整います。

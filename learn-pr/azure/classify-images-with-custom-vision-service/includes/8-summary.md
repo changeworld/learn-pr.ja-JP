@@ -1,3 +1,3 @@
-### Summary
+### <a name="summary"></a>まとめ
 
-Image classification is playing an increasingly large role in industry as a means for automating such tasks as checking images uploaded to web sites for offensive content and inspecting parts rolling off assembly lines for defects. Building an image-classification model manually — that is, coding it from the ground up in Python, R, or another language — requires no small amount of expertise, but the Custom Vision Service enables virtually anyone to build sophisticated image-classification models. And once a model is built and trained, an app that uses it is only few lines of code away.
+画像分類は、Web サイトにアップロードされた画像に不快なコンテンツがないか調べる作業や流れ作業台を流れる部品に欠陥がないか調べる作業などを自動化する手段として、産業において大きな役割を担っており、その重要性はますます上がっています。 画像分類モデルを手作業で作成するには、つまり、Python や R などの言語で一からプログラミングするには、かなりの専門知識が必要になりますが、Custom Vision Service を使用すると、事実上、誰でも高度な画像分類モデルを作成できます。 また、モデルを一度作成すれば、それを使用するアプリをわずか数行のコードで作成できます。

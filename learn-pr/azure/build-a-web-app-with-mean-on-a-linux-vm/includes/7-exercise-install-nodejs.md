@@ -1,38 +1,38 @@
-In this unit, you will install Node.js - the **N** in the MEAN acronym - on an Azure-hosted Ubuntu Linux virtual machine. Node.js will serve as our runtime for handling our HTTP traffic and hosting our web application.
+このユニットでは、Azure でホストされている Ubuntu Linux 仮想マシンに Node.js (頭字語 MEAN の **N**) をインストールします。 Node.js は、HTTP トラフィックを処理し、Web アプリケーションをホストするためのランタイムとして機能します。
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>VM に接続する
 
-In order to install Node.js, you have to connect to the VM using **ssh**. If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+Node.js をインストールするには、**ssh** を使用して VM に接続する必要があります。 まだ VM に接続していない場合は、次のコマンドを実行します。 `<vm-admin-username>` と `<vm-public-ip>` のプレースホルダーを、管理者ユーザー名とご自分の VM のパブリック IP アドレスに置き換えます。
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Install Node.js
+## <a name="install-nodejs"></a>Node.js をインストールする
 
 > [!Important]
-> Ubuntu provides an unofficial package called **Node.js-legacy**. This package is not maintained by Node.js and is outdated.
+> Ubuntu では、**Node.js-legacy** という名前の非公式のパッケージを提供しています。 このパッケージは、期限が切れており、Node.js では管理されていません。
 
-1. Register the Node.js package repository, so **apt-get** can find the right package to install on your virtual machine.
+1. ご使用の仮想マシンにインストールできる適切なパッケージを **apt-get** で検出できるように、Node.js パッケージ リポジトリを登録します。
 
     ```bash
     curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
     ```
 
-1. Install the Node.js package on your Linux system.
+1. Linux システムに Node.js パッケージをインストールします。
 
     ```bash
     sudo apt-get install -y Node.js
     ```
 
-1. Verify the Node.js installation succeeded by running the following simple Node.js command.
+1. 次の単純な Node.js コマンドを実行して、Node.js のインストールが成功したことを確認します。
 
     ```bash
     node -v
     ```
 
-    The output should be something like `v8.11.4`, with the version reflecting the latest Node.js version that's available when you install the package.
+    出力は `v8.11.4` のようになり、パッケージのインストール時点で利用できる最新の Node.js バージョンが反映されたバージョンが表示されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-With Node.js installed on your virtual machine, we can start building a web application that it will be responsible for running.
+仮想マシンに Node.js をインストールすると、実行を担当する Web アプリケーションを構築できるようになります。

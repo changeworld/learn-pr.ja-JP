@@ -1,31 +1,31 @@
-Now that a virtual machine has been created, we can get information about it through other commands.
+仮想マシンが作成されたら、他のコマンドを使用してその仮想マシンに関する情報を取得できます。
 
-Let's start with `vm list`.
+`vm list` から始めましょう。
 
 ```azurecli
 az vm list
 ```
 
-This command will return _all_ virtual machines defined in this subscription. The output can be filtered to a specific resource group through the `--resource-group` parameter. 
+このコマンドは、このサブスクリプションで定義されている_すべて_の仮想マシンを返します。 出力は、`--resource-group` パラメーターを使用して特定のリソース グループにフィルター処理することができます。 
 
-## Output types
-Notice that the default response type for all the commands we've done so far is JSON. This is great for scripting - but most people find it harder to read. You can change the output style for any response through the `--output` flag. For example, try the following command in Azure Cloud Shell to see the different output style.
+## <a name="output-types"></a>出力の種類
+これまでに行ったすべてのコマンドに対する既定の応答の種類は、JSON でした。 これはスクリプトには優れていますが、ほとんどの人が読みにくいと感じます。 `--output` フラグを使用して、任意の応答の出力スタイルを変更することができます。 たとえば、異なる出力スタイルを確認するため、Azure Cloud Shell で次のコマンドを試してください。
 
 ```azurecli
 az vm list --output table
 ```
 
-Along with `table`, you can specify `json` (the default), `jsonc` (colorized JSON), or `tsv` (Table-Separated Values). Try a few variations with the above command to see the difference.
+`table` と共に、`json` (既定)、`jsonc` (色付けされた JSON)、または `tsv` (テーブル区切り値) を指定できます。 違いを確認するため、上記のコマンドを使用していくつかのバリエーションを試してください。
 
-## Getting the IP address
+## <a name="getting-the-ip-address"></a>IP アドレスを取得する
 
-Another useful command is `vm list-ip-addresses`, which will list the public and private IP addresses for a VM. If they change, or you didn't capture them during creation, you can retrieve them at any time.
+もう 1 つの便利なコマンドが `vm list-ip-addresses` です。これは、VM のパブリック IP アドレスとプライベート IP アドレスを一覧表示します。 IP アドレスは、変更になった場合、または作成時にキャプチャしなかった場合、いつでも取得することができます。
 
 ```azurecli
 az vm list-ip-addresses -n SampleVM -o table
 ```
 
-This returns:
+次が返されます。
 
 ```
 VirtualMachine    PublicIPAddresses    PrivateIPAddresses
@@ -34,23 +34,23 @@ SampleVM          168.61.54.62         10.0.0.4
 ```
 
 > [!TIP]
-> Notice that we are using a shorthand syntax for the `--output` flag as `-o`. Most parameters to Azure CLI commands can be shortened to a single dash and letter. For example, `--name` can be shortened to `-n` and `--resource-group` to `-g`. This is handy for typing, but we recommend using the full option name in scripts for clarity. Check the documentation for details on each command.
+> `--output` フラグの略式の構文として `-o` を使用していることに注目してください。 Azure CLI コマンドのほとんどのパラメーターは、単一のダッシュと文字に短縮できます。 たとえば、`--name` は `-n`に、`--resource-group` は `-g` に短縮できます。 これは入力するには便利ですが、スクリプトではわかりやすくするために完全なオプション名を使用することをお勧めします。 各コマンドの詳細については、ドキュメントで確認してください。
 
-## Getting VM details
+## <a name="getting-vm-details"></a>VM の詳細を取得する
 
-We can get more detailed information about a specific virtual machine by name or ID using the `vm show` command.
+`vm show` コマンドを使用して、名前または ID で特定の仮想マシンに関するより詳細な情報を取得することができます。
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM
 ```
 
-This will return a fairly large JSON block with all sorts of information about the VM, including attached storage devices, network interfaces, and all of the object IDs for resources that the VM is connected to. Again, we could change to a table format, but that omits almost all of the interesting data. Instead, we can turn to a built-in query language for JSON called [JMESPath](http://jmespath.org/).
+これにより、VM に関するあらゆる情報 (接続されている記憶域デバイス、ネットワーク インターフェイス、および VM が接続されているリソースのすべてのオブジェクト ID など) を含むかなり大きな JSON ブロックが返されます。 テーブル形式に変更することはできますが、それにより興味深いデータのほとんどが省略されます。 代わりに、[JMESPath](http://jmespath.org/) と呼ばれる JSON 用の組み込みクエリ言語を使用することができます。
 
-## Adding filters to queries with JMESPath
+## <a name="adding-filters-to-queries-with-jmespath"></a>JMESPath を使用してクエリにフィルターを追加する
 
-JMESPath is an industry-standard query language built around JSON objects. The simplest query is to specify an _identifier_ that selects a key in the JSON object.
+JMESPath は、JSON オブジェクトを中心に構築された業界標準クエリ言語です。 最もシンプルなクエリは、JSON オブジェクト内のキーを選択する_識別子_を指定することです。
 
-For example, given the object:
+たとえば、次のようなオブジェクトについて考えてみましょう。
 
 ```json
 {
@@ -71,7 +71,7 @@ For example, given the object:
 }
 ```
 
-We can use the query `people` to return the array of values for the `people` array. If we just want _one_ of the people, we can use an indexer. For example, `people[1]` would return:
+クエリ `people`を使用して、`people` 配列の値の配列を返すことができます。 people の _1 人_だけが必要な場合は、インデクサーを使用できます。 たとえば、`people[1]` と指定すると次のオブジェクトが返されます。
 
 ```json
 {
@@ -80,7 +80,7 @@ We can use the query `people` to return the array of values for the `people` arr
 }
 ```
 
-We can also add specific qualifiers that would return a subset of the objects based on some criteria. For example, adding the qualifier `people[?age > '25']` would return:
+絞り込むための修飾子を追加することもでき、条件に基づいてオブジェクトのサブセットが返されます。 たとえば、修飾子 `people[?age > '25']` を指定すると次のオブジェクトが返されます。
 
 ```json
 [
@@ -95,7 +95,7 @@ We can also add specific qualifiers that would return a subset of the objects ba
 ]
 ```
 
-Finally, we can constrain the results by adding a select: `people[?age > '25'].[name]` that returns just the names:
+最後に、結果を簡潔にするために select: `people[?age > '25'].[name]` を追加します。これで、名前だけが返されます。
 
 ```json
 [
@@ -108,34 +108,34 @@ Finally, we can constrain the results by adding a select: `people[?age > '25'].[
 ]
 ```
 
-JMESQuery has several other interesting query features. When you have time, check out the [online tutorial](http://jmespath.org/tutorial.html) available on the [JMESPath.org](http://jmespath.org/) site.
+JMESQuery には、興味深いクエリ機能が他にもいくつかあります。 時間があるときに、[オンライン チュートリアル](http://jmespath.org/tutorial.html)を確認してください。これは [JMESPath.org](http://jmespath.org/) サイトから入手できます。
 
-## Filtering our Azure CLI queries
+## <a name="filtering-our-azure-cli-queries"></a>Azure CLI クエリをフィルター処理する
 
-With a basic understanding of JMES queries, we can add filers to the data being returned by queries like the `vm show` command. For example, we can retrieve the admin user name:
+JMES クエリの基礎知識があれば、クエリによって返されるデータに `vm show` コマンドのようなフィルターを追加できます。 たとえば、管理者のユーザー名を取得できます。
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "osProfile.adminUsername"
 ```
 
-We can get the size assigned to our VM:
+VM に割り当てられているサイズを取得できます。
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query hardwareProfile.vmSize
 ```
 
-Or to retrieve all the IDs for your network interfaces, you can use the query:
+または、次のクエリを使用して、ネットワーク インターフェイスのすべての ID を取得できます。
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "networkProfile.networkInterfaces[].id"
 ```
 
-This query technique will work with any Azure CLI command and can be used to pull specific bits of data out on the command line. It is useful for scripting as well - for example, you can pull a value out of your Azure account and store it in an environment or script variable. If you decide to use it this way, a useful flag to add is the `--output tsv` parameter (which can be shortened to `-o tsv`). This will return the results in tab-separated values that only include the actual data values with tab separators.
+このクエリ手法は、任意の Azure CLI コマンドで機能し、コマンドライン上のデータの特定の部分を取得するために使用できます。 これはスクリプトにも役立ちます。たとえば、Azure アカウントから値を取得し、それを環境内またはスクリプトの変数に格納することができます。 このクエリ手法を使用する場合に、追加すると便利なフラグが `--output tsv` パラメーター (`-o tsv` に短縮可能) です。 これを追加すると、実際のデータ値とタブ区切りのみを含むタブ区切り値で結果が返されます。
 
-As an example,
+たとえば、
 
 ```azurecli
 az vm show --resource-group ExerciseResources --name SampleVM --query "networkProfile.networkInterfaces[].id" -o tsv
 ```
 
-returns the text: `/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`
+次のテキストが返されます。`/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources/providers/Microsoft.Network/networkInterfaces/SampleVMVMNic`

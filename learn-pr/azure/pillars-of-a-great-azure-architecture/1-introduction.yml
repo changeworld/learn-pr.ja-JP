@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.1-introduction
-title: Introduction
+title: はじめに
 metadata:
-  title: Introduction
-  description: Introduction
+  title: はじめに
+  description: はじめに
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7cd52fd582ba72123c32ad3de2c464882817658f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231505"
 durationInMinutes: 2
-content: |
-  [!include[](includes/1-introduction.md)]
+content: '[!include[](includes/1-introduction.md)]'

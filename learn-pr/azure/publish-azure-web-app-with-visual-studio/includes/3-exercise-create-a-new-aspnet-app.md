@@ -1,64 +1,64 @@
-Now that you've got your app up and running on your local machine, it's time to get it published to Azure. 
+ローカル コンピューターでアプリを稼働状態にしたので、次にアプリを Azure に発行します。 
 
-In this unit, you will create, build, and run a new ASP.NET web application on your local machine.
+このユニットでは、ローカル コンピューターで新しい ASP.NET Web アプリケーションを作成、ビルド、実行します。
 
-## Create a new project
+## <a name="create-a-new-project"></a>新しいプロジェクトを作成する
 
-### Visual Studio for Windows
+### <a name="visual-studio-for-windows"></a>Visual Studio for Windows
 
-The first step is to start Visual Studio and create a local ASP.NET Core web application.
+最初に、Visual Studio を起動して、ローカル ASP.NET Core Web アプリケーションを作成します。
 
-1. On the Visual Studio start page, select **File**, then click **New**, and then click **Project..**.
+1. Visual Studio の開始ページで、**[ファイル]** を選択し、**[新規]** をクリックして、**[プロジェクト...]** をクリックします。
 
-1. In the **New Project** dialog box, on the left-hand pane, select **Web**.
+1. **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Web]** を選択します。
 
-1. In the center pane, click **ASP.NET Core Web Application**.
+1. 中央のウィンドウで、**[ASP.NET Core Web アプリケーション]** をクリックします。
 
-1. At the bottom of the dialog box, in the **Name** field, enter **Alpine Ski House**.
+1. ダイアログの下部にある **[名前]** フィールドに、「**Alpine Ski House**」と入力します。
 
-1. Select a **Location** for your new solution.
+1. 新しいソリューションの **[場所]** を選択します。
 
-1. Click the **OK** button to create your project.
+1. **[OK]** ボタンをクリックしてプロジェクトを作成します。
 
-1. In the **New ASP.NET Core Web Application** dialog box, you will see a selection of starting templates. For this exercise, select **Web Application**, and then click **OK** to create your project.
+1. **[新しい ASP.NET Core Web アプリケーション]** ダイアログ ボックスで、開始用テンプレートの選択肢が表示されます。 この演習では **[Web アプリケーション]** を選択し、**[OK]** をクリックしてプロジェクトを作成します。
 
-    ![New Project Dialog](../media-draft/3-aspnet-templates.png)
+    ![[新しいプロジェクト] ダイアログ](../media-draft/3-aspnet-templates.png)
 
     > [!NOTE]
-    > You can also select different starting templates in this dialog box depending on your web development requirements. At the top of the dialog box, you are also able to select the version of ASP.NET Core. You should select ASP.NET Core 2.0 or later.
+    > このダイアログ ボックスでは、Web 開発の要件に応じて別の開始テンプレートを選択することもできます。 ダイアログ ボックスの上部では、ASP.NET Core のバージョンを選択することもできます。 ASP.NET Core 2.0 以降を選択する必要があります。
 
-1. You should now have your new ASP.NET Core web application solution.
+1. これで、新しい ASP.NET Core Web アプリケーション ソリューションが作成されます。
 
-    ![New Project Dialog](../media-draft/3-new-solution.png)
+    ![[新しいプロジェクト] ダイアログ](../media-draft/3-new-solution.png)
 
-### Visual Studio Mac
+### <a name="visual-studio-mac"></a>Visual Studio for Mac
 
-1. On the Visual Studio start page, select **File**, then click **New**, and then click **Project..**.
+1. Visual Studio の開始ページで、**[ファイル]** を選択し、**[新規]** をクリックして、**[プロジェクト...]** をクリックします。
 
-1. Under .**NET Core**, select an **ASP.NET Core Web App**, and then click **Next**.
+1. **[.NET Core]** で **[ASP.NET Core Web アプリ]** を選択し、**[次へ]** をクリックします。
 
-1. For the **Project Name**, type **AlpineSkiHouse**. This should also auto-populate the solution name.
+1. **[プロジェクト名]** に「**AlpineSkiHouse**」と入力します。 ソリューション名にも同じ名前が自動的に設定されます。
 
-1. Select a **location** on your local machine for the project.
+1. プロジェクトに使用するローカル コンピューター上の**場所**を選択します。
 
-1. Click **Create**.
+1. **[作成]** をクリックします。
 
-## Build and test on your local machine
+## <a name="build-and-test-on-your-local-machine"></a>ローカル コンピューター上でビルドしてテストする
 
-Now, let's build and test your new project on your local machine to ensure it builds and deploys locally before deploying to Azure.
+次に、ローカル コンピューター上で新しいプロジェクトをビルドしてテストし、Azure に展開する前にローカルでビルドと展開を確認します。
 
-1. Press **F5** to run the app in debug mode or **Ctrl-F5** to run without attaching the debugger.
+1. **F5** キーを押してデバッグ モードでアプリを実行するか、または **Ctrl + F5** キーを押してデバッガーをアタッチしないで実行します。
 
-    ![New Project Dialog](../media-draft/3-webapp-launch.png)
+    ![[新しいプロジェクト] ダイアログ](../media-draft/3-webapp-launch.png)
 
-Visual Studio starts IIS Express and runs the app. When Visual Studio creates a web project, a random port is used for the web server. In the preceding image, the port number is 44381. When you run the app, you'll likely see a different port number.
+Visual Studio で IIS Express が開始されて、アプリが実行されます。 Visual Studio で Web プロジェクトが作成されるとき、Web サーバーにはランダムなポートが使用されます。 上の図では、ポート番号は 44381 です。 ご自分のアプリを実行すると、おそらく別のポート番号が表示されます。
 
 > [!TIP]
-> Launching the app with **Ctrl+F5** (non-debug mode) allows you to make code changes, save the file, refresh the browser, and see the code changes. Many developers prefer to use non-debug mode to quickly launch the app and view changes.
+> **Ctrl + F5** キー (非デバッグ モード) でアプリを起動すると、コードを変更してファイルを保存し、ブラウザーを更新して、コードの変更を確認することができます。 多くの開発者は、非デバッグ モードを使用してすばやくアプリを起動して変更を見ることを好みます。
 
 > [!IMPORTANT]
-> You might notice the section at the top of the web page that provides a place for your privacy and cookie use policy. Select **Accept** to consent to tracking. This app doesn't track personal information. The template-generated code includes assets to help meet General Data Protection Regulation (GDPR).
+> Web ページの上部のセクションに、プライバシーと Cookie 使用ポリシーが表示されます。 **[同意する]** を選択して、追跡に同意します。 このアプリでは、個人情報は追跡されません。 テンプレートによって生成されるコードには、一般データ保護規則 (GDPR) を満たすための資産が含まれます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-The first step to getting your ASP.NET site up and running is to create it and run it locally. Now that your site is created, you are ready to deploy it to Azure.
+ASP.NET サイトを稼働させる最初の手順は、ローカルで作成して実行することです。 サイトの作成が済んだので、Azure に展開できるようになりました。

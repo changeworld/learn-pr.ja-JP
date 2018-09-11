@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-web-apps.3-exercise-create-a-web-app-in-the-azure-portal
-title: Exercise - Create a web app in the Azure portal
+title: 演習 - ポータルで Azure Web アプリを作成する
 metadata:
-  title: Exercise - Create a web app in the Azure portal
-  description: Exercise - Create a web app in the Azure portal
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO:Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: 演習 - ポータルで Azure Web アプリを作成する
+  description: 演習 - ポータルで Azure Web アプリを作成する
+  ms.openlocfilehash: aad70624b2f99c0b28868a930042b1d05b8d49a3
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834387"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-exercise-create-a-web-app-in-the-azure-portal.md)]
+content: '[!include[](includes/3-exercise-create-a-web-app-in-the-azure-portal.md)]'

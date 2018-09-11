@@ -1,32 +1,32 @@
-Visual Studio is a fully featured and rich integrated development environment (IDE), aimed at almost any kind of software professional. Visual Studio has a full set of tools and features specifically aimed at developing applications with Microsoft Azure. The tight integration in Visual Studio means that Azure deployment, debugging, and development tools are first class. Visual Studio for Mac is no different. This unit will introduce you to both, and their strengths when it comes to Azure development.
+Visual Studio は、ほとんどすべての種類のソフトウェア プロフェッショナルを対象とする、完全な機能を備えたリッチな統合開発環境 (IDE) です。 Visual Studio には、Microsoft Azure でのアプリケーション開発を特に目的とするツールと機能の完全なセットが含まれます。 Visual Studio での緊密な統合により、Azure のデプロイ、デバッグ、開発のツールは優れたものであることを意味します。 Visual Studio for Mac も同じです。 このユニットでは、両方の概要と、Azure で開発する場合の長所を説明します。
 
-## Visual Studio
+## <a name="visual-studio"></a>Visual Studio
 
-Visual Studio is a fully featured IDE used to develop applications for Windows, Android, iOS, the web, and Azure.
+Visual Studio は、Windows、Android、iOS、Web、および Azure 用アプリケーションを開発するために使用される機能完備の IDE です。
 
-When installing Visual Studio, you'll see that several workloads are available. Workloads are collections of libraries and components that define an area of functionality that can be installed. Instead of installing a single individual component, where you must know and remember the dependencies between each, you can use workloads to do "themed" installations. This ensures that all necessary components are included.
+Visual Studio をインストールするときに、利用できる複数のワークロードが表示されます。 ワークロードは、インストールできる機能の領域を定義するライブラリとコンポーネントのコレクションです。 個々のコンポーネントを 1 つずつインストールする場合はそれぞれの間の依存関係を理解している必要がありますが、ワークロードを使用すると "テーマ" でインストールを行うことができます。 これにより、すべての必要なコンポーネントが確実に含まれます。
 
-The base installation of Visual Studio comes with no tools or libraries for Azure development. For that, you need to include the Azure development workload. This includes the Azure SDKs, tooling, and template projects for getting started creating applications and experiences on Azure.
+Visual Studio の基本インストールには、Azure 開発用のツールまたはライブラリは付属しません。 そのため、Azure の開発ワークロードを含める必要があります。 これにより、Azure でのアプリケーションとエクスペリエンスの作成を始めるための Azure SDK、ツール、およびテンプレート プロジェクトが組み込まれます。
 
-To install Visual Studio, download the installer. This installer will ask which workloads to install, which is where you specify the Azure development workload. If there is additional functionality needed, this is most likely available through NuGet or a Visual Studio extension.
+Visual Studio をインストールするには、インストーラーをダウンロードします。 このインストーラーではインストールするワークロードの指定を求められるので、そこで Azure 開発ワークロードを指定します。 必要な追加機能がある場合は、通常、NuGet または Visual Studio 拡張機能で入手できます。
 
-## Visual Studio for Mac
+## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
-Visual Studio for Mac is a natively designed and developed IDE for macOS. It provides a first class developer experience for creating applications for mobile apps on Android and iOS, the web, and .NET Core solutions. It is also perfectly suited for creating applications on Azure.
+Visual Studio for Mac は、macOS 用にネイティブに設計されて開発された IDE です。 Android、iOS、Web、および .NET Core ソリューションでモバイル アプリ向けのアプリケーションを作成するための最高の開発者エクスペリエンスを提供します。 また、Azure でのアプリケーションの作成にも最適です。
 
-The base installation of Visual Studio for Mac comes with contextual integration of Azure tooling. For example, if you are building a Xamarin app for Android, then the Connected Services workload will provide a link to create a mobile back end with Azure App Service. If you want to create an Azure function, then that is a project template under the Cloud category.
+Visual Studio for Mac の基本インストールには、Azure ツールのコンテキスト統合が付属しています。 たとえば、Android 向けの Xamarin アプリを構築している場合、接続済みサービスのワークロードでは、Azure App Service でモバイル バックエンドを作成するためのリンクが提供されます。 Azure 関数を作成する場合は、クラウド カテゴリの下のプロジェクト テンプレートを使用します。
 
-If you require tools for Azure features and functions that aren't in the base installation, NuGet is the way to go. The NuGet package manager has a ton of Azure packages that extend the functionality and tooling of Visual Studio for Mac.
+Azure の機能と関数のために必要なツールが基本インストールに含まれていない場合は、NuGet で入手できます。 NuGet パッケージ マネージャーには、Visual Studio for Mac の機能とツールを拡張する Azure パッケージが豊富に含まれます。
 
-To install Visual Studio for Mac, download the installer. The installer will inspect your system to determine what components are needed or need to be updated. You can customize the components to install from those that are found to be missing from your system. The base installation will include Azure tooling. If additional functionality is needed, it will likely be available through NuGet or a Visual Studio for Mac extension.
+Visual Studio for Mac をインストールするには、インストーラーをダウンロードします。 インストーラーでは、システムが調べられて、必要なコンポーネントまたは更新する必要があるコンポーネントが特定されます。 システムに不足していることがわかったものから、インストールするコンポーネントをカスタマイズすることができます。 基本インストールには Azure のツールが含まれます。 必要な追加機能がある場合は、通常、NuGet または Visual Studio for Mac 拡張機能で入手できます。
 
 > [!NOTE]
-> You may be prompted for administrator credentials on your machine to install certain components.
+> 特定のコンポーネントをインストールする場合、コンピューターでの管理者資格情報の指定を求められることがあります。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you have installed Visual Studio either on Windows or on macOS.
+このユニットでは、Windows または macOS に Visual Studio をインストールしました。
 
-For Windows you chose the Azure development workload in the installer experience, which installed all the necessary tooling for building Azure applications and generating Azure resources. You can then access all the Azure resources for your subscription through Explorer tooling, or via resource referencing.
+Windows の場合は、インストーラーのエクスペリエンスで Azure 開発ワークロードを選択することにより、Azure アプリケーションを構築して Azure リソースを生成するために必要なすべてのツールがインストールされました。 その後は、エクスプローラーのツールまたはリソース参照を使用してサブスクリプションに対するすべての Azure リソースにアクセスできます。
 
-Visual Studio for Mac comes with some Azure tooling built into the base installation, and many more features available through NuGet. This will give access to resources and services on your Azure subscription as well.
+Visual Studio for Mac では、基本インストールにいくつかの Azure ツールが組み込まれており、さらに多くの機能を NuGet で利用できます。 Azure サブスクリプション上のリソースとサービスにもアクセスできます。

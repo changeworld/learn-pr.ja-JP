@@ -1,27 +1,27 @@
-The last thing we want to try on our VM is to install a web server. One of the easiest packages to install is `nginx`.
+VM 上で最後に試してみたいのは、Web サーバーをインストールすることです。 インストールするのが最も簡単なパッケージの 1 つとして、`nginx` があります。
 
-1. Locate the public IP address of your Linux virtual machine. Remember you can use the `vm list-ip-addresses` command to look it up.
+1. 使用する Linux 仮想マシンのパブリック IP アドレスを検索します。 この検索には、`vm list-ip-addresses` コマンドが使用できることに注意してください。
 
-1. Next, open an `ssh` connection to the machine like you did when we tested it. Remember you will need to pass in the admin name ("**aldis**").
+1. 次に、マシンのテストを行ったときと同様に、マシンへの `ssh` 接続を開きます。 管理者名 ("**aldis**") を渡す必要があることに注意してください。
 
-1. In the presented shell, execute the following command to install the `nginx` web server.
+1. 提示されたシェルで、次のコマンドを実行して `nginx` Web サーバーをインストールします。
 
 ```azurecli
 sudo apt-get -y update && sudo apt-get -y install nginx
 ```
 
-1. In Azure Cloud Shell, use `curl` to read the default page from your Linux web server. Alternatively, you can open a new browser tab and browse to the public IP address.
+1. Azure Cloud Shell で、`curl` を使用してご利用の Linux Web サーバーから既定のページを読み取ります。 あるいは、新しいブラウザー タブを開いて、パブリック IP アドレスを参照することもできます。
 
 ```azurecli
 curl 168.61.54.62
 ```
 
-It will fail because the Linux virtual machine doesn't expose port 80 (`http`) through the built-in firewall. Luckily, the Azure CLI has a command for that: `vm open-port`. 
+Linux 仮想マシンでは組み込みのファイアウォールを経由してポート 80 (`http`) が公開されないため、それは失敗します。 さいわい、Azure CLI にはそれ用のコマンドとして `vm open-port` があります。 
 
-1. Type the following into Cloud Shell to open port 80:
+1. Cloud Shell に次の内容を入力して、ポート 80 を開きます。
 
 ```
 az vm open-port --port 80 --resource-group ExerciseResources --name SampleVM
 ```
 
-Finally, try `curl` again. This time it should return data. You can see the page in a browser as well.
+最後に、`curl` をもう一度お試しください。 今回は、それによってデータが返されます。 ブラウザーで該当するページを表示することもできます。

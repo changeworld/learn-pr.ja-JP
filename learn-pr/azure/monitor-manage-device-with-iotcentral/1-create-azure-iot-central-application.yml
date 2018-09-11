@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.1-create-azure-iot-central-application
+title: Azure IoT Central アプリケーションを作成する
+metadata:
+  title: Azure IoT Central アプリケーションを作成する
+  description: Azure IoT Central アプリケーションを作成する
+  ms.openlocfilehash: e8c698bdbf44cc17d687466702c06b59f7023806
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795667"
+durationInMinutes: 12
+content: '[!include[](includes/1-create-azure-iot-central-application.md)]'

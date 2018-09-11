@@ -1,16 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.7-bind-the-azure-function-to-twilio
-title: Bind the function to Twilio to send SMS messages
+title: 関数を Twilio にバインドして SMS メッセージを送信する
 metadata:
-  title: Bind the function to Twilio to send SMS messages
-  description: Bind the function to Twilio to send SMS messages
+  title: 関数を Twilio にバインドして SMS メッセージを送信する
+  description: 関数を Twilio にバインドして SMS メッセージを送信する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: aa589b9724173b2a190181fc1fc08b49fea47551
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44229839"
 durationInMinutes: 11
-content: |
-  [!include[](includes/7-bind-the-azure-function-to-twilio.md)]
-  
+content: '[!include[](includes/7-bind-the-azure-function-to-twilio.md)]'

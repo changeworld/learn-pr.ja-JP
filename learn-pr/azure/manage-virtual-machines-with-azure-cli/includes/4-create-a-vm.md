@@ -1,42 +1,42 @@
-The Azure CLI includes the `vm` command to work with virtual machines in Azure. We can supply several subcommands to do specific tasks. The most common include:
+Azure CLI には、Azure 内の仮想マシンを操作するための `vm` コマンドが含まれます。 特定のタスクを実行するためのサブコマンドがいくつかあります。 最も一般的なものを次に示します。
 
-| Sub-command | Description |
+| サブコマンド | 説明 |
 |-------------|-------------|
-| `create`    | Create a new virtual machine |
-| `deallocate` | Deallocate a virtual machine |
-| `delete` | Delete a virtual machine |
-| `list` | List the created virtual machines in your subscription |
-| `open-port` | Open a specific network port for inbound traffic |
-| `restart` | Restart a virtual machine |
-| `show` | Get the details for a virtual machine |
-| `start` | Start a stopped virtual machine |
-| `stop` | Stop a running virtual machine |
-| `update` | Update a property of a virtual machine |
+| `create`    | 新しい仮想マシンを作成します |
+| `deallocate` | 仮想マシンの割り当てを解除します |
+| `delete` | 仮想マシンの削除 |
+| `list` | サブスクリプションに作成されている仮想マシンの一覧を表示します |
+| `open-port` | 受信トラフィック用に特定のネットワーク ポートを開きます |
+| `restart` | 仮想マシンの再起動 |
+| `show` | 仮想マシンについての詳細を取得します |
+| `start` | 停止している仮想マシンを起動します |
+| `stop` | 実行している仮想マシンを停止します |
+| `update` | 仮想マシンのプロパティを更新します |
 
 > [!NOTE]
-> For a complete list of commands, you can check the [Azure CLI reference documentation](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest).
+> コマンドの完全な一覧については、[Azure CLI のリファレンス ドキュメント](https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest)をご覧ください。
 
-Let's start with the first one: `az vm create`. This command is used to create a virtual machine in a resource group. There are several parameters you can pass to configure all the aspects of the new VM. The three parameters that must be supplied are:
+最初の `az vm create` から始めましょう。 このコマンドは、リソース グループ内に仮想マシンを作成するために使用します。 複数のパラメーターを渡して、新しい VM のすべての面を構成することができます。 次の 3 つのパラメーターを必ず指定する必要があります。
 
-| Parameter | Description |
+| パラメーター | 説明 |
 |-----------|-------------|
-| `resource-group` | The resource group that will own the virtual machine. |
-| `name` | The name of the virtual machine - must be unique within the resource group. |
-| `image` | The operating system image to use to create the VM. |
+| `resource-group` | その仮想マシンを所有するリソース グループです |
+| `name` | 仮想マシンの名前であり、リソース グループ内で一意である必要があります |
+| `image` | VM の作成に使用するオペレーティング システム イメージです |
 
-In addition, it's helpful to add the `--verbose` flag to see progress while the VM is being created. 
+さらに、`--verbose` フラグを追加して VM の作成の進行状況を表示すると便利です。 
 
-## Create a Linux virtual machine
+## <a name="create-a-linux-virtual-machine"></a>Linux 仮想マシンの作成
 
-Let's create a new Linux virtual machine. Execute the following command in Azure Cloud Shell:
+新しい Linux 仮想マシンを作成してみます。 Azure Cloud Shell で次のコマンドを実行します。
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
-This command will create a new **Debian** Linux virtual machine with the name `SampleVM`. Notice that the Azure CLI tool is blocked while the VM is being created. If you would prefer not to wait, you can use the `--no-wait` option to tell the Azure CLI tool to return immediately, for example if you're executing the command in a script. Later in the script, use the `azure vm wait --name [vm-name]` command to wait for the VM to finish being created.
+このコマンドでは、新しい **Debian** Linux 仮想マシンが `SampleVM` という名前で作成されます。 VM が作成されている間、Azure CLI ツールがブロックされることに注意してください。 スクリプトでコマンドを実行している場合などで待ちたくない場合は、`--no-wait` オプションを使用して、すぐに戻るよう Azure CLI ツールに指示できます。 後でスクリプトの中で `azure vm wait --name [vm-name]` コマンドを使用して、VM の作成が完了するのを待機します。
 
-If you look at the verbose responses, you will also see that the `SampleVM` name is used to name various dependencies for the VM.
+詳細な応答を見ると、VM のさまざまな依存関係の名前に `SampleVM` という名前が使用されていることもわかります。
 
 ```
 Succeeded: SampleVMNSG (Microsoft.Network/networkSecurityGroups)
@@ -47,15 +47,13 @@ Succeeded: SampleVMVNET (Microsoft.Network/virtualNetworks)
 Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deployments)
 ```
 
-You can override these auto-generated resource names using optional parameters to `vm create`, such as `--vnet-name` and `--public-ip-address-dns-name`.
+これらの自動生成されるリソースの名前は、省略可能なパラメーター `vm create` を使用してオーバーライドできます (`--vnet-name` や `--public-ip-address-dns-name` など)。
 
-Notice that we are specifying the admin account name through the `admin-username` flag to be "aldis". If you omit this, the `vm create` command will use your _current user name_. Since the rules for account names are different for each OS, it's safer to specify a specific name. Common names such as "root" and "admin" are not allowed for most images.
+`admin-username` フラグを使用して管理者アカウント名を "aldis" と指定していることに注意してください。 これを省略した場合、`vm create` コマンドは "_現在のユーザー名_" を使用します。 アカウントの命名規則は OS によって異なるため、特定の名前を指定する方が安全です。 "root" や "admin" などの一般的な名前は、ほとんどのイメージで使用できません。
 
-We are also using the `generate-ssh-keys` flag. This parameter is used for Linux distributions and creates a pair of security keys so we can use the `ssh` tool to access the virtual machine remotely. The two files are placed into the `.ssh` folder on your machine and in the VM. If you already have an SSH key named `id_rsa` in the target folder, then it will be used rather than having a new key generated.
+ここでは、`generate-ssh-keys` フラグも使用しています。 このパラメーターは Linux ディストリビューションに対して使用され、`ssh` ツールを使用して仮想マシンにリモート アクセスできるように、セキュリティ キーのペアが作成されます。 コンピューター上と VM 内の `.ssh` フォルダーに、2 つのファイルが配置されます。 ターゲット フォルダーに `id_rsa` という名前の SSH キーが既にある場合はそれが使用され、新しいキーは生成されません。
 
-Once it finishes creating the VM, you will get a JSON response which includes the current state of the virtual machine and its public and private IP addresses assigned by Azure:
-
-<!-- TODO: find out the default location! -->
+VM の作成が完了すると、JSON 応答が返されます。この応答の中に、仮想マシンの現在の状態と、Azure によって割り当てられたパブリックとプライベートの IP アドレスが記述されています。
 
 ```json
 {
@@ -71,7 +69,5 @@ Once it finishes creating the VM, you will get a JSON response which includes th
 }
 ```
 
-<!-- TODO: find out the default location! -->
-
 > [!NOTE]
-> Notice that the VM was created in the **eastus** location. By default, the virtual machine is created in the location identified by the owning region. However, sometimes you might want to associate the VM with an existing region, but actually have it spin up somewhere else in the world. You can do this by specifying the option `--location` parameter as part of the `az vm create` command.
+> VM が作成された場所が **eastus** であることに注目してください。 既定では、仮想マシンが作成される場所は所有するリージョンによって決まります。 VM を既存のリージョンに関連付けることが必要である場合でも、実際には別の場所で VM が作成されます。 このようにするには、オプション `--location` パラメーターを `az vm create` コマンドで指定します。

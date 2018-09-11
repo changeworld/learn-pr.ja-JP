@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.4-query
 metadata:
-  title: Query using the .NET Core SDK
-  description: Query using the .NET Core SDK
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Query using the .NET Core SDK
+  title: .NET Core SDK を使用したクエリ
+  description: .NET Core SDK を使用したクエリ
+  ms.openlocfilehash: d6cfb4469b9ed09718e04a174e38b96e2a55de92
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833290"
+title: .NET Core SDK を使用したクエリ
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-query.md)]
+content: '[!include[](includes/4-query.md)]'

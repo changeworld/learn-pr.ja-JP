@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.3-choose-azure-storage-queues
-title: Choose a message-based delivery with queues
+title: キューを使用するメッセージベースの配信を選択する
 metadata:
-  title: Choose a message-based delivery with queues
-  description: Choose a message-based delivery with queues
+  title: キューを使用するメッセージベースの配信を選択する
+  description: キューを使用するメッセージベースの配信を選択する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9cbd32d26c9dce0db8d048986479e62924e5f39c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44229879"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-choose-azure-storage-queues.md)]
+content: '[!include[](includes/3-choose-azure-storage-queues.md)]'

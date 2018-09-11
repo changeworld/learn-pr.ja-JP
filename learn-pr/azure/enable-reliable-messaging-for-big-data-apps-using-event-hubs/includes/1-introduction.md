@@ -1,22 +1,22 @@
-Big data applications should have the ability to process increased throughput by scaling out to meet increased transaction volumes.
+ビッグ データ アプリケーションには、トランザクション ボリュームの増大に対応するために、スケール アウトしてスループットの増加を操作する機能が用意されている必要があります。
 
-Suppose you work in the credit card department of a bank. You're part of a team that manages the system responsible for fraud testing to determine whether to approve or decline each transaction. Your system receives a stream of transactions and needs to process them in real time.
+銀行のクレジット カード部門に勤務しているとします。 不正行為がないかをテストして各トランザクションの承認または拒否を判断する役割を担うシステムを管理するチームに属しています。 ご利用のシステムでは、トランザクションのストリームが受信されるため、リアルタイムでのトランザクションの処理が必要です。
 
-The load on your system can spike during weekends and holidays. It should be able to handle increased throughput efficiently and accurately. Given the sensitive nature of the transactions, even the slightest error can have a huge impact.
+ご利用のシステム上の負荷は、週末および休日の間に急増することがあります。 ご利用のシステムでは、スループットの増加を効率的および正確に処理できる必要があります。 トランザクションの機密性が高い場合、わずかなエラーでも大きな影響を受ける可能性があります。
 
-Azure Event Hubs can receive and process large number of transactions. It can also be configured to scale dynamically, when required, to handle increased throughput.
-In this module, you’ll learn how to connect Event Hubs to your application and reliably process huge transaction volumes.
+Azure Event Hubs を使用すると、多数のトランザクションを受信し処理することができます。 また、スループットの増加を操作するために、必要に応じて、スケーリングを動的に行うように構成することもできます。
+このモジュールでは、Event Hubs をご利用のアプリケーションに接続し、大きなトランザクション ボリュームを確実に処理する方法について説明します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Create an event hub using the Azure CLI.
-- Configure applications to send or receive messages through an event hub.
-- Evaluate event hub performance using the Azure portal.
+- Azure CLI を使用してイベント ハブを作成します。
+- イベント ハブを経由してメッセージを送受信するようにアプリケーションを構成します。
+- Azure portal を使用してイベント ハブのパフォーマンスを評価します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Experience creating and managing resources using the Azure portal.
-- Experience with using Azure CLI 2.0 to sign into Azure, and to create resources.
-- Knowledge of basic big data concepts such as streaming and event processing.
+- Azure portal を使用してリソースを作成および管理した経験。
+- Azure CLI 2.0 を使用して Azure へのサインインおよびリソースの作成を行った経験。
+- ストリーミングやイベント処理など、ビッグ データの基本概念に関する知識。

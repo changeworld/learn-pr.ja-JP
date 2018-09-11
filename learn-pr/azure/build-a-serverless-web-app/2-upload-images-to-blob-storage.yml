@@ -4,12 +4,13 @@ title: Azure Functions を使用して BLOB ストレージに画像をアップ
 metadata:
   title: Azure Functions を使用して BLOB ストレージに画像をアップロードする
   description: Azure Functions を使用して BLOB ストレージに画像をアップロードします。
-  ms.openlocfilehash: ae58614478ec7ef44836aae04b1c0314a5981139
-  ms.sourcegitcommit: 1697ef50de6fbaf39175872148e70d87d7d9bd13
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: c6830e9551be8711540e48996264514e37c18e74
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/24/2018
-  ms.locfileid: "42890323"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790711"
 durationInMinutes: 15
 interactive: bash-editor
 content: '[!include[](includes/2-upload-images-to-blob-storage.md)]'

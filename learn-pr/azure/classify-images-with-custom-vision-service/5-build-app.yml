@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.5-build-app
-title: Create a Node.js app that uses the model
+title: モデルを使用する Node.js アプリを作成する
 metadata:
-  title: Create a Node.js app that uses the model
-  description: Create a Node.js app that uses the model
+  title: モデルを使用する Node.js アプリを作成する
+  description: モデルを使用する Node.js アプリを作成する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7fbac76a1abcb3f8c22ac77801aba0fbf695f29d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239495"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-build-app.md)]
+content: '[!include[](includes/5-build-app.md)]'

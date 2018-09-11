@@ -1,86 +1,86 @@
-After you have created and configured your event hub, you'll need to configure applications to send and receive event data streams.
+イベント ハブを作成して構成したら、イベント データ ストリームの送受信ができるようにアプリケーションを構成する必要があります。
 
-For example, a payment processing solution will use some form of sender application to collect customer's credit card data and a receiver application to verify that the credit card is valid.
+たとえば、支払い処理ソリューションでは、顧客のクレジット カードのデータを収集するために何らかの形式の送信側アプリケーションが使用され、そのクレジット カードが有効であることを確認するために受信側アプリケーションが使用されます。
 
-Although there are differences in how a Java application is configured, compared to a .NET application, there are general principles for enabling applications to connect to an event hub, and to successfully send or receive messages. So, although the process of editing Java configuration text files is different to preparing a .NET application using Visual Studio, the principles are the same.
+.NET アプリケーションの場合と比較して、Java アプリケーションの構成方法には違いがありますが、アプリケーションをイベント ハブに接続し、アプリケーションによってメッセージの送受信を正常に行えるようにするには一般的な原則に従います。 そのため、Java 構成テキスト ファイルの編集プロセスは、Visual Studio を使用して .NET アプリケーションを準備するのとは異なりますが、原則は同じです。
 
-## What are the minimum Event Hub application requirements?
+## <a name="what-are-the-minimum-event-hub-application-requirements"></a>イベント ハブ アプリケーションの最小要件とは?
 
-To configure an application to send messages to an event hub, you must provide the following information, so that the application can create connection credentials:
+イベント ハブにメッセージを送信できるようにアプリケーションを構成するには、次の情報を指定して、アプリケーションによって接続の資格情報が作成されるようにする必要があります。
 
-- Event hub namespace name
-- Event hub name
-- Shared access policy name
-- Primary shared access key
+- イベント ハブ名前空間の名前
+- イベント ハブ名
+- 共有アクセス ポリシー名
+- プライマリ共有アクセス キー
 
-To configure an application to receive messages from an event hub, provide the following information, so that the application can create connection credentials:
+イベント ハブからメッセージを受信できるようにアプリケーションを構成するには、次の情報を指定して、アプリケーションによって接続の資格情報が作成されるようにします。
 
-- Event hub namespace name
-- Event hub name
-- Shared access policy name
-- Primary shared access key
-- Storage account name
-- Storage account connection string
-- Storage account container name
+- イベント ハブ名前空間の名前
+- イベント ハブ名
+- 共有アクセス ポリシー名
+- プライマリ共有アクセス キー
+- ストレージ アカウント名
+- ストレージ アカウントの接続文字列
+- ストレージ アカウントのコンテナー名
 
-If you have a receiver application that stores messages in Azure Blob Storage, you'll also need to first configure a storage account.
+Azure Blob Storage 内にメッセージを格納する受信側アプリケーションがある場合は、最初にストレージ アカウントも構成する必要があります。
 
-## The Azure CLI commands for creating a general-purpose standard storage account
+## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>汎用の Standard ストレージ アカウントを作成するための Azure CLI コマンド
 
-1. Create a general-purpose V2 Storage account in your resource group, and the same Azure datacenter location that you used when creating the resource group.
+1. ご利用のリソース グループ内で、およびそのリソース グループを作成するときに使用したのと同じ Azure データセンターの場所内で、ストレージ アカウントを作成します (汎用 V2)。
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob
     ```
 
-1. To access this storage, you'll need a storage account access key. View the access keys that are associated with the storage account.
+1. このストレージにアクセスするには、ストレージ アカウントのアクセス キーが必要です。 ストレージ アカウントに関連付けられているアクセス キーを表示します。
 
     ```azurecli
     az storage account keys list --account-name <storage account name> --resource-group <resource group name>
     ```
 
-1. Save the value associated with **key1**.
+1. **key1** に関連付けられている値を保存します。
 
-1. You will also need the connection details for the storage account. View the connection string for the storage account.
+1. また、ストレージ アカウントに関する接続の詳細も必要になります。 ストレージ アカウント用の接続文字列を表示します。
 
     ```azurecli
     az storage account show-connection-string -n <storage account name> -g <resource group name>
     ```
 
-1. Save the value associated with the **connectionString**.
+1. **connectionString** に関連付けられている値を保存します。
 
-1. Messages will be stored in a container within your storage account. Create a container in your storage account, using `<connection string>` with the connection string from the previous step.
+1. ご利用のストレージ アカウント内のコンテナーにメッセージが格納されるようになります。 前の手順からの接続文字列を含む `<connection string>` を使用して、ストレージ アカウント内でコンテナーを作成します。
 
     ```azurecli
     az storage container create -n <container> --connection-string "<connection string>"
     ```
 
-## Shell command for cloning an application GitHub repository
+## <a name="shell-command-for-cloning-an-application-github-repository"></a>アプリケーションの GitHub リポジトリを複製するためのシェル コマンド
 
-Git is a collaboration tool that uses a distributed version control model, and is designed for collaborative working on software and documentation projects. Git clients are available for multiple platforms, including Windows, and the Git command line is included in the Azure Bash cloud shell. GitHub is a web-based hosting service for Git repositories. 
+Git は分散型バージョン管理モデルを使用するコラボレーション ツールであり、ソフトウェア プロジェクトやドキュメント プロジェクトでの共同作業向けに設計されています。 Windows を含む複数のプラットフォームで Git クライアントを利用することができ、Git コマンドラインは Azure Bash Cloud Shell に含まれています。 GitHub は Git リポジトリに対する Web ベースの ホスティング サービスです。 
 
-If you have an application that is hosted as a project in GitHub, you can make a local copy of the project, by cloning its repository using the **git clone** command.
+GitHub 内でプロジェクトとしてホストされているアプリケーションがある場合は、**git clone** コマンドを使用してプロジェクトのリポジトリを複製することにより、プロジェクトのローカル コピーを作成することができます。
 
-1. Clone a repository to your home directory.
+1. ホーム ディレクトリにリポジトリを複製します。
 
     ```azurecli
       git clone https://github.com/<project repository>
     ```
 
-## Shell commands for preparing an application
+## <a name="shell-commands-for-preparing-an-application"></a>アプリケーションを準備するためのシェル コマンド
 
-1. You can now use an editor, such as **nano** to edit the application and add your event hub namespace, event hub name, shared access policy name, and primary key. Nano is a simple text editor available for Linux and other Unix-like operating systems; it is also available in the Azure Bash cloud shell. For example, use this command to open a Java application file in the **nano** editor.
+1. **nano** などのエディターを使用して、アプリケーションを編集し、ご利用のイベント ハブ名前空間、イベント ハブ名、共有アクセス ポリシー名、およびプライマリ キーを追加できるようになりました。 Nano は Linux や他の Unix 系のオペレーティング システムで使用できるシンプルなテキスト エディターです。Azure Bash Cloud Shell 内で使用することもできます。 たとえば、**nano** エディターでは次のコマンドを使用して Java アプリケーション ファイルを開くことができます。
 
     ```azurecli
     nano <application>.java
     ```
 
-1. Depending on how your applications are developed, you may need to compile or build the application after you've added the event hub configuration information. For example, the Java applications used in the next unit need to be built using a tool such as Apache **Maven**. Maven compiles .java files into .class files or packages them into .jar files. Maven is available from the Bash cloud shell; to build the Java application, you use **mvn** commands. Use this mvn command to build a Java  application.
+1. アプリケーションの開発方法によっては、イベント ハブの構成情報を追加した後でアプリケーションをコンパイルまたはビルドすることが必要な場合があります。 たとえば、次のユニットで使用する Java アプリケーションについては、Apache **Maven** などのツールを使用してビルドする必要があります。 Maven では、.java ファイルが .class ファイルにコンパイルされるか、または .java ファイルが .jar ファイルにパッケージ化されます。 Maven は Bash Cloud Shell から利用することができます。Java アプリケーションをビルドするには、**mvn** コマンドを使用します。 Java アプリケーションをビルドするには、次の mvn コマンドを使用します。
 
     ```azurecli
     mvn clean package -DskipTests
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Sender and receiver applications must be configured with specific information about the event hub environment. You create a storage account if your receiver application stores messages in Blob Storage. If your application is hosted on GitHub, you have to clone it to your local directory. Text editors, such as **nano** is used to  add your namespace to the application.
+イベント ハブ環境に関する特定の情報を使用して、送信側アプリケーションと受信側アプリケーションを構成する必要があります。 ご利用の受信側アプリケーションによってメッセージを Blob Storage に格納する場合は、ストレージ アカウントを作成します。 ご利用のアプリケーションが GitHub 上でホストされている場合は、それをローカル ディレクトリに複製する必要があります。 アプリケーションに名前空間を追加するには、**nano** のようなテキスト エディターを使用します。

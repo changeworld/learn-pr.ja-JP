@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
-title: Initialize the storage account model
+title: ストレージ アカウントのモデルを初期化する
 metadata:
-  title: Initialize the storage account model
-  description: Initialize the storage account model
+  title: ストレージ アカウントのモデルを初期化する
+  description: ストレージ アカウントのモデルを初期化する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: c8c77ddc9e15023aa6f253a477b6343c47d43f65
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240485"
 durationInMinutes: 10
-content: |
-  [!include[](includes/9-initialize-the-storage-account-model.md)]
+content: '[!include[](includes/9-initialize-the-storage-account-model.md)]'

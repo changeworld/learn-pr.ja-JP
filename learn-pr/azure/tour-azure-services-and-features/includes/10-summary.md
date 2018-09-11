@@ -1,11 +1,11 @@
-We have covered a lot of ground in this module. 
+このモジュールでは多くのことを説明しました。 
 
 > [!div class="checklist"]
-> * You have seen some of the core products in Azure across the main service pillars.
-> * You have learned how to create a free account for Microsoft Azure and how to sign in using that account. 
-> * You reviewed the features of the Azure portal and its customization options. 
-> * You created, customized, and shared a dashboard.
+> * サービスの主要な柱にわたって Azure のコア製品をいくつか見てきました。
+> * Microsoft Azure の無料アカウントを作成する方法と、そのアカウントを使用してサインインする方法を学習しました。 
+> * Azure portal とそのカスタマイズ オプションの機能を確認しました。 
+> * ダッシュボードを作成し、カスタマイズして、共有しました。
 
-However, this is just the beginning. Azure has so much to offer you, no matter what role you plan in your organization. If you are a developer, Azure provides an easy way to test new platforms and build sophisticated apps. If you are an administrator, you will use the Azure portal, Azure CLI, or Azure PowerShell tools to administer your cloud-based infrastructure. If you are an architect, you can use Azure to test out new architecture ideas quickly.
+ただし、これは始まりにすぎません。 組織で計画している役割に関係なく、Azure にはお客様に提供できるものが多数あります。 開発者は、Azure を使用して、新しいプラットフォームのテストや高度なアプリの作成を簡単に行うことができます。 管理者は、Azure portal、Azure CLI、または Azure PowerShell ツールを使用して、クラウド ベースのインフラストラクチャを管理できます。 アーキテクトは、Azure を使用して新しいアーキテクチャのアイデアを速やかに試すことができます。
 
-Keep exploring Azure by selecting one or more paths through the content that's structured specifically for what you want to learn.
+お客様が学習したい内容について明確に構成されたコンテンツを通じて 1 つ以上のパスを選択して、Azure の探索を続けてください。

@@ -5,6 +5,7 @@ Visual Studio と Azure App Service は、Azure で Web アプリを作成、発
 ## <a name="learning-objectives"></a>学習の目的
 
 このモジュールでは、次のことを行います。
+
 - PC または Mac 向けの Visual Studio 2017 で ASP.NET Web アプリを作成します。
 - Visual Studio 2017 で Azure に ASP.NET Web アプリを発行します。
 - PC または Mac 向けの Visual Studio を使用して、Azure で ASP.NET アプリケーションを更新します。

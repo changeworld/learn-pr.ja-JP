@@ -6,9 +6,9 @@
 
 この特典を受けるには、Windows ライセンスがソフトウェア アシュアランスの対象である必要があります。 次のガイドラインも適用されます。
 
-- 各 2 プロセッサ ライセンスまたは 16 コア ライセンスの各セットでは、最大 8 コアのインスタンスを 2 つ、または最大 16 コアのインスタンスを 1 つ利用できます。 
+- 各 2 プロセッサ ライセンスまたは 16 コア ライセンスの各セットでは、最大 8 コアのインスタンスを 2 つ、または最大 16 コアのインスタンスを 1 つ利用できます。
 - Standard Edition ライセンスは、オンプレミスまたは Azure 内のどちらかで一度のみ使用できます。 つまり、Azure VM とローカル コンピューターに対して同じライセンスを使用することはできません。
-- Datacenter Edition の特典では、オンプレミスと Azure 内の両方で同時に使用することができるため、このライセンスでは実行中の 2 台の Windows コンピューターが対象になります。 
+- Datacenter Edition の特典では、オンプレミスと Azure 内の両方で同時に使用することができるため、このライセンスでは実行中の 2 台の Windows コンピューターが対象になります。
 
 > [!NOTE]
 > ほとんどのお客様には通常、コアごとにライセンスが供与されるため、そのモデルを使用して計算します。 保有するライセンスについて質問がある場合は、ライセンス リセラーまたは Microsoft アカウント チームにお問い合わせください。
@@ -23,13 +23,15 @@ SQL Server 向け Azure ハイブリッド特典は、現在のライセンス�
 
 ### <a name="azure-sql-database-vcore-based-options"></a>Azure SQL Database の仮想コア ベースのオプション
 
-![SQL Server ライセンスのトレードイン](../images/sql-tradein-value.jpg)
-
 Azure SQL Database の場合、Azure ハイブリッド特典は次のようになります。
 
 - アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Standard Edition がある場合は、オンプレミスで所有しているライセンス コアごとに General Purpose サービス レベルで仮想コアを 1 つ取得できます。
 - アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Enterprise Edition がある場合は、オンプレミスで所有しているライセンス コアごとに Business Critical サービス レベルで仮想コアを 1 つ取得できます。 Business Critical サービス レベル用の SQL Server 向け Azure ハイブリッド特典を利用できるのは、Enterprise Edition ライセンスを持つお客様のみであることに注意してください。
 - アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに高度に仮想化された Enterprise Edition がある場合は、オンプレミスで所有しているライセンス コアごとに General Purpose サービス レベルで仮想コアを 4 つ取得できます。 これは、Azure SQL Database でのみ利用可能な独自の仮想化特典です。
+
+次の図は、SQL Server ライセンスの Azure ハイブリッド特典が与えられている場合、各サービスで利用できる vCore ベースのオプションを示しています。
+
+![Azure ハイブリッド特典を使用し、既存の SQL サーバー ライセンス値を最大化する方法の例を示す図。](../media-drafts/5-sql-tradein-value.png)
 
 Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は次のようになります。
 
@@ -47,7 +49,7 @@ Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は
 
 Enterprise Agreement のお客様で、既に SQL Server ライセンスに投資しており、Azure へのリソースの移動時にライセンスが解放された場合、**ライセンス持ち込み** (BYOL) イメージを Azure Marketplace からプロビジョニングでき、未使用のライセンスを利用して Azure VM のコストを削減することができます。 これは Windows VM をプロビジョニングし、手動で SQL Server をインストールすることで常に行うことはできましたが、マイクロソフト認定イメージを活用することで作成プロセスが簡略化されます。 これらのイメージを見つけるには、Marketplace で **BYOL** を検索します。
 
-![Azure の SQL Server 用 BYOL](../images/byol-sql-server.png)
+![Azure の SQL Server 用 BYOL](../media-drafts/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > 認定されたこれらの BYOL イメージを使用するには、Enterprise Agreement サブスクリプションが必要です。

@@ -21,7 +21,7 @@ Get-Help <cmdlet-name> -detailed
 **AzureRM** は、Azure 機能で使用できるコマンドレットを含む Azure PowerShell コマンドレットの正式名称です (名前の中の **RM** は **Resource Manager** という意味です)。 数百単位のコマンドレットが含まれ、あらゆる Azure リソースのほぼすべての面を制御できます。 リソース グループ、ストレージ、仮想マシン、Azure Active Directory、コンテナー、機械学習などを操作できます。
 
 ## <a name="how-to-create-a-resource-group"></a>リソース グループの作成方法
-次に、Azure PowerShell のローカル インストールを使用し、リソース グループを作成します。 
+次に、ローカルにインストールした Azure PowerShell を使用してリソース グループを作成します。 
 
 次の 4 つのステップがあります。 
 1. Azure コマンドレットをインポートします。

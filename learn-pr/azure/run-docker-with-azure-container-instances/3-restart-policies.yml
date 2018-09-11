@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.3-restart-policy
-metadata:
-  title: Control Azure Container Instances restart behavior
-  description: Control Container Instances restart behavior.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Control restart behavior
 interactive: bash
-azureSandbox: true
+metadata:
+  title: Azure Container Instances の再起動の動作を制御する
+  description: Container Instances の再起動の動作を制御します。
+  ms.openlocfilehash: b244e3cea5ca80aba22af2252e4f94dd8405bb99
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833830"
+title: 再起動の動作を制御する
 durationInMinutes: 6
-content: |
-  [!include[](includes/3-restart-policy.md)]
+content: '[!include[](includes/3-restart-policy.md)]'

@@ -1,36 +1,36 @@
-At this point, the app is working to get the user's location and is ready to be sent to an Azure function. In this unit, you build the Azure function.
+この時点では、アプリはユーザーの位置を取得しようとしています。また、アプリは Azure 関数に送信される準備ができています。 この演習では、Azure 関数を作成します。
 
-## Create an Azure Functions project
+## <a name="create-an-azure-functions-project"></a>Azure Functions プロジェクトを作成する
 
-1. Add a new project to the `ImHere` solution by right-clicking on the solution and selecting *Add->New Project...*.
+1. ソリューションを右クリックし、*[追加]、[新しいプロジェクト]* の順に選択して新しいプロジェクトを `ImHere` ソリューションに追加します。
 
-1. From the tree on the left-hand side, select *Visual C#->Cloud*, and then select *Azure Functions* from the panel in the center.
+1. 左側にあるツリーから、*[Visual C#]、[クラウド]* の順に選択し、中央のパネルから *[Azure Functions]* を選択します。
 
-1. Name the project "ImHere.Functions", and then click **OK**.
+1. プロジェクトに "ImHere.Functions" という名前を付け、**[OK]** をクリックします。
 
-    ![The Add New Project dialog](../media-drafts/5-add-new-functions-project.png)
+    ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-functions-project.png)
 
-1. In the **New Project** configuration dialog, leave the Functions version set to *Azure Functions v1 (.NET Framework)*. Select *Http Trigger*, leave the storage account set to *Storage Emulator*, and set the access rights to *Anonymous*. Then click **OK**.
+1. **[新しいプロジェクト]** 構成ダイアログで、Functions のバージョンは *[Azure Functions v1 (.NET Framework)]* に設定されているままにします。 *[Http トリガー]* を選択し、ストレージ アカウントを *[ストレージ エミュレーター]* に設定されているままにし、アクセス権を *[匿名]* に設定します。 次に、 **[OK]** をクリックします
 
-    ![The Azure Function project configuration dialog](../media-drafts/5-configure-trigger.png)
+    ![Azure 関数のプロジェクト構成ダイアログ](../media-drafts/5-configure-trigger.png)
 
-The new project will be created and have a default function called `Function1`.
+新しいプロジェクトが作成され、`Function1` という名前の既定の関数が与えられます。
 
-> This function was created with anonymous access. Once published to Azure, anybody who knows the URL will be able to call this function. In a real-world scenario, you would protect this with some form of authentication, such as [Azure App Service authentication](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) or [Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c).
+> この関数は匿名アクセスで作成されました。 Azure に公開されると、URL を知っている人は誰でもこの関数を呼び出すことができます。 現実世界のシナリオでは、[Azure App Service 認証](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)または [Azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c) など、何らかの形式の認証でこれを保護します。
 
-## Create the function
+## <a name="create-the-function"></a>関数を作成する
 
-The Azure Functions project is created with a single HTTP trigger function called `Function1`. The function itself is implemented as a static `Run` method in the `Function1` class.
+Azure Functions プロジェクトは `Function1` という名前のシングル HTTP トリガーで作成されます。 この関数自体は `Function1` クラスの静的 `Run` メソッドとして実装されます。
 
-1. Rename the file in Solution Explorer from "Function1.cs" to "SendLocation.cs". When prompted to rename all references to the code element `Function1`, click **Yes**.
+1. ソリューション エクスプローラーのファイルの名前を "Function1.cs" から "SendLocation.cs" に変更します。 コード要素 `Function1` の参照の名前をすべて変更するように求められたら、**[はい]** をクリックします。
 
-1. Rename the function name in the attribute to "SendLocation".
+1. 属性の関数名を "SendLocation" に変更します。
 
     ```cs
     [FunctionName("SendLocation")]
     ```
 
-1. Delete the contents of the function, except the first line that writes an information message to the logger.
+1. ロガーに情報メッセージを書き込む最初の行を除き、関数の内容を削除します。
 
     ```cs
     public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -42,23 +42,23 @@ The Azure Functions project is created with a single HTTP trigger function calle
     }
     ```
 
-## Create a class to share data between the mobile app and function
+## <a name="create-a-class-to-share-data-between-the-mobile-app-and-function"></a>モバイル アプリと関数の間でデータを共有するクラスを作成する
 
-When data is sent to the Azure function, it will be sent as JSON. The mobile app will serialize data into JSON and the function will deserialize from JSON. To keep this data consistent between the mobile app and the function, create a new project that contains a class to hold the location and phone number data. This project will then be referenced by the app and function.
+データが Azure 関数に送信されるとき、データは JSON として送信されます。 モバイル アプリによりデータが JSON にシリアル化され、関数により JSON から逆シリアル化されます。 モバイル アプリと関数の間でこのデータの整合性を維持するためには、場所と電話番号データを保持するクラスを含む新しいプロジェクトを作成します。 このプロジェクトはアプリと関数によって参照されます。
 
-1. Create a new project under the `ImHere` solution by right-clicking on the solution and selecting *Add->New Project...*.
+1. ソリューションを右クリックし、*[追加]、[新しいプロジェクト]* の順に選択して、`ImHere` ソリューションの下で新しいプロジェクトを作成します。
 
-1. From the tree on the left-hand side, select *Visual C#->.NET Standard*, and then select *Class Library (.NET Standard)* from the panel in the center.
+1. 左側にあるツリーから、*[Visual C#]、[.NET Standard]* の順に選択し、中央のパネルから *[クラス ライブラリ (.NET Standard)]* を選択します。
 
-1. Name the project "ImHere.Data", and then click **OK**.
+1. プロジェクトに "ImHere.Data" という名前を付け、**[OK]** をクリックします。
 
-    ![The Add New Project dialog](../media-drafts/5-add-new-net-standard-project.png)
+    ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-net-standard-project.png)
 
-1. Delete the auto-generated "Class1.cs" file.
+1. 自動生成された "Class1.cs" ファイルを削除します。
 
-1. Create a new class in the `ImHere.Data` project called `PostData` by right-clicking on the project and then selecting *Add->Class...*. Name the new class "PostData" and click **OK**.
+1. プロジェクトを右クリックし、*[追加]、[クラス]* の順に選択して、`PostData` という名前の `ImHere.Data` プロジェクトで新しいクラスを作成します。新しいクラスに "PostData" という名前を付け、**[OK]** をクリックします。
 
-1. Add `double` properties for the latitude and longitude, as well as a `string[]` property for the phone numbers to send to.
+1. 緯度と経度に `double` プロパティと送信先の電話番号の `string[]` プロパティを追加します。
 
     ```cs
     public class PostData
@@ -69,41 +69,41 @@ When data is sent to the Azure function, it will be sent as JSON. The mobile app
     }
     ```
 
-1. Add a reference to this project to both the `ImHere.Functions` and `ImHere` projects by right-clicking on the project and then selecting *Add->Reference...*. Select *Projects* from the tree on the left-hand side, and then check the box next to *ImHere.Data*.
+1. プロジェクトを右クリックし、*[追加]、[参照]* を選択して、このプロジェクトの参照を `ImHere.Functions` プロジェクトと `ImHere` プロジェクトの両方に追加します。左側にあるツリーから *[プロジェクト]* を選択し、*ImHere.Data* の隣にあるボックスをオンにします。
 
-    ![Configuring project references](../media-drafts/5-configure-project-references.png)
+    ![プロジェクト参照を構成する](../media-drafts/5-configure-project-references.png)
 
-## Read the data sent to the function
+## <a name="read-the-data-sent-to-the-function"></a>関数に送信されたデータを読み込む
 
-In the Azure function, the `req` parameter contains the HTTP request that was made and the data inside this request will be a JSON serialized `PostData` object.
+Azure 関数では、`req` パラメーターには行われた HTTP 要求が含まれます。この要求の中にあるデータは JSON でシリアル化された `PostData` オブジェクトになります。
 
-1. Open the `SendLocation` class in the `ImHere.Functions` project.
+1. `ImHere.Functions` プロジェクトで `SendLocation` クラスを開きます。
 
-1. Read the contents of the HTTP request into a `PostData` object, adding a using directive for the `ImHere.Data` namespace.
+1. HTTP 要求の内容を `PostData` オブジェクトに読み込み、`ImHere.Data` 名前空間に using ディレクティブを追加します。
 
     ```cs
     PostData data = await req.Content.ReadAsAsync<PostData>();
     ```
 
-1. Construct a Google Maps URL using the latitude and longitude from the `PostData`.
+1. `PostData` からの緯度と経度を利用して Google Maps URL を作成します。
 
    ```cs
    string url = $"https://www.google.com/maps/search/?api=1&query={data.Latitude},{data.Longitude}";
    ```
 
-1. Log the URL.
+1. URL をログに記録します。
 
     ```cs
     log.Info($"URL created - {url}");
     ```
 
-1. Return a 200 status code to show the function completed without error.
+1. 200 ステータス コードを返し、関数がエラーなく完了したことを示します。
 
     ```cs
     return req.CreateResponse(HttpStatusCode.OK);
     ```
 
-The complete function is shown below.
+完全な関数を下に示します。
 
 ```cs
 public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -119,24 +119,24 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 }
 ```
 
-## Run the Azure function locally
+## <a name="run-the-azure-function-locally"></a>Azure 関数をローカルで実行する
 
-Functions can be run locally using a local storage account and local Azure Functions runtime. This local runtime allows you to test out your function before deploying it to Azure.
+関数は、ローカル ストレージ アカウントとローカル Azure Functions ランタイムを利用してローカルで実行できます。 このローカル ランタイムでは、Azure にデプロイする前に関数をテストできます。
 
-1. Right-click on the `ImHere.Functions` project in the solution explorer, and then select *Set as StartUp project*.
+1. ソリューション エクスプローラーで `ImHere.Functions` プロジェクトを右クリックし、*[スタートアップ プロジェクトに設定]* を選択します。
 
-1. From the *Debug* menu, select *Start Without Debugging*. The local Azure Functions runtime will launch inside a console window and start your function, listening on an available port on `localhost`.
+1. *[デバッグ]* メニューから *[デバッグなしで開始]* を選択します。 ローカル Azure Functions ランタイムはコンソール ウィンドウ内で起動し、関数を開始し、`localhost` で利用できるポートをリッスンします。
 
-    ![The Azure function running locally](../media-drafts/5-function-running-locally.png)
+    ![ローカルで実行される Azure 関数](../media-drafts/5-function-running-locally.png)
 
-1. Take a note of the port that the function is listening on. You'll need this in the next unit to test out the mobile app. In the image above, the function is listening on port **7071**.
+1. 関数がリッスンしているポートをメモします。 これは次の演習でモバイル アプリをテストするために必要になります。 上記の図で、関数はポート **7071** でリッスンしています。
 
     ```sh
     Listening on http://localhost:7071/
     ```
 
-1. Leave the function running so that you can test the mobile app in the next unit.
+1. 次の演習でモバイル アプリをテストできるように、関数は実行中のままにします。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to create an Azure Functions project in Visual Studio, added a shared project with a data object to be shared between the mobile app and the function, and learned how to create a basic implementation of the function to deserialize the data passed in. You also learned how to run an Azure function locally. In the next unit, you'll call the Azure function from the mobile app.
+この演習では、Visual Studio で Azure Functions プロジェクトを作成する方法を学習し、モバイル アプリと関数の間で共有するデータ オブジェクトを含む共有プロジェクトを追加し、渡されたデータを逆シリアル化する関数の基本実装を作成する方法を学習しました。 Azure 関数をローカルで実行する方法も学習しました。 次の演習では、モバイル アプリから Azure 関数を呼び出します。

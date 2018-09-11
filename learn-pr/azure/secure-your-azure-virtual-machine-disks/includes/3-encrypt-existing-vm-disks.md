@@ -1,60 +1,60 @@
-Suppose your company has decided to implement Azure Disk Encryption (ADE) across all VMs. You need to evaluate how to roll out encryption to existing VM volumes.
+社内のすべての VM に Azure Disk Encryption (ADE) を実装することに決まったとします。 既存の VM ボリュームに暗号化をロールアウトする方法を評価する必要があります。
 
-Here, we'll look at the requirements for ADE, and the steps involved in encrypting disks on existing Windows VMs.
+ここでは、ADE の要件と、既存の Windows VM のディスクを暗号化するための手順を紹介します。
 
-## Azure Disk Encryption prerequisites
+## <a name="azure-disk-encryption-prerequisites"></a>Azure Disk Encryption の前提条件
 
-Before you can encrypt your first VM disk, you need to:
+最初の VM ディスクを暗号化する前に、次を行う必要があります。
 
-1. Create a key vault.
-1. Set up an Azure Active Directory (Azure AD) application and service principal.
-1. Set the key vault access policy for the Azure AD app.
-1. Set key vault advanced access policies.
+1. キー コンテナーを作成する
+1. Azure AD アプリケーションとサービス プリンシパルを設定する
+1. Azure AD アプリのキー コンテナー アクセス ポリシーを設定する
+1. キー コンテナーの高度なアクセス ポリシーを設定する
 
-### Azure Key Vault
+### <a name="azure-key-vault"></a>Azure Key Vault
 
-The encryption keys used by ADE can be stored in Azure Key Vault. Azure Key Vault is a tool for securely storing and accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, or certificates. This provides highly available and scalable secure storage, in Federal Information Processing Standards (FIPS) 140-2 Level 2 validated Hardware Security Modules (HSMs). Using Key Vault, you keep full control of the keys used to encrypt your data, and you can manage and audit your key usage. You can configure and manage your key vault using the Azure portal, Azure PowerShell, and the Azure CLI.
+ADE によって使用される暗号化キーは、Azure Key Vault に格納できます。 Azure Key Vault は、シークレットを安全に保管し、それにアクセスするためのツールです。 シークレットは、API キー、パスワード、証明書など、アクセスを厳密に制御する必要がある任意のものです。 これにより、Federal Information Processing Standards (FIPS) 140-2 レベル 2 で検証済みのハードウェア セキュリティ モジュール (HSM) において、可用性が高くスケーラブルで安全なストレージが提供されます。 キー コンテナーを使用して、データの暗号化に使用されるキーを全面的に制御し、キーの使用方法を管理して監査できます。 キー コンテナーの構成と管理には、Azure Portal、Azure PowerShell、および Azure CLI を使用します。
 
 >[!NOTE]
-> Azure Disk Encryption requires that your key vault and your VMs are in the same Azure region; this ensures that encryption secrets do not cross regional boundaries.
+> Azure Disk Encryption では、暗号化シークレットがリージョン境界を超えないするため、キー コンテナーと VM が同じ Azure リージョンにあることが必要です。
 
-### Azure AD application and service principal
+### <a name="azure-ad-application-and-service-principal"></a>Azure AD アプリケーションとサービス プリンシパル
 
-To access or modify resources, such as the encryption configuration for a VM with scripts or code, you must first set up an **Azure Active Directory (AD) application**. Azure AD is a multi-tenant, cloud-based directory, and identity management service. It combines core directory services, application access management, and identity protection into a single solution.
+スクリプトまたはコードを使用して、VM の暗号化構成などのリソースにアクセスしたり変更したりするには、まず、**Azure Active Directory (AD) アプリケーション** を設定する必要があります。 Azure Active Directory (Azure AD) は、マルチテナントに対応したクラウドベースのディレクトリおよび ID 管理サービスで、中核となるディレクトリ サービス、アプリケーションのアクセス管理機能、ID の保護機能が 1 つのソリューションに統合されています。
 
-You'll also need an Azure **service principal**. Service principals are the service accounts you use to run the script or code. They allow you to assign the specific permissions and scope that are needed to run the task against a particular Azure resource.
+Azure **サービス プリンシパル**も必要になります。 サービス プリンシパルは、スクリプトまたはコードを実行するために使用するサービス アカウントです。これによって、特定の Azure リソースに対してタスクを実行するために必要なアクセス許可とスコープを割り当てることができます。
 
-There are two elements in Azure AD: the application object is the **_definition_** of the application (what it does), and the service principal is the **_specific instance_** of the application.
+Azure AD には 2 つの要素があります。アプリケーション オブジェクトはアプリケーションの**_定義_** です (どのようなアプリケーション化)。サービス プリンシパルはアプリケーションの**_特定のインスタンス_** です。
 
-This approach aligns with the principle of **least privilege**, where the permissions assigned to the app are restricted to the bare minimum required to enable the app to perform its tasks.
+この方法は**最小限の特権**の原則と一致しており、アプリに割り当てられるアクセス許可は、アプリがタスクを実行するための必要最小限に制限されます。
 
-You can configure and manage Azure AD applications and service principals using the Azure portal, Azure PowerShell, and the Azure CLI.
+Azure AD アプリケーションとサービス プリンシパルの構成と管理には、Azure Portal、Azure PowerShell、および Azure CLI を使用します。
 
-### Key vault access policies
+### <a name="key-vault-access-policies"></a>キー コンテナー アクセス ポリシー
 
-Before you can store encryption keys in a key vault, ADE requires details on the **Client ID** and the **Client Secret** of the Azure AD application that is permitted to write to the key vault.
+キー コンテナーに暗号化キーを格納するには、事前に、Azure Active Directory アプリケーションの**クライアント ID** と**クライアント シークレット**の詳細を ADE に指定する必要があります。
 
-You'll also need to provide Azure access to the encryption keys in your key vault, so they are made available to the VM for booting and decrypting the volumes.
+キー コンテナー内の暗号化キーへのアクセス権を Azure に付与する必要もあります。これにより、ボリュームをブートして暗号化する際に、それらの情報を VM に提供できるようになります。
 
-## Set key vault advanced access policies
+## <a name="set-key-vault-advanced-access-policies"></a>キー コンテナーの高度なアクセス ポリシーを設定する
 
-**Advanced access policies** enable disk encryption on the key vault, and without them, encryption deployments will fail. 
+**高度なアクセス ポリシー**を使用すると、キー コンテナーに対するディスク暗号化が可能になります。これを使用しないと、暗号化のデプロイが失敗します。 
 
-There are three policies that need to be enabled:
+次の 3 つのポリシーを有効にする必要があります。
 
-- **Key Vault for disk encryption**. Required for Azure Disk Encryption.
-- **Key Vault for deployment**. Enables the Microsoft.Compute resource provider to retrieve secrets from the key vault. This policy is needed when you are creating a VM.
-- **Key Vault for template deployment, if needed**. Enables Azure Resource Manager to get secrets from the key vault. This policy is required when you are using Azure Resource Manager templates for VM deployment.
+- **キー コンテナーのディスク暗号化**: Azure Disk Encryption で必須です。
+- **キー コンテナーのデプロイ**: Microsoft.Compute リソース プロバイダーが、キー コンテナーからシークレットを取得できるようになります。このポリシーは VM を作成するときに必要です。
+- **キー コンテナーのテンプレートのデプロイ (必要な場合)**: Azure Resource Manager がこのキー コンテナーからシークレットを取得できるようになります。このポリシーは VM のデプロイ時に ARM を使用するときに必要です。
 
-Key vault access policies can be configured and managed using the Azure portal, Azure PowerShell, or the Azure CLI.
+キー コンテナー アクセス ポリシーの構成と管理には、Azure Portal、Azure PowerShell、または Azure CLI を使用します。
 
-### What is the Azure Disk Encryption prerequisites configuration script
+### <a name="what-is-the-azure-disk-encryption-prerequisites-configuration-script"></a>Azure Disk Encryption の前提条件構成スクリプトとは
 
-The **Azure Disk Encryption prerequisites configuration script** sets up all (or as many as you want) of the encryption prerequisites. The script also ensures that your key vault is in the same region as the VM you are going to encrypt. It will create a resource group and key vault, and set the key vault access policy. The script also creates a resource lock on the key vault to help protect it from accidental deletion.
+**Azure Disk Encryption の前提条件構成スクリプト**は、暗号化の前提条件をすべて (または必要なだけ) 設定します。 また、このスクリプトにより、暗号化しようとしている VM と同じリージョンにキー コンテナーが配置されます。 これにより、リソース グループとキー コンテナーが作成され、キー コンテナーのアクセス ポリシーが設定されます。 また、このスクリプトでは、誤って削除されるのを防ぐため、キー コンテナーに対するリソース ロックも作成されます。
 
-## Encrypting an existing VM disk
+## <a name="encrypting-an-existing-vm-disk"></a>既存の VM ディスクの暗号化
 
-There are two steps for encrypting an existing VM disk, when you are using the Azure Disk Encryption prerequisites configuration script:
+**Azure Disk Encryption 前提条件構成スクリプト**を使用して既存の VM ディスクを暗号化するには 2 つの手順があります。
 
-1. Run the Azure Disk Encryption prerequisites configuration script.
-1. Encrypt the Azure virtual machine in PowerShell.
+1. Azure Disk Encryption の前提条件構成スクリプトを実行します。
+1. PowerShell で Azure 仮想マシンを暗号化します。

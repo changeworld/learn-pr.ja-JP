@@ -3,13 +3,17 @@ uid: learn.choose-storage-approach-in-azure.1-introduction
 metadata:
   title: はじめに
   description: はじめに
-  displayType: one-column
-  ms.openlocfilehash: bd07b26f8a54f3ce1f7034c5fe90e683f566fb15
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0f666049393b55e6172e9f58a18c9fcc902951d5
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252282"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231828"
 title: はじめに
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

@@ -1,41 +1,29 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
 metadata:
-  title: Query types 
-  description: Learn what kinds of queries you can use in Azure Cosmos DB to retrieve your data.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Query types
+  title: クエリの種類
+  description: ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。
+  ms.openlocfilehash: ac566e569a81adeaf5e6b973f52b944f52682ade
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795396"
+title: クエリの種類
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/4-query-types.md)]
-#TODO: The quiz isn't displaying properly
 quiz:
-  title: 'Quiz Title'
+  title: テスト タイトル
   questions:
-  - content: 'What is the only required clause in a SQL query?'
+  - content: SQL クエリで唯一必要とされる句とは?
     choices:
-    - content: "SELECT"
+    - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+      isCorrect: false
+      incorrectExplanation: 違います。このクエリでは昇順に並べ替えられて製品 ID が返されます。
+    - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+      isCorrect: false
+      incorrectExplanation: 違います。このクエリでは降順に並べ替えられて ID のみが返されます。
+    - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
       isCorrect: true
-      incorrectExplanation: "Correct! SELECT is the only required clause in a query."
-    - content: FROM
-      isCorrect: false
-      correctExplanation: "No, FROM is an optional clause in a SQL query."
-    - content: "WHERE"
-      isCorrect: false
-      incorrectExplanation: "No, WHERE is an optional clause in a SQL query.
-  - content: 'Which query would you use to get an ordered list of products IDs and product descriptions, starting with the largest product ID and ending with the smallest product ID?"
-    choices:
-    - content: "SELECT p.productId FROM Products p ORDER BY p.productId ASC"
-      isCorrect: false
-      incorrectExplanation: "No, this would only return the product IDs in ascending order."
-    - content: "SELECT p.id FROM Products p ORDER BY p.productId DESC"
-      isCorrect: false
-      incorrectExplanation: "No, this would only return the ID in descending order"
-    - content: "SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC"
-      isCorrect: true
-      incorrectExplanation: "Correct, this would return both the product ID and product description in ascending order."
+      incorrectExplanation: 正解です。このクエリでは昇順に並べ替えられて製品 ID と製品の説明の両方が返されます。

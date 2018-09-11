@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.2-upload-tagged-images
-title: Upload tagged images
+title: タグを付けた画像をアップロードする
 metadata:
-  title: Upload tagged images
-  description: Upload tagged images
+  title: タグを付けた画像をアップロードする
+  description: タグを付けた画像をアップロードする
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: e570f4e1f7ff4ffd6efc97fa8a6330ec38c552c7
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248335"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-upload-tagged-images.md)]
+content: '[!include[](includes/2-upload-tagged-images.md)]'

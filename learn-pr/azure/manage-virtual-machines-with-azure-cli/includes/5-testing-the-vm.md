@@ -1,13 +1,13 @@
-When you create a virtual machine, it gets assigned a public IP address that is reachable over the Internet, and a private IP address used within the Azure data center. We can quickly test that the Linux VM is up and running using the `ssh` tool. Remember that we set our admin name to `aldis`, so we have to specify that.
+仮想マシンを作成すると、インターネット経由でアクセス可能なパブリック IP アドレスと、Azure データ センター内で使用されるプライベート IP アドレスが割り当てられてます。 `ssh` ツールを使用して、Linux VM が稼働していることを簡単にテストできます。 ここでは、管理者名を `aldis` に設定したので、この名前を指定する必要があります。
 
 ```azurecli
 ssh 168.61.54.62 -l aldis
 ```
 
 > [!NOTE]
-> We don't need a password because we generated an SSH key pair as part of the VM creation. The first time you shell into the VM, it will give you a prompt about the authenticity of the host. 
+> VM の作成の一環として SSH キー ペアを生成したので、パスワードは不要です。 初めて VM でシェルを実行すると、ホストの信頼性に関するプロンプトが表示されます。 
 > 
-> This is because we are hitting an IP address directly instead of a host name. Answering "yes" will save the IP as a valid host for connection and allow the connection to proceed.
+> これは、ホスト名ではなく IP アドレスを直接入力したためです。 "yes" と答えると、IP が接続の有効なホストとして保存され、接続の続行が許可されます。
 
 ```
 The authenticity of host '168.61.54.62 (168.61.54.62)' can't be established.
@@ -16,7 +16,7 @@ Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '168.61.54.62' (RSA) to the list of known hosts.
 ```
 
-Then you'll be presented with a remote shell where you can enter Linux commands.
+ここで、リモート シェルが表示され、Linux コマンドを入力できます。
 
 ```
 The programs included with the Debian GNU/Linux system are free software;
@@ -28,4 +28,4 @@ permitted by applicable law.
 aldis@SampleVM:~$
 ```
 
-Try a few commands as practice and when you are finished, sign out of your account (type `logout` or `exit` in the shell).
+練習としていくつかのコマンドを試し、終了したら、アカウントからサインアウトします (シェルで `logout` または `exit` を入力)。

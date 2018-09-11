@@ -1,93 +1,93 @@
-You created a site and you want to deploy it to Azure. Now we need to consider which Azure services to leverage to best support our needs. Web Apps provides a highly scalable, self-patching web hosting service for your applications.
+サイトが作成され、それを Azure にデプロイしたいとでしょう。 ここで、このニーズに最適な Azure サービスはどれか考える必要があります。 Web Apps は、アプリケーションに、高度にスケーラブルな自己適用型の Web ホスティング サービスを提供します。
 
-Here, we look at how to use Visual Studio to publish your ASP.NET Core web application to an Azure App Service plan.
+ここでは、Visual Studio を使用して Azure App Service プランに ASP.NET Core Web アプリケーションを発行する方法を説明します。
 
-## Azure subscription
+## <a name="azure-subscription"></a>Azure サブスクリプション
 
-To publish to Azure, you need to have an Azure subscription. You can use an [Azure Free Subscription](https://azure.microsoft.com/free/) for testing the Azure App Service features.
+Azure に発行するには、Azure サブスクリプションが必要です。 Azure App Service の機能のテストに、[Azure の無料アカウント](https://azure.microsoft.com/free/)を使用できます。
 
-## What is Web Apps?
+## <a name="what-is-web-apps"></a>Web Apps とは
 
-The Web Apps feature of Azure App Service is a service for hosting web applications, REST APIs, and mobile backends. Web Apps host code is written in a variety of languages, such as .NET, .NET Core, Java, Ruby, Node.js, PHP, and Python. Web Apps is ideal for most websites, particularly if you don't need a lot of control over the hosting infrastructure.
+Azure App Service の Web Apps 機能は、Web アプリケーション、REST API、およびモバイル バックエンドをホストするためのサービスです。 Web Apps のホスト コードは、.NET、.NET Core、Java、Ruby、Node.js、PHP および Python などのさまざまな言語で記述されています。 Web Apps は、特にホスティング インフラストラクチャを制御する必要があまりない、ほとんどの Web サイトに最適です。
 
-## What is the App Service plan?
+## <a name="what-is-the-app-service-plan"></a>App Service プランとは
 
-The App Service plan defines the compute resources your app will consume, where those resources are located, how many additional resources the plan can consume, and the type of service plan in use. These compute resources are analogous to the server farm in conventional web hosting. One or more apps can be configured to run on the same App Service plan.
+App Service プランでは、コンピューティング リソースの場所、そのプランで消費できる追加のリソースの数、使用されているサービス プランの種類など、アプリが使用するコンピューティング リソースを定義します。 これらのコンピューティング リソースは従来の Web ホスティングのサーバー ファームに似ています。 同じ App Service プランで 1 つ以上のアプリを実行するように構成することができます。
 
-When you deploy your apps, you can create a new App Service plan or you can continue to add apps to an existing plan.  However, apps in the same App Service plan all share the same compute resources. To determine whether the new app has the necessary resources, you need to understand the capacity of the existing App Service plan, and the expected load for the new app. Overloading an App Service plan can potentially cause downtime for your new and existing apps.
+アプリをデプロイする場合、新しい App Service プランを作成するか、アプリを既存のプランに追加し続けます。  ただし、同じ App Service プラン内のアプリは、同じコンピューティング リソースを共有します。 新しいアプリが必要なリソースを持てるかどうかを判断するには、既存の App Service プランの容量と新しいアプリの予想される負荷について理解する必要があります。 App Service プランのオーバーロードは、新規および既存のアプリのダウンタイムを引き起こす可能性があります。
 
-You can define an App Service plan in advance in the Azure portal with PowerShell or the Azure CLI, or set one up as you publish your application in Visual Studio.
+App Service プランは、事前に Azure portal で、PowerShell または Azure CLI を使用して定義することができます。また、アプリケーションを Visual Studio で発行するときにそれを設定することも可能です。
 
-Each App Service plan defines:
+各 App Service プランでは以下を定義します。
 
-- Region (West US, East US, and so on)
-- Number of VM instances
-- Size of VM instances (small, medium, large)
-- Pricing tier (Free, Shared, Basic, Standard, Premium, Premium V2, Isolated, Consumption)
+- リージョン (米国西部、米国東部など)
+- VM インスタンスの数
+- VM インスタンスのサイズ (小、中、大)
+- 価格レベル (Free、Shared、Basic、Standard、Premium、PremiumV2、Isolated、従量課金)
 
-## Specify the region
+## <a name="specify-the-region"></a>リージョンを指定する
 
-When creating an App Service plan, you have to define a region or location where that plan will be hosted. Typically, you would choose a region geographically close to your expected customers.
+App Service プランを作成する場合に、そのプランをホストするリージョンや場所を定義する必要があります。 通常、見込み顧客に地理的に近いリージョンを選択します。
 
-## What are the pricing and reliability levels?
+## <a name="what-are-the-pricing-and-reliability-levels"></a>価格と信頼性のレベルとは
 
-A key factor when deploying apps to Azure App Service is choosing the right service plan. Your App Service plan can be scaled up and down at any time. You can choose a lower pricing tier at first and scale up later when you need more App Service features.
+Azure App Service にアプリをデプロイするときの重要な要因は、正しいサービス プランの選択です。 App Service プランは、いつでもスケールアップまたはスケールダウンできます。 最初に低い価格レベルを選び、後で App Service 機能がさらに必要になったときにスケールアップできます。
 
-There are a few categories of pricing tiers:
+価格レベルにはいくつかのカテゴリがあります。
 
-**Shared compute**: **Free** and **Shared**, the two base tiers, run an app on the same Azure VM as other App Service apps, including apps of other customers. These tiers allocate CPU quotas to each app that runs on the shared resources, and the resources cannot scale out.
+**共有コンピューティング**: 2 つの基本レベルである **Free** と **Shared** は、他のお客様のアプリを含む他の App Service アプリと同じ Azure VM 上でアプリを実行します。 これらのレベルは共有リソースで実行される各アプリに CPU クォータを割り当て、リソースはスケールアウトできません。
 
-Free and Shared plans are best for small-scale personal projects with very limited traffic demands, with a set limit of 165 MB of outbound data every 24 hours.
+Free および Shared プランは、トラフィックの需要が非常に少ない小規模な個人プロジェクトに最適です。限度として、24 時間ごとに 165 MB の送信データが設定されています。
 
-**Dedicated compute**: The **Basic, Standard, Premium, and Premium V2** tiers run apps on dedicated Azure VMs. Only apps in the same App Service plan share the same compute resources. The higher the tier, the more VM instances are available to you for scale out.
+**専用コンピューティング**: **Basic、Standard、Premium、PremiumV2** のレベルはアプリを専用の Azure VM 上で実行します。 同じ App Service プラン内のアプリのみが同じコンピューティング リソースを共有します。 レベルが高いほど、スケールアウトに使用できる VM インスタンスが多くなります。
 
-The Standard service plan is best suited for live production workloads, where you are publishing commercial applications to customers.
-The Premium service plans support high-capacity web apps where you do not want the additional costs of a dedicated (isolated) plan.
+Standard サービス プランは、商用のアプリをお客様に発行する、ライブ プロダクション ワークロードに最適です。
+Premium サービス プランは、専用 (Isolated) プランによる追加コストを支払いたくない、処理能力の高い Web アプリをサポートしています。
 
-**Isolated**: This tier runs dedicated Azure VMs on dedicated Azure virtual networks, which provide network isolation on top of compute isolation to your apps. It provides the maximum scale-out capabilities. You would only select an Isolated service plan when you have a specific requirement for the highest levels of security and performance.
+**Isolated**: このレベルは、専用の Azure VM を専用の Azure 仮想ネットワーク上で実行し、コンピューティングの分離の上のネットワークの分離をアプリに提供します。 最大のスケールアウト機能を提供します。 Isolated サービス プランは、最高レベルのセキュリティおよびパフォーマンスが必要な特殊な場合を除き、選択しません。
 
-Isolate your app into a new App Service plan when:
+次の場合にはアプリを新しい App Service プランに分離してください。
 
-- The app is resource-intensive
-- You want to scale the app independently from the other apps in the existing plan
-- The app needs resources in a different geographical region
+- アプリが多くのリソースを消費している。
+- 既存のプランの他のアプリとは別に、そのアプリをスケーリングする必要がある。
+- アプリに別の地理的なリージョンのリソースが必要である。
 
-**Consumption**: This tier is only available to function apps. It scales the functions dynamically depending on workload. For more information, see the Azure Functions hosting plans comparison.
+**従量課金**: このレベルは関数アプリにのみ使用できます。 ワークロードに応じて関数を動的にスケーリングします。 詳細については、「Azure Functions のホスティング プラン」を参照してください。
 
-## Specify the resource group
+## <a name="specify-the-resource-group"></a>リソース グループを指定する
 
-As with most Azure resources, you will need to specify the resource group you want to use. You can use an existing resource group or create a new one directly from Visual Studio. A resource group is a logical container into which Azure resources like web apps, databases, and storage accounts are deployed and managed. It is a useful mechanism for keeping associated resources together.
+多くの Azure リソース同様、使用するリソース グループを指定する必要があります。 既存のリソース グループを使用することも、Visual Studio から新しいリソース グループを作成することもできます。 リソース グループとは、Web アプリ、データベース、ストレージ アカウントなどの Azure リソースのデプロイと管理に使用する論理コンテナーです。 これは、関連するリソースを一緒に保持する便利なメカニズムです。
 
-## Deploy your web app from Visual Studio
+## <a name="deploy-your-web-app-from-visual-studio"></a>Visual Studio から Web アプリをデプロイする
 
-It's a short process to publish your app to Azure from Visual Studio.
+アプリの Azure から Visual Studio への発行は、短時間で行えます。
 
-### Select the project
+### <a name="select-the-project"></a>プロジェクトを選択する
 
-1. Right-click the project in Solution Explorer.
+1. ソリューション エクスプローラーで、プロジェクトを右クリックします。
 
-1. Select **Publish > Publish to Azure**.
+1. **[発行]、[Azure に発行する]** の順に選択します。
 
-### Configure the App Service plan in Windows
+### <a name="configure-the-app-service-plan-in-windows"></a>Windows で App Service のプランを構成する
 
-1. Configure the App Service plan
+1. App Service のプランを構成する
 
-    - Hosting: You will configure your App Service plan in this tab. It specifies the location, size, and features of the web server that hosts your app. You can select an existing hosting plan or create a new one. Windows will automatically generate globally unique names which you can change during setup.
-    - Services: You can configure a SQL database for your site here.
+    - Hosting\(ホスティング\): このタブでは、App Service のプランを設定します。ここでは、アプリをホストする Web サーバー ファームの場所、サイズ、機能を指定します。 既存のホスティング プランを選択するか、新しいホスティング プランを作成します。 Windows によって、グローバルに一意の名前が自動的に生成されます。この名前は、設定中に変更することができます。
+    - サービス: ここで、サイトの SQL データベースを構成できます。
 
         > [!NOTE]
-        > Although you can connect and manage a SQL database in Azure from Visual Studio, that is beyond the scope of this module.
+        > Visual Studio から Azure の SQL データベースに接続し、それを管理します。しかし、このモジュールではそれについては扱いません。
 
-1. Click **Create** to deploy the app. Once this is done, Visual Studio will launch the web page where your site is hosted.
+1. **[作成]** をクリックして、アプリをデプロイします。 これが完了すると、Visual Studio によりサイトがホストされている Web ページが起動されます。
 
-### Configure the App Service plan for Mac
+### <a name="configure-the-app-service-plan-for-mac"></a>Mac 向けの App Service プランを構成する
 
-1. You can select an existing App Service plan if you have one set up in Azure, or you can create a new one.
+1. Azure で設定済みの場合、既存の App Service プランを選択するか、新しいものを作成することができます。
 
-1. Configure your  App Service plan in this tab. It specifies the location, size, and features of the web server that hosts your app. You can select an existing hosting plan or create a new one. Remember that Azure requires the name of your website and all resources to be globally unique.
+1. このタブで App Service プランを構成します。ここでは、アプリをホストする Web サーバー ファームの場所、サイズ、機能を指定します。 既存のホスティング プランを選択するか、新しいホスティング プランを作成します。 Azure では、Web サイトと、すべてのリソースの名前がグローバルに一意である必要があることに注意してください。
 
-1. Click **Create** to deploy the app. Once this is done, Visual Studio will launch the web page where your site is hosted.
+1. **[作成]** をクリックして、アプリをデプロイします。 これが完了すると、Visual Studio によりサイトがホストされている Web ページが起動されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-ASP.NET Core web applications and Azure App Services provide a flexible, scalable solution for hosting your ASP.NET web app. As with all Azure services, you will need to provide a resource group and select the pricing tier which best fulfills your needs.
+ASP.NET Core Web アプリケーションおよび Azure App Services は、ASP.NET Web アプリをホストする柔軟でスケーラブルなソリューションです。 他の Azure サービス同様、リソース グループを提供し、ニーズを一番満たす価格レベルを選択する必要があります。

@@ -1,31 +1,31 @@
-The Eclipse integrated development environment (IDE) is used for Java development by a lot of developers. It is a great choice for connecting your Java application to your Azure subscription, as there are many tools readily available. The Azure Toolkit for Eclipse provides templates and features to simplify using Azure in your Java applications.
+多くの開発者が、Java 開発用に Eclipse 統合開発環境 (IDE) を使用しています。 すぐに使用できる多くのツールがあるため、Azure サブスクリプションに Java アプリケーションを接続するための優れた選択肢です。 Azure Toolkit for Eclipse では、Java アプリケーションで Azure を簡単に使用できるテンプレートと機能が提供されています。
 
-## Eclipse
+## <a name="eclipse"></a>Eclipse
 
-The most widely used IDE by Java developers is Eclipse. It is a very versatile development environment, which has an extensible plugin architecture that can be used to support other languages apart from Java. While the majority of Eclipse users are Java developers, a lot of other disciplines are also using Eclipse, including C++, Python, C, and Ruby. It receives regular annual updates to keep the IDE modern and up-to-date.
+Java 開発者によって最も広く使用されている IDE は Eclipse です。 非常に汎用的な開発環境であり、Java 以外の他の言語をサポートするために使用できる拡張可能なプラグイン アーキテクチャを備えています。 Eclipse のユーザーの大半は Java 開発者であり、C++、Python、C、Ruby などの他の分野の多くも Eclipse を使用しています。 IDE を最新の状態に保つための更新プログラムが毎年提供されます。
 
-Eclipse is used for large enterprise apps, and many of these are likely to require connections to Microsoft Azure services and products.
+Eclipse は大規模なエンタープライズ アプリに使用され、その多くでは Microsoft Azure のサービスと製品への接続が必要になる可能性があります。
 
-## Azure Toolkit for Eclipse
+## <a name="azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
-The Azure Toolkit for Eclipse provides templates and functionality that you can use to easily create, develop, test, and deploy cloud applications to Azure from inside the Eclipse IDE.
+Azure Toolkit for Eclipse では、クラウド アプリケーションを簡単に作成、開発、およびテストし、Eclipse IDE の内部から Azure に展開できる、テンプレートと機能が提供されています。
 
-The toolkit includes integration templates for Docker containers, HDInsights, Azure documentation, Azure Redis Cache, storage account operations, and virtual machine management.
+このツールキットには、Docker コンテナー、HDInsight、Azure ドキュメント、Azure Redis Cache、ストレージ アカウント操作、および仮想マシン管理のための統合テンプレートが含まれています。
 
-## Installation of Eclipse with Azure tooling
+## <a name="installation-of-eclipse-with-azure-tooling"></a>Azure ツールでの Eclipse のインストール
 
-Eclipse is supported on Windows, macOS, and Linux. The installation process uses the Eclipse installer on all platforms, varying only in the general installation procedure between the platforms.
+Eclipse は、Windows、macOS、および Linux でサポートされています。 すべてのプラットフォームでインストール プロセスには Eclipse インストーラーが使用され、プラットフォーム間での一般的インストール手順のみが異なります。
 
-Installing Eclipse for Java or Java EE on any platform is straight-forward, and looks like any other installation on the chosen platform. The installer also prompts the user to choose the packages to install depending on the target language and frameworks.
+どのプラットフォームでも Java または Java EE に対する Eclipse のインストールは簡単であり、選択したプラットフォームでの他のインストールと同様です。 対象の言語およびフレームワークに応じて、ユーザーはインストールするパッケージの選択を求められることもあります。
 
-## The Azure Toolkit for Eclipse
+## <a name="the-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse
 
-Because the Azure Toolkit is installed through the Eclipse IDE itself, it is the same procedure on all the supported operating systems. The toolkit itself is available from the Eclipse Marketplace.
+Azure Toolkit は Eclipse IDE 自体によってインストールされるため、サポートされているすべてのオペレーティング システムで同じ手順になります。 ツールキット自体は、Eclipse Marketplace から入手できます。
 
-The entire toolkit is open source and hosted in GitHub. It is frequently updated to consistently work with new features and updates on the Azure cloud platform.
+ツールキット全体がオープン ソースであり、GitHub でホストされています。 Azure クラウド プラットフォームで新機能と更新プログラムが一貫して動作するように、頻繁に更新されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this section, you have learned how simple and easy it is to get started creating Java applications by using Eclipse and the Azure Toolkit. Once installed, the toolkit provides a multitude of easy-to-use templates and features that makes Azure integration simpler and more efficient.
+このセクションでは、Eclipse と Azure Toolkit を使用して Java アプリケーションの作成をシンプルに始められることを学習しました。 ツールキットをインストールすると、Azure の統合をいっそう簡単かつ効率的にする、シンプルに使用できるさまざまなテンプレートと機能が提供されます。
 
-Both Eclipse and the Azure Toolkit are frequently updated, and provide a stable and efficient way to write Java applications with cloud integration.
+Eclipse と Azure Toolkit はどちらも頻繁に更新され、クラウド統合を使用して Java アプリケーションを記述する安定した効率的な方法が提供されます。

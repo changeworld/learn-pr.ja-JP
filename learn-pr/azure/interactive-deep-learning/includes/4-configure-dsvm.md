@@ -1,18 +1,18 @@
-## Introduction to Jupyter for more interactive deep learning 
+## <a name="introduction-to-jupyter-for-more-interactive-deep-learning"></a>ディープ ラーニングをいっそう対話型にするための Jupyter の概要 
 
-Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
+Jupyter Notebook はオープン ソースの Web アプリケーションであり、ライブ コード、数式、視覚化、および説明テキストが含まれるドキュメントを作成して共有することができます。 用途: データのクリーニングと変換、数値のシミュレーション、統計的モデリング、データの視覚化、機械学習、その他。
 
-## Serving Jupyter Notebooks with Nvidia Docker on an Azure DSVM
+## <a name="serving-jupyter-notebooks-with-nvidia-docker-on-an-azure-dsvm"></a>Azure DSVM で Nvidia Docker を使用して Jupyter Notebook を提供する
 
-### Step 1 Create a Linux DSVM
+### <a name="step-1-create-a-linux-dsvm"></a>手順 1: Linux DSVM を作成する
 
-Use call code from the Azure CLI
+Azure CLI から呼び出しコードを使用します
 
 ```
 code .
 ```
 
-Fill in the following deployment schema and save it as parameter_file.json
+次の展開スキーマを入力し、parameter_file.json として保存します
 
 ``` 
 { 
@@ -27,40 +27,40 @@ Fill in the following deployment schema and save it as parameter_file.json
 }
 ```
 
-A list of available vm sizes can be found here [Ubuntu DSVM ARM template](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst).
+使用可能な VM のサイズの一覧は、こちらの [Ubuntu DSVM ARM テンプレート](https://azure.microsoft.com/en-us/global-infrastructure/services/?WT.mc_id=blog-learning-abornst)で見つかります。
 
 
-### Create a resource group for your DSVM in a region of your choice:
+### <a name="create-a-resource-group-for-your-dsvm-in-a-region-of-your-choice"></a>選択したリージョンで DSVM 用のリソース グループを作成します。
 ```
 az group create --name [[NAME OF RESOURCE GROUP]] --location [[ Data center. For eg: "West US 2"]]
 ```
 
-A list of available regions can be found here [Azure Regions](https://github.com/Azure/DataScienceVM/blob/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json).
+使用できるリージョンの一覧は、こちらの [Azure リージョン](https://github.com/Azure/DataScienceVM/blob/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json)をご覧ください。
 
-### Deploy your DSVM to your new resource group
+### <a name="deploy-your-dsvm-to-your-new-resource-group"></a>新しいリソース グループに、DSVM を展開します
 
 ```
 az group deployment create --resource-group  [[NAME OF RESOURCE GROUP ABOVE]]  --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json --parameters parameter_file.json
 ```
 
-## Step 2 Open the Port 8888, 22 on the DSVM 
+## <a name="step-2-open-the-port-8888-22-on-the-dsvm"></a>手順 2: DSVM でポート 8888、22 を開く 
 
 ```
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 22 --priority 900
 $ az vm open-port -g [[NAME OF RESOURCE GROUP]] -n [[HOSTNAME OF DSVM]] --port 8888 --priority 901
 ```
 
-Port 8888 is the default port for Jupyter Notebooks For detailed steps on opening a port [click here](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)
+ポート 8888 は Jupyter Notebook の既定のポートです。ポートを開く詳しい手順については、[こちらをクリック](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/nsg-quickstart-portal?WT.mc_id=blog-medium-abornst)してください
  
-## Step 3 Connect to the DSVM with the Azure Shell 
+## <a name="step-3-connect-to-the-dsvm-with-the-azure-shell"></a>手順 3: Azure シェルを使用して DSVM に接続する 
  
 ``` 
 ssh myuser@[[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com 
 ``` 
 
-## Step 4 Run Jupyter in Docker Container & link 8888 port to the VM Host 
+## <a name="step-4-run-jupyter-in-docker-container--link-8888-port-to-the-vm-host"></a>手順 4: Docker コンテナー内の Jupyter を実行し、8888 ポートを VM ホストにリンクする 
 
-Link port 8888 between the VM and the docker container, install jupyter and pull pytorch tutorials.  
+VM と Docker コンテナーの間のポート 8888 をリンクし、Jupyter をインストールし、pytorch チュートリアルをプルします。  
 
 ```  
 sudo docker run --rm -it --entrypoint '/bin/sh' -p 8888:8888 pytorch/pytorch -c \
@@ -69,11 +69,11 @@ sudo docker run --rm -it --entrypoint '/bin/sh' -p 8888:8888 pytorch/pytorch -c 
   jupyter notebook --ip=0.0.0.0 --no-browser --allow-root'
 ``` 
 
-## Step 5 Navigate to the Jupyter Notebook in the Browser 
+## <a name="step-5-navigate-to-the-jupyter-notebook-in-the-browser"></a>手順 5: ブラウザーで Jupyter Notebook に移動する 
 
-Once the Jupyter notebook is running you will see a message as follows : 
+Jupyter Notebook が実行すると、次のようなメッセージが表示されます。 
 
-> Copy/paste this URL into your browser when you connect for the first time, to login with a token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken}
+> Copy/paste this URL into your browser when you connect for the first time, to login with a token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken} (初めて接続するときは、この URL をコピーしてブラウザーに貼り付け、トークンを使用してログインします: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken})
 
-Replace the **http://(5b8783e7911d or 127.0.0.1)** part of the url with **[[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com** and navigate to the address  in a new a tab in your browser:
+Replace the **http://(5b8783e7911d or 127.0.0.1)** part of the url with **[[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com** and navigate to the address  in a new a tab in your browser: (URL の http://(5b8783e7911d or 127.0.0.1) の部分を [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com に置き換え、ブラウザーの新しいタブでアドレスに移動します。)
 - [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com:8888/?token={sometoken}

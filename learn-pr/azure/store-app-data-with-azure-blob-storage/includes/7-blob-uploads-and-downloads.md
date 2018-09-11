@@ -81,7 +81,7 @@ az webapp deployment source config-zip --src ../site.zip --name <your-unique-app
 
 ブラウザーで `https://<your-unique-app-name>.azurewebsites.net` を開いて、実行中のアプリを表示します。 次の図のようになります。
 
-![FileUploader Web アプリのスクリーンショット](../media-drafts/fileuploader-empty.PNG)
+![FileUploader Web アプリのスクリーンショット](../media/7-fileuploader-empty.PNG)
 
 アプリをテストするため、ファイルをいくつかアップロードしてダウンロードしてみましょう。 ファイルをいくつかアップロードしたら、シェル内で次を実行して、コンテナーにアップロードされた BLOB を確認します。
 

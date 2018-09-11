@@ -1,20 +1,19 @@
-In this module, we learned what cloud computing is and how it can help every business, from start-up to large enterprise. At this point, we should know what cloud computing is, however, we haven't talked about a specific cloud provider.
+このモジュールでは、クラウド コンピューティングとは何か、また、新規事業から大企業まで、あらゆるビジネスにそれがどのように役立つかを見てきました。 この時点で、クラウド コンピューティングとは何かを理解しましたが、特定のクラウド プロバイダーについてはまだ説明していません。
 
-### Microsoft Azure
+### <a name="microsoft-azure"></a>Microsoft Azure
 
-Azure is Microsoft's cloud computing platform. Azure provides over 100 services that enable you to do everything from running your existing applications on virtual machines to exploring new software paradigms such as intelligent bots and mixed reality.
+Azure は Microsoft のクラウド コンピューティング プラットフォームです。 Azure は 100 を超えるサービスを提供しています。仮想マシン上で既存のアプリケーションを実行するサービスから、インテリジェント ボットや複合現実などの新しいソフトウェア パラダイムを探索するサービスまであらゆるサービスがそろっています。
 
-Here are just a few kinds of services you'll find on Azure:
+ここでは、Azure で利用できるサービスのごく一部を紹介します。
 
-- **Compute** services such as VMs and containers that can run your applications
-- **Database** services that provide both relational and NoSQL choices
-- **Identity** services that help you authenticate and protect your users
-- **Networking** services that connect your data center to the cloud, provide high availability, or host your DNS domain
-- **Storage** solutions that can accommodate massive amounts of both structured and unstructured data
-- **AI and machine-learning** services that can naturally communicate with your users through vision, hearing, and speech
-- And many more!
+- **コンピューティング**: アプリケーションを実行できる VM やコンテナーなどのサービスです
+- **データベース**: リレーショナル データベースと NoSQL データベースが用意されているサービスです
+- **ID**: ユーザーを認証および保護できるサービスです
+- **ネットワーク**: データ センターをクラウドに接続する、高可用性を実現する、または DNS ドメインをホストすることができるサービスです
+- **記憶域**: 構造化データと非構造化データの両方を大量に格納できるソリューションです
+- **AI および機械学習**: 視覚、聴覚、音声を使用してユーザーと自然にコミュニケーションをとることができるサービスです
+- その他にも数多くのサービスがあります。
 
-### Get started with Microsoft Azure
+### <a name="get-started-with-microsoft-azure"></a>Microsoft Azure の概要
 
-You can jump into Azure today with a free trial account! Head to
-[azure.microsoft.com](https://azure.microsoft.com).
+無料試用版アカウントで今日からすぐに Azure を始められます。 [azure.microsoft.com](https://azure.microsoft.com) に移動します。

@@ -1,35 +1,35 @@
-Your Alpine Ski House web app is up and running, but now you need to show it to your boss. You are going to have to update the site and publish those updates to Azure.
+これで、Alpine Ski House の Web アプリが起動および実行されたので、あなたはこれを上司に見せる必要があります。 サイトを更新し、それらの更新を Azure に発行する必要があります。
 
-## Update your web app
+## <a name="update-your-web-app"></a>Web アプリを更新する
 
-### Replace the boilerplate code
+### <a name="replace-the-boilerplate-code"></a>定型のコードを置き換える
 
-1. In the **Pages** folder, open the **About.cshtml** file.
+1. **[ページ]** フォルダーで **[About.cshtml]** ファイルを開きます。
 
-1. At the bottom of the code, locate `<p> Use this area to provide additional information. </p>`
+1. コードの下部で `<p> Use this area to provide additional information. </p>` を検索します。
 
-1. Replace the boilerplate text with `Welcome to the Alpine Ski House!`
+1. 定型のテキストを `Welcome to the Alpine Ski House!` に置き換えます。
 
-1. Save the file.
+1. ファイルを保存します。
 
-1. Open the **About.cshtml.cs** file.
+1. **About.cshtml.cs** ファイルを開きます。
 
-1. Replace the `Message` string to say **Alpine Ski House is the premier ski hill in Northeast.**
+1. `Message` の文字列を、**Alpine Ski House is the premier ski hill in Northeast.** などに置き換えます。
 
-1. Save the file.
+1. ファイルを保存します。
 
-### Publish your updates
+### <a name="publish-your-updates"></a>更新を発行する
 
-1. In Solution Explorer, right-click the project.
+1. ソリューション エクスプローラーで、プロジェクトを右クリックします。
 
-1. Select **Publish**. You should have an option that includes your [website]-web deploy.
+1. **[発行]** を選択します。 お使いの [Web サイト]-Web 配置を含むオプションがあるはずです。
 
-1. Select your site, and Visual Studio will send your changes to Azure.
+1. ご自分のサイトを選択すると、Visual Studio によって変更点が Azure に送信されます。
 
-### View your changes
+### <a name="view-your-changes"></a>変更を確認する
 
-Once you've published your changes, Visual Studio will open the site in your browser. Navigate to the **About** page, and see that your changes are reflected.
+変更を発行したら、Visual Studio によってサイトがブラウザーで開かれます。 **[About]\([概要]\)** ページに移動し、変更が反映されていることを確認します。
 
-## Congrats!
+## <a name="congrats"></a>おめでとうございます!
 
-You have successfully updated your web app using Visual Studio 2017.
+Web アプリが Visual Studio 2017 で正常に更新されました。

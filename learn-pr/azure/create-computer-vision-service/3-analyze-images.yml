@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.3-analyze-images
+interactive: bash
+title: Computer Vision を使用して画像を分析する
+metadata:
+  title: Computer Vision を使用して画像を分析する
+  description: Computer Vision を使用して画像を分析する
+  ms.openlocfilehash: 115d05a33085d6fe37df1938dc200939acf6f02c
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833650"
+durationInMinutes: 10
+content: '[!include[](includes/3-analyze-images.md)]'

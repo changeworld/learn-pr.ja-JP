@@ -1,65 +1,65 @@
-The application you're building is a cross-platform mobile app that talks to an Azure function to share your location. In this unit, you create the blank mobile app using Visual Studio and install a NuGet package that has an API for getting the user's location.
+ビルドするアプリケーションはクロスプラットフォームのモバイル アプリであり、Azure 関数と通信を行って場所を共有します。 このユニットでは、Visual Studio を使用して空のモバイル アプリを作成し、ユーザーの場所を取得するための API を含む NuGet パッケージをインストールします。
 
-## Create the Xamarin.Forms project
+## <a name="create-the-xamarinforms-project"></a>Xamarin.Forms プロジェクトを作成する
 
-1. From Visual Studio, select *File->New->Project...*.
+1. Visual Studio で、*[ファイル]、[新規]、[プロジェクト]* の順に選択します。
 
-1. From the tree on the left-hand side, select *Visual C#->Cross-Platform* and then select *Mobile App (Xamarin.Forms)* from the panel in the center.
+1. 左側にあるツリーから、*[Visual C#]、[クロス プラットフォーム]* の順に選択し、中央のパネルから *[モバイル アプリ (Xamarin.Forms)]* を選びます。
 
-1. Name the solution "ImHere".
+1. ソリューションに "ImHere" という名前を付けます。
 
-1. Choose an appropriate location for the solution.
+1. ソリューションに適した場所を選びます。
 
-    > If you are running this module locally on Windows and are planning on building for Android, then make sure the path is as short as possible. There are path length limitations with the Android SDK, so your root path should be as short as possible.
-
-1. Click **OK**.
-
-    ![The New Solution dialog](../media-drafts/2-new-solution-dialog.png)
-
-1. From the **New Cross Platform App** dialog, select the *Blank App* template.
-
-1. For this module you will build a UWP app, so uncheck iOS and Android and leave UWP checked.
-
-    > If you are running this locally, then you can leave Android checked because the Android SDK is installed as part of the *Mobile Development With .NET* workload inside Visual Studio. If you also want to build for iOS, you will need to pair to a macOS build agent. You can read more on this in the [Xamarin iOS docs](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/).
-
-1. For the *Code Sharing Strategy*, select **.NET Standard**.
+    > このモジュールを Windows でローカルに実行しており、Android 用のビルドを計画している場合は、パスをできるだけ短くしてください。 Android SDK にはパスの長さに関する制限があるため、ルート パスをできるだけ短くする必要があります。
 
 1. Click **OK**.
 
-    ![The configure new solution dialog](../media-drafts/2-configure-solution-dialog.png)
+    ![[新しいソリューション] ダイアログ](../media-drafts/2-new-solution-dialog.png)
 
-Visual Studio will create two projects for you - a UWP app called `ImHere.UWP` and a .NET standard library, `ImHere`. Xamarin.Forms apps are made up of two parts - one or more platform-specific app projects and one (or more) .NET standard libraries. The platform-specific app projects contain the platform-specific code needed to run an app on the relevant platform. These projects then launch a Xamarin.Forms app that is defined in a cross-platform .NET standard library. You build your app in cross-platform code and, at runtime, any user interfaces you create are translated into the relevant platform-specific UI components.
+1. **[New Cross Platform App]\(新しいクロス プラットフォーム アプリ\)** ダイアログで、*[空のアプリ]* テンプレートを選択します。
 
-## Adding Xamarin.Essentials
+1. このモジュールでは、UWP アプリをビルドするため、iOS と Android をオフにし、UWP はオンのままにします。
 
-The UWP, Android, and iOS platforms provide numerous similar capabilities that take advantage of the operating system and hardware. Despite these similarities, the APIs are very different. Using these APIs from cross-platform code requires writing platform-specific code in your app projects that you expose to your .NET standard libraries. [Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/) is a NuGet package that provides a cross-platform abstraction over a number of these APIs, including the geolocation APIs that you will use in your app to get the user's location.
+    > ローカルでこれを実行する場合は、Android をオンのままにしておいてかまいません。Android SDK は、Visual Studio 内で *[.NET によるモバイル開発]* ワークロードの一部としてインストールされるためです。 また iOS 用にビルドする場合は、macOS ビルド エージェントにペアリングする必要があります。 これに関する詳細については、[Xamarin iOS のドキュメント](https://docs.microsoft.com/xamarin/ios/get-started/installation/windows/connecting-to-mac/)を参照してください。
 
-1. Right-click on the `ImHere` solution in the Visual Studio Solution Explorer and select *Manage NuGet Packages for Solution...*.
+1. *[コード共有方法]* では、**[.NET Standard]** を選択します。
 
-1. Select the **Browse** tab and search for "Xamarin.Essentials". This package is currently available as a prerelease NuGet package, so check the *include prelease* box.
+1. Click **OK**.
 
-1. Select the **Xamarin.Essentials** NuGet package.
+    ![新しいソリューションの構成ダイアログ](../media-drafts/2-configure-solution-dialog.png)
 
-1. Check all your projects in the project list on the right-hand side.
+Visual Studio では 2 つのプロジェクト (`ImHere.UWP` という UWP アプリと `ImHere` という .NET 標準ライブラリ) が作成されます。 Xamarin.Forms アプリは 2 つの部分、つまり、1 つ以上のプラットフォーム固有のアプリ プロジェクトと 1 つ (またはそれ以上の) .NET 標準ライブラリで構成されます。 プラットフォーム固有のアプリ プロジェクトには、関連するプラットフォームでアプリを実行するために必要なプラットフォーム固有のコードが含まれます。 その後、これらのプロジェクトでは、クロスプラットフォームの .NET 標準ライブラリで定義されている Xamarin.Forms アプリが起動されます。 クロスプラットフォーム コードでアプリをビルドすると、実行時に、作成するすべてのユーザー インターフェイスが、関連するプラットフォーム固有の UI コンポーネントに変換されます。
 
-1. Click the **Install** button to install the NuGet package. You'll need to accept the license to continue.
+## <a name="adding-xamarinessentials"></a>Xamarin.Essentials の追加
 
-    ![Adding the Xamarin.Essentials NuGet package to all projects in the solution](../media-drafts/2-add-essentials-nuget.png)
+UWP、Android、iOS プラットフォームでは、オペレーティング システムとハードウェアを利用する数多くの同様の機能が提供されます。 これらは似ていますが、API は大きく異なります。 クロスプラットフォーム コードからこれらの API を使用するには、.NET 標準ライブラリに公開するアプリ プロジェクトでプラットフォーム固有のコードを記述する必要があります。 [Xamarin.Essentials](https://docs.microsoft.com/xamarin/essentials/) は NuGet パッケージであり、これらの多くの API でのクロスプラットフォームの抽象化が提供されます。これらの API には、ユーザーの場所を取得するためにアプリで使用する地理位置情報 API が含まれます。
 
-    > If you are running this module locally and want to target Android, you'll need to do some additional setup. For more information, see the [Xamarin.Essentials Getting Started docs](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid).
+1. Visual Studio のソリューション エクスプローラーで `ImHere` ソリューションを右クリックし、*[ソリューションの NuGet パッケージの管理]* を選択します。
 
-## Building and running the app
+1. **[参照]** タブを選択し、"Xamarin.Essentials" を検索します。 このパッケージは現在、プレリリース版の NuGet パッケージとして利用可能であるため、*[include prelease]\(プレリリースを含める\)* ボックスをオンにします。
 
-1. Right-click on the `ImHere.UWP` project in Solution Explorer and select *Set as StartUp project*.
+1. **[Xamarin.Essentials]** NuGet パッケージを選択します。
 
-1. Set the build configuration to **Debug**, the platform to **x86**, and the device to run on to **Local Machine**.
+1. 右側にあるプロジェクトの一覧で自分のプロジェクトをすべて確認します。
 
-    ![Setting the Debug x86 configuration to run on the local device](../media-drafts/2-debug-configuration.png)
+1. **[インストール]** ボタンをクリックして、NuGet パッケージをインストールします。 続行するにはライセンスに同意する必要があります。
 
-1. Start debugging the app.
+    ![ソリューション内のすべてのプロジェクトへの Xamarin.Essentials NuGet パッケージの追加](../media-drafts/2-add-essentials-nuget.png)
 
-    ![The app running](../media-drafts/2-debuging-app.png)
+    > このモジュールをローカルで実行し、Android を対象とする場合は、追加のセットアップをいくつか行う必要があります。 詳細については、[Xamarin.Essentials の概要に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/get-started?context=xamarin%2Fios&tabs=windows%2Candroid)を参照してください。
 
-## Summary
+## <a name="building-and-running-the-app"></a>アプリのビルドと実行
 
-In this unit, you created a new Xamarin.Forms cross-platform mobile app and added the Xamarin.Essentials NuGet package. Next, you learn how to build up the mobile app UI and logic.
+1. ソリューション エクスプローラーで、`ImHere.UWP` プロジェクトを右クリックして *[スタートアップ プロジェクトに設定]* を選択します。
+
+1. ビルド構成を **[デバッグ]** に、プラットフォームを **[x86]** に、実行先のデバイスを **[ローカル コンピューター]** にそれぞれ設定します。
+
+    ![ローカル デバイスで実行する場合のデバッグ x86 構成の設定](../media-drafts/2-debug-configuration.png)
+
+1. アプリのデバッグを開始します。
+
+    ![実行中のアプリ](../media-drafts/2-debuging-app.png)
+
+## <a name="summary"></a>まとめ
+
+このユニットでは、新しい Xamarin.Forms クロスプラットフォームのモバイル アプリを作成し、Xamarin.Essentials NuGet パッケージを追加しました。 次は、モバイル アプリの UI とロジックを構築する方法を学習します。

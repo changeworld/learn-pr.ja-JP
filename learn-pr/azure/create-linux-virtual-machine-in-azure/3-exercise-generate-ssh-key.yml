@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.3-exercise-generate-ssh-key
-title: Decide an authentication method for SSH
+title: SSH の認証方法を決定する
 metadata:
-  title: Decide an authentication method for SSH
-  description: Decide an authentication method for SSH
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: SSH の認証方法を決定する
+  description: SSH の認証方法を決定する
+  ms.openlocfilehash: 8171140ebe5ae8689c0be373d609be006f4b04ad
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833722"
 durationInMinutes: 10
 interactive: bash
-azureSandbox: true
-content: |
-  [!include[](includes/3-exercise-generate-ssh-key.md)]
+content: '[!include[](includes/3-exercise-generate-ssh-key.md)]'

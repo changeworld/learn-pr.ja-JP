@@ -1,177 +1,177 @@
-You've chosen to use a Service Bus queue to exchange messages about individual sales between the mobile app that your sales personnel use and the web service, hosted in Azure, that will store details about each sale in an Azure SQL Database instance.
+販売担当者が使用しているモバイル アプリと、Azure SQL Database に各販売に関する詳細情報を格納する、Azure でホストされた Web サービスの間で、Service Bus キューを使用して、個々の販売に関するメッセージを交換することを選択しました。
 
-You've already implemented the necessary objects in your Azure subscription. Now, you want to write code that sends messages to that queue and retrieves messages.
+必要なオブジェクトは Azure サブスクリプションに既に実装してあります。 ここでは、そのキューにメッセージを送信したり、キューからメッセージを取得したりするコードを記述します。
 
-## Clone and open the starter application
+## <a name="clone-and-open-the-starter-application"></a>スターター アプリケーションを複製して開く
 
-In this unit, you'll build two console applications in **Visual Studio Code**. The first application places messages into a Service Bus queue and the second retrieves them. The applications are part of a single .NET Core solution. 
+このユニットでは、**Visual Studio Code** で 2 つのコンソール アプリケーションを作成します。 1 つ目のアプリケーションは Service Bus キューにメッセージを格納し、2 つ目はそれらを取得します。 これらのアプリケーションは、1 つの .NET Core ソリューションの一部です。 
 
-Start by cloning the solution:
+最初にソリューションを複製します。
 
-1. Start a command prompt and change to the directory where you want to host the source code for the application.
+1. コマンド プロンプトを開始し、アプリケーションのソース コードをホストするディレクトリに変更します。
 
-1. Type the following command, and then press **Enter**:
+1. 次のコマンドを入力して、**Enter** キーを押します。
 
     ```powershell
     git clone https:\\ <!-- TODO: (add git URL) -->
     ```
 
-1. When the clone operation is complete, change to the starter folder.
+1. 複製操作が完了したら、スターター フォルダーに変更します。
 
-1. Type the following command, and then press **Enter**.
+1. 次のコマンドを入力して、**Enter** キーを押します。
 
     ```powershell
     code .
     ```
 
-1. If a message appears asking if you want to restore dependencies, click **Yes**.
+1. 依存関係を復元するかどうかを確認するメッセージが表示された場合は、**[はい]** をクリックします。
 
-## Configure a connection string to a Service Bus namespace
+## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Service Bus 名前空間への接続文字列を構成する
 
-In order to access a Service Bus namespace and use a queue, you must configure two pieces of information in your console apps:
+Service Bus 名前空間にアクセスしてキューを使用するには、コンソール アプリで次の 2 つの情報を構成する必要があります。
 
-* The endpoint for your namespace
-* The shared access key for authentication
+* 名前空間のエンドポイント
+* 認証のための共有アクセス キー
 
-Both of these values can be obtained from the Azure portal in the form of a complete connection string.
+どちらの値も、完全な接続文字列の形式で Azure portal から取得できます。
 
 > [!NOTE]
-> For simplicity, you will hard-code the connection string in the **Program.cs** file of both console applications. In a production application, you might use a configuration file or even Azure Key Vault to store the connection string.
+> わかりやすくするため、ここでは、両方のコンソール アプリケーションの **Program.cs** に接続文字列をハード コーディングします。 運用アプリケーションでは、構成ファイルまたは Azure Key Vault を使用して接続文字列を格納できます。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. In the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. Under **SETTINGS**, click **Shared Access Policies**.
+1. **[設定]** の **[共有アクセス ポリシー]** をクリックします。
 
-1. In the list of policies, click **RootManageSharedAccessKey**.
+1. ポリシーの一覧で、**RootManageSharedAccessKey** をクリックします。
 
-1. To the right of the **Primary Connection string** text box, click the **Click to copy** button.
+1. **[プライマリ接続文字列]** ボックスの右側にある **[クリックしてコピー]** ボタンをクリックします。
 
-1. Switch to **Visual Studio Code**.
+1. **Visual Studio Code** に切り替えます。
 
-1. In the **Explorer** pane, in the **privatemessagesender** folder, click the **Program.cs** file.
+1. **[エクスプローラー]** ウィンドウで、**privatemessagesender** フォルダーの **Program.cs** ファイルをクリックします。
 
-1. Locate the following line of code:
-
-    ```C#
-    const string ServiceBusConnectionString = "";
-    ```
-
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
-
-1. In the **Explorer** pane, in the **privatemessagereceiver** folder, click the **Program.cs** file.
-
-1. Locate the following line of code:
+1. 次のコード行を見つけます。
 
     ```C#
     const string ServiceBusConnectionString = "";
     ```
 
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
+1. 引用符の間にカーソルを置き、**Ctrl + V** キーを押します。
 
-1. Click **File**, and then click **Save All**.
+1. **[エクスプローラー]** ウィンドウで、**privatemessagereceiver** フォルダーの **Program.cs** ファイルをクリックします。
 
-1. Close all open editor windows.
-
-## Write code that sends a message to the queue
-
-To complete the component that sends messages about sales, follow these steps:
-
-1. In Visual Studio Code, in the **Explorer** pane, in the **privatemessagesender** folder, click the **Program.cs** file.
-
-1. Locate the `SendSalesMessageAsync()` method.
-
-1. Within that method, locate the following line of code:
+1. 次のコード行を見つけます。
 
     ```C#
-    // Create a queue client here
+    const string ServiceBusConnectionString = "";
     ```
 
-1. To create a queue client, replace that line of code with the following code:
+1. 引用符の間にカーソルを置き、**Ctrl + V** キーを押します。
+
+1. **[ファイル]**、**[すべて保存]** の順にクリックします。
+
+1. 開いているすべてのエディター ウィンドウを閉じます。
+
+## <a name="write-code-that-sends-a-message-to-the-queue"></a>キューにメッセージを送信するコードを記述する
+
+販売に関するメッセージを送信するコンポーネントを完成させるには、次の手順のようにします。
+
+1. Visual Studio Code の **[エクスプローラー]** ウィンドウで、**privatemessagesender** フォルダーの **Program.cs** ファイルをクリックします。
+
+1. `SendSalesMessageAsync()` メソッドを探します。
+
+1. そのメソッド内で、次のコード行を見つけます。
+
+    ```C#
+    // Create a Queue Client here
+    ```
+
+1. キュー クライアントを作成するには、そのコード行を次のコードに置き換えます。
 
     ```C#
     queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
-1. Within the `try...catch` block, locate the following line of code:
+1. `try...catch` ブロック内で、次のコード行を見つけます。
 
     ```C#
     // Create and send a message here
     ```
 
-1. To create and format a message for the queue, replace that line of code with the following code:
+1. キューに対するメッセージを作成して書式設定するには、そのコード行を次のコードに置き換えます。
 
     ```C#
     string messageBody = $"$10,000 order for bicycle parts from retailer Adventure Works.";
     var message = new Message(Encoding.UTF8.GetBytes(messageBody));
     ```
 
-1. To display the message in the console, on the next line, add the following code:
+1. コンソールにメッセージを表示するには、その次の行に、以下のコードを追加します。
 
     ```C#
     Console.WriteLine($"Sending message: {messageBody}");
     ```
 
-1. To send the message to the queue, on the next line, add the following code:
+1. キューにメッセージを送信するには、その次の行に、以下のコードを追加します。
 
     ```C#
     await queueClient.SendAsync(message);
     ```
 
-1. Locate the following line of code:
+1. 次のコード行を見つけます。
 
     ```C#
     // Close the connection to the queue here
     ```
 
-1. To close the connection the Service Bus, replace that line of code with the following code:
+1. Service Bus の接続を閉じるには、そのコード行を次のコードに置き換えます。
 
     ```C#
     await queueClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code で、すべてのエディター ウィンドウを閉じ、変更したすべてのファイルを保存します。
 
-## Send a message to the queue
+## <a name="send-a-message-to-the-queue"></a>メッセージをキューに送信する
 
-To run the component that sends a message about a sale, follow these steps:
+販売に関するメッセージを送信するコンポーネントを実行するには、次の手順のようにします。
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code の **[表示]** メニューで、**[デバッグ]** をクリックします。
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Private Message Sender**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. **[デバッグ]** ウィンドウのドロップダウン リストで、**[Launch Private Message Sender]\(プライベート メッセージ送信側の起動\)** を選択して、**F5** キーを押します。 Visual Studio Code でデバッグ モードのコンソール アプリケーションがビルドされて実行されます。
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. プログラムが実行されたら、**デバッグ コンソール**でメッセージを調べます。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus が表示されない場合は、ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Queues**, and then click the **salesmessages** queue. The **ACTIVE MESSAGE COUNT** should indicate that one message has been added to the queue.
+1. **[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[キュー]** をクリックし、**salesmessages** キューをクリックします。 **[アクティブなメッセージ数]** で、1 つのメッセージがキューに追加されたことが示されます。
 
-## Write code that receives a message from the queue
+## <a name="write-code-that-receives-a-message-from-the-queue"></a>キューからメッセージを受信するコードを記述する
 
-To complete the component that retrieves messages about sales, follow these steps:
+販売に関するメッセージを取得するコンポーネントを完成させるには、次の手順のようにします。
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **privatemessagereceiver** folder, click the **Program.cs** file.
+1. Visual Studio Code の **[エクスプローラー]** ウィンドウで、**privatemessagereceiver** フォルダーの **Program.cs** ファイルをクリックします。
 
-1. Locate the `ReceiveSalesMessageAsync()` method.
+1. `ReceiveSalesMessageAsync()` メソッドを探します。
 
-1. Within that method, locate the following line of code:
+1. そのメソッド内で、次のコード行を見つけます。
 
     ```C#
-    // Create a queue client here
+    // Create a Queue Client here
     ```
 
-1. To create a queue client, replace that line with the following code:
+1. キュー クライアントを作成するには、その行を次のコードに置き換えます。
 
     ```C#
     queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
-1. Locate the `RegisterMessageHandler()` method.
+1. `RegisterMessageHandler()` メソッドを検索します。
 
-1. To configure message handling options, replace all the code within that method with the following code:
+1. メッセージ処理オプションを構成するには、そのメソッド内のすべてのコードを次のコードに置き換えます。
 
     ```C#
     var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
@@ -181,58 +181,58 @@ To complete the component that retrieves messages about sales, follow these step
     };
     ```
 
-1. To register the message handler, on the next line, add the following code:
+1. メッセージ ハンドラーを登録するには、その次の行に、以下のコードを追加します。
 
     ```C#
     queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
     ```
 
-1. Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+1. `ProcessMessagesAsync()` メソッドを探します。 このメソッドを、受信メッセージを処理するメソッドとして登録しました。
 
-1. To display incoming messages in the console, replace all the code within that method with the following code:
+1. 受信メッセージをコンソールに表示するには、そのメソッド内のすべてのコードを次のコードに置き換えます。
 
     ```C#
     Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
     ```
 
-1. To remove the received message from the queue, on the next line, add the following code:
+1. 受信したメッセージをキューから削除するには、その次の行に、以下のコードを追加します。
 
     ```C#
     await queueClient.CompleteAsync(message.SystemProperties.LockToken);
     ```
 
-1. Return to the `ReceiveSalesMessageAsync()` method and locate the following line of code:
+1. `ReceiveSalesMessageAsync()` メソッドに戻り、次のコード行を見つけます。
 
     ```C#
     // Close the queue here
     ```
 
-1. To close the connection to Service Bus, replace that line with the following code:
+1. Service Bus への接続を閉じるには、そのコードを次のコードに置き換えます。
 
     ```C#
     await queueClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code で、すべてのエディター ウィンドウを閉じ、変更したすべてのファイルを保存します。
 
-## Retrieve a message from the queue
+## <a name="retrieve-a-message-from-the-queue"></a>キューからメッセージを取得する
 
-To run the component that retrieves a message about a sale, follow these steps:
+販売に関するメッセージを取得するコンポーネントを実行するには、次の手順のようにします。
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code の **[表示]** メニューで、**[デバッグ]** をクリックします。
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Private Message Receiver**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. **[デバッグ]** ウィンドウのドロップダウン リストで、**[Launch Private Message Receiver]\(プライベート メッセージ受信側の起動\)** を選択して、**F5** キーを押します。 Visual Studio Code でデバッグ モードのコンソール アプリケーションがビルドされて実行されます。
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. プログラムが実行されたら、**デバッグ コンソール**でメッセージを調べます。
 
-1. When you see that the message has been received and displayed in the console, on the **Debug** menu, click **Stop Debugging**.
+1. メッセージが受信されてコンソールに表示されたら、**[デバッグ]** メニューの **[デバッグの停止]** をクリックします。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus が表示されない場合は、ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Queues**, and then click the **salesmessages** queue. The **ACTIVE MESSAGE COUNT** should indicate that the message has been removed from the queue.
+1. **[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[キュー]** をクリックし、**salesmessages** キューをクリックします。 **[アクティブなメッセージ数]** で、メッセージがキューから削除されたことが示されます。
 
-You have written code that sends a message about individual sales to a Service Bus queue. In the sales force distributed application, you should write this code in the mobile app that sales personnel use on devices.
+個々の販売に関するメッセージを Service Bus キューに送信するコードを記述しました。 営業部門の分散アプリケーションでは、販売担当者がデバイスで使用するモバイル アプリにこのコードを記述する必要があります。
 
-You have also written code that receives a message from the Service Bus queue. In the sales force distributed application, you should write this code in the web service that runs in Azure and processes received messages.
+Service Bus キューからメッセージを受信するコードも記述しました。 営業部門の分散アプリケーションでは、Azure で実行されて受信メッセージを処理する Web サービスにこのコードを記述する必要があります。

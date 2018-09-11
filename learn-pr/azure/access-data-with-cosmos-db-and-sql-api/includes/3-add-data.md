@@ -1,25 +1,25 @@
-Adding data to your Azure Cosmos DB database is simple. You open the Azure portal, navigate to your database, and use the Data Explorer to add JSON documents to the database. There are more advanced ways to add data, but we'll start here because the Data Explorer is a great tool to get you acquainted with the inner workings and functionality provided by Azure Cosmos DB.
+Azure Cosmos DB データベースにデータを追加するのは簡単です。 Azure portal を開いてデータベースに移動し、データ エクスプローラーを使用して JSON ドキュメントをデータベースに追加します。 データを追加するには、他にも高度な方法がありますが、データ エクスプローラーは Azure Cosmos DB によって提供される内部動作と機能を理解するのに最適なツールなので、まずはデータ エクスプローラーを使用します。
 
-## What is the Data Explorer?
-The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is used to manage data stored in an Azure Cosmos DB. It provides a UI for viewing and navigating data collections, as well as for editing documents within the database.
+## <a name="what-is-the-data-explorer"></a>データ エクスプローラーとは
+Azure Cosmos DB データ エクスプローラーは、Azure portal に含まれるツールであり、Azure Cosmos DB に格納されているデータを管理するために使用します。 データ コレクションの表示とデータ コレクション内の移動、およびデータベース内のドキュメントの編集のための UI が提供されています。
 
-## Add data using the Data Explorer
+## <a name="add-data-using-the-data-explorer"></a>データ エクスプローラーを使用してデータを追加する
 
-1. If you're continuing from the previous module, click **Data Explorer** in the Azure portal window, and then click **Open Full Screen**.
+1. 前のモジュールから続けている場合は、Azure portal ウィンドウで **[データ エクスプローラー]** をクリックして、**[全画面表示で開く]** をクリックします。
 
-    Otherwise, sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true), click **All services** > **Databases** > **Azure Cosmos DB**. Then select your account, click **Data Explorer**, and then click **Open Full Screen**.
+    それ以外の場合は、[Azure portal](https://portal.azure.com/?azure-portal=true) にサインインし、**[すべてのサービス]** > **[データベース]** > **[Azure Cosmos DB]** をクリックします。 次に、ご自分のアカウントを選択し、**[データ エクスプローラー]**、**[全画面表示で開く]** の順にクリックします
  
-   ![Create new documents in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
+   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media-draft/3-azure-cosmosdb-data-explorer-full-screen.png)
 
-2. In the **Open Full Screen** box, click **Open**.
+2. **[全画面表示で開く]** ボックスで、**[開く]** をクリックします。
 
-    The web browser displays the new full-screen Data Explorer, which gives you more space and a dedicated environment for working with your database.
+    Web ブラウザーでは、新しいデータ エクスプローラーが全画面表示され、データベースを操作するための多くの領域と専用の環境が提供されます。
 
-3. To create a new JSON document, click **New Document**.
+3. 新しい JSON ドキュメントを作成するには、**[新しいドキュメント]** をクリックします。
 
-   ![Create new documents in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-new-document.png)
+   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media-draft/3-azure-cosmosdb-data-explorer-new-document.png)
 
-4. Now, add a document to the collection with the following structure. Just copy and paste the following code into the **Documents** tab:
+4. ここで、次の構造のドキュメントをコレクションに追加します。 次のコードをコピーして、**[ドキュメント]** タブに貼り付けるだけです。
 
      ```
     {
@@ -38,11 +38,11 @@ The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is
         }
      ```
 
-5. Once you've added the JSON to the **Documents** tab, click **Save**.
+5. JSON を **[ドキュメント]** タブに追加したら、**[保存]** をクリックします。
 
-    ![Copy in JSON data and click Save in Data Explorer in the Azure portal](../media/3-azure-cosmosdb-data-explorer-save-document.png)
+    ![JSON データをコピーし、Azure portal のデータ エクスプローラーで [保存] をクリックします](../media-draft/3-azure-cosmosdb-data-explorer-save-document.png)
 
-6. Create and save one more document by copying the following JSON object into Data Explorer and clicking **Save**.
+6. 次の JSON オブジェクトをデータ エクスプローラーにコピーして、**[保存]** をクリックすることによって、ドキュメントをもう 1 つ作成して保存します。
 
      ```
     {
@@ -62,10 +62,10 @@ The Azure Cosmos DB Data Explorer is a tool included in the Azure portal that is
     }
      ```
 
-7. Confirm the documents have been saved by clicking **Documents** on the left-hand menu. 
+7. 左側のメニューで **[ドキュメント]** をクリックして、ドキュメントが保存されていることを確認します。 
 
-    Data Explorer displays the two documents in the **Documents** tab.
+    データ エクスプローラーには、**[ドキュメント]** タブにドキュメントが 2 つ表示されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this module, you added two documents, each representing a product in your product catalog, to your database by using the Data Explorer. The Data Explorer is a good way to create documents, modify documents, and get started with Azure Cosmos DB.  
+このモジュールでは、データ エクスプローラーを使用して、それぞれが製品カタログ内の製品を表す 2 つのドキュメントを、データベースに追加しました。 データ エクスプローラーは、ドキュメントの作成、ドキュメントの変更、Azure Cosmos DB の使用開始に適しています。  

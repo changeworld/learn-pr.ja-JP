@@ -1,18 +1,18 @@
 ### YamlMime:LearningPath
 uid: learn.work-with-relational-data-in-azure
 metadata:
-  title: Work with relational data in Azure
-  description: Azure supports several popular SQL-based database solutions including SQL Server, PostgreSQL, and MySQL. Learn how to use these enterprise data solutions in Azure to store and retrieve your app's data in the cloud.
+  title: Azure でリレーショナル データを操作する
+  description: Azure では、SQL Server、PostgreSQL、MySQL など、いくつかの一般的な SQL ベースのデータベース ソリューションがサポートされています。 Azure でこれらのエンタープライズ データ ソリューションを使用して、クラウドでアプリのデータを格納および取得する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Work with relational data in Azure
-summary: Azure supports several popular SQL-based database solutions including SQL Server, PostgreSQL, and MySQL. Learn how to use these enterprise data solutions in Azure to store and retrieve your app's data in the cloud.
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 7ed3e1fd490f0fcf15f57027ccbec97760006bad
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824497"
+title: Azure でリレーショナル データを操作する
+summary: Azure では、SQL Server、PostgreSQL、MySQL など、いくつかの一般的な SQL ベースのデータベース ソリューションがサポートされています。 Azure でこれらのエンタープライズ データ ソリューションを使用して、クラウドでアプリのデータを格納および取得する方法について説明します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
@@ -23,6 +23,4 @@ products:
 modules:
 - learn.provision-azure-sql-db
 - learn.migrate-sql-server-relational-data
-- learn.create-azure-db-for-postgresql
-- learn.secure-your-azure-sql-database
 achievement: learn.work-with-relational-data-in-azure.trophy
