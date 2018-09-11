@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.4-create-a-vm
-title: <span data-ttu-id="9074d-101">仮想マシンの作成</span><span class="sxs-lookup"><span data-stu-id="9074d-101">Create a virtual machine</span></span>
+title: <span data-ttu-id="f8b16-101">仮想マシンの作成</span><span class="sxs-lookup"><span data-stu-id="f8b16-101">Create a virtual machine</span></span>
 metadata:
-  title: <span data-ttu-id="9074d-102">仮想マシンの作成</span><span class="sxs-lookup"><span data-stu-id="9074d-102">Create a virtual machine</span></span>
-  description: <span data-ttu-id="9074d-103">Azure CLI を使用して新しい VM を作成する</span><span class="sxs-lookup"><span data-stu-id="9074d-103">Use the Azure CLI to create a new VM</span></span>
+  title: <span data-ttu-id="f8b16-102">仮想マシンの作成</span><span class="sxs-lookup"><span data-stu-id="f8b16-102">Create a virtual machine</span></span>
+  description: <span data-ttu-id="f8b16-103">Azure CLI を使用して新しい VM を作成する</span><span class="sxs-lookup"><span data-stu-id="f8b16-103">Use the Azure CLI to create a new VM</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2c6d1f9ce6525304f06eb9b1695bc5bdcb7f02fb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: c4c05a96785a1e2330c72d350886fe8d41be670b
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246601"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44309659"
 interactive: bash
+azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/4-create-a-vm.md)]'

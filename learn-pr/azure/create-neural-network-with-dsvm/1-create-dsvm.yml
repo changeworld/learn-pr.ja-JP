@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.1-create-dsvm
-title: <span data-ttu-id="bbcd1-101">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="bbcd1-101">Create an Ubuntu Data Science VM</span></span>
+title: <span data-ttu-id="b0fea-101">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="b0fea-101">Create an Ubuntu Data Science VM</span></span>
 metadata:
-  title: <span data-ttu-id="bbcd1-102">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="bbcd1-102">Create an Ubuntu Data Science VM</span></span>
-  description: <span data-ttu-id="bbcd1-103">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="bbcd1-103">Create an Ubuntu Data Science VM</span></span>
+  title: <span data-ttu-id="b0fea-102">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="b0fea-102">Create an Ubuntu Data Science VM</span></span>
+  description: <span data-ttu-id="b0fea-103">Ubuntu Data Science VM の作成</span><span class="sxs-lookup"><span data-stu-id="b0fea-103">Create an Ubuntu Data Science VM</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf7f918be7e0fde8fb18171241aa5bd361a544cb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 14fca08a846aa5d180ee1494100c92a470852eda
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244272"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310650"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/1-create-dsvm.md)]'
