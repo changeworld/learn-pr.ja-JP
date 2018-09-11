@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.3-create-a-resource-group
-title: <span data-ttu-id="caf36-101">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="caf36-101">Create a resource group</span></span>
+title: <span data-ttu-id="5c714-101">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="5c714-101">Create a resource group</span></span>
 metadata:
-  title: <span data-ttu-id="caf36-102">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="caf36-102">Create a resource group</span></span>
-  description: <span data-ttu-id="caf36-103">Azure CLI を使用して新しいリソース グループを作成する</span><span class="sxs-lookup"><span data-stu-id="caf36-103">Use the Azure CLI to create a new resource group</span></span>
+  title: <span data-ttu-id="5c714-102">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="5c714-102">Create a resource group</span></span>
+  description: <span data-ttu-id="5c714-103">Azure CLI を使用して新しいリソース グループを作成する</span><span class="sxs-lookup"><span data-stu-id="5c714-103">Use the Azure CLI to create a new resource group</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 851d6e001f481d61bb3640a353f95e89bd2004a3
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 29c14dde9223a6a5ea583049d3d027a3446aa65a
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244986"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310359"
 interactive: bash
+azureSandbox: true
 durationInMinutes: 3
 content: '[!include[](includes/3-create-a-resource-group.md)]'

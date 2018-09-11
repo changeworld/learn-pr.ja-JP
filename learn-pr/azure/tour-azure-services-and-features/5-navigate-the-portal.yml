@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.5-navigate-the-portal
-title: <span data-ttu-id="74f26-101">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="74f26-101">Navigate the portal</span></span>
+title: <span data-ttu-id="40a05-101">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="40a05-101">Navigate the portal</span></span>
 metadata:
-  title: <span data-ttu-id="74f26-102">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="74f26-102">Navigate the portal</span></span>
-  description: <span data-ttu-id="74f26-103">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="74f26-103">Navigate the portal</span></span>
+  title: <span data-ttu-id="40a05-102">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="40a05-102">Navigate the portal</span></span>
+  description: <span data-ttu-id="40a05-103">ポータルを操作する</span><span class="sxs-lookup"><span data-stu-id="40a05-103">Navigate the portal</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 66a0741f91b9a7bf0198d13bf7fa693915344682
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: efa319cbf1638f9a0297b5b62abb8aa460864342
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44230094"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310767"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-navigate-the-portal.md)]'

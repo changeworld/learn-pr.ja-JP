@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
-title: <span data-ttu-id="beee3-101">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="beee3-101">Retrieve a message from the queue</span></span>
+title: <span data-ttu-id="2c0f4-101">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="2c0f4-101">Retrieve a message from the queue</span></span>
 metadata:
-  title: <span data-ttu-id="beee3-102">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="beee3-102">Retrieve a message from the queue</span></span>
-  description: <span data-ttu-id="beee3-103">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="beee3-103">Retrieve a message from the queue</span></span>
+  title: <span data-ttu-id="2c0f4-102">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="2c0f4-102">Retrieve a message from the queue</span></span>
+  description: <span data-ttu-id="2c0f4-103">キューからメッセージを取得する</span><span class="sxs-lookup"><span data-stu-id="2c0f4-103">Retrieve a message from the queue</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b682c525a01c48028184518b34704547d7bdf33b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 57feb5b74c46a937e7127b20b76de0a35384d015
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44239512"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308183"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/8-exercise-implement-dequeue.md)]'

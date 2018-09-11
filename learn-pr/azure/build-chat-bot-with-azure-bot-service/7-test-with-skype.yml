@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-azure-bot-services-bot.7-test-with-skype
-title: <span data-ttu-id="79e16-101">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="79e16-101">Test the bot with Skype</span></span>
+title: <span data-ttu-id="d5101-101">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="d5101-101">Test the bot with Skype</span></span>
 metadata:
-  title: <span data-ttu-id="79e16-102">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="79e16-102">Test the bot with Skype</span></span>
-  description: <span data-ttu-id="79e16-103">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="79e16-103">Test the bot with Skype</span></span>
+  title: <span data-ttu-id="d5101-102">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="d5101-102">Test the bot with Skype</span></span>
+  description: <span data-ttu-id="d5101-103">Skype でボットをテストする</span><span class="sxs-lookup"><span data-stu-id="d5101-103">Test the bot with Skype</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d7f280fa56978874ec6b74ecc3166aca7d8837ce
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 9d4eb1555a788015e19b2a7563798ee7aec531ba
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233617"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44306789"
+azureSandbox: true
 durationInMinutes: 10
-content: <span data-ttu-id="79e16-104">[!include[](includes/7-test-with-skype.md)</span><span class="sxs-lookup"><span data-stu-id="79e16-104">[!include[](includes/7-test-with-skype.md)</span></span>
+content: <span data-ttu-id="d5101-104">[!include[](includes/7-test-with-skype.md)</span><span class="sxs-lookup"><span data-stu-id="d5101-104">[!include[](includes/7-test-with-skype.md)</span></span>

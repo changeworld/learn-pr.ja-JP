@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
-title: <span data-ttu-id="b1a91-101">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="b1a91-101">Logins and subscriptions</span></span>
+title: <span data-ttu-id="bf880-101">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="bf880-101">Logins and subscriptions</span></span>
 metadata:
-  title: <span data-ttu-id="b1a91-102">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="b1a91-102">Logins and subscriptions</span></span>
-  description: <span data-ttu-id="b1a91-103">Azure CLI にログインし、使用するサブスクリプションを選択します</span><span class="sxs-lookup"><span data-stu-id="b1a91-103">Log in to the Azure CLI and select a subscription to work with</span></span>
+  title: <span data-ttu-id="bf880-102">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="bf880-102">Logins and subscriptions</span></span>
+  description: <span data-ttu-id="bf880-103">Azure CLI にログインし、使用するサブスクリプションを選択します</span><span class="sxs-lookup"><span data-stu-id="bf880-103">Log in to the Azure CLI and select a subscription to work with</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6eb6c72ba61004b6b0c7d81a42ba9d446712b1c6
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: f98dcb46bc1dab8b3b447f5ad4a7ac307ad4c001
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235908"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307877"
 interactive: bash
+azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/2-logins-and-subscriptions.md)]'

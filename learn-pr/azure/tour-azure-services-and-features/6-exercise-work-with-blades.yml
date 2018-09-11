@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.6-exercise-work-with-blades
-title: <span data-ttu-id="35f89-101">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="35f89-101">Work with blades</span></span>
+title: <span data-ttu-id="83bb0-101">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="83bb0-101">Work with blades</span></span>
 metadata:
-  title: <span data-ttu-id="35f89-102">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="35f89-102">Work with blades</span></span>
-  description: <span data-ttu-id="35f89-103">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="35f89-103">Work with blades</span></span>
+  title: <span data-ttu-id="83bb0-102">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="83bb0-102">Work with blades</span></span>
+  description: <span data-ttu-id="83bb0-103">ブレードを使用する</span><span class="sxs-lookup"><span data-stu-id="83bb0-103">Work with blades</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9ad063ff9a75a06c300774f0f0b0b42495ee7a54
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 78ff656844c6faac96317c878735f9e80344e9ac
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248029"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44311090"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/6-exercise-work-with-blades.md)]'

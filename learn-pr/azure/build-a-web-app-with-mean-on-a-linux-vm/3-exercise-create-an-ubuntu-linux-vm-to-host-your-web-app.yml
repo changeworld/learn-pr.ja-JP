@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app
-title: <span data-ttu-id="ac4a8-101">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ac4a8-101">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
+title: <span data-ttu-id="ae453-101">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ae453-101">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
 metadata:
-  title: <span data-ttu-id="ac4a8-102">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ac4a8-102">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
-  description: <span data-ttu-id="ac4a8-103">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ac4a8-103">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
+  title: <span data-ttu-id="ae453-102">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ae453-102">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
+  description: <span data-ttu-id="ae453-103">演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する</span><span class="sxs-lookup"><span data-stu-id="ae453-103">Exercise - Create an Ubuntu Linux VM to host your web application</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: efa2edaa8b5e29d92504646e2984c0fbec6cbc5a
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 7007c701a7b1bf0a876f2df8ec1f437e9f1323d9
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233772"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307179"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app.md)]'
