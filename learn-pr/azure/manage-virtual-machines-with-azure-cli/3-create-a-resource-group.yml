@@ -4,12 +4,17 @@ title: リソース グループの作成
 metadata:
   title: リソース グループの作成
   description: Azure CLI を使用して新しいリソース グループを作成する
-  ms.openlocfilehash: a036dea383d150d6d2ab0076ba6abf705cd44af2
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 851d6e001f481d61bb3640a353f95e89bd2004a3
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834111"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244986"
 interactive: bash
 durationInMinutes: 3
 content: '[!include[](includes/3-create-a-resource-group.md)]'

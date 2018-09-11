@@ -24,12 +24,18 @@ Get-Help <cmdlet-name> -detailed
 次に、ローカルにインストールした Azure PowerShell を使用してリソース グループを作成します。 
 
 次の 4 つのステップがあります。 
+
 1. Azure コマンドレットをインポートします。
+
 1. Azure サブスクリプションに接続します。
+
 1. リソース グループを作成します。
+
 1. 正常に作成できたことを確認します (下記参照)。
 
-![Azure PowerShell を使用して Azure にリソースを作成する手順](../media-drafts/5-create-resource-overview.png)
+次の図では、この手順の概要を示します。
+
+![リソース グループを作成する手順を示す図。](../media/5-create-resource-overview.png)
 
 各手順は異なるコマンドレットに対応しています。
 

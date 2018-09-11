@@ -1,18 +1,22 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.8-exercise-add-azure-storage-configuration-to-your-app
-title: Add Azure Storage configuration to your app
+title: アプリに Azure Storage の構成を追加する
 metadata:
-  title: Add Azure Storage configuration to your app
-  description: Add Azure Storage configuration to your app
+  title: アプリに Azure Storage の構成を追加する
+  description: アプリに Azure Storage の構成を追加する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: 9ed11b520e16ccaf47e786ff5a63272921f4bf90
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307673"
 interactive: bash-editor
 azureSandbox: true
 durationInMinutes: 10
-content: |
-  [!include[](includes/8-exercise-add-azure-storage-configuration-to-your-app.md)]
+content: '[!include[](includes/8-exercise-add-azure-storage-configuration-to-your-app.md)]'

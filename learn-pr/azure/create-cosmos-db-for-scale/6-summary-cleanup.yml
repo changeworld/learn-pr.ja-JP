@@ -3,12 +3,12 @@ uid: learn.create-cosmos-db-for-scale.6-summary-cleanup
 metadata:
   title: 概要とクリーンアップ
   description: 概要とクリーンアップ
-  ms.openlocfilehash: 58d609ed452ec36b7c530bbf51dcabf0f5fb041d
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.openlocfilehash: a01c2889dd6487c3bb2fcbfec69384305a4be9c1
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43412159"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792717"
 title: 概要とクリーンアップ
 durationInMinutes: 2
 content: '[!include[](includes/6-summary-cleanup.md)]'

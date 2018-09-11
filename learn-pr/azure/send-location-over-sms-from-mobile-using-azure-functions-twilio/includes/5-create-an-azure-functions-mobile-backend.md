@@ -4,13 +4,13 @@
 
 1. ソリューションを右クリックし、*[追加]、[新しいプロジェクト]* の順に選択して新しいプロジェクトを `ImHere` ソリューションに追加します。
 
-2. 左側にあるツリーから、*[Visual C#]、[クラウド]* の順に選択し、中央のパネルから *[Azure Functions]* を選択します。
+1. 左側にあるツリーから、*[Visual C#]、[クラウド]* の順に選択し、中央のパネルから *[Azure Functions]* を選択します。
 
-3. プロジェクトに "ImHere.Functions" という名前を付け、**[OK]** をクリックします。
+1. プロジェクトに "ImHere.Functions" という名前を付け、**[OK]** をクリックします。
 
     ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-functions-project.png)
 
-4. **[新しいプロジェクト]** 構成ダイアログで、Functions のバージョンは *[Azure Functions v1 (.NET Framework)]* に設定されているままにします。 *[Http トリガー]* を選択し、ストレージ アカウントを *[ストレージ エミュレーター]* に設定されているままにし、アクセス権を *[匿名]* に設定します。 次に、 **[OK]** をクリックします
+1. **[新しいプロジェクト]** 構成ダイアログで、Functions のバージョンは *[Azure Functions v1 (.NET Framework)]* に設定されているままにします。 *[Http トリガー]* を選択し、ストレージ アカウントを *[ストレージ エミュレーター]* に設定されているままにし、アクセス権を *[匿名]* に設定します。 次に、 **[OK]** をクリックします
 
     ![Azure 関数のプロジェクト構成ダイアログ](../media-drafts/5-configure-trigger.png)
 
@@ -24,13 +24,13 @@ Azure Functions プロジェクトは `Function1` という名前のシングル
 
 1. ソリューション エクスプローラーのファイルの名前を "Function1.cs" から "SendLocation.cs" に変更します。 コード要素 `Function1` の参照の名前をすべて変更するように求められたら、**[はい]** をクリックします。
 
-2. 属性の関数名を "SendLocation" に変更します。
+1. 属性の関数名を "SendLocation" に変更します。
 
     ```cs
     [FunctionName("SendLocation")]
     ```
 
-3. ロガーに情報メッセージを書き込む最初の行を除き、関数の内容を削除します。
+1. ロガーに情報メッセージを書き込む最初の行を除き、関数の内容を削除します。
 
     ```cs
     public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous,
@@ -48,17 +48,17 @@ Azure Functions プロジェクトは `Function1` という名前のシングル
 
 1. ソリューションを右クリックし、*[追加]、[新しいプロジェクト]* の順に選択して、`ImHere` ソリューションの下で新しいプロジェクトを作成します。
 
-2. 左側にあるツリーから、*[Visual C#]、[.NET Standard]* の順に選択し、中央のパネルから *[クラス ライブラリ (.NET Standard)]* を選択します。
+1. 左側にあるツリーから、*[Visual C#]、[.NET Standard]* の順に選択し、中央のパネルから *[クラス ライブラリ (.NET Standard)]* を選択します。
 
-3. プロジェクトに "ImHere.Data" という名前を付け、**[OK]** をクリックします。
+1. プロジェクトに "ImHere.Data" という名前を付け、**[OK]** をクリックします。
 
     ![[新しいプロジェクトの追加] ダイアログ](../media-drafts/5-add-new-net-standard-project.png)
 
-4. 自動生成された "Class1.cs" ファイルを削除します。
+1. 自動生成された "Class1.cs" ファイルを削除します。
 
-5. プロジェクトを右クリックし、*[追加]、[クラス]* の順に選択して、`PostData` という名前の `ImHere.Data` プロジェクトで新しいクラスを作成します。新しいクラスに "PostData" という名前を付け、**[OK]** をクリックします。
+1. プロジェクトを右クリックし、*[追加]、[クラス]* の順に選択して、`PostData` という名前の `ImHere.Data` プロジェクトで新しいクラスを作成します。新しいクラスに "PostData" という名前を付け、**[OK]** をクリックします。
 
-6. 緯度と経度に `double` プロパティと送信先の電話番号の `string[]` プロパティを追加します。
+1. 緯度と経度に `double` プロパティと送信先の電話番号の `string[]` プロパティを追加します。
 
     ```cs
     public class PostData
@@ -69,7 +69,7 @@ Azure Functions プロジェクトは `Function1` という名前のシングル
     }
     ```
 
-7. プロジェクトを右クリックし、*[追加]、[参照]* を選択して、このプロジェクトの参照を `ImHere.Functions` プロジェクトと `ImHere` プロジェクトの両方に追加します。左側にあるツリーから *[プロジェクト]* を選択し、*ImHere.Data* の隣にあるボックスをオンにします。
+1. プロジェクトを右クリックし、*[追加]、[参照]* を選択して、このプロジェクトの参照を `ImHere.Functions` プロジェクトと `ImHere` プロジェクトの両方に追加します。左側にあるツリーから *[プロジェクト]* を選択し、*ImHere.Data* の隣にあるボックスをオンにします。
 
     ![プロジェクト参照を構成する](../media-drafts/5-configure-project-references.png)
 
@@ -79,25 +79,25 @@ Azure 関数では、`req` パラメーターには行われた HTTP 要求が�
 
 1. `ImHere.Functions` プロジェクトで `SendLocation` クラスを開きます。
 
-2. HTTP 要求の内容を `PostData` オブジェクトに読み込み、`ImHere.Data` 名前空間に using ディレクティブを追加します。
+1. HTTP 要求の内容を `PostData` オブジェクトに読み込み、`ImHere.Data` 名前空間に using ディレクティブを追加します。
 
     ```cs
     PostData data = await req.Content.ReadAsAsync<PostData>();
     ```
 
-3. `PostData` からの緯度と経度を利用して Google Maps URL を作成します。
+1. `PostData` からの緯度と経度を利用して Google Maps URL を作成します。
 
    ```cs
    string url = $"https://www.google.com/maps/search/?api=1&query={data.Latitude},{data.Longitude}";
    ```
 
-4. URL をログに記録します。
+1. URL をログに記録します。
 
     ```cs
     log.Info($"URL created - {url}");
     ```
 
-5. 200 ステータス コードを返し、関数がエラーなく完了したことを示します。
+1. 200 ステータス コードを返し、関数がエラーなく完了したことを示します。
 
     ```cs
     return req.CreateResponse(HttpStatusCode.OK);
@@ -125,17 +125,17 @@ public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLeve
 
 1. ソリューション エクスプローラーで `ImHere.Functions` プロジェクトを右クリックし、*[スタートアップ プロジェクトに設定]* を選択します。
 
-2. *[デバッグ]* メニューから *[デバッグなしで開始]* を選択します。 ローカル Azure Functions ランタイムはコンソール ウィンドウ内で起動し、関数を開始し、`localhost` で利用できるポートをリッスンします。
+1. *[デバッグ]* メニューから *[デバッグなしで開始]* を選択します。 ローカル Azure Functions ランタイムはコンソール ウィンドウ内で起動し、関数を開始し、`localhost` で利用できるポートをリッスンします。
 
     ![ローカルで実行される Azure 関数](../media-drafts/5-function-running-locally.png)
 
-3. 関数がリッスンしているポートをメモします。 これは次の演習でモバイル アプリをテストするために必要になります。 上記の図で、関数はポート **7071** でリッスンしています。
+1. 関数がリッスンしているポートをメモします。 これは次の演習でモバイル アプリをテストするために必要になります。 上記の図で、関数はポート **7071** でリッスンしています。
 
     ```sh
     Listening on http://localhost:7071/
     ```
 
-4. 次の演習でモバイル アプリをテストできるように、関数は実行中のままにします。
+1. 次の演習でモバイル アプリをテストできるように、関数は実行中のままにします。
 
 ## <a name="summary"></a>まとめ
 

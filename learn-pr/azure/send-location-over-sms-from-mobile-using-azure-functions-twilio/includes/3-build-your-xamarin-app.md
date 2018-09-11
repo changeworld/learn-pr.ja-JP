@@ -2,9 +2,9 @@
 
 アプリの UI は次のもので構成されています。
 
-* 電話番号を入力するためのテキスト入力コントロール。
-* Azure 関数を使用してこれらの番号に場所を送信するボタン。
-* 現在の状態 (送信されている場所、正常に送信された場所など) についてのメッセージをユーザーに表示するラベル。
+- 電話番号を入力するためのテキスト入力コントロール。
+- Azure 関数を使用してこれらの番号に場所を送信するボタン。
+- 現在の状態 (送信されている場所、正常に送信された場所など) についてのメッセージをユーザーに表示するラベル。
 
 Xamarin.Forms では、Model-View-ViewModel (MVVM) と呼ばれる設計パターンがサポートされています。 MVVM について詳しくは、[Xamarin MVVM ドキュメント](https://docs.microsoft.com/xamarin/xamarin-forms/enterprise-application-patterns/mvvm)をご覧ください。MVVM の最も重要な点は、各ページ (View) がプロパティと動作を公開する ViewModel を持っていることです。
 
@@ -18,15 +18,15 @@ ViewModel の動作はコマンドのプロパティとして公開されます�
 
 1. プロジェクトを右クリックし、*[追加] > [クラス]* の順に選択して、`BaseViewModel` という名前の `ImHere` .NET 標準プロジェクトに新しいクラスを作成します。新しいクラスの名前を "BaseViewModel" にして、**[追加]** をクリックします。
 
-2. クラスを `public` にして、`INotifyPropertyChanged` から派生します。 `System.ComponentModel` に using ディレクティブを追加する必要があります。
+1. クラスを `public` にして、`INotifyPropertyChanged` から派生します。 `System.ComponentModel` に using ディレクティブを追加する必要があります。
 
-3. `PropertyChanged` イベントを追加することで `INotifyPropertyChanged` インターフェイスを実装します。
+1. `PropertyChanged` イベントを追加することで `INotifyPropertyChanged` インターフェイスを実装します。
 
     ```cs
     public event PropertyChangedEventHandler PropertyChanged;
     ```
 
-4. ViewModel のプロパティの一般的なパターンでは、プライベート バッキング フィールドを持つパブリック プロパティを使用します。 プロパティ セッターで、新しい値に対してバッキング フィールドが確認されます。 新しい値がバッキング フィールドと異なる場合、バッキング フィールドが更新されて、`PropertyChanged` イベントが発生します。 このロジックを簡単に抽出して `Set` メソッドとして追加できます。 `System.Runtime.CompilerServices` 名前空間に対して using ディレクティブを追加する必要があります。
+1. ViewModel のプロパティの一般的なパターンでは、プライベート バッキング フィールドを持つパブリック プロパティを使用します。 プロパティ セッターで、新しい値に対してバッキング フィールドが確認されます。 新しい値がバッキング フィールドと異なる場合、バッキング フィールドが更新されて、`PropertyChanged` イベントが発生します。 このロジックを簡単に抽出して `Set` メソッドとして追加できます。 `System.Runtime.CompilerServices` 名前空間に対して using ディレクティブを追加する必要があります。
 
     ```cs
     protected void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
@@ -67,9 +67,9 @@ namespace ImHere
 
 1. `ImHere` .NET 標準プロジェクトに `MainViewModel` というクラスを作成します。
 
-2. このクラスを public にして、`BaseViewModel` から派生します。
+1. このクラスを public にして、`BaseViewModel` から派生します。
 
-3. それぞれバッキング フィールドを備えた 2 つの `string` プロパティ `PhoneNumbers` と `Message` を追加します。 プロパティ セッターで、基底クラスの `Set` メソッドを使用して値を更新し、`PropertyChanged` イベントを発生させます。
+1. それぞれバッキング フィールドを備えた 2 つの `string` プロパティ `PhoneNumbers` と `Message` を追加します。 プロパティ セッターで、基底クラスの `Set` メソッドを使用して値を更新し、`PropertyChanged` イベントを発生させます。
 
    ```cs
     string message = "";
@@ -87,13 +87,13 @@ namespace ImHere
     }
    ```
 
-4. 読み取り専用のコマンド プロパティ `SendLocationCommand` を追加します。 このコマンドは `System.Windows.Input` 名前空間の `ICommand` 型です。
+1. 読み取り専用のコマンド プロパティ `SendLocationCommand` を追加します。 このコマンドは `System.Windows.Input` 名前空間の `ICommand` 型です。
 
     ```cs
     public ICommand SendLocationCommand { get; }
     ```
 
-5. クラスにコンストラクターを追加し、このコンストラクターで `SendLocationCommand` を `Xamarin.Forms` 名前空間の新しい `Command` として初期化します。 このコマンドのコンストラクターはコマンドが呼び出されたときに実行する `Action` を受け取るので、`SendLocation` という名前の `async` メソッドを作成し、この呼び出しを `await` するラムダ関数をコンストラクターに渡します。 `SendLocation` メソッドの本体は、このモジュールの後のユニットで実装します。 `System.Threading.Tasks` 名前空間に対して using ディレクティブを追加し、`Task` を戻すことができるようにする必要があります。
+1. クラスにコンストラクターを追加し、このコンストラクターで `SendLocationCommand` を `Xamarin.Forms` 名前空間の新しい `Command` として初期化します。 このコマンドのコンストラクターはコマンドが呼び出されたときに実行する `Action` を受け取るので、`SendLocation` という名前の `async` メソッドを作成し、この呼び出しを `await` するラムダ関数をコンストラクターに渡します。 `SendLocation` メソッドの本体は、このモジュールの後のユニットで実装します。 `System.Threading.Tasks` 名前空間に対して using ディレクティブを追加し、`Task` を戻すことができるようにする必要があります。
 
     ```cs
     public MainViewModel()
@@ -153,7 +153,7 @@ Xamarin.Forms UI は XAML を使用して作成できます。
 
     注 - `ImHere.UWP` プロジェクトにも `MainPage.xaml` という名前のファイルが含まれています。 .NET 標準ライブラリのものを編集していることを確認してください。
 
-2. ViewModel のプロパティにコントロールをバインドする前に、ページのバインディング コンテキストとして ViewModel のインスタンスを設定する必要があります。 最上位レベルの `ContentPage` の中に次の XAML を追加します。
+1. ViewModel のプロパティにコントロールをバインドする前に、ページのバインディング コンテキストとして ViewModel のインスタンスを設定する必要があります。 最上位レベルの `ContentPage` の中に次の XAML を追加します。
 
     ```xml
     <ContentPage.BindingContext>
@@ -161,14 +161,14 @@ Xamarin.Forms UI は XAML を使用して作成できます。
     </ContentPage.BindingContext>
     ```
 
-3. `StackLayout` の内容を削除し、UI の見た目がよくなるように何かパディングを追加します。
+1. `StackLayout` の内容を削除し、UI の見た目がよくなるように何かパディングを追加します。
 
     ```xml
     <StackLayout Padding="20">
     </StackLayout>
     ```
 
-4. ユーザーが `StackLayout` に電話番号を追加するのに使用できる `Editor` コントロールを追加します。上の `Label` では、入力コントロールの用途を説明します。 `StackLayout` では子コントロールが追加された順序で水平方向または垂直方向に配置されるので、`Label` を最初に追加すると `Editor` の上に配置されます。 `Editor` コントロールは複数行入力コントロールであり、ユーザーは 1 行に 1 つずつ、複数の電話番号を入力できます。
+1. ユーザーが `StackLayout` に電話番号を追加するのに使用できる `Editor` コントロールを追加します。上の `Label` では、入力コントロールの用途を説明します。 `StackLayout` では子コントロールが追加された順序で水平方向または垂直方向に配置されるので、`Label` を最初に追加すると `Editor` の上に配置されます。 `Editor` コントロールは複数行入力コントロールであり、ユーザーは 1 行に 1 つずつ、複数の電話番号を入力できます。
 
     ```xml
     <StackLayout Padding="20">
@@ -179,7 +179,7 @@ Xamarin.Forms UI は XAML を使用して作成できます。
 
     `Editor` の `Text` プロパティは、`MainViewModel` の `PhoneNumbers` プロパティにバインドされます。 プロパティの値を `"{Binding <property name>}"` に設定するのがバインドの構文です。 中かっこにより、この値は特別であり、シンプルな `string` とは異なる方法で扱う必要があることを XAML コンパイラに指示します。
 
-5. ユーザーの場所を送信するための `Button` を、`Editor` の下に追加します。
+1. ユーザーの場所を送信するための `Button` を、`Editor` の下に追加します。
 
     ```xml
     <Button Text="Send Location" BackgroundColor="Blue" TextColor="White"
@@ -188,7 +188,7 @@ Xamarin.Forms UI は XAML を使用して作成できます。
 
     `Command` プロパティは、ViewModel の `SendLocationCommand` コマンドにバインドされています。 ボタンをタップすると、コマンドが実行されます。
 
-6. ステータス メッセージを表示する `Label` を、`Button` の下に追加します。
+1. ステータス メッセージを表示する `Label` を、`Button` の下に追加します。
 
     ```xml
     <Label Text="{Binding Message}"

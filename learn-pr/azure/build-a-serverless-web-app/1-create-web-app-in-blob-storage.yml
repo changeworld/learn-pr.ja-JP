@@ -4,12 +4,18 @@ title: Azure Blob Storage で Web アプリを作成する
 metadata:
   title: Azure Blob Storage で Web アプリを作成する
   description: Azure Blob Storage で Web アプリを作成する
-  ms.openlocfilehash: 49e0bc88e5f57f388b328497f8611b9a0773300a
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b8493c4261271936a4ba0640e145f3b1e1917761
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791170"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308387"
 durationInMinutes: 10
 interactive: bash-editor
+azureSandbox: true
 content: '[!include[](includes/1-create-web-app-in-blob-storage.md)]'

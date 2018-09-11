@@ -13,6 +13,3 @@ Azure 料金計算ツールと、このツールを使用して Azure でのコ�
 - [Azure の課金に関するドキュメント](https://docs.microsoft.com/azure/billing/)
 - [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)
 - [Azure の予算](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
-
-
-

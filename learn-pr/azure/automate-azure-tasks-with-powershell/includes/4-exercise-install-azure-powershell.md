@@ -1,4 +1,4 @@
-この演習では、ローカル コンピューターに **Azure PowerShell** をインストールします。 お使いのオペレーティング システムに該当するセクションを選択してください。
+このユニットでは、ローカル コンピューターに **Azure PowerShell** をインストールします。 お使いのオペレーティング システムに該当するセクションを選択してください。
 
 ## <a name="linux-and-mac"></a>Linux および Mac
 Linux と macOS では、最初に **PowerShell Core** をインストールします。
@@ -13,6 +13,7 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
     ```
+
 1. パッケージ マネージャーで PowerShell Core パッケージを検索することができるように、**Microsoft Ubuntu リポジトリ**を登録します。
 
     ```bash
@@ -48,6 +49,7 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
     ```bash
     brew tap caskroom/cask
     ```
+
 1. PowerShell Core をインストールします。
 
     ```bash
@@ -74,16 +76,20 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
 >バージョン番号が 5.0 より小さい場合は、[既存の Windows PowerShell をアップグレードする](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)手順に従ってください。
 
 1. **[スタート]** メニューを開き、「**Windows PowerShell**」と入力します。
-2. **[Windows PowerShell]** アイコンを右クリックし、**[管理者として実行]** を選択します。
-3. **[ユーザー アカウント制御]** ダイアログで、**[はい]** を選択します。
-4. 次のコマンドを入力して、Enter キーを押します。
+
+1. **[Windows PowerShell]** アイコンを右クリックし、**[管理者として実行]** を選択します。
+
+1. **[ユーザー アカウント制御]** ダイアログで、**[はい]** を選択します。
+
+1. 次のコマンドを入力して、Enter キーを押します。
 
     ```powershell
     Install-Module -Name AzureRM
     ```
-5. PSGallery からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
 
-> [!NOTE]
+1. PSGallery からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
+
+> [!TIP]
 > Azure PowerShell モジュールの何らかのバージョンが既にインストールされていることを示すエラー メッセージが表示された場合は、次のコマンドを実行して "_最新_" のバージョンに更新できます。
 > 
 > `Update-Module -Name AzureRM`

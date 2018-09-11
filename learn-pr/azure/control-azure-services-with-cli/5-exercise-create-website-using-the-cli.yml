@@ -4,12 +4,17 @@ title: CLI を使用して Azure Web サイトを作成する
 metadata:
   title: CLI を使用して Azure Web サイトを作成する
   description: Azure CLI を操作して新しい PHP Web サイトを作成する
-  ms.openlocfilehash: b35437af6904a40b0f6712972ba48f03245f0292
-  ms.sourcegitcommit: 90f796728a05f49738903d8fb3165927b7df866a
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ddce0871f845cc1e4931a202cc1da57fe0c70c4d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43658647"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230502"
 durationInMinutes: 10
 interactive: bash
 content: '[!include[](includes/5-exercise-create-website-using-the-cli.md)]'

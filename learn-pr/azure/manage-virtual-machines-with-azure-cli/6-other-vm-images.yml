@@ -4,12 +4,17 @@ title: その他の VM イメージについて知る
 metadata:
   title: その他の VM イメージについて知る
   description: Azure で VM を作成するときに使用できるその他のイメージ タイプについて学習します
-  ms.openlocfilehash: ee767c2817dbec8f9ead82b28768eaf0b6b28666
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1af84f410301c27f723ae43c54a8b242db3444c3
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834918"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245309"
 interactive: bash
 durationInMinutes: 3
 content: '[!include[](includes/6-other-vm-images.md)]'
