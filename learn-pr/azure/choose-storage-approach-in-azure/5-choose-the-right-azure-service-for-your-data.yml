@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for-your-data
 metadata:
-  title: <span data-ttu-id="0c15e-101">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="0c15e-101">Choose an Azure Storage solution</span></span>
-  description: <span data-ttu-id="0c15e-102">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="0c15e-102">Choose an Azure Storage solution</span></span>
-  displayType: one-column
-  ms.openlocfilehash: a17365aaf40328b1ee1f64147c90664613294a43
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="a744a-101">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="a744a-101">Choose an Azure Storage solution</span></span>
+  description: <span data-ttu-id="a744a-102">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="a744a-102">Choose an Azure Storage solution</span></span>
+  ms.openlocfilehash: 219cbca9eee1517c3e3943ce0a671226f783685f
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252442"
-title: <span data-ttu-id="0c15e-103">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="0c15e-103">Choose an Azure Storage solution</span></span>
+  ms.locfileid: "43314858"
+title: <span data-ttu-id="a744a-103">Azure Storage ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="a744a-103">Choose an Azure Storage solution</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/5-choose-the-right-azure-service-for-your-data.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.1-introduction
+title: <span data-ttu-id="0b6b1-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="0b6b1-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="0b6b1-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="0b6b1-102">Introduction</span></span>
+  description: <span data-ttu-id="0b6b1-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="0b6b1-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 727294ae31fab1853dd81293d7ee824edca06cc9
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230332"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.6-describe-azure-expressroute
+title: <span data-ttu-id="fd564-101">Azure ExpressRoute の説明</span><span class="sxs-lookup"><span data-stu-id="fd564-101">Describe Azure ExpressRoute</span></span>
+metadata:
+  title: <span data-ttu-id="fd564-102">Azure ExpressRoute の説明</span><span class="sxs-lookup"><span data-stu-id="fd564-102">Describe Azure ExpressRoute</span></span>
+  description: <span data-ttu-id="fd564-103">Azure ExpressRoute の説明</span><span class="sxs-lookup"><span data-stu-id="fd564-103">Describe Azure ExpressRoute</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 607025a46a18ba7683ec1b9bb0f4d90e0f7e0195
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44229958"
+durationInMinutes: 5
+content: '[!include[](includes/6-describe-azure-expressroute.md)]'

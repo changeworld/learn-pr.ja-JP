@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.5-paas
+title: <span data-ttu-id="2e978-101">サービスとしてのプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="2e978-101">Platform as a service</span></span>
+metadata:
+  title: <span data-ttu-id="2e978-102">PaaS</span><span class="sxs-lookup"><span data-stu-id="2e978-102">PaaS</span></span>
+  description: <span data-ttu-id="2e978-103">サービスとしてのプラットフォームについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="2e978-103">Learn about platform as a service and if it might be the right choice for your application</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b7cba0c6ac6bc3cc0b81183e8564dc60d99fb414
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240175"
+durationInMinutes: 4
+content: '[!include[](includes/5-paas.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.5-summary
+title: <span data-ttu-id="9c7dc-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="9c7dc-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="9c7dc-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="9c7dc-102">Summary</span></span>
+  description: <span data-ttu-id="9c7dc-103">「Azure コンピューティングの概要」モジュールのまとめ。</span><span class="sxs-lookup"><span data-stu-id="9c7dc-103">Summary for the 'Introduction to Azure compute' module.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cdfc22f76facfec184687edc7f63a899218b627c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237285"
+durationInMinutes: 2
+content: '[!include[](includes/5-summary.md)]'

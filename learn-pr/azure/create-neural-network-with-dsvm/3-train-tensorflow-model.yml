@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-neural-network-with-dsvm.3-train-tensorflow-model
+title: <span data-ttu-id="88103-101">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="88103-101">Train a TensorFlow model</span></span>
+metadata:
+  title: <span data-ttu-id="88103-102">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="88103-102">Train a TensorFlow model</span></span>
+  description: <span data-ttu-id="88103-103">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="88103-103">Train a TensorFlow model</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 40e1e30428fc850f87b1994c042eca00332899bd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230638"
+durationInMinutes: 20
+content: '[!include[](includes/3-train-tensorflow-model.md)]'

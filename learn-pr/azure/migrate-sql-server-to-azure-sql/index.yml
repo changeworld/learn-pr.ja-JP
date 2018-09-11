@@ -1,0 +1,39 @@
+### YamlMime:Module
+uid: learn.migrate-sql-server-relational-data
+metadata:
+  title: SQL Serer リレーショナル データを Azure SQL に移行する
+  description: このモジュールでは、SQL Server データベースを Azure SQL Database に移行します。 それぞれの手法を活用すると共に、利用できる選択肢について学習します。 また、ご使用の SQL Server データベースにアクセスして、そのデータベースを Azure SQL Database に移行します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 59b4be0e9c2103cc726074de29842a362668fb85
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834106"
+title: SQL Serer リレーショナル データを Azure SQL に移行する
+summary: このモジュールでは、Data Migration Assistant (DMA) でどのようにオンプレミスの SQL Server データベースの評価が提供され、データベースを Azure SQL Database に移行できるかについて学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 移行について SQL Server データベースを評価します。
+
+  - 移行の前にデータベースを分析して修正します。
+
+  - Microsoft Data Migration Assistant を使用してデータベースを移行します。
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+units:
+- learn.migrate-sql-server-relational-data.1-introduction
+- learn.migrate-sql-server-relational-data.2-assess-your-database
+- learn.migrate-sql-server-relational-data.3-exercise-assess-your-database
+- learn.migrate-sql-server-relational-data.4-deploy-fixes-and-migrate-the-database
+- learn.migrate-sql-server-relational-data.5-exercise-migrate-the-database
+- learn.migrate-sql-server-relational-data.6-knowledge-check-deploy-fixes-and-migrate-the-database
+- learn.migrate-sql-server-relational-data.7-summary
+achievement: learn.migrate-sql-server-relational-data.badge

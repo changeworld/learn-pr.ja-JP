@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.2-connect-to-dsvm
-title: <span data-ttu-id="23956-101">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="23956-101">Connect to the Data Science VM</span></span>
+title: <span data-ttu-id="79121-101">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-101">Connect to the Data Science VM</span></span>
 metadata:
-  title: <span data-ttu-id="23956-102">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="23956-102">Connect to the Data Science VM</span></span>
-  description: <span data-ttu-id="23956-103">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="23956-103">Connect to the Data Science VM</span></span>
-  ms.openlocfilehash: 50052da64ed4bd181b722113f64fea0a9f177dff
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="79121-102">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-102">Connect to the Data Science VM</span></span>
+  description: <span data-ttu-id="79121-103">Data Science VM に接続する</span><span class="sxs-lookup"><span data-stu-id="79121-103">Connect to the Data Science VM</span></span>
+  ms.openlocfilehash: 7818ed0028d2d26a0663ec7a688099afd5523916
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228169"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791527"
 durationInMinutes: 5
 content: '[!include[](includes/2-connect-to-dsvm.md)]'

@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.2-run-aci
+interactive: bash
+metadata:
+  title: <span data-ttu-id="062bf-101">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="062bf-101">Run Azure Container Instances</span></span>
+  description: <span data-ttu-id="062bf-102">Azure Container Instances を実行します。</span><span class="sxs-lookup"><span data-stu-id="062bf-102">Run Azure Container Instances.</span></span>
+  ms.openlocfilehash: e261fe425d41c90490dea41dbf4eb24912af76f7
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833775"
+title: <span data-ttu-id="062bf-103">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="062bf-103">Run Azure Container Instances</span></span>
+durationInMinutes: 5
+content: '[!include[](includes/2-run-aci.md)]'

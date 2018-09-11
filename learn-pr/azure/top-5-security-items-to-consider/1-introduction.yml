@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.1-introduction
+title: <span data-ttu-id="e74a9-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="e74a9-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="e74a9-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="e74a9-102">Introduction</span></span>
+  description: <span data-ttu-id="e74a9-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="e74a9-103">Introduction</span></span>
+  ms.openlocfilehash: 01459018b22fbeba554bd36e39b88de50b8fe279
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255421"
+durationInMinutes: 10
+content: '[!include[](includes/1-introduction.md)]'

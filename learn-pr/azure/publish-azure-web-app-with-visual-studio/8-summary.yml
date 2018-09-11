@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.8-summary
+title: <span data-ttu-id="b1606-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="b1606-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="b1606-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="b1606-102">Summary</span></span>
+  description: <span data-ttu-id="b1606-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="b1606-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 80c85f7d372aac815c8320f8931352ae77a26f23
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233585"
+durationInMinutes: 3
+content: '[!include[](includes/8-summary.md)]'

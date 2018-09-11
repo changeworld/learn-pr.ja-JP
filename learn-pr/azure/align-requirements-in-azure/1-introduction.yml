@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.1-introduction
+title: <span data-ttu-id="763dd-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="763dd-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="763dd-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="763dd-102">Introduction</span></span>
+  description: <span data-ttu-id="763dd-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="763dd-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bccdfd5d35b03adce9c915e182f19aba6dbb6407
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233902"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

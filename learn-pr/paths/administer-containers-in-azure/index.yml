@@ -1,25 +1,26 @@
 ### YamlMime:LearningPath
 uid: learn.administer-containers-in-azure
+metadata:
+  title: Azure でコンテナーを管理する
+  description: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 88ca111cf743fac6ca9bbb8a80c58d23580f34dc
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826741"
 title: Azure でコンテナーを管理する
 summary: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
-cardDescription: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
-- developer
+- administrator
 products:
-- Azure
-prerequisites: なし
-metadata:
-  title: Azure でコンテナーを管理する
-  description: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
-  ms.openlocfilehash: 753fe61e57393a51f6a7e0031ce251390c6ceef7
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40446067"
+- azure
 modules:
-- learn.sample-module-cloudshell
+- learn.intro-to-containers
+- learn.run-docker-containers-aci
 achievement: learn.administer-containers-in-azure.trophy

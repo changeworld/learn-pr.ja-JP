@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.5-exercise-write-code-that-uses-service-bus-queues
+title: <span data-ttu-id="3edc3-101">演習 - Service Bus キューを使用するコードを記述する</span><span class="sxs-lookup"><span data-stu-id="3edc3-101">Exercise - Write code that uses Service Bus queues</span></span>
+metadata:
+  title: <span data-ttu-id="3edc3-102">演習 - Service Bus キューを使用するコードを記述する</span><span class="sxs-lookup"><span data-stu-id="3edc3-102">Exercise - Write code that uses Service Bus queues</span></span>
+  description: <span data-ttu-id="3edc3-103">演習 - Service Bus キューを使用するコードを記述する</span><span class="sxs-lookup"><span data-stu-id="3edc3-103">Exercise - Write code that uses Service Bus queues</span></span>
+  ms.openlocfilehash: 6aa138d88fa5c9bad8e8f8a6c8cbe5b29f995323
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43833746"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-write-code-that-uses-service-bus-queues.md)]'

@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
+title: <span data-ttu-id="dab7a-101">Azure Storage の構成に接続する</span><span class="sxs-lookup"><span data-stu-id="dab7a-101">Connect with your Azure Storage configuration</span></span>
+metadata:
+  title: <span data-ttu-id="dab7a-102">Azure Storage の構成に接続する</span><span class="sxs-lookup"><span data-stu-id="dab7a-102">Connect with your Azure Storage configuration</span></span>
+  description: <span data-ttu-id="dab7a-103">Azure Storage の構成に接続する</span><span class="sxs-lookup"><span data-stu-id="dab7a-103">Connect with your Azure Storage configuration</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: fc60b9e975dbd76fa90a087eeb19494805683edf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239325"
+interactive: bash-editor
+durationInMinutes: 15
+content: '[!include[](includes/10-exercise-connect-with-your-azure-storage-configuration.md)]'

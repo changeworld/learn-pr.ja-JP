@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.3-create-an-azure-functions-app-in-the-azure-portal
-title: <span data-ttu-id="79be4-101">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="79be4-101">Create a function app in the Azure portal</span></span>
+title: <span data-ttu-id="7f881-101">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="7f881-101">Create a function app in the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="79be4-102">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="79be4-102">Create a function app in the Azure portal</span></span>
-  description: <span data-ttu-id="79be4-103">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="79be4-103">Create a function app in the Azure portal</span></span>
-  ms.openlocfilehash: 7808aab299b9c4ef45bd92b1bed65af8da505627
-  ms.sourcegitcommit: 98b9b8a6d7b2c9ab7919eb7dc99b330e2302e2c0
+  title: <span data-ttu-id="7f881-102">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="7f881-102">Create a function app in the Azure portal</span></span>
+  description: <span data-ttu-id="7f881-103">Azure portal で関数アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="7f881-103">Create a function app in the Azure portal</span></span>
+  ms.openlocfilehash: 552dc0a2bb4da8c78178148f4f25c0931ae37e5a
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/27/2018
-  ms.locfileid: "42989097"
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791204"
 durationInMinutes: 5
 content: '[!include[](includes/3-create-an-azure-functions-app-in-the-azure-portal.md)]'
