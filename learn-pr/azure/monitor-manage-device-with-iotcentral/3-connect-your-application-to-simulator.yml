@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
+title: <span data-ttu-id="70b74-101">コーヒー メーカー シミュレーターにアプリケーションを接続する</span><span class="sxs-lookup"><span data-stu-id="70b74-101">Connect your application to the coffee machine simulator</span></span>
+metadata:
+  title: <span data-ttu-id="70b74-102">コーヒー メーカー シミュレーターにアプリケーションを接続する</span><span class="sxs-lookup"><span data-stu-id="70b74-102">Connect your application to the coffee machine simulator</span></span>
+  description: <span data-ttu-id="70b74-103">コーヒー メーカー シミュレーターにアプリケーションを接続する</span><span class="sxs-lookup"><span data-stu-id="70b74-103">Connect your application to coffee machine simulator</span></span>
+  ms.openlocfilehash: d7dbbf8226940d5a61ee707edd7600b0bfd0bf2e
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795032"
+durationInMinutes: 12
+content: '[!include[](includes/3-connect-your-application-to-simulator.md)]'
