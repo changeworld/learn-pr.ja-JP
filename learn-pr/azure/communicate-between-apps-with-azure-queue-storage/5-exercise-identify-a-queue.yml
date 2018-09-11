@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
+title: <span data-ttu-id="94b25-101">キューを識別する - パート 2</span><span class="sxs-lookup"><span data-stu-id="94b25-101">Identify a queue - Part 2</span></span>
+metadata:
+  title: <span data-ttu-id="94b25-102">キューを識別する - パート 2</span><span class="sxs-lookup"><span data-stu-id="94b25-102">Identify a queue - Part 2</span></span>
+  description: <span data-ttu-id="94b25-103">演習 - キューを識別する</span><span class="sxs-lookup"><span data-stu-id="94b25-103">Exercise - Identify a queue</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 321663704290a78634a38092f005dd0fd2140704
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310512"
+interactive: bash-editor
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/5-exercise-identify-a-queue.md)]'

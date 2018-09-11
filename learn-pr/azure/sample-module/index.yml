@@ -3,23 +3,22 @@ uid: learn.sample-module-cloudshell
 metadata:
   title: CloudShell を使用するサンプル モジュール
   description: サンプル モジュール タイトルの説明
-  ms.openlocfilehash: df8a1ef2195faee22d3f1cd6aa468bb19ed6e0b3
-  ms.sourcegitcommit: 89dccddf7de169aecda3c1657e4354906389ed25
+  ms.openlocfilehash: 8daf0ee826e3046845049de668866bea976a0096
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43324575"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43828203"
 title: CloudShell を使用するサンプル モジュール
 summary: これはサンプル モジュールの概要です
 abstract: これはサンプル モジュールの要約です
-cardDescription: これはサンプル モジュールのカードの説明です
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
 roles:
 - developer
 products:
-- Azure
+- azure
 units:
 - learn.sample-module-cloudshell.1-unit-text-only
 - learn.sample-module-cloudshell.2-unit-text-and-knowledge-check

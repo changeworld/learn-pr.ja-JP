@@ -1,15 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
-title: <span data-ttu-id="2f78f-101">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="2f78f-101">Logins and subscriptions</span></span>
+title: <span data-ttu-id="bf880-101">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="bf880-101">Logins and subscriptions</span></span>
 metadata:
-  title: <span data-ttu-id="2f78f-102">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="2f78f-102">Logins and subscriptions</span></span>
-  description: <span data-ttu-id="2f78f-103">Azure CLI にログインし、使用するサブスクリプションを選択します</span><span class="sxs-lookup"><span data-stu-id="2f78f-103">Log in to the Azure CLI and select a subscription to work with</span></span>
-  ms.openlocfilehash: 90dff52f35690b90c9c3783aa3fcc8958cd8e1ab
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="bf880-102">ログインとサブスクリプション</span><span class="sxs-lookup"><span data-stu-id="bf880-102">Logins and subscriptions</span></span>
+  description: <span data-ttu-id="bf880-103">Azure CLI にログインし、使用するサブスクリプションを選択します</span><span class="sxs-lookup"><span data-stu-id="bf880-103">Log in to the Azure CLI and select a subscription to work with</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f98dcb46bc1dab8b3b447f5ad4a7ac307ad4c001
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833458"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307877"
 interactive: bash
+azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/2-logins-and-subscriptions.md)]'

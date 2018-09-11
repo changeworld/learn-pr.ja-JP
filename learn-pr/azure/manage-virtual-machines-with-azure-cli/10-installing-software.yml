@@ -1,15 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.10-installing-software
-title: <span data-ttu-id="71eec-101">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="71eec-101">Install software on your VM</span></span>
+title: <span data-ttu-id="c2f2a-101">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="c2f2a-101">Install software on your VM</span></span>
 metadata:
-  title: <span data-ttu-id="71eec-102">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="71eec-102">Install software on your VM</span></span>
-  description: <span data-ttu-id="71eec-103">Linux VM にソフトウェアをインストールして Web サーバーを実行する</span><span class="sxs-lookup"><span data-stu-id="71eec-103">Install software to run a web server on your Linux VM</span></span>
-  ms.openlocfilehash: f3668d6b98df9ed15577bbcee26058f269b1a31a
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="c2f2a-102">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="c2f2a-102">Install software on your VM</span></span>
+  description: <span data-ttu-id="c2f2a-103">Linux VM にソフトウェアをインストールして Web サーバーを実行する</span><span class="sxs-lookup"><span data-stu-id="c2f2a-103">Install software to run a web server on your Linux VM</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a40c9efa78d941bd25b14115dd4cba56f56a7638
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835674"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308948"
 interactive: bash
+azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/10-installing-software.md)]'

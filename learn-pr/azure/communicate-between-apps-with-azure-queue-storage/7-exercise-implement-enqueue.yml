@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
-title: <span data-ttu-id="c4b3f-101">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="c4b3f-101">Add a message to the queue</span></span>
+title: <span data-ttu-id="57fcc-101">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="57fcc-101">Add a message to the queue</span></span>
 metadata:
-  title: <span data-ttu-id="c4b3f-102">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="c4b3f-102">Add a message to the queue</span></span>
-  description: <span data-ttu-id="c4b3f-103">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="c4b3f-103">Add a message to the queue</span></span>
+  title: <span data-ttu-id="57fcc-102">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="57fcc-102">Add a message to the queue</span></span>
+  description: <span data-ttu-id="57fcc-103">メッセージをキューに追加する</span><span class="sxs-lookup"><span data-stu-id="57fcc-103">Add a message to the queue</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: faf2ae1c8b6acc84940fdbd9fab4d3fe2bc7b69c
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 1b966cf97c68cbe439a37bbab66d02865e7e1de9
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44242266"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44311073"
 interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-implement-enqueue.md)]'
