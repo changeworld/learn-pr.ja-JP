@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: learn.store-app-data-with-azure-blob-storage
+metadata:
+  title: Azure Blob Storage に Web アプリケーション データを格納する
+  description: Azure Blob Storage を使用してユーザー ファイルを格納する Web アプリを作成します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: e09ba22fbc0fce83968ba25aec27f76bd75752af
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43459082"
+title: Azure Blob Storage に Web アプリケーション データを格納する
+summary: Azure Blob Storage を使用してユーザー ファイルを格納する Web アプリを作成します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure Blob Storage でデータを整理します。
+
+  - BLOB を保持するストレージ リソースを作成します。
+
+  - Azure Blob Storage にデータを格納して取得します。
+prerequisites: なし
+iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- storage
+- storageBlob
+units:
+- learn.store-app-data-with-azure-blob-storage.1-introduction
+- learn.store-app-data-with-azure-blob-storage.2-what-are-blobs
+- learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
+- learn.store-app-data-with-azure-blob-storage.4-create-storage-resources
+- learn.store-app-data-with-azure-blob-storage.5-configure-and-initialize-the-client-library
+- learn.store-app-data-with-azure-blob-storage.6-getting-blob-references
+- learn.store-app-data-with-azure-blob-storage.7-blob-uploads-and-downloads
+- learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
+achievement: learn.store-app-data-with-azure-blob-storage.badge

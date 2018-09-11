@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-storage-account.3-choose-your-account-settings
+title: <span data-ttu-id="cbc6d-101">アカウント設定を選択する</span><span class="sxs-lookup"><span data-stu-id="cbc6d-101">Choose your account settings</span></span>
+metadata:
+  title: <span data-ttu-id="cbc6d-102">アカウント設定を選択する</span><span class="sxs-lookup"><span data-stu-id="cbc6d-102">Choose your account settings</span></span>
+  description: <span data-ttu-id="cbc6d-103">アカウント設定を選択する</span><span class="sxs-lookup"><span data-stu-id="cbc6d-103">Choose your account settings</span></span>
+  ms.openlocfilehash: 2b4b0b6fa5cf2ea927065e28f0e634d4719a5c8b
+  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43471548"
+durationInMinutes: 7
+content: '[!include[](includes/3-choose-your-account-settings.md)]'

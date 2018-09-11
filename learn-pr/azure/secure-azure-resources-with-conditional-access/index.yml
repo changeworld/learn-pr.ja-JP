@@ -1,0 +1,30 @@
+### YamlMime:Module
+uid: learn.secure-access-azure-ad-multi-factor-authentication
+metadata:
+  title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+  description: Azure Active Directory での条件付きアクセスの利用方法について学習します。
+  ms.openlocfilehash: 0fa3e6ecc210bd779fd7c06354cce805e453b9b7
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43476956"
+title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+summary: 管理者は、Azure portal のような特定のアプリケーションへのアクセスをセキュリティで保護したいと考えます。
+abstract: 多くの組織は、セキュリティ体制の強化を望んでいますが、この要件とユーザーにとってのアクセスの簡単さのバランスを取りたいと考えています。 Azure AD では、条件付きアクセスでこのバランスをサポートするためのメカニズムを提供します。 組織は特定の状況において、Azure Multi-Factor Authentication (MFA) のような代替制御を必要とする場合があります。 たとえば、機密性の高いアプリケーションにアクセスする場合や、信頼されていない IP アドレスから受信する場合、特定のリスク条件が存在する場合があります。
+cardDescription: Azure portal のような特定のアプリケーションへのアクセスを、条件付きアクセスを使用してセキュリティで保護する方法を学習します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- administrator
+products:
+- Azure Active Directory
+units:
+- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

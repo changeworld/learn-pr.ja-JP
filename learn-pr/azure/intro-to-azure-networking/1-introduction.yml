@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.1-introduction
+title: <span data-ttu-id="23dd7-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="23dd7-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="23dd7-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="23dd7-102">Introduction</span></span>
+  description: <span data-ttu-id="23dd7-103">回復性の向上と待ち時間の短縮という 2 つの一般的なネットワークの課題について学習します。</span><span class="sxs-lookup"><span data-stu-id="23dd7-103">Learn about two common networking challenges &ndash; improving resiliency and reducing latency.</span></span>
+  ms.openlocfilehash: c5a89a580277d17cdd7245a47eff745a58847d50
+  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43477775"
+durationInMinutes: 5
+content: '[!include[](includes/1-introduction.md)]'

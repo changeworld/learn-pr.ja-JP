@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.predict-costs-and-optimize-spending
+metadata:
+  title: Azure のコストを予測して支出を最適化する
+  description: コストは、クラウドの特に重要な要素で、ビジネスに大きな影響を与える場合があります。 Azure では、クラウド支出をさらに把握するために役立つツールや、コストの節約のために利用できるベスト プラクティスがいくつか用意されています。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 0381bfdeb3669e4453e10bd4bde3b0281cfaa14a
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43458698"
+title: Azure のコストを予測して支出を最適化する
+summary: コストは、クラウドの特に重要な要素で、ビジネスに大きな影響を与える場合があります。 Azure では、クラウド支出をさらに把握するために役立つツールや、コストの節約のために利用できるベスト プラクティスがいくつか用意されています。
+prerequisites: "- Azure インフラストラクチャ コンポーネント内のオプションを理解しておくこと。 \n"
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure 料金計算ツールを使用して、コストを見積もります。
+
+  - Azure でのコストの予測と最適化に使用できるツールを特定します。
+
+  - インフラストラクチャのコストを削減するためのベスト プラクティスを特定します。
+
+  - ライセンスのコストを削減するためのベスト プラクティスを明らかにします。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- solution-architect
+- administrator
+products:
+- azure
+- azurePortal
+- costManagement
+units:
+- learn.predict-costs-and-optimize-spending.1-introduction
+- learn.predict-costs-and-optimize-spending.2-estimate-costs-with-the-azure-pricing-calculator
+- learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+- learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+- learn.predict-costs-and-optimize-spending.5-save-on-licensing-costs
+- learn.predict-costs-and-optimize-spending.6-summary
+achievement: learn.predict-costs-and-optimize-spending.badge

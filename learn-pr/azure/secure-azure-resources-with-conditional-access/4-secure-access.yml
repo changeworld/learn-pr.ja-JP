@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+metadata:
+  title: <span data-ttu-id="2ea0b-101">リソースへのアクセスをセキュリティで保護する</span><span class="sxs-lookup"><span data-stu-id="2ea0b-101">Secure access to resources</span></span>
+  description: <span data-ttu-id="2ea0b-102">ユーザーが Azure portal にアクセスするときに多要素認証を実行する必要があるようにする条件付きアクセス規則を作成する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="2ea0b-102">Learn how to create a conditional access rule to require users to perform multi-factor authentication when they access the Azure portal.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: efcf9f9f2fd7a286c621f21ae5ab6f6c73030126
+  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43454866"
+title: <span data-ttu-id="2ea0b-103">リソースへのアクセスをセキュリティで保護する</span><span class="sxs-lookup"><span data-stu-id="2ea0b-103">Secure access to resources</span></span>
+labOnDemandUrl: https://labondemand.com/Launch/00000000
+durationInMinutes: 10
+content: '[!include[](includes/4-secure-access.md)]'

@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.7-view-activity-logs
+metadata:
+  title: <span data-ttu-id="e6d66-101">RBAC の変更のアクティビティ ログを表示する</span><span class="sxs-lookup"><span data-stu-id="e6d66-101">View activity logs for RBAC changes</span></span>
+  description: <span data-ttu-id="e6d66-102">Azure アクティビティ ログを使用して、ポータルの RBAC の変更を一覧表示し、シンプルなレポートを生成する方法について学習します。</span><span class="sxs-lookup"><span data-stu-id="e6d66-102">Learn how to use Azure Activity Log to list RBAC changes in the portal and generate a simple report.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 7f36b722772b5821746abdce81dcf509231a1bdc
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43478793"
+title: <span data-ttu-id="e6d66-103">RBAC の変更のアクティビティ ログを表示する</span><span class="sxs-lookup"><span data-stu-id="e6d66-103">View activity logs for RBAC changes</span></span>
+labOnDemandUrl: https://labondemand.com/Launch/00000000
+durationInMinutes: 5
+content: '[!include[](includes/7-view-activity-logs.md)]'

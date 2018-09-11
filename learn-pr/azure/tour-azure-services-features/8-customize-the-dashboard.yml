@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.8-customize-the-dashboard
-title: <span data-ttu-id="09544-101">ダッシュボードのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="09544-101">Customize the dashboard</span></span>
+title: <span data-ttu-id="0def2-101">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="0def2-101">Azure Portal dashboards</span></span>
 metadata:
-  title: <span data-ttu-id="09544-102">ダッシュボードのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="09544-102">Customize the dashboard</span></span>
-  description: <span data-ttu-id="09544-103">ダッシュボードのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="09544-103">Customize the dashboard</span></span>
-  ms.openlocfilehash: 383482db1a6af2119b50268c8d532d6526de9f23
-  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  title: <span data-ttu-id="0def2-102">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="0def2-102">Azure Portal dashboards</span></span>
+  description: <span data-ttu-id="0def2-103">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="0def2-103">Azure Portal dashboards</span></span>
+  ms.openlocfilehash: b4d7c0dcf02abe20a2205d844c758f86e1408527
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/22/2018
-  ms.locfileid: "40445131"
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43459431"
 durationInMinutes: 10
 content: '[!include[](includes/8-customize-the-dashboard.md)]'

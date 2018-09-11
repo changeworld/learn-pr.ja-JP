@@ -1,0 +1,40 @@
+<span data-ttu-id="b458e-101">既に説明したストレージ アカウントの設定は、アカウント内のデータ サービスに適用されます。</span><span class="sxs-lookup"><span data-stu-id="b458e-101">The storage account settings we've already covered apply to the data services in the account.</span></span> <span data-ttu-id="b458e-102">ここでは、アカウントに格納されるデータではなく、アカウント自体に適用される 3 つの設定について説明します。</span><span class="sxs-lookup"><span data-stu-id="b458e-102">Here, we will discuss the three settings that apply to the account itself rather than the data stored in the account:</span></span>
+
+- <span data-ttu-id="b458e-103">名前</span><span class="sxs-lookup"><span data-stu-id="b458e-103">Name</span></span>
+- <span data-ttu-id="b458e-104">デプロイ モデル</span><span class="sxs-lookup"><span data-stu-id="b458e-104">Deployment model</span></span>
+- <span data-ttu-id="b458e-105">アカウントの種類</span><span class="sxs-lookup"><span data-stu-id="b458e-105">Account kind</span></span>
+
+<span data-ttu-id="b458e-106">これらの設定は、アカウントの管理方法と、アカウント内のサービスのコストに影響を与えます。</span><span class="sxs-lookup"><span data-stu-id="b458e-106">These impact how you manage your account and the cost of the services within it.</span></span>
+
+## <a name="name"></a><span data-ttu-id="b458e-107">名前</span><span class="sxs-lookup"><span data-stu-id="b458e-107">Name</span></span>
+
+<span data-ttu-id="b458e-108">各ストレージ アカウントには名前があります。</span><span class="sxs-lookup"><span data-stu-id="b458e-108">Each storage account has a name.</span></span> <span data-ttu-id="b458e-109">名前はグローバルに一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="b458e-109">The name must be globally unique.</span></span> <span data-ttu-id="b458e-110">名前の長さは 3 - 24 文字でなければならず、使用できるのは小文字と数字のみです。</span><span class="sxs-lookup"><span data-stu-id="b458e-110">It must be between 3 and 24 characters and use only lower-case letters and digits.</span></span>
+
+## <a name="deployment-model"></a><span data-ttu-id="b458e-111">デプロイ モデル</span><span class="sxs-lookup"><span data-stu-id="b458e-111">Deployment model</span></span>
+
+<span data-ttu-id="b458e-112">"_デプロイ モデル_" は、Azure でリソースを編成するために使用されるシステムです。</span><span class="sxs-lookup"><span data-stu-id="b458e-112">A _deployment model_ is the system Azure uses to organize your resources.</span></span> <span data-ttu-id="b458e-113">これらのリソースの作成、構成、管理に使用する API が定義されています。</span><span class="sxs-lookup"><span data-stu-id="b458e-113">It defines the API that you use to create, configure, and manage those resources.</span></span> <span data-ttu-id="b458e-114">Azure では、2 種類のデプロイ モデルが提供されています。</span><span class="sxs-lookup"><span data-stu-id="b458e-114">Azure provides two deployment models:</span></span>
+
+- <span data-ttu-id="b458e-115">**Resource Manager**: Azure Resource Manager (ARM) API を使用する現在のモデル</span><span class="sxs-lookup"><span data-stu-id="b458e-115">**Resource Manager**: the current model that uses the Azure Resource Manager (ARM) API</span></span>
+- <span data-ttu-id="b458e-116">**クラシック**: Azure サービス管理 (ASM) API を使用するレガシ オファリング。</span><span class="sxs-lookup"><span data-stu-id="b458e-116">**Classic**: a legacy offering that uses the Azure Service Management (ASM) API.</span></span>
+
+<span data-ttu-id="b458e-117">ほとんどの Azure リソースは Resource Manager でのみ動作するので、選択するものの決定はたいていは簡単です。</span><span class="sxs-lookup"><span data-stu-id="b458e-117">The decision on which one to choose is usually easy because most Azure resources only work with Resource Manager.</span></span> <span data-ttu-id="b458e-118">ただし、ストレージ アカウント、仮想マシン、仮想ネットワークは両方をサポートします。</span><span class="sxs-lookup"><span data-stu-id="b458e-118">However, storage accounts, virtual machines, and virtual networks support both.</span></span> <span data-ttu-id="b458e-119">つまり、ストレージ アカウントを作成するときに、どちらか一方を選択する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b458e-119">This means you must choose one or the other when you create your storage account.</span></span>
+
+<span data-ttu-id="b458e-120">2 つのモデルの重要な機能の違いは、グループ化のサポートです。</span><span class="sxs-lookup"><span data-stu-id="b458e-120">The key feature difference between the two models is their support for grouping.</span></span> <span data-ttu-id="b458e-121">Resource Manager モデルで追加された "_リソース グループ_" の概念は、クラシック モデルでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="b458e-121">The Resource Manager model adds the concept of a _resource group_ that is not available in the classic model.</span></span> <span data-ttu-id="b458e-122">リソース グループを使用すると、リソースのコレクションを 1 つの単位として展開および管理することができます。</span><span class="sxs-lookup"><span data-stu-id="b458e-122">A resource group lets you deploy and manage a collection of resources as a single unit.</span></span>
+
+<span data-ttu-id="b458e-123">すべての新しいリソースには Resource Manager を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b458e-123">Microsoft recommends that you use Resource Manager for all new resources.</span></span>
+
+## <a name="account-kind"></a><span data-ttu-id="b458e-124">アカウントの種類</span><span class="sxs-lookup"><span data-stu-id="b458e-124">Account kind</span></span>
+
+<span data-ttu-id="b458e-125">ストレージ アカウントの "_種類_" とは、アカウントに含めることができるデータ サービスを決定するポリシーのセットと、それらのサービスの価格です。</span><span class="sxs-lookup"><span data-stu-id="b458e-125">Storage account _kind_ is a set of policies that determine which data services you can include in the account and the pricing of those services.</span></span> <span data-ttu-id="b458e-126">ストレージ アカウントには、次の 3 種類があります。</span><span class="sxs-lookup"><span data-stu-id="b458e-126">There are three kinds of storage accounts:</span></span>
+
+- <span data-ttu-id="b458e-127">**StorageV2 (汎用 v2)**: すべてのストレージの種類とすべての最新の機能をサポートしている現在のオファリング</span><span class="sxs-lookup"><span data-stu-id="b458e-127">**StorageV2 (general purpose v2)**: the current offering that supports all storage types and all of the latest features</span></span>
+- <span data-ttu-id="b458e-128">**Storage (汎用 v1)**: すべてのストレージの種類をサポートしていますが、すべての機能はサポートしていない場合がある、従来の種類</span><span class="sxs-lookup"><span data-stu-id="b458e-128">**Storage (general purpose v1)**: a legacy kind that supports all storage types but may not support all features</span></span>
+- <span data-ttu-id="b458e-129">**BLOB ストレージ**: ブロック BLOB と追加 BLOB のみを使用できる従来の種類。</span><span class="sxs-lookup"><span data-stu-id="b458e-129">**Blob storage**: a legacy kind that allows only block blobs and append blobs.</span></span>
+
+<span data-ttu-id="b458e-130">新しいストレージ アカウントには汎用 v2 を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="b458e-130">Microsoft recommends that you use the general purpose v2 for new storage accounts.</span></span>
+
+<span data-ttu-id="b458e-131">このルールの例外になる場合がある特別なケースがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="b458e-131">There are a few special cases that can be exceptions to this rule.</span></span> <span data-ttu-id="b458e-132">たとえば、トランザクションの料金は汎用 v1 の方が安く、一般的なワークロードに合う場合はコストを若干削減できます。</span><span class="sxs-lookup"><span data-stu-id="b458e-132">For example, pricing for transactions is lower in general purpose v1 which would allow you to slightly reduce costs if that matches your typical workload.</span></span>
+
+## <a name="summary"></a><span data-ttu-id="b458e-133">まとめ</span><span class="sxs-lookup"><span data-stu-id="b458e-133">Summary</span></span>
+
+<span data-ttu-id="b458e-134">ここでの主要なアドバイスは、すべてのストレージ アカウントで **Resource Manager** デプロイ モデルと **StorageV2 (汎用 v2)** アカウントの種類を選択するということです。</span><span class="sxs-lookup"><span data-stu-id="b458e-134">The core advice here is to choose the **Resource Manager** deployment model and the **StorageV2 (general purpose v2)** account kind for all your storage accounts.</span></span> <span data-ttu-id="b458e-135">他のオプションは、主に、既存のリソースの運用を続けられるようにするために存在します。</span><span class="sxs-lookup"><span data-stu-id="b458e-135">The other options still exist primarily to allow existing resources to continue operation.</span></span> <span data-ttu-id="b458e-136">新しいリソースの場合は、他の選択肢を検討する理由はほとんどありません。</span><span class="sxs-lookup"><span data-stu-id="b458e-136">For new resources, there are very few reasons to consider the other choices.</span></span>

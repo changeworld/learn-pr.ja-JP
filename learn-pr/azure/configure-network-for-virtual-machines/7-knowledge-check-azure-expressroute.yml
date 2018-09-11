@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+title: <span data-ttu-id="05176-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="05176-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="05176-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="05176-102">Knowledge check</span></span>
+  description: <span data-ttu-id="05176-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="05176-103">Knowledge check</span></span>
+  ms.openlocfilehash: b44cec1812fc141ac7115fee02f2ab79e5d65720
+  ms.sourcegitcommit: 8d5c75ba3026e29b302d962ace4a29fa1b47a6d2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43544657"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="05176-104">知識チェック - Azure ExpressRoute</span><span class="sxs-lookup"><span data-stu-id="05176-104">Knowledge check - Azure ExpressRoute</span></span>
+  questions:
+  - content: <span data-ttu-id="05176-105">次のプロトコルのうち、Azure ExpressRoute の動的ルーティングを提供するものはどれですか。</span><span class="sxs-lookup"><span data-stu-id="05176-105">Which of the following protocols provides dynamic routing for Azure ExpressRoute?</span></span>
+    choices:
+    - content: <span data-ttu-id="05176-106">IPVPN</span><span class="sxs-lookup"><span data-stu-id="05176-106">IPVPN</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-107">PPTP</span><span class="sxs-lookup"><span data-stu-id="05176-107">PPTP</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-108">IPsec</span><span class="sxs-lookup"><span data-stu-id="05176-108">IPsec</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-109">BCP</span><span class="sxs-lookup"><span data-stu-id="05176-109">BCP</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="05176-110">S-key</span><span class="sxs-lookup"><span data-stu-id="05176-110">S-key</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="05176-111">次のピアリングの種類のうち、クラウドベースの SaaS サービスへの接続をサポートしているものはどれですか。</span><span class="sxs-lookup"><span data-stu-id="05176-111">Which peering type supports connections to cloud-based SaaS offerings?</span></span>
+    choices:
+    - content: <span data-ttu-id="05176-112">Azure プライベート</span><span class="sxs-lookup"><span data-stu-id="05176-112">Azure Private</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-113">Azure パブリック</span><span class="sxs-lookup"><span data-stu-id="05176-113">Azure Public</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-114">Microsoft</span><span class="sxs-lookup"><span data-stu-id="05176-114">Microsoft</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="05176-115">Office 365</span><span class="sxs-lookup"><span data-stu-id="05176-115">Office 365</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="05176-116">動的</span><span class="sxs-lookup"><span data-stu-id="05176-116">Dynamic</span></span>
+      isCorrect: false

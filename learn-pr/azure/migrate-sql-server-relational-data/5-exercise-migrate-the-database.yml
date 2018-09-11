@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.5-exercise-migrate-the-database
+title: <span data-ttu-id="f6817-101">演習 - データを移行する</span><span class="sxs-lookup"><span data-stu-id="f6817-101">Exercise - Migrate your database</span></span>
+metadata:
+  title: <span data-ttu-id="f6817-102">演習 - データを移行する</span><span class="sxs-lookup"><span data-stu-id="f6817-102">Exercise - Migrate your database</span></span>
+  description: <span data-ttu-id="f6817-103">演習 - データを移行する</span><span class="sxs-lookup"><span data-stu-id="f6817-103">Exercise - Migrate your database</span></span>
+  ms.openlocfilehash: 6a34040558aadb0723fbc5420356a115acef6993
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43460566"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-migrate-the-database.md)]'

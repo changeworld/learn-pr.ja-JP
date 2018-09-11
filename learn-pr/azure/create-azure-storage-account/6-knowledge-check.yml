@@ -1,0 +1,41 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-storage-account.6-knowledge-check
+title: '<span data-ttu-id="e13b8-101">知識チェック: ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="e13b8-101">Knowledge check: Create a storage account</span></span>'
+durationInMinutes: 3
+metadata:
+  title: '<span data-ttu-id="e13b8-102">知識チェック: ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="e13b8-102">Knowledge check: Create a storage account</span></span>'
+  description: <span data-ttu-id="e13b8-103">ストレージ アカウントのプロパティと作成に関する質問。</span><span class="sxs-lookup"><span data-stu-id="e13b8-103">Questions about storage account properties and creation.</span></span>
+  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
+  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43471761"
+quiz:
+  title: '<span data-ttu-id="e13b8-104">知識チェック: ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="e13b8-104">Knowledge check: Create a storage account</span></span>'
+  questions:
+  - content: '<span data-ttu-id="e13b8-105">BLOB として保存されたビデオ ファイルが 2 つあるとします。</span><span class="sxs-lookup"><span data-stu-id="e13b8-105">Suppose you have two video files stored as blobs.</span></span> <span data-ttu-id="e13b8-106">ビデオの 1 つはビジネスに不可欠で、地理的に多様なデータセンター間で複数のコピーを作成するレプリケーション ポリシーが必要です。</span><span class="sxs-lookup"><span data-stu-id="e13b8-106">One of the videos is business-critical and requires a replication policy that creates multiple copies across geographically diverse datacenters.</span></span> <span data-ttu-id="e13b8-107">その他のビデオは一般用で、ローカルのレポリケーション ポリシーは十分です。</span><span class="sxs-lookup"><span data-stu-id="e13b8-107">The other video is non-critical, and a local replication policy is sufficient.</span></span> <span data-ttu-id="e13b8-108">True または False: これらの制約を満たすには、2 つの BLOB は別のストレージ アカウント内にある必要があります。</span><span class="sxs-lookup"><span data-stu-id="e13b8-108">True or false: to satisfy these constraints, the two blobs will need to be in separate storage accounts.</span></span>'
+    choices:
+    - content: <span data-ttu-id="e13b8-109">True</span><span class="sxs-lookup"><span data-stu-id="e13b8-109">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e13b8-110">レプリケーション ポリシーは、ストレージ アカウントの特性です。</span><span class="sxs-lookup"><span data-stu-id="e13b8-110">Replication policy is a characteristic of a storage account.</span></span> <span data-ttu-id="e13b8-111">ストレージ アカウントのすべてのメンバーが、同じポリシーを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e13b8-111">Every member in the storage account must use the same policy.</span></span> <span data-ttu-id="e13b8-112">一部のデータは geo レプリケーション戦略を使用し、その他のデータはローカル レプリケーション戦略を使用する必要がある場合、ストレージ アカウントは 2 つ必要になります。</span><span class="sxs-lookup"><span data-stu-id="e13b8-112">If you need some data to use the geo-replication strategy and other data to use the local-replication strategy, then you will need two storage accounts.</span></span>
+    - content: <span data-ttu-id="e13b8-113">False</span><span class="sxs-lookup"><span data-stu-id="e13b8-113">False</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="e13b8-114">ストレージ アカウントの名前は次のようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e13b8-114">The Name of a storage account must be:</span></span>
+    choices:
+    - content: <span data-ttu-id="e13b8-115">含まれているリソース グループ内で一意。</span><span class="sxs-lookup"><span data-stu-id="e13b8-115">Unique within the containing resource group.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e13b8-116">Azure サブスクリプション内で一意。</span><span class="sxs-lookup"><span data-stu-id="e13b8-116">Unique within your Azure subscription.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e13b8-117">グローバルに一意</span><span class="sxs-lookup"><span data-stu-id="e13b8-117">Globally unique</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e13b8-118">ストレージ アカウント名は、API アクセス用の URI の一部として使用されるため、グローバルに一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e13b8-118">The storage account name is used as part of the URI for API access, so it must be globally unique.</span></span>
+  - content: <span data-ttu-id="e13b8-119">一般的なプロジェクトでは、いつストレージ アカウントを作成しますか? </span><span class="sxs-lookup"><span data-stu-id="e13b8-119">In a typical project, when would you create your storage account(s)?</span></span>
+    choices:
+    - content: <span data-ttu-id="e13b8-120">開始時のプロジェクトのセットアップ中。</span><span class="sxs-lookup"><span data-stu-id="e13b8-120">At the beginning, during project set up.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="e13b8-121">通常、ストレージ アカウントは、プロジェクトの有効期間中は安定しています。</span><span class="sxs-lookup"><span data-stu-id="e13b8-121">Storage accounts are usually stable for the lifetime of a project.</span></span> <span data-ttu-id="e13b8-122">プロジェクトの開始時に作成するのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="e13b8-122">It is common to create them at the start of a project.</span></span>
+    - content: <span data-ttu-id="e13b8-123">開発後のプロジェクトの実行中。</span><span class="sxs-lookup"><span data-stu-id="e13b8-123">After deployment, when the project is running.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="e13b8-124">最後のリソースのクリーンアップ時。</span><span class="sxs-lookup"><span data-stu-id="e13b8-124">At the end, during resource clean up.</span></span>
+      isCorrect: false
