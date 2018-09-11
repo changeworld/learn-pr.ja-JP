@@ -1,124 +1,115 @@
-Your transportation company wants to set themselves apart from other companies but without breaking the bank. You must have a good handle on how to set up the database to provide the best service while controlling costs.
+ある輸送会社は、破産することなく他の会社と差別化したいと考えています。 コストを管理しながら、最善のサービスを提供するようにデータベースを設定する方法を理解する必要があります。
 
-Here, you'll learn:
+ここでは、次の内容について学習します。
 
-- What considerations you need to make when creating an Azure SQL database, including:
-  - How a logical server acts as an administrative container for your databases.
-  - The differences between purchasing models.
-  - How elastic pools enable you to share processing power among databases.
-  - How collation rules affect how data is compared and sorted.
-- How to bring up Azure SQL Database from the portal.
-- How to add firewall rules so that your database is accessible from only trusted sources.
+* 次のような、Azure SQL Database を作成するときに考慮する必要があること。
+  * データベースの管理コンテナーとしての論理サーバーの動作。
+  * 購入するモデルの相違。
+  * エラスティック プールを使用してデータベース間で処理能力を共有する方法。
+  * データの比較と並べ替えの方法に対する照合順序規則の影響。
+* ポータルから Azure SQL Database を起動する方法。
+* 信頼できるソースからのみデータベースにアクセスできるようにファイアウォール規則を追加する方法。
 
-Let's take a quick look at some things you need to consider when you create an Azure SQL database.
+Azure SQL Database を作成するときに考慮する必要があることを簡単に見てみましょう。
 
-## One server, many databases
+## <a name="one-server-many-databases"></a>1 つのサーバー、多数のデータベース
 
-When you create your first Azure SQL database, you also create an _Azure SQL logical server_. Think of a logical server as an administrative container for your databases. You can control logins, firewall rules, and security policies through the logical server. You can also override these policies on each database within the logical server.
+最初の Azure SQL Database を作成するときは、"_Azure SQL 論理サーバー_" も作成します。 論理サーバーはデータベースの管理コンテナーと考えることができます。 論理サーバーを使用して、ログイン、ファイアウォール規則、セキュリティ ポリシーを制御できます。 また、論理サーバー内の各データベースでこれらのポリシーをオーバーライドすることもできます。
 
-For now, you need just one database. But a logical server enables you to add more later and tune performance among all your databases.
+ここで必要なデータベースは 1 つだけです。 ただし、論理サーバーを使用すると、後でさらにデータベースを追加し、すべてのデータベース間でパフォーマンスを調整することができます。
 
-## Choose performance: DTUs versus vCores
+## <a name="choose-performance-dtus-versus-vcores"></a>パフォーマンスの選択: DTU か仮想コアか
 
-Azure SQL Database has two purchasing models: DTU and vCore.
+Azure SQL Database には、DTU と仮想コアの 2 種類の購入モデルがあります。
 
-### What are DTUs?
+### <a name="what-are-dtus"></a>DTU とは
 
-DTU stands for Database Transaction Unit and is a combined measure of compute, storage, and IO resources. Think of the DTU model as a simple, preconfigured purchase option.
+DTU はデータベース トランザクション ユニット (Database Transaction Unit) の頭文字であり、コンピューティング、ストレージ、IO リソースの結合されたメジャーです。 DTU モデルは、シンプルな事前構成済みの購入オプションと考えることができます。
 
-Because your logical server can hold more than one database, there's also the idea of eDTUs, or elastic Database Transaction Units. This option enables you to choose one price, but allow each database in the pool to consume fewer or greater resources depending on current load.
+論理サーバーは複数のデータベースを保持できるため、eDTU つまりエラスティック データベース トランザクション ユニットの概念もあります。 このオプションで選択できる価格は 1 つですが、プール内の各データベースは、現在の負荷に応じて消費するリソースを増やしたり減らしたりすることができます。
 
-### What are vCores?
+### <a name="what-are-vcores"></a>仮想コアとは
 
-vCore gives you greater control over what compute and storage resources you create and pay for.
+仮想コアでは、作成して支払うコンピューティング リソースとストレージ リソースをきめ細かく制御できます。
 
-While the DTU model provides fixed combinations of compute, storage, and IO resources, the vCore model enables you to configure resources independently. For example, with the vCore model you can increase storage capacity but keep the existing amount of compute and IO throughput.
+DTU モデルではコンピューティング、ストレージ、IO リソースの組み合わせは固定ですが、仮想コア モデルではリソースを個別に構成することができます。 たとえば、仮想コア モデルでは、ストレージ容量だけを増やし、コンピューティングと IO のスループットは既存の量のままにすることができます。 
 
-Your transportation and logistics prototype only needs one Azure SQL Database instance. You decide on the DTU option because it provides a good balance of compute, storage, and IO performance and is less expensive to get started.
+この輸送と物流のプロトタイプで必要なのは、1 つの Azure SQL Database インスタンスだけです。 コンピューティング、ストレージ、IO のパフォーマンスのバランスが取れていて、低コストで開始できるため、この会社は DTU オプションを使うことに決定します。
 
-## What are SQL elastic pools?
+## <a name="what-are-sql-elastic-pools"></a>SQL エラスティック プールとは
 
-When you create your Azure SQL database, you can create a _SQL elastic pool_.
+Azure SQL Database を作成するときに、"_SQL エラスティック プール_" を作成することができます。
 
-SQL elastic pools relate to eDTUs. They enable you to buy a set of compute and storage resources that are shared among all the databases in the pool. Each database can use the resources they need, within the limits you set, depending on current load.
+SQL エラスティック プールは eDTU と関連があります。 SQL エラスティック プールでは、プール内のすべてのデータベース間で共有されるコンピューティング リソースとストレージ リソースのセットを購入できます。 各データベースでは、現在の負荷に応じて、設定された制限内で必要なリソースを使用できます。
 
-For your prototype, you won't need a SQL elastic pool because you need only one SQL database.
+このプロトタイプでは、必要な SQL Database は 1 つだけなので、SQL エラスティック プールは必要ありません。
 
-## What is collation?
+## <a name="what-is-collation"></a>照合順序とは
 
-Collation refers to the rules that sort and compare data. Collation helps you define sorting rules when case sensitivity, accent marks, and other language characteristics are important.
+照合順序とは、データを並べ替えたり比較したりする規則のことです。 大文字小文字の区別、アクセント記号、その他の言語の特性が重要なときに並べ替え規則を定義する場合に、照合順序が役立ちます。
 
-Let's take a moment to consider what the default collation, **SQL_Latin1_General_CP1_CI_AS**, means.
+既定の照合順序 **SQL_Latin1_General_CP1_CI_AS** が意味することについて考えます。
 
-- **Latin1_General** refers to the family of Western European languages.
-- **CP1** refers to code page 1252, a popular character encoding of the Latin alphabet.
-- **CI** means that comparisons are case insensitive. For example, "HELLO" compares equally to "hello".
-- **AS** means that comparisons are accent sensitive. For example, "résumé" doesn't compare equally to "resume".
+* **Latin1_General** は、西ヨーロッパ言語のファミリを示します。
+* **CP1** は、ラテン アルファベットの人気のある文字エンコーディングであるコード ページ 1252 を示します。
+* **CI** は、比較で大文字と小文字が区別されないことを意味します。 たとえば、"HELLO" と "hello" は同じです。
+* **AS** は、比較でアクセントが区別されることを意味します。 たとえば、"résumé" と "resume" は同じではありません。
 
-Because you don't have specific requirements around how data is sorted and compared, you choose the default collation.
+データの並べ替えと比較の方法に関して特定の要件はないので、既定の照合順序を選択します。
 
-## Create your Azure SQL database
+## <a name="create-your-azure-sql-database"></a>Azure SQL Database を作成する
 
-Here you'll set up your database, which includes creating your logical server. You'll choose settings that support your transportation logistics application. In practice, you would choose settings that support the kind of app you're building.
+ここではデータベースを設定します。これには論理サーバーの作成が含まれます。 輸送物流アプリケーションをサポートする設定を選択します。 実際には、構築しているアプリの種類をサポートしている設定を選択します。
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal にログインします](https://portal.azure.com?azure-portal=true)。
+1. ポータルの左上隅にある **[リソースの作成]** をクリックします。 **[Databases]** を選択し、**[SQL Database]** を選択します。
 
-1. From the portal, click **Create a resource** from the upper left-hand corner. Select **Databases**, then select **SQL Database**.
+    ![ポータルからの Azure SQL Database の作成](../media-draft/create-db.png)
+1. **[サーバー]** の **[必要な設定の構成]** をクリックし、フォームに入力して、**[選択]** をクリックします。 フォームに入力する方法の詳細を示します。
 
-   ![Screenshot of the Azure portal showing the Create a resource blade with the Databases section selected and the Create a resource, Databases, and SQL Database buttons highlighted.](../media-draft/create-db.png)
-
-1. Under **Server**, click **Configure required settings**, fill out the form, then click **Select**. Here's more information on how to fill out the form:
-
-    | Setting      | Value |
+    | 設定      | 値 |
     | ------------ | ----- |
-    | **Server name** | A globally unique [server name](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
-    | **Server admin login** | A [database identifier](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers) that serves as your primary administrator login name. |
-    | **Password** | Any valid password that has at least eight characters and contains characters from three of these categories: uppercase characters, lowercase characters, numbers, and non-alphanumeric characters. |
-    | **Location** | Any valid location. |
+    | **サーバー名** | グローバルに一意の[サーバー名](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions)です。 |
+    | **サーバー管理者ログイン** | プライマリ管理者ログイン名として機能する[データベース識別子](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers)です。 |
+    | **パスワード** | 有効なパスワードには 8 文字以上が使用され、大文字、小文字、数字、英数字以外の文字のうち、3 つのカテゴリの文字が含まれている必要があります。 |
+    | **場所** | 有効な場所です。 |
     > [!IMPORTANT]
-    > Note your server name, admin login, and password for later.
+    > 後で使用するので、サーバー名、管理者ログイン、パスワードを書き留めておきます。
+1. **[価格レベル]** をクリックして、サービス レベルを指定します。 **[Basic]** サービス レベルを選択し、**[適用]** をクリックします。
+1. フォームの残りの部分を設定するには、次の値を使用します。
 
-1. Click **Pricing tier** to specify the service tier. Select the **Basic** service tier, then click **Apply**.
-
-1. Use these values to fill out the rest of the form.
-
-    | Setting      | Value |
+    | 設定      | 値 |
     | ------------ | ----- |
-    | **Database name** | **Logistics** |
-    | **Subscription** | Your subscription |
-    | **Resource group** | **logistics-db-rg** |
-    | **Select source** | **Blank database** |
-    | **Want to use SQL elastic pool?** | **Not now** |
-    | **Collation** | **SQL_Latin1_General_CP1_CI_AS** |
+    | **データベース名** | **Logistics** | 
+    | **サブスクリプション** | お使いのサブスクリプション |
+    | **[リソース グループ]** | **logistics-db-rg** | 
+    | **ソースの選択** | **空のデータベース** | 
+    | **SQL エラスティック プールを使用しますか?** | **後で** |
+    | **照合順序** | **SQL_Latin1_General_CP1_CI_AS** |
+1. **[作成]** をクリックして Azure SQL Database を作成します。
+1. ツール バーの **[通知]** をクリックして、デプロイ プロセスを監視します。
+    ![デプロイ プロセスの監視](../media-draft/notifications-progress.png) プロセスが完了したら、**[ダッシュボードにピン留めする]** をクリックして、後で必要なときにすばやくアクセスできるように、データベース サーバーをダッシュボードにピン留めします。
+    ![ダッシュボードへのサーバーのピン留め](../media-draft/notifications-complete.png)
 
-1. Click **Create** to create your Azure SQL database.
+## <a name="set-the-server-firewall"></a>サーバーのファイアウォールを設定する
 
-1. On the toolbar, click **Notifications** to monitor the deployment process.
+Azure SQL Database を稼働状態にしました。 新しいデータベースをさらに構成、セキュリティ保護、監視、トラブルシューティングするための多くのオプションがあります。
 
-When the process completes, click **Pin to dashboard** to pin your database server to the dashboard so that you have quick access when you need it later.
+たとえば、時間が経過して、要求に対応するためにコンピューティング能力の追加が必要なことに気付いたものとします。 パフォーマンス オプションを調整したり、パフォーマンス モデルを DTU と仮想コアの間で切り替えたりすることさえできます。
 
-   ![Screenshot of the Azure portal showing the Notifications menu with the Pin to dashboard button from a recent deployment success message highlighted.](../media-draft/notifications-complete.png)
+また、ファイアウォール経由でデータベースにアクセスできるシステムを指定することもできます。 初期状態のファイアウォールでは、Azure の外部からデータベース サーバーへのアクセスはすべて禁止されます。
 
-## Set the server firewall
+このプロトタイプでは、ユーザーのノート パソコンからのみデータベースにアクセスする必要があります。 後で、モバイル アプリなどのシステムをホワイトリストに追加できます。
 
-Your Azure SQL database is now up and running. You have many options to further configure, secure, monitor, and troubleshoot your new database.
+それでは、開発用コンピューターがファイアウォール経由でデータベースにアクセスできるようにしましょう。
 
-For example, say that over time you realize you need additional compute power to keep up with demand. You can adjust performance options or even switch between the DTU and vCore performance models.
+1.  Logistics データベースの概要ブレードに移動します。 前にデータベースをピン留めした場合は、ダッシュボードの **Logistics** タイルをクリックして移動できます。
+    ![Logistics タイル](../media-draft/logistics-tile.png)
+1. **[サーバー ファイアウォールの設定]** をクリックします。
 
-You can also specify which systems can access your database through the firewall. Initially, the firewall prevents all access to your database server from outside of Azure.
+    ![サーバー ファイアウォールの設定](../media-draft/set-server-firewall.png)
+1. **[クライアント IP の追加]** をクリックして、**[保存]** をクリックします。
 
-For your prototype, you only need to access the database from your laptop. Later, you can whitelist additional systems, such as your mobile app.
+    ![クライアント IP アドレスの追加](../media-draft/add-client-ip.png)
 
-Let's enable your development computer to access the database through the firewall now.
-
-1. Go to the overview blade of the Logistics database. If you pinned the database earlier, you can click the **Logistics** tile on the dashboard to get there.
-
-1. Click **Set server firewall**.
-
-    ![Screenshot of the Azure portal showing a SQL database overview blade with the Set server firewall button highlighted.](../media-draft/set-server-firewall.png)
-
-1. Click **Add client IP**, and then click **Save**.
-
-    ![Screenshot of the Azure portal showing a SQL database Firewall settings blade with the Add client IP button highlighted.](../media-draft/add-client-ip.png)
-
-In the next part, you'll get some hands-on practice with your new database and with Azure Cloud Shell. You'll connect to the database, create a table, add some sample data, and execute a few SQL statements.
+次のパートでは、新しいデータベースと Cloud Shell に関する実習をいくつか行います。 データベースに接続し、テーブルを作成し、いくつかサンプル データを追加して、いくつかの SQL ステートメントを実行します。

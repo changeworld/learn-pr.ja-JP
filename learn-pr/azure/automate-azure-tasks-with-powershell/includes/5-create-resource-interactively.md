@@ -1,82 +1,76 @@
-Azure PowerShell lets you write commands and execute them immediately. This is known as **interactive mode**.
+Azure PowerShell では、コマンドを記述し、すぐに実行できます。 これは**対話モード**と呼ばれています。
 
-Recall that the overall goal in the Customer Relationship Management (CRM) example is to create three test environments containing VMs. You will use resource groups to ensure the VMs are organized into separate environments: one for unit testing, one for integration testing, and one for acceptance testing. You only need to create the resource groups once, which means using the interactive mode of PowerShell is a good choice.
+顧客関係管理 (CRM) の例の全体的な目標は VM を含む 3 つのテスト環境を作成することであることを思い出してください。 リソース グループを利用して VM を別々の環境に整理します。単体テスト用に 1 つ、統合テスト用に 1 つ、受け入れテスト用に 1 つとなります。 リソース グループは一度だけ作成すれば十分です。そこで、PowerShell の対話モードを使用することが良い選択肢となります。
 
-This section shows some examples of using PowerShell interactively to log on to your Azure subscription and create resource groups.
+このセクションでは、PowerShell を対話的に使用し、Azure サブスクリプションにログオンしてリソース グループを作成する例をいくつか紹介します。
 
-## What are PowerShell cmdlets?
-A PowerShell command is called a **cmdlet** (pronounced "command-let"). A cmdlet is a command that manipulates a single feature. The term **cmdlet** is intended to imply "small command". By convention, cmdlet authors are encouraged to keep cmdlets simple and single-purpose.
+## <a name="what-are-powershell-cmdlets"></a>PowerShell コマンドレットとは
+PowerShell コマンドは**コマンドレット**と呼ばれています。 コマンドレットは 1 つの機能を操作するコマンドです。 **コマンドレット**と用語は "小さなコマンド" を意味します。 慣例で、コマンドレットの作成者には、コマンドレットをシンプルにすること、目的を 1 つだけにすることが推奨されています。
 
-The base PowerShell product ships with cmdlets that work with features such as sessions and background jobs. You add modules to your PowerShell installation to get cmdlets that manipulate other features. For example, there are third-party modules to work with ftp, administer your operating system, access the file system, and so on.
+基本の PowerShell 製品には、セッションやバックグラウンド ジョブなどの機能で使用できるコマンドレットが付属します。 他の機能を操作するコマンドレットを得るには、PowerShell インストールにモジュールを追加します。 たとえば、サードパーティ モジュールには、FTP と連動するモジュール、オペレーティング システムを管理するモジュール、ファイル システムにアクセスするモジュールなどがあります。
 
-Cmdlets follow a verb-noun naming convention; for example, **Get-Process**, **Format-Table**, and **Start-Service**. There is also a convention for verb choice: "get" to retrieve data, "set" to insert or update data, "format" to format data, "out" to direct output to a destination, and so on.
+コマンドレットには、動詞-名詞の命名規則が採用されています。たとえば、**Get-Process**、**Format-Table**、**Start-Service** のようになります。 動詞の選択にも規則があります。たとえば、データの取得は "get"、データの挿入または更新は "set"、データの書式設定は "format"、宛先への直接出力は "out" になります。
 
-Cmdlet authors are encouraged to include a help file for each cmdlet. The **Get-Help** cmdlet displays the help file for any cmdlet:
+コマンドレットの作成者には、コマンドレットごとにヘルプ ファイルを含めることが推奨されています。 **Get-Help** コマンドレットを実行すると、コマンドレットのヘルプ ファイルが表示されます。
 
 ```powershell
 Get-Help <cmdlet-name> -detailed
 ```
 
-## What is AzureRM?
-**AzureRM** is the formal name for the Azure PowerShell module containing cmdlets to work with Azure features (the **RM** in the name stands for **Resource Manager**). It contains hundreds of cmdlets that let you control nearly every aspect of every Azure resource. You can work with resource groups, storage, virtual machines, Azure Active Directory, containers, machine learning, and so on.
+## <a name="what-is-azurerm"></a>AzureRM とは
+**AzureRM** は、Azure 機能で使用できるコマンドレットを含む Azure PowerShell コマンドレットの正式名称です (名前の中の **RM** は **Resource Manager** という意味です)。 数百単位のコマンドレットが含まれ、あらゆる Azure リソースのほぼすべての面を制御できます。 リソース グループ、ストレージ、仮想マシン、Azure Active Directory、コンテナー、機械学習などを操作できます。
 
-## How to create a resource group
-Next, we'll create a resource group using a local installation of Azure PowerShell. 
+## <a name="how-to-create-a-resource-group"></a>リソース グループの作成方法
+次に、Azure PowerShell のローカル インストールを使用し、リソース グループを作成します。 
 
-There are four steps: 
+次の 4 つのステップがあります。 
+1. Azure コマンドレットをインポートします。
+1. Azure サブスクリプションに接続します。
+1. リソース グループを作成します。
+1. 正常に作成できたことを確認します (下記参照)。
 
-1. Import the Azure cmdlets.
+![Azure PowerShell を使用して Azure にリソースを作成する手順](../media-drafts/5-create-resource-overview.png)
 
-1. Connect to your Azure subscription.
+各手順は異なるコマンドレットに対応しています。
 
-1. Create the resource group.
+### <a name="import"></a>[インポート]
+起動時、PowerShell は既定で中心的なコマンドレットのみを読み込みます。 つまり、Azure で使用する必要があるコマンドレットは読み込まれません。 必要なコマンドレットを最も確実に読み込む方法は、PowerShell セッションの開始時にコマンドレットを手動でインポートすることです。
 
-1. Verify that creation was successful (see below).
-
-The following illustration shows an overview of these steps.
-
-![An illustration showing the steps to create a resource group.](../media/5-create-resource-overview.png)
-
-Each step corresponds to a different cmdlet.
-
-### Import
-At startup, PowerShell loads only the core cmdlets by default. This means the cmdlets you need to work with Azure won't be loaded. The most reliable way to load the cmdlets you need is to import them manually at the start of your PowerShell session.
-
-You use the **Import-Module** cmdlet to load modules. This cmdlet has many parameters to handle a variety of situations. For example, it can load multiple modules, a specific module version, part of a module, and so on. To load the entirety of one module, the syntax is simply:
+モジュールの読み込みには **Import-Module** コマンドレットを使用します。 このコマンドレットには、さまざまな状況に対処するためのパラメーターがたくさんあります。 たとえば、複数のモジュールを読み込んだり、特定のモジュール バージョンを読み込んだり、モジュールの一部を読み込んだりできます。 1 つのモジュールを完全に読み込む場合、構文は次のように単純になります。
 
 ```powershell
 Import-Module <module-name>
 ```
 
 > [!TIP]
-> If you find that you work with Azure PowerShell frequently, there are two ways you can automate the module-loading process. You can add an entry to your PowerShell profile to import the Azure module at startup or use the latest versions of PowerShell, which loads the containing module automatically when you use a cmdlet.
+> Azure PowerShell を頻繁に使用するようであれば、2 とおりの方法でモジュール読み込みプロセスを自動化できます。 PowerShell プロファイルにエントリを追加し、起動時に Azure モジュールをインポートするか、PowerShell の最新版を使用し、コマンドレットの使用時にコマンドレットを含むモジュールを自動的に読み込むことができます。
 
-### Connect
-Since you are working with a local install of Azure PowerShell, you will need to authenticate before you can execute Azure commands. The **Connect-AzureRmAccount** cmdlet prompts for your Azure credentials and then connects to your Azure subscription. It has many optional parameters, but if all you need is an interactive prompt, no parameters are needed:
+### <a name="connect"></a>接続
+Azure PowerShell のローカル インストールを使用している場合、Azure コマンドを実行する前に認証する必要があります。 **Connect-AzureRmAccount** コマンドレットを実行すると、Azure 資格情報が求められ、Azure サブスクリプションに接続されます。 さまざまなオプション パラメーターがありますが、対話的プロンプトだけが必要であれば、パラメーターは必要ありません。
 
 ```powershell
 Connect-AzureRmAccount
 ```
 
-### Create
-The **New-AzureRmResourceGroup** cmdlet creates a resource group. You must specify a name and location. The name must be unique within your subscription. The location determines where the metadata for your resource group will be stored (which may be important to you for compliance reasons). You use strings like "West US", "North Europe", or "West India" to specify the location. As with most of the Azure cmdlets, **New-AzureRmResourceGroup** has many optional parameters; however, the core syntax is:
+### <a name="create"></a>Create
+**New-AzureRmResourceGroup** コマンドレットを実行すると、リソース グループが作成されます。 名前と場所を指定する必要があります。 この名前はサブスクリプション内で一意である必要があります。 この場所によって、お使いのリソース グループのメタデータが保存される場所が決定されます (コンプライアンス上の理由から重要となる場合があります)。 "West US"、"North Europe"、"West India" などの文字列を使用して場所を指定します。 ほとんどの Azure コマンドレットと同様に、**New-AzureRmResourceGroup** にはオプション パラメーターがたくさんありますが、中心的な構文は次のようになります。
 
 ```powershell
 New-AzureRmResourceGroup -Name <name> -Location <location>
 ```
 
-### Verify
-The **Get-AzureRmResource** lists your Azure resources. This is useful here to verify whether creation of the resource group was successful.
+### <a name="verify"></a>確認
+**Get-AzureRmResource** を実行すると、Azure リソースが一覧表示されます。 リソース グループが正常に作成されたことを確認するためにここで役に立ちます。
 
 ```powershell
 Get-AzureRmResource
 ```
 
-To get a more concise view, you can send the output from the **Get-AzureRmResource** to the **Format-Table** cmdlet using a pipe '|'.
+もっと簡潔な一覧を表示するには、パイプ '|' を利用して **Get-AzureRmResource** から **Format-Table** コマンドレットに出力を送信できます。
 
 ```powershell
 Get-AzureRmResource | Format-Table
 ```
 
-## Summary
-PowerShell's interactive mode is appropriate for one-off tasks. In our example, we'll use the same resource group for the lifetime of the project, which means creating it interactively is reasonable. Interactive mode is often quicker and easier for this task than writing a script and executing that script exactly once.
+## <a name="summary"></a>まとめ
+PowerShell の対話モードは 1 回限りのタスクに適しています。 例では、プロジェクトのライフタイムに対して同じリソース グループを使用します。つまり、対話で作成することが道理にかなっています。 このタスクでは多くの場合、スクリプトを記述してそのスクリプトを正確に 1 回実行するより、対話モードの方が簡単で速くなります。

@@ -1,49 +1,49 @@
-Imagine you're a photographer and you have a website where you display your pictures of the day. Because you're busy, you don't have a consistent upload schedule, but you want to notify your fans when you upload a picture. You decide to create an Azure function to automatically send a tweet whenever you upload an image to your Azure Storage blob container.
+あなたは写真家で、その日の写真を載せる Web サイトを所有しているとします。 忙しさからアップロードのスケジュールが一貫していないため、写真をアップロードするときにファンに通知したいと考えています。 ご利用の Azure Storage Blob コンテナーにイメージをアップロードするたびに、自動的にツイートを送信する Azure 関数を作成することにします。
 
-Here, you learn how to create a blob trigger and instruct it to monitor a specific location in your Azure Storage blob container.
+ここでは、BLOB トリガーを作成して、Azure Storage Blob コンテナーの特定の場所を監視するように指示する方法について説明します。
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Azure Storage とは
 
-Azure Storage is Microsoft's cloud storage solution that supports all types of data, including: blobs, queues, and NoSQL. The goal of Azure Storage is to provide data storage that's:
+Azure Storage は、すべての種類のデータ (BLOB、キュー、NoSQL など) をサポートする Microsoft のクラウド ストレージのソリューションです。 Azure Storage の目標は、次のようなデータ ストレージを提供することです。
 
-- Highly available
-- Secure
-- Scalable
-- Managed
+- 高可用性
+- セキュリティ保護
+- 拡張性
+- 管理者常駐型
 
-We're not going to focus on Azure Storage too much. Instead, we use it to create blobs that will trigger our function to run.
+ここでは Azure Storage にはあまり焦点を当てません。 代わりに、Azure Storage を使って、関数を実行するようにトリガーする BLOB を作成します。
 
-## What is Azure Blob storage?
+## <a name="what-is-azure-blob-storage"></a>Azure BLOB Storage とは
 
-Azure Blob storage is an object storage solution that's designed to store large amounts of unstructured data. 
+Azure BLOB ストレージは、大量の非構造化データを格納するように設計されたオブジェクト ストレージのソリューションです。 
 
-For example, Azure Blob storage is great at doing things like:
+たとえば、Azure BLOB ストレージは次の操作に最適です。
 
-- Storing files
-- Serving files
-- Streaming video and audio
-- Logging data
+- ファイルを格納する。
+- ファイルを提供する。
+- ビデオおよびオーディオをストリーミング配信する。
+- ログを記録する。
 
-There are three types of blobs: **block blobs**, **append blobs**, and **page blobs**. Block blobs are the most common type. They allow you to store text or binary data efficiently. Append blobs are like block blobs, but they're designed more for append operations like creating a log file that's being constantly updated. Finally, page blobs are made up of pages and are designed for frequent random read and write operations.
+BLOB には、**ブロック BLOB**、**追加 BLOB**、**ページ BLOB** の 3 種類があります。 ブロック BLOB は最も一般的な種類です。 ブロック BLOB では、テキストやバイナリ データを効率的に格納できます。 追加 BLOB はブロック BLOB に似ていますが、定期的に更新されるログ ファイルの作成など、より追加の操作のために設計されています。 最後に、ページ BLOB はページで構成されており、頻繁なランダムの読み取り/書き込み操作のために設計されています。
 
-## What is a blob trigger?
+## <a name="what-is-a-blob-trigger"></a>BLOB トリガーとは
 
-A blob trigger is a trigger that executes a function when a file is uploaded or updated in Azure Blob storage. To create a blob trigger, you create an Azure Storage account and provide a location that the trigger monitors.
+BLOB トリガーは、Azure BLOB ストレージ内にファイルがアップロードされたり、ファイルが更新されたりしたときに関数を実行するトリガーです。 BLOB トリガーを作成するには、Azure Storage アカウントを作成して、トリガーで監視する場所を指定します。
 
-## How to create a blob trigger
+## <a name="how-to-create-a-blob-trigger"></a>BLOB トリガーを作成する方法
 
-Just like the other triggers we've seen so far, we create a blob trigger in the Azure portal. Inside your Azure function, select **Blob trigger** from the list of predefined trigger types. Then enter the logic to execute when a blob is created or updated.
+これまでに確認したその他のトリガーのように、Azure portal 内で BLOB トリガーを作成します。 Azure 関数内で、定義済みのトリガーの種類の一覧から **[BLOB トリガー]** を選択します。 次に、BLOB が作成または更新されたときに実行するロジックを入力します。
 
-One setting that you'll want to look at is the **Path**. The **Path** tells the blob trigger where to monitor to see if a blob is uploaded or updated. By default, the **Path** value is: 
+1 つ確認する必要があるのは、**パス**という設定です。 **パス**によって、BLOB トリガーに、BLOB がアップロードまたは更新されたかどうかを確認するために監視する場所を示します。 既定では、**パス**の値は次のとおりです。 
 
 > samples-workitems/{name}
 
-Let's break down this concept into two pieces: *samples-workitems* and *{name}*. The first part, *samples-workitems*, represents the blob container that the trigger monitors. The second part, *{name means that every type of file will cause the trigger to invoke the function. The function is invoked because there's no filter. For example, I could make the trigger invoke the function only when a PNG file is added by using syntax like:
+この概念を *samples-workitems* と *{name}* の 2 つの部分に分割します。 最初の部分の *samples-workitems* は、トリガーを監視する BLOB コンテナーを表します。 2 番目の部分の *{name は、どの種類のファイルでも、このトリガーで関数を呼び出せることを意味します。 関数が呼び出されるのは、フィルターがないからです。 たとえば、PNG ファイルが次のような構文を使用して追加される場合にのみ、トリガーで関数を呼び出すことができます。
 
 > samples-workitems/{name}.png
 
-The last significant piece of information with this concept is the text *name*. The *name* represents a parameter in your Azure function that receives the name of the added file. For example, if I upload a file named *resume.txt*, my Azure function receives that value as a string through a parameter called *name*.
+この概念での情報における重要な最後の部分は、テキストの *name* です。 *name* は、追加されたファイルの名前を受け取る Azure 関数内のパラメーターを表します。 たとえば、*resume.txt* という名前のファイルをアップロードした場合、自分の Azure 関数では *name* と呼ばれるパラメーターを介して、文字列としてその値を受け取ります。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-A blob trigger invokes an Azure function when it sees activity at a specific location in your Azure Storage blob account. You set the location to monitor by modifying the **Path** value in the Azure portal.
+Azure Storage Blob アカウントの特定の場所でアクティビティを表示する場合、BLOB トリガーによって Azure 関数が呼び出されます。 Azure portal 内で**パス**の値を変更することによって、監視する場所を設定します。

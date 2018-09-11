@@ -1,47 +1,44 @@
-Azure provides PaaS services to help you manage all kinds of data, from highly structured relational data to unstructured data.
+Azure では、高度に構造化されたリレーショナル データから非構造化データまで、あらゆる種類のデータの管理に役立つ PaaS サービスを提供しています。
 
-Here you'll learn why Azure SQL Database is a convenient, cost-effective, and secure way to host your relational databases.
+ここでは、Azure SQL Database がリレーショナル データベースをホストするための便利でコスト効率が高い安全な方法である理由について学習します。
 
-## Why choose Azure SQL Database?
+## <a name="why-choose-azure-sql-database"></a>Azure SQL Database を選ぶ理由
 
-Your transportation logistics application requires stored procedures that run basic CRUD (**create**, **read**, **update**, and **delete**) operations. You have experience working with SQL Server and other relational databases.
+あなたの輸送物流アプリケーションには、基本的な CRUD (**作成**、**読み取り**、**更新**、**削除**) 操作を実行するストアド プロシージャが必要です。 あなたには SQL Server とその他のリレーショナル データベースの使用経験があります。
 
-You consider two choices for your database:
+あなたは次の 2 つのデータベースの選択肢を検討しています。
 
-1. Host SQL Server on-premises. Your IT team runs a small in-house data center to support the finance department and a few other teams. You can work with IT to host a SQL Server deployment in their data center.
+1. オンプレミスで SQL Server をホストする。 IT チームは、財務部門と他のいくつかのチームをサポートするために、小規模なデータ センターを社内で運用しています。 IT と協力して、そのデータ センターで SQL Server のデプロイをホストできます。
+1. クラウドで Azure SQL Database をホストする。 Azure SQL Database は、SQL Server に基づいており、必要なリレーショナル データベース機能を提供します。
 
-1. Host Azure SQL Database in the cloud. Azure SQL Database is based on SQL Server and provides the relational database functionality you need.
+この物流アプリ用に Web とアプリケーションの層を Azure に構築することは決定しています。 したがって、そこでデータベースもホストすることは、理にかなっています。 しかし、Azure SQL Database が賢明な選択である理由、および仮想マシンを使用するよりもずっと簡単な理由は他にもあります。
 
-You've decided to build the web and application tiers for your logistics app on Azure. So it makes sense to also host your database there. But there are some other reasons why Azure SQL Database is a smart choice, and why it's even easier than using virtual machines.
+* **利便性**
 
-- **Convenience**
+    VM または物理ハードウェア上に SQL Server をセットアップするには、ハードウェアとソフトウェアの要件について理解する必要があります。 最新のセキュリティのベスト プラクティスを理解し、オペレーティング システムと SQL Server 修正プログラムを定期的に管理する必要があります。 また、バックアップとデータ保有の問題も自分で管理する必要があります。
 
-    Setting up SQL Server on a VM or on physical hardware requires you to know about hardware and software requirements. You'll need to understand the latest security best practices and manage operating system and SQL Server patches on a routine basis. You also need to manage backup and data retention issues yourself.
+    Azure SQL Database では、Microsoft によりハードウェア、ソフトウェア更新プログラム、OS の修正プログラムが管理されます。 自分のデータベースの名前といくつかのオプションを指定するだけで済みます。 数分で SQL データベースを実行することができます。
 
-    With Azure SQL Database, we manage the hardware, software updates, and OS patches for you. All you specify is the name of your database and a few options. You'll have a running SQL database in minutes.
+    都合に合わせて、Azure SQL Database インスタンスを起動および破棄することができます。 Azure SQL Database はすばやく起動し、簡単に構成できます。 ソフトウェアの構成よりも、アプリをすばらしいものにすることにより集中できます。
+* **コスト**
 
-    You can bring up and tear down Azure SQL Database instances at your convenience. Azure SQL Database comes up fast and is easy to configure. You can focus less on configuring software and more on making your app great.
+    Microsoft がすべてのことを管理するため、利用者の方が購入する、能力を提供する、またはメンテナンスするシステムはありません。
 
-- **Cost**
+    Azure SQL Database には、複数の価格オプションがあります。 これらの価格オプションにより、パフォーマンスとコストのバランスを取ることができます。 月あたりほんの数ドルで始めることができます。
+* **スケール**
+ 
+    あなたは、格納する必要がある輸送物流データ量が毎年倍増していることに気付いています。 オンプレミスで実行する場合、どのくらい余分な容量を計画する必要がありますか?
 
-    Because we manage things for you, there are no systems for you to buy, provide power for, or otherwise maintain.
+    Azure SQL database を使用すれば、ニーズの変化に応じてすぐに、データベースのパフォーマンスとサイズを調整できます。
 
-    Azure SQL Database has several pricing options. These pricing options enable you to balance performance versus cost. You can start for just a few dollars a month.
+* **セキュリティ**
 
-- **Scale**
+    Azure SQL Database には、インターネットからの接続を制限するように自動的に構成されるファイアウォールが付属しています。
 
-    You find that the amount of transportation logistics data you must store doubles every year. When running on-premises, how much excess capacity should you plan for?
+    信頼する IP アドレスを "ホワイト リスト" に登録することができます。 ホワイト リストに登録することで、Visual Studio、SQL Server Management Studio、またはその他のツールを使用して、Azure SQL Database を管理することができます。
 
-    With Azure SQL Database, you can adjust the performance and size of your database on the fly when your needs change.
+## <a name="summary"></a>まとめ
 
-- **Security**
+Azure SQL Database では、Microsoft によりハードウェア、ソフトウェア更新プログラム、OS の修正プログラムが管理されます。 予測可能なコストで必要なパフォーマンスを得るのに役立つ購入オプションが用意されています。 Azure SQL Database には、データへのアクセスを制御できるように、ファイアウォールも付属しています。
 
-    Azure SQL Database comes with a firewall that's automatically configured to restrict connections from the Internet.
-
-    You can "whitelist" IP addresses you trust. Whitelisting lets you use Visual Studio, SQL Server Management Studio, or other tools to manage your Azure SQL database.
-
-## Summary
-
-With Azure SQL Database, we manage the hardware, software updates, and OS patches for you. We provide buying options to help you get the performance you need at a predictable cost. Azure SQL Database also comes with a firewall so that you can control access to your data.
-
-Although you don't need to be a DBA to use Azure SQL Database, there are a few concepts you should understand before you start. We'll cover these concepts next.
+Azure SQL Database を使用するには、データベース管理者である必要はありませんが、開始する前に理解する必要がある概念がいくつかあります。 これらの概念については次で説明します。

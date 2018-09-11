@@ -1,49 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
-  title: Knowledge check
-  description: Knowledge check
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Knowledge check
+  title: 知識チェック
+  description: 知識チェック。
+  displayType: one-column
+  ms.openlocfilehash: 17bf564f5105a01d15d0fd205c7d70e21d3a8082
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251978"
+title: 知識チェック
 durationInMinutes: 5
+content: 知識チェック
 quiz:
-  title: Knowledge check
+  title: 知識チェック
   questions:
-  - content: Your online learning portal needs to keep a record of each user's physical address and their email address. Which Azure features will let you manage this information well?
+  - content: ご利用のオンライン ラーニング ポータルで、各ユーザーの物理アドレスおよびメール アドレスを保持する必要があります。 Azure のどの機能で、この情報を管理できますか?
     choices:
-    - content: Azure Archive 
+    - content: Azure Archive
       isCorrect: false
-      incorrectExplanation: Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities. 
+      incorrectExplanation: Azure Archive は、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。
     - content: Azure SQL Database
       isCorrect: true
-      correctExplanation: Correct! Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.
+      correctExplanation: 正解です。 Azure SQL Database では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。
     - content: Azure Files
       isCorrect: false
-      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
-  - content: The simulation files used by the sales learning portals can grow to significantly large sizes. How will Azure support these files?
+      incorrectExplanation: Azure Files は、クラウドでのファイル共有で使用します。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
+  - content: 販売ラーニング ポータルで使用されるシミュレーション ファイルのサイズが、かなり大きくなる場合があります。 Azure では、これらのファイルはどのようにサポートされますか?
     choices:
-    - content: Azure Blob storage can support files up to 8 TB in size
+    - content: Azure Blob Storage では、最大 8 TB までのファイル サイズがサポートされます
       isCorrect: true
-      correctExplanation: Correct! Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.
-    - content:  Azure Files can support storing and streaming of large files.
+      correctExplanation: 正解です。 Azure Blob Storage では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
+    - content: Azure Files は、大きなファイルの格納およびストリーミングがサポートされます。
       isCorrect: false
-      incorrectExplanation: Azure Files is used for file shares in the cloud. It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.
-    - content: Azure does not support storing and streaming of large files.
+      incorrectExplanation: Azure Files は、クラウドでのファイル共有に使用されます。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
+    - content: Azure では、大きなファイルの格納およびストリーミングはサポートされていません。
       isCorrect: false
-      incorrectExplanation: Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.
-  - content: How does Azure support durability and reliability of data?
+      incorrectExplanation: Azure では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
+  - content: Azure では、データの持続性と信頼性はどのようにサポートされますか?
     choices:
-    - content: Through Azure replication capabilities.
+    - content: Azure のレプリケーション機能を使用してです。
       isCorrect: true
-      correctExplanation: Correct! Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.
-    - content:  You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.
+      correctExplanation: 正解です。 Azure には、自然災害からデータを保護するレプリケーション機能と、悪意のある攻撃からデータを保護する暗号化があります。
+    - content: データの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています。
       isCorrect: false
-      incorrectExplanation: You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.
-    - content: Azure does not have in-built redundancy and encryption features.
+      incorrectExplanation: 追加のサポートは不要です。Azure には、予期しないリスクや脅威からデータを保護する機能があります。
+    - content: Azure には、組み込みの冗長性や暗号化機能はありません。
       isCorrect: false
-      incorrectExplanation: Azure comes with in-built capabilities for protecting your data against risks and threats.
+      incorrectExplanation: Azure には、リスクや脅威からデータを保護するための機能が組み込まれています。

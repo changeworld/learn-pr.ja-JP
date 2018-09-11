@@ -1,29 +1,29 @@
-Now that you understand how request units are used to determine database throughput and how the partition key creates the scale-out strategy for your database, you're ready to create your database and collection.
+これで、要求ユニットを使用してデータベース スループットを判断する方法、およびパーティション キーによってデータベースのスケールアウト戦略を作成する方法を理解できたので、データベースとコレクションを作成する準備が整いました。
 
-## Creating your database and collection
+## <a name="creating-your-database-and-collection"></a>データベースとコレクションを作成する
 
-1. In the Azure Portal, select **Data Explorer** from your Cosmos DB resource and then click the **New Collection** button in the toolbar.
+1. Azure portal で、Cosmos DB リソースの **[データ エクスプローラー]** を選択し、ツール バーの **[新しいコレクション]** ボタンをクリックします。
     
-    The **Add Collection** area is displayed on the far right. You may need to scroll right to see it.
+    **[コレクションの追加]** 領域が右端に表示されます。 見えない場合は右にスクロールする必要があります。
 
-    ![The Azure portal Data Explorer, Add Collection blade](../media-draft/5-azure-cosmosdb-data-explorer.png)
+    ![Azure Portal の [データ エクスプローラー] の [コレクションの追加] ブレード](../media/5-create-a-database-and-collection/azure-cosmosdb-data-explorer.png)
 
-1. In the **Add collection** page, enter the settings for the new collection.
+2. **[コレクションの追加]** ページで、新しいコレクションの設定を入力します。
 
-    Setting | Suggested value | Description
+    Setting | 推奨値 | 説明
     --------|-----------------|-------------
-    Database id      | Products         | Enter *Products* as the name for the new database. Database names must contain from 1 through 255 characters, and they cannot contain /, \\, #, ?, or a trailing space.
-    Collection id    | Clothing  | Enter *Clothing* as the name for your new collection. Collection ids have the same character requirements as database names.
-    Storage capacity | Unlimited     | Use the default value of **Unlimited**. This value is the storage capacity of the database, and it enables your database to scale out as needed.
-    Partition key    | productId        | productId is a good partition key for an online retail scenario, as so many queries are based around the product ID.
-    Throughput       |1000 RU        | Change the throughput to 1000 request units per second (RU/s). 1000 is the minimum RU/s value you can set to enable automatic scaling.
+    データベース ID      | ユーザー         | 新しいデータベースの名前として *[ユーザー]* を入力します。 データベース名は 1 文字以上 255 文字以内にする必要があります。/、\\、#、? は使えず、末尾にスペースを入れることもできません。
+    コレクション ID    | WebCustomers  | 新しいコレクションの名前として *WebCustomers* と入力します。 コレクション ID には、データベース名と同じ文字要件があります。
+    ストレージの容量 | 無制限     | 既定値の **[無制限]** を使用します。 この値は、データベースのストレージ容量です。データベースは必要に応じてスケールアウトできます。
+    パーティション キー    | UserId        | 非常に多くのクエリが主に顧客 ID に基づいているので、UserID は、オンライン小売シナリオにとって適切なパーティション キーです。
+    Throughput       |1000 RU        | スループットを 1000 要求ユニット (RU/秒) に変更します。 1000 は、自動スケールを有効にするために設定できる最小 RU/秒値です。
     
-    For now, don't check the **Provision database throughput** option, and don't add any unique keys to the collection.
+    ここでは、**[Provision database throughput]\(データベース スループットをプロビジョニングする\)** オプションをオンにしないでください。また、コレクションに一意のキーを追加しないでください。 
     
-1. Click **OK**. The Data Explorer will display the new database and collection.
+3. **[OK]** をクリックします。 データ エクスプローラーに新しいデータベースとコレクションが表示されます。
 
-    ![The Azure portal Data Explorer, showing the new database and collection](../media-draft/5-azure-cosmos-db-new-collection.png)
+    ![新しいデータベースとコレクションを示す Azure portal のデータ エクスプローラー](../media/5-create-a-database-and-collection/azure-cosmos-db-new-collection.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you used your knowledge of partition keys and request units to create a database and collection with throughput and scaling settings appropriate for your business needs.
+このユニットでは、パーティション キーと要求ユニットの知識を活用して、ビジネス ニーズに見合うスループットおよびスケールの設定によりデータベースとコレクションを作成しました。

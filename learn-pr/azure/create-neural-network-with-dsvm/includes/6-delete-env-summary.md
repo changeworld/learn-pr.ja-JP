@@ -1,15 +1,17 @@
-### Delete the Data Science VM
+### <a name="exercise-6-delete-the-data-science-vm"></a>演習 6: Data Science VM を削除する
 
-In this unit, you will delete the resource group created in Exercise 1 when you created the Data Science VM. Deleting the resource group deletes everything in it and prevents any further charges from being incurred for it. Resource groups that are deleted can't be recovered, so be certain you're finished using it before deleting it. However, it is **important not to leave this resource group deployed any longer than necessary** because a Data Science VM is moderately expensive.
+この演習では、演習 1 で Data Science VM を作成したときに作成したリソース グループを削除します。 リソース グループを削除すると、グループ内のすべてのものが削除されるため、今後料金が発生することを防ぐことができます。 削除したリソース グループを復旧することはできないため、必ずグループの使用が終了していることを確認してから、削除してください。 ただし、Data Science VM はやや高価なため、**デプロイされたこのリソース グループを必要以上に長く残しておかないことが重要です**。
 
-1. Return to the blade for the resource group you created in Exercise 1. Then, click the **Delete resource group** button at the top of the blade.
+1. 演習 1 で作成したリソース グループのブレードに戻ります。 次に、ブレードの上部にある **[リソース グループの削除]** ボタンをクリックします。
 
-    ![Deleting the resource group](../media-draft/6-delete-resource-group.png)
+    ![リソース グループを削除する](../images/delete-resource-group.png)
 
-1. For safety, you are required to type in the resource group's name. (Once deleted, a resource group cannot be recovered.) Type the name of the resource group. Then, click the **Delete** button to remove all traces of this module from your Azure subscription.
+    "リソース グループを削除する"__
 
-After a few minutes, the resource group and all of its resources will be deleted. Billing stops when you click **Delete**, so you're not charged for the time required to delete the resources. Similarly, billing doesn't start until the resources are fully and successfully deployed.
+1. 安全のため、リソース グループの名前を入力する必要があります。 (リソース グループは、削除すると復旧することはできません。)リソース グループの名前を入力します。 次に、**[削除]** ボタンをクリックして、このラボのすべてのトレースを Azure サブスクリプションから削除します。
 
-### Summary
+数分後、リソース グループとそのリソースのすべてが削除されます。 **[削除]** クリックすると課金が停止するため、リソースを削除するために必要な時間に対しては課金されません。 同様に、リソースが完全かつ正常にデプロイされるまで、課金は発生しません。
 
-The steps in this module may be generalized to perform other types of image-classification tasks. For example, you could train the same TensorFlow model to recognize cat images or identify defective parts produced on an assembly line. Image classification is one of the most prevalent uses of machine learning today, and its usefulness will only increase over time. Now that you have a basis to work from, try creating some image-classification models of your own. You never know what might come of it!
+### <a name="summary"></a>まとめ
+
+このラボの手順は、他の種類の画像分類タスクを実行するために一般化されている場合があります。 たとえば、同じ TensorFlow モデルをトレーニングして、猫のイメージを認識するようにしたり、組立ラインで製造されたパーツの中から欠陥パーツを識別したりすることもできます。 画像分類は現在、機械学習の最も一般的な用途の 1 つで、その有用性は、時間の経過と共に増す一方です。 作業の基礎となるものができたので、独自の画像分類モデルをいくつか作成してみましょう。 どのようなものができるかは分かりません。

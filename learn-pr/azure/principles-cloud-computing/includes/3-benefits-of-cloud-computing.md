@@ -1,94 +1,38 @@
-Every business must decide how they want to store their data and execute their logic. Depending on your business requirements, cloud computing may or may not be right for you.
+どの企業も、自社のデータをどのように保存し、自社のロジックをどのように実行するかを決定する必要があります。 企業の要件によっては、クラウド コンピューティングが適している場合もあれば、適していない場合もあります。
 
-Let's learn some of the top benefits of cloud computing.
+クラウド コンピューティングの最大の利点をいくつか見てみましょう。
 
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-cost-effective.png)
-    :::column-end:::
-    :::column span="3":::
-        **It’s cost effective**
+### <a name="cloud-computing-is-cost-effective"></a>クラウド コンピューティングはコスト効率に優れている
 
-Cloud computing provides a **pay-as-you-go** pricing model. Rather than paying for a pre-defined amount of computing resources or hardware up-front, you rent hardware and pay for the resources that you use.
+クラウド コンピューティングでは、**従量課金制**価格モデルが採用されています。 あらかじめ決められた量のコンピューティング リソースに支払ったり、ハードウェアの先行投資を行うのではなく、ハードウェアを借りて、使用した分のリソースに対して支払います。
 
-For example, imagine you have a blog, and when you create a new post you want to notify your subscribers via text message. Using the correct cloud computing service, you'll only spend money when you're sending texts to your subscribers. When you're not posting, it won’t cost you anything.
+たとえば、ブログを運営していて、新しい投稿を作成したときに、テキスト メッセージでサブスクライバーに通知したいとします。 適切なクラウド コンピューティング サービスを使用すると、サブスクライバーにテキスト メッセージを送信する場合にのみ料金が発生します。 投稿していない期間に対して料金は発生しません。
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-scalable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's scalable**
+### <a name="cloud-computing-is-scalable"></a>クラウド コンピューティングは拡張性が高い
 
-Cloud computing supports both _vertical_ and _horizontal_ scaling depending on your needs.
+クラウド コンピューティングでは、ニーズに応じて、_垂直_スケーリングと_水平_スケーリングの両方がサポートされます。
 
-**Vertical scaling** is the process of adding resources to increase the power of an existing server. Some examples of vertical scaling are: adding a faster CPU, additional CPUs, or adding more memory.
+**垂直スケーリング**は、既存のサーバーの能力を高めるためにリソースを追加するプロセスです。 垂直スケーリングの例には、高速な CPU の追加、CPU の追加、メモリの追加などがあります。
 
-**Horizontal scaling** is the process of adding more servers that function together as one unit. For example, instead of having one server processing incoming requests, you have two.
+**水平スケーリング**は、1 つのユニットとして相互に機能するサーバーを追加するプロセスです。 たとえば、受信要求を処理するサーバーを 1 台ではなく 2 台持ちます。
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-elastic.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's elastic**
+### <a name="cloud-computing-is-elastic"></a>クラウド コンピューティングは柔軟性が高い
 
-As your workload changes due to a spike or drop in demand, a cloud computing system can compensate by automatically adding or removing resources.
+クラウド コンピューティング システムは、需要の急増または減少によって変化するワークロードに合わせて補正するために、自動的にリソースを追加または削除することができます。
 
-For example, imagine your website is featured in a news article, which leads to a spike in traffic overnight. Since the cloud is elastic, it automatically allocates more computing resources to handle the increased traffic. When the traffic begins to settle, the cloud notices it has too many resources allocated and begins to remove them so you don’t waste any money.
+たとえば、ニュース記事であなたの Web サイトが取り上げられ、これにより突然トラフィックが急増したとします。 クラウドは柔軟性が高いため、増加したトラフィックを処理するために、多くのコンピューティング リソースを自動的に割り当てることができます。 トラフィックが落ち着き始め、クラウドで割り当てられているリソースが多すぎることが認識されると、無駄な料金が発生しないように、それらのリソースの削除が開始されます。
 
-Another example is if you are running an application used by employees, you can have the cloud automatically add resources for the core hours during which most people access the application, and remove the resources at the usual end of the day.
+### <a name="cloud-computing-is-current"></a>クラウド コンピューティングは最新
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-current.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's current**
+クラウドを使用すると、アプリケーションのビルドとデプロイという重要なことに集中できるようになります。 メンテナンス作業、たとえばソフトウェアのパッチ適用、ハードウェアのセットアップ、アップグレードやその他の IT 管理タスクに時間を取られることはなくなります。 これらはすべて見えないところで自動的に行われ、事業を経営するために最新かつ最高のツールを確実に使用できるようになります。
 
-When you use the cloud, you’re able to focus on what matters: building and deploying applications. You don't have to be caught up in the maintenance work of software patching, hardware setup, upgrades, and other IT management tasks. All of this is automatically done for you to ensure you're using the latest and greatest tools to run your business.
+### <a name="cloud-computing-is-reliable"></a>クラウド コンピューティングは信頼性が高い
 
-Additionally, the computer hardware is maintained and upgraded by the cloud provider. For example, if a disk goes out, the disk will be replaced. If new hardware comes out, you don’t have to go through the process of replacing your hardware. You also don’t have to bear the cost for having up-to-date hardware all the time.
+事業を経営していると、データが常に存在しているという確信が欲しいものです。 クラウド コンピューティング プロバイダーでは、お客様のデータの安全性を確保するために、データのバックアップ、ディザスター リカバリー、およびデータ レプリケーションのサービスを提供しています。
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's reliable**
+## <a name="summary"></a>まとめ
 
-When you're running a business, you want to be confident your data is always going to be there. Cloud computing providers offer data backup, disaster recovery, and data replication services to make sure your data is always safe.
+クラウド コンピューティングは、事業経営を容易に行えるようにしています。 クラウド コンピューティングは、コスト効率、拡張性、柔軟性、信頼性に優れ、常に最新です。 これは、基になる詳細情報の管理にかかる時間を減らして、より多くの時間が重要なことに割けることを意味します。
 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        ![fpo image](../media/3-reliable.png)
-    :::column-end:::
-    :::column span="3":::
-        **It's secure**
 
-Think about how you secure your data center. You have physical security &ndash; who can access the building, who can touch server racks, and so on. You also have digital security &ndash; who can connect to your systems and data over the network.
 
-The cloud is essentially a network of large data centers distributed throughout the globe. So cloud providers need to deal with many of these same issues, just at a larger scale.
-
-When it comes to physical security &ndash; threats to cloud infrastructure, cloud providers invest heavily in walls, cameras, gates, security personnel, and so on to protect physical assets. They also have strict procedures in place to ensure employees have access only to those resources that they’ve been authorized to manage.
-
-Then there’s digital security. One thing that makes the cloud unique is that you rent compute and storage resources from a shared pool. Plus, data can travel in many different ways &ndash; within a data center, between data centers, and over the internet.
-
-For example, you want only authorized users to be able to log into virtual machines or storage systems running in the cloud. The responsibility for securing these resources is shared between you and the cloud provider. Cloud providers offer tools that help you mitigate security threats but you must use these tools to protect the resources you use.
-
-    :::column-end:::
-:::row-end:::
-
-## Summary
-
-Cloud computing makes running a business easier. It’s cost effective, scalable, elastic, current, reliable, and secure. This means you’re able to spend more time on what matters and less time on managing the underlying details.

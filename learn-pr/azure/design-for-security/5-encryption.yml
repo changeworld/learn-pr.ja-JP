@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: 暗号化
+metadata:
+  title: 暗号化
+  description: このユニットでは、暗号化を使用してアーキテクチャをセキュリティで保護する方法について説明します
+  ms.openlocfilehash: 2252612477ca95ad299a40cf97f91514ad7ab9f5
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366518"
+durationInMinutes: 5
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: 知識チェック - 暗号化
+  questions:
+  - content: Windows 仮想マシンでのみ Azure Disk Encryption を使用できます
+    choices:
+    - content: "True"
+      isCorrect: false
+    - content: "False"
+      isCorrect: true
+  - content: データを分類する際に、その分類を決定するのは次のうちのどれですか?
+    choices:
+    - content: リスクにさらされている場合に顧客にもたらされるそのリスクのレベル
+      isCorrect: true
+    - content: データ転送の方法
+      isCorrect: false
+    - content: データを仮想マシン上と仮想マシン内のどちらに格納するか
+      isCorrect: false
+    - content: 格納データの量
+      isCorrect: false

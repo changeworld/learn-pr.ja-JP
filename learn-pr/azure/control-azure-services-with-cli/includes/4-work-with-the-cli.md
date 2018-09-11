@@ -1,62 +1,57 @@
-The Azure CLI lets you type commands and execute them immediately from the command line. Recall that the overall goal in the software development example is to deploy new builds of a web app for testing. Let's talk about the sorts of tasks you can do with the Azure CLI.
+Azure CLI では、コマンド ラインからコマンドを入力してすぐに実行できます。 ソフトウェア開発サンプルの全体的目標は、テストのために Web アプリの新しいビルドを展開することであることを思い出してください。 Azure CLI を使用して実行できるタスクの種類について説明します。
 
-## What Azure resources can be managed using the Azure CLI?
+## <a name="what-azure-resources-can-be-managed-using-the-azure-cli"></a>Azure CLI を利用してどのような Azure リソースを管理できますか?
+Azure CLI を利用すると、あらゆる Azure リソースのほとんどすべての側面を制御できます。 リソース グループ、ストレージ、仮想マシン、Azure Active Directory (Azure AD)、コンテナー、機械学習などを操作することができます。
 
-The Azure CLI lets you control nearly every aspect of every Azure resource. You can work with resource groups, storage, virtual machines, Azure Active Directory (Azure AD), containers, machine learning, and so on.
+CLI のコマンドは "_グループ_" と "_サブグループ_" で構成されています。 各グループが、Azure によって提供されるサービスを表しており、サブグループによって、そのサービスのコマンドが論理グループに分かれています。 たとえば、`storage` グループには、**account**、**blob**、**storage**、**queue** などのサブグループが含まれています。
 
-Commands in the CLI are structured in _groups_ and _subgroups_. Each group represents a service provided by Azure, and the subgroups divide commands for these services into logical groupings. For example, the `storage` group contains subgroups including **account**, **blob**, **storage**, and **queue**.
-
-So, how do you find the particular commands you need? One way is to use `az find`. For example, if you want to find commands that might help you manage a storage blob, you can use the following find command:
+それでは、必要な特定のコマンドはどのような方法で見つけますか? 方法の 1 つに、`az find` を使用するというものがあります。 たとえば、ストレージ BLOB の管理に役立つかもしれないコマンドを見つける場合、次の find コマンドを使用できます。
 
 ```bash
 az find -q blob
 ```
 
-If you already know the name of the command you want, the `--help` argument for that command will get you more detailed information on the command, and for a command group, a list of the available subcommands. So, with our storage example, here's how you can get a list of the subgroups and commands for managing blob storage:
+目的のコマンドの名前が既にわかっている場合、そのコマンドに対して `--help` 引数を指定すると、コマンド、コマンド グループ、使用可能なサブコマンドの一覧の詳細な情報が表示されます。 そこで、今回のストレージの例では、BLOB ストレージを管理するためのサブグループとコマンドの一覧を次のように取得できます。
 
 ```bash
 az storage blob --help
 ```
 
-## How to create an Azure resource
+## <a name="how-to-create-an-azure-resource"></a>Azure リソースを作成する方法
+新しい Azure リソースを作成するとき、通常、3 つの段階があります。Azure サブスクリプションに接続し、リソースを作成し、その作成が成功したことを確認します。 次の図では、プロセスの概要を示します。
 
-When creating a new Azure resource, there are typically three steps: connect to your Azure subscription, create the resource, and verify that creation was successful. The following illustration shows a high-level overview of the process.
+![コマンド ライン インターフェイスを使用して Azure リソースを作成する手順を示す図。](../media-drafts/4-create-resources-overview.png)
 
-![An illustration showing the steps to create an Azure resource using the command-line interface.](../media-drafts/4-create-resources-overview.png)
+各ステップは、異なる Azure CLI コマンドに対応します。
 
-Each step corresponds to a different Azure CLI command.
-
-### Connect
-
-Since you're working with a local install of the Azure CLI, you'll need to authenticate before you can execute Azure commands, by using the Azure CLI **login** command. 
+### <a name="connect"></a>接続
+Azure CLI のローカル インストールを使用している場合、Azure コマンドを実行する前に Azure CLI **login** コマンドを使用して認証する必要があります。 
 
 ```bash
 az login
 ```
 
-The Azure CLI will typically launch your default browser to open the Azure sign-in page. If this doesn't work, follow the command-line instructions and enter an authorization code at [https://aka.ms/devicelogin](https://aka.ms/devicelogin).
+Azure CLI は一般的に既定のブラウザーを起動して Azure のサインイン ページを開きます。 これでうまくいかない場合、コマンドラインの指示に従い、[https://aka.ms/devicelogin](https://aka.ms/devicelogin) で承認コードを入力します。
 
-After a successful sign in, you'll be connected to your Azure subscription. 
+サインインに成功すると、Azure サブスクリプションに接続されます。 
 
-### Create
+### <a name="create"></a>Create
+新しい Azure サービスを作成する前に新しいリソース グループを作成しなければならないことが頻繁にあります。そこで、例としてリソース グループを使用し、CLI から Azure リソースを作成する方法について示します。
 
-You'll often need to create a new resource group before you create a new Azure service, so we'll use resource groups as an example to show how to create Azure resources from the CLI.
-
-The Azure CLI **group create** command creates a resource group. You must specify a name and location. The name must be unique within your subscription. The location determines where the metadata for your resource group will be stored. You use strings like "West US", "North Europe", or "West India" to specify the location; alternatively, you can use single word equivalents, such as westus, northeurope, or westindia. The core syntax is:
+Azure CLI **group create** コマンドによってリソース グループが作成されます。 名前と場所を指定する必要があります。 この名前はサブスクリプション内で一意である必要があります。 この場所によって、お使いのリソース グループのメタデータが保存される場所が決定されます。 "米国西部"、"北ヨーロッパ"、"インド西部" などの文字列を使用して場所を指定するか、westus、northeurope、westindia など、同じものを意味する 1 つの単語を使用できます。 中心的な構文は次のようになります。
 
 ```bash
 az group create --name <name> --location <location>
 ```
 
-### Verify
-
-For many Azure resources, the Azure CLI provides a **list** subcommand to view resource details. For example, the Azure CLI **group list** command lists your Azure resource groups. This is useful here to verify whether creation of the resource group was successful:
+### <a name="verify"></a>確認
+多くの Azure リソースの場合、Azure CLI によってリソース詳細を表示するための **list** サブコマンドが提供されます。 たとえば、Azure CLI **group list** コマンドによって Azure リソース グループが一覧表示されます。 リソース グループが正常に作成されたことを確認するためにここで役に立ちます。
 
 ```bash
 az group list
 ```
 
-To get a more concise view, you can format the output as a simple table:
+さらに簡潔なビューを得るために、出力をシンプルな表としてフォーマットできます。
 
 ```bash
 az group list --output table

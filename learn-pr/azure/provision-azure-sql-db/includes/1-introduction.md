@@ -1,22 +1,22 @@
-Managing data is a critical component of any business. Relational databases, and specifically Microsoft SQL Server, have been among the most common tools for handling that data for decades. 
+データの管理はあらゆるビジネスの中心です。 リレーショナル データベースは、具体的には Microsoft SQL Server のことですが、長年、ビジネス データ処理のための最も一般的なツールの 1 つとして数えられています。 
 
-If we want to manage our data using the cloud, we _can_ just use Azure virtual machines to host our own Microsoft SQL Server instances. Sometimes that's the right solution, but Azure offers another way that is often much easier and more cost effective. Azure SQL databases are a Platform-as-a-Service (PaaS) offering, meaning much less infrastructure and maintenance to manage yourself.
+クラウドでデータを管理する場合、Azure 仮想マシンを使用し、独自の Microsoft SQL Server インスタンスをホスト_できます_。 これが適切な解決策となることもありますが、多くの場合、一層簡単でコスト効果に優れた別の方法が Azure にはあります。 Azure SQL Database は PaaS (サービスとしてのプラットフォーム) です。つまり、自分で管理するクチャとメンテナンスが大幅に少なくなります。
 
-To understand better, let's consider a scenario: You're a software development lead at a transportation logistics company, Contoso Transport.
+理解を助けるために 1 つシナリオを考えてみます。あなたは Contoso Transport という輸送ロジスティクス会社のソフトウェア開発主任であるとします。
 
-The transportation industry requires tight coordination among everyone involved: schedulers, dispatchers, drivers, and even customers.
+輸送産業は、関与する全員、つまり、日程作成者、配車係、運転手、さらには顧客の間で緊密な連携を必要とします。
 
-Your current process involves piles of paper forms and hours on the phone to coordinate shipments. You find that paperwork is often missing signatures and dispatchers are frequently unavailable. These holdups leave drivers sitting idle, which causes important shipments to arrive late. Customer satisfaction and repeat business are crucial to your bottom line.
+現行のプロセスには大量の書類が伴い、何時間も電話して出荷を調整しています。 書類にしばしば署名がないこと、配車係が頻繁にいないことにあなたは気付きます。 そのように停滞することで運転手が遊休状態になり、大切な出荷品が遅れて到着します。 顧客満足度とリピーターは会社の最終的な業績に大きく響きます。
 
-Your team decides to move from paper forms and phone calls to digital documents and online communication. Going digital will enable everyone to coordinate and track shipment times through their web browser or mobile app.
+あなたのチームは紙と電話を止め、デジタル書類とオンライン通信に移行することを決定します。 デジタル化すると、誰もが Web ブラウザーまたはモバイル アプリから出荷時間を調整し、追跡できるようになります。
 
-You want to quickly prototype something to share with your team. Your prototype will include a database to hold driver, customer, and order information. Your prototype will be the basis for your production app. So the technology choices you make now should carry to what your team delivers.
+あなたはすぐに試作品を作り、チームに披露したいと考えます。 その試作品には運転手、顧客、注文情報を格納するデータベースが含まれます。 試作品は本稼働アプリの基礎になります。 ここであなたが選択するテクノロジはチームの業務に見合ったものでなければなりません。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you'll learn:
+ここでは、次の内容について学習します。
 
-- Why Azure SQL Database is a good choice for running your relational database
-- What configuration and pricing options are available for your Azure SQL database
-- How to create an Azure SQL database from the portal
-- How to use Azure Cloud Shell to connect to your Azure SQL database, add a table, and work with data
+- リレーショナル データベースを運用するとき、Azure SQL Database が選ばれる理由
+- お使いの Azure SQL Database で利用できる構成と価格帯
+- ポータルから SQL Azure Database を作成する方法
+- Cloud Shell を使用して SQL Azure Database に接続し、テーブルを追加し、データを操作する方法

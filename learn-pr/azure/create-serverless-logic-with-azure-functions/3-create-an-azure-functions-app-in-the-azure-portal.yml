@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.3-create-an-azure-functions-app-in-the-azure-portal
-title: Create a function app in the Azure portal
+title: Azure portal で関数アプリを作成する
 metadata:
-  title: Create a function app in the Azure portal
-  description: Create a function app in the Azure portal
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: Azure portal で関数アプリを作成する
+  description: Azure portal で関数アプリを作成する
+  ms.openlocfilehash: 7808aab299b9c4ef45bd92b1bed65af8da505627
+  ms.sourcegitcommit: 98b9b8a6d7b2c9ab7919eb7dc99b330e2302e2c0
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42989097"
 durationInMinutes: 5
-content: |
-  [!include[](includes/3-create-an-azure-functions-app-in-the-azure-portal.md)]
+content: '[!include[](includes/3-create-an-azure-functions-app-in-the-azure-portal.md)]'

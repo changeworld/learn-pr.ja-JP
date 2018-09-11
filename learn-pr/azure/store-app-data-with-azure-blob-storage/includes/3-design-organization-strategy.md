@@ -1,48 +1,48 @@
-When designing an app that needs to store data, it's important to think about how the app is going to organize data across storage accounts, containers, and blobs.
+データを格納する必要があるアプリを設計するときは、そのアプリが、ストレージ アカウント、コンテナー、BLOB にわたってどのようにデータを整理するかについて考えることが重要です。
 
-## Storage accounts
+## <a name="storage-accounts"></a>ストレージ アカウント
 
-A single storage account is flexible enough to organize your blobs however you like, but you should use additional storage accounts as necessary to logically separate costs and control access to data.
+1 つのストレージ アカウントで BLOB を整理するのに十分な柔軟性がありますが、論理的にコストを分離し、データへのアクセス制御に必要な場合は、追加のストレージ アカウントを使用する必要があります。
 
-## Containers and blobs
+## <a name="containers-and-blobs"></a>コンテナーと BLOB
 
-The nature of your application and the data that it stores should drive your strategy for naming and organizing containers and blobs.
+アプリケーションとアプリケーションが格納するデータの性質によって、コンテナーと BLOB の名前付けと整理の方法を決める必要があります。
 
-Apps using blobs as part of a storage scheme that includes a database often don't need to rely heavily on organization, naming, or metadata to indicate anything about their data. Such apps commonly use identifiers like GUIDs as blob names and reference these identifiers in database records. The app will use the database to determine where blobs are stored and the kind of data they contain.
+データベースを含むストレージ スキームの一部として BLOB を使用しているアプリは、多くの場合、そのデータに関することを表示するのに、組織、名前付け、またはメタデータに大きく依存する必要はありません。 このようなアプリは一般的に、GUID のような識別子を BLOB 名として使用し、データベース レコードでこれらの識別子を参照します。 アプリでは、データベースを使用して、BLOB が格納されている場所と BLOB に含まれているデータの種類を判断します。
 
-Other apps may use Azure Blob storage more like a personal file system, where container and blob names are used to indicate meaning and structure. Blob names in these kinds of apps will often look like traditional file names and include file name extensions like `.jpg` to indicate what kind of data they contain. They'll use virtual directories (see below) to organize blobs and will frequently use metadata tags to store information about blobs and containers.
+その他のアプリでは、より個人のファイル システムに近い Azure Blob Storage を使用しているものもあります。この場合、意味と構造を示すためにコンテナーと BLOB の名前が使用されます。 この種のアプリでは、BLOB 名は、従来のファイル名に似ていることが多く、含まれているデータの種類を示すために `.jpg` のようなファイル名拡張子が含まれています。 これらのアプリでは、BLOB を整理するために仮想ディレクトリ (下記参照) が使用され、BLOB とコンテナーに関する情報を格納するためにメタデータ タグが頻繁に使用されます。
 
-There are a few key things to consider when deciding how to organize and store blobs and containers.
+BLOB とコンテナーを整理して格納する方法を決定する際に、考慮すべきいくつかの重要事項があります。
 
-### Naming limitations
+### <a name="naming-limitations"></a>名前付けの制限事項
 
-Container and blob names must conform to a set of rules, including length limitations and character restrictions. See the Further Reading section at the end of this module for more specific information about naming rules.
+コンテナーと BLOB の名前は、長さ制限や文字の制限を含む、一連の規則に従う必要があります。 名前付け規則に関するより具体的な情報については、このモジュールの最後の「参考資料」をご覧ください。
 
-### Public access and containers as security boundaries
+### <a name="public-access-and-containers-as-security-boundaries"></a>パブリック アクセスとセキュリティ境界としてのコンテナー
 
-By default, all blobs require authentication to access. However, individual containers can be configured to allow public downloading of their blobs without authentication. This feature supports many use cases, such as hosting static website assets and sharing files. This is because downloading blob contents works the same way as reading any other kind of data over the web: you just point a browser or anything that can make a GET request at the blob URL.
+既定では、すべての BLOB にはアクセスするための認証が必要です。 ただし、個々のコンテナーは、認証がなくてもその BLOB のパブリック ダウンロードができるように構成できます。 この機能は、静的な Web サイト資産のホストやファイルの共有など、多くのユース ケースをサポートします。 BLOB コンテンツのダウンロードが、Web 経由での他の種類のデータの読み取りと同じように機能するため、ブラウザーや、BLOB URL で GET 要求ができるものをポイントするだけで済みます。
 
-Enabling public access is important for scalability because data downloaded directly from Blob storage doesn't generate any traffic in your server-side app. Even if you don't immediately take advantage of public access or if you will use a database to control data access via your application, plan on using separate containers for data you want to be publicly available.
+サーバー側のアプリに BLOB ストレージから直接ダウンロードしたデータによるトラフィックが生成されないため、パブリック アクセスを有効にすることはスケーラビリティにとって重要です。 パブリック アクセスの利点がすぐに得られない場合や、アプリケーション経由でデータへのアクセスを制御するためにデータベースを使用する場合でも、公開するデータ用に個別のコンテナーを使用することを計画してください。
 
 > [!CAUTION]
-> Blobs in a container configured for public access can be downloaded without any kind of authentication or auditing by anyone who knows their storage URLs. Never put blob data in a public container that you don't intend to share publicly.
+> パブリック アクセス用に構成されたコンテナー内の BLOB は、そのストレージ URL を知っていれば、誰でもダウンロードでき、いかなる種類の認証や監査も必要としません。 一般に共有する予定がない BLOB データをパブリック コンテナーに配置しないでください。
 
-In addition to public access, Azure has a shared access signature feature that allows fine-grained permissions control on containers. Precision access control enables scenarios that further improve scalability, so thinking about containers as security boundaries in general is a helpful guideline.
+パブリック アクセスの他に、Azure には、コンテナーでのきめ細かいアクセス制御を可能にする Shared Access Signature 機能があります。 正確なアクセス制御により、スケーラビリティをさらに向上させるシナリオが可能になります。そのため、一般的にセキュリティ境界としてのコンテナーを考えることがガイドラインとして役立ちます。
 
-### Blob name prefixes (virtual directories)
+### <a name="blob-name-prefixes-virtual-directories"></a>BLOB 名のプレフィックス (仮想ディレクトリ)
 
-Technically, containers are "flat" and do not support any kind of nesting or hierarchy. But if you give your blobs hierarchical names that look like file paths (such as `finance/budgets/2017/q1.xls`), the API's listing operation can filter results to specific prefixes. This allows you to navigate the list as if it was a hierarchical system of files and folders.
+技術的には、コンテナーは "フラット" で、いかなる種類の入れ子または階層もサポートしません。 しかし、BLOB にファイル パスのような階層名 (`finance/budgets/2017/q1.xls` など) を付けると、API の一覧表示操作によって結果を特定のプレフィックスにフィルター処理できます。 これにより、ファイルとフォルダーの階層的なシステムのように、一覧内を移動できるようになります。
 
-This feature is often called *virtual directories* because some tools and client libraries use it to visualize and navigate Blob storage as if it was a file system. Each folder navigation triggers a separate call to list the blobs in that folder.
+この機能は、一部のツールとクライアント ライブラリでファイル システムのように BLOB ストレージを視覚化して移動するために使用されているため、一般に*仮想ディレクトリ*と呼ばれます。 フォルダーを移動するたびに、そのフォルダー内の BLOB を一覧表示する別の呼び出しがトリガーされます。
 
-Using names that are like file names for blobs is a common technique for organizing and navigating complex blob data.
+BLOB にファイル名のような名前を使用するのは、複雑な BLOB データを整理および移動するための一般的な手法です。
 
-### Blob types
+### <a name="blob-types"></a>BLOB の種類
 
-There are three different kinds of blobs you can store data in:
+データを格納できる BLOB には、次の 3 種類があります。
 
-- **Block blobs** are composed of blocks of different sizes that can be uploaded independently and in parallel. Writing to a block blob involves uploading data to blocks and committing them to the blob.
-- **Append blobs** are specialized block blobs that support only appending new data (not updating or deleting existing data), but they're very efficient at it. Append blobs are great for scenarios like storing logs or writing streamed data.
-- **Page blobs** are designed for scenarios that involve random-access reads and writes. Page blobs are used to store the virtual hard disk (VHD) files used by Azure Virtual Machines, but they're great for any scenario that involves random access.
+- **ブロック BLOB** は、個別にまたは並列でアップロードできる異なるサイズのブロックで構成されます。 ブロック BLOB に書き込むには、データをブロックにアップロードして、それを BLOB にコミットする必要があります。
+- **追加 BLOB** は、新しいデータの追加だけをサポートする (既存のデータの更新または削除はサポートされません) 特殊なブロック BLOB ですが、データの追加には非常に効率的です。 追加 BLOB はログの格納やストリーミングされるデータの書き込みのようなシナリオに適しています。
+- **ページ BLOB** は、ランダム アクセスの読み取りと書き込みを伴うシナリオ用に設計されています。 ページ BLOB は Azure Virtual Machines で使用される仮想ハード ディスク (VHD) ファイルの格納に使用されますが、ランダム アクセスを伴うすべてのシナリオに適しています。
 
-Block blobs are the best choice for most scenarios that don't specifically call for append or page blobs. Their block-based structure supports very fast uploads and downloads and efficient access to individual pieces of a blob. The process of managing and committing blocks is automatically handled by most client libraries, and some will also handle parallel uploads and downloads to maximize performance.
+追加 BLOB やページ BLOB を特に必要としないほとんどのシナリオには、ブロック BLOB が最適な選択肢です。 そのブロック ベースの構造では、非常に高速のアップロードとダウンロード、および BLOB の個々の部分への効率的なアクセスがサポートされています。 ブロックの管理とコミットのプロセスは、ほとんどのクライアント ライブラリによって自動的に処理され、一部ではパフォーマンスを最大化するために並列アップロードとダウンロードも処理されます。

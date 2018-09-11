@@ -1,28 +1,39 @@
-When talking about cloud computing, there are three major categories. It's important to understand them because they are used in conversation, documentation, and training.
+クラウド コンピューティングに関しては 3 つの主要なカテゴリがあります。 これらは会話、ドキュメント、トレーニングで使用されるため、理解しておくことが重要です。
 
-## Explore the three categories of cloud computing
+3 つの一般的なクラウド サービス カテゴリは次のとおりです。
 
-<!-- TODO: Verify video -->
-> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
+- サービスとしてのインフラストラクチャ (IaaS)
+- サービスとしてのプラットフォーム (PaaS)
+- サービスとしてのソフトウェア (SaaS)
 
-### Infrastructure as a service (IaaS)
+注意する必要があるのは、これらのカテゴリが相互に階層を成しているということです。 たとえば、PaaS は抽象化のレベルを提供することによって IaaS の上にレイヤーを追加します。 抽象化には、細部が隠ぺいされるので開発者は気にする必要がなく迅速にコーディングできるというメリットがあります。 ただし、その対価の 1 つとして、基になるハードウェアについて開発者が制御できる範囲は狭くなります。 次の図では、ご自分で、およびサービス プロバイダーが管理する、それぞれのクラウド サービスのカテゴリのリソース一覧を示しています。
 
-Infrastructure as a Service is the most flexible category of cloud services. It aims to give you complete control over the hardware that runs your application. Instead of buying hardware, with IaaS, you rent it.
+![クラウド サービスの各カテゴリの抽象化レベルを示す図。](../media/5-layer-diagram.png)
 
-### Platform as a service (PaaS)
 
-PaaS provides an environment for building, testing, and deploying software applications. The goal of PaaS is to help you create an application as quickly as possible without having to worry about managing the underlying infrastructure. For example, when deploying a web application using PaaS, you don't have to install an operating system, web server, or even system updates.
+### <a name="infrastructure-as-a-service-iaas"></a>サービスとしてのインフラストラクチャ (IaaS)
 
-### Software as a service (SaaS)
+サービスとしてのインフラストラクチャは最も柔軟なクラウド サービスのカテゴリであり、アプリケーションを実行するハードウェアを完全に制御できるようにすることが目的です。 IaaS では、ハードウェアを購入するのではなくレンタルします。
 
-SaaS is software that is centrally hosted and managed for the end customer. It is usually based on an architecture where one version of the application is used for all customers, and licensed through a monthly or annual subscription. Office 365 is a perfect example of SaaS software.
+IaaS の例を次に示します。
 
-## Think about service categories as layers
+- 仮想マシン
+- ファイアウォール
+- ハード ディスク
+- ロード バランサー
 
-One thing to understand is that these categories are layers on top of each other. For example, PaaS adds a layer on top of IaaS by providing a level of abstraction. The abstraction has the benefit of hiding the details that you may not care about so that you can get to coding quicker. However, one cost of that is that you have less control over the underlying hardware. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+### <a name="platform-as-a-service-paas"></a>サービスとしてのプラットフォーム (PaaS)
 
-![An illustration showing the level of abstraction in each category of cloud service.](../media/5-layer-diagram.png)
+サービスとしてのプラットフォームでは、ソフトウェア アプリケーションのビルド、テスト、展開のための環境が提供されます。 PaaS の目的は、基になっているインフラストラクチャの管理について心配することなく、できるだけ早くアプリケーションを作成できるようにすることです。 たとえば、PaaS を使用して Web アプリケーションを展開するときは、オペレーティング システムや Web サーバー、さらにはシステムの更新プログラムさえインストールする必要はありません。 
 
-## Summary
+PaaS の例は Azure App Service です。
 
-IaaS, PaaS, and SaaS each contain different levels of managed services. You may easily use a combination of these types of infrastructure. You could use Office 365 on your company’s computers (SaaS), and in Azure you could host your VMs (IaaS) and use Azure SQL Database (PaaS) to store your data. With the cloud’s flexibility, you can use any combination that provides you with the maximum result.
+### <a name="software-as-a-service-saas"></a>サービスとしてのソフトウェア (SaaS)
+
+サービスとしてのソフトウェアでは、インターネット経由でアプリケーションを配布する手段が提供されます。 SaaS アプリケーションは Web ベースのアプリケーションと呼ぶのが最も一般的ですが、SaaS アプリケーションという用語は、アプリケーションが SaaS プロバイダーのサーバーでホストされているという事実に由来します。 SaaS では、インストールやセットアップについて心配する必要はなく、Web ブラウザーまたはソフトウェア アプリケーションを通して使用するだけです。 
+
+Microsoft Office 365 は SaaS アプリケーションの例です。
+
+## <a name="summary"></a>まとめ
+
+IaaS、PaaS、SaaS はすべて相互にレイヤーを形成しています。 基になるハードウェアを制御できるレベルにより、最適なサービスのカテゴリが決まります。

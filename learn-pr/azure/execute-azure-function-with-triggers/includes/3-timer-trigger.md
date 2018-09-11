@@ -1,53 +1,54 @@
-It's common to execute a piece of logic at a set interval. Imagine you're a blog owner and you notice that your subscribers aren't reading your most recent posts. You decide that the best action is to send an email once a week to remind them to check your blog. You implement this logic using an Azure function with a _timer trigger_ to invoke your function weekly.
+設定した間隔でロジックを実行することはよくあります。 あなたはブログ所有者で、購読者が最新の投稿を読んでいないことに気付いたとします。 最良の対処として、1 週間に一度、ブログをチェックするように知らせる電子メールを送信することにしました。 このロジックを実装するには、Azure 関数と_タイマー トリガー_を使用して関数を週 1 回呼び出します。
 
-## What is a timer trigger?
+## <a name="what-is-a-timer-trigger"></a>タイマー トリガーとは
 
-A timer trigger is a trigger that executes a function at a consistent interval. To create a timer trigger, you need to supply two pieces of information.
+タイマー トリガーは、一定の間隔で関数を実行するトリガーです。 タイマー トリガーを作成するには、2 つの情報を指定する必要があります。 
 
-1. A *Timestamp parameter name*, which is simply an identifier to access the trigger in code.
-2. A *Schedule*, which is a *CRON expression* that sets the interval for the timer.
+1. *タイムスタンプ パラメーター名*。これは、コード内でこのトリガーにアクセスするための識別子です。 
+2. *スケジュール*。これは、タイマーの間隔を設定する *CRON 式*です。
 
-## What is a CRON expression?
+## <a name="what-is-a-cron-expression"></a>CRON 式とは
 
-A *CRON expression* is a string that consists of six fields that represent a set of times.
+*CRON 式*は、一連の時間を表す 6 つのフィールドで構成される文字列です。
 
-The order of the six fields in Azure is: `{second} {minute} {hour} {day} {month} {day of the week}`.
+Azure でのこの 6 つのフィールドの順序は、`{second} {minute} {hour} {day} {month} {day of the week}` です。
 
-For example, a *CRON expression* to create a trigger that executes every five minutes looks like:
+たとえば、5 分ごとに実行されるトリガーを作成する *CRON 式*は、次のようになります。
 
-```log
+```
 0 */5 * * * *
 ```
 
-At first, this string may look confusing. We'll come back and break down these concepts when we have a deeper look at *CRON expressions*.
+最初は、この文字列は複雑に見えるかもしれません。 *CRON 式*について詳しく説明するときに、再度個々に解説します。
 
-To build a *CRON expression*, you need to have a basic understanding of some of the special characters.
+*CRON 式*を作成するには、いくつかの特殊文字について基本を理解している必要があります。
 
-| Special character | Meaning | Example |
+| 特殊文字 | 意味 | 例 |
 | ------------- | ------------- | ------------- |
-| *      | Selects every value in a field | An asterisk "*" in the day of the week field means *every* day. |
-| ,      | Separates items in a list | A comma "1,3" in the day of the week field means just Mondays (day 1) and Wednesdays (day 3). |
-| -      | Specifies a range | A hyphen "10-12" in the hour field means a range that includes the hours 10, 11, and 12. |
-| /      | Specifies an increment | A slash "*/10" in the minutes field means an increment of every 10 minutes. |
+| *      | フィールド内のすべての値を選択する | 曜日フィールド内でのアスタリスク "*" は、*すべての*曜日を意味します。 |
+| ,      | リスト内の項目を区切る | 曜日フィールド内でのコンマ "1, 3" は、月曜日 (1 日目) と水曜日 (3 日目) を意味します。 |
+| -      | 範囲を指定する | 時間フィールド内でのハイフン "10 - 12" は、10 時、11 時、および 12 時を含む範囲を意味します。 |
+| /      | 増分を指定する | 分フィールド内でのスラッシュ"*/10" は、10 分ごとの増分を意味します。 |
 
-Now we'll go back to the original CRON expression example. Let’s try to understand it better by breaking it down field by field.
+では、元の CRON 式の例に戻ります。 フィールドごとに分けて詳しく理解してみましょう。
 
-```log
+```
 0 */5 * * * *
 ```
 
-The **first field** represents seconds. This field supports the values 0-59. Because the field contains a zero, it selects the first possible value, which is one second.
+**最初のフィールド**は、秒を表します。 このフィールドでは、0 から 59 までの値を使用できます。 このフィールドには 0 が含まれているため、最初の指定可能な値である 1 秒を選択しています。
 
-The **second field** represents minutes. The value "*/5" contains two special characters. First, the asterisk (\*) means "select every value within the field." Because this field represents minutes, the possible values are 0-59. The second special character is the slash (/), which represents an increment. When you combine these characters together, it means for all values 0-59, select every fifth value. An easier way to say that is simply "every five minutes."
+**2 番目のフィールド**は、分を表します。 "*/5" という値には 2 つの特殊文字が含まれています。 まず、アスタリスク (\*) は "フィールド内のすべての値を選択する" ことを意味します。 このフィールドは分を表すため、取り得る値は 0 から 59 までです。 2 つ目の特殊文字はスラッシュ (/) で、これは増分を表します。 これらの文字を組み合わせると、0 から 59 までのすべての値について、5 番目ごとの値を選択することを意味します。 簡単に言うと、"5 分ごと" です。
 
-The **remaining four fields** represent the hour, day, month, and weekday of the week. An asterisk for these fields means to select every possible value. In this example, we select "every hour of every day of every month."
+**残りの 4 つのフィールド**は、時間、日、月、曜日を表します。 これらのフィールドにおいて、アスタリスクはすべての値を選択することを意味します。 この例では、"毎月の毎日の毎時" を選択します。
 
-When you put all the fields together, the expression is read as "on the first second, of every fifth minute of every hour, of every day, of every month".
+すべてのフィールドを結合すると、この式は "毎月、毎日、毎時、5 分ごと、最初の秒" と読むことができます。
 
-## How to create a timer trigger
+## <a name="how-to-create-a-timer-trigger"></a>タイマー トリガーを作成する方法
 
-A timer trigger can be created completely within the Azure portal. In your Azure function, select **timer trigger** from the list of predefined trigger types. Enter the logic that you want to execute. Supply a **Timestamp parameter name** and the **CRON expression**.
+タイマー トリガーは、Azure portal 内だけで作成できます。 Azure 関数内で、定義済みのトリガーの種類の一覧から **[タイマー トリガー]** を選択します。 実行するロジックを入力します。 **[タイムスタンプ パラメーター名]** と **[CRON 式]** を指定します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-A timer trigger invokes an Azure function on a consistent schedule. To define the schedule for a timer trigger, we build a *CRON expression*, which is a string that represents a set of times.
+タイマー トリガーは、一貫したスケジュールに基づいて Azure 関数を呼び出すトリガーです。 タイマー トリガーのスケジュールを定義するには、*CRON 式*を作成します。CRON 式は一連の時間を表す文字列です。
+

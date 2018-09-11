@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.2-create-qna-maker
+title: Microsoft QnA Maker でナレッジ ベースを作成する
+metadata:
+  title: Microsoft QnA Maker でナレッジ ベースを作成する
+  description: Microsoft QnA Maker でナレッジ ベースを作成する
+  ms.openlocfilehash: 156a3fce397171db747c5e922e83a50a0fbdd205
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230652"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-qna-maker.md)'

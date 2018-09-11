@@ -1,38 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.4-transactions
 metadata:
-  title: Group multiple operations in a transaction
-  description: Group multiple operations in a transaction
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Group multiple operations in a transaction
+  title: トランザクションで複数の操作をグループ化する
+  description: トランザクションで複数の操作をグループ化する
+  displayType: one-column
+  ms.openlocfilehash: deca0e972e897760f2179b8176dfdd079790a423
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252608"
+title: トランザクションで複数の操作をグループ化する
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/4-transactions.md)]
 quiz:
-  title: 'Transactions'
+  title: トランザクション
   questions:
-  - content: "What kind of system does the product data need?"
+  - content: 商品データに必要なシステムの種類
     choices:
-    - content: "OLAP"
+    - content: OLAP
       isCorrect: false
-      incorrectExplanation: "No, an OLAP system is best for data that requires complex queries or transactions, and doesn't require low latency. The product data needs to be modified quickly, and needs a low-latency, high-throughput system."
-    - content: "OLTP"
+      incorrectExplanation: 不正解です。OLAP システムは、複雑なクエリやトランザクションを必要とし、低遅延である必要はないデータに最適です。 商品データはすばやく変更する必要があり、低遅延で高スループットのシステムが必要です。
+    - content: OLTP
       isCorrect: true
-      correctExplanation: "Yes, OLTP systems support lots of users, have quick response times, handle large volumes of data, are highly available, and typically handle small or relatively simple transactions, which is perfect for the product data set."
-  - content: "If the operations to update inventory and process payments were in the same transaction, and a user was attemtping to apply a store credit for the full amount and submitted the exact same order via phone and by laptop to an ACID-compliant database, what would happen?" 
+      correctExplanation: 正解です。OLTP システムは、多数のユーザーをサポートし、応答時間が速く、大量のデータを処理し、高可用性であり、通常は小規模または比較的単純なトランザクションを処理します。これは、商品データ セットに最適です。
+  - content: 在庫を更新して支払い処理するための操作が同じトランザクション内にある場合、ユーザーが電話とラップトップから ACID 準拠のデータベースに対してまったく同じ注文を送信すると、どうなるでしょうか。
     choices:
-    - content: "The first order would complete, the remaining credit account would change to zero, and the second order would be updated to show that the user had no in-store credit remaining."
+    - content: 1 番目の注文は完了し、クレジット残高が 0 に変更されます。2 番目の注文は、ユーザーに店内のクレジット残高がないことを示すように更新されます。
       isCorrect: false
-      incorrectExplanation: "No, due to the Isolation in transactional databases, the two transactions are handled independently, and the first transaction would not modify the second in-process transaction until the second transaction completed and failed."
-    - content: "One order would be processed and would use the in-store credit, and the other order would update the remaining inventory for the items in the basket, but would not complete the order."
+      incorrectExplanation: 不正解です。トランザクション データベースの分離性のため、2 つのトランザクションは独立して処理され、2 番目のトランザクションが完了して失敗するまで、1 番目のトランザクションが 2 番目の処理中のトランザクションを変更することはありません。
+    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は買い物かごの中の商品の在庫残を更新しますが、注文は完了しません。
       isCorrect: false
-      incorrectExplanation: "No, due to the Atomicity in transactional databases, the second order would not update the remaining inventory for the failed order."
-    - content: "One order would be processed and would use the in-store credit, and the other order would not be processed."
+      incorrectExplanation: 不正解です。トランザクション データベースでの原子性のため、2 番目の注文は失敗した注文に対する在庫残を更新しません。
+    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は処理されません。
       isCorrect: true
-      correctExplanation: "Yes, once the second order determined the in-store credit had already been used, it would roll back the transaction."
-
+      correctExplanation: 正解です。2 番目の注文は、店内クレジットが既に使用されていることを認識すると、トランザクションをロールバックします。

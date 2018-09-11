@@ -1,33 +1,28 @@
-The following is the typical workflow for apps that use Azure Blob storage:
+Azure Blob Storage を使用するアプリの一般的なワークフローを次に示します。
 
-1. **Retrieve configuration**: At startup, load the storage account configuration. This is typically a storage account connection string.
+1. **構成を取得する**: 起動時に、ストレージ アカウントの構成を読み込みます。 これは通常、ストレージ アカウント接続文字列です。
+1. **クライアントを初期化する**: 接続文字列を使用して、Azure Storage クライアント ライブラリを初期化します。 これにより、BLOB ストレージ API を操作する場合にアプリが使用するオブジェクトが作成されます。
+1. **使用する**: コンテナーおよび BLOB に対して動作するクライアント ライブラリを指定して API 呼び出しを行います。
 
-1. **Initialize client**: Use the connection string to initialize the Azure Storage client library. This creates the objects the app will use to work with the Blob storage API.
+## <a name="configure-your-connection-string"></a>接続文字列の構成
 
-1. **Use**: Make API calls with the client library to operate on containers and blobs.
+コードを記述する前に、使用するストレージ アカウント用の接続文字列が必要になります。
 
-## Configure your connection string
-
-Before running your app, you'll need the connection string for the storage account you will use. You can use any Azure management interface to get it, including the Azure portal, the Azure CLI or Azure PowerShell. When we set up the web app to run our code near the end of this module, we'll use the Azure CLI to get the connection string for the storage account you created earlier.
-
-Storage account connection strings include the account key. The account key is considered a secret and should be stored securely. Here, we will store the connection string in an App Service application setting. App Service application settings are a secure place for application secrets, but this design does not support local development and is not a robust, end-to-end solution on its own.
+ストレージ アカウント接続文字列には、アカウント キーが含まれます。 アカウント キーはシークレットとみなし、安全に格納する必要があります。 ここで、App Service アプリケーション設定内に接続文字列を格納することにします。 App Service アプリケーション設定は、アプリケーション シークレットにとって安全な場所ですが、この設計ではローカル開発をサポートしていないため、単独では堅牢なエンドツーエンド ソリューションとはなりません。
 
 > [!WARNING]
-> **Do not place storage account keys in code or in unprotected configuration files.** Storage account keys enable full access to your storage account. Leaking a key can result in unrecoverable damage and large bills. See the Further Reading section at the end of this module for storage guidance and advice about how to recover from a leaked key.
+> **コード内または保護されていない構成ファイル内には、ストレージ アカウント キーを置かないでください。** ストレージ アカウント キーにより、ご利用のストレージ アカウントへのフル アクセスを有効にすることができます。 キーが漏えいすると、回復不能な損害が発生し、高額の請求を招く恐れがあります。 ストレージのガイダンスおよび漏えいしたキーを回収する方法については、このモジュールの最後に示す「参考資料」セクションを参照してください。
 
-## Initialize the Blob storage object model
+## <a name="initialize-the-blob-storage-object-model"></a>BLOB ストレージ オブジェクト モデルを初期化する
 
-In the Azure Storage SDK for .NET Core, the standard pattern for using Blob storage consists of the following steps:
+Azure Storage SDK for .NET Core において、BLOB ストレージを使用するための標準的なパターンは、次の手順で構成されます。
 
-1. Call `CloudStorageAccount.Parse` (or `TryParse`) with your connection string to get a `CloudStorageAccount`.
+1. 接続文字列を使用して `CloudStorageAccount.Parse` (または `TryParse`) を呼び出して、`CloudStorageAccount` を取得します。
+1. `CloudStorageAccount` 上で `CreateCloudBlobClient` を呼び出して `CloudBlobClient` を取得します。
+1. `CloudBlobClient` 上で `GetContainerReference` を呼び出して `CloudBlobContainer` を取得します。
+1. そのコンテナー上のメソッドを使用することで、BLOB の一覧を取得および/または個々の BLOB への参照を取得してデータのアップロードおよびダウンロードを行います。
 
-1. Call `CreateCloudBlobClient` on the `CloudStorageAccount` to get a `CloudBlobClient`.
-
-1. Call `GetContainerReference` on the `CloudBlobClient` to get a `CloudBlobContainer`.
-
-1. Use methods on the container to get a list of blobs and/or get references to individual blobs to upload and download data.
-
-In code, steps 1&ndash;3 look like this:
+コード内で、ステップ 1 からステップ 3 は次のようになります。
 
 ```csharp
 CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString); // or TryParse()
@@ -35,56 +30,58 @@ CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 CloudBlobContainer container = blobClient.GetContainerReference(containerName);
 ```
 
-None of this initialization code makes calls over the network. This means that some exceptions that occur because of incorrect information won't be thrown until later. For example, the call to `CloudStorageAccount.Parse` will throw an exception immediately if the connection string is formatted incorrectly, but no exception will be thrown if the storage account that a connection string points to doesn't exist.
+この初期化コードで、ネットワーク経由の呼び出しが行われることはありません。 これは、間違った情報が原因で発生するいくつかの例外が後になってもスローされないことを意味します。 たとえば、`CloudStorageAccount.Parse` への呼び出しでは、接続文字列が不正に書式設定されていると、すぐに例外がスローされますが、接続文字列の指すストレージ アカウントが存在しない場合には、例外はスローされません。
 
-## Create containers at startup
+## <a name="create-containers-at-startup"></a>起動時にコンテナーを作成する
 
-Calling `CreateIfNotExistsAsync` on a `CloudBlobContainer` is the best way to create a container when your application starts or when it first tries to use it.
+アプリケーションの起動時またはアプリケーションで初めてコンテナーを使用するときにコンテナーを作成するには、`CloudBlobContainer` で `CreateIfNotExistsAsync` を呼び出すのが最善の方法です。
 
-`CreateIfNotExistsAsync` won't throw an exception if the container already exists, but it does make a network call to Azure Storage. Call it once during initialization, not every time you try to use a container.
+コンテナーは既に存在するものの、Azure Storage へのネットワーク呼び出しを行った場合には、`CreateIfNotExistsAsync` で例外がスローされません。 呼び出しは、コンテナーを使用するたびではなく、初期化中に 1 回行います。
 
-## Exercise
+## <a name="exercise"></a>演習
 
-### Clone and explore the unfinished app
+### <a name="clone-and-explore-the-unfinished-app"></a>未完了のアプリを複製して詳細を確認する
 
-First, let's clone the starter app from GitHub. In the Cloud Shell terminal, run the following command to get a copy of the source code and open it in the editor:
+まず、GitHub からスターター アプリを複製してみましょう。 Cloud Shell ターミナルで、次のコマンドを実行してソース コードのコピーを取得し、それをエディターで開きます。
+
+**TODO 最終的なリポジトリの URL を更新してください**
 
 ```console
-git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
-cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
+git clone https://github.com/nickwalkmsft/FileUploader.git
+cd FileUploader
 code .
 ```
 
-Open the file `Controllers/FilesController.cs` in the editor. There's no work to do here, but we're going to have a quick look at what the app does.
+ファイル `Controllers/FilesController.cs` を開きます。 ここで作業することはありませんが、アプリで行われることを簡単に見ていきます。
 
-This controller implements an API with three actions:
+このコントローラーでは、次の 3 つのアクションによって API が実装されます。
 
-- **Index** (GET /api/Files) returns a list of URLs, one for each file that's been uploaded. The app front end calls this method to build a list of hyperlinks to the uploaded files.
-- **Upload** (POST /api/Files) receives an uploaded file and saves it.
-- **Download** (GET /api/Files/{filename}) downloads an individual file by its name.
+* **Index** (GET/api/Files) では、URL のリストが返されます。アップロードされた各ファイルに対する URL です。 アップロードされたファイルへのハイパーリンクのリストを作成するこのメソッドがアプリ フロント エンドによって呼び出されます。
+* **Upload** (POST/api/Files) では、アップロードされたファイルが受信され、保存されます。
+* **Download** (GET /api/Files/{filename}) では、名前を指定した個々のファイルがダウンロードされます。
 
-Each method uses an `IStorage` instance called `storage` to do its work. There is an incomplete implementation of `IStorage` in `Models/BlobStorage.cs` that we're going to fill in.
+各メソッドでは、該当する処理を実行するために `storage` と呼ばれる `IStorage` インスタンスが使用されます。 `Models/BlobStorage.cs` には、`IStorage` の不完全な実装があり、それをこれから埋めていきます。
 
-### Add the NuGet package
+### <a name="add-the-nuget-package"></a>NuGet パッケージを追加する
 
-First, add a reference to the Azure Storage SDK. In the terminal, run the following:
+最初に、Azure Storage SDK への参照を追加します。 ターミナルで、次の内容を実行します。
 
 ```console
 dotnet add package WindowsAzure.Storage
 dotnet restore
 ```
 
-This will make sure we're using the newest version of the Blob storage client library.
+これにより、確実に BLOB ストレージ クライアント ライブラリの最新バージョンを使用することになります。
 
-### Configure
+### <a name="configure"></a>構成
 
-The configuration values we need are the storage account connection string and the name of the container the app will use to store files. In this module, we're only going to run the app in Azure App Service, so we'll follow App Service best practice and store the values in App Service application settings. We'll do that when we create the App Service instance, so there's nothing we need to do at the moment.
+アプリを実行するために必要な構成値は、ストレージ アカウント接続文字列と、ファイルを格納するためにアプリによって使用されるコンテナーの名前です。 この演習では、Azure App Service でアプリを実行するだけなので、App Service のベスト プラクティスに従って、値を App Service アプリケーション設定に格納します。 これは、App Service インスタンスを作成するときに行うので、現時点では何もする必要はありません。
 
-When it comes to *using* the configuration, our starter app already includes the plumbing we need. The `IOptions<AzureStorageConfig>` constructor parameter in `BlobStorage` has two properties: the storage account connection string and the name of the container our app will store blobs in. There is code in the `ConfigureServices` method of `Startup.cs` that loads the values from configuration when the app starts.
+構成の*使用*に関しては、対象のスターター アプリに必要としているプラミングが既に含まれています。 `BlobStorage` 内の `IOptions<AzureStorageConfig>` コンストラクター パラメーターには 2 つのプロパティがあります。ストレージ アカウントの接続文字列と、アプリによって BLOB が格納されるコンテナーの名前です。 `Startup.cs` の `ConfigureServices` メソッド内には、アプリの起動時に構成から値を読み込むコードがあります。
 
-### Initialize
+### <a name="initialize"></a>初期化
 
-Open `Models/BlobStorage.cs` in the editor. Add the following `using` statements to the top of the file to prepare it for the code you're going to add during the exercise.
+`Models/BlobStorage.cs` を開きます。 ファイルの先頭に次の `using` ステートメントを追加して、演習中に追加するコード用に準備します。
 
 ```csharp
 using System.Linq;
@@ -92,9 +89,9 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 ```
 
-Locate the `Initialize` method. Our app will call this method when `BlobStorage` is used for the first time. If you're curious, you can look at `ConfigureServices` in `Startup.cs` to see how this is done.
+`Initialize` メソッドを検索します。 `BlobStorage` が初めて使用されるときに、ご利用のアプリによってこのメソッドが呼び出されます。 関心がある場合は、`Startup.cs` 内にある `ConfigureServices` を調べて、それがどのように行われるかを確認することができます。
 
-`Initialize` is where we want to create our container if it doesn't already exist. Replace the current implementation of `Initialize` with the following code and save your work:
+コンテナーがまだ存在していない場合は、`Initialize` でコンテナーを作成します。 `Initialize` の現在の実装を次のコードで置き換えて、作業内容を保存します。
 
 ```csharp
 public Task Initialize()

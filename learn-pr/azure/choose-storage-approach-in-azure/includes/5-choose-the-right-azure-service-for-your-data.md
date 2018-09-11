@@ -1,82 +1,79 @@
-Choosing the correct storage solution can lead to better performance, cost savings, and improved managability. Here, you'll apply what you've learned about the data in your online retail scenario, and find the best Azure service for each data set. 
+正しいストレージ ソリューションを選択すると、パフォーマンスの向上につながります。 ここでは、オンライン小売りシナリオでのデータについて学習したことを適用して、各データ セットに最適な Azure サービスを見つけます。 
 
-## Product catalog data
+## <a name="product-catalog-data"></a>商品カタログ データ
 
-**Data classification:** Semi-structured because of the need to extend or modify the schema for new products
+データの分類: 半構造化
 
-**Operations:**
+操作:
 
-- Customers require a high number of read operations, with the ability to query on many fields within the database.
-- The business requires a high number of write operations to track the constantly changing inventory.
+* 顧客は、多くの読み取り操作と、データベース内の多くのフィールドに対してクエリを実行する機能を、必要とします。
+* 店側では、常に変化する在庫を追跡するために多くの書き込み操作が必要です。
 
-**Latency & throughput:** High throughput and low latency
+待機時間とスループット: 高スループットと低遅延
 
-**Transactional support:** Required
+トランザクションのサポート: 必要
 
-### Recommended service: Azure Cosmos DB
+### <a name="recommended-service-azure-cosmos-db"></a>推奨されるサービス: Azure Cosmos DB
 
-Azure Cosmos DB supports semi-structured data, or NoSQL data, by design. So, supporting new fields, such as the "Bluetooth Enabled" field or any new fields you need in the future, is a given with Azure Cosmos DB.
+Azure Cosmos DB は、設計上、半構造化データつまり NoSQL データをサポートします。 そのため、Bluetooth 対応フィールドや、将来必要になる新しいフィールドなどの新しいフィールドのサポートは、Azure Cosmos DB で実現できます。
 
-Regarding operations, Azure Cosmos DB supports SQL for queries and every property is indexed by default. Creating queries to match your customers’ need to filter on almost everything is supported.
+操作に関しては、Azure Cosmos DB は SQL でのクエリをサポートし、すべてのプロパティには既定でインデックスが付けられるので、ほとんどすべてのものをフィルター処理するという顧客のニーズに合わせたクエリの作成がサポートされています。
 
-Regarding latency and throughput, Azure Cosmos DB enables you to configure your both. You can scale up to handle higher customer demand during peak shopping times, or scale down during slower times to conserve cost. And because Azure Cosmos DB indexes all properties by default, customers will be able to query on any field.
+待機時間とスループットに関しては、Azure Cosmos DB ではスループットを構成できるので、ショッピングが増える期間は高い顧客需要を処理するようにスケールアップし、少なくなったらコストを節約するためにスケールダウンすることができます。 また、Azure Cosmos DB では既定ですべてのプロパティにインデックスが付けられるので、顧客は任意のフィールドでクエリを行うことができます。
 
-Azure Cosmos DB is also ACID-compliant, so you can be assured that your transactions are completed according to those strict requirements.
+Azure Cosmos DB は ACID に準拠しているので、トランザクションは厳密な要件に従って完了します。
 
-As an added plus, Azure Cosmos DB also enables you to replicate your data anywhere in the world with the click of a button. So, if your e-commerce site has concentrated users in the US, France, and England, you can replicate your data to those data centers to reduce latency, as you've physically moved the data closer to your users. And even with data replicated around the world, you can choose from one of five consistency levels. By choosing the right consistency level, you can determine the tradeoffs to make between consistency, availability, latency, and throughput.
+さらに、Azure Cosmos DB ではボタンをクリックするだけで世界中のどこにでもデータをレプリケートできます。 したがって、eコマース サイトのユーザーが米国、フランス、英国に集中している場合は、これらのデータ センターにデータをレプリケートすると、データがユーザーの近くに物理的に移動するので、待機時間を短縮できます。 そして、世界各地にデータをレプリケートしても、5 つの整合性レベルのいずれかを選択して、整合性、可用性、待機時間、スループットの間のトレードオフを決定できます。
 
-### Why not other Azure services?
+### <a name="why-not-other-azure-services"></a>他の Azure サービスにしない理由
 
-Azure SQL Database would be an excellent choice for this data set, were it not for the need to extend the schema ad-hoc for new products. Azure SQL Database can provide many of the same benefits of Azure Cosmos DB, but it cannot handle heterogeneous data, all data needs to adhere to a schema.
+Azure Table Storage、HDInsight の一部としての Azure HBase、Azure Redis Cache などの他の Azure サービスも、NoSQL データを格納できます。 このシナリオでは、ユーザーは複数のフィールドでのクエリを望んでいるため、Azure Table Storage、Azure Redis Cache、HDInsight の一部としての Azure HBase より Azure Cosmos DB の方が適しています。Azure Cosmos DB では既定ですべてのフィールドにインデックスが付けられるのに対し、他のサービスではインデックスが付けられるデータが制限されるため、データベースの任意のフィールドに対してクエリを実行する機能が限定されるためです。
 
-Other Azure services, such as Azure Table storage, Azure HBase as a part of HDInsight, and Azure Redis Cache, can also store NoSQL data. In this scenario, because users will want to query on multiple fields, Azure Cosmos DB is a better fit. This is because Azure Cosmos DB indexes every field by default, whereas the other services are limited in the data they index, so they have reduced abilities to query on any field in the database.
+## <a name="photos-and-videos"></a>写真とビデオ
 
-## Photos and videos
+データの分類: 非構造化
 
-**Data classification:** Unstructured
+操作:
 
-**Operations:**
+* 写真やビデオでは、ID による取得だけが必要です。
+* 作成と更新はあまり頻繁ではなく、読み取り操作より待機時間が長くてもかまいません。
 
-- Only need to be retrieved by ID.
-- Customers require a high number of read operations with low-latency.
-- Creates and updates will be somewhat infrequent and can have higher latency than read operations.
+待機時間とスループット: ID による検索では、低遅延と高スループットをサポートする必要があります。 作成と更新は、読み取り操作より待機時間が長くてもかまいません。
 
-**Latency & throughput:** Retrievals by ID need to support low latency and high throughput. Creates and updates can have higher latency than read operations.
+トランザクションのサポート: 不要
 
-**Transactional support:** Not required
+## <a name="recommended-service-azure-blob-storage"></a>推奨されるサービス: Azure BLOB ストレージ
 
-### Recommended service: Azure Blob storage
+Azure BLOB ストレージでは、写真やビデオなどのファイルを格納できます。 また、最もよく使用されるコンテンツをキャッシュしてエッジ サーバーに格納することにより Azure Content Delivery Network (CDN) で機能し、それらの画像をユーザーに提供するときの待機時間が減ります。
 
-Azure Blob storage supports storing files such as photos and videos. It also works with Azure Content Delivery Network (CDN) by caching the most used content and storing it on edge servers. This reduces latency in serving up those images to your users.
+Azure BLOB ストレージを使用すると、画像をホット ストレージ層からクール ストレージ層またはアーカイブ ストレージ層に移動することもでき、コストを削減して、最もよく見られる画像やビデオにスループットを集中できます。
 
-By using Azure Blob storage, you can also move images from the hot storage tier to the cool or archive storage tier, to reduce costs and focus throughput on the most viewed images and videos.
+### <a name="why-not-other-azure-services"></a>他の Azure サービスにしない理由
 
-### Why not other Azure services?
+画像を Azure App Service にアップロードして、アプリを実行しているのと同じサーバーで画像を提供することができます。 画像が多くない場合はそれでもかまいませんが、ファイルが多い場合、およびグローバルなユーザーに対しては、Azure BLOB ストレージと Azure Content Delivery Network を使用した方が、より高いパフォーマンスの結果を得られます。
 
-You could upload your images to Azure App Service, so that the same server running your app is serving up your images. That would work if you didn't have many file. But if you have lots of files, and a global audience, you'll get more performant results by using Azure Blob storage with Azure CDN.
+## <a name="business-data"></a>ビジネス データ
 
-## Business data
+データの分類: 構造化
 
-**Data classification:** Structured
+操作: 複数のデータベースに対する読み取り専用の複雑な分析クエリ
 
-**Operations:** Read-only, complex analytical queries across multiple databases
+待機時間とスループット: クエリの複雑さによっては、結果においてある程度の待機時間が予想されます。
 
-**Latency & throughput:** Some latency in the results is expected based on the complex nature of the queries.
+トランザクションのサポート: 必要
 
-**Transactional support:** Required
+### <a name="recommended-service-azure-sql-database"></a>推奨されるサービス: Azure SQL Database
 
-### Recommended service: Azure SQL Database
+ほとんどの場合、ビジネス データのクエリはビジネス アナリストによって行われ、アナリストは他のクエリ言語より SQL をよく知っていると思われます。 Azure SQL Database だけでもソリューションとして使用できますが、Azure SQL Database と Azure Analysis Services を組み合わせると、Azure SQL Database 内のデータに対するセマンティック モデルを作成してから、それをビジネス ユーザーと共有することにより、行う必要があるすべてのことを BI ツールからのモデルに接続し、データをすぐに調べて分析情報を得ることができるようになります。 
 
-Business data will most likely be queried by business analysts, who are more likely to know SQL than any other query language. Azure SQL Database could be used as the solution by itself, but pairing it with Azure Analysis Services enables data analysts to create a semantic model over the data in SQL Database. They can then share it with business users, so that all they need to do is connect to the model from any business intelligence (BI) tool, and immediately explore the data and gain insights. 
+### <a name="why-not-other-azure-services"></a>他の Azure サービスにしない理由
 
-### Why not other Azure services?
+Azure SQL Data Warehouse は OLAP ソリューションと SQL クエリをサポートしますが、ビジネス アナリストはクロス データベース クエリを実行する必要があり、Azure SQL Data Warehouse ではサポートされていません。
 
-Azure SQL Data Warehouse supports OLAP solutions and SQL queries. But your business analysts will need to perform cross-database queries, which SQL Data Warehouse does not support.
+Azure SQL Database に加えて Azure Analysis Services を使用できますが、ビジネス アナリストは Power BI より SQL の方を熟知しているため、SQL クエリをサポートしているデータベースを好み、Azure Analysis Services はそれをサポートしていません。 さらに、ビジネス データ セットに格納する財務データは、リレーショナルで多次元であるという性質を持っており、Azure Analysis Services はサービス自体に格納された表形式のデータはサポートしますが、多次元データはサポートしません。 Azure Analysis Services で多次元データを分析するには、Azure SQL Database への直接クエリを使用できます。
 
-Azure Analysis Services could be used in addition to Azure SQL Database. But your business analysts are more well versed in SQL than working with Power BI. So they'd like a database that supports SQL queries, which Azure Analysis Services does not. In addition, the financial data you're storing in your business data set is relational and multidimensional in nature. Azure Analysis Services supports tabular data stored on the service itself, but not multidimensional data. To analyze multidimensional data with Azure Analysis Services, you can use direct query to the SQL Database.
+Azure Stream Analytics はデータを分析して、それをアクションにつながる分析情報に変換する優れた手段ですが、重視されているのはストリーミングされるリアルタイム データであり、この例でのビジネス アナリストは履歴データのみを調べています。
 
-Azure Stream Analytics is a great way to analyze data and transform it into actionable insights, but its focus is on real-time data that is streaming in. In this case, our business analysts will be looking at historical data only.
+## <a name="summary"></a>まとめ
 
-## Summary
-
-Each category of data has different storage requirements, and it's your job to figure out which solution is best. You should always consider the category of data, required operations, latency, and the need for transactional support.
+データの各カテゴリはストレージ要件が異なり、どのソリューションが最適か判断するのはユーザーの仕事です。 データのカテゴリ、必要な操作、待機時間、およびトランザクションのサポートの必要性を、常に考慮する必要があります。

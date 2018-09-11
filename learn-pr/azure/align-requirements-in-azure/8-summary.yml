@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.8-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 2
-content: |
-  [!include[](includes/8-summary.md)]
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: cfbc5ff361f0fc304ed6741dd00e1c32a81ee08b
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42821479"
+durationInMinutes: 1
+content: '[!include[](includes/8-summary.md)]'

@@ -1,29 +1,43 @@
-In this unit, you will use the Artworks app to submit images to the Custom Vision Service for classification. The app uses the JSON information returned from calls to the Custom Vision Prediction API's [PredictImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814) method to tell you whether an image represents a painting by Picasso, Rembrandt, Pollock, or none of the above. It also shows the probability that the classification assigned to the image is correct.
+### <a name="exercise-6-use-the-app-to-classify-images"></a>演習 6: アプリを使用してイメージを分類する
 
-1. Click the **Browse (...)** button in the Artworks app.
+この演習では、Artworks アプリを使用して、イメージを分類のために Custom Vision Service に送信します。 このアプリは、Custom Vision Prediction API の [PredictImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814) メソッドへの呼び出しから返された JSON 情報を使用して、イメージがピカソ、レンブラント、ポロック、またはそのいずれでもない人物による絵画を表しているかどうかを示します。 また、イメージに割り当てられた分類が正しい確率も示します。
 
-    ![Browsing for local images in the Artworks app](../media/6-app-click-browse.png)
+1. Artworks アプリで **[参照(...)]** ボタンをクリックします。 
 
-1. Browse to the "Quick Tests" folder in the module resources. Select the file named **PicassoTest_02.jpg**, and then click **Open**.
+    ![Artworks アプリでローカル イメージを参照する](../images/app-click-browse.png)
 
-1. Click the **Predict** button to submit the image to the Custom Vision Service.
+    "Artworks アプリでローカル イメージを参照する"__ 
 
-    ![Submitting the image to the Custom Vision Service](../media/6-app-click-predict.png)
+1. ラボ リソースの "Quick Tests" フォルダーを参照します。 **PicassoTest_02.jpg** という名前のファイルを選択し、**[開く]** をクリックします。
 
-1. Confirm that the app identifies the painting as a Picasso.
+1. **[予測]** ボタンをクリックして、イメージを Custom Vision Service に送信します。
 
-    ![Classifying an image as a Picasso](../media/6-app-prediction-01.png)
+    ![イメージを Custom Vision Service に送信する](../images/app-click-predict.png)
 
-1. Repeat steps 1 through 3 for **RembrandtTest_01.jpg** and **PollockTest_01.jpg**, and confirm that the app can identify paintings by Rembrandt and Pollock.
+    "イメージを Custom Vision Service に送信する"__ 
 
-    ![Classifying an image as a Rembrandt](../media/6-app-prediction-02.png)
+1. アプリでその絵がピカソの作品として識別されることを確認します。
 
-1. Repeat steps 1 through 3 for **VanGoghTest_01.png** and **VanGoghTest_02.png**, and confirm that the app does not identify these Van Gogh masterworks as paintings by Picasso, Rembrandt, or Pollock.
+    ![イメージをピカソとして分類する](../images/app-prediction-01.png)
 
-    ![Not a Picasso, Rembrandt, or Pollock](../media/6-app-prediction-03.png)
+    "イメージをピカソとして分類する"__ 
 
-1. As you can see, using the Prediction API from an app is as reliable as it is through the Custom Vision Service portal — and way more fun! What's more, if you go to the Predictions page in the portal, you'll find each of the images uploaded via the app shown there as well.
+1. **RembrandtTest_01.jpg** と **PollockTest_01.jpg** に対して手順 1 から 3 を繰り返して、アプリがレンブラントおよびポロックの絵画を識別できることを確認します。
 
-    ![Image submitted to the Custom Vision Service](../media/6-portal-all-predictions.png)
+    ![イメージをレンブラントとして分類する](../images/app-prediction-02.png)
 
-Feel free to test with images of your own and gauge the model's adeptness at identifying artists or determining that an image is not a Picasso, Rembrandt, or Pollock. If you'd like to train it to recognize Van Goghs too, upload some Van Gogh paintings, tag them with "Van Gogh," and retrain the model. There is no limit to the intelligence you can add if you're willing to do the training. And remember that in general, the more images you train with, the smarter the model will be.
+    "イメージをレンブラントとして分類する"__ 
+
+1. **VanGoghTest_01.png** と **VanGoghTest_02.png** に対して手順 1 から 3 を繰り返して、アプリがゴッホのこれらの名画をピカソやレンブラント、ポロックの絵画として識別しないことを確認します。
+
+    ![ピカソでもレンブラントでもポロックでもない](../images/app-prediction-03.png)
+
+    "ピカソでもレンブラントでもポロックでもない"__ 
+
+1. ご覧のように、アプリから Prediction API を使用すると、Custom Vision Service ポータルを使用する場合と同じくらいの信頼性が得られ、より楽しく行えます。 さらに、ポータルの予測ページに移動すると、アプリを使用してアップロードされた各イメージもそこに表示されます。
+ 
+    ![Custom Vision Service に送信されたイメージ](../images/portal-all-predictions.png)
+
+    "Custom Vision Service に送信されたイメージ"__ 
+
+ご自分のイメージを使用して、アーティストを識別したり、イメージがピカソ、レンブラント、またはポロックの作品ではないことの識別についてモデルの熟練度を自由にテストしたり、測定したりしてみましょう。 ゴッホも認識するようにトレーニングする場合は、ゴッホの絵画をいくつかアップロードして、それらに "Van Gogh" (ヴァン ゴッホ) とタグ付けして、モデルを再トレーニングします。 トレーニングの手間をいとわなければ、追加できるインテリジェンスに制限はありません。 一般的に、トレーニングするイメージが多いほどモデルはスマートになります。

@@ -1,55 +1,54 @@
-Your company has chosen Azure Cosmos DB to meet the demands of their expanding customer and product base. You have been tasked with creating the database.
+あなたの会社は、拡大する顧客および製品ベースの需要に合わせて Azure Cosmos DB を選択しました。 あなたにはデータベースを作成する仕事が課せられました。
 
-The first step is to create an Azure Cosmos DB account.
+最初の手順では、Azure Cosmos DB アカウントを作成します。 
 
-## What is an Azure Cosmos DB account?
+## <a name="what-is-an-azure-cosmos-db-account"></a>Azure Cosmos DB アカウントとは
 
-Azure Cosmos DB account is an Azure resource that acts as an organizational entity for your databases. It connects your usage to your Azure subscription for billing purposes.
+Azure Cosmos DB アカウントは、データベースの組織エンティティとして機能する Azure リソースです。 課金の目的で、使用状況が Azure サブスクリプションに接続されています。
 
-Each Azure Cosmos DB account is associated with one of the several data models Azure Cosmos DB supports, and you can create as many accounts as you need. 
+各 Azure Cosmos DB アカウントは、Azure Cosmos DB がサポートするさまざまなデータ モデルの 1 つに関連付けられており、アカウントを必要な数だけ作成できます。 
 
-SQL API is the preferred data model if you are creating a new application. If you're working with graphs or tables, or migrating your MongoDB or Cassandra data to Azure, create additional accounts and select relevant data models.
+SQL API は、新しいアプリケーションを作成する場合の優先データ モデルです。 グラフやテーブルを扱う場合や、MongoDB または Cassandra のデータを Azure に移行する場合は、追加のアカウントを作成して関連するデータ モデルを選択します。
 
-When creating an account, choose an ID that is meaningful to you; it is how you identify your account. Further, create the account in the Azure region that's closest to your users to minimize latency between the datacenter and your users.
+アカウントを作成する場合は、自分のアカウントを識別できるよう、わかりやすい ID を選択します。 また、データ センターとユーザーの間の待機時間を最小限に抑えるために、ユーザーに最も近い Azure リージョンでアカウントを作成します。
 
-You can optionally set up virtual networks and geo-redundancy during account creation, but this can also be done later. In this module we will not enable those settings.
+必要に応じて、アカウントの作成時に仮想ネットワークと geo 冗長性を設定できますが、この設定は後で行うこともできます。 このモジュールでは、これらの設定は有効にしません。
 
-## Creating an Azure Cosmos DB account in the portal
+## <a name="creating-an-azure-cosmos-db-account-in-the-portal"></a>ポータルで Azure Cosmos DB アカウントを作成する
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
-
-1. Click **Create a resource** > **Databases** > **Cosmos DB**.
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
+2. **[リソースの作成]** > **[データベース]** > **[Azure Cosmos DB]** の順にクリックします。
    
-   ![The Azure portal Databases pane](../media-draft/2-create-nosql-db-databases-json-tutorial.png)
+   ![Azure Portal の [データベース] ウィンドウ](../media/1-introduction/create-nosql-db-databases-json-tutorial-1.png)
 
-1. On the **New account** page, enter the settings for the new Azure Cosmos DB account.
+3. **[新しいアカウント]** ページで、新しい Azure Cosmos DB アカウントの設定を入力します。
  
-    Setting|Value|Description
+    Setting|値|説明
     ---|---|---
-    ID|*Enter a unique name*|Enter a unique name to identify this Azure Cosmos DB account. Because *documents.azure.com* is appended to the ID that you provide to create your URI, use a unique but identifiable ID.<br><br>The ID can contain only lowercase letters, numbers, and the hyphen (-) character, and it must contain 3 to 50 characters.
-    API|SQL|The API determines the type of account to create. Azure Cosmos DB provides five APIs to suit the needs of your application: SQL (document database), Gremlin (graph database), MongoDB (document database), Azure Table, and Cassandra, each of which currently requires a separate account. <br><br>Select **SQL** because in this module you are creating a document database that is queryable using SQL syntax and accessible with the SQL API.|
-    Subscription|*Your subscription*|Select the Azure subscription that you want to use for this Azure Cosmos DB account.
-    Resource Group|Create new<br><br>*Then enter the same unique name as provided above in ID*|Select **Create New**, and then enter a new resource-group name for your account. For simplicity, the same name can be used as your ID. 
-    Location|*Select the region closest to your users*|Select the geographic location in which to host your Azure Cosmos DB account. Use the location that's closest to your users to give them the fastest access to the data.
-    Enable geo-redundancy| Leave blank | This setting creates a replicated version of your database in a second (paired) region. Leave this blank for now, as the database can be replicated later.
-    Virtual networks|Disabled|Leave virtual networks disabled for now. This can be enabled later.
+    ID|<*一意の名前を入力*>|この Azure Cosmos DB アカウントを識別するための一意の名前を入力します。 指定した ID に *documents.azure.com* が付加されて URI が作成されるので、ID は一意であっても識別可能なものを使用してください。<br><br>ID に含めることができるのは英小文字、数字、ハイフン (-) のみ、3 文字以上で 50 文字以内にする必要があります。
+    API|SQL|API によって、作成するアカウントの種類が決まります。 Azure Cosmos DB には、アプリケーションのニーズに応じて、SQL (ドキュメント データベース)、Gremlin (グラフ データベース)、MongoDB (ドキュメント データベース)、Azure Table、および Cassandra の 5 つの API が用意されています。現時点では、それぞれ別個のアカウントが必要です。 <br><br>このモジュールでは、SQL 構文を使ってクエリを実行し、SQL API でアクセスできるドキュメント データベースを作成しているので、**[SQL]** を選びます。|
+    サブスクリプション|*該当するサブスクリプション*|この Azure Cosmos DB アカウントに使用する Azure サブスクリプションを選択します。 
+    リソース グループ|新規作成<br><br>*上記の ID で指定したものと同じ一意の名前を入力*|**[新規作成]** を選択し、アカウントの新しいリソース グループ名を入力します。 簡略化のため、ID と同じ名前を使用できます。 
+    Location|<*ユーザーに最も近いリージョンを選択*>|Azure Cosmos DB アカウントをホストする地理的な場所を選択します。 データに最も高速にアクセスできる、ユーザーに最も近い場所を使用します。
+    Geo 冗長の有効化| 空白 | この設定では、データベースのレプリケート バージョンが 2 番目 (ペア) のリージョンに作成されます。 データベースは後でレプリケートできるので、ここでは空白のままにします。 
+    仮想ネットワーク|Disabled|ここでは、仮想ネットワークを無効のままにします。 これは後で有効にすることができます。 
 
-1. Click **Create**.
+4. **[作成]** をクリックします。
 
-    ![The new account page for Azure Cosmos DB](../media-draft/2-azure-cosmos-db-create-new-account.png)
+    ![Azure Cosmos DB の新しいアカウント ページ](../media/1-introduction/azure-cosmos-db-create-new-account.png)
 
-1. The account creation takes a few minutes. Wait for the portal to display the notification that the deployment succeeded and click the notification. 
+5. アカウントの作成には数分かかります。 ポータルにデプロイ成功の通知が表示されるまで待ち、その通知をクリックします。 
 
-    ![Notification alert](../media-draft/2-azure-cosmos-db-notification.png)
+    ![通知アラート](../media/1-introduction/azure-cosmos-db-notification.png)
 
-1. In the notification window, click **Go to resource**.
+6. 通知ウィンドウで、**[リソースに移動]** をクリックします。
 
-    ![Go to resource](../media-draft/2-azure-cosmos-db-go-to-resource.png)
+    ![リソースに移動](../media/1-introduction/azure-cosmos-db-go-to-resource.png)
 
-    The portal displays the **Congratulations! Your Azure Cosmos DB account was created** page.
+    ポータルに、"**ご利用ありがとうございます。Azure Cosmos DB アカウントが作成されました**" ページが表示されるまで待機します。
 
-    ![The Azure portal Notifications pane](../media-draft/2-azure-cosmos-db-account-created.png)
+    ![Azure Portal の [通知] ウィンドウ](../media/1-introduction/azure-cosmos-db-account-created.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You have created an Azure Cosmos DB account, which is the first step in creating an Azure Cosmos DB database. You selected appropriate settings for your data types and set the account location to minimize latency for your users.
+Azure Cosmos DB データベースの作成時の最初の手順として、Azure Cosmos DB アカウントを作成しました。 データ型に対して適切な設定を選択し、ユーザーの待機時間が最小限に抑えられるようアカウントの場所を設定しました。

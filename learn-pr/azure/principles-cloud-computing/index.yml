@@ -1,36 +1,29 @@
 ### YamlMime:Module
 uid: principles-cloud-computing
 metadata:
-  title: Principles of cloud computing
-  description: Explore the core concepts of cloud computing and how it can help your business.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Principles of cloud computing
-summary: Explore the core concepts of cloud computing and how it can help your business.
-abstract:  | 
-  In this module, you will:
-  - Explore common cloud computing services
-  - Explore the benefits of cloud computing
-  - Decide which cloud deployment model is best for you
-prerequisites: None
-#TODO: Update icon URL with real image 
+  title: クラウド コンピューティングの原則
+  description: クラウド コンピューティングの概要とクラウドに移行することの利点について学習します。 基本的な用語、さまざまなデプロイ モデル、すべてのクラウド プロバイダーが提供する一般的サービスについて紹介します。
+  ms.openlocfilehash: 981fc33be83e9ca81b6f1378adb97fcbba60c430
+  ms.sourcegitcommit: 5b967802ae01d5e5985a3e6bcbdba1163ec2f6c9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "42982121"
+title: クラウド コンピューティングの原則
+summary: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
+abstract: クラウド コンピューティングの概要とクラウドに移行することの利点について学習します。 基本的な用語、さまざまなデプロイ モデル、すべてのクラウド プロバイダーが提供する一般的サービスについて紹介します。
+cardDescription: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - administrator
 - business-analyst
 - business-user
 - developer
-- solution-architect
+- solutions-architect
 products:
-- azure
-- azure-portal
-- azure-resource-manager
+- Azure
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing
@@ -39,4 +32,4 @@ units:
 - principles-cloud-computing.5-types-of-cloud-services
 - principles-cloud-computing.6-knowledge-check
 - principles-cloud-computing.7-summary
-achievement: learn.principles-cloud-computing.badge
+achievement: learn.placeholder.badge

@@ -1,33 +1,32 @@
-Once we have an idea of how we're going to store data across storage accounts, containers and blobs, we can think about the Azure resources we need to create to support the app.
+ストレージ アカウント、コンテナー、BLOB 間でデータをどのように保管するかについてアイデアが固まったら、アプリをサポートするために作成する必要がある Azure リソースについて検討することができます。
 
-### Storage accounts
+### <a name="storage-accounts"></a>ストレージ アカウント
 
-Storage account creation is an administrative/management activity that takes place prior to deploying and running your app. Accounts are usually created by a deployment or environment setup script, an Azure Resource Manager template, or manually by an administrator. Applications other than administrative tools generally should not have permissions to create storage accounts.
+ストレージ アカウントの作成は、アプリのデプロイと実行の前に、管理者またはマネージャーがあらかじめ行う作業です。 アカウントは通常、デプロイまたは環境セットアップ用のスクリプトや Azure Resource Manager テンプレートによって作成するか、管理者が手動で作成します。 通常、管理ツール以外のアプリケーションには、ストレージ アカウントを作成するアクセス許可を与えないようにします。
 
-### Containers
+### <a name="containers"></a>Containers
 
-Unlike storage account creation, container creation is a lightweight activity that makes sense to perform from within an app. It's not uncommon for apps to create and delete containers as part of their work.
+ストレージ アカウントの作成とは異なり、コンテナーの作成は、アプリ内から実行するのに適した簡単な作業です。 アプリの作業の一部としてコンテナーの作成と削除を行うことは、珍しくありません。
 
-For apps that rely on a known set of containers with hard-coded or preconfigured names, typical practice is to let the app create the containers it needs on startup or first usage if they don't already exist. Letting your app create containers instead of doing it as part of your app's deployment eliminates the need for both your application and your deployment process to know the names of the containers the app uses.
+ハードコードまたは事前に構成された名前を持つ既知のコンテナー セットに依存するアプリの場合、一般的な処理方法として、アプリを起動した時点または必要なコンテナーを初めて使用する時点でコンテナーがまだ存在していない場合は、アプリでコンテナーを作成します。 コンテナーをアプリのデプロイ過程で作成せず、アプリで作成できるようにすると、アプリケーションとデプロイ プロセスの両方について、アプリで使用するコンテナーの名前を知る必要がなくなります。
 
-## Exercise
+## <a name="exercise"></a>演習
 
-We're going to complete an unfinished ASP.NET Core app by adding code to use Azure Blob storage. This exercise is more about exploring the Blob storage API than it is about designing an organization and naming scheme, but here's a quick overview of the app and how it stores data.
+Azure Blob Storage を使用するコードを追加して、未完成の ASP.NET Core アプリを完成させます。 この演習は、組織と名前付けスキームの設計についてよりも、Blob Storage API の活用方法について学習することを目的にしていますが、アプリおよびアプリでのデータ格納方法の簡単な概要を次に示します。
 
-![Screenshot of the FileUploader web app](../media/4-fileuploader-with-files.PNG)
+![FileUploader Web アプリのスクリーンショット](../media-drafts/fileuploader-with-files.PNG)
 
-Our app works like a shared folder that accepts file uploads and makes them available for download. It doesn't use a database for organizing blobs &mdash; instead, it sanitizes the names of uploaded files and uses them as blob names directly. All uploaded files are stored in a single container.
+ここで使用するアプリは共有フォルダーのように機能し、ファイルのアップロードを受け入れて、ファイルをダウンロードできるようにします。 データベースを BLOB の整理に使用することはしません。そうではなく、アップロードされたファイルの名前をサニタイズしたうえで、BLOB 名として直接使用します。 アップロードされたすべてのファイルを単一のコンテナーに格納します。
 
-The code we'll start with compiles and runs, but the parts responsible for storing and loading data are empty. After we complete the code, we'll deploy the app to Azure App Service and test it.
+最初のコードはコンパイルされて実行されますが、データの格納と読み込みに関する部分は空です。 コードが完了したら、アプリを Azure App Service にデプロイし、テストします。
 
-Let's set up the storage infrastructure for our app.
+アプリのストレージ インフラストラクチャを設定してみましょう。
 
-### Resource group and storage account
-<!---TODO: Update for sandbox?--->
+### <a name="resource-group-and-storage-account"></a>リソース グループとストレージ アカウント
 
-First, we'll create a resource group to contain all the resources In this unit. We'll delete it at the end to cleanup everything we create. We'll also create the storage account our app will use to store blobs.
+この演習に含まれるすべてのリソースを格納するために、リソース グループを作成します。 最後にそれを削除して、作成したすべてのものをクリーンアップします。 また、BLOB を格納するためにアプリで使用するストレージ アカウントを作成します。
 
-Use the Azure Cloud Shell terminal to create the resource group and storage account by running the following Azure CLI commands. You'll need to provide a unique name for the storage account &mdash; make a note of it for later. The choice of `eastus` for the location is arbitrary.
+Azure Cloud Shell 端末を使用してリソース グループとストレージ アカウントを作成します。そのためには、次の Azure CLI コマンドを実行します。 ストレージ アカウントには一意の名前を付ける必要があります。後で必要になるため、名前をメモしておいてください。 場所に `eastus` を選択することは任意です。
 
 ```console
 az group create --name blob-exercise-group --location eastus
@@ -35,8 +34,8 @@ az storage account create --name <your-unique-storage-account-name> --resource-g
 ```
 
 > [!NOTE]
-> Why `--kind StorageV2`? There are a few different kinds of storage accounts. For most scenarios, you should use general-purpose v2 accounts. The only reason you need to explicitly specify `--kind StorageV2` is that general-purpose v2 accounts are still fairly new and have not yet been made the default in the Azure Portal or the Azure CLI.
+> なぜ `--kind StorageV2` なのか ストレージ アカウントにはいくつかの異なる種類があります。 ほとんどのシナリオでは、汎用 v2 アカウントを使用する必要があります。 `--kind StorageV2` を明示的に指定する必要がある唯一の理由は、汎用 v2 アカウントはかなり新しく、まだ Azure Portal または Azure CLI で既定となっていないためです。
 
-### Container
+### <a name="container"></a>コンテナー
 
-The app we'll be working with in this module uses a single container. We're going to follow the best practice of letting the app create the container at startup. However, container creation can be done from the Azure CLI: run `az storage container create -h` in the Cloud Shell terminal if you'd like to see the documentation.
+このモジュールで操作するアプリでは、単一のコンテナーを使用しています。 ベスト プラクティスに従い、起動時にアプリでコンテナーを作成できるようにします。 ただし、コンテナーの作成は Azure CLI から行うこともできます。マニュアルを表示するには、Cloud Shell 端末で「`az storage container create -h`」を実行します。

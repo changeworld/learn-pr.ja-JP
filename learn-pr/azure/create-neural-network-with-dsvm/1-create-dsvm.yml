@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.1-create-dsvm
-title: Create an Ubuntu Data Science VM
+title: Ubuntu Data Science VM の作成
 metadata:
-  title: Create an Ubuntu Data Science VM
-  description: Create an Ubuntu Data Science VM
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: Ubuntu Data Science VM の作成
+  description: Ubuntu Data Science VM の作成
+  ms.openlocfilehash: 5cae126517c9a068b74e7ba7b5a8ad46811ccf36
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43229163"
 durationInMinutes: 10
-content: |
-  [!include[](includes/1-create-dsvm.md)]
+content: '[!include[](includes/1-create-dsvm.md)]'

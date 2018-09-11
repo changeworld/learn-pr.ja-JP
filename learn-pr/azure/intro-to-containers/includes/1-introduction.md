@@ -1,23 +1,23 @@
-Containers are a modern way of delivering applications and compute processes. When using containers, applications and all dependencies are packaged into what is known as a *container image*. Container images are super portable when using a container image registry. You can create a container image on your development system, then run an instance of that image in an Azure datacenter and have confidence that it will work without additional modification.
+コンテナーはアプリケーションと計算プロセスを配信する最新の方法です。 コンテナーを使用する場合、アプリケーションとすべての依存関係がいわゆる*コンテナー イメージ*にパッケージ化されます。 コンテナー イメージは、コンテナー イメージ レジストリを使用することで、移植性に優れています。 コンテナー イメージをご利用の開発システム上で作成し、次にそのイメージのインスタンスを Azure データ センター内で実行することができます。追加の変更を加えなくてもそれは動作するようになります。
 
-## Container efficiencies
+## <a name="container-efficiencies"></a>コンテナーの効率性
 
-Containers and container images are built in such a way that they efficiently use host resources, such as disk space, memory, and CPU. Due to these efficiencies, containers start quickly. In some cases, starting a new instance of a container is almost instantaneous. This not only allows for quick provisioning of applications, it also allows for a new model of on-demand processing and scale operations.
+コンテナーとコンテナー イメージは、ディスク領域、メモリ、CPU などのホスト リソースが効率的に使用されるように構築されます。 このような効率性により、コンテナーはすぐに起動します。 場合によっては、コンテナーの新しいインスタンスはほぼ瞬時に起動します。 これにより、アプリケーションの迅速なプロビジョニングが可能になるだけでなく、オンデマンド処理およびスケーリング操作の新しいモデルも可能になります。
 
-Envision this scenario: You run a batch processing service that occasionally sees a large spike in demand. Using containers, you can build a system that reacts to increased demand by quickly provisioning new container instances to meet the increased demand. That's powerful and not easy to achieve with traditional virtual machines.
+このシナリオの想定: 需要の急増が確認される場合があるバッチ処理サービスを実行しています。 コンテナーを使用すれば、需要の増大に対応する新しいコンテナー インスタンスを迅速にプロビジョニングすることによって需要の増大に応答するシステムを構築することができます。 それは強力なシステムですが、従来の仮想マシンを使用して実現するのは容易ではありません。
 
-In addition to their fast start, containers also allow you to achieve "hyper density". This effectively means that you can run more applications and processes with less virtual or physical resources.
+コンテナーを使用すれば、起動の高速化に加えて、"ハイパー密度" を実現することができます。 これは、事実上、より少ない仮想リソースまたは物理リソースによって、より多くのアプリケーションおよびプロセスを実行できることを意味します。
 
-## Use cases
+## <a name="use-cases"></a>ユース ケース
 
-While containers are a great platform for running traditional workload like webservers, they also help open opportunities, such as burstable batch processing, applications built with a modern and distributed architecture, and anything that requires on-demand scale.
+コンテナーは Web サーバーのような従来のワークロードを実行するのに適したプラットフォームであると同時に、負荷の急増に対応できるバッチ処理、最新の分散アーキテクチャでビルドされたアプリケーション、オンデマンド スケーリングを必要とする任意のものなど、機会を開くのにも役立ちます。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Prepare a local container development environment.
-- Learn basic Docker operations.
-- Run, list, and delete containers.
-- Create a custom container images.
-- Push container images to a public container registry and run containers from these images.
+- ローカル コンテナー開発環境を準備します。
+- Docker の基本的な操作を学習します。
+- コンテナーを実行、一覧表示、削除します。
+- カスタム コンテナー イメージを作成します。
+- コンテナー イメージをパブリック コンテナー レジストリにプッシュし、それらのイメージからコンテナーを実行します。

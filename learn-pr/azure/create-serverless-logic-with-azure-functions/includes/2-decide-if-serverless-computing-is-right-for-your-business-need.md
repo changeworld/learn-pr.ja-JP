@@ -1,43 +1,45 @@
-To help decide whether serverless computing is right for you, let's first learn what serverless is all about.
+サーバーレス コンピューティングが自社に適しているかどうかを容易に判断できるように、まずサーバーレスとはどのようなものかを説明します。
 
-## What is serverless compute?
+## <a name="what-is-serverless-compute"></a>サーバーレス コンピューティングとは
 
-Serverless compute can be thought of as a function as a service (FaaS), or a microservice that is hosted on a cloud platform. Your business logic runs as functions and you don't have to manually provision or scale infrastructure. The cloud provider manages infrastructure. Your app is automatically scaled out or down depending on load. Azure has several ways to build this sort of architecture. The two most common approaches are Azure Logic Apps and Azure Functions, which we focus on in this module.
+サーバーレス コンピューティングは、Function as a Service (FaaS)、またはクラウド プラットフォーム上でホストされるマイクロサービスと考えることができます。 ご利用のビジネス ロジックは関数として実行され、インフラストラクチャのプロビジョニングまたはスケーリングを手動で行う必要はありません。 インフラストラクチャはクラウド プロバイダーによって管理されます。 ご利用のアプリは、負荷に応じて自動的にスケール アウトまたはスケール ダウンされます。 Azure には、この種のアーキテクチャを構築するための方法がいくつか用意されています。 最も一般的な方法として、このモジュールで取り上げる Azure Logic Apps と Azure Functions の 2 つが挙げられます。
 
-## What is Azure Functions?
+## <a name="what-is-azure-functions"></a>Azure Functions とは
 
-Azure Functions is a serverless application platform. It allows developers to host business logic that can be executed without provisioning infrastructure. Functions provides intrinsic scalability and you are charged only for the resources used. You can write your function code in the language of your choice, including C#, F#, and JavaScript. Support for NuGet and NPM is also included, so you can use popular libraries in your business logic.
+Azure Functions はサーバーレス アプリケーション プラットフォームです。 これにより、開発者はインフラストラクチャをプロビジョニングすることなく実行できるビジネス ロジックをホストできます。 Functions では、組み込みのスケーラビリティが提供され、使用されているリソースに対してのみ料金が請求されます。 C#、F#、JavaScript など、好みの言語で関数コードを記述することができます。 NuGet および NPM のサポートも含まれているので、ビジネス ロジック内で一般的なライブラリを使用することができます。
 
-## Benefits of a serverless compute solution
+## <a name="benefits-of-a-serverless-compute-solution"></a>サーバーレス コンピューティング ソリューションの利点
 
-Serverless compute is a great option for hosting business logic code in the cloud. With serverless offerings such as Azure Functions, you can write your business logic in the language of your choice. You get automatic scaling, you have no servers to manage, and you are charged based on what is used — not on reserved time. Here are some additional characteristics of a serverless solution for you to consider.
+サーバーレス コンピューティングは、クラウドでビジネス ロジックのコードをホストする場合に適したオプションです。 Azure Functions などサーバーレス サービスを使用すると、好みの言語でビジネス ロジックを記述できます。 スケーリングが自動的に行われます。管理対象のサーバーはありません。予約された時間ではなく、使用されているものに基づいて課金されます。 サーバーレス ソリューションには、他にも検討すべき特性がいくつかあります。
 
-### Avoids over-allocation of infrastructure
+### <a name="avoids-over-allocation-of-infrastructure"></a>インフラストラクチャの割り当て超過を回避する
 
-Suppose you've provisioned VM servers and configured them with enough resources to handle your peak load times. When the load is light, you are potentially paying for infrastructure you're not using. Serverless computing helps solve the allocation problem by scaling up or down automatically, and you're only billed when your function is processing work.
+VM サーバーをプロビジョニングし、このサーバーに、ピーク負荷に対応するために十分なリソースを構成したとします。 負荷が小さい場合、使用していないインフラストラクチャに対しても課金される可能性があります。 サーバーレス コンピューティングでは、自動的なスケール アップまたはスケール ダウンにより割り当ての問題を容易に解決することができ、ご利用の機能で作業が処理されているときのみ課金されます。
 
-### Stateless logic
+### <a name="stateless-logic"></a>ステートレスなロジック
 
-Stateless functions are great candidates for serverless compute; function instances are created and destroyed on demand. If state is required, it can be stored in an associated storage service.
+ステートレスな関数は、サーバーレス コンピューティングの有力候補です。関数のインスタンスがオンデマンドで作成され、破棄されます。 状態が必要な場合は、関連付けられているストレージ サービスに格納できます。
 
-### Event driven
+### <a name="event-driven"></a>イベント ドリブン
 
-Functions are _event driven_. This means they run only in response to an event (called a "trigger"), such as receiving an HTTP request, or a message being added to a queue. You configure a trigger as part of the function definition. This approach simplifies your code by allowing you to declare where the data comes from (trigger/input binding) and where it goes (output binding). You don't need to write code to watch queues, blobs, hubs, etc. You can focus purely on the business logic.
+Functions は_イベント ドリブン_です。 つまり、HTTP 要求やキューに追加されているメッセージの受信などのイベント ("トリガー" と呼ばれる) への応答でのみ実行されます。 トリガーは関数定義の一部として構成します。 この方法では、データの取得元 (トリガー/入力バインディング) およびデータの送信先 (出力バインディング) を宣言できるようになるため、コードが大幅に簡略化されます。 キュー、BLOB、ハブなどを監視するコードを記述する必要はありません。純粋にビジネス ロジックに専念できます。
 
-### Functions can be used in traditional compute environments
+### <a name="functions-can-be-used-in-traditional-compute-environments"></a>Functions は従来のコンピューティング環境で使用できます。
 
-Functions are a key component of serverless computing, but they are also a general compute platform for executing any type of code. Should the needs of your app change, you can take your project and deploy it in a non-serverless environment, which gives you the flexibility to manage scaling, run on virtual networks, and even completely isolate your functions.
+Functions は、サーバーレス コンピューティングの重要なコンポーネントですが、任意の種類のコードを実行するための一般的なコンピューティング プラットフォームでもあります。 ご利用のアプリのニーズに変化が生じた場合は、そのプロジェクトを取得し、それを非サーバーレス環境にデプロイすることができます。そうすることで、スケーリングの管理、仮想ネットワーク上での実行、さらに自分の関数の完全な分離を柔軟に行うことができます。
 
-## Drawbacks of a serverless compute solution
+## <a name="drawbacks-of-a-serverless-compute-solution"></a>サーバーレス コンピューティング ソリューションの欠点
 
-Serverless compute will not always be the appropriate solution to hosting your business logic. Here are a few characteristics of functions that may affect your decision to host your services in serverless compute.
+サーバーレス コンピューティングのソリューションはビジネス ロジックのホスティングに常に適しているわけではありません。 サーバーレス コンピューティングでご利用のサービスをホストするための決定に影響を与える可能性がある Functions の特性をいくつか示します。 
 
-### Execution time
+### <a name="execution-time"></a>実行時間
 
-By default, functions have a timeout of 5 minutes. This timeout is configurable to a maximum of 10 minutes. If your function requires more than 10 minutes to execute, you can host it on a VM. Additionally, if your service is initiated through an HTTP request and you expect that value as an HTTP response, the timeout is further restricted to 2.5 minutes. Finally, there's also an option called **Durable Functions** that allows you to orchestrate the executions of multiple functions without any timeout.
+既定では、Functions に 5 分のタイムアウトが設定されています。 このタイムアウトは、最大 10 分に設定することができます。 実行に 10 分以上必要な関数は、VM 上でホストすることができます。 さらに、サービスが HTTP 要求を介して開始され、その値を HTTP 応答として求める場合は、タイムアウトが 2.5 分にまで制限されます。 最後に、**Durable Functions** と呼ばれるオプションもあります。これを使用すると、タイムアウトなしで複数の関数の実行を調整することができます。
 
-### Execution frequency
+### <a name="execution-frequency"></a>実行頻度
 
-The second characteristic is execution frequency. If you expect your function to be executed continuously by multiple clients, it would be prudent to estimate the usage and calculate the cost of using functions accordingly. It might be cheaper to host your service on a VM.
+2 番目の特性は、実行頻度です。 ご利用の関数が複数のクライアントによって継続的に実行されることが想定される場合は、必要に応じて使用量を見積もり、Functions を使用するコストを計算することをお勧めします。 ご利用のサービスを VM 上でホストする方が安くなる可能性もあります。
 
-While scaling, only one function app instance can be created every 10 seconds, for up to 200 total instances. Keep in mind, each instance can service multiple concurrent executions, so there is no set limit on how much traffic a single instance can handle. Different types of triggers have different scaling requirements, so research your choice of trigger and investigate its limits.
+スケーリング中には、10 秒ごとに関数アプリ インスタンスを 1 つだけ作成でき、合計では最大 200 個のインスタンスを作成できます。 各インスタンスでは複数の同時実行を提供できるため、1 つのインスタンスで処理できるトラフィックには制限がないことに留意してください。 トリガーの種類が異なれば、スケーリング要件も異なるため、選択したトリガーとその制限を確認してください。
+
+

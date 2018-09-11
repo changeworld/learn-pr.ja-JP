@@ -1,19 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.1-create-web-app-in-blob-storage
-title: Create a web app in Azure Blob storage
+title: Azure Blob Storage で Web アプリを作成する
 metadata:
-  title: Create a web app in Azure Blob storage
-  description: Create a web app in Azure Blob storage
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 20
-# TODO: Consider Azure Portal Interactivity. This module uses both Cloud Shell and the portal, which should be able to be accessed together with azure-portal.
-# interactive: azure-portal
+  title: Azure Blob Storage で Web アプリを作成する
+  description: Azure Blob Storage で Web アプリを作成する
+  ms.openlocfilehash: 072f00b7a51ef6dc3a38fdd9089b43c96a9539ae
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154203"
+durationInMinutes: 10
 interactive: bash-editor
-azureSandbox: true
-content: |
-  [!include[](includes/1-create-web-app-in-blob-storage.md)]
+content: '[!include[](includes/1-create-web-app-in-blob-storage.md)]'

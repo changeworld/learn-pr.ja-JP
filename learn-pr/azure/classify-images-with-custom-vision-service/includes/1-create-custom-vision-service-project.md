@@ -1,19 +1,27 @@
-The first step in building an image-classification model with the Custom Vision Service is to create a project. In this unit, you will use the Custom Vision Service portal to create a Custom Vision Service project.
+### <a name="exercise-1-create-a-custom-vision-service-project"></a>演習 1: Custom Vision Service プロジェクトを作成する
 
-1. Open the [Custom Vision Service portal](https://www.customvision.ai/) in your browser. Then click **Sign In**.
+Custom Vision Service で画像分類モデルを構築するための最初のステップは、プロジェクトを作成することです。 この演習では、Custom Vision Service ポータルを使用して Custom Vision Service プロジェクトを作成します。
 
-    ![Signing in to the Custom Vision Service portal](../media/1-portal-sign-in.png)
+1. ブラウザーで [Custom Vision Service ポータル](https://www.customvision.ai/)を開きます。 **[サインイン]** をクリックします。 
+ 
+    ![Custom Vision Service ポータルにサインインする](../images/portal-sign-in.png)
 
-1. If you are asked to sign in, do so using the credentials for your Microsoft account. If you are asked to let this app access your info, click **Yes**, and if prompted, agree to the terms of service.
+    "Custom Vision Service ポータルにサインインする"__
 
-1. Click **New Project** to create a new project.
+1. サインインを求められたら、Microsoft アカウントの資格情報を使用してサインインします。 このアプリにユーザー情報へのアクセスを許可するように求められたら、**[はい]** をクリックし、プロンプトが表示されたらサービス使用条件に同意します。
 
-    ![Creating a Custom Vision Service project](../media/1-portal-click-new-project.png)
+1. **[新しいプロジェクト]** をクリックして新しいプロジェクトを作成します。
+  
+    ![Custom Vision Service プロジェクトを作成する](../images/portal-click-new-project.png)
 
-1. In the "New project" dialog, name the project "Artworks," ensure that **General** is selected as the domain, and click **Create project**.
+    "Custom Vision Service プロジェクトを作成する"__
 
-    > A domain optimizes a model for specific types of images. For example, if your goal is to classify food images by the types of food they contain or the ethnicity of the dishes, then it might be helpful to select the Food domain. For scenarios that don't match any of the offered domains, or if you are unsure of which domain to choose, select the General domain.
+1. [新しいプロジェクト] ダイアログで、プロジェクトに "Artworks" と名前を付け、ドメインとして **[全般]** が選択されていることを確認して、**[プロジェクトの作成]** をクリックします。
 
-   ![Creating a Custom Vision Service project](../media/1-portal-create-project.png)
+    > ドメインは、指定した種類の画像に合わせてモデルを最適化しています。 たとえば、含まれている食品の種類別または料理の民族性別に食品の画像を分類することが目標の場合は、[食料] ドメインを選択すると便利です。 提供されているどのドメインとも一致しないシナリオの場合、または選択するドメインがわからない場合は、[全般] ドメインを選択します。
 
-The next step is to upload images to the project and assign tags to those images to classify them.
+    ![Custom Vision Service プロジェクトを作成する](../images/portal-create-project.png)
+
+    "Custom Vision Service プロジェクトを作成する"__
+
+次の手順は、プロジェクトに画像をアップロードし、それらの画像にタグを割り当てて分類することです。

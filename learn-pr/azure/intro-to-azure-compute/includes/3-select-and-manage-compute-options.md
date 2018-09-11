@@ -1,37 +1,37 @@
-Now that you've been introduced to the Azure compute services available, let's look at each in turn to help you decide when to use each service.
+利用できる Azure コンピューティング サービスの概要がわかったので、各サービスをどのようなときに使用すればよいか決められるように各サービスを順番に見ていきましょう。
 
-## Azure virtual machines
+## <a name="azure-virtual-machines"></a>Azure Virtual Machines
 
-When full control over the operating system and environment is required, virtual machines are an ideal choice. You're able to customize all of the software running on the VM, just like a physical computer. This is ideal when running custom software or custom hosting configurations.
+オペレーティング システムと環境を完全に制御する必要がある場合は、Virtual Machines が理想的な選択肢です。 物理コンピューターと同じように、VM で実行されているすべてのソフトウェアをカスタマイズすることができます。 これは、カスタム ソフトウェアまたはカスタム ホスト構成を実行するときに適しています。
 
-VMs are also an excellent choice when moving from a physical server to the cloud. You can often create an image of the physical server and host it within a virtual machine. This gives you complete freedom to choose operating systems and application execution environments, meaning you can develop in almost any language that uses the tools of your choice.
+物理サーバーからクラウドに移行するときも、VM が優れた選択肢です。 多くの場合、物理サーバーのイメージを作成し、仮想マシン内でそれをホストできます。 これにより、オペレーティング システムとアプリケーション実行環境を完全に自由に選択でき、好みのツールを使用するほぼすべての言語で開発することができます。
 
-However, you'll be required to maintain the virtual machine. This means updating the operating system and the software it runs. 
+ただし、仮想マシンを維持する必要があります。 これは、オペレーティング システムとそこで実行されているソフトウェアを更新することを意味します。 
 
-It also requires more consideration when scaling. You can scale up the virtual machine, meaning you can add more compute and memory resources. But if you need to run multiple instances in parallel, you may need to add additional services, such as load balancers.
+また、スケーリングするときもいっそうの考慮が必要です。 仮想マシンをスケールアップできます。つまり、コンピューティング リソースとメモリ リソースを追加できます。 ただし、複数のインスタンスを並列で実行する必要がある場合は、ロード バランサーのようなサービスを追加する必要がある場合があります。
 
-Imagine you're running a website that hosts a retail website. If you duplicated the VM, you'd need an additional service to route requests between multiple instances of the website VM.
+あなたは、小売り Web サイトをホストする Web サイトを実行しているとします。 VM を複製した場合、複数の Web サイト VM インスタンス間で要求をルーティングするサービスを追加する必要があります。
 
-There are also advanced virtual machine services available in Azure:
+Azure では高度な仮想マシン サービスも利用できます。
 
-- For running consistently available instances of the same app, or sets of apps, on similarly configured VMs, use the **Virtual Machine Scale Sets** option. It automatically generates thousands of identical VMs loaded with your application in minutes, so your users never have to wait. And, since you don't have to pre-provision virtual machines, you use only the compute resources your application needs at any time.
+* 同じように構成された VM で同じアプリまたはアプリ セットの常に使用可能なインスタンスを実行する場合は、**Virtual Machine Scale Sets** オプションを使用します。 何千もの同一の VM が自動的に生成されてアプリケーションが分単位で読み込まれるので、ユーザーは待つ必要がありません。 また、仮想マシンを事前にプロビジョニングする必要がないため、いつでもアプリケーションで必要なコンピューティング リソースだけが使用されます。
 
-- There may be situations in which you need raw computing power or supercomputer level compute power. The **Batch** option provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs. You can even specify VMs with supercomputer capabilities.
+* 手が加えられていないコンピューティング能力またはスーパーコンピューター レベルのコンピューティング パワーが必要な場合があります。 **Batch** オプションでは、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。 スーパーコンピューターの機能を備えた VM を指定することさえできます。
 
-## Azure containers
+## <a name="azure-containers"></a>Azure コンテナー
 
-Containers are an excellent choice if you wish to run multiple instances of an application on a single virtual machine. The container orchestrator can start, stop, and scale out application instances as needed.
+単一の仮想マシンでアプリケーションの複数のインスタンスを実行したい場合は、コンテナーが優れた選択肢です。 コンテナー オーケストレーターで、必要に応じてアプリケーション インスタンスを開始、停止、スケールアウトできます。
 
-However, containers are commonly used to create solutions using a microservice architecture. Containers are often used to break solutions into smaller pieces. For example, you may split a website into a container hosting your front end, another hosting your back end, and a third for storage. This allows you to separate portions of your app into logical sections that can be maintained, scaled, or updated independently.
+ただし、コンテナーがよく使用されるのは、マイクロサービス アーキテクチャを使用してソリューションを作成する場合です。 ソリューションを小さな部分に分割するためにコンテナーを使用することがよくあります。 たとえば、1 つの Web サイトを、フロントエンドをホストするコンテナー、バックエンドをホストするコンテナー、ストレージ用の 3 つ目のコンテナーに分割できます。 これにより、独立して維持、スケーリング、更新できる論理的なセクションに、アプリの部分を分離することができます。
 
-Imagine your website back end has reached capacity but the front end and storage aren't being stressed. You could scale the back end separately to improve performance. Or you could decide to use a different storage service. Or you could replace the storage container without affecting the rest of the application.
+Web サイトのバックエンドは容量に達したけれども、フロントエンドとストレージはまだ余裕がある場合を想像してください。 バックエンドを個別にスケーリングして、パフォーマンスを向上させることができます。 または、別のストレージ サービスを使用することもできます。 または、アプリケーションの他の部分に影響を与えずに、ストレージ コンテナーを置き換えることができます。
 
- If your team is comfortable with using Kubernetes container orchestration, consider the **Azure Kubernetes Service (AKS)** option. It simplifies and automates the management, deployment, and operations of Kubernetes orchestration.
+ チームが Kubernetes コンテナー オーケストレーションを使い慣れている場合は、**Azure Kubernetes Service (AKS)** オプションを検討します。 Kubernetes オーケストレーションの管理、展開、操作が簡素化および自動化されます。
 
-## Azure functions
+## <a name="azure-functions"></a>Azure Functions
 
-Azure functions are ideal when you're concerned only about the code running your service, and not the underlying platform or infrastructure. They're commonly used when you need to perform work in response to an event, often via a REST request, timer, or message from another Azure service and when that work can be completed quickly, within seconds or less.
+サービスを実行しているコードのみに関心があり、基になるプラットフォームやインフラストラクチャには関心がない場合は、Azure Functions が最適です。 REST 要求、タイマー、または別の Azure サービスからのメッセージによるイベントに応答して処理を実行する必要があり、数秒以内にすばやく処理を完了できる場合に、よく使用されます。
 
-Azure functions scale automatically, so they're an excellent choice when demand is variable, and you're charged only when a function is triggered. For example, you may be receiving messages from an IoT solution used to monitor a fleet of delivery vehicles. You'll likely have more data arriving during business hours.
+Azure Functions は自動的にスケーリングされるので、需要が変化する場合に優れた選択肢であり、関数がトリガーされたときにのみ課金されます。 たとえば、配送車群を監視するために使用されている IoT ソリューションからのメッセージを受信するような場合があります。 業務時間中は受信データが増える可能性があります。
 
-Azure functions are stateless; they behave as if they're restarted every time they respond to an event. This is ideal for processing incoming data. And if state is required, they can be connected to an Azure storage service.
+Azure Functions はステートレスであり、イベントに応答するたびに再起動されたかのように動作します。 これは、受信データを処理するために最適です。 状態が必要な場合は、Azure ストレージ サービスに接続できます。

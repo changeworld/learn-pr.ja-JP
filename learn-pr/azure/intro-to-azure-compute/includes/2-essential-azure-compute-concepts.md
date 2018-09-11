@@ -1,49 +1,48 @@
-Your research team needs to perform computationally intense data processing and doesn't have the equipment to do the work. They've decided to use Azure to do the data analysis.
+ある研究チームは、計算量の多いデータ処理を実行する必要がありますが、作業を行うための機器を持っていません。 チームは Azure を使用してデータ分析を行うことにしました。
 
-## What is Azure compute?
-Azure compute is an on-demand computing resource service for running cloud-based applications. It provides computing resources like multi-core processors and supercomputers via virtual machines and containers. It also provides serverless computing to enable running apps without requiring infrastructure setup or configuration. The resources are available on-demand and can typically be created in minutes or even seconds. You pay only for the resources you use and only for as long as you're using them.
+## <a name="what-is-azure-compute"></a>Azure コンピューティングとは
+Azure コンピューティングとは、クラウド ベースのアプリケーションを実行するためのオンデマンド コンピューティング リソース サービスです。 仮想マシンとコンテナーを使用して、マルチコア プロセッサやスーパーコンピューターなどのコンピューティング リソースを提供します。 また、インフラストラクチャのセットアップや構成を必要とせずにアプリを実行できるようにする、サーバーレス コンピューティングも提供します。 オンデマンドでリソースを利用でき、通常は分単位で、場合によっては秒単位でさえ作成することができます。 使用したリソースに対してのみ、それらを使用している期間についてだけ、課金されます。
 
-There are three common techniques for performing compute in Azure:
+Azure でコンピューティングを実行するには、3 つの一般的な手法があります。
+1. 仮想マシン
+1. Containers
+1. サーバーレス コンピューティング
 
-- Virtual machines
-- Containers
-- Serverless computing
+## <a name="what-are-virtual-machines"></a>仮想マシンとは
 
-## What are virtual machines?
+**仮想マシン (VM)** とは、物理コンピューターのソフトウェア エミュレーションです。 仮想プロセッサ、メモリ、ストレージ、およびネットワーク リソースが含まれます。 オペレーティング システムをホストし、物理コンピューターと同じようにソフトウェアをインストールして実行できます。 リモート デスクトップ クライアントを使用することにより、物理端末の前に座っているのと同じように、仮想マシンを使用および制御できます。
 
-A **virtual machine (VM)** is a software emulation of a physical computer. They include a virtual processor, memory, storage, and networking resources. They host an operating system, and you're able to install and run software just like a physical computer. And by using a remote desktop client, you can use and control the virtual machine as if you were sitting in front of a physical terminal.
+### <a name="virtual-machines-in-azure"></a>Azure での仮想マシン
 
-### Virtual machines in Azure
+仮想マシンを Azure で作成したり、ホストしたりすることができます。 通常、事前構成済みの仮想マシン イメージを選択すると、数分で新しい仮想マシンを作成してプロビジョニングできます。
 
-Virtual machines can be created and hosted in Azure. New virtual machines can typically be created and provisioned in minutes by selecting a pre-configured virtual machine image.
+イメージの選択は、VM を作成するときに行う必要がある最も重要な決定事項の 1 つです。 イメージとは、仮想マシンの作成に使用するテンプレートです。 これらのテンプレートには、オペレーティング システム (OS) と、多くの場合は開発ツールや Web ホスティング環境などの他のソフトウェアが、既に含まれています。
 
-Selecting an image is one of the most important decisions you'll need to make when creating a VM. An image is a template used to create a virtual machine. These templates already include an operating system (OS) and often other software, such as development tools or web hosting environments.
+## <a name="what-are-containers"></a>コンテナーとは
 
-## What are containers?
+コンテナーは仮想化環境ですが、仮想マシンとは異なりオペレーティング システムを含みません。 代わりに、コンテナーを実行しているホスト環境のオペレーティング システムを参照します。 たとえば、特定の Linux カーネルを使用するサーバーで 5 つのコンテナーを実行すると、5 つのコンテナーすべてがその同じカーネルで実行されます。 
 
-Containers are a virtualization environment but, unlike a virtual machine, they do not include an operating system. Instead, they reference the operating system of the host environment that runs the container. For example, if five containers are running on a server with a specific Linux kernel, all five containers are running on that same kernel.
+VM 上で直接実行されるアプリケーションとコンテナーとして実行されるアプリケーションを比較した図を以下に示します。
 
-The following illustration show a comparison between applications running directly on a VM and applications running inside containers on a VM.
+![VM 上で直接実行されるアプリとコンテナーとの比較](../media/vm-versus-containers.png)
 
-![An illustration showing how the operating system is a part of the virtual machine and not part of the container.](../media/2-vm-versus-containers.png)
+通常、コンテナーにはユーザーが作成したアプリケーションが含まれ、ホスト環境のカーネルでそのアプリケーションを実行するために必要なすべてのライブラリが含まれます。 
 
-Containers typically contain an application that you write and will include any libraries required for your application to run on the host environment's kernel. 
+コンテナーは軽量になるように意図され、環境や需要の変化に応じて動的に作成、スケールアウト、停止されるように設計されています。
 
-Containers are meant to be lightweight and are designed to be created, scaled out, and stopped dynamically. This allows you to respond to changes in demand and quickly restart in case of a crash or hardware interruption. 
+コンテナーを使用する利点は、複数の独立したアプリケーションを仮想マシンで実行できることです。 コンテナー自体がセキュリティで保護されて分離されているので、異なるワークロードごとに VM を分ける必要は必ずしもありません。
 
-A benefit of using containers is the ability to run multiple isolated applications on a virtual machine. Since containers themselves are secured and isolated, you don't necessarily need separate VMs for separate workloads.
+Azure では、Docker コンテナーと、それらのコンテナーを管理するための複数の方法がサポートされています。 手動で、または Azure Kubernetes Service などの Azure サービスで、コンテナーを管理できます。
 
-Azure supports Docker containers and several ways to manage those containers. Containers can be managed manually or with Azure services such as Azure Kubernetes Service.
+### <a name="what-is-serverless-computing"></a>サーバーレス コンピューティングとは
 
-### What is serverless computing?
+サーバーレス コンピューティングとは、ユーザーのコードを実行するクラウドでホストされた実行環境ですが、基になるホスティング環境が完全に抽象化されています。 サービスのインスタンスを作成して、コードを追加します。インフラストラクチャの構成やメンテナンスは必要はありませんが、許可されていることもあります。
 
-Serverless computing is a cloud-hosted execution environment that runs your code but completely abstracts the underlying hosting environment. You create an instance of the service, and you add your code; no infrastructure configuration or maintenance is required, or even allowed.
+_イベント_ に応答するようにサーバーレス アプリを構成します。 REST エンドポイント、定期的なタイマー、別の Azure サービスから受信したメッセージなどのイベントがあります。 イベントでトリガーされた場合にのみ、サーバーレス アプリが実行されます。
 
-You configure your serverless apps to respond to _events_. This could be a REST endpoint, a periodic timer, or even a message received from another Azure service. The serverless app runs only when it's triggered by an event.
+ユーザーにはインフラストラクチャに関する責任はありません。 スケーリングとパフォーマンスは自動的に処理され、使用した正確なリソースに対してのみ課金されます。 容量を予約する必要すらありません。
 
-Infrastructure isn't your responsibility. Scaling and performance are handled automatically, and you are billed only for the exact resources you use. There's no need to even reserve capacity.
+Azure には、サーバーレス コンピューティングの 2 つの実装があります。 
 
-Azure has two implementations of serverless compute: 
-
-- **Azure Functions** which can execute code in almost any modern language
-- **Azure Logic Apps** which are designed in a web-based designer and can execute logic triggered by Azure services without writing any code.
+1. **Azure Functions**: ほぼすべての最新の言語でコードを実行できます。
+2. **Azure Logic Apps**: Web ベースのデザイナーで設計されており、コードを記述せずに Azure サービスによってトリガーされるロジックを実行できます。

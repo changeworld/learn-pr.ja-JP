@@ -1,0 +1,38 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: ID 管理
+metadata:
+  title: ID 管理
+  description: このユニットでは、ご利用の ID を保護する方法について説明します。
+  ms.openlocfilehash: 1e3cd562e2ce99c59c47a23f789c0ab95a755d6f
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366818"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: 知識チェック - ID 管理
+  questions:
+  - content: 次のうち、多要素認証の要素とならないものはどれですか?
+    choices:
+    - content: モバイル デバイスのサムプリント スキャナー
+      isCorrect: false
+    - content: Azure Authenticator アプリケーションで生成されたトークン
+      isCorrect: false
+    - content: パスワード
+      isCorrect: false
+    - content: ご自分の靴のサイズ
+      isCorrect: true
+  - content: 次のうち、SSO による利点ではないのはどれですか?
+    choices:
+    - content: ユーザーへのアクセス許可の割り当てが複雑になる
+      isCorrect: true
+    - content: ユーザーが記憶すべき ID とパスワードの数が減る
+      isCorrect: false
+    - content: ユーザーのロールが変わったときや組織を離れるときの管理作業が減る
+      isCorrect: false
+    - content: すべてのアプリケーションのパスワード ポリシーが一貫性のあるものになる
+      isCorrect: false

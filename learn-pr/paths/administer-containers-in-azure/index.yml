@@ -1,27 +1,25 @@
 ### YamlMime:LearningPath
 uid: learn.administer-containers-in-azure
-metadata:
-  title: Administer containers in Azure
-  description: Azure Container Instances are the quickest and easiest way to run containers in Azure. This learning path will teach you how to create and manage your containers, and how ACI can be used to provide elastic scale for Kubernetes.
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Administer containers in Azure
-summary: Azure Container Instances are the quickest and easiest way to run containers in Azure. This learning path will teach you how to create and manage your containers, and how ACI can be used to provide elastic scale for Kubernetes.
-prerequisites: None
-#TODO: Update icon URL with real image 
+title: Azure でコンテナーを管理する
+summary: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
+cardDescription: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
-- administrator
-products: 
-- azure
+roles:
+- developer
+products:
+- Azure
+prerequisites: なし
+metadata:
+  title: Azure でコンテナーを管理する
+  description: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
+  ms.openlocfilehash: 753fe61e57393a51f6a7e0031ce251390c6ceef7
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446067"
 modules:
-- learn.intro-to-containers
-- learn.azure-container-registry
-- learn.run-docker-containers-aci
-#TODO: Add - Orchestrate containerized application (POST-IGNITE)
+- learn.sample-module-cloudshell
 achievement: learn.administer-containers-in-azure.trophy

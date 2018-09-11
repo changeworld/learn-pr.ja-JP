@@ -1,57 +1,35 @@
-Cloud computing is renting resources such as storage space or CPU cycles on another company’s computers, paying only for what you use. The company providing these services is referred to as a cloud provider, with examples being Microsoft, Amazon, and Google.
+クラウド コンピューティングとは、コンピューティング サービスをインターネット経由で、従量課金制価格モデルを使用して提供することです。 コンピューティング サービスの内容は、クラウド プロバイダーによって異なる傾向があります。 ただし、通常は次の項目が含まれます。
 
-![Image of cloud providers](../media/2-cloud-providers.png)
+- コンピューティング能力
+- Storage
+- [アプリケーション]
+- ネットワーク
+- Analytics
 
-The cloud provider is responsible for the physical hardware required to execute your work, and for keeping it up to date. The computing services offered tend to vary by cloud provider. However, typically they include:
+## <a name="what-is-a-cloud-provider"></a>クラウド プロバイダーとは
 
-- Compute power, such as Windows and Linux virtual machines
-- Storage, such as object storage
-- Applications, such as NoSQL or SQL database applications
-- Networking, such as setting up virtual networks for your virtual machines
-- Analytics, such as visualizing telemetry, and performance data
+クラウド プロバイダーは、クラウド コンピューティング サービスを提供し、作業を正常に実行するための物理的なハードウェアを備えた、サード パーティ会社です。
 
-## Cloud computing services
+## <a name="cloud-computing-services"></a>クラウド コンピューティング サービス
 
-The goal of cloud computing is to make running a business easier and more efficient, whether it's a small start-up or a large enterprise. Every business is unique and has different needs. To meet those needs, cloud computing providers offer a wide range of services.
-You need to have a basic understanding of some of the services it provides. Let's briefly discuss the two most common services that all cloud providers offer &ndash; compute power and storage.
+クラウド コンピューティングは、小規模なスタートアップ企業であっても大企業であっても、より簡単かつ効率的に企業を運営することを目標としています。 すべての企業は独自性を持ち、それぞれニーズが異なるため、それらのニーズを満たすために、クラウド コンピューティング プロバイダーは多岐にわたるサービスを提供しています。
 
-:::row:::
-    :::column:::
-        ![Compute power gauge](../media/2-compute-power.png)
-    :::column-end:::
-	:::column span="3":::
-        **Compute power**
+クラウド コンピューティングがどのようなものかを正確に把握するには、提供されるいくつかのサービスの基本を理解しておく必要があります。 ここでは、すべてのクラウド プロバイダーが提供する最も一般的な 2 つのサービスについて簡単に説明します。
 
-You're using compute power everyday, whether you know it or not. If you're sending an email, browsing a website, or even checking the weather on your mobile device, there’s hardware doing computer processing work behind the scenes.
+### <a name="compute-power"></a>コンピューティング能力
 
-When you build solutions using cloud computing, you can choose how you want work to be done based on your resources and needs. For example, if you want to have more control and responsibility over maintenance, you could create a virtual machine, or VM. A VM looks like a physical computer running Windows or Linux. With the cloud, you can have a VM ready within minutes, not days or weeks.
+認識しているかどうかにかかわらず、誰もがコンピューティング能力を毎日使用しています。 電子メールを送信したり、Web サイトを閲覧したり、モバイル デバイスで天気をチェックするたびに、バック グラウンドではハードウェアにより自動的にコンピューター処理が行われています。 
 
-VMs are a great start. But containers and serverless computing are two concepts you'll want to learn more about.
+クラウド コンピューティングを使用してソリューションをビルドするときは、リソースとニーズに基づいてどのような作業を行うかを柔軟に選択できます。 たとえば、メンテナンスに対する制御と責任を高める場合は、Windows または Linux を実行している物理コンピューターに似ている仮想マシン (VM) を作成できます。 アプリケーションの動作にのみ関心があり、実行の方法や場所はあまり気にしない場合は、サーバーレス アプローチを使用できます。
 
-Containers are one of the hottest technology trends in the last few years, with the open source project, Docker, being one of the leading platforms for managing containers. Docker containers provide an efficient, lightweight approach to application deployment because they allow different components of the application to be deployed independently into different containers. Multiple containers can reside on a single machine, and containers can be moved between machines. The extreme portability of the container makes it very easy for applications to be deployed in multiple environments—either on-premises or in the cloud—often with no changes to the application.
+### <a name="storage"></a>Storage
 
-Serverless computing is another hot trend. With serverless computing, you don't need to worry about provisioning and maintaining servers. Serverless computing enables you to focus solely on how your application behaves. As an example, you can build a serverless process that automatically sends an email confirmation after a customer makes an online purchase.
+デバイスでは持続的にデータが収集されています。 たとえば、新しいアカウントを登録したり携帯電話で自撮りするとき、デバイスでデータが収集されます。
 
-        :::column-end:::
-:::row-end:::
- :::row:::
-    :::column:::
-        ![Storage gauge](../media/2-storage.png)
-    :::column-end:::
-	:::column span="3":::
-        **Storage**
+データは、テキスト、画像、動画などのさまざまな形態とサイズで取得されます。 クラウド プロバイダーは、通常はすべてを処理できるサービスを提供します。 たとえば、テキストを格納する場合、ディスク上のファイルを使用できるほか、リレーショナル データベースを使用するなど、より構造化されたアプローチを採用することもできます。
 
-Most devices read and/or write data. Here are some examples:
+## <a name="summary"></a>まとめ
 
-- Retrieving weather information
-- Taking a picture
-- Sending an email
-- Leaving a voicemail
+企業の持つニーズや要件はそれぞれ異なることを踏まえて、クラウド コンピューティングでは高い**柔軟性**と**コスト効率**が実現されます。 小規模なスタートアップ企業であっても大企業であっても、クラウド コンピューティングが役立ちます。
 
-In all of these cases, data is either read (like the weather) or written (like taking a picture). The type of data is different in each of these cases.
 
-Cloud providers typically offer services that can handle all of these types of data. For example, if you wanted to store text, you could use a file on disk or you could take a more structured approach like using a relational database.
-
-## Summary
-
-Every business has different needs and requirements. Cloud computing is **flexible** and **cost efficient**, which can be beneficial to every business, whether it's a small start-up or a large enterprise.

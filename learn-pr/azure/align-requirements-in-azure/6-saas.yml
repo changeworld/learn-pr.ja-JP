@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.6-saas
-title: Software as a service
+title: サービスとしてのソフトウェア
 metadata:
   title: SaaS
-  description: Learn about software as a service and if it might be the right choice for your application
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 4
-content: |
-  [!include[](includes/6-saas.md)]
+  description: サービスとしてのソフトウェアについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します
+  ms.openlocfilehash: 714a06ceb2e6c62fdcd77e9ee745c56d5f935725
+  ms.sourcegitcommit: a8497a897faccb27bfeaf5812a5887ac15f97625
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42821744"
+durationInMinutes: 3
+content: '[!include[](includes/6-saas.md)]'

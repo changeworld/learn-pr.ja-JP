@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.9-exercise-connect-with-your-azure-storage-configuration
+title: 演習 - Azure Storage の構成に接続する
+metadata:
+  title: 演習 - Azure Storage の構成に接続する
+  description: 演習 - Azure Storage の構成に接続する
+  ms.openlocfilehash: d712e34b220d3ebb9847cb907fb512fb4de7da0b
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230197"
+durationInMinutes: 10
+content: '[!include[](includes/9-exercise-connect-with-your-azure-storage-configuration.md)]'

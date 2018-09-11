@@ -1,28 +1,28 @@
-Once we have a reference to a blob, we can upload and download data. `ICloudBlob` objects have `Upload` and `Download` methods that support byte arrays, streams, and files as sources and targets. Specific types have additional methods for convenience &mdash; for example, `CloudBlockBlob` supports uploading and downloading strings with `UploadTextAsync` and `DownloadTextAsync`.
+BLOB への参照を設定したら、データをアップロードおよびダウンロードすることができます。 `ICloudBlob` オブジェクトには、ソースおよびターゲットとしてバイト配列、ストリーム、およびファイルをサポートする `Upload` メソッドと `Download` メソッドが含まれています。 特定の種類には、便宜上、追加のメソッドが含まれています。たとえば、`CloudBlockBlob` では、`UploadTextAsync` および `DownloadTextAsync` を使用した文字列のアップロードとダウンロードがサポートされています。
 
-## Creating new blobs
+## <a name="creating-new-blobs"></a>新しい BLOB を作成する
 
-To create a new blob, you call one of the `Upload` methods on a reference to a blob that doesn't exist in storage. This does two things: creates the blob in storage and uploads the data.
+新しい BLOB を作成するには、ストレージ内に存在していない BLOB に対して、参照にある `Upload` メソッドのいずれかを呼び出します。 これにより、ストレージ内での BLOB の作成とデータのアップロードという 2 つのことが行われます。
 
-## Moving data to and from blobs
+## <a name="moving-data-to-and-from-blobs"></a>BLOB 間のデータ移動
 
-Moving data to and from a blob is a network operation that takes time. In the Azure Storage SDK for .NET Core, all methods that require network activity return `Task`s, so make sure you use `await` in your controller methods appropriately.
+BLOB 間のデータ移動は、時間がかかるネットワーク操作です。 Azure Storage SDK for .NET Core では、ネットワーク アクティビティを必要とするすべてのメソッドから `Task` が返されるため、コントローラー メソッドで `await` を正しく使用していることを確認します。
 
-A common recommendation when working with large data objects is to use streams instead of in-memory structures like byte arrays or strings. This avoids buffering the full content in memory before sending it to the target. ASP.NET Core supports reading and writing streams from requests and responses.
+大規模なデータ オブジェクトを操作する場合の一般的な推奨事項は、バイト配列や文字列のようなメモリ内の構造ではなくストリームを使用することです。 これにより、ターゲットへの送信前に、すべての内容がメモリ内にバッファリングされるのを回避できます。 ASP.NET Core では、要求と応答でのストリームの読み取りおよび書き込みがサポートされています。
 
-## Concurrent access
+## <a name="concurrent-access"></a>同時アクセス
 
-Other processes may be adding, changing, or deleting blobs as your app is using them. Always code defensively and think about problems caused by concurrency, such as blobs that are deleted right as you try to download from them, or blobs whose contents change when you don't expect them to. See the Further Reading section at the end of this module for information about using AccessConditions and blob leases to manage concurrent blob access.
+ご利用のアプリによって BLOB が使用されているときにその BLOB が他のプロセスによって追加、変更、または削除される可能性があります。 常に防衛的なコードを作成すると共に、ダウンロードを試みるとすぐに削除される BLOB や予期していないときに内容が変更される BLOB など同時実行により発生する問題について考えます。 AccessConditions および BLOB リースを使用して、BLOB への同時アクセスを管理する方法については、このモジュールの最後に記載されている「参考資料」セクションを参照してください。
 
-## Exercise
+## <a name="exercise"></a>演習
 
-Let's finish our app by adding upload and download code, then deploy it to Azure App Service for testing.
+アップロードおよびダウンロードのコードを追加することによってアプリを完了してから、テストのためにそれを Azure App Service にデプロイしましょう。
 
-### Upload
+### <a name="upload"></a>アップロード
 
-To upload a blob, we'll implement the `BlobStorage.Save` method using `GetBlockBlobReference` to get a `CloudBlockBlob` from the container. `FilesController.Upload` passes the file stream to `Save`, so we can use `UploadFromStreamAsync` to perform the upload for maximum efficiency.
+BLOB をアップロードするには、コンテナーから `CloudBlockBlob` を取得する `GetBlockBlobReference` を使用して `BlobStorage.Save` メソッドを実装します。 `FilesController.Upload` からは `Save` にファイル ストリームが渡されるので、効率を最大限に高めるために `UploadFromStreamAsync` を使用してアップロードを実行することができます。
 
-In the editor, replace `Save` in `BlobStorage.cs` with the following code:
+エディターで `BlobStorage.cs` を開き、`Save` を次のコードで置き換えます。
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -36,13 +36,13 @@ public Task Save(Stream fileStream, string name)
 ```
 
 > [!NOTE]
-> The stream-based upload code shown here is more efficient than reading the file into a byte array before sending it to Azure Blob storage. However, the ASP.NET Core `IFormFile` technique we use to get the file from the client is not a true end-to-end streaming implementation and is only appropriate for handling uploads of small files. See the Further Reading section at the end of this module for information about fully streamed file uploads.
+> ここに示したストリーム ベースのアップロード コードは、バイト配列にファイルを読み込んでから Azure Blob Storage に送信するよりも効率的です。 ただし、クライアントからファイルを取得するのに使用する ASP.NET Core `IFormFile` 手法は、真のエンドツーエンド ストリーミング実装ではなく、小さいファイルのアップロードを処理する場合にのみ適しています。 完全にストリーミングされたファイル アップロードについては、このモジュールの最後に記載されている「参考資料」セクションを参照してください。
 
-### Download
+### <a name="download"></a>ダウンロード
 
-`BlobStorage.Load` returns a `Stream`, meaning that our code doesn't need to physically move the bytes from Blob storage at all &mdash; we just need to return a reference to the blob stream. We can do that with `OpenReadAsync`. ASP.NET Core will handle reading and closing the stream when it builds the client response.
+`BlobStorage.Load` からは `Stream` が返されます。すなわち、作成するコードでは BLOB ストレージからバイトを物理的に移動する必要は全くなく、BLOB ストリームへの参照を返す必要があるだけです。 それは、`OpenReadAsync` を使用して行うことができます。 ASP.NET Core では、クライアント応答がビルドされると、ストリームの読み取りおよび終了の処理が行われます。
 
-Replace `Load` with this code and save your work:
+`Load` をこのコードで置き換えて、作業内容を保存します。
 
 ```csharp
 public Task<Stream> Load(string name)
@@ -54,11 +54,11 @@ public Task<Stream> Load(string name)
 }
 ```
 
-### Deploy and run in Azure
+### <a name="deploy-and-run-in-azure"></a>Azure 内でデプロイして実行する
 
-Our app is finished &mdash; let's deploy it and see it work. Create an App Service app and configure it with application settings for our storage account connection string and container name. Get the storage account's connection string with `az storage account show-connection-string` and set the name of the container to be `files`.
+アプリが完成したので、デプロイして動作を確認してみましょう。 App Service アプリを作成し、そのアプリをアプリケーション設定を使用して、自分のストレージ アカウント接続文字列とコンテナー名用に構成します。 `az storage account show-connection-string` を使用してストレージ アカウントの接続文字列を取得し、コンテナーの名前が `files` になるように設定します。
 
-The app name needs to be globally unique, so you'll need to choose your own name to fill in `<your-unique-app-name>`.
+アプリ名はグローバルに一意である必要があるため、独自の名前を選んで `<your-unique-app-name>` に入力する必要があります。
 
 ```azurecli
 az appservice plan create --name blob-exercise-plan --resource-group blob-exercise-group
@@ -67,10 +67,10 @@ CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique
 az webapp config appsettings set --name <your-unique-app-name> --resource-group blob-exercise-group --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
-Now we'll deploy our app. The below commands will publish the site to the `pub` folder, zip it up into `site.zip`, and deploy the zip to App Service.
+ここでアプリをデプロイします。 以下のコマンドによってサイトを `pub` フォルダーに発行し、`site.zip` として圧縮した後、その zip を App Service にデプロイします。
 
 > [!NOTE]
-> Make sure your shell is still in the `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start` directory before running the following commands.
+> シェルが次のコマンドの `FileUploader` ディレクトリにあることを確認します。
 
 ```azurecli
 dotnet publish -o pub
@@ -79,11 +79,11 @@ zip -r ../site.zip *
 az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group blob-exercise-group
 ```
 
-Open `https://<your-unique-app-name>.azurewebsites.net` in a browser to see the running app. It should look like the image below.
+ブラウザーで `https://<your-unique-app-name>.azurewebsites.net` を開いて、実行中のアプリを表示します。 次の図のようになります。
 
-![Screenshot of the FileUploader web app](../media/7-fileuploader-empty.PNG)
+![FileUploader Web アプリのスクリーンショット](../media-drafts/fileuploader-empty.PNG)
 
-Try uploading and downloading some files to test the app. After you've uploaded a few files, run the following in the shell to see the blobs that have been uploaded to the container:
+アプリをテストするため、ファイルをいくつかアップロードしてダウンロードしてみましょう。 ファイルをいくつかアップロードしたら、シェル内で次を実行して、コンテナーにアップロードされた BLOB を確認します。
 
 ```console
 az storage blob list --account-name <your-unique-storage-account-name> --container-name files --query [].{Name:name} --output table

@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.7-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 3
-content: |
-  [!include[](includes/7-summary.md)]
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 763ecfaaddf67720d89393af44b5aa1d904ad820
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445810"
+durationInMinutes: 5
+content: '[!include[](includes/7-summary.md)]'

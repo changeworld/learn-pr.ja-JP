@@ -1,80 +1,81 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.5-knowledge-check
-title: Check your knowledge
+title: 自分の知識をチェックする
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understood the steps required to build neural networks with Tensorflow and the Azure Data Science Virtual Machine.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 自分の知識をチェックする
+  description: Tensorflow と Azure Data Science Virtual Machine を使用してニューラル ネットワークを構築するために必要な手順を理解しているかどうかを確認します。
+  ms.openlocfilehash: 50c8562c19b838f0b7414434c8d6ac4296969c00
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251651"
 durationInMinutes: 10
+content: 必須
 quiz:
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine
+  title: TensorFlow と Azure Data Science Virtual Machine を使用したニューラル ネットワークの構築
   questions:
-  - content: "Can you create a Data Science VM with an operating system other than Linux?"
+  - content: Linux 以外のオペレーティング システムで Data Science VM を作成できますか?
     choices:
-    - content: "No"
+    - content: いいえ
       isCorrect: false
-      incorrectExplanation: "There are other options for operating systems for the Data Science VM."
-    - content: "Yes"
+      incorrectExplanation: Data Science VM 用のオペレーティング システムには他のオプションがあります。
+    - content: はい
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What should be copied in the Azure Portal to use to connect to the Data Science VM with client?"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+  - content: Data Science VM とクライアントを接続するには、Azure Portal で何をコピーする必要がありますか?
     choices:
-    - content: "IP Address"
+    - content: IP アドレス
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Subscription name"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: サブスクリプション名
       isCorrect: false
-      incorrectExplanation: "The subscription name isn't needed to connect to the VM."
-    - content: "DNS name"
+      incorrectExplanation: VM への接続にサブスクリプション名は必要ありません。
+    - content: DNS 名
       isCorrect: false
-      incorrectExplanation: "The DNS name isn't needed to connect to the VM."
-    - content: "Virtual network/subnet"
+      incorrectExplanation: VM への接続に DNS 名は必要ありません。
+    - content: 仮想ネットワーク/サブネット
       isCorrect: false
-      incorrectExplanation: "The Virtual network or subnet isn't needed to connect to the VM."
-  - content: "What do you need to perform transfer learning on the Data Science VM?"
+      incorrectExplanation: VM への接続に仮想ネットワークまたはサブネットは必要ありません。
+  - content: Data Science VM における転移学習の実行に必要なものは何ですか?
     choices:
-    - content: "Access to a large GPU"
+    - content: 大規模な GPU へのアクセス
       isCorrect: false
-      incorrectExplanation: "While a GPU is great for retraining on images, it doesn't need to be large or required."
-    - content: "Tensorflow installed"
+      incorrectExplanation: GPU はイメージでの再トレーニングに適していますが、大規模な GPU は必要ではなく、また必須でもありません。
+    - content: Tensorflow のインストール
       isCorrect: false
-      incorrectExplanation: "Tensorflow is already installed in the Data Science VM so there's no need to install it again."
-    - content: "Pre-trained model"
+      incorrectExplanation: Tensorflow は Data Science VM に既にインストールされているため、再度インストールする必要はありません。
+    - content: 事前トレーニング済みモデル
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "A very large set of data"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: 非常に大規模なデータ セット
       isCorrect: false
-      incorrectExplanation: "You don't need a large data set to use pre-trained models."
-  - content: "What is the name of the tool to visualize Tensorflow models?"
+      incorrectExplanation: 事前トレーニング済みモデルを使用するために大規模なデータ セットは必要ありません。
+  - content: Tensorflow モデルを視覚化するツールの名前は何ですか?
     choices:
-    - content: "Tensorview"
+    - content: Tensorview
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorvision"
+      incorrectExplanation: ''
+    - content: Tensorvision
       isCorrect: false
-      incorrectExplanation: ""
-    - content: "Tensorpanel"
+      incorrectExplanation: ''
+    - content: Tensorpanel
       isCorrect: true
-      incorrectExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Tensorboard"
+      incorrectExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: Tensorboard
       isCorrect: false
-      correctExplanation: ""
-  - content: "When executing the TkInter code for a GUI to test the model, what is the name of the Python script it calls to get results from the model?"
+      correctExplanation: ''
+  - content: TkInter コードを実行して GUI でモデルをテストする場合、モデルから結果を取得するために呼び出す Python スクリプトの名前は何ですか?
     choices:
-    - content: "retrain.py"
+    - content: retrain.py
       isCorrect: false
-      incorrectExplanation: "This script was used earlier to retrain the model with our own images."
-    - content: "classify.py"
+      incorrectExplanation: このスクリプトは、独自のイメージを使用してモデルを再トレーニングするために過去に使用されていました。
+    - content: classify.py
       isCorrect: false
-      incorrectExplanation: "This script was used to put the TkInter code into and run from."
-    - content: "label_image.py"
+      incorrectExplanation: このスクリプトは、TkInter コードの配置先および実行元として使用されていました。
+    - content: label_image.py
       isCorrect: true
-      correctExplanation: "ThGreat! Proceed to the next part of the lab."
-    - content: "results.py"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: results.py
       isCorrect: false
-      incorrectExplanation: "This script wouldn't exist and would result in an error."
+      incorrectExplanation: このスクリプトは存在しないため、エラーが発生します。

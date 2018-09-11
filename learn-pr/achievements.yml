@@ -2,517 +2,258 @@
 achievements:
 - uid: learn.placeholder.badge
   type: badge
-  #TODO: Replace iconURL with real image.
   iconUrl: http://via.placeholder.com/120x120
-  title: Module Placeholder Badge
-  summary: Sample Module Trophy Summary
+  title: モジュール プレースホルダー バッジ
+  summary: サンプル モジュール トロフィーの概要
+- uid: learn.sample-module-cloudshell.badge
+  type: badge
+  title: CloudShell を使用するサンプル モジュールのバッジ
+  summary: "\"CloudShell を使用するサンプル モジュール\" モジュールのバッジ。"
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.build-a-serverless-web-app.badge
   type: badge
-  title: Build a serverless web app Badge
-  summary: Badge for the 'Build a serverless web app' module.
-  iconUrl: ./achievements/build-a-serverless-web-app.svg
+  title: サーバーレス Web アプリの構築のバッジ
+  summary: "\"サーバーレス Web アプリの構築\" モジュールのバッジ。"
+  iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
 - uid: learn.cd-pipeline-github-to-azure-web-app.badge
   type: badge
-  title: Create a continuous deployment pipeline from GitHub to your Azure Web App Badge
-  summary: Create a continuous deployment pipeline from GitHub to your Azure Web App Badge Summary
-  iconUrl: ./achievements/cd-pipeline-github-to-azure-web-app.svg
+  title: GitHub から Azure Web App への継続的デプロイの作成のバッジ
+  summary: GitHub から Azure Web App への継続的デプロイの作成のバッジの概要
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.connect-app-to-azure-storage.badge
   type: badge
-  title: Connect an app to Azure Storage
-  summary: Connect an app to Azure Storage
-  iconUrl: ./achievements/connect-app-to-azure-storage.svg
+  title: Azure Storage へのアプリの接続
+  summary: Azure Storage へのアプリの接続
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-azure-storage-account.badge
   type: badge
-  title: Create an Azure storage account Badge
-  summary: Create an Azure storage account Badge Summary
-  iconUrl: ./achievements/create-azure-storage-account.svg
+  title: Azure Storage へのアプリの接続のバッジ
+  summary: Azure Storage へのアプリの接続のバッジの概要
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-serverless-logic-with-functions.badge
   type: badge
-  title: Create serverless logic with Azure Functions
-  summary: Create serverless logic with Azure Functions
-  iconUrl: ./achievements/create-serverless-logic-with-functions.svg
+  title: Azure Functions を使用したサーバーレス ロジックの作成
+  summary: Azure Functions を使用したサーバーレス ロジックの作成
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.host-a-web-application-with-azure-web-apps.badge
   type: badge
-  title: Host a web application with Azure Web Apps Badge
-  summary: Host a web application with Azure Web Apps Badge Summary
-  iconUrl: ./achievements/host-a-web-application-with-azure-web-apps.svg
+  title: Azure Web Apps での Web アプリケーションのホストのバッジ
+  summary: Azure Web Apps での Web アプリケーションのホストのバッジの概要
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.publish-azure-web-app-with-visual-studio.badge
   type: badge
-  title: Publish an Azure Web App with Visual Studio for Windows or Mac
-  summary: Publish an Azure Web App with Visual Studio for Windows or Mac
-  iconUrl: ./achievements/publish-azure-web-app-with-visual-studio.svg
+  title: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
+  summary: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
+  iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-containers-in-azure.trophy
   type: trophy
-  title: Administer containers in Azure Trophy
-  summary: Trophy for the 'Administer containers in Azure' learning path
-  #TODO: Replace iconURL with real image.
+  title: Azure でのコンテナーの管理のトロフィー
+  summary: "\"Azure でのコンテナーの管理\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-serverless-applications.trophy
   type: trophy
-  title: Create serverless applications Trophy
-  summary: Trophy for the 'Create serverless applications' learning path
-  #TODO: Replace iconURL with real image.
+  title: サーバーレス アプリケーションの作成のトロフィー
+  summary: "\"サーバーレス アプリケーションの作成\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.administer-infrastructure-resources-in-azure.trophy
   type: trophy
-  title: Administer infrastructure resources in Azure Trophy
-  summary: Trophy for the 'Administer infrastructure resources in Azure' learning path
-  #TODO: Replace iconURL with real image.
+  title: Azure でインフラストラクチャ リソースを管理するのトロフィー
+  summary: "\"Azure でインフラストラクチャ リソースを管理する\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.cloud-foundations.trophy
   type: trophy
-  title: Cloud Foundations Trophy
-  summary: Trophy for the 'Cloud Foundations' learning path.
-  #TODO: Replace iconURL with real image.
+  title: クラウドの基礎のトロフィー
+  summary: "\"クラウドの基礎\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.connect-your-services-together.trophy
   type: trophy
-  title: Connect your services together Trophy
-  summary: Trophy for the 'Connect your services together' learning path.
-  #TODO: Replace iconURL with real image.
+  title: サービスの接続のトロフィー
+  summary: "\"サービスの接続\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.architect-great-solutions-in-azure.trophy
   type: trophy
-  title: Architect great solutions in Azure Trophy
-  summary: Trophy for the 'Architect great solutions in Azure' learning path.
-  #TODO: Replace iconURL with real image.
+  title: Azure で最適なソリューションを設計するのトロフィー
+  summary: "\"Azure で最適なソリューションを設計する\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-to-develop-apps-on-azure.trophy
   type: trophy
-  title: Prepare to develop apps on Azure Trophy
-  summary: Trophy for the 'Prepare to develop apps on Azure' learning path
-  #TODO: Replace iconURL with real image.
+  title: Azure でアプリを開発するための準備のトロフィー
+  summary: "\"Azure でアプリを開発するための準備\" ラーニング パスのトロフィー"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.deploy-a-website-with-azure-app-service.trophy
   type: trophy
-  title: Deploy a website with Azure App Service Trophy
-  summary: Trophy for the 'Deploy a website with Azure App Service' learning path.
-  #TODO: Replace iconURL with real image.
+  title: Azure App Service で Web サイトをデプロイするのトロフィー
+  summary: "\"Azure App Service で Web サイトをデプロイする\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
   type: trophy
-  title: Work with NoSQL data in Azure Cosmos DB Trophy
-  summary: Trophy for 'Work with NoSQL data in Azure Cosmos DB' learning path.
-  #TODO: Replace iconURL with real image.
+  title: Azure Cosmos DB の NoSQL データを扱うのトロフィー
+  summary: "\"Azure Cosmos DB の NoSQL データを扱う\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.work-with-relational-data-in-azure.trophy
   type: trophy
-  title: Work with relational data in Azure Trophy
-  summary: Trophy for the 'Working with relational data in Azure' learning path.
-  #TODO: Replace iconURL with real image.
+  title: Azure でリレーショナル データを操作するのトロフィー
+  summary: "\"Azure でリレーショナル データを操作する\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.secure-your-cloud-data.trophy
   type: trophy
-  title: Secure your cloud data Trophy
-  summary: Trophy for the 'Secure your cloud data' learning path.
-  #TODO: Replace iconURL with real image.
+  title: クラウド データのセキュリティ保護のトロフィー
+  summary: "\"クラウド データのセキュリティ保護のトロフィー\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.store-data-in-azure.trophy
   type: trophy
-  title: Store data in Azure Trophy
-  summary: Trophy for the 'Store data in Azure' learning path.
-  #TODO: Replace iconURL with real image.
+  title: Azure へのデータの格納のトロフィー
+  summary: "\"Azure へのデータの格納\" ラーニング パスのトロフィー。"
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.automate-azure-tasks-with-powershell.badge
   type: badge
-  title: Automate Azure tasks using scripts with PowerShell Badge
-  summary: Automate Azure tasks using scripts with PowerShell Summary
-  #TODO: Replace iconURL with real image.
+  title: PowerShell でのスクリプトを使用した Azure タスクの自動化のバッジ
+  summary: PowerShell でのスクリプトを使用した Azure タスクの自動化の概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-azure-db-for-postgresql.badge
   type: badge
-  title: Create a PostgreSQL DB server via the Azure CLI Badge
-  summary: Create a PostgreSQL DB server via the Azure CLI Summary
-  #TODO: Replace iconURL with real image.
+  title: Azure CLI による PostgreSQL DB サーバーの作成のバッジ
+  summary: Azure CLI による PostgreSQL DB サーバーの作成の概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-linux-vm-in-azure.badge
   type: badge
-  title: Create a Linux virtual machine in Azure Badge
-  summary: Create a Linux virtual machine in Azure Summary
-  #TODO: Replace iconURL with real image.
+  title: Azure での Linux 仮想マシンの作成のバッジ
+  summary: Azure での Linux 仮想マシンの作成の概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.choose-messaging-model.badge
   type: badge
-  title: Choose messaging model Badge
-  summary: Choose messaging model Badge Summary
-  #TODO: Replace iconURL with real image.
+  title: メッセージング モデルの選択のバッジ
+  summary: メッセージング モデルの選択のバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
   type: badge
-  title: Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine
-  summary: Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine
-  #TODO: Replace iconURL with real image.
+  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+  summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.prepare-azure-dev-environment.badge
   type: badge
-  title: Prepare Azure development environment Badge
-  summary: Prepare Azure development environment Badge Summary
-  #TODO: Replace iconURL with real image.
+  title: Azure 開発環境の準備のバッジ
+  summary: Azure 開発環境の準備のバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-resources-with-azure-portal.badge
   type: badge
-  title: Manage resources with Azure portal Badge
-  summary: Manage resources with Azure portal Badge Summary
-  #TODO: Replace iconURL with real image.
+  title: Azure portal でのリソースの管理のバッジ
+  summary: Azure portal でのリソースの管理のバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.explore-azure-services-for-web-devs.badge
   type: badge
-  title: Explore Azure services for web developers Badge
-  summary: Explore Azure services for web developers Badge Summary
-  #TODO: Replace iconURL with real image.
+  title: Web 開発者のための Azure サービスの探求のバッジ
+  summary: Web 開発者のための Azure サービスの探求のバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.control-azure-services-with-cli.badge
   type: badge
-  title: Control Azure services with the CLI Badge
-  summary: Control Azure services with the CLI Badge Summary
-  #TODO: Replace iconURL with real image.
+  title: CLI を使用した Azure サービスの制御のバッジ
+  summary: CLI を使用した Azure サービスの制御のバッジの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.azure-services-features.badge
   type: badge
-  title: Tour Azure services and features Badge
-  summary: Tour Azure services and features Summary
-  #TODO: Replace iconURL with real image.
+  title: Azure サービスと機能のツアーのバッジ
+  summary: Azure サービスと機能のツアーの概要
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.migrate-sql-server-relational-data.badge
   type: badge
-  title: Migrate your SQL server relational data to Azure SQL
-  summary: Migrate your SQL server relational data to Azure SQL
-  #TODO: Replace iconURL with real image.
+  title: SQL Serer のリレーショナル データを Azure SQL に移行する
+  summary: SQL Serer のリレーショナル データを Azure SQL に移行する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.communicate-between-applications-with-azure-queue-storage.badge
   type: badge
-  title: Communicate between applications with Azure queue storage
-  summary: Communicate between applications with an Azure queue storage
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.caching-and-performance-azure-storage-and-disks.badge
-  type: badge
-  title: Caching and performance in Azure Storage and disks
-  summary: Caching and performance in Azure Storage and disks
-  #TODO: Replace iconURL with real image.
+  title: アプリケーションと Azure キュー ストレージの間の通信
+  summary: アプリケーションと Azure キュー ストレージの間の通信
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.create-a-windows-vm-in-azure.badge
   type: badge
-  title: Create a Windows virtual machine in Azure
-  summary: Create a Windows virtual machine in Azure
-  #TODO: Replace iconURL with real image.
+  title: Azure で Windows 仮想マシンを作成する
+  summary: Azure で Windows 仮想マシンを作成する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.choose-web-hosting.badge
   type: badge
-  title: Choose a Web Hosting Option in Azure
-  summary: Choose a Web Hosting Option in Azure
-  #TODO: Replace iconURL with real image.
+  title: Azure で Web ホスティング オプションを選択する
+  summary: Azure で Web ホスティング オプションを選択する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.interactive-iot-deployments.badge
   type: badge
-  title: Working with interactive IoT deployments in Azure
-  summary: Working with interactive IoT deployments in Azure
-  #TODO: Replace iconURL with real image.
+  title: Azure での対話型 IoT デプロイの操作
+  summary: Azure での対話型 IoT デプロイの操作
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.iot-for-ops.badge
   type: badge
-  title: IoT Suite for ops
-  summary: IoT Suite for ops
-  #TODO: Replace iconURL with real image.
+  title: 運用のための IoT Suite
+  summary: 運用のための IoT Suite
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.web-app-with-mean-on-linux-vm.badge
   type: badge
-  title: Build and run a web application with the MEAN stack on an Azure Linux virtual machine
-  summary: Build and run a web application with the MEAN stack on an Azure Linux virtual machine
-  #TODO: Replace iconURL with real image.
+  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+  summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.optimize-web-app-with-redis.badge
   type: badge
-  title: Optimize your web applications by caching read-only data with Redis
-  summary: Optimize your web applications by caching read-only data with Redis
-  #TODO: Replace iconURL with real image.
+  title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+  summary: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.manage-secrets-with-azure-key-vault.badge
   type: badge
-  title: Manage secrets in your web apps with Azure Key Vault
-  summary: Manage secrets in your web apps with Azure Key Vault
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
+  title: Azure Key Vault を使用して Web アプリのシークレットを管理する
+  summary: Azure Key Vault を使用して Web アプリのシークレットを管理する
+  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 - uid: learn.secure-azure-resources-with-rbac.badge
   type: badge
-  title: Secure your Azure resources with role-based access control (RBAC)
-  summary: Secure your Azure resources with role-based access control (RBAC)
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
-  type: badge
-  title: Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication
-  summary: Secure access to resources using Azure AD, conditional access, and Azure Multi-Factor Authentication
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.share-location-over-sms-from-mobile-using-azure-functions-twilio.badge
-  type: badge
-  title: Sending location information over SMS from your phone using Azure Functions and Twilio badge
-  summary: Badge for 'Sending location information over SMS from your phone using Azure Functions and Twilio' module
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-vms-with-azure-cli-data.badge
-  type: badge
-  title: Manage virtual machines with the Azure CLI
-  summary: Manage virtual machines with the Azure CLI
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
-  type: trophy
-  title: Deploy a website with Azure Virtual Machines Trophy
-  summary: Trophy for the 'Deploy a website with Azure Virtual Machines' learning path.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.store-app-data-with-azure-blob-storage.badge
-  type: badge
-  title: Store web application data with Azure Blob Storage
-  summary: Store web application data with Azure Blob Storage
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
-  type: badge
-  title: Enable reliable messaging for Big Data Applications using Azure Event Hubs
-  summary: Enable reliable messaging for Big Data Applications using Azure Event Hubs module
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-azure-sql-database.badge
-  type: badge
-  title: Secure an Azure SQL Server Database
-  summary: Secure an Azure SQL Server Database
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-compute.badge
-  type: badge
-  title: Introduction to Compute Badge
-  summary: Badge for 'Introduction to Compute' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-data-in-azure.badge
-  type: badge
-  title: Introduction to data in Azure Badge
-  summary: Badge for 'Introduction to data in Azure' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.introduction-to-azure-virtual-machines.badge
-  type: badge
-  title: Introduction to Azure Virtual Machines
-  summary: Introduction to Azure Virtual Machines
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cosmos-db-app-with-vscode.badge
-  type: badge
-  title:  Build an Azure Cosmos DB app in Visual Studio Code
-  summary: Badge for 'Build an Azure Cosmos DB app in Visual Studio Code' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-cosmos-db-for-scale.badge
-  type: badge
-  title:  Create an Azure Cosmos DB database built to scale
-  summary: Badge for 'Create an Azure Cosmos DB database built to scale' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-resources-in-azure.trophy
-  type: trophy
-  title: Manage resources in Azure trophy
-  summary: Trophy for the 'Manage resources in Azure' learning path.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.ci-cd-pipelines-azure-devops.badge
-  type: badge
-  title: Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps badge
-  summary: Badge for 'Build Continuous Integration/Continuous Deployment pipelines using Azure DevOps' module.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.top-5-security-items-to-consider.badge
-  type: badge
-  title: Top 5 Security Items To Consider Before Pushing To Production
-  summary: Top 5 Security Items To Consider Before Pushing To Production
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.interactive-deep-learning.badge
-  type: badge
-  title: Five steps to more interactive deep learning Badge
-  summary: Badge for the 'Five steps to more interactive deep learning' module.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-computer-vision-service.badge
-  type: badge
-  title:  Create a Computer Vision Service
-  summary: Badge for 'Create a Computer Vision Service' module.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.monitor-manage-device-with-iotcentral.badge
-  type: badge
-  title: Monitor and manage your coffee machine with Azure IoT Central Badge
-  summary: Badge for the 'Monitor and manage your coffee machine with Azure IoT Central' module.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.align-requirements-in-azure.badge
-  type: badge
-  title: Align requirements with cloud types and service models in Azure badge
-  summary: Badge for the 'Align requirements with cloud types and service models in Azure' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-storage-approach-in-azure.badge
-  type: badge
-  title: Choose storage approach in Azure badge
-  summary: Badge for the 'Choose storage approach in Azure' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-container-registry.badge
-  type: badge
-  title: Build and store container images with Azure Container Registry badge
-  summary: Badge for the 'Build and store container images with Azure Container Registry' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.build-azure-bot-services-bot.badge
-  type: badge
-  title: Build a chat bot with the Azure Bot Service badge
-  summary: Badge for the 'Build a chat bot with the Azure Bot Service' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.classify-images-with-custom-vision-services.badge
-  type: badge
-  title: Classify images with the Microsoft Custom Vision Service badge
-  summary: Badge for the 'Classify images with the Microsoft Custom Vision Service' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-neural-network-with-dsvm.badge
-  type: badge
-  title: Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine badge
-  summary: Badge for the 'Building Neural Networks with TensorFlow and the Azure Data Science Virtual Machine' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.design-for-efficiency-and-operations.badge
-  type: badge
-  title: Design for efficiency and operations badge
-  summary: Badge for the 'Design for efficiency and operations' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.design-for-performance-and-scalability.badge
-  type: badge
-  title: Design for performance and scalability badge
-  summary: Badge for the 'Design for performance and scalability' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.design-for-security.badge
-  type: badge
-  title: Design for security badge
-  summary: Badge for the 'Design for security' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.execute-azure-function-with-triggers.badge
-  type: badge
-  title: Execute an Azure Function with triggers badge
-  summary: Badge for the 'Execute an Azure Function with triggers' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-containers.badge
-  type: badge
-  title: Introduction to Containers badge
-  summary: Badge for the 'Introduction to Containers' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.predict-costs-and-optimize-spending.badge
-  type: badge
-  title: Predict costs and optimize spending for Azure badge
-  summary: Badge for the 'Predict costs and optimize spending for Azure' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.principles-cloud-computing.badge
-  type: badge
-  title: Principles of Cloud Computing badge
-  summary: Badge for the 'Principles of Cloud Computing' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.provision-azure-sql-db.badge
-  type: badge
-  title: Provision an Azure SQL database to store application data badge
-  summary: Badge for the 'Provision an Azure SQL database to store application data' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.run-docker-containers-aci.badge
-  type: badge
-  title: Run Docker containers with Azure Container Instances (ACI) badge
-  summary: Badge for the 'Run Docker containers with Azure Container Instances (ACI)' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.access-data-with-cosmos-db-and-sql-api.badge
-  type: badge
-  title:  Store and access data with Cosmos DB and the SQL API Badge
-  summary: Badge for 'Store and access data with Cosmos DB and the SQL API' module.
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.configure-the-network-for-your-virtual-machines.badge
-  type: badge
-  title: Configure the network for your virtual machines
-  summary: Configure the network for your virtual machines
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.introduction-to-security.badge
-  type: badge
-  title: Introduction to Azure security
-  summary: Introduction to Azure security
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-azure-virtual-machine-disks.badge
-  type: badge
-  title: Secure your Azure virtual machine disks
-  summary: Secure your Azure virtual machine disks
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.protect-your-resources-with-azure-security-center.badge
-  type: badge
-  title: Protect your resources with Azure Security Center
-  summary: Protect your resources with Azure Security Center
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.make-your-virtual-machines-highly-available.badge
-  type: badge
-  title: Make your virtual machines highly available
-  summary: Make your virtual machines highly available
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.implement-message-workflows-with-service-bus.badge
-  type: badge
-  title: Implement message-based communication workflows with Azure Service Bus
-  summary: Implement message-based communication workflows with Azure Service Bus
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-azure-networking.badge
-  type: badge
-  title: Introduction to Azure networking badge
-  summary: Introduction to Azure networking
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.pillars-of-a-great-azure-architecture.badge
-  type: badge
-  title: Pillars of a great Azure architecture badge
-  summary: Pillars of a great Azure architecture badge
-  #TODO: Replace iconURL with real image.
+  title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+  summary: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
   iconUrl: http://via.placeholder.com/120x120
 - uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
   type: badge
-  title: Send location over SMS using Azure Functions and Twilio badge
-  summary: Send location over SMS using Azure Functions and Twilio badge
-  #TODO: Replace iconURL with real image.
+  title: Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信するのバッジ
+  summary: "\"Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信する\" モジュールのバッジ"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
+- uid: learn.manage-vms-with-azure-cli-data.badge
   type: badge
-  title: Add and size disks in Azure Virtual Machines
-  summary: Add and size disks in Azure Virtual Machines
-  #TODO: Replace iconURL with real image.
+  title: Azure CLI を使用して仮想マシンを管理する
+  summary: Azure CLI を使用して仮想マシンを管理する
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.scale-and-size-virtual-machines.badge
+- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
+  type: trophy
+  title: Azure Virtual Machines を使用して Web サイトをデプロイするのトロフィー
+  summary: "\"Azure Virtual Machines を使用して Web サイトをデプロイする\" ラーニング パスのトロフィー。"
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.store-app-data-with-azure-blob-storage.badge
   type: badge
-  title: Scale and size Virtual Machines in Azure
-  summary: Scale and size Virtual Machines in Azure
-  #TODO: Replace iconURL with real image.
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-iot-devices.badge
+  title: Azure Blob Storage に Web アプリケーション データを保存する
+  summary: Azure Blob Storage に Web アプリケーション データを保存する
+  iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
+- uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
   type: badge
-  title: IoT Suite for ops
-  summary: IoT Suite for ops
+  title: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にする
+  summary: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にするモジュール
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.the-mojifier.badge
+- uid: learn.intro-to-compute.badge
   type: badge
-  title: The Mojifier
-  summary: The Mojifier badge
+  title: コンピューティングの概要のバッジ
+  summary: "\"コンピューティングの概要\" モジュールのバッジ。"
   iconUrl: http://via.placeholder.com/120x120
-- uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
+- uid: learn.intro-to-data-in-azure.badge
   type: badge
-  title: Work with mutable and partial data in a Redis cache
-  summary: Work with mutable and partial data in a Redis cache
+  title: Azure でのデータの概要のバッジ
+  summary: "\"Azure でのデータの概要\" モジュールのバッジ。"
   iconUrl: http://via.placeholder.com/120x120
+- uid: learn.cosmos-db-app-with-vscode.badge
+  type: badge
+  title: Visual Studio Code での Azure Cosmos DB アプリの作成
+  summary: "\"Visual Studio Code での Azure Cosmos DB アプリの作成\" モジュールのトロフィー。"
+  iconUrl: http://via.placeholder.com/120x120
+- uid: learn.manage-resources-in-azure.trophy
+  type: trophy
+  title: Azure でのリソースの管理のトロフィー
+  summary: "\"Azure でのリソースの管理\" ラーニング パスのトロフィー。"
+  iconUrl: http://via.placeholder.com/120x120
+metadata:
+  ms.openlocfilehash: 4dc465d762264757b61a4000ad999e39ee339d64
+  ms.sourcegitcommit: d51dceaa3772e8083b3f0b6460f8a616b3139d25
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/27/2018
+  ms.locfileid: "43053932"

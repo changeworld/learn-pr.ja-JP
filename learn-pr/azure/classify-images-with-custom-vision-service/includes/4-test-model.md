@@ -1,25 +1,35 @@
-Later in this module, you will create a Node.js app that uses the model to identify the artist of paintings presented to it. But you don't have to write an app to test the model; you can do your testing in the portal, and you can further refine the model using the images that you test with. In this unit, you will test the model's ability to identify the artist of a painting using test images provided for you.
+### <a name="exercise-4-test-the-model"></a>演習 4: モデルをテストする
 
-1. Click **Quick Test** at the top of the page.
+[演習 5](../5-build-app.yml) では、モデルを使用し、画家を識別して表示する Node.js アプリを作成します。 しかし、モデルをテストするために、アプリを作成する必要はありません。ポータル内でご自分のテストを行うことができ、テストするイメージを使ってさらにモデルを改良することができます。 この演習では、モデルの機能をテストし、ユーザーのために提供されているテスト イメージを使用して画家を識別します。
 
-    ![Testing the model](../media/4-portal-click-quick-test.png)
+1. ページの上部にある **[Quick Test]\(クイック テスト\)** をクリックします。
+ 
+    ![モデルのテスト](../images/portal-click-quick-test.png)
 
-1. Click **Browse local files**, and then browse to the "Quick Tests" folder in the module resources. Select **PicassoTest_01.jpg**, and click **Open**.
+    "モデルのテスト"__ 
 
-    ![Selecting a Picasso test image](../media/4-portal-select-test-01.png)
+1. **[ローカル ファイルを参照します]** をクリックして、ラボ リソースの "Quick Tests" フォルダーを参照します。 **PicassoTest_01.jpg** を選択して、**[開く]** をクリックします。
 
-1. Examine the results of the test in the "Quick Test" dialog. What is the probability that the painting is a Picasso? What is the probability that it is a Rembrandt or Pollock?
+    ![ピカソのテスト イメージの選択](../images/portal-select-test-01.png)
 
-1. Close the "Quick Test" dialog. Then click **Predictions** at the top of the page.
+    _ピカソのテスト イメージの選択_ 
 
-    ![Viewing the tests that have been performed](../media/4-portal-select-predictions.png)
+1. "クイック テスト" ダイアログでテストの結果を確認します。 絵画がピカソである確率とは何ですか? 絵画がレンブラントやポロックである確率とは何ですか? 
 
-1. Click the test image that you uploaded to show a detail of it. Then tag the image as a "Picasso" by selecting **Picasso** from the drop-down list and clicking **Save and close**.
+1. "クイック テスト" ダイアログを閉じます。 次に、ページの上部にある **[予測]** をクリックします。
+ 
+    ![実行されたテストの表示](../images/portal-select-predictions.png)
 
-    > By tagging test images this way, you can refine the model without uploading additional training images.
+    _実行されたテストの表示_ 
 
-    ![Tagging the test image](../media/4-tag-test-image.png)
+1. アップロードしたテスト イメージをクリックして、その詳細を表示します。 次に、ドロップダウン リストから **[Picasso]** を選択し、**[保存して閉じる]** をクリックすることによって、イメージを "Picasso" としてタグ付けします。
 
-1. Perform another quick test using the file named **FlowersTest.jpg** in the "Quick Test" folder. Confirm that this image is assigned a low probability of being a Picasso, a Rembrandt, or a Pollock.
+    > このようにテスト イメージをタグ付けすることによって、追加のトレーニング用イメージをアップロードすることなく、モデルを改良することができます。
+ 
+    ![テスト イメージのタグ付け](../images/tag-test-image.png)
 
-The model is trained and ready to go and appears to be adept at identifying paintings by certain artists. Now let's go a step further and incorporate the model's intelligence into an app.
+    "テスト イメージのタグ付け"__ 
+
+1. "Quick Test" フォルダー内の **FlowersTest.jpg** という名前のファイルを使用して、別のクイック テストを実行します。 このイメージはピカソ、レンブラント、またはポロックである確率が低いと割り当てられていることを確認します。
+
+このモデルはトレーニングされ、使用する準備ができており、特定の画家ごとに絵画をうまく識別することができます。 さらに手順を進めて、モデルのインテリジェンスをアプリに組み込みましょう。

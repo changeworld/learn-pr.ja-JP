@@ -1,56 +1,56 @@
-Imagine that you've been asked to build a system on Azure, and you've been asked for an estimate of what it might cost to run over the next 12 months. You already know that Azure pricing is fully transparent and that you're billed monthly for only the services that you use. How would you get that estimate without deploying and running those services or without manually pricing out each service from the Azure service pricing pages?
+Azure でのシステムの構築を依頼され、今後 12 か月間のコストを見積もるよう求められたものとします。 Azure の料金計算は完全に透過的であり、毎月使用したサービスについてのみ請求されることは、既に知っています。 それらのサービスをデプロイして実行することなく、または Azure サービスの価格ページを基にして各サービスの料金を手作業で計算することなく、その見積もりを得るにはどうすればよいでしょうか? 
 
-## Introducing the Azure pricing calculator
+## <a name="introducing-the-azure-pricing-calculator"></a>Azure 料金計算ツールの概要
 
-To make estimates easy for customers to create, Microsoft developed the **Azure pricing calculator**. The Azure pricing calculator is a free web-based tool that allows you to input Azure services and modify properties and options of the services. It outputs the costs per service and total cost for the full estimate.
+お客様が見積もりを作成しやすいように、**Azure 料金計算ツール**が作成されています。 Azure 料金計算ツールは Web ベースの無料ツールであり、Azure サービスを入力し、サービスのプロパティとオプションを変更できるようになっています。 サービスあたりのコストと、完全な見積もりの総コストが出力されます。
 
-In another browser window or tab, go to the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/). On the pricing calculator page, you'll see three tabs:
+別のブラウザー ウィンドウまたはタブで、[Azure 料金計算ツール](https://azure.microsoft.com/pricing/calculator/)に移動します。 料金計算ツールのページには 3 つのタブがあります。
 
-1. **Products.** This tab is where you'll do most of your activity. This tab has all the Azure services listed and is where you'll add or remove services to formulate your estimate.
-2. **Estimates.** This tab has all of your previously saved estimates. We'll go through this process in a moment.
-3. **FAQ.** Just as it says, this tab has answers to some frequently asked questions.
+1. **[製品]**。 このタブでほとんどの作業を行います。 このタブには、すべての Azure サービスが一覧表示されます。このタブで見積もり式を作成するサービスを追加したり削除したりします。
+2. **[見積もり]**。 このタブには、以前に保存した見積もりがすべて表示されます。 このプロセスについては後で説明します。
+3. **[FAQ]**。 名前のとおり、このタブにはよく寄せられる質問に対する回答があります。
 
-Let's start with the **Products** tab. You'll see the full listing of service categories down the left-hand side. Clicking on any of the categories will display the services in that category. There's also a search box where you can search through all services for the service you're looking for. Clicking on the service will add that service to your estimate. You can add just one service, or you can add as many as you need, including multiples of the same service (for example, multiple virtual machines).
+**[製品]** タブから始めます。左側にすべてのサービス カテゴリが一覧表示されています。 いずれかのカテゴリをクリックすると、そのカテゴリのサービスが表示されます。 検索ボックスもあり、すべてのサービスから探しているサービスを検索できます。 サービスをクリックすると、そのサービスが見積もりに追加されます。 1 つでも複数でも、必要な数のサービスを追加できます。同じサービスを複数追加することもできます (たとえば、複数の仮想マシン)。 
 
-After you've added the services, you'll want to price them. Scrolling down on the page will show you customizable details for that service that apply to pricing. For example, on virtual machines, you can select details such as the region, operating system, and instance size, all of which will impact the pricing for the VM. You'll see a subtotal for the service. And scrolling further down, you'll see a full total for all services included in the estimate. Along with the total, you'll see buttons where you can export, save, and share the estimate.
+サービスを追加した後は、その料金を計算します。 ページを下にスクロールすると、そのサービスの料金に適用されるカスタマイズ可能な詳細が表示されます。 たとえば、仮想マシンについては、リージョン、オペレーティング システム、インスタンス サイズなどの詳細を選択でき、そのすべてが VM の料金に影響します。 サービスの小計が表示されます。 さらに下にスクロールすると、見積もりに含まれるすべてのサービスの総計が表示されます。 合計と共に、見積もりをエクスポート、保存、共有するボタンが表示されます。
 
-## Estimate a solution
+## <a name="estimate-a-solution"></a>ソリューションを見積もる
 
-From our original scenario, let's imagine that this system will run on two Azure VMs and will connect to an Azure SQL Database instance. We also want to have a layer 7 firewall in place to ensure we have the following enhanced load-balancing capabilities. The following illustration shows an application gateway connected to two virtual machines that are connected to a single Azure SQL Database instance.
+元のシナリオで、このシステムを 2 つの Azure VM 上で実行し、Azure SQL Database インスタンスに接続するものとします。 また、レイヤー 7 ファイアウォールを設けて、次のような強化された負荷分散機能を実現するものとします。
 
-![An illustration of a sample architecture that will be used as an example to demonstrate estimating costs.](../media/2-estimate-costs-architecture.png)
+![システム アーキテクチャ ダイアグラム](../images/estimate-costs-architecture.png)
 
-We can use the Azure pricing calculator to figure out what the solution will cost and export our estimate to share with the team.
+Azure 料金計算ツールを使用して、ソリューションのコストを計算し、チームと共有するために見積もりをエクスポートすることができます。
 
-> [!TIP]
-> Make sure you have a clean calculator with nothing listed in the estimate. If you have anything present in your estimate, click the trashcan icon on each item to reset the estimate.
+> [!NOTE]
+> 計算ツールを、見積もりに何も表示されていないクリーンな状態にします。 現在見積もりに何かある場合は、各項目のごみ箱アイコンをクリックして、見積もりをリセットします。
 
-In the Azure pricing calculator, on the **Products** tab, add the following services to the estimate by clicking on them:
+Azure 料金計算ツールの **[製品]** タブで、次のサービスをクリックして見積もりに追加します。
 
-* Virtual Machines in the Compute category
-* Azure SQL Database in the Database category
-* Application Gateway in the Network category
+- Virtual Machines
+- Azure SQL Database
+- Application Gateway
 
-We can configure the details of each, on the **Estimates** tab, to get a solid estimate of our costs. Use the **West US** region for all resources.
+**[見積もり]** タブで各サービスの詳細を構成し、コストの確実な見積もりを取得できます。 すべてのリソースに対し、**[米国西部]** リージョンを使用します。
 
-* **Virtual Machines.** This is an ASP.NET application, so we'll need to use a **Windows OS** VM. This application doesn't require a massive amount of computing power, so select the **D2v3** instance size. We'll need two virtual machines, and they will run all the time (730 hours/month). We're going to use premium SSD storage for these VMs and will require just one disk per VM of size **E10**, for a total of two disks.
+* **Virtual Machines**。 これは ASP.NET アプリケーションなので、**Windows OS** VM を使用する必要があります。 このアプリケーションでは大量のコンピューティング パワーは必要ないので、**D2v3** インスタンス サイズを選択します。 2 つの仮想マシンを必要とし、それを常時 (730 時間/月) 実行します。 これらの VM に対しては Premium SSD ストレージを使用し、VM ごとにサイズ **E10** のディスクが 1 つだけ必要です (全部で 2 つのディスク)。 
 
-* **SQL Database.** For the database, we're going to provision a **single database type** using the **vCore model**. We want a General Purpose, Gen 4 database with 4 vCores. We'll need 32 GB of storage and will be retaining an average of 16 GB of storage. Our retention policy will be 8 weeks, 12 months, and 5 years.
+* **SQL Database**。 データベースについては、**仮想コア モデル**を使用して**単一データベース タイプ**をプロビジョニングします。 4 仮想コアの汎用 Gen 4 データベースが必要です。 32 GB のストレージが必要であり、平均 16 GB のストレージを保持します。 アイテム保持ポリシーは、8 週、12 か月、5 年です。 
 
-* **Application Gateway.** For Application Gateway, we're going to use the Web Application Firewall tier, so we have some protection for our environment. And we're going to go with just two instances and medium size, as our load isn't going to be high. We expect to process 1 TB of data per month.
+* **Application Gateway**。 Application Gateway については、Web Application Firewall レベルを使用するので、環境がある程度保護されます。 また、負荷が高くなることはないので、中サイズのインスタンスを 2 つだけ使用します。 1 か月のデータ処理量は 1 TB と予想されます。
 
-Looking through your estimate, you should see a summary cost for each service you've added and a full total for the entire estimate. In this case, your estimate should be in the neighborhood of **$1,400.00 per month**. You can try playing with some of the options to see the estimate go up and down.
+見積もりに目を通すと、追加したサービスごとの小計コストと、見積もり全体の総計が表示されているはずです。 この場合、見積もりは **1 か月あたり 1,400.00 ドル**前後になるはずです。 一部のオプションを変更してみて、見積もりが増減することを確認できます。
 
-## Share and save your estimate
+## <a name="share-and-save-your-estimate"></a>見積もりを共有および保存する
 
-We now have an estimate for our solution. We can save this estimate, so we can come back to it at a later time and make adjustments if necessary, export it to Excel for further analysis, and share the estimate via a URL.
+ソリューションの見積もりができました。 この見積もりを保存しておき、後で必要に応じて戻って調整したり、さらに分析するために Excel にエクスポートしたり、URL を使用して見積もりを共有したりすることができます。 
 
-To export the estimate, click `Export` at the bottom of the estimate. This will download your estimate in Excel (**.xlsx**) format and will include all the services you added to your estimate.
+見積もりをエクスポートするには、見積もりの下部にある [`Export`] をクリックします。 見積もりが Excel (**.xlsx**) 形式でダウンロードされます。見積もりに追加したすべてのサービスが含まれます。
 
-We can either share the Excel spreadsheet, or we can click on the `Share` button in the calculator. This gives you a URL that you can use to share this estimate. Anyone with this link will be able to access it, making it easy to share with your team.
+Excel スプレッドシートを共有することも、計算ツールの [`Share`] ボタンをクリックして共有することもできます。 ボタンをクリックすると、この見積もりを共有するために使用できる URL が示されます。 このリンクを提供されたユーザーは誰でもこの見積もりにアクセスでき、簡単にチームと共有できます。
 
-If you are logged in with your Azure account, you can save the estimate, so you can come back to it later. Go ahead and click the **Save** button. If you are signed in, you should see a notification that your estimate was saved. If you aren't signed in, you'll see a message to sign in to save your estimate. After you've saved the estimate, scroll back up to the top of the page and select the **Estimates** tab. You will see your estimate there. You can then select it to pull it back up or delete it if you no longer need it.
+Azure アカウントでログインしている場合は、見積もりを保存できるので、後で再び見積もりを表示できます。 ページの下部にある **[保存]** ボタンをクリックします。 サインインしている場合は、見積もりが保存されたことを示す通知が表示されます。 サインインしていない場合は、見積もりを保存するにはサインインする必要があることを示すメッセージが表示されます。 見積もりを保存した後、ページの先頭までスクロールして戻り、**[見積もり]** タブを選択します。見積もりが表示されます。 表示されている見積もりを選択して、再び詳細を見たり、不要になった場合は削除したりできます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-We have arrived at a cost estimate for a set of Azure services without spending any money. We didn't create anything, and we have a fully sharable estimate that we can do further analysis or modifications on in the future. You can use this not only to create estimates for systems where you know the specific services you plan to use but also to compare how different services might impact your overall costs. An example is Microsoft SQL Server on a VM vs. Azure SQL Database. Now let's take a look at how we can get insight into costs for services we've already deployed.
+まったくお金を使わずに、Azure サービスのセットに対する料金の見積もりを作成しました。 何も作成せずに、さらに分析したり後で変更したりできる完全に共有可能な見積もりが手に入りました。 このツールを使うと、使用する予定の特定のサービスがわかっているシステムの見積もりを作成するだけでなく、さまざまなサービスが全体的なコストに与える影響を比較することもできます。 たとえば、VM 上の Microsoft SQL Server とAzure SQL Database を比較できます。 既にデプロイしてあるサービスについてコストの分析情報を入手する方法を見てみましょう。

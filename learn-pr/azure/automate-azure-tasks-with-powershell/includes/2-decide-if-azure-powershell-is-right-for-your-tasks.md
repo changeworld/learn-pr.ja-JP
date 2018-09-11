@@ -1,25 +1,25 @@
-Suppose you need to choose a tool to administer the Azure resources used to test your Customer Relationship Management (CRM) system. The key operations you need to do are: create resource groups and provision Virtual Machines (VMs).
+顧客関係管理 (CRM) システムのテストに使用する Azure リソースの管理ツールを選択する必要があるとします。 実行する必要がある主な操作は、リソース グループの作成と仮想マシン (VM) のプロビジョニングです。
 
-You want something that is easy for administrators to learn, but powerful enough to automate the installation and setup of multiple virtual machines (VMs) or script a full application environment. There are multiple tools available; you need to find the best one for your people and your tasks.
+管理者が簡単に習得できて、複数の仮想マシン (VM) のインストールと設定を自動化できるか、完全なアプリケーション環境をスクリプト化できる強力な機能があるツールを探しています。 利用できるツールは複数あります。スタッフとタスクに最適なツールを見つける必要があります。
 
-## What tools are available?
-Azure provides three administration tools to choose from: 
+## <a name="what-tools-are-available"></a>使用できるツール
+Azure には、次の 3 つの管理ツールがあります。 
 
-- The Azure portal 
-- The Azure CLI
+- Azure portal 
+- Azure CLI
 - Azure PowerShell
 
-They all offer approximately the same amount of control; any task that you can do with one of tools, you can likely do with the other two. All three are cross-platform, running on Windows, macOS, and Linux. They differ in syntax, setup requirements, and whether they support automation.
+いずれも管理できる機能はほぼ同じです。あるツールで実行できるタスクは、他の 2 つのツールでも同様に実行できます。 3 つのツールはすべてクロスプラットフォームであり、Windows、macOS、および Linux 上で動作します。 構文、設定要件、および自動化をサポートするかどうかは異なります。
 
-Here, we will describe each of the three options and give some guidance on how to decide among them. 
+ここでは、3 つの選択肢についてそれぞれ説明し、その中からどのように選択するかについてガイダンスをいくつか示します。 
 
-## What is the Azure portal?
-The Azure portal is a website that lets you create, configure, and alter the resources in your Azure subscription. The portal is a Graphical User Interface (GUI) that makes it convenient to locate the resource you need and execute any required changes. It also guides you through complex administrative tasks by providing wizards and tooltips.
+## <a name="what-is-the-azure-portal"></a>Azure portal とは
+Azure portal は、Azure サブスクリプションのリソースを作成、構成、変更することができる Web サイトです。 ポータルはグラフィカル ユーザー インターフェイス (GUI) であり、必要なリソースを検索したり、必要な変更を実行したりする場合に便利です。 また、ウィザードやツールヒントが用意されているので、複雑な管理タスクにも対応できます。
 
-The portal does not provide any way to automate repetitive tasks. For example, to set up 15 VMs, you would need to create them one-by-one by completing the wizard for each VM. This can be time-consuming and error-prone for complex tasks. 
+ポータルには、反復的なタスクを自動化する方法は用意されていません。 たとえば、15 個の VM を設定するには、個々の VM についてウィザードを完了して 1 つずつ VM を作成する必要があります。 複雑なタスクの場合、この処理には時間がかかり、誤りが発生しやすくなります。 
 
-## What is the Azure CLI?
-The Azure CLI is a cross-platform command-line program to connect to Azure and execute administrative commands on Azure resources. For example, to create a VM, you would use a command like the following:
+## <a name="what-is-the-azure-cli"></a>Azure CLI とは
+Azure CLI は、Azure に接続して Azure リソース上で管理コマンドを実行することができるクロスプラットフォームのコマンドライン プログラムです。 たとえば、VM を作成するには、次のようなコマンドを使用します。
 
 ```bash
 az vm create \
@@ -29,12 +29,12 @@ az vm create \
   ...
 ```
 
-The Azure CLI is available two ways: inside a browser via the Azure Cloud Shell or with a local install on Linux, Mac, or Windows. In both cases, it can be used interactively or scripted. For interactive use, you first launch a shell such as `cmd.exe` on Windows or Bash on Linux or macOS and then issue the command at the shell prompt. To automate repetitive tasks, you assemble the commands into a shell script using the script syntax of your chosen shell and then execute the script.
+Azure CLI を使用するには、Azure Cloud Shell 経由のブラウザー内、または Linux、Mac、または Windows 上のローカル インストールという 2 つの方法があります。 いずれの場合も、対話形式またはスクリプト形式で使用できます。 対話形式で使用するには、まずシェル (Windows 上では `cmd.exe`、Linux または macOS 上では Bash) を起動し、シェルのプロンプトでコマンドを発行します。 反復的なタスクを自動化するには、選択したシェルのスクリプト構文を使用して、複数のコマンドを 1 つのシェル スクリプトにまとめて、スクリプトを実行します。
 
-## What is Azure PowerShell?
-Azure PowerShell is a module that you add to Windows PowerShell or PowerShell Core to let you connect to your Azure subscription and manage resources. Azure PowerShell requires PowerShell to function. PowerShell provides services like the shell window, command parsing, and so on. Azure PowerShell adds the Azure-specific commands.
+## <a name="what-is-azure-powershell"></a>Azure PowerShell とは
+Azure PowerShell は、Windows PowerShell または PowerShell Core に追加し、Azure サブスクリプションに接続してリソースを管理することができるモジュールです。 Azure PowerShell を使用するには、PowerShell が機能している必要があります。 PowerShell は、シェル ウィンドウ、コマンド解析などのサービスを提供します。 Azure PowerShell で、Azure 固有のコマンドが追加されます。
 
-For example, Azure PowerShell provides the **New-AzureRmVM** command that creates a Virtual Machine for you inside your Azure subscription. To use it, you would launch the PowerShell application and then issue a command like the following:
+たとえば Azure PowerShell には、Azure サブスクリプション内に仮想マシンを作成する **New-AzureRmVM** コマンドがあります。 使用するには、PowerShell アプリケーションを起動し、次のようなコマンドを発行します。
 
 ```powershell
 New-AzureRmVm `
@@ -44,30 +44,30 @@ New-AzureRmVm `
     ...
 ```
 
-Azure PowerShell is also available two ways: inside a browser via the Azure Cloud Shell or with a local install on Linux, Mac, or Windows. In both cases, you have two modes to choose from. You can use it in interactive mode, in which you manually issue one command at a time, or in scripting mode, where you execute a script that consists of multiple commands.
+Azure PowerShell を使用する場合も、Azure Cloud Shell 経由のブラウザー内、または Linux、Mac、または Windows 上のローカル インストールという 2 つの方法があります。 いずれの場合も、2 つのモードから選択できます。 対話モードでは、一度に 1 つのコマンドを手動で発行します。スクリプト モードでは、複数のコマンドで構成される 1 つのスクリプトを実行できます。
 
-## How to Choose an administrative tool
-There is approximate parity between the portal, the Azure CLI, and Azure PowerShell with respect to the Azure objects they can administer and the configurations they can create. They are also all cross-platform. This means you will typically consider several other factors when making your choice:
+## <a name="how-to-choose-an-administrative-tool"></a>管理ツールを選択する方法
+管理できる Azure オブジェクトと作成できる構成の点で、ポータル、Azure CLI、Azure PowerShell はほぼ同等です。 また、いずれもクロスプラットフォームです。 そのため、選択する場合は、通常、他のいくつかの要素を考慮することになります。
 
-- **Automation**: Do you need to automate a set of complex or repetitive tasks? Azure PowerShell and the Azure CLI support this while the portal does not.
+- **自動化**: 一連の複雑なタスクまたは反復的なタスクを自動化する必要はありますか。 Azure PowerShell と Azure CLI ではサポートしていますが、ポータルではサポートしていません。
 
-- **Learning curve**: Do you need to complete a task quickly without learning new commands or syntax? The Azure portal does not require you to learn syntax or memorize commands. In Azure PowerShell and the Azure CLI, you must know the detailed syntax for each command you use.
+- **学習曲線**: 新しいコマンドや構文を習得することなく、すぐにタスクを完了する必要がありますか。 Azure portal では、構文を習得したり、コマンドを記憶したりする必要はありません。 Azure PowerShell と Azure CLI では、使用する各コマンドの詳細な構文を把握する必要があります。
 
-- **Team skillset**: Does your team have existing expertise? For example, your team may have used PowerShell to administer Windows. If so, they will quickly become comfortable using Azure PowerShell.
+- **チームのスキルセット**: チームには既存の専門知識がありますか。 たとえば、チームが PowerShell を使用して Windows を管理したことがあるとします。 このような場合は、Azure PowerShell の使用にもすぐになじむでしょう。
 
-## Example
-Recall that you are choosing an administrative tool to create the test environments for your CRM application. Your administrators have two specific Azure tasks they will need to do:
+## <a name="example"></a>例
+この例は、CRM アプリケーションのテスト環境を作成する管理ツールを選択することが目的です。 管理者には、実行する必要がある Azure のタスクが 2 つあります。
 
-1. Create one resource group for each category of testing (unit, integration, and acceptance).
-2. Create multiple VMs in each resource group before every round of testing.
+1. テストのカテゴリ (単体テスト、統合テスト、および受け入れテスト) ごとに 1 つのリソース グループを作成します。
+2. 各テスト ラウンドの前に、個々のリソース グループに複数の VM を作成します。
 
-To create the resource groups, the Azure portal is a reasonable choice. These are one-off tasks, so you don't need scripts to do them.
+リソース グループを作成するには、Azure portal が適しています。 1 回限りのタスクなので、スクリプトを実行する必要はありません。
 
-Finding the best tool to create the VMs is a more challenging decision. You need to create several of them and you need to do it repeatedly, likely several times each week. This means you will want automation, so the Azure portal is not a good choice. In this case, either Azure PowerShell or the Azure CLI will meet your needs. If your team members have some existing PowerShell knowledge, Azure PowerShell will likely be the best match. Azure PowerShell is available on the operating systems your admin team uses, it supports automation, and should be quick for your team to learn.
+VM の作成に最適なツールを見つけることは、より難しい判断になります。 リソース グループをいくつか作成する必要があります。また、毎週複数回など、繰り返し作成する必要があります。 つまり、自動化が必要なので、Azure portal は適していません。 この場合、Azure PowerShell または Azure CLI のいずれかがニーズに合っています。 チーム メンバーに PowerShell の知識が既にある場合は、おそらく Azure PowerShell が最適です。 Azure PowerShell は、管理チームが使用するオペレーティング システム上で使用可能で自動化をサポートしています。また、チームはすぐに習得できるはずです。
 
-## Summary
-Most administrators' first experience with Azure is in the Portal. It's a great place to start as it provides a clean, well-structured graphical interface but provided limited options for automation. When you need automation, Azure gives you two options: Azure PowerShell for admins with PowerShell experience and the Azure CLI for everyone else.
+## <a name="summary"></a>まとめ
+多くの管理者は Azure portal で Azure の機能を初めて使用します。 きれいで整理されたグラフィカル インターフェイスが用意されているため、初めての場合には最適ですが、自動化のオプションは限られています。 自動化が必要な場合、Azure には 2 つの選択肢があります。PowerShell の経験がある管理者向けの Azure PowerShell と、その他のユーザー向けの Azure CLI です。
 
-In practice, businesses typically have a mix of one-off and repetitive tasks. This means it is common to use both the Portal and a scripting solution. In our CRM example, it's appropriate to create the resource groups via the Portal and automate the VM creation with PowerShell.
+通常、実際の業務では、1 回限りのタスクと反復的なタスクが混在しています。 つまり、ポータルとスクリプト ソリューションの両方を使用するのが一般的です。 この CRM の例では、ポータルを使用してリソース グループを作成し、PowerShell を使用して VM の作成を自動化する方法が適切です。
 
-The rest of this module focuses on installing and using Azure PowerShell.
+以降のこのモジュールでは、Azure PowerShell のインストールと使用を中心に説明します。

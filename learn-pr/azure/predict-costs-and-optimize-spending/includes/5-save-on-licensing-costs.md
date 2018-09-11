@@ -1,77 +1,75 @@
-Licensing is another area that can dramatically impact your cloud spending. Let's look at some ways you can reduce your licensing costs.
+もう 1 つの領域であるライセンスは、クラウドの支出に大きく影響する可能性があります。 ライセンス コストを削減できる方法をいくつか見てみましょう。
 
-## Azure Hybrid Benefit for Windows Server
+## <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure Hybrid Benefit
 
-Many customers have made an investment in Windows Server licenses and would like to repurpose this investment on Azure. The Azure Hybrid Benefit gives customers the right to use these licenses for virtual machines on Azure. That means you won't be charged for the Windows Server license and will instead be billed at the Linux rate.
+多くのお客様が Windows Server ライセンスに投資しており、Azure ではこの投資を別の用途に使いたいと考えます。 Azure ハイブリッド特典では、Azure で仮想マシン用にこれらのライセンスを使用する権利がお客様に与えられます。 つまり、Windows Server ライセンスに対する料金は発生せず、代わりに Linux 料金で課金されます。 
 
-To be eligible for this benefit, your Windows licenses must be covered by Software Assurance. The following guidelines will also apply:
+この特典を受けるには、Windows ライセンスがソフトウェア アシュアランスの対象である必要があります。 次のガイドラインも適用されます。
 
-- Each two-processor license or each set of 16-core licenses is entitled to two instances of up to 8 cores or one instance of up to 16 cores.
-- Standard Edition licenses can only be used once either on-premises or in Azure. That means you can't use the same license for an Azure VM and a local computer.
-- Datacenter Edition benefits allow for simultaneous usage both on-premises and in Azure, so the license will cover two running Windows machines.
+- 各 2 プロセッサ ライセンスまたは 16 コア ライセンスの各セットでは、最大 8 コアのインスタンスを 2 つ、または最大 16 コアのインスタンスを 1 つ利用できます。 
+- Standard Edition ライセンスは、オンプレミスまたは Azure 内のどちらかで一度のみ使用できます。 つまり、Azure VM とローカル コンピューターに対して同じライセンスを使用することはできません。
+- Datacenter Edition の特典では、オンプレミスと Azure 内の両方で同時に使用することができるため、このライセンスでは実行中の 2 台の Windows コンピューターが対象になります。 
 
 > [!NOTE]
-> Most customers are typically licensed by core, so you'll use that model for your calculation. If you have questions about what licenses you have, reach out to your license reseller or your Microsoft account team.
+> ほとんどのお客様には通常、コアごとにライセンスが供与されるため、そのモデルを使用して計算します。 保有するライセンスについて質問がある場合は、ライセンス リセラーまたは Microsoft アカウント チームにお問い合わせください。
 
-Applying the benefit is easy. It can be turned on and off at any time with existing VMs or applied at deployment time for new VMs. The Hybrid Benefit (especially when combined with reserved instances) can provide substantial license savings.
+特典の適用は簡単です。 既存の VM でいつでもオンとオフを切り替えることができます。あるいは新しい VM のデプロイ時に適用できます。 ハイブリッド特典 (特に予約インスタンスと組み合わせた場合) ではライセンス コストを大幅に節約できます。
 
-## Azure Hybrid Benefit for SQL Server
+## <a name="azure-hybrid-benefit-for-sql-server"></a>SQL Server 向け Azure ハイブリッド特典
 
-The Azure Hybrid Benefit for SQL Server helps you maximize the value from your current licensing investments and accelerate your migration to the cloud. Azure Hybrid Benefit for SQL Server is an Azure-based benefit that enables you to use your SQL Server licenses with active Software Assurance to pay a reduced rate.
+SQL Server 向け Azure ハイブリッド特典は、現在のライセンス投資価値を最大限に高め、クラウドへの移行を促進するうえで役立ちます。 SQL Server 向け Azure ハイブリッド特典は Azure ベースの特典であり、アクティブなソフトウェア アシュアランス付きの SQL Server ライセンスを使用して、割引料金を適用できます。
 
-You can apply this benefit even if the Azure resource is active, but the reduced rate will be applied from the time you select it in the portal. No credit will be issued retroactively.
+この特典は、Azure リソースがアクティブな場合でも適用できます。ただし、割引料金が適用されるのはポータルで選択した時点からとなります。 以前にさかのぼってクレジットが発行されることはありません。
 
-### Azure SQL Database vCore-based options
+### <a name="azure-sql-database-vcore-based-options"></a>Azure SQL Database の仮想コア ベースのオプション
 
-For Azure SQL Database, the Azure Hybrid Benefit works as follows:
+![SQL Server ライセンスのトレードイン](../images/sql-tradein-value.jpg)
 
-- If you have Standard Edition per core licenses with active Software Assurance, you can get one vCore in the General Purpose service tier for every one license core you own on-premises.
-- If you have Enterprise Edition per core licenses with active Software Assurance, you can get one vCore in the Business Critical service tier for every one license core you own on-premises. Note that the Azure Hybrid Benefit for SQL Server for the Business Critical service tier is available only to customers who have Enterprise Edition licenses.
-- If you have highly virtualized Enterprise Edition per core licenses with active Software Assurance, you can get four vCores in the General Purpose service tier for every one license core you own on-premises. This is a unique virtualization benefit available only on Azure SQL Database.
+Azure SQL Database の場合、Azure ハイブリッド特典は次のようになります。
 
-The following illustration shows the vCore-based options available in each service tier with Azure Hybrid Benefit for SQL Server licenses.
+- アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Standard Edition がある場合は、オンプレミスで所有しているライセンス コアごとに General Purpose サービス レベルで仮想コアを 1 つ取得できます。
+- アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Enterprise Edition がある場合は、オンプレミスで所有しているライセンス コアごとに Business Critical サービス レベルで仮想コアを 1 つ取得できます。 Business Critical サービス レベル用の SQL Server 向け Azure ハイブリッド特典を利用できるのは、Enterprise Edition ライセンスを持つお客様のみであることに注意してください。
+- アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに高度に仮想化された Enterprise Edition がある場合は、オンプレミスで所有しているライセンス コアごとに General Purpose サービス レベルで仮想コアを 4 つ取得できます。 これは、Azure SQL Database でのみ利用可能な独自の仮想化特典です。
 
-![An illustration showing an example of how to maximize your existing SQL server license value using the Azure Hybrid Benefit.](../media/5-sql-tradein-value.png)
+Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は次のようになります。
 
-For SQL Server in Azure Virtual Machines, the Azure Hybrid Benefit works as follows:
+- アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Enterprise Edition がある場合は、オンプレミスで所有しているライセンス コアごとに Azure Virtual Machines の SQL Server Enterprise Edition のコアを 1 つ取得できます。
+- アクティブなソフトウェア アシュアランス付きのコア ライセンスごとに Standard Edition がある場合は、オンプレミスで所有しているライセンス コアごとに Azure Virtual Machines の SQL Server Standard Edition のコアを 1 つ取得できます。
 
-- If you have Enterprise Edition per core licenses with active Software Assurance, you can get one core of SQL Server Enterprise Edition in Azure Virtual Machines for every one license core you own on-premises.
-- If you have Standard Edition per core licenses with active Software Assurance, you can get one core of SQL Server Standard Edition in Azure Virtual Machines for every one license core you own on-premises.
+これが SQL Server ワークロードでの Azure の支出に大きな影響を与える場合があります。
 
-This can make a dramatic impact on your Azure spending with SQL Server workloads.
+## <a name="use-devtest-subscription-offers"></a>Dev/Test サブスクリプション オファーを使用する
 
-## Use Dev/Test subscription offers
+[Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) および[開発テスト用の従量課金制プラン](https://azure.microsoft.com/offers/ms-azr-0023p/) オファーは、非運用環境でコストを節約するために利用できる特典です。 この特典ではいくつかの割引が適用されます。特に Windows ワークロードの場合、ライセンス料金が不要となり、仮想マシン用の Linux 料金でのみ課金されます。 これは SQL Server や、Visual Studio サブスクリプション (旧 MSDN) の対象となるその他の Microsoft ソフトウェアにも適用されます。 この特典に関する要件がいくつかあります。1 つは非運用ワークロード専用であること、もう 1 つはこれらの環境のすべてのユーザー (テスト担当者を除く) は Visual Studio サブスクリプションの対象でなければならないということです。 つまり、非運用ワークロードの場合、Windows、SQL Server、およびその他の Microsoft 仮想マシンのワークロードにかかるコストを節約できます。
+以下に各オファーの詳細を示します。 Enterprise Agreement のお客様の場合、Enterprise Dev/Test オファーを活用します。Enterprise Agreement をご利用でないお客様で、代わりに PAYG アカウントを使用する場合は、開発テスト用の従量課金制プラン オファーを活用します。
 
-The [Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) and [Pay-As-You-Go Dev/Test](https://azure.microsoft.com/offers/ms-azr-0023p/) offers are a benefit you can take advantage of to save costs on your non-production environments. This benefit gives you several discounts, most notably for Windows workloads, eliminating license charges and only billing you at the Linux rate for virtual machines. This also applies to SQL Server and any other Microsoft software that is covered under a Visual Studio subscription (formerly known as MSDN). There are a few requirements for this benefit, one being that it's only for non-production workloads, and another being that any users of these environments (excluding testers) must be covered under a Visual Studio subscription. In short, for non-production workloads, this allows you to save money on your Windows, SQL Server, and other Microsoft virtual machine workloads.
-Below are the full details of each offer. If you are a customer on an Enterprise Agreement, you'd leverage the Enterprise Dev/Test offer, and if you are a customer without an Enterprise Agreement and are instead using PAYG accounts, you'd leverage the Pay-As-You-Go Dev/Test offer.
+## <a name="bring-your-own-sql-server-license"></a>SQL Server ライセンスを持ち込む
 
-## Bring your own SQL Server license
+Enterprise Agreement のお客様で、既に SQL Server ライセンスに投資しており、Azure へのリソースの移動時にライセンスが解放された場合、**ライセンス持ち込み** (BYOL) イメージを Azure Marketplace からプロビジョニングでき、未使用のライセンスを利用して Azure VM のコストを削減することができます。 これは Windows VM をプロビジョニングし、手動で SQL Server をインストールすることで常に行うことはできましたが、マイクロソフト認定イメージを活用することで作成プロセスが簡略化されます。 これらのイメージを見つけるには、Marketplace で **BYOL** を検索します。
 
-If you are a customer on an Enterprise Agreement and already have an investment in SQL Server licenses, and they have freed up as part of moving resources to Azure, you can provision **bring your own license** (BYOL) images off the Azure Marketplace, giving you the ability to take advantage of these unused licenses and reduce your Azure VM cost. You've always been able to do this by provisioning a Windows VM and manually installing SQL Server, but this simplifies the creation process by leveraging Microsoft certified images. Search for **BYOL** in the Marketplace to find these images.
-
-![Screenshot of the Azure portal showing BYOL options for SQL Server.](../media/5-byol-sql-server.png)
+![Azure の SQL Server 用 BYOL](../images/byol-sql-server.png)
 
 > [!IMPORTANT]
-> An Enterprise Agreement subscription is required to use these certified BYOL images.
+> 認定されたこれらの BYOL イメージを使用するには、Enterprise Agreement サブスクリプションが必要です。
 
-## Use SQL Server Developer Edition
+## <a name="use-sql-server-developer-edition"></a>SQL Server Developer Edition を使用する
 
-A lot of people are unaware that SQL Server Developer Edition is a free product for **nonproduction use**. Developer Edition has all the same features that Enterprise Edition has, but for nonproduction workloads, you can save dramatically on your licensing costs.
+多くの人は、SQL Server Developer Edition が**非運用環境用**の無料の製品であることに気付いていません。 Developer Edition には Enterprise Edition と同じ機能がすべてありますが、非運用ワークロードでは、ライセンス コストを大幅に節約できます。
 
-Look for SQL Server images for Developer Edition on the Azure Marketplace and use them for development or testing purposes to eliminate the additional cost for SQL Server in these cases.
+このような場合、Azure Marketplace で Developer Edition 用の SQL Server イメージを見つけて、開発やテスト目的に使用することで、SQL Server にかかる追加コストを削減できます。 
 
-> [!TIP]
-> For full licensing information, take a look at the [documented pricing guidance](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance).
+> [!NOTE]
+> ライセンスについて詳しくは、[料金ガイダンスに関するドキュメント](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance)を参照してください。
 
-## Use constrained instance sizes for database workloads
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>データベース ワークロードで制約付きインスタンス サイズを使用する 
 
-Many customers have high requirements for memory, storage, or I/O bandwidth but low CPU core counts. Based on this popular request, Microsoft has made available the most popular VM sizes (DS, ES, GS, and MS) in new sizes that constrain the vCPU count to one half or one quarter of the original VM size, while maintaining the same memory, storage, and I/O bandwidth.
+多くのお客様はメモリ、ストレージ、および I/O 帯域幅に対する高い要求を持っていますが、CPU コアについては少ない数に抑えたいと考えます。 このようなよくある要求に基づき、Microsoft では新しいサイズで最もよく使われる VM サイズ (DS、ES、GS、MS) を利用できるようにしました。これにより、同じメモリ、ストレージ、および I/O 帯域幅を維持しながら、vCPU 数が元の VM サイズの半分または 4 分の 1 に制限されます。
 
-| VM Size | vCPUs | Memory | Max disks | Max I/O throughput | SQL Server Enterprise licensing cost per year | Total cost per year (compute + licensing) |
+| VM サイズ | vCPU 数 | メモリ | ディスクの最大数 | 最大 I/O スループット | SQL Server Enterprise の 1 年あたりのライセンス コスト | 1 年あたりの総コスト (コンピューティング + ライセンス) |
 |---------|-------|--------|-----------|--------------------|-----------------------------------------------|---------------------------|
-| Standard_DS14v2   | 16 | 112 GB | 32 | 51,200 IOPS or 768 MB/s |           |           |
-| Standard_DS14-4v2 | **4**  | 112 GB | 32 | 51,200 IOPS or 768 MB/s | 75% lower | 57% lower |
-| Standard_GS5      | 32 | 448    | 64 | 80,000 IOPS or 2 GB/s   |           |           |
-| Standard_GS5-8    | **8**  | 448    | 64 | 80,000 IOPS or 2 GB/s   | 75% lower | 42% lower |
+| Standard_DS14v2   | 16 | 112 GB | 32 | 51,200 IOPS または 768 MB/秒 |           |           |
+| Standard_DS14-4v2 | **4**  | 112 GB | 32 | 51,200 IOPS または 768 MB/秒 | 75% 削減 | 57% 削減 |
+| Standard_GS5      | 32 | 448    | 64 | 80,000 IOPS または 2 GB/秒   |           |           |
+| Standard_GS5-8    | **8**  | 448    | 64 | 80,000 IOPS または 2 GB/秒   | 75% 削減 | 42% 削減 |
 
-Because database products like SQL Server and Oracle are licensed per CPU, this allows customers to reduce licensing cost by up to 75 percent but still maintain the high performance their database requires.
+SQL Server や Oracle などのデータベース製品のライセンスは CPU ごとに供与されるため、お客様は最大で 75% ライセンス コストを削減でき、データベースで必要なハイ パフォーマンスを引き続き維持できます。 

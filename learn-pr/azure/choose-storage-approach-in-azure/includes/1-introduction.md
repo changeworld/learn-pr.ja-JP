@@ -1,8 +1,8 @@
-Data comes in different shapes and sizes, and there isn't one storage solution that fits all. For example, an online retail website has a number of distinct data sets that are all used to run the business: product catalog data, media files like photos and videos, and financial business data. Each data set has different requirements, and it's your job to figure out which storage solution is best. The main factors that determine the best storage solution are: data category, data usage, and performance.
+データの形態とサイズはさまざまなので、すべてに当てはまる 1 つのストレージ ソリューションはありません。 たとえば、オンライン小売り Web サイトには、商品カタログ データ、写真やビデオなどのメディア ファイル、財務ビジネス データなど、複数の異なるデータ セットがあります。 各データ セットの要件は異なり、どのストレージ ソリューションが最適か判断するのはユーザーの仕事です。 最適なストレージ ソリューションを決定する主な要因は、データのカテゴリ、データの使用状況、パフォーマンスです。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-- Identify the different categories of data
-- Determine the usage of your data
-- Determine whether your data requires transactions 
+- データの異なるカテゴリを識別する
+- データの使用状況を調べる
+- データにトランザクションが必要かどうかを決定する 

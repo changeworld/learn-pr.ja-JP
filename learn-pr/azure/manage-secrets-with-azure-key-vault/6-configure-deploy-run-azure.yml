@@ -1,17 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
-title: Configure, deploy, and run in Azure
+title: Azure での構成、展開、実行
 metadata:
-  title: Configure, deploy, and run in Azure
-  description: Configure, deploy, and run in Azure
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 12
+  title: Azure での構成、展開、実行
+  description: Azure での構成、展開、実行
+  ms.openlocfilehash: 2877e343b38fce7016c15621f390db6343838e7d
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40448026"
+durationInMinutes: 10
 interactive: bash
-azureSandbox: true
-content: |
-  [!include[](includes/6-configure-deploy-run-azure.md)]
+content: '[!include[](includes/6-configure-deploy-run-azure.md)]'

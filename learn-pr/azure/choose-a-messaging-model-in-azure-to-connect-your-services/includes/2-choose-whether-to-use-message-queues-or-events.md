@@ -1,45 +1,45 @@
-Suppose you are planning the architecture of a distributed music-sharing application. You want to ensure that the application is as reliable and scalable as possible, and you intend to use Azure technologies to build a robust communication infrastructure.
+あなたは、分散型の音楽共有アプリケーションのアーキテクチャを計画しているとします。 このアプリケーションの信頼性とスケーラビリティをできるだけ高くする必要があるため、Azure のテクノロジを使用して堅牢な通信インフラストラクチャを構築しようとしています。
 
-Before you can choose the right Azure technology, you must understand each individual communication that the components of the application exchange. For each communication you can choose a different Azure technology.
+適切な Azure テクノロジを選択するには、まずアプリケーションのコンポーネントが交わす個々の通信について理解しておく必要があります。 通信ごとに異なる Azure テクノロジを選択できます。
 
-The first thing to understand about a communication is whether it sends **messages** or **events**. This is a fundamental choice that will help you choose the appropriate Azure service to use.
+通信についてまず理解しなければならないのは、**メッセージ**と**イベント**のどちらを送信するかということです。 これは基本となる選択の 1 つであり、使用する Azure サービスを適切に選択するのに役立ちます。
 
-## What is a message?
-In the terminology of distributed applications, **messages** have the following characteristics:
+## <a name="what-is-a-message"></a>メッセージとは何でしょうか。
+分散アプリケーションの用語で、**メッセージ**には次の特性があります。
 
-- A message contains raw data, produced by one component, that will be consumed by another component.
-- A message contains the data itself, not just a reference to that data.
-- The sending component expects the message content to be processed in a certain way by the destination component. The integrity of the overall system may depend on both sender and receiver doing a specific job.
+- メッセージには、1 つのコンポーネントによって生成され、別のコンポーネントで使用される生のデータが含まれています。
+- メッセージには、データへの参照だけでなく、データ自体が含まれています。
+- 送信側コンポーネントは、メッセージのコンテンツが宛先コンポーネントによって特定の方法で処理されることを想定しています。 システム全体の整合性は、特定のジョブを実行する送信側と受信側の両方によって決まる場合があります。
 
-For example, suppose a user uploads a new song by using the mobile music-sharing app. The mobile app must send that song to the web API that runs in Azure. The song media file itself must be sent, not just an alert that indicates that a new song has been added. The mobile app expects that the web API will store the new song in the database and make it available to other users. This is an example of a message.
+たとえば、ユーザーがモバイルの音楽共有アプリを使用して新しい曲をアップロードするとします。 モバイル アプリは、Azure で実行されている Web API にその曲を送信する必要があります。 新しい曲が追加されたことを示すアラートだけでなく、曲のメディア ファイル自体を送信する必要があります。 モバイル アプリは、Web API が新しい曲をデータベースに格納し、他のユーザーが利用できるようにすることを想定しています。 これはメッセージの例です。
 
-## What is an event?
+## <a name="what-is-an-event"></a>イベントとは何でしょうか。
 
-**Events** are lighter weight than messages, and are most often used for broadcast communications. The components sending the event are known as **publishers**, and receivers are known as **subscribers**.
+**イベント**はメッセージよりも軽量で、ほとんどの場合はブロードキャスト通信に使用されます。 イベントを送信するコンポーネントは**パブリッシャー**と呼ばれ、受信側は**サブスクライバー**と呼ばれます。
 
-With events, receiving components will generally decide in which communications they are interested, and will "subscribe" to those. The subscription is usually managed by an intermediary, like Azure Event Grid or Azure Event Hubs. When publishers send an event, the intermediary will route that event to interested subscribers. This is known as a "publish-subscribe architecture." It is not the only way to deal with events, but it is the most common.
+イベントを使用するときは、基本的に受信側コンポーネントがどの通信に関心があるかを決定して、その通信を "サブスクライブ" します。 サブスクリプションの管理は通常、Azure Event Grid や Azure Event Hubs などの仲介役が行います。 パブリッシャーがイベントを送信すると、仲介役は関心を持っているサブスクライバーにそのイベントをルーティングします。 これを、"パブリッシュ/サブスクライブ アーキテクチャ" といいます。 これがイベントを扱う唯一の方法ではありませんが、最も一般的です。
 
-Events have the following characteristics:
+イベントには次の特性があります。
 
-- An event is a lightweight notification that indicates that something happened.
-- The event may be sent to multiple receivers, or to none at all.
-- Events are often intended to "fan out," or have a large number of subscribers for each publisher.
-- The publisher of the event has no expectation about the action a receiving component takes.
-- Some events are discrete units and unrelated to other events. 
-- Some events are part of a related and ordered series.  
+- イベントは、何かが発生したことを示す軽量の通知です。
+- 送信されたイベントの受信者が複数のこともあれば、まったくいないこともあります。
+- 多くの場合、イベントは "ファンアウト" を意図しています。つまり、パブリッシャーのそれぞれに対して多数のサブスクライバーが存在します。
+- イベントのパブリッシャーは、受信側コンポーネントがどのようなアクションを実行するかについて何も想定していません。
+- 一部のイベントは個別のユニットであり、他のイベントに関連しません。 
+- あるいは、一連の関連するイベントに順序が付けられることもあります。  
 
-For example, suppose the music file upload has been completed, and the new song has been added to the database. In order to inform users of the new file, the web API must inform the web front end and mobile app users of the new file. The users can choose whether to listen to the new song, so the initial notification does not include the music file but only notifies users that the song exists. The sender does not have a specific expectation that the event receivers will do anything particular in responsiveness of receiving this event.
+たとえば、音楽ファイルのアップロードが完了し、新しい曲がデータベースに追加されたとします。 新しいファイルのことをユーザーに知らせるために、Web API は Web フロント エンドとモバイル アプリのユーザーに新しいファイルのことを通知する必要があります。 ユーザーは、その新しい曲を聴くかどうかを選択できます。したがって、最初の通知には音楽ファイルは含まれず、その曲が存在することだけをユーザーに通知します。 送信側は、イベントの受信側がこのイベント受信に応答して特に何かを実行することは、想定していません。
 
-This is an example of a discrete event.
+これは、個別のイベントの例です。
 
-## How to choose messages or events
+## <a name="how-to-choose-messages-or-events"></a>メッセージまたはイベントを選択する方法
 
-A single application is likely to use events for some purposes and messages for others. Before you choose, you must analyze your application's architecture and all its use cases, to identify all the different purposes where its components have to communicate with each other.
+1 つのアプリケーションが、ある目的のためにイベントを使用し、別の目的のためにメッセージを使用するということはよくあります。 選択を行う前に、アプリケーションのアーキテクチャとそのすべてのユース ケースを分析して、そのコンポーネントが相互に通信する際のさまざまな目的をすべて識別する必要があります。
 
-Events are more likely to be used for broadcasts and are often ephemeral, meaning a communication might not be handled by any receiver if none are currently subscribing. Messages are more likely to be used where the distributed application requires a guarantee that the communication will be processed.
+イベントは、ブロードキャストに使用される可能性が高く、多くの場合に一時的です。つまり、通信が現在サブスクライブされていない場合、受信側で処理されない可能性があります。 メッセージが使用される可能性が高いのは、分散アプリケーションで通信の処理を保証する必要がある場合です。
 
-For each communication, consider the following question: **Does the sending component expect the communication to be processed in a particular way by the destination component?**
+通信のそれぞれについて、**送信側コンポーネントはその通信が宛先コンポーネントによって特定の方法で処理されることを想定しているか?** を考えてみてください。
 
-If the answer is _yes_, choose to use a message. If the answer is _no_, you may be able to use events.
+答えが _"はい"_ の場合は、メッセージを使用します。 答えが _"いいえ"_ の場合は、イベントを使用できる可能性があります。
 
-Understanding how your components need to communicate will help you to choose how your components will communicate. Let's start with messages.
+コンポーネントがどのように通信する必要があるかを理解することは、コンポーネントの通信方法を選択するのに役立ちます。 では、初めにメッセージについて見ていきましょう。

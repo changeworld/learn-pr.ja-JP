@@ -1,81 +1,81 @@
-### Train a TensorFlow model
+### <a name="exercise-3-train-a-tensorflow-model"></a>演習 3: TensorFlow モデルをトレーニングする
 
-In this unit, you will train an image-classification model built with [TensorFlow](https://www.tensorflow.org/) to recognize images that contain hot dogs. Rather than create the model from scratch, which would require vast amounts of computing power and tens or hundreds of thousands of images, you will customize a preexisting model, a practice known as [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning). Transfer learning allows you to achieve high levels of accuracy with as little as a few minutes of training time on a typical laptop or PC and as few as several dozen images.
+この演習では、[TensorFlow](https://www.tensorflow.org/) を使用してビルドされたイメージ分類モデルを、ホットドッグが入ったイメージを認識するようにトレーニングします。 モデルをゼロから作成すると、膨大な量のコンピューティング能力と数十万ものイメージが必要になるため、[転移学習](https://en.wikipedia.org/wiki/Transfer_learning)として知られている既存のモデルをカスタマイズします。 転移学習を使用すると、一般的なノート パソコンや PC で数十個のイメージだけを使用して、わずか数分間で高レベルの精度を実現できます。
 
-In the context of deep learning, transfer learning involves starting with a deep neural network that is pretrained to perform image classification and adding a layer that customizes the network for your problem domain — for example, to classify images into two groups: those that contain hot dogs, and those that do not. More than 20 pretrained TensorFlow image-classification models are available at <https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models.> The [Inception](https://arxiv.org/abs/1512.00567) and [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) models are characterized by higher accuracy and commensurately higher resource requirements, while the MobileNet models trade accuracy for compactness and power efficiency and were developed with mobile devices in mind. All of these models are well known in the deep-learning community and have been used in a number of competitions as well as in real-world applications. You will use one of the MobileNet models as the basis for your neural network in order to strike a reasonable balance between accuracy and training time.
+ディープ ラーニングとの関係において、転移学習は、イメージの分類と、問題のドメインのネットワークをカスタマイズするレイヤーの追加 (たとえばイメージにホットドッグが含まれているか含まれていないかで 2 つのグループに分類する) を実行するように事前にトレーニングされたディープ ニューラル ネットワークから始まります。 <https://github.com/tensorflow/models/tree/master/research/slim#pre-trained-models.> では、20 を超える事前トレーニング済みの TensorFlow イメージ分類モデルを入手できます。[Inception](https://arxiv.org/abs/1512.00567) と [ResNet](https://towardsdatascience.com/an-overview-of-resnet-and-its-variants-5281e2f56035) モデルが高い精度とそれに応じた高いリソース要件によって特徴付けられているのに対し、MobileNet モデルは精度と引き換えにコンパクトさと電源効率が高くなっており、モバイル デバイスでの使用を考慮して開発されました。 これらのモデルはいずれもディープ ラーニング コミュニティではよく知られており、多くのコンペティションや実際のアプリケーションで使用されています。 ここでは、精度とトレーニング時間の妥当なバランスを取るため、MobileNet モデルのうちの 1 つをニューラル ネットワークの基礎として使用します。
 
-Training the model involves little more than running a Python script that downloads the base model and adds a layer trained with domain-specific images and labels. The script you need is available on GitHub, and the images you will use were assembled from thousands of public-domain food images available from [Kaggle](https://www.kaggle.com).
+モデルのトレーニングは、基本モデルをダウンロードして、ドメイン固有のイメージとラベルを使ってトレーニングされたレイヤーを追加する Python スクリプトを実行するだけです。 必要なスクリプトは GitHub で入手できます。使用するイメージは、[Kaggle](https://www.kaggle.com) から入手可能なパブリック ドメインの数千の食品イメージから集められました。
 
-1. In the Data Science VM, click the Terminal icon at the bottom of the screen to open a terminal window.
+1. Data Science VM で、画面の下部にあるターミナル アイコンをクリックして、ターミナル ウィンドウを開きます。
 
-    ![Launching a terminal window](../media-draft/3-launch-terminal.png)
+    ![ターミナル ウィンドウを起動する](../images/launch-terminal.png)
 
-    _Launching a terminal window_
+    "ターミナル ウィンドウを起動する"__
 
-1. Execute the following command in the terminal window to navigate to the "notebooks" folder:
+1. ターミナル ウィンドウで、次のコマンドを実行して、"notebooks" フォルダーに移動します。
 
     ```bash
     cd notebooks
     ```
-    This folder is prepopulated with sample Jupyter notebooks curated for the DSVM.
+    このフォルダーには、DSVM 用に収集されたサンプルの Jupyter ノートブックがあらかじめ入っています。
 
-1. Now use the following command to clone the "TensorFlow for Poets" repository from GitHub:
+1. 次のコマンドを使用して GitHub から "TensorFlow for Poets" リポジトリを複製します。
 
     ```bash
     git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
     ```
-    > **Tip**: You can copy this line to the clipboard, and then use **Shift+Ins** to paste it into the terminal window.
+    > **ヒント**: クリップボードにこの行をコピーして、**Shift + Ins** を使用してターミナル ウィンドウに貼り付けることができます。
 
-    This repo contains scripts for creating transfer-learning models, invoking a trained model in order to classify an image, and more. It is part of [Google Codelabs](https://codelabs.developers.google.com/), which contains a variety of resources and hands-on labs for software developers interested in learning about TensorFlow and other Google tools and APIs.
+    このリポジトリには、転移学習モデルを作成するためのスクリプトや、イメージを分類するためにトレーニング済みモデルを呼び出すスクリプトなどが含まれています。 これは [Google Codelabs](https://codelabs.developers.google.com/) の一部です。Google Codelabs には、TensorFlow やその他の Google のツールおよび API について関心のあるソフトウェア開発者向けのさまざまなリソースとハンズオン ラボが含まれています。
 
-1. Once cloning is complete, navigate to the folder containing the cloned model:
+1. 複製が完了したら、複製したモデルを含むフォルダーに移動します。
 
     ```bash
     cd tensorflow-for-poets-2
     ```
 
-1. Use the following command to download the images that will be used to train the model:
+1. 次のコマンドを使用して、モデルのトレーニングに使用するイメージをダウンロードします。
 
     ```bash
     wget https://topcs.blob.core.windows.net/public/tensorflow-resources.zip -O temp.zip; unzip temp.zip -d tf_files; rm temp.zip
     ```
 
-    This command downloads a zip file containing hundreds of food images — half containing hot dogs, and half that do not — and copies them into the subdirectory named "tf_files."
+    このコマンドにより、数百の食品イメージ (このうちの半分にはホットドッグが入っており、もう半分には入っていません) を含む zip ファイルがダウンロードされ、それらが "tf_files" という名前のサブディレクトリにコピーされます。
 
-1. Click the File Manager icon at the bottom of the screen to open a File Manager window.
+1. 画面の下部にある [ファイル マネージャー] アイコンをクリックして、[ファイル マネージャー] ウィンドウを開きます。
 
-    ![Launching File Manager](../media-draft/3-launch-file-manager.png)
+    ![ファイル マネージャーを起動する](../images/launch-file-manager.png)
 
-    _Launching File Manager_
+    "ファイル マネージャーを起動する"__
 
-1. In File Manager, navigate to the "notebooks/tensorflow-for-poets-2/tf_files" folder. Confirm that the folder contains a pair of subdirectories named "hot_dog" and "not_hot_dog." The former contains several hundred images containing hot dogs, while the latter contains an equal number of images that do **not** contain hot dogs. Browse the images in the "hot_dog" folder to get a feel for what they look like. Check out the images in the "not_hot_dog" folder as well.
+1. ファイル マネージャーで、"notebooks/tensorflow-for-poets-2/tf_files" フォルダーに移動します。 フォルダーに "hot_dog" と "not_hot_dog" という名前のサブディレクトリのペアが含まれていることを確認します。 前者にはホットドッグが入った数百のイメージが格納されており、後者にはホットドッグが**入っていない**同じ数のイメージが格納されています。 "hot_dog" フォルダー内のイメージを参照して、その見た目の感触をつかみます。 "Not_hot_dog" フォルダー内のイメージも確認します。
 
-    > In order to train a neural network to determine whether an image contains a hot dog, you will train it with images that contain hot dogs as well as images that do not contain hot dogs.
+    > イメージにホットドッグが含まれているかどうかをニューラル ネットワークが判断できるように、ホットドッグが含まれているイメージと含まれていないイメージを使ってトレーニングします。
 
-    ![Images in the "hot_dog" folder](../media-draft/3-hot-dog-images.png)
+    !["hot_dog" フォルダー内のイメージ](../images/hot-dog-images.png)
 
-    *Images in the "hot_dog" folder*
+    *"hot_dog" フォルダー内のイメージ*
 
-    Also, confirm that the folder contains a text file named **retrained_labels_hotdog.txt**. This file identifies the subdirectories containing the training images. It is used by the Python script that trains the model. The script enumerates the files in each subdirectory identified in the text file (the text file's name is a parameter passed to the script) and uses those files to train the network.
+    また、**retrained_labels_hotdog.txt** という名前のテキスト ファイルがフォルダーに含まれていることを確認します。 このファイルは、トレーニング イメージが含まれているサブディレクトリを識別します。 これはモデルをトレーニングする Python スクリプトによって使用されます。 スクリプトによって、識別された各サブディレクトリ内のファイルをテキスト ファイルが列挙され (テキスト ファイルの名前はスクリプトに渡されるパラメーター)、これらのファイルを使用してネットワークがトレーニングされます。
 
-1. Open a second terminal window and navigate to the "notebooks/tensorflow-for-poets-2" folder — the same one that is open in the first terminal window. Then, use the following command to launch [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard), which is a set of tools used to visualize TensorFlow models and gain insight into the transfer-learning process:
+1. 2 番目のターミナル ウィンドウを開き、"notebooks/tensorflow-for-poets-2" フォルダー (最初のターミナル ウィンドウで開いたのと同じフォルダー) に移動します。 次に、次のコマンドを使用して [TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard) を起動します。これは、TensorFlow モデルを視覚化し、転移学習プロセスの分析情報を得るためのツール セットです。
 
      ```bash
      tensorboard --logdir tf_files/training_summaries
      ```
 
-     > This command will fail if there is already an instance of TensorBoard running. If you are notified that port 6006 is already in use, use a ```pkill -f "tensorboard"``` command to kill the existing process. Then, execute the ```tensorboard``` command again.
+     > TensorBoard のインスタンスが既に実行されている場合には、このコマンドは失敗します。 ポート 6006 が既に使用されていることがわかっている場合には、```pkill -f "tensorboard"``` コマンドを使用して既存のプロセスを強制終了します。 ```tensorboard``` コマンドをもう一度実行します。
 
-1. Switch back to the original terminal window and execute the following commands:
+1. 元のターミナル ウィンドウに戻り、次のコマンドを実行します。
 
     ```bash
     IMAGE_SIZE=224;
     ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}";
     ```
 
-    These commands initialize environment variables specifying the resolution of the training images and the base model that your neural network will build upon. Valid values for IMAGE_SIZE are 128, 160, 192, and 224. Higher values increase the training time, but also increase the accuracy of the classifier.
+    これらのコマンドにより、トレーニング イメージの解像度と、ニューラル ネットワークの基礎となる基本モデルを指定する環境変数が初期化されます。 IMAGE_SIZE の有効な値は、128、160、192、224 です。 値が大きいほどトレーニング時間は長くなりますが、分類の精度も高まります。
 
-1. Now execute the following command to start the transfer-learning process — that is, to train the model with the images you downloaded:
+1. 次に、次のコマンドを実行して、転移学習プロセスを開始します。つまり、ダウンロードしたイメージを使って、モデルをトレーニングします。
 
     ```bash
     python scripts/retrain.py \
@@ -91,24 +91,32 @@ Training the model involves little more than running a Python script that downlo
     --validation_percentage=15
     ```
 
-    **retrain.py** is one of the scripts in the repo that you downloaded. It is complex, comprising more than 1,000 lines of code and comments. Its job is to download the model specified with the ```--architecture``` switch and add to it a new layer trained with the images found in subdirectories of the directory specified with the ```--image_dir``` switch. Each image is labeled with the name of the subdirectory in which it is located — in this case, either "hot_dog" or "not_hot_dog" — enabling the modified neural network to classify images input to it as hot-dog images ("hot_dog") or not-hot-dog images ("not_hot_dog"). The output from the training session is a TensorFlow model file named **retrained_graph_hotdog.pb**. The name and location are specified in the ```--output_graph``` switch.
+    **retrain.py** は、ダウンロードしたリポジトリ内のスクリプトの 1 つです。 これは複雑で、1,000 行を超えるコードとコメントで構成されています。 そのジョブは、```--architecture``` スイッチで指定されたモデルをダウンロードして、それを ```--image_dir``` スイッチで指定されたディレクトリのサブディレクトリにあるイメージを使用してトレーニングされた新しい層に追加することです。 各イメージは、それぞれが格納されているサブディレクトリの名前 (この場合は、"hot_dog" または "not_hot_dog" のいずれか) でラベル付けされ、変更されたニューラル ネットワークがイメージ入力をホットドッグのイメージ ("hot_dog") またはホットドッグなしのイメージ ("not_hot_dog") に分類できるようにします。 トレーニング セッションからの出力は、**retrained_graph_hotdog.pb** という名前の TensorFlow モデル ファイルです。 名前と場所は、```--output_graph``` スイッチで指定されます。
 
-1. Wait for training to complete; it should take less than five minutes. Then, check the output to determine the accuracy of the model. Your result may vary slightly from the one below because the training process involves a small amount of random estimation.
+1. トレーニングが完了するまで待ちます。通常は 5 分程度で完了します。 次に、出力を確認して、モデルの精度を判断します。 トレーニング プロセスには多少の推定が入っているため、実際の結果は以下と多少異なる場合があります。
 
-      ![Gauging the model's accuracy](../media-draft/3-running-transfer-learning.png)
+      ![モデルの精度を計測する](../images/running-transfer-learning.png)
 
-1. Click the browser icon at the bottom of the desktop to open the browser installed in the Data Science VM. Then, navigate to <http://0.0.0.0:6006> to connect to Tensorboard.
+      "モデルの精度を計測する"__
 
-    ![Launching Firefox](../media-draft/3-launch-firefox.png)
+1. デスクトップの下部にあるブラウザー アイコンをクリックして、Data Science VM にインストールされているブラウザーを開きます。 次に、<http://0.0.0.0:6006> に移動して Tensorboard に接続します。
 
-1. Inspect the graph labeled "accuracy_1." The blue line depicts the accuracy achieved over time as the 500 training steps specified with the ```how_many_training_steps``` switch are executed. This metric is important, because it shows how the accuracy of the model evolves as training progresses. Equally important is the distance between the blue and orange lines, which quantifies the amount of overfitting that occurred and should always be minimized. [Overfitting](https://en.wikipedia.org/wiki/Overfitting) means the model is adept at classifying the images it was trained with, but not as adept at classifying other images presented to it. The results here are acceptable, because there is a difference of less than 10% between the orange line (the "training" accuracy achieved with the training images) and the blue line (the "validation" accuracy achieved when tested with images outside the training set).
+    ![Firefox を起動する](../images/launch-firefox.png)
 
-    ![The TensorBoard Scalars display](../media-draft/3-tensorboard-scalars.png)
+    "Firefox を起動する"__
 
-1. Click **GRAPHS** in the TensorBoard menu and inspect the graph shown there. The primary purpose of this graph is to depict the neural network and the layers that comprise it. In this example, "input_1" is the layer that was trained with food images and added to the network. "MobilenetV1" is the base neural network that you started with. It contains many layers which aren't shown. Had you built a deep neural network from scratch, all of the layers would have been diagrammed here. (If you would like to see the layers that comprise the MobileNet, double-click the "MobilenetV1" block in the diagram.) For more information on the Graphs display and the information surfaced there, refer to [TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz).
+1. "accuracy_1" というラベルが付いたグラフを調べます。 青い線は、```how_many_training_steps``` スイッチで指定された 500 のトレーニング ステップを経て達成された精度を示しています。 このメトリックは、トレーニングの進行とともにモデルの精度がどのように進化しているかを示すため、重要です。 同じくらい重要なのは、青の線とオレンジの線の間の距離です。これは、発生したオーバーフィットの量を数値化したもので、常に最小限に抑える必要があります。 [オーバーフィット](https://en.wikipedia.org/wiki/Overfitting)は、モデルが、トレーニングに使用したイメージはうまく分類できるようになったが、示された他のイメージはそれほどうまく分類できないことを意味します。 ここでの結果は、オレンジの線 (トレーニング イメージを使って達成された "トレーニング" 精度) と青の線 (トレーニング セット以外のイメージを使ってテストした場合に達成された "検証" 精度) との差が 10% 未満なので、許容範囲内です。
 
-    ![The TensorBoard Graphs display](../media-draft/3-tensorboard-graphs.png)
+    ![TensorBoard スカラーの表示](../images/tensorboard-scalars.png)
 
-1. Switch back to File Manager and navigate to the "notebooks/tensorflow-for-poets-2/tf_files" folder. Confirm that it contains a file named **retrained_graph_hotdog.pb**. *This file was created during the training process and contains the trained TensorFlow model*. You will use it in the next exercise to invoke the model from the NotHotDog app.
+    "TensorBoard スカラーの表示"__
 
-The script that you executed in Step 10 specified 500 training steps, which strikes a balance between accuracy and the time required for training. If you would like, try training the model again with a higher ```how_many_training_steps``` value such as 1000 or 2000. A higher step count generally results in higher accuracy, but at the expense of increased training time. Watch out for overfitting, which, as a reminder, is represented by the difference between the orange and blue lines in TensorBoard's Scalars display.
+1. TensorBoard のメニューで **[グラフ]** をクリックして、表示されるグラフを調べます。 このグラフの主な目的は、ニューラル ネットワークとそれを構成するレイヤーを示すことです。 この例では、"input_1" が食品イメージを使用してトレーニングされ、ネットワークに追加されたレイヤーです。 "MobilenetV1" は、最初に使用する基本のニューラル ネットワークです。 これには、示されていない多くのレイヤーが含まれています。 ゼロからディープ ニューラル ネットワークを構築した場合は、すべてのレイヤーがここにダイアグラム化されます。 (MobileNet を構成するレイヤーを表示する場合は、ダイアグラム内の "MobilenetV1" ブロックをダブルクリックします。)グラフの表示に関する情報とグラフに表示される情報については、「[TensorBoard: Graph Visualization](https://www.tensorflow.org/programmers_guide/graph_viz)」 (TensorBoard: グラフの視覚化) を参照してください。
+
+    ![TensorBoard グラフの表示](../images/tensorboard-graphs.png)
+
+    _TensorBoard グラフの表示_
+
+1. ファイル マネージャーに戻って、"notebooks/tensorflow-for-poets-2/tf_files" フォルダーに移動します。 **retrained_graph_hotdog.pb** という名前のファイルが含まれていることを確認します。 *このファイルは、トレーニング プロセス中に作成され、トレーニング済みの TensorFlow モデルが含まれています*。 次の演習では、これを使用して、NotHotDog アプリからモデルを呼び出します。
+
+手順 10 で実行したスクリプトでは、精度とトレーニングに必要な時間とのバランスを取るため、500 のトレーニング ステップを指定しました。 必要に応じて、```how_many_training_steps``` の値を 1000 または 2000 などに増やして、もう一度モデルのトレーニングを試してください。 通常は、ステップ数が多くなるほど精度が高まりますが、引き換えにトレーニング時間が長くなります。 TensorBoard のスカラー表示でオレンジの線と青の線との差で示される、オーバー フィットに注意してください。

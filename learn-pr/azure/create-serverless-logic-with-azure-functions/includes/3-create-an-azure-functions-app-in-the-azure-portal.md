@@ -1,58 +1,54 @@
-You are now ready to start implementing the temperature service. In the previous unit, you determined that a serverless solution would best fit your needs. Let's start by creating a function app to hold our Azure Function.
+これで温度サービスを実装する準備ができました。 前のユニットでは、サーバーなしのソリューションが自分のニーズに最適であることがわかりました。 Azure 関数を保持するために、関数アプリを作成することから始めましょう。
 
-## What is a function app?
+## <a name="what-is-a-function-app"></a>関数アプリとは
+関数は、**関数アプリ**と呼ばれる実行コンテキストでホストされます。 Azure では、関数とコンピューティング リソースを論理的にグループ化し、構造化するために、関数アプリを定義します。 エレベーターの例では、エスカレーター駆動歯車の温度サービスをホストする関数アプリを作成します。 関数アプリを作成するために、いくつかの決定を行う必要があります。サービス プランを選択し、互換性のあるストレージ アカウントを選択する必要があります。
 
-Functions are hosted in an execution context called a **function app**. You define function apps to logically group and structure your functions and a compute resource in Azure. In our elevator example, you would create a function app to host the escalator drive gear temperature service. There are a few decisions that need to be made to create the function app; you need to choose a service plan and select a compatible storage account.
+### <a name="choosing-a-service-plan"></a>サービス プランを選択する
+関数アプリでは、2 種類のサービス プランのいずれかを使用できます。 最初のサービス プランは、**従量課金サービス プラン**です。 これは、Azure のサーバーレス アプリケーション プラットフォームを使用するときに選択するプランです。 従量課金サービス プランでは、自動スケーリングが提供され、関数が実行されているときに課金されます。 従量課金プランには、関数の実行に対して構成可能なタイムアウト期間が付属します。 既定は 5 分ですが、最長 10 分までのタイムアウトを構成できます。 
 
-### Choosing a service plan
+2 つ目のプランは、**Azure App Service プラン**と呼ばれています。 このプランでは、定義した VM 上で関数が連続的に実行されるようにして、タイムアウト期間を避けることができます。 App Service プランを使用している場合、お客様は関数を実行するアプリ リソースを管理する責任があるため、これは技術的にはサーバーレス プランではありません。 ただし、関数が連続的に使用される場合、あるいは従量課金プランよりも多くの処理能力または実行時間が必要な場合に、このプランを選択することをお勧めします。 
 
-Function apps may use one of two types of service plans. The first service plan is the **Consumption service plan**. This is the plan that you choose when using the Azure serverless application platform. The Consumption service plan provides automatic scaling and bills you when your functions are running. The Consumption plan comes with a configurable timeout period for the execution of a function. By default, it is 5 minutes, but may be configured to have a timeout as long as 10 minutes.
+### <a name="storage-account-requirements"></a>ストレージ アカウントの要件
+関数アプリを作成する場合、関数アプリはストレージ アカウントにリンクされている必要があります。 既存のアカウントを選択するか、新しいアカウントを作成できます。 関数アプリでは、関数実行の記録や実行トリガーの管理など、内部操作のためにこのストレージ アカウントが使用されます。 従量課金サービス プランでは、これは関数コードと構成ファイルが格納される場所でもあります。
 
-The second plan is called the **Azure App Service plan**. This plan allows you to avoid timeout periods by having your function run continuously on a VM that you define. When using an App Service plan, you are responsible for managing the app resources the function runs on, so this is technically not a serverless plan. However, it may be a better choice if your functions are used continuously or if your functions require more processing power or execution time than the Consumption plan can provide.
+## <a name="create-a-function-app"></a>関数アプリの作成
+Azure portal で関数アプリを作成しましょう。
 
-### Storage account requirements
+1. ご自分の Azure アカウントを使用して [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-When you create a function app, it must be linked to a storage account. You can select an existing account or create a new one. The function app uses this storage account for internal operations such as logging function executions and managing execution triggers. On the Consumption service plan, this is also where the function code and configuration file are stored.
+2. Azure portal の左上隅にある **[リソースの作成]** ボタンを選択し、**[はじめに]、[Serverless Function App]\(サーバーなしの Function App\)** の順に選択して、Function App の *[作成]* ブレードを開きます。 または、**[計算]、[Function App]** オプションの順に選択して、同じブレードを開くこともできます。
+  
+  ![[計算] と [Function App] が続く *[リソースの作成]* の選択が強調表示されている Azure portal](../media-draft/3-create-function-app-blade.png)
 
-## Create a function app
+3. グローバルに一意のアプリ名を選択します。 これはご自分のサービスのベース URL として機能します。 たとえば、**escalator-functions-xxxxxxx** という名前を付けることができます。xxxxxxx は自分のイニシャルや誕生年に置き換えることができます。 グローバルに一意でない場合、別の組み合わせをお試しください。 有効な文字は a-z、0-9、- (ハイフン) です。
 
-Let's create a function app in the Azure portal.
+4. 関数アプリをホストする Azure サブスクリプションを選択します。
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+5. **escalator-functions-group** という名前の新しいリソース グループを作成します。 このモジュール内で使用されるリソースをすべて保持するためにリソース グループを使用すると、後でクリーンアップするのに役立ちます。
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, and then select **Get started > Serverless Function App** to open the Function App *Create* blade. Alternatively, you can use the **Compute > Function App** option, which will open the same blade.
+6. OS に **[Windows]** を選択します。
 
-  ![Screenshot of the Azure portal showing the Create a resource blade with the Compute section and Function App highlighted.](../media/3-create-function-app-blade.png)
+7. **[ホスティング プラン]** については、サーバーレス ホスティング オプションである **[従量課金プラン]** を選択します。
 
-1. Choose a globally unique app name. This will serve as the base URL of your service. For example, you can name it **escalator-functions-xxxxxxx**, where the x's can be replaced with your initials and your birth year. If this isn't globally unique, you can try any other combination. Valid characters are a-z, 0-9 and -.
+8. 自分 (または顧客) が住んでいる場所に最も近い地域を選択します。
 
-1. Select the Azure subscription where you would like the function app hosted.
+9. 新しいストレージ アカウントを作成します。 Azure では、アプリ名に基づいて名前が指定されます。 必要に応じて変更できますが、この名前も固有である必要があります。
 
-1. Create a new resource group called **escalator-functions-group**. Using a resource group to hold all resources used in this module will help with clean-up later.
+10. Azure Application Insights が **[オン]** になっていることを確認し、自分 (または顧客) から最も近いリージョンを選択します。
+完了したら、構成は次のスクリーンショットにある構成のようになります。
 
-1. Select **Windows** for OS.
+  ![前の手順に従ってすべてのフィールドが構成された Function App の *[作成]* 構成画面。](../media-draft/3-create-function-app-settings.png)
 
-1. For **Hosting Plan**, select the **Consumption Plan**, which is the serverless hosting option.
+11. **[作成]** を選択します。デプロイには数分かかります。 完了すると、通知を受け取ります。
 
-1. Select the geographical location closest to you (or your customers).
+## <a name="verify-your-azure-function-app"></a>Azure 関数アプリの確認
 
-1. Create a new storage account. Azure will give it a name based on the app name. You can change it if you like, but it must also be unique.
+1. Azure Portal の左側にあるメニューから、**[リソース グループ]** を選択します。 利用できるグループの一覧には、**escalator-functions-group** が表示されています。
 
-1. Make sure that Azure Application Insights is **On** and select the region closest to you (or your customers).
-  When you're finished, your configuration should look like the config in the following screenshot.
+  ![Azure portal のビューにリソース グループ escalator-functions-group がある、Azure portal のリソース グループ画面。](../media-draft/3-resource-group.png)
 
-  ![Screenshot of the Azure portal showing the Function App Create blade with all fields configured as per the preceding instructions.](../media/3-create-function-app-settings.png)
+2. **[escalator-functions-group]** を選択します。 次の一覧のようにリソース リストが表示されます。
+  
+  ![App Service プラン、ストレージ アカウント、Application Insights および App Service へのエントリを含む、escalator-functions-group グループ内のすべてのリソース](../media-draft/3-resource-list.png)
 
-1. Select **Create**; deployment will take a few minutes. You'll receive a notification once it's complete.
-
-## Verify your Azure function app
-
-1. From the Azure portal left-hand menu, select **Resource groups**. You should then see the **escalator-functions-group** in the list of available groups.
-
-  ![Screenshot of the Azure portal showing the Resource groups blade with the Resource groups menu item and escalator-functions-group list item highlighted.](../media/3-resource-group.png)
-
-1. Select the **escalator-functions-group**. You should then see a resource list like the following list.
-
-  ![Screenshot of the Azure portal showing all resources within the escalator-functions-group group, including entries for an App Service plan, a Storage account, Application Insights resource, and an App Service.](../media/3-resource-list.png)
-
-The item with the lightning bolt Function icon, listed as an App Service, is your new function app. You can click on it to open the details about the new function - it has a public URL assigned to it, if you open that in a browser, you should get a default web page that indicates your Function App is running.
+App Service として一覧されている稲妻アイコンの付いた項目は、新しい関数アプリです。 クリックして新しい関数の詳細を表示することができます。ここには、この関数アプリに割り当てられたパブリック URL があり、ブラウザーで開いた場合は、その Function App が実行されていることを示す既定の Web ページを取得します。

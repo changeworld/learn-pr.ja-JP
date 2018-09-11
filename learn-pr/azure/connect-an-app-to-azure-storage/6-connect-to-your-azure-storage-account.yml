@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.6-connect-to-your-azure-storage-account
+title: Azure Storage アカウントに接続する
+metadata:
+  title: Azure Storage アカウントに接続する
+  description: Azure Storage アカウントに接続する
+  ms.openlocfilehash: e334d47a890db671fd5277ae9e4d438b67e5318f
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230686"
+durationInMinutes: 5
+content: '[!include[](includes/6-connect-to-your-azure-storage-account.md)]'

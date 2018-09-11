@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.2-connect-to-dsvm
-title: Connect to the Data Science VM
+title: Data Science VM に接続する
 metadata:
-  title: Connect to the Data Science VM
-  description: Connect to the Data Science VM
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  title: Data Science VM に接続する
+  description: Data Science VM に接続する
+  ms.openlocfilehash: 50052da64ed4bd181b722113f64fea0a9f177dff
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43228169"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-connect-to-dsvm.md)]
+content: '[!include[](includes/2-connect-to-dsvm.md)]'

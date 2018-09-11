@@ -1,47 +1,47 @@
-An HTTP request is a common operation on most platforms and devices. Whether it's a request to look up a word in a dictionary or to get the local weather, we send HTTP requests all the time. Azure Functions allows us to quickly create a piece of logic to execute when an HTTP request is received.
+HTTP 要求とは、ほとんどのプラットフォームおよびデバイスで一般的に実行される操作です。 辞書から単語を調べる要求や、地域の天気を取得する要求など、ユーザーは、常に HTTP 要求を送信します。 Azure Functions では、HTTP 要求の受信時に一片のロジックを迅速に作成できます。  
 
-Here, you'll learn how to create and invoke an Azure function using an HTTP trigger. You'll also explore some of the customization options that are available.
+ここでは、HTTP トリガーを使用して Azure 関数を作成および呼び出す方法について説明します。 また、実行可能なカスタマイズ オプションについても説明します。
 
-## What is an HTTP trigger?
+## <a name="what-is-an-http-trigger"></a>HTTP トリガーとは
 
-An HTTP trigger is a trigger that executes a function when it receives an HTTP request. HTTP triggers have many capabilities and customizations, including:
+HTTP トリガーとは、HTTP 要求を受け取ったときに関数を実行するトリガーです。 HTTP トリガーには、次のような多数の機能やカスタマイズがあります。
 
-- Provide authorized access by supplying keys.
-- Restrict which HTTP verbs are supported.
-- Return data back to the caller.
-- Receive data through query string parameters or through the request body.
-- Support URL route templates to modify the function URL.
+- キーを指定し、承認されたアクセスを提供します。
+- どの HTTP 動詞をサポートするかを制限します。
+- 呼び出し元にデータを戻します。
+- クエリ文字列パラメーターまたは要求本文を介して、データを受け取ります。
+- 関数 URL を修正するために URL ルート テンプレートをサポートします。
 
-When you create an HTTP trigger, select a programming language, provide a trigger name, and select an Authorization level.
+HTTP トリガーを作成する場合、プログラミング言語を選択し、トリガー名を指定し、承認レベルを選択します。
 
-## What is an HTTP trigger Authorization level?
+## <a name="what-is-an-http-trigger-authorization-level"></a>HTTP トリガーの承認レベルとは
 
-An HTTP trigger Authorization level is a flag that indicates if an incoming HTTP request needs an API key for authentication reasons.
+HTTP トリガーの承認レベルとは、受信 HTTP 要求に承認のために API キーが必要であるかどうかを示すフラグです。
 
-There are three Authorization levels:
+承認レベルは、次のとおり 3 つあります。
 
-1. Function
-2. Anonymous
-3. Admin
+1. 関数
+2. 匿名
+3. [Admin]
 
-The **Function** and **Admin** levels are "key" based. To send an HTTP request, you must supply a key for authentication. There are two types of keys: *function* and *host*. The differences between the two keys are their scope. *Function* keys are specific to a function. *Host* keys apply to all functions inside the entire Azure Functions application. If your Authorization level is set to **Function**, you can use either a *function* or a *host* key. If your Authorization level is set to **Admin**, you must supply a *host* key.
+**関数**および**管理者**レベルは、"キー" に基づきます。 HTTP 要求を送信するには、承認にキーを指定する必要があります。 キーには、*関数*と*ホスト*の 2 種類があります。 2 つのキーの違いは、そのスコープです。 *関数*キーは、関数に固有です。 *ホスト* キーは、Azure Functions アプリケーション全体のすべての関数に適用されます。 使用する承認レベルが**関数**に設定されている場合、*関数*または*ホスト* キーのいずれかを使用できます。 使用する承認レベルが**管理者**に設定されている場合、*ホスト* キーを指定する必要があります。
 
-The **Anonymous** level means that there's no authentication required. We use this level in our exercise.
+**匿名**レベルとは、認証は必要ないということです。 演習では、このレベルを使用します。
 
-## How to create an HTTP trigger
+## <a name="how-to-create-an-http-trigger"></a>HTTP トリガーの作成方法
 
-Just like a timer trigger, you can create an HTTP trigger through the Azure portal. Inside your Azure function, you select **HTTP trigger** from the list of predefined trigger types. Then you enter the logic that you want to execute and make any customizations like restricting the use of certain HTTP verbs.
+HTTP トリガーは、タイマー トリガーと同様に Azure Portal で作成できます。 作成する Azure 関数の中で、定義済みのトリガーの種類の一覧から **[HTTP トリガー]** を選択します。 次に、実行するロジックを入力し、必要に応じてカスタマイズ (たとえば、特定の HTTP 動詞の使用を禁止する) を行います。 
 
-One setting that's important to understand is **Request parameter name**. This setting is a string that represents the name of the parameter that contains the information about an incoming HTTP request. By default, the name of the parameter is *req*.
+理解しておく必要がある重要な設定の 1 つに、**[要求パラメーター名]** があります。 この設定は、受信 HTTP 要求の情報を含むパラメーター名を表す文字列です。 既定のパラメーター名は *req* です。
 
-## How to invoke an HTTP trigger
+## <a name="how-to-invoke-an-http-trigger"></a>HTTP トリガーを起動する方法
 
-To invoke an HTTP trigger, you send an HTTP request to the URL for your function. To get this URL, go to the code page for your function and select the **Get function URL** link.
+HTTP トリガーを起動するには、使用している関数用に URL に HTTP 要求を送信します。 この URL を取得するには、使用している関数のコード ページに進み、**[関数の URL の取得]** リンクを選択します。
 
-![Screenshot of the Azure portal showing a Functions App blade with the app's Get function URL button highlighted.](../media/5-function-url.png)
+![ご利用の関数の URL を探す](../media-drafts/5-function-url.png)
 
-After you have the URL for your function, you can send HTTP requests. If your function receives data, remember that you can use either query string parameters or supply the data through the request body.
+ご利用の関数の URL を取得したら、HTTP 要求を送信できます。 ご利用の関数でデータを受信したら、クエリ文字列パラメーターを使用するか、要求本文からデータを指定できることに注意してください。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-An HTTP trigger invokes an Azure function when it receives an HTTP request to its function URL. HTTP triggers allow you to receive data and return data back to the caller.
+HTTP トリガーは、その関数 URL で HTTP 要求を受け取ると、Azure 関数を実行します。 HTTP トリガーでは、データを受信して、呼び出し元にデータを戻すことができます。

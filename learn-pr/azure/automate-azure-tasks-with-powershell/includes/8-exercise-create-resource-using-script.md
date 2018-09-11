@@ -1,32 +1,32 @@
-In this unit, you will continue with the example of a company that makes Linux admin tools. Recall that you plan to use Linux VMs to let potential customers test your software. You have a resource group ready and now it is time to create the VMs.
+この演習では、引き続き、Linux 管理ツールを作成している会社の例を扱います。 Linux VM を使用して自社のソフトウェアを潜在顧客にテストしてもらう計画であることを思い出してください。 リソース グループの準備はできているので、次に VM を作成します。
 
-Your company has paid for a booth at a big Linux trade show. You plan a demo area containing three terminals each connected to a separate Linux VM. At the end of each day, you want to delete the VMs and recreate them, so they start fresh every morning. Creating the VMs manually after work when you are tired would be error prone. You want to write a PowerShell script to automate the VM creation process.
+会社では Linux の大規模なトレード ショーでブースを確保するための費用を支払いました。 デモンストレーション領域を設け、そこにはそれぞれ別々の Linux VM に接続された 3 台の端末を設置する計画です。 1 日の終わりに VM を削除して再作成します。そうすることで、VM は毎朝新しい状態で開始されます。 仕事の後、疲れているときに手動で VM を作成すると、間違いやすくなります。 VM の作成プロセスを自動化するための PowerShell スクリプトを記述します。
 
-## Write a script that creates Virtual Machines
+## <a name="write-a-script-that-creates-virtual-machines"></a>仮想マシンを作成するスクリプトを記述する
 
-Follow these steps to write the script:
+次の手順に従って、スクリプトを記述します。
 
-1. Create a new text file named **ConferenceDailyReset.ps1**.
+1. **ConferenceDailyReset.ps1** という名前の新しいテキスト ファイルを作成します。
 
-1. Capture the parameter in a variable:
+2. 変数内にパラメーターを取り込みます。
 
     ```powershell
     param([string]$resourceGroup)
     ```
 
-1. Authenticate with Azure using your credentials:
+3. ご自分の資格情報を使用して Azure に対する認証を受けます。
 
     ```powershell
     Connect-AzureRmAccount
     ```
 
-1. Prompt for a username and password for the VM's admin account and capture the result in a variable:
+4. VM の管理者アカウント用のユーザーとパスワードを求めるプロンプトを表示し、その結果を変数内に取り込みます。
 
     ```powershell
     $adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
     ```
 
-1. Create a loop that executes three times:
+5. 3 回実行されるループを作成します。
 
     ```powershell
     For ($i = 1; $i -le 3; $i++) 
@@ -35,21 +35,21 @@ Follow these steps to write the script:
     }
     ```
 
-1. In the loop body, create a name for each VM and store it in a variable:
+6. ループの本体で、各 VM の名前を作成し、それを変数内に格納します。
 
     ```powershell
     $vmName = "ConferenceDemo" + $i
     ```
 
-1. Next, create a VM using the `$vmName` variable:
+7. 次に、`$vmName` 変数を使用して VM を作成します。
 
    ```powershell
    New-AzureRmVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Location "East US" -Image UbuntuLTS
    ```
 
-1. Save the file.
+8. ファイルを保存します。
 
-The completed script should look like this:
+完成したスクリプトは次のようになります。
 
 ```powershell
 param([string]$resourceGroup)
@@ -66,22 +66,19 @@ For ($i = 1; $i -le 3; $i++)
 }
 ```
 
-## Execute the script
+## <a name="execute-the-script"></a>スクリプトを実行する
 
-Launch PowerShell and change to the directory where you saved the script file. To run the script, execute the following command:
+PowerShell を起動し、スクリプト ファイルを保存してあるディレクトリに移動します。 スクリプトを実行するには、次のコマンドを実行します。
 
 ```powershell
 .\ConferenceDailyReset.ps1 TrialsResourceGroup
 ```
 
-The script may take a few minutes to complete. When it is finished, verify that it ran successfully:
+スクリプトが終了するまでに数分かかる場合があります。 スクリプトが終了したら、正常に実行されたことを確認します。
 
-<!---TODO: Update for sandbox?--->
-1. In a browser, sign into the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. ブラウザー内で、Azure Portal にサインインします。
+2. 左側のナビゲーションで、**[リソース グループ]** をクリックします。
+3. リソース グループの一覧で、**[TrialsResourceGroup]** をクリックします。 リソースの一覧に、新しく作成された VM とそれに関連するリソースが表示されます。
 
-1. In the navigation on the left, click **Resource Groups**.
-
-1. In the list of resource groups, click **TrialsResourceGroup**. In the list of resources, you should see the newly created VMs and their associated resources.
-
-## Summary
-You wrote a script that automated the creation of three VMs in the resource group indicated by a script parameter. The script is short and simple but automates a process that would take a long time to complete manually with the portal.
+## <a name="summary"></a>まとめ
+スクリプト パラメーターで指定したリソース グループ内に 3 つの VM を自動的に作成するスクリプトを記述しました。 このスクリプトは短くてシンプルですが、このスクリプトでは、ポータルを使用して手動で行うと完了するまで時間がかかるプロセスを自動化することができます。

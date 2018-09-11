@@ -1,18 +1,20 @@
-To address the storage problem for your online learning portal, you're thinking of storing your data in the cloud. However, your biggest concern with cloud storage is security, backup, and disaster recovery. You're also concerned that it could be difficult to manage cloud-hosted data.
+オンライン学習ポータルのストレージ問題に対処するために、クラウドにデータを保存することをあなたは考えています。 しかしながら、クラウド ストレージには、セキュリティ、バックアップ、ディザスター リカバリーという大きな懸念事項があります。 クラウドでホストするデータは管理が難しいのではないかという不安もあります。
 
-## What is Azure Storage?
+## <a name="what-is-azure-storage"></a>Azure Storage とは
 
-Azure Storage is a cloud-based solution that provides highly secure and scalable storage for modern business needs. Its features address the key challenges of cloud storage and provide you with a reliable and durable storage solution.
+Azure Storage はクラウドベースのソリューションであり、セキュリティと拡張性に優れたストレージ ソリューションを提供し、現代のビジネス ニーズに対応します。 その強化された機能でクラウド ストレージのあらゆる課題に対処し、信頼性と耐久性に優れたストレージ ソリューションを提供します。
 
-## Benefits of using Azure to store data
+## <a name="benefits-of-using-azure-to-store-data"></a>Azure を利用してデータを格納することの長所
 
-The following are some of the benefits of Azure storage:
+![メリット](../media-draft/Benefits.png)
 
-- **Automated backup and recovery** - This feature mitigates the risk of losing your data if there is any unforeseen failure or interruption.
-- **Replication across the globe** - Azure Storage replicates the copies of your data to protect it against any planned or unplanned events, such as scheduled maintenance or hardware failures. You can choose to replicate your data at multiple locations across the globe.
-- **Support for data analytics** – Azure storage supports performing analytics on your data consumption.
-- **Encryption capabilities** – Azure Storage encrypts all the data to make it highly secure. It also has tight control over who can access the data.
-- **Multiple data type support** – Azure can store almost any type of data you need. It can handle video files, text files, and even large binary files like virtual hard disks. It also has many options for your relational and NoSQL data.
-- **Support for structured/unstructured data** - Azure Cosmos DB and Azure Blob storage features provide the option to store both structured and unstructured data.
-- **Data storage in virtual disks** - Azure also has the capability of storing up to 8 TB of data in its virtual disks. This is a significant capability when you're storing heavy data such as videos and simulations.
-- **Storage tiers** - Azure Storage offers storage tiers to prioritize access to data based on frequently used versus rarely used information.
+Azure Storage には次のような長所があります。
+
+- **バックアップと回復の自動化** - 予期しない障害や中断が発生しても、データを失うリスクがこの機能で軽減されます。
+- **世界中で複製** - Azure Storage によってデータが複製され、定期的な保守やハードウェアの故障など、予定に入っているイベントや突然の出来事からデータを保護します。 世界中の複数の場所でデータを複製するように選択できます。
+- **データ分析のサポート** – Azure Storage には、データの使用状況を分析する機能があります。
+- **暗号化機能** – Azure Storage では、すべてのデータが暗号化され、非常に安全性が高くなります。 データにアクセスできる人物を厳重に制御することもできます。
+- **複数の種類のデータに対応** – Azure では、ユーザーに必要とされる、ほとんどすべての種類のデータを保存できます。 動画ファイル、テキスト ファイル、そして仮想ハード ディスクなど、さらに大きなバイナリ ファイルを処理できます。 リレーショナル データや NoSQL データのためのさまざまなオプションもあります。
+- **構造化/非構造化データのサポート** - Azure Cosmos DB 機能と Azure BLOB ストレージ機能には、構造化データと非構造化データの両方を格納するオプションがあります。
+- **仮想ディスクのデータ ストレージ** - Azure では、その仮想ディスクに最大 8 TB のデータを格納することができます。 動画やシミュレーションなど、大容量データを格納するときに重要な機能となります。
+- **ストレージ層** - Azure Storage には、使用頻度情報に基づいてデータへのアクセスに優先順位を付けるストレージ層があります。 この機能によって使いやすさが大幅に向上します。

@@ -1,21 +1,19 @@
-Creating administration scripts is a powerful way to optimize your work flow. You can automate common, repetitive tasks, and once a script has been verified, it will run consistently, likely reducing errors.
+管理スクリプトを作成することは、ワークフローを最適化する強力な方法です。 共通する反復的なタスクを自動化することができ、スクリプトは一度検証すれば毎回同じように実行されるため、エラーを削減できます。
 
-Suppose you work at a company that uses Azure Virtual Machines (VMs) to test your Customer Relationship Management (CRM) software. The VMs are built from images that include a web front-end, a web service that implements business logic, and a SQL database.
+勤務先の会社で、Azure Virtual Machines (VM) を使用してカスタマー リレーションシップ マネジメント (CRM) ソフトウェアをテストするとします。 VM は、Web フロントエンド、ビジネス ロジックを実装する Web サービス、SQL データベースを含むイメージから構築されています。
 
-You have been executing multiple rounds of tests on a single VM but noticed that changes in the database and configuration files can cause inconsistent results. In one case, a bug created a phone call record with no corresponding customer in the database. The orphaned record caused subsequent integration tests to fail even after the bug was fixed. You plan to solve this problem by using a fresh VM deployment for each testing cycle. You want to automate the VM creation setup because it will be executed many times per week. 
+単一の VM に対して複数回のテストを実行したところ、データベースと構成ファイル内での変更が必ずしも一貫した結果にならないことがわかりました。 ある場合は、バグのために、該当する顧客が存在しない音声通話レコードがデータベース内に作成されました。 この孤立したレコードが原因で、以降の統合テストは、バグを修正した後も失敗しました。 この問題を解決するため、あなたはテスト サイクルのたびに新しい VM デプロイを使用することを計画しています。 1 週間に何度も行う VM 作成の設定を自動化したいと考えています。 
 
-Here, you will see how to manage Azure resources using Azure PowerShell. You will use Azure PowerShell interactively for one-off tasks and write scripts to automate repeated tasks. 
+ここでは、Azure PowerShell を使用して Azure リソースを管理する方法について説明します。 1 回限りのタスクには Azure PowerShell を対話形式で使用し、反復的なタスクはスクリプトを書いて自動化します。 
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
+- Azure PowerShell が自分の Azure 管理タスクに対して適切なツールかどうかを判断します。
+- Azure PowerShell を Linux、macOS、Windows にインストールします。
+- Azure PowerShell を使用して Azure サブスクリプションに接続します。
+- Azure PowerShell を使用して Azure のリソースを作成します。
 
-- Decide if Azure PowerShell is the right tool for your Azure administration tasks
-- Install Azure PowerShell on Linux, macOS, and/or Windows
-- Connect to an Azure subscription using Azure PowerShell
-- Create Azure resources using Azure PowerShell
-
-## Prerequisites
-
-- Experience with a command-line interface such as PowerShell or Bash
-- Knowledge of basic Azure concepts such as resource groups and Virtual Machines
-- Experience administering Azure resources using the Azure portal
+## <a name="prerequisites"></a>前提条件
+- PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
+- リソース グループや Virtual Machines など、Azure の基本的な概念に関する知識
+- Azure Portal を使用した Azure リソースの管理経験

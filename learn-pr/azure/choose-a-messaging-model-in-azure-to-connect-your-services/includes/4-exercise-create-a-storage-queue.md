@@ -1,137 +1,136 @@
-In this unit, you will create a new storage account in your Azure subscription. You will then use Azure Cloud Shell to create a new queue, add a message to it, and then read that message and remove it from the queue.
+この演習では、Azure サブスクリプションで新しいストレージ アカウントを作成します。 次に Azure Cloud Shell を使用して新しいキューを作成し、それにメッセージを追加し、そのメッセージを読み、キューから削除します。
 
-These are the same actions taken by components in a distributed application. For example, a mobile app may add a message to a queue, where it waits for a web service to retrieve it and process it.
+これらは、分散アプリケーションのコンポーネントによって行われる同じアクションです。 たとえば、モバイル アプリがメッセージをキューに追加し、Web サービスがメッセージを取得して処理するまで待機することがあります。
 
-## Create a storage account
-<!---TODO: Update for sandbox.--->
+## <a name="create-a-storage-account"></a>ストレージ アカウントを作成する
 
-Since Azure Storage queues are part of Azure general-purpose storage accounts, you must start by creating a storage account:
+Azure Storage キューは Azure 汎用ストレージ アカウントの一部なので、まずストレージ アカウントを作成する必要があります。
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com?azure-portal=true), and sign in with your normal credentials.
+1. ブラウザーで [Azure portal](https://portal.azure.com?azure-portal=true) に移動し、通常の資格情報でサインインします。
 
-1. In the top left, click **All services**.
+1. 左上の **[すべてのサービス]** をクリックします。
 
-1. Scroll down to the **Storage** section, and then click **Storage accounts**.
+1. 下へスクロールして **[ストレージ]** セクションを表示し、**[ストレージ アカウント]** をクリックします。
 
-1. At the top left of the **Storage accounts** blade, click **Add**.
+1. **[ストレージ アカウント]** ブレードの左上にある **[追加]** をクリックします。
 
-  ![Screenshot of Storage accounts blade, with Add highlighted](../media-draft/4-create-a-storage-account-1.png)
+  ![[追加] が強調表示されたストレージ アカウントのスクリーン ショット](../media-draft/4-create-a-storage-account-1.png)
 
-1. In the resulting dialog, enter the following information, each of these options has a `(i)` icon in the portal which you can use to get more information about what the option does.
+1. 表示されるダイアログに次の情報を入力します。ポータルの各オプションには `(i)` アイコンが表示されます。このアイコンをクリックすると、オプションの実行内容について詳細が表示されます。
 
-    - In the **Name** text box, type a unique name for the storage account.
-    - Under **Deployment model**, ensure that **Resource Manager** is selected.
-    - In the **Account kind** drop-down list, select **Storage (general purpose v2)**.
-    - In the **Location** drop-down list, select a region near you.
-    - In the **Replication** drop-down list, select **Locally-redundant storage (LRS)**.
-    - Under **Performance**, select **Standard**.
-    - Under **Access tier**, select **Cool**.
-    - Under **Secure transfer required**, select **Disabled**.
-    - Under **Subscription**, select your subscription.
-    - Under **Resource group**, select **Create new**. In the text box, type **MusicSharingResourceGroup**.
-    - Under **Virtual networks**, select **Disabled**. 
+    - **[名前]** テキスト ボックスにストレージ アカウントの一意の名前を入力します。
+    - **[デプロイ モデル]** で **[Resource Manager]** が選択されていることを確認します。
+    - **[アカウントの種類]** ドロップダウン リストで **[ストレージ (汎用 v2)]** を選択します。
+    - **[場所]** ドロップダウン リストで、近くのリージョンを選択します。
+    - **[レプリケーション]** ドロップダウン リストで、**[ローカル冗長ストレージ (LRS)]** を選択します。
+    - **[パフォーマンス]** で **[Standard]** を選択します。
+    - **[アクセス層]** で **[クール]** を選択します。
+    - **[安全な転送が必須]** で **[無効]** を選択します。
+    - **[サブスクリプション]** でご使用のサブスクリプションを選択します。
+    - **[リソース グループ]** で **[新規作成]** を選択します。 テキスト ボックスに「**MusicSharingResourceGroup**」と入力します。
+    - **[仮想ネットワーク]** で **[無効]** を選択します。 
 
-    ![Screenshot of Create storage account dialog box](../media-draft/4-create-a-storage-account-2.png)
+    ![[ストレージ アカウントを作成する] ダイアログ ボックスのスクリーンショット](../media-draft/4-create-a-storage-account-2.png)
 
-1. Click **Create** - Azure will create a new resource group and a new storage account associated with it.
+1. **[作成]** をクリックします。Azure で新しいリソース グループとそれに関連付けられた新しいストレージ アカウントが作成されます。
 
-    ![Screenshot of Create storage account dialog box, with Create highlighted](../media-draft/4-create-a-storage-account-3.png)
+    ![[作成] が強調表示された [ストレージ アカウントの作成] ダイアログ ボックスのスクリーンショット](../media-draft/4-create-a-storage-account-3.png)
 
-## Create a queue
+## <a name="create-a-queue"></a>キューを作成する
 
-Now that the storage account has been created, you can add a new queue to it. You must create the queue by using PowerShell commands:
+ストレージ アカウントが作成されたので、それに新しいキューを追加できます。 PowerShell コマンドを使用してキューを作成する必要があります。
 
-1. In the top right of the portal, click the **Cloud Shell** link `(>_)`.
+1. ポータルの上部で、**Cloud Shell** リンク `(>_)` をクリックします。
 
-    ![Screenshot of Azure portal, with Cloud Shell icon highlighted](../media-draft/4-create-a-storage-queue-1.png)
+    ![[Cloud Shell] アイコンが強調表示された Azure portal のスクリーンショット](../media-draft/4-create-a-storage-queue-1.png)
 
-1. In the **Welcome to Azure Cloud Shell** screen, click **PowerShell (Linux)**.
+1. **[Azure Cloud Shell へようこそ]** 画面で **[PowerShell (Linux)]** をクリックします。
 
-1. If the **You have no storage mounted** screen appears, click **Create storage**.
+1. **[ストレージがマウントされていません]** 画面が表示されたら、**[ストレージの作成]** をクリックします。
 
-1. When the `PS Azure` prompt appears, to obtain the storage account, type the following command. Substitute `<storageaccountname>` with the unique name of your storage account you created above, and then press **Enter**. We want to assign the resulting object to a variable named `$storageaccount`.
+1. `PS Azure` プロンプトが表示されたら、ストレージ アカウントを取得するために次のコマンドを入力します。 `<storageaccountname>` を、前の手順で作成したストレージ アカウントの一意の名前に置き換え、**Enter** キーを押します。 結果のオブジェクトを `$storageaccount` という名前の変数に割り当てます。
 
     ```powershell
     $storageaccount = Get-AzureRmStorageAccount -Name <storageaccountname> -ResourceGroup  MusicSharingResourceGroup
     ```
 
-1. Next, we need to get the storage account _context_ - this is a property on the returned object. Let's assign it to another variable named `$context`.
+1. 次に、ストレージ アカウント _context_ を取得する必要があります。これは返されたオブジェクトのプロパティです。 それを `$context` という別の変数に割り当てましょう。
 
     ```powershell
     $context = $storageaccount.Context
     ```
 
-1. Now we are ready to create the queue. Use the `New-AzureStorageQueue` command and assign it to a `$messageQueue` variable.
-    - Pass a `-Name` parameter with the value `musicsharingmessages`
-    - Pass a `-Context` parameter with the value you retrieved in the previous step.
+1. これでキューを作成する準備が整いました。 `New-AzureStorageQueue` コマンドを使用して `$messageQueue` 変数に割り当てます。
+    - 値 `musicsharingmessages` を指定して `-Name` パラメーターを渡します。
+    - 前の手順で取得した値を指定して `-Context` パラメーターを渡します。
 
     ```powershell
     $messageQueue = New-AzureStorageQueue -Name musicsharingmessages -Context $context
     ```
 
-## Add a message to the queue
+## <a name="add-a-message-to-the-queue"></a>メッセージをキューに追加する
 
-Now that you have created a queue in the storage account, you can add a message to it.
+これでストレージ アカウントにキューが作成されたので、それにメッセージを追加できます。
 
-1. To create a new message, use the `New-Object` method to create a .NET `CloudQueueMessage` with a string-based argument:
+1. 新しいメッセージを作成するには、`New-Object` メソッドを使用し、文字列ベースの引数を指定して .NET `CloudQueueMessage` を作成します。
 
     ```powershell
     $newSongMessage = New-Object -TypeName Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage -ArgumentList "A new song has been added."
     ```
 
-1. To add the new message to the new queue, pass the created `CloudQueueMessage` to the `AddMessageAsync` method on your `$messageQueue` queue.
+1. 新しいメッセージを新しいキューに追加するには、作成した `CloudQueueMessage` を `$messageQueue` キューの `AddMessageAsync` メソッドに渡します。
 
     ```powershell
     $messageQueue.CloudQueue.AddMessageAsync($newSongMessage)
     ```
 
-## Verify the message was queued
+## <a name="verify-the-message-was-queued"></a>メッセージがキューに追加されたことを確認する
 
-We can use the **Storage Explorer** to work with our queue. There are two variations available:
+**ストレージ エクスプローラー**を使用してキューを操作することができます。 2 種類の方法で利用できます。
 
-- A cross-platform desktop app for Linux, macOS, and Windows that you can download.
-- A preview web version in the Azure portal. This is the one we will use here, but you can install the desktop version if you prefer - the instructions are very similar.
+- ダウンロードできる Linux、macOS、および Windows 用のクロスプラットフォーム デスクトップ アプリ。
+- Azure portal のプレビュー Web バージョン。 ここではこの方法を使用しますが、好みに応じてデスクトップ バージョンをインストールすることもできます。手順は同様です。
 
-1. In the Azure portal, in the navigation on the left, click **All resources**.
+1. Azure portal の左側のナビゲーションで **[すべてのリソース]** をクリックします。
 
-1. In the list of resources, click the storage account you created earlier.
+1. リソースの一覧で、先に作成したストレージ アカウントをクリックします。
 
-1. In the storage account blade, click **Storage Explorer (Preview)**.
+1. [ストレージ アカウント] ブレードで、**[ストレージ エクスプローラー (プレビュー)]** をクリックします。
 
-1. In the Storage Explorer, under **QUEUES**, click **musicsharingmessages**. The Storage Explorer should display the message you just added.
+1. ストレージ エクスプローラーの **[キュー]** の下で **[musicsharingmessages]** をクリックします。 ストレージ エクスプローラーには、追加したメッセージが表示されます。
 
-## Retrieve and remove the message
+## <a name="retrieve-and-remove-the-message"></a>メッセージの取得と削除
 
-A destination component for a message in a Storage queue must retrieve the message at the front of the queue. Then the destination component must process the message and delete it from the queue so that other components do not retrieve it.
+ストレージ キュー内のメッセージの宛先コンポーネントは、キューの先頭にあるメッセージを取得する必要があります。 次に、宛先コンポーネントはそのメッセージを処理してキューから削除し、他のコンポーネントがメッセージを取得しないようにする必要があります。
 
-1. We can retrieve the first available message in PowerShell using the `GetMessageAsync` method on our queue. This is an asynchronous .NET method, since we want to wait for it we can just use the `Result` property to get the return value. This returns an object representing the message which we can assign to a parameter.
+1. 最初の使用できるメッセージを取得するには、PowerShell でキューに対して `GetMessageAsync` メソッドを使用します。 `Result` プロパティを使用して戻り値を取得できるように待機する必要があるため、これは非同期の .NET メソッドです。 その結果、パラメーターに割り当てることができるメッセージを表すオブジェクトが返されます。
 
     ```powershell
     $retrievedMessage = $messageQueue.CloudQueue.GetMessageAsync().Result
     ```
 
-1. We can get a textual version of the message by calling `AsString` - this will output the value on the console.
+1. `AsString` を呼び出してメッセージのテキスト バージョンを取得できます。その結果、コンソールに値が出力されます。
 
     ```powershell
     $retrievedMessage.AsString
     ```
 
-1. Or, we can display all the properties of the message by just typing the variable name and pressing **Enter**.
+1. また、変数名を入力して **Enter** キーを押すだけで、メッセージのすべてのプロパティを表示することもできます。
 
     ```powershell
     $retrievedMessage
     ```
 
-1. `GetMessageAsync` does *not* remove the message - it simply returns it, which means we could process it again. To remove the message from the queue, we can use the `DeleteMessageAsync` method on the queue - this requires that we pass in the message we want to remove.
+1. `GetMessageAsync` を実行してもメッセージは削除*されません*。単にメッセージが返されるだけです。つまり、メッセージを再び処理することができます。 キューからメッセージを削除するには、キューに対して `DeleteMessageAsync` メソッドを使用できます。この場合、削除するメッセージを渡す必要があります。
 
     ```powershell
     $messageQueue.CloudQueue.DeleteMessageAsync($retrievedMessage)
     ```
 
-1. To verify that the message is gone, refresh the queue display in the Azure portal by navigating to the Storage Account blade and selecting **Overview > Storage Explorer**. Under **QUEUES**, click **musicsharingmessages**. The Storage Explorer should now show that the queue is empty because you removed the only message.
+1. メッセージが削除されたことを確認するには、[ストレージ アカウント] ブレードに移動し、**[概要] > [ストレージ エクスプローラー]** の順に選択して、Azure portal のキュー表示を更新します。 **[キュー]** の下で **[musicsharingmessages]** をクリックします。 メッセージのみを削除したため、ストレージ エクスプローラーにはキューが空であることが表示されます。
 
 
-## Summary
-Storage account queues are a good solution when you want to pass _messages_ between the components of a distributed application. This is a great choice if you want to guarantee delivery or to ensure that messages are delivered in the same order you sent them. However, queues imply that the sender and receiver understand the format of the data being passed - there's an implied data contract between them which adds a bit of "coupling" between the two communicating services.
+## <a name="summary"></a>まとめ
+ストレージ アカウントのキューは、分散アプリケーションのコンポーネント間で_メッセージ_を渡す場合に最適なソリューションです。 これは、配信を保証したい場合や、送信した順序と同じ順序でメッセージを確実に配信したい場合に最適です。 ただし、キューは、送信者と受信者が、渡されるデータの形式を認識していることを前提としています。つまり、2 つの通信サービス間をある程度 "結合" する暗黙のデータ コントラクトがあります。
 
-Not all architectures need to pass formatted blocks of data, some really just need simple messages which we want to fire-and-forget without any knowledge of what will handle the message. In these scenarios, a queue isn't a great choice. Let's look at another messaging strategy which is more suited to this style of communication.
+正しい形式のデータ ブロックを渡すことは、すべてのアーキテクチャにとって必須ではありません。メッセージの処理側が何かを認識していなくても、メッセージを送信し、後の処理には関知しない単純なメッセージが必要な場合もあります。 このようなシナリオの場合、キューは最適ではありません。 このようなスタイルの通信に適した別のメッセージング戦略を見てみましょう。

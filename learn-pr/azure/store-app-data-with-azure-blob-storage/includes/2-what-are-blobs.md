@@ -1,27 +1,27 @@
-Blobs are "files for the cloud". Apps work with blobs in much the same way as they would work with files on a disk, like reading and writing data. However, unlike a local file, blobs can be reached from anywhere with an internet connection.
+BLOB は "クラウド用のファイル" です。 アプリによる BLOB の使用方法はディスク上のファイルとほとんど同じで、データを読み書きします。 ただし、ローカル ファイルとは異なり、BLOB にはインターネットに接続できればどこからでもアクセスできます。
 
-Azure Blob storage is *unstructured*, meaning that there are no restrictions on the kinds of data it can hold. For example, a blob can hold a PDF document, a JPG image, a JSON file, video content, etc. Blobs aren't limited to common file formats &mdash; a blob could contain gigabytes of binary data streamed from a scientific instrument, an encrypted message for another application, or data in a custom format for an app you're developing.
+Azure BLOB ストレージは "*構造化されていません*"。つまり、保持できるデータの種類に制限はありません。 たとえば、BLOB には PDF ドキュメント、JPG イメージ、JSON ファイル、動画コンテンツなどを保持できます。BLOB は一般的なファイル形式に限定されません。BLOB には、科学機器からストリーミングされたギガバイト単位のバイナリ データ、別のアプリケーションに対する暗号化されたメッセージ、開発中のアプリ向けのカスタム形式のデータなどを格納できます。
 
-Blobs are usually not appropriate for structured data that needs to be queried frequently. They have higher latency than memory and local disk and don't have the indexing features that make databases efficient at running queries. However, blobs are frequently used in *combination* with databases to store non-queryable data. For example, an app with a database of user profiles could store profile pictures in blobs. Each user record in the database would include the name or URL of the blob containing the user's picture.
+通常、頻繁にクエリを行う必要がある構造化データには BLOB は適していません。 BLOB はメモリやローカル ディスクより高遅延であり、BLOB にはクエリ実行時のデータベースを効率化するインデックス作成機能がありません。 ただし、BLOB とデータベースを "*組み合わせて*" 使用し、クエリ不可能なデータを格納することがよくあります。 たとえば、ユーザー プロファイルのデータベースを持つアプリでは、BLOB にプロファイル画像を格納できます。 データベース内の各ユーザー レコードには、ユーザーの画像を格納している BLOB の名前または URL が含まれます。
 
-Blobs are used for data storage in many ways across all kinds of applications and architectures:
+あらゆる種類のアプリケーションやアーキテクチャで、データ ストレージのためにさまざまな方法で BLOB が使用されます。
 
-- Apps that need to communicate large amounts of data over a messaging system that supports only small messages can store data in blobs and send the blob URLs in messages.
-- Blob storage can be used like a file system for storing and sharing documents and other personal data.
-- Static web assets like images can be stored in blobs and made available for public download as if they were files on a web server.
-- Many Azure components use blobs behind the scenes. For example, Azure Cloud Shell stores your files and configuration in blobs, and Azure Virtual Machines uses blobs for hard-disk storage.
+* 小さなメッセージのみをサポートするメッセージング システムを介して大量のデータを通信する必要があるアプリでは、BLOB にデータを格納し、メッセージでは BLOB の URL を送信することができます。
+* BLOB ストレージをファイル システムのように使用して、ドキュメントや他の個人データを格納したり共有したりできます。
+* 画像のような静的な Web アセットを BLOB に格納し、Web サーバー上のファイルと同じようにパブリックにダウンロードできるようにすることができます。
+* 多くの Azure コンポーネントでは、見えないところで BLOB が使用されています。 たとえば、Azure Cloud Shell ではファイルと構成を BLOB に格納し、Azure Virtual Machines ではハード ディスク ストレージに BLOB を使用しています。
 
-Some apps will constantly create, update, and delete blobs as part of their work. Others will use a small set of blobs and rarely change them.
+アプリの中には、処理の一部として絶えず BLOB を作成、更新、削除しているものがあります。 BLOB の小規模なセットを使用し、ほとんど変更しないアプリもあります。
 
-## Storage accounts, containers, and metadata
+## <a name="storage-accounts-containers-and-metadata"></a>ストレージ アカウント、コンテナー、メタデータ
 
-In Blob storage, every blob lives inside a *blob container*. You can store an unlimited number of blobs in a container and an unlimited number of containers in a storage account. Containers are "flat" &mdash; they can only store blobs, not other containers.
+BLOB ストレージでは、すべての BLOB が "*BLOB コンテナー*" 内に存在します。 コンテナー内に格納できる BLOB の数、およびストレージ アカウント内のコンテナーの数には、制限はありません。 コンテナーは "フラット" であり、BLOB のみを格納でき、他のコンテナーは格納できません。
 
-Blobs and containers support metadata in the form of name-value string pairs. Your apps can use metadata for anything you like: a human-readable description of a blob's contents to be displayed by the application, a string that your app uses to determine how to process the blob's data, etc.
+BLOB とコンテナーでは、名前と値の文字列ペアの形式でメタデータがサポートされます。 アプリケーションで表示される BLOB の内容についての人が読める説明や、BLOB のデータの処理方法を決定するためにアプリで使用される文字列など、アプリではメタデータを任意の目的に使用できます。
 
 > [!TIP]
-> Blob storage does not provide any mechanism for searching or sorting blobs by metadata. See the Further Reading section at the end of this module for information about using Azure Search to achieve this.
+> BLOB ストレージでは、メタデータで BLOB の検索や並べ替えを行うためのメカニズムは提供されていません。 この目的に Azure Search を使用する方法については、このモジュールの最後の「参考資料」をご覧ください。
 
-## The Blob storage API and client libraries
+## <a name="the-blob-storage-api-and-client-libraries"></a>BLOB ストレージ API とクライアント ライブラリ
 
-The Blob storage API is REST-based and supported by client libraries in many popular languages. It lets you write apps that create and delete blobs and containers, upload and download blob data, and list the blobs in a container.
+BLOB ストレージ API は REST ベースであり、多くの一般的な言語のクライアント ライブラリによってサポートされています。 それを使用して、BLOB やコンテナーの作成と削除、BLOB データのアップロードとダウンロード、コンテナー内の BLOB の一覧表示を行うアプリを作成できます。

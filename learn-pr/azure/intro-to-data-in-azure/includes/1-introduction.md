@@ -1,15 +1,15 @@
-Suppose you manage an online sales learning portal for your organization. The majority of your sales team are often in different geographical areas, so the online learning portal is an essential requirement. It's even more important as your organization continues to increase the skills and knowledge enhancement training for the sales staff.
+組織のためにオンライン販売の学習ポータルを管理しているものとします。 販売チームの多くはいつも、さまざまな地域にいるため、オンライン学習ポータルは必須要件です。 組織が販売スタッフの技能や知識の向上トレーニングを継続的に増やしているのであれば、より重要です。
 
-Your training data includes high-quality video, detailed sales simulations, and large repositories for maintaining student data and progress. Currently, all the training content is stored in your on-premises storage. You have an aggressive plan to add new courses and would like to avoid the need to continuously increase the local storage capacity.
+そのトレーニング データは大容量です。 これには高画質の動画、詳細な販売シミュレーション、生徒のデータと進捗状況を維持するための大型リポジトリが含まれます。 現在、トレーニング コンテンツはオンプレミスのストレージに保存されています。 あなたには新しいコースを追加するという積極的な計画があり、ローカル ストレージ容量を継続的に追加する必要性を回避したいと考えています。
 
-You're looking for a storage solution that is secure, durable, scalable, and easily accessible from across the globe.
+安全性、耐久性、拡張性に優れ、世界中から簡単にアクセスできるストレージ ソリューションをあなたは探しています。
 
-Azure Storage provides features that will meet all of your business needs.
+Azure Storage は、あらゆるビジネス ニーズを満たす機能を提供します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Explore the benefits of Azure Storage
-- Explore how Azure Storage meets your business demands
-- Compare Azure storage with on-premises storage
+- Azure Storage の利点を調べる
+- Azure Storage でビジネス要件が満たされるかどうかを調べる
+- Azure Storage とオンプレミス ストレージを比較する

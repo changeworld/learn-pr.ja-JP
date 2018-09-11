@@ -1,12 +1,11 @@
-Imagine a scenario where a busy hair salon has a recurring problem: their customers commonly miss their appointments. The appointments are reserved time slots. If a customer misses an appointment, the salon loses money. To fix this problem, the salon reaches out to you, a software developer. To improve the problem, you decide to send reminder text messages. Every morning, you send a text message to every customer with an appointment that day.
+忙しい美容院で、顧客がよく予定を忘れるという問題が繰り返し起きているとします。 予定とは、予約された時間帯です。 顧客が予定を忘れた場合、美容院は経済的な損失を受けます。 この問題を解決するために、美容院からソフトウェア開発者であるあなたに依頼があったとします。 問題を削減するため、あなたはテキスト メッセージでリマインダーを送信することにしました。 毎朝、その日に来店が予定されているすべての顧客にテキスト メッセージを送信します。
 
-As an Azure developer, you decide to solve this problem using an Azure function. You already know how to implement the logic to send a text message. Now you need to learn how to send the message at a specific time. Luckily, Azure Functions supports a feature called _triggers_. Triggers are used to determine how an Azure function is executed.
+Azure 開発者として、あなたは Azure 関数を使用してこの問題を解決することにしました。 テキスト メッセージを送信するためのロジックを実装する方法は、既に知っています。 今必要なのは、特定の時刻にメッセージを送信する方法を知ることです。 さいわい、Azure Functions では_トリガー_と呼ばれる機能がサポートされています。 トリガーによって、Azure 関数がどのように実行されるかが決まります。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-In this module, you will:
-
-- Determine which trigger works best for your business needs.
-- Create a timer trigger to invoke a function on a consistent schedule.
-- Create an HTTP trigger to invoke a function when an HTTP request is received.
-- Create a blob trigger to invoke a function when a blob is created or updated in Azure Storage.
+- ビジネス ニーズに照らして、どのトリガーが最適かを判断します。
+- 一貫したスケジュールに基づいて関数を呼び出すタイマー トリガーを作成します。
+- HTTP 要求を受信したときに関数を呼び出す HTTP トリガーを作成します。
+- Azure Storage 内に BLOB が作成されたとき、または Azure Storage 内の BLOB が更新されたときに関数を呼び出す、BLOB トリガーを作成します。

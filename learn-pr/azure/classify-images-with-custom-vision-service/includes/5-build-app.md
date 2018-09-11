@@ -1,61 +1,83 @@
-The true power of the Microsoft Custom Vision Service is the ease with which developers can incorporate its intelligence into their own applications using the [Custom Vision Prediction API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814). In this unit, you will use Visual Studio Code to modify an app named Artwork to use the model you built and trained in previous exercises.
+### <a name="exercise-5-create-a-nodejs-app-that-uses-the-model"></a>演習 5: モデルを使用する Node.js アプリを作成する
 
-1. If Node.js isn't installed on your system, go to https://nodejs.org and install the latest LTS version for your operating system.
+Microsoft Custom Vision Service の真の力は、[Custom Vision の予測 API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/eb68250e4e954d9bae0c2650db79c653/operations/58acd3c1ef062f0344a42814) を使用して、開発者がそのインテリジェンスを独自のアプリケーションに簡単に組み込むことができることにあります。 この演習では、Visual Studio Code を使用して、Artwork という名前のアプリを変更し、前の演習でビルドおよびトレーニングを行ったモデルを使用します。
 
-   > If you aren't sure whether Node.js is installed, open a command prompt or terminal window and type **node -v**. If you don't see a Node.js version number, then Node.js isn't installed. If a version of Node.js older than 6.0 is installed, we highly recommend that you download and install the latest version.
+1. ご利用のシステムに Node.js がインストールされていない場合は、 https://nodejs.org に移動して使用しているオペレーティング システム用の最新の LTS バージョンをインストールします。
 
-1. If Visual Studio Code isn't installed on your workstation, go to http://code.visualstudio.com and install it now.
+    > Node.js がインストールされているかどうかが不明な場合は、コマンド プロンプトまたはターミナル ウィンドウを開き、「**node -v**」と入力します。 Node.js のバージョン番号が表示されない場合は、Node.js はインストールされていません。 インストールされている Node.js のバージョンが 6.0 よりも古い場合は、最新バージョンをダウンロードしてインストールすることを強くお勧めします。
 
-1. Start Visual Studio Code and select **Open Folder...** from the **File** menu. In the ensuing dialog, select the "Client\Artworks" folder included in the module resources.
+1. ご利用のワークステーションに Visual Studio Code がインストールされていない場合は、 http://code.visualstudio.com に移動して今すぐインストールします。
 
-    ![Selecting the Artworks folder](../media/5-fe-select-folder.png)
+1. Visual Studio Code を起動して、**[ファイル]** メニューから **[フォルダーを開く]** を選択します。 後続のダイアログで、ラボ リソースに含まれている "Client\Artworks" フォルダーを選択します。
 
-1. Use the **View** > **Integrated Terminal** command to open an integrated terminal window in Visual Studio Code. Then execute the following command in the integrated terminal to load the packages required by the app:
+    ![Artworks フォルダーの選択](../images/fe-select-folder.png)
 
-	```
-	npm install
-	```
+    _Artworks フォルダーの選択_ 
 
-1. Return to the Artwork project in the Custom Vision Service portal, click **Performance**, and then click **Make default** to make sure the latest iteration of the model is the default iteration.
+1. Visual Studio Code で、**[表示]** > **[統合ターミナル]** を使用し、統合ターミナル ウィンドウを開きます。 次に、統合ターミナルで次のコマンドを実行し、アプリに必要なパッケージを読み込みます。
 
-    ![Specifying the default iteration](../media/5-portal-make-default.png)
+    ```
+    npm install
+    ```
 
-1. Before you can run the app and use it to call the Custom Vision Service, it must be modified to include endpoint and authorization information. To that end, click **Prediction URL**.
+1. Custom Vision Service ポータル内の Artwork プロジェクトに戻り、**[パフォーマンス]**、**[既定に設定]** の順にクリックして、モデルの最新のイテレーションが既定のイテレーションになっていることを確認します。 
 
-    ![Viewing Prediction URL information](../media/5-portal-prediction-url.png)
+    ![既定のイテレーションの指定](../images/portal-make-default.png)
 
-1. The ensuing dialog lists two URLs: one for uploading images via URL, and another for uploading local images. Copy the Prediction API URL for image files to the clipboard.
+    _既定のイテレーションの指定_ 
 
-    ![Copying the Prediction API URL](../media/5-copy-prediction-url.png)
+1. アプリを実行して使用し、Custom Vision Service を呼び出すには、エンドポイントと認証情報を含めるように、事前にアプリを変更する必要があります。 そのために、**[Prediction URL]\(予測 URL\)** をクリックします。
 
-1. Return to Visual Studio Code and click **predict.js** to open it in the code editor.
+    ![予測 URL の情報を表示](../images/portal-prediction-url.png)
 
-    ![Opening predict.js](../media/5-vs-predict-file.png)
+    _予測 URL の情報を表示_ 
 
-1. Replace "PREDICTION_ENDPOINT" in line 3 with the URL on the clipboard.
+1. 後続のダイアログに次の 2 つの URL が一覧されます。1 つは URL を使用してイメージをアップロードするための URL、もう 1 つはローカルのイメージをアップロードするための URL です。 イメージ ファイル用の予測 API URL をクリップボードにコピーします。 
 
-    ![Adding the Prediction API URL](../media/5-vs-prediction-endpoint.png)
+    ![予測 API URL のコピー](../images/copy-prediction-url.png)
 
-1. Return to the Custom Vision Service portal and copy the Prediction API key to the clipboard.
+    _予測 API URL のコピー_ 
 
-    ![Copying the Prediction API key](../media/5-copy-prediction-key.png)
+1. Visual Studio Code に戻り、**[predict.js]** をクリックしてコード エディターで開きます。
 
-1. Return to Visual Studio Code and replace "PREDICTION_KEY" in line 4 of **predict.js** with the API key on the clipboard.
+    ![predict.js を開く](../images/vs-predict-file.png)
 
-    ![Adding the Prediction API key](../media/5-vs-prediction-key.png)
+    "predict.js を開く"__ 
 
-1. Scroll down in **predict.js** and examine the block of code that begins on line 34. This is the code that calls out to the Custom Vision Service using AJAX. Using the Custom Vision Prediction API is as easy as making a simple, authenticated POST to a REST endpoint.
+1. 3 行目の "PREDICTION_ENDPOINT" をクリップボードの URL に置き換えます。
 
-    ![Making a call to the Prediction API](../media/5-vs-code-block.png)
+    ![予測 API URL の追加](../images/vs-prediction-endpoint.png)
 
-1. Return to the integrated terminal in Visual Studio Code and execute the following command to start the app:
+    _予測 API URL の追加_ 
 
-	```
-	npm start
-	```
+1. Custom Vision Service ポータルに戻り、予測 API キーをクリップボードにコピーします。 
 
-1. Confirm that the Artworks app starts and displays a window like this one:
+    ![予測 API キーのコピー](../images/copy-prediction-key.png)
 
-    ![The Artworks app](../media/5-app-startup.png)
+    _予測 API キーのコピー_ 
 
-Artworks is a cross-platform app written with Node.js and [Electron](https://electron.atom.io/). As such, it is equally capable of running on Windows, macOS, and Linux. In the next exercise, you will use it to classify images by the artists who painted them.
+1. Visual Studio Code に戻り、**predict.js** の 4 行目の "PREDICTION_KEY"をクリップボードの API キーに置き換えます。
+
+    ![予測 API キーの追加](../images/vs-prediction-key.png)
+
+    "予測 API キーの追加"__ 
+
+1. **predict.js** まで下へスクロールして、34 行目から始まるコードのブロックを確認します。 これは、AJAX を使用して Custom Vision Service を呼び出すコードです。 Custom Vision の予測 API の使用は、REST エンドポイントへのシンプルな認証済みの投稿を作成するのと同じくらい簡単です。
+
+    ![予測 API を呼び出す](../images/vs-code-block.png)
+
+    "予測 API を呼び出す"__ 
+
+1. Visual Studio Code の統合ターミナルに戻り、次のコマンドを実行してアプリを開始します。
+
+    ```
+    npm start
+    ```
+
+1. Artworks アプリが開始され、次のようなウィンドウが表示されることを確認します。
+
+    ![Artworks アプリ](../images/app-startup.png)
+
+    "Artworks アプリ"__ 
+
+Artworks は、Node.js と [Electron](https://electron.atom.io/) で記述されたクロスプラットフォーム アプリです。 そのため、Windows、macOS、Linux 上で同様に実行することができます。 次の演習では、このアプリを使用して、描いた画家によってイメージを分類します。

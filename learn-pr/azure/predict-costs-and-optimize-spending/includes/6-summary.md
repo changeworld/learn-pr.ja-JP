@@ -1,15 +1,18 @@
-We've talked through the Azure pricing calculator and how you can use it to estimate your costs on Azure and compare pricing between different service offerings. We looked at savings options, how to export pricing estimates, and at various tools that Azure has available to help you keep your cloud spend in check.
+Azure 料金計算ツールと、このツールを使用して Azure でのコストを見積もり、さまざまなサービス内容の料金を比較する方法について説明しました。 見積もりの保存と共有について、また、クラウドの支出を抑えるのに役立つ Azure で利用可能なツールを確認しました。 
 
-- Azure Advisor provides recommendations in a number of areas, including cost.
-- Azure Cost Management gives you reporting and billing information, so you can gain insights into where you're spending your money.
-- Cloudyn takes this even further and gives you detailed information that you can use for chargebacks and to identify areas of inefficiency.
+- Azure Advisor では、コストを含む、多くの領域で推奨事項が提供されます。
+- Azure Cost Management ではレポートと課金に関する情報が提供されるため、コストのかかる部分を把握できます。 
+- Cloudyn ではこれをさらに利用し、詳しい情報を提供します。その情報をチャージバックや、非効率的な領域の特定に利用できます。
 
-We then explored best practices to help you save money on both infrastructure and licensing.
+インフラストラクチャとライセンスの両方にかかるコストを節約するのに役立ついくつかのベスト プラクティスについても説明しました。
 
-## Learn more
+## <a name="learn-more"></a>詳細情報
 
-Here are some places to go to learn more about what we've covered today:
+今日説明した内容の詳細については、以下を参照してください。
 
-- [Azure billing documentation](https://docs.microsoft.com/azure/billing/)
-- [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/)
-- [Azure budgets](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
+- [Azure の課金に関するドキュメント](https://docs.microsoft.com/azure/billing/)
+- [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)
+- [Azure の予算](https://docs.microsoft.com/azure/billing/billing-cost-management-budget-scenario)
+
+
+

@@ -1,30 +1,30 @@
-Now that you know how enabling managed identities for Azure resources creates an identity for our app to use for authentication, we'll create an app that uses that identity to access secrets in the vault.
+これまでに、MSI を有効にして、認証に使用できる自社アプリ用の ID を作成する方法を学習しました。次は、その ID を使用してコンテナー内のシークレットにアクセスするアプリを作成してみましょう。
 
-## Reading secrets in an ASP.NET Core app
+## <a name="reading-secrets-in-an-aspnet-core-app"></a>ASP.NET Core アプリでシークレットを読み取る
 
-The Azure Key Vault API is a REST API that handles all management and usage of keys and vaults. Each secret in a vault has a unique URL, and secret values are retrieved with HTTP GET requests.
+Azure Key Vault API は、キーとコンテナーのすべての管理と使用を処理する REST API です。 コンテナー内の各シークレットには一意の URL があり、シークレット値は HTTP GET 要求で取得されます。
 
-The official Key Vault client library for .NET Core is the `KeyVaultClient` class in the Microsoft.Azure.KeyVault NuGet package. You don't need to use it directly, though &mdash; with ASP.NET Core's `AddAzureKeyVault` method, you can load all the secrets from a vault into the Configuration API at startup. This technique enables you to access all of your secrets by name using the same `IConfiguration` interface you use for the rest of your configuration. Apps that use `AddAzureKeyVault` require both **Get** and **List** permissions to the vault.
+.NET Core の公式の Key Vault クライアント ライブラリは、Microsoft.Azure.KeyVault NuGet パッケージの `KeyVaultClient` クラスです。 これを直接使用する必要はありませんが、&mdash; と ASP.NET Core の `AddAzureKeyVault` メソッドを使用すると、起動時にコンテナーのすべてのシークレットを Configuration API に読み込むことができます。 この手法では、残りの構成で使用するものと同じ `IConfiguration` インターフェイスを使用して、すべてのシークレットに名前を指定してアクセスできます。 `AddAzureKeyVault` を使用するアプリには、コンテナーに対する **Get** と **List** の両方のアクセス許可が必要です。
 
 > [!TIP]
-> Regardless of the framework or language you use to build your app, cache secret values locally or load them into memory at app startup unless you have a specific reason not to. Reading them directly from the vault every time you need them is unnecessarily slow and expensive.
+> 特別な理由がない限り、アプリのビルドに使用するフレームワークや言語に関係なく、アプリの起動時にシークレット値をローカルにキャッシュするか、メモリに読み込んでください。 必要なときに毎回コンテナーから直接読み取ると、不必要に低速でコストも高くなります。
 
-`AddAzureKeyVault` only requires the vault name as an input, which we'll get from our local app configuration. It also automatically handles managed identity authentication &mdash; when used in an app deployed to Azure App Service with managed identities for Azure resources enabled, it will detect the managed identities token service and use it to authenticate. It's a good fit for most scenarios and implements all best practices, and we'll use it in this unit's exercise.
+`AddAzureKeyVault` には入力としてコンテナー名のみが必要です。コンテナー名はローカル アプリの構成から取得します。 また、MSI が有効な Azure App Service にデプロイされたアプリに使用すると、MSI 認証 &mdash; が自動的に処理され、MSI トークン サービスが検出され、認証に使用されます。 これはほとんどのシナリオに適しており、すべてのベスト プラクティスが実装されているので、このユニットの演習に使用します。
 
-## Handling secrets in an app
+## <a name="handling-secrets-in-an-app"></a>アプリでシークレットを処理する
 
-Once a secret is loaded into your app, it's up to your app to handle it securely. In the app we build in this module, we write our secret value out to the client response and view it in a web browser to demonstrate that it has been loaded successfully. **Returning a secret value to the client is *not* something you'd normally do!** Usually, you'll use secrets to do things like initialize client libraries for databases or remote APIs.
+シークレットがアプリに読み込まれた後、シークレットを安全に処理する作業はアプリの担当です。 このモジュールで構築したアプリでは、クライアントの応答に応じてシークレットの値を書き出し、Web ブラウザーに表示して、読み込みが成功したことを示します。 **クライアントにシークレット値を返す処理は、通常の作業とは*異なります*。** 通常は、シークレットを使用してデータベースやリモート API のクライアント ライブラリを初期化するなどの処理を行います。
 
 > [!IMPORTANT]
-> Always carefully review your code to ensure that your app never writes secrets to any kind of output, including logs, storage, and responses.
+> 常に注意してコードを見直し、ログ、ストレージ、応答など、どのような種類の出力にもシークレット情報を書き込まないようにしてください。
 
-## Exercise
+## <a name="exercise"></a>演習
 
-We'll create a new ASP.NET Core web API and use `AddAzureKeyVault` to load the secret from our vault.
+新しい ASP.NET Core Web API を作成し、`AddAzureKeyVault` を使用してコンテナーからシークレットを読み込みます。
 
-### Create the app
+### <a name="create-the-app"></a>アプリケーションの作成
 
-In the Azure Cloud Shell terminal, run the following to create a new ASP.NET Core web API application and open it in the editor.
+Azure Cloud Shell ターミナルで以下を実行して新しい ASP.NET Core Web API アプリケーションを作成し、エディターで開きます。
 
 ```console
 dotnet new webapi -o KeyVaultDemoApp
@@ -32,18 +32,18 @@ cd KeyVaultDemoApp
 code .
 ```
 
-After the editor loads, run the following commands in the shell to add the NuGet package containing `AddAzureKeyVault` and restore all of the app's dependencies.
+エディターの読み込みが完了したら、シェルで次のコマンドを実行して、`AddAzureKeyVault` を含む NuGet パッケージを追加し、すべてのアプリの依存関係を復元します。
 
 ```console
 dotnet add package Microsoft.Extensions.Configuration.AzureKeyVault
 dotnet restore
 ```
 
-### Add code to load and use secrets
+### <a name="add-code-to-load-and-use-secrets"></a>シークレットを読み込んで使用するコードを追加する
 
-To demonstrate good usage of Key Vault, we will modify our app to load secrets from the vault at startup. We'll also add a new controller with an endpoint that gets our **SecretPassword** secret from the vault.
+Key Vault の適切な使用方法を示すため、起動時にコンテナーからシークレットを読み込むようにアプリを変更します。 また、エンドポイントに新しいコントローラーを追加して、**SecretPassword** シークレットをコンテナーから取得します。
 
-First, the app startup: Open `Program.cs`, delete the contents and replace them with the following code:
+最初にアプリのスタートアップ: `Program.cs` を開き、内容を削除して次のコードに置き換えます。
 
 ```csharp
 using Microsoft.AspNetCore;
@@ -71,10 +71,9 @@ namespace KeyVaultDemoApp
                     var vaultUrl = $"https://{builtConfig["VaultName"]}.vault.azure.net/";
 
                     // Load all secrets from the vault into configuration. This will automatically
-                    // authenticate to the vault using a managed identity. If a managed identity
-                    // is not available, it will check if Visual Studio and/or the Azure CLI are
-                    // installed locally and see if they are configured with credentials that can
-                    // access the vault.
+                    // authenticate to the vault using MSI. If MSI is not available, it will
+                    // check if Visual Studio and/or the Azure CLI are installed locally and
+                    // see if they are configured with credentials that can access the vault.
                     config.AddAzureKeyVault(vaultUrl);
                 })
                 .UseStartup<Startup>();
@@ -82,15 +81,15 @@ namespace KeyVaultDemoApp
 }
 ```
 
-> [!TIP]
-> Make sure to save files with `Ctrl+S` when you're done editing them.
+> [!NOTE]
+> 編集が完了したら、必ず `Ctrl+S` でファイルを保存します。
 
-The only change from the starter code is the addition of `ConfigureAppConfiguration`. This is where we load the vault name from configuration and call `AddAzureKeyVault` with it.
+スターター コードからの唯一の変更は、`ConfigureAppConfiguration` の追加です。 ここでは、構成からコンテナー名を読み込み、それを使用して `AddAzureKeyVault` を呼び出します。
 
-Next, the controller: Create a new file in the `Controllers` folder called `SecretTestController.cs` and paste the following code into it.
+次にコントローラー: `SecretTestController.cs` という `Controllers` フォルダーに新しいファイルを作成し、次のコードを貼り付けます。
 
-> [!TIP]
-> To create a new file, use the `touch` command in the shell. In this case, use `touch Controllers/SecretTestController.cs`. You'll need to click the refresh button in the Files pane of the editor to see it there.
+> [!NOTE]
+> 新しいファイルを作成するには、シェルで `touch` コマンドを使用します。 例では `touch Controllers/SecretTestController.cs`が使用されます。 表示するには、エディターの [ファイル] ウィンドウの [更新] ボタンをクリックする必要があります。
 
 ```csharp
 using System;
@@ -136,4 +135,4 @@ namespace KeyVaultDemoApp.Controllers
 }
 ```
 
-Run `dotnet build` in the shell to make sure everything compiles. The app is ready to run &mdash; now let's get it into Azure!
+シェルで `dotnet build` を実行して、すべてがコンパイルされていることを確認します。 アプリで &mdash; を実行できる準備が整いました。次は Azure に取り込みましょう。

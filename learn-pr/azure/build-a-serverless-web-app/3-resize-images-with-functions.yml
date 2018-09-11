@@ -1,19 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.3-resize-images-with-functions
-title: Resize images with Azure Functions
+title: Azure Functions を使用して画像のサイズを変更する
 metadata:
-  title: Resize images with Azure Functions
-  description: Resize images with Azure Functions
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity. This module uses both Cloud Shell and the portal, which should be able to be accessed together with azure-portal.
-# interactive: azure-portal
+  title: Azure Functions を使用して画像のサイズを変更する
+  description: Azure Functions を使用して画像のサイズを変更します。
+  ms.openlocfilehash: 765eb8df524863e55a91a12417dad907c77e18cb
+  ms.sourcegitcommit: 1697ef50de6fbaf39175872148e70d87d7d9bd13
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42890920"
 durationInMinutes: 11
 interactive: bash-editor
-azureSandbox: true
-content: |
-  [!include[](includes/3-resize-images-with-functions.md)]
+content: '[!include[](includes/3-resize-images-with-functions.md)]'

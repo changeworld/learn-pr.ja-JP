@@ -1,43 +1,43 @@
-There are certain applications that produce a massive number of events from almost as many sources. We often hear the term "Big Data" applied to these situations, and they require unique infrastructure to handle them.
+ほぼ同数のソースから膨大な数のイベントを生成する特定のアプリケーションがあります。 このような状況に適用される "ビッグ データ" という語をよく耳にしますが、こうしたデータを処理するには独自のインフラストラクチャが必要です。
 
-Imagine you work for Contoso Aircraft Engines. The engines your employer manufactures have hundreds of sensors. Before an aircraft can be flown each morning, its engines are connected to a test harness and put through their paces. Additionally, cached in-flight data is streamed when the aircraft is connected to ground equipment.
+あなたが Contoso Aircraft Engines に勤務しているとします。 雇用主が製造するエンジンは何百ものセンサーを備えています。 毎朝航空機が飛行する前に、そのエンジンがテスト ハーネスに接続され、性能が試されます。 さらに、航空機が地上器材に接続されているときに、キャッシュされた飛行中のデータがストリーミングされます。
 
-You want to use historic sensor data to find patterns in the sensor readings that indicate engine failure is likely to happen soon. You want the real-time sensor readings to be compared against these failure patterns. You can then warn users in near real time if an engine is showing worrisome readings.
+あなたは、センサーの履歴データを使用して、エンジンの故障がまもなく発生する可能性が高いことを示すセンサー測定値のパターンを見つけようとしています。 リアルタイムのセンサー測定値を、これらの故障パターンと比較します。 これにより、エンジンが疑わしい測定値を示す場合に、ほぼリアルタイムでユーザーに警告することができます。
 
-## What is Azure Event Hubs?
-Event Hubs is an intermediary for the publish-subscribe communication pattern. Unlike Event Grid, however, it is optimized for extremely high throughput, a large number of publishers, security, and resiliency.
+## <a name="what-is-azure-event-hubs"></a>Azure Event Hubs とは
+Event Hubs は、発行/サブスクライブ通信パターンの仲介役です。 ただし、Event Grid とは異なり、非常に高いスループット、多数の発行元、セキュリティ、および回復性に対して最適化されています。
 
-Whereas Event Grid fits perfectly into the publish-subscribe pattern in that it simply manages subscriptions and routes communications to those subscribers, Event Hubs performs quite a few additional services. These additional services make it look more like a service bus or message queue, than a simple event broadcaster.
+Event Grid は、サブスクリプションを単純に管理し、これらのサブスクライバーに通信をルーティングする点で、発行/サブスクライブ通信パターンと完全に合致します。これに対して Event Hubs では、かなり多くの追加サービスを実行します。 これらのサービスのため、Event Hubs は、単純なイベント ブロードキャスターよりもサービス バスやメッセージ キューに似ています。
 
-#### Partitions
-As Event Hubs receives communications, it divides them into partitions. Partitions are buffers into which the communications are saved. Because of the event buffers, events are not completely ephemeral, and an event isn't missed just because a subscriber is busy or even offline. The subscriber can always use the buffer to "catch up." By default, events stay in the buffer for 24 hours before they automatically expire.
+#### <a name="partitions"></a>パーティション
+Event Hubs は通信を受信すると、その通信をパーティションに分割します。 パーティションは、通信が保存されるバッファーです。 イベント バッファーのため、イベントは完全に一時的なものではなく、サブスクライバーがビジー状態またはオフラインであってもイベントが見落とされることはありません。 サブスクライバーでは、常にバッファーを使用して "キャッチアップ" することができます。 既定では、イベントはバッファー内に 24 時間留まった後、自動的に期限切れとなります。
 
-The buffers are called partitions because the data is divided amongst them. Every event hub has at least two partitions, and each partition has a separate set of subscribers.
+バッファーは、それらの間でデータが分割されるため、パーティションと呼ばれます。 すべてのイベント ハブには少なくとも 2 つのパーティションが含まれ、各パーティションにはサブスクライバーの別個のセットが含まれます。
 
-#### Capture
-Event Hubs can send all your events immediately to Azure Data Lake or Azure Blob storage for inexpensive, permanent persistence.
+#### <a name="capture"></a>キャプチャ
+Event Hubs では、Azure Data Lake または Azure BLOB ストレージにすべてのイベントを瞬時に送信して、永続性を低コストで実現することができます。
 
-#### Authentication
-All publishers are authenticated and issued a token. This means Event Hubs can accept events from external devices and mobile apps, without worrying that fraudulent data from pranksters could ruin our analysis. 
+#### <a name="authentication"></a>認証
+すべての発行元が認証され、トークンが発行されます。 つまり、Event Hubs では、いたずらにより不正なデータが分析に支障をきたすことを心配せずに、外部デバイスおよびモバイル アプリからのイベントを受け取ることができます。 
 
-## Using Event Hubs
-Event Hubs has support for pipelining event streams to other Azure services. Using it with Azure Stream Analytics, for instance, allows complex analysis of data in near real time, with the ability to correlate multiple events and look for patterns. In this case, Stream Analytics would be considered a subscriber.
+## <a name="using-event-hubs"></a>Event Hubs の使用
+Event Hubs では、イベント ストリームと他の Azure サービスの間のパイプライン設定がサポートされています。 たとえば、Azure Stream Analytics とともに使用すると、複数のイベントを関連付けてパターンを見つける機能により、ほぼリアルタイムでデータの複雑な分析を行うことができます。 この場合、Stream Analytics はサブスクライバーと見なされます。
 
-For our aircraft engines, we'll set up our architecture so that Event Hubs will authenticate the communications from our engines. We will then have it use capture to save all the data to Data Lake. Later, we can use all that data to retrain and improve our machine learning models. Finally, our event streams will be picked up by Stream Analytics subscribers. Stream Analytics will use our machine learning model to look for patterns in the sensor data that might indicate problems.
+ここでは、航空機エンジンに対して、Event Hubs がエンジンからの通信を認証できるようにアーキテクチャを設定します。 その後、キャプチャを使用してすべてデータを Data Lake に保存するようにします。 これらのデータはすべて、機械学習モデルを保持および向上させるために後で使用できます。 最後に、Stream Analytics のサブスクライバーによってイベント ストリームが取得されます。 Stream Analytics では、機械学習モデルを使用して、問題を示す可能性のあるセンサー データのパターンを見つけます。
 
-Because we have several partitions, and each engine sends all its data to only one partition, each instance of our Stream Analytics subscriber only need deal with a subset of our overall data. It does not have to filter and correlate over all of it.
+複数のパーティションがあり、各エンジンではそのすべてのデータを 1 つのパーティションだけに送信するので、Stream Analytics サブスクライバーの各インスタンスでは、データ全体のサブセットを扱うだけで済みます。 すべてのデータに対してフィルター処理および関連付けを行う必要はありません。
 
-## Which service should I choose?
-Just like our queue choice, selecting between these two event delivery services can seem tricky at first. Both support *At Least Once* semantics.
+## <a name="which-service-should-i-choose"></a>どのサービスを選択すべきか
+キューの選択と同様に、最初は、これらの 2 つのイベント配信サービスの間で選択を行うことは困難に思われます。 両者とも *At Least Once* セマンティクスをサポートしています。
 
-#### Choose Event Hubs if:  
+#### <a name="choose-event-hubs-if"></a>次の場合には、Event Hubs を選択します。  
 
-- You need to support authenticating a large number of publishers.
-- You need to save a stream of events to Data Lake or Blob storage.
-- You need aggregation or analytics on your event stream.
-- You need reliable messaging or resiliency.  
+- 多数の発行元の認証をサポートする必要がある。
+- Data Lake または BLOB ストレージにイベントのストリームを保存する必要がある。
+- イベント ストリームの集計または分析が必要である。
+- 信頼できるメッセージングまたは回復性が必要である。  
 
-Otherwise, if you need a simple event publish-subscribe infrastructure, with trusted publishers (for instance, your own web server), you should choose Event Grid.
+一方、信頼された発行元 (たとえば、自身の Web サーバー) との単純なイベント発行/サブスクライブ インフラストラクチャが必要な場合は、Event Grid を選択する必要があります。
 
-## Summary
-Event Hubs lets you build a big data pipeline capable of processing millions of events per second with low latency. It can handle data from concurrent sources and route it to a variety of stream-processing infrastructures and analytics services. It enables real-time processing and supports repeated replay of stored raw data. 
+## <a name="summary"></a>まとめ
+Event Hubs を使用すると、毎秒数百万のイベントを短い待機時間で処理できる、ビッグ データ パイプラインを構築できます。 同時ソースからのデータを処理し、さまざまなストリーム処理インフラストラクチャや分析サービスにルーティングすることができます。 リアルタイム処理が可能になり、格納された生データの繰り返し再生がサポートされます。 

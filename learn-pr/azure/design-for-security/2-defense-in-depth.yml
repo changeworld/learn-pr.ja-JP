@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: 多層防御
+metadata:
+  title: 多層防御
+  description: このユニットでは、多層防御を実践する方法について説明します。
+  ms.openlocfilehash: 5a38b6b3200442e32bf80ae8c45f1209b2ec9000
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366746"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: 知識チェック - 多層防御
+  questions:
+  - content: 次のうち、多層防御セキュリティ戦略を使用するのが適切な戦術はどれですか?
+    choices:
+    - content: コスト削減のために、使用していない仮想マシンの割り当てを解除する
+      isCorrect: false
+    - content: CPU の割合が 90% を超過した場合に警告されるように設定する
+      isCorrect: false
+    - content: 構成ファイルに接続文字列を保存する
+      isCorrect: false
+    - content: Web アプリケーションのホストに Azure App Service を使用する
+      isCorrect: true
+  - content: クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。
+    choices:
+    - content: "True"
+      isCorrect: false
+    - content: "False"
+      isCorrect: true

@@ -1,8 +1,8 @@
-In this module, you explored the benefits of using Azure Storage. Azure Storage provides the following features:
+このモジュールでは、Azure Storage を使用する利点について説明しました。 Azure Storage には以下のような特徴があります。
 
-- Azure supports storing both structured and unstructured data.
-- The data that's stored in Azure is secured and supports the global compliance standards.
-- There are load balancing, high availability, and redundancy capabilities available within Azure Storage options.
-- Large volumes of data can be stored and streamed directly to the browser using features such as Azure Blob storage.
+* Azure は構造化されたデータと構造化されていないデータ両方の格納をサポートします。
+* Azure に格納されたデータはセキュリティで保護され、グローバルなコンプライアンス標準をサポートします。
+* Azure Storage オプションでは負荷分散、高可用性、および冗長性の機能を使用できます。
+* Azure Blob Storage などの機能を使用して、大量のデータをブラウザーに直接格納およびストリーミングできます。
 
-The capabilities of Azure Storage make it an ideal platform for hosting any large global application or portal.
+Azure Storage は、その機能により、大規模なグローバル アプリケーションまたはポータルをホストするのに理想的なプラットフォームになります。

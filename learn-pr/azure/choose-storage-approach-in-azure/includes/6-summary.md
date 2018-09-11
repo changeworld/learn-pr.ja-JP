@@ -1,1 +1,2 @@
-In this module, you've learned how to classify data. You've also learned how to review what will be done with the data, the performance requirements, and whether your data requires transactions. With this knowledge in place for the specific data sets in the online retailing scenario, you learned why some Azure services are better suited to the job than others. You can now apply these learnings to future projects, when you're choosing which service to use for data storage.
+このモジュールでは、データを分類し、データとパフォーマンス要件に関して行われることを確認し、データにトランザクションが必要かどうかを決定する方法を学習しました。 オンライン小売りシナリオの特定のデータ セットに対するこの知識を基に、一部の Azure サービスが他のサービスよりジョブに対して適していることの理由を学習しました。 将来のプロジェクトで、データ ストレージに対して使用するサービスを選択するときに、これらの学習内容を適用できます。
+

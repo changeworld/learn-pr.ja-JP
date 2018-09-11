@@ -1,60 +1,60 @@
 ### YamlMime:ModuleUnit
 uid: learn.align-requirements-in-azure.7-knowledge-check
-title: Knowledge check - IaaS, PaaS & SaaS
+title: 知識の確認 - IaaS、PaaS、SaaS
 metadata:
-  title: Knowledge check - IaaS, PaaS & SaaS
-  description: Knowledge check - IaaS, PaaS & SaaS
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-durationInMinutes: 2
+  title: 知識の確認 - IaaS、PaaS、SaaS
+  description: 知識の確認 - IaaS、PaaS、SaaS
+  ms.openlocfilehash: 89b732ce3ec1a229e057799df1ab24e4f8cee520
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43252495"
+durationInMinutes: 5
 quiz:
-  title: 'Knowledge check - IaaS, PaaS & SaaS'
+  title: 知識の確認 - IaaS、PaaS、SaaS
   questions:
-  - content: 'Given the following scenario, what the best the cloud service model to use? A SQL Server database is needed for a short-term project. The IT department does not have available hardware that meets the performance requirements or resources to deploy it. The project starts next week. Once the project is over, the database is no longer needed.'
+  - content: 次のシナリオの場合、使用するのに最適なクラウド サービス モデルとは? 短期プロジェクトのために、SQL Server データベースが必要です。 IT 部門には、パフォーマンス要件またはデプロイするためのリソースを満たしている利用可能なハードウェアがありません。 プロジェクトは、次の週に始まります。 プロジェクトが終了すると、データベースは必要なくなります。
     choices:
     - content: IaaS
-      incorrectExplanation: You could create a virtual machine and install SQL Server. However, the database is needed quickly. Someone would need to install and maintain the SQL database for the project.
+      incorrectExplanation: 仮想マシンを作成して、SQL Server をインストールできます。 しかし、データベースはすぐに必要です。 誰かがプロジェクト用に SQL Database をインストールして管理する必要があります。
       isCorrect: false
     - content: PaaS
-      correctExplanation: Because of the immediate need, no available hardware, and short lifetime, PaaS is the best option. For example, you could use Azure SQL Database for the solution.
+      correctExplanation: 直ちに必要で、利用できるハードウェアがなく、短期であるため、PaaS が最適なオプションです。 たとえば、ソリューションとして Azure SQL Database を使用できます。
       isCorrect: true
     - content: SaaS
-      incorrectExplanation: The requirement is a SQL database delivered as a service. SaaS would not apply for this scenario.
+      incorrectExplanation: 要件は、サービスとして提供される SQL Database です。 SaaS はこのシナリオには適用されません。
       isCorrect: false
-  - content: 'Given the following scenario, what is the cloud service model? You create several virtual machines in the cloud. The VMs are networked together using a virtual network. The VMs have access to x-ray image files in cloud storage. One virtual machine is a web server that hosts a website exposed to the internet for customers to access their records. There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.'
+  - content: 次のシナリオの場合のクラウド サービス モデルとは?  クラウド内でいくつかの仮想マシンを作成します。 VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。 VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。 1 つの仮想マシンは、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。 画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。
     choices:
     - content: IaaS
-      correctExplanation: All the resources used in this scenario can be implemented using IaaS. 
+      correctExplanation: このシナリオで使用されるリソースはすべて、IaaS を使用して実装できます。
       isCorrect: true
     - content: PaaS
-      incorrectExplanation: Only part of the solution could be implemented using PaaS.
+      incorrectExplanation: ソリューションの一部のみを PaaS を使用して実装できます。
       isCorrect: false
     - content: SaaS
-      incorrectExplanation: Since this is a custom solution, we can assume there isn't a SaaS offering that delivers this functionality.
+      incorrectExplanation: これはカスタム ソリューションのため、この機能を提供する SaaS サービスはないと推測されます。
       isCorrect: false
-  - content: 'Given the following scenario, what is the best cloud service model? You create a small start-up company. You have a handful of employees who need to collaborate. They need email, calendar scheduling, and somewhere to store documents. The team is technical but do not have the time or hardware to implement and manage a solution.'
+  - content: 次のシナリオの場合に最適なクラウド サービス モデルとは?  小さなスタートアップ企業を設立します。 共同作業を行う必要がある従業員が少数います。 従業員は電子メール、予定表のスケジュール、およびドキュメントを保存する場所が必要です。 チームは技術職ですが、ソリューションを実装および管理するための時間やハードウェアはありません。
     choices:
     - content: IaaS
-      incorrectExplanation: While you could achieve the functionality using virtual machines and installing collaboration software, this would take time to install and manage. The team does not have time to use this option.
+      incorrectExplanation: 仮想マシンを使ってコラボレーション ソフトウェアをインストールすることで機能を得ることができますが、インストールや管理を行うには時間がかかります。 チームにはこのオプションを使うための時間がありません。
       isCorrect: false
     - content: PaaS
-      incorrectExplanation: The team does not have time to create a PaaS solution to meet the requirements.
+      incorrectExplanation: チームには、要件を満たす PaaS ソリューションを作成する時間がありません。
       isCorrect: false
     - content: SaaS
-      correctExplanation: A SaaS solution such as Office 365 would be a good solution for the collaboration requirements.
+      correctExplanation: Office 365 などの SaaS ソリューションが、コラボレーションの要件に最適なソリューションです。
       isCorrect: true
-  - content: 'Given the following scenario, what is the cloud service model? You have two datacenters in your organization. One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement. You want to access the database from the other datacenter. You create a VPN using a cloud provider to connect the two datacenters.'
+  - content: 次のシナリオの場合のクラウド サービス モデルとは?  お客様の組織にはデータセンターが 2 か所あります。 一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。 もう一方のデータセンターからそのデータベースにアクセスする必要があります。 2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。
     choices:
     - content: IaaS
-      correctExplanation: You can use an IaaS VPN to implement this solution.
+      correctExplanation: このソリューションを実装するには、IaaS VPN を使用できます。
       isCorrect: true
     - content: PaaS
-      incorrectExplanation: VPN is an infrastructure resource. VPN is not a PaaS solution.
+      incorrectExplanation: VPN はインフラストラクチャ リソースです。 VPN は PaaS ソリューションではありません。
       isCorrect: false
     - content: SaaS
-      incorrectExplanation: VPN is an infrastructure resource. VPN is not a SaaS solution.
+      incorrectExplanation: VPN はインフラストラクチャ リソースです。 VPN は SaaS ソリューションではありません。
       isCorrect: false

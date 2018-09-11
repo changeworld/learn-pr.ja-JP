@@ -1,14 +1,13 @@
-In this module, you have explored four different Azure services that allow you to create reliable and resilient distributed applications. Choosing between them is a matter of deciding the type of data that needs to be passed between components (messages or events), and then what features you need to deliver and process the data.
+このモジュールでは、信頼性と回復力の高い分散アプリケーションを作成するための 4 つの異なる Azure サービスについて説明しました。 これらのサービス間で選択を行うことは、コンポーネント間で渡す必要のあるデータの種類 (メッセージまたはイベント) を判断し、そのデータを配信および処理するのに必要な機能を判断するということです。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>クリーンアップ
 
-While a Storage Account contains data, it incurs a cost against your Azure subscription, although these are likely to be low for small queue with few messages. When you have finished with the queue, remember to remove it in order to avoid unnecessary charges. Because you created all the resources in the same resource group, the easiest way to cleanup your Azure subscription is to remove the resource group which will remove all its contents:
+ごく少量のメッセージが含まれている小さなキューにかかるコストはわずかですが、それでもストレージ アカウントにデータが含まれていれば Azure サブスクリプションに対してコストが発生します。 キューが完了したら、不要なコストがかからないように必ず削除してください。 すべてのリソースを同じリソースグループ内で作成したので、Azure サブスクリプションをクリーンアップする最も簡単な方法は、リソース グループを削除することです。これにより、そのすべてのコンテンツが削除されます。
 
 ```powershell
 Remove-AzureRmResourceGroup -Name "MusicSharingResourceGroup" -Force
 ```
 
-When you are asked to confirm the delete, answer **Yes**.
+削除の確認を求められたら、**[はい]** と答えます。
 
-The command may take several minutes to complete as resources are deleted.
+リソースが削除済みとなってコマンドが完了するまで、数分かかる場合があります。

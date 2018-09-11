@@ -1,14 +1,13 @@
-Imagine you work for an escalator company that has invested in IoT technology to monitor its product in the field. You oversee the processing of temperature sensor data from the drive gears of the escalators. You monitor the temperature data and add a data flag to indicate when the gears are too hot. In downstream systems, this data helps determine when maintenance is required.
+フィールドに設置した自社の製品を監視するために IoT 技術に投資をしたエスカレーター会社に勤務しているとします。 あなたは、エスカレーターのドライブ ギアから取得した温度センサー データの処理を監督する立場です。 温度データを監視し、ギアが熱くなりすぎた場合は、そのことを示すデータ フラグを追加します。 このデータは、ダウンストリーム システムにおいて、いつメンテナンスが必要かを判断するために役立ちます。
 
-Your company receives sensor data from several locations and from different escalator models. The data arrives in different formats, including batch file uploads, scheduled database pulls, messages on a queue, and incoming data from an event hub. You want to develop a reusable service that can process your temperature data from all these sources.
+勤務先の会社では、複数の事業所から、異なる複数の型式のエスカレーターからのセンサー データを受け取ります。 受け取るデータには複数の形式があります。バッチ ファイル アップロード、スケジュールされたデータベース プル、キューに入れられたメッセージ、イベント ハブから受信したデータなどです。 あなたは、このようなすべてのソースから取得した温度データを処理することができる、再利用可能なサービスを開発する必要があります。
 
-When designing a service such as this with traditional enterprise architecture strategies, you would need to consider server infrastructure and maintenance up front: scope out necessary hardware, plan to install it, coordinate with IT to manage it, etc. An alternative to all that work is **serverless computing**. With serverless computing, your cloud provider manages the provisioning and maintenance of the infrastructure letting you focus completely on building the app logic. Azure Functions is a key component of the serverless computing offering from Azure and enables you to run pieces of code or *functions*, written in the programming language of your choice, in the cloud.
+このようなサービスを、従来のエンタープライズ アーキテクチャ戦略を使用して設計する場合は、サーバーのインフラストラクチャとメンテナンスを事前に検討しておく必要があります。たとえば、必要なハードウェアの調査、その設置計画、IT を使用して管理するための調整などがあります。その作業全体に代えて使用できる方法として、**サーバーレス コンピューティング**があります。 サーバーレス コンピューティングを使用すると、ご利用のクラウド プロバイダーによってインフラストラクチャのプロビジョニングとメンテナンスが管理されるので、アプリ ロジックの構築に完全に集中することができます。 Azure Functions は Azure から提供されるサーバーレス コンピューティング サービスの重要なコンポーネントです。これを使用することで、好みのプログラミング言語で記述したコードまたは*関数*をクラウド内で実行することができます。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-In this module, you will:
-
-- Decide if serverless computing is right for your business need.
-- Create an Azure function app in the Azure portal.
-- Execute a function using triggers.
-- Monitor and test your Azure function from the Azure portal .
+- サーバーレス コンピューティングが、自分のビジネス ニーズに適しているかどうかを判断します。
+- Azure portal 内で Azure 関数アプリを作成します。
+- トリガーを使用して関数を実行します。
+- Azure portal から Azure 関数の監視とテストを行います。

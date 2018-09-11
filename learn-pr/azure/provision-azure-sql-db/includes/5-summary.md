@@ -1,38 +1,35 @@
-Now that your Azure SQL database is up and running, you can connect it to your favorite SQL Server management tool to populate it with real data.
+Azure SQL Database が稼働しているので、お気に入りの SQL Server 管理ツールに接続して実際のデータを入力することができます。
 
-You initially considered whether to run your database on-premises or in the cloud. With Azure SQL Database, you configure a few basic options and you have a fully functional SQL database that you can connect to your apps.
+最初に、データベースをオンプレミスとクラウドのどちらで実行するかを検討しました。 Azure SQL Database を使用していくつかの基本的なオプションを構成し、アプリに接続できる完全な機能を備えた SQL データベースがあります。
 
-There's no infrastructure or software patches to maintain. You're now free to focus more on getting your transportation logistics app prototype up and running and less on database administration. Your prototype won't be a throw-away demo, either. Azure SQL Database provides production-level security and performance features.
+保守が必要なインフラストラクチャやソフトウェア修正プログラムはありません。 輸送物流アプリのプロトタイプを稼働させることに労力を割き、データベース管理にかかる作業を減らすことができるようになりました。 また、このプロトタイプは無駄になるデモではありません。 Azure SQL Database には、運用レベルのセキュリティとパフォーマンスの機能があります。
 
-Remember that each Azure SQL logical server contains one or more databases. Azure SQL Database provides two pricing models, DTU and vCore, to help you balance cost versus performance across all your databases.
+各 Azure SQL 論理サーバーには、1 つ以上のデータベースが含まれています。 Azure SQL Database には DTU と仮想コアという 2 つの価格モデルがあり、すべてのデータベースでコストとパフォーマンスのバランスをとることができます。
 
-Choose DTU if you're just getting started or want a simple, preconfigured buying option. Choose vCore when you want greater control over what compute and storage resources you create and pay for.
+初めて使用する場合や、シンプルで事前に構成された購入オプションが必要な場合は、DTU を選択します。 作成して支払うコンピューティング リソースとストレージ リソースをきめ細かく制御するには、仮想コアを選択します。
 
-Azure Cloud Shell makes it easy to start working with your databases. From Cloud Shell, you have access to the Azure CLI, which enables you to get information about your Azure resources. Cloud Shell also provides many other common utilities, such as `sqlcmd`, to help you start working right away with your new database.
+Cloud Shell を使用すると、データベースの操作を簡単に開始できます。 Cloud Shell から Azure CLI にアクセスできます。そのため、Azure リソースに関する情報を取得できます。 また、Cloud Shell には `sqlcmd` などの他の一般的なユーティリティも多く用意されているので、新しいデータベースをすぐに使用できます。
 
-## Clean up
+## <a name="cleanup"></a>クリーンアップ
 
-<!---TODO: Update for sandbox?--->
+Azure SQL Database のインストールを使用して、他にも自由に実験してみてください。 終わった後にデータベースを削除する最も簡単な方法は、親リソース グループを削除することです。
 
-Feel free to experiment more with your Azure SQL Database installation. When you're done, the easiest way to delete your database is to delete its parent resource group.
+1. ポータルで **[リソース グループ]** をクリックします。
+1. **logistics-db-rg** を選択します。
+1. **[リソース グループの削除]** をクリックします。
 
-1. From the portal, click **Resource groups**.
+    ![リソース グループを削除する](../media-draft/delete-rg.png)
+1. プロンプトで「logistics-db-rg」と入力し、**[削除]** をクリックします。
 
-1. Select **logistics-db-rg**.
+## <a name="additional-resources"></a>その他のリソース
 
-1. Click **Delete resource group**.
+ドキュメントには、チュートリアルやサンプルなど、多くの情報が提供されています。 ここで取り上げた内容に関するリンクを次にいくつか示します。
 
-1. At the prompt, type "logistics-db-rg" and click **Delete**.
+* [Azure SQL Database のドキュメント](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure SQL Database の購入モデルとリソース](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-service-tiers)
+* [Azure SQL Database 論理サーバーとその管理](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-logical-servers)
+* [Azure SQL Database と SQL Data Warehouse のファイアウォール規則](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-firewall-configure)
 
-## Additional resources
+Cloud Shell の詳細については、[Azure Cloud Shell の概要](https://docs.microsoft.com/en-us/azure/cloud-shell/overview)に関するページを参照してください。
 
-The documentation provides lots more information, including tutorials and samples. Here are a few links to what we covered here:
-
-- [Azure SQL Database documentation](https://docs.microsoft.com/azure/sql-database/)
-- [Azure SQL Database purchasing models and resources](https://docs.microsoft.com/azure/sql-database/sql-database-service-tiers)
-- [Azure SQL Database logical servers and their management](https://docs.microsoft.com/azure/sql-database/sql-database-logical-servers)
-- [Azure SQL Database and SQL Data Warehouse firewall rules](https://docs.microsoft.com/azure/sql-database/sql-database-firewall-configure)
-
-To learn more about Cloud Shell, see [Overview of Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
-
-If you're interested in learning more about the `sqlcmd` utility, see [sqlcmd Utility](https://docs.microsoft.com/sql/tools/sqlcmd-utility?view=sql-server-2017).
+`sqlcmd` ユーティリティの詳細について関心をお持ちの場合は、[sqlcmd ユーティリティ](https://docs.microsoft.com/en-us/sql/tools/sqlcmd-utility?view=sql-server-2017)に関するページを参照してください。

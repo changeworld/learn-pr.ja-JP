@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app
+title: 演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する
+metadata:
+  title: 演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する
+  description: 演習 - Web アプリケーションをホストする Ubuntu Linux VM を作成する
+  ms.openlocfilehash: ae1df846a7688354cde08fc702c2a440bde2aea5
+  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/25/2018
+  ms.locfileid: "42927505"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app.md)]'

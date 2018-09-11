@@ -1,60 +1,75 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.7-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: Summary
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 3eda85c456c56d92e4e60b1578c2eadc581d9643
+  ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43179864"
 durationInMinutes: 3
-content: |
+interactive: bash
+content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Knowledge check: Azure Key Vault'
+  title: '知識チェック: Azure Key Vault'
   questions:
-  - content: Which of the following is **not** a primary benefit of Azure Key Vault?
+  - content: 次のうち、Azure Key Vault の主な利点では**ない**のはどれですか?
     choices:
-    - content: Secure storage of private user information.
+    - content: ユーザーの個人情報を安全に格納します。
       isCorrect: true
-      correctExplanation: Key Vault is intended for storing application secrets, not user secrets.
-    - content: Synchronizing application secrets among multiple instances of an application.
+      correctExplanation: Key Vault は、ユーザーのシークレットではなく、アプリケーション シークレットを格納することを目的としています。
+    - content: アプリケーションの複数のインスタンスに対して、アプリケーション シークレットを同期します。
       isCorrect: false
-      incorrectExplanation: Key Vault does enable multiple instances of applications to access the same secrets by storing them centrally.
-    - content: Reducing the need for application developers to directly handle application secrets. 
+      incorrectExplanation: Key Vault では、中央にシークレットを格納し、アプリケーションの複数のインスタンスが同じシークレットに同時にアクセスすることを許可していません。
+    - content: アプリケーションの開発者が、アプリケーション シークレットを直接処理する必要性が減ります。
       isCorrect: false
-      incorrectExplanation: Reducing hands-on interaction with secrets is a primary benefit of Key Vault and increases security.
-    - content: Controlling access to application secrets with assignable permissions.
+      incorrectExplanation: Key Vault の主な利点は、シークレットの実際のやり取りが減ることであり、これによりセキュリティが高まります。
+    - content: 割り当て可能なアクセス許可を使用して、アプリケーション シークレットへのアクセスを制御します。
       isCorrect: false
-      incorrectExplanation: Key Vault's access control policies increase secret security by limiting access to secrets.
-  - content: Which of these statements best describes Key Vault's authentication and authorization process?
+      incorrectExplanation: Key Vault のアクセス制御ポリシーでは、シークレットへのアクセスを制限することで、シークレットのセキュリティを強化します。
+  - content: 次のうち、Key Vault の認証と承認プロセスの最も適切な説明はどれですか?
     choices:
-    - content: Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.
+    - content: アプリケーションでは、リード開発者のユーザー名とパスワードを使用して、コンテナーに認証を行います。これでは、コンテナーのすべてのシークレットに完全にアクセスすることができます。
       isCorrect: false
-      incorrectExplanation: Key Vault authentication does not use usernames and passwords, and applications should authenticate with their own identities, not the identity of a person.
-    - content: Applications and users authenticate to a vault with a Microsoft Account and are authorized to access specific secrets.
+      incorrectExplanation: Key Vault の認証では、ユーザー名とパスワードは使用されません。また、アプリケーションは、個人の ID ではなく、そのアプリケーションの ID で認証されます。
+    - content: アプリケーションとユーザーは、Microsoft アカウントを使用してコンテナーに認証を行い、特定のシークレットにアクセスすることを承認されます。
       isCorrect: false
-      incorrectExplanation: Key Vault authentication does not use Microsoft Accounts, and access policies do not offer control over individual secrets in a vault.
-    - content: Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform different actions on all secrets in the vault.
+      incorrectExplanation: Key Vault の認証では、Microsoft アカウントは使用されません。また、アクセス ポリシーでは、コンテナー内の個々のシークレットは制御されていません。
+    - content: アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットにさまざまなアクションを実行することを承認されます。
       isCorrect: true
-      correctExplanation: All authentication to Key Vault uses Azure Active Directory identities, and access policies are based on actions that apply to every secret in the vault.
-    - content: Applications authenticate to a vault using the usernames and passwords of users who sign in to the web app, and are granted access to secrets owned by those users.
+      correctExplanation: Key Vault のすべての認証で、Azure Active Directory の ID が使用され、アクセス ポリシーは、コンテナー内のすべてのシークレットに適用されるアクションに基づきます。
+    - content: アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに認証を行い、それらのユーザーが所有するシークレットへのアクセスが付与されます。
       isCorrect: false
-      incorrectExplanation: Users of an app should not have access to an application's Key Vault, and vaults should not be used to store user secrets.
-  - content: How does Key Vault help protect your secrets after they have been loaded by your app?
+      incorrectExplanation: アプリのユーザーには、アプリケーションの Key Vault にアクセスする権限がなく、コンテナーはユーザーのシークレットの格納には使用されません。
+  - content: Key Vault を使用する Web アプリでマネージド サービス ID (MSI) を使用する主な利点は何ですか?
     choices:
-    - content: Key Vault automatically generates new secret values each time you load a secret so they can never be reused.
+    - content: コンテナーに、アプリケーションに対するアクセス許可を自動的に付与します。
       isCorrect: false
-      incorrectExplanation: Key Vault does not automatically generate new secret values.
-    - content: The Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.
+      incorrectExplanation: コンテナーに自動的に付与される唯一のアクセス許可は、それを作成したユーザーに対するものです。
+    - content: シークレットを管理するために、開発者に、アプリケーションの代わりにコンテナーにアクセスすることを許可します。
       isCorrect: false
-      incorrectExplanation: This is not a feature of the Key Vault client library.
-    - content: Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they are used.
+      incorrectExplanation: アプリケーションとユーザーは、コンテナーへのアクセスに、自分の ID を使用します。
+    - content: シークレットを取得するために、認証されたユーザーがコンテナーで自動的に認証されるようにします。
       isCorrect: false
-      incorrectExplanation: Secret values returned to your app from a vault are not encrypted.
-    - content: It doesn't &mdash; secrets are unprotected once they are loaded by your application.
+      incorrectExplanation: Key Vault はアプリのユーザーが使用することを目的としたものではありません。 MSI は、コンテナーへのアクセスに使用するために、アプリケーションの ID を自動作成します。
+    - content: コンテナー外でシークレットを管理する必要なく、Key Vault に安全に認証されるようにします。
       isCorrect: true
-      correctExplanation: Once secrets have been loaded by an app, they are unprotected. Take care not to log them, store them or return them in client responses in your application code.  
+      correctExplanation: MSI では、構成にシークレットを格納することなく、独自の ID を使用して、アプリケーションがコンテナーに対して認証されるようにします。
+  - content: ご自分のアプリに読み込んだ後、Key Vault ではどのようにシークレットを保護しますか?
+    choices:
+    - content: Key Vault では、シークレットを読み込むたびに新しいシークレット値が自動生成されます。そのため、それらが再利用されることはありません。
+      isCorrect: false
+      incorrectExplanation: Key Vault では、新しいシークレット値は自動生成されません。
+    - content: Key Vault のクライアント ライブラリでは、ご使用のアプリケーションによって使用されるメモリ領域が保護されるので、シークレットが誤って公開されるのが防止されます。
+      isCorrect: false
+      incorrectExplanation: これは、Key Vault クライアント ライブラリの機能ではありません。
+    - content: Key Vault はシークレットを二重に暗号化するので、それが使用されるたびに、ご利用のアプリでローカルで復号化される必要があります。
+      isCorrect: false
+      incorrectExplanation: コンテナーからご使用のアプリに返されるシークレット値は暗号化されていません。
+    - content: 誤り。シークレットは、アプリケーションに読み込まれると保護解除されます。
+      isCorrect: true
+      correctExplanation: シークレットは、アプリが読み込まれると、保護解除されます。 アプリケーション コードで、これらが記録されたり、格納されたり、クライアントの応答で返されたりしないようにする必要があります。

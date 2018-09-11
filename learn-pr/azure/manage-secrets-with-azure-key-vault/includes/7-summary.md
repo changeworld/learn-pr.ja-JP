@@ -1,30 +1,29 @@
-In this module, you secured an app's secret configuration in Azure Key Vault. Our app code authenticates to the vault with a managed identity and automatically loads the secrets from the vault into ASP.NET Core's configuration system at startup.
+このモジュールでは、Azure Key Vault でアプリのシークレット構成をセキュリティ保護しました。 このアプリ コードでは、マネージド サービス ID を使用してコンテナーへの認証が行われ、起動時にコンテナーから ASP.NET Core の構成システムにシークレットが自動的に読み込まれます。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="cleanup"></a>クリーンアップ
 
-To cleanup your Azure subscription, run the following in the Azure Cloud Shell to delete the resource group containing all the resources we created in this module.
+Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 
 ```console
 az group delete --name keyvault-exercise-group
 ```
 
-To cleanup your Cloud Shell storage, delete the `KeyVaultDemoApp` directory.
+Cloud Shell ストレージをクリーンアップするには、`KeyVaultDemoApp` ディレクトリを削除します。
 
-## Next steps
+## <a name="next-steps"></a>次の手順
 
-If this was a real app, what would come next?
+実際のアプリの場合、次の手順は何でしょうか。
 
-- Put all your app secrets in your vaults! There's no longer any reason to have them in configuration files.
-- Continue to develop the application. Your production environment is all set up, so for future deployments to it you don't need to repeat all the setup.
-- To support development, create a development-environment vault that contains secrets with the same names but different values. Grant permissions to the development team and configure the vault name in the app's development-environment configuration file. When developers run the app locally, `AddAzureKeyVault` will automatically detect local installations of Visual Studio and the Azure CLI and use Azure credentials configured in those applications to sign in and access the vault.
-- Create additional environments for purposes like user acceptance testing.
-- Separate vaults across different subscriptions and/or resource groups to isolate them.
-- Grant access to other environment vaults to the appropriate people.
+- すべてのアプリ シークレットをコンテナーに配置することです! 構成ファイル内に入れておく理由は何もありません。
+- 引き続きアプリケーションを開発します。 運用環境はすべてセットアップ済みなので、今後のデプロイですべてのセットアップを繰り返す必要はありません。
+- 開発をサポートするには、名前は同じでも値の異なるシークレットを含む開発環境コンテナーを作成します。 アプリの開発環境構成ファイルで、開発チームにアクセス許可を付与し、コンテナー名を構成します。 開発者がアプリをローカルで実行すると、`AddAzureKeyVault` は Visual Studio および Azure CLI のローカル インストールを自動的に検出し、それらのアプリケーションで構成されている Azure 資格情報を使用してサインインし、コンテナーにアクセスします。
+- ユーザー受け入れテストなどの目的で追加の環境を作成します。
+- 異なるサブスクリプションやリソース グループ間でコンテナーを別々にして、分離します。
+- 該当するユーザーに他の環境コンテナーへのアクセス権を付与します。
 
-## Further reading
+## <a name="further-reading"></a>参考資料
 
-- [Key Vault documentation](https://docs.microsoft.com/azure/key-vault/)
-- [More about AddAzureKeyVault and its advanced options](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
-- [This tutorial](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application) walks through using `KeyVaultClient`, including manually authenticating it to Azure Active Directory using a client secret instead of using a managed identity.
-- [Managed identities for Azure resources token service documentation](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol), for implementing the authentication workflow yourself.
+- [Key Vault のドキュメント](https://docs.microsoft.com/azure/key-vault/)
+- [AddAzureKeyVault とその高度なオプションの詳細](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
+- [このチュートリアル](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application)では、MSI の代わりにクライアント シークレットを使用して Azure Active Directory への認証を手動で行う手順を含め、`KeyVaultClient` の使用手順について説明します。
+- 認証ワークフローを自分で実装するための [MSI トークン サービスのドキュメント](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)

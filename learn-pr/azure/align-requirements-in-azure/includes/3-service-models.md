@@ -1,13 +1,13 @@
-Cloud computing resources are delivered using three different service models.
+クラウド コンピューティング リソースは、次の 3 つの異なるサービス モデルを使用して提供されます。
 
-- **Infrastructure-as-a-service (IaaS)** provides instant computing infrastructure that you can provision and manage over the Internet.
-- **Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.
-- **Software as a service (SaaS)** delivers applications over the Internet as a web-based service.
+- **インフラストラクチャとしてのサービス (IaaS)** は、インターネット経由でプロビジョニングと管理ができるインスタント コンピューティング インフラストラクチャを提供します。
+- **サービスとしてのプラットフォーム (PaaS)** は、独自のクラウド サービスを提供するために使用できる既製の開発環境とデプロイ環境を提供します。
+- **サービスとしてのソフトウェア (SaaS)** は、Web ベースのサービスとしてアプリケーションをインターネット経由で提供します。
 
-!!! Video TC-007 placeholder !!!
+!!! Video TC-007 プレースホルダー !!!
 
 > [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
 
-When choosing a service model, consider which party should be responsible for the computing resource. Based on your scenario, you can decide how much shared management responsibility you want. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+サービス モデルを選択する際には、どのパーティがコンピューティング リソースを担当するかを考慮します。 ご自分のシナリオに基づいて、管理責任をどの程度分担するかを決めることができます。 次の図では、ご自分で、およびサービス プロバイダーが管理する、それぞれのクラウド サービスのカテゴリのリソース一覧を示しています。
 
-![An illustration showing the level of shared management responsibility in each category of cloud service.](../media/3-shared-responsibility.png)
+![クラウド サービスの各カテゴリの共有管理責任のレベルを示す図。](../media/3-shared-responsibility.png)

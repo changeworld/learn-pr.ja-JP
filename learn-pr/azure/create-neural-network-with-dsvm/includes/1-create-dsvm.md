@@ -1,36 +1,51 @@
-### Create an Ubuntu Data Science VM
+### <a name="exercise-1-create-an-ubuntu-data-science-vm"></a>演習 1: Ubuntu Data Science VM の作成
 
-The Data Science Virtual Machine for Linux is a virtual-machine image that simplifies getting started with data science. Multiple tools are already built, installed, and configured in order to get you up and running quickly. The NVIDIA GPU driver, [NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads) and the [NVIDIA CUDA Deep Neural Network](https://developer.nvidia.com/cudnn) (cuDNN) library are also included, as are [Jupyter](http://jupyter.org/), several sample Jupyter notebooks, and [TensorFlow](https://www.tensorflow.org/). All pre-installed frameworks are GPU-enabled but work on CPUs as well. In this unit, you will create an instance of the Data Science Virtual Machine (DSVM) for Linux on Azure.
+Linux 用の Data Science Virtual Machine は、データ サイエンスの使用の開始を簡単にする仮想マシン イメージです。 すぐに起動して実行できるように、複数のツールが既に構築、インストール、および構成されています。 [Jupyter](http://jupyter.org/)、一部のサンプル Jupyter ノートブック、[TensorFlow](https://www.tensorflow.org/) のように、NVIDIA GPU ドライバー、[NVIDIA CUDA](https://developer.nvidia.com/cuda-downloads)、[NVIDIA CUDA ディープ ニューラル ネットワーク](https://developer.nvidia.com/cudnn) (cuDNN) ライブラリも含まれます。 事前にインストールされているフレームワークはすべて、GPU 対応ですが、CPU でも動作します。 この演習では、Azure で Linux Data Science Virtual Machine のインスタンスを作成します。
 
-1. Open the [Azure Portal](https://portal.azure.com/?azure-portal=true) in your browser.
+1. ブラウザーで [Azure portal](https://portal.azure.com) を開きます。 ログインを求められたら、Microsoft アカウントを使用してサインインします。
 
-1. Click **Create a resource** in the menu on the left side of the portal, and then type "data science" (without quotation marks) into the search box. Select **Data Science Virtual Machine for Linux (Ubuntu)** from the results list.
+1. ポータルの左側にあるメニューで **[+ リソースの作成]** をクリックし、検索ボックスに「data science」と入力します。 検索一覧から **[Linux (Ubuntu) Data Science Virtual Machine]** を選択します。
 
-    ![Finding the Ubuntu Data Science VM](../media-draft/1-new-data-science-vm.png)
+    ![Ubuntu Data Science VM の検索](../images/new-data-science-vm.png)
 
-1. Take a moment to review the list of tools included in the VM. Then, click **Create** at the bottom of the blade.
+    "Ubuntu Data Science VM の検索"__
 
-1. Fill in the "Basics" blade as shown below. Provide a password that's at least 12 characters long containing a mix of uppercase letters, lowercase letters, numbers, and special characters. *Be sure to remember the user name and password that you enter, because you will need them later in the module.*
+1. 少しばかり時間をとって、VM に含まれているツールの一覧をご確認ください。 次に、ブレードの下部にある **[作成]** をクリックします。
 
-    ![Entering basic information about the VM](../media-draft/1-create-data-science-vm-1.png)
+1. [基本] ブレードに次のように入力します。 12 文字以上で大文字、小文字、数字、特殊文字を含むパスワードを指定します。 *入力したユーザー名とパスワードは必ず覚えておいてください。後に演習で必要になります。*
 
-1. In the "Choose a size" blade, select **DS1_V2 Standard**, which provides a low-cost way to experiment with Data Science VMs. Then, click the **Select** button at the bottom of the blade.
+    ![VM に関する基本的な情報の入力。](../images/create-data-science-vm-1.png)
 
-    ![Choosing a VM size](../media-draft/1-create-data-science-vm-2.png)
+    _基本設定の入力_
 
-1. In the **Settings** blade, check **SSH (22)** in the list of inbound ports so clients can connect to the VM using the [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) protocol on port 22. Then, click **OK**.
+1. [サイズの選択] ブレードで **[DS1_V2 Standard]** を選択します。データ サイエンス VM を低コストで実験できます。 次に、ブレードの下部にある **[選択]** ボタンをクリックします。
 
-    ![Creating the VM](../media-draft/1-create-data-science-vm-3.png)
+    ![VM サイズの選択](../images/create-data-science-vm-2.png)
 
-1. In the **Create** blade, take a moment to review the options you selected for the VM, and click **Create** to start the VM creation process.
+    "VM サイズの選択"__
 
-    ![Creating the VM](../media-draft/1-create-data-science-vm-4.png)
+1. クライアントがポート 22 で [Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell) (SSH) プロトコルを利用して VM に接続できるように、[設定] ブレードの受信ポートの一覧で **[SSH (22)]** を選択します。 次に、**[OK]** をクリックします
 
-1. Click **Resource groups** in the menu on the left side of the portal. Then, click the **data-science-rg** resource group.
+    ![VM の作成](../images/create-data-science-vm-3.png)
 
-    ![Opening the resource group](../media-draft/1-open-resource-group.png)
+    "VM の作成"__
 
-  
-1. Wait until "Deploying" changes to "Succeeded", indicating that DSVM and supporting Azure resources have been created. Deployment typically takes five minutes or less. Periodically click **Refresh** at the top of the blade to refresh the deployment status.
+1. [作成] ブレードで少し時間をとって VM に選択したオプションを見直し、**[作成]** をクリックして VM 作成プロセスを開始します。
 
-    ![Monitoring the deployment status](../media-draft/1-deployment-succeeded.png)
+    ![VM の作成](../images/create-data-science-vm-4.png)
+
+    "VM の作成"__
+
+1. ポータルの左側のメニューで **[リソース グループ]** をクリックします。 次に "data-science-rg" リソース グループをクリックします。
+
+    ![リソース グループを開く](../images/open-resource-group.png)
+
+    "リソース グループを開く"__
+
+1. "デプロイ中" が "成功" に変わり、DSVM と補助 Azure リソースが作成されたことが示されるまで待ちます。 通常、デプロイに要する時間は 5 分以下です。 ブレードの上部にある **[更新]** をときどきクリックして、デプロイの状態を更新します。
+
+    ![デプロイ状態の監視](../images/deployment-succeeded.png)
+
+    _デプロイ状態の監視_
+
+デプロイが完了したら、次の演習に進みます。

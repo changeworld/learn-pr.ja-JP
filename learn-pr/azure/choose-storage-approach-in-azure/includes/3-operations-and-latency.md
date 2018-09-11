@@ -1,36 +1,32 @@
-Once you've identified the kind of data you're dealing with (structured, semi-structured, or unstructured), the other important step is to determine how you'll use the data. For example, as an online retailer you know customers need quick access to product data, and business users need to run complex analytical queries. As you start to work through these requirements, and take your data classification into account, you can start to put together your data storage approach.
+扱っているデータの種類 (構造化、半構造化、非構造化) がわかったら、データの使用方法を決定することがもう 1 つの重要なステップです。 たとえば、オンライン小売り業者は客がすばやく製品データにアクセスできることを望み、ビジネス ユーザーは複雑な分析クエリを実行することを望みます。 これらの要件を検討し、データの分類を考慮すると、データ ストレージ アプローチの作成を始めることができます。
 
-Here, you'll go through some of the questions you should ask when determining what you'll do with your data.
+ここでは、データの操作を決定するときに行う必要があるいくつかの質問について説明します。
 
-## Operations and latency
+## <a name="operations-and-latency"></a>操作と待機時間
 
-What are the main operations you'll be completing on each data type, and what are performance requirements?
+データの種類ごとに実行する主要な操作と、パフォーマンスの要件は何ですか。
 
-Ask yourself these questions:
-* Will you be doing simple lookups by an ID? 
-* Do you need to query the database for one or more fields? 
-* How many create, update, and delete operations do you expect? 
-* Do you need to run complex analytical queries? 
-* How fast do these operations need to complete?
+具体的には、ID で単純な参照を行いますか。 データベースで 1 つまたは複数のフィールドのクエリを行う必要がありますか。 予想される作成、更新、削除の操作の量はどれくらいですか。 複雑な分析クエリを実行する必要がありますか。 これらの操作をどれくらいの速さで行う必要がありますか。
 
-Let’s walk through each of the data sets with these questions in mind and discuss the requirements.
+各データ セットを見ていき、要件について検討します。
 
-## Product catalog data
+### <a name="product-catalog-data"></a>製品カタログ データ
 
-For product catalog data in an online retail scenario, customers will have the highest priority needs. Customers will want to query the product catalog to find, for example, all men's shoes, then men's shoes on sale, and then men's shoes on sale in a particular size. So, you could categorize customer's needs as requiring lots of read operations, with the ability to query on certain fields.
+オンライン小売りシナリオの製品カタログ データは、ユーザーが最も高い優先度で必要とするものです。 ユーザーは、たとえば、製品カタログのクエリを行ってすべての男性用の靴を探し、次に販売されている男性用の靴を探し、それから特定のサイズの販売されている男性用の靴を探します。 したがって、客のニーズは、多くの読み取り操作を必要とし、特定のフィールドでクエリを行うことができる、と分類できます。
 
-In addition, when customers place orders, the product data quantities need to be updated by the application. Those update operations need to happen as fast as the read operations so that users don't end up placing items in their shopping baskets when that product has just sold out. So not only do you need lots of read operations, you also require lots of write operations for product catalog data. Be sure to determine the priorities for all the users of the database, not just the primary ones.
+さらに、客が注文したときは、製品データの数量をアプリケーションで更新する必要もあります。 ユーザーがちょうど売り切れた商品を買い物かごに入れたりすることがないように、これらの更新操作は読み取り操作と同じくらい速く行う必要があります。そのため、多くの読み取り操作だけでなく、製品カタログ データの多くの書き込み操作も必要です。 主要なユーザーだけでなく、データベースのすべてのユーザーの優先順位を決定してください。
 
-## Photos and videos
+### <a name="photos-and-videos"></a>写真とビデオ
 
-The photos and videos that are displayed on product pages have different requirements though. They do need fast retrieval times to display on the site at the same time as the product catalog data, but they don't need to be queried independently. Instead, you can rely on the results of the product query, and just have the video ID or URL as a property on the product data. So, photos and videos don't need to be queried by anything other than their ID.
+製品ページに表示される写真やビデオには、異なる要件があります。 サイトに表示するために高速で取得する必要がありますが、それだけでクエリを行う必要はありません。 代わりに、商品のクエリを利用して、商品データのプロパティとしてビデオ ID や URL を取得できます。 したがって、写真やビデオについては、ID 以外のデータでクエリを行う必要はありません、
 
-In addition, users will not be making updates to existing photos or videos. They may, however, add new photos for product reviews. So, they might upload an image of themselves showing off their new shoes. As an employee, you also upload and delete product photos from your vendor, but that update doesn't need to happen as fast as your other product data updates. So, in summary, photos and videos just need to be queried by ID to return the whole file, but creates and updates will be less frequent and are less of a priority.  
+さらに、ユーザーは、既存の写真やビデオを更新することはありませんが、商品レビュー用に新しい写真を追加する可能性があります。 そのため、新しい靴が写っている画像を自体でアップロードする場合があります。 また、ベンダーから提供された商品の写真のアップロードと削除も行いますが、他の商品データの更新ほど速く更新を行う必要はありません。 まとめると、写真やビデオは ID でクエリを行ってファイル全体を取得する必要がありますが、作成と更新の頻度は低く、優先順位は高くありません。  
 
-## Business data
+### <a name="business-data"></a>ビジネス データ
 
-For business data, all the analysis is happening on historical data. None of the original data would be updated based on the analysis. So, the business data is read-only, and users don't expect their complex analytics to run instantly, so having some latency in the results is okay. In addition, business data will be stored in multiple data sets, as users will have different access to write to each data set. However, the business analysts will be able to read from all databases.
+ビジネス データの場合は、すべての分析は履歴データに対して行われます。 分析に基づいて元のデータが更新されることはありません。 そのため、ビジネス データは読み取り専用であり、ユーザーは複雑な分析がすぐに実行されることを期待してはいないので、結果を得るまでにある程度の待機時間があってもかまいません。 さらに、ユーザーはデータ セットごとに異なる書き込みアクセス権を持っているので、ビジネス データは複数のデータ セットに格納されますが、ビジネス アナリストはすべてのデータベースから読み取ることができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-When deciding what storage solution to use, you should think about how your data will be used. How often will your data be accessed? Is your data read-only? Does query time matter? The answers to these questions will help you decide on the best storage solution for your data.
+使用するストレージ ソリューションを決定するときは、データの使用方法について考える必要があります。 データのアクセス頻度はどれくらいですか。 データは読み取り専用ですか。 クエリの時間が重要ですか。 これらの質問に対する回答は、データに最適なストレージ ソリューションを決定するときの参考になります。
+

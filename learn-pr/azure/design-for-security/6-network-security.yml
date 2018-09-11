@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: ネットワークのセキュリティ
+metadata:
+  title: ネットワークのセキュリティ
+  description: このユニットでは、ネットワーク インフラストラクチャをセキュリティで保護する方法について説明します。
+  ms.openlocfilehash: f98e9f24b46119fda8be58fb4a06f8f15d60ed66
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43366745"
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: 知識チェック - ネットワーク セキュリティ
+  questions:
+  - content: Azure App Service で Web アプリケーションを実行する場合、アプリケーションはセキュリティで完全に保護されており、その他のセキュリティ保護を行う必要はありません。
+    choices:
+    - content: "True"
+      isCorrect: false
+    - content: "False"
+      isCorrect: true
+  - content: 次のうち、インターネットに接続されているサービスをネットワーク攻撃から保護する方法でないのはどれですか?
+    choices:
+    - content: Azure DDoS
+      isCorrect: false
+    - content: Azure Application Gateway WAF
+      isCorrect: false
+    - content: Azure Disk Encryption
+      isCorrect: true
+    - content: ネットワーク仮想アプライアンス
+      isCorrect: false

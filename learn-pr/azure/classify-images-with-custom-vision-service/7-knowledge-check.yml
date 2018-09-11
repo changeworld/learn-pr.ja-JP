@@ -1,108 +1,109 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.7-knowledge-check
-title: Check your knowledge
+title: 自分の知識をチェックする
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understand the steps required to classify images with the Microsoft Custom Vision Service.
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 自分の知識をチェックする
+  description: Microsoft Custom Vision Service を使用してイメージを分類するために必要な手順を理解しているかどうかを確認します。
+  ms.openlocfilehash: 792c6ece8bd052abcaae40a892b665a4a9d49b3d
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251434"
 durationInMinutes: 10
+content: 必須
 quiz:
-  title: Using the Microsoft Custom Vision Service to perform image classification
+  title: Microsoft Custom Vision Service を使用してイメージの分類を実行する
   questions:
-  - content: "When you're creating a new Custom Vision Service project, what is a domain used for?"
+  - content: 新しい Custom Vision プロジェクトを作成するときにドメインを使用する目的は何ですか?
     choices:
-    - content: "Helps you decide what to name your project"
+    - content: プロジェクト名の決定に役立ちます
       isCorrect: false
-      incorrectExplanation: "You can name the project anything you want. The domain doesn't interfere with that."
-    - content: "Helps you decide how to structure your project"
+      incorrectExplanation: 必要な名前をプロジェクトに付けることができます。 ドメインはこの操作に干渉しません。
+    - content: プロジェクトを構造化する方法の決定に役立ちます
       isCorrect: false
-      incorrectExplanation: "Projects have the same structure in terms of training images and predictions. The domain doesn't interfere with that."
-    - content: "Optimizes a model for specific types of images"
+      incorrectExplanation: トレーニング イメージと予測の観点から見ると、プロジェクトの構造は同じです。 ドメインはこの操作に干渉しません。
+    - content: 指定した種類のイメージに合わせてモデルを最適化します
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Optimizes your training images for organization"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: 組織のトレーニング イメージを最適化します
       isCorrect: false
-      incorrectExplanation: "Training images are organized by tag. The domain doesn't interfere with that."
-  - content: "Why should you add a tag after uploading images?"
+      incorrectExplanation: トレーニング イメージはタグ別に整理されます。 ドメインはこの操作に干渉しません。
+  - content: イメージのアップロード後にタグの追加が必要なのはなぜですか?
     choices:
-    - content: "To help you organize your images in the project for later use"
+    - content: プロジェクト内のイメージを整理して後で使用するため
       isCorrect: false
-      incorrectExplanation: "While tags do help organize images, that's not the full purpose of tags."
-    - content: "To put the images in a category for training"
+      incorrectExplanation: タグはイメージの整理に役立ちますが、タグの目的はそれだけではありません。
+    - content: トレーニングのカテゴリにイメージを追加するため
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "To generate a word cloud after training"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: トレーニング後にワード クラウドを生成するには
       isCorrect: false
-      incorrectExplanation: "The Custom Vision Service doesn't do anything with word clouds."
-    - content: "You don't need to add a tag"
+      incorrectExplanation: Custom Vision Service は、ワード クラウドに対する処理を何も行いません。
+    - content: タグを追加する必要はありません
       isCorrect: false
-      incorrectExplanation: "In order for the image classification to work, you do need to add at least one tag."
-  - content: "Are precision and recall related when you're measuring the model's performance?"
+      incorrectExplanation: イメージの分類を機能させるには、少なくとも 1 つのタグを追加する必要があります。
+  - content: モデルのパフォーマンスを測定するときに精度と再現率は関連しますか?
     choices:
-    - content: "No"
+    - content: いいえ
       isCorrect: false
-      incorrectExplanation: "Precision and recall are related. You won't have a model that performs well if you have high precision and low recall."
-    - content: "Yes"
+      incorrectExplanation: 精度と再現率は関連します。 精度が高く再現率が低い場合は、パフォーマンスに優れたモデルが得られません。
+    - content: はい
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "Which ways can you perform a quick test on your model after training?"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+  - content: トレーニング後、モデルに対する簡単なテストをどのような方法で実行できますか?
     choices:
-    - content: "Image file"
+    - content: イメージ ファイル
       isCorrect: false
-      incorrectExplanation: "While the service can do a quick test on image files, it can do others, too."
-    - content: "Image URL"
+      incorrectExplanation: このサービスではイメージ ファイルに対して簡単なテストを行うことができますが、その他の処理も可能です。
+    - content: イメージ URL
       isCorrect: false
-      incorrectExplanation: "While the service can do a quick test on image URLs, it can do others, too."
-    - content: "Web page of images"
+      incorrectExplanation: このサービスではイメージ URL に対して簡単なテストを行うことができますが、その他の処理も可能です。
+    - content: イメージの Web ページ
       isCorrect: false
-      incorrectExplanation: "The service is unable to perform a quick test on just a web page with images on it."
-    - content: "Image file and image URL"
+      incorrectExplanation: このサービスでは、イメージを含む Web ページに対して簡単なテストを実行することはできません。
+    - content: イメージ ファイルとイメージ URL
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What does marking 'Make default' from the Performance tab do?"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+  - content: '[パフォーマンス] タブからの "既定値にする" のマーキングではどのような処理が行われますか?'
     choices:
-    - content: "Marks the latest iteration of the model as the default iteration"
+    - content: モデルの最新のイテレーションを既定のイテレーションとしてマークします
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Marks the image URL endpoint as the default endpoint"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: イメージ URL エンドポイントを既定のエンドポイントとしてマークします
       isCorrect: false
-      incorrectExplanation: "The endpoints are constant regardless of the number of iterations on the model."
-    - content: "Marks the image file endpoint as the default endpoint"
+      incorrectExplanation: エンドポイントは、モデル上のイテレーションの数に関係なく一定です。
+    - content: イメージ ファイル エンドポイントを既定のエンドポイントとしてマークします
       isCorrect: false
-      incorrectExplanation: "The endpoints are constant regardless of the number of iterations on the model."
-    - content: "Marks the current project as the default project to use"
+      incorrectExplanation: エンドポイントは、モデル上のイテレーションの数に関係なく一定です。
+    - content: 現在のプロジェクトを、使用する既定のプロジェクトとしてマークします
       isCorrect: false
-      incorrectExplanation: "The project must be specified so the endpoint knows which one to use. The project ID is included in the URL on the Prediction URL tab."
-  - content: "What is the name of the header for the prediction key to send with the prediction endpoint?"
+      incorrectExplanation: プロジェクトを指定して、使用するプロジェクトをエンドポイントが認識できるようにする必要があります。 プロジェクト ID は、[Prediction URL]\(予測 URL\) タブの URL に含まれます。
+  - content: 予測エンドポイントと共に送信する予測キーのヘッダーの名前は何ですか?
     choices:
-    - content: "Subscription Key"
+    - content: サブスクリプション キー
       isCorrect: false
-      incorrectExplanation: "There is no subscription key used for the Custom Vision Service."
-    - content: "Prediction Key"
+      incorrectExplanation: Custom Vision Service に使用されるサブスクリプション キーはありません。
+    - content: 予測キー
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Training Key"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: トレーニング キー
       isCorrect: false
-      incorrectExplanation: "The training key is used to train new iterations on your model, but not to make predictions."
-    - content: "API Key"
+      incorrectExplanation: トレーニング キーは、モデル上の新しいイテレーションのトレーニングに使用されますが、予測には使用されません。
+    - content: API キー
       isCorrect: false
-      incorrectExplanation: "There is no API key used for the Custom Vision Service."
-  - content: "When you're using the prediction API, what else happens back in the Custom Vision Service portal?"
+      incorrectExplanation: Custom Vision Service に使用される API キーはありません。
+  - content: 予測 API の使用時に Custom Vision ポータルに戻るとどうなりますか?
     choices:
-    - content: "Images are tagged if they come back as unknown"
+    - content: イメージが不明として戻った場合にタグ付けされます
       isCorrect: false
-      incorrectExplanation: "Images are only manually tagged in the portal, not automatically."
-    - content: "Images are loaded as untagged in the training set"
+      incorrectExplanation: ポータルではイメージのタグ付けは手動でのみ行われ、自動的には行われません。
+    - content: イメージがタグなしとしてトレーニング セットに読み込まれます
       isCorrect: false
-      incorrectExplanation: "Images have to be explicitly uploaded to be a part of the training set."
-    - content: "Images are shown in the Predictions tab"
+      incorrectExplanation: イメージをトレーニング セットの一部として明示的にアップロードする必要があります。
+    - content: イメージが [Predictions]\(予測\) タブに表示されます
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Nothing happens"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: 何も起こりません
       isCorrect: false
-      incorrectExplanation: "The images are put in a certain part of the portal."
+      incorrectExplanation: イメージがポータルの特定の部分に配置されます。

@@ -1,38 +1,39 @@
-Now that we have a function app created, let's look at how to build, configure, and execute a function.
+関数アプリを作成したので、関数をビルド、構成、実行する方法について確認しましょう。
 
-### Triggers
+### <a name="triggers"></a>トリガー
 
-Functions are event driven, which means they run in response to an event.
+関数はイベント駆動型です。つまり、イベントに応答して実行されるということです。
 
-The type of event that starts the function is called a **trigger**. You must configure a function with exactly one trigger.
+関数を開始するイベントの種類は、*トリガー*と呼ばれます。 関数は必ず 1 つのトリガーで構成する必要があります。
 
-Azure supports triggers for the following services.
+Azure では、次のサービスに対してトリガーをサポートしています。
 
-| Service                 | Trigger description  |
+| サービス                 | トリガーの説明  |
 |-------------------------|---------|
-| Blob storage            | Start a function when a new or updated blob is detected.       |
-| Cosmos DB               | Start a function when inserts and updates are detected.      |
-| Event Grid              | Start a function when an event is received from Event Grid.       |
-| HTTP                    | Start a function with an HTTP request.      |
-| Microsoft Graph Events  | Start a function in response to an incoming webhook from the Microsoft Graph. Each instance of this trigger can react to one Microsoft Graph resource type.       |
-| Queue storage           | Start a function when a new item is received on a queue. The queue message is provided as input to the function.      |
-| Service Bus             | Start a function in response to messages from a Service Bus queue.       |
-| Timer                   | Start a function on a schedule.       |
-| Webhooks                | Start a function with a webhook request.       |
+| BLOB ストレージ            | 新しい BLOB または更新された BLOB が検出されたときに関数を開始します。       |
+| Cosmos DB               | 挿入および更新が検出されたときに関数を開始します。      |
+| Event Grid              | Event Grid からイベントを受信したときに関数を開始します。       |
+| HTTP                    | HTTP 要求で関数を開始します。      |
+| Microsoft Graph イベント  | Microsoft Graph から受信した Webhook に応答して関数を開始します。 このトリガーの各インスタンスは、それぞれ Microsoft Graph の 1 つのリソースの種類に応答できます。       |
+| Queue Storage           | キューで新しい項目を受け取ったときに関数を開始します。 キュー メッセージは、関数への入力として提供されます。      |
+| Service Bus             | Service Bus キューからのメッセージに応答して関数を開始します。       |
+| Timer                   | スケジュールに従って関数を開始します。       |
+| Webhook                | Webhook 要求で関数を開始します。       |
 
-### Bindings
+### <a name="bindings"></a>バインド
 
-Bindings are a declarative way to connect data and services to your function. Bindings know how to talk to different services, which means you don't have to write code in your function to connect to data sources and manage connections. The platform takes care of that complexity for you as part of the binding code. Each binding has a direction - your code reads data from *input* bindings and writes data to *output* bindings. Each function can have zero or more bindings to manage the input and output data processed by the function.
+バインドは、データとサービスを作成した関数に接続するための宣言型の方法です。 バインドは、さまざまなサービスに応答する方法を理解しています。つまり、データ ソースに接続して、接続を管理するために、自分で関数にコードを記述する必要はないということです。 ユーザーの代わりに、プラットフォームによってその複雑さがバインド コードの一部として処理されます。 バインドごとに方向が 1 つあります。お客様のコードでは、*入力*バインディングからデータを読み取り、*出力*バインディングにデータを書き込みます。 各関数には、関数によって処理された入出力データを管理するために、0 個またはそれ以上のバインドを持つことができます。
 
-A trigger is a special type of input binding that has the additional capability of initiating execution.
+> [!NOTE]
+> 技術的には、トリガーは、実行を開始する追加機能を持つ特殊な入力バインディングです。
 
-Azure provides a [large number of bindings](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings) to connect to different storage and messaging services.
+Azure では、さまざまなストレージとメッセージング サービスに接続するために、[多数のバインド](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)が提供されます。
 
-### A sample binding definition
+### <a name="a-sample-binding-definition"></a>バインド定義のサンプル
 
-Let's look at an example of configuring a function with an input binding (trigger) and an output binding. Let's say we want to read data from Blob storage, process it in our function, and then write a message to a queue. You would configure an _input binding_ of type *blob* and an _output binding_ of type *queue*.
+入力バインディング (トリガー) と出力バインディングで関数を構成する例を見てみましょう。 BLOB ストレージからデータを読み取り、関数で処理して、キューにメッセージを書き込む必要があるとします。 *BLOB* の種類の_入力バインディング_と*キュー*の種類の_出力バインディング_を構成します。
 
-Bindings can be defined in the Azure portal, and are stored as JSON files, which you can also edit directly. The following JSON is sample definition of a trigger and binding for a function.
+バインドは Azure portal で定義することができ、直接編集することもできる JSON ファイルとして保存されます。 次の JSON は、関数に対するトリガーとバインドの定義のサンプルです。
 
 ```json
 {
@@ -55,72 +56,72 @@ Bindings can be defined in the Azure portal, and are stored as JSON files, which
 }
 ```
 
-This example shows a function that is triggered by a message being added to a queue named **myqueue-items**. It then sends the return value of the function to the **outTable** table in Azure Table storage. This is a very simple example, we could change the output to be an email using a SendGrid binding, or put an event onto a Service Bus to notify some other component in our architecture, or even have multiple output bindings to push data to various services.
+この例は、メッセージが **myqueue-items** という名前のキューに追加されることによってトリガーされる関数を示しています。 次に、関数の戻り値を Azure テーブル ストレージ内の **outTable** テーブルに送信します。 これは非常にシンプルな例で、出力を SendGrid バインディングを使用する電子メールに変更したり、アーキテクチャ内のその他のコンポーネントに通知するために Service Bus にイベントを配置したりすることができます。また、さまざまなサービスにデータをプッシュするように、複数の出力バインディングを含めることもできます。
 
-## Creating a function in the Azure portal
+## <a name="creating-a-function-in-the-azure-portal"></a>Azure portal で関数をテストする
 
-Azure provides several pre-made function templates for common scenarios.
+Azure では、一般的なシナリオに使用できる、いくつかの事前に作成された関数テンプレートを提供します。
 
-### Quickstart templates
+### <a name="quickstart-templates"></a>クイック スタート テンプレート
 
-When adding your first function, you are presented with the Quickstart screen. This screen allows you to choose a trigger type (HTTP, Timer, or Data) and programming language (C#, JavaScript, F# or Java). Then, based on your selections, Azure will generate the function code and configuration for you with some sample code provided to display out the input data received in the log.
+初めて関数を追加する場合、クイック スタート画面が表示されます。 この画面では、トリガーの種類 (HTTP、タイマーまたはデータ) およびプログラミング言語 (C#、JavaScript、F# または Java) を選ぶことができます。 次に、選択内容に基づいて、Azure では、ログで受け取った入力データを表示するために提供されたサンプル コードを使って、ユーザーのために関数コードと構成が生成されます。 
+ 
+### <a name="custom-function-templates"></a>カスタムの関数テンプレート
 
-### Custom function templates
+クイック スタート テンプレートを選択すると、最も一般的なシナリオへの簡単なアクセスが提供されます。 しかし、Azure では使用を開始できるテンプレートが 30 個以上提供されています。 これらのテンプレートは、後続の関数の作成時にテンプレート リストの画面から選択できます。または、クイック スタート画面で **[カスタム関数]** オプションを使用することで選択できます。
 
-The selection of Quickstart templates provides easy access to the most common scenarios. However, Azure provides over 30 additional templates you can start with. These can be selected from the template list screen when creating subsequent functions or be selected by using the **Custom function** option on the Quickstart screen.
+- HTTP トリガーと C#、F#、または JavaScript
+- タイマー トリガーと C#、F#、または JavaScript
+- キュー トリガーと C#、F#、または JavaScript
+- Service Bus キュー トリガーと C#、F#、または JavaScript
+- Cosmos DB トリガーと C#、F#、または JavaScript
+- IoT Hub (イベント ハブ) と C#、F#、または JavaScript
+- ... その他
 
-- HTTP trigger w/ C#, F#, or JavaScript
-- Timer trigger w/ C#, F#, or JavaScript
-- Queue trigger w/ C#, F#, or JavaScript
-- Service Bus Queue trigger w/ C#, F#, or JavaScript
-- Cosmos DB trigger w/ C# or JavaScript
-- IoT Hub (Event Hub) w/ C#, F#, or JavaScript
-- ... and many more
+## <a name="navigating-to-your-function-and-files"></a>関数とファイルに移動する
 
-## Navigating to your function and files
+テンプレートから関数を作成すると、複数のファイルが作成されます。 たとえば、JavaScript を使用して Webhook + API クイック スタートを使用することを選択した場合は、構成ファイル (**function.json**) とソース コード ファイル (**index.js**) が生成されます。 関数アプリで作成した関数は、関数アプリ ポータル内の **[関数]** メニュー項目の下に表示されます。
 
-When you create a function from a template, several files are created. For example, if you opted to use the Webhook + API Quickstart using JavaScript, the files generated would be a configuration file, **function.json**, and a source code file, **index.js**. The functions you create in a function app appear under the **Functions** menu item in the function app portal.
+関数アプリで関数を選択すると、次のスクリーンショットで示されているように、コード エディターが開き、ご自分の関数用のコードが表示されます。
 
-When you select a function in your function app, a code editor opens and displays the code for your function, as illustrated in the following screenshot.
+![関数テンプレートの選択インターフェイスには、関数の開発を高速化するために使用できるテンプレートのセットが一覧されます。](../media-draft/4-file-navigation.png)
 
-![Screenshot of the Azure portal showing the function editor blade, including the expanded View files menu, with the selected "HttpTriggerJS1" function in our app service navigation and the View files menu highlighted.](../media/4-file-navigation.png)
+前のスクリーンショットで確認できるように、右側にポップアップ メニューがあり、**[ファイルの表示]** へのタブが含まれています。 このタブを選択すると、ご自分の関数を構成するファイル構造が表示されます。  
 
-As you can see in the preceding screenshot, there's a flyout menu on the right that includes a tab to **View files**. Selecting this tab shows the file structure that makes up your function.
+## <a name="testing-your-azure-function"></a>Azure 関数をテストする
 
-## Testing your Azure function
+関数を作成したら、テストする必要があります。 手動で実行する方法と、Azure portal 内からテストする方法の 2 種類があります。
 
-Once you've created a function, you'll want to test it. There are a couple of approaches: manual execution and testing from within the Azure portal itself.
+### <a name="manual-execution"></a>手動での実行
 
-### Manual execution
+構成されたトリガーを手動でトリガーすることによって、関数を開始できます。 たとえば、HTTP トリガーを使用している場合、Postman や cURL などのツールを使用して、ご自分の関数エンドポイント URL への HTTP 要求を開始することができます。これは HTTP のトリガー定義から利用できます (**[Get function URL]\(関数の URL の取得\)**)。  
 
-You can start a function by manually triggering the configured trigger. For instance, if you are using an HTTP trigger - you can use a tool such as Postman or cURL to initiate an HTTP request to your function endpoint URL, which is available from the HTTP trigger definition (**Get function URL**).
+### <a name="testing-in-the-azure-portal"></a>Azure portal でテストする
 
-### Testing in the Azure portal
+ポータルにも、関数をテストするための便利な手段が用意されています。 コード ウィンドウの右側に、タブ付きのポップアップ ナビゲーション メニューがあります。 このメニューには、**[テスト]** 項目が含まれています。 メニューを展開してこのタブを選択すると、別の方法で関数を実行し、結果を表示することができます。 このテスト ウィンドウで **[実行]** をクリックすると、その結果が出力ウィンドウに状態コードと共に表示されます。 
 
-The portal also provides a convenient way to test your functions. On the right side of the code window, there is a flyout tabbed navigation menu. This menu contains a **Test** item. Expanding the menu and selecting this tab gives you another way to execute your function and view the result. When you click **Run** in this test window, the results are displayed in the output window, along with a status code.
+## <a name="monitoring-dashboard"></a>監視ダッシュボード
 
-## Monitoring dashboard
+関数を監視する機能は、開発時および運用環境で重要です。 Azure portal では、Application Insights の統合を有効にした場合に利用できる監視ダッシュボードを提供します。 関数アプリのナビゲーション メニューでは、関数ノードを展開すると、**[監視]** メニュー項目が表示されます。 この監視ダッシュボードでは、関数の実行履歴を表示する簡単な方法が提供され、Application Insights によって設定されたタイムスタンプ、結果コード、期間、操作 ID が表示されます。
 
-The ability to monitor your functions is critical during development and in production. The Azure portal provides a monitoring dashboard available if you turn on the Application Insights integration. In the function app navigation menu, once you expand the function node you'll see a **Monitor** menu item. This monitor dashboard provides a quick way to view the history of function executions and displays the timestamp, result code, duration, and operation ID populated by Application Insights.
+![関数の呼び出しの成功と失敗の一覧を示している、**[監視]** 関数のメニュー項目から起動した監視ダッシュボードのスクリーンショット。](../media-draft/4-monitor-function.png)
 
-![Screenshot of the Azure portal showing an HTTP function Monitor blade with several function results and their corresponding HTTP status codes, with the Module menu item of the function highlighted.](../media/4-monitor-function.png)
+## <a name="streaming-log-window"></a>ストリーミング ログ ウィンドウ
 
-## Streaming log window
+Azure portal でデバッグのために、ご自分の関数にログ ステートメントを追加することもできます。 言語ごとに呼び出されたメソッドによって、情報をログ記録するために使用される可能性がある "ログ記録" オブジェクトが、コード ウィンドウの下部にあるタブ付きのポップアップ メニューに配置されたログ ウィンドウに渡されます。 
 
-You're also able to add logging statements to your function for debugging in the Azure portal. The called methods for each language are passed a "logging" object, which may be used to log information to the log window located in a tabbed flyout menu located at the bottom of the code window.
-
-The following JavaScript code snippet shows how to log a message using the `context.log` method (the `context` object is passed to the handler).
+次の JavaScript コード スニペットは、`context.log` メソッドを使用してメッセージを記録する方法について示します (`context` オブジェクトはハンドラーに渡されます)。
 
 ```javascript
   context.log('Enter your logging statement here');
-```
+```  
 
-We could the same thing in C# using the `log.Info` method. In this case, the `log` object is passed ot the C# method processing the function.
+C# では `log.Info` メソッドを使用して同じことを行えます。 この場合、`log` オブジェクトは、その関数を処理する C# メソッドに渡されます。
 
 ```csharp
   log.Info("Enter your logging statement here");
 ```
 
-### Errors and warnings window
+### <a name="errors-and-warnings-window"></a>エラーと警告ウィンドウ
 
-You can locate the errors and warnings window tab in the same flyout menu as the log window. This window will show compilation errors and warnings within your code.
+エラーと警告ウィンドウ タブは、ログ ウィンドウと同じポップアップ メニューで検索できます。 このウィンドウには、コード内のコンパイル エラーと警告が表示されます。

@@ -1,26 +1,23 @@
-The **Data Science Virtual Machine** for Linux is a virtual-machine image that simplifies getting started with data science.Multiple tools are already built, installed, and configured to get you up and running quickly. The NVIDIA GPU driver, NVIDIA CUDA, and NVIDIA CUDA Deep Neural Network (cuDNN) library are also included, as are Jupyter and TensorFlow. All pre-installed frameworks are GPU-enabled but work on CPUs as well.
+Linux 用の **Data Science Virtual Machine** は、データ サイエンスの使用の開始を簡単にする仮想マシン イメージです。 すぐに起動して実行できるように、複数のツールが既に構築、インストール、および構成されています。 Jupyter や TensorFlow のように、NVIDIA GPU ドライバー、NVIDIA CUDA、NVIDIA CUDA ディープ ニューラル ネットワーク (cuDNN) ライブラリも含まれます。 事前にインストールされているフレームワークはすべて、GPU 対応ですが、CPU でも動作します。
 
-## Learning objectives
+## <a name="what-is-covered-in-this-lab"></a>このラボの対象範囲
 
-In this module, you will:
+ このラボで行う内容
+* Azure で Linux Data Science Virtual Machine を作成する
+* リモート デスクトップを使って DSVM に接続する
+* イメージを、ホットドッグが含まれているものと、含まれていないものに分類できるように、TensorFlow モデルをトレーニングします。
+* Python アプリでモデルを使用する
 
-- Create a Linux Data Science Virtual Machine in Azure.
-- Connect to the DSVM via remote desktop.
-- Train a TensorFlow model to classify images as ones containing hot dogs and ones NOT containing hot dogs.
-- Use the model in a Python app.
+このラボを完了するには、Azure サブスクリプションと Xfce リモート デスクトップ クライアントが必要です。 詳細については、前提条件のセクションを参照してください。 Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウント](https://azure.microsoft.com/en-us/free/?WT.mc_id=A261C142F)を作成してください。
 
-### Prerequisites
-<!---TODO: This is really long, need to make more concise and also add to index.yml--->
-<!---TODO: Update for free sandbox.--->
+### <a name="prerequisites-for-the-lab"></a>ラボの前提条件
 
-To complete this module, you will need an Azure subscription and a Xfce remote-desktop client.
+ 1. **Microsoft Azure Account**: このラボには有効かつアクティブな Azure アカウントが必要です。 アカウントがない場合でも、[無料試用版](https://azure.microsoft.com/en-us/free/)にサインアップできます
 
- 1. **Microsoft Azure Account**: You will need a valid and active Azure account for this module. If you do not have one, you can sign up for a [free trial](https://azure.microsoft.com/free/)
+    * Visual Studio のアクティブ サブスクライバーの場合は、毎月 $50 から $150 クレジットが請求されます。 毎月 Azure クレジットをアクティブ化して使用を開始する方法などの詳細については、この[リンク](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/)を参照してください。
 
-    * If you are a Visual Studio Active Subscriber, you are entitled to a $50-$150 credit per month. You can refer to this [link](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) to find out more, including how to activate and start using your monthly Azure credit.
+    * Visual Studio サブスクライバーでない場合は、無料の [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) プログラムにサインアップして、**Azure の無料アカウント** (1 年間の無料サービス、最初の 1 か月間の $200 を含む) を作成できます。
 
-    * If you are not a Visual Studio Subscriber, you can sign up for the FREE [Visual Studio Dev Essentials](https://www.visualstudio.com/dev-essentials/) program to create **Azure free account** (includes one year of free services, $200 for the first month).
+    * 学生の場合は、無料の [Microsoft Azure for Students](https://aka.ms/azure4students) アカウントにサインアップして、クレジット カードなしで、無料の Azure クレジットとして $100 と 1 年間の無料サービスを受け取ることができます。 
 
-    * If you are a student, you can sign up for a free [Azure for Students](https://aka.ms/azure4students) account to get $100 in free Azure credits, plus a year of free services, with no credit card required. 
-
-1. An [Xfce](https://xfce.org/) remote-desktop client such as [X2Go](https://wiki.x2go.org/doku.php/download:start)
+1. [X2Go](https://wiki.x2go.org/doku.php/download:start) などの[Xfce](https://xfce.org/) リモート デスクトップ クライアント

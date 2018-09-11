@@ -1,22 +1,19 @@
-The Azure portal is great for performing single tasks, and to see a quick overview of the state of your resources. But for tasks that need to be repeated daily, or even hourly, using the command line and a set of tested commands or scripts can help get your work done more quickly and avoid errors. 
+Azure portal は、1 つのタスクを実行したり、ご利用のリソースの状態の概要を確認したりするのに適しています。 しかし、毎日、さらには 1 時間ごとに繰り返し行う必要があるタスクには、コマンドラインと一連のテスト済みのコマンドまたはスクリプトを使用することで、作業を迅速化し、エラーを回避することができます。 
 
-Suppose you work at a company that develops Azure Web Apps. These are applications hosted in Azure, with all the benefits of automatically configured security, load balancing, management, and so on. You're currently testing a web app that generates sales forecasts, based on a range of inputs from different databases and other data sources. Your developers use Windows, Linux, and Mac computers, and use a GitHub repository for daily builds of the applications. 
+あなたは、Azure Web アプリを開発している企業で働いているとします。 これらのアプリケーションは Azure でホストされているため、自動的に構成されるセキュリティ、負荷分散、管理などのすべての利点が得られます。 あなたは現在、別のデータベースと他のデータ ソースからの入力の範囲に基づいて、売上予測を生成する Web アプリをテストしています。 開発者は、Windows、Linux、および Mac のコンピューターを使用し、アプリケーションの毎日のビルド用に GitHub リポジトリを使用しています。 
 
-As part of the testing, you want to compare app performance for different data sources, and for different types of data connections. You've noticed that when your development team uses the Azure portal to create a new test instance of the app, they don't always use exactly the same parameters. You plan to solve this problem by using a set of standard deployment commands for each app test, which can be automated if required, and which will work in the same way across all the computers used by your software team.
+あなたは、テストの一環として、さまざまなデータ ソースおよびさまざまな種類のデータ接続に対して、アプリのパフォーマンスを比較したいと考えています。 あなたは、開発チームが Azure portal を使用してアプリの新しいテスト インスタンスを作成するときに、常に同じパラメーターを使用していないことに気付いています。 あなたは、この問題を解決するために、各アプリ テストに対し、必要に応じて自動化することができ、ソフトウェア チームが使用するすべてのコンピューターで同じ方法で機能する、一連の標準の展開コマンドを使用することを計画しています。
 
-In this module, you'll see how to manage Azure resources using the Azure CLI. 
+このモジュールでは、Azure CLI を使用して Azure リソースを管理する方法を説明します。 
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-In this module, you will:
+- Linux、macOS、Windows 上に Azure CLI をインストールします。
+- Azure CLI を使用して Azure サブスクリプションに接続します。
+- Azure CLI を使用して Azure リソースを作成します。
 
-- Install the Azure CLI on Linux, macOS, and/or Windows.
-- Connect to an Azure subscription using the Azure CLI.
-- Create Azure resources using the Azure CLI.
-
-## Prerequisites  
-
-- Experience with a command-line interface, such as PowerShell or Bash
-- Knowledge of basic Azure concepts, such as resource groups
-- Experience administering Azure resources using the Azure portal
-- 
+## <a name="prerequisites"></a>前提条件
+- PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
+- リソース グループなど、Azure の基本的な概念に関する知識
+- Azure portal を使用した Azure リソースの管理経験

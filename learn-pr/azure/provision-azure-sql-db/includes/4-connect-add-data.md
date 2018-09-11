@@ -1,55 +1,51 @@
-Before you connect the database to your app, you want to check that you can connect to it, add a basic table, and work with sample data.
+データベースをアプリに接続する前に、データベースに接続し、基本的なテーブルを追加し、サンプル データを操作できることを確認する必要があります。
 
-We maintain the infrastructure, software updates, and patches for your Azure SQL database. Beyond that, you can treat your Azure SQL database like you would any other SQL Server installation. For example, you can use Visual Studio, SQL Server Management Studio, or other tools to manage your Azure SQL database.
+Azure SQL Database のインフラストラクチャ、ソフトウェア更新プログラム、修正プログラムは Microsoft が保守しています。 Azure SQL Database のそれ以外の部分については、他の SQL Server インストールと同様に扱うことができます。 たとえば、Visual Studio、SQL Server Management Studio、またはその他のツールを使用して、Azure SQL Database を管理することができます。
 
-How you access your database and connect it to your app is up to you. But to get some experience working with your database, here you'll connect to it directly from the portal, create a table, and run a few basic CRUD operations. You'll learn:
+データベースにアクセスしてアプリに接続する方法は任意です。 しかし、データベースの操作経験をある程度積むために、ここではポータルから直接接続し、テーブルを作成し、基本的な CRUD 操作をいくつか実行します。 学習内容:
 
-- What Cloud Shell is and how to access it from the portal.
-- How to access information about your database from the Azure CLI, including connection strings.
-- How to connect to your database using `sqlcmd`.
-- How to initialize your database with a basic table and some sample data.
+* Cloud Shell の概要と、ポータルからアクセスする方法。
+* 接続文字列などのデータベースに関する情報に Azure CLI からアクセスする方法。
+* `sqlcmd` を使用してデータベースに接続する方法。
+* 基本的なテーブルといくつかのサンプル データを使用してデータベースを初期化する方法。
 
-## What is Azure Cloud Shell?
+## <a name="what-is-azure-cloud-shell"></a>Azure Cloud Shell とは
 
-Azure Cloud Shell is a browser-based shell experience to manage and develop Azure resources. Think of Cloud Shell as an interactive console that runs in the cloud.
+Azure Cloud Shell は、Azure リソースを開発および管理するための、ブラウザー ベースのシェル環境です。 Cloud Shell は、クラウド上で動作する対話型コンソールと考えてください。
 
-Behind the scenes, Cloud Shell runs on Linux. But depending on whether you prefer a Linux or Windows environment, you have two experiences to choose from: Bash and PowerShell.
+バックグラウンドでは Cloud Shell は Linux 上で動作しています。 ただし、Linux 環境と Windows 環境のどちらを好むかによって、Bash と PowerShell のいずれかから選択できます。
 
-Cloud Shell is accessible from anywhere. Besides the portal, you can also access Cloud Shell from [shell.azure.com](https://shell.azure.com/), the Azure mobile app, or from Visual Studio Code.
+Cloud Shell は任意の場所からアクセスできます。 ポータル以外にも、[shell.azure.com](https://shell.azure.com/)、Azure mobile app、または Visual Studio Code からも Cloud Shell にアクセスできます。
 
-Cloud Shell includes popular tools and text editors. Here's a brief look at `az`, `jq`, and `sqlcmd`, three tools you'll use for our current task.
+Cloud Shell には、一般的なツールとテキスト エディターが含まれています。 次に、このドキュメントのタスクに使用する 3 つのツール `az`、`jq`、`sqlcmd` について簡単に説明します。
 
-- `az` is also known as the Azure CLI. It's the command-line interface for working with Azure resources. You'll use this to get information about your database, including the connection string.
-- `jq` is a command-line JSON parser. You'll pipe output from `az` commands to this tool to extract important fields from JSON output.
-- `sqlcmd` enables you to execute statements on SQL Server. You'll use `sqlcmd` to create an interactive session with your Azure SQL database.
+* `az` は Azure CLI とも呼ばれます。 Azure のリソースを使用するためのコマンド ライン インターフェイスです。 接続文字列など、データベースに関する情報を取得するために使用します。
+* `jq` はコマンドライン JSON パーサーです。 `az` コマンドの出力をこのツールにパイプして、JSON 出力から重要なフィールドを抽出します。
+* `sqlcmd` を使用すると、SQL Server 上でステートメントを実行できます。 Azure SQL Database との対話型セッションを作成するために `sqlcmd` を使用します。
 
-## Get information about your Azure SQL database
+## <a name="get-information-about-your-azure-sql-database"></a>Azure SQL Database に関する情報を入手する
 
-Before you connect to your database, it's a good idea to verify it exists and is online.
+データベースに接続する前に、データベースが存在していて、オンラインであることを確認することをお勧めします。
 
-Here, you bring up Cloud Shell and use the `az` utility to list your databases and show some information about the **Logistics** database, including its maximum size and status.
+ここでは、Cloud Shell を起動し、`az` ユーティリティを使用してデータベースを一覧表示し、最大サイズと状態などの **Logistics** データベースに関する一部の情報を表示します。
 
-1. From the portal, at the top, click **Cloud Shell**.
-
-1. The `az` commands you'll run require the name of your resource group and the name of your Azure SQL logical server. To save typing, run this `azure configure` command to specify them as default values.
-    Replace `contoso-logistics` with the name of your Azure SQL logical server.
-
+1. ポータルの上部にある **[Cloud Shell]** をクリックします。 
+    ![Cloud Shell を開く](../media-draft/open-cloud-shell.png)
+1. `az` コマンドを実行する場合、リソース グループの名前と Azure SQL 論理サーバーの名前が必要です。 入力を省略できるように、この `azure configure` コマンドを実行して既定値として指定します。
+    `contoso-logistics` を Azure SQL 論理サーバーの名前に置き換えます。
     ```azurecli
     az configure --defaults group=logistics-db-rg sql-server=contoso-logistics
     ```
-
-1. Run `az sql db list` to list all databases on your Azure SQL logical server.
-
+1. `az sql db list` を実行して、Azure SQL 論理サーバー上のすべてのデータベースを一覧表示します。
     ```azurecli
     az sql db list
     ```
-    You see a large block of JSON as output.
-
-1. Since we want just the database names, run the command a second time. This time, pipe the output to `jq` to print out only the name fields.
+    出力として大きなブロックの JSON が表示されます。 
+1. データベース名のみが必要なので、このコマンドをもう一度実行します。 今回は、出力を `jq` にパイプして、名前フィールドのみを出力します。
     ```azurecli
     az sql db list | jq '[.[] | {name: .name}]'
     ```
-    You see this.
+    次のように表示されます。
     ```console
     [
       {
@@ -60,21 +56,17 @@ Here, you bring up Cloud Shell and use the `az` utility to list your databases a
       }
     ]
     ```
-    **Logistics** is your database. Like SQL Server, **master** includes server metadata, such as sign-in accounts and system configuration settings.
-
-1. Run this `az sql db show` command to get details about the **Logistics** database.
-
+    **Logistics** はデータベースです。 SQL Server と同様に、**master** には、ログオン アカウントやシステム構成設定などのサーバー メタデータが含まれています。
+1. この `az sql db show` コマンドを実行すると、**Logistics** データベースに関する詳細情報が得られます。 
     ```azurecli
     az sql db show --name Logistics
     ```
-    As before, you see a large block of JSON as output.
-
-1. Run the command a second time. This time, pipe the output to `jq` to limit output to only the name, maximum size, and status of the **Logistics** database.
-
+    前回と同様に、出力として大きなブロックの JSON が表示されます。
+1. このコマンドをもう一度実行します。 今回は、出力を `jq` にパイプして、**Logistics** データベースの名前、最大サイズ、状態のみに出力を制限します。
     ```azurecli
     az sql db show --name Logistics | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
     ```
-    You see that the database is online and can hold around 2 GB of data.
+    データベースがオンラインであり、約 2 GB のデータを保持できることがわかります。
     ```console
     {
       "name": "Logistics",
@@ -83,137 +75,107 @@ Here, you bring up Cloud Shell and use the `az` utility to list your databases a
     }
     ```
 
-## Connect to your database
+## <a name="connect-to-your-database"></a>データベースに接続する
 
-Now that you understand a bit about your database, let's connect to it using `sqlcmd`, create a table that holds information about transportation drivers, and perform a few basic CRUD operations.
+データベースの概要を少し理解したところで、`sqlcmd` を使用してデータベースに接続し、輸送ドライバーに関する情報を保持するテーブルを作成し、いくつかの基本的な CRUD 操作を実行してみましょう。
 
-Remember that CRUD stands for **create**, **read**, **update**, and **delete**. These terms refer to operations you perform on table data and are the four basic operations you need for your app. Now's a good time to verify you can perform each of them.
+CRUD は、**作成** (create)、**読み取り** (read)、**更新** (update)、**削除** (delete) の略です。 これらはテーブル データに対して実行する操作を指します。また、アプリに必要な 4 つの基本操作です。 今が各操作を実行できることを確認するよい機会です。
 
-1. Run this `az sql db show-connection-string` command to get the connection string to the **Logistics** database in a format that `sqlcmd` can use.
-
+1. この `az sql db show-connection-string` コマンドを実行すると、**Logistics** データベースに対する接続文字列を `sqlcmd` に使用できる形式で取得できます。
     ```azurecli
     az sql db show-connection-string --client sqlcmd --name Logistics
     ```
-    Your output resembles this.
+    次のような内容が出力されます。
     ```console
     "sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U <username> -P <password> -N -l 30"
     ```
-
-1. Run the `sqlcmd` statement from the previous step to create an interactive session.
-    Remove the surrounding quotes and replace `<username>` and `<password>` with the username and password you specified when you created your database. Here's an example.
-
+1. 前の手順で `sqlcmd` ステートメントを実行して、対話型セッションを作成します。
+    囲んでいる引用符を削除し、`<username>` と `<password>` をデータベースの作成時に指定したユーザー名とパスワードに置き換えます。 次に例を示します。
     ```console
     sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U martina -P "password1234$" -N -l 30
     ```
-
     > [!TIP]
-    > Place your password in quotes so that "&" and other special characters aren't interpreted as processing instructions.
-
-1. From your `sqlcmd` session, create a table named `Drivers`.
-
+    > "&" と他の特殊文字が処理命令として解釈されないように、パスワードを引用符で囲みます。
+1. `sqlcmd` セッションから、`Drivers` という名前のテーブルを作成します。
     ```sql
     CREATE TABLE Drivers (DriverID int, LastName varchar(255), FirstName varchar(255), OriginCity varchar(255) );
     GO
     ```
-
-    The table contains four columns: a unique identifier, the driver's last and first name, and the driver's city of origin.
-
+    このテーブルには、一意の識別子、ドライバーの姓、名、ドライバーの出発地 (市区町村) という 4 つの列があります。
     > [!NOTE]
-    > The language you see here is Transact-SQL, or T-SQL.
-
-1. Verify that the `Drivers` table exists.
-
+    > ここに表示されている言語は、Transact-SQL または T-SQL です。
+1. `Drivers` テーブルが存在することを確認します。
     ```sql
     SELECT name FROM sys.tables;
     GO
     ```
-
-    You see this.
-
+    次のように表示されます。
     ```console
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-
+    
     (1 rows affected)
     ```
-
-1. Run this `INSERT` T-SQL statement to add a sample row to the table. This is the **create** operation.
-
+1. この `INSERT` T-SQL ステートメントを実行して、サンプル行をテーブルに追加します。 これは**作成**操作です。
     ```sql
     INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
     GO
     ```
-
-    You see this to indicate the operation succeeded.
-
+    これは操作が成功したことを示すために表示されます。
     ```console
     (1 rows affected)
     ```
-
-1. Run this `SELECT` T-SQL statement list in the `DriverID` column from all rows in the table. This is the **read** operation.
-
+1. この `SELECT` T-SQL ステートメントを実行して、テーブルのすべての行から`DriverID` 列を一覧表示します。 これは**読み取り**操作です。
     ```sql
     SELECT DriverID FROM Drivers;
     GO
     ```
-
-    You see one result, the `DriverID` for the row you created in the previous step.
-
+    1 つの結果として、前の手順で作成した行の `DriverID` が表示されます。
     ```console
     DriverID
     -----------
             123
-
+    
     (1 rows affected)
     ```
-
-1. Run this `UPDATE` T-SQL statement to change the city of origin from "Springfield" to "Springfield, OR" for the driver with a `DriverID` of 123. This is the **update** operation.
-
+1. この `UPDATE` T-SQL ステートメントを実行して、`DriverID` が 123 のドライバーについて出発地を "Springfield" から "Springfield, OR" に変更します。 これは**更新**操作です。
     ```sql
     UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
     GO
     ```
-
-    You see this.
-
+    次のように表示されます。
     ```console
     (1 rows affected)
     ```
-
-1. Run this `DELETE` T-SQL statement to delete the record. This is the **delete** operation.
-
+1. この `DELETE` T-SQL ステートメントを実行して、レコードを削除します。 これは**削除**操作です。
     ```sql
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-
+    
     ```console
     (1 rows affected)
     ```
-
-1. Run this `SELECT` T-SQL statement to verify the `Drivers` table is empty.
-
+1. この `SELECT` T-SQL ステートメントを実行して、`Drivers` テーブルが空であることを確認します。
     ```sql
     SELECT COUNT(*) FROM Drivers;
     GO
     ```
-
-    You see that the table contains no rows.
-
+    テーブルに行がないことがわかります。
     ```console
     -----------
               0
-
+    
     (1 rows affected)
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Now that you have the hang of working with Azure SQL Database from Cloud Shell, you can get the connection string for your favorite SQL management tool &ndash; whether that's from SQL Server Management Studio, Visual Studio, or something else.
+Cloud Shell から Azure SQL Database を操作する方法を学んだので、SQL Server Management Studio、Visual Studio などから、好みの SQL 管理ツールの接続文字列を取得できます。
 
-Cloud Shell makes it easy to access and work with your Azure resources. Because Cloud Shell is browser-based, you can access it from Windows, macOS, or Linux &ndash; essentially any system with a web browser.
+Cloud Shell を使用すると、Azure のリソースに簡単にアクセスして操作できます。 Cloud Shell はブラウザーベースなので、Windows、macOS、または Linux から、つまり基本的には Web ブラウザーを使用する任意のシステムからアクセスできます。
 
-You gained some hands-on experience running Azure CLI commands to get information about your Azure SQL database. As a bonus, you practiced your T-SQL skills.
+ここでは、Azure CLI コマンドを実行して SQL Azure データベースに関する情報を取得する実践的な経験を得ました。 さらに、T-SQL のスキルについても実践しました。
 
-Finally, let's wrap up and see how to tear down your database.
+最後に、データベースの破棄方法を要約して説明します。

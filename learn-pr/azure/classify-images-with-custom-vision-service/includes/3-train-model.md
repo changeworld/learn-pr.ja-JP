@@ -1,11 +1,17 @@
-In this unit, you will train the model using the images uploaded and tagged in the previous exercise. Training can be accomplished with a simple button click in the portal, or by calling the [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) method in the [Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3). After you train a model, you can refine it by uploading additional tagged images and retraining it.
+### <a name="exercise-3-train-the-model"></a>演習 3: モデルをトレーニングする
 
-1. Click the **Train** button at the top of the page to train the model. Each time you train the model, a new iteration is created. The Custom Vision Service maintains several iterations, allowing you to compare your progress over time.
+この演習では、前の演習でアップロードおよびタグ付けしたイメージを使用して、モデルをトレーニングします。 トレーニングは、ポータルでシンプルにボタンをクリックするか、[Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3) で [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) メソッドを呼び出すことで実現できます。 一度トレーニングしたモデルは、タグが付けされたイメージを追加アップロードして、再トレーニングすることで修正できます。
+ 
+1. モデルをトレーニングするには、ページの上部にある **[トレーニング]** ボタンをクリックします。 モデルをトレーニングするたびに、新しいイテレーションが作成されます。 Custom Vision Service には、進捗を経時的に比較できるいくつかのイテレーションが保持されます。
 
-    ![Training the model](../media/2-portal-click-train.png)
+    ![モデルをトレーニングする](../images/portal-click-train.png)
 
-1. Wait for the training process to finish. (It should take only a few seconds.) Then review the training statistics presented to you for iteration 1. **Precision** and **recall** are separate but related  measures of the model's accuracy. Suppose the model was presented with three Picassos and three Van Goghs, and that it correctly identified two of the Picassos as "Picasso" images, but incorrectly identified two of the Van Goghs as Picassos. In this case, the precision would be 50% (two of the four images it classified as Picassos are actually Picassos), while its recall would be 67% (it correctly identified two of the three Picasso images as Picassos).
+    _モデルをトレーニングする_
 
-    ![Results of training the model](../media/2-portal-train-complete.png)
+1. トレーニング プロセスが完了するまで待機します。 (わずか数秒で完了します。)次いで、イテレーション 1 のトレーニング統計を確認します。 **[精度]** と **[再現率]** は、モデルの正確性を測定するものとしては別ですが、関連性があります。 モデルにピカソの作品 3 点、ゴッホの作品 3 を提示したところ、ピカソの作品のうち 2 点が "ピカソ" のイメージとして正しく識別されましたが、ゴッホの作品のうち 2 点が誤ってピカソとして識別されたとします。 この場合は、精度は 50% になり (4 つのイメージのうち 2 つはピカソと分類され、実際にピカソでした)、再現率は 67 % になります (3 つのピカソのイメージのうち、2 つがピカソのイメージとして識別されました)。 詳細については、精度と再現率について https://en.wikipedia.org/wiki/Precision_and_recall を参照してください。
 
-Now let's test the model using the portal's Quick Test feature, which allows you to submit images to the model and see how it classifies them using the knowledge gained from the training images.
+    ![モデルのトレーニング結果](../images/portal-train-complete.png)
+
+    _モデルのトレーニング結果_ 
+
+では、トレーニング イメージから取得したナレッジを使用して、モデルに送信されたイメージがどのように分類されるか、ポータルの Quick Test 機能を使用して、モデルをテストしてみましょう。

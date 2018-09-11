@@ -1,41 +1,39 @@
-Suppose you work at a company that makes a suite of Linux admin tools. Your job is to help potential customers try your software before they buy it. Because the software makes root-level changes to the OS, you have decided to create a Linux VM for each trial customer. You create the VMs as needed and delete them at the end of the trial subscription. This way, each customer starts with a clean version of the OS. 
+Linux 管理ツールのスイートを作成する会社で働いているものとします。 仕事は、見込みのあるお客様が購入する前にソフトウェアを試すのを支援することです。 ソフトウェアでは OS に対してルート レベルの変更を加えるため、試用版のお客様ごとに Linux VM を作成することにしました。 必要に応じて VM を作成し、試用サブスクリプションの最後にそれらを削除します。 このようにすると、各お客様はクリーンなバージョンの OS で始めることができます。 
 
-To keep these VMs separate from the VMs your company uses for internal testing, you will create a dedicated resource group to house them. You only need one resource group so using Azure PowerShell in interactive mode is a reasonable choice for this task.
+これらの VM を、内部テスト用に会社で使用されている VM から分離しておくため、それらを格納するための専用のリソース グループを作成します。 必要なリソース グループは 1 つだけなので、このタスクには対話モードの Azure PowerShell を使用するのが妥当です。
 
-## Steps to create a resource group
-<!---TODO: Update for sandbox.--->
+## <a name="steps-to-create-a-resource-group"></a>リソース グループの作成手順
 
-1. Launch PowerShell.
+1. PowerShell を起動します。
 
-1. Import the module into the current session so you have access to the Azure cmdlets.
+1. Azure コマンドレットにアクセスできるように、現在のセッションにモジュールをインポートします。
 
    ```powershell
    Import-Module AzureRM
    ```
 
-1. Connect to Azure using the command shown below. After entering the command, authenticate by providing your Azure credentials.
+1. 次に示すコマンドを使用して、Azure に接続します。 コマンドを入力した後、Azure 資格情報を指定して認証を行います。
 
    ```powershell
    Connect-AzureRmAccount
    ```
 
-1. Create a resource group.
+1. リソース グループを作成します。
 
     ```powershell
     New-AzureRmResourceGroup -Name "TrialsResourceGroup" -Location "East US"
     ```
 
-1. Verify the resource group was created successfully.
+1. リソース グループが正常に作成されたことを確認します。
 
     ```powershell
     Get-AzureRmResource | Format-Table
     ```
+リソース グループが正常に作成されたかどうかは、Azure portal を使用して確認することもできます。 そのためには、ポータルにログインし、**[リソース グループ]** セクション (下記参照) に移動します。 新しいリソース グループが一覧に表示されるはずです。
 
-Another way to check whether the resource group was created successfully is to use the Azure portal. To do this, login to the Portal and navigate to the **Resource Groups** section (see below). The new resource group should be displayed in the list.
+次のスクリーンショットでは、Azure portal でのリソース グループ カテゴリの場所を示します。
 
-The following screenshot shows the location of the Resource groups category in the Azure portal.
+![Azure portal の [お気に入り] ブレードでリソース グループ カテゴリが強調表示されているスクリーンショット。](../media/6-listing-resource-groups.png)
 
-![Screenshot of the Azure portal Favorites blade with the Resource group category highlighted.](../media/6-listing-resource-groups.png)
-
-## Summary
-This exercise shows a common pattern for an interactive PowerShell session. You used a standard cmdlet to import the AzureRM module and then the Azure PowerShell cmdlets to perform a specific task. You now have a resource group in your subscription and are ready to create VMs.
+## <a name="summary"></a>まとめ
+この演習では、対話型 PowerShell セッションの一般的なパターンを示します。 標準的なコマンドレットを使用して AzureRM モジュールをインポートしてから、Azure PowerShell コマンドレットを使用して特定のタスクを実行しました。 サブスクリプションにリソース グループが作成されて、VM を作成する準備が整いました。

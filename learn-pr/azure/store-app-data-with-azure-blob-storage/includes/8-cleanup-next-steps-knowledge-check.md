@@ -1,21 +1,20 @@
-In this module, you learned how to use Azure Blob storage to store web application data. We discussed tips for creating a strategy to use Blob storage in a web app and how to use the Azure Storage SDK for .NET Core to write to and read from blobs. The app we made accepts uploaded files from users, stores them in Blob storage, and makes them available for download.
+このモジュールでは、Azure Blob Storage を使用して Web アプリケーションのデータを格納する方法について説明しました。 Web アプリで BLOB ストレージを使用するための戦略を作成するためのヒント、および Azure Storage SDK for .NET Core を使用して BLOB に書き込みまたは BLOB から読み取る方法について説明しました。 作成したアプリが、ユーザーからのファイルのアップロードを受け取り、それを BLOB ストレージに格納し、ダウンロードできるようにします。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="cleanup"></a>クリーンアップ
 
-To cleanup your Azure subscription, run the following in Azure Cloud Shell to delete the resource group containing all the resources we created in this module.
+Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 
 ```console
 az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-To cleanup your Cloud Shell storage, delete the `mslearn-store-data-in-azure` directory.
+Cloud Shell ストレージをクリーンアップするには、`FileUploader` ディレクトリを削除します。
 
-## Further reading
+## <a name="further-reading"></a>参考資料
 
-- **Securely storing secrets like connection strings**: The most robust end-to-end solution for storing secret configuration values is Azure Key Vault. See [here](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x) for information about using Key Vault in an ASP.NET Core application. Alternatively, you can safely store connection strings in App Service application settings and use the [ASP.NET Core Secret Manager tool](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows) to support developer environments.
-- [Uploading large files with streaming in ASP.NET Core](https://docs.microsoft.com/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.1#uploading-large-files-with-streaming)
-- [Blob concurrency: AccessConditions and blob leases](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)
-- [Granting limited access to Azure Storage object with shared access signatures](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Indexing Blob storage with Azure Search](https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage)
-- [Container and blob name restrictions](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#resource-names)
+* **接続文字列のようにシークレットを安全に格納する**: シークレット構成値を格納するための最も堅牢なエンドツーエンド ソリューションは、Azure Key Vault です。 ASP.NET Core アプリケーションでの Key Vault の使用に関する詳細は、[こちら](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)をご覧ください。 または、App Service アプリケーション設定で接続文字列を安全に格納して、[ASP.NET Core Secret Manager ツール](https://docs.microsoft.com/aspnet/core/security/app-secrets?view=aspnetcore-2.1&tabs=windows)を使用して、開発者環境をサポートすることもできます。
+* [ASP.NET Core でのストリーミングによる大きいファイルのアップロード](https://docs.microsoft.com/aspnet/core/mvc/models/file-uploads?view=aspnetcore-2.1#uploading-large-files-with-streaming)
+* [BLOB の同時実行: AccessConditions と BLOB のリース](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)
+* [Shared Access Signature を使用して、Azure Storage オブジェクトへの制限付きアクセスを許可する](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
+* [Azure Search を使用した BLOB ストレージのインデックス作成](https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage)
+* [コンテナーと BLOB 名の制限](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#resource-names)

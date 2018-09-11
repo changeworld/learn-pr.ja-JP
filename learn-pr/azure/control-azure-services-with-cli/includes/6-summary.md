@@ -1,12 +1,10 @@
-The Azure CLI is a good choice for anyone new to Azure command line and scripting. Its simple syntax and cross-platform compatibility help reduce the risk of errors when performing regular and repetitive tasks. In this module, you used the Azure CLI commands to create a resource group, and deploy a web app by using a small set of commands. These commands could be combined into a shell script as part of automation solution. 
+Azure CLI は、Azure コマンド ラインおよびスクリプトを初めて使用するすべてのユーザーに適しています。 そのシンプルな構文とクロス プラットフォームの互換性は、定期的な繰り返しのタスクを実行するときにエラーのリスクを減らすのに役立ちます。 このモジュールでは、Azure CLI コマンドを使用してリソース グループを作成し、小規模なコマンド セットを使用して Web アプリをデプロイしました。 これらのコマンドは、自動化ソリューションの一部としてシェル スクリプトに結合することが可能です。 
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-Running web apps incurs costs against your subscription. Remove unneeded resources to avoid unnecessary charges. The easiest way to cleanup your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you're finished with this module, run the following Azure command:
+## <a name="cleanup"></a>クリーンアップ
+Web アプリを実行する場合は、サブスクリプションに対してコストがかかります。 不必要な課金を回避するために不要なリソースを削除します。 ご利用の Azure サブスクリプションをクリーンアップする最も簡単な方法は、リソース グループを削除することです。これにより、グループ内のすべてのリソースも削除されます。 このモジュールが終了したら、次の Azure コマンドを実行します。
 
     ```azurecli
     az group delete --resource-group popupResGroup
     ```
 
-When you're asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted. 
+削除の確定を求められたら、**[はい]** と答えます。 リソースが削除済みとなってコマンドが完了するまで、数分かかる場合があります。 

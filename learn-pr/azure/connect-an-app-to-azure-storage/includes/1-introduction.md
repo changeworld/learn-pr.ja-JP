@@ -1,10 +1,10 @@
-Imagine you're building a photo-sharing application. Every day, thousands of users take pictures and rely on your application to keep them safe and make them accessible across all their devices. Storing these photos is critical to your business, and you would like to ensure that the system used in your application is fast, reliable and secure. Ideally without you having to build all these aspects into the app.
+写真を共有するアプリケーションを作成しているところを想像してください。 毎日、何千人ものユーザーが写真を撮影し、そのアプリケーションを利用して、写真を見たり保護したりできるようにします。 写真は重要であり、使用するストレージ システムは、確実に高速で信頼性が高く堅牢なものにしたいと考えています。 さらに、完全にバックアップされてセキュリティで保護されている状態を確保し、これらのことすべてを理解したりストレージ システムに組み込んだりする必要がないことを望んでいます。 動いてくれるだけで十分です。
 
-Azure Storage provides such power, resiliency, and performance in the cloud. This module will provide you with the knowledge to be able to utilize the power of Azure Storage to achieve the reliability and performance in your app that you require. This knowledge can then be applied to any application.
+Azure Storage を使用すると、そのような機能、回復性、パフォーマンスがクラウドに提供されます。 このモジュールでは、Azure Storage の機能を利用して必要なアプリで信頼性とパフォーマンスを実現するための知識を提供します。 この知識は、任意のアプリケーションに適用できます。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-- Explore the data types and services supported by an Azure storage account
-- Create a new Azure storage account using the Azure portal
-- Create a new application and connect the app to an Azure Storage account.
+- Azure Storage がアプリに適しているかどうかを判断します
+- アプリで Azure Storage を使用するときの設計の考慮事項を評価します
+- 新しいアプリケーションを作成し、アプリを Azure Storage アカウントに接続します

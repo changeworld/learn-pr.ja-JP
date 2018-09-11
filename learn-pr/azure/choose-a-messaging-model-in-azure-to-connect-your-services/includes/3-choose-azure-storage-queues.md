@@ -1,63 +1,63 @@
-Suppose you are planning the architecture for your music-sharing application. You want to ensure that music files are uploaded to the web API reliably from the mobile app - we then want to deliver the details about new songs directly to the app when an artist adds new music to their collection. This is a perfect use of a message-based system and Azure offers two solutions to this problem:
+音楽共有アプリケーション用のアーキテクチャを計画中であるとします。 モバイル アプリから Web API に音楽ファイルが確実にアップロードされるようにし、その後、アーティストが新しい曲をそのコレクションに追加すると、新しい曲の詳細がアプリに直接配信されるようにします。 これは、メッセージ ベースのシステムの使用法として最適であり、Azure では、この問題に対して次の 2 つのソリューションが提供されています。
 
 - Azure Queue Storage
 - Azure Service Bus
 
-## What is Azure Queue Storage?
-Queue storage is a service that uses Azure Storage to store large numbers of messages that can be securely accessed from anywhere in the world using a simple REST-based interface. Queues can contain millions of messages, limited only by the capacity of the storage account that owns it.
+## <a name="what-is-azure-queue-storage"></a>Azure Queue Storage とは
+Queue Storage は、Azure Storage を使用して、REST ベースの単純なインターフェイスを介して世界中のどこからでも安全にアクセスできる多数のメッセージを格納するサービスです。 キューには数百万のメッセージを格納でき、それを所有するストレージ アカウントの容量のみが制限となります。
 
-## What is Azure Service Bus?
-Service Bus is a message broker system intended for enterprise applications. These apps often utilize multiple communication protocols, have different data contracts, higher security requirements, and can include both cloud and on-premises services. Service Bus is built on top of a dedicated messaging infrastructure designed for exactly these scenarios.
+## <a name="what-is-azure-service-bus"></a>Azure Service Bus とは
+Service Bus は、エンタープライズ アプリケーションを対象とするメッセージ ブローカー システムです。 多くの場合、これらのアプリは複数の通信プロトコルを利用し、さまざまなデータ コントラクトと、より高いセキュリティ要件を持ち、クラウドとオンプレミスの両方のサービスを含むことができます。 Service Bus は、こうしたシナリオに的を絞って設計された専用のメッセージング インフラストラクチャの上に構築されます。
 
-Both of these services are based on the idea of a "queue" which holds sent messages until the target is ready to receive them. If you've never worked with a message queue system before, they have several convenient benefits.
+これら両方のサービスは、送信されたメッセージを、ターゲットが受信できるようになるまで保持する "キュー" の概念に基づいています。 メッセージ キュー システムをまだ使用していない場合、使用するといくつかの便利な利点が得られます。
 
-## Increased reliability
-Queues are used by distributed applications as a temporary storage location for messages pending delivery to a destination component. The source component can add a message to the queue and destination components can retrieve the message at the front of the queue for processing. Queues increase the reliability of the message exchange because, at times of high demand, messages can simply wait until a destination component is ready to process them.
+## <a name="increased-reliability"></a>信頼性の向上
+キューは、分散アプリケーションによって、宛先コンポーネントへの配信が保留されているメッセージの一時保管場所として使用されます。 ソース コンポーネントでは、メッセージをキューに追加でき、宛先コンポーネントでは、そのメッセージをキューの先頭で取得して処理することができます。 キューにより、メッセージ交換の信頼性が向上します。それは混み合っているときに、宛先コンポーネント側でメッセージを処理する準備が整うまで、メッセージを単純に待機させることができるからです。
 
-## Message delivery guarantees
-Queuing systems usually guarantee delivery of each message in the queue to a destination component. However, these guarantees can take different approaches:
+## <a name="message-delivery-guarantees"></a>メッセージの配信保証
+キュー内の各メッセージを宛先コンポーネントに配信する処理は、通常、キュー システムによって保証されます。 ただし、このような保証は、次のようなさまざまなアプローチで実現できます。
 
-- **At-Least-Once Delivery.** In this approach, each message is guaranteed to be delivered to at least one of the components that retrieve messages from the queue. Note, however, that in certain circumstances, it is possible that the same message may be delivered more than once. For example, if there are two instances of a web app retrieving messages from a queue, ordinarily each message goes to only one of those instances. However, if one instance takes a long time to process the message, and a time-out expires, the message may be sent to the other instance as well. Your web app code should be designed with this possibility in mind.
+- **At-Least-Once 配信。** このアプローチでは、キューからメッセージを取得するコンポーネントの少なくとも 1 つへ、各メッセージが配信されることが保証されます。 ただし、特定の状況では、同じメッセージが複数回配信される可能性があります。 たとえば、キューからメッセージを取得する Web アプリのインスタンスが 2 つある場合、通常、各メッセージはこれらのインスタンスの 1 つだけに送信されます。 ただし、一方のインスタンスでメッセージの処理に時間がかかり、タイムアウトになった場合、もう一方のインスタンスにもメッセージが送信される可能性があります。 Web アプリ コードは、この可能性を考慮して設計する必要があります。
 
-- **At-Most-Once Delivery.** In this approach, each message is not guaranteed to be delivered, and there is a very small chance that it may not arrive. However, unlike At-Least-Once delivery, there is no chance that the message will be delivered twice. This is sometimes referred to as "automatic duplicate detection".
+- **At-Most-Once 配信。** このアプローチでは、各メッセージの配信は保証されず、各メッセージが届かない可能性がごくわずかにあります。 ただし、At-Least-Once 配信の場合とは異なり、同じメッセージが 2 回配信されることはありません。 これは、"自動重複データ検出" と呼ばれる場合もあります。
 
-- **First-In-First-Out (FIFO).** In most messaging systems, messages usually leave the queue in the same order in which they were added, but you should consider whether this order is guaranteed. If your distributed application requires that messages are processed in precisely the correct order, you must choose a queue system that includes a FIFO guarantee.
+- **先入れ先出し法 (FIFO)。** ほとんどのメッセージング システムでは、通常、メッセージはキューに入れられたのと同じ順番でキューから出されますが、この順番が保証されているかどうかを検討する必要があります。 分散アプリケーションにおいてメッセージが正確に正しい順序で処理される必要がある場合、FIFO 保証を含むキュー システムを選択する必要があります。
 
-## Transactional support
-Some closely related groups of messages may cause problems when delivery fails for one message in the group.
+## <a name="transactional-support"></a>トランザクションのサポート
+いくつかのメッセージ グループが密接に関連しているために、グループ内の 1 つのメッセージについて配信が失敗すると、問題が発生する場合があります。
 
-For example, consider an e-commerce application. When the user clicks the **Buy** button, a series of messages might be generated and sent off to various processing destinations:
+たとえば、e コマース アプリケーションを考えてみます。 ユーザーが**購入**ボタンをクリックすると、一連のメッセージが生成され、次のようにさまざまな処理を行う宛先に送信される可能性があります。
 
-- A message with the order details is sent to a fulfillment center
-- A message with the total and payment details is sent to a credit card processor. 
-- A message with the receipt information is sent to a database to generate an invoice for the customer
+- 注文の詳細を含むメッセージが、処理センターに送信されます。
+- 合計額と支払いの詳細を含むメッセージが、クレジット カード プロセッサに送信されます。 
+- 領収書情報を含むメッセージがデータベースに送信されて、顧客に対して請求書が生成されます。
 
-In this case, we want to make sure _all_ messages get processed, or none of them are processed. We won't be in business long if the credit card message is not delivered, and all our orders are fulfilled without payment! You can avoid these kinds of problems by grouping the two messages into a transaction. Message transactions succeed or fail as a single unit - just like in the database world. If the credit card details message delivery fails, then so will the order details message.
+この場合、_すべての_メッセージが確実に処理されるか、そうでなければ、どのメッセージも処理されないようにする必要があります。 クレジット カード メッセージが配信されずに、すべての注文内容が支払いなしに処理された場合、長くは営業を続けられなくなります。 このような問題は、2 つのメッセージをトランザクションにグループ化することによって回避できます。 メッセージ トランザクションは、データベースの場合と同様に、単一のユニットとして成功または失敗します。 クレジット カード情報のメッセージ配信が失敗した場合は、注文詳細のメッセージ配信も失敗します。
 
-## Which service should I choose?
-Having understood that the communication strategy for this architecture should be a message, you must choose whether to use Azure Storage queues or Azure Service Bus, both of which can be used to store and deliver messages between your components. Each has a slightly different feature set, which means you can choose one or the other, or use both, depending on the problem you are solving.
+## <a name="which-service-should-i-choose"></a>どのサービスを選択すべきか
+このアーキテクチャでの通信方法がメッセージである必要があることを理解できたら、Azure Storage キューと Service Bus のどちらを使用するかを選択する必要があります。これらは両者とも、コンポーネント間でメッセージを格納および配信するのに使用できます。 機能に若干の違いがあるため、解決する必要がある問題に応じて、どちらかを選択するか、または両方を使用することができます。
 
-#### Choose Service Bus queues if:
+#### <a name="choose-service-bus-queues-if"></a>次の場合は、Service Bus キューを選択します。
 
-- You need an At-Most-Once delivery guarantee.
-- You need a FIFO guarantee.
-- You need to group messages into transactions.
-- You want to receive messages without polling the queue.
-- You need to provide a role-based access model to the queues.
-- You need to handle messages larger than 64 KB but less than 256 KB.
-- Your queue size will not grow larger than 80 GB.
-- You would like to be able to publish and consume batches of messages.
+- At-Most-Once 配信保証が必要である。
+- FIFO 保証が必要である。
+- メッセージをトランザクションにグループ化する必要がある。
+- キューをポーリングせずにメッセージを受信する必要がある。
+- キューにロール ベースのアクセス モデルを提供する必要がある。
+- 64 KB を超えるが 256 KB 未満のメッセージを処理する必要がある。
+- キューのサイズが 80 GB を超えることがない。
+- バッチ メッセージを発行および使用できる必要がある。
 
-Queue storage isn't quite as feature-rich, but if you don't need any of those features, it can be a simpler choice. In addition, it's the best solution if your app has any of the following requirements.
+Queue Storage は機能があまり豊富ではありませんが、これらのいずれの機能も必要ない場合は、より単純な方法として選択できます。 また、アプリが次のいずれかの要件を持つ場合、Queue Storage は最良のソリューションです。
 
-#### Choose Queue storage if:
+#### <a name="choose-queue-storage-if"></a>次の場合は、Queue Storage を選択します。
 
-- You need an audit trail of all messages that pass through the queue.
-- You expect the queue to exceed 80 GB in size.
-- You want to track progress for processing a message inside of the queue.
+- キューを通ったすべてのメッセージの監査証跡が必要である。
+- キューのサイズが 80 GB を超えると予想される。
+- キュー内のメッセージ処理の進行状況を追跡する必要がある。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-A queue is a simple, temporary storage location for messages sent between the components of a distributed application. Use a queue to organize messages and gracefully handle unpredictable surges in demand.
+キューは、分散アプリケーションのコンポーネント間で送信されるメッセージ用の一時的な簡易保存場所です。 キューを使用すると、メッセージを整理し、予測できない需要急増を適切に対処できます。
 
-Use Storage queues when you want a simple and easy-to-code queue system. For more advanced needs, use Service Bus queues.
+簡単にコーディングできるシンプルなキュー システムを望んでいる場合は、Storage キューを使用します。 より高度なニーズに対しては、Service Bus キューを使用します。

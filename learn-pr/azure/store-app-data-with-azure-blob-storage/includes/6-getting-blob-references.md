@@ -1,20 +1,20 @@
-Working with an individual blob in the Azure Storage SDK for .NET Core requires a *blob reference* &mdash; an instance of an `ICloudBlob` object.
+.NET Core 向けの Azure Storage SDK の個々の BLOB の操作には、`ICloudBlob` オブジェクトのインスタンスである *BLOB 参照*が必要です。
 
-You can get an `ICloudBlob` by requesting it with the blob's name or selecting it from a list of blobs in the container. Both require a `CloudBlobContainer`, which we saw how to get in the last unit.
+`ICloudBlob` は、BLOB 名を使用して要求するか、コンテナーの BLOB 一覧から選択して取得することができます。 いずれにも、最後のユニットで入手方法を確認した、`CloudBlobContainer` が必要です。
 
-## Getting blobs by name
+## <a name="getting-blobs-by-name"></a>名前での BLOB の取得
 
-Call one of the `GetXXXReference` methods on a `CloudBlobContainer` to get an `ICloudBlob` by name. If you know the type of the blob you are retrieving, use one of the specific methods (`GetBlockBlobReference`, `GetAppendBlobReference`, or `GetPageBlobReference`) to get an object that includes methods and properties tailored for that blob type.
+`CloudBlobContainer` の `GetXXXReference` メソッドの 1 つを呼び出し、名前で `ICloudBlob` を取得します。 取得する BLOB の種類がわかっている場合、より具体的なメソッドを選んで使用します (`GetBlockBlobReference`、`GetAppendBlobReference`、または `GetPageBlobReference`)。
 
-None of these methods make network calls, nor do they confirm whether or not the targeted blob actually exists. They only create a blob reference object locally, which can then be used to call methods that *do* operate over the network and interact with blobs in storage. A separate method, `GetBlobReferenceFromServerAsync`, does call the Blob storage API and will throw an exception if the blob doesn't already exist.
+これらのいずれのメソッドもネットワーク呼び出しを行ったり、BLOB が実際に存在するか確認しません。 別のメソッドの `GetBlobReferenceFromServerAsync` は BLOB ストレージ API を呼び出し、BLOB がまだ存在しない場合は、例外をスローします。
 
-## Listing blobs in a container
+## <a name="listing-blobs-in-a-container"></a>コンテナー内の BLOB を列挙する
 
-You can get a list of the blobs in a container using `CloudBlobContainer`'s `ListBlobsSegmentedAsync` method. *Segmented* refers to the separate pages of results returned &mdash; a single call to `ListBlobsSegmentedAsync` is never guaranteed to return all the results in a single page. We may need to call it repeatedly using the `ContinuationToken` it returns to work our way through the pages. This makes the code for listing blobs a little more complex than the code for uploading or downloading, but there's a standard pattern you can use to get every blob in a container:
+`CloudBlobContainer` の `ListBlobsSegmentedAsync` メソッドを使用すると、コンテナーの BLOB の一覧を入手できます。 *Segmented* とは、戻された結果の別のページを指します。`ListBlobsSegmentedAsync` に 1 回呼び出しを行っても、1 ページにすべての結果を返されることは保証されていません。 ページを進めるには、それが戻した `ContinuationToken` を使用して繰り返し呼び出す必要があります。 これは、アップロードまたはダウンロード用のコードよりも、BLOB を列挙するコードを少し複雑にしますが、コンテナー内のすべての BLOB を取得するために使用できる標準のパターンがあります。
 
 ```csharp
 BlobContinuationToken continuationToken = null;
-BlobResultSegment resultSegment = null;
+BlobResultSegment resultSegment = null; 
 
 do
 {
@@ -26,16 +26,13 @@ do
 } while (continuationToken != null);
 ```
 
-This will call `ListBlobsSegmentedAsync` repeatedly until `continuationToken` is `null`, which signals the end of the results.
+これは、`continuationToken` が `null` (結果の終わりを示します) になるまで、`ListBlobsSegmentedAsync` を繰り返し呼び出します。
 
-> [!IMPORTANT]
-> Never assume that `ListBlobsSegmentedAsync` results will arrive in a single page. Always check for a continuation token and use it if it's present.
+### <a name="processing-list-results"></a>一覧の結果の処理
 
-### Processing list results
+`ListBlobsSegmentedAsync` から戻されるオブジェクトには、`IEnumerable<IListBlobItem>` 型の `Results` プロパティが含まれます。 `IListBlobItem` には、BLOB のコンテナーと URL に関するいくつかのプロパティが含まれますが、アップロードまたはダウンロード方法は含まれていません。 これは、一部の結果オブジェクトが、個々の BLOB ではなく仮想ディレクトリを表す `CloudBlobDirectory` オブジェクトである場合があるからです。
 
-The object you'll get back from `ListBlobsSegmentedAsync` contains a `Results` property of type `IEnumerable<IListBlobItem>`. The `IListBlobItem` interface includes only a handful of properties about the blob's container and URL, and isn't very useful by itself.
-
-To get useful blob objects out of `Results`, you can use the `OfType<>` method to filter and cast the results to more specific blob object types. Here are a few examples:
+個々の BLOB に興味がある場合は、結果のフィルターに `OfType<>` メソッドを使用することができます。 次に例をいくつか示します。
 
 ```csharp
 // Get all blobs
@@ -45,14 +42,13 @@ var allBlobs = resultSegment.Results.OfType<ICloudBlob>();
 var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 ```
 
-> [!TIP]
-> Using `OfType<>` requires a reference to the `System.Linq` namespace (`using System.Linq;`).
+`OfType<>` の使用には、`System.Linq` 名前空間への参照が必要です (`using System.Linq;`)。
 
-## Exercise
+## <a name="exercise"></a>演習
 
-One of the features in our app requires getting a list of blobs from the API. We'll use the pattern shown above to list all the blobs in our container. As we process the list, we get the name of each blob.
+アプリケーションの機能の 1 つに、API からの BLOB の一覧を取得する必要があるものがあります。 前述のパターンを使用して、コンテナーのすべての BLOB を列挙します。 一覧を処理してゆくと、各 BLOB の名前を取得できます。
 
-Using the editor, replace `GetNames` in `BlobStorage.cs` with the following code and save your changes.
+エディターで `BlobStorage.cs` を開き、次のコードを `GetNames` に入力します。
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()
@@ -80,7 +76,4 @@ public async Task<IEnumerable<string>> GetNames()
 }
 ```
 
-> [!TIP]
-> Note that the method signature now needs to specify `async`.
-
-The names returned by this method are processed by `FilesController` to turn them into URLs. When they are returned to the client, they are rendered as hyperlinks on the page.
+このメソッドによって返された名前は、`FilesController` によって URL に変換され処理されます。 これがクライアントに返されると、ページでハイパーリンクとしてレンダリングされます。

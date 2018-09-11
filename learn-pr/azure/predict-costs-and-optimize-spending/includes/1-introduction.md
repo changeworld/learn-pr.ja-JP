@@ -1,22 +1,19 @@
-When planning a solution in the cloud, there's always the challenge of balancing cost against performance. It can feel like a guessing game whether the selected options will stay within budget, or if we'll have a surprise on our next bill!
+クラウドでソリューションを計画するとき、コストとパフォーマンスのバランスを取るという課題が常に存在します。 選択したオプションが予算内に収まるか、来月の請求書を見てびっくりするのか、まるで推測ゲームのようです。
 
-We need to be able to confidently answer several questions:
+次のような質問に自信を持って答えられなければなりません。
 
-- What will this solution cost this fiscal year?
-- Is there a configuration we could use to save money?
-- Is there a way to estimate how a change would impact your cost and performance _without_ putting it into a production system?
+- 今期の会計年度においてこのソリューションはいくらかかるか? 
+- コストを節約できる構成はあるか? 
+- 運用システムを_使用せずに_、変更がコストとパフォーマンスに与える影響を推定する方法はあるか?
 
-In this module, we'll explore the tools you can use to answer these questions and more.
+このモジュールでは、以上のような質問に答えるためのツールについて学習します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
+> [!div class="checklist"]
+> * Azure 料金計算ツールでコストを見積もる。
+> * Azure Cost Management と Azure Advisor でコストを予測し、最適化する。
+> * インフラストラクチャ コストを節約するためのベスト プラクティス。
+> * ライセンス コストを節約するためのベスト プラクティス。
 
-In this module, you will:
-
-- Estimate costs with the Azure pricing calculator.
-- Predict and optimize costs with Azure Cost Management and Azure Advisor.
-- Best practices for saving on infrastructure costs.
-- Best practices for saving on licensing costs.
-
-## Prerequisite
-
-- An understanding of your options within Azure infrastructure components.
+## <a name="prerequisite"></a>前提条件 
+- Azure インフラストラクチャ コンポーネント内のオプションを理解しておくこと。 
