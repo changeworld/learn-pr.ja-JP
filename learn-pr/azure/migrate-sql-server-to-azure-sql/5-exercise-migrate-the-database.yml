@@ -4,11 +4,17 @@ title: データベースを移行する - パート 2
 metadata:
   title: データベースを移行する - パート 2
   description: データベースを移行する - パート 2
-  ms.openlocfilehash: 02cd284b1a17d84eb9590b22857b3f1658894383
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7c561173516637e17491f2b04ec20dd873bfadb0
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833026"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310539"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-migrate-the-database.md)]'

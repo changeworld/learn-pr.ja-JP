@@ -3,14 +3,17 @@ uid: learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
 metadata:
   title: ディレクトリを作成する
   description: ディレクトリを作成し、一時的なライセンスを取得する方法を学習します。
-  displayType: one-column
-  ms.openlocfilehash: 554e80f34cff1228f9c71dfde416dbbc36125d17
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 500b2fd8cee6c44a749969b42906ea9dbae489e8
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43454429"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230553"
 title: ディレクトリを作成する
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 15
 content: '[!include[](includes/3-build-azure-ad.md)]'

@@ -4,11 +4,16 @@ title: データベースを評価する
 metadata:
   title: データベースを評価する
   description: データベースを評価する
-  ms.openlocfilehash: 0fe2707404e69d91504f877ca7ed281da0100752
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7549838e13434b57ba8d1c27bd20479a657e9ea0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833019"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243694"
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-assess-your-database.md)]'

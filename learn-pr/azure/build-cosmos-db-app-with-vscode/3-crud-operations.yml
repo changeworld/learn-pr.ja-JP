@@ -3,12 +3,17 @@ uid: learn.cosmos-db-app-with-vscode.3-crud-operations
 metadata:
   title: ドキュメントをプログラムで作成、読み取り、更新、および削除する
   description: ドキュメントをプログラムで作成、読み取り、更新、および削除する
-  ms.openlocfilehash: 875df1e7f446d190669953157ebcc310040a2fd2
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: beca83d0994306a74ea9ca77a4b83108d95424b9
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833278"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242572"
 title: ドキュメントをプログラムで作成、読み取り、更新、および削除する
 durationInMinutes: 10
 content: '[!include[](includes/3-crud-operations.md)]'

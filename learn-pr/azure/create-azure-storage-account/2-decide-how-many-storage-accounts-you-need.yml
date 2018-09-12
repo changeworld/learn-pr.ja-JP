@@ -4,11 +4,16 @@ title: 必要なストレージ アカウントの数を決定する
 metadata:
   title: 必要なストレージ アカウントの数を決定する
   description: 必要なストレージ アカウントの数を決定する
-  ms.openlocfilehash: e6bb826a247384dac572d09230f1caaf844316de
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8206043c73e4b0dbb0a6eeca687a2b24fe4ae66c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471577"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244597"
 durationInMinutes: 10
 content: '[!include[](includes/2-decide-how-many-storage-accounts-you-need.md)]'

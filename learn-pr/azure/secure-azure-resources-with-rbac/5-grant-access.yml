@@ -3,14 +3,17 @@ uid: learn.secure-azure-resources-with-rbac.5-grant-access
 metadata:
   title: RBAC と Azure portal を使用してアクセス権を付与する
   description: Azure portal を使用してリソース グループ内に仮想マシンを作成して管理するためのアクセス権をユーザーに付与する方法について学習します。
-  displayType: one-column
-  ms.openlocfilehash: a2e4aa48292ea8b1535d9a61e643ca5cdfe3abcb
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 93e2f26ff07bff3392626186c0bc5d1b443e81c6
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43455120"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231063"
 title: RBAC と Azure portal を使用してアクセス権を付与する
-labOnDemandUrl: https://labondemand.com/Launch/00000000
 durationInMinutes: 10
 content: '[!include[](includes/5-grant-access.md)]'

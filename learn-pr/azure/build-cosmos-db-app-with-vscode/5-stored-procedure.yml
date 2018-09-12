@@ -3,12 +3,18 @@ uid: learn.cosmos-db-app-with-vscode.5-stored-procedure
 metadata:
   title: アプリからストアド プロシージャを作成して実行する
   description: アプリからストアド プロシージャを作成して実行する
-  ms.openlocfilehash: 5a3c2343fd18ad8a34657d847ef0addae7b59910
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 239c6b0dce0c55718cb1b19e467bc4a216c7fa4c
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833283"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310903"
 title: アプリからストアド プロシージャを作成して実行する
+azureSandbox: true
 durationInMinutes: 7
 content: '[!include[](includes/5-stored-procedure.md)]'
