@@ -3,13 +3,12 @@ uid: learn.choose-storage-approach-in-azure.2-classify-data
 metadata:
   title: データを分類する
   description: データを分類する
-  displayType: one-column
-  ms.openlocfilehash: 361eb3c2315493975eea2c6bcab89b3baaa21913
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.openlocfilehash: bff2656d47833d65f3c9fb27e38faa1a74dfd7b2
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252543"
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43362667"
 title: データを分類する
 durationInMinutes: 10
 content: >
@@ -24,10 +23,10 @@ quiz:
       incorrectExplanation: すべてのユーザーの情報が同じわけではないので、構造化された形式でこのデータを格納するのは理想的ではありません。
     - content: 半構造化
       isCorrect: true
-      correctExplanation: 正解です。プロフィール情報を登録しないユーザーもおり、将来一部のユーザーに新しいフィールドを追加する可能性があるため、このユーザー データは半構造化されています。 これは、すべてのデータが同じスキーマに従うわけではなく、データの各部分が固有の構造を持つ可能性があることを示すので、半構造化されたデータです。
+      correctExplanation: 正解です。すべてのユーザーがプロファイル情報を持っているわけではなく、将来一部のユーザーに新しいフィールドを追加する可能性があるため、このユーザー データは半構造化されています。 これは、すべてのデータが同じスキーマに従うわけではなく、データの各部分が固有の構造を持つ可能性があることを示すので、半構造化されたデータです。
     - content: 非構造化
       isCorrect: false
-      incorrectExplanation: 非構造化形式のデータを処理するのは難しいので、非構造化データとしてユーザー データを格納することは推奨されません。
+      incorrectExplanation: 非構造化形式のデータを処理するのは難しいので、非構造化データとしてユーザー データを格納することはお勧めできません。
   - content: 非構造化データに構造化されたメタデータを関連付けることはできますか。
     choices:
     - content: はい

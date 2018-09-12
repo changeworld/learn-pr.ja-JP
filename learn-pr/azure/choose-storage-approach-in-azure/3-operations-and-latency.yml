@@ -3,13 +3,12 @@ uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
   title: 操作と待機時間
   description: 操作と待機時間
-  displayType: one-column
-  ms.openlocfilehash: 3d67e7dd28258dc8accc73c36ae7573e143b7c02
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.openlocfilehash: 27c0f598fbb80ee732a1c83b899cdfdffc0ef35d
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252446"
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363005"
 title: 操作と待機時間
 durationInMinutes: 10
 content: >
@@ -19,12 +18,12 @@ quiz:
   questions:
   - content: オンライン小売アプリケーション用のユーザー データが格納されているデータベースの操作ニーズをどのように分類しますか。 データ セットには、発送の個人設定、以前の注文、製品レビューに表示されるプロファイル情報が含まれます。
     choices:
-    - content: アプリケーションでは、速い取得時間と大量の読み書きが必要であり、すべてのプロパティに対してクエリを実行できる必要があります
+    - content: アプリケーションでは、速い取得時間と大量の読み書きが必要であり、すべてのプロパティに対してクエリを実行できる必要があります。
       isCorrect: true
       correctExplanation: ユーザーはユーザー データを頻繁に作成および更新し、アプリケーションではユーザー データの注文情報が更新されます。 オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。 したがって、要件を洗い出すときは、最終的な客だけでなく、データのすべてのユーザーのことを考える必要があります。
-    - content: アプリケーションでは、速い取得時間と大量の読み書きが必要であり、限られたプロパティ セットのクエリを実行できる必要があります
+    - content: アプリケーションでは、速い取得時間と大量の読み書きが必要であり、限られたプロパティ セットのクエリを実行できる必要があります。
       isCorrect: false
       correctExplanation: オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。したがって、すべてのプロパティにインデックスを付けて、クエリ可能にする必要があります。
-    - content: アプリケーションは、遅い取得時間と読み取り専用の操作をサポートできます
+    - content: アプリケーションでは、遅い取得時間と読み取り専用の操作をサポートできます。
       isCorrect: false
-      incorrectExplanation: 客は自分のプロファイル情報を作成して更新するので、ユーザー データは読み取り/書き込みにする必要があります。
+      incorrectExplanation: 客は自分のプロファイル情報を作成して更新するので、ユーザー データを読み取り/書き込みにする必要があります。
