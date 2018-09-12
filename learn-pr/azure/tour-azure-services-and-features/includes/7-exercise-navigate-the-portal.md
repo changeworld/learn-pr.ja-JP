@@ -1,168 +1,168 @@
-The Azure Portal has a lot of features and services available; let's look at some of the more common areas you'll tend to use:
+Azure portal では、多くの機能とサービスを使用できます。利用機会の多い一般的な領域のいくつかを見てみましょう。
 
-- [Services blade](#services-blade)
-- [Notifications blade](#notifications-blade)
+- [[サービス] ブレード](#services-blade)
+- [[通知] ブレード](#notifications-blade)
 - [Azure Cloud Shell](#cloud-shell)
-- [Settings](#settings-blade)
-- [Feedback blade](#feedback-blade)
-- [Help blade](#help-blade)
-- [Directory + subscription blade](#subscriptions-blade)
-- [Profile settings](#profile-blade)
+- [設定](#settings-blade)
+- [[フィードバック] ブレード](#feedback-blade)
+- [[ヘルプ] ブレード](#help-blade)
+- [[ディレクトリ + サブスクリプション] ブレード](#subscriptions-blade)
+- [プロファイルの設定](#profile-blade)
 
 <a name="services-blade"></a>
 
-## Services blade
+## <a name="services-blade"></a>[サービス] ブレード
 
-1. In the left-hand pane, click **All services**. Take a couple of minutes to scroll down the list to see how many services Azure offers.
+1. 左側のウィンドウで、**[すべてのサービス]** をクリックします。 数分かかりますが、下方向に一覧をスクロールすると、Azure で提供しているサービスの数がわかります。
 
-1. Click **Virtual machines**. The **Virtual Machines** blade appears. There is nothing currently showing because you have not defined any virtual machines.
+1. **[仮想マシン]** をクリックします。 **[仮想マシン]** ブレードが表示されます。 仮想マシンが定義されていないため、現在のところは何も表示されません。
 
-1. Click the **+ Add** button. The **Compute** blade appears, as in the previous exercise.
+1. **[+ 追加]** ボタンをクリックします。 前の演習と同様に **[コンピューティング]** ブレードが表示されます。
 
-1. Click the **X** in the top right-hand corner to close the **Compute** blade.
+1. 右上隅の **X** をクリックして **[コンピューティング]** ブレードを閉じます。
 
-1. Click the **X** in the top right-hand corner to close the **Virtual machines** blade. You should now be back at the dashboard page.
+1. 右上隅の **X** をクリックして **[仮想マシン]** ブレードを閉じます。 ダッシュボード ページに戻るはずです。
 
 <a name="notifications-blade"></a>
 
-## Notifications blade
+## <a name="notifications-blade"></a>[通知] ブレード
 
-1. On the top menu on the right side, click the bell icon. You can now see any notifications.
+1. 右側の上部メニューで、鈴のアイコンをクリックします。 通知があれば表示されます。
 
-1. If any notifications appear, on one of them, hover your mouse, and then Click the **X** to dismiss that notification.
+1. 通知が表示された場合、そのうちの 1 つにマウス カーソルを合わせて **X** をクリックすると、その通知が破棄されます。
 
-1. To the right of **Dismiss**, click **All**. You should have no notifications showing.
+1. **[破棄]** の右にある **[すべて]** をクリックします。 通知がすべて消えるはずです。
 
-1. Click the **X** in the top right-hand corner to close the **Notifications** pane.
+1. 右上隅の **X** をクリックして **[通知]** ウィンドウを閉じます。
 
 <a name="cloud-shell"></a>
 
-## Azure Cloud Shell
+## <a name="azure-cloud-shell"></a>Azure Cloud Shell
 
-1. Click the **Cloud Shell** icon (>_) to create a Cloud Shell session.
+1. Cloud Shell セッションを作成するには、**[Cloud Shell]** アイコン (>_) をクリックします。
 
-1. Click **Bash (Linux)** or **PowerShell (Linux)**, depending on your personal preferences.
+1. 個人の好みに応じて **[Bash (Linux)]** または **[PowerShell (Linux)]** をクリックします。
 
-1. In the **You have no storage mounted** screen, click **Create storage**. The Cloud Shell window appears at the bottom of the screen.
+1. **[ストレージがマウントされていません]** 画面で、**[ストレージの作成]** をクリックします。 [Cloud Shell] ウィンドウが画面の下部に表示されます。
 
-1. In the prompt, type *AZ Help*, and press Enter.
+1. プロンプトに「*AZ Help*」と入力し、Enter キーを押します。
 
-1. Click the language drop-down on the left of the bar, and change the scripting language from PowerShell to Bash or from Bash to PowerShell, depending on which option you selected. Click **Restart** when prompted. The screen displays **Restarting your Cloud Shell**.
+1. バーの左にある言語ドロップダウンをクリックし、選択したオプションに合わせてスクリプト言語を PowerShell から Bash に変更するか、Bash から PowerShell に変更します。 確認を求めるメッセージが表示されたら、**[再起動]** をクリックします。 画面に **[Cloud Shell を再起動しています]** と表示されます。
 
-1. In the restarted shell, type *AZ Help* and press Enter.
+1. 再起動後の Shell に「*AZ Help*」と入力し、Enter キーを押します。
 
-1. In the Cloud Shell window, click the **Settings** (cog) icon. Note that you can change the text size and the font.
+1. [Cloud Shell] ウィンドウで **[設定]** (歯車) アイコンをクリックします。 テキストのサイズとフォントを変更できます。
 
-1. Click the **X** in the top right-hand corner to close the **Cloud Shell** pane.
+1. 右上隅の **X** をクリックして **[Cloud Shell]** ウィンドウを閉じます。
 
 <a name="settings-blade"></a>
 
-## Settings
+## <a name="settings"></a>設定
 
-1. Click the **cog** icon to open the **Portal settings** pane.
+1. **歯車**アイコンをクリックすると、**[ポータルの設定]** ウィンドウが開きます。
 
-1. Drop down the **Log me out when inactive** setting, and select **After one hour**.
+1. **[非アクティブのときにログアウトする]** ドロップダウンから **[1 時間後]** を選択します。
 
-1. Under **Choose a theme**, select the different themes and choose the one you like the best.
+1. **[テーマの選択]** で別のテーマを選択します。自分が最も気に入ったテーマを選択してください。
 
-1. Under **High contrast theme**, try the three different options.
+1. **[ハイ コントラストのテーマ]** で異なるオプションを 3 つ試します。
 
-1. Disable Toast notifications.
+1. トースト通知を無効にします。
 
-1. Note the double-click to change the dashboard theme setting.
+1. ダブルクリックすると、ダッシュボードのテーマ設定が変わります。
 
-1. Click **Apply** to accept your changes.
+1. **[適用]** をクリックし、変更を承諾します。
 
-1. Under **Language**, select **Español**, and then click the **Refresh** button. If a **Translate this page** dialog box appears, close the box. Note that the whole portal is now in Spanish.
+1. **[言語]** で **[Español]** を選択し、**[更新]** をクリックします。 **[このページを翻訳する]** ダイアログ ボックスが表示された場合、ボックスを閉じます。 ポータル全体がスペイン語になりました。
 
-1. Click the **cog** icon in the top menu bar and, under **Language**, select **English**. Click the **Actualizar** button. The portal returns to English.
+1. 上部のメニュー バーにある**歯車**アイコンをクリックし、**[言語]** で **[English]** を選択します。 **[Actualizar]** ボタンをクリックします。 ポータルが英語に戻ります。
 
 <a name="feedback-blade"></a>
 
-## Feedback blade
+## <a name="feedback-blade"></a>[フィードバック] ブレード
 
-1. Click the **smiley face** icon to open the **Send us feedback** blade.
+1. **笑顔**のアイコンをクリックすると、**[フィードバックの送信]** ブレードが開きます。
 
-1. Type your impressions of Azure in the **Tell us about your experience** box, click the box that says **Microsoft can email you about your feedback**, and click **Submit Feedback**.
+1. **[ご意見やご感想をお聞かせください]** ボックスに Azure に対する印象を入力し、**[Microsoft からフィードバックについてメールをお送りする場合があります]** ボックスをクリックし、**[フィードバックの送信]** をクリックします。
 
-1. A **Feedback sent** message will appear, and then close. You should now be back at the dashboard.
+1. **[フィードバックが送信されました]** というメッセージが表示され、閉じられます。 ダッシュボードに戻るはずです。
 
 <a name="help-blade"></a>
 
-## Help blade
+## <a name="help-blade"></a>[ヘルプ] ブレード
 
-1. Click the question mark to show the **Help** blade.
+1. 疑問符をクリックすると、**[ヘルプ]** ブレードが表示されます。
 
-1. Click the **Help and Support** button.
+1. **[ヘルプとサポート]** ボタンをクリックします。
 
-1. In the **Help + Support** blade, under **Support**, click **New support request**.
+1. **[ヘルプとサポート]** ブレードの **[サポート]** で **[新しいサポート要求]** をクリックします。
 
-1. In the Basics blade, under **Issue type**, select **Technical**.
+1. [基本] ブレードの **[問題の種類]** で **[技術]** を選択します。
 
-1. Under **Subscription**, click your subscription name.
+1. **[サブスクリプション]** で、サブスクリプションの名前をクリックします。
 
-1. Under **Service**, select **Virtual Machine running Windows**.
+1. **[サービス]** で **[Windows を実行している仮想マシン]** を選択します。
 
-1. Because you do not have a paid support plan, there are limited support options. Under **Upgrade your support plan**, click **Choose a plan**.
+1. 有料サポート プランをご利用ではないため、サポート オプションが限られています。 **[サポート プランをアップグレードする]** で **[プランの選択]** をクリックします。
 
-1. In the **Support Plans** blade, there are four available plans - Basic, Developer, Standard, and Professional Direct. Compare the options offered by each plan, and then Click the **X** at the top right to close the **Support Plans** blade.
+1. **[サポート プラン]** ブレードには、Basic、Developer、Standard、Professional Direct という 4 つのプランがあります。 プランごとのオプションを比較したら、右上隅の **X** をクリックして **[サポート プラン]** ブレードを閉じます。
 
-1. Close the **Support options** blade.
+1. **[サポート オプション]** ブレードを閉じます。
 
-1. Close the **Basics** blade.
+1. **[基本]** ブレードを閉じます。
 
-1. Close the **New support request** blade.
+1. **[新しいサポート要求]** ブレードを閉じます。
 
-1. Close the **Help and Support** blade.
+1. **[ヘルプとサポート]** ブレードを閉じます。
 
-1. Click the **Help** icon again.
+1. **[ヘルプ]** アイコンをもう一度クリックします。
 
-1. Click **What's new** to see what features have recently been released. Also note the other help options:
+1. **[新機能]** をクリックすると、最近リリースされた機能が表示されます。 他のヘルプ オプションにもご留意ください。
 
-- Azure roadmap
-- Launch guided tour
-- Keyboard shortcuts
-- Show diagnostics
-- Privacy + terms
+- Azure のロードマップ
+- ガイド付きツアーの起動
+- キーボード ショートカット
+- 診断の表示
+- プライバシーと使用条件
 
-11. Click the **X** in the top right-hand corner to close the **Help** blade.
+11. 右上隅の **X** をクリックして **[ヘルプ]** ブレードを閉じます。
 
-11. Close the **What's new** blade. You should now be back to the dashboard.
+11. **[新機能]** ブレードを閉じます。 ダッシュボードに戻るはずです。
 
 <a name="subscription-blade"></a>
 
-## Directory and subscription
+## <a name="directory-and-subscription"></a>ディレクトリとサブスクリプション
 
-1. Click the **Book and Filter** icon to show the **Directory + subscription** blade.  This is where you can switch between multiple directories if you have more than one. Because you do not have additional directories, you will not be able to switch directories.
+1. **本とフィルター**のアイコンをクリックすると、**[ディレクトリ + サブスクリプション]** ブレードが表示されます。  複数のディレクトリがある場合は、ここでディレクトリを切り替えることができます。 ディレクトリを追加していないため、ディレクトリを切り替えることはできません。
 
-1. Click the **X** in the top right-hand corner to close the **Directory + subscription** blade.
+1. 右上隅の **X** をクリックして **[ディレクトリ + サブスクリプション]** ブレードを閉じます。
 
 <a name="profile-blade"></a>
 
-## Profile settings
+## <a name="profile-settings"></a>プロファイルの設定
 
-1. Click on your name in the top right-hand corner of the portal. Options include:
+1. ポータルの右上隅にある名前をクリックします。 次のオプションがあります。
 
-    - Sign out of Azure
-    - Change password
-    - Change contact information
-    - View permissions
-    - Submit an idea to the Azure team
-    - View your bill
-    - Switch directory (shows the **Directory + subscription** blade as in the previous section)
+    - Azure からサインアウトする
+    - パスワードの変更
+    - 連絡先情報の変更
+    - アクセス許可の表示
+    - Azure チームにアイデアを送信する
+    - 課金状況の表示
+    - ディレクトリを切り替えます (前のセクションと同じように、**[ディレクトリ + サブスクリプション]** ブレードが表示されます)。
 
-1. Click **View my bill** takes you to the **Cost Management + Billing - Invoices** page, which helps you analyze where Azure is generating costs.
+1. **[明細の表示]** をクリックすると、**[コスト管理 + 課金 - 請求書]** ページが表示されます。このページは、Azure におけるコストの発生場所の分析に役立ちます。
 
-1. Under **Subscription or reserved instance**, select your subscription.
+1. **[サブスクリプションまたは予約済みインスタンス]** でご利用のサブスクリプションを選択します。
 
-1. Click a billing period.
+1. 請求期間をクリックします。
 
-1. Note the service costs. These should be minimal with your current subscription.
+1. サービス コストに注意してください。 現在のサブスクリプションで最小限にする必要があります。
 
-1. Click the **X** in the top right-hand corner to close the **Costs by service** blade.
+1. 右上隅の **X** をクリックして **[サービスごとのコスト]** ブレードを閉じます。
 
-1. Click the **X** in the top right-hand corner to close the **Cost Management + Billing - Invoices** page.
+1. 右上隅の **X** をクリックして **[コスト管理 + 課金 - 請求書]** ページを閉じます。
 
-1. You should now be back at the dashboard.
+1. ダッシュボードに戻るはずです。
 
-Now that we've explored all the main areas of the Azure portal, let's look at one of the most useful features - Dashboards.
+Azure portal の主な領域はすべて確認しました。次は、最も便利な機能の 1 つであるダッシュボードを見てみましょう。

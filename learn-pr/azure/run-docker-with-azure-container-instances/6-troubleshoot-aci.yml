@@ -4,12 +4,17 @@ interactive: bash
 metadata:
   title: Azure Container Instances のトラブルシューティング
   description: Azure Container Instances のトラブルシューティング。
-  ms.openlocfilehash: 001b41d67dc405e627156cecc5cf40107eb8d5ec
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 637aa9bd41a56e0b145477822c05c9859b594388
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833871"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232627"
 title: Azure Container Instances のトラブルシューティング
 durationInMinutes: 10
 content: '[!include[](includes/6-troubleshoot-aci.md)]'

@@ -1,16 +1,16 @@
-Azure is a cloud platform that provides the compute, storage, and networking resources needed to build cloud-hosted applications. As a new user, the Azure Portal is likely to be the primary way you will interact with Azure. The Azure Portal lets you create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool since you can survey all available resources and use guided wizards to create the ones you need.
+Azure はクラウド プラットフォームであり、クラウドでホストされるアプリケーションの構築に必要なコンピューティング リソース、ストレージ リソース、ネットワーク リソースを提供します。 新しいユーザーが Azure とやり取りするための主要な方法となるのが Azure portal です。 Azure portal では、すべての Azure リソースを作成し、管理できます。 たとえば、新しいデータベースを設定したり、仮想マシンの計算処理能力を増やしたり、毎月のコストを監視したりできます。 利用できるすべてのリソースを監視したり、ガイド付きのウィザードを利用して必要なリソースを作成したりできるので、学習ツールとしても優れています。
 
-Here you will learn how to create an Azure account, sign in to the portal, and navigate the portal interface. You will customize the dashboard, so it is convenient to locate and monitor your most essential services.
+ここでは、Azure アカウントを作成し、ポータルにサインインし、ポータルのインターフェイスを操作する方法を学習します。 最も重要なサービスを簡単に見つけて監視できるように、ダッシュボードをカスタマイズします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Create an Azure account
-- Navigate the Azure portal
-- Customize the dashboard
+- Azure アカウントの作成
+- Azure portal 内の移動
+- ダッシュボードのカスタマイズ
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Knowledge of basic cloud computing terms and concepts
-- A valid credit card to register with Azure
+- 基本的なクラウド コンピューティングの用語と概念の知識
+- Azure に登録する有効なクレジット カード

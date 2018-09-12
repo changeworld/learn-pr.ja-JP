@@ -3,16 +3,19 @@ uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
 metadata:
   title: 知識チェック - RBAC とは何ですか?
   description: 知識チェック - RBAC とは何ですか?
-  displayType: one-column
-  ms.openlocfilehash: 973a839a37cfc03f3078519642d2216d4983ef15
-  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 85b15c5e29716aa4aa54bc49c7ad6c016901c41b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43478879"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243252"
 title: 知識チェック - RBAC とは何ですか?
 durationInMinutes: 3
-content: 知識チェック - RBAC とは何ですか?
 quiz:
   title: 知識チェック - RBAC とは何ですか?
   questions:

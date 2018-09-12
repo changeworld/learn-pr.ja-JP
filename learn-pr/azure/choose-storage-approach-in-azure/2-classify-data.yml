@@ -3,12 +3,17 @@ uid: learn.choose-storage-approach-in-azure.2-classify-data
 metadata:
   title: データを分類する
   description: データを分類する
-  ms.openlocfilehash: bff2656d47833d65f3c9fb27e38faa1a74dfd7b2
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9d1dcb52b1221e2a4c804a94cc38e5bf4e2f308e
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43362667"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237302"
 title: データを分類する
 durationInMinutes: 10
 content: >

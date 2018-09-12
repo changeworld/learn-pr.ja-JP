@@ -4,11 +4,17 @@ title: Azure portal を使用してデプロイされたイベント ハブの�
 metadata:
   title: Azure portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する
   description: Azure portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する
-  ms.openlocfilehash: a61476e2a48545098138b7fb3d662c87428f0009
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 08be0c602e918b02dd4617ef995a2fd3f14fdd6a
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836127"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310954"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal.md)]'

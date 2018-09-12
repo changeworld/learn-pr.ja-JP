@@ -1,34 +1,34 @@
-An Azure function doesn't do work until something tells it to execute. For example, we could create an Azure function to send out a reminder text message to our customers before an appointment. If we don't tell the function when it should run, our customers will never receive a message.
+Azure 関数は、何かによって実行を指示されない限り、動作しません。 たとえば、予約時間の前に顧客にリマインダーをテキスト メッセージで送信する Azure 関数を作成することができます。 実行のタイミングを関数に指示しなければ、顧客にメッセージは届きません。
 
-Here, you'll examine triggers at a high level and explore the most common types of triggers.
+ここでは、トリガーの概要を説明し、最も一般的な種類のトリガーについて確認します。
 
-## What is a trigger?
+## <a name="what-is-a-trigger"></a>トリガーとは
 
-A trigger is a service that defines how an Azure function is invoked. For example, if you want a function to execute every 10 minutes, you could use a timer trigger.
+トリガーは、Azure 関数がどのように呼び出されるかを定義するサービスです。 たとえば、10 分ごとに関数を実行する必要がある場合は、タイマー トリガーを使用できます。
 
-Every function must have exactly one trigger associated with it. If you want to execute a piece of logic under multiple conditions, you need to create multiple functions.
+各関数には厳密に 1 つのトリガーしか関連付けられません。 1 つのロジックを複数の条件下で実行する場合は、複数の関数を作成する必要があります。
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>バインディングとは
 
-A binding is a connection to data within your function. Bindings are optional and come in the form of input and output bindings. An input binding is the data that your function receives. An output binding is the data that your function sends.
+バインディングとは、関数内でのデータへの接続です。 バインディングは省略可能であり、入力バインディングと出力バインディングの形式があります。 入力バインディングは、関数が受け取るデータです。 出力バインディングは、関数が送信するデータです。
 
-Unlike a trigger, a function can have multiple input and output bindings.
+関数はトリガーとは異なり、複数の入出力バインディングを持つことができます。
 
-## Types of triggers
+## <a name="types-of-triggers"></a>トリガーの種類
 
-Azure Functions support a wide range of trigger types. Here are some of the most common types:
+Azure Functions では、さまざまな種類のトリガーがサポートされています。 最も一般的な種類の一部を次に示します。
 
-| Type | Purpose |
+| type | 目的 |
 | --- | --- |
-| **Timer** | Execute a function at a set interval. |
-| **HTTP** | Execute a function when an HTTP request is received. |
-| **Blob** | Execute a function when a file is uploaded or updated in Azure Blob storage. |
-| **Queue** | Execute a function when a message is added to an Azure Storage queue. |
-| **Cosmos DB** | Execute a function when a document changes in a collection. |
-| **Event Hub** | Execute a function when an event hub receives a new event. |
+| **Timer** | 設定した間隔で関数を実行します。 |
+| **HTTP** | HTTP 要求を受信したときに関数を実行します。 |
+| **BLOB** | Azure Blob Storage 内にファイルがアップロードされたとき、または Azure Blob Storage 内のファイルが更新されたときに、関数を実行します。 |
+| **キュー** | Azure Storage キューにメッセージが追加されたときに、関数を実行します。 |
+| **Cosmos DB** | コレクション内のドキュメントが変更されたときに、関数を実行します。 |
+| **イベント ハブ** | イベント ハブで新しいイベントが受信されたときに、関数を実行します。 |
 
-In this module, we're going to focus on the **timer**, **HTTP**, and **blob** types.
+このモジュールでは、**タイマー**、**HTTP**、**BLOB** の各種類について説明します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-To execute an Azure function, we need to use a trigger. Timer, HTTP, and blob triggers are three of the most common trigger types that you'll use to execute serverless logic.
+Azure 関数を実行するには、トリガーを使用する必要があります。 タイマー トリガー、HTTP トリガー、BLOB トリガーは、サーバーレス ロジックの実行に使用する最も一般的なトリガーの種類のうちの 3 つです。

@@ -1,18 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.3-create-a-vm
-title: Create a VM using the Azure portal
+title: Azure Portal を使用して VM を作成する
 metadata:
-  title: Create a VM using the Azure portal
-  description: Create a VM using the Azure portal
+  title: Azure Portal を使用して VM を作成する
+  description: Azure Portal を使用して VM を作成する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
+  ms.openlocfilehash: 2f26f5e3ed77b31612c7ce90059651012693a9fb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242861"
 durationInMinutes: 15
-content: |
-  [!include[](includes/3-create-a-vm.md)]
+content: '[!include[](includes/3-create-a-vm.md)]'

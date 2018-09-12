@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
-title: Maximize efficiency of cloud spend
+title: クラウド支出の効率を最大化する
 metadata:
-  title: Maximize efficiency of cloud spend
-  description: In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures
+  title: クラウド支出の効率を最大化する
+  description: このユニットでは、クラウド支出の効率を最大化する方法について説明します
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 7644faa213e2ea6331e697f016633ae58ff26c47
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230893"
 durationInMinutes: 15
-content: |
+content: >
   [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
 quiz:
-  title: 'Knowledge check - Maximize efficiency of cloud spend'
+  title: 知識チェック - クラウド支出の効率を最大化する
   questions:
-  - content: 'Which of the following is the best candidate for a reserved instance?'
+  - content: 次のうち、予約インスタンスに最適な候補はどれですか?
     choices:
-    - content: 'A web application deployed on Azure App Service.'
+    - content: Azure App Service にデプロイされた Web アプリケーション。
       isCorrect: false
-      incorrectExplanation: 'Azure App Service is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A non-production virtual machine that is automatically shut down in off-hours when not in use.'
+      incorrectExplanation: Azure App Service は PaaS サービスであり、予約インスタンスは仮想マシンにのみ使用できます。
+    - content: 使用されていないときに業務時間外に自動的にシャットダウンされる非運用仮想マシン。
       isCorrect: false
-      incorrectExplanation: 'Since this virtual machine will not be running the majority of the time it will not fully utilize the instance reservation, and is not a good candidate for a reserved instance.'
-    - content: 'An Azure SQL Database instance.'
+      incorrectExplanation: この仮想マシンは大半の時間は実行されていないため、インスタンスの予約を完全には利用せず、予約インスタンスに適した候補ではありません。
+    - content: Azure SQL Database インスタンス。
       isCorrect: false
-      incorrectExplanation: 'Azure SQL Database is a PaaS service, reserved instances can only be used for virtual machines.'
-    - content: 'A database server for an HR system for a global business.'
+      incorrectExplanation: Azure SQL Database は PaaS サービス、予約インスタンスは仮想マシンにのみ使用できます。
+    - content: グローバル企業向け HR システム用のデータベース サーバー。
       isCorrect: true
-      correctExplanation: 'Because of the criticality and global nature of this system, it is likely that it would be running the majority of the time, making it a great candidate for a reserved instance.'
-  - content: 'Compute costs associated with a VM stop accruing when:'
+      correctExplanation: このシステムの重要さとグローバルな性質のため、ほとんどの時間は実行している可能性があり、予約インスタンスに適した候補です。
+  - content: 次の場合、VM に関連するコンピューティング コストが発生しなくなります。
     choices:
-    - content: 'You shut the virtual machine down from inside the OS.'
+    - content: OS 内から仮想マシンをシャットダウンする。
       isCorrect: false
-      incorrectExplanation: 'If you shut down the OS of the virtual machine, it is still allocated on the Azure platform and will continue to accrue compute costs.'
-    - content: 'You click the Stop button in the Azure portal.'
+      incorrectExplanation: 仮想マシンの OS をシャットダウンした場合でも、Azure プラットフォームではまだ割り当てられており、コンピューティング コストが発生し続けます。
+    - content: Azure portal で [停止] ボタンをクリックする。
       isCorrect: true
-      correctExplanation: 'Clicking the Stop button will deallocate the virtual machine from the Azure platform and will no longer accrue compute costs.'
+      correctExplanation: '[停止] ボタンをクリックすると仮想マシンは Azure プラットフォームから割り当て解除され、コンピューティング コストはかからなくなります。'

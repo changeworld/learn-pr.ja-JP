@@ -1,28 +1,28 @@
-Direct communication between the components of a distributed application can be problematic because it might be disrupted when network bandwidth is low or when demand is high.
+ネットワーク帯域幅が狭いときや需要が高いときに中断する可能性があるため、分散アプリケーションのコンポーネント間の直接通信には問題があります。
 
-We've seen this in our system: the web portal calls a web service, which works great if the service responds in a timely manner. High traffic causes problems and so the plan is to use a queue to eliminate the direct link between the front-end apps and your middle-tier web service.
+この問題は演習のシステムに見られます。Web ポータルから Web サービスが呼び出されるシステムです。サービスが適時に応答している場合は問題ありません。 トラフィックが増えると問題が発生するため、キューを使用してフロントエンド アプリと中間層の Web サービス間の直接リンクを排除することを計画します。
 
-## What is Azure Queue storage?
+## <a name="what-is-azure-queue-storage"></a>Azure Queue Storage とは
 
-Azure Queue storage is an Azure service that implements cloud-based queues. Each queue maintains a list of messages. Application components access a queue using a REST API or an Azure-supplied client library. Typically, you will have one or more _sender_ components and one or more _receiver_ components. Sender components add message to the queue. Receiver components retrieve messages from the front of the queue for processing. The following illustration shows multiple sender applications adding messages to the Azure Queue and one receiver application retrieving the messages.
+Azure Queue Storage は、クラウドベースのキューを実装する Azure サービスです。 各キューにはメッセージの一覧が保持されています。 アプリケーション コンポーネントは、REST API または Azure が提供するクライアント ライブラリを使用してキューにアクセスします。 通常、1 つ以上の_送信側_コンポーネントと 1 つ以上の_受信側_コンポーネントがあります。 送信側コンポーネントは、メッセージをキューに追加します。 受信側コンポーネントは、キューの先頭から処理対象のメッセージを取得します。 次の図は、メッセージを Azure Queue に追加する複数の送信側アプリケーションと、メッセージを取得する 1 つの受信側アプリケーションを示しています。
 
-![An illustration showing a high-level architecture of Azure Queue storage](../media/2-queue-overview.png)
+![Azure Queue Storage のアーキテクチャを示す概要図](../media/2-queue-overview.png)
 
-Pricing is based on queue size and number of operations. Larger message queues cost more than smaller queues. Charges are also incurred for each operation, such as adding a message and deleting a message. For pricing details, see [Azure Queue storage pricing](https://azure.microsoft.com/pricing/details/storage/queues/).
+価格は、キュー サイズと操作数に基づいています。 大きいメッセージ キューの方が小さいキューよりもコストが高くなります。 また、メッセージの追加やメッセージの削除などの操作ごとに料金が発生します。 価格の詳細については、[Azure Queue Storage の価格](https://azure.microsoft.com/pricing/details/storage/queues/)に関するページを参照してください。
 
-## Why use queues?
+## <a name="why-use-queues"></a>キューを使用する理由
 
-A queue increases resiliency by temporarily storing waiting messages. At times of low or normal demand, the size of the queue remains small because the destination component removes messages from the queue faster than they are added. At times of high demand, the queue may increase in size, but messages are not lost. The destination component can catch up and empty the queue as demand returns to normal.
+待機中のメッセージをキューに一時的に保存することで、回復性が高くなります。 需要が低いときまたは通常のときは、宛先コンポーネントがキューからメッセージを削除する処理がメッセージがキューに追加される処理よりも速いので、キューのサイズは小さいままです。 需要が高いときは、キューのサイズが大きくなる可能性がありますが、メッセージは失われません。 需要が正常に戻ると、宛先コンポーネントは処理に追いついて、キューを空にすることができます。
 
-A single queue can be up to **500 TB** in size, so it can potentially store _millions_ of messages. The target throughput for a single queue is 2000 messages per second, allowing it to handle high-volume scenarios.
+1 つのキューは最大で **500 TB** になる可能性があるため、_数百万個_単位のメッセージが格納される可能性があります。 1 つのキューのターゲット スループットは 1 秒あたり 2,000 メッセージなので、大規模なシナリオを処理できます。
 
-Queues let your application scale automatically and immediately when demand changes. This makes them useful for critical business data that would be damaging to lose. Azure offers many other services that scale automatically. For example, the **Autoscale** feature is available on Azure virtual machine scale sets, cloud services, Azure App Service plans, and App Service environments. This lets you define rules that Azure uses to identify periods of high demand and automatically add capacity without involving an administrator. Autoscaling responds to demand quickly, but not instantaneously. By contrast, Azure Queue storage instantaneously handles high demand by storing messages until processing resources are available.
+キューを使用すると、需要の変化に合わせて自動的かつ即時にアプリケーションをスケーリングできます。 そのため、失うと損害になる重大なビジネス データの場合に役立ちます。 Azure には、自動的にスケーリングするサービスが他にも多くあります。 たとえば、**自動スケール**機能は、Azure 仮想マシン スケール セット、クラウド サービス、Azure App Service プラン、App Service 環境で使用できます。 そのため、需要の高い期間を指定し、管理者の操作を介さずに自動的に容量を追加するように、Azure が使用するルールを定義できます。 自動スケーリングは需要にすぐに反応しますが、即時ではありません。 対照的に、Azure Queue Storage は、処理リソースを使用できるようになるまでメッセージを格納することで、高い需要を即時に処理します。
 
-## What is a message?
+## <a name="what-is-a-message"></a>メッセージとは
 
-A message in a queue is a byte array of up to 64 KB. Message contents are not interpreted at all by any Azure component.
+キュー内のメッセージは、最大 64 KB のバイト配列です。 メッセージ コンテンツはどの Azure コンポーネントでもまったく解釈されません。
 
-If you want to create a structured message, you could format the message content using XML or JSON. Your code is responsible for generating and interpreting your custom format. For example, you could make a custom JSON message that looks like the following:
+構造化メッセージを作成する場合は、XML または JSON を使用してメッセージ コンテンツの形式を設定できます。 カスタム形式の生成と解釈は、コード側の役割です。 たとえば、次のようなカスタム JSON メッセージを作成できます。
 
 ```json
 {
@@ -35,26 +35,26 @@ If you want to create a structured message, you could format the message content
 }
 ```
 
-## Creating a storage account
+## <a name="creating-a-storage-account"></a>ストレージ アカウントの作成
 
-A queue must be part of a storage account. You can create a storage account using the Azure CLI (or PowerShell), or Azure portal. The portal is easiest because it's all guided and prompts you for each piece of information. 
+キューはストレージ アカウントの一部である必要があります。 Azure CLI (または PowerShell)、または Azure portal を使用してストレージ アカウントを作成できます。 すべての手順が案内され、各情報の入力が求められるので、ポータルが最も簡単です。 
 
-The following screenshot shows the location of the Storage accounts category.
+次のスクリーンショットは、ストレージ アカウント カテゴリの場所を示しています。
 
-![Screenshot of the All services blade with the Storage accounts category highlighted.](../media/2-create-storage-account-1.png)
+![ストレージ アカウント カテゴリが強調表示されている [すべてのサービス] ブレードのスクリーンショット。](../media/2-create-storage-account-1.png)
 
-There are several options you can supply when you create the account, most of which you can use the default selection. We covered these options in a previous module, but you can hover over the `(i)` tip associated with each option to get a reminder of what it does. Here's an example of filling out the portal blade.
+アカウントの作成時に指定できるオプションがいくつかありますが、そのほとんどは既定の選択を使用できます。 前のモジュールではこれらのオプションについて説明しましたが、各オプションに関連付けられている `(i)` のヒントをポイントすると、その機能の概要が表示されます。 次に、ポータル ブレードの入力例を示します。
 
-The following screenshot displays the Create storage account blade and the information required to create a storage account.
+次のスクリーンショットは、[ストレージ アカウントの作成] ブレードとストレージ アカウントの作成に必要な情報を示します。
 
-![Screenshot of the Create storage account blade showing the options to specify when creating a storage account.](../media/2-create-storage-account-2.png)
+![ストレージ アカウントの作成時に指定するオプションを示す [ストレージ アカウントの作成] ブレードのスクリーンショット。](../media/2-create-storage-account-2.png)
 
-### Settings for queues
-When you create a storage account that will contain queues, you should consider the following settings:
+### <a name="settings-for-queues"></a>キューの設定
+キューを含むストレージ アカウントを作成するときは、次の設定を考慮する必要があります。
 
-- Queues are only available as part of Azure general-purpose storage accounts (v1 or v2). You cannot add them to Blob storage accounts.
-- The **Access tier** setting which is shown for StorageV2 accounts applies only to Blob storage and does not affect queues.
-- You should choose a location that is close to either the source components or destination components or (preferably) both.
-- Data is always replicated to multiple servers to guard against disk failures and other hardware problems. You have a choice of replication strategies: **Locally Redundant Storage (LRS)** is low-cost but vulnerable to disasters that affect an entire data center while **Geo-Redundant Storage (GRS)** replicates data to other Azure data centers. Choose the replication strategy that meets your redundancy needs.
-- The performance tier determines how your message are stored: **Standard** uses magnetic drives while **Premium** uses solid-state drives. Choose Standard if you expect peaks in demand to be short. Consider Premium if queue length sometimes becomes long and you need to minimize the time to access messages.
-- Require secure transfer if sensitive information may pass through the queue. This setting ensures that all connections to the queue are encrypted using Secure Sockets Layer (SSL).
+- キューは、Azure 汎用ストレージ アカウント (v1 または v2) の一部としてのみ利用できます。 BLOB ストレージ アカウントに追加することはできません。
+- StorageV2 アカウントに対して表示される **[アクセス層]** 設定は、BLOB ストレージにのみ適用され、キューには影響しません。
+- ソース コンポーネント、宛先コンポーネント、または (できれば) 両方のコンポーネントに近い場所を選択するようにします。
+- データは常に複数のサーバーにレプリケートされるので、ディスク障害やその他のハードウェアの問題から保護されます。 レプリケーション戦略には選択肢があります。**ローカル冗長ストレージ (LRS)** は低コストですが、データセンター全体に影響する災害に対しては脆弱です。一方、**geo 冗長ストレージ (GRS)** では、データが他の Azure データ センターにレプリケートされます。 実際の冗長性のニーズを満たすレプリケーション戦略を選択してください。
+- パフォーマンス レベルによって、メッセージの保存方法が決まります。**Standard** の場合は磁気ドライブが使用されていますが**Premium** の場合はソリッドステート ドライブが使用されています。 需要のピークが短いと予想される場合は、Standard を選択します。 キューの長さが長くなり、メッセージにアクセスする時間を最小限に抑える必要がある場合は、Premium を検討します。
+- 機密情報がキューを経由する可能性がある場合は、安全な転送が必要です。 この設定により、キューへのすべての接続が Secure Sockets Layer (SSL) を使用して確実に暗号化されます。

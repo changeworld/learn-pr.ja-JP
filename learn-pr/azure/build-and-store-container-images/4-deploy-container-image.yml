@@ -1,17 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.deploy-image
+interactive: bash
 metadata:
-  title: Deploy images from Azure Container Registry
-  description: Deploy images from Azure Container Registry
+  title: Azure Container Registry からイメージをデプロイする
+  description: Azure Container Registry からイメージをデプロイする
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Deploy images from Azure Container Registry
+  ms.openlocfilehash: 56728232223ba026ef2b7c9f79f5d295587f9477
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237795"
+title: Azure Container Registry からイメージをデプロイする
 durationInMinutes: 20
-interactive: bash
-azureSandbox: true
-content: |
-  [!include[](includes/4-deploy-image.md)]
+content: '[!include[](includes/4-deploy-image.md)]'

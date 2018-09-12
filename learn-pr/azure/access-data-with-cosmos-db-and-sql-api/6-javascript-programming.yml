@@ -3,12 +3,18 @@ uid: learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
 metadata:
   title: データに対して複雑な操作を実行する
   description: Azure Portal でストアド プロシージャとユーザー定義関数 (UDF) を使用して、複雑な操作を実行する方法を学習します。
-  ms.openlocfilehash: ac69c555de4f4e4f730e9bbe0ca69c24b3f1d9e5
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3714937b52b1919eef3948fc0c9022a17c5f4380
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43795349"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308336"
+azureSandbox: true
 title: データに対して複雑な操作を実行する
 durationInMinutes: 10
 content: >

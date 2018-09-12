@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.2-what-are-blobs
-title: What are blobs?
+title: BLOB とは
 metadata:
-  title: What are blobs?
-  description: What are blobs?
+  title: BLOB とは
+  description: BLOB とは
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 28183808098e290830b46ad7715cd43a440ea087
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231845"
 durationInMinutes: 3
-content: |
-  [!include[](includes/2-what-are-blobs.md)]
+content: '[!include[](includes/2-what-are-blobs.md)]'

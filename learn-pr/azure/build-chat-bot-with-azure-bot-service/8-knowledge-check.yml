@@ -1,114 +1,113 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-azure-bot-services-bot.8-knowledge-check
-title: Check your knowledge
+title: 自分の知識をチェックする
 metadata:
-  title: Check your knowledge
-  description: Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.
+  title: 自分の知識をチェックする
+  description: Azure Bot Service を使用してチャット ボットを構築するのに必要な手順を理解したことを確認します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9c4187ec4b1b72632f0ffa9e8a5166f59679e170
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239089"
 durationInMinutes: 10
 quiz:
-  title: Building neural networks with TensorFlow and the Azure Data Science Virtual Machine
+  title: TensorFlow と Azure Data Science Virtual Machine を使用したニューラル ネットワークの構築
   questions:
-  - content: "When the Azure web app bot was deployed, what all was created?"
+  - content: Azure Web アプリ ボットをデプロイしたとき、作成されたすべてのものは何ですか?
     choices:
-    - content: "A bot service"
+    - content: ボット サービス
       isCorrect: false
-      incorrectExplanation: "A bot service was created, but something else was, too."
-    - content: "A web app"
+      incorrectExplanation: 1 つボット サービスが作成されましたが、他のものも作成されました。
+    - content: Web アプリ
       isCorrect: false
-      incorrectExplanation: "A web app was created, but something else was, too."
-    - content: "A bot service and web app"
+      incorrectExplanation: 1 つ Web アプリが作成されましたが、他のものも作成されました。
+    - content: ボット サービスと Web アプリ
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the module."
-    - content: "Nothing got deployed yet"
+    - content: まだ何もデプロイされていません
       isCorrect: false
-      incorrectExplanation: "A deployment happened by this step."
-  - content: "What is QnA Maker used to create?"
+      incorrectExplanation: このステップで、デプロイが行われました。
+  - content: QnA Maker は何を作成するために使用されるのですか?
     choices:
-    - content: "A service that takes in a set of questions and answers"
+    - content: 質問と回答のセットを受け取るサービスです
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "A service to answer questions"
+    - content: 質問に回答するサービスです
       isCorrect: false
-      incorrectExplanation: "It helps answer questions, but that's not all QnA Maker can do."
-    - content: "A service that generates new answers to questions"
+      incorrectExplanation: 質問の回答にも役立ちますが、それが QnA Maker でできることのすべてでありません。
+    - content: 質問に新しい回答を生成するサービスです
       isCorrect: false
-      incorrectExplanation: "QnA Maker doesn't generate new answers, but it does give answers it knows about."
-    - content: "A bot"
+      incorrectExplanation: QnA Maker は新しい回答を作成するわけではなく、知っていることに回答します。
+    - content: ボット
       isCorrect: false
-      incorrectExplanation: "QnA Maker can be associated with a bot, but it doesn't create one."
-  - content: "What ways can you populate your knowledge base in QnA Maker?"
+      incorrectExplanation: QnA Maker はボットと関連付けることができますが、それを作成することはありません。
+  - content: QnA Maker には使用するナレッジ ベースをどのように入力するのですか?
     choices:
-    - content: "Can only manually populate your knowledge base"
+    - content: 使用するナレッジ ベースは手動でのみ入力できます
       isCorrect: false
-      incorrectExplanation: "You could manually populate the knowledge base, but there are other ways."
-    - content: "With a text file"
+      incorrectExplanation: ナレッジ ベースは手動で入力できますが、他にも方法があります。
+    - content: テキスト ファイルを使用する
       isCorrect: false
-      incorrectExplanation: "A text file isn't the only way to populate the knowledge base."
-    - content: "With a URL"
+      incorrectExplanation: ナレッジ ベースに入力する方法は、テキスト ファイルのみではありません。
+    - content: URL を使用する
       isCorrect: false
-      incorrectExplanation: "A URL isn't the only way to populate the knowledge base."
-    - content: "With a text file or URL"
+      incorrectExplanation: ナレッジ ベースに入力する方法は、URL のみではありません。
+    - content: テキスト ファイルまたは URL を使用する
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-  - content: "What step(s) are needed to use QnA Maker in your applications?"
+  - content: アプリケーションで QnA Maker を使用するには、どのような手順が必要ですか?
     choices:
-    - content: "Save"
+    - content: 保存する
       isCorrect: false
-      incorrectExplanation: "You do need to save, but other steps are needed."
-    - content: "Save and train"
+      incorrectExplanation: 保存をする必要はありますが、他にも手順が必要です。
+    - content: 保存してトレーニングする
       isCorrect: false
-      incorrectExplanation: "Training is important, but what else do you need to consume the service?"
-    - content: "Save, train, and publish"
+      incorrectExplanation: トレーニングは重要ですが、サービスの使用には他に何が必要ですか?
+    - content: 保存し、、トレーニングして、公開する
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Publish"
+    - content: 公開する
       isCorrect: false
-      incorrectExplanation: "Unfortunately, you can't just go straight to publishing."
-  - content: "Other than the bot framework packages, what other package is needed to build and consume RESTful services?"
+      incorrectExplanation: 残念ながら、直接公開に進むことはできません。
+  - content: ボット フレームワーク パッケージ以外に、RESTful サービスの構築および使用には何が必要ですか?
     choices:
-    - content: "restify"
+    - content: restify
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "express"
+    - content: express
       isCorrect: false
-      incorrectExplanation: "Express is used to as a full web framework, not to just create RESTful services."
-    - content: "swagger"
+      incorrectExplanation: Express は、RESTful サービスを作成するためのみではなく、完全な Web フレームワークとして使用します。
+    - content: swagger
       isCorrect: false
-      incorrectExplanation: "Swagger is used to specify, build, and test your APIs, not just to create RESTful services."
-    - content: "babel"
+      incorrectExplanation: Swagger は、RESTful サービスを作成するためのみではなく、独自の API を指定、ビルド、テストするために使用します。
+    - content: babel
       isCorrect: false
-      incorrectExplanation: "Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax."
-  - content: "In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?"
+      incorrectExplanation: Babel は新しい構文をサポートしない可能性があるブラウザー用に、JavaScript の新バージョンをコンパイルするために使用します。
+  - content: Azure portal では、Web アプリ ボット用の QnA Maker の設定をどのセクションに追加しますか?
     choices:
-    - content: "All app service settings"
+    - content: すべてのアプリ サービスの設定
       isCorrect: false
-      incorrectExplanation: "This setting allows you to change settings on the app service associated with the web app."
-    - content: "Application settings"
+      incorrectExplanation: この設定では、Web アプリと関連付けられているアプリ サービスの設定を変更することができます。
+    - content: アプリケーションの設定
       isCorrect: true
-      correctExplanation: "Great! Proceed to the next part of the lab."
-    - content: "Build"
+      correctExplanation: そのとおりです。 ラボの次のパートに進みます。
+    - content: 構築
       isCorrect: false
-      incorrectExplanation: "This section allows you to view and get the code for the bot."
-    - content: "Channels"
+      incorrectExplanation: このセクションでは、ボットのコードを参照したり取得したりすることができます。
+    - content: チャネル
       isCorrect: false
-      incorrectExplanation: "This section allows you to hook the bot up to different services to interact with the bot."
-  - content: "If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?"
+      incorrectExplanation: このセクションでは、ボットを別のサービスにフックして、ボットとやりとりさせることができます。
+  - content: Microsoft Teams に使用するボットを追加する場合、Azure portal のどのセクションに進みますか?
     choices:
-    - content: "All app service settings"
+    - content: すべてのアプリ サービスの設定
       isCorrect: false
-      incorrectExplanation: "This setting allows you to change."
-    - content: "Application settings"
+      incorrectExplanation: この設定では変更することができます。
+    - content: アプリケーションの設定
       isCorrect: false
-      incorrectExplanation: "This setting allows you to specify specific settings for the web application."
-    - content: "Build"
+      incorrectExplanation: この設定では、Web アプリケーションの特定の設定を指定できます。
+    - content: 構築
       isCorrect: false
-      incorrectExplanation: "This section allows you to view and get the code for the bot."
-    - content: "Channels"
+      incorrectExplanation: このセクションでは、ボットのコードを参照したり取得したりすることができます。
+    - content: チャネル
       isCorrect: true
-      #TODO: Update explanation - should not instruct user what to do next. Should reinforce knowledge. correctExplanation: "Great! Proceed to the next part of the lab."

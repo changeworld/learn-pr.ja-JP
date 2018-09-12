@@ -1,34 +1,34 @@
-Container images can be pulled from Azure Container Registry from many container management platforms, such as Azure Container Instances, Azure Kubernetes Registry, and Docker for Windows or Mac. When running container images from Azure Container Registry, authentication credentials may be needed. It is recommended to use an Azure service principal for authentication with Container Registry. Furthermore, it is also recommended to secure the Azure service principal credentials in Azure Key Vault.
+Azure Container Registry や、Azure Container Instances、Azure Kubernetes Registry、Docker for Windows/Mac などの多くのコンテナー管理プラットフォームから、コンテナー イメージをプルできます。 Azure Container Registry からコンテナー イメージを実行するときは、認証資格情報が必要になる場合があります。 Container Registry での認証には、Azure サービス プリンシパルを使用することをお勧めします。 さらに、Azure Key Vault で Azure サービス プリンシパルの資格情報をセキュリティ保護することも勧めします。
 
-In this unit, you will create a service principal for your Azure container registry, store it in Azure Key Vault, and then deploy the container to Azure Container Instances using the service principal's credentials.
+このユニットでは、Azure Container Registry 用のサービス プリンシパルを作成し、それを Azure Key Vault に格納してから、サービス プリンシパルの資格情報を使用して Azure Container Instances にコンテナーを展開します。
 
-## Configure registry authentication
+## <a name="configure-registry-authentication"></a>レジストリの認証を構成する
 
-All production scenarios should use service principals to access an Azure container registry. Service principals allow you to provide role-based access control (RBAC) to your container images. For example, you can configure a service principal with pull-only access to a registry.
+すべての運用シナリオでは、サービス プリンシパルを使用して Azure コンテナー レジストリにアクセスします。 サービス プリンシパルを使用すると、コンテナー イメージにロールベースのアクセス制御 (RBAC) を提供できます。 たとえば、レジストリに対するプルのみのアクセス権を持つサービス プリンシパルを構成できます。
 
-If you don't already have a vault in Azure Key Vault, create one with the Azure CLI using the following commands.
+Azure Key Vault にコンテナーがまだない場合は、Azure CLI の次のコマンドを使用して作成します。
 
-First, create a variable with the name of your container registry. This variable is used throughout this unit.
+最初に、コンテナー レジストリの名前で変数を作成します。 この変数は、このユニット全体で使われます。
 
 ```azurecli
 ACR_NAME=<acrName>
 ```
 
-Create an Azure key vault with the `az keyvault create` command.
+`az keyvault create` コマンドで Azure キー コンテナーを作成します。
 
 ```azurecli
 az keyvault create --resource-group myResourceGroup --name $ACR_NAME-keyvault
 ```
 
-Now, you need to create a service principal and store its credentials in your key vault.
+次に、サービス プリンシパルを作成し、その資格情報をキー コンテナーに格納する必要があります。
 
-Use the `az ad sp create-for-rbac` command to create the service principal. The `--role` argument configures the service principal with the *reader* role, which grants it pull-only access to the registry. To grant both push and pull access, change the `--role` argument to *contributor*.
+サービス プリンシパルを作成するには、`az ad sp create-for-rbac` コマンドを使用します。 `--role` 引数により、*reader* ロールを持つサービス プリンシパルが構成され、レジストリに対するプルのみのアクセス権が付与されます。 プッシュ アクセス権とプル アクセス権の両方を付与するには、`--role` 引数を *contributor* に変更します。
 
 ```azurecli
 az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --output tsv) --role reader
 ```
 
-This is what the output of the service principal creation will look like. Take note of the `appId` and the `password` values. These will be stored in the Azure key vault.
+サービス プリンシパルの作成の出力は次のようになります。 `appId` と `password` の値を書き留めておきます。 これらは Azure キー コンテナーに格納されます。
 
 ```bash
 {
@@ -40,30 +40,30 @@ This is what the output of the service principal creation will look like. Take n
 }
 ```
 
-Next, use the `az keyvault secret set` command to store the service principal's *appId* in the vault. Replace `<appId>` with the `appId` of the service principal.
+次に、`az keyvault secret set` コマンドを使用して、サービス プリンシパルの *appId* をコンテナーに格納します。 `<appId>` は、サービス プリンシパルの `appId` に置き換えます。
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --value <appId>
 ```
 
-Now, use the `az keyvault secret set` command to store the service principal's *password* in the vault. Replace `<password>` with the `password` of the service principal.
+次に、`az keyvault secret set` コマンドを使用して、サービス プリンシパルの *password* をコンテナーに格納します。 `<password>` は、サービス プリンシパルの `password` に置き換えます。
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --value <password>
 ```
 
-You've created an Azure key vault and stored two secrets in it:
+Azure キー コンテナーを作成し、そこに 2 つのシークレットを格納しました。
 
-* `$ACR_NAME-pull-usr`: The service principal ID, for use as the container registry **username**.
-* `$ACR_NAME-pull-pwd`: The service principal password, for use as the container registry **password**.
+* `$ACR_NAME-pull-usr`: サービス プリンシパルの ID。コンテナー レジストリの**ユーザー名**として使用します。
+* `$ACR_NAME-pull-pwd`: サービス プリンシパルのパスワード。コンテナー レジストリの**パスワード**として使用します。
 
-You can now reference these secrets by name when you or your applications and services pull images from the registry.
+これらのシークレットは、ユーザーまたはアプリケーションやサービスがレジストリからイメージをプルするときに名前で参照できます。
 
-### Deploy a container with Azure CLI
+### <a name="deploy-a-container-with-azure-cli"></a>Azure CLI でコンテナーを展開する
 
-Now that the service principal credentials are stored in Azure Key Vault, your applications and services can use them to access your private registry.
+サービス プリンシパルの資格情報を Azure Key Vault に格納したので、アプリケーションやサービスでそれを使用してプライベート レジストリにアクセスできます。
 
-Execute the following `az container create` command to deploy a container instance. The command uses the service principal's credentials stored in Azure Key Vault to authenticate to your container registry.
+コンテナー インスタンスを展開するには、次の `az container create` コマンドを実行します。 このコマンドでは、Azure Key Vault に格納されているサービス プリンシパルの資格情報を使用して、コンテナー レジストリに対する認証を行います。
 
 ```azurecli
 az container create \
@@ -76,13 +76,13 @@ az container create \
     --registry-password $(az keyvault secret show --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --query value -o tsv)
 ```
 
-Get the IP address of the Azure container instance.
+Azure コンテナー インスタンスの IP アドレスを取得します。
 
 ```azurecli
 az container show --resource-group myResourceGroup --name acr-build --query ipAddress.ip --output table
 ```
 
-Open up a browser and navigate to the IP address of the container. If everything has been configured correctly, you should see the following results:
+ブラウザーを開き、コンテナーの IP アドレスに移動します。 すべてが正しく構成されている場合、次の結果が表示されるはずです。
 
-![Sample web application with the text Hello World](../media/hello.png)
+![テキスト Hello World が表示されるサンプル Web アプリケーション](../media/hello.png)
 

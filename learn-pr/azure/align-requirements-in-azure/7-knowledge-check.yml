@@ -4,12 +4,17 @@ title: 知識の確認 - IaaS、PaaS、SaaS
 metadata:
   title: 知識の確認 - IaaS、PaaS、SaaS
   description: 知識の確認 - IaaS、PaaS、SaaS
-  ms.openlocfilehash: 3c3a55adb5518099be7cef75cb728fd84e103c11
-  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e6bf0ac0acc384f527141dfa0c1899e30af0e87e
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/04/2018
-  ms.locfileid: "43675267"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241076"
 durationInMinutes: 2
 quiz:
   title: 知識の確認 - IaaS、PaaS、SaaS

@@ -1,22 +1,22 @@
-Your company makes use of container images to manage compute workloads in the company. You use local Docker tooling to build your container images. The decision to make use of an Azure Container Registry now allows you to build container images in the cloud. 
+会社ではコンテナー イメージを使用して、社内のコンピューティング ワークロードを管理しています。 ローカルの Docker ツールを使用して、ご自分のコンテナー イメージをビルドします。 Azure Container Registry の使用を決断することにより、クラウド内でコンテナー イメージをビルドできるようになりました。 
 
-You can now use Azure Container Registry Build to build these containers. Container Registry Build also allows for DevOps process integration with automated build on source code commit.
+Azure Container Registry Build を使用することで これらのコンテナーをビルドできるようになりました｡ また、Container Registry Build では、ソース コードのコミット時に DevOps プロセスと自動化されたビルドを統合できます。
 
-Let's automate the creation of a container image using Azure Container Registry Build.
+Azure Container Registry Build を使用してコンテナー イメージの作成を自動化してみましょう。
 
-## Create a container image with Azure Container Registry Build
+## <a name="create-a-container-image-with-azure-container-registry-build"></a>Azure Container Registry Build を使用してコンテナー イメージを作成する
 
-You use a standard Dockerfile to provide build instructions. Azure Container Registry Build allows you to reuse any Dockerfile currently in your environment, including multi-staged builds.
+ビルド手順が提供されている標準の Dockerfile を使用します。 Azure Container Registry Build では、ご利用の環境に現在ある任意の Dockerfile を再利用することができます。
 
-We'll use new Dockerfile for our example. 
+この例では、新しい Dockerfile を使用します。 
 
-The first step is to create a new file named `Dockerfile`. You can use any text editor to edit the file. We'll use Visual Studio Code for this example.
+最初の手順として、`Dockerfile` という名前の新しいファイルを作成します。 任意のテキスト エディターを使用して、ファイルを編集することができます。 この例では、Visual Studio Code を使用します。
 
 ```bash
 code Dockerfile
 ```
 
-Copy the following contents to your new Dockerfile. Make sure to safe the file. 
+次のコンテンツを新しい Dockerfile にコピーします。 必ずファイルをセキュリティで保護します。 
 
 ```bash
 FROM    node:9-alpine
@@ -27,25 +27,25 @@ EXPOSE  80
 CMD     ["node", "server.js"]
 ```
 
-This configuration adds a Node.js application to the `node:9-alpine` image. Then configures the container to serve the application on port 80 via the *EXPOSE* instruction.
+この構成では、Node.js アプリケーションが `node:9-alpine` イメージに追加されます。 次に、ポート 80 上で *EXPOSE* 命令を介してアプリケーションを提供できるようにコンテナーを構成します。
 
-Now run the Azure CLI command, `az acr build`, to build the container image from the Dockerfile.
+次に、Azure CLI コマンド `az acr build` を実行して、Dockerfile からコンテナー イメージをビルドします。
 
 ```azurecli
 az acr build --registry <acrName> --image helloacrbuild:v1 .
 ```
 
-You'll see the image being built and pushed to your Container Registry as you run the command.
+このコマンドを実行すると、ビルドされてご利用のコンテナー レジストリにプッシュされるイメージが表示されます。
 
-## Verify the image
+## <a name="verify-the-image"></a>イメージを確認する
 
-Run the following command to verify that the image has been created and stored in the registry.
+次のコマンドを実行して、イメージが作成されてレジストリに格納されたことを確認します。
 
 ```azurecli
 az acr repository list --name <acrName> --output table
 ```
 
-The output should look similar to the following:
+出力は次のようになります。
 
 ```console
 Result
@@ -53,4 +53,4 @@ Result
 helloacrbuild
 ```
 
-The `helloacrbuild` image is now ready to be used.
+これで、`helloacrbuild` イメージが使用できる状態になりました。

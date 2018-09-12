@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.1-introduction
-title: Why use Azure compute?
+title: Azure コンピューティングを使用する理由
 metadata:
-  title: Why use Azure compute?
-  description: Why use Azure compute?
+  title: Azure コンピューティングを使用する理由
+  description: Azure コンピューティングを使用する理由
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: fa09082ba754601cbfd1a9300c09f47ba6b2ebb5
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233593"
 durationInMinutes: 2
-content: |
-  [!include[](includes/1-introduction.md)]
+content: '[!include[](includes/1-introduction.md)]'

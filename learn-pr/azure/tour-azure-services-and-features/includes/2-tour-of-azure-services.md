@@ -1,126 +1,126 @@
-Microsoft Azure is a continually expanding set of cloud services that help your organization meet your current and future business challenges. Azure gives you the freedom to build, manage, and deploy applications on a massive global network using your favorite tools and frameworks. Let's take a quick tour of the high-level services Azure offers.
+Microsoft Azure では、現在および将来のビジネスの課題に対応する組織に役立つクラウド サービスのセットが継続的に拡張されています。 Azure では、好みのツールとフレームワークを使用して、大規模なグローバル ネットワーク上でアプリケーションを自由にビルド、管理、デプロイできます。 Azure で提供されている高度なサービスのクイック ツアーを見てみましょう。
 
-## Azure services
+## <a name="azure-services"></a>Azure サービス
 
-Azure provides a vast range of cloud-based services, with features added and enhanced every month. 
+Azure では膨大なクラウド ベース サービスが提供されており、機能の追加と強化が毎月行われています。 
 
-![Azure services](../media-draft/2-image204.png)
+![Azure サービス](../media-draft/2-image204.png)
 
-Let's take a closer look at a few of the more commonly-used features: 
+よく使われる機能のいくつかを詳しく見てみましょう。 
 
 - [Compute](#compute-services)
-- [Networking ](#networking-services)
+- [ネットワーク](#networking-services)
 - [Storage](#storage-services)
 - [Mobile](#mobil-services)
-- [Databases](#database-services)
+- [データベース](#database-services)
 - [Web](#web-services)
 
 <a name="compute-services"></a>
 
-### Compute
+### <a name="compute"></a>コンピューティング
 
-Compute services are one of the primary reasons why companies move to the Azure platform. Azure provides a range of options for hosting applications and services including:
+コンピューティング サービスは、企業が Azure Platform に移行する主な理由の 1 つです。 Azure では、アプリケーションとサービスをホストするためのさまざまなオプションが提供されています。次はその一部です。
 
-![IaaS, PaaS, and FaaS comparison](../media/2-iaas-paas-faas.png)
+![IaaS、PaaS、FaaS の比較](../media/2-iaas-paas-faas.png)
 
-Here are some examples of IaaS, PaaS, and FaaS in Azure.
+Azure での IaaS、PaaS、FaaS の例を次に示します。
 
-|  Type  |  Service name             | Service function                                                         |
+|  種類  |  サービス名             | サービスの機能                                                         |
 |--------|---------------------------|--------------------------------------------------------------------------|
-| IaaS   | Azure Virtual Machines    | Windows or Linux VMs hosted in Azure                                     | 
-| IaaS   | Azure Kubernetes Service  | Enables management of a cluster of VMs that run containerized services   |
-| PaaS   | Azure Service Fabric      | Distributed systems platform. Runs in Azure or on-premises               |
-| PaaS   | Azure Batch               | Managed service for parallel and high-performance computing applications |
-| PaaS   | Azure Cloud Services      | Managed service for running cloud applications                           |
-| FaaS   | Azure Container Instances | Provides containers without requiring VM provision or higher services    |
-| FaaS   | Azure Functions           | Managed FaaS service                                                     |
+| IaaS   | Azure Virtual Machines    | Azure でホストされている Windows または Linux の VM です                                     | 
+| IaaS   | Azure Kubernetes Service  | コンテナー化されたサービスを実行する VM のクラスターを管理できます   |
+| PaaS   | Azure Service Fabric      | 分散システム プラットフォームです。 Azure またはオンプレミスで実行されます。               |
+| PaaS   | Azure Batch               | 並列および高パフォーマンスのコンピューティング アプリケーション用のマネージド サービスです |
+| PaaS   | Azure Cloud Services      | クラウド アプリケーションを実行するためのマネージド サービスです                           |
+| FaaS   | Azure Container Instances | VM のプロビジョニングやより高いサービスを必要としないコンテナーを提供します    |
+| FaaS   | Azure Functions           | 管理された FaaS サービスです                                                     |
 
 <a name="network-services"></a>
 
-### Networking
+### <a name="networking"></a>ネットワーク
 
-Linking compute resources and providing access to applications is the key function of Azure networking. Networking functionality in Azure includes a range of options to connect the outside world to services and features in the global Microsoft Azure datacenters.
+コンピューティング リソースをリンクし、アプリケーションへのアクセスを提供することが、Azure ネットワークの主要な機能です。 Azure のネットワーク機能には、外部の世界をグローバルな Microsoft Azure データ センター内のサービスと機能に接続するためのさまざまなオプションが含まれています。
 
-Azure networking facilities have the following features:
+Azure ネットワーク機能には次のようなものがあります
 
-|  Service name             | Service function                                                                     |
+|  サービス名             | サービスの機能                                                                     |
 | -------------             | -------------                                                                        |
-| Azure Virtual Network     | Connects VMs to incoming Virtual Private Network (VPN) connections                   |
-| Azure Load Balancer       | Balances inbound and outbound connections to applications or service endpoints       |
-| Azure Application Gateway | Optimizes app server farm delivery while increasing application security             |
-| Azure VPN Gateway         | Accesses Azure Virtual Networks through high-performance VPN gateways                |
-| Azure DNS                 | Provides ultra-fast DNS responses and ultra-high domain availability                 |
-| Azure Content Delivery Network  | Delivers high-bandwidth content to customers globally                          |
-| Azure DDoS Protection     | Protects Azure-hosted applications from distributed denial of service (DDOS) attacks |
-| Azure Traffic Manager     | Distributes network traffic across Azure regions worldwide                           |
-| Azure ExpressRoute        | Connects to Azure over high-bandwidth dedicated secure connections                   |
-| Azure Network Watcher     | Monitors and diagnoses network issues using scenario-based analysis                  |
-| Azure Firewall            | Implements high-security, high-availability firewall with unlimited scalability      |
-| Azure Virtual WAN         | Creates a unified wide area network (WAN), connecting local and remote sites         |
+| Azure Virtual Network     | 受信仮想プライベート ネットワーク (VPN) 接続に VM を接続します                   |
+| Azure Load Balancer       | 受信および送信接続を複数のアプリケーションまたはサービス エンドポイントに分散させます       |
+| Azure Application Gateway | アプリケーションのセキュリティを高めながら、アプリ サーバー ファームの配信を最適化します             |
+| Azure VPN Gateway         | 高パフォーマンスの VPN ゲートウェイを介して Azure Virtual Network にアクセスします                |
+| Azure DNS                 | 超高速の DNS 応答と非常に高いドメインの可用性を提供します                 |
+| Azure Content Delivery Network  | 顧客に対して高帯域幅コンテンツをグローバルに提供します                          |
+| Azure DDoS Protection     | Azure でホストされたアプリケーションを分散型サービス拒否 (DDoS) 攻撃から保護します |
+| Azure Traffic Manager     | 世界中の Azure リージョンにネットワーク トラフィックを分散させます                           |
+| Azure ExpressRoute        | セキュリティで保護された高帯域幅の専用接続を介して Azure に接続します                   |
+| Azure Network Watcher     | シナリオ ベースの分析を使用してネットワークの問題を監視および診断します                  |
+| Azure Firewall            | 無制限の拡張性を備えたセキュリティと可用性が高いファイアウォールを実装します      |
+| Azure Virtual WAN         | ローカルとリモートのサイトを接続する統合されたワイド エリア ネットワーク (WAN) を作成します         |
 
 <a name="storage-services"></a>
 
-### Storage
+### <a name="storage"></a>ストレージ
 
-Azure provides four main types of storage services. These services are:
+Azure では、主に 4 種類のストレージ サービスが提供されます。 これらのサービスを次に示します。
 
-- **Azure Blob storage** - provides storage for very large objects, such as video files or bitmaps
-- **Azure File storage** - creates file shares that you can access and manage like a file server
-- **Azure Queue storage** - implements a store for queuing and reliably delivering messages between applications
-- **Azure Table storage** - consists of a NoSQL store that hosts unstructured data independent of any schema
+- **Azure Blob Storage** - ビデオ ファイルやビットマップなどの非常に大きなオブジェクト用のストレージを提供します
+- **Azure File Storage** - ファイル サーバーのようにアクセスおよび管理できるファイル共有を作成します
+- **Azure Queue Storage** - アプリケーション間のメッセージのキューイングおよび確実な配信のためのストアを実装します
+- **Azure Table Storage** - どのようなスキーマからも独立した非構造化データをホストする NoSQL ストアで構成されます
 
-Each of these services shares common characteristics, which are:
+これらの各サービスは、次のような共通の特性を備えています。
 
-- Durable and highly available with redundancy and replication.
-- Secure through automatic encryption and role-based access control.
-- Scalable with virtually unlimited storage.
-- Managed, handling maintenance and any critical problems for you.
-- Accessible from anywhere in the world over HTTP or HTTPS.
+- 冗長性とレプリケーションによる永続性と高可用性。
+- 自動的な暗号化とロールベースのアクセス制御による安全性。
+- 実質的に無制限のストレージによる拡張性。
+- メンテナンスや重大な問題の管理された自動的な処理。
+- 世界中のどこからでも HTTP または HTTPS 経由でアクセス可能。
 
 <a name="mobile-services"></a>
 
-### Mobile
+### <a name="mobile"></a>モバイル
 
-Azure enables developers to create engaging iOS, Android, and Windows apps quickly and easily in a wide range of languages using their choice of development environment. Features that used to take time and increase project risks, such as adding corporate sign-in and then connecting to on-premises resources such as SAP, Oracle, SQL Server, and SharePoint, are now simple to include.
+Azure では、開発者は自分が選択した開発環境を使用して、幅広い言語で iOS、Android、Windows の魅力的なアプリを短時間で簡単に作成できます。 企業のサインインを追加してから、SAP、Oracle、SQL Server、SharePoint などのオンプレミス リソースに接続するといった、これまでであれば時間がかかってプロジェクトのリスクが高くなるような機能を、シンプルに組み込めるようになりました。
 
-Other features of this service include:
+このサービスには他に次のような機能があります。
 
-- Offline data synchronization.
-- Connectivity to on-premises data.
-- Broadcasting push notifications.
-- Autoscaling to match business needs.
+- オフライン データ同期。
+- オンプレミス データへの接続。
+- プッシュ通知のブロードキャスト。
+- ビジネス ニーズに合わせた自動スケーリング。
 
 <a name="database-services"></a>
 
-### Databases
+### <a name="databases"></a>データベース
 
-Azure provides multiple database services to store a wide variety of data types and volumes. And with global connectivity, this data is available to users instantly.
+Azure では、さまざまなデータの種類とボリュームを格納するために複数のデータベース サービスが提供されています。 また、グローバル接続により、ユーザーはこのデータをすぐに使用できます。
 
-|  Service name              | Service function                                                                                |
+|  サービス名              | サービスの機能                                                                                |
 | -------------              | -------------                                                                                   |
-| Azure Cosmos DB            | Globally distributed database that supports NoSQL options                                       |
-| Azure SQL Database         | Fully managed relational database with auto-scale, integral intelligence, and robust security    |
-| Azure Database for MySQL   | Fully managed and scalable MySQL relational database with high availability and security        |
-| Azure Database for PostgreSQL   | Fully managed and scalable PostgreSQL relational database with high availability and security   |
-| SQL Server on VMs          | Host enterprise SQL Server apps in the cloud                                                    |
-| Azure SQL Data Warehouse   | Fully managed data warehouse with integral security at every level of scale at no extra cost    |
-| Azure Database Migration Service    | Migrates your databases to the cloud with no application code changes                  |
-| Azure Redis Cache          | Caches frequently used and static data to reduce data and application latency                   |
-| Azure Database for MariaDB | Fully managed and scalable MySQL relational database with high availability and security        |
+| Azure Cosmos DB            | NoSQL オプションをサポートするグローバル分散データベース                                       |
+| Azure SQL Database         | 自動スケーリング、統合インテリジェンス、堅牢なセキュリティを備えた、フル マネージドのリレーショナル データベース    |
+| Azure Database for MySQL   | 高可用性とセキュリティを備えた完全に管理されたスケーラブルな MySQL リレーショナル データベース        |
+| Azure Database for PostgreSQL   | 高可用性とセキュリティを備えた完全に管理されたスケーラブルな PostgreSQL リレーショナル データベース   |
+| VM 上の SQL Server          | エンタープライズ SQL Server アプリをクラウドでホストする                                                    |
+| Azure SQL Data Warehouse   | すべてのスケール レベルで無料の統合セキュリティを備えた完全に管理されたデータ ウェアハウス    |
+| Azure Database Migration Service    | アプリケーション コードの変更なしでクラウドにデータベースを移行します                  |
+| Azure Redis Cache          | 頻繁に使用される静的データをキャッシュして、データとアプリケーションの待機時間を短縮します                   |
+| Azure Database for MariaDB | 高可用性とセキュリティを備えた完全に管理されたスケーラブルな MySQL リレーショナル データベース        |
 
 <a name="web-services"></a>
 
-### Web
+### <a name="web"></a>Web
 
-Web services in Azure include the following facilities:
+Azure の Web サービスには、次の機能が含まれます。
 
-| Service Name | Description |
+| サービス名 | 説明 |
 |--------------|-------------|
-| Azure App Service | Quickly create powerful cloud apps for web and mobile. |
-| Azure Notification Hubs |Send push notifications to any platform from any back end. |
-| Azure API Management | Publish APIs to developers, partners, and employees securely and at scale. |
-| Azure Search | Fully managed search as a service. |
-| Web Apps feature of Azure App Service | Create and deploy mission-critical web apps at scale. |
-| Azure SignalR Service | Add real-time web functionalities easily. |
+| Azure App Service | Web およびモバイル向けのパワフルなクラウド アプリを短期間で作成します。 |
+| Azure Notification Hubs |どのバック エンドからでもあらゆるプラットフォームへプッシュ通知を送信します。 |
+| Azure API Management | API を開発者、パートナー、従業員に安全かつ大規模に発行します。 |
+| Azure Search | フル マネージドの、サービスとしての検索です。 |
+| Azure App Service の Web Apps の機能 | 大規模な基幹業務系 Web アプリを作成してデプロイします。 |
+| Azure SignalR Service | リアルタイム Web 機能を簡単に追加します。 |
 
-Now that we've identified some of the areas that might interest a company looking to migrate to Azure let's look at what it takes to use the services and features.
+これで、Azure への移行を検討している企業が関心を持つ領域を特定できました。では、そのサービスと機能を利用して実現できることを確認してみましょう。

@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.4-knowledge-check
-title: Knowledge check
+title: 知識チェック
 metadata:
-  title: Knowledge check
-  description: Knowledge check for the 'Introduction to Azure compute' module.
+  title: 知識チェック
+  description: 「Azure コンピューティングの概要」モジュールに関する知識チェック。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 57d1dfcb1fa2948482c18e3ec67ce371e8e63f9d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232389"
 durationInMinutes: 2
-content: |
+content: >
   [!include[](includes/4-knowledge-check.md)]
 quiz:
-    title: Introduction to Azure compute knowledge check
-    questions:
-    - content: "Imagine that your astronomy team is small and that, while the members of your team are top notch astronomers and computer programmers, they have only a rudimentary understanding of server and web administration. Which of the following options should you choose?"
-      choices:
-      - content: "Azure Kubernetes Service (AKS)"
-        isCorrect: false
-        incorrectExplanation: "Kubernetes requires advanced knowledge about container orchestration."
-      - content: "Service Fabric"
-        isCorrect: false
-        incorrectExplanation: "The work of the astronomers does not need to be widely or globally distributed."
-      - content: "App Service"
-        isCorrect: true
-        correctExplanation: "Because it is fully managed and scales their applications, the team can focus on writing their specialized software."
-    - content: "Imagine that your astronomy team has come up against certain astronomical calculations that are taking hours and even days to complete. Parallel execution does not seem to help much. Which of the following options should you choose?"
-      choices:
-      - content: "Cloud Services"
-        isCorrect: false
-        incorrectExplanation: "Not all of the astronomical calculations can be run in parallel so deploying additional VMs can only marginally improve performance."
-      - content: "Azure Batch"
-        isCorrect: true
-        correctExplanation: "Certain astronomical calculations require supercomputer capabilities."
-      - content: "Container Instances"
-        isCorrect: false
-        incorrectExplanation: "It may be that not all of the astronomical calculations can be run in parallel so deploying additional containers can only marginally improve performance."
+  title: Azure コンピューティングの概要に関する知識チェック
+  questions:
+  - content: 少人数の天文学チームがあり、チームのメンバーは一流の天文学者やコンピューター プログラマーですが、サーバーや Web 管理については基本的な理解しかないものとします。 次のどのオプションを選択する必要がありますか?
+    choices:
+    - content: Azure Kubernetes Service (AKS)
+      isCorrect: false
+      incorrectExplanation: Kubernetes には、コンテナー オーケストレーションに関する高度な知識が必要です。
+    - content: Service Fabric
+      isCorrect: false
+      incorrectExplanation: 天文学者の作業を、広範に、あるいはグローバルに分散する必要はありません。
+    - content: App Service
+      isCorrect: true
+      correctExplanation: 完全に管理されていて、アプリケーションをスケーリングするため、チームは特別なソフトウェアの作成に集中できます。
+  - content: 天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるようなある天文学の計算に直面しているものとします。 並列実行はあまり役に立たないようです。 次のどのオプションを選択する必要がありますか?
+    choices:
+    - content: Cloud Services
+      isCorrect: false
+      incorrectExplanation: 天文学のすべての計算を並列に実行できるわけではないので、VM を追加展開してもパフォーマンスを少し向上できるだけです。
+    - content: Azure Batch
+      isCorrect: true
+      correctExplanation: 天文学のある種の計算には、スーパーコンピューター並みの機能が必要です。
+    - content: Container Instances
+      isCorrect: false
+      incorrectExplanation: 天文学のすべての計算を並列に実行できるわけではない可能性があるので、コンテナーを追加展開してもパフォーマンスを少し向上できるだけです。

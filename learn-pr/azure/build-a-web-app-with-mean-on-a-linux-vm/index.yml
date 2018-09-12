@@ -1,29 +1,40 @@
 ### YamlMime:Module
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm
 metadata:
-  title: Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine
-  description: Learn how to set up a MEAN-based web application on a new Azure Linux virtual machine.
+  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+  description: Azure の新しい Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Build and run a web application with the MEAN stack on an Azure Linux Virtual Machine
-summary: Learn how to set up a MEAN-based web application on a new Azure Linux virtual machine.
-abstract: |
-  In this module, you will:
-  - Decide if the MEAN web stack is right for you
-  - Create an Ubuntu Linux VM to host your web app
-  - Add MongoDB as a data store for your web app
-  - Add Node.js as a host runtime for your web app
-  - Add Express as a Node.js web framework
-  - Add mongooseJS for object modeling of your MongoDB data
-  - Create a simple web app to verify the MEAN stack is working
-    - Make the web application publicly available from your VM
-prerequisites: |
-  - Experience with the Bash command-line interface
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: b843d8723ea3b8998f8bf14e80eea00156968ca4
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244765"
+title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+summary: Azure の新しい Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - MEAN Web スタックが自分に適しているかどうかを判断する
+
+  - ご利用の Web アプリをホストする Ubuntu Linux VM を作成する
+
+  - ご利用の Web アプリ用のデータ ストアとして MongoDB を追加する
+
+  - ご利用の Web アプリ用のホスト ランタイムとして Node.js を追加する
+
+  - Node.js Web フレームワークとして Express を追加する
+
+  - ご利用の MongoDB データのオブジェクト モデリング用に mongooseJS を追加する
+
+  - MEAN スタックが動作していることを確認するシンプルな Web アプリを作成する
+    - ご利用の VM から Web アプリケーションを一般に使用できるようにする
+prerequisites: >
+  - Bash コマンドライン インターフェイスのエクスペリエンス
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -33,7 +44,6 @@ products:
 - azure
 - azure-virtual-machines
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.1-introduction
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.2-decide-if-mean-is-right-for-you
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.3-exercise-create-an-ubuntu-linux-vm-to-host-your-web-app

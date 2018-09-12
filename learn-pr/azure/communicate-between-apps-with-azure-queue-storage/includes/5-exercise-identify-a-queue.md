@@ -1,16 +1,16 @@
-Let's create a client application to work with a queue. Then we'll add our connection string to the code.
+キューを操作するクライアント アプリケーションを作成しましょう。 次に、コードに接続文字列を追加します。
 
-## Create the application
+## <a name="create-the-application"></a>アプリケーションを作成する
 
-We'll create a .NET Core application that you can run on Linux, macOS, or Windows. Let's name it **QueueApp**. For simplicity, we'll use a single app that will both send and receive messages through our queue.
+Linux、macOS、または Windows で実行できる .NET Core アプリケーションを作成します。 これに **QueueApp** という名前を付けましょう。 わかりやすくするため、キューを介してメッセージの受信と送信の両方を行う単独のアプリを使用します。
 
-1. Use the `dotnet new` command to create a new console app with the name **QueueApp**. You can type commands into the Cloud Shell on the right, or if you are working locally, in a terminal/console window. This creates a simple app with a single source file: `Program.cs`.
+1. `dotnet new` コマンドを使用して、**QueueApp** という名前の新しいコンソール アプリを作成します。 コマンドの入力は右側の Cloud Shell か、ローカルで作業している場合はターミナル/コンソール ウィンドウで行うことができます。 これにより、1 つのソース ファイルによる、簡単なアプリが作成されます: `Program.cs`。
 
     ```azurecli
     dotnet new console -n QueueApp
     ```
 
-1. Switch to the newly created `QueueApp` folder and build the app to verify that all is well.
+1. 新しく作成された `QueueApp` フォルダーに切り替え、アプリをビルドして、すべて問題ないことを確認します。
 
     ```azurecli
     cd QueueApp
@@ -20,17 +20,17 @@ We'll create a .NET Core application that you can run on Linux, macOS, or Window
     dotnet build
     ```
 
-## Get your connection string
+## <a name="get-your-connection-string"></a>接続文字列を取得する
 
-Recall that your connection string is available in the Azure portal **Settings > Access keys** section of your storage account.
+Azure Portal のご自分のストレージ アカウントの **[設定] > [アクセス キー]** セクションで、ご自分の接続文字列が使用できることを思い出してください。
 
-You can also retrieve it through the Azure CLI or PowerShell tools. Let's use the Azure CLI command. Remember to replace the `<name>` with the specific name of the storage account you created. You can use `az storage account list` if you need a reminder.
+Azure CLI または PowerShell のツールから取得することもできます。 Azure CLI のコマンドを使用しましょう。 `<name>` はご自分で作成したストレージ アカウントの名前に置き換えてください。 確認が必要な場合は、`az storage account list` を使用できます。
 
 ```azurecli
 az storage account show-connection-string --name <name> --resource-group ExerciseResources
 ```
 
-This command will return a JSON block with your connection string. It will include the storage account name and the account key:
+このコマンドは、ご自分の接続文字列が含まれる JSON ブロックを返します。 ストレージ アカウント名とアカウント キーが含まれています。
 
 ```json
 {
@@ -38,22 +38,22 @@ This command will return a JSON block with your connection string. It will inclu
 }
 ```
 
-## Add the connection string to the application
+## <a name="add-the-connection-string-to-the-application"></a>接続文字列をアプリケーションに追加する
 
-Finally, let's add the connection string into our app so it can access the storage account.
+最後に、接続文字列がストレージ アカウントにアクセスできるように、アプリに追加しましょう。
 
 > [!WARNING]
-> For simplicity, you will place the connection string in the **Program.cs** file. In a production application, you should store it in a secure location. For server side use, we recommend using Azure Key Vault.
+> わかりやすくするため、接続文字列を **Program.cs** ファイルに配置します。 実稼働アプリケーションでは、安全な場所に格納する必要があります。 サーバー側で使用するために、Azure Key Vault の使用をお勧めします。
 
-1. Type `code .` in the terminal to open the online code editor. Alternatively, if you are working on your own you can use the IDE of your choice. We recommend Visual Studio Code, which is an excellent cross-platform IDE.
+1. ターミナルに `code .` と入力して、オンライン コード エディターを開きます。 または、自分で操作する場合は、任意の IDE を使用できます。 優れたクロスプラットフォーム IDE である Visual Studio Code をお勧めします。
 
-1. Open the `Program.cs` source file in the project.
+1. プロジェクトの `Program.cs` ソース ファイルを開きます。
 
-1. In the `Program` class, add a `const string` value to hold the connection string. You only need the value (it starts with the text **DefaultEndpointsProtocol**).
+1. 接続文字列を保持するため、`Program` クラスに `const string` の値を追加します。 必要なのはこの値のみです (**DefaultEndpointsProtocol** のテキストで始まります)。
 
-1. Save the file. You can click the ellipse "..." in the right corner of the cloud editor, it will also show you the keyboard shortcut.
+1. ファイルを保存します。 クラウド エディターの右上隅にある省略記号 "..." をクリックすると、キーボード ショートカットも表示されます。
 
-Your code should look something like this (the string value will be unique to your account).
+次のようなコードが表示されるはずです (文字列値は、アカウントに対して一意になります)。
 
 ```csharp
 ...
@@ -68,4 +68,4 @@ namespace QueueApp
 }
 ```
 
-Now that we have this starter project setup, let's look at how to work with a queue in code. It all starts with _messages_.
+このスタート プロジェクトがセットアップされたので、コードでキューを操作する方法を見てみましょう。 すべて_メッセージ_で始まります。

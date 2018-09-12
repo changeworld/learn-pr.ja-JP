@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
-title: Compiling a checklist for creating an Azure Virtual Machine
+title: Azure 仮想マシンの作成についてのチェックリストを作る
 metadata:
-  title: Compiling a checklist for creating an Azure Virtual Machine
-  description: Compile a checklist for creating an Azure Virtual Machine
+  title: Azure 仮想マシンの作成についてのチェックリストを作る
+  description: Azure 仮想マシンの作成についてのチェックリストを作る
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 51922e8e1aaaecf3c23b227c2fdd8a3113bd1b91
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236197"
 durationInMinutes: 10
-content: |
-  [!include[](includes/2-compile-a-checklist-for-creating-a-vm.md)]
+content: '[!include[](includes/2-compile-a-checklist-for-creating-a-vm.md)]'

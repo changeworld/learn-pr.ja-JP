@@ -1,0 +1,29 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.3-query-types
+metadata:
+  title: クエリの種類
+  description: ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。
+  ms.openlocfilehash: 3df6fc94dfc10fa5fd8cf12f402967f32047c7fb
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43727378"
+title: クエリの種類
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-query-types.md)]
+quiz:
+  title: テスト タイトル
+  questions:
+  - content: SQL クエリで唯一必須の句は何ですか?
+    choices:
+    - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+      isCorrect: false
+      incorrectExplanation: 違います。このクエリでは昇順に並べ替えられて製品 ID が返されます。
+    - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+      isCorrect: false
+      incorrectExplanation: 違います。このクエリでは降順に並べ替えられて ID のみが返されます。
+    - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
+      isCorrect: true
+      incorrectExplanation: 正解です。このクエリでは昇順に並べ替えられて製品 ID と製品の説明の両方が返されます。

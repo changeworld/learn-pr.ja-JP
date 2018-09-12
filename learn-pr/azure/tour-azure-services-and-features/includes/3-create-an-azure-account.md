@@ -1,55 +1,55 @@
-With a free Azure account, you can build, test, and deploy enterprise applications, create custom web and mobile experiences, and gain insights from your data through machine learning and powerful analytics.
+無料の Azure アカウントを使用して、エンタープライズ アプリケーションの構築、テスト、デプロイや、カスタムの Web およびモバイル エクスペリエンスの作成を行うことができます。また、機械学習や強力な分析によってデータから分析情報を得ることもできます。
 
-## What is an Azure account?
+## <a name="what-is-an-azure-account"></a>Azure アカウントとは
 
-An _Azure account_ is tied to a specific identity and holds information like:
+_Azure アカウント_は特定の ID に関連付けられており、次のような情報が保持されています。
 
-- Name, email, and contact preferences
-- Billing information such as a credit card
+- 名前、電子メール、連絡先の設定
+- クレジット カードなどの課金情報
 
-An Azure account is associated with one more  _subscriptions_.
+Azure アカウントは、1 つ以上の_サブスクリプション_に関連付けられています。
 
-## What is an Azure subscription?
+## <a name="what-is-an-azure-subscription"></a>Azure サブスクリプションとは
 
-An _Azure subscription_ is a logical container used to provision resources in Microsoft Azure. It holds the details of all your resources like virtual machines, databases, etc. It also has a trust relationship to a single Azure AD _tenant_ which is used to authenticate users and roles for the resources held in the subscription.
+_Azure サブスクリプション_は、Microsoft Azure にリソースをプロビジョニングするために使用される論理コンテナーです。 仮想マシンやデータベースなどのすべてのリソースの詳細が保持されています。また、サブスクリプションには、Azure AD _テナント_との信頼関係があります。この信頼関係は、サブスクリプションに保持されているリソースに対してユーザーとロールを認証する際に使用されます。
 
-Billing occurs at the subscription level. You can set spending limits on each subscription to ensure you aren't surprised at the end of the month. 
+課金はサブスクリプション レベルで発生します。 月末に驚かないように、サブスクリプションごとに使用制限を設定できます。 
 
-## What is an Azure AD tenant?
+## <a name="what-is-an-azure-ad-tenant"></a>Azure AD テナントとは
 
-Azure AD (Azure Active Directory) is a modern identity provider that supports multiple authentication protocols to secure applications and services in the cloud. It's _not_ the same as Windows Active Directory, which is focused on securing Windows desktops and servers. Instead, Azure AD is all about web-based authentication standards such as OpenID and OAuth.
+Azure AD (Azure Active Directory) は、複数の認証プロトコルをサポートして、クラウドのアプリケーションとサービスをセキュリティで保護する最新の ID プロバイダーです。 Windows デスクトップおよびサーバーのセキュリティ保護を重視した Windows Active Directory とは_異なります_。 Azure AD は、OpenID や OAuth などの Web ベースの認証標準に関するものです。
 
-A single tenant represents a logical organization and allows multiple identities to access and utilize resources protected by that tenant. An Azure subscription always has a trust relationship with a _single_ Azure AD tenant, but _multiple_ subscriptions can share a single tenant. This structure allows the organization to manage multiple subscriptions and set security rules across all the resources contained within them.
+1 つのテナントは論理的な組織を表しており、そのテナントによって保護されているリソースに複数の ID がアクセスして利用することができます。 Azure サブスクリプションには、常に "_1 つの_" Azure AD テナントとの信頼関係がありますが、"_複数の_" サブスクリプションで 1 つのテナントを共有できます。 この構造により、組織は複数のサブスクリプションを管理し、それらに含まれるすべてのリソースのセキュリティ規則を設定できます。
 
-Here's a simple representation of accounts, subscriptions, tenants, and resources.
+ここでは、アカウント、サブスクリプション、テナント、リソースを簡単に表しています。
 
-![Diagram of how accounts, tenants, subscriptions, and resources work together](../media/3-azure-ad-tenant.png)
+![アカウント、テナント、サブスクリプション、リソースの連携の図](../media/3-azure-ad-tenant.png)
 
-Notice that each Azure AD tenant has an _account owner_. This is the original Azure account that is responsible for billing. You can add additional users to the tenant, and even invite guests from other Azure AD tenants to access resources in subscriptions.
+Azure AD テナントごとに "_アカウント オーナー_" がいることに注意してください。 これは、課金に対して責任を負う元の Azure アカウントです。 ユーザーをテナントに追加したり、サブスクリプション内のリソースにアクセスするために、他の Azure AD テナントからゲストを招待したりできます。
 
-## Azure account types
+## <a name="azure-account-types"></a>Azure アカウントの種類
 
-Azure has several account types that cater to different customer types. The most commonly used accounts are:
+Azure には、さまざまな顧客タイプに対応する複数のアカウントの種類があります。 最もよく使用されるアカウントは次のとおりです。
 
-- Free
-- Pay-As-You-Go
+- 無料
+- 従量課金制
 - Enterprise Agreement
 
-### Azure free account
+### <a name="azure-free-account"></a>Azure 無料アカウント
 
-An Azure free account includes a **$200 credit** to spend for the first 30 days, free access to the most popular Azure products for 12 months, and access to more than 25 products that are always free. This is an excellent way for new users to get started. To set up a free account, you need a phone number, a credit card, and a Microsoft account.
+Azure 無料アカウントには、最初の 30 日間に使用できる **200 ドルのクレジット**、最も人気のある Azure 製品への 12 か月間の無料アクセス、常に無料の 25 以上の製品へのアクセスが含まれます。 これは、新しいユーザーが使い始めるための優れた方法です。 無料アカウントを設定するには、電話番号、クレジット カード、および Microsoft アカウントが必要です。
 
 > [!NOTE]
-> Credit card information is used for identity verification only. You won’t be charged for any services until you upgrade.
+> クレジットカード情報は本人確認にのみ使用されます。 アップグレードするまで、どのサービスにも課金されません。
 
-### Azure Pay-As-You-Go account
+### <a name="azure-pay-as-you-go-account"></a>Azure 従量課金制アカウント
 
-A Pay-As-You-Go (PAYG) account bills you monthly for the services you used. This account type is appropriate for a wide range of users, from individuals to small businesses and many large organizations as well.
+従量課金制 (PAYG) アカウントでは、ユーザーが 1 か月間に使用したサービスに対して請求されます。 このアカウントの種類は、個人から小規模企業や多くの大規模組織まで、広範なユーザーに適しています。
 
-### Azure Enterprise Agreement
+### <a name="azure-enterprise-agreement"></a>Azure Enterprise Agreement
 
-An Enterprise Agreement provides flexibility to buy cloud services and software licenses under one agreement, with discounts for new licenses and Software Assurance. It is targeted at enterprise-scale organizations.
+Enterprise Agreement では 1 つの契約でクラウド サービスやソフトウェア ライセンスを柔軟に購入でき、新しいライセンスとソフトウェア アシュアランスについては割引があります。 エンタープライズ規模の組織が対象になります。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Whether you are an individual, a small business, or an enterprise, you need an account to use Azure services. The typical sequence is to start with a free account so that you can evaluate Azure services. When your trial period expires, you will convert from the free account to Pay-As-You-Go.
+個人、スモール ビジネス、エンタープライズのいずれであっても、Azure サービスを使用するにはアカウントが必要です。 一般的な順序としては、Azure サービスを評価できるように無料アカウントで開始します。 試用期間が経過した後、無料アカウントから従量課金制に変換します。

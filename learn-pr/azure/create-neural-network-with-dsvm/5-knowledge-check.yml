@@ -4,12 +4,17 @@ title: 自分の知識をチェックする
 metadata:
   title: 自分の知識をチェックする
   description: Tensorflow と Azure Data Science Virtual Machine を使用してニューラル ネットワークを構築するために必要な手順を理解しているかどうかを確認します。
-  ms.openlocfilehash: 118d9b5f0fe9aa3299d4504df9027010135648ab
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0d96ef86afcfb4eead29233311a59c30824df1ad
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414457"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231301"
 durationInMinutes: 10
 quiz:
   title: TensorFlow と Azure Data Science Virtual Machine を使用したニューラル ネットワークの構築

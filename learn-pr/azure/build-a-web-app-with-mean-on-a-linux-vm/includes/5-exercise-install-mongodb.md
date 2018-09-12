@@ -1,59 +1,59 @@
-In this unit, you will install MongoDB on your Ubuntu Linux virtual machine to act as a data store for your upcoming sample web application.
+このユニットでは、今後のサンプル Web アプリケーションのデータ ストアとして動作する MongoDB を Ubuntu Linux 仮想マシンにインストールします。
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>VM に接続する
 
-In order to install MongoDB, you have to connect to the VM using **ssh**. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+MongoDB をインストールするには、**ssh** を使用して VM に接続する必要があります。 `<vm-admin-username>` と `<vm-public-ip>` のプレースホルダーを、管理者ユーザー名とご自分の VM のパブリック IP アドレスに置き換えます。
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Install MongoDB
+## <a name="install-mongodb"></a>MongoDB をインストールする
 
 > [!Important]
-> Ubuntu provides an unofficial package called **mongodb**. This package is not maintained by MongoDB Inc.
+> Ubuntu では、**mongodb** という名前の非公式のパッケージを提供しています。 このパッケージは MongoDB Inc. では管理されていません。
 
-1. Import the encryption key for the MongoDB repository. This will allow the package manager to verify that the mongodb packages you install are coming from MongoDB Inc.
+1. MongoDB リポジトリの暗号化キーをインポートします。 これで、インストールする mongodb パッケージが MongoDB Inc. からリリースされたものであることをパッケージ マネージャーで確認できるようになります。
 
     ```bash
     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
     ```
 
-    The **sudo** command means that we want to run the specified command with administrative privileges.
+    **sudo** コマンドは、管理特権を使用して、指定されたコマンドを実行することを意味します。
 
-1. Register the MongoDB Ubuntu repository so the package manager can locate the mongodb packages.
+1. パッケージ マネージャーで mongodb パッケージを検出できるように、MongoDB Ubuntu リポジトリを登録します。
 
     > [!NOTE]
-    > This command is different for different versions of Ubuntu. To find out which version of Ubuntu you're using, run: `uname -v`.
-    > This command will output something like this: `#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018`.
+    > このコマンドは Ubuntu のバージョンによって異なります。 使用している Ubuntu のバージョンを確認するには、`uname -v` を実行します。
+    > このコマンドの出力は、`#21~16.04.1-Ubuntu SMP Fri Aug 10 12:36:09 UTC 2018` のようになります。
     >
-    > This output indicates that we're running Ubuntu version 16.04.1.
-    > Refer to the [Install MongoDB Community Edition on Ubuntu](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/) documentation to get the exact command for your version.
+    > この出力は、Ubuntu バージョン 16.04.1 を実行していることを示しています。
+    > 使用しているバージョンの正確なコマンドを確認するには、[MongoDB Community Edition を Ubuntu にインストールする方法](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)に関するドキュメントを参照してください。
 
-    On Ubuntu 16.04, we run this command:
+    Ubuntu 16.04 上で以下のコマンドを実行します。
 
     ```bash
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. Reload the package database so we have the latest package information.
+1. 最新のパッケージ情報が得られるように、パッケージ データベースをリロードします。
 
     ```bash
     sudo apt-get update
     ```
 
-1. Install the MongoDB package onto our VM.
+1. MongoDB パッケージを VM にインストールします。
 
     ```bash
     sudo apt-get install -y mongodb-org
     ```
 
-1. Start the MongoDB service so you can connect to it later.
+1. MongoDB サービスを開始して、後で接続できるようにします。
 
     ```bash
     sudo service mongod start
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-We now have MongoDB installed on our Ubuntu Linux VM. MongoDB will serve as your backing data store for the information you save and retrieve in your web application.
+Ubuntu Linux VM に MongoDB をインストールしました。 MongoDB は、Web アプリケーションで保存および取得した情報のバッキング データ ストアとして機能します。

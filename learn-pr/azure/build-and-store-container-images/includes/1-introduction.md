@@ -1,14 +1,14 @@
-Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is a private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments.
+Azure Container Registry は、オープンソースの Docker Registry 2.0 に基づくマネージド Docker レジストリ サービスです。 Container Registry は Azure でプライベートにホストされており、あらゆる種類のコンテナー展開用にイメージをビルド、格納、管理できます。
 
-Container images can be pushed and pulled with Container Registry using the Docker CLI or the Azure CLI. Azure portal integration allows you to visually inspect the container images in your container registry. In distributed environments, the Container Registry geo-replication feature can be used to distribute container images to multiple Azure datacenters for localized distribution.
+Container Registry では、Docker CLI または Azure CLI を使用して、コンテナー イメージをプッシュおよびプルできます。 Azure portal の統合を使用して、コンテナー レジストリ内のコンテナー イメージを視覚的に検査できます。 分散環境では、Container Registry の geo レプリケーション機能を使用して、ローカライズされた配布用に複数の Azure データ センターにコンテナー イメージを配布できます。
 
-In addition to storing container images, Azure Container Registry Build can build container images in Azure. Build uses a standard Dockerfile to create and store a container image in Azure Container Registry without the need for local Docker tooling. With Azure Container Registry Build, you can build on demand or fully automate container image builds using DevOps processes and tooling.
+コンテナー イメージを格納するだけでなく、Azure Container Registry Build では Azure にコンテナー イメージを構築できます。 Build では、標準的な Dockerfile を使用してコンテナー イメージが作成され、Azure Container Registry に格納されます。ローカルな Docker ツールは必要ありません。 Azure Container Registry Build では、DevOps のプロセスとツールを使用して、必要に応じてコンテナー イメージをビルドしたり、コンテナー イメージのビルドを完全に自動化したりできます。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Deploy an Azure container registry
-- Build a container image using Azure Container Registry Build
-- Deploy this container to an Azure container instance
-- Replicate the container image to multiple Azure datacenters
+- Azure コンテナー レジストリを展開する
+- Azure Container Registry Build を使用してコンテナー イメージをビルドする
+- このコンテナーを Azure コンテナー インスタンスに展開する
+- コンテナー イメージを複数の Azure データ センターにレプリケートする

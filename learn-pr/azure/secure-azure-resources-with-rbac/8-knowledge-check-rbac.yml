@@ -3,16 +3,19 @@ uid: learn.secure-azure-resources-with-rbac.8-knowledge-check-rbac
 metadata:
   title: 知識チェック - RBAC を使用する
   description: 知識チェック - RBAC を使用する
-  displayType: one-column
-  ms.openlocfilehash: 6888c6b1d676f0bc3066cce4c92d0202984c2b52
-  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ef602766d1f775d59db158e0eb384830c08d0e69
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43479202"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235572"
 title: 知識チェック - RBAC を使用する
 durationInMinutes: 5
-content: 知識チェック - RBAC を使用する
 quiz:
   title: 知識チェック - RBAC を使用する
   questions:

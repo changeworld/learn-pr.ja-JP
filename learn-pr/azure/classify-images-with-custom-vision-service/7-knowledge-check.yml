@@ -4,12 +4,17 @@ title: 自分の知識をチェックする
 metadata:
   title: 自分の知識をチェックする
   description: Microsoft Custom Vision Service を使用してイメージを分類するために必要な手順を自分が理解しているかどうかを確認します。
-  ms.openlocfilehash: b217a3b77827db2dc79334d15f430d7289f7ada5
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c69b14bf20dbd79b03402009a2fb8ece7c4466ab
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43363864"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233138"
 durationInMinutes: 10
 quiz:
   title: Microsoft Custom Vision Service を使用してイメージの分類を実行する

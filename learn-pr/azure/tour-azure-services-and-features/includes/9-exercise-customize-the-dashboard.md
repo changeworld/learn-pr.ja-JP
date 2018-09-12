@@ -1,185 +1,185 @@
-Dashboards are a flexible tool for managing different aspects of Azure services through the Portal. They make it convenient to monitor the state of your services. Because they are shareable, they help ensure that everyone on your team sees the same data and stays aware of the state of your critical components. Let's create a new dashboard and add some tiles to it.
+ダッシュボードは、ポータルを通じて Azure サービスのさまざまな側面を管理するための柔軟なツールです。 これにより、サービスの状態を簡単に監視できるようになります。 ダッシュボードは共有できるため、チームの全員が同じデータを見て、重要なコンポーネントの状態を常に認識しているのに役立ちます。 新しいダッシュボードを作成し、タイルをいくつか追加してみましょう。
 
-## Create a new dashboard
+## <a name="create-a-new-dashboard"></a>新しいダッシュボードを作成する
 
-1. In the Azure portal, click the **New Dashboard** button.
+1. Azure Portal で **[新しいダッシュボード]** ボタンをクリックします。
 
-1. In the box saying **My Dashboard**, change the name to **Customer Dashboard**.
+1. **[マイ ダッシュボード]** ボックスで、名前を**顧客ダッシュボード**に変更します。
 
-## Add and configure the Clock Tile
+## <a name="add-and-configure-the-clock-tile"></a>[時計] タイルを追加して構成する
 
-1. In the tile gallery, drag the clock onto the workspace. Place it on the top right of the available space.
+1. タイル ギャラリーからワークスペースに時計をドラッグします。 それを、使用可能な領域の右上に配置します。
 
-1. On the **Edit clock** blade, change the Location to **Pacific Time (US & Canada)**.
+1. **[時計の編集]** ブレードで、[場所] を **[大阪、札幌、東京]** に変更します。
 
-1. Under **Time format**, click **24 hour**.
+1. **[時刻の形式]** で、**[24 時間]** をクリックします。
 
-1. Click **Done**.
+1. **[完了]** をクリックします。
 
-1. Repeat the preceding four steps, except select **Eastern Time (US & Canada)**. You should now have two clocks, one showing the time on the West Coast, the other on the East Coast.
+1. 上の 4 つの手順を繰り返し、今度は **[東部標準時 (米国およびカナダ)]** を選択します。 日本の時刻と米国東海岸の時刻を示す 2 つの時計が表示されるようになりました。
 
-## Resize a tile
+## <a name="resize-a-tile"></a>タイルのサイズを変更する
 
-1. In the **Tile Gallery** pane, click **All resources**, and then drop the tile onto the top left-hand side of the new dashboard workspace.
+1. **[タイル ギャラリー]** ウィンドウで **[すべてのリソース]** をクリックし、新しいダッシュボード ワークスペースの左上にタイルをドロップします。
 
-1. Click the tile, right-click the ellipsis, and then click **6x6**.
+1. タイルをクリックし、省略記号を右クリックして、**[6 x 6]** をクリックします。
 
-1. Click the gray corner on the bottom right-hand side of the tile, and resize the tile to 3.5 vertically by six horizontally. Note that when you finish resizing, it adjusts to 4x6.
+1. タイルの右下にあるグレーのコーナーをクリックし、タイルのサイズを縦 3.5、横 6 に変更します。 サイズ変更が完了したら、4 x 6 に調整されることに注意してください。
 
-1. In the Tile Gallery, click the **Resource Groups** tile, and drag it onto the workspace. Place it underneath the **All resources** tile.
+1. タイル ギャラリーで **[リソース グループ]** タイルをクリックして、ワークスペースにドラッグします。 **[すべてのリソース]** タイルの下に配置します。
 
-1. In the Tile Gallery, click the **Service Health** tile, and drag it onto the workspace. Place it to the right of the **All resources** tile.
+1. タイル ギャラリーで **[Service Health]** タイルをクリックして、ワークスペースにドラッグします。 **[すべてのリソース]** タイルの右側に配置します。
 
-1. Continue to add the following tiles, rearranging them to fit:
+1. 続けて、次のタイルを追加し、適切に再配置します。
 
-    - Help + Support
-    - Quick Tasks
-    - Marketplace
-    - What's New
+    - ヘルプとサポート
+    - クイック タスク
+    - マーケットプレース
+    - 新機能
 
-1. When you have added these tiles, click **Done customizing**. The **Customer Dashboard** dashboard should appear.
+1. これらのタイルを追加したら、**[カスタマイズ完了]** をクリックします。 **顧客ダッシュボード** ダッシュボードが表示されます。
 
-## Clone a dashboard
+## <a name="clone-a-dashboard"></a>ダッシュボードを複製する
 
-You now want to create a very similar dashboard for some other customers.
+次に、他の顧客用に非常によく似たダッシュボードを作成します。
 
-1. Click the **Clone** button.
+1. **[複製]** ボタンをクリックします。
 
-1. Rename the dashboard from **Clone of Customer Dashboard** to **Azure AD Admin Dashboard**.
+1. ダッシュボードの名前を、**顧客ダッシュボードの複製**から **Azure AD 管理ダッシュボード**に変更します。
 
-1. On the **Resource Groups** tile, click the dustbin icon to delete this tile.
+1. **[リソース グループ]** タイルで、ごみ箱アイコンをクリックしてこのタイルを削除します。
 
-1. From the Tile Gallery, add the following tiles:
+1. タイル ギャラリーから、次のタイルを追加します。
 
-    - Organization Identity
-    - Users and Groups
-    - User Activity Summary
-    - Welcome to the Azure AD Admin Center
+    - 組織 ID
+    - ユーザーとグループ
+    - ユーザー アクティビティの概要
+    - Azure AD 管理センターへようこそ
 
-1. Reposition the tiles as necessary, and then click **Done customizing**.
+1. 必要に応じてタイルの位置を変更し、**[カスタマイズ完了]** をクリックします。
 
-## Share a dashboard
+## <a name="share-a-dashboard"></a>ダッシュボードを共有する
 
-You now want to make this dashboard available to other users. To do this, carry out the following steps:
+次に、このダッシュボードを他のユーザーも利用できるようにします。 そのためには、次の手順を行います。
 
-1. Ensure that the Azure Active Directory (Azure AD) Admin dashboard is selected, and then click **Share**.
+1. Azure Active Directory (AD) 管理ダッシュボードが選択されていることを確認し、**[共有]** をクリックします。
 
-1. On the **Sharing and access control** blade, ensure that **Publish to the 'dashboards' resource group** is selected.
+1. **[共有 + アクセス制御]** ブレードで、**['dashboards' リソース グループに発行します]** がオンになっていることを確認します。
 
-1. Set the **Location** to one that is appropriate for your geography. Typically, this value defaults to your nearest data center.
+1. **[場所]** を地理に合わせて適切に設定します。 通常、この値の既定値は最も近いデータ センターです。
 
-1. Click **Publish**, and then close the **Sharing + access control** blade.
+1. **[発行]** をクリックした後、**[共有 + アクセス制御]** ブレードを閉じます。
 
-1. Click **Azure AD Admin Dashboard**, and then select **Customer Dashboard**.
+1. **Azure AD 管理ダッシュボード**を選択し、**顧客ダッシュボード**を選択します。
 
-    Note that in **All resources**, a Shared dashboard resource has appeared, and that in **Resource groups**, a dashboards resource group has also appeared.
+    **[すべてのリソース]** には共有ダッシュボードのリソースが表示され、**[リソース グループ]** にはダッシュボード リソース グループも表示されていることを確認してください。
 
-1. Repeat steps 1 to 3 to share the Customer Dashboard.
+1. 手順 1 から 3 を繰り返し、顧客ダッシュボードを共有します。
 
-## Edit a dashboard.json file
+## <a name="edit-a-dashboardjson-file"></a>ダッシュボード.json ファイルを編集する
 
-To show how you can download and edit a dashboard file, carry out the following steps:
+ダッシュボード ファイルをダウンロードして編集する方法を示すため、次の手順を行います。
 
-1. Click **Download**.
+1. **[Download]** をクリックします。
 
-1. Open Windows Explorer, and navigate to your Downloads folder.
+1. エクスプローラーを開き、[ダウンロード] フォルダーに移動します。
 
-1. Find the *Customer Dashboard.json* file and double-click it.
+1. *顧客ダッシュボード.json* ファイルを探し、そのファイルをダブルクリックします。
 
-1. In your file editor, look for the text *ClockPart*.
+1. お使いのファイル エディターで、*ClockPart* というテキストを探します。
 
-1. On the first occurrence of ClockPart, change the previous **rowSpan** value to 1.
+1. 最初に見つかった ClockPart で、前の **rowSpan** の値を 1 に変更します。
 
-1. On the second occurrence of Clockpart, also change the previous **rowSpan** value to 1.
+1. 次に見つかった ClockPart でも、前の **rowSpan** の値を 1 に変更します。
 
-1. On the second occurrence of Clockpart, change the Y value from 2 to 1.
+1. 2 番目に見つかった Clockpart の Y の値を 2 から 1 に変更します。
 
-1. Save the *Customer Dashboard.json* file and close your code editor.
+1. *顧客ダッシュボード.json* ファイルを保存して、コード エディターを閉じます。
 
-1. On the Azure dashboard, click **Upload**.
+1. Azure ダッシュボードで、**[アップロード]** をクリックします。
 
-1. In the **Open** dialog box, browse to the Downloads folder, and double-click *Customer Dashboard.json*.
+1. **[開く]** ダイアログ ボックスで、[ダウンロード] フォルダーに移動し、*顧客ダッシュボード.json* をダブルクリックします。
 
-    Note that the clocks have resized to one row high, and the bottom clock has moved up one row.
+    時計の高さがどちらも 1 行になり、下の時計が 1 行だけ上に移動していることを確認してください。
 
-## Select a shared dashboard
+## <a name="select-a-shared-dashboard"></a>共有ダッシュボードを選択する
 
-You've realized that you don't like the smaller clocks, and you want to return to the earlier shared version of the Customer Dashboard. You can do that either by editing the file and uploading it again or by accessing the shared version. To do that, carry out the following steps:
+小さい時計は不便なので、顧客ダッシュボードの以前の共有バージョンに戻すことにします。 これは、ファイルを編集して再びアップロードするか、共有バージョンにアクセスすることによって実現できます。 そのためには、次の手順を行います。
 
-1. Click the down arrow next to **Customer Dashboard**.
+1. **顧客ダッシュボード**の隣の下向き矢印をクリックしします。
 
-1. Click **Browse all dashboards**.
+1. **[すべてのダッシュボードを参照]** をクリックします。
 
-1. On the **All dashboards** blade, under **TYPE**, select **Shared dashboards**.
+1. **[すべてのダッシュボード]** ブレードの **[タイプ]** で、**[共有ダッシュボード]** を選択します。
 
-1. Click **Customer Dashboard**.
+1. **顧客ダッシュボード**をクリックします。
 
-1. Close the **All dashboards** blade.
+1. **[すべてのダッシュボード]** ブレードを閉じます。
 
-    Note that the clocks have returned to their original size.
+    時計が元のサイズに戻ったことを確認してください。
 
-## Switch to full screen
+## <a name="switch-to-full-screen"></a>全画面表示に切り替える
 
-1. Click the down arrow next to **Customer Dashboard**. 
+1. **顧客ダッシュボード**の隣の下向き矢印をクリックします。 
 
-    Note that there is another Customer Dashboard, without the shared symbol next to it. Click that version of Customer Dashboard, and the clocks become small again.
+    横に共有シンボルが付いていないもう 1 つの顧客ダッシュボードがあることに注意してください。 そのバージョンの顧客ダッシュボードをクリックすると、時計が再び小さくなります。
 
-1. Switch back to the shared Customer Dashboard.
+1. 共有バージョンの顧客ダッシュボードに切り替えます。
 
-1. Click the **Full Screen** button. 
+1. **[全画面表示]** ボタンをクリックします。 
 
-    Note that the browser menus and bars have all disappeared.
+    ブラウザーのメニューとバーがすべて表示されなくなります。
 
-1. Click the **Exit Full Screen** to return to the standard screen.
+1. 標準の画面に戻すには、**[全画面表示を終了]** をクリックします。
 
-## Unshare a dashboard
+## <a name="unshare-a-dashboard"></a>ダッシュボードの共有を解除する
 
-If you want to prevent a shared dashboard from being available for selection, you can _unshare_ it. To unshare a dashboard, carry out the following steps:
+共有ダッシュボードを選択できないようにする場合は、"_共有を解除_" できます。 ダッシュボードの共有を解除するには、次の手順を行います。
 
-1. Click the **Unshare** button. The **Sharing + access control** blade appears.
+1. **[共有の解除]** ボタンをクリックします。 **[共有 + アクセス制御]** ブレードが表示されます。
 
-1. Click the **Unpublish** button.
+1. **[発行の取り消し]** ボタンをクリックします。
 
-1. In the confirmation message box, click **OK**.
+1. 確認メッセージ ボックスで、**[はい]** をクリックします。
 
-1. Click the down arrow next to **Customer Dashboard**.
+1. **顧客ダッシュボード**の隣の下向き矢印をクリックしします。
 
-1. Click **Browse all dashboards**.
+1. **[すべてのダッシュボードを参照]** をクリックします。
 
-1. On the **All dashboards** blade, under **TYPE**, select **Shared dashboards**.
+1. **[すべてのダッシュボード]** ブレードの **[タイプ]** で、**[共有ダッシュボード]** を選択します。
 
-    Note that **Customer Dashboard** no longer appears in the list of available dashboards.
+    使用可能なダッシュボードの一覧に**顧客ダッシュボード**が表示されなくなります。
 
-1. Close the **All dashboards** blade.
+1. **[すべてのダッシュボード]** ブレードを閉じます。
 
-## Delete a dashboard
+## <a name="delete-a-dashboard"></a>ダッシュボードを削除する
 
-1. Ensure that the **Azure AD Admin** dashboard is selected.
+1. **Azure AD 管理**ダッシュボードが選択されていることを確認します。
 
-1. Click the **Delete** button.
+1. **[削除]** をクリックします。
 
-1. In the **Confirmation** message box, select the checkbox to confirm that this dashboard will no longer be visible, and then click **OK**.
+1. **[確認]** メッセージ ボックスで、このダッシュボードが表示されなくなることを確認するチェック ボックスをオンにして、**[OK]** をクリックします。
 
-## Reset a dashboard
+## <a name="reset-a-dashboard"></a>ダッシュボードをリセットする
 
-1. Ensure that **Customer Dashboard** is selected.
+1. **顧客ダッシュボード**が選択されていることを確認します。
 
-1. Click **Edit**.
+1. **[編集]** をクリックします。
 
-1. Right-click on the workspace, and click **Reset to default state**.
+1. ワークスペースを右クリックして、**[既定の状態にリセット]** をクリックします。
 
-1. In the **Reset dashboard to default state** message box, click **Yes**.
+1. **[ダッシュボードを既定の状態にリセットしますか?]** メッセージ ボックスで、**[はい]** をクリックします。
 
-    Note that the Customer Dashboard has reset to its default tiles.
+    顧客ダッシュボードが既定のタイルにリセットされたことを確認してください。
 
-1. Click **Done customizing**.
+1. **[カスタマイズ完了]** をクリックします。
 
-1. Click your name at the top right of the portal.
+1. ポータルの右上にある自分の名前をクリックします。
 
-1. Click **Sign out**.
+1. **[サインアウト]** をクリックします。
 
-1. Close your browser.
+1. ブラウザーを閉じます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You have now created and edited dashboards, shared them, altered them as **.JSON** files, unshared and finally, reset them to the default state. You should now be able to see what powerful tools dashboards can be and how you can use them to create efficient interfaces for differing roles within an organization.
+ここでは、ダッシュボードの作成と編集、共有、**.JSON** ファイルとしての変更、共有解除、既定の状態へのリセットを行いました。 次は、強力なツールとしてダッシュボードを使用する方法、およびダッシュボードを使用して組織内の異なる役割用に効果的なインターフェイスを作成する方法をご覧ください。

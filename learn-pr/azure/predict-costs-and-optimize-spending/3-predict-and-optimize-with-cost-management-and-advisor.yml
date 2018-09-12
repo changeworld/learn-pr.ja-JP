@@ -4,12 +4,17 @@ title: Cost Management と Azure Advisor で予測および最適化する
 metadata:
   title: Cost Management と Azure Advisor で予測および最適化する
   description: このユニットでは、Cost Management と Azure Advisor を使用して予測および最適化する方法を説明します
-  ms.openlocfilehash: a1e0bda42bd3f2d28ebfa78391506b6fdadfcb04
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0c4bc66250f7d3dc6d3938115cdd807d200ea4a2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43790575"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233638"
 durationInMinutes: 15
 content: >
   [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]

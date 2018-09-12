@@ -3,12 +3,17 @@ uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
 metadata:
   title: クエリの種類
   description: ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。
-  ms.openlocfilehash: ac566e569a81adeaf5e6b973f52b944f52682ade
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6c086c70eeb3baecd55d819dae074e978663bb97
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43795396"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240634"
 title: クエリの種類
 durationInMinutes: 10
 content: >
@@ -16,7 +21,7 @@ content: >
 quiz:
   title: テスト タイトル
   questions:
-  - content: SQL クエリで唯一必要とされる句とは?
+  - content: SQL クエリで唯一必須の句は何ですか?
     choices:
     - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
       isCorrect: false

@@ -1,19 +1,19 @@
-Imagine you work for a major news organization that reports breaking news alerts. Our company employs a worldwide network of journalists that are constantly sending updates through a web portal and a mobile app. A middle tier web service layer then takes those alert updates and publishes them online through several channels.
+あなたはニュース速報通知を提供する大手のニュース配信会社に勤務していると考えてください。 会社は世界中に広がるジャーナリストのネットワークを擁し、それらのジャーナリストから Web ポータルとモバイル アプリを通して常に更新情報が送信されます。 中間層である Web サービス レイヤーでは、それらの通知の更新情報を受け取り、複数のチャネルを通じてオンラインに公開します。
 
-However, it's been noticed the system is missing alerts when globally significant events occur. This is a _huge_ problem because we're being "scooped" by our competition! You've been hand-selected as the company's top developer to identify and fix the problem.
+ただし、世界的に重要なできごとが起こったときに、システムで通知が行われていないことがわりました。 スクープを競争相手に奪われていることになるため、これは "_重大な_" 問題です。 あなたは、問題を特定して修正する、会社のトップ開発者として選定されました。
 
-The middle tier provides plenty of capacity to handle normal loads. However, a look at the server logs revealed the system was overloaded when several journalists tried to upload larger breaking stories at the same time. Some writers complained the portal became unresponsive, and others said they lost their stories altogether. You've spotted a direct correlation between the reported issues and the spike in demand on the middle tier servers.
+中間層には、通常の負荷を処理するのに十分な容量があります。 ただし、サーバーのログを見ると、大きめのサイズの記事を複数のジャーナリストが同時にアップロードしようとしたときに、システムがオーバーロード状態になっていたことがわかりました。 ポータルが応答しなくなったと訴えるライターや、記事が全部消失したと訴えるライターもいました。 あなたは、報告された問題と中間層サーバー上での需要の急上昇との間に、直接的な相関関係があることを発見しました。
 
-Clearly, you need a way to handle these unexpected peaks. You don't want to add more instances of the website and middle tier web service because they're expensive and, under normal conditions, redundant. We could dynamically spin up instances, but this takes time and we'd have the issue waiting for new servers to come online.
+明らかに、このような予期しない負荷上昇を処理する方法が必要です。 あなたは、Web サイトと中間層の Web サービスのインスタンスを追加することは望んでいません。なぜなら、費用がかかり、しかも通常の状態では冗長だからです。 インスタンスを動的に起動することも可能ですが、それには時間がかかり、新たなサーバーがオンラインになるのを待機する際に問題が発生すると考えられます。
 
-You can solve this problem by using Azure Queue storage. A storage queue is a high-performance message buffer that can act as a broker between the front-end components (the "producers") and the middle tier (the "consumer"). 
+この問題は、Azure Queue Storage を使用して解決することができます。 ストレージ キューは、フロントエンド コンポーネント ("プロデューサー") と中間層 ("コンシューマー") との間でブローカーとして機能することができる、高パフォーマンスのメッセージ バッファーです。 
 
-Our front-end components place a message for each new alert into a queue. The middle tier then retrieves these messages one at a time from the queue for processing. At times of high-demand, the queue may grow in length, but no stories will be lost, and the application will remain responsive. When demand drops back to normal levels, the web service will catch up by working through the queue backlog.
+新たな通知ごとに、フロントエンド コンポーネントによってメッセージがキューに配置されます。 中間層では、これらのメッセージをキューから一度に 1 つずつ取り出して、処理します。 需要が多いときには、キューが長くなる場合がありますが、記事が失われることはありません。また、アプリケーションは応答性を維持します。 需要が通常のレベルに戻ると、たまっているキューのバックログが Web サービスによって処理されます。
 
-Let's learn how to use Azure Queue storage to handle high demand and improve resilience in your distributed applications.
+Azure Queue Storage を使用して高需要を処理し、分散アプリケーションの復元性を高める方法を学習しましょう。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-- Create an Azure Storage account that supports queues.
-- Create a queue using C# and the Azure Storage Client Library for .NET.
-- Add, retrieve, and remove messages from a queue using C# and the Azure Storage Client Library for .NET.
+- キューをサポートする Azure Storage アカウントを作成します。
+- C# と .NET 用 Azure Storage クライアント ライブラリを使用してキューを作成します。
+- C# と .NET 用 Azure Storage クライアント ライブラリを使用してキューにメッセージを追加し、またキューからメッセージを取得および削除します。

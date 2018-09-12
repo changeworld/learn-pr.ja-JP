@@ -7,7 +7,7 @@ Azure Event Hubs を使用すると、大量のデータを処理する機能を
 - Azure portal を使用してご利用のイベント ハブの状態とパフォーマンスを表示する。
 
 ## <a name="clean-up"></a>クリーンアップ 
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 ご利用のイベント ハブのテストに使用したリソースには、サブスクリプションに対してコストが発生します。 イベント ハブでの作業が完了したら、不要なコストがかからないようにそれらのリソースを必ず削除してください。
 
