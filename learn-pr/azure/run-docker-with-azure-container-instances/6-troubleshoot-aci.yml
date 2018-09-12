@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.6-troubleshoot-aci
-interactive: bash
 metadata:
-  title: <span data-ttu-id="d70bc-101">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d70bc-101">Troubleshoot Azure Container Instances</span></span>
-  description: <span data-ttu-id="d70bc-102">Azure Container Instances のトラブルシューティング。</span><span class="sxs-lookup"><span data-stu-id="d70bc-102">Troubleshoot Azure Container Instances.</span></span>
+  title: <span data-ttu-id="7d830-101">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="7d830-101">Troubleshoot Azure Container Instances</span></span>
+  description: <span data-ttu-id="7d830-102">Azure Container Instances のトラブルシューティング。</span><span class="sxs-lookup"><span data-stu-id="7d830-102">Troubleshoot Azure Container Instances.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 637aa9bd41a56e0b145477822c05c9859b594388
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: d8f1d74092ad4329987c7870d6056d7b598dbe00
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44232627"
-title: <span data-ttu-id="d70bc-103">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="d70bc-103">Troubleshoot Azure Container Instances</span></span>
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44309849"
+title: <span data-ttu-id="7d830-103">Azure Container Instances のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="7d830-103">Troubleshoot Azure Container Instances</span></span>
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/6-troubleshoot-aci.md)]'

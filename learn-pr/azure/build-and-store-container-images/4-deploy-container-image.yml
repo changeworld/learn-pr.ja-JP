@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.deploy-image
-interactive: bash
 metadata:
-  title: <span data-ttu-id="e4540-101">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="e4540-101">Deploy images from Azure Container Registry</span></span>
-  description: <span data-ttu-id="e4540-102">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="e4540-102">Deploy images from Azure Container Registry</span></span>
+  title: <span data-ttu-id="28b31-101">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="28b31-101">Deploy images from Azure Container Registry</span></span>
+  description: <span data-ttu-id="28b31-102">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="28b31-102">Deploy images from Azure Container Registry</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 56728232223ba026ef2b7c9f79f5d295587f9477
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 20db124f38eaa1dd0c14691142493df9c9f9c498
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44237795"
-title: <span data-ttu-id="e4540-103">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="e4540-103">Deploy images from Azure Container Registry</span></span>
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308166"
+title: <span data-ttu-id="28b31-103">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="28b31-103">Deploy images from Azure Container Registry</span></span>
 durationInMinutes: 20
+interactive: bash
+azureSandbox: true
 content: '[!include[](includes/4-deploy-image.md)]'
