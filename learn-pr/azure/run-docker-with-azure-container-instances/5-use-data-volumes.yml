@@ -1,6 +1,5 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.5-use-data-volumes
-interactive: bash
 metadata:
   title: データ ボリュームを使用する
   description: Azure Container Instances (ACI) でデータ ボリュームを使用します。
@@ -9,12 +8,14 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ad86517bd9f85444ea92e26343c1fffac466c242
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 2470c218c0809747653a0732d854b85e7c90f3b4
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234786"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44311039"
 title: データ ボリュームを使用する
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-use-data-volumes.md)]'

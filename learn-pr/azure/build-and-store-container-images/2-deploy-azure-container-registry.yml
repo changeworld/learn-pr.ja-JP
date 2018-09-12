@@ -1,6 +1,5 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.deploy-acr
-interactive: bash
 metadata:
   title: Azure Container Registry をデプロイする
   description: Azure Container Registry をデプロイする
@@ -9,12 +8,14 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 3fee1f6b34037660b14a472db5a9a9419526827d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 34422aa18a9293b82c78d1e5d2eacb0364ea163a
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44237659"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307284"
 title: Azure Container Registry をデプロイする
 durationInMinutes: 10
+interactive: bash
+azureSandbox: true
 content: '[!include[](includes/2-deploy-acr.md)]'

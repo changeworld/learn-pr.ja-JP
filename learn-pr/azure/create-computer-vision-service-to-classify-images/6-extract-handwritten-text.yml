@@ -1,6 +1,5 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.6-extract-handwritten-text
-interactive: bash
 title: イメージから手書きのテキストを抽出する
 metadata:
   title: イメージから手書きのテキストを抽出する
@@ -10,11 +9,13 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6c17c3bcf22068fb3bc75a177a528f3794cb5425
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 037caad0aa63076ba4f99de6b7399be4a92bf179
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241265"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44309458"
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/6-extract-handwritten-text.md)]'
