@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.3-create-a-vm
+title: Azure portal を使用して VM を作成する
+metadata:
+  title: Azure portal を使用して VM を作成する
+  description: Azure portal を使用して VM を作成する
+  ms.openlocfilehash: b5e4e364e1d5aae84c2545fe5b9365af1e63a1af
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791509"
+durationInMinutes: 15
+content: '[!include[](includes/3-create-a-vm.md)]'
