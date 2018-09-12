@@ -1,111 +1,111 @@
-Our server is ready to process video data; the last thing we need to do is open the ports that the traffic cameras will use to upload video files to our server. 
+サーバーはビデオ データを処理する準備ができています。後は、サーバーにビデオ ファイルをアップロードするために交通カメラで使用するポートを開くだけです。 
 
-## Create a network security group
+## <a name="create-a-network-security-group"></a>ネットワーク セキュリティ グループの作成
 
-Azure should have created a security group for us because we indicated we wanted Remote Desktop access. But let's create a new security group so you can walk through the entire process. This is particularly important if you decide to create your virtual network _before_ your VMs. As mentioned earlier, security groups are _optional_ and not necessarily created with the network.
-
-> [!NOTE]
-> Since this is _supposed_ to be the second VM, we would already have a security group to apply to our network, but let's pretend for a moment that we don't, or that the rules are different for this VM.
-
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), click the **Create a resource** button in the left corner sidebar to start a new resource creation.
-
-1. Type "Network security group" into the filter box and select the matching item in the list.
-
-1. Make sure the **Resource Manager** deployment model is selected and click **Create**.
-
-1. Provide a **Name** for your security group. Again, naming conventions are a good idea here, let's use "test-vp-nsg2" for "Test Video Processor Network Security Group #2".
-
-1. Select the proper **Subscription** and use your existing **Resource group**.
-
-1. Finally, put it into the same **Location** as the VM / Virtual Network. This is important - you won't be able to apply this resource if it's in a different location.
-
-1. Click **Create** to create the group.
-
-## Add a new inbound rule to our Network Security Group
-
-Deployment should complete quickly.
-
-1. Find the new security group resource and select it in the Azure portal.
-
-1. On the overview page, you'll find that it has some default rules created to lock down the network.
-
-    On the inbound side:
-
-    - All inbound traffic from one VNet to another is allowed. This lets resources on the VNet talk to each other.
-    - Azure Load balancer "probe" requests to ensure the VM is alive
-    - All other inbound traffic is denied.
-    On the outbound side:
-    - All in-network traffic on the VNet is allowed.
-    - All outbound traffic to the Internet is allowed.
-    - All other outbound traffic is denied.
+リモート デスクトップ アクセスが必要であることを示したため、Azure ではセキュリティ グループが作成されているはずです。 しかし、ここではプロセス全体を確認するために、新しいセキュリティ グループを作成します。 VM の_前_に仮想ネットワークを作成することにした場合、これは特に重要です。 前述のとおり、セキュリティ グループは_省略可能_であり、必ずしもネットワークと共に作成されるわけではありません。
 
 > [!NOTE]
-> These default rules are set with high priority values, which means that they get evaluated _last_. They cannot be changed or deleted, but you can _override_ them by creating more specific rules to match your traffic with a lower priority value.
+> これは 2 番目の VM であることが_想定_されるため、ネットワークに適用するセキュリティ グループは既に存在しますが、ここではまだ存在しないか、この VM に対するルールが異なると仮定します。
 
-1. Click the **Inbound security rules** section in the **Settings** panel for the security group.
+1. [Azure Portal](https://portal.azure.com?azure-portal=true) で、左隅のサイドバーにある **[リソースの作成]** ボタンをクリックして、新しいリソースの作成を開始します。
 
-1. Click **+ Add** to add a new security rule.
+1. フィルター ボックスに「ネットワーク セキュリティ グループ」と入力し、一覧で一致する項目を選択します。
 
-    ![Add a security rule](../media-drafts/8-add-rule.png)
+1. **[リソース マネージャー]** デプロイ モデルが選択されていることを確認し、**[作成]** をクリックします。
 
-    There are two ways to enter the information necessary for a security rule: basic and advanced. You can switch between them by clicking the button at the top of the "add" panel.
+1. セキュリティ グループの **[名前]** を指定します。 ここでも、名前付け規則を使用することをお勧めします。"Test Video Processor Network Security Group #2" の場合は "test-vp-nsg2" を使用します。
 
-    ![Basic vs. Advanced rule input](../media-drafts/8-advanced-create-rule.png)
+1. 適切な **[サブスクリプション]** を選択し、既存の **[リソース グループ]** を使用します。
 
-    The advanced mode provides the ability to completely customize the rule, however, if you just need to configure a known protocol, the basic mode is a bit easier to work with.
+1. 最後に、VM / 仮想ネットワークと同じ**場所**に配置します。 これは重要なことです。場所が異なる場合、このリソースを適用できなくなります。
 
-1. Switch to the Basic mode.
+1. **[作成]** をクリックしてグループを作成します。
 
-1. Add the information for our FTP rule.
+## <a name="add-a-new-inbound-rule-to-our-network-security-group"></a>ネットワーク セキュリティ グループに新しい受信規則を追加する
 
-    - Set the **Service** to be FTP. This will set your port range up for you.
-    - Set the **Priority** to "1000". It has to be a lower number than the default **Deny** rule. You can start the range at any value, but it's recommended you give yourself some space in case an exception needs to be created later.
-    - Give the rule a name, we'll use "traffic-cam-ftp-upload-2".
-    - Give the rule a description.
+デプロイはすぐに完了するはずです。
 
-1. Switch back to the **Advanced** mode. Notice that our settings are still present. We can use this panel to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. If you know the current IP address of your local computer, you can try that. Otherwise, leave the setting as "Any" so you can test the rule.
+1. Azure Portal で新しいセキュリティ グループのリソースを見つけて選択します。
 
-1. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+1. 概要ページには、ネットワークをロックダウンするために作成された既定の規則がいくつか表示されます。
+
+    受信側:
+
+    - VNet 間の受信トラフィックはすべて許可されます。 これにより、VNet 上のリソースは相互に通信することができます。
+    - Azure Load Balancer の "プローブ" によって、VM が有効であることを確認するように求められます
+    - 他の受信トラフィックはすべて拒否されます。
+    送信側:
+    - VNet 上のすべてのネットワーク内のトラフィックが許可されます。
+    - インターネットへの送信トラフィックはすべて許可されます。
+    - 他の送信トラフィックはすべて拒否されます。
+
+> [!NOTE]
+> これらの既定の規則には優先度の高い値が設定されます。これは、_最後_に評価されることを意味します。 これを変更したり、削除したりすることはできませんが、優先度の低い値のトラフィックと一致するようにより具体的な規則を作成することで、_オーバーライド_できます。
+
+1. セキュリティ グループの **[設定]** パネルで **[受信セキュリティ規則]** セクションをクリックします。
+
+1. **[+ 追加]** をクリックして新しいセキュリティ規則を追加します。
+
+    ![セキュリティ規則を追加する](../media-drafts/8-add-rule.png)
+
+    セキュリティ規則に必要な情報を入力する方法は 2 つ (基本と高度) あります。 [追加] パネルの上部にあるボタンをクリックして、これらを切り替えることができます。
+
+    ![Basic デプロイと高度な規則の入力](../media-drafts/8-advanced-create-rule.png)
+
+    高度なモードでは規則を完全にカスタマイズできますが、既知のプロトコルを構成するだけの場合は、基本モードのほうが操作は少し簡単です。
+
+1. 基本モードに切り替えます。
+
+1. FTP 規則に関する情報を追加します。
+
+    - **[サービス]** を FTP に設定します。 これでポートの範囲が設定されます。
+    - **[優先順位]** を "1000" に設定します。 既定値の **[拒否]** 規則よりも低い数値にする必要があります。 任意の値で範囲を開始することができますが、後で例外を作成する必要がある場合は、余裕を持たせることをお勧めします。
+    - 規則に名前を付けます。ここでは、"traffic-cam-ftp-upload-2" を使用します。
+    - 規則の説明を入力します。
+
+1. **高度な**モードに戻ります。 設定がまだ存在することに注目してください。 このパネルを使用して、より詳細な設定を作成することができます。 たとえば、**[ソース]** を特定の IP アドレスまたはカメラに固有の IP アドレスの範囲に制限できます。 ローカル コンピューターの現在の IP アドレスがわかっている場合は、それを試すことができます。 それ以外の場合は、設定を "任意" のままにして、規則をテストできるようにします。
+
+1. **[追加]** をクリックして、規則を作成します。 これで受信規則の一覧が更新されます。規則が優先順になっていることに注目してください。これは規則を調べる順序です。
     
-## Apply the security group
+## <a name="apply-the-security-group"></a>セキュリティ グループを適用する
 
-Recall that we can apply the security group to a network interface to guard a single VM, or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common so let's do that. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM which is using the virtual network.
+セキュリティ グループを単一の VM を保護するためにネットワーク インターフェイスに適用することも、サブネットに適用し、そのサブネット上のリソースに適用できることを思い出してください。 どちらかというと後者のアプローチが最も一般的であるため、これを使用します。 Azure でこのリソースにアクセスすることができます。その場合、仮想ネットワーク リソースを経由するか、仮想ネットワークを使用している VM 経由で間接的にアクセスできます。
 
-1. Switch to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. 仮想マシンの **[概要]** パネルに切り替えます。 **[すべてのリソース]** の下に VM があります。
 
-1. Select the **Networking** item in the **Settings** section.
+1. **[設定]** セクションで **[ネットワーク]** という項目を選択します。
 
-    ![Networking item in the VM settings](../media-drafts/8-network-settings.png)
+    ![VM 設定の [ネットワーク] 項目](../media-drafts/8-network-settings.png)
 
-1. In the networking properties, you will find information about the networking applied to the VM including the **Virtual network/subnet**. This is a clickable link to get to the resource. Click it to open the virtual network. This link is _also_ available on the **Overview** panel of the VM. Either of these will open the **Overview** of the virtual network.
+1. ネットワーク プロパティには、**[仮想ネットワーク/サブネット]** を含む、VM に適用されるネットワークに関する情報があります。 これは、リソースにアクセスするためのクリック可能なリンクです。 これをクリックして仮想ネットワークを開きます。 このリンクは、VM の **[概要]** パネル_でも_使用できます。 これらのいずれかをクリックすると、仮想ネットワークの **[概要]** が開きます。
 
-1. In the **Settings** section, select the **Subnets** item.
+1. **[設定]** セクションで、**[サブネット]** 項目を選択します。
 
-1. We should have a single subnet defined (default) from when we created the VM + network earlier. Click the item in the list to open the details.
+1. 以前に VM とネットワークを作成したときの拒否された (既定) 単一のサブネットがあるはずです。 一覧の項目をクリックして詳細を表示します。
 
-1. Click the **Network security group** entry.
+1. **[ネットワーク セキュリティ グループ]** エントリをクリックします。
 
-1. Select your new security group: **test-vp-nsg2**.
+1. **test-vp-nsg2** という新しいセキュリティ グループを選択します。
 
-1. Click **Save** to save the change. It will take a minute to apply to the network.
+1. **[保存]** をクリックして変更内容を保存します。 ネットワークに適用されるまで少し時間がかかります。
 
-## Verify the rules
+## <a name="verify-the-rules"></a>規則を確認する
 
-Let's validate the change.
+変更内容を検証しましょう。
 
-1. Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. 仮想マシンの **[概要]** パネルに戻ります。 **[すべてのリソース]** の下に VM があります。
 
-1. Select the **Networking** item in the **Settings** section.
+1. **[設定]** セクションで **[ネットワーク]** という項目を選択します。
 
-1. In the **Overview** panel for the network, there is a link for **Effective security rules that will quickly show you how rules are going to be evaluated. Click the link to open the analysis and make sure you see your FTP rule.
+1. ネットワークの **[概要]** パネルには、**有効なセキュリティ規則のリンクがあります。これをクリックすると、規則がどのように評価されるかがすぐにわかります。 リンクをクリックして分析を開き、FTP 規則が表示されることを確認します。
 
-    ![Effective security rules for our network](../media-drafts/8-effective-rules.png)
+    ![ネットワークの有効なセキュリティ規則](../media-drafts/8-effective-rules.png)
 
-1. If you installed the FTP server role, you should be able to connect to the FTP endpoint now. Try it out.
+1. FTP サーバー ロールをインストールした場合は、FTP エンドポイントに接続できるようになっているはずです。 実際にやってみましょう。
 
-## One more thing
+## <a name="one-more-thing"></a>もう 1 つ注意すべき点
 
-Security rules are tricky to get right. We actually made a mistake when we applied this new security group - we lost our Remote Desktop access! To fix this, you can add another rule to the security group to support RDP access. Make sure to restrict the inbound TCP/IP addresses for the rule to be the ones you own.
+セキュリティ規則を理解するのは大変です。 実際、この新しいセキュリティ グループを適用したときに間違えてしまいました。つまり、リモート デスクトップ アクセスが失なわれてしまったのです。 これを解決するために、RDP アクセスがサポートされるようにセキュリティ グループに別の規則を追加することができます。 必ず、規則に対する受信 TCP/IP アドレスを所有しているものに限定してください。
 
 > [!WARNING]
-> Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by RDP to be something other than the default 3389. Keep in mind that changing ports is not sufficient to stop attacks, it simply makes it a little harder to discover.
+> 常に、管理アクセスに使用するポートをロックダウンするようにしてください。 さらに優れたアプローチは、プライベート ネットワークに仮想ネットワークをリンクするための VPN を作成し、そのアドレス範囲からの RDP または SSH 要求のみを許可することです。 RDP で使用されるポートを、既定の 3389 以外のものに変更することもできます。 ポートの変更は攻撃を阻止するには不十分であり、検出が少し困難になることに注意してください。
