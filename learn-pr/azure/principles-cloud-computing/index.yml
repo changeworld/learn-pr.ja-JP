@@ -1,30 +1,27 @@
 ### YamlMime:Module
-uid: principles-cloud-computing
+uid: learn.principles-cloud-computing
 metadata:
-  title: クラウド コンピューティングの原則
-  description: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
+  title: Principles of cloud computing
+  description: Explore the core concepts of cloud computing and how it can help your business.
   ms.date: 09/24/2018
-  ms.openlocfilehash: 11d73eff33b33397cbcebd62b0a1187be478d873
-  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43459372"
-title: クラウド コンピューティングの原則
-summary: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
-abstract: >
-  このモジュールでは、次のことを行います。
-
-  - 一般的なクラウド コンピューティング サービスについて調べます。
-
-  - クラウド コンピューティングのメリットについて調べます。
-
-  - 自分に最適なクラウド デプロイ モデルを判断します。
-prerequisites: なし
+  #TODO: Update with real author name.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Principles of cloud computing
+summary: Explore the core concepts of cloud computing and how it can help your business.
+abstract:  | 
+  In this module, you will:
+  - Explore common cloud computing services
+  - Explore the benefits of cloud computing
+  - Decide which cloud deployment model is best for you
+prerequisites: None
+#TODO: Update icon URL with real image 
 iconUrl: http://via.placeholder.com/120x120
-levels:
+levels: 
 - beginner
-roles:
+roles: 
 - administrator
 - business-analyst
 - business-user
@@ -32,14 +29,14 @@ roles:
 - solution-architect
 products:
 - azure
-- azurePortal
-- resourceManager
+- azure-portal
+- azure-resource-manager
 units:
-- principles-cloud-computing.1-motivation
-- principles-cloud-computing.2-what-is-cloud-computing
-- principles-cloud-computing.3-benefits-of-cloud-computing
-- principles-cloud-computing.4-cloud-deployment-models
-- principles-cloud-computing.5-types-of-cloud-services
-- principles-cloud-computing.6-knowledge-check
-- principles-cloud-computing.7-summary
+- learn.principles-cloud-computing.1-motivation
+- learn.principles-cloud-computing.2-what-is-cloud-computing
+- learn.principles-cloud-computing.3-benefits-of-cloud-computing
+- learn.principles-cloud-computing.4-cloud-deployment-models
+- learn.principles-cloud-computing.5-types-of-cloud-services
+- learn.principles-cloud-computing.6-knowledge-check
+- learn.principles-cloud-computing.7-summary
 achievement: learn.principles-cloud-computing.badge
