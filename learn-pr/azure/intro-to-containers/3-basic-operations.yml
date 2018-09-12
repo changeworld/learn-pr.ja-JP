@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.3-basic-operations
 metadata:
-  title: <span data-ttu-id="a1afc-101">基本的なコンテナー操作</span><span class="sxs-lookup"><span data-stu-id="a1afc-101">Basic container operations</span></span>
-  description: <span data-ttu-id="a1afc-102">基本的なコンテナー操作。</span><span class="sxs-lookup"><span data-stu-id="a1afc-102">Basic container operations.</span></span>
-  ms.openlocfilehash: 20d01a1489961512f0207c0dc90cb26fdc80459a
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  title: <span data-ttu-id="8d1ae-101">基本的なコンテナー操作</span><span class="sxs-lookup"><span data-stu-id="8d1ae-101">Basic container operations</span></span>
+  description: <span data-ttu-id="8d1ae-102">基本的なコンテナー操作。</span><span class="sxs-lookup"><span data-stu-id="8d1ae-102">Basic container operations.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 30c81631af81d9a61cf71d4870bebb3fbe902a1f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43729316"
-title: <span data-ttu-id="a1afc-103">基本的なコンテナー操作</span><span class="sxs-lookup"><span data-stu-id="a1afc-103">Basic container operations</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44234004"
+title: <span data-ttu-id="8d1ae-103">基本的なコンテナー操作</span><span class="sxs-lookup"><span data-stu-id="8d1ae-103">Basic container operations</span></span>
 durationInMinutes: 15
 content: '[!include[](includes/3-basic-operations.md)]'

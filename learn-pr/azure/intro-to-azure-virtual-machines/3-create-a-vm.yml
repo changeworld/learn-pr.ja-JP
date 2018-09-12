@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.3-create-a-vm
+title: <span data-ttu-id="2709d-101">Azure Portal を使用して VM を作成する</span><span class="sxs-lookup"><span data-stu-id="2709d-101">Create a VM using the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="2709d-102">Azure Portal を使用して VM を作成する</span><span class="sxs-lookup"><span data-stu-id="2709d-102">Create a VM using the Azure portal</span></span>
+  description: <span data-ttu-id="2709d-103">Azure Portal を使用して VM を作成する</span><span class="sxs-lookup"><span data-stu-id="2709d-103">Create a VM using the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f26f5e3ed77b31612c7ce90059651012693a9fb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242861"
+durationInMinutes: 15
+content: '[!include[](includes/3-create-a-vm.md)]'

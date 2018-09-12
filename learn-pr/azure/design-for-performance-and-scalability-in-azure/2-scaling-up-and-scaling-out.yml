@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+title: <span data-ttu-id="03066-101">スケールアップとスケールアウト</span><span class="sxs-lookup"><span data-stu-id="03066-101">Scaling up and scaling out</span></span>
+metadata:
+  title: <span data-ttu-id="03066-102">スケールアップとスケールアウト</span><span class="sxs-lookup"><span data-stu-id="03066-102">Scaling up and scaling out</span></span>
+  description: <span data-ttu-id="03066-103">このユニットでは、アーキテクチャでスケールアップとスケールアウトを活用する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="03066-103">In this unit we'll discuss how to leverage scaling up and scaling out in your architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6e13b83be38887c195613ee6f9c20a1eef506d8d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248471"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-scaling-up-and-scaling-out.md)]
+quiz:
+  title: <span data-ttu-id="03066-104">知識チェック - スケールアップとスケールアウト</span><span class="sxs-lookup"><span data-stu-id="03066-104">Knowledge check - Scaling up and scaling out</span></span>
+  questions:
+  - content: <span data-ttu-id="03066-105">スケールアウトの最も正確な説明はどれですか?</span><span class="sxs-lookup"><span data-stu-id="03066-105">Which is the most accurate description of scaling out?</span></span>
+    choices:
+    - content: <span data-ttu-id="03066-106">1 つのインスタンスのリソースの量を増やすこと</span><span class="sxs-lookup"><span data-stu-id="03066-106">Increasing the amount of resources of an instance</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-107">"1 つのインスタンスのリソースの量を増やすこと" はスケールアップの説明です。</span><span class="sxs-lookup"><span data-stu-id="03066-107">Increasing the amount of resources of a single instance is a description for scaling up</span></span>
+    - content: <span data-ttu-id="03066-108">要求に対応するインスタンスの数を増やすこと</span><span class="sxs-lookup"><span data-stu-id="03066-108">Increasing the number of instances serving requests</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03066-109">これが正解です。</span><span class="sxs-lookup"><span data-stu-id="03066-109">This is correct.</span></span> <span data-ttu-id="03066-110">スケールアウトでは、要求に対応するインスタンスの数を増やします。</span><span class="sxs-lookup"><span data-stu-id="03066-110">Scaling out increases the number of instances service requests.</span></span>
+    - content: <span data-ttu-id="03066-111">仮想マシンにストレージを追加すること</span><span class="sxs-lookup"><span data-stu-id="03066-111">Adding additional storage to a virtual machine</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-112">"ストレージを追加すること" は、スケールアウトの説明ではありません。</span><span class="sxs-lookup"><span data-stu-id="03066-112">Adding additional storage is not an example of scaling out.</span></span>
+    - content: <span data-ttu-id="03066-113">アプリケーションのスケールの最大レベルに達すること</span><span class="sxs-lookup"><span data-stu-id="03066-113">Reaching the maximum level of scale for your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-114">アプリケーションのスケールの最大レベルに達した場合、スケールアウトによって対処できますが、スケールアウトの正確な説明ではありません。</span><span class="sxs-lookup"><span data-stu-id="03066-114">Reaching the maximum level of scale for your application can be addressed by scaling out, but is not an accurate description of scaling out.</span></span>
+  - content: <span data-ttu-id="03066-115">スケールダウンの最も正確な説明はどれですか?</span><span class="sxs-lookup"><span data-stu-id="03066-115">Which is the most accurate description of scaling down?</span></span>
+    choices:
+    - content: <span data-ttu-id="03066-116">要求に対応するインスタンスの数を減らすこと</span><span class="sxs-lookup"><span data-stu-id="03066-116">Decreasing the number of instances serving requests</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-117">"要求に対応するインスタンスの数を減らすこと" はスケールインです。</span><span class="sxs-lookup"><span data-stu-id="03066-117">Decreasing the number of instances serving requets is scaling in</span></span>
+    - content: <span data-ttu-id="03066-118">アプリケーションのスケーリング方法の所有権を取得すること</span><span class="sxs-lookup"><span data-stu-id="03066-118">Taking ownership of how your application scales</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-119">"アプリケーションのスケーリング方法の所有権を取得すること" はスケールダウンではありません。</span><span class="sxs-lookup"><span data-stu-id="03066-119">Taking ownership of how your application scales is not scaling down.</span></span>
+    - content: <span data-ttu-id="03066-120">インスタンスのリソースの量を減らすこと</span><span class="sxs-lookup"><span data-stu-id="03066-120">Decreasing the amount of resources of an instance</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03066-121">スケールダウンとは、1 つのインスタンスが利用できるリソースを減らすことです。</span><span class="sxs-lookup"><span data-stu-id="03066-121">Scaling down is the reduction of resources that a single instance has available.</span></span>
+    - content: <span data-ttu-id="03066-122">アプリケーションのスケールの最大レベルにまだ達していないこと</span><span class="sxs-lookup"><span data-stu-id="03066-122">Not yet reaching the maximum level of scale for your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-123">これはスケールダウンの説明ではありません。</span><span class="sxs-lookup"><span data-stu-id="03066-123">This is not a description of scaling down.</span></span>
+  - content: <span data-ttu-id="03066-124">アプリケーションにスケーリング戦略を組み込むときの考慮事項でないものは次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="03066-124">Which of the following is NOT a consideration when building a scaling strategy into your application?</span></span>
+    choices:
+    - content: <span data-ttu-id="03066-125">インスタンスのバックアップ リテンション ポリシー</span><span class="sxs-lookup"><span data-stu-id="03066-125">The backup retention policies for your instances</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="03066-126">バックアップ リテンション ポリシーを定義することは重要ですが、アプリケーションのスケーリング機能とは無関係です。</span><span class="sxs-lookup"><span data-stu-id="03066-126">While it is importatnt to define the backup retention policies, it is unrelated to the ability of your application to scale.</span></span>
+    - content: <span data-ttu-id="03066-127">アプリケーションの状態管理</span><span class="sxs-lookup"><span data-stu-id="03066-127">State management of your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-128">スケーリング戦略を構築するときは、状態管理を考慮することが重要です。</span><span class="sxs-lookup"><span data-stu-id="03066-128">State management is important to consider when building a scaling strategy.</span></span> <span data-ttu-id="03066-129">適切にスケーリングできるかどうかは、インスタンスを追加または削除したときにユーザー エクスペリエンスが損なわれないように、個々のインスタンスの外部でユーザーの状態を保存できるかどうかに左右されます。</span><span class="sxs-lookup"><span data-stu-id="03066-129">The ability to scale well will depend on the ability to store user state outside of the individual instances to ensure user experience is not broken as additional instances are added and removed.</span></span>
+    - content: <span data-ttu-id="03066-130">インスタンスの起動時間</span><span class="sxs-lookup"><span data-stu-id="03066-130">Startup time of your instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-131">起動時間はスケーリング戦略における重要な考慮事項です。</span><span class="sxs-lookup"><span data-stu-id="03066-131">Startup time is an important consideration in a scaling strategy.</span></span> <span data-ttu-id="03066-132">インスタンスの起動時間が長くなると、アプリケーションのスケーリングに必要な時間が増えます。</span><span class="sxs-lookup"><span data-stu-id="03066-132">As the time to start an instance increases, the more time you need to allow for your application to scale.</span></span>
+    - content: <span data-ttu-id="03066-133">メトリックまたはスケジュールに基づくインスタンスのスケーリングの自動化</span><span class="sxs-lookup"><span data-stu-id="03066-133">Automating the scaling of your instances based on some metric or schedule</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="03066-134">スケーリングの自動化は、スケーリング戦略の重要な要素です。</span><span class="sxs-lookup"><span data-stu-id="03066-134">Scaling automation is an important piece of a scaling strategy.</span></span> <span data-ttu-id="03066-135">スケーリング機能を自動化すると、手動での介入やユーザー エクスペリエンスの低下を伴わずに、ユーザー負荷の変動に適切に対応できるようになります。</span><span class="sxs-lookup"><span data-stu-id="03066-135">As you automate your scaling capabilities you willll have greater ability to handle fluctuations in user load without manual intervention or poor user experience.</span></span>

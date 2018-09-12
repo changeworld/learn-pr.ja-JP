@@ -1,15 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.4-use-environment-variables
-interactive: bash
 metadata:
-  title: <span data-ttu-id="4df72-101">環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="4df72-101">Set environment variables</span></span>
-  description: <span data-ttu-id="4df72-102">Azure Container Instances で環境変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="4df72-102">Set environment variables in Azure Container Instances.</span></span>
-  ms.openlocfilehash: 921168a568e52b47ff347521fff4969213d0fa88
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="6ec93-101">環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="6ec93-101">Set environment variables</span></span>
+  description: <span data-ttu-id="6ec93-102">Azure Container Instances で環境変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="6ec93-102">Set environment variables in Azure Container Instances.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 121d22c224c33875cf10038d9c63596882a3b1f4
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833787"
-title: <span data-ttu-id="4df72-103">環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="4df72-103">Set environment variables</span></span>
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308217"
+title: <span data-ttu-id="6ec93-103">環境変数を設定する</span><span class="sxs-lookup"><span data-stu-id="6ec93-103">Set environment variables</span></span>
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/4-use-environment-variables.md)]'

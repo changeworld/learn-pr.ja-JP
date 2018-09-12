@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.8-install-express
+title: <span data-ttu-id="d0337-101">Express をインストールする</span><span class="sxs-lookup"><span data-stu-id="d0337-101">Install Express</span></span>
+metadata:
+  title: <span data-ttu-id="d0337-102">Express をインストールする</span><span class="sxs-lookup"><span data-stu-id="d0337-102">Install Express</span></span>
+  description: <span data-ttu-id="d0337-103">Express をインストールする</span><span class="sxs-lookup"><span data-stu-id="d0337-103">Install Express</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c7fb9c1530e9514fa965ec74f37b7818debbcf41
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231250"
+durationInMinutes: 5
+content: '[!include[](includes/8-install-express.md)]'

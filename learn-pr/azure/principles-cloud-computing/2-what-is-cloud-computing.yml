@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: principles-cloud-computing.2-what-is-cloud-computing
-title: <span data-ttu-id="4585f-101">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4585f-101">What is cloud computing?</span></span>
+title: <span data-ttu-id="4d013-101">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4d013-101">What is cloud computing?</span></span>
 metadata:
-  title: <span data-ttu-id="4585f-102">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4585f-102">What is cloud computing?</span></span>
-  description: <span data-ttu-id="4585f-103">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4585f-103">What is cloud computing?</span></span>
-  ms.openlocfilehash: 57a72fefb649f8a5b8da83add5db736d57e36ca4
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  title: <span data-ttu-id="4d013-102">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4d013-102">What is cloud computing?</span></span>
+  description: <span data-ttu-id="4d013-103">クラウド コンピューティングとは</span><span class="sxs-lookup"><span data-stu-id="4d013-103">What is cloud computing?</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8c5f3663efc8007090d7e33c79e8fc25058006fd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414740"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236789"
 durationInMinutes: 8
 content: '[!include[](includes/2-what-is-cloud-computing.md)]'

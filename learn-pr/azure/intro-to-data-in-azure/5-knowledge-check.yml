@@ -1,49 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.5-knowledge-check
 metadata:
-  title: <span data-ttu-id="e57e1-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="e57e1-101">Knowledge check</span></span>
-  description: <span data-ttu-id="e57e1-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="e57e1-102">Knowledge check</span></span>
-  ms.openlocfilehash: 5956110e16d5e8479e149ee83abc6fbfda8787ad
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  title: <span data-ttu-id="049e1-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="049e1-101">Knowledge check</span></span>
+  description: <span data-ttu-id="049e1-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="049e1-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3c9195a15df18b14e5b56b9e3dc5b5926224ebee
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43414083"
-title: <span data-ttu-id="e57e1-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="e57e1-103">Knowledge check</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233528"
+title: <span data-ttu-id="049e1-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="049e1-103">Knowledge check</span></span>
 durationInMinutes: 5
 quiz:
-  title: <span data-ttu-id="e57e1-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="e57e1-104">Knowledge check</span></span>
+  title: <span data-ttu-id="049e1-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="049e1-104">Knowledge check</span></span>
   questions:
-  - content: <span data-ttu-id="e57e1-105">ご利用のオンライン ラーニング ポータルで、各ユーザーの物理アドレスおよびメール アドレスを保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e57e1-105">Your online learning portal needs to keep a record of each user's physical address and their email address.</span></span> <span data-ttu-id="e57e1-106">Azure のどの機能で、この情報を管理できますか?</span><span class="sxs-lookup"><span data-stu-id="e57e1-106">Which Azure features will let you manage this information well?</span></span>
+  - content: <span data-ttu-id="049e1-105">ご利用のオンライン ラーニング ポータルで、各ユーザーの物理アドレスおよびメール アドレスを保持する必要があります。</span><span class="sxs-lookup"><span data-stu-id="049e1-105">Your online learning portal needs to keep a record of each user's physical address and their email address.</span></span> <span data-ttu-id="049e1-106">Azure のどの機能で、この情報を管理できますか?</span><span class="sxs-lookup"><span data-stu-id="049e1-106">Which Azure features will let you manage this information well?</span></span>
     choices:
-    - content: <span data-ttu-id="e57e1-107">Azure Archive</span><span class="sxs-lookup"><span data-stu-id="e57e1-107">Azure Archive</span></span>
+    - content: <span data-ttu-id="049e1-107">Azure Archive</span><span class="sxs-lookup"><span data-stu-id="049e1-107">Azure Archive</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-108">Azure Archive は、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-108">Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities.</span></span>
-    - content: <span data-ttu-id="e57e1-109">Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="e57e1-109">Azure SQL Database</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-108">Azure Archive は、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="049e1-108">Azure Archive is ideal for storing older versions of your data so that you can retrieve it when it's required for auditing or other infrequent activities.</span></span>
+    - content: <span data-ttu-id="049e1-109">Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="049e1-109">Azure SQL Database</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e57e1-110">正解です。</span><span class="sxs-lookup"><span data-stu-id="e57e1-110">Correct!</span></span> <span data-ttu-id="e57e1-111">Azure SQL Database では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-111">Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.</span></span>
-    - content: <span data-ttu-id="e57e1-112">Azure Files</span><span class="sxs-lookup"><span data-stu-id="e57e1-112">Azure Files</span></span>
+      correctExplanation: <span data-ttu-id="049e1-110">正解です。</span><span class="sxs-lookup"><span data-stu-id="049e1-110">Correct!</span></span> <span data-ttu-id="049e1-111">Azure SQL Database では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。</span><span class="sxs-lookup"><span data-stu-id="049e1-111">Azure SQL Database helps store relational data and retrieves the data quickly with powerful queries.</span></span>
+    - content: <span data-ttu-id="049e1-112">Azure Files</span><span class="sxs-lookup"><span data-stu-id="049e1-112">Azure Files</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-113">Azure Files は、クラウドでのファイル共有で使用します。</span><span class="sxs-lookup"><span data-stu-id="e57e1-113">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="e57e1-114">Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-114">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
-  - content: <span data-ttu-id="e57e1-115">販売ラーニング ポータルで使用されるシミュレーション ファイルのサイズが、かなり大きくなる場合があります。</span><span class="sxs-lookup"><span data-stu-id="e57e1-115">The simulation files used by the sales learning portals can grow to significantly large sizes.</span></span> <span data-ttu-id="e57e1-116">Azure では、これらのファイルはどのようにサポートされますか?</span><span class="sxs-lookup"><span data-stu-id="e57e1-116">How will Azure support these files?</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-113">Azure Files は、クラウドでのファイル共有で使用します。</span><span class="sxs-lookup"><span data-stu-id="049e1-113">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="049e1-114">Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。</span><span class="sxs-lookup"><span data-stu-id="049e1-114">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
+  - content: <span data-ttu-id="049e1-115">販売ラーニング ポータルで使用されるシミュレーション ファイルのサイズが、かなり大きくなる場合があります。</span><span class="sxs-lookup"><span data-stu-id="049e1-115">The simulation files used by the sales learning portals can grow to significantly large sizes.</span></span> <span data-ttu-id="049e1-116">Azure では、これらのファイルはどのようにサポートされますか?</span><span class="sxs-lookup"><span data-stu-id="049e1-116">How will Azure support these files?</span></span>
     choices:
-    - content: <span data-ttu-id="e57e1-117">Azure Blob Storage では、最大 8 TB までのファイル サイズがサポートされます</span><span class="sxs-lookup"><span data-stu-id="e57e1-117">Azure Blob storage can support files up to 8 TB in size</span></span>
+    - content: <span data-ttu-id="049e1-117">Azure Blob Storage では、最大 8 TB までのファイル サイズがサポートされます</span><span class="sxs-lookup"><span data-stu-id="049e1-117">Azure Blob storage can support files up to 8 TB in size</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e57e1-118">正解です。</span><span class="sxs-lookup"><span data-stu-id="e57e1-118">Correct!</span></span> <span data-ttu-id="e57e1-119">Azure Blob Storage では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-119">Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.</span></span>
-    - content: <span data-ttu-id="e57e1-120">Azure Files は、大きなファイルの格納およびストリーミングがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-120">Azure Files can support storing and streaming of large files.</span></span>
+      correctExplanation: <span data-ttu-id="049e1-118">正解です。</span><span class="sxs-lookup"><span data-stu-id="049e1-118">Correct!</span></span> <span data-ttu-id="049e1-119">Azure Blob Storage では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。</span><span class="sxs-lookup"><span data-stu-id="049e1-119">Azure Blob storage provides the ability to store and stream large video or audio files directly to the browser from anywhere in the world.</span></span>
+    - content: <span data-ttu-id="049e1-120">Azure Files は、大きなファイルの格納およびストリーミングがサポートされます。</span><span class="sxs-lookup"><span data-stu-id="049e1-120">Azure Files can support storing and streaming of large files.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-121">Azure Files は、クラウドでのファイル共有に使用されます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-121">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="e57e1-122">Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-122">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
-    - content: <span data-ttu-id="e57e1-123">Azure では、大きなファイルの格納およびストリーミングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="e57e1-123">Azure does not support storing and streaming of large files.</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-121">Azure Files は、クラウドでのファイル共有に使用されます。</span><span class="sxs-lookup"><span data-stu-id="049e1-121">Azure Files is used for file shares in the cloud.</span></span> <span data-ttu-id="049e1-122">Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。</span><span class="sxs-lookup"><span data-stu-id="049e1-122">It can be mounted concurrently by cloud or on-premises deployments of Windows, Linux, and macOS.</span></span>
+    - content: <span data-ttu-id="049e1-123">Azure では、大きなファイルの格納およびストリーミングはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="049e1-123">Azure does not support storing and streaming of large files.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-124">Azure では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。</span><span class="sxs-lookup"><span data-stu-id="e57e1-124">Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.</span></span>
-  - content: <span data-ttu-id="e57e1-125">Azure では、データの持続性と信頼性はどのようにサポートされますか?</span><span class="sxs-lookup"><span data-stu-id="e57e1-125">How does Azure support durability and reliability of data?</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-124">Azure では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。</span><span class="sxs-lookup"><span data-stu-id="049e1-124">Azure does have the ability to store and stream large video and audio files directly to the browser from anywhere in the world.</span></span>
+  - content: <span data-ttu-id="049e1-125">Azure では、データの持続性と信頼性はどのようにサポートされますか?</span><span class="sxs-lookup"><span data-stu-id="049e1-125">How does Azure support durability and reliability of data?</span></span>
     choices:
-    - content: <span data-ttu-id="e57e1-126">Azure のレプリケーション機能を使用してです。</span><span class="sxs-lookup"><span data-stu-id="e57e1-126">Through Azure replication capabilities.</span></span>
+    - content: <span data-ttu-id="049e1-126">Azure のレプリケーション機能を使用してです。</span><span class="sxs-lookup"><span data-stu-id="049e1-126">Through Azure replication capabilities.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="e57e1-127">正解です。</span><span class="sxs-lookup"><span data-stu-id="e57e1-127">Correct!</span></span> <span data-ttu-id="e57e1-128">Azure には、自然災害からデータを保護するレプリケーション機能と、悪意のある攻撃からデータを保護する暗号化があります。</span><span class="sxs-lookup"><span data-stu-id="e57e1-128">Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.</span></span>
-    - content: <span data-ttu-id="e57e1-129">データの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています。</span><span class="sxs-lookup"><span data-stu-id="e57e1-129">You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.</span></span>
+      correctExplanation: <span data-ttu-id="049e1-127">正解です。</span><span class="sxs-lookup"><span data-stu-id="049e1-127">Correct!</span></span> <span data-ttu-id="049e1-128">Azure には、自然災害からデータを保護するレプリケーション機能と、悪意のある攻撃からデータを保護する暗号化があります。</span><span class="sxs-lookup"><span data-stu-id="049e1-128">Azure provides replication capabilities to protect the data against natural disasters and supports encryption to protect the data against malicious attacks.</span></span>
+    - content: <span data-ttu-id="049e1-129">データの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています。</span><span class="sxs-lookup"><span data-stu-id="049e1-129">You need additional premium support to encrypt and decrypt your data, and reliability is supported by third-party backup features.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-130">追加のサポートは不要です。Azure には、予期しないリスクや脅威からデータを保護する機能があります。</span><span class="sxs-lookup"><span data-stu-id="e57e1-130">You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.</span></span>
-    - content: <span data-ttu-id="e57e1-131">Azure には、組み込みの冗長性や暗号化機能はありません。</span><span class="sxs-lookup"><span data-stu-id="e57e1-131">Azure does not have in-built redundancy and encryption features.</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-130">追加のサポートは不要です。Azure には、予期しないリスクや脅威からデータを保護する機能があります。</span><span class="sxs-lookup"><span data-stu-id="049e1-130">You don't need any additional support; Azure has the capability to protect your data against unforeseen risks and threats.</span></span>
+    - content: <span data-ttu-id="049e1-131">Azure には、組み込みの冗長性や暗号化機能はありません。</span><span class="sxs-lookup"><span data-stu-id="049e1-131">Azure does not have in-built redundancy and encryption features.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="e57e1-132">Azure には、リスクや脅威からデータを保護するための機能が組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="e57e1-132">Azure comes with in-built capabilities for protecting your data against risks and threats.</span></span>
+      incorrectExplanation: <span data-ttu-id="049e1-132">Azure には、リスクや脅威からデータを保護するための機能が組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="049e1-132">Azure comes with in-built capabilities for protecting your data against risks and threats.</span></span>

@@ -3,13 +3,16 @@ uid: learn.administer-containers-in-azure
 metadata:
   title: Azure でコンテナーを管理する
   description: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
-  ms.date: 09/24/2018
-  ms.openlocfilehash: 88ca111cf743fac6ca9bbb8a80c58d23580f34dc
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6b26cde78f068bb1338e0942bcd7fdd78717fd00
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826741"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236486"
 title: Azure でコンテナーを管理する
 summary: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
 prerequisites: なし
@@ -22,5 +25,6 @@ products:
 - azure
 modules:
 - learn.intro-to-containers
+- learn.azure-container-registry
 - learn.run-docker-containers-aci
 achievement: learn.administer-containers-in-azure.trophy
