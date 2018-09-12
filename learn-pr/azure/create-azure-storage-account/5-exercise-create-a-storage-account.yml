@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.5-exercise-create-a-storage-account
-title: <span data-ttu-id="10011-101">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="10011-101">Create a storage account using the Azure portal</span></span>
+title: <span data-ttu-id="75cd5-101">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="75cd5-101">Create a storage account using the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="10011-102">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="10011-102">Create a storage account using the Azure portal</span></span>
-  description: <span data-ttu-id="10011-103">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="10011-103">Create a storage account using the Azure portal</span></span>
-  ms.openlocfilehash: aeeafd32cb8802a637560ad088c64d72903001c4
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  title: <span data-ttu-id="75cd5-102">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="75cd5-102">Create a storage account using the Azure portal</span></span>
+  description: <span data-ttu-id="75cd5-103">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="75cd5-103">Create a storage account using the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d9668ff449ad2ed619121afac59c102a2935ad5d
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471672"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310240"
+azureSandbox: true
 durationInMinutes: 7
 content: '[!include[](includes/5-exercise-create-a-storage-account.md)]'

@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.4-set-up-visual-studio
-title: <span data-ttu-id="df7cc-101">Visual Studio を使用する</span><span class="sxs-lookup"><span data-stu-id="df7cc-101">Using Visual Studio</span></span>
+title: <span data-ttu-id="e6c31-101">Visual Studio の使用</span><span class="sxs-lookup"><span data-stu-id="e6c31-101">Using Visual Studio</span></span>
 metadata:
-  title: <span data-ttu-id="df7cc-102">Visual Studio を使用する</span><span class="sxs-lookup"><span data-stu-id="df7cc-102">Using Visual Studio</span></span>
-  description: <span data-ttu-id="df7cc-103">Visual Studio を使用する</span><span class="sxs-lookup"><span data-stu-id="df7cc-103">Using Visual Studio</span></span>
-  ms.openlocfilehash: 938662a5bc43df547cf6e49f9fec8290956711ab
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="e6c31-102">Visual Studio の使用</span><span class="sxs-lookup"><span data-stu-id="e6c31-102">Using Visual Studio</span></span>
+  description: <span data-ttu-id="e6c31-103">Visual Studio の使用</span><span class="sxs-lookup"><span data-stu-id="e6c31-103">Using Visual Studio</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4285e407fbb3f7609865129d808c6ebac4762f88
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833662"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241994"
 durationInMinutes: 5
 content: '[!include[](includes/4-set-up-visual-studio.md)]'

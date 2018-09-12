@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
-title: <span data-ttu-id="c94dc-101">Azure ツールで Eclipse を使用する</span><span class="sxs-lookup"><span data-stu-id="c94dc-101">Using Eclipse with Azure tooling</span></span>
+title: <span data-ttu-id="85cfa-101">Azure ツールでの Eclipse の使用</span><span class="sxs-lookup"><span data-stu-id="85cfa-101">Using Eclipse with Azure tooling</span></span>
 metadata:
-  title: <span data-ttu-id="c94dc-102">Azure ツールで Eclipse を使用する</span><span class="sxs-lookup"><span data-stu-id="c94dc-102">Using Eclipse with Azure tooling</span></span>
-  description: <span data-ttu-id="c94dc-103">Azure ツールで Eclipse を使用する</span><span class="sxs-lookup"><span data-stu-id="c94dc-103">Using Eclipse with Azure tooling</span></span>
-  ms.openlocfilehash: d0e080b79f9bfee9fefd5e1d6d24d5795db884d9
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="85cfa-102">Azure ツールでの Eclipse の使用</span><span class="sxs-lookup"><span data-stu-id="85cfa-102">Using Eclipse with Azure tooling</span></span>
+  description: <span data-ttu-id="85cfa-103">Azure ツールでの Eclipse の使用</span><span class="sxs-lookup"><span data-stu-id="85cfa-103">Using Eclipse with Azure tooling</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 83a5b6c5d3ad0ba37f152dcb5ca128c94a11f236
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833643"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245054"
 durationInMinutes: 5
 content: '[!include[](includes/6-set-up-eclipse-ide-for-java-developers.md)]'

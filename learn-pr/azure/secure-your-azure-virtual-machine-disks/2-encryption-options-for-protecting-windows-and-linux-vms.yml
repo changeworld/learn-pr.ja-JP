@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.2-encryption-options-for-protecting-windows-and-linux-vms
-title: <span data-ttu-id="1fa28-101">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="1fa28-101">Encryption options for protecting Windows and Linux VMs</span></span>
+title: <span data-ttu-id="bcd0f-101">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="bcd0f-101">Encryption options for protecting Windows and Linux VMs</span></span>
 metadata:
-  title: <span data-ttu-id="1fa28-102">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="1fa28-102">Encryption options for protecting Windows and Linux VMs</span></span>
-  description: <span data-ttu-id="1fa28-103">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="1fa28-103">Encryption options for protecting Windows and Linux VMs</span></span>
-  ms.openlocfilehash: 49e5d12a01a292d7209e6958e5d413d17055691b
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  title: <span data-ttu-id="bcd0f-102">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="bcd0f-102">Encryption options for protecting Windows and Linux VMs</span></span>
+  description: <span data-ttu-id="bcd0f-103">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="bcd0f-103">Encryption options for protecting Windows and Linux VMs</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 54f801a57d3f4a768a33b047849e0e10fef1c18d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43730046"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248097"
 durationInMinutes: 5
 content: '[!include[](includes/2-encryption-options-for-protecting-windows-and-linux-vms.md)]'

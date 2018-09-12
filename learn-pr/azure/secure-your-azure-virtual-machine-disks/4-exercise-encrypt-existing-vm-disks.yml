@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.4-exercise-encrypt-existing-vm-disks
-title: <span data-ttu-id="5446a-101">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="5446a-101">Exercise - Encrypt existing VM disks</span></span>
+title: <span data-ttu-id="bcc40-101">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="bcc40-101">Exercise - Encrypt existing VM disks</span></span>
 metadata:
-  title: <span data-ttu-id="5446a-102">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="5446a-102">Exercise - Encrypt existing VM disks</span></span>
-  description: <span data-ttu-id="5446a-103">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="5446a-103">Exercise - Encrypt existing VM disks</span></span>
-  ms.openlocfilehash: 630e832b917306dbeaf0821bf28b0b8100238ac6
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="bcc40-102">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="bcc40-102">Exercise - Encrypt existing VM disks</span></span>
+  description: <span data-ttu-id="bcc40-103">演習 - 既存の VM ディスクの暗号化</span><span class="sxs-lookup"><span data-stu-id="bcc40-103">Exercise - Encrypt existing VM disks</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9f4f77e9ced2c849af11d32b69ee349a1f715c1d
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43792190"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308523"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/4-exercise-encrypt-existing-vm-disks.md)]'

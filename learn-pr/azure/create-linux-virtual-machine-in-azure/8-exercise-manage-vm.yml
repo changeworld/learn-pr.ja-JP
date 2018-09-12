@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
-title: <span data-ttu-id="7cd6c-101">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="7cd6c-101">Configure network settings</span></span>
+title: <span data-ttu-id="04a3e-101">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-101">Configure network settings</span></span>
 metadata:
-  title: <span data-ttu-id="7cd6c-102">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="7cd6c-102">Configure network settings</span></span>
-  description: <span data-ttu-id="7cd6c-103">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="7cd6c-103">Configure network settings</span></span>
-  ms.openlocfilehash: a042f3987a85713435bde4ed2bc9d6f5a4648a69
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="04a3e-102">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-102">Configure network settings</span></span>
+  description: <span data-ttu-id="04a3e-103">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-103">Configure network settings</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a3771c30a5fed38346c6207968aca042d7ecda4a
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833835"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44308608"
 durationInMinutes: 10
+azureSandbox: true
 content: '[!include[](includes/8-exercise-manage-vm.md)]'

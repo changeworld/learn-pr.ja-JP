@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.4-query
 metadata:
-  title: <span data-ttu-id="0b852-101">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="0b852-101">Query using the .NET Core SDK</span></span>
-  description: <span data-ttu-id="0b852-102">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="0b852-102">Query using the .NET Core SDK</span></span>
-  ms.openlocfilehash: d6cfb4469b9ed09718e04a174e38b96e2a55de92
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="c1a67-101">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="c1a67-101">Query using the .NET Core SDK</span></span>
+  description: <span data-ttu-id="c1a67-102">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="c1a67-102">Query using the .NET Core SDK</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 19d62d7fcaa331f791d81ca8f812ff7437e1f744
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833290"
-title: <span data-ttu-id="0b852-103">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="0b852-103">Query using the .NET Core SDK</span></span>
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237488"
+title: <span data-ttu-id="c1a67-103">.NET Core SDK を使用したクエリ</span><span class="sxs-lookup"><span data-stu-id="c1a67-103">Query using the .NET Core SDK</span></span>
 durationInMinutes: 5
 content: '[!include[](includes/4-query.md)]'
