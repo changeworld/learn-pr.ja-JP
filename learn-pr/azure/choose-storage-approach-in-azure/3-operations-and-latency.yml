@@ -1,30 +1,29 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
-  title: <span data-ttu-id="fb8b1-101">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="fb8b1-101">Operations and latency</span></span>
-  description: <span data-ttu-id="fb8b1-102">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="fb8b1-102">Operations and latency</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 3d67e7dd28258dc8accc73c36ae7573e143b7c02
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="193be-101">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="193be-101">Operations and latency</span></span>
+  description: <span data-ttu-id="193be-102">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="193be-102">Operations and latency</span></span>
+  ms.openlocfilehash: 27c0f598fbb80ee732a1c83b899cdfdffc0ef35d
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252446"
-title: <span data-ttu-id="fb8b1-103">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="fb8b1-103">Operations and latency</span></span>
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363005"
+title: <span data-ttu-id="193be-103">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="193be-103">Operations and latency</span></span>
 durationInMinutes: 10
 content: >
   [!include[](includes/3-operations-and-latency.md)]
 quiz:
-  title: <span data-ttu-id="fb8b1-104">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="fb8b1-104">Operations and latency</span></span>
+  title: <span data-ttu-id="193be-104">操作と待機時間</span><span class="sxs-lookup"><span data-stu-id="193be-104">Operations and latency</span></span>
   questions:
-  - content: <span data-ttu-id="fb8b1-105">オンライン小売アプリケーション用のユーザー データが格納されているデータベースの操作ニーズをどのように分類しますか。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-105">How would you classify the operational needs of a database that stored user data for your online retail application.</span></span> <span data-ttu-id="fb8b1-106">データ セットには、発送の個人設定、以前の注文、製品レビューに表示されるプロファイル情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-106">The data set would contain shipping preferences, previous orders, and profile information to display on product reviews.</span></span>
+  - content: <span data-ttu-id="193be-105">オンライン小売アプリケーション用のユーザー データが格納されているデータベースの操作ニーズをどのように分類しますか。</span><span class="sxs-lookup"><span data-stu-id="193be-105">How would you classify the operational needs of a database that stored user data for your online retail application.</span></span> <span data-ttu-id="193be-106">データ セットには、発送の個人設定、以前の注文、製品レビューに表示されるプロファイル情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="193be-106">The data set would contain shipping preferences, previous orders, and profile information to display on product reviews.</span></span>
     choices:
-    - content: <span data-ttu-id="fb8b1-107">アプリケーションでは、速い取得時間と大量の読み書きが必要であり、すべてのプロパティに対してクエリを実行できる必要があります</span><span class="sxs-lookup"><span data-stu-id="fb8b1-107">The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on every property</span></span>
+    - content: <span data-ttu-id="193be-107">アプリケーションでは、速い取得時間と大量の読み書きが必要であり、すべてのプロパティに対してクエリを実行できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="193be-107">The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on every property.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="fb8b1-108">ユーザーはユーザー データを頻繁に作成および更新し、アプリケーションではユーザー データの注文情報が更新されます。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-108">Users will create and update their user data frequently, and the application will update their order information in their user data.</span></span> <span data-ttu-id="fb8b1-109">オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-109">Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code.</span></span> <span data-ttu-id="fb8b1-110">したがって、要件を洗い出すときは、最終的な客だけでなく、データのすべてのユーザーのことを考える必要があります。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-110">So be sure to remember all the users of your data, not just your end customer when it comes to listing requirements.</span></span>
-    - content: <span data-ttu-id="fb8b1-111">アプリケーションでは、速い取得時間と大量の読み書きが必要であり、限られたプロパティ セットのクエリを実行できる必要があります</span><span class="sxs-lookup"><span data-stu-id="fb8b1-111">The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on a limited set of properties</span></span>
+      correctExplanation: <span data-ttu-id="193be-108">ユーザーはユーザー データを頻繁に作成および更新し、アプリケーションではユーザー データの注文情報が更新されます。</span><span class="sxs-lookup"><span data-stu-id="193be-108">Users will create and update their user data frequently, and the application will update their order information in their user data.</span></span> <span data-ttu-id="193be-109">オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。</span><span class="sxs-lookup"><span data-stu-id="193be-109">Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code.</span></span> <span data-ttu-id="193be-110">したがって、要件を洗い出すときは、最終的な客だけでなく、データのすべてのユーザーのことを考える必要があります。</span><span class="sxs-lookup"><span data-stu-id="193be-110">So be sure to remember all the users of your data, not just your end customer, when it comes to listing requirements.</span></span>
+    - content: <span data-ttu-id="193be-111">アプリケーションでは、速い取得時間と大量の読み書きが必要であり、限られたプロパティ セットのクエリを実行できる必要があります。</span><span class="sxs-lookup"><span data-stu-id="193be-111">The application requires fast retrieval times, lots of reads and writes, and needs to be able to query on a limited set of properties.</span></span>
       isCorrect: false
-      correctExplanation: <span data-ttu-id="fb8b1-112">オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。したがって、すべてのプロパティにインデックスを付けて、クエリ可能にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-112">Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code, so all properties should be indexed an queryable</span></span>
-    - content: <span data-ttu-id="fb8b1-113">アプリケーションは、遅い取得時間と読み取り専用の操作をサポートできます</span><span class="sxs-lookup"><span data-stu-id="fb8b1-113">The application can support slow retrieval times and read-only operations</span></span>
+      correctExplanation: <span data-ttu-id="193be-112">オンライン小売りサイトの客は堅牢な方法でデータをクエリできることを期待してはいませんが (特定の郵便番号の配送先住所になっているかどうかを確認するクエリなど)、会社は特定の郵便番号のユーザー数を確認するためのクエリを実行できることを望んでいます。したがって、すべてのプロパティにインデックスを付けて、クエリ可能にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="193be-112">Although customers in an online retail site don't expect to be able to query their data in a robust manner, such as querying to see if they have a shipping address in a certain zip code, the company will want to be able to query to see how many users are in a certain zip code, so all properties should be indexed an queryable.</span></span>
+    - content: <span data-ttu-id="193be-113">アプリケーションでは、遅い取得時間と読み取り専用の操作をサポートできます。</span><span class="sxs-lookup"><span data-stu-id="193be-113">The application can support slow retrieval times and read-only operations.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="fb8b1-114">客は自分のプロファイル情報を作成して更新するので、ユーザー データは読み取り/書き込みにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="fb8b1-114">Customers will be creating and updating their own profile information, so the user data needs to be read-write.</span></span>
+      incorrectExplanation: <span data-ttu-id="193be-114">客は自分のプロファイル情報を作成して更新するので、ユーザー データを読み取り/書き込みにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="193be-114">Customers will be creating and updating their own profile information, so the user data needs to be read-write.</span></span>

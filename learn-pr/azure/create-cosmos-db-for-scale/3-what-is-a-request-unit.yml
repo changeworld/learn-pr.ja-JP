@@ -1,46 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.3-what-is-a-request-unit
 metadata:
-  title: <span data-ttu-id="c9937-101">Azure Cosmos DB 要求ユニットとは?</span><span class="sxs-lookup"><span data-stu-id="c9937-101">What is an Azure Cosmos DB request unit?</span></span>
-  description: <span data-ttu-id="c9937-102">Azure Cosmos DB 内で要求ユニットを使用してスループットを割り当てる方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c9937-102">Learn how throughput is allocated in Azure Cosmos DB by using request units.</span></span>
-  displayType: one-column
-  ms.openlocfilehash: d5c9095b41cce8f33e85d3ac184726298f2ff852
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  title: <span data-ttu-id="84549-101">Azure Cosmos DB 要求ユニットとは?</span><span class="sxs-lookup"><span data-stu-id="84549-101">What is an Azure Cosmos DB request unit?</span></span>
+  description: <span data-ttu-id="84549-102">Azure Cosmos DB 要求ユニットとは?</span><span class="sxs-lookup"><span data-stu-id="84549-102">What is an Azure Cosmos DB request unit?</span></span>
+  ms.openlocfilehash: 0cc2c35e8db603453dc42b2490402b26d20e0686
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252045"
-title: <span data-ttu-id="c9937-103">要求ユニットとは?</span><span class="sxs-lookup"><span data-stu-id="c9937-103">What is a request unit?</span></span>
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43410802"
+title: <span data-ttu-id="84549-103">要求ユニットとは?</span><span class="sxs-lookup"><span data-stu-id="84549-103">What is a request unit?</span></span>
 durationInMinutes: 8
 content: "[!include[](includes/3-what-is-a-request-unit.md)] \n"
 quiz:
-  title: <span data-ttu-id="c9937-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="c9937-104">Knowledge check</span></span>
+  title: <span data-ttu-id="84549-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="84549-104">Knowledge check</span></span>
   questions:
-  - content: <span data-ttu-id="c9937-105">Azure Cosmos DB アカウントを作成し、アプリケーションのニーズに応じてアカウントが確実に拡張するようにしたい場合、スループットとして設定する最小値は何ですか。</span><span class="sxs-lookup"><span data-stu-id="c9937-105">When you create an Azure Cosmos DB account, and you want to ensure it will grow with your application’s needs, what’s the minimum value you should set the throughput to?</span></span>
+  - content: <span data-ttu-id="84549-105">Azure Cosmos DB アカウントを作成し、アプリケーションのニーズに応じてアカウントが確実に拡張するようにしたい場合、スループットとして設定する最小値は何ですか。</span><span class="sxs-lookup"><span data-stu-id="84549-105">When you create an Azure Cosmos DB account, and you want to ensure it will grow with your application’s needs, what’s the minimum value you should set the throughput to?</span></span>
     choices:
-    - content: <span data-ttu-id="c9937-106">400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-106">400 RU/s</span></span>
+    - content: <span data-ttu-id="84549-106">400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-106">400 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-107">400 RU/秒は、Azure Cosmos DB に設定できる最小のスループットです。ただし、元のスループットとして 400 RU/秒を指定して作成されたデータベースは、自動スケーリングされません。</span><span class="sxs-lookup"><span data-stu-id="c9937-107">400 RU/s is the minimum throughput you can set for an Azure Cosmos DB; however, databases created with an original throughput of 400 RU/s will not autoscale.</span></span>
-    - content: <span data-ttu-id="c9937-108">1000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-108">1000 RU/s</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-107">400 RU/秒は、Azure Cosmos DB に設定できる最小のスループットです。ただし、元のスループットとして 400 RU/秒を指定して作成されたデータベースは、自動スケーリングされません。</span><span class="sxs-lookup"><span data-stu-id="84549-107">400 RU/s is the minimum throughput you can set for an Azure Cosmos DB; however, databases created with an original throughput of 400 RU/s will not autoscale.</span></span>
+    - content: <span data-ttu-id="84549-108">1000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-108">1000 RU/s</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="c9937-109">正解です。</span><span class="sxs-lookup"><span data-stu-id="c9937-109">Correct!</span></span> <span data-ttu-id="c9937-110">1000 RU/秒のスループットは、データベースの自動スケーリングを有効にする最小値です。</span><span class="sxs-lookup"><span data-stu-id="c9937-110">A throughput of 1000 RU/s is the minimum value to enable autoscaling of your database.</span></span>
-    - content: <span data-ttu-id="c9937-111">1400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-111">1400 RU/s</span></span>
+      correctExplanation: <span data-ttu-id="84549-109">正解です。</span><span class="sxs-lookup"><span data-stu-id="84549-109">Correct!</span></span> <span data-ttu-id="84549-110">1000 RU/秒のスループットは、データベースの自動スケーリングを有効にする最小値です。</span><span class="sxs-lookup"><span data-stu-id="84549-110">A throughput of 1000 RU/s is the minimum value to enable autoscaling of your database.</span></span>
+    - content: <span data-ttu-id="84549-111">1400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-111">1400 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-112">スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。</span><span class="sxs-lookup"><span data-stu-id="c9937-112">Setting throughput to 1400 RU/s would enable your database to autoscale; however, it's not the minimum value you could set to enable autoscaling.</span></span>
-    - content: <span data-ttu-id="c9937-113">250,000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-113">250,000 RU/s</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-112">スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。</span><span class="sxs-lookup"><span data-stu-id="84549-112">Setting throughput to 1400 RU/s would enable your database to autoscale; however, it's not the minimum value you could set to enable autoscaling.</span></span>
+    - content: <span data-ttu-id="84549-113">250,000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-113">250,000 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-114">スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。</span><span class="sxs-lookup"><span data-stu-id="c9937-114">Setting throughput to 1400 RU/s would enable your database to autoscale; however, it's not the minimum value you could set to enable autoscaling.</span></span>
-  - content: <span data-ttu-id="c9937-115">4 KB のドキュメントを Azure Cosmos DB データベースに 100 回書き込み、4 KB のドキュメントを 500 回読み込むことを予定している場合、アカウントにレート制限が適用されないようにするには、何個の要求ユニットをプロビジョニングする必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="c9937-115">If you plan on writing a 4-KB document to an Azure Cosmos DB database 100 times per second and reading the 4-KB document 500 times per second, how many request units should you provision to ensure your account is not rate-limited?</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-114">スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。</span><span class="sxs-lookup"><span data-stu-id="84549-114">Setting throughput to 1400 RU/s would enable your database to autoscale; however, it's not the minimum value you could set to enable autoscaling.</span></span>
+  - content: <span data-ttu-id="84549-115">4 KB のドキュメントを Azure Cosmos DB データベースに 100 回書き込み、4 KB のドキュメントを 500 回読み込むことを予定している場合、アカウントにレート制限が適用されないようにするには、何個の要求ユニットをプロビジョニングする必要がありますか。</span><span class="sxs-lookup"><span data-stu-id="84549-115">If you plan on writing a 4-KB document to an Azure Cosmos DB database 100 times per second and reading the 4-KB document 500 times per second, how many request units should you provision to ensure your account is not rate-limited?</span></span>
     choices:
-    - content: <span data-ttu-id="c9937-116">400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-116">400 RU/s</span></span>
+    - content: <span data-ttu-id="84549-116">400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-116">400 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-117">残念ながら、このシナリオに対して 400 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c9937-117">Sorry, you'd be rate-limited if you provisioned only 400 RU/s for this scenario.</span></span> <span data-ttu-id="c9937-118">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="c9937-118">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
-    - content: <span data-ttu-id="c9937-119">1000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-119">1000 RU/s</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-117">残念ながら、このシナリオに対して 400 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="84549-117">Sorry, you'd be rate-limited if you provisioned only 400 RU/s for this scenario.</span></span> <span data-ttu-id="84549-118">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="84549-118">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
+    - content: <span data-ttu-id="84549-119">1000 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-119">1000 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-120">残念ながら、このシナリオに対して 1000 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c9937-120">Sorry, you'd be rate-limited if you provisioned only 1000 RU/s for this scenario.</span></span> <span data-ttu-id="c9937-121">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="c9937-121">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
-    - content: <span data-ttu-id="c9937-122">1300 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-122">1300 RU/s</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-120">残念ながら、このシナリオに対して 1000 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="84549-120">Sorry, you'd be rate-limited if you provisioned only 1000 RU/s for this scenario.</span></span> <span data-ttu-id="84549-121">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="84549-121">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
+    - content: <span data-ttu-id="84549-122">1300 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-122">1300 RU/s</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c9937-123">残念ながら、このシナリオに対して 1300 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="c9937-123">Sorry, you'd be rate-limited if you provisioned only 1300 RU/s for this scenario.</span></span> <span data-ttu-id="c9937-124">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="c9937-124">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
-    - content: <span data-ttu-id="c9937-125">1400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="c9937-125">1400 RU/s</span></span>
+      incorrectExplanation: <span data-ttu-id="84549-123">残念ながら、このシナリオに対して 1300 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。</span><span class="sxs-lookup"><span data-stu-id="84549-123">Sorry, you'd be rate-limited if you provisioned only 1300 RU/s for this scenario.</span></span> <span data-ttu-id="84549-124">表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。</span><span class="sxs-lookup"><span data-stu-id="84549-124">Take a look at the table and look for a 4-KB document that requires 500 reads per second and 100 writes per second.</span></span>
+    - content: <span data-ttu-id="84549-125">1400 RU/秒</span><span class="sxs-lookup"><span data-stu-id="84549-125">1400 RU/s</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="c9937-126">正解です。</span><span class="sxs-lookup"><span data-stu-id="c9937-126">Correct!</span></span> <span data-ttu-id="c9937-127">表は、このシナリオには最低 1350 RU/秒が必要であることを示しています。</span><span class="sxs-lookup"><span data-stu-id="c9937-127">The table indicates that you'd need a minimum of 1350 RU/s to support this scenario.</span></span> <span data-ttu-id="c9937-128">レート制限が適用されないようにするには、1400 RU/秒をプロビジョニングする必要があります。なぜなら、1350 RU/秒よりも多く必要であり、要求ユニットは 100 の単位 (1300、1400、1500 など) でプロビジョニングされるからです。</span><span class="sxs-lookup"><span data-stu-id="c9937-128">To ensure you aren't rate limited you should provision 1400 RU/s, as you need more than 1350 RU/s and request units are provisioned in units of 100 (1300, 1400, 1500, etc.).</span></span>
+      correctExplanation: <span data-ttu-id="84549-126">正解です。</span><span class="sxs-lookup"><span data-stu-id="84549-126">Correct!</span></span> <span data-ttu-id="84549-127">表は、このシナリオには最低 1350 RU/秒が必要であることを示しています。</span><span class="sxs-lookup"><span data-stu-id="84549-127">The table indicates that you'd need a minimum of 1350 RU/s to support this scenario.</span></span> <span data-ttu-id="84549-128">レート制限が適用されないようにするには、1400 RU/秒をプロビジョニングする必要があります。なぜなら、1350 RU/秒よりも多く必要であり、要求ユニットは 100 の単位 (1300、1400、1500 など) でプロビジョニングされるからです。</span><span class="sxs-lookup"><span data-stu-id="84549-128">To ensure you aren't rate limited you should provision 1400 RU/s, as you need more than 1350 RU/s and request units are provisioned in units of 100 (1300, 1400, 1500, etc.).</span></span>
