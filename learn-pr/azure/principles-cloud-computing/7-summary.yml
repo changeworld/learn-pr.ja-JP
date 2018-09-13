@@ -1,5 +1,5 @@
 ### YamlMime:ModuleUnit
-uid: principles-cloud-computing.7-summary
+uid: learn.principles-cloud-computing.7-summary
 title: まとめ
 metadata:
   title: まとめ
@@ -9,11 +9,11 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: bc2d0815315ec9047b8ed73fd4e27a552c1ed844
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 5c854b5b57ecf9f5e09d30f04bca42e671969d3f
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245598"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44370550"
 durationInMinutes: 3
 content: '[!include[](includes/7-summary.md)]'

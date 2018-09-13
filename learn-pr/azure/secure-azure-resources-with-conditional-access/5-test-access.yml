@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: be913602b7ce2d479ddbbdd199d2ab9bdb242d4c
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 4804f2ede733f521d18afbf55ba7a97121c8c2e4
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44232542"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503106"
 title: リソースへのアクセスをテストする
-durationInMinutes: 10
+durationInMinutes: 3
 content: '[!include[](includes/5-test-access.md)]'

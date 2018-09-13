@@ -9,11 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 10c49cf32e16601fc6e9eeb038319d086b1c10c9
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 4acf69285f54dc4a9fdfa245f05bf134ffc38531
+  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44240858"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44495434"
+labId: 45999
 durationInMinutes: 5
 content: '[!include[](includes/2-create-your-xamarin-forms-app-with-xamarin-essentials.md)]'

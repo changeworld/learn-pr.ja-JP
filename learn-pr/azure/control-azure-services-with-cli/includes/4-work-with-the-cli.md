@@ -8,13 +8,13 @@ CLI のコマンドは "_グループ_" と "_サブグループ_" で構成さ�
 
 それでは、必要な特定のコマンドはどのような方法で見つけますか? 方法の 1 つに、`az find` を使用するというものがあります。 たとえば、ストレージ BLOB の管理に役立つかもしれないコマンドを見つける場合、次の find コマンドを使用できます。
 
-```bash
+```azurecli
 az find -q blob
 ```
 
 目的のコマンドの名前が既にわかっている場合、そのコマンドに対して `--help` 引数を指定すると、コマンド、コマンド グループ、使用可能なサブコマンドの一覧の詳細な情報が表示されます。 そこで、今回のストレージの例では、BLOB ストレージを管理するためのサブグループとコマンドの一覧を次のように取得できます。
 
-```bash
+```azurecli
 az storage blob --help
 ```
 
@@ -22,21 +22,21 @@ az storage blob --help
 
 新しい Azure リソースを作成するとき、通常、3 つの段階があります。Azure サブスクリプションに接続し、リソースを作成し、その作成が成功したことを確認します。 次の図では、プロセスの概要を示します。
 
-![コマンド ライン インターフェイスを使用して Azure リソースを作成する手順を示す図。](../media-drafts/4-create-resources-overview.png)
+![コマンド ライン インターフェイスを使用して Azure リソースを作成する手順を示す図。](../media/4-create-resources-overview.png)
 
 各ステップは、異なる Azure CLI コマンドに対応します。
 
 ### <a name="connect"></a>接続
 
-Azure CLI のローカル インストールを使用している場合、Azure コマンドを実行する前に Azure CLI **login** コマンドを使用して認証する必要があります。 
+Azure CLI のローカル インストールを使用している場合、Azure コマンドを実行する前に Azure CLI **login** コマンドを使用して認証する必要があります。
 
-```bash
+```azurecli
 az login
 ```
 
 Azure CLI は一般的に既定のブラウザーを起動して Azure のサインイン ページを開きます。 これでうまくいかない場合、コマンドラインの指示に従い、[https://aka.ms/devicelogin](https://aka.ms/devicelogin) で承認コードを入力します。
 
-サインインに成功すると、Azure サブスクリプションに接続されます。 
+サインインに成功すると、Azure サブスクリプションに接続されます。
 
 ### <a name="create"></a>Create
 
@@ -44,7 +44,7 @@ Azure CLI は一般的に既定のブラウザーを起動して Azure のサイ
 
 Azure CLI **group create** コマンドによってリソース グループが作成されます。 名前と場所を指定する必要があります。 この名前はサブスクリプション内で一意である必要があります。 この場所によって、お使いのリソース グループのメタデータが保存される場所が決定されます。 "米国西部"、"北ヨーロッパ"、"インド西部" などの文字列を使用して場所を指定するか、westus、northeurope、westindia など、同じものを意味する 1 つの単語を使用できます。 中心的な構文は次のようになります。
 
-```bash
+```azurecli
 az group create --name <name> --location <location>
 ```
 
@@ -52,12 +52,12 @@ az group create --name <name> --location <location>
 
 多くの Azure リソースの場合、Azure CLI によってリソース詳細を表示するための **list** サブコマンドが提供されます。 たとえば、Azure CLI **group list** コマンドによって Azure リソース グループが一覧表示されます。 リソース グループが正常に作成されたことを確認するためにここで役に立ちます。
 
-```bash
+```azurecli
 az group list
 ```
 
 さらに簡潔なビューを得るために、出力をシンプルな表としてフォーマットできます。
 
-```bash
+```azurecli
 az group list --output table
 ```

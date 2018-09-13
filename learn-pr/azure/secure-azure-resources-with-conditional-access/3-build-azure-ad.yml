@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 500b2fd8cee6c44a749969b42906ea9dbae489e8
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: a96291a348f5097f1a89636ec0915d845c05c427
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44230553"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503905"
 title: ディレクトリを作成する
-durationInMinutes: 15
+durationInMinutes: 5
 content: '[!include[](includes/3-build-azure-ad.md)]'

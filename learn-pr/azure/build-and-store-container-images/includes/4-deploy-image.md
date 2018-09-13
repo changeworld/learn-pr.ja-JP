@@ -30,7 +30,7 @@ az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --ou
 
 サービス プリンシパルの作成の出力は次のようになります。 `appId` と `password` の値を書き留めておきます。 これらは Azure キー コンテナーに格納されます。
 
-```bash
+```output
 {
   "appId": "1fa05179-0000-0000-0000-e269a4e97c41",
   "displayName": "azure-cli-2018-08-19-22-35-26",

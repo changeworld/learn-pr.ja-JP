@@ -9,13 +9,13 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 403cf1d1e78f1532880d4826555e3d6d1039225f
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: cb08f47ff7a95da7a5276848620e758a9f33d969
+  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44308982"
-durationInMinutes: 10
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44386146"
+durationInMinutes: 5
 interactive: bash
 azureSandbox: true
 content: '[!include[](includes/5-extract-printed-text.md)]'
