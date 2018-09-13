@@ -4,11 +4,16 @@ title: Azure Toolkit を使用して Eclipse を設定する
 metadata:
   title: Azure Toolkit を使用して Eclipse を設定する
   description: Azure Toolkit を使用して Eclipse を設定する
-  ms.openlocfilehash: 6bf152b9eb6675c33198341df3b9f56de7463b2a
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a91922116abc94dd4c89b6bbcba2406d67a27a03
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834411"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44242708"
 durationInMinutes: 15
 content: '[!include[](includes/7-exercise-set-up-eclipse.md)]'

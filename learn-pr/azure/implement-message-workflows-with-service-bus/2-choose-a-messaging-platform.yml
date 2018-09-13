@@ -4,11 +4,16 @@ title: メッセージング プラットフォームを選択する
 metadata:
   title: メッセージング プラットフォームを選択する
   description: メッセージング プラットフォームを選択する
-  ms.openlocfilehash: 899e26e1318f3ce61bcb96ff24dea9e5eb55f0d9
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0aabd72ef71c32b43e05f7a8d1a426b4adb59997
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834562"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245360"
 durationInMinutes: 5
 content: '[!include[](includes/2-choose-a-messaging-platform.md)]'
