@@ -1,22 +1,24 @@
 ### YamlMime:Module
 uid: learn.intro-to-compute
 metadata:
-  title: Introduction to Azure compute
-  description: Review the Azure compute services and how they can be used to solve common business needs.
+  title: Azure コンピューティングの概要
+  description: Azure コンピューティング サービスの内容と、一般的なビジネス ニーズを解決するためにこれをどのように使用できるかを確認します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Introduction to Azure compute
-summary: Review the Azure compute services and how they can be used to solve common business needs.
-abstract:  | 
-  In this module, you will:
-  - Identify Azure compute options
-  - Select one or more compute options that are appropriate for solving your business needs
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: bfbd082a7e9be8e00b4bb1f492d087cf3258a031
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43853998"
+title: Azure コンピューティングの概要
+summary: Azure コンピューティング サービスの内容と、一般的なビジネス ニーズを解決するためにこれをどのように使用できるかを確認します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure コンピューティングのオプションの確認
+
+  - ビジネス ニーズの解決に適した、1 つまたは複数のコンピューティング オプションを選択する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

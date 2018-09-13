@@ -1,29 +1,29 @@
 ### YamlMime:Module
 uid: learn.intro-to-data-in-azure
 metadata:
-  title: Introduction to data in Azure
-  description: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
+  title: Azure でのデータの概要
+  description: このモジュールでは、Azure Storage とオンプレミス ストレージの利点を比較します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Introduction to data in Azure
-summary: In this module, we'll explore the benefits of Azure Storage versus on-premises storage.
-abstract:  | 
-  In this module, you will:
-  - Explore the benefits of Azure Storage
-  - Explore how Azure Storage meets your business demands
-  - Compare Azure storage with on-premises storage
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: f88854bb3e05794983d7fbce01fb64cbd7912788
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43853965"
+title: Azure でのデータの概要
+summary: このモジュールでは、Azure Storage とオンプレミス ストレージの利点を比較します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure Storage の利点を調べる
+    - Azure Storage でビジネス要件が満たされるかどうかを調べる
+    - Azure Storage とオンプレミス ストレージを比較する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - developer
-products: 
+products:
 - azure
 - azure-storage
 units:

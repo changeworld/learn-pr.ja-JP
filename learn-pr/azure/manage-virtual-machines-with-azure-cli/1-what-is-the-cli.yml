@@ -4,11 +4,16 @@ title: Azure CLI とは
 metadata:
   title: Azure CLI とは
   description: Azure CLI とは
-  ms.openlocfilehash: 40925a0e1e15f0f28128099f0bd018381c09d64a
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cc430f8896b7dfe766ce8fc73d56e69a99154bdd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834881"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241966"
 durationInMinutes: 3
 content: '[!include[](includes/1-what-is-the-cli.md)]'

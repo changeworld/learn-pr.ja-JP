@@ -3,19 +3,23 @@ uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 metadata:
   title: まとめ
   description: まとめ
-  displayType: one-column
-  ms.openlocfilehash: 254fbb2d71f03aa6048c4fab026724c2bb8c2077
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e304ba65bbe39c289f95bc5bb300256a6554bdb1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477177"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246533"
 title: まとめ
 durationInMinutes: 10
 content: >
   [!include[](includes/6-summary.md)]
 quiz:
-  title: 'テスト: Azure Active Directory と条件付きアクセス'
+  title: 'ナレッジ チェック: Azure Active Directory と条件付きアクセス'
   questions:
   - content: Azure AD は Azure で実行される AD DS ドメイン コントローラーです。
     choices:

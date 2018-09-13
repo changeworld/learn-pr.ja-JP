@@ -1,18 +1,18 @@
 ### YamlMime:LearningPath
 uid: learn.manage-resources-in-azure
 metadata:
-  title: Manage resources in Azure
-  description: Learn how to work with the Azure command line and web portal to create, manage, and control cloud based resources.
+  title: Azure でのリソースの管理
+  description: Azure コマンド ラインと Web ポータルを使用して、クラウド ベースのリソースを作成、管理、制御する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Manage resources in Azure
-summary: Learn how to work with the Azure command line and web portal to create, manage, and control cloud based resources.
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: dd659efb544350a1e9b622532b3b0fea1e03e509
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826870"
+title: Azure でのリソースの管理
+summary: Azure コマンド ラインと Web ポータルを使用して、クラウド ベースのリソースを作成、管理、制御する方法について説明します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -27,5 +27,4 @@ modules:
 - learn.control-azure-services-with-cli
 - learn.automate-azure-tasks-with-powershell
 - learn.predict-costs-and-optimize-spending
-#TODO: Add - Control and organize resources with Azure Resource Manager (POST-IGNITE)
 achievement: learn.manage-resources-in-azure.trophy

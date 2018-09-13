@@ -1,23 +1,23 @@
 ### YamlMime:Module
 uid: learn.create-a-windows-vm-in-azure
 metadata:
-  title: Create a Windows virtual machine in Azure
-  description: Azure virtual machines (VMs) enable you to create dedicated compute resources in minutes that can be used just like a physical desktop or server machine. Whether your virtual machine is a server that you connect to for administration purposes, or a virtual workstation for an end user, the remote desktop protocol (RDP) gives the same experience as sitting at the terminal of a local physical computer.
+  title: Azure で Windows 仮想マシンを作成する
+  description: Azure 仮想マシン (VM) では、専用のコンピューティング リソースを数分で作成でき、物理デスクトップやサーバー コンピューターと同様に使用できます。 仮想マシンが管理目的で接続するサーバーであるか、エンド ユーザー用の仮想ワークステーションであるかに関係なく、リモート デスクトップ プロトコル (RDP) では、ローカルの物理コンピューターのターミナルでの設定と同じエクスペリエンスが提供されます。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Create a Windows virtual machine in Azure
-summary: Azure virtual machines (VMs) enable you to create dedicated compute resources in minutes that can be used just like a physical desktop or server machine. Whether your virtual machine is a server that you connect to for administration purposes, or a virtual workstation for an end user, the remote desktop protocol (RDP) gives the same experience as sitting at the terminal of a local physical computer.
-abstract:  | 
-  In this module, you will:
-  - Create a Windows virtual machine using the Azure portal
-  - Connect to a running Windows virtual machine using Remote Desktop
-  - Install software and change the network configuration on a VM using the Azure portal
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: d5970495320b99e6169e1abf00711606730d0864
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847216"
+title: Azure で Windows 仮想マシンを作成する
+summary: Azure 仮想マシン (VM) では、専用のコンピューティング リソースを数分で作成でき、物理デスクトップやサーバー コンピューターと同様に使用できます。 仮想マシンが管理目的で接続するサーバーであるか、エンド ユーザー用の仮想ワークステーションであるかに関係なく、リモート デスクトップ プロトコル (RDP) では、ローカルの物理コンピューターのターミナルでの設定と同じエクスペリエンスが提供されます。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure portal を使用して Windows 仮想マシンを作成する
+    - リモート デスクトップを使用して実行中の Windows 仮想マシンに接続する
+    - ソフトウェアをインストールし、Azure portal を使用して VM 上でネットワーク構成を変更する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
@@ -28,7 +28,6 @@ products:
 - azure-virtual-machines
 - azure-portal
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
 - learn.create-a-windows-vm-in-azure.1-introduction
 - learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
 - learn.create-a-windows-vm-in-azure.3-exercise-create-a-vm

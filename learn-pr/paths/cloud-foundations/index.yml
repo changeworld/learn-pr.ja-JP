@@ -1,18 +1,18 @@
 ### YamlMime:LearningPath
 uid: learn.cloud-foundations
 metadata:
-  title: Cloud foundations
-  description: Interested in the cloud, but aren't quite sure what it can do for you? This learning path is the place to start. Learn the benefits of cloud computing, features in Azure that will save you time and money, basic strategies for transitioning to the cloud and more.
+  title: クラウドの基礎
+  description: クラウドに関心があっても、その機能についてはあまりご存知ないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Cloud foundations
-summary: Interested in the cloud, but aren't quite sure what it can do for you? This learning path is the place to start. Learn the benefits of cloud computing, features in Azure that will save you time and money, basic strategies for transitioning to the cloud and more.
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 42a739267fee3c7b403b72bfc3a07d631f408c17
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826869"
+title: クラウドの基礎
+summary: クラウドに関心があっても、その機能についてはあまりご存知ないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
@@ -27,6 +27,5 @@ modules:
 - learn.azure-services-features
 - learn.intro-to-compute
 - learn.intro-to-data-in-azure
-- learn.introduction-to-security
 - learn.intro-to-azure-networking
 achievement: learn.cloud-foundations.trophy
