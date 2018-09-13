@@ -1,52 +1,52 @@
-Now that we have a Windows VM in Azure, the next thing you’ll do is put your applications and data on those VMs to process our traffic videos. 
+これで、Azure 内に Windows VM を用意できました。次に、ご自分のアプリケーションとデータをそれらの VM に配置し、トラフィックのビデオを処理します。 
 
-However, unless you’ve set up a site-to-site VPN to Azure, your Azure VMs won’t be accessible from your local network. If you’re just getting started with Azure, it’s unlikely that you have a working site-to-site VPN. So how can you transfer files to Azure VMs? One easy way is to use Azure’s Remote Desktop Connections feature to share your local drives with your new Azure VMs.
+しかし、Azure に対してサイト間 VPN を設定していない場合、ご利用の Azure VM にはご自分のローカル ネットワークからアクセスできません。 Azure を使い始めたばかりであれば、おそらくサイト間 VPN は動作していません。 それでは、Azure VM にファイルを転送するにはどうすればよいでしょうか。 Azure のリモート デスクトップ接続の機能を使用して、ご自分の新しい Azure VM でローカル ドライブを共有するのが簡単な方法です。
 
-Now that we have a new Windows virtual machine, we need to install our custom software on to it. There are two ways we can use:
+新しい Windows 仮想マシンがあるので、そこにカスタム ソフトウェアをインストールする必要があります。 使用できる方法が 2 つあります。
 
-- Remote Desktop Protocol (RDP)
-- Custom scripts
-- Custom VM images (with the software preinstalled)
+- リモート デスクトップ プロトコル (RDP)
+- カスタム スクリプト
+- カスタム VM イメージ (プレインストールされているソフトウェアを含む)
 
-Let's look at the simplest approach for Windows VMs: Remote Desktop.
+Windows VM で最も簡単な手法であるリモート デスクトップを見てみましょう。
 
-## What is the Remote Desktop Protocol?
+## <a name="what-is-the-remote-desktop-protocol"></a>リモート デスクトップ プロトコルとは
 
-Remote Desktop (RDP) provides remote connectivity to the UI of Windows-based computers. RDP enables you to sign in to a remote physical or virtual Windows computer and control that computer as if you were seated at the console. An RDP connection enables you to carry out the vast majority of operations that you can do from the console of a physical computer, with the exception of some power and hardware-related functions.
+リモート デスクトップ (RDP) で、Windows ベース コンピューターの UI にリモート接続機能が追加されます。 RDP を使用すると、離れた場所にある物理または仮想 Windows コンピューターにサインインし、まるでコンソールで操作しているかのようにそのコンピューターを制御できます。 RDP 接続を利用すると、電源とハードウェアに関連する一部の機能を除き、物理コンピューターのコンソールからできる作業のほとんどを実行できます。
 
-An RDP connection requires an RDP client. Microsoft provides RDP clients for the following operating systems:
+RDP 接続には RDP クライアントが必要です。 Microsoft では、次のオペレーティング システム用の RDP クライアントを提供しています。
 
-- Windows (built-in)
+- Windows (組み込み)
 - MacOS
 - iOS
 - Android
 
-The following screenshot displays the Remote Desktop Protocol client in Windows 10.
+次のスクリーンショットは、Windows 10 でのリモート デスクトップ プロトコル クライアントを示しています。
 
-![Screenshot of the user interface of the Remote Desktop Protocol client.](../media/4-rdp-client.png)
+![リモート デスクトップ プロトコル クライアントのユーザー インターフェイスのスクリーンショット。](../media/4-rdp-client.png)
 
-There are also open source Linux clients, such as Remmina that enable you to connect to a Windows PC from an Ubuntu distribution.
+また、オープンソースの Linux クライアントもあり、たとえば、Remmina を利用すれば、Ubuntu ディストリビューションから Windows PC に接続できます。
 
-## Connecting to an Azure VM
+## <a name="connecting-to-an-azure-vm"></a>Azure VM への接続
 
-As we saw a moment ago, Azure VMs communicate on a virtual network. They can also have an optional public IP address assigned to them. With a public IP, we can communicate with the VM over the Internet. Alternatively, we can setup a virtual private network (VPN) that connects our on-premises network to Azure - letting us securely connect to the VM without exposing a public IP. This approach is covered in another module and is fully documented if you are interested in exploring that option.
+少し前に説明したように、Azure VM は仮想ネットワーク経由で通信します。 また、任意のパブリック IP アドレスを VM に割り当てることもできます。 パブリック IP を使用すると、インターネット経由で VM と通信できます。 または、オンプレミスのネットワークを Azure に接続する仮想プライベート ネットワーク (VPN) を設定できます。そうすれば、パブリック IP を公開することなく、安全に VM に接続できます。 この手法については、別のモジュールを参照してください。手法の選択肢についても詳しく説明されています。
 
-One thing to be aware of with public IP addresses in Azure is they are often dynamically allocated. That means the IP address can change over time - for VMs this happens when the VM is restarted. You can pay more to assign static addresses if you want to connect directly to an IP address instead of a name and need to ensure that the IP address will not change.
+Azure でのパブリック IP アドレスに関して注意すべき 1 つの点は、多くの場合、それが動的に割り当てられることです。 つまり、時間が経つと IP アドレスが変わる可能性があります。VM の場合、これは VM の再起動時に行われます。 名前ではなく IP アドレスに直接接続し、IP アドレスが変化しないようにする必要がある場合は、静的アドレスを割り当てることができます。
 
-### How do you connect to a VM in Azure using RDP?
+### <a name="how-do-you-connect-to-a-vm-in-azure-using-rdp"></a>RDP を使用して Azure の VM に接続するにはどうすればよいですか。
 
-Connecting to a VM in Azure using RDP is a simple process. In the Azure portal, you go to the properties of your VM, and at the top, click **Connect**. This will show you the IP addresses assigned to the VM and give you the option to download a preconfigured **.rdp** file that Windows then opens in the RDP client. You can choose to connect over the public IP address of the VM in the RDP file. Alternatively, if you're connecting over VPN or ExpressRoute, you can select the internal IP address. You can also select the port number for the connection.
+RDP を使用した Azure の VM への接続はシンプルなプロセスです。 Azure portal で、お使いの VM のプロパティに移動し、一番上にある **[接続]** をクリックします。 これにより、その VM に割り当てられている IP アドレスが表示され、Windows が RDP クライアントで開かれる構成済みの **.rdp** ファイルをダウンロードするオプションが提供されます。 RDP ファイルの VM のパブリック IP アドレス経由で接続するように選択できます。 あるいは、VPN または ExpressRoute 経由で接続する場合、内部 IP アドレスを選択できます。 接続のポート番号も選択できます。
 
-If you're using a static public IP address for the VM, you can save the **.rdp** file to your desktop. If you're using dynamic IP addressing, the **.rdp** file only remains valid while the VM is running. If you stop and restart the VM, you must download another **.rdp** file.
+VM に静的パブリック IP アドレスを使用している場合、**.rdp** ファイルをお使いのデスクトップに保存できます。 動的 IP アドレスを使用している場合、VM が実行されている間のみ、**.rdp** ファイルは有効となります。 VM を停止し、再起動する場合、別の **.rdp** ファイルをダウンロードする必要があります。
 
 > [!TIP]
-> You can also enter the public IP address of the VM into the Windows RDP client and click **Connect**.
+> Windows RDP クライアントに VM のパブリック IP アドレスを入力し、**[接続]** をクリックすることもできます。
 
-When you connect, you will typically receive two warnings. These are:
+接続すると、通常、2 つの警告が表示されます。 次のとおりです。
 
--**Publisher warning** - caused by the **.rdp** file not being publicly signed.
-- **Certificate warning** - caused by the machine certificate not being trusted.
+-**発行元警告** - **.rdp** ファイルに公的な署名がないことが警告の原因です。
+- **証明書警告** - コンピューター証明書が信頼されていないことが警告の原因です。
 
-In test environments, these warnings can be ignored. In production environments, the **.rdp** file can be signed using **RDPSIGN.EXE** and the machine certificate placed in the client's **Trusted Root Certification Authorities** store.
+テスト環境では、これらの警告を無視できます。 運用環境では、**.rdp** ファイルに **RDPSIGN.EXE** を利用して署名し、コンピューター証明書をクライアントの**信頼されたルート証明機関**ストアに配置するということが可能です。
 
-Let's try using RDP to connect to our VM.
+RDP を使用して VM に接続してみましょう。

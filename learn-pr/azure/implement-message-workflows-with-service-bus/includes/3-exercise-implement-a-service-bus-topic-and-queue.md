@@ -1,76 +1,76 @@
-Suppose you have an application for the sales team in your global company. Each team member has a mobile phone where your app will be installed. A web service hosted in Azure implements the business logic for your application and stores information in Azure SQL Database. There is one instance of the web service for each geographical region. You have identified the following purposes for sending messages between the mobile app and the web service:
+グローバル企業の営業チーム向けアプリケーションがあるとします。 各チーム メンバーは、アプリをインストールする携帯電話を持っています。 Azure でホストされている Web サービスには、アプリケーションのビジネス ロジックが実装され、情報は Azure SQL Database に格納されます。 地理的リージョンごとに 1 インスタンスの Web サービスがあります。 次のように、モバイル アプリと Web サービスの間でメッセージを送信する目的を特定しました。
 
-- Messages that relate to individual sales must be sent only to the web service instance in the user's region.
-- Messages that relate to sales performance must be sent to all instances of the web service.
+- 個々の販売に関連するメッセージは、ユーザーのリージョンの Web サービス インスタンスにのみ送信される必要があります。
+- 販売実績に関連するメッセージは、Web サービスのすべてのインスタンスに送信される必要があります。
 
-You have decided to implement a Service Bus queue for the first use case and the Service Bus topic for the second use case.
+1 つ目のユース ケースのために Service Bus キュー、2 つ目のユース ケースのために Service Bus トピックを実装することに決めました。
 
-In this exercise, you will create a Service Bus namespace, which will contain both a queue and a topic with subscriptions.
+この演習では、サブスクリプションに関するキューとトピックの両方を含む Service Bus 名前空間を作成します。
 
-## Create a Service Bus namespace
+## <a name="create-a-service-bus-namespace"></a>Service Bus 名前空間を作成する
 
-In Azure Service Bus, a namespace is a container, with a unique fully qualified domain name, for queues, topics, and relays. You must start by creating the namespace.
+Azure Service Bus における名前空間とは、キュー、トピック、およびリレー用の一意の完全修飾ドメイン名を持つコンテナーです。 まず名前空間の作成から始める必要があります。
 
-Each namespace also has primary and secondary shared access signature encryption keys. A sending or receiving component must provide these keys when it connects to gain access to the objects within the namespace.
+各名前空間には、プライマリおよびセカンダリの Shared Access Signature (SAS) 暗号化キーもあります。 送信側または受信側のコンポーネントは、名前空間内のオブジェクトに対するアクセス権を得るために、接続時にこれらのキーを提供する必要があります。
 
-To create a Service Bus namespace by using the Azure portal, follow these steps:
+Azure portal を使用して Service Bus 名前空間を作成するには、次の手順を実行します。
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/) and log in with your usual Azure account credentials.
+1. ブラウザーで [Azure portal](https://portal.azure.com/) に移動し、通常の Azure アカウントの資格情報でログインします。
 
-1. In the navigation on the left, click **All services**.
+1. 左側のナビゲーションで、**[すべてのサービス]** をクリックします。
 
-1. In the **All Services** blade, scroll down to the **INTEGRATION** section, and then click **Service Bus**.
+1. **[すべてのサービス]** ブレードで、**[統合]** セクションまでスクロールし、**[Service Bus]** をクリックします。
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-1.png)
+    ![Service Bus 名前空間を作成する](../media-draft/3-create-namespace-1.png)
 
-1. In the top left of the **Service Bus** blade, click **Add**.
+1. **[Service Bus]** ブレードの左上にある **[追加]** をクリックします。
 
-1. In the **Name** text box, type a unique name for the namespace. For example "salesteamapp" + *your initials* + *current date*.
+1. **[名前]** ボックスに、名前空間の一意の名前を入力します。 たとえば、「salesteamapp」 + *自分のイニシャル* + *現在の日付*を入力します。
 
-1. In the **Pricing tier** drop-down list, select **Standard**.
+1. **[価格レベル]** ドロップダウン リストで **[Standard]** を選択します。
 
-1. In the **Subscription** drop-down list, select your subscription.
+1. **[サブスクリプション]** ドロップダウン リストでサブスクリプションを選択します。
 
-1. Under **Resource group**, select **Create new**, and then type **SalesTeamAppRG**.
+1. **[リソース グループ]** で **[新規作成]** を選択し、「**SalesTeamAppRG**」と入力します。
 
-1. In the **Location** drop-down list, select a location near you, and then click **Create**. Azure creates the new Service Bus namespace.
+1. **[場所]** ドロップダウン リストで、近くの場所を選択し、**[作成]** をクリックします。 新しい Service Bus 名前空間が作成されます。
 
-    ![Create a Service Bus namespace](../media-draft/3-create-namespace-2.png)
+    ![Service Bus 名前空間を作成する](../media-draft/3-create-namespace-2.png)
 
-## Create a Service Bus queue
+## <a name="create-a-service-bus-queue"></a>Service Bus キューを作成する
 
-Now that you have a namespace, you can create a queue for messages about individual sales. To do this, follow these steps:
+名前空間を用意できたので、次は個々の販売に関するメッセージのキューを作成します。 その手順は次のとおりです。
 
-1. In the **Service Bus** blade, click **Refresh**. The namespace you just created is displayed.
+1. **[Service Bus]** ブレードで **[更新]** をクリックします。 作成した名前空間が表示されます。
 
-1. Click the namespace you just created.
+1. 先ほど作成した名前空間をクリックします。
 
-1. In the top left of the namespace blade, click **+ Queue**.
+1. 名前空間ブレードの左上にある **[+ キュー]** をクリックします。
 
-1. In the **Create queue** blade, in the **Name** text box, type **salesmessages**, and then click **Create**. Azure creates the queue in your namespace.
+1. **[キューの作成]** ブレードで、**[名前]** ボックスに「**salesmessages**」と入力し、**[作成]** をクリックします。 名前空間にキューが作成されます。
 
-    ![Creating a queue](../media-draft/3-create-queue.png)
+    ![キューの作成](../media-draft/3-create-queue.png)
 
-## Create a Service Bus topic and subscriptions
+## <a name="create-a-service-bus-topic-and-subscriptions"></a>Service Bus トピックとサブスクリプションを作成する
 
-You also want to create a topic that will be used for messages that relate to sales performance. Multiple instances of the business logic web service will subscribe to this topic from different countries. Each message will be delivered to multiple instances.
+販売実績に関連するメッセージに使用されるトピックを作成することもできます。 ビジネス ロジック Web サービスの複数のインスタンスが、さまざまな国からこのトピックをサブスクライブします。 各メッセージは複数のインスタンスに配信されます。
 
-Follow these steps:
+次の手順を実行します。
 
-1. In the **Service Bus Namespace** blade, click **+ Topic**.
+1. **[Service Bus 名前空間]** ブレードで **[+ トピック]** をクリックします。
 
-1. In the **Create topic** blade, in the **Name** text box, type **salesperformancemessages**, and then click **Create**. Azure creates the topic in your namespace.
+1. **[トピックの作成]** ブレードで、**[名前]** ボックスに「**salesperformancemessages**」と入力し、**[作成]** をクリックします。 Azure で名前空間にトピックが作成されます。
 
-    ![Creating a topic](../media-draft/3-create-topic.png)
+    ![トピックの作成](../media-draft/3-create-topic.png)
 
-1. When the topic has been created, in the **Service Bus Namespace** blade, under **Entities**, click **Topics**.
+1. トピックが作成されたら、**[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[トピック]** をクリックします。
 
-1. In the list of topics, click **salesperformancemessages**, and then click **+ Subscription**.
+1. トピックのリストから **[salesperformancemessages]** をクリックし、**[+ サブスクリプション]** をクリックします。
 
-1. In the **Name** text box, type **Americas**, and then click **Create**.
+1. **[名前]** ボックスに「**Americas**」と入力し、**[作成]** をクリックします。
 
-1. Click **+ Subscription**.
+1. **[+ サブスクリプション]** をクリックします。
 
-1. In the **Name** text box, type **EuropeAndAfrica**, and then click **Create**.
+1. **[名前]** ボックスに「**EuropeAndAfrica**」と入力し、**[作成]** をクリックします。
 
-You have built the infrastructure required to use Service Bus to increase the resilience of your sales force distributed application. You have created a queue for messages about individual sales and a topic for messages about sales performance. The topic includes multiple subscriptions because messages sent to that topic can be delivered to multiple recipient web services around the world.
+営業部門の分散アプリケーションの回復力を高めるために、Service Bus の使用に必要なインフラストラクチャを構築しました。 個々の販売に関するメッセージのキューと、販売実績に関するメッセージのトピックを作成しました。 トピックには複数のサブスクリプションが含まれています。これは、そのトピックに送信されたメッセージが、世界各地の複数の受信側 Web サービスに配信される可能性があるためです。

@@ -1,49 +1,49 @@
-In this unit, you will install Visual Studio on either your Windows or your macOS computer. On Windows, the Azure development workload will need to be installed. And on Visual Studio for Mac, the built-in Connected Services workflow will enable you to build apps for Azure App Service. At the end, you will be ready to start creating applications and publishing them to Azure.
+このユニットでは、Visual Studio を Windows または macOS コンピューターにインストールします。 Windows 上には、Azure 開発ワークロードをインストールする必要があります。 そして Visual Studio for Mac では、組み込みの接続済みサービス ワークフローにより、Azure App Service 用にアプリを構築します。 最後には、アプリケーションを作成する準備が完了し、それを Azure に公開できるようになります。
 
-## Exercise steps
+## <a name="exercise-steps"></a>演習の手順
 
-There are slight differences in installing Visual Studio between Windows and macOS. The following sections outline these differences.
+Visual Studio を Windows と macOS にインストールする場合には、若干の違いがあります。 次のセクションで、これらの違いを説明します。
 
-### Windows
+### <a name="windows"></a>Windows
 
-1. Download the Visual Studio installer from https://visualstudio.microsoft.com/downloads/.
+1. Visual Studio のインストーラーを、 https://visualstudio.microsoft.com/downloads/ からダウンロードします。
 
-1. Run the installer and it will open the Workloads window.
+1. インストーラーを実行すると、ワークロード ウィンドウが開きます。
 
-1. Choose the **Azure development** workload.
+1. **[Azure の開発]** ワークロードを選びます。
 
-    The following screenshot shows the Visual Studio Installer workload selected to allow Azure development within Visual Studio.
+    次のスクリーンショットは、Visual Studio で Azure を開発するために Visual Studio インストーラーのワークロードが選択されているところを示しています。
 
-    ![Screenshot of the Visual Studio Installer with the Azure development workload highlighted.](../media/5-select-azure-workload.png)
+    ![Azure 開発ワークロードが強調表示された Visual Studio インストーラーのスクリーンショット。](../media/5-select-azure-workload.png)
 
-1. (Optional) Install the ASP.NET and web development workload to be ready to create web applications for Azure.
+1. (省略可能) Azure で使用する Web アプリケーションを作成するために、ASP.NET および Web 開発ワークロードをインストールします。
 
-1. Click **Install**, and wait for Visual Studio to install.
+1. **[インストール]** をクリックし、Visual Studio がインストールされるのを待機します。
 
-1. When the installation is complete, open Visual Studio.
+1. インストールが完了したら、Visual Studio を開きます。
 
-1. Go to the View menu in Visual Studio and make sure you have the **Cloud Explorer** option.
+1. Visual Studio の [表示] メニューに移動し、**[Cloud Explorer]** オプションがあることを確認します。
 
-    The following screenshot shows the Cloud Explorer menu option that will be present if you have the Azure development workload installed.
+    次のスクリーン ショットでは、Azure 開発ワークロードがインストールされている場合に存在する Cloud Explorer のメニュー オプションを示します。
 
-    ![Screenshot of the Visual Studio View menu with the Cloud Explorer menu option highlighted.](../media/5-verify-cloud-explorer.png)
+    ![Cloud Explorer のメニュー オプションが強調表示された Visual Studio の [表示] メニューのスクリーンショット。](../media/5-verify-cloud-explorer.png)
 
-### macOS
+### <a name="macos"></a>macOS
 
-1. Go to https://visualstudio.microsoft.com/ and download the Visual Studio for Mac installer.
+1. https://visualstudio.microsoft.com/ に移動し、Visual Studio for Mac インストーラーをダウンロードします。
 
-1. Click the VisualStudioInstaller.dmg file to mount the installer and then run it by double-clicking the logo.
+1. VisualStudioInstaller.dmg ファイルをクリックしてインストーラーをマウントし、ロゴをダブルクリックして実行します。
 
-1. Acknowledge the Privacy and License terms when presented.
+1. 表示されたらプライバシーとライセンス条項に同意します。
 
-1. The installer will ask which components you wish to install. Azure components are already part of Visual Studio for Mac, but it is recommended to install the **.NET Core** platform to develop web experiences for Azure.
+1. インストーラーにより、どのコンポーネントをインスト―ルするか尋ねられます。 Azure のコンポーネントは既に Visual Studio for Mac の一部ですが、Azure 用の Web エクスペリエンスを開発するには、**.NET Core** プラットフォームをインストールすることが推奨されます。
 
-    The following screenshot shows the .NET Core platform required to add Azure development capabilities to Visual Studio for Mac.
+    次のスクリーン ショットは、Visual Studio for Mac で Azure を開発する機能を追加するために必要な .NET Core プラットフォームを示しています。
 
-    ![Screenshot of the Visual Studio for Mac installer with the selected .NET Core platform option highlighted.](../media/5-vsmac-install-net-core.png)
+    ![選択されている .NET Core プラットフォーム オプションが強調表示された Visual Studio for Mac インストーラーのスクリーン ショット。](../media/5-vsmac-install-net-core.png)
 
-1. Click **Install and Update** once you are happy with the selections, and wait for the installer to complete.
+1. 選択に問題がなければ、**[Install and Update]** \(インストールして更新\) をクリックし、インストーラーが完了するまで待機します。
 
-1. If you are prompted to elevate the permissions needed, use your administrator credentials to do so.
+1. 必要なアクセス許可を昇格するように求められた場合、それの実行に管理者の資格情報を使用します。
 
-1. Once the installer is complete, start Visual Studio for Mac.
+1. インストーラーが完了したら、Visual Studio for Mac を開始します。

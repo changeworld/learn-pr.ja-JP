@@ -1,32 +1,32 @@
-One of the main tasks you'll want to do while running virtual machines is to start and stop them.
+仮想マシンを実行する際に行う主なタスクの 1 つが、仮想マシンの起動と停止です。
 
-## Stopping a VM
+## <a name="stopping-a-vm"></a>VM の停止
 
-We can stop a running VM with the `vm stop` command. You must pass the name and resource group, or the unique ID for the VM:
+実行中の VM を停止するには、`vm stop` コマンドを使用します。 VM の名前とリソース グループ、または一意の ID を渡す必要があります。
 
 ```azurecli
 az vm stop -n SampleVM -g ExerciseResources
 ```
 
-We can verify it has stopped by attempting to ping the public IP address, using `ssh`, or through the `vm get-instance-view` command. This final approach returns the same basic data as `vm show` but includes details about the instance itself. Try typing the following command into Azure Cloud Shell to see the current running state of your VM:
+停止したことを確認するには、`ssh` を使用して、または `vm get-instance-view` コマンドを使用して、パブリック IP アドレスに ping を試行します。 この最後の方法では、`vm show` と同じ基本的なデータが返されますが、インスタンス自体の詳細が含まれます。 Azure Cloud Shell に次のコマンドを入力して、VM の現在の実行状態を確認してみましょう。
 
 ```azurecli
 az vm get-instance-view -n SampleVM -g ExerciseResources --query "instanceView.statuses[?starts_with(code, 'PowerState/')].displayStatus" -o tsv
 ```
 
-This command should return `VM stopped` as the result.
+このコマンドでは、結果として `VM stopped` が返されるはずです。
 
-## Starting a VM
+## <a name="starting-a-vm"></a>VM の起動
 
-We can do the reverse through the `vm start` command.
+`vm start` コマンドを使用して逆のことができます。
 
 ```azurecli
 az vm start -n SampleVM -g ExerciseResources
 ```
 
-This command will start a stopped VM. We can verify it through the `vm get-instance-view` query, which should now return `VM running`.
+このコマンドは、停止した VM を起動します。 これを確認するには、`vm get-instance-view` クエリを使用します。これにより `VM running` が返されるはずです。
 
-## Restarting a VM
+## <a name="restarting-a-vm"></a>VM の再起動
 
-Finally, we can restart a VM if we have made changes that require a reboot using the `vm restart` command. You can add the `--no-wait` flag if you want the Azure CLI to return immediately without waiting for the VM to reboot.
+最後に、VM に再起動が必要な変更を行った場合は、`vm restart` コマンドを使用して再起動することができます。 VM の再起動を待たずに Azure CLI をすぐに復帰させる場合は、`--no-wait` フラグを追加します。
 

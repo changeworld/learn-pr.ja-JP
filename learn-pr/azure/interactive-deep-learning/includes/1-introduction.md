@@ -1,13 +1,13 @@
-## Introduction 
+## <a name="introduction"></a>はじめに 
 
-This module will walk through the basics of deep learning by the end of the module you will:
+このモジュールでは、次のことを行うモジュールの終了までにディープ ラーニングの基礎について説明します。
 
-- Learn the Basics of Deep Learning
-- Spin up your first Deep Learning Virtual Machine (DVSM)
-- Learn how to use Docker to set up a Custom Deep learning environment
-- Connect to Interactive Jupyter Notebooks through docker on the DSVM
-- Run your first deep learning experiment with Jupyter.
+- ディープ ラーニングの基礎を学習する
+- 最初のディープ ラーニング仮想マシン (DVSM) を起動する
+- Docker を使用してカスタム ディープ ラーニング環境を設定する方法について説明する
+- DSVM 上で Docker を介して対話型の Jupyter Notebook に接続する
+- Jupyter を使用して最初のディープ ラーニング実験を実行します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Azure subscription with access to D series VMs 
+- D シリーズ VM へのアクセス権を持つ Azure サブスクリプション 

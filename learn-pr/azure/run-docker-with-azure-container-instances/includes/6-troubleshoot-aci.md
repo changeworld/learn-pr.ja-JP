@@ -1,22 +1,22 @@
-In this unit, you will perform some basic troubleshooting operations such as pulling container logs, container events, and attaching to a container instance. By the end of this module, you should understand basic capabilities for troubleshooting container instances.
+このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナー インスタンスにアタッチするなどの、いくつかの基本的なトラブルシューティング操作を実行します。 このモジュールの最後には、コンテナー インスタンスをトラブルシューティングする基本的な機能を理解できるようになります。
 
-## Create a container
+## <a name="create-a-container"></a>コンテナーの作成
 
-Start by creating a container to use in this unit. If you still have the first container created in this module, skip this step:
+まず、このユニットで使用するコンテナーを作成します。 このモジュールで作成した最初のコンテナーがまだある場合は、この手順はスキップします。
 
 ```azurecli
 az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
-## Get logs from a container instance
+## <a name="get-logs-from-a-container-instance"></a>コンテナー インスタンスからのログの取得
 
-To view logs from your application code within a container, you can use the `az container logs` command:
+アプリケーション コードからコンテナー内のログを表示するために、`az container logs` コマンドを使用できます。
 
 ```azazurecli
 az container logs --resource-group myResourceGroup --name mycontainer
 ```
 
-The following is log output from the example container after the web app has been accessed a few times:
+Web アプリが数回アクセスされた後のコンテナー例からのログ出力は次のとおりです。
 
 ```bash
 listening on port 80
@@ -26,15 +26,15 @@ listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:27 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ```
 
-## Get container events
+## <a name="get-container-events"></a>コンテナー イベントの取得
 
-The `az container attach` command provides diagnostic information during container startup. Once the container has started, it also streams STDOUT and STDERR to your local console:
+`az container attach` コマンドからは、コンテナーの起動中の診断情報が出力されます。 コンテナーが起動すると、ご利用のローカル コンソールに STDOUT と STDERR もストリーミングされます。
 
 ```azazurecli
 az container attach --resource-group myResourceGroup --name mycontainer
 ```
 
-Example output:
+出力例:
 
 
 ```bash
@@ -49,17 +49,17 @@ listening on port 80
 listening on port 80
 ```
 
-## Execute a command in a container
+## <a name="execute-a-command-in-a-container"></a>コンテナーでのコマンドの実行
 
-Azure Container Instances supports executing a command in a running container. Running a command in a container you've already started is especially helpful during application development and troubleshooting. The most common use of this feature is to launch an interactive shell, so that you can debug issues in a running container.
+Azure Container Instances は、実行中のコンテナーでのコマンドの実行をサポートします。 既に開始されているコンテナー内でのコマンドの実行は、アプリケーションの開発とトラブルシューティング時に特に役立ちます。 この機能の最も一般的な用途は、対話型シェルを起動して、実行中のコンテナーで発生した問題をデバッグできるようにすることです。
 
-This example starts an interactive terminal session with the running container:
+この例では、実行中のコンテナーで対話型のターミナル セッションを開始します。
 
 ```azurecli
 az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
 ```
 
-Once the command has completed, you are effectively working inside of the container. In this example, the `ls` command was run to display the contents of the working directory:
+コマンドが完了すると、実質的にコンテナー内で作業していることになります。 この例では、作業ディレクトリの内容を表示する `ls` コマンドを実行しました。
 
 ```bash
 usr/src/app # ls
@@ -67,23 +67,23 @@ index.html         node_modules       package.json
 index.js           package-lock.json
 ```
 
-Enter `exit` to stop the remote session.
+「`exit`」と入力し、リモート セッションを停止します。
 
-## Monitor container CPU and memory
+## <a name="monitor-container-cpu-and-memory"></a>コンテナーの CPU とメモリを監視する
 
-You may want to pull metrics on CPU and memory usage. To do so, first get the ID of the Azure container instance. In this example, the ID is placed in a variable named `CONTAINER_ID`:
+CPU とメモリの使用量に関するメトリックをプルしたい場合があります。 これを行うには、まず、Azure コンテナー インスタンスの ID を取得します。 この例では、ID は `CONTAINER_ID` という名前の変数に配置されています。
 
 ```azurecli
 CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
 ```
 
-Now, use the `az monitor metrics list` command to pull back CPU usage information:
+ここで、`az monitor metrics list` コマンドを使用して、CPU の使用量の情報を戻します。
 
 ```azurecli
 az monitor metrics list --resource $CONTAINER_ID --metric CPUUsage --output table
 ```
 
-Example output:
+出力例:
 
 ```bash
 Timestamp            Name              Average
@@ -105,13 +105,13 @@ Timestamp            Name              Average
 2018-08-20 21:53:00  CPU Usage      0.5
 ```
 
-The following command can be used to get memory usage information:
+メモリ使用量の情報を取得する場合は、次のコマンドを使用できます。
 
 ```azurecli
 az monitor metrics list --resource $CONTAINER_ID --metric MemoryUsage --output table
 ```
 
-Example output:
+出力例:
 
 ```bash
 Timestamp            Name              Average
@@ -131,19 +131,19 @@ Timestamp            Name              Average
 2018-08-20 21:55:00  Memory Usage  19181568.0
 ```
 
-This information is also available in the Azure portal. To see graphical representation of CPU and memory usage information, visit the Azure portal overview page for a container instance.
+この情報は、Azure portal でも見つけることができます。 CPU とメモリ使用量の情報を図で確認するには、コンテナー インスタンスに関する Azure portal の概要ページを参照してください。
 
-![Azure portal view of Azure Container Instances CPU and memory usage information](../media-draft/cpu-memory.png)
+![Azure Container Instances の CPU とメモリ使用量の情報を示す Azure portal のビュー](../media-draft/cpu-memory.png)
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>クリーンアップ
+<!---TODO: Do we need to include cleanup for the free education tier?--->
 
-This is the last unit of the Azure Container Instances learning module. At this point, you can cleanup the created resources by deleting the resource group. To do so, use the **az group delete** command:
+これは、Azure Container Instances のラーニング モジュールの最後のユニットです。 この時点で、リソース グループを削除することにより、作成したリソースをクリーンアップすることができます。 これを行うには、**az group delete** コマンドを使用します。
 
 ```azurecli
 az group delete --name myResourceGroup --no-wait
 ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned about several troubleshooting operations such as pulling container logs, container events, and attaching to a container instance.
+このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナ― インスタンスにアタッチするなどの、いくつかのトラブルシューティング操作を学習しました。

@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
+title: ご利用のデータをバックアップと復元で保護する
+metadata:
+  title: ご利用のデータをバックアップと復元で保護する
+  description: ご利用のデータをバックアップと復元で保護する
+  ms.openlocfilehash: 6bd2d58b595798d9c811c75e22d8f2d92d877c72
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43848993"
+durationInMinutes: 15
+content: >
+  [!include[](includes/4-backup-and-restore.md)]
+quiz:
+  title: 知識チェック - ご利用のデータをバックアップと復元で保護する
+  questions:
+  - content: 次の理由により復元を定期的にテストすることが重要です
+    choices:
+    - content: ご利用のバックアップの整合性を検証することができます
+      isCorrect: false
+      incorrectExplanation: 復元を定期的にテストすることでご利用のバックアップの整合性を検証することができますが、適切な選択肢はこれだけではありません。
+    - content: 復元プロセスを理解することができます
+      isCorrect: false
+      incorrectExplanation: 復元を定期的にテストすることで復元プロセスを理解することができますが、適切な選択肢はこれだけではありません。
+    - content: バックアップ プロセスおよび復元プロセスでのギャップを識別するのに役立ちます
+      isCorrect: false
+      incorrectExplanation: 復元を定期的にテストすることで、バックアップ プロセスおよび復元プロセスでのギャップを識別することができますが、適切な選択肢はこれだけではありません。
+    - content: 上記のすべて
+      isCorrect: true
+      correctExplanation: 上記のすべてが、バックアップの復元を定期的にテストすることの十分な理由です。
+  - content: 次のうちデータの定期的な自動的バックアップが含まれていないのはどれですか
+    choices:
+    - content: Azure BLOB ストレージ
+      isCorrect: true
+      correctExplanation: Azure BLOB ストレージには、ご利用のデータの自動バックアップは含まれません。 他の方法を使用してバックアップを実装する必要があります。
+    - content: Cosmos DB
+      isCorrect: false
+      incorrectExplanation: Cosmos DB には、ご利用のデータの完全に自動化された定期的なバックアップが含まれます。
+    - content: Azure SQL Database
+      isCorrect: false
+      incorrectExplanation: Azure SQL Database には、ご利用のデータの完全に自動化された定期的なバックアップが含まれます。

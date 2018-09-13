@@ -1,107 +1,107 @@
-Let's apply a network security group to our network, so that we only allow HTTP traffic through our server.
+ネットワーク セキュリティ グループをネットワークに適用し、サーバーに対して HTTP トラフィックだけを許可してみましょう。
 
-## Create a network security group
+## <a name="create-a-network-security-group"></a>ネットワーク セキュリティ グループの作成
 
-Azure should have created a security group for us because we indicated we wanted SSH access. But let's create a new security group, so you can walk through the entire process. This is particularly important if you decide to create your virtual network _before_ your VMs. As mentioned earlier, security groups are _optional_ and not necessarily created with the network.
+SSH アクセスが必要であることを示したため、Azure ではセキュリティ グループが作成されているはずです。 しかし、ここではプロセス全体を確認するために、新しいセキュリティ グループを作成します。 VM の "_前_" に仮想ネットワークを作成することにした場合、これは特に重要です。 前述のとおり、セキュリティ グループは "_省略可能_" であり、必ずしもネットワークと共に作成されるわけではありません。
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), click the **Create a resource** button in the left-corner sidebar to start a new resource creation.
+1. [Azure portal](https://portal.azure.com?azure-portal=true) で、左隅のサイドバーにある **[リソースの作成]** ボタンをクリックして、新しいリソースの作成を開始します。
 
-1. Type **Network security group** into the filter box and select the matching item in the list.
+1. フィルター ボックスに「ネットワーク セキュリティ グループ」と入力し、一覧で一致する項目を選択します。
 
-1. Make sure the **Resource Manager** deployment model is selected and click **Create**.
+1. **[リソース マネージャー]** デプロイ モデルが選択されていることを確認し、**[作成]** をクリックします。
 
-1. Provide a **Name** for your security group. Again, naming conventions are a good idea here. Let's use **test-web-eus-nsg1** for **Test Web Network Security Group #1 in East US**. You'll likely want to change the location portion of the name to reflect where you put the security group.
+1. セキュリティ グループの **[名前]** を指定します。 ここでも、名前付け規則を使用することをお勧めします。"Test Web Network Security Group #1 in East US" の場合は "test-web-eus-nsg1" を使用します。 セキュリティ グループをどこに配置するかに応じて、場所の部分を変更してください。
 
-1. Select the proper **Subscription** and use your existing **Resource group**.
+1. 適切な **[サブスクリプション]** を選択し、既存の **[リソース グループ]** を使用します。
 
-1. Finally, put it into the same **Location** as the VM / virtual network. This is important; you won't be able to apply this resource if it's in a different location.
+1. 最後に、VM / 仮想ネットワークと同じ**場所**に配置します。 これは重要なことです。場所が異なる場合、このリソースを適用できなくなります。
 
-1. Click **Create** to create the group.
+1. **[作成]** をクリックしてグループを作成します。
 
-## Add a new inbound rule to our network security group
+## <a name="add-a-new-inbound-rule-to-our-network-security-group"></a>ネットワーク セキュリティ グループに新しい受信規則を追加する
 
-Deployment should complete quickly. When it's finished, we can add new rules to our security group:
+デプロイはすぐに完了するはずです。完了したら、新しい規則をセキュリティ グループに追加できます。
 
-1. Find the new security group resource and select it in the Azure portal.
+1. Azure portal で新しいセキュリティ グループのリソースを見つけて選択します。
 
-1. On the overview page, you'll find that it has some default rules created to lock down the network.
+1. 概要ページには、ネットワークをロックダウンするために作成された既定の規則がいくつか表示されます。
 
-    On the inbound side:
+    受信側:
 
-    - All incoming traffic from one VNet to another is allowed. This lets resources on the VNet talk to each other.
-    - Azure Load Balancer **probe** requests to ensure the VM is alive.
-    - All other inbound traffic is denied.  
+    - VNet 間の受信トラフィックはすべて許可されます。 これにより、VNet 上のリソースは相互に通信することができます
+    - Azure Load Balancer の "プローブ" によって、VM が有効であることを確認するように求められます
+    - 送信側の他の受信トラフィックはすべて拒否されます。
+    - VNet 上のすべてのネットワーク内のトラフィックが許可されます
+    - インターネットへの送信トラフィックはすべて許可されます
+    - 他の送信トラフィックはすべて拒否されます
 
-    On the outbound side:  
-    - All in-network traffic on the VNet is allowed.
-    - All outbound traffic to the internet is permitted.
-    - All other outbound traffic is denied.
+> [!NOTE]
+> これらの既定の規則には優先度の高い値が設定されます。これは、"_最後_" に評価されることを意味します。 これを変更したり、削除したりすることはできませんが、優先度の低い値のトラフィックと一致するようにより具体的な規則を作成することで、"_オーバーライド_" できます。
 
-    > [!NOTE]  
-    > These default rules are set with high-priority values, which means that they get evaluated _last_. They cannot be changed or deleted, but you can _override_ them by creating more specific rules to match your traffic with a lower priority value.
+1. セキュリティ グループの **[設定]** パネルで **[受信セキュリティ規則]** セクションをクリックします。
 
-1. Click the **Inbound security rules** section in the **Settings** panel for the security group.
+1. **[+ 追加]** をクリックして新しいセキュリティ規則を追加します。
 
-1. Click **+ Add** to add a new security rule.
+    ![セキュリティ規則を追加する](../media-drafts/8-add-rule.png)
 
-    ![Screenshot of the Azure portal showing the inbound security rules settings with the Add button highlighted.](../media/8-add-rule.png)
+    セキュリティ規則に必要な情報を入力する方法は 2 つ (基本と高度) あります。 [追加] パネルの上部にあるボタンをクリックして、これらを切り替えることができます。
 
-    There are two ways to enter the information necessary for a security rule: basic and advanced. You can switch between them by clicking the button at the top of the **add** panel.
+    ![基本と高度な規則の入力](../media-drafts/8-advanced-create-rule.png)
 
-    ![A pair of screenshots of the Azure portal showing the toggle between Basic and Advanced rule input, with an arrow linking between the two states of the toggle button highlighted.](../media/8-advanced-create-rule.png)
+    高度なモードでは規則を完全にカスタマイズできますが、既知のプロトコルを構成するだけの場合は、基本モードのほうが操作は少し簡単です。
 
-    The advanced mode provides the ability to customize the rule completely. However, if you need to configure a known protocol, the basic mode is a bit easier to work with.
+1. 基本モードに切り替えます。
 
-1. Switch to the basic mode.
+1. HTTP 規則に関する情報を追加します。
 
-1. Add the information for our HTTP rule:
+    - **[サービス]** を HTTP に設定します。 これでポートの範囲が設定されます。
+    - **[優先度]** を "1000" に設定します。 既定値の **[拒否]** 規則よりも低い数値にする必要があります。 任意の値で範囲を開始することができますが、後で例外を作成する必要がある場合は、余裕を持たせることをお勧めします。
+    - 規則に名前を付けます。ここでは、"allow-http-traffic" を使用します。
+    - 規則の説明を入力します。
 
-    - Set the **Service** to be HTTP. This will set your port range up for you.
-    - Set the **Priority** to **1000**. It has to be a lower number than the default **Deny** rule. You can start the range at any value, but it's recommended that you give yourself some space in case an exception needs to be created later.
-    - Give the rule a name; we'll use **allow-http-traffic**.
-    - Give the rule a description.
+1. **高度な**モードに戻ります。 設定がまだ存在することに注目してください。 このパネルを使用して、より詳細な設定を作成することができます。 たとえば、**[ソース]** を特定の IP アドレスまたはカメラに固有の IP アドレスの範囲に制限できます。 ローカル コンピューターの現在の IP アドレスがわかっている場合は、それを試すことができます。 それ以外の場合は、設定を "任意" のままにして、規則をテストできるようにします。
 
-1. Switch back to the **Advanced** mode. Notice that our settings are still present. We can use this panel to create more fine-grained settings. In particular, we would likely restrict the **Source** to be a specific IP address or range of IP addresses specific to the cameras. If you know the current IP address of your local computer, you can try that. Otherwise, leave the setting as **Any**, so you can test the rule.
+1. **[追加]** をクリックして、規則を作成します。 これで受信規則の一覧が更新されます。規則が優先順になっていることに注目してください。これは規則を調べる順序です。
+    
+## <a name="apply-the-security-group"></a>セキュリティ グループを適用する
 
-1. Click **Add** to create the rule. This will update the list of inbound rules - notice they are in priority order, which is how they will be examined.
+セキュリティ グループを単一の VM を保護するためにネットワーク インターフェイスに適用することも、サブネットに適用し、そのサブネット上のリソースに適用できることを思い出してください。 どちらかというと後者のアプローチが最も一般的であるため、これを使用します。 Azure でこのリソースにアクセスすることができます。その場合、仮想ネットワーク リソースを経由するか、仮想ネットワークを使用している VM 経由で間接的にアクセスできます。
 
-## Apply the security group
+1. 仮想マシンの **[概要]** パネルに切り替えます。 **[すべてのリソース]** の下に VM があります。
 
-Recall that we can apply the security group to a network interface to guard a single VM or to a subnet where it would apply to any resources on that subnet. The latter approach tends to be the most common, so let's do that. We could get to this resource in Azure through either the virtual network resource or indirectly through the VM that is using the virtual network.
+1. **[設定]** セクションで **[ネットワーク]** という項目を選択します。
 
-1. Switch to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+    ![VM 設定の [ネットワーク] 項目](../media-drafts/8-network-settings.png)
 
-1. Select the **Networking** item in the **Settings** section.
+1. ネットワーク プロパティには、**[仮想ネットワーク/サブネット]** を含む、VM に適用されるネットワークに関する情報があります。 これは、リソースにアクセスするためのクリック可能なリンクです。 これをクリックして仮想ネットワークを開きます。 このリンクは、VM の **[概要]** パネル "_でも_" 使用できます。 これらのいずれかをクリックすると、仮想ネットワークの **[概要]** が開きます。
 
-1. In the networking properties, you will find information about the networking applied to the VM, including the **Virtual network/subnet**. This is a clickable link to get to the resource. Click it to open the virtual network. This link is _also_ available on the **Overview** panel of the VM. Either of these will open the **Overview** of the virtual network.
+1. **[設定]** セクションで、**[サブネット]** 項目を選択します。
 
-1. In the **Settings** section, select the **Subnets** item.
+1. 以前に VM とネットワークを作成したときの拒否された (既定) 単一のサブネットがあるはずです。 一覧の項目をクリックして詳細を表示します。
 
-1. We should have a single subnet defined (default) from when we created the VM + network earlier. Click the item in the list to open the details.
+1. **[ネットワーク セキュリティ グループ]** エントリをクリックします。
 
-1. Click the **Network security group** entry.
+1. **test-web-eus-nsg1** という新しいセキュリティ グループを選択します。 ここには VM で作成された別のグループもあるはずです。
 
-1. Select your new security group: **test-web-eus-nsg1**. There should be another group here as well that was created with the VM.
+1. **[保存]** をクリックして変更内容を保存します。 ネットワークに適用されるまで少し時間がかかります。
 
-1. Click **Save** to save the change. It will take a minute to apply to the network.
+## <a name="verify-the-rules"></a>規則を確認する
 
-## Verify the rules
+変更内容を検証しましょう。
 
-Let's validate the change:
+1. 仮想マシンの **[概要]** パネルに戻ります。 **[すべてのリソース]** の下に VM があります。
 
-1. Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+1. **[設定]** セクションで **[ネットワーク]** という項目を選択します。
 
-1. Select the **Networking** item in the **Settings** section.
+1. ネットワークの **[概要]** パネルには、**[有効なセキュリティ規則]** のリンクがあります。これをクリックすると、規則がどのように評価されるかがすぐにわかります。 リンクをクリックして分析を開き、新しい規則が表示されることを確認します。
 
-1. In the **Overview** panel for the network, there is a link for **Effective security rules** that will quickly show you how rules are going to be evaluated. Click the link to open the analysis and make sure you see your new rule.
+    ![ネットワークの有効なセキュリティ規則](../media-drafts/8-effective-rules.png)
 
-    ![Screenshot of the Azure portal showing the Effective security rules blade for our network.](../media/8-effective-rules.png)
+1. もちろん、規則がすべて動作しているのを検証する最善の方法は、サーバーに HTTP 要求を送信することです。 まだ動作しているはずです。 **HTTP** 規則を削除して、セキュリティ グループ規則が適用されていることを確認することもできます。
 
-1. Of course, the best way to validate it's all working is to hit our server with an HTTP request. It should still work. You can even delete the **HTTP** rule to verify that the security group rules are now being applied.
+## <a name="one-more-thing"></a>もう 1 つ注意すべき点
 
-## One more thing
+セキュリティ規則を理解するのは大変です。 この新しいセキュリティ グループを適用したときに間違えてしまいました。つまり、SSH が失われてしまったのです。 これを解決するために、SSH アクセスがサポートされるようにセキュリティ グループに別の規則を追加することができます。 必ず、規則に対する受信 TCP/IP アドレスを所有しているものに限定してください。
 
-Security rules are tricky to get right. We made a mistake when we applied this new security group - we lost our SSH access! To fix this, you can add another rule to the security group to support SSH access. Make sure to restrict the inbound TCP/IP addresses for the rule to be the ones you own.
-
-> [!WARNING]  
-> Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by SSH to be something other than the default. Keep in mind that changing ports is not sufficient to stop attacks. It simply makes it a little harder to discover.
+> [!WARNING]
+> 常に、管理アクセスに使用するポートをロックダウンするようにしてください。 さらに優れたアプローチは、プライベート ネットワークに仮想ネットワークをリンクするための VPN を作成し、そのアドレス範囲からの RDP または SSH 要求のみを許可することです。 SSH で使用されるポートを、既定以外のものに変更することもできます。 ポートの変更は攻撃を阻止するには不十分であり、検出が少し困難になることに注意してください。

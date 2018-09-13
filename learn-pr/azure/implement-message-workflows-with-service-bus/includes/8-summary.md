@@ -1,13 +1,12 @@
-In this module, you created a Service Bus namespace, a queue, and a topic in your subscription by using the Azure portal, and you sent and received messages through the queue and the topic.
+このモジュールでは、Azure portal を使用してサブスクリプションに Service Bus の名前空間、キュー、トピックを作成し、キューとトピックを介してメッセージを送受信しました。
 
-Service Bus queues and topics are excellent tools that you can use to increase the resilience of communications within a distributed application. By acting as a temporary storage location, they remove the requirement for direct communication between components and handle peaks in demand smoothly. Consider using them whenever you have a component that can communicate with another component in a loosely coupled configuration.
+Service Bus のキューとトピックは、分散アプリケーション内の通信の回復力を高めるために使用できる優れたツールです。 一時的な格納場所として機能するので、コンポーネント間の直接通信の必要がなくなり、スムーズに需要のピークを処理できます。 疎結合構成の別コンポーネントと通信できるコンポーネントがある場合は、常にキューとトピックを使用することを検討してください。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up"></a>クリーンアップ
 
-Service Bus queues and topics in your Azure subscription incur a cost, although it is likely to be small when there are few, small messages. The easiest way to clean up your Azure subscription is to remove the resource group that you created during our first exercise. Doing so will also delete all the topics, queues, namespaces, and other resources in the group. When you are finished with this module, take the following steps:
+Azure サブスクリプションの Service Bus のキューとトピックにはコストがかかりますが、メッセージがほとんどない場合または少数の場合はコストもあまりかからない可能性があります。 Azure サブスクリプションをクリーンアップする最も簡単な方法は、最初の演習で作成したリソース グループを削除することです。 その結果、グループ内のすべてのトピック、キュー、名前空間、およびその他のリソースも削除されます。 このモジュールを完了したら、次の手順を実行します。
 
-1. In the **Azure portal**, in the navigation on the left, click **Resource groups**.
-1. In the list of resource groups, click **SalesTeamRG**.
-1. In the **Resource group** blade, click **Delete resource group**.
-1. In the **TYPE THE RESOURCE GROUP NAME** text box, type **SalesTeamAppRG**, and then click **Delete**. Azure removes the resource group and all its resources.
+1. **Azure portal** の左側のナビゲーションで **[リソース グループ]** をクリックします。
+1. リソース グループの一覧で、**[SalesTeamRG]** をクリックします。
+1. **[リソース グループ]** ブレードで、**[リソース グループの削除]** をクリックします。
+1. **[TYPE THE RESOURCE GROUP NAME]\(リソース グループ名を入力\)** ボックスに「**SalesTeamAppRG**」と入力し、**[削除]** をクリックします。 リソース グループとそのすべてのリソースが削除されます。

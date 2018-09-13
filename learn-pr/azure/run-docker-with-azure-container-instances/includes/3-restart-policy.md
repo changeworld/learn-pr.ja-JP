@@ -1,24 +1,24 @@
-The ease and speed of deploying containers in Azure Container Instances provides a compelling platform for executing run-once tasks like build, test, and image rendering in a container instance.
+Azure Container Instances ではコンテナー デプロイを簡単にすばやく行えるため、コンテナー インスタンスでのビルド、テスト、イメージ レンダリングなどの一度のみ実行されるタスクの実行に優れたプラットフォームを提供します。
 
-With a configurable restart policy, you can specify that your containers are stopped when their processes have completed. Because container instances are billed by the second, you're charged only for the compute resources used while the container executing your task is running.
+構成可能な再起動ポリシーを使用して、プロセスが完了したらコンテナーが停止するように指定できます。 コンテナーのインスタンスは秒単位で課金されるため、タスクを実行するコンテナーの実行中に使用されるコンピューティング リソースのみが課金されます。
 
-## Container restart policies
+## <a name="container-restart-policies"></a>コンテナー再起動ポリシー
 
-When you create a container in Azure Container Instances, you can specify one of three restart policy settings:
+Azure Container Instances でコンテナーを作成する場合、3 つの再起動ポリシー設定のいずれかを指定できます。
 
-| Restart policy   | Description |
+| 再起動ポリシー   | 説明 |
 | ---------------- | :---------- |
-| `Always` | Containers in the container group are always restarted. This is the **default** setting applied when no restart policy is specified at container creation. |
-| `Never` | Containers in the container group are never restarted. The containers run at most once. |
-| `OnFailure` | Containers in the container group are restarted only when the process executed in the container fails (when it terminates with a nonzero exit code). The containers are run at least once. |
+| `Always` | コンテナー グループ内のコンテナーを常に再起動する。 これは**既定**の設定で、コンテナー作成時に再起動ポリシーが指定されていない場合に適用されます。 |
+| `Never` | コンテナー グループ内のコンテナーを再起動しない。 コンテナーは最大で 1 回実行されます。 |
+| `OnFailure` | コンテナーで実行されたプロセスが失敗 (0 以外の終了コードで終了) した場合にのみ、コンテナー グループ内のコンテナーを再起動する。 コンテナーは少なくとも 1 回実行されます。 |
 
-In the previous unit of this module, a container was created without a specified restart policy. By default, this container received the *Always* restart policy. Because the workload in the container is long running (a web server), this policy makes sense.
+このモジュールの前のユニットでは、再起動ポリシーを指定せずに、コンテナーを作成しました。 既定で、このコンテナーが *Always* 再起動ポリシーを受け取りました。 コンテナー内のワークロードは長時間実行されているため (Web サーバー)、このポリシーは理にかなっています。
 
-## Run to completion
+## <a name="run-to-completion"></a>完了まで実行
 
-To see the restart policy in action, create a container instance from the *microsoft/aci-wordcount* image and specify the *OnFailure* restart policy. This example container runs a Python script that analyzes the text of Shakespeare's Hamlet, writes the 10 most common words to STDOUT, and then exits.
+再起動ポリシーが動作しているのを確認するには、*microsoft/aci-wordcount* イメージからコンテナー インスタンスを作成し、*OnFailure* 再起動ポリシーを指定します。 このコンテナー例では、シェイクスピアのハムレットのテキストを解析し、最もよく使われる単語 10 個を STDOUT に書き込んで終了する Python スクリプトを実行します。
 
-Run the example container with the following `az container create` command:
+次の `az container create` コマンドを使用してコンテナー例を実行します。
 
 ```azureclu
 az container create \
@@ -28,9 +28,9 @@ az container create \
     --restart-policy OnFailure
 ```
 
-Azure Container Instances starts the container and then stops it when its application (or script, in this case) exits. When Azure Container Instances stops a container whose restart policy is *Never* or *OnFailure*, the container's status is set to **Terminated**.
+Azure Container Instances によってコンテナーが開始され、そのアプリケーション (ここではスクリプト) の終了時に停止されます。 Azure Container Instances によって、再起動ポリシーが *Never* または *OnFailure* のコンテナーが停止されると、そのコンテナーの状態は **Terminated** に設定されます。
 
-You can check a container's status with the `az container show` command:
+`az container show` コマンドで、コンテナーの状態を確認できます。
 
 ```azurecli
 az container show \
@@ -39,13 +39,13 @@ az container show \
     --query containers[0].instanceView.currentState.state
 ```
 
-Once the example container's status shows **Terminated**, you can see its task output by viewing the container logs. Run the **az container logs** command to view the script's output:
+コンテナー例の状態が**終了**と表示されたら、コンテナー ログを表示してタスクの出力を確認できます。 **az container logs** コマンドを実行して、スクリプトの出力を表示します。
 
 ```azurecli
 az container logs --resource-group myResourceGroup --name mycontainer-restart-demo
 ```
 
-Output:
+出力:
 
 ```bash
 [('the', 990),
@@ -60,8 +60,8 @@ Output:
  ('HAMLET', 386)]
 ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you created a container instance with a restart policy of *OnFailure*. This configuration works well for containers that run short-lived tasks.
+このユニットでは、*OnFailure* の再起動ポリシーを使用して、コンテナー インスタンスを作成しました。 この構成は、存続期間の短いタスクを実行するコンテナーに適しています。
 
-In the next unit, you will set environment variables in Azure Container Instances.
+次のユニットでは、Azure Container Instances で環境変数を設定します。

@@ -1,10 +1,10 @@
-By default, Azure Container Instances is stateless. If the container crashes or stops, all of its state is lost. To persist state beyond the lifetime of the container, you must mount a volume from an external store.
+既定では、Azure Container Instances はステートレスです。 コンテナーがクラッシュまたは停止すると、すべての状態が失われます。 コンテナーの有効期間後も状態を保持するには、外部ストアからボリュームをマウントする必要があります。
 
-In this unit, you will mount an Azure file share to an Azure container instance for data storage and retrieval.
+このユニットでは、データの保管と取得のため、Azure コンテナー インスタンスに Azure ファイル共有をマウントします。
 
-## Create an Azure file share
+## <a name="create-an-azure-file-share"></a>Azure ファイル共有を作成する
 
-Before using an Azure file share with Azure Container Instances, you must create it. Run the following script to create a storage account. The storage account name must be globally unique, so the script adds a random value to the base string:
+Azure Container Instances で Azure ファイル共有を使用するには、まず、ファイル共有を作成する必要があります。 次のスクリプトを実行して、ストレージ アカウントを作成します。 ストレージ アカウント名はグローバルに一意にする必要があるため、このスクリプトではベース文字列にランダムな値が追加されます。
 
 ```azurecli
 ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
@@ -12,39 +12,39 @@ ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
 az storage account create --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --location eastus --sku Standard_LRS
 ```
 
-Run the following command to place the storage account connection string into an environment variable named *AZURE_STORAGE_CONNECTION_STRING*. This environment variable is understood by the Azure CLI and can be used in storage-related operations:
+次のコマンドを実行して、環境変数 *AZURE_STORAGE_CONNECTION_STRING* にストレージ アカウントの接続文字列を設定します。 この環境変数は、Azure CLI によって認識され、ストレージ関連の操作で使用できます。
 
 ```azurecli
 export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-string --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --output tsv`
 ```
 
-Create the file share by running the `az storage share create` command. The following example creates a share with the name *aci-share-demo*:
+`az storage share create` コマンドを実行してファイル共有を作成します。 次の例では、*aci-share-demo* という名前の共有を作成します。
 
 ```azurecli
 az storage share create --name aci-share-demo
 ```
 
-## Get storage credentials
+## <a name="get-storage-credentials"></a>ストレージの資格情報を取得する
 
-To mount an Azure file share as a volume in Azure Container Instances, you need three values: the storage account name, the share name, and the storage access key.
+Azure Container Instances 内のボリュームとして Azure ファイル共有をマウントするには、ストレージ アカウント名、共有名、ストレージ アクセス キーの 3 つの値が必要です。
 
-If you used the script above, the storage account name was created with a random value at the end. To query the final string (including the random portion), use the following commands:
+上のスクリプトを使用した場合、ストレージ アカウント名は最後にランダムな値を付加して作成されています。 最後の文字列 (ランダムな部分を含む) のクエリを実行するには、次のコマンドを使用します。
 
 ```azurecli
 STORAGE_ACCOUNT=$(az storage account list --resource-group myResourceGroup --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
 echo $STORAGE_ACCOUNT
 ```
 
-The share name is already known (aci-share-demo), so all that remains is the storage account key, which can be found using the following command:
+共有名は既にわかっているので (aci-share-demo)、あとはストレージ アカウント キーです。このキーを見つけるには、次のコマンドを使用します。
 
 ```azurecli
 STORAGE_KEY=$(az storage account keys list --resource-group myResourceGroup --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
 echo $STORAGE_KEY
 ```
 
-## Deploy container and mount volume
+## <a name="deploy-container-and-mount-volume"></a>コンテナーをデプロイしてボリュームをマウントする
 
-To mount an Azure file share as a volume in a container, specify the share and volume mount point when you create the container:
+Azure ファイル共有をコンテナーのボリュームとしてマウントするには、コンテナーを作成するときに、共有とボリュームのマウント ポイントを指定します。
 
 ```azurecli
 az container create \
@@ -59,25 +59,25 @@ az container create \
     --azure-file-volume-mount-path /aci/logs/
 ```
 
-Once the container has been created, get the public IP address:
+コンテナーが作成された後、パブリック IP アドレスを取得します。
 
 ```azurecli
 az container show --resource-group myResourceGroup --name aci-demo-files --query ipAddress.ip -o tsv
 ```
 
-Open a browser and navigate to the container's IP address. You will be presented with a simple form. Enter some text and click **Submit**. This action will create a file in the Azure Files share with the text entered here as the file body.
+ブラウザーを開き、コンテナーの IP アドレスに移動します。 シンプルなフォームが表示されます。 いくつかのテキストを入力して、**[送信]** をクリックします。 これにより、ここで入力したテキストを本体とするファイルが Azure Files 共有で作成されます。
 
-![Azure Container Instances file share demo](../media-draft/files-ui.png)
+![Azure Container Instances のファイル共有のデモ](../media-draft/files-ui.png)
 
-To validate, you can navigate to the file share in the Azure portal and download the file.
+検証するには、Azure portal でファイル共有に移動し、ファイルをダウンロードします。
 
-![Sample text file with contents demo application](../media-draft/sample-text.png)
+![コンテンツ デモ アプリケーションのサンプル テキスト ファイル](../media-draft/sample-text.png)
 
-If the files and data stored in the Azure Files share were of any value, this share could be remounted on a new container instance to provide stateful data.
+Azure Files 共有に格納されているファイルとデータに何らかの価値がある場合は、この共有を新しいコンテナー インスタンスに再マウントして、ステートフルなデータを提供できます。
 
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you have created an Azure Files share and a container, and have mounted the file share to that container. This share was then used to store application data.
+このユニットでは、Azure Files 共有とコンテナーを作成し、そのコンテナーにファイル共有をマウントしました。 この共有を使用して、アプリケーション データを格納しました。
 
-In the next unit, you will work through some common Container Instances troubleshooting operations.
+次のユニットでは、Container Instances の一般的なトラブルシューティング操作について説明します。

@@ -1,30 +1,30 @@
-The app has a UI and a ViewModel. In this unit, you add location lookup to the ViewModel using Xamarin.Essentials.
+アプリには UI と ViewModel があります。 この演習では、Xamarin.Essentials を使用して、ViewModel に場所の参照を追加します。
 
-## Enable location permissions
+## <a name="enable-location-permissions"></a>場所のアクセス許可を有効にする
 
-All mobile platforms have security around user information and certain hardware, such as the camera, photo library, and the user's location. Before an app can access the user's location, the user has to grant permission - either by implicitly granting these permissions at install time or by choosing to grant a permission at runtime. When you view a UWP app on the store, the listing will show the permissions that the app needs. By installing the app, you implicitly grant permission. These permissions are configured in an app manifest file.
+すべてのモバイル プラットフォームでは、カメラ、フォト ライブラリ、ユーザーの場所など、ユーザーの情報と特定のハードウェアに関するセキュリティが適用されます。 アプリからユーザーの場所にアクセスできるようにするには、ユーザーはアクセス許可を付与する必要があります。その場合、インストール時に暗黙的にアクセス許可を付与するか、実行時にアクセス許可を付与するように選択します。 ストアで UWP アプリを表示すると、一覧にアプリで必要なアクセス許可が表示されます。 アプリをインストールすることで、アクセス許可を暗黙的に付与します。 これらのアクセス許可はアプリのマニフェスト ファイルで構成されます。
 
-1. In the `ImHere.UWP` app project, open the `Package.appxmanifest` file.
+1. `ImHere.UWP` アプリ プロジェクトで、`Package.appxmanifest` ファイルを開きます。
 
-1. Head to the **Capabilities** tab and check the *Location* capability.
+1. **[機能]** タブに移動して、*位置情報*機能をオンにします。
 
-    ![The UWP capabilities tab](../media-drafts/4-uwp-location-capability.png)
+    ![UWP の [機能] タブ](../media-drafts/4-uwp-location-capability.png)
 
-> If you want to support Android or iOS, the permissions need to be configured differently. This is detailed in the [Xamarin.Essentials Geolocation docs](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started).
+> Android や iOS をサポートする場合は、アクセス許可を個別に構成する必要があります。 詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started)を参照してください。
 
-## Query for the user's location
+## <a name="query-for-the-users-location"></a>ユーザーの場所をクエリする
 
-There are two ways to get the user's location - the last known or the current. The current location can take some time to get because the device may need to establish a GPS link and wait for the accurate location to be retrieved. The fastest way is to get the last known location detected by the device. The last known location is potentially less accurate but is a much faster call. Locations come as the latitude and longitude in [decimal degrees](https://en.wikipedia.org/wiki/Decimal_degrees) and the altitude of the device in meters above sea level.
+ユーザーの場所を取得するには、2 つの方法があります。つまり、最新の場所または現在の場所を取得します。 現在の場所を取得するには時間がかかる場合があります。これは、デバイスで GPS リンクを確立し、正確な場所が取得されるまで待機する必要がある場合があるためです。 最も簡単な方法は、デバイスによって検出された最新の場所を取得することです。 最新の場所は正確性に欠ける可能性がありますが、呼び出しははるかに速くなります。 場所は緯度と経度 ([10 進経緯度](https://en.wikipedia.org/wiki/Decimal_degrees)に関する記述を参照) で表され、デバイスの海抜高度 (メートル単位) が示されます。
 
-1. Open the `MainViewModel` class in the `ImHere` .NET standard project.
+1. `ImHere` .NET 標準プロジェクトで `MainViewModel` クラスを開きます。
 
-1. In the `SendLocation` method, make a call to the `GetLastKnownLocationAsync` static method on the `Geolocation` class in the `Xamarin.Essentials` namespace.
+1. `SendLocation` メソッドで、`Xamarin.Essentials` 名前空間の `Geolocation` クラスに対して `GetLastKnownLocationAsync` 静的メソッドを呼び出します。
 
     ```cs
     Location location = await Geolocation.GetLastKnownLocationAsync();
     ```
 
-1. Update the `Message` property with the user's location if one is found.
+1. ユーザーの場所が見つかった場合は、その場所で `Message` プロパティを更新します。
 
     ```cs
     if (location != null)
@@ -33,7 +33,7 @@ There are two ways to get the user's location - the last known or the current. T
     }
     ```
 
-The full code for this method is below.
+このメソッドの完全なコードは次のとおりです。
 
 ```cs
 async Task SendLocation()
@@ -47,13 +47,12 @@ async Task SendLocation()
 }
 ```
 
-Run the app and click the **Send Location** button to see the location on the UI.
+アプリを実行し、**[場所の送信]** ボタンをクリックして UI で場所を表示します。
 
-![The running app showing the user's location](../media-drafts/4-running-app-showing-location.png)
+![ユーザーの場所を示す実行中のアプリ](../media-drafts/4-running-app-showing-location.png)
 
-> This app uses the last known location. In a production-quality app, you would want to get the current accurate location with a time-out, and if one is not found in time, fall back to the last known. You can read more on how to do this in the [Xamarin.Essentials Geolocation docs](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation).
-> This app does not have error handling. In a production-quality app, you should handle any exceptions that occur, such as if the location was not available.
+> このアプリでは最新の場所を使用します。 運用品質アプリで、タイムアウトを設定して現在の正確な場所を取得する必要があります。時間内に見つからない場合は、最新の場所にフォールバックします。 これを行う方法の詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)を参照してください。このアプリではエラー処理は行われません。 運用品質のアプリでは、場所を使用できなかった場合など、発生した例外を処理する必要があります。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to use Xamarin.Essentials to get the user's location. In the next unit, you'll create an Azure function to act as a back end for the mobile app.
+この演習では、Xamarin.Essentials を使用して、ユーザーの場所を取得する方法を学習しました。 次の演習では、モバイル アプリ用のバック エンドとして動作する Azure 関数を作成します。

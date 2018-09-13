@@ -1,67 +1,69 @@
-In this unit, you'll use the Azure portal to verify your event hub is working and performing according to the desired expectations. You'll also test how event hub messaging works when it's temporarily unavailable and use Event Hubs metrics to check the performance of your event hub.
+このユニットでは、Azure portal を使用して、イベント ハブが想定どおりに動作していることを確認します。 また、一時的に使用できなくなった場合にイベント ハブのメッセージングがどのように動作するかをテストし、Event Hubs メトリックを使用してイベント ハブのパフォーマンスを確認します。
 
-## View event hub activity
+## <a name="view-event-hub-activity"></a>イベント ハブのアクティビティの確認
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Find your event hub, using the Search bar, and open it.
+1. 検索バーを使用してイベント ハブを検索し、それを開きます。
 
-1. On the Overview page, view the message counts.
+1. [概要] ページでメッセージ数を確認します。
 
-    ![View Event Hub messages](../media-draft/6-view-messages.png)
+    ![イベント ハブのメッセージの確認](../media-draft/6-view-messages.png)
 
-1. The SimpleSend and EventProcessorSample applications are configured to send/receive 100 messages. You'll see that the event hub has processed 100 messages from the SimpleSend application and has transmitted 100 messages to the EventProcessorSample application.
+1. SimpleSend アプリケーションと EventProcessorSample アプリケーションは、100 件のメッセージを送信/受信するように構成されています。 イベント ハブが、SimpleSend アプリケーションからの 100 件のメッセージを処理し、EventProcessorSample アプリケーションに 100 件のメッセージを送信したことを確認します。
 
-## Test event hub resilience
+## <a name="test-event-hub-resilience"></a>イベント ハブの回復力のテスト
 
-Use the following steps to see what happens when an application sends messages to an event hub while it's temporarily unavailable.
+次の手順に従って、イベント ハブが一時的に使用不可になっている間にアプリケーションがメッセージを送信するとどうなるかを確認します。
 
-1. Resend messages to the event hub using the SimpleSend application. Use the following command:
+1. SimpleSend アプリケーションを使用して、イベント ハブにメッセージを再送信します。 次のコマンドを使用します。
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When you see **Send Complete...**, press ENTER.
+1. "**Send Complete...**" と表示されたら、Enter キーを押します。
 
-1. In the Azure portal, click **Event Hubs Instance** > **SETTINGS** > **Properties**.
+1. Azure Portal で、**[Event Hubs のインスタンス]** > **[設定]** > **[プロパティ]** の順にクリックします。
 
-1. Under Event Hub state, click **Disabled**.
+1. イベント ハブの状態の下で、**[無効]** をクリックします。
 
-    ![Disable Event Hub](../media-draft/7-disable-event-hub.png)
+    ![イベント ハブの無効化](../media-draft/7-disable-event-hub.png)
 
-Wait for a minimum of five minutes.
+最低でも 5 分間待機します。
 
-1. Click **Active** under Event Hub state to re-enable your event hub and save your changes.
+1. イベント ハブの状態の下で **[アクティブ]** をクリックしてイベント ハブを再び有効にし、変更を保存します。
 
-1. Rerun the EventProcessorSample application to receive messages. Use the following command.
+1. EventProcessorSample アプリケーションを再実行して、メッセージを受信します。 次のコマンドを使用します。
 
     ```azurecli
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
+    ENTER
     ```
 
-1. When messages stop being displayed to the console, press ENTER.
+1. メッセージがコンソールに表示されなくなったら、Enter キーを押します。
 
-1. In the Azure portal, find your event hub **_namespace_** and open it. 
+1. Azure Portal でイベント ハブの **_namespace_** を検索し、それを開きます。 
 
-1. Click **Event Hubs Namespace** > **MONITORING** > **Metrics (preview)**.
+1. **[Event Hubs 名前空間]** > **[監視]** > **[メトリック (プレビュー)]** の順にクリックします。
 
-    ![Use Event Hub Metrics](../media-draft/7-event-hub-metrics.png)
+    ![イベント ハブのメトリックの使用](../media-draft/7-event-hub-metrics.png)
 
-1. From the **Metric** list, select **Incoming Messages** and click **Add Metric**.
+1. **[メトリック]** の一覧から **[受信メッセージ]** を選択し、**[メトリックの追加]** をクリックします。
 
-1. From the **Metric** list, select **Outgoing Messages** and click **Add Metric**.
+1. **[メトリック]** の一覧から **[送信メッセージ]** を選択し、**[メトリックの追加]** をクリックします。
 
-1. At the top of the chart, click **Last 24 hours (Automatic)** to change the time period to **Last 30 minutes**.
+1. グラフの上部にある **[Last 24 hours (Automatic)]\(過去 24 時間 (自動)\)** をクリックして、期間を **[過去 30 分間]** に変更します。
 
-1. Click **Apply**.
+1. **[適用]** をクリックします。
 
-You'll see that though the messages were sent before the event hub was taken offline for a period, all 100 messages were successfully transmitted.
+メッセージを送信したのはイベント ハブがしばらくオフラインになる前でしたが、100 件のメッセージがすべて正常に送信されていることを確認します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you used the Event Hubs metrics to test that your event hub is successfully processing the sending and receiving messages.
+この演習では、Event Hubs メトリックを使用して、イベント ハブがメッセージの送受信を正常に処理していることをテストしました。
