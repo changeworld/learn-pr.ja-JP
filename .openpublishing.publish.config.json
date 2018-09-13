@@ -28,18 +28,19 @@
   "notification_subscribers": [],
   "branches_to_filter": [
     "live-sxs",
-    "master-sxs"
+    "master-sxs",
+    "live"
   ],
-  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/learn",
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/learn.ja-jp",
   "git_repository_branch_open_to_public_contributors": "master",
-  "continue_with_document_error": true,
+  "continue_with_document_error": false,
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.ja-JP",
+      "url": "https://github.com/Microsoft/templates.docs.msft.ja-jp",
       "branch": "master",
       "branch_mapping": {}
     },
