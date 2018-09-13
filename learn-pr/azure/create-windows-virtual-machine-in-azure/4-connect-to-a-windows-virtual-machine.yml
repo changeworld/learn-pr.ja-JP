@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.4-connect-to-a-windows-virtual-machine
-title: Using RDP to connect to Windows Azure virtual machines
+title: RDP を使用して Microsoft Azure 仮想マシンに接続する
 metadata:
-  title: Using RDP to connect to Windows Azure virtual machines
-  description: Using RDP to connect to Windows Azure virtual machines
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: RDP を使用して Microsoft Azure 仮想マシンに接続する
+  description: RDP を使用して Microsoft Azure 仮想マシンに接続する
+  ms.openlocfilehash: 716a86589c75b3bfc1d4999ee472d8470c8d56ac
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836234"
 durationInMinutes: 10
-content: |
-  [!include[](includes/4-connect-to-a-windows-virtual-machine.md)]
+content: '[!include[](includes/4-connect-to-a-windows-virtual-machine.md)]'

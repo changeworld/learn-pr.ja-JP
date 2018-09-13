@@ -1,22 +1,21 @@
-In this module, you learned how to create a Windows VM using the Azure portal. You then connected to the public IP address of the VM and managed it over RDP. You discovered how RDP in Azure provides a similar experience to logging on interactively to a physical computer.
+このモジュールでは、Azure portal を利用して Windows VM を作成する方法を学習しました。 次にその VM のパブリック IP アドレスに接続し、RDP 経由で管理しました。 Azure の RDP では物理コンピューターに対話でログインする場合と同じようにログインできますが、そのしくみについて確認しました。
 
-You learned that while RDP allows us to interact with the operating system and software of the virtual machine, the portal allows us to configure the virtual hardware and connectivity. We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.
+RDP では仮想マシンのオペレーティング システムやソフトウェアを操作でき、ポータルでは仮想のハードウェアと接続性を構成できることを学びました。 コマンド ラインやスクリプト可能環境を望む場合、PowerShell や Azure CLI も使用できました。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-the-resources"></a>リソースのクリーンアップ
 
-You are charged for VMs while they run, and for the storage based on how much you use. Always stop and deallocate VMs when you aren't using them, and when you no longer need the resources it's a good idea to delete them. To remove all the resources that you created, you can delete them one-by-one, or just delete the resource group.
+VM は実行時間に対して課金され、ストレージは使用量に基づいて課金されます。 VM を使用していないときには常に停止して割り当て解除してください。リソースが今後必要でなくなったら、削除することをお勧めします。 作成したすべてのリソースを削除する場合、リソースを 1 つずつ削除する方法と、リソース グループを削除する方法があります。
 
-1. Sign in to the Azure portal.
+1. Azure portal にサインインします。
 
-1. On the left menu, select **All Services**.
+1. 左側のメニューから、**[すべてのサービス]** を選択します。
 
-1. Select **Resource Groups**.
+1. **[リソース グループ]** を選択します。
 
-1. Find the resource group that you created in the first exercise. Click the ellipsis (...) on the right side of the list view.
+1. 最初の演習で作成したリソース グループを探します。 リスト ビューの右側にある省略記号 (...) をクリックします。
 
-1. Select **Delete resource group**.
+1. **[リソース グループの削除]** を選択します。
 
-1. On the next screen, enter the resource group name to confirm the deletion.
+1. 次の画面で、リソース グループ名を入力し、削除を確定します。
 
-1. Click **Delete**.
+1. **[削除]** をクリックします。

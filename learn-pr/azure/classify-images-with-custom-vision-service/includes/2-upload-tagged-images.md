@@ -1,32 +1,32 @@
 このユニットでは、ピカソ、ポロック、レンブラントの有名な絵画の画像を Artworks プロジェクトに追加し、Custom Vision Service が画家の区別を学習できるように画像にタグを付けます。
-  
+
 1. **[Add images]\(画像の追加\)** をクリックして画像をプロジェクトに追加します。
 
-    ![Artworks プロジェクトへの画像の追加](../media-draft/2-portal-click-add-images.png)
+    ![Artworks プロジェクトへの画像の追加](../media/2-portal-click-add-images.png)
 
 1. **[Browse local files]\(ローカル ファイルの参照\)** をクリックします。
 
-    ![ローカル画像の参照](../media-draft/2-portal-click-browse-local-files.png)
+    ![ローカル画像の参照](../media/2-portal-click-browse-local-files.png)
 
-    _"ローカル画像の参照"_ 
- 
+    _"ローカル画像の参照"_
+
 1. [このモジュールに付属するリソース](https://a4r.blob.core.windows.net/public/cvs-resources.zip)の "Artists\Picasso" フォルダーを参照し、フォルダー内のすべてのファイルを選択して、**[開く]** をクリックします。
 
-    ![画像の選択](../media-draft/2-fe-browse-picasso-01.png)
+    ![画像の選択](../media/2-fe-browse-picasso-01.png)
 
 1. **[Add some tags...]\(タグの追加...\)** ボックスに「絵画」と入力します。 **[+]** をクリックして画像にタグを割り当てます。
 
-    ![画像への "絵画" タグの追加](../media-draft/2-portal-add-tags-01.png)
+    ![画像への "絵画" タグの追加](../media/2-portal-add-tags-01.png)
 
 1. 手順 4 を繰り返し、"ピカソ" タグを画像に追加します。
 
 1. **[Upload 7 files]\(7 ファイルをアップロード\)** をクリックして、画像をアップロードします。 アップロードが完了したら、**[完了]** をクリックします。
 
-    ![タグを付けた画像のアップロード](../media-draft/2-upload-picasso-images.png)
+    ![タグを付けた画像のアップロード](../media/2-upload-picasso-images.png)
 
 1. アップロードした画像が、割り当てたタグと共にポータルに表示されることを確認します。
 
-    ![アップロードされた画像](../media-draft/2-portal-tagged-01.png)
+    ![アップロードされた画像](../media/2-portal-tagged-01.png)
 
 1. ピカソの 7 つの画像を使用して、Custom Vision Service はピカソの絵を適切に識別できます。 しかし、今すぐモデルをトレーニングした場合、モデルはピカソの絵がどのようなものかだけを理解し、他の画家の絵画を識別することはできません。
 
@@ -34,11 +34,11 @@
 
     > "絵画" タグを追加するとき、再度入力する必要はありません。 次に示すように、**[Add some tags...]\(タグの追加...\)** ボックスのドロップダウン リストから選択できます。 "レンブラント" タグを追加するには、「レンブラント」と**入力**して、**[+]** をクリックする必要があります。
 
-    ![既存のタグの選択](../media-draft/2-select-painting-tag.png)
+    ![既存のタグの選択](../media/2-select-painting-tag.png)
 
 1. プロジェクトにピカソの画像と共にレンブラントの画像が表示され、タグの一覧に "レンブラント" と表示されることを確認します。
 
-    ![ピカソとレンブラントの画像](../media-draft/2-portal-tagged-02.png)
+    ![ピカソとレンブラントの画像](../media/2-portal-tagged-02.png)
 
 1. 次に、謎めいた画家であるジャクソン ポロックの絵画を追加し、Custom Vision Service がポロックの絵も認識できるようにします。 モジュール リソースの "Artists\Pollock" フォルダーですべての画像を選択し、"絵画" と "ポロック" というタグを付けて、プロジェクトにアップロードします。
 

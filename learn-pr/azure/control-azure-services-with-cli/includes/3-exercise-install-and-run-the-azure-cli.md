@@ -1,21 +1,16 @@
----
-zone_pivot_groups: platform
-ms.openlocfilehash: 5e0a236b9cf0c3c0b23beb1324f35a34dade2e92
-ms.sourcegitcommit: 926510a198d738c5726081f6d7994fe9b6fc6edb
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43179830"
----
 Azure CLI をローカル コンピューターにインストールしてから、シンプルなコマンドを実行してインストールを確認します。 Azure CLI をインストールするために使用する方法は、お使いのコンピューターのオペレーティング システムによって異なります。 お使いのオペレーティング システムの手順を選択してください。
+
+> [!NOTE]
+> この演習では、Azure CLI ツールをローカルでインストールする手順を説明します。 モジュールの残りの部分では Azure Cloud Shell を使用して、Microsoft Learn で無料のサブスクリプション サポートを利用できるようにします。 この演習は省略可能なアクティビティと考え、必要に応じて手順を確認できます。
 
 ::: zone pivot="linux"
 
 ### <a name="linux"></a>Linux
+
 ここでは、Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して、**Ubuntu Linux** 上に Azure CLI をインストールします。
 
-> [!WARNING]
-> 次のコマンドは、Ubuntu バージョン 18.04 用です。 別のバージョンの Ubuntu を使用している場合は、別のリポジトリを追加する必要があります。 詳細については、「[apt での Azure CLI 2.0 のインストール](https://docs.microsoft.com/cli/azure/install-azure-cli-apt)」を参照してください。
+> [!TIP]
+> 次のコマンドは、Ubuntu バージョン 18.04 用です。 Linux のその他のバージョンやディストリビューションの手順は異なります。 別の Linux バージョンを使用する場合は、[公式ドキュメント](https://docs.microsoft.com/cli/azure/install-azure-cli)を確認してください。
 
 1. Microsoft リポジトリが登録されるように、自分のソース リストを変更すると、パッケージ マネージャーで Azure CLI パッケージを検索できるようになります。
 
@@ -43,6 +38,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 ::: zone pivot="macos"
 
 ### <a name="macos"></a>macOS
+
 ここでは、Homebrew パッケージ マネージャーを使用して macOS に Azure CLI をインストールします。
 
 > [!IMPORTANT]
@@ -65,6 +61,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 ::: zone pivot="windows"
 
 ### <a name="windows"></a>Windows
+
 ここでは、MSI インストーラーを使用して Windows に Azure CLI をインストールします。
 
 1. [https://aka.ms/installazurecliwindows](https://aka.ms/installazurecliwindows) に移動して、ブラウザーのセキュリティ ダイアログ ボックスで、**[実行]** をクリックします。
@@ -74,6 +71,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 ::: zone-end
 
 ## <a name="running-the-azure-cli"></a>Azure CLI の実行
+
 Azure CLI を実行するには、bash シェルを開く (Linux と macOS) か、コマンド プロンプトまたは PowerShell (Windows) から実行します。
 
 1. Azure CLI を起動し、バージョン チェックを実行して、インストールを確認します。
@@ -84,10 +82,11 @@ Azure CLI を実行するには、bash シェルを開く (Linux と macOS) か�
 
 ::: zone pivot="windows"
 
-> [!NOTE]
+> [!TIP]
 > PowerShell から Azure CLI を実行することには、Windows コマンド プロンプトから Azure CLI を実行することに比べて、いくつかの利点があります。 PowerShell では、コマンド プロンプトよりも多くのタブ補完機能が提供されます。 
 
 ::: zone-end
 
 ## <a name="summary"></a>まとめ
+
 Azure CLI を使用して Azure リソースを管理できるように、ローカル コンピューターを設定しました。 Azure CLI をローカルに使用して、コマンドを入力したりスクリプトを実行したりできるようになりました。 入力したコマンドは、Azure CLI によって Azure データセンターに転送され、Azure サブスクリプションの内部で実行されます。

@@ -1,18 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.7-exercise-manage-vm
-title: Configure the virtual machine network settings
+title: 仮想マシン ネットワーク設定を構成する
 metadata:
-  title: Configure the virtual machine network settings
-  description: Configure the virtual machine network settings
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 仮想マシン ネットワーク設定を構成する
+  description: 仮想マシン ネットワーク設定を構成する
+  ms.openlocfilehash: 68332e1eb5674f5a2044e1a5b2efea10ec005c83
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836267"
 durationInMinutes: 12
-# TODO:Add Azure Portal Interactivity
-# interactive: azure-portal
-azureSandbox: true
-content: |
-  [!include[](includes/7-exercise-manage-vm.md)]
+content: '[!include[](includes/7-exercise-manage-vm.md)]'

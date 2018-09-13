@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.optimize-web-app-with-redis
+metadata:
+  title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+  description: Azure で Redis キャッシュを使用してデータベースの負荷を軽減し、さまざまなキャッシュ アーキテクチャを使用して高負荷の分散環境でより高い負荷をサポートします。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 5e73e6e1cc68f28214317575c2d948734ac006d8
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43410596"
+title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+summary: Azure で Redis キャッシュを使用してデータベースの負荷を軽減し、さまざまなキャッシュ アーキテクチャを使用して高負荷の分散環境でより高い負荷をサポートします。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Redis Cache とは何か、何のためにそれを利用するのか説明します。
+
+  - Redis Cache を使用するための設計計画を作成します。
+
+  - Azure で Redis Cache をプロビジョニングします。
+
+  - Web アプリをキャッシュに接続します。
+prerequisites: >
+  - アプリの開発経験。
+
+  - アプリでのデータの使用経験。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- redisCache
+units:
+- learn.optimize-web-app-with-redis.1-introduction
+- learn.optimize-web-app-with-redis.2-decide-if-you-want-use-redis-in-azure
+- learn.optimize-web-app-with-redis.3-configure-redis-cache
+- learn.optimize-web-app-with-redis.4-exercise-connect-an-app-to-the-cache
+- learn.optimize-web-app-with-redis.5-summary
+achievement: learn.optimize-web-app-with-redis.badge

@@ -1,27 +1,27 @@
-## Train your first deep learning model using PyTorch and Jupyter
+## <a name="train-your-first-deep-learning-model-using-pytorch-and-jupyter"></a>PyTorch と Jupyter を使用して、最初のディープ ラーニング モデルをトレーニングします
 
-![PyTorch logo](../media/5-image1.PNG) 
+![PyTorch ロゴ](../media/5-image1.PNG) 
 
-Typically deep learning engineers do not hard code matrix algebra operations all by hand. They instead use frameworks such as PyTorch or TensorFlow.  
+通常ディープ ラーニングのエンジニアはマトリックス代数をすべて手動でハード コード化することはありません。 PyTorch や TensorFlow などのフレームワークを代用します。  
 
-PyTorch is a python-based framework that provides flexibility as a deep learning development platform. PyTorch's workflow is built on top of python scientific computing library numpy. 
+PyTorch は、ディープ ラーニングの開発プラットフォームとしての柔軟性を提供する python ベースのフレームワークです。 PyTorch のワークフローは、python の科学技術コンピューティング ライブラリ NumPy 上に構築されます。 
 
-Now you might ask, why would we use PyTorch to build deep learning models?  
+PyTorch をディープ ラーニング モデルの構築に使用するのはなぜでしょうか。  
 
-- Easy to use API – It's as simple as python can be.
-- Python support – PyTorch smoothly integrates with the scientific computing stack.
-- Dynamic computation graphs – Instead of predefined graphs with specific functionalities, PyTorch build computational graphs dynamically that can be modified during runtime. Dynamic computation graphs are valuable for nested batching and when we do not know how much memory will be needed for creating a given network.
+- API が簡単に使えます – python と同じほど簡単です。
+- Python のサポート – PyTorch が科学技術コンピューティング スタックとスムーズに統合されます。
+- 動的計算グラフ – 特定機能付きで、事前に定義されたグラフではなく、PyTorch が実行時間内に変更可能な計算グラフを動的に作成します。 動的計算グラフは、入れ子になったバッチ処理に有効で、特定のネットワークに必要とされるメモリの量が不明の場合に役立ちます。
 
-## Run your first PyTorch model
+## <a name="run-your-first-pytorch-model"></a>最初の PyTorch モデルを実行します
 
-Navigate to the Jupyter Notebook that you set up in the last chapter.
+最後の章でセットアップした、Jupyter Notebook に移動します。
 
 - [[HOSTNAME OF DSVM]].westus2.cloudapp.azure.com:8888/?token={sometoken}
 
-Select the first_pytorch_classifier.ipynb notebook
+First_pytorch_classifier.ipynb ノートブックを選択します
 
-![select the first_pytorch_classifier.ipynb](../media/5-image2.PNG)
+![first_pytorch_classifier.ipynb を選択します](../media/5-image2.PNG)
 
-Follow the instructions in the notebook to train your first PyTorch classifer.
+ノートブックの指示に従って、最初の PyTorch クラシッファーをトレーニングします。
 
-![screenshot of notebook](../media/5-image3.PNG)
+![ノートブック のスクリーン ショット](../media/5-image3.PNG)

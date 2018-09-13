@@ -1,22 +1,22 @@
-Azure Container Instances makes it easy to create and manage Docker containers in Azure, without having to provision virtual machines or adopt a higher-level service. In this unit, you create a container in Azure and expose it to the internet with a fully qualified domain name (FQDN).
+Azure Container Instances を使用すると、仮想マシンをプロビジョニングしたり、より高度なレベルのサービスを採用したりしなくても、Azure の Docker コンテナーを簡単に作成、管理できます。 このユニットでは、Azure でコンテナーを作成し、完全修飾ドメイン名 (FQDN) を使用してインターネットに公開します。
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>リソース グループの作成
 
-Azure Container Instances, like all Azure resources, must be placed in a resource group, a logical collection into which Azure resources are deployed and managed.
+Azure Container Instances は、すべての Azure リソースと同様に、リソース グループに配置する必要があります。リソース グループとは、Azure リソースのデプロイと管理に使用する論理コレクションです。
 
-Create a resource group with the `az group create` command.
+`az group create` コマンドでリソース グループを作成します。
 
-The following example creates a resource group named *myResourceGroup* in the *eastus* location:
+次の例では、*myResourceGroup* という名前のリソース グループを *eastus* に作成します。
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
 ```
 
-## Create a container
+## <a name="create-a-container"></a>コンテナーの作成
 
-You can create a container by providing a name, a Docker image, and an Azure resource group to the **az container create** command. You can optionally expose the container to the internet by specifying a DNS name label. In this example, you deploy a container that hosts a small web app.
+名前、Docker イメージ、および Azure リソース グループを **az container create** コマンドに指定することで、コンテナーを作成できます。 必要に応じて、DNS 名ラベルを指定してコンテナーをインターネットに公開できます。 この例では、小型の Web アプリをホストするコンテナーをデプロイします。
 
-Execute the following command to start a container instance. The *--dns-name-label* value must be unique within the Azure region you create the instance, so you might need to modify this value to ensure uniqueness:
+次のコマンドを実行して、コンテナー インスタンスを開始します。 *--dns-name-label* の値は、インスタンスを作成する Azureの リージョン内で一意である必要があります。そのため、場合によっては一意性を確保するためにこの値を変更する必要があります。
 
 ```azurecli
 az container create \
@@ -27,7 +27,7 @@ az container create \
     --dns-name-label aci-demo
 ```
 
-Within a few seconds, you should get a response to your request. Initially, the container is in the **Creating** state, but it should start within a few seconds. You can check the status using the `az container show` command:
+数秒のうちに、要求に対する応答が得られます。 最初に、コンテナーは**作成中**の状態ですが、数秒のうちに起動されます。 `az container show` コマンドを使用して状態を確認することができます。
 
 ```azurecli
 az container show \
@@ -37,7 +37,7 @@ az container show \
     --out table
 ```
 
-When you run the command, the container's fully qualified domain name (FQDN) and its provisioning state are displayed:
+コマンドを実行すると、コンテナーの完全修飾ドメイン名 (FQDN) とそのプロビジョニング状態が表示されます。
 
 ```bash
 FQDN                                    ProvisioningState
@@ -45,12 +45,12 @@ FQDN                                    ProvisioningState
 aci-demo.eastus.azurecontainer.io       Succeeded
 ```
 
-Once the container moves to the **Succeeded** state, navigate to its FQDN in your browser:
+コンテナーが**成功**状態に推移したら、ブラウザーでその FQDN に移動します。
 
-![Browser screenshot showing an application running in an Azure container instance](../media-draft/aci-app-browser.png)
+![Azure Container Instanceで実行されているアプリケーションを示すブラウザー スクリーンショット](../media-draft/aci-app-browser.png)
 
-## Summary
+## <a name="summary"></a>概要
 
-In this unit, you created an Azure container instance that is running a web server and application. You also accessed this application using the FQDN of the container instance.
+このユニットでは、Web サーバーとアプリケーションを実行する Azure Container Instanceを作成しました。 このアプリケーションには、コンテナー インスタンスの FQDN を使用してもアクセスしました。
 
-In the next unit, you will configure container instance restart policies.
+次のユニットでは、コンテナー インスタンスの再起動のポリシーを構成します。

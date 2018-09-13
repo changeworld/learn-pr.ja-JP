@@ -1,30 +1,30 @@
-## Intro to deep learning
+## <a name="intro-to-deep-learning"></a>ディープ ラーニングの概要
 
-The goal of Machine Learning ML is to find features to train a model that transforms input data (such as pictures, time series, or audio) to a given output (for example captions, price values, transcriptions). In traditional data science, features are often hand-picked.
+Machine Learning ML の目的は、入力データ (画像、タイム シリーズ、オーディオなど) を指定された出力 (たとえばキャプション、価格値、トランスクリプション) に変換するモデルをトレーニングする機能を検索することです。 従来のデータ サイエンスでは、機能は多くの場合、慎重に選択されます。
 
-![Canonical example of a feed forward deep neural network.](../media/2-image1.PNG)
+![フィード フォワード ディープ ニューラル ネットワークの Canonical 例です。](../media/2-image1.PNG)
 
-In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.  
+ディープ ラーニング (DL) では、入力をベクトルとして表し、これを一連の適切な線形代数操作によって指定された出力に変換することで機能の抽出プロセスを学習します。  
 
-The model output is then compared against the expected output using an equation called a loss function. The value returned by the loss function of each training input is used to guide the model to extract features that will result in a lower loss value on the next pass.  
+次にモデル出力が、損失関数と呼ばれる式を使用して、想定される出力と比較されます。 各トレーニング入力の損失関数によって返される値は、次のパス上で下位の損失となる機能を抽出するようにモデルをガイドするために使用されます。  
  
-The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.
+線形代数コンポーネントの一部として計算する一連の行列演算は、計算上コストの高い傾向があり、並列処理が極めて高いことが多く、効率的に計算するにはグラフィックス処理ユニット (GPU) などの特殊な計算を必要とします。
 
-## Data Science Virtual Machine
+## <a name="data-science-virtual-machine"></a>Data Science Virtual Machine
 
-![DSVM Options](../media/2-image2.PNG)
+![Data Science Virtual Machine のオプション](../media/2-image2.PNG)
 
-DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.
+データ サイエンス VM は、データ分析、機械学習、ディープ ラーニング トレーニングでよく使用される一般的なツールを使用して事前インストール、構成、テストされた Azure 仮想マシン イメージです。
 
-They provide:
+次を提供します。
 
-- Consistent setup across team, promote sharing and collaboration, Azure scale and management, Near-Zero Setup, full cloud-based desktop for data science.
-- On-demand elastic capacity Ability to run analytics on all Azure hardware configurations with vertical and horizontal scaling. Pay only for what you use, when you use it.
-- Deep Learning with GPUs Readily available GPU clusters with Deep Learning tools already pre-configured. 
+- チーム全体で一貫した設定で共有とコラボレーション、Azure スケールと管理、ほとんど不要なセットアップ、データ サイエンス用の完全クラウド ベースのデスクトップを推進。
+- オンデマンドでのエラスティックな容量で、垂直方向および水平方向のスケーリングによってすべての Azure ハードウェア構成の分析を実行する機能。 料金は使用した量、使用したときのみ課金。
+- ディープ ラーニング ツールが既に事前構成されているすぐに利用可能な GPU クラスターによるディープ ラーニング。 
 
-The DSVM contains several tools for AI including popular GPU editions of deep learning frameworks and tools such as Microsoft R Server Developer Edition, Anaconda Python, Jupyter notebooks for Python and R, IDEs for Python and R, SQL database and many other data science and ML tools.
+データ サイエンス VM には、Microsoft R Server Developer Edition、Anaconda Python、Python および R 用 Jupyter ノートブック、Python および R 用 IDE、SQL データベース、その他多くのデータ サイエンスと ML ツールなどの、ディープ ラーニング フレームワークとツールの一般的な GPU エディションを含む AI 用の複数のツールが含まれています。
 
-The DSVM can run on Azure GPU NC-series VM instances. These GPUs use discrete device assignment, resulting in performance close to bare-metal, and are well-suited to deep learning problems.
+Data Science Virtual Machine は、Azure の GPU の NC シリーズ VM インスタンスで実行できます。 これらの GPU では個別のデバイスの割り当てが使用され、ベア メタルに近いパフォーマンスが実現され、ディープ ラーニングの問題に適しています。
 
 <!--### Quiz? 
 

@@ -27,6 +27,7 @@ Azure Key Vault の API では、Azure Active Directory を使用してユーザ
 手始めに、コンテナーを作成し、1 つのシークレットを格納します。
 
 ### <a name="create-a-resource-group"></a>リソース グループの作成
+<!---TODO: Update for sandbox?--->
 
 このユニットのすべてのリソース用に、`keyvault-exercise-group` というリソース グループを作成します。 このモジュールの最後に、このリソース グループを削除して、一度にすべてクリーンアップします。 このユニットでのすべての場所として `eastus` を使用します。
 

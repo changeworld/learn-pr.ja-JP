@@ -1,16 +1,16 @@
-Many applications consist of programs that run on several different computers or devices. In such distributed applications, messages must be sent between the components across networks and long distances. Even on the same server or in the same data center, loosely coupled architectures require mechanisms for components to communicate. Reliable messaging is often a critical problem.
+多くのアプリケーションは、いくつかの別のコンピューターまたはデバイスで実行されるプログラムで構成されています。 このような分散アプリケーションでは、メッセージは、ネットワークの各地へ長距離でコンポーネント間で送信される必要があります。 同じサーバーやデータ センター上にあった場合でも、アーキテクチャの結合が弱い場合、コンポーネントの通信にはメカニズムが必要です。 信頼できるメッセージングは、しばしば重要な問題となります。
 
-Suppose you work at a software company that develops a music-sharing application. Musicians can upload music they create to your platform by using a web front end or a mobile app. They can listen to and comment on other members' work. The application consists of a website that runs at your ISP, a mobile app that runs on users' mobile devices, a web API that runs in Azure, and an Azure SQL Database where data is stored.
+音楽を共有するアプリケーションを開発しているソフトウェア企業で働いてるとします。 ミュージシャンは、Web フロント エンドまたはモバイル アプリを使用して作成した音楽を、使用しているプラットフォームにアップロードできます。 また、他のメンバーの作品を聴いたり、それにコメントすることができます。 このアプリケーションは、ご利用の ISP で実行される Web サイト、ユーザーのモバイル デバイス上で実行されるモバイル アプリ、Azure で実行される Web API、データが格納される Azure SQL Database で構成されます。
 
-You have observed that at times of high demand, some music files are not successfully uploaded, and some comments are not posted. Your testing shows that these issues are caused by dropped messages between front-end components and the web API. You plan to solve these issues by using one or more of the following technologies: Azure Storage queues, Azure Event Hubs, Azure Event Grid, and Azure Service Bus.
+需要が高いときに、一部の音楽ファイルが正常にアップロードされていないことや、一部のコメントが投稿されていないことが確認されました。 テストで、フロントエンドのコンポーネントと Web API の間でメッセージが削除されることによってこれらの問題が発生していることがわかりました。 Azure Storage キュー、Azure Event Hubs、Azure Event Grid、Azure Service Bus の 1 つまたは複数のテクノロジを使用してこれらの問題を解決しようと計画しています。
 
-Here, you will learn how to choose the right messaging technology in Azure for each communication task in a distributed application.
+ここでは、分散アプリケーションのそれぞれの通信タスク用に、Azure の正しいメッセージング技術を選択する方法を学習します。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-- Describe events and messages, and the challenges you can use them to solve in a distributed application.
-- Identify scenarios in which Storage queue is the best messaging technology for an application.
-- Identify scenarios in which Event Grid is the best messaging technology for an application.
-- Identify scenarios in which Event Hubs is the best messaging technology for an application.
-- Identify scenarios in which Service Bus is the best messaging technology for an application.
+- イベントとメッセージを説明し、分散アプリケーションで解決するための課題について説明します。
+- アプリケーションのメッセージング テクノロジとして、Storage キューが最適なシナリオを特定する。
+- アプリケーションのメッセージング テクノロジとして、Event Grid が最適なシナリオを特定する。
+- アプリケーションのメッセージング テクノロジとして、Event Hubs が最適なシナリオを特定する。
+- アプリケーションのメッセージング テクノロジとして、Service Bus が最適なシナリオを特定する。

@@ -4,12 +4,16 @@ metadata:
   title: Azure でのリソースの管理
   description: Azure コマンド ラインと Web ポータルを使用して、クラウド ベースのリソースを作成、管理、制御する方法について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: dd659efb544350a1e9b622532b3b0fea1e03e509
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 04e851f1941010ee794a93476e9ddcd9597cb8ad
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826870"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236505"
 title: Azure でのリソースの管理
 summary: Azure コマンド ラインと Web ポータルを使用して、クラウド ベースのリソースを作成、管理、制御する方法について説明します。
 prerequisites: なし

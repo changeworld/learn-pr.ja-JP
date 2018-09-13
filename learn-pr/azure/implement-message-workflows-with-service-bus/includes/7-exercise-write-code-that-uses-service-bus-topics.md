@@ -1,146 +1,145 @@
-You have chosen to use an Azure Service Bus topic to distribute messages about sales performance in your sales force distributed application. The app used by sales personnel on their mobile devices will send messages that summarize sales figures for each area and time period. Those messages will be distributed to web services located in the company's operational regions, including the Americas and Europe.
+Azure Service Bus トピックを使用して、営業部門の分散アプリケーションで販売業績に関するメッセージを配信することにしました。 販売担当者が自分のモバイル デバイスで使用しているアプリが、各エリアと期間ごとの売り上げ高を集計したメッセージを送信します。 これらのメッセージは、南北アメリカ、ヨーロッパなど会社の運用領域内にある web サービスに配信されます。
 
-You have already implemented the necessary infrastructure in your Azure subscription, including the topic and subscriptions. Now, you want to write the code that sends messages to the topic and retrieves messages from each subscription.
+トピックとサブスクリプションを含む、Azure サブスクリプションで、必要なインフラストラクチャを既に実装しています。 ここでは、トピックにメッセージを送信し、各サブスクリプションからメッセージを収得するコードを書き込みます。
 
-## Configure a connection string to a Service Bus namespace
+## <a name="configure-a-connection-string-to-a-service-bus-namespace"></a>Service Bus 名前空間への接続文字列を構成する
 
-Start by configuring connection strings both in the sending and receiving components:
+接続文字列を送信と受信コンポーネントの両方で構成することからはじめます。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. In the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. Under **SETTINGS**, click **Shared Access Policies**.
+1. **[設定]** の **[共有アクセス ポリシー]** をクリックします。
 
-1. In the list of policies, click **RootManageSharedAccessKey**.
+1. ポリシーの一覧で、**RootManageSharedAccessKey** をクリックします。
 
-1. To the right of the **Primary Connection string** text box, click the **Click to copy** button.
+1. **[プライマリ接続文字列]** テキスト　ボックスの右側にある **[クリックしてコピー]** ボタンをクリックします。
 
-1. Switch to **Visual Studio Code**.
+1. **Visual Studio Code** に切り替えます。
 
-1. In the **Explorer** pane, in the **performancemessagesender** folder, click the **Program.cs** file.
+1. **[エクスプローラー]** ウィンドウで、**performancemessagesender** フォルダーの **Program.cs** ファイルをクリックします。
 
-1. Locate the following line of code:
-
-    ```C#
-    const string ServiceBusConnectionString = "";
-    ```
-
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
-
-1. In the **Explorer** pane, in the **performancemessagereceiver** folder, click the **Program.cs** file.
-
-1. Locate the following line of code:
+1. 次のコード行を見つけます。
 
     ```C#
     const string ServiceBusConnectionString = "";
     ```
 
-1. Place the cursor between the quotation marks, and then press **Ctrl+V**.
+1. 引用符の間にカーソルを置き、**Ctrl + V** キーを押します。
 
-1. Click **File**, and then click **Save All**.
+1. **[エクスプローラー]** ウィンドウで、**performancemessagereceiver** フォルダーの**Program.cs** ファイルをクリックします。
 
-1. Close all open editor windows.
+1. 次のコード行を見つけます。
 
-## Write code that sends a message to the topic
+    ```C#
+    const string ServiceBusConnectionString = "";
+    ```
 
-To complete the component that sends messages about sales performance, follow these steps:
+1. 引用符の間にカーソルを置き、**Ctrl + V** キーを押します。
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **performancemessagesender** folder, click the **Program.cs** file.
+1. **[ファイル]**、**[すべて保存]** の順にクリックします。
 
-1. Locate the `SendPerformanceMessageAsync()` method.
+1. 開いているすべてのエディター ウィンドウを閉じます。
 
-1. Within that method, locate the following line of code:
+## <a name="write-code-that-sends-a-message-to-the-topic"></a>トピックにメッセージを送信するコードを書き込みます
+
+販売業績に関するメッセージを送信するコンポーネントを完成させるには、次の手順に従います。
+
+1. Visual Studio Code の **[エクスプローラー]** ウィンドウで、**performancemessagesender** フォルダーの **Program.cs** ファイルをクリックします。
+
+1. `SendPerformanceMessageAsync()` メソッドを見つけます。
+
+1. そのメソッド内で、次のコード行を見つけます。
 
     ```C#
     // Create a Topic Client here
     ```
 
-1. To create a topic client, replace that line of code with the following code:
+1. トピック クライアントを作成するには、そのコード行を次のコードで置き換えます。
 
     ```C#
     topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
     ```
 
-1. Within the `try...catch` block, locate the following line of code:
+1. `try...catch` ブロック内で、次のコード行を見つけます。
 
     ```C#
     // Create and send a message here
     ```
 
-1. To create and format a message for the queue, replace that line of code with the following code:
+1. キューに対するメッセージを作成してフォーマットするには、そのコード行を次のコードで置き換えます。
 
     ```C#
     string messageBody = $"Total sales for Brazil in August: $13m.";
     var message = new Message(Encoding.UTF8.GetBytes(messageBody));
     ```
 
-1. To display the message in the console, on the next line, add the following code:
+1. コンソールにメッセージを表示するには、その次の行に、以下のコードを追加します。
 
     ```C#
     Console.WriteLine($"Sending message: {messageBody}");
     ```
 
-1. To send the message to the queue, on the next line, add the following code:
+1. キューにメッセージを送信するには、その次の行に、以下のコードを追加します。
 
     ```C#
     await topicClient.SendAsync(message);
     ```
 
-1. Locate the following line of code:
+1. 次のコード行を見つけます。
 
     ```C#
     // Close the connection to the topic here
     ```
 
-1. To close the connection to Service Bus, replace that line of code with the following code:
+1. Service Bus の接続を閉じるには、そのコード行を次のコードで置き換えます。
 
     ```C#
     await topicClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code で、すべてのエディター ウィンドウを閉じ、変更したすべてのファイルを保存します。
 
-## Send a message to the topic
+## <a name="send-a-message-to-the-topic"></a>メッセージをトピックに送信する
 
-To run the component that sends a message about a sale, follow these steps:
+販売に関するメッセージを送信するコンポーネントを実行するには、次の手順に従います。
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code の **[表示]** メニューで、**[デバッグ]** をクリックします。
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Performance Message Sender**, and then press **F5**. Visual Studio Code builds and runs 
-the console application in debugging mode.
+1. **[デバッグ]** ウィンドウのドロップダウン リストで、**[Launch Performance Message Sender]** を選択して、**F5** キーを押します。 Visual Studio Code でデバッグ モードのコンソール アプリケーションがビルドされて実行されます。
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. プログラムが実行されたら、**デバッグ コンソール**でメッセージを調べます。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus が表示されない場合は、ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Topics**, and then click the **salesperformancemessages** topic. In the list of subscriptions, there should be one message displayed in both the **Americas** and **Europe** subscriptions.
+1. **[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[トピック]** をクリックし、**salesperformancemessages** トピックをクリックします。 サブスクリプションの一覧では、**南北アメリカ**と**ヨーロッパ**サブスクリプションの両方に一つのメッセージが表示されます。
 
-## Write code that receives a message from a topic subscription
+## <a name="write-code-that-receives-a-message-from-a-topic-subscription"></a>トピックサブスクリプションからメッセージを受信するコードを書き込む
 
-To complete the component that retrieves messages about sales performance, follow these steps:
+販売業績に関するメッセージを取得するコンポーネントを完成させるには、次の手順に従います。
 
-1. In Visual Studio Code, in the **Explorer** pane, in the **performancemessagereceiver** folder, click the **Program.cs** file.
+1. Visual Studio Code の **[エクスプローラー]** ウィンドウで、**performancemessagereceiver** フォルダーの **Program.cs** ファイルをクリックします。
 
-1. Locate the `MainAsync()` method.
+1. `MainAsync()` メソッドを見つけます。
 
-1. Within that method, locate the following line of code:
+1. そのメソッド内で、次のコード行を見つけます。
 
     ```C#
-    // Create a subscription client here
+    // Create a Subscription Client here
     ```
 
-1. To create a subscription client, replace that line with the following code:
+1. サブスクリプション クライアントを作成するには、その行を次のコードで置き換えます。
 
     ```C#
     subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
     ```
 
-1. Locate the `RegisterMessageHandler()` method.
+1. `RegisterMessageHandler()` メソッドを見つけます。
 
-1. To configure message handling options, replace all the code within that method with the following code:
+1. メッセージ処理オプションを構成するには、そのメソッド内のすべてのコードを次のコードで置き換えます。
 
     ```C#
     var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
@@ -150,54 +149,54 @@ To complete the component that retrieves messages about sales performance, follo
     };
     ```
 
-1. To register the message handler, on the next line, add the following code:
+1. メッセージ ハンドラーを登録するには、その次の行に、以下のコードを追加します。
 
     ```C#
     subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
     ```
 
-1. Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+1. `ProcessMessagesAsync()` メソッドを見つけます。 このメソッドを、受信メッセージを処理するメソッドとして登録しました。
 
-1. To display incoming messages in the console, replace all the code within that method with the following code:
+1. 受信メッセージをコンソールに表示するには、そのメソッド内のすべてのコードを次のコードで置き換えます。
 
     ```C#
     Console.WriteLine($"Received sale performance message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
     ```
 
-1. To remove the received message from the subscription, on the next line, add the following code:
+1. サブスクリプションから受信したメッセージを削除するには、その次の行に、以下のコードを追加します。
 
     ```C#
     await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
     ```
 
-1. Return to the `MainAsync()` method and locate the following line of code:
+1. `MainAsync()` メソッドに戻り、次のコード行を見つけます。
 
     ```C#
     // Close the subscription here
     ```
 
-1. To close the connection to Service Bus, replace that code with the following code:
+1. Service Bus への接続を終了するには、そのコードを次のコードで置き換えます。
 
     ```C#
     await subscriptionClient.CloseAsync();
     ```
 
-1. In Visual Studio Code, close all editor windows and save all changed files.
+1. Visual Studio Code で、すべてのエディター ウィンドウを閉じ、変更したすべてのファイルを保存します。
 
-## Retrieve a message from a topic subscription
+## <a name="retrieve-a-message-from-a-topic-subscription"></a>トピック サブスクリプションからメッセージを取得する
 
-To run the component that retrieves a message about sales performance, follow these steps:
+販売業績に関するメッセージを取得するコンポーネントを実行するには、次の手順に従います。
 
-1. In Visual Studio Code, on the **View** menu, click **Debug**.
+1. Visual Studio Code の **[表示]** メニューで、**[デバッグ]** をクリックします。
 
-1. In the **Debug** pane, in the drop-down list, select **Launch Performance Message Receiver**, and then press **F5**. Visual Studio Code builds and runs the console application in debugging mode.
+1. **[デバッグ]** ウィンドウのドロップダウン リストで、**[Launch Performance Message Receiver]** を選択して、**F5** キーを押します。 Visual Studio Code でデバッグ モードのコンソール アプリケーションがビルドされて実行されます。
 
-1. As the program executes, examine the messages in the **Debug Console**.
+1. プログラムが実行されたら、**デバッグ コンソール**でメッセージを調べます。
 
-1. When you see that the message has been received and displayed in the console, on the **Debug** menu, click **Stop Debugging**.
+1. メッセージが受信されてコンソールに表示されたら、**[デバッグ]** メニューの **[デバッグの停止]** をクリックします。
 
-1. Switch to the Azure portal.
+1. Azure portal に切り替えます。
 
-1. If the Service Bus namespace is not displayed, in the home page, click **All Resources**, and then click the Service Bus namespace you created earlier.
+1. Service Bus が表示されない場合は、ホーム ページで **[すべてのリソース]** をクリックし、先ほど作成した Service Bus 名前空間をクリックします。
 
-1. In the **Service Bus Namespace** blade, under **ENTITIES**, click **Topics**, and then click the **salesperformancemessages** topic. In the list of subscriptions, there should be zero messages displayed in the **Americas** subscription because your application has processed and removed the only message. Notice that the message is still present in the **Europe** subscription.
+1. **[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[トピック]** をクリックし、**salesperformancemessages** トピックをクリックします。 サブスクリプションの一覧では、アプリケーションが処理され、唯一のメッセージが削除されるため、**南北アメリカ**サブスクリプションに表示されるメッセージはゼロであるはずです。 **ヨーロッパ**サブスクリプションにはメッセージがあることを確認してください。

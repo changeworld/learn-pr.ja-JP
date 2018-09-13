@@ -1,14 +1,14 @@
-Imagine you work for a company that does data processing and storage for traffic cameras. The video streams are analyzed, categorized, and processed to identify faces and license plates at particular times. The information is uploaded to Azure Data Lake and a searchable index is generated for law enforcement.
+交通カメラから送られてくるデータの処理と保管を行う企業に勤めていることを想像してください。 特定の時間に顔やナンバー プレートを識別するためにビデオ ストリームの分析、分類、処理が行われます。 情報は Azure Data Lake にアップロードされ、法執行機関のために検索可能なインデックスが生成されます。
 
-These video streams use a range of different codecs and resolutions. You need to run several Windows-based proprietary software packages to carry out the initial processing and encode them into a common video format. Since new formats are regularly released, it's beneficial to do the video processing on virtual machines (VMs). The proprietary packages can then be added and updated without stopping the entire system.
+これらのビデオ ストリームではさまざまなコーデックや解像度が使用されます。 いくつかの Windows ベース専用のソフトウェア パッケージを実行し、初期処理を行って一般的なビデオ形式にエンコードする必要があります。 新しい形式が定期的にリリースされるため、仮想マシン (VM) 上でビデオを処理することをお勧めします。 その後、専用パッケージを追加し、更新できます。システム全体を停止することはありません。
 
-Azure provides a robust virtual machine hosting solution that can meet your needs. Let's explore how to create and work with Windows virtual machines in Azure.
+Azure はお客様の需要を満たす、堅牢な仮想マシンのホスティング ソリューションを提供します。 Azure 内で Windows 仮想マシンの作成と運用の方法を見ていきましょう。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Understand the options that are available for virtual machines in Azure.
-- Create a Windows virtual machine using the Azure portal.
-- Connect to a running Windows virtual machine using Remote Desktop.
-- Install software and change the network configuration on a VM using the Azure portal.
+- Azure で仮想マシンに利用可能なオプションについて理解します。
+- Azure portal を使用して Windows 仮想マシンを作成します。
+- Remote Desktop を使用して実行中の Windows 仮想マシンに接続します。
+- Azure portal を使用してソフトウェアのインストールならびに VM 上のネットワーク構成の変更を行います。

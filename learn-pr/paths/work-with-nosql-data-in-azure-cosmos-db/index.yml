@@ -4,12 +4,16 @@ metadata:
   title: Azure Cosmos DB の NoSQL データを扱う
   description: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: b77de7a32b2a61c38aa2d422581af8f005c88da8
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: df29cb5cfdefa35c106a2cf822856bf842fc74ac
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826894"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248199"
 title: Azure Cosmos DB の NoSQL データを扱う
 summary: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
 prerequisites: なし

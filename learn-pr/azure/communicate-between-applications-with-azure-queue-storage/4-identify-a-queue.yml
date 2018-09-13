@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.4-identify-a-queue
+title: キューを識別する - パート 1
+metadata:
+  title: キューを識別する - パート 2
+  description: キューを識別する
+  ms.openlocfilehash: addf3b5014be3e1c7620cb8cf8682fda5f96adde
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43314824"
+durationInMinutes: 5
+content: '[!include[](includes/4-identify-a-queue.md)]'

@@ -6,20 +6,20 @@
 
 1. Azure CLI を起動し、ログイン コマンドを実行します。
 
-    ```bash
+    ```azurecli
     az login
     ```
     Web ブラウザーで Azure のサインイン ページが表示されない場合は、コマンド ラインの手順に従って、[https://aka.ms/devicelogin](https://aka.ms/devicelogin) に認証コードを入力します。
 
 1. リソース グループを作成します。
 
-    ```bash
+    ```azurecli
     az group create --location westeurope --name popupResGroup
     ```
 
 1. テーブルにご利用のリソース グループをすべて一覧表示して、リソース グループが正常に作成されたことを確認します。
 
-    ```bash
+    ```azurecli
     az group list --output table
     ```
 
@@ -28,7 +28,7 @@
 
 1. グループ内にアイテムが多数含まれている場合は、`--query` オプションを追加することで、戻り値をフィルター処理することができます。次のコマンドを試してみてください。
 
-    ```bash
+    ```azurecli
     az group list --query '[?name == popupResGroup]'
     ```
 
@@ -43,13 +43,13 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
     > [!WARNING]
     > アプリとプランの名前は_一意_でなければなりません。そのため、名前にサフィックスを追加し、以下のコマンド内の `<unique>` テキストを、Azure 全体で確実に一意になるように、一連の数値、自分のイニシャル、またはその他の何らかのテキストに置換します。 
 
-    ```bash
+    ```azurecli
     az appservice plan create --name popupapp-<unique> --resource-group popupResGroup --location westeurope
     ```
 
 1. テーブルにご利用のすべてのプランを一覧表示して、サービス プランが正常に作成されたことを確認します。
 
-    ```bash
+    ```azurecli
     az appservice plan list --output table
     ```
 
@@ -58,13 +58,13 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
 次に、サービス プランに Web アプリを作成します。 それと同時にコードをデプロイすることができますが、この例では、デプロイを別の手順として行います。
 
 1. Web アプリをプラン作成し、前に作成したプランの名前を指定します。 **プランと同じようにアプリ名も一意でなければなりませんので、名前がグローバルに一意となるように、`<unique>` マーカーを何らかのテキストに置換します。**
-    ```bash
+    ```azurecli
     az webapp create --name popupapp-<unique> --resource-group popupResGroup --plan popupapp-<unique>
     ```
 
 1. テーブルにご利用のすべてのアプリを一覧表示して、アプリが正常に作成されたことを確認します。
 
-    ```bash
+    ```azurecli
     az webapp list --output table
     ```
 
@@ -74,7 +74,7 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
 
 1. 最後の手順では、GitHub リポジトリから Web アプリにコードをデプロイします。 Azure Samples Github リポジトリ内で提供されているシンプルな PHP ページを使用してみましょう。実行すると、 "HelloWorld!" と表示されます。 自分で作成した Web アプリ名を必ず使用します。
 
-    ```bash
+    ```azurecli
     az webapp deployment source config --name popupapp-<unique> --resource-group popupResGroup --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 

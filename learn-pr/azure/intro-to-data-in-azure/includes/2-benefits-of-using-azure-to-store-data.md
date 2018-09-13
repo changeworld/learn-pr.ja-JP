@@ -6,8 +6,6 @@ Azure Storage はクラウドベースのソリューションであり、セキ
 
 ## <a name="benefits-of-using-azure-to-store-data"></a>Azure を利用してデータを格納することの長所
 
-![メリット](../media-draft/Benefits.png)
-
 Azure Storage には次のような長所があります。
 
 - **バックアップと回復の自動化** - 予期しない障害や中断が発生しても、データを失うリスクがこの機能で軽減されます。

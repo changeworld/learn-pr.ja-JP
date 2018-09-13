@@ -4,21 +4,30 @@ metadata:
   title: Azure でのコンテナーの概要
   description: Azure でのコンテナーの作成および使用について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 2e4a5880683632b26e8affddf37e023b9270efe4
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9f6643ea7505200b9c9c2ece0cee313b8801590b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43853981"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44239716"
 title: Azure でのコンテナーの概要
 summary: Azure でのコンテナーの作成および使用について説明します。
 abstract: >
   このモジュールでは、次のことを行います。
-    - ローカル コンテナー開発環境を準備する
-    - Docker の基本的な操作を学習する
-    - コンテナーを実行、一覧表示、削除する
-    - カスタム コンテナー イメージを作成する
-    - コンテナー イメージをパブリック コンテナー レジストリにプッシュし、それらのイメージからコンテナーを実行する
+
+  - ローカル コンテナー開発環境を準備する
+
+  - Docker の基本的な操作を学習する
+
+  - コンテナーを実行、一覧表示、削除する
+
+  - カスタム コンテナー イメージを作成する
+
+  - コンテナー イメージをパブリック コンテナー レジストリにプッシュし、それらのイメージからコンテナーを実行する
 prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
@@ -33,4 +42,5 @@ units:
 - learn.intro-to-containers.3-basic-operations
 - learn.intro-to-containers.4-container-images
 - learn.intro-to-containers.5-knowledge-check
+- learn.intro-to-containers.6-summary
 achievement: learn.intro-to-containers.badge

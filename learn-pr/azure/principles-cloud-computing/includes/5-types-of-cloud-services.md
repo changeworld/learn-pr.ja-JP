@@ -2,8 +2,7 @@
 
 ## <a name="explore-the-three-categories-of-cloud-computing"></a>クラウド コンピューティングの 3 つのカテゴリを確認する
 
-<!-- TODO: replace video link? -->
-
+<!-- TODO: Verify video -->
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
 ### <a name="infrastructure-as-a-service-iaas"></a>サービスとしてのインフラストラクチャ (IaaS)

@@ -4,12 +4,16 @@ metadata:
   title: サーバーレス アプリケーションの作成
   description: Azure Functions では、さまざまな外部イベントによってトリガーできるオンデマンド コンピューティング システムである、イベント駆動型の作成が可能です。 サーバー側のロジックを実行して、サーバーレス アーキテクチャを構築するための機能を活用する方法について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 632b27e6ae21bbc70ae91dbc93b9c5a2682c4d38
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a7f2ca804a19a5e612bb29e76455238f86b7d783
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43824176"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44344231"
 title: サーバーレス アプリケーションの作成
 summary: Azure Functions では、さまざまな外部イベントによってトリガーできるオンデマンド コンピューティング システムである、イベント駆動型の作成が可能です。 サーバー側のロジックを実行して、サーバーレス アーキテクチャを構築するための機能を活用する方法について説明します。
 prerequisites: なし
@@ -22,6 +26,7 @@ products:
 - azure
 modules:
 - learn.create-serverless-logic-with-functions
-- execute-azure-function-with-triggers
+- learn.execute-azure-function-with-triggers
+- learn.chain-azure-functions-data-using-input-output-bindings
 - learn.build-a-serverless-web-app
 achievement: learn.create-serverless-applications.trophy

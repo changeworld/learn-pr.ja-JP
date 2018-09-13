@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: 概要と知識チェック
+metadata:
+  title: 概要と知識チェック
+  description: 概要と知識チェック
+  ms.openlocfilehash: b5b474cbfc1f501965805e36d035caf0c5ffbfeb
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836071"
+durationInMinutes: 10
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: Computer Vision テスト
+  questions:
+  - content: コンピューター ビジョンで識別されないのは、どのような種類の良く知られた画像ですか？
+    choices:
+    - content: 'ランドマーク '
+      isCorrect: false
+    - content: 有名人
+      isCorrect: false
+    - content: ムービー
+      isCorrect: true
+  - content: 画像を分析するときに受信するのにどのビジュアル機能を選択しますか。
+    choices:
+    - content: 図形
+      isCorrect: true
+    - content: 画像カテゴリ
+      isCorrect: false
+    - content: タグ
+      isCorrect: false
+    - content: 説明テキスト
+      isCorrect: false
+    - content: 顔
+      isCorrect: false
+    - content: 色
+      isCorrect: false
+    - content: 成人向けや際どいコンテンツ
+      isCorrect: false
+  - content: スマートトリミングの作用
+    choices:
+    - content: 左上から画像をトリミング
+      isCorrect: false
+    - content: 目的の箇所に基づいた画像のトリミング (顔、オブジェクトにフォーカス、その他)
+      isCorrect: true

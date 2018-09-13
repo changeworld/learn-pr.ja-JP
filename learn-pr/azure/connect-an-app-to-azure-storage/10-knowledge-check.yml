@@ -1,0 +1,36 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.10-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.openlocfilehash: 83099397375194d754264742692de050de30603c
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43479610"
+durationInMinutes: 3
+quiz:
+  title: Azure Storage への接続
+  questions:
+  - content: Azure ストレージ アカウントにアクセスするためにアクセス キーはいくつ提供されますか。
+    choices:
+    - content: "1"
+      isCorrect: false
+    - content: "2"
+      isCorrect: true
+    - content: "3"
+      isCorrect: false
+    - content: "4"
+      isCorrect: false
+  - content: 通常、Azure Storage 接続文字列はアプリ内のどこに保存されますか。
+    choices:
+    - content: アプリケーション コードにハードコード
+      isCorrect: false
+    - content: 構成ファイル、環境変数、データベースなど、構成システム内
+      isCorrect: true
+    - content: 実行時にアプリに入力
+      isCorrect: false
+    - content: リソース ファイルとしてコンパイルされ、アプリ アセンブリに組み込まれる
+      isCorrect: false
