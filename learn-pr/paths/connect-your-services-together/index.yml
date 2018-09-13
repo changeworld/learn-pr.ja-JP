@@ -1,0 +1,27 @@
+### YamlMime:LearningPath
+uid: learn.connect-your-services-together
+metadata:
+  title: サービスの接続
+  description: Azure では、さまざまなコンポーネント (Web サイトのフロントエンド、バックエンド サービス、およびオンデマンド コンピューティング サービスを実行するトリガーされた関数) で構成されたアプリケーションを作成することができます。 Azure には、これらさまざまなコンポーネントが相互にデータを渡せるようにするためのさまざまな通信方法も含まれています。 これらの通信サービスを活用して、テスト可能なコンポーネントから拡張性の高い、効率的なソリューションを作成する方法について説明します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 10fb00fdb0ac4c8563f1290c9dd5340a42c43942
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824786"
+title: サービスの接続
+summary: Azure では、さまざまなコンポーネント (Web サイトのフロントエンド、バックエンド サービス、およびオンデマンド コンピューティング サービスを実行するトリガーされた関数) で構成されたアプリケーションを作成することができます。 Azure には、これらさまざまなコンポーネントが相互にデータを渡せるようにするためのさまざまな通信方法も含まれています。 これらの通信サービスを活用して、テスト可能なコンポーネントから拡張性の高い、効率的なソリューションを作成する方法について説明します。
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+modules:
+- learn.choose-messaging-model
+- learn.communicate-between-applications-with-azure-queue-storage
+- learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs
+achievement: learn.connect-your-services-together.trophy

@@ -1,0 +1,30 @@
+### YamlMime:LearningPath
+uid: learn.administer-infrastructure-resources-in-azure
+metadata:
+  title: Azure でコンテナーを管理する
+  description: 仮想マシンのリソースを作成、管理、セキュリティ保護、スケーリングする方法について説明します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: f6da192e10561df97e895a8113508182beb9b15b
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43825977"
+title: Azure でインフラストラクチャ リソースを管理する
+summary: 仮想マシンのリソースを作成、管理、セキュリティ保護、スケーリングする方法について説明します。
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+modules:
+- learn.introduction-to-azure-virtual-machines
+- learn.create-linux-vm-in-azure
+- learn.create-a-windows-vm-in-azure
+- learn.manage-vms-with-azure-cli
+- learn.configure-the-network-for-your-virtual-machines
+- learn.secure-your-azure-virtual-machine-disks
+achievement: learn.administer-infrastructure-resources-in-azure.trophy

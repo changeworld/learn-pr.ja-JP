@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.5-add-logic-to-the-function-app
+title: <span data-ttu-id="fd01c-101">Function App にロジックを追加する</span><span class="sxs-lookup"><span data-stu-id="fd01c-101">Add logic to the function app</span></span>
+metadata:
+  title: <span data-ttu-id="fd01c-102">Function App にロジックを追加する</span><span class="sxs-lookup"><span data-stu-id="fd01c-102">Add logic to the function app</span></span>
+  description: <span data-ttu-id="fd01c-103">Function App にビジネス ロジック + トリガーを追加する</span><span class="sxs-lookup"><span data-stu-id="fd01c-103">Add the business logic + trigger into the Function App</span></span>
+  ms.openlocfilehash: 93586f71c6dcf20abbd81a69f5a0a588a54b4a7e
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791221"
+durationInMinutes: 10
+content: '[!include[](includes/5-add-logic-to-the-function-app.md)]'

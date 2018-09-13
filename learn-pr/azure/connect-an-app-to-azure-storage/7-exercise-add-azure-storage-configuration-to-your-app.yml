@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.7-exercise-add-azure-storage-configuration-to-your-app
+title: <span data-ttu-id="a4362-101">アプリに Azure Storage の構成を追加する</span><span class="sxs-lookup"><span data-stu-id="a4362-101">Add Azure Storage configuration to your app</span></span>
+metadata:
+  title: <span data-ttu-id="a4362-102">アプリに Azure Storage の構成を追加する</span><span class="sxs-lookup"><span data-stu-id="a4362-102">Add Azure Storage configuration to your app</span></span>
+  description: <span data-ttu-id="a4362-103">アプリに Azure Storage の構成を追加する</span><span class="sxs-lookup"><span data-stu-id="a4362-103">Add Azure Storage configuration to your app</span></span>
+  ms.openlocfilehash: fe194feea9e7ecd5018060b7451b9fa0b8bfba1f
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792207"
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-add-azure-storage-configuration-to-your-app.md)]'

@@ -1,61 +1,60 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
-title: <span data-ttu-id="086c8-101">クリーンアップ、次の手順、および知識チェック</span><span class="sxs-lookup"><span data-stu-id="086c8-101">Cleanup, next steps, and knowledge check</span></span>
+title: <span data-ttu-id="dbf3b-101">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="dbf3b-101">Clean up and knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="086c8-102">クリーンアップ、次の手順、および知識チェック</span><span class="sxs-lookup"><span data-stu-id="086c8-102">Cleanup, next steps, and knowledge check</span></span>
-  description: <span data-ttu-id="086c8-103">クリーンアップ、次の手順、知識チェック</span><span class="sxs-lookup"><span data-stu-id="086c8-103">Cleanup, next steps, and knowledge check</span></span>
-  ms.openlocfilehash: 7c554c0f755764aa9231c4d783b81697c2502c68
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  title: <span data-ttu-id="dbf3b-102">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="dbf3b-102">Clean up and knowledge check</span></span>
+  description: <span data-ttu-id="dbf3b-103">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="dbf3b-103">Clean up and knowledge check</span></span>
+  ms.openlocfilehash: a638c0207bea93fa344291c7dc13c741a92c1e98
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43225678"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43825619"
 durationInMinutes: 2
-interactive: bash
 content: >
   [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
 quiz:
-  title: '<span data-ttu-id="086c8-104">知識チェック: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="086c8-104">Knowledge check: Blob Storage</span></span>'
+  title: '<span data-ttu-id="dbf3b-104">知識チェック: Blob Storage</span><span class="sxs-lookup"><span data-stu-id="dbf3b-104">Knowledge check: Blob Storage</span></span>'
   questions:
-  - content: <span data-ttu-id="086c8-105">アプリ用にストレージ アカウントと BLOB コンテナーを作成するための方法として適切なものは、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="086c8-105">Which of the following best describes a good strategy for creating storage accounts and blob containers for your app?</span></span>
+  - content: <span data-ttu-id="dbf3b-105">アプリ用にストレージ アカウントと BLOB コンテナーを作成するための方法として適切なものは、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="dbf3b-105">Which of the following best describes a good strategy for creating storage accounts and blob containers for your app?</span></span>
     choices:
-    - content: <span data-ttu-id="086c8-106">アプリがデプロイされる前に、Azure portal またはスクリプトを使用してストレージ アカウントとコンテナーを手動で作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="086c8-106">Storage accounts and containers must be created manually in the Azure portal or with scripts before your app is deployed.</span></span>
+    - content: <span data-ttu-id="dbf3b-106">アプリがデプロイされる前に、Azure portal またはスクリプトを使用してストレージ アカウントとコンテナーを手動で作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-106">Storage accounts and containers must be created manually in the Azure portal or with scripts before your app is deployed.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-107">ストレージ アカウントは、アプリがデプロイされる前に作成しておく必要がありますが、コンテナーの作成は通常、アプリケーションによって即座に作成されます。</span><span class="sxs-lookup"><span data-stu-id="086c8-107">Storage accounts should be created up front, prior to app deployment, but container creation is commonly performed by applications on the fly.</span></span>
-    - content: <span data-ttu-id="086c8-108">ストレージ アカウントは、アプリの必要に応じてアプリによって作成されますが、アプリで必要なすべてのコンテナーは、デプロイ プロセスで事前に作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="086c8-108">Your app should create storage accounts as it needs them, but your deployment process should create all the containers your app needs up front.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-107">ストレージ アカウントは、アプリがデプロイされる前に作成しておく必要がありますが、コンテナーの作成は通常、アプリケーションによって即座に作成されます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-107">Storage accounts should be created up front, prior to app deployment, but container creation is commonly performed by applications on the fly.</span></span>
+    - content: <span data-ttu-id="dbf3b-108">ストレージ アカウントは、アプリの必要に応じてアプリによって作成されますが、アプリで必要なすべてのコンテナーは、デプロイ プロセスで事前に作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-108">Your app should create storage accounts as it needs them, but your deployment process should create all the containers your app needs up front.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-109">ストレージ アカウントの作成とは、一般に、アプリケーションで実行すべきではない管理アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="086c8-109">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
-    - content: <span data-ttu-id="086c8-110">アプリをデプロイする前に、アプリのストレージ アカウントを事前に作成して、アプリで必要なコンテナーをアプリが作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="086c8-110">You should create your app's storage accounts up front, before deploying your app, and let your app create the containers it needs.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-109">ストレージ アカウントの作成とは、一般に、アプリケーションで実行すべきではない管理アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-109">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
+    - content: <span data-ttu-id="dbf3b-110">アプリをデプロイする前に、アプリのストレージ アカウントを事前に作成して、アプリで必要なコンテナーをアプリが作成できるようにします。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-110">You should create your app's storage accounts up front, before deploying your app, and let your app create the containers it needs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="086c8-111">コンテナーの作成は、一般的なアプリ アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="086c8-111">Container creation is a common app activity.</span></span> <span data-ttu-id="086c8-112">アプリケーションは、必要なコンテナーを即座に作成できます。</span><span class="sxs-lookup"><span data-stu-id="086c8-112">Applications can create containers they need on the fly.</span></span>
-    - content: <span data-ttu-id="086c8-113">適切に構成されたアプリでは、すべてのストレージ アカウントと必要なコンテナーがアプリによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="086c8-113">A properly configured app should create all of the storage accounts and containers it needs on its own.</span></span>
+      correctExplanation: <span data-ttu-id="dbf3b-111">コンテナーの作成は、一般的なアプリ アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-111">Container creation is a common app activity.</span></span> <span data-ttu-id="dbf3b-112">アプリケーションは、必要なコンテナーを即座に作成できます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-112">Applications can create containers they need on the fly.</span></span>
+    - content: <span data-ttu-id="dbf3b-113">適切に構成されたアプリでは、すべてのストレージ アカウントと必要なコンテナーがアプリによって作成されます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-113">A properly configured app should create all of the storage accounts and containers it needs on its own.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-114">ストレージ アカウントの作成とは、一般に、アプリケーションで実行すべきではない管理アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="086c8-114">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
-  - content: <span data-ttu-id="086c8-115">アプリ内の BLOB ストレージ クライアント ライブラリを初期化するために一般的に使用される構成はどれですか?</span><span class="sxs-lookup"><span data-stu-id="086c8-115">What kind of configuration is typically used to initialize the Blob storage client library within an app?</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-114">ストレージ アカウントの作成とは、一般に、アプリケーションで実行すべきではない管理アクティビティです。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-114">Storage account creation is a management activity that generally should not be performed by applications.</span></span>
+  - content: <span data-ttu-id="dbf3b-115">アプリ内の BLOB ストレージ クライアント ライブラリを初期化するために一般的に使用される構成はどれですか?</span><span class="sxs-lookup"><span data-stu-id="dbf3b-115">What kind of configuration is typically used to initialize the Blob storage client library within an app?</span></span>
     choices:
-    - content: <span data-ttu-id="086c8-116">Azure ユーザー名とパスワード。</span><span class="sxs-lookup"><span data-stu-id="086c8-116">An Azure username and password.</span></span>
+    - content: <span data-ttu-id="dbf3b-116">Azure ユーザー名とパスワード。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-116">An Azure username and password.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-117">ユーザー名とパスワードは、Azure ストレージの認証メカニズムではありません。</span><span class="sxs-lookup"><span data-stu-id="086c8-117">Usernames and passwords are not an authentication mechanism for Azure storage.</span></span>
-    - content: <span data-ttu-id="086c8-118">ストレージ アカウントの接続文字列。</span><span class="sxs-lookup"><span data-stu-id="086c8-118">The storage account connection string.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-117">ユーザー名とパスワードは、Azure ストレージの認証メカニズムではありません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-117">Usernames and passwords are not an authentication mechanism for Azure storage.</span></span>
+    - content: <span data-ttu-id="dbf3b-118">ストレージ アカウントの接続文字列。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-118">The storage account connection string.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="086c8-119">ストレージ アカウントの接続文字列には、アプリケーションが BLOB ストレージに接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="086c8-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
-    - content: <span data-ttu-id="086c8-120">アプリケーションを表すグローバル一意識別子 (GUID)。</span><span class="sxs-lookup"><span data-stu-id="086c8-120">A globally-unique identifier (GUID) that represents the application.</span></span>
+      correctExplanation: <span data-ttu-id="dbf3b-119">ストレージ アカウントの接続文字列には、アプリケーションが BLOB ストレージに接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="dbf3b-120">アプリケーションを表すグローバル一意識別子 (GUID)。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-120">A globally-unique identifier (GUID) that represents the application.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-121">GUID は、Azure ストレージの認証メカニズムではありません。</span><span class="sxs-lookup"><span data-stu-id="086c8-121">GUIDS are not an authentication mechanism for Azure storage.</span></span>
-    - content: <span data-ttu-id="086c8-122">ストレージ アカウント データセンターと場所の識別子。</span><span class="sxs-lookup"><span data-stu-id="086c8-122">The storage account datacenter and location identifiers.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-121">GUID は、Azure ストレージの認証メカニズムではありません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-121">GUIDS are not an authentication mechanism for Azure storage.</span></span>
+    - content: <span data-ttu-id="dbf3b-122">ストレージ アカウント データセンターと場所の識別子。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-122">The storage account datacenter and location identifiers.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-123">アプリケーションで、データセンターに関する情報とそれにアクセスするストレージ アカウントの場所を認識する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="086c8-123">Your application does not need to know information about the datacenter and location of a storage account to access it.</span></span>
-  - content: <span data-ttu-id="086c8-124">BLOB の名前を使用して `GetBlockBlobReference` を呼び出すと、何が起こりますか?</span><span class="sxs-lookup"><span data-stu-id="086c8-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-123">アプリケーションで、データセンターに関する情報とそれにアクセスするストレージ アカウントの場所を認識する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-123">Your application does not need to know information about the datacenter and location of a storage account to access it.</span></span>
+  - content: <span data-ttu-id="dbf3b-124">BLOB の名前を使用して `GetBlockBlobReference` を呼び出すと、何が起こりますか?</span><span class="sxs-lookup"><span data-stu-id="dbf3b-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
     choices:
-    - content: <span data-ttu-id="086c8-125">ストレージ内に新しいブロック BLOB が作成されます。</span><span class="sxs-lookup"><span data-stu-id="086c8-125">A new block blob is created in storage.</span></span>
+    - content: <span data-ttu-id="dbf3b-125">ストレージ内に新しいブロック BLOB が作成されます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-125">A new block blob is created in storage.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-126">BLOB 参照を取得しても BLOB は自動的に作成されませんが、参照を使用してデータをアップロードし、対象となる BLOB が存在しない場合は、BLOB が作成されます。</span><span class="sxs-lookup"><span data-stu-id="086c8-126">Getting a blob reference does not create a blob on its own, but it will create a blob if you use the reference to upload data and the targeted blob doesn't already exist.</span></span>
-    - content: <span data-ttu-id="086c8-127">`CloudBlockBlob` オブジェクトがローカルに作成されます。</span><span class="sxs-lookup"><span data-stu-id="086c8-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="086c8-128">ネットワーク呼び出しが行われません。</span><span class="sxs-lookup"><span data-stu-id="086c8-128">No network calls are made.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-126">BLOB 参照を取得しても BLOB は自動的に作成されませんが、参照を使用してデータをアップロードし、対象となる BLOB が存在しない場合は、BLOB が作成されます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-126">Getting a blob reference does not create a blob on its own, but it will create a blob if you use the reference to upload data and the targeted blob doesn't already exist.</span></span>
+    - content: <span data-ttu-id="dbf3b-127">`CloudBlockBlob` オブジェクトがローカルに作成されます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="dbf3b-128">ネットワーク呼び出しが行われません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-128">No network calls are made.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="086c8-129">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、単にオブジェクトがローカルに作成されます。このオブジェクトは後で保存された BLOB を操作するために使用することができます。</span><span class="sxs-lookup"><span data-stu-id="086c8-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can then be used to work with a stored blob.</span></span>
-    - content: <span data-ttu-id="086c8-130">ストレージ内に BLOB が存在しない場合、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="086c8-130">An exception is thrown if the blob does not exist in storage.</span></span>
+      correctExplanation: <span data-ttu-id="dbf3b-129">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、単にオブジェクトがローカルに作成されます。このオブジェクトは後で保存された BLOB を操作するために使用することができます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can then be used to work with a stored blob.</span></span>
+    - content: <span data-ttu-id="dbf3b-130">ストレージ内に BLOB が存在しない場合、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-130">An exception is thrown if the blob does not exist in storage.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-131">BLOB 参照を取得しても、BLOB がストレージ内に既に存在しているかどうかのチェックは行われません。</span><span class="sxs-lookup"><span data-stu-id="086c8-131">Getting a blob reference does not check whether the blob already exists in storage.</span></span>
-    - content: <span data-ttu-id="086c8-132">指定された BLOB のコンテンツがダウンロードされます。</span><span class="sxs-lookup"><span data-stu-id="086c8-132">The contents of the named blob are downloaded.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-131">BLOB 参照を取得しても、BLOB がストレージ内に既に存在しているかどうかのチェックは行われません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-131">Getting a blob reference does not check whether the blob already exists in storage.</span></span>
+    - content: <span data-ttu-id="dbf3b-132">指定された BLOB のコンテンツがダウンロードされます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-132">The contents of the named blob are downloaded.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="086c8-133">BLOB 参照を取得しても、データは自動的にダウンロードされません。</span><span class="sxs-lookup"><span data-stu-id="086c8-133">Getting a blob reference does not download any data on its own.</span></span> <span data-ttu-id="086c8-134">ただし、参照を取得したら、それを使用して対象となる BLOB からデータをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="086c8-134">However, once you have a reference, it can be used to download data from the targeted blob.</span></span>
+      incorrectExplanation: <span data-ttu-id="dbf3b-133">BLOB 参照を取得しても、データは自動的にダウンロードされません。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-133">Getting a blob reference does not download any data on its own.</span></span> <span data-ttu-id="dbf3b-134">ただし、参照を取得したら、それを使用して対象となる BLOB からデータをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="dbf3b-134">However, once you have a reference, it can be used to download data from the targeted blob.</span></span>
