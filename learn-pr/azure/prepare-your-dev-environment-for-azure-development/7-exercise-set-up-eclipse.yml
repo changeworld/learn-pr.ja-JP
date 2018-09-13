@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+title: <span data-ttu-id="a5949-101">Azure Toolkit を使用して Eclipse を設定する</span><span class="sxs-lookup"><span data-stu-id="a5949-101">Set up Eclipse with the Azure Toolkit</span></span>
+metadata:
+  title: <span data-ttu-id="a5949-102">Azure Toolkit を使用して Eclipse を設定する</span><span class="sxs-lookup"><span data-stu-id="a5949-102">Set up Eclipse with the Azure Toolkit</span></span>
+  description: <span data-ttu-id="a5949-103">Azure Toolkit を使用して Eclipse を設定する</span><span class="sxs-lookup"><span data-stu-id="a5949-103">Set up Eclipse with the Azure Toolkit</span></span>
+  ms.openlocfilehash: 6bf152b9eb6675c33198341df3b9f56de7463b2a
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834411"
+durationInMinutes: 15
+content: '[!include[](includes/7-exercise-set-up-eclipse.md)]'

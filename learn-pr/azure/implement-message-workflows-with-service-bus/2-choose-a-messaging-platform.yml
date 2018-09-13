@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.2-choose-a-messaging-platform
+title: <span data-ttu-id="a360e-101">メッセージング プラットフォームを選択する</span><span class="sxs-lookup"><span data-stu-id="a360e-101">Choose a messaging platform</span></span>
+metadata:
+  title: <span data-ttu-id="a360e-102">メッセージング プラットフォームを選択する</span><span class="sxs-lookup"><span data-stu-id="a360e-102">Choose a messaging platform</span></span>
+  description: <span data-ttu-id="a360e-103">メッセージング プラットフォームを選択する</span><span class="sxs-lookup"><span data-stu-id="a360e-103">Choose a messaging platform</span></span>
+  ms.openlocfilehash: 899e26e1318f3ce61bcb96ff24dea9e5eb55f0d9
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43834562"
+durationInMinutes: 5
+content: '[!include[](includes/2-choose-a-messaging-platform.md)]'

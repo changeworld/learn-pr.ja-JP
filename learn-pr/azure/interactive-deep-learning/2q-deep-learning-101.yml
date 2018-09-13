@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2q-deep-learning-101
+title: <span data-ttu-id="0954d-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="0954d-101">Knowledege Check</span></span>
+metadata:
+  title: <span data-ttu-id="0954d-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="0954d-102">Knowledege Check</span></span>
+  description: <span data-ttu-id="0954d-103">ディープ ラーニング 101 知識チェック</span><span class="sxs-lookup"><span data-stu-id="0954d-103">Deep learning 101 Knowledege Check</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 6539b5c2f32d97a1a20ef2f801a1749f760643e7
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835119"
+durationInMinutes: 2
+content: <span data-ttu-id="0954d-104">次に進むにはテストに回答してください</span><span class="sxs-lookup"><span data-stu-id="0954d-104">Answer the following to continue</span></span>
+quiz:
+  title: <span data-ttu-id="0954d-105">ディープ ラーニング 101 テスト</span><span class="sxs-lookup"><span data-stu-id="0954d-105">Deep Learning 101 Quiz</span></span>
+  questions:
+  - content: <span data-ttu-id="0954d-106">従来の機械学習とディープ ラーニングの主な違いの 1 つは何ですか。</span><span class="sxs-lookup"><span data-stu-id="0954d-106">What is one of the main differences between traditional machine learning and deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="0954d-107">ディープ ラーニングでは、線型モデルのみを使用しています。一方、従来の機械学習では、あらゆる種類のモデルのグラフ (代数および確率) を使用しています。</span><span class="sxs-lookup"><span data-stu-id="0954d-107">In deep learning we only use linear models where as in traditonal machine learning we use all kinds of models graph, algebraic and probablistic.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="0954d-108">従来の機械学習では、フィーチャーが選択されます。ディープ ラーニングでは、選択され、学習されます。</span><span class="sxs-lookup"><span data-stu-id="0954d-108">In traditional machine learning features are hand picked in deep learning they are hand picked and learned.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0954d-109">ディープ ラーニング (DL) の場合、フィーチャー抽出のプロセスは、入力をベクトルとして表現し、一連の優れた線形代数演算を使用して特定の出力に変換することで学習されます。</span><span class="sxs-lookup"><span data-stu-id="0954d-109">In Deep Learning (DL), the process of feature extraction is learned through representing inputs as vectors and transforming them, with a series of clever linear algebra operations, into a given output.</span></span>
+    - content: <span data-ttu-id="0954d-110">ディープ ラーニングは、脳を手本にしてモデル化されていますが、従来の機械学習は心臓を手本にしてモデル化されています。</span><span class="sxs-lookup"><span data-stu-id="0954d-110">Deep learning is modeled after the brain and traditional machine learning is modeled after the heart.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="0954d-111">DSVM の目的は何ですか。</span><span class="sxs-lookup"><span data-stu-id="0954d-111">What is the purpose of the DSVM?</span></span>
+    choices:
+    - content: <span data-ttu-id="0954d-112">DSVM は Azure 上の機械学習と対話する唯一の方法です。</span><span class="sxs-lookup"><span data-stu-id="0954d-112">The DSVMs are the only way to interact with machine learning on Azure.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="0954d-113">DSVM は、最も一般的なデータ サイエンスおよび機械学習フレームワークのサポートを提供する構築済みイメージです。</span><span class="sxs-lookup"><span data-stu-id="0954d-113">DSVMs are prebuilt images that provide support for the most popular data science and machine learning frameworks.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="0954d-114">DSVM は、データ分析、機械学習、ディープ ラーニング トレーニングでよく使用される一般的なツールを使用して事前インストール、構成、テストされた Azure 仮想マシン イメージです。</span><span class="sxs-lookup"><span data-stu-id="0954d-114">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training.</span></span>
+    - content: <span data-ttu-id="0954d-115">ディープ ラーニング仮想マシン イメージとは異なり、DSVM は従来のデータ サイエンスにのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="0954d-115">Unlike the Deep Learning Virtual Machine image DSVMs can only be used for traditional data science.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="0954d-116">GPU がディープ ラーニングに使用されることが多いのはなぜですか。</span><span class="sxs-lookup"><span data-stu-id="0954d-116">Why are GPUs often used for deep learning?</span></span>
+    choices:
+    - content: <span data-ttu-id="0954d-117">ディープ ラーニングの行列代数には多数の並列計算が必要であり、GPU でそれを実現できます。</span><span class="sxs-lookup"><span data-stu-id="0954d-117">The matrix algebra in deep learning requires lots of parallel computation and GPUs make the viable.</span></span>
+      correctExplanation: <span data-ttu-id="0954d-118">線形代数コンポーネントの一部として計算する一連の行列演算は、計算コストが高くなる傾向があります。また、頻繁に並列処理が実行される可能性があるため、グラフィック処理ユニット (GPU) などの特殊な演算を効率的に実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0954d-118">The series of matrix operations that we computer as part of the linear algebra component tend to be computationally expensive and are often heavily parallelizable, requiring specialized compute such as Graphics Processing Units GPUs to compute efficiently.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="0954d-119">GPU によって、ディープ ラーニング モデルは勾配降下中に収束します。</span><span class="sxs-lookup"><span data-stu-id="0954d-119">GPUs ensure that deep learning models converge during gradient decent.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="0954d-120">GPU は損失関数を評価するために必要です。</span><span class="sxs-lookup"><span data-stu-id="0954d-120">GPUs are needed to evaluate a loss function.</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="0954d-121">Azure 上の N シリーズ マシンと D シリーズ マシンの違いは何ですか。</span><span class="sxs-lookup"><span data-stu-id="0954d-121">What is the difference between an N-Series and D-Series machines on Azure?</span></span>
+    choices:
+    - content: <span data-ttu-id="0954d-122">D シリーズはディープ ラーニング用であり、N シリーズは通常の計算用です。</span><span class="sxs-lookup"><span data-stu-id="0954d-122">D series are for deep learning where as N series are for Normal compute.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="0954d-123">D シリーズは一般的な計算用であり、N シリーズには GPU が含まれています。</span><span class="sxs-lookup"><span data-stu-id="0954d-123">D series are for general compute where as N series contain GPUs.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="0954d-124">D シリーズは高パフォーマンスの計算用であり、N シリーズには GPU が含まれています。</span><span class="sxs-lookup"><span data-stu-id="0954d-124">D series are for high preformance compute where as N series contain GPUs.</span></span>
+      isCorrect: false
