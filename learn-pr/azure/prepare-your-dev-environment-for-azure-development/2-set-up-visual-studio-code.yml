@@ -4,11 +4,16 @@ title: Visual Studio Code の使用
 metadata:
   title: Visual Studio Code の使用
   description: Visual Studio Code の使用
-  ms.openlocfilehash: 306759ba8db89f4aec6fcf0b6aa06b030b52ff4d
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4acd62c2b33c9f766213c8716c1fbe83eb0542ea
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835595"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247298"
 durationInMinutes: 5
 content: '[!include[](includes/2-set-up-visual-studio-code.md)]'

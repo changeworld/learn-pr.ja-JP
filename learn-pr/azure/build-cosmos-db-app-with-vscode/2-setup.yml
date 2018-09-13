@@ -3,12 +3,17 @@ uid: learn.cosmos-db-app-with-vscode.2-setup
 metadata:
   title: Visual Studio Code でアプリを設定する
   description: Visual Studio Code でアプリを設定する
-  ms.openlocfilehash: 84b7016b85cc49165abfc4301f8d3b8e26527e73
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aeb3b265dc618556f17ab4e08fc8bcdee79f560d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836528"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235313"
 title: Visual Studio Code でアプリを設定する
 durationInMinutes: 15
 content: '[!include[](includes/2-setup.md)]'

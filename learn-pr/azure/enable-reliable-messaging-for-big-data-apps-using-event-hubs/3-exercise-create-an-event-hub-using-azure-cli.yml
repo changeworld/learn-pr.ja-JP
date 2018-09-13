@@ -4,11 +4,17 @@ title: Azure CLI を使用してイベント ハブを作成する
 metadata:
   title: Azure CLI を使用してイベント ハブを作成する
   description: Azure CLI を使用してイベント ハブを作成する
-  ms.openlocfilehash: ac7da26c54ce4e2862363242e5d96150336c67f9
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: feab26f3a0f86e99175abce72d9d95d384ca9237
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835315"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310223"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-an-event-hub-using-azure-cli.md)]'

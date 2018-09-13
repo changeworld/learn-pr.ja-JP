@@ -76,7 +76,7 @@ Azure CLI を実行するには、bash シェルを開く (Linux と macOS) か�
 
 1. Azure CLI を起動し、バージョン チェックを実行して、インストールを確認します。
 
-    ```bash
+    ```azurecli
     az --version
     ```
 
