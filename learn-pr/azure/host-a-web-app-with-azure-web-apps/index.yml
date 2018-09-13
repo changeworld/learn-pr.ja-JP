@@ -1,0 +1,36 @@
+### YamlMime:Module
+uid: learn.host-a-web-application-with-azure-web-apps
+metadata:
+  title: Azure Web Apps で Web アプリケーションをホストする
+  description: Azure でホストされる Web アプリのプラットフォームを使って Web サイトを作成します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 84674d57c8970615ed62068bf46ae57ba0ba71d1
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43854270"
+title: Azure Web Apps で Web アプリケーションをホストする
+summary: Azure でホストされる Web アプリのプラットフォームを使って Web サイトを作成します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure portal を使用して Web アプリを作成する
+    - Linux を使用して ASP.NET Core Web アプリを作成する
+    - Git を使用して Azure App Service にコードをアップロードする
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.host-a-web-application-with-azure-web-apps.1-introduction
+- learn.host-a-web-application-with-azure-web-apps.2-create-a-web-app-in-the-azure-portal
+- learn.host-a-web-application-with-azure-web-apps.3-exercise-create-a-web-app-in-the-azure-portal
+- learn.host-a-web-application-with-azure-web-apps.4-using-asp.net-core-on-linux
+- learn.host-a-web-application-with-azure-web-apps.5-exercise-create-an-asp.net-core-web-application-on-linux
+- learn.host-a-web-application-with-azure-web-apps.6-upload-your-code-to-azure
+- learn.host-a-web-application-with-azure-web-apps.7-exercise-upload-your-code-to-azure
+- learn.host-a-web-application-with-azure-web-apps.8-summary
+achievement: learn.host-a-web-application-with-azure-web-apps.badge

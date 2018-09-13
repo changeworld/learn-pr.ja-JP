@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: <span data-ttu-id="bb853-101">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="bb853-101">Design for availability and recoverability</span></span>
+metadata:
+  title: <span data-ttu-id="bb853-102">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="bb853-102">Design for availability and recoverability</span></span>
+  description: <span data-ttu-id="bb853-103">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="bb853-103">Design for availability and recoverability</span></span>
+  ms.openlocfilehash: 117976f472c1fbd963e817c54eceda329e181c6b
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847182"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: <span data-ttu-id="bb853-104">知識チェック - 可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="bb853-104">Knowledge check - Design for availability and recoverability</span></span>
+  questions:
+  - content: <span data-ttu-id="bb853-105">顧客に対して確約可能な SLA を決定する際、次のどの事項を考慮する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="bb853-105">Which of the following need to be considered when determing the SLA you can commit to for customers?</span></span>
+    choices:
+    - content: <span data-ttu-id="bb853-106">直接的に管理責任を負うサービスに対して提供できる SLA</span><span class="sxs-lookup"><span data-stu-id="bb853-106">The SLA you can provide for services you are directly responsible for managing</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-107">これは、顧客に対して確約可能な SLA を決定する際の重要な考慮事項ですが、正解はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="bb853-107">This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="bb853-108">アーキテクチャで利用するクラウド サービスの SLA</span><span class="sxs-lookup"><span data-stu-id="bb853-108">The SLA of cloud services that you utilize in your architecture</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-109">これは、顧客に対して確約可能な SLA を決定する際の重要な考慮事項ですが、正解はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="bb853-109">This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="bb853-110">オンプレミスの依存要素に接続するためのネットワーク サービスの SLA</span><span class="sxs-lookup"><span data-stu-id="bb853-110">The SLA of networking services for connectivity to dependencies on-premises</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-111">これは、顧客に対して確約可能な SLA を決定する際の重要な考慮事項ですが、正解はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="bb853-111">This is an important consideration when determining the SLA you can commit to for customers, but is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="bb853-112">顧客に対して確約可能な SLA を決定する際は、上記のすべてを考慮する必要がある</span><span class="sxs-lookup"><span data-stu-id="bb853-112">All of the above would need to be considered when determining the SLA you can commit to for customers</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bb853-113">顧客に対して確約可能な SLA を決定する際は、上記のすべてを考慮する必要がある</span><span class="sxs-lookup"><span data-stu-id="bb853-113">All of the above would need to be considered when determining the SLA you can commit to for customers</span></span>
+  - content: <span data-ttu-id="bb853-114">次のうち、定義された RPO の影響を受けるのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="bb853-114">Which of the following would be impacted by your defined RPO?</span></span>
+    choices:
+    - content: <span data-ttu-id="bb853-115">データベース バックアップの頻度</span><span class="sxs-lookup"><span data-stu-id="bb853-115">The frequency of database backups</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bb853-116">目標復旧時点 (RPO) は許容できるデータ損失の量に関係するため、バックアップの頻度はこの時間枠に収まっている必要があり、定義された RPO に直接影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="bb853-116">Since the recovery point objective is concerned with the amount of data loss that is tolerable, the frequency of backups needs to be within this time window and is directly impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="bb853-117">データのレプリケート先リージョンの数</span><span class="sxs-lookup"><span data-stu-id="bb853-117">The number of regions that data is replicated to</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-118">データのレプリケート先リージョンの数は重要な考慮事項ですが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="bb853-118">The number of regions that data is replicated to is an important consideration, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="bb853-119">データベース クラスター内のインスタンス数</span><span class="sxs-lookup"><span data-stu-id="bb853-119">The number of instances in a database cluster</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-120">データベース クラスター内のインスタンス数は重要な決定事項である可能性がありますが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="bb853-120">The number of instances in a database cluster can be an important decision, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="bb853-121">アプリケーションで使用される負荷分散テクノロジの種類</span><span class="sxs-lookup"><span data-stu-id="bb853-121">The type of load-balancing technology used in your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb853-122">アプリケーションで使用される負荷分散テクノロジの種類は重要な決定事項である可能性がありますが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="bb853-122">The type of load-balancing technology used in your application can be an important decision, but is not impacted by your defined RPO.</span></span>

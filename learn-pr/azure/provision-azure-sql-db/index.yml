@@ -2,28 +2,39 @@
 uid: learn.provision-azure-sql-db
 metadata:
   title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
-  description: TBD
-  ms.openlocfilehash: bb31b897406ba79f232995d82531466cc5882307
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  description: Azure portal と Cloud Shell を使用して、Azure SQL Database をプロビジョニング、接続、および管理します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 7465c205ab0da20b0946c614aa1a2c3b63da47c7
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43229851"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847488"
 title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
-summary: TBD
-abstract: TBD
-cardDescription: TBD
+summary: Azure portal と Cloud Shell を使用して、Azure SQL Database をプロビジョニング、接続、および管理します。
+abstract: >
+  このモジュールでは、次のことを学習します。
+
+  - リレーショナル データベースを運用するとき、Azure SQL Database が選ばれる理由。
+
+  - お使いの Azure SQL Database で利用できる構成と価格帯。
+
+  - ポータルから Azure SQL Database を作成する方法。
+
+  - Azure Cloud Shell を使用して Azure SQL Database に接続し、テーブルを追加し、データを操作する方法。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
-achievement: learn.placeholder.badge
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-sql-database
 units:
 - learn.provision-azure-sql-db.1-introduction
 - learn.provision-azure-sql-db.2-plan-your-database
 - learn.provision-azure-sql-db.3-create-your-database
 - learn.provision-azure-sql-db.4-connect-add-data
 - learn.provision-azure-sql-db.5-summary
+achievement: learn.provision-azure-sql-db.badge

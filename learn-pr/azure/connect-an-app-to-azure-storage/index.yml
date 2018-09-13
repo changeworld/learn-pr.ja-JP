@@ -2,24 +2,30 @@
 uid: learn.connect-app-to-azure-storage
 metadata:
   title: Azure Storage へのアプリの接続
-  description: Azure Storage は、使用するアプリケーション データを、データの種類に関係なく格納する柔軟でシンプルな方法です。 このモジュールでは、.NET Core コンソール アプリケーションを作成し、クライアント ライブラリを使用して Azure Storage に接続する方法を示します。
-  ms.openlocfilehash: 103e84360f6fa44929577ee27933a5a35c8bd72b
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  description: .NET Core コンソール アプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 8c59dd11237c325e8146afa818feee6a8fce49d3
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43228885"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43846859"
 title: Azure Storage へのアプリの接続
 summary: .NET Core コンソール アプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
-abstract: Azure Storage は、使用するアプリケーション データを、データの種類に関係なく格納する柔軟でシンプルな方法です。 このモジュールでは、.NET Core コンソール アプリケーションを作成し、クライアント ライブラリを使用して Azure Storage に接続する方法を示します。
-cardDescription: .NET Core コンソール アプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure Storage がアプリに適しているかどうかを判断します
+    - アプリで Azure Storage を使用するときの設計の考慮事項を評価します
+    - 新しいアプリケーションを作成し、アプリを Azure ストレージ アカウントに接続します。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - developer
 products:
-- Azure
+- azure
+- azure-storage
 units:
 - learn.connect-app-to-azure-storage.1-introduction
 - learn.connect-app-to-azure-storage.2-prepare-your-app-and-azure-storage-account

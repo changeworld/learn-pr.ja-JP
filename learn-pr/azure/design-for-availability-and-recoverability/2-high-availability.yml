@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.2-high-availability
+title: <span data-ttu-id="fd8ff-101">高可用性アーキテクチャの構築</span><span class="sxs-lookup"><span data-stu-id="fd8ff-101">Build a highly available architecture</span></span>
+metadata:
+  title: <span data-ttu-id="fd8ff-102">高可用性アーキテクチャの構築</span><span class="sxs-lookup"><span data-stu-id="fd8ff-102">Build a highly available architecture</span></span>
+  description: <span data-ttu-id="fd8ff-103">高可用性アーキテクチャの構築</span><span class="sxs-lookup"><span data-stu-id="fd8ff-103">Build a highly available architecture</span></span>
+  ms.openlocfilehash: 53f11f27ad81d46d6c615f999c5e043ac5cd8709
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43849009"
+durationInMinutes: 20
+content: >
+  [!include[](includes/2-high-availability.md)]
+quiz:
+  title: <span data-ttu-id="fd8ff-104">知識チェック - 高可用性アーキテクチャの構築</span><span class="sxs-lookup"><span data-stu-id="fd8ff-104">Knowledge Check - Build a highly available architecture</span></span>
+  questions:
+  - content: <span data-ttu-id="fd8ff-105">SLA はサービスの定義に重要です。その理由は何ですか?</span><span class="sxs-lookup"><span data-stu-id="fd8ff-105">An SLA is important to define for your service because</span></span>
+    choices:
+    - content: <span data-ttu-id="fd8ff-106">バックアップ リテンション期間要件を決定するときに役立つ</span><span class="sxs-lookup"><span data-stu-id="fd8ff-106">It helps you determine your backup retention requirements</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-107">バックアップ リテンション期間を定義することは重要ですが、SLA に基づくものではありません。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-107">Backup retention is important to define, but is not driven by SLA.</span></span>
+    - content: <span data-ttu-id="fd8ff-108">顧客に提供するサービスの可用性を決定するときに役立つ</span><span class="sxs-lookup"><span data-stu-id="fd8ff-108">It helps you determine the availablity of your service you will commit to your customers</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fd8ff-109">サービス レベル アグリーメントは、顧客に対するサービスの可用性の確約です。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-109">Service level agreement is a commitement you are making to your customers for the availability of your service.</span></span>
+    - content: <span data-ttu-id="fd8ff-110">それを使ってマネージャーを説得し、仮想マシンの作成を自動化することができる</span><span class="sxs-lookup"><span data-stu-id="fd8ff-110">You can use it to convince your manager to automate virtual machine creation</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-111">議論することはよいことですが、SLA はその結果に影響しないでしょう。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-111">While this is a good discussion to have, your SLA will likely not have any impact on the outcome.</span></span>
+    - content: <span data-ttu-id="fd8ff-112">それを使ってリソースの RBAC の設定を定義できる</span><span class="sxs-lookup"><span data-stu-id="fd8ff-112">You use it to define the RBAC settings for your resources</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-113">RBAC 設定は重要ですが、アプリケーションの SLA には関連しません。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-113">RBAC settings are important, but are not related to the SLA of your application.</span></span>
+  - content: <span data-ttu-id="fd8ff-114">高可用性アーキテクチャで使われないものはどれですか?</span><span class="sxs-lookup"><span data-stu-id="fd8ff-114">Which of the following is not used in a highly available architecture?</span></span>
+    choices:
+    - content: <span data-ttu-id="fd8ff-115">負荷分散</span><span class="sxs-lookup"><span data-stu-id="fd8ff-115">Load balancing</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-116">一般的に、負荷分散は、利用可能なシステムに負荷を分散させたり、障害を起こしたシステムから負荷を取り除いたりするために、高可用性アーキテクチャで使われます。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-116">Load balancing is typically used in a highly available architecture to distribute load to available systems and remove failed systems from load.</span></span>
+    - content: <span data-ttu-id="fd8ff-117">可用性ゾーン</span><span class="sxs-lookup"><span data-stu-id="fd8ff-117">Availability zones</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-118">可用性ゾーンは、リージョン内の複数のデータセンターにシステムを分散させるために、高可用性アーキテクチャで使われます。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-118">Availability zones are used in a highly available architecture to distribute systems across multiple datacenters within a region.</span></span>
+    - content: <span data-ttu-id="fd8ff-119">可用性セット</span><span class="sxs-lookup"><span data-stu-id="fd8ff-119">Availability sets</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fd8ff-120">可用性セットは、局所的な障害やメンテナンス イベントの影響を最低限に抑えるために、高可用性アーキテクチャで使われます。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-120">Availability sets are used in a highly available architecture to minimize impact from localized failures and maintenance events.</span></span>
+    - content: <span data-ttu-id="fd8ff-121">Recovery Services コンテナー</span><span class="sxs-lookup"><span data-stu-id="fd8ff-121">A recovery service vault</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fd8ff-122">Recovery Services コンテナーは、バックアップ先を提供しますが、高可用性アーキテクチャの一部ではありません。</span><span class="sxs-lookup"><span data-stu-id="fd8ff-122">Recovery service vaults provide a destination for backups, but are not part of a highly available architecture.</span></span>

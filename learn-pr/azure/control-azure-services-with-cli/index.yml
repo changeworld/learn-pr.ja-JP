@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.control-azure-services-with-cli
+metadata:
+  title: CLI を使用した Azure サービスの制御
+  description: Azure CLI をローカルにインストールし、それを使用して Azure リソースを管理します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 4c91411059ac9767a0fcc199cd2e336e27e708f1
+  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43847913"
+title: CLI を使用した Azure サービスの制御
+summary: Azure CLI をローカルにインストールし、それを使用して Azure リソースを管理します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Linux、macOS、Windows 上に Azure CLI をインストールする
+    - Azure CLI を使用して Azure サブスクリプションに接続する
+    - Azure CLI を使用して Azure リソースを作成する
+prerequisites: >
+  - PowerShell または Bash などのコマンド ライン インターフェイスのエクスペリエンス
+
+  - リソース グループなど、Azure の基本的な概念に関する知識
+
+  - Azure portal を使用した Azure リソースの管理経験
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-clis
+units:
+- learn.control-azure-services-with-cli.1-introduction
+- learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+- learn.control-azure-services-with-cli.3-exercise-install-and-run-the-azure-cli
+- learn.control-azure-services-with-cli.4-work-with-the-cli
+- learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+- learn.control-azure-services-with-cli.6-summary
+achievement: learn.control-azure-services-with-cli.badge
