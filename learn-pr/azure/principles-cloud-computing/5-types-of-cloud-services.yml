@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
-uid: principles-cloud-computing.5-types-of-cloud-services
-title: <span data-ttu-id="e3ffd-101">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="e3ffd-101">Types of cloud services</span></span>
+uid: learn.principles-cloud-computing.5-types-of-cloud-services
+title: <span data-ttu-id="a7365-101">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="a7365-101">Types of cloud services</span></span>
 metadata:
-  title: <span data-ttu-id="e3ffd-102">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="e3ffd-102">Types of cloud services</span></span>
-  description: <span data-ttu-id="e3ffd-103">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="e3ffd-103">Types of cloud services</span></span>
+  title: <span data-ttu-id="a7365-102">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="a7365-102">Types of cloud services</span></span>
+  description: <span data-ttu-id="a7365-103">クラウド サービスの種類</span><span class="sxs-lookup"><span data-stu-id="a7365-103">Types of cloud services</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 75851fb0e2565e8b9a35e04248a4c7a30c363772
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 343fda4ed580f5e5c12ba9a251875d45e3ac5553
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234919"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44372139"
 durationInMinutes: 10
 content: '[!include[](includes/5-types-of-cloud-services.md)]'

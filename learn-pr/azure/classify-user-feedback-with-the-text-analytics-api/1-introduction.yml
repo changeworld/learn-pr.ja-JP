@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.1-introduction
-title: <span data-ttu-id="d7f62-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="d7f62-101">Introduction</span></span>
+title: <span data-ttu-id="202c0-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="202c0-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="d7f62-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="d7f62-102">Introduction</span></span>
-  description: <span data-ttu-id="d7f62-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="d7f62-103">Introduction</span></span>
-  ms.openlocfilehash: 49dba63febbf667d96f7e27ed8e1e71e4d230914
-  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  title: <span data-ttu-id="202c0-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="202c0-102">Introduction</span></span>
+  description: <span data-ttu-id="202c0-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="202c0-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5d011f857aaa7b79496c9b639d8af94ec8805b23
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44258129"
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44371799"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

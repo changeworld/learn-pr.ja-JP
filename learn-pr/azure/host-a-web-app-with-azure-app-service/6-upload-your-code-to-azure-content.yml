@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-app-service.6-upload-your-code-to-azure
+title: <span data-ttu-id="41436-101">デプロイ スロットの使用</span><span class="sxs-lookup"><span data-stu-id="41436-101">Using deployment slots</span></span>
+metadata:
+  title: <span data-ttu-id="41436-102">デプロイ スロットの使用</span><span class="sxs-lookup"><span data-stu-id="41436-102">Using deployment slots</span></span>
+  description: <span data-ttu-id="41436-103">デプロイ スロットの使用</span><span class="sxs-lookup"><span data-stu-id="41436-103">Using deployment slots</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d0939519de8f8ec19d0ea36f605ddc3eb98772ad
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44373048"
+durationInMinutes: 10
+content: '[!include[](includes/6-upload-your-code-to-azure.md)]'
