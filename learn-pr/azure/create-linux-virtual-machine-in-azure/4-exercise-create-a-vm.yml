@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.4-exercise-create-a-vm
-title: <span data-ttu-id="909c8-101">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="909c8-101">Create a Linux virtual machine with the Azure portal</span></span>
+title: <span data-ttu-id="6c584-101">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="6c584-101">Create a Linux virtual machine with the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="909c8-102">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="909c8-102">Create a Linux virtual machine with the Azure portal</span></span>
-  description: <span data-ttu-id="909c8-103">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="909c8-103">Create a Linux virtual machine with the Azure portal</span></span>
-  ms.openlocfilehash: 28f5d7bd7c55a445912c04e2c533ba870423d1f8
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="6c584-102">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="6c584-102">Create a Linux virtual machine with the Azure portal</span></span>
+  description: <span data-ttu-id="6c584-103">Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="6c584-103">Create a Linux virtual machine with the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 83fb2fb8d99fff34abaca0983c1a9fc20d098087
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43834694"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307622"
 durationInMinutes: 20
+azureSandbox: true
 content: '[!include[](includes/4-exercise-create-a-vm.md)]'
