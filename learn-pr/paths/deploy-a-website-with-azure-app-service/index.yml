@@ -1,27 +1,26 @@
 ### YamlMime:LearningPath
 uid: learn.deploy-a-website-with-azure-app-service
 metadata:
-  title: Deploy a website to Azure with Azure App Service
-  description: Web apps in Azure allow you to publish and manage your website easily without having to work with the underlying servers, storage, or network assets. Instead, you can focus on your website features and rely on the robust Azure platform to provide secure access to your site.
+  title: Azure App Service を使用して Web サイトを Azure にデプロイする
+  description: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Deploy a website to Azure with Azure App Service
-summary: Web apps in Azure allow you to publish and manage your website easily without having to work with the underlying servers, storage, or network assets. Instead, you can focus on your website features and rely on the robust Azure platform to provide secure access to your site.
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 0799ae4438edc35c2710d7619a452b1d3e760aa4
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826078"
+title: Azure App Service を使用して Web サイトを Azure にデプロイする
+summary: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - developer
-products: 
+products:
 - azure
 modules:
 - learn.host-a-web-application-with-azure-web-apps
-#TODO: Add - learn.cd-pipeline-github-to-azure-web-app (POST-IGNITE)
 - learn.publish-azure-web-app-with-visual-studio
 achievement: learn.deploy-a-website-with-azure-app-service.trophy

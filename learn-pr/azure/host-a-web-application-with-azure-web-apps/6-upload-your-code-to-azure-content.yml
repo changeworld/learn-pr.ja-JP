@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.6-upload-your-code-to-azure
+title: デプロイ スロットの使用
+metadata:
+  title: デプロイ スロットの使用
+  description: デプロイ スロットの使用
+  ms.openlocfilehash: ff7b657ee9b4dafc938ab04ab370ff46ecfb889e
+  ms.sourcegitcommit: 7cb102aab9e02ef52429d61a119a574c7ad3b2fb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43725615"
+durationInMinutes: 10
+content: '[!include[](includes/6-upload-your-code-to-azure.md)]'

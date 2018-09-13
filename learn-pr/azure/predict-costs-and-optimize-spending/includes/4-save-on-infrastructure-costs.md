@@ -16,7 +16,7 @@ Azure Cost Management と Azure Advisor によって VM の適切なサイズ設
 
 サイズ超過の仮想マシンがあると、Azure に一般的な不要経費がかかりますが、簡単に修正できます。 Azure portal、Azure PowerShell、または Azure CLI を使用して、VM のサイズを変更することができます。
 
-> [!NOTE]
+> [!TIP]
 > VM のサイズを変更するには、VM を停止し、サイズを変更してから再起動する必要があります。 サイズ変更の大きさによっては、数分かかる場合があります。 停止を計画するか、このタスクの実行中に別のインスタンスにトラフィックをシフトします。
 
 ## <a name="deallocate-virtual-machines-in-off-hours"></a>業務時間外に仮想マシンの割り当てを解除する

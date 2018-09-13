@@ -1,12 +1,12 @@
-You've learned how to use Azure Functions to host business logic services in the cloud. It's a great way to add hosted services to your solution that can scale and grow with your business. You focus on the code using the language of your choice, and Azure manages the infrastructure. Functions can integrate with other services, like Event Grid, GitHub, Twilio, Microsoft Graph, and Logic Apps to create complex and robust serverless workflows quickly and easily.
+Azure Functions を使用して、クラウドでビジネス ロジック サービスをホストする方法について学習しました。 この方法はホストされたサービスを、ビジネスを拡大および成長させることができるご自分のソリューションに追加するのに最適です。 好みの言語を使用してコードに集中することができ、インフラストラクチャは Azure によって管理されます。 Functions を、Event Grid、GitHub、Twilio、Microsoft Graph、Logic Apps などの他のサービスと統合することで、複雑で堅牢なサーバーレス ワークフローを迅速かつ簡単に作成することができます。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
+## <a name="clean-up-your-resources"></a>リソースをクリーンアップする
+<!---TODO: Do we need to include cleanup for the free education tier?---> Azure 関数はトリガーされたときにのみ実行されますが、演習で作成したリソースを削除したい場合があります。
 
-Although Azure functions run only when they're triggered, you may want to remove the resources we created in the exercise.
+1. ご自分の Azure アカウントを使用して [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true) using your Azure account.
+1. 左側のメニューで **[すべてのリソース]** を選んで、**[escalator-functions-group]** を選択して、最初の演習で作成したリソース グループにアクセスします。
 
-1. Access the resource group you created in the first exercise by choosing **All resources** in the left-hand menu, and then selecting **escalator-functions-group**.
+1. ツールバーで、**[リソース グループの削除]** ボタンを押します。 削除するリソース グループの名前を入力するように求められます。 完了したら、**[削除]** ボタンを押します。  
 
-1. In the toolbar, press the **Delete resource group** button. You will be asked to type in the name of the resource group to be deleted. Press the **Delete** button once complete.
+![リソース グループの削除](../media-draft/6-cleanup.png)

@@ -1,18 +1,18 @@
-Software as a service (SaaS) allows users to connect to and use cloud-based apps over the Internet. Common examples are email, calendaring, and office tools such as Microsoft Office 365. SaaS provides a complete software solution that you purchase on a pay-as-you-go basis from a cloud service provider. You can *rent* the use of an application for your organization. Your users connect to the service over the Internet, usually with a web browser. All of the underlying infrastructure, middleware, app software, and app data are located in the service provider’s data center. The service provider manages the hardware and software, and with the appropriate service agreement, will ensure the availability and the security of the app and your data as well. SaaS allows your organization to get quickly up and running with an app at minimal upfront cost.
+サービスとしてのソフトウェア (SaaS) を使用すると、ユーザーはインターネット経由でクラウドベースのアプリに接続して使用することができます。 一般的な例には、電子メール、予定表機能、および Microsoft Office 365 などの Office ツールがあります。 SaaS では、クラウド サービス プロバイダーから従量課金制で購入する完全なソフトウェア ソリューションを提供します。 組織用にアプリケーションの使用を "*レンタル*" できます。 ユーザーはインターネット経由で、通常は Web ブラウザーを使用して、サービスに接続します。 基になるインフラストラクチャ、ミドルウェア、アプリ ソフトウェア、およびアプリのデータはすべて、サービス プロバイダーのデータ センターに配置されます。 サービス プロバイダーがハードウェアとソフトウェアを管理し、適切なサービス契約を結ぶことで、アプリとデータの可用性とセキュリティも保証されます。 SaaS を使用すると、組織は最小限の初期費用ですばやくアプリを立ち上げて実行することができます。
 
-If you’ve used a web-based email service such as Outlook, Hotmail, or Yahoo! Mail, then you’ve already used a form of SaaS. With these services, you log into your account over the Internet, often from a web browser. The email software is located on the service provider’s network, and your messages are stored there too. You can access your email and stored messages from a web browser on any computer or Internet-connected device.
+Outlook、Hotmail、Yahoo! メールなどの Web ベースの電子メール サービスを使用したことがある場合は、 既に SaaS の形式を使っています。 これらのサービスでは、多くの場合、Web ブラウザーからインターネット経由で自分のアカウントにログインします。 メール ソフトウェアは、サービス プロバイダーのネットワーク上に配置され、ユーザーのメッセージもそこに保存されます。 自分の電子メールと保存されているメッセージには、任意のコンピューターまたはインターネットに接続されたデバイスの Web ブラウザーからアクセスできます。
 
-### Common scenarios
+### <a name="common-scenarios"></a>一般的なシナリオ
 
-Let's imagine your healthcare company requires a customer relationship management (CRM) solution for its sales team. The team is global. You can use a SaaS CRM provider to quickly implement a solution to your organization's sales team.
+あなたの勤務先の医療関連企業で、自社の営業チーム向けのカスタマー リレーションシップ マネジメント (CRM) ソリューションが必要になったとしましょう。 チームはグローバルです。 あなたは、SaaS CRM プロバイダーを使用して、組織の営業チームにソリューションをすばやく実装することができます。
 
-For organizational use, you can rent productivity apps, such as email, collaboration, and calendaring; and sophisticated business applications such as customer relationship management (CRM), enterprise resource planning (ERP), and document management. You pay for the use of these apps by subscription or according to the level of use.
+組織で使用するため、あなたは電子メール、コラボレーション、およびカレンダーなどの生産性アプリや、カスタマー リレーションシップ マネジメント (CRM)、エンタープライズ リソース プランニング (ERP)、およびドキュメント管理などの高度なビジネス アプリケーションをレンタルすることができます。 これらのアプリの使用に対する支払いは、サブスクリプション、または使用レベルに応じて支払います。
 
-### Advantages
+### <a name="advantages"></a>長所
 
-**Gain access to sophisticated applications:** To provide SaaS apps to users, you don’t need to purchase, install, update, or maintain any hardware, middleware, or software. SaaS makes even sophisticated enterprise applications, such as ERP and CRM, affordable for organizations that lack the resources to buy, deploy, and manage the required infrastructure and software themselves.
-Pay only for what you use. You also save money because the SaaS service automatically scales up and down according to the level of usage.
+**高度なアプリケーションへのアクセス:** SaaS アプリをユーザーに提供するために、ハードウェア、ミドルウェア、またはソフトウェアを購入、インストール、更新、またはメンテナンスする必要はありません。 SaaS により、ERP や CRM などのさらに高度なエンタープライズ アプリケーションが、必要なインフラストラクチャとソフトウェアを購入、デプロイ、および管理するためのリソースが不足している組織に手の届くものになります。
+使用した分だけ支払えばよいのです。 SaaS サービスは、使用レベルに応じて自動的にスケール アップまたはスケール ダウンするため、コストも節約できます。
 
-**Use free client software:** Users can run most SaaS apps directly from their web browser without needing to download and install any software. You don't need to purchase or deploy client software for your users.
+**無料のクライアント ソフトウェアを使用:** ユーザーは、ソフトウェアをダウンロードしてインストールすることなく、自分の Web ブラウザーから直接、ほとんどの SaaS アプリを実行することができます。 ユーザーのためにクライアント ソフトウェアを購入したりデプロイしたりする必要はありません。
 
-**Access app data from anywhere:** With data stored in the cloud, users can access their information from any Internet-connected computer or mobile device. And as app data is stored in the cloud, no data is lost if a user’s computer or device fails.
+**どこからでもアプリ データにアクセス:** データがクラウドに格納されているため、ユーザーはインターネットに接続された任意のコンピューターまたはモバイル デバイスから、自身の情報にアクセスできます。 また、アプリ データがクラウドに保存されているため、ユーザーのコンピューターやデバイスが故障した場合でも、データが失われることがありません。

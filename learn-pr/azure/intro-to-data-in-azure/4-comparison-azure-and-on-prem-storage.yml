@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-data-in-azure.4-comparison-azure-and-on-prem-storage
-title: Comparison between Azure Storage and on-premises storage
+title: Azure Storage とオンプレミス ストレージの比較
 metadata:
-  title: Comparison between Azure Storage and on-premises storage
-  description: Comparison between Azure Storage and on-premises storage
-  ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: Azure Storage とオンプレミス ストレージの比較
+  description: Azure Storage とオンプレミス ストレージの比較
+  ms.openlocfilehash: e283803eaaf60551481704a92eb2c0c2d8250cb0
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675442"
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-comparison-azure-and-on-prem-storage.md)]
+content: '[!include[](includes/4-comparison-azure-and-on-prem-storage.md)]'

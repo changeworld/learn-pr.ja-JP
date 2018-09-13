@@ -1,15 +1,15 @@
-When you turn on a light, you simply want the light to work. You know you need electricity for that to happen, but in that moment, the details of how the electricity gets to the light bulb aren’t important. You might not think about electricity being created in a power plant, traveling through large network of high-voltage transmission lines to your town, going through a substation, and eventually making its way into your home.
+照明に電源を入れると、単純に明かりがつきます。 そのためには電気が必要ですが、その際、電気がどのように電球に供給されているかに関する細かな情報は重要ではありません。 発電所で作られた電気が、大規模な高圧送電線網をとおして自分の住む街に届けられ、変電所を経由して、最終的に自宅に届けられることについて、考えることはないでしょう。
 
-![Clouds over a skyline representing electricity being delivered](../media/1-heading.png)
+![届けられる電気を表す地平線の上の雲](../media/1-heading.png)
 
-The process of turning on a light is hidden behind the simple act of flipping a switch. At this point, electricity becomes a utility, which has many benefits. First, you only pay for what you need. When you buy a light bulb, you don’t pay your electricity provider up front for how long you could possibly use it. Instead, you pay for the amount that you actually use. Second, you don’t have to worry about how power plants upgrade to the latest technology. Finally, you don’t have to manage scaling the electricity. For example, as people move to your town, you can rest assured that your light will stay on.
+照明をつけるプロセスは、スイッチを入れるという単純な行為の後ろに隠れています。 この時点で、電気はユーティリティとなり、さまざまな利点があります。 まず、必要な分だけ料金を払います。 電球を購入するとき、その電球を使用できる期間の料金を電気会社に前払いすることはありません。 そうではなく、実際の使用量に対して料金を払います。 第 2 に、発電所がどのように最新のテクノロジーにアップグレードするかについて心配する必要がありません。 最後に、電力のスケーリングを管理する必要がありません。 たとえば、あなたの住む街に引っ越す人がいても、あなたの家の灯りが消えることはありません。
 
-As a technology professional, it would be nice to have these same benefits when developing and deploying applications. Storing data, streaming video, or even hosting a website all require managing hardware and software. This management is an unnecessary obstacle when delivering your application to your users. Luckily there is a solution to this problem: **cloud computing**.
+テクノロジのプロフェッショナルであれば、アプリケーションを開発して展開するとき、同じくこれらの利点を取り入れることをお勧めします。 データの格納、動画の配信、さらには Web サイトのホストも、すべてハードウェアとソフトウェアの管理を必要とします。 アプリケーションをユーザーに届けるとき、この管理は不要な障害物となります。 幸運にも、この問題には解決策があります。**クラウド コンピューティング**です。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Explore common cloud computing services
-- Explore the benefits of cloud computing
-- Decide which cloud deployment model is best for you
+- 一般的なクラウド コンピューティング サービスについて知る
+- クラウド コンピューティングのメリットについて知る
+- 自分に最適なクラウド デプロイ モデルを判断する

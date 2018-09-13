@@ -1,10 +1,10 @@
 
-In this module, you explored the concepts of cloud computing. Cloud computing is the provisioning of services and applications on demand over the internet. Servers, applications, data, and other resources are provided as a service. 
+このモジュールでは、クラウド コンピューティングの概念について学習しました。 クラウド コンピューティングとは、インターネット経由でサービスとアプリケーションをオンデマンドでプロビジョニングすることです。 サーバー、アプリケーション、データ、およびその他のリソースは、サービスとして提供されます。 
 
-Cloud computing resources are delivered using three different service models:
+クラウド コンピューティング リソースは、次の 3 つの異なるサービス モデルを使用して提供されます。
 
-1. Infrastructure-as-a-service (IaaS) provides instant computing infrastructure that you can provision and manage over the Internet.
+1. インフラストラクチャとしてのサービス (IaaS) は、インターネット経由でプロビジョニングと管理ができるインスタント コンピューティング インフラストラクチャを提供します。
 
-2. Platform as a service (PaaS) provides ready-made development and deployment environments that you can use to deliver your own cloud services.
+2. サービスとしてのプラットフォーム (PaaS) は、独自のクラウド サービスを提供するために使用できる既製の開発環境と展開環境を提供します。
 
-3. Software as a service (or SaaS) delivers applications over the Internet as a web-based service.
+3. サービスとしてのソフトウェア (SaaS) は、Web ベースのサービスとしてアプリケーションをインターネット経由で提供します。
