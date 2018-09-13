@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.2-deep-learning-101
+title: <span data-ttu-id="7a517-101">ディープ ラーニング 101</span><span class="sxs-lookup"><span data-stu-id="7a517-101">Deep learning 101</span></span>
+metadata:
+  title: <span data-ttu-id="7a517-102">ディープ ラーニング 101</span><span class="sxs-lookup"><span data-stu-id="7a517-102">Deep learning 101</span></span>
+  description: <span data-ttu-id="7a517-103">ディープ ラーニング 101</span><span class="sxs-lookup"><span data-stu-id="7a517-103">Deep learning 101</span></span>
+  displayType: one-column
+  ms.openlocfilehash: d78e6b825b5a788e1d6331ee240b976826c8918d
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835506"
+durationInMinutes: 2
+content: '[!include[](includes/2-deep-learning-101.md)]'

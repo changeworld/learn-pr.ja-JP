@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.1-create-web-app-bot
+title: <span data-ttu-id="1d863-101">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="1d863-101">Create an Azure web app bot</span></span>
+metadata:
+  title: <span data-ttu-id="1d863-102">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="1d863-102">Create an Azure web app bot</span></span>
+  description: <span data-ttu-id="1d863-103">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="1d863-103">Create an Azure web app bot</span></span>
+  ms.openlocfilehash: dd2bf4b504682dd3fdbc9ac1f2ad41b00d04c35f
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43362687"
+durationInMinutes: 10
+content: '[!include[](includes/1-create-web-app-bot.md)]'

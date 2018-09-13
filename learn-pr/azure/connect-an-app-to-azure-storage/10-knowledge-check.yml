@@ -1,0 +1,36 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.10-knowledge-check
+title: <span data-ttu-id="f2e73-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="f2e73-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="f2e73-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="f2e73-102">Knowledge check</span></span>
+  description: <span data-ttu-id="f2e73-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="f2e73-103">Knowledge check</span></span>
+  ms.openlocfilehash: 83099397375194d754264742692de050de30603c
+  ms.sourcegitcommit: 850ce909966600e7a8d6f89d8bdebbb621416838
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43479610"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="f2e73-104">Azure Storage への接続</span><span class="sxs-lookup"><span data-stu-id="f2e73-104">Connecting to Azure Storage</span></span>
+  questions:
+  - content: <span data-ttu-id="f2e73-105">Azure ストレージ アカウントにアクセスするためにアクセス キーはいくつ提供されますか。</span><span class="sxs-lookup"><span data-stu-id="f2e73-105">How many access keys are provided for accessing your Azure storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e73-106">1</span><span class="sxs-lookup"><span data-stu-id="f2e73-106">1</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f2e73-107">2</span><span class="sxs-lookup"><span data-stu-id="f2e73-107">2</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e73-108">3</span><span class="sxs-lookup"><span data-stu-id="f2e73-108">3</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f2e73-109">4</span><span class="sxs-lookup"><span data-stu-id="f2e73-109">4</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="f2e73-110">通常、Azure Storage 接続文字列はアプリ内のどこに保存されますか。</span><span class="sxs-lookup"><span data-stu-id="f2e73-110">Where are Azure Storage connection strings typically stored within your app?</span></span>
+    choices:
+    - content: <span data-ttu-id="f2e73-111">アプリケーション コードにハードコード</span><span class="sxs-lookup"><span data-stu-id="f2e73-111">Hard-coded in the application code</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f2e73-112">構成ファイル、環境変数、データベースなど、構成システム内</span><span class="sxs-lookup"><span data-stu-id="f2e73-112">Within a configuration system such as a configuration file, environment variable, or database</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="f2e73-113">実行時にアプリに入力</span><span class="sxs-lookup"><span data-stu-id="f2e73-113">Entered into the app at runtime</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="f2e73-114">リソース ファイルとしてコンパイルされ、アプリ アセンブリに組み込まれる</span><span class="sxs-lookup"><span data-stu-id="f2e73-114">Compiled and embedded into the app assembly as a resource file</span></span>
+      isCorrect: false

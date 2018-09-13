@@ -1,0 +1,100 @@
+<span data-ttu-id="b6f4f-101">Windows VM の展開が完了して起動されていますが、タスクを行うための設定が行われていません。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-101">We have our Windows VM deployed and running, but it's not configured to do any work.</span></span>
+
+<span data-ttu-id="b6f4f-102">今回使用するシナリオは映像処理システムであることを思い返してください。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-102">Recall our scenario is a video processing system.</span></span> <span data-ttu-id="b6f4f-103">プラットフォームは FTP を通じてファイルを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-103">Our platform receives files through FTP.</span></span> <span data-ttu-id="b6f4f-104">サーバー上のフォルダにマップされた既知の URL に向けて、交通カメラが映像クリップをアップロードします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-104">The traffic cameras upload video clips to a known URL which is mapped to a folder on the server.</span></span> <span data-ttu-id="b6f4f-105">各 Windows VM 上のカスタム ソフトウェアがサービスとして実行され、フォルダを監視してアップロードされたそれぞれのクリップを処理します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-105">The custom software on each Windows VM runs as a service and watches the folder and processes each uploaded clip.</span></span> <span data-ttu-id="b6f4f-106">その後、正規化された映像を他の Azure サービス上で実行されているアルゴリズムに渡します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-106">It then passes the normalized video to our algorithms running on other Azure services.</span></span>
+
+<span data-ttu-id="b6f4f-107">このシナリオをサポートするためには、いくつかの設定を行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-107">There are a few things we would need to configure to support this scenario:</span></span>
+
+- <span data-ttu-id="b6f4f-108">FTP をインストールして通信を行うのに必要なポートを開ける。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-108">Install FTP and open the ports it needs to communicate.</span></span>
+- <span data-ttu-id="b6f4f-109">都市のカメラ システムにあわせた独自の映像コーデックをインストールする。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-109">Install the proprietary video codec unique to the city's camera system.</span></span>
+- <span data-ttu-id="b6f4f-110">アップロードされた映像を処理するためのトランスコード サービスをインストールする。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-110">Install our transcoding service that processes uploaded videos.</span></span>
+
+<span data-ttu-id="b6f4f-111">これらの多くは一般的な管理上のタスクであり、ここでは実際にカバーしません。そしてインストールするソフトウェアもありません。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-111">Many of these are typical administrative tasks we won't actually cover here, and we don't have software to install.</span></span> <span data-ttu-id="b6f4f-112">代わりに、Remote Desktop を使用してカスタムまたはサードパーティ製のソフトウェアをインストール_する_方法を、手順ごとにご紹介します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-112">Instead, we will walk through the steps and show you how you _could_ install custom or 3rd party software using Remote Desktop.</span></span> <span data-ttu-id="b6f4f-113">それでは、接続情報の取得から始めましょう。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-113">Let's start by getting the connection information.</span></span>
+
+## <a name="connect-to-the-vm-with-remote-desktop-protocol"></a><span data-ttu-id="b6f4f-114">Remote Desktop Protocol を使って VM に接続する</span><span class="sxs-lookup"><span data-stu-id="b6f4f-114">Connect to the VM with Remote Desktop Protocol</span></span>
+
+<span data-ttu-id="b6f4f-115">RDP クライアントを使って Azure VM に接続するには、次が必要になります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-115">To connect to an Azure VM with an RDP client, you will need:</span></span>
+
+- <span data-ttu-id="b6f4f-116">VM のパブリック IP アドレス（VM がお客様のネットワークへの接続設定をされている場合はプライベート アドレス）。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-116">The public IP address of the VM (or private if the VM is configured to connect to your network).</span></span>
+- <span data-ttu-id="b6f4f-117">ポート番号。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-117">The port number.</span></span>
+
+<span data-ttu-id="b6f4f-118">この情報を RDP クライアントに入力するか、事前設定された **RDP** ファイルをダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-118">You can enter this information into the RDP client, or download a pre-configured **RDP** file.</span></span>
+
+### <a name="download-the-rdp-file"></a><span data-ttu-id="b6f4f-119">RDP ファイルのダウンロード</span><span class="sxs-lookup"><span data-stu-id="b6f4f-119">Download the RDP file</span></span>
+
+1. <span data-ttu-id="b6f4f-120">[Azure portal](https://portal.azure.com?azure-portal=true) 内で、以前に作成した仮想マシンの**概要**パネルが開かれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-120">In the [Azure portal](https://portal.azure.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open.</span></span> <span data-ttu-id="b6f4f-121">もしパネルを開く必要がある場合は、**すべてのリソース**下で VM を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-121">You can find the VM under **All Resources** if you need to open it.</span></span> <span data-ttu-id="b6f4f-122">概要パネルには、VM に関する多数の情報があります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-122">The overview panel has a lot of information about the VM.</span></span>
+
+    - <span data-ttu-id="b6f4f-123">VM が起動中か否かを確認可能。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-123">You can see whether the VM is running.</span></span>
+    - <span data-ttu-id="b6f4f-124">VM の停止または再起動。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-124">Stop or restart it.</span></span>
+    - <span data-ttu-id="b6f4f-125">VM へ接続するためのパブリック IP アドレスを取得。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-125">Get the public IP address to connect to the VM.</span></span>
+    - <span data-ttu-id="b6f4f-126">CPU、ディスク、およびネットワークの活動状況を確認。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-126">See the activity of the CPU, disk, and network.</span></span>
+
+1. <span data-ttu-id="b6f4f-127">パネル最上部の**接続**ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-127">Click the **Connect** button at the top of the pane.</span></span>
+
+1. <span data-ttu-id="b6f4f-128">**仮想マシンへの接続**ブレード内で、**IP アドレス**および**ポート番号**設定を控えたあと、**RDP ファイルのダウンロード**をクリックしてコンピュータに保存します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-128">In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings, then click **Download RDP File** and save it to your computer.</span></span>
+
+1. <span data-ttu-id="b6f4f-129">接続するまえに、いくつかの設定を調整しましょう。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-129">Before we connect, let's adjust a few settings.</span></span> <span data-ttu-id="b6f4f-130">Windows では、Explorer を使ってファイルを探し、右クリックをして**編集**を選択します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-130">On Windows, find the file using Explorer, right-click and select **Edit**.</span></span> <span data-ttu-id="b6f4f-131">MacOS では、まず RDP クライアントを使ってファイルを開く必要があります。その後表示されているリスト内のアイテムを右クリックし、**編集**を選択します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-131">On MacOS you will need to open the file first with the RDP client and then right-click on the item in the displayed list and select **Edit**.</span></span>
+
+1. <span data-ttu-id="b6f4f-132">さまざまな設定を調整して、Azure VM への接続エクスペリエンスを制御することが可能です。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-132">You can adjust a variety of settings to control the experience in connecting to the Azure VM.</span></span> <span data-ttu-id="b6f4f-133">調べる設定は以下のようなものがあります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-133">The settings you will want to examine are:</span></span>
+
+    - <span data-ttu-id="b6f4f-134">**表示**：デフォルトではフルスクリーンになっています。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-134">**Display**: By default, it will be full screen.</span></span> <span data-ttu-id="b6f4f-135">この項目をより低解像度に変更したり、複数のモニタを持っている場合はすべてのモニタを使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-135">You can change this to a lower resolution, or use all your monitors if you have more than one.</span></span>
+    - <span data-ttu-id="b6f4f-136">**ローカル リソース**：ローカル ドライブを VM と共有することで、PC から VM へファイルをコピーすることができるようになります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-136">**Local Resources**: You can share local drives with the VM - allowing you to copy files from your PC to the VM.</span></span> <span data-ttu-id="b6f4f-137">**ローカルのデバイスおよびリソース**の下にある**詳細**ボタンをクリックして、共有するものを選択します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-137">Click the **More** button under **Local devices and resources** to select what is shared.</span></span>
+    - <span data-ttu-id="b6f4f-138">**エクスペリエンス**：ネットワーク品質に基づいてビジュアル エクスペリエンスを調整します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-138">**Experience**: Adjust the visual experience based on your network quality.</span></span>
+
+1. <span data-ttu-id="b6f4f-139">VM から可視化するために、ローカルの C: を共有します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-139">Share your Local C: drive so it will be visible to the VM.</span></span>
+
+1. <span data-ttu-id="b6f4f-140">**一般**タブに戻り、**保存**をクリックして変更を保存します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-140">Switch back to the **General** tab and click **Save** to save the changes.</span></span> <span data-ttu-id="b6f4f-141">他の設定を試すために、いつでもこのファイルの編集に戻ってくることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-141">You can always come back and edit this file later to try other settings.</span></span>
+
+### <a name="connect-to-the-windows-vm"></a><span data-ttu-id="b6f4f-142">Windows VM に接続する</span><span class="sxs-lookup"><span data-stu-id="b6f4f-142">Connect to the Windows VM</span></span>
+
+1. <span data-ttu-id="b6f4f-143">**接続**ボタンをクリックして、VM への接続を開始します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-143">Click the **Connect** button to start the connection to the VM.</span></span>
+
+1. <span data-ttu-id="b6f4f-144">**リモート デスクトップ接続** ダイアログ ボックスで、セキュリティに関する警告とリモート コンピューターの IP アドレスをメモしてから **接続** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-144">In the **Remote Desktop Connection** dialog box, note the security warning and the remote computer IP address, then click **Connect**.</span></span>
+
+1. <span data-ttu-id="b6f4f-145">**Windows Security** のダイアログ ボックス内で、手順 6 および 7 で使用したユーザー名とパスワードを入力します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-145">In the **Windows Security** dialog box, enter your username and password that you used in steps 6 and 7.</span></span>
+    
+    > [!NOTE]
+    > <span data-ttu-id="b6f4f-146">VM への接続に Windows クライアントを使用している場合、マシン上の既知の ID にデフォルト設定されます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-146">If you are using a Windows client to connect to the VM, it will default to known identities on your machine.</span></span> <span data-ttu-id="b6f4f-147">**複数の選択肢**オプションをクリックして「違うアカウントを使用する」を選択することで、別のユーザー名、パスワードまたはその組み合わせを入力することができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-147">You can click the **More choices** option and select "Use a different account" to let you enter a different username/password combination.</span></span>
+    
+1. <span data-ttu-id="b6f4f-148">2 番目の **リモート デスクトップ接続** ダイアログ ボックスで、証明書に関するエラーをメモしてから **はい** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-148">In the second **Remote Desktop Connection** dialog box, note the certificate errors, then click **Yes**.</span></span>
+
+### <a name="install-worker-roles"></a><span data-ttu-id="b6f4f-149">ワーカー ロールのインストール</span><span class="sxs-lookup"><span data-stu-id="b6f4f-149">Install worker roles</span></span>
+
+<span data-ttu-id="b6f4f-150">Windows サーバー VM への初回接続時は、サーバー マネージャーが起動します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-150">The first time you connect to a Windows server VM, it will launch Server Manager.</span></span> <span data-ttu-id="b6f4f-151">これによって、一般的なウェブまたはデータ タスクのワーカー ロールを割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-151">This allows you to assign a worker role for common web or data tasks.</span></span> <span data-ttu-id="b6f4f-152">Start メニューからもサーバー マネージャーを立ち上げることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-152">You can also launch the Server Manager through the Start Menu.</span></span>
+
+<span data-ttu-id="b6f4f-153">ここで、サーバーに Web Server のロールを追加します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-153">This is where we would add the Web Server role to the server.</span></span> <span data-ttu-id="b6f4f-154">これによって IIS がインストールされ、設定の一環として HTTP リクエストがオフになり、FTP サーバーが有効になります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-154">This will install IIS and as part of the configuration you would turn off HTTP requests and enable the FTP server.</span></span> <span data-ttu-id="b6f4f-155">または、IIS の代わりにサードパーティー製の FTP サーバーをインストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-155">Or, we could ignore IIS and install a 3rd party FTP server.</span></span> <span data-ttu-id="b6f4f-156">その後 FTP サーバーを設定し、VM に追加したビッグ データ ドライブのフォルダへのアクセスを有効にします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-156">We'd then configure the FTP server to allow access to a folder on our big data drive we added to the VM.</span></span>
+
+<span data-ttu-id="b6f4f-157">ここでは実際の設定は行いませんので、サーバー マネージャーを閉じます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-157">Since we aren't going to actually configure that here, just close Server Manager.</span></span>
+
+## <a name="install-custom-software"></a><span data-ttu-id="b6f4f-158">カスタム ソフトウェアのインストール</span><span class="sxs-lookup"><span data-stu-id="b6f4f-158">Install custom software</span></span>
+
+<span data-ttu-id="b6f4f-159">ソフトウェアをインストールする際に使用できる、2 種類のアプローチがあります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-159">We have two approaches we can use to install software.</span></span> <span data-ttu-id="b6f4f-160">先ず、この VM はインターネットに接続されています。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-160">First, this VM is connected to the Internet.</span></span> <span data-ttu-id="b6f4f-161">必要なソフトウェアがダウンロード可能なインストーラを提供している場合、RDP セッション内でウェブ ブラウザを開き、ソフトウェアをダウンロードしてインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-161">If the software you need has a downloadable installer, you can open a web browser in the RDP session, download the software, and install it.</span></span> <span data-ttu-id="b6f4f-162">次に、ソフトウェアがカスタムである場合、ローカル マシンから VM へソフトウェアをコピーしてインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-162">Second, if your software is custom - like our custom service, you can copy it from your local machine over to the VM to install it.</span></span> <span data-ttu-id="b6f4f-163">後者のアプローチを見ていきましょう。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-163">Let's look at this latter approach.</span></span>
+
+1. <span data-ttu-id="b6f4f-164">エクスプローラーを開きます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-164">Open File Explorer.</span></span> <span data-ttu-id="b6f4f-165">サイドバーにある**この PC** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-165">Click on **This PC** in the sidebar.</span></span> <span data-ttu-id="b6f4f-166">いくつかのドライブが見えます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-166">You should see several drives:</span></span>
+
+    - <span data-ttu-id="b6f4f-167">Windows（C:）ドライブは、OS を表しています。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-167">Windows (C:) drive representing the OS.</span></span>
+    - <span data-ttu-id="b6f4f-168">一時ストレージ（D:）ドライブです。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-168">Temporary Storage (D:) drive.</span></span>
+    - <span data-ttu-id="b6f4f-169">ローカルの C: ドライブです（下記に表示されているものと別の名前を持ちます）。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-169">Your local C: drive (it will have a different name than shown below).</span></span>
+
+    ![Azure と共有するローカル ドライブ](../media-drafts/6-drive-list.png)
+
+<span data-ttu-id="b6f4f-171">ローカル ドライブにアクセスしてカスタム ソフトウェアのファイルを VM にコピーし、ソフトウェアをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-171">With access to your local drive, you can copy the files for the custom software onto the VM and install the software.</span></span> <span data-ttu-id="b6f4f-172">今回は模擬シナリオで実際にこの動作は行いませんが、どのような動きになるかを想像しておくことは可能です。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-172">We won't actually do that since it's just a simulated scenario, but you can imagine how it would work.</span></span>
+
+<span data-ttu-id="b6f4f-173">ドライブ一覧を確認して、何が_足りないのか_の情報を確認します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-173">The more interesting thing to observe in the list of drives is what is _missing_.</span></span> <span data-ttu-id="b6f4f-174">**データ** ドライブが存在していないことに注目してください。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-174">Notice that our **Data** drive is not present.</span></span> <span data-ttu-id="b6f4f-175">Azure は VHD を追加しましたが、初期化は行っていません。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-175">Azure added a VHD but didn't initialize it.</span></span>
+
+## <a name="initialize-data-disks"></a><span data-ttu-id="b6f4f-176">データ ディスクの初期化</span><span class="sxs-lookup"><span data-stu-id="b6f4f-176">Initialize data disks</span></span>
+
+<span data-ttu-id="b6f4f-177">最初から作成した追加のドライブはすべて、初期化およびフォーマットを行う必要があります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-177">Any additional drives you create from scratch will need to be initialized and formatted.</span></span> <span data-ttu-id="b6f4f-178">これは、物理ディスクへ行う処理と同一です。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-178">The process for doing this is identical to a physical drive.</span></span>
+
+1. <span data-ttu-id="b6f4f-179">Start メニューから**ディスク管理**ツールを起動します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-179">Launch the **Disk Management** tool from the Start Menu.</span></span>
+
+1. <span data-ttu-id="b6f4f-180">これによって、初期化されていないディスクを検出したという警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-180">It will display a warning that it has detected an uninitialized disk.</span></span>
+
+    ![VM 内のデータ ディスクの初期化](../media-drafts/6-disk-management.png)
+
+1. <span data-ttu-id="b6f4f-182">**OK** をクリックしてディスクを初期化します。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-182">Click **OK** to initialize the disk.</span></span> <span data-ttu-id="b6f4f-183">その後、フォーマット可能なボリューム一覧が表示され、ドライブ名が割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-183">It will then show up in the list of volumes where you can format it and assign a drive letter.</span></span>
+
+1. <span data-ttu-id="b6f4f-184">ファイル エクスプローラーを開くと、データ ドライブが表示されるようになりました。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-184">Open File Explorer and you should now see your data drive.</span></span>
+
+1. <span data-ttu-id="b6f4f-185">RDP クライアントを閉じて VM からサインアウトします。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-185">Go ahead and close the RDP client to sign out of the VM.</span></span> <span data-ttu-id="b6f4f-186">サーバーは引き続き実行中となります。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-186">The server will continue to run.</span></span>
+
+<span data-ttu-id="b6f4f-187">RDP を使うと、ローカル コンピュータと同様の操作で Azure VM での作業が行えます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-187">RDP allows you to work with the Azure VM just like a local computer.</span></span> <span data-ttu-id="b6f4f-188">デスクトップ UI アクセスを使って、他の Windows コンピュータと同じように、ソフトウェアのインストール、役割の設定、機能の調整およびその他の一般的なタスクなどを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-188">With Desktop UI access, you can administer this VM as you would any Windows computer: installing software, configuring roles, adjusting features and other common tasks.</span></span> <span data-ttu-id="b6f4f-189">ただし、これらはマニュアルでの処理です。もし今後何かのソフトウェアをインストールする必要がある場合、スクリプトを使った処理の自動化を検討するのも良いでしょう。</span><span class="sxs-lookup"><span data-stu-id="b6f4f-189">However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.</span></span>

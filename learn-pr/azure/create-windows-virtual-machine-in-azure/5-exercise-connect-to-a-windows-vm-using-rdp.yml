@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
+title: <span data-ttu-id="17162-101">RDP を利用して Windows 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="17162-101">Connect to a Windows virtual machine using RDP</span></span>
+metadata:
+  title: <span data-ttu-id="17162-102">RDP を利用して Windows 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="17162-102">Connect to a Windows virtual machine using RDP</span></span>
+  description: <span data-ttu-id="17162-103">RDP を利用して Windows 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="17162-103">Connect to a Windows virtual machine using RDP</span></span>
+  ms.openlocfilehash: 9432fbb200a9dfee4e098de2bfaa79ef8a5981f9
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43835744"
+durationInMinutes: 10
+content: '[!include[](includes/5-exercise-connect-to-a-windows-vm-using-rdp.md)]'

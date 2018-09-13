@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.3-exercise-create-your-app-and-azure-storage-account
+title: <span data-ttu-id="0fad1-101">演習 - アプリと Azure ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="0fad1-101">Exercise - Create your app and Azure storage account</span></span>
+metadata:
+  title: <span data-ttu-id="0fad1-102">演習 - アプリと Azure ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="0fad1-102">Exercise - Create your app and Azure storage account</span></span>
+  description: <span data-ttu-id="0fad1-103">演習 - アプリと Azure ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="0fad1-103">Exercise - Create your app and Azure storage account</span></span>
+  ms.openlocfilehash: e83aa3fa192a0004e172b0c25b070cf40934f782
+  ms.sourcegitcommit: e90461bc6f88bca3b53183b476553633f93990a3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "44043425"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-your-app-and-azure-storage-account.md)]'

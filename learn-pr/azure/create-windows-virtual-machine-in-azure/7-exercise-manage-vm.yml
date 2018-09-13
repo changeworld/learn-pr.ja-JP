@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.7-exercise-manage-vm
+title: <span data-ttu-id="e8d00-101">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="e8d00-101">Configure the virtual machine network settings</span></span>
+metadata:
+  title: <span data-ttu-id="e8d00-102">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="e8d00-102">Configure the virtual machine network settings</span></span>
+  description: <span data-ttu-id="e8d00-103">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="e8d00-103">Configure the virtual machine network settings</span></span>
+  ms.openlocfilehash: 68332e1eb5674f5a2044e1a5b2efea10ec005c83
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43836267"
+durationInMinutes: 12
+content: '[!include[](includes/7-exercise-manage-vm.md)]'

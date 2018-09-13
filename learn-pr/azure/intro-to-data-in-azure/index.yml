@@ -4,19 +4,26 @@ metadata:
   title: Azure でのデータの概要
   description: このモジュールでは、Azure Storage とオンプレミス ストレージの利点を比較します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: f88854bb3e05794983d7fbce01fb64cbd7912788
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a7ffa2d785d45214b5d5bed7499e4eb491f97d22
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43853965"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241586"
 title: Azure でのデータの概要
 summary: このモジュールでは、Azure Storage とオンプレミス ストレージの利点を比較します。
 abstract: >
   このモジュールでは、次のことを行います。
-    - Azure Storage の利点を調べる
-    - Azure Storage でビジネス要件が満たされるかどうかを調べる
-    - Azure Storage とオンプレミス ストレージを比較する
+
+  - Azure Storage の利点を調べる
+
+  - Azure Storage でビジネス要件が満たされるかどうかを調べる
+
+  - Azure Storage とオンプレミス ストレージを比較する
 prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
