@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.4-connect-to-a-windows-virtual-machine
-title: <span data-ttu-id="19e26-101">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="19e26-101">Using RDP to connect to Windows Azure virtual machines</span></span>
+title: <span data-ttu-id="6b99d-101">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="6b99d-101">Using RDP to connect to Windows Azure virtual machines</span></span>
 metadata:
-  title: <span data-ttu-id="19e26-102">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="19e26-102">Using RDP to connect to Windows Azure virtual machines</span></span>
-  description: <span data-ttu-id="19e26-103">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="19e26-103">Using RDP to connect to Windows Azure virtual machines</span></span>
-  ms.openlocfilehash: 716a86589c75b3bfc1d4999ee472d8470c8d56ac
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="6b99d-102">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="6b99d-102">Using RDP to connect to Windows Azure virtual machines</span></span>
+  description: <span data-ttu-id="6b99d-103">RDP を使用して Microsoft Azure 仮想マシンに接続する</span><span class="sxs-lookup"><span data-stu-id="6b99d-103">Using RDP to connect to Windows Azure virtual machines</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 09a4df4a835563ea7c3c70318acb954eff308ea4
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836234"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44238271"
 durationInMinutes: 10
 content: '[!include[](includes/4-connect-to-a-windows-virtual-machine.md)]'

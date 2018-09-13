@@ -1,16 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.6-cleanup
-title: <span data-ttu-id="97af7-101">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="97af7-101">Clean Up DSVM Resources</span></span>
+title: <span data-ttu-id="60739-101">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="60739-101">Clean Up DSVM Resources</span></span>
 metadata:
-  title: <span data-ttu-id="97af7-102">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="97af7-102">Clean Up DSVM Resources</span></span>
-  description: <span data-ttu-id="97af7-103">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="97af7-103">Clean Up DSVM Resources</span></span>
-  displayType: bash
-  ms.openlocfilehash: 34af473c25ad2a50fcf6fc2d07d7fbbed1de08e8
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="60739-102">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="60739-102">Clean Up DSVM Resources</span></span>
+  description: <span data-ttu-id="60739-103">DSVM のリソースをクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="60739-103">Clean Up DSVM Resources</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 275d86d9a1d11ba86730a609fecf503f1166a248
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43836108"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44307894"
 durationInMinutes: 1
 interactive: bash
+azureSandbox: true
 content: '[!include[](includes/6-cleanup.md)]'
