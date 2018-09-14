@@ -1,6 +1,6 @@
 作成できるクエリの種類について学習しましたので、Azure portal でデータ エクスプローラーを使用して、ご自分の製品データを取得およびフィルター処理してみましょう。
 
-データ エクスプローラー ウィンドウでは、既定で、**[ドキュメント]** タブのクエリが `SELECT * FROM c` に設定されています。 この既定のクエリでは、コレクション内のすべてのドキュメントが取得されて表示されます。
+データ エクスプ ローラー ウィンドウでなお既定では、クエリで、**ドキュメント**に設定されているタブ`SELECT * FROM c`次の図のようにします。 この既定のクエリでは、コレクション内のすべてのドキュメントを取得し、表示します。
 
 ![データ エクスプローラーの既定のクエリは、"SELECT * FROM c" です](../media/5-azure-cosmosdb-data-explorer-query.png)
 
@@ -12,10 +12,8 @@
 
 2. 前のユニットで説明したクエリの一部を実行してみましょう。 クエリ タブで、`SELECT * from c` を削除し、次のクエリをコピーして貼り付け、**[クエリの実行]** をクリックします。
 
-    ```
-    SELECT *
-    FROM Products p
-    WHERE p.id ="1"
+    ```sql
+    SELECT * FROM Products p WHERE p.id ="1"
     ```
 
     結果には、`productId` が 1 の製品が返されます。
@@ -24,10 +22,10 @@
 
 3. 前のクエリを削除し、次のクエリをコピーして貼り付け、**[クエリの実行]** をクリックします。 このクエリでは、すべての製品の価格、説明、および製品 ID が、価格の昇順に並べ替えられて返されます。
  
-    ```
-    SELECT p.price, p.description, p.productId
-    FROM Products p
-    ORDER BY p.price ASC
+    ```sql
+    SELECT p.price, p.description, p.productId 
+        FROM Products p 
+        ORDER BY p.price ASC
     ```
 
 ## <a name="summary"></a>まとめ

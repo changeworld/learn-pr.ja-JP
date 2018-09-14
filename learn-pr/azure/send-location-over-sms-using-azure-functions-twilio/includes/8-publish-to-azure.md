@@ -1,7 +1,7 @@
 アプリと Azure 関数が完成し、ローカルで実行されています。 このユニットでは、関数を Azure に発行してクラウドで実行します。
 
-> このユニットでは、関数を Visual Studio から発行します。 これは概念実証、プロトタイプ、学習を始める方法として優れていますが、運用品質のアプリにはこの手法を利用**しないで**ください。 何らかの形式の CI ベースのデプロイを利用してください。 この方法に関する詳細は、[Azure Functions のデプロイに関するドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment)を参照してください。
->
+> [!Note]
+> Visual Studio から関数を発行します。 これは概念実証、プロトタイプ、学習を始める方法として優れていますが、運用品質のアプリにはこの手法を利用**しないで**ください。 何らかの形式の CI ベースのデプロイを利用してください。 この方法に関する詳細は、[Azure Functions のデプロイに関するドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment)を参照してください。
 
 ## <a name="publishing-your-app-to-azure"></a>アプリを Azure に発行する
 
@@ -11,11 +11,11 @@ Azure 関数は Visual Studio 内から Azure に発行できます。
 
 1. ソリューション エクスプローラーで `ImHere.Functions` アプリを右クリックし、*[発行]* を選択します。
 
-    ![Functions アプリで右クリック発行する](../media-drafts/8-right-click-publish.png)
+    ![Functions アプリで右クリック発行する](../media/8-right-click-publish.png)
 
 1. **[発行先の選択]** ダイアログから *[Azure 関数アプリ]* を選択し、**[Azure App Service]** には *[新規作成]* を選択します。 **[発行]** をクリックします。
 
-    ![発行先の Azure App Service を新しく作成する](../media-drafts/8-pick-publish-target.png)
+    ![発行先の Azure App Service を新しく作成する](../media/8-pick-publish-target.png)
 
 1. Azure アカウントを複数持っていて、必要なアカウントを選択していない場合は、右上隅のドロップダウンから Azure アカウントを選択します。
 
@@ -23,23 +23,24 @@ Azure 関数は Visual Studio 内から Azure に発行できます。
 
 1. この Functions アプリを作成するサブスクリプションを選択します。
 
+<!---TODO: Update for sandbox?--->
 1. **[リソース グループ]** ドロップダウンの横にある **[新規]** ボタンをクリックし、"ImHere" のような名前を付けることで、この Functions アプリに新しいリソース グループを作成します。 リソース グループ名は、Azure 全体で一意にするのではなく、サブスクリプションに対して一意にする必要があります。 次に、 **[OK]** をクリックします
 
-    ![新しいリソース グループを作成する](../media-drafts/8-create-new-resource-group.png)
+    ![新しいリソース グループを作成する](../media/8-create-new-resource-group.png)
 
    新しいリソース グループを作成すると、後のクリーンアップが簡単になります。 リソース グループを削除すると、この Functions アプリに作成したすべてが同時に削除されます。
 
 1. **[ホスティング プラン]** ドロップダウンの横にある **[新規]** ボタンをクリックし、新しいホスティング プランを作成します。 App Service プランの名前は、既定でアプリ名の末尾に "Plan" が付く形式になります。 **[場所]** をお住まいの地域に最も近い場所に設定し、**[サイズ]** を消費に設定します。 次に、 **[OK]** をクリックします
 
-    ![ホスティング プランを構成する](../media-drafts/8-configure-hosting-plan.png)
+    ![ホスティング プランを構成する](../media/8-configure-hosting-plan.png)
 
 1. **[ストレージ アカウント]** ドロップダウンの横にある **[新規]** ボタンをクリックし、新しいストレージ アカウントを作成します。 既定の名前が与えられます。既定値をすべてそのまま選択し、**[OK]** をクリックします。
 
-    ![ストレージ アカウントの作成](../media-drafts/8-create-storage-account.png)
+    ![ストレージ アカウントの作成](../media/8-create-storage-account.png)
 
 1. **[作成]** をクリックし、Azure にすべてのリソースをプロビジョニングし、Azure Functions アプリを発行します。
 
-    ![App Service を作成する](../media-drafts/8-create-app-service.png)
+    ![App Service を作成する](../media/8-create-app-service.png)
 
 プロビジョニングの実行には 2、3 分かかります。 次のリソースがプロビジョニングされます。
 
@@ -55,23 +56,23 @@ Azure 関数がローカルで実行されていたとき、`local.settings.json
 
 1. [発行] タブから **[アプリケーション設定の管理]** オプションをクリックします。
 
-    ![[アプリケーション設定の管理] オプション](../media-drafts/8-application-settings-option.png)
+    ![[アプリケーション設定の管理] オプション](../media/8-application-settings-option.png)
 
 1. **[追加]** ボタンをクリックして、新しい設定を追加します。 これに "TwilioAccountSid" という名前を付け、値を Twilio アカウント SID に設定します。 "TwilioAuthToken" という名前を使用し、認証トークンに対してこの手順を繰り返します。
 
-    ![アプリケーション設定で Twilio 資格情報を設定する](../media-drafts/8-set-creds-in-app-settings.png)
+    ![アプリケーション設定で Twilio 資格情報を設定する](../media/8-set-creds-in-app-settings.png)
 
 1. Click **OK**.
 
 1. **[発行]** をクリックし、新しいアプリケーション設定で Azure Functions アプリを再発行します。
 
-    ![[発行] ボタン](../media-drafts/8-publish-application-button.png)
+    ![[発行] ボタン](../media/8-publish-application-button.png)
 
 ## <a name="pointing-the-mobile-app-to-azure"></a>モバイル アプリを Azure にポイントする
 
 1. [発行] タブから、値の横にあるコピー ボタンを使用して **[サイト URL]** をコピーします。
 
-    ![[発行] タブからサイトの URL をコピーする](../media-drafts/8-copy-site-url.png)
+    ![[発行] タブからサイトの URL をコピーする](../media/8-copy-site-url.png)
 
 1. `ImHere` プロジェクトから `MainViewModel` を開く
 

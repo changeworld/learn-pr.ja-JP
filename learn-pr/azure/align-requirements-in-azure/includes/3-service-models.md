@@ -4,9 +4,9 @@
 - **サービスとしてのプラットフォーム (PaaS)** では、独自のクラウド サービスを提供するために使用できる既製の開発環境とデプロイ環境が提供されます。
 - **サービスとしてのソフトウェア (SaaS)** は、Web ベースのサービスとしてアプリケーションをインターネット経由で提供します。
 
-!!! Video TC-007 プレースホルダー !!!
+#### <a name="iaas-versus-sass-versus-paas"></a>IaaS と PaaS Sass と
 
-> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
 サービス モデルを選択する際には、どのパーティがコンピューティング リソースを担当するかを考慮します。 ご自分のシナリオに基づいて、管理責任をどの程度分担するかを決めることができます。 次の図では、ご自分で、およびサービス プロバイダーが管理する、それぞれのクラウド サービスのカテゴリのリソース一覧を示しています。
 

@@ -1,6 +1,6 @@
-Container Instances で環境変数を設定すると、コンテナーによって実行されるアプリケーションまたはスクリプトの動的な構成を提供できます。 環境変数の設定は、コンテナーの作成時に Azure CLI、PowerShell、または Azure portal を使用して行います。 コンテナー操作の出力に機密情報が表示されるのを防ぐには、セキュリティで保護された環境変数を使います。
+Container instances で環境変数を使用すると、アプリケーションまたはコンテナーによって実行されるスクリプトの動的な構成を提供できます。 Azure CLI、PowerShell、または Azure portal を使用して、コンテナーを作成するときに変数を設定します。 コンテナー操作の出力に機密情報が表示されるのを防ぐには、セキュリティで保護された環境変数を使います。
 
-このユニットでは、Azure Cosmos DB インスタンスを作成した後、環境変数として格納されている Azure Cosmos DB インスタンスの接続情報を使用して Azure コンテナー インスタンスを実行します。 コンテナー内のアプリケーションでは、変数を使用して Azure Cosmos DB のデータを読み書きします。 このユニットでは、環境変数とセキュリティで保護された環境変数の両方を作成します。
+ここでは、Azure Cosmos DB インスタンスと Azure コンテナー インスタンスに接続情報を渡す使用の環境変数を作成します。 コンテナー内のアプリケーションでは、Cosmos DB からデータを読み書きする変数を使用します。 環境変数と、セキュリティで保護された環境変数の両方を作成します。
 
 ## <a name="deploy-azure-cosmos-db"></a>Azure Cosmos DB をデプロイする
 
@@ -9,13 +9,13 @@ Container Instances で環境変数を設定すると、コンテナーによっ
 このコマンドが完了するまで数分かかることがあります。
 
 ```azurecli
-COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group myResourceGroup --name aci-cosmos --query documentEndpoint -o tsv)
+COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query documentEndpoint -o tsv)
 ```
 
 次に、`az cosmosdb list-keys` コマンドを使用して Azure Cosmos DB の接続キーを取得し、*COSMOS_DB_MASTERKEY* という名前の変数に格納します。
 
 ```azurecli
-COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --name aci-cosmos --query primaryMasterKey -o tsv)
+COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query primaryMasterKey -o tsv)
 ```
 
 ## <a name="deploy-a-container-instance"></a>コンテナー インスタンスをデプロイする
@@ -24,7 +24,7 @@ COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --n
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -35,10 +35,10 @@ az container create \
 コンテナーが作成された後、`az container show` コマンドを使用して IP アドレスを取得します。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query ipAddress.ip --output tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query ipAddress.ip --output tsv
 ```
 
-ブラウザーを開き、コンテナーの IP アドレスに移動します。 次のアプリケーションが表示されます。 投票を行うと、Azure Cosmos DB インスタンスに投票が格納されます。
+ブラウザーを開き、コンテナーの IP アドレスに移動します。 次のアプリケーションが表示されます。 投票をキャストすると、投票は、Azure Cosmos DB インスタンスに格納されます。
 
 ![猫または犬という 2 つの選択肢がある Azure 投票アプリケーション。](../media-draft/azure-vote.png)
 
@@ -49,7 +49,7 @@ az container show --resource-group myResourceGroup --name aci-demo --query ipAdd
 たとえば、前の演習で作成したコンテナーに関する情報を `az container show` コマンドで取得する場合、環境変数にはプレーン テキストでアクセスできます。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query containers[0].environmentVariables
 ```
 
 出力例:
@@ -75,7 +75,7 @@ az container show --resource-group myResourceGroup --name aci-demo --query conta
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-secure \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -86,7 +86,7 @@ az container create \
 コンテナーが `az container show` コマンドで返されたとき、環境変数は表示されません。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-secure --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-secure --query containers[0].environmentVariables
 ```
 
 出力例:
@@ -105,9 +105,3 @@ az container show --resource-group myResourceGroup --name aci-demo-secure --quer
   }
 ]
 ```
-
-## <a name="summary"></a>まとめ
-
-このユニットでは、Azure Cosmos DB インスタンスと Azure コンテナー インスタンスを作成しました。 コンテナー内で実行されているアプリケーションが Azure Cosmos DB インスタンスに接続できるように、コンテナー インスタンスで環境変数を設定しました。
-
-次のユニットでは、データの永続化のために Azure コンテナー インスタンスにデータ ボリュームをマウントします。

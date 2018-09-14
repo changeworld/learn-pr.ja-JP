@@ -4,6 +4,10 @@
 
 通信についてまず理解しなければならないのは、**メッセージ**と**イベント**のどちらを送信するかということです。 これは基本となる選択の 1 つであり、使用する Azure サービスを適切に選択するのに役立ちます。
 
+#### <a name="communication-strategies-in-azure-apis"></a>(Api) を Azure での通信方法
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuaw]
+
 ## <a name="what-is-a-message"></a>メッセージとは何でしょうか。
 分散アプリケーションの用語で、**メッセージ**には次の特性があります。
 

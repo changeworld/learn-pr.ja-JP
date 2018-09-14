@@ -1,22 +1,22 @@
-このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナー インスタンスにアタッチするなどの、いくつかの基本的なトラブルシューティング操作を実行します。 このモジュールの最後には、コンテナー インスタンスをトラブルシューティングする基本的な機能を理解できるようになります。
+ここでは、コンテナー ログをコンテナーのイベントをプルなど、一部の基本的なトラブルシューティング操作を実行すると、コンテナー インスタンスをアタッチします。 このモジュールの最後には、コンテナー インスタンスをトラブルシューティングする基本的な機能を理解できるようになります。
 
-## <a name="create-a-container"></a>コンテナーの作成
+## <a name="create-a-container"></a>コンテナーを作成する
 
-まず、このユニットで使用するコンテナーを作成します。 このモジュールで作成した最初のコンテナーがまだある場合は、この手順はスキップします。
+まず、コンテナーを作成します。 このモジュールで作成した最初のコンテナーがまだある場合は、この手順はスキップします。
 
 ```azurecli
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
+az container create --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
-## <a name="get-logs-from-a-container-instance"></a>コンテナー インスタンスからのログの取得
+## <a name="get-logs-from-a-container-instance"></a>コンテナー インスタンスからログを取得する
 
 アプリケーション コードからコンテナー内のログを表示するために、`az container logs` コマンドを使用できます。
 
 ```azazurecli
-az container logs --resource-group myResourceGroup --name mycontainer
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
-Web アプリが数回アクセスされた後のコンテナー例からのログ出力は次のとおりです。
+Web アプリが数回アクセスされた後の例のコンテナーからのログ出力は次のとおりです。
 
 ```output
 listening on port 80
@@ -26,12 +26,12 @@ listening on port 80
 ::ffff:0.0.0.0 - - [20/Aug/2018:21:44:27 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
 ```
 
-## <a name="get-container-events"></a>コンテナー イベントの取得
+## <a name="get-container-events"></a>コンテナー イベントを取得する
 
-`az container attach` コマンドからは、コンテナーの起動中の診断情報が出力されます。 コンテナーが起動すると、ご利用のローカル コンソールに STDOUT と STDERR もストリーミングされます。
+`az container attach` コマンドでは、コンテナーの起動中の診断情報が示されます。 コンテナーが起動すると、ローカル コンソールに STDOUT と STDERR もストリーミングされます。
 
 ```azazurecli
-az container attach --resource-group myResourceGroup --name mycontainer
+az container attach --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 出力例:
@@ -49,14 +49,14 @@ listening on port 80
 listening on port 80
 ```
 
-## <a name="execute-a-command-in-a-container"></a>コンテナーでのコマンドの実行
+## <a name="execute-a-command-in-a-container"></a>コンテナーでコマンドを実行する
 
 Azure Container Instances は、実行中のコンテナーでのコマンドの実行をサポートします。 既に開始されているコンテナー内でのコマンドの実行は、アプリケーションの開発とトラブルシューティング時に特に役立ちます。 この機能の最も一般的な用途は、対話型シェルを起動して、実行中のコンテナーで発生した問題をデバッグできるようにすることです。
 
 この例では、実行中のコンテナーで対話型のターミナル セッションを開始します。
 
 ```azurecli
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
+az container exec --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --exec-command /bin/sh
 ```
 
 コマンドが完了すると、実質的にコンテナー内で作業していることになります。 この例では、作業ディレクトリの内容を表示する `ls` コマンドを実行しました。
@@ -71,10 +71,10 @@ index.js           package-lock.json
 
 ## <a name="monitor-container-cpu-and-memory"></a>コンテナーの CPU とメモリを監視する
 
-CPU とメモリの使用量に関するメトリックをプルしたい場合があります。 これを行うには、まず、Azure コンテナー インスタンスの ID を取得します。 この例では、ID は `CONTAINER_ID` という名前の変数に配置されています。
+CPU とメモリの使用量のメトリックをプルしたい場合があります。 これを行うには、まず、Azure コンテナー インスタンスの ID を取得します。 この例では、ID は `CONTAINER_ID` という名前の変数に配置されています。
 
 ```azurecli
-CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
+CONTAINER_ID=$(az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --query id --output tsv)
 ```
 
 ここで、`az monitor metrics list` コマンドを使用して、CPU の使用量の情報を戻します。
@@ -131,19 +131,8 @@ Timestamp            Name              Average
 2018-08-20 21:55:00  Memory Usage  19181568.0
 ```
 
-この情報は、Azure portal でも見つけることができます。 CPU とメモリ使用量の情報を図で確認するには、コンテナー インスタンスに関する Azure portal の概要ページを参照してください。
+この情報は、Azure portal でも見つけることができます。 CPU とメモリ使用量の情報を図で確認する場合は、コンテナー インスタンスの Azure portal の概要ページを参照してください。
 
 ![Azure Container Instances の CPU とメモリ使用量の情報を示す Azure portal のビュー](../media-draft/cpu-memory.png)
 
-## <a name="clean-up"></a>クリーンアップ
-<!---TODO: Update for sandbox?--->
-
-これは、Azure Container Instances のラーニング モジュールの最後のユニットです。 この時点で、リソース グループを削除することにより、作成したリソースをクリーンアップすることができます。 これを行うには、**az group delete** コマンドを使用します。
-
-```azurecli
-az group delete --name myResourceGroup --no-wait
-```
-
-## <a name="summary"></a>まとめ
-
-このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナ― インスタンスにアタッチするなどの、いくつかのトラブルシューティング操作を学習しました。
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

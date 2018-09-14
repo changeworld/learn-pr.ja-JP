@@ -7,6 +7,10 @@
 ## <a name="what-is-azure-event-hubs"></a>Azure Event Hubs とは
 Event Hubs は、発行/サブスクライブ通信パターンの仲介役です。 ただし、Event Grid とは異なり、非常に高いスループット、多数の発行元、セキュリティ、および回復性に対して最適化されています。
 
+#### <a name="what-is-an-event-hub"></a>イベント ハブとは何ですか。
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yuat]
+
 Event Grid は、サブスクリプションを単純に管理し、これらのサブスクライバーに通信をルーティングする点で、発行/サブスクライブ通信パターンと完全に合致します。これに対して Event Hubs では、かなり多くの追加サービスを実行します。 これらのサービスのため、Event Hubs は、単純なイベント ブロードキャスターよりもサービス バスやメッセージ キューに似ています。
 
 #### <a name="partitions"></a>パーティション

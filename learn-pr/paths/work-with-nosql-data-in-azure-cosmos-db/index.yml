@@ -2,28 +2,34 @@
 uid: learn.work-with-nosql-data-in-azure-cosmos-db
 metadata:
   title: Azure Cosmos DB の NoSQL データを扱う
-  description: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
+  description: NoSQL データは、SQL のリレーショナル データベースの要件に対応していない情報を格納する効率的な方法です。<br><br>NoSQL データ用のデータベースには、テクニック、および可用性とデータ整合性の要件を微調整する機会を簡略化されたスケールと柔軟性の向上が有効にします。 Azure Cosmos DB では、これらのすべての特典とツールおよび Sdk、NoSQL データの操作を提供することで詳細を提供します。<br><br>Azure portal、Visual Studio Code での Azure Cosmos DB の拡張機能と Azure Cosmos DB .NET Core SDK を使用して、目的の場所、NoSQL データを使用して、世界中のどこでも、高可用性をユーザーに提供する方法について説明します。
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: df29cb5cfdefa35c106a2cf822856bf842fc74ac
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: bd7b740111bfef6cfbcd73ebd1f80e28af1e2beb
+  ms.sourcegitcommit: 58a90e44fa548614c6c14153ef64cf67c7e3e6ac
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248199"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45559529"
 title: Azure Cosmos DB の NoSQL データを扱う
-summary: NoSQL は SQL に代わる、特定の種類のデータに対して可用性が非常に高い、非常に効率的なデータベース モデルです。 ご利用のアプリケーション データの保存、それの全インスタンスへのレプリケート、データ アクセスの最適化を行うために Azure Cosmos DB を使用する方法を説明します。
+summary: NoSQL データは、SQL のリレーショナル データベースの要件に対応していない情報を格納する効率的な方法です。<br><br>NoSQL データ用のデータベースには、テクニック、および可用性とデータ整合性の要件を微調整する機会を簡略化されたスケールと柔軟性の向上が有効にします。 Azure Cosmos DB では、これらのすべての特典とツールおよび Sdk、NoSQL データの操作を提供することで詳細を提供します。<br><br>Azure portal、Visual Studio Code での Azure Cosmos DB の拡張機能と Azure Cosmos DB .NET Core SDK を使用して、目的の場所、NoSQL データを使用して、世界中のどこでも、高可用性をユーザーに提供する方法について説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-cosmos-db
+- vs
+- vs-code
+- azure-portal
+- azure-clis
 modules:
 - learn.create-cosmos-db-for-scale
 - learn.access-data-with-cosmos-db-and-sql-api

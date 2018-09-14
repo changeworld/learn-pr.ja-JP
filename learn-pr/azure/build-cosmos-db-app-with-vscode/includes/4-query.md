@@ -59,7 +59,7 @@ LINQ は、計算処理をオブジェクトのストリームに対するクエ
     this.ExecuteSimpleQuery("Users", "WebCustomers");
     ```
 
-1. Program.cs ファイルを保存し、統合ターミナルで次のコマンドを実行します。
+1. 統合ターミナルで、次のコマンドを実行します。
     
     ```
     dotnet run

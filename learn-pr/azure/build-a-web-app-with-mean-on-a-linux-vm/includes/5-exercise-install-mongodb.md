@@ -1,17 +1,12 @@
 このユニットでは、今後のサンプル Web アプリケーションのデータ ストアとして動作する MongoDB を Ubuntu Linux 仮想マシンにインストールします。
 
-## <a name="connect-to-the-vm"></a>VM に接続する
-
-MongoDB をインストールするには、**ssh** を使用して VM に接続する必要があります。 `<vm-admin-username>` と `<vm-public-ip>` のプレースホルダーを、管理者ユーザー名とご自分の VM のパブリック IP アドレスに置き換えます。
-
-```bash
-ssh <vm-admin-username>@<vm-public-ip>
-```
-
 ## <a name="install-mongodb"></a>MongoDB をインストールする
 
-> [!Important]
-> Ubuntu では、**mongodb** という名前の非公式のパッケージを提供しています。 このパッケージは MongoDB Inc. では管理されていません。
+1. Cloud Shell では、VM に ssh で接続します。
+
+    ```bash
+    ssh <vm-admin-username>@<vm-public-ip>
+    ```
 
 1. MongoDB リポジトリの暗号化キーをインポートします。 これで、インストールする mongodb パッケージが MongoDB Inc. からリリースされたものであることをパッケージ マネージャーで確認できるようになります。
 
@@ -30,13 +25,13 @@ ssh <vm-admin-username>@<vm-public-ip>
     > この出力は、Ubuntu バージョン 16.04.1 を実行していることを示しています。
     > 使用しているバージョンの正確なコマンドを確認するには、[MongoDB Community Edition を Ubuntu にインストールする方法](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)に関するドキュメントを参照してください。
 
-    Ubuntu 16.04 上で以下のコマンドを実行します。
+    Ubuntu 16.04 上で次のコマンドを実行します。
 
     ```bash
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. 最新のパッケージ情報が得られるように、パッケージ データベースをリロードします。
+1. パッケージの最新の情報はこれは、パッケージのデータベースを更新します。
 
     ```bash
     sudo apt-get update

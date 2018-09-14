@@ -1,21 +1,21 @@
 ### YamlMime:Module
 uid: learn.create-azure-storage-account
 metadata:
-  title: Azure ストレージ アカウントの作成
-  description: Azure ストレージ アカウントでは、クラウド内のデータを整理する強力な方法が提供されます。 関連するデータの論理グループを作成し、課金、アクセス、ストレージの場所などに関する 1 つのポリシーを、グループ内のすべての項目に適用します。 ここでは、Azure ストレージ アカウントを使用して、Azure BLOB、ファイル、キュー、テーブルをグループ化して管理します。
+  title: Azure Storage アカウントの作成
+  description: Azure のストレージ アカウントでは、強力なクラウドでデータを整理する方法を提供します。 関連するデータの論理グループを作成し、課金、アクセス、ストレージの場所などに関する 1 つのポリシーを、グループ内のすべての項目に適用します。 ここでは、Azure ストレージ アカウントを使用して、Azure BLOB、ファイル、キュー、テーブルをグループ化して管理します。
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c675bd65da277635057bc77857e4e331ea334bfe
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: d12eebc4b6d95c90a0b5c6a359e0c7efc15d85ba
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241280"
-title: Azure ストレージ アカウントの作成
-summary: ビジネス要件に適したオプションで Azure ストレージ アカウントを作成します。
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556293"
+title: Azure Storage アカウントの作成
+summary: ビジネス ニーズに適したオプションでは、Azure Storage アカウントを作成します。
 abstract: >
   このモジュールでは、次のことを行います。
 
@@ -28,13 +28,15 @@ prerequisites: >
   - Azure Portal を操作する
 
   - Azure データ サービスの BLOB、ファイル、キュー、テーブルに精通する
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/create-azure-storage-account.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-storage
+- azure-portal
 units:
 - learn.create-azure-storage-account.1-introduction
 - learn.create-azure-storage-account.2-decide-how-many-storage-accounts-you-need

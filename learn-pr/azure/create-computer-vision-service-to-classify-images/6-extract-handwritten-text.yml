@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.6-extract-handwritten-text
-title: イメージから手書きのテキストを抽出する
+title: 画像に含まれる手書きテキストの検出と抽出
 metadata:
-  title: イメージから手書きのテキストを抽出する
-  description: イメージから手書きのテキストを抽出する
+  title: 画像に含まれる手書きテキストの検出と抽出
+  description: 画像に含まれる手書きテキストの検出と抽出
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: faa454e19d1a023971bf459ab6d392af7ac04111
-  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
+  ms.openlocfilehash: 7bb4d4fe0d7fe369d3881991478a918d7ebcf079
+  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44386164"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45531141"
+labId: 45986
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

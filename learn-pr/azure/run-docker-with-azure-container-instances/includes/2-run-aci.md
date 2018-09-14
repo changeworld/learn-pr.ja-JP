@@ -1,26 +1,29 @@
-Azure Container Instances を使用すると、仮想マシンをプロビジョニングしたり、より高度なレベルのサービスを採用したりしなくても、Azure の Docker コンテナーを簡単に作成、管理できます。 このユニットでは、Azure でコンテナーを作成し、完全修飾ドメイン名 (FQDN) を使用してインターネットに公開します。
+ここでは、Azure でコンテナーを作成して、完全修飾ドメイン名 (FQDN) を使用してインターネットに公開します。
 
-## <a name="create-a-resource-group"></a>リソース グループを作成する
+## <a name="why-use-azure-container-instances"></a>Azure Container Instances を使用する理由
 
-Azure Container Instances は、すべての Azure リソースと同様に、リソース グループに配置する必要があります。リソース グループとは、Azure リソースのデプロイと管理に使用する論理コレクションです。
+Azure Container Instances は、単純なアプリケーション、タスクの自動化などの分離されたコンテナーで処理でき、ジョブを作成する場合に便利です。 Azure Container Instances には次の利点があります。
 
-`az group create` コマンドでリソース グループを作成します。
+- **高速スタートアップ**: 数秒でコンテナーを起動します。
+- **単位の 2 つ目の課金**: コンテナーの実行中にのみ、コストを発生します。
+- **ハイパーバイザー レベルのセキュリティ**: アプリケーションを VM であるかのように完全に分離します。
+- **カスタム サイズ**: CPU コアとメモリの正確な値を指定します。
+- **永続的なストレージ**: Azure Files のマウントを取得し、状態を維持するためのコンテナーに直接共有します。
+- **Linux および Windows**: 同じ API を使用して Windows と Linux の両方のコンテナーのスケジュールを設定します。
 
-次の例では、*myResourceGroup* という名前のリソース グループを *eastus* という場所に作成します。
-
-```azurecli
-az group create --name myResourceGroup --location eastus
-```
+複数のコンテナー間でのサービスの検出、自動スケーリング、調整されたアプリケーション アップグレードなど、完全なコンテナー オーケストレーションが必要なシナリオには、Azure Kubernetes Service (AKS) をお勧めします。
 
 ## <a name="create-a-container"></a>コンテナーを作成する
 
-名前、Docker イメージ、および Azure リソース グループを **az container create** コマンドに指定することで、コンテナーを作成できます。 必要に応じて、DNS 名ラベルを指定してコンテナーをインターネットに公開できます。 この例では、小型の Web アプリをホストするコンテナーをデプロイします。
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-次のコマンドを実行して、コンテナー インスタンスを開始します。 *--dns-name-label* の値は、インスタンスを作成する Azure リージョン内で一意である必要があります。そのため、場合によっては一意性を確保するためにこの値を変更する必要があります。
+名前、Docker イメージ、およびする Azure リソース グループを提供することでコンテナーを作成する、 **az コンテナー作成**コマンド。 必要に応じて、DNS 名ラベルを指定してコンテナーをインターネットに公開できます。 この例では、小型の Web アプリをホストするコンテナーをデプロイします。
+
+コンテナー インスタンスを起動する Cloud Shell で次のコマンドを実行します。 *--dns-name-label* の値は、インスタンスを作成する Azure リージョン内で一意である必要があります。そのため、場合によっては一意性を確保するためにこの値を変更する必要があります。
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --image microsoft/aci-helloworld \
     --ports 80 \
@@ -31,7 +34,7 @@ az container create \
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer \
     --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" \
     --out table
@@ -45,12 +48,6 @@ FQDN                                    ProvisioningState
 aci-demo.eastus.azurecontainer.io       Succeeded
 ```
 
-コンテナーが**成功**状態に推移したら、ブラウザーでその FQDN に移動します。
+コンテナーに移動すると、 **Succeeded**状態、成功を確認する、ブラウザーでその FQDN に移動します。
 
-![Azure コンテナー インスタンスで実行されているアプリケーションを示すブラウザー スクリーンショット](../media-draft/aci-app-browser.png)
-
-## <a name="summary"></a>まとめ
-
-このユニットでは、Web サーバーとアプリケーションを実行する Azure コンテナー インスタンスを作成しました。 また、このアプリケーションには、コンテナー インスタンスの FQDN を使用してアクセスしました。
-
-次のユニットでは、コンテナー インスタンスの再起動のポリシーを構成します。
+ここでは、web サーバーとアプリケーションを実行する Azure コンテナー インスタンスを作成します。 また、このアプリケーションには、コンテナー インスタンスの FQDN を使用してアクセスしました。

@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.9-create-the-respondtoslackcommand-function
+metadata:
+  title: 作成、RespondToSlackCommand
+  description: どの slack がだれかが実行されるたびを呼び出す 2 番目のエンドポイントを作成、`\mojify`コマンド。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c8a097a3f714a161b9726bac1877220a593c6d40
+  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45530971"
+labId: 45987
+title: 作成、RespondToSlackCommand
+durationInMinutes: 7
+content: '[!include[](includes/9-create-the-respondtoslackcommand-function.md)]'

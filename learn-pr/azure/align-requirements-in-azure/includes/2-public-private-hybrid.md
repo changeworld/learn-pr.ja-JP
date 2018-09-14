@@ -10,9 +10,9 @@
 
 ![クラウド デプロイ モデルの概要を示す図。](../media/2-cloud-deployment.png)
 
-!!! Video TC-008 プレースホルダー !!! 
+#### <a name="public-versus-private-versus-hybrid"></a>ハイブリッドとプライベートとパブリック
 
-> [!VIDEO https://channel9.msdn.com/Series/History/The-History-of-Microsoft-1995/player]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEv7]
 
 ## <a name="public-cloud"></a>パブリック クラウド
 

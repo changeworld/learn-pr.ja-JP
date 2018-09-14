@@ -9,12 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d4fc7700e80f8716294a84f91da41e80c76f1be1
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 8485ea136a4ac545a581fc79a022ff7826053ca2
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44247281"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537358"
 durationInMinutes: 5
 quiz:
   title: コンテナーの概要
@@ -22,11 +22,11 @@ quiz:
   - content: コンテナーを導入する利点として、次の中で正しくないのはどれですか?
     choices:
     - content: 起動時間が速い。
-      incorrectExplanation: コンテナーは、仮想システムまたは物理システムよりも大幅に速く起動することができます。
       isCorrect: false
+      incorrectExplanation: コンテナーは、仮想システムまたは物理システムよりも大幅に速く起動することができます。
     - content: ホスト リソースの効率的な使用。
       isCorrect: false
-      incorrectExplanation: イメージ アーキテクチャが共有されているため、ホスト リソースを効率的に利用しながら、単一のホスト上で多くのコンテナーを実行することができます。
+      incorrectExplanation: 共有のイメージのアーキテクチャのための複数のコンテナーは、ホストのリソースを効率的に活用して 1 つのホストで実行できます。
     - content: 組み込みのディザスター リカバリー。
       isCorrect: true
       correctExplanation: 本質的にコンテナーによってディザスター リカバリー手順は変更されません。
@@ -36,22 +36,18 @@ quiz:
   - content: すべてのコンテナー インスタンス (停止状態および実行中) を表示するためのコマンドとは?
     choices:
     - content: docker ps
-      incorrectExplanation: このコマンドでは、実行中のコンテナーのみが表示されます。
       isCorrect: false
+      incorrectExplanation: このコマンドでは、実行中のコンテナーのみが表示されます。
+    - content: docker イメージ
+      isCorrect: false
+      incorrectExplanation: このコマンドではコンテナー イメージがリストされます。
     - content: docker ps -a
       isCorrect: true
       correctExplanation: このコマンドでは、実行中のコンテナーと停止状態のコンテナーがすべてリストされます。
-    - content: docker ps -x
-      incorrectExplanation: これは有効な Docker コマンドはありません。
-      isCorrect: false
-    - content: docker ps
-      incorrectExplanation: このコマンドではコンテナー イメージがリストされます。
-      isCorrect: false
-  - content: 運用環境では、Dockerfile を使用してコンテナー イメージの作成を自動化する必要があります。
+  - content: 'True または false: Dockerfile で運用環境でコンテナー イメージの作成を自動化する必要があります。'
     choices:
-    - content: False。
-      incorrectExplanation: コンテナー作成の自動化には多くの利点があり、コンテナーの運用環境で利用する必要があります。
-      isCorrect: false
-    - content: True。
+    - content: ○
       isCorrect: true
-      correctExplanation: コンテナー作成の自動化には多くの利点があり、コンテナーの運用環境で利用する必要があります。
+      correctExplanation: Automation は、迅速、簡単に反復可能かつエラーより手動のイメージの作成が生じやすいです。 ベスト プラクティスでは、automation を使用して、コンテナーの運用環境でお勧めします。
+    - content: ×
+      isCorrect: false

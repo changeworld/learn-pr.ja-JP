@@ -4,7 +4,7 @@ Azure Cosmos DB への接続が完了した後、次の手順としてデータ�
 
 ## <a name="working-with-documents-programmatically"></a>プログラムによるドキュメントの操作
 
-データは、Azure Cosmos DB 内の JSON ドキュメントに格納されます。 前のモジュールで示したようにポータルで、またはこのモジュールで説明するようにプログラムを使用して、[ドキュメント](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents)を作成、取得、置換、または削除できます。 Azure Cosmos DB では .NET、.NET Core、Java、Node.js、Python 用のクライアント側 SDK が提供されており、いずれもこれらの操作をサポートします。 このモジュールでは、.NET Core SDK を使用して CRUD (作成、取得、更新、削除) 操作を実行します。 
+データは、Azure Cosmos DB 内の JSON ドキュメントに格納されます。 前のモジュールで示したようにポータルで、またはこのモジュールで説明するようにプログラムを使用して、[ドキュメント](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents)を作成、取得、置換、または削除できます。 Azure Cosmos DB では .NET、.NET Core、Java、Node.js、Python 用のクライアント側 SDK が提供されており、いずれもこれらの操作をサポートします。 このモジュールで使用する .NET Core SDK CRUD を実行する (作成、取得、更新、および削除) Azure Cosmos DB に格納されている NoSQL データの操作。 
 
 Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) クラスの一部です。
 * [CreateDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
@@ -113,7 +113,7 @@ Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClie
         }
     ```
 
-1. そして、次のコードを **BasicOperations** メソッドに追加します。
+1. 末尾に、次を追加、 **BasicOperations**メソッド。
 
     ```csharp
      User yanhe = new User
@@ -192,13 +192,13 @@ Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClie
                 await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. 統合ターミナルで、もう一度、次のコマンドを入力してプログラムを実行し、実行されていることを確認します。
+1. 統合ターミナルで、もう一度プログラムを実行する次のコマンドを入力します。
 
     ```csharp
     dotnet run
     ```
 
-    両方のユーザー レコードが正常に作成されたことを示す次の出力が、ターミナルに表示されます。
+    アプリケーションには、各新規ユーザー ドキュメントが作成されると、ターミナル出力が表示されます。 プログラムを完了する任意のキーを押します。
 
     ```
     Database and collection validation complete
@@ -211,7 +211,7 @@ Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClie
 
 ## <a name="read-documents"></a>ドキュメントを読み取る
 
-1. データベースからドキュメントを読み取るには、次のコードをコピーし、Program.cs ファイルの末尾に配置します。
+1. データベースからドキュメントを参照する次のコードを Program.cs ファイルで WriteToConsoleAndPromptToContinue メソッドの後の場所にコピーします。
     
     ```csharp
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -241,18 +241,18 @@ Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClie
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Program.cs ファイルを保存し、統合ターミナルで次のコマンドを実行します。
+1. 統合ターミナルで、プログラムを実行するには、次のコマンドを入力します。
 
     ```
     dotnet run
     ```
-    「Read user 1」の出力によって文書の読み込みが行われた状態で、ターミナルは次の出力を表示します。
+    ターミナルに次の出力が表示されます。"Read user 1" という出力は、ドキュメントが取得されたことを示します。
 
     ```
     Database and collection validation complete
-    Created User 1
+    User 1 already exists in the database
     Press any key to continue ...
-    Created User 2
+    User 2 already exists in the database
     Press any key to continue ...
     Read user 1
     Press any key to continue ...
@@ -263,7 +263,7 @@ Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClie
 
 Azure Cosmos DB は、JSON ドキュメントの置換をサポートします。 ここでは、姓の変更を反映するようにユーザー レコードを更新します。
 
-1. **ReplaceFamilyDocument** メソッドをコピーし、Program.cs ファイルの末尾に貼り付けます。
+1. コピーして貼り付け、 **ReplaceFamilyDocument** Program.cs ファイルで ReadUserDocument メソッドの後のメソッド。
 
     ```csharp
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -294,7 +294,7 @@ Azure Cosmos DB は、JSON ドキュメントの置換をサポートします�
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Program.cs ファイルを保存し、統合ターミナルで次のコマンドを実行します。
+1. 統合ターミナルで、次のコマンドを実行します。
 
     ```
     dotnet run
@@ -303,13 +303,13 @@ Azure Cosmos DB は、JSON ドキュメントの置換をサポートします�
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     End of demo, press any key to exit.
     ```
@@ -340,7 +340,7 @@ Azure Cosmos DB は、JSON ドキュメントの置換をサポートします�
     }
     ```
 
-1. 次のコードをコピーし、**BasicOperations** メソッドの 2 回目のクエリ実行のすぐ下に貼り付けます。
+1. コピーし、の最後で次のコードを貼り付け、 **BasicOperations**メソッド。
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
@@ -352,17 +352,17 @@ Azure Cosmos DB は、JSON ドキュメントの置換をサポートします�
     dotnet run
     ```
 
-    「Read user 1」の出力によって文書の削除が行われた状態で、ターミナルは次の出力を表示します。
+    ターミナルに次の出力が表示されます。"Deleted user 1" という出力は、ドキュメントが削除されたことを示します。
 
     ```
     Database and collection validation complete
-    Created User 1
-    Press any key to continue ...
-    Created User 2
-    Press any key to continue ...
-    Read user 1
+    User 1 already exists in the database
     Press any key to continue ...
     Replaced last name for Suh
+    Press any key to continue ...
+    User 2 already exists in the database
+    Press any key to continue ...
+    Read user 1
     Press any key to continue ...
     Deleted user 1
     End of demo, press any key to exit.

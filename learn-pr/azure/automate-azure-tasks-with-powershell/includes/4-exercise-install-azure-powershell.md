@@ -1,10 +1,13 @@
-このユニットでは、ローカル コンピューターに **Azure PowerShell** をインストールします。 お使いのオペレーティング システムに該当するセクションを選択してください。
+このユニットでは、インストール**PowerShell**ローカル コンピューターにします。
 
-## <a name="linux-and-mac"></a>Linux および Mac
-Linux と macOS では、最初に **PowerShell Core** をインストールします。
+> [!NOTE]
+> この演習では、PowerShell ツールをローカルにインストールする手順に従ってできます。 モジュールの残りの部分では Azure Cloud Shell を使用して、Microsoft Learn で無料のサブスクリプション サポートを利用できるようにします。 この演習は省略可能なアクティビティと考え、必要に応じて手順を確認できます。
 
-### <a name="linux"></a>Linux
-最後のユニットで説明されているように、Linux 用 PowerShell のインストールではパッケージ マネージャーを使用します。 この例では **Ubuntu 18.04** を使用しますが、[他のバージョンやディストリビューションに関する詳細な説明についてはこちらのドキュメント](https://docs.microsoft.com/powershell/scripting/setup/installing-powershell-core-on-linux)をご覧ください。
+::: zone pivot="linux"
+
+## <a name="linux"></a>Linux
+
+Linux 用 PowerShell をインストールすると、パッケージ マネージャーを使用する必要があります。 この例では **Ubuntu 18.04** を使用しますが、[他のバージョンやディストリビューションに関する詳細な説明についてはこちらのドキュメント](https://docs.microsoft.com/powershell/scripting/setup/installing-powershell-core-on-linux)をご覧ください。
 
 Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して、Ubuntu Linux 上に PowerShell Core をインストールします。 
 
@@ -37,9 +40,13 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
     ```bash
     pwsh
     ```
+::: zone-end
 
-### <a name="macos"></a>macOS
-次に、Homebrew パッケージ マネージャーを使用して macOS に **PowerShell Core** をインストールします。
+::: zone pivot="macos"
+
+## <a name="macos"></a>MacOS
+
+Macos でインストールには、まず**PowerShell Core**します。 これは、Homebrew パッケージ マネージャーを使用します。
 
 > [!IMPORTANT]
 > **brew** コマンドを使用できない場合は、Homebrew パッケージ マネージャーのインストールが必要な場合があります。 詳しくは、[Homebrew の Web サイト](https://brew.sh/)をご覧ください。
@@ -62,56 +69,30 @@ Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して
     pwsh
     ```
 
-## <a name="install-azure-powershell"></a>Azure PowerShell をインストールする
-ベース **PowerShell** 製品をインストールした後、**Azure PowerShell** をインストールして Azure 固有のコマンドを追加します。
+::: zone-end
 
-### <a name="windows"></a>Windows
-`Install-Module` PowerShell コマンドを使用して、Windows に Azure PowerShell をインストールします。
+::: zone pivot="windows"
 
-> [!IMPORTANT]
-> Azure PowerShell をインストールするには、PowerShell バージョン 5.0 以降が必要です。 PowerShell のバージョンを確認するには、次のコマンドを使用します。 
->
-> `$PSVersionTable.PSVersion` 
->
->バージョン番号が 5.0 より小さい場合は、[既存の Windows PowerShell をアップグレードする](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)手順に従ってください。
+## <a name="windows"></a>Windows
+PowerShell は、ただしできる場合があります、更新プログラム、コンピューターの Windows に含まれています。 Azure のサポートを使用して、ここでは、PowerShell バージョン 5.0 以降が必要です。 次の手順を使用してインストールするバージョンを確認できます。
 
-1. **[スタート]** メニューを開き、「**Windows PowerShell**」と入力します。
+1. **[スタート]** メニューを開き、「**Windows PowerShell**」と入力します。 複数のショートカット リンクを使用可能なあります。
+    - Windows PowerShell - これは、64 ビット版と一般に選択する必要があります。
+    - Windows PowerShell (x86)-これは、64 ビット Windows にインストールされている 32 ビット バージョンです。
+    - Windows PowerShell ISE - Integrated Scripting Environment (ISE) は、PowerShell でスクリプトを作成するために使用されます。 
+    - Windows PowerShell ISE (x86)-ISE の 32 ビット バージョン。
 
-1. **[Windows PowerShell]** アイコンを右クリックし、**[管理者として実行]** を選択します。
+1. Windows PowerShell アイコンを選択します。
 
-1. **[ユーザー アカウント制御]** ダイアログで、**[はい]** を選択します。
-
-1. 次のコマンドを入力して、Enter キーを押します。
+1. インストールされている PowerShell のバージョンを確認するには、次のコマンドを入力します。
 
     ```powershell
-    Install-Module -Name AzureRM
+    $PSVersionTable.PSVersion
     ```
+    
+バージョン番号が 5.0 よりも小さい場合は、次の手順を[既存の Windows PowerShell をアップグレード](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell)します。
 
-1. PSGallery からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
-
-> [!TIP]
-> Azure PowerShell モジュールの何らかのバージョンが既にインストールされていることを示すエラー メッセージが表示された場合は、次のコマンドを実行して "_最新_" のバージョンに更新できます。
-> 
-> `Update-Module -Name AzureRM`
-> 
-> `Install-Module` コマンドと同じように、モジュールの信頼の確認を求められたら **[はい]** または **[すべてはい]** を選択します。
-
-### <a name="linux-or-macos"></a>Linux または macOS
-同じ基本プロセスを使用して、Linux または macOS に Azure PowerShell をインストールします。 手順はどちらのオペレーティング システムでも同じです。 違っているのは、PowerShell Core セッションを管理者特権にする点です。
-
-1. ターミナルで次のコマンドを入力し、管理者特権で PowerShell Core を起動します。
-
-    ```bash
-    sudo pwsh
-    ```
-
-1. PowerShell Core プロンプトで次のコマンドを実行して、Azure PowerShell をインストールします。
-
-    ```powershell
-    Install-Module AzureRM.NetCore
-    ```
-
-1. **PSGallery** からのモジュールを信頼するかどうかの確認を求められたら、**[はい]** または **[すべてはい]** を選択します。
+::: zone-end
 
 ## <a name="summary"></a>まとめ
-Azure PowerShell を使用して Azure のリソースを管理できるようにローカル コンピューターをセットアップしました。 Azure PowerShell をローカルで使用して、コマンドを入力したりスクリプトを実行したりできるようになりました。 入力したコマンドは、Azure PowerShell によって Azure データセンターに転送され、Azure サブスクリプションの内部で実行されます。
+PowerShell をサポートするために、ローカル マシンのセットアップがあります。 次に、Azure モジュールなどを追加するコマンドについてご説明します。

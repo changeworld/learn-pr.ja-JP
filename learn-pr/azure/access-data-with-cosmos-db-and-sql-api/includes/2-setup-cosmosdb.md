@@ -1,67 +1,84 @@
-> [!NOTE]
-> **スケールを目的とした Azure Cosmos DB データベースの作成**に続いてこちらを参照し、作成した Cosmos DB データベースおよびコレクションを削除していない場合は、このユニットをスキップして、データ エクスプローラーによるデータの追加まで移動してください。
+最初の手順を行うには、空の Azure Cosmos DB データベースとを使用するコレクションを作成します。 このラーニング パスの最後のモジュールで作成したものと同じにするときに: という名前のデータベース **"Products"** という名前のコレクションと **"Clothing"** します。 以下の手順と、画面の右側の Azure Cloud Shell を使用して、データベースを再作成します。
 
-最初に行う必要があるのは、使用するために空の Cosmos DB データベースおよびコレクションを作成することです。 このラーニング パスの直前のモジュールで作成したのと同じものが必要です。**"Products"** という名前のデータベースと **"Clothing"** という名前のコレクションです。 以下の手順と、画面の右側の Azure Cloud Shell を使用して、データベースを再作成します。
+# <a name="create-an-azure-cosmos-db-account--database-with-the-azure-cli"></a>Azure CLI を使用して、Azure Cosmos DB アカウントとデータベースを作成します。
 
-# <a name="create-a-cosmos-db-account--database-with-the-azure-cli"></a>Azure CLI を使用して Cosmos DB アカウントおよびデータベースを作成する
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. まず適切なサブスクリプションを選択します。無料の教育用アクセス サブスクリプションに関連付けられたサブスクリプション ID を選択してください。
+<!--
+TODO: This is original text prior to updates to use the sandbox. These can be worked back in as instructions for people using their own subscriptions. There is one more block like this below. Note that the assignment of RESOURCE_GROUP below would need to be different as well.
+
+1. Start by selecting the correct subscription - you want to select the subscription ID associated with your free education access subscription.
 
     ```azurecli
     az account list --output table
     ```
 
-1. サブスクリプションの一覧に "サンドボックス" が表示されているのを確認し、それを使用する最新のものとして設定します。 <!-- TODO: get official name here -->
+1. Make sure you see "sandbox" in the subscription list and set it as the current one to use:
 
     ```azurecli
     az account set --subscription "sandbox"
     ```
     
-1. 作成されたリソース グループを取得します。 自分のサブスクリプションを使用する場合は、この手順をスキップして、使用する一意の名前を下の `RESOURCE_GROUP` 環境変数に指定します。 リソース グループ名をメモしておきます。 ここにデータベースを作成することになります。 <!-- Do we get a token for this? -->
+1. Get the Resource Group that has been created for you. If you are using your own subscription, skip this step and just supply a unique name you want to use in the `RESOURCE_GROUP` environment variable below. Take note of the Resource Group name. This is where we will create our database.
 
     ```azurecli
     az group list --out table
     ```
+-->
 
-1. 少し簡単にするには、いくつかの環境変数を設定して、毎回共通の値を入力しないで済むようにできます。 
-
-    > [!IMPORTANT]
-    > これらの値はセッションに合わせて適切な値に変更してください。 たとえば、`<resource group>` 値は、上で確認したリソース グループ名で置き換えます。
+1. たびに、一般的な値を入力する必要はありませんので、いくつかの環境変数を設定します。 たとえば、Azure Cosmos DB アカウントの名前を設定して開始`export NAME="mycosmosdbaccount"`します。 フィールドはのみ英小文字、数字を含めることができます、'-' 文字、および 3 文字以上 31 文字の間である必要があります。
 
     ```azurecli
-    export RESOURCE_GROUP="<resource group>"
-    export NAME="<cosmos db name>"
+    export NAME="<Azure Cosmos DB account name>"
+    ```
+
+2. サンド ボックスの既存のリソース グループを使用するリソース グループを設定します。
+
+    ```azurecli
+    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
+    ```
+
+2. 最も近いリージョンを選択しなど、環境変数の設定`export LOCATION="EastUS"`します。
+
+    [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+    ```azurecli
     export LOCATION="<location>"
     ```
-    
-1. 次に、データベース名の変数を設定します。 名前を "Users" と付けて、直前のモジュールで作成したデータベースと一致するようにします。
+
+2. データベース名の変数を設定します。 ファイル名"Products"最後のモジュールで作成したデータベースに一致するようにします。
 
     ```azurecli
     export DB_NAME="Products"
     ```
-    
-1. 自分のサブスクリプションでこの手順を行い、_新しい_リソース グループを使用する場合 (推奨)、次のコマンドを使用してリソース グループを作成します。 **重要:** Microsoft Learn 提供の無料教育用リソースを使用している場合は、この手順を実行する必要はありません。 代わりに、上の `RESOURCE_GROUP` 変数に、割り当てられたリソース グループを設定してください。
+
+<!-- 
+
+TODO: Pre-sandbox text to be worked back in.
+
+1. If you are doing this on your own subscription, and you are using a _new_ Resource Group (recommended), then use the following command to create the Resource Group. **Important:** If you are using the free education resources provided by Microsoft Learn, then you do not need to execute this step. Instead, make sure the `RESOURCE_GROUP` variable above is set to your assigned resource group.
 
     ```azurecli
     az group create --name $RESOURCE_GROUP --location $LOCATION
     ```
-    
-1. 次に、Azure Cosmos DB アカウントを作成します。 これが完了するまでに数分かかります。
+-->
+
+3. 次に、Azure Cosmos DB アカウントを作成します。 これが完了するまでに数分かかります。
 
     ```azurecli
     az cosmosdb create --name $NAME --kind GlobalDocumentDB --resource-group $RESOURCE_GROUP
     ```
-    
-1. アカウントで `Products` データベースを作成します。
+
+4. アカウントで `Products` データベースを作成します。
 
     ```azurecli
     az cosmosdb database create --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
-    
-1. 最後に、`Clothing` コレクションを作成します。
+
+5. 最後に、`Clothing` コレクションを作成します。
 
     ```azurecli
     az cosmosdb collection create --collection-name "Clothing" --partition-key-path "/productId" --throughput 1000 --name $NAME --db-name $DB_NAME --resource-group $RESOURCE_GROUP
     ```
 
-これで、Cosmos DB アカウント、データベース、コレクションができあがりました。データを追加しましょう。
+Azure Cosmos DB アカウント、データベース、およびコレクションをいくつかのデータを追加してみましょう go!
