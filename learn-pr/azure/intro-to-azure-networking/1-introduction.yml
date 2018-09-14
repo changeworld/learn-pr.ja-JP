@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.1-introduction
-title: <span data-ttu-id="17fcd-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="17fcd-101">Introduction</span></span>
+title: <span data-ttu-id="d49cd-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="d49cd-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="17fcd-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="17fcd-102">Introduction</span></span>
-  description: <span data-ttu-id="17fcd-103">回復性の向上と待ち時間の短縮という 2 つの一般的なネットワークの課題について学習します。</span><span class="sxs-lookup"><span data-stu-id="17fcd-103">Learn about two common networking challenges &ndash; improving resiliency and reducing latency.</span></span>
+  title: <span data-ttu-id="d49cd-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="d49cd-102">Introduction</span></span>
+  description: <span data-ttu-id="d49cd-103">回復性の向上と待ち時間の短縮という 2 つの一般的なネットワークの課題について学習します。</span><span class="sxs-lookup"><span data-stu-id="d49cd-103">Learn about two common networking challenges &ndash; improving resiliency and reducing latency.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2c7935be644d2b5ce71aeb4a21d451ef9a31f6da
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 700edbb10baa798cb40e6c2b16fdc8e54e31fb5e
+  ms.sourcegitcommit: 62416ff619ca53bbda14edfbd05a1d1cf659743b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246245"
-durationInMinutes: 5
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45582081"
+durationInMinutes: 1
 content: '[!include[](includes/1-introduction.md)]'

@@ -1,19 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.host-a-web-application-with-azure-app-service.5-exercise-create-an-asp.net-core-web-application-on-linux
-title: <span data-ttu-id="19858-101">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="19858-101">Exercise - Create an ASP.NET Core application on Linux</span></span>
+title: <span data-ttu-id="8c341-101">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="8c341-101">Exercise - Create an ASP.NET Core application on Linux</span></span>
 metadata:
-  title: <span data-ttu-id="19858-102">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="19858-102">Exercise - Create an ASP.NET Core application on Linux</span></span>
-  description: <span data-ttu-id="19858-103">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="19858-103">Exercise - Create an ASP.NET Core application on Linux</span></span>
+  title: <span data-ttu-id="8c341-102">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="8c341-102">Exercise - Create an ASP.NET Core application on Linux</span></span>
+  description: <span data-ttu-id="8c341-103">演習 - Linux で ASP.NET Core アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="8c341-103">Exercise - Create an ASP.NET Core application on Linux</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 539e279d78694c171f88ff3c73563acdf77ca192
-  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.openlocfilehash: 3c73c9ee2da417fcbfb91cc5beeae6a13659c5e7
+  ms.sourcegitcommit: 8fbdc9990a51065cb16b1ff4644ca3af93798a5e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44372984"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45586313"
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-create-an-asp.net-core-web-application-on-linux.md)]'
