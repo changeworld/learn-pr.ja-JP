@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.8-summary
+title: <span data-ttu-id="c4b4e-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="c4b4e-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="c4b4e-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="c4b4e-102">Summary</span></span>
+  description: <span data-ttu-id="c4b4e-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="c4b4e-103">Summary</span></span>
+  ms.openlocfilehash: 2a2929abb0a98559f5cf1413882c1d4a3f750fd6
+  ms.sourcegitcommit: ee277f4207efa50a4f7c657b47725be7f8c45489
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43475794"
+durationInMinutes: 2
+content: '[!include[](includes/8-summary.md)]'

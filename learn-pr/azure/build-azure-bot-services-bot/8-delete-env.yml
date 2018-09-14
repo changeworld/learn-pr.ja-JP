@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-delete-env
+title: <span data-ttu-id="04640-101">リソース グループを削除する</span><span class="sxs-lookup"><span data-stu-id="04640-101">Delete the resource group</span></span>
+metadata:
+  title: <span data-ttu-id="04640-102">リソース グループを削除する</span><span class="sxs-lookup"><span data-stu-id="04640-102">Delete the resource group</span></span>
+  description: <span data-ttu-id="04640-103">リソース グループを削除する</span><span class="sxs-lookup"><span data-stu-id="04640-103">Delete the resource group</span></span>
+  ms.openlocfilehash: 361b1e4e9200503b15a103735fbedb72f26d2cb3
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43229035"
+durationInMinutes: 10
+content: <span data-ttu-id="04640-104">[!include[](includes/8-delete-env.md)</span><span class="sxs-lookup"><span data-stu-id="04640-104">[!include[](includes/8-delete-env.md)</span></span>
