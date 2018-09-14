@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b960d54b9e9ee524178fdccf921cf8b90799e21
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231709"
+durationInMinutes: 2
+content: '[!include[](includes/7-summary.md)]'

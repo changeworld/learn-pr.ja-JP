@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.5-high-availability
-title: Azure VM の可用性の管理
+title: Azure VM の可用性を管理する
 metadata:
-  title: Azure VM の可用性の管理
-  description: Azure VM の可用性の管理
+  title: Azure VM の可用性を管理する
+  description: Azure VM の可用性を管理する
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

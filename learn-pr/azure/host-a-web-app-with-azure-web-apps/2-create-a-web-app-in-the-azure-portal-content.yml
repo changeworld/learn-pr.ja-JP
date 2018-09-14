@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.2-create-a-web-app-in-the-azure-portal
+title: Azure portal で Web アプリを作成する
+metadata:
+  title: Azure portal で Web アプリを作成する
+  description: Azure portal で Web アプリケーションを作成する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 180d25a85bca8fdb79768c9fa883c917dc2afe54
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230519"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-a-web-app-in-the-azure-portal.md)]'

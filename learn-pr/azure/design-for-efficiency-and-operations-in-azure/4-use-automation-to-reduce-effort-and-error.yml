@@ -37,9 +37,9 @@ quiz:
       correctExplanation: Azure Storage Explorer は、ストレージ アカウントを管理するためのユーティリティです。 インフラストラクチャの展開を自動化する機能は提供されません。
   - content: Azure Automation を使用して、業務時間外での仮想マシンの開始/停止を自動化することができます。
     choices:
-    - content: ○
+    - content: "True"
       isCorrect: true
       correctExplanation: Azure Automation は、業務時間外での仮想マシンの開始/停止を自動化するための優れた方法です。
-    - content: ×
+    - content: "False"
       isCorrect: false
       incorrectExplanation: Azure Automation は、業務時間外での仮想マシンの開始/停止を自動化するための優れた方法です。

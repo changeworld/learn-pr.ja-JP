@@ -4,13 +4,17 @@ title: 知識 チェック
 metadata:
   title: 知識 チェック
   description: Docker とディープ ラーニング 知識 チェック
-  displayType: one-column
-  ms.openlocfilehash: 1327473f4e03e1d186b07e110c14c3439d7acb3b
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 083fc6a378cf9502b0f58ec211c17393c2d1ebb2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835189"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245292"
 durationInMinutes: 2
 content: 次に答えて続行してください。
 quiz:

@@ -25,13 +25,13 @@ quiz:
     choices:
     - content: Azure での監視ニーズの 1 つの窓
       isCorrect: false
-      incorrectExplanation: Application Insights は、アプリケーションのパフォーマンスに関する豊富なデータを提供できる、Azure の包括的な監視ソリューションです。
+      incorrectExplanation: Application Insights では、アプリケーションのパフォーマンスに関する豊富なデータが提供されますが、Azure の包括的監視ソリューションとは言えません。
     - content: 正常性エンドポイント監視パターンの実装
       isCorrect: false
       incorrectExplanation: 正常性エンドポイント監視パターンは、アプリケーションによって公開されるエンドポイントの全体的な正常性の監視に重点を置いています。
     - content: インフラストラクチャ全体およびアプリケーション間でのログの収集を可能にするワークスペース
       isCorrect: false
-      incorrectExplanation: Log Analytics は、インフラストラクチャ全体およびアプリケーション間でのログの収集を可能にするワークスペースです。
+      incorrectExplanation: Log Analytics は、インフラストラクチャ全体およびアプリケーションのログの収集を可能にするワークスペースです。
     - content: Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービス
       isCorrect: true
       correctExplanation: Application Insights は、Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービスです。

@@ -28,7 +28,7 @@ quiz:
       incorrectExplanation: Azure App Service は PaaS サービスであり、予約インスタンスは仮想マシンにのみ使用できます。
     - content: 使用されていないときに業務時間外に自動的にシャットダウンされる非運用仮想マシン。
       isCorrect: false
-      incorrectExplanation: この仮想マシンは大半の時間は実行されていないため、インスタンスの予約を完全には利用せず、予約インスタンスに適した候補ではありません。
+      incorrectExplanation: この仮想マシンは多くの時間は実行されないため、インスタンスの予約を完全には有効活用せず、予約インスタンスに適した候補ではありません。
     - content: Azure SQL Database インスタンス。
       isCorrect: false
       incorrectExplanation: Azure SQL Database は PaaS サービス、予約インスタンスは仮想マシンにのみ使用できます。

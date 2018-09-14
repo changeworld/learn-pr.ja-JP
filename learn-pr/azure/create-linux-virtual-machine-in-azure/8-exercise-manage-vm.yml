@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
-title: ネットワークの設定を構成する
+title: ネットワーク設定の構成
 metadata:
-  title: ネットワークの設定を構成する
-  description: ネットワークの設定を構成する
+  title: ネットワーク設定の構成
+  description: ネットワーク設定の構成
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
