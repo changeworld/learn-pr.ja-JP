@@ -9,11 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f002823f31521b264da5e3b920e5278cc704033b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 304ddaea215171217be043066afdb0085730432a
+  ms.sourcegitcommit: 496e19edaa5bfde56b43c9e8792fcbe8d2ce9443
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231879"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45524048"
+labId: 45995
 durationInMinutes: 10
 content: '[!include[](includes/3-create-qna-maker.md)'

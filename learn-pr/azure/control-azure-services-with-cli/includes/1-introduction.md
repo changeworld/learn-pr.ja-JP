@@ -19,4 +19,3 @@ Azure portal は、1 つのタスクを実行したり、ご利用のリソー�
 - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
 - リソース グループなど、Azure の基本的な概念に関する知識
 - Azure portal を使用した Azure リソースの管理経験
-- 

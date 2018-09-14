@@ -1,0 +1,45 @@
+このモジュールでは、サーバーレス バックエンドでクロスプラットフォームの Xamarin.Forms アプリを作成します。 このアプリではデバイスからユーザーの場所を取得し、電話番号の一覧とともに Azure 関数に送信します。 その後、関数ではサード パーティ サービス (Twilio) へのバインドを使用して、提供されるすべての電話番号に SMS メッセージとして場所を送信します。
+
+この処理では、以下の手順に従います。
+
+1. アプリでは、デバイス固有の場所 API の抽象化として Xamarin.Essentials を使用して場所をキャプチャします。
+
+1. 場所と電話番号は JSON ペイロードにパッケージ化され、Azure 関数に送信されます。
+
+1. Azure 関数では JSON ペイロードをデコードし、SMS メッセージを作成します。
+
+1. SMS メッセージは [Twilio](http://twilio.com) を介して送信されます。
+
+次の図で、この処理の概要を示します。
+
+![テキスト メッセージを通じて、ロケーションを共有する処理の高水準アーキテクチャを示す図。](../media/1-architecture.png)
+
+## <a name="create-a-twilio-account"></a>Twilio アカウントを作成する
+
+Azure 関数から SMS メッセージを送信できるようにするには、Twilio アカウントが必要になります。 作業を開始するには無料アカウントで十分です。
+
+1. [twilio.com](https://twilio.com) に移動します。
+
+1. 右上隅にある **[サインアップ]** という赤いボタンをクリックします。
+
+1. 詳細を入力し、**[作業開始]** をクリックします。
+
+1. ご自分の電話番号を確認する必要があります。 Twilio の無料アカウントでは、スパムに使用されないように確認済みの電話番号にのみメッセージを送信できます。 Twilio によって、電話番号を確認するために入力する必要がある確認コードが送信されます。
+
+1. "I'm here" など、最初のプロジェクト用の名前を指定します。
+
+1. Twilio のメッセージング ダッシュボードで、(ホーム アイコンがある) 左側の **[Console Dashboard]\(コンソール ダッシュボード\)** アイコンをクリックして、**[プロジェクト情報]** パネルを展開します。 ご自分の **ACCOUNT SID** と **AUTH TOKEN** はメモしておいてください。これらの値は後で必要になります。
+
+## <a name="launch-visual-studio"></a>Visual Studio を起動する
+
+このモジュールでは、仮想マシンを介して利用可能な、Visual Studio 2017 を使用してモバイル アプリと Azure Functions アプリを開発します。 Xamarin.Forms アプリをビルドして iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) を実行できますが、このモジュールでは UWP のみに焦点を合わせ、ラボの仮想マシン内で動作するようにします。 その他のプラットフォームに固有の内容に関するリンクが提供されます。
+
+<!-- TODO - add HoL link button here -->
+
+既に Visual Studio をローカルにインストールしている場合は、ローカル インストールを使用してこのモジュールに従うことができます。 適切な構成がある場合は、UWP だけでなく、Android や iOS でも実行できます。 適切なワークロードと SDK がインストールされていることを確認する場合は [Xamarin のインストールに関するドキュメント](https://docs.microsoft.com/xamarin/cross-platform/get-started/installation/windows)を参照し、UWP SDK については [UWP のインストールに関するドキュメント](https://docs.microsoft.com/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp#requirements)を参照してください。 Azure Functions プロジェクトを作成できるようにするには、[Azure 開発](https://docs.microsoft.com/azure/azure-functions/functions-develop-vs#prerequisites)ワークロードをインストールする必要もあります。
+
+macOS で Visual Studio for Mac を使用してこのモジュールに従う場合、UWP プロジェクトを作成することはできません。iOS または Android を対象にする必要があります。 Visual Studio for Mac 用のインストール手順については、[Xamarin のドキュメント](https://docs.microsoft.com/visualstudio/cross-platform/setup-and-install#mac-setup-apple-id-xcode-and-xamarin)を参照してください。アプリをビルドして発行するために行う必要がある手順は、このモジュールで示される手順と異なる場合もあります。
+
+## <a name="summary"></a>まとめ
+
+このユニットでは、SMS メッセージを送信するために使用する Twilio アカウントを作成し、Visual Studio を起動しました。 次は、Xamarin.Forms アプリを作成し、Xamarin.Essentials NuGet パッケージを追加する方法を学習します。

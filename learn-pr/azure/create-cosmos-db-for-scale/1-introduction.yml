@@ -4,16 +4,16 @@ metadata:
   title: はじめに
   description: はじめに
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e37b74ae2af83c2894ebae207b5c5bd3a688c7fd
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 3a17531133e7f0cdaa352e1151f79796dc43c49f
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44238407"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44693414"
 title: はじめに
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

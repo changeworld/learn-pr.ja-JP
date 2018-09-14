@@ -29,7 +29,7 @@
 1. グループ内にアイテムが多数含まれている場合は、`--query` オプションを追加することで、戻り値をフィルター処理することができます。次のコマンドを試してみてください。
 
     ```azurecli
-    az group list --query '[?name == popupResGroup]'
+    az group list --query "[?name == 'popupResGroup']"
     ```
 
     クエリは、JSON 要求を対象とした標準クエリ言語である **JMESPath** を使用してフォーマットされます。 この強力なフィルター言語の詳細については、<http://jmespath.org/> を参照してください。 **Azure CLI を使用した VM の管理**に関するモジュールでもクエリの詳細を説明しています。

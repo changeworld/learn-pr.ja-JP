@@ -96,7 +96,7 @@ async Task SendLocation()
 
 1. UWP アプリをスタートアップ アプリとして設定し、実行します。 **[Send Location]\(場所の送信\)** ボタンをクリックします。 Functions ランタイム コンソールに出力が表示され、呼び出されている関数を確認できます。ログには生成された URL が表示されます。
 
-    ![呼び出されている関数の出力](../media-drafts/6-function-called.png)
+    ![呼び出されている関数の出力](../media/6-function-called.png)
 
 1. URL 生成をテストするには、それをコンソールからブラウザーに貼り付けます。 現在の場所が表示されるはずです。
 

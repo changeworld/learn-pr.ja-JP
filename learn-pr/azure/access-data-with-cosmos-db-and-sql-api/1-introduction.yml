@@ -4,16 +4,16 @@ metadata:
   title: はじめに
   description: Azure Cosmos DB でデータを作成、格納、クエリする方法について説明します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c7eaa922bc302690d0ec49ec0099f975cced530b
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 74216f9d93572df075382e1d614d758077498587
+  ms.sourcegitcommit: 18f983ffeecf4f3b544a13de28b6d494fa204ee3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241110"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45511936"
 title: はじめに
-durationInMinutes: 10
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

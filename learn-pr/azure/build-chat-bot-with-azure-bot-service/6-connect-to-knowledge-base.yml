@@ -9,12 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0842689d22e1be0a3b7308eb1aa65f42f91f4ee9
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 1b1551ccd0f1cee66c75e357ba48ff10f1f115c6
+  ms.sourcegitcommit: 496e19edaa5bfde56b43c9e8792fcbe8d2ce9443
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307639"
-azureSandbox: true
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45524156"
+labId: 45995
 durationInMinutes: 10
 content: '[!include[](includes/6-connect-to-knowledge-base.md)'

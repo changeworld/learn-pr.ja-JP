@@ -1,0 +1,71 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+metadata:
+  title: 知識チェック - RBAC を使用する
+  description: 知識チェック - RBAC を使用する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5a48224c7368dcdbd52bd3ee792b1b9f138b95e7
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44697480"
+title: 知識チェック - RBAC を使用する
+durationInMinutes: 5
+quiz:
+  title: 知識チェック - RBAC を使用する
+  questions:
+  - content: アクセス権を付与する、Azure portal のブレードの名前は何ですか?
+    choices:
+    - content: Azure リソース
+      isCorrect: false
+      correctExplanation: '[Azure リソース] ブレードでは、ロールを割り当てることはできませんが、自分または選択したユーザーに割り当てられているロールを確認することができます。'
+    - content: Azure Active Directory
+      isCorrect: false
+      incorrectExplanation: '[Azure Active Directory] ブレードでは、ロールを割り当てることはできませんが、このブレードで Azure Active Directory 機能にアクセスできます。'
+    - content: すべてのユーザー
+      isCorrect: false
+      correctExplanation: '[すべてのユーザー] ブレードでは、ロールを割り当てることはできません。 このブレードには、選択したディレクトリのすべてのユーザーが一覧表示されます。'
+    - content: アクセス制御 (IAM)
+      isCorrect: true
+      correctExplanation: 正解です。 [アクセス制御 (IAM)] ブレードでロールを割り当てます。 このブレードは、ポータル内の複数の領域に表示されます。
+  - content: Azure リソースへのアクセス権をユーザーに付与するには、ロールの割り当てを作成します。
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: 正解です。 ロールの割り当ては、アクセス権を付与する目的のため、特定のスコープで、ロールをサービス プリンシパルにバインドするプロセスです。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: ロールの割り当ては、アクセス権を付与する目的のため、特定のスコープで、ロールをサービス プリンシパルにバインドするプロセスです。
+  - content: 他のユーザーにアクセス権を付与できるのは、どのロールですか?
+    choices:
+    - content: 'Virtual Machine Contributor '
+      isCorrect: false
+      correctExplanation: Virtual Machine Contributor ロールでは、仮想マシンを管理することはできますが、他のユーザーにアクセス権を付与することはできません。
+    - content: ユーザー アクセス管理者
+      isCorrect: true
+      incorrectExplanation: 正解です。 ユーザー アクセス管理者ロールと所有者ロールが、他のユーザーにアクセス権を付与できます。
+    - content: 共同作成者
+      isCorrect: false
+      correctExplanation: 共同作成者ロールでは、すべてのリソースを管理することはできますが、他のユーザーにアクセス権を付与することはできません。
+    - content: 閲覧者
+      isCorrect: false
+      correctExplanation: 閲覧者ロールでは、すべてのリソースを読み取ることはできますが、他のユーザーにアクセス権を付与することはできません。
+  - content: 開発者には、リソース グループへのフル アクセスが必要です。 最小限の特権のベスト プラクティスに従っている場合、どのスコープを指定する必要がありますか?
+    choices:
+    - content: リソース グループ
+      isCorrect: true
+      correctExplanation: 正解です。 最小限の特権のベスト プラクティスに従って、ユーザーが自分の業務を遂行するのに必要なアクセス権のみを付与します。 この場合、リソース グループだけにスコープを設定する必要があります。
+    - content: サブスクリプション
+      isCorrect: false
+      incorrectExplanation: サブスクリプション スコープでは、開発者のアクセス権が付与されますが、必要以上に広範になる場合があります。
+    - content: リソース
+      isCorrect: false
+      correctExplanation: リソース スコープでは、開発者に必要なアクセス権が付与されません。
+    - content: ユーザー
+      isCorrect: false
+      correctExplanation: ユーザーはスコープではありません。

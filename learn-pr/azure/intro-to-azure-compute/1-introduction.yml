@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.1-introduction
-title: Azure コンピューティングを使用する理由
+title: はじめに
 metadata:
-  title: Azure コンピューティングを使用する理由
-  description: Azure コンピューティングを使用する理由
+  title: はじめに
+  description: はじめに
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fa09082ba754601cbfd1a9300c09f47ba6b2ebb5
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 38be8198039c76f6274b6aa447c627cbdd24cf4e
+  ms.sourcegitcommit: 18f983ffeecf4f3b544a13de28b6d494fa204ee3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233593"
-durationInMinutes: 2
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45511239"
+durationInMinutes: 1
 content: '[!include[](includes/1-introduction.md)]'

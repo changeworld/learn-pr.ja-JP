@@ -4,16 +4,16 @@ metadata:
   title: Visual Studio Code でアプリを設定する
   description: Visual Studio Code でアプリを設定する
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: aeb3b265dc618556f17ab4e08fc8bcdee79f560d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: fabb57dbfadc613300b28b38920447b25aee7673
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235313"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44695952"
 title: Visual Studio Code でアプリを設定する
 durationInMinutes: 15
 content: '[!include[](includes/2-setup.md)]'

@@ -219,7 +219,7 @@ Xamarin.Forms UI は XAML を使用して作成できます。
 
 アプリを実行して新しい UI を表示します。 この時点でバインドを検証する場合は、プロパティまたは `SendLocation` メソッドにブレークポイントを追加することによって行うことができます。
 
-![アプリの新しい UI](../media-drafts/3-new-ui.png)
+![アプリの新しい UI](../media/3-new-ui.png)
 
 ## <a name="summary"></a>まとめ
 

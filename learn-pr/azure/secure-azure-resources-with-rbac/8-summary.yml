@@ -1,20 +1,19 @@
 ### YamlMime:ModuleUnit
-uid: learn.choose-storage-approach-in-azure.6-summary
+uid: learn.secure-azure-resources-with-rbac.8-summary
 metadata:
   title: まとめ
   description: まとめ
   ms.date: 09/24/2018
-  author: mimig1
-  ms.author: mimig
+  author: markjulmar
+  ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0e43c598029df9ca108e7716b7174994cf4fb6ad
+  ms.openlocfilehash: 1718acdf4d6fbaa6e6af68a5891ab6f690cad009
   ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
   ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44695884"
+  ms.locfileid: "44697419"
 title: まとめ
-azureSandbox: true
-durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+durationInMinutes: 2
+content: '[!include[](includes/8-summary.md)]'

@@ -9,11 +9,11 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7efbfb2caf77c949beb7b6a6f1e1c53ab7083e3c
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 35fda79c33db9950273337c88ede973c957d8dfb
+  ms.sourcegitcommit: 18f983ffeecf4f3b544a13de28b6d494fa204ee3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235398"
-durationInMinutes: 7
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45512072"
+durationInMinutes: 5
 content: '[!include[](includes/3-select-and-manage-compute-options.md)]'
