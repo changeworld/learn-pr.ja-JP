@@ -1,0 +1,16 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.deploy-image
+interactive: bash
+metadata:
+  title: <span data-ttu-id="56d30-101">Azure Container Registry からイメージを展開する</span><span class="sxs-lookup"><span data-stu-id="56d30-101">Deploy images from Azure Container Registry</span></span>
+  description: <span data-ttu-id="56d30-102">Azure Container Registry からイメージを展開します。</span><span class="sxs-lookup"><span data-stu-id="56d30-102">Deploy images from Azure Container Registry.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: f67b2a907b3d397fc33a17ff2d8c60511193bff0
+  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43251876"
+title: <span data-ttu-id="56d30-103">Azure Container Registry からイメージを展開する</span><span class="sxs-lookup"><span data-stu-id="56d30-103">Deploy images from Azure Container Registry</span></span>
+durationInMinutes: 20
+content: '[!include[](includes/4-deploy-image.md)]'

@@ -1,0 +1,114 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.7-knowledge-check
+title: <span data-ttu-id="f9ffd-101">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="f9ffd-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="f9ffd-102">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="f9ffd-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="f9ffd-103">Azure Bot Service を使用してチャット ボットをビルドするのに必要な手順を理解したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-103">Confirm that you understood the steps required to build a chat bot with the Azure Bot Service.</span></span>
+  ms.openlocfilehash: 03a830345f79ae78ea30dd6cf1dc811aba4a8741
+  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/31/2018
+  ms.locfileid: "43363421"
+durationInMinutes: 10
+quiz:
+  title: <span data-ttu-id="f9ffd-104">TensorFlow と Azure Data Science Virtual Machine を使用したニューラル ネットワークの構築</span><span class="sxs-lookup"><span data-stu-id="f9ffd-104">Building neural networks with TensorFlow and the Azure Data Science Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="f9ffd-105">Azure Web アプリ ボットをデプロイしたとき、作成されたすべてのものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-105">When the Azure web app bot was deployed, what all was created?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-106">ボット サービス</span><span class="sxs-lookup"><span data-stu-id="f9ffd-106">A bot service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-107">1 つボット サービスが作成されましたが、他のものも作成されました。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-107">A bot service was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="f9ffd-108">Web アプリ</span><span class="sxs-lookup"><span data-stu-id="f9ffd-108">A web app</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-109">1 つ Web アプリが作成されましたが、他のものも作成されました。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-109">A web app was created, but something else was, too.</span></span>
+    - content: <span data-ttu-id="f9ffd-110">ボット サービスと Web アプリ</span><span class="sxs-lookup"><span data-stu-id="f9ffd-110">A bot service and web app</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-111">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-111">Great!</span></span> <span data-ttu-id="f9ffd-112">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-112">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f9ffd-113">まだ何もデプロイされていません</span><span class="sxs-lookup"><span data-stu-id="f9ffd-113">Nothing got deployed yet</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-114">このステップで、デプロイが行われました。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-114">A deployment happened by this step.</span></span>
+  - content: <span data-ttu-id="f9ffd-115">QnA Maker は何を作成するために使用されるのですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-115">What is QnA Maker used to create?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-116">質問と回答のセットを受け取るサービスです</span><span class="sxs-lookup"><span data-stu-id="f9ffd-116">A service that takes in a set of questions and answers</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-117">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-117">Great!</span></span> <span data-ttu-id="f9ffd-118">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-118">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f9ffd-119">質問に回答するサービス</span><span class="sxs-lookup"><span data-stu-id="f9ffd-119">A service to answer questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-120">質問の回答に役立ちますが、QnA Maker により行えることは、これだけではありません。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-120">It helps answer questions, but that's not all QnA Maker can do.</span></span>
+    - content: <span data-ttu-id="f9ffd-121">質問に新しい回答を生成するサービス</span><span class="sxs-lookup"><span data-stu-id="f9ffd-121">A service that generates new answers to questions</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-122">QnA Maker は新しい回答を作成するわけではなく、知っていることに回答します。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-122">QnA Maker doesn't generate new answers, but it does give answers it knows about.</span></span>
+    - content: <span data-ttu-id="f9ffd-123">ボット</span><span class="sxs-lookup"><span data-stu-id="f9ffd-123">A bot</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-124">QnA Maker はボットと関連付けることができますが、それを作成することはありません。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-124">QnA Maker can be associated with a bot, but it doesn't create one.</span></span>
+  - content: <span data-ttu-id="f9ffd-125">QnA Maker には使用するナレッジ ベースをどのように入力するのですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-125">What ways can you populate your knowledge base in QnA Maker?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-126">使用するナレッジ ベースは手動でのみ入力できます</span><span class="sxs-lookup"><span data-stu-id="f9ffd-126">Can only manually populate your knowledge base</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-127">ナレッジ ベースは手動で入力できますが、他にも方法があります。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-127">You could manually populate the knowledge base, but there are other ways.</span></span>
+    - content: <span data-ttu-id="f9ffd-128">テキスト ファイルを使用する</span><span class="sxs-lookup"><span data-stu-id="f9ffd-128">With a text file</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-129">ナレッジ ベースに入力する方法は、テキスト ファイルのみではありません。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-129">A text file isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="f9ffd-130">URL を使用する</span><span class="sxs-lookup"><span data-stu-id="f9ffd-130">With a URL</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-131">ナレッジ ベースに入力する方法は、URL のみではありません。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-131">A URL isn't the only way to populate the knowledge base.</span></span>
+    - content: <span data-ttu-id="f9ffd-132">テキスト ファイルまたは URL を使用する</span><span class="sxs-lookup"><span data-stu-id="f9ffd-132">With a text file or URL</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-133">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-133">Great!</span></span> <span data-ttu-id="f9ffd-134">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-134">Proceed to the next part of the lab.</span></span>
+  - content: <span data-ttu-id="f9ffd-135">アプリケーションで QnA Maker を使用するには、どのような手順が必要ですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-135">What step(s) are needed to use QnA Maker in your applications?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-136">保存する</span><span class="sxs-lookup"><span data-stu-id="f9ffd-136">Save</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-137">保存をする必要はありますが、他にも手順が必要です。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-137">You do need to save, but other steps are needed.</span></span>
+    - content: <span data-ttu-id="f9ffd-138">保存とトレーニング</span><span class="sxs-lookup"><span data-stu-id="f9ffd-138">Save and train</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-139">トレーニングは重要ですが、サービスの使用には他に何が必要ですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-139">Training is important, but what else do you need to consume the service?</span></span>
+    - content: <span data-ttu-id="f9ffd-140">保存、トレーニング、公開</span><span class="sxs-lookup"><span data-stu-id="f9ffd-140">Save, train, and publish</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-141">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-141">Great!</span></span> <span data-ttu-id="f9ffd-142">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-142">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f9ffd-143">公開する</span><span class="sxs-lookup"><span data-stu-id="f9ffd-143">Publish</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-144">残念ながら、直接公開に進むことはできません。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-144">Unfortunately, you can't just go straight to publishing.</span></span>
+  - content: <span data-ttu-id="f9ffd-145">ボット フレームワーク パッケージ以外に、RESTful サービスの構築および使用には何が必要ですか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-145">Other than the bot framework packages, what other package is needed to build and consume RESTful services?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-146">restify</span><span class="sxs-lookup"><span data-stu-id="f9ffd-146">restify</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-147">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-147">Great!</span></span> <span data-ttu-id="f9ffd-148">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-148">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f9ffd-149">express</span><span class="sxs-lookup"><span data-stu-id="f9ffd-149">express</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-150">Express は、RESTful サービスを作成するためのみではなく、完全な Web フレームワークとして使用します。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-150">Express is used to as a full web framework, not to just create RESTful services.</span></span>
+    - content: <span data-ttu-id="f9ffd-151">swagger</span><span class="sxs-lookup"><span data-stu-id="f9ffd-151">swagger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-152">Swagger は、RESTful サービスを作成するためのみではなく、独自の API を指定、ビルド、テストするために使用します。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-152">Swagger is used to specify, build, and test your APIs, not just to create RESTful services.</span></span>
+    - content: <span data-ttu-id="f9ffd-153">babel</span><span class="sxs-lookup"><span data-stu-id="f9ffd-153">babel</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-154">Babel は、新しい構文がサポートされていない可能性があるブラウザー用に、新しいバージョンの JavaScript をコンパイルするために使用されます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-154">Babel is used to compile new versions of JavaScript for browsers that may not support the new syntax.</span></span>
+  - content: <span data-ttu-id="f9ffd-155">Azure portal では、Web アプリ ボット用の QnA Maker の設定をどのセクションに追加しますか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-155">In the Azure portal for the web app bot, what section do you go to add the QnA Maker settings?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-156">すべてのアプリ サービスの設定</span><span class="sxs-lookup"><span data-stu-id="f9ffd-156">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-157">この設定では、Web アプリと関連付けられているアプリ サービスの設定を変更することができます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-157">This setting allows you to change settings on the app service associated with the web app.</span></span>
+    - content: <span data-ttu-id="f9ffd-158">アプリケーションの設定</span><span class="sxs-lookup"><span data-stu-id="f9ffd-158">Application settings</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-159">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-159">Great!</span></span> <span data-ttu-id="f9ffd-160">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-160">Proceed to the next part of the lab.</span></span>
+    - content: <span data-ttu-id="f9ffd-161">構築</span><span class="sxs-lookup"><span data-stu-id="f9ffd-161">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-162">このセクションでは、ボットのコードを参照したり取得したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-162">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="f9ffd-163">チャネル</span><span class="sxs-lookup"><span data-stu-id="f9ffd-163">Channels</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-164">このセクションでは、ボットを別のサービスにフックして、ボットとやりとりさせることができます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-164">This section allows you to hook the bot up to different services to interact with the bot.</span></span>
+  - content: <span data-ttu-id="f9ffd-165">Microsoft Teams に使用するボットを追加する場合、Azure portal のどのセクションに進みますか?</span><span class="sxs-lookup"><span data-stu-id="f9ffd-165">If you wanted to add your bot to Microsoft Teams, what section in the Azure portal do you go to?</span></span>
+    choices:
+    - content: <span data-ttu-id="f9ffd-166">すべてのアプリ サービスの設定</span><span class="sxs-lookup"><span data-stu-id="f9ffd-166">All app service settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-167">この設定では変更することができます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-167">This setting allows you to change.</span></span>
+    - content: <span data-ttu-id="f9ffd-168">アプリケーションの設定</span><span class="sxs-lookup"><span data-stu-id="f9ffd-168">Application settings</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-169">この設定では、Web アプリケーションの特定の設定を指定できます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-169">This setting allows you to specify specific settings for the web application.</span></span>
+    - content: <span data-ttu-id="f9ffd-170">構築</span><span class="sxs-lookup"><span data-stu-id="f9ffd-170">Build</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f9ffd-171">このセクションでは、ボットのコードを参照したり取得したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-171">This section allows you to view and get the code for the bot.</span></span>
+    - content: <span data-ttu-id="f9ffd-172">チャネル</span><span class="sxs-lookup"><span data-stu-id="f9ffd-172">Channels</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f9ffd-173">そのとおりです。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-173">Great!</span></span> <span data-ttu-id="f9ffd-174">ラボの次のパートに進みます。</span><span class="sxs-lookup"><span data-stu-id="f9ffd-174">Proceed to the next part of the lab.</span></span>

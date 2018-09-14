@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.7-manage-vm
+title: <span data-ttu-id="ef32e-101">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="ef32e-101">Configure network settings</span></span>
+metadata:
+  title: <span data-ttu-id="ef32e-102">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="ef32e-102">Configure network settings</span></span>
+  description: <span data-ttu-id="ef32e-103">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="ef32e-103">Configure network settings</span></span>
+  ms.openlocfilehash: 626e1009161b800f8beaa098f90ebba97cef49d0
+  ms.sourcegitcommit: 1aec476e479e92851bc3b5b7795f1200740bc1e5
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/03/2018
+  ms.locfileid: "43498047"
+durationInMinutes: 10
+content: '[!include[](includes/7-manage-vm.md)]'

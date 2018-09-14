@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.deploy-acr
+interactive: bash
+metadata:
+  title: <span data-ttu-id="2ea7d-101">Azure Container Registry をデプロイする</span><span class="sxs-lookup"><span data-stu-id="2ea7d-101">Deploy Azure Container Registry</span></span>
+  description: <span data-ttu-id="2ea7d-102">Azure Container Registry をデプロイする</span><span class="sxs-lookup"><span data-stu-id="2ea7d-102">Deploy Azure Container Registry</span></span>
+  ms.openlocfilehash: 906093e77dc9cfe267552bd0775e4422be97606a
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43317823"
+title: <span data-ttu-id="2ea7d-103">Azure Container Registry をデプロイする</span><span class="sxs-lookup"><span data-stu-id="2ea7d-103">Deploy Azure Container Registry</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/2-deploy-acr.md)]'
