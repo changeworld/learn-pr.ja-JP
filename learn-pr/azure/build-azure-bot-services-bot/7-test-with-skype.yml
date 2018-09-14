@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.7-test-with-skype
+title: Skype でボットをテストする
+metadata:
+  title: Skype でボットをテストする
+  description: Skype でボットをテストする
+  ms.openlocfilehash: ddb19b558f5a2302792330cbc0c5940fd6b0d824
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43795248"
+durationInMinutes: 10
+content: '[!include[](includes/7-test-with-skype.md)'

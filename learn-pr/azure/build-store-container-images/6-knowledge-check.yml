@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: Azure Container Registry 知識チェック。
+  ms.openlocfilehash: 6477ce7e69188d1ef0b8f73248f00bd386068cde
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43315436"
+durationInMinutes: 5
+quiz:
+  title: テスト タイトル
+  questions:
+  - content: Azure Container Registry を使用する利点として、次の中で正しくないのはどれですか?
+    choices:
+    - content: 多くの Azure データセンターにコンテナー イメージをレプリケートします。
+      incorrectExplanation: これは Azure Container Registry の geo レプリケーション機能によって可能になります。
+      isCorrect: false
+    - content: Docker コンテナーに関連するテクノロジを使用して、Container Registry からコンテナー イメージをプルします。
+      isCorrect: false
+      incorrectExplanation: Container Registry は、Docker に関連するすべてのテクノロジで使用できます。
+    - content: コンテナー イメージをプル操作に使用できるようにします。
+      isCorrect: true
+      correctExplanation: Container Registry はプライベート レジストリです。 Container Registry に格納されているイメージにアクセスするには認証が必要です。
+    - content: ローカルにインストールされた Docker ツールを使用せずにコンテナー イメージをビルドします。
+      isCorrect: false
+      incorrectExplanation: コンテナー イメージは、Azure Container Registry Build を使用してクラウドでビルドできます。
+  - content: Azure Container Registry に推奨される認証方法は何ですか?
+    choices:
+    - content: 管理者アカウント。
+      incorrectExplanation: Azure Container Registry 用の管理者アカウントを作成できますが、これは推奨される認証方法ではありません。
+      isCorrect: false
+    - content: ユーザー名とパスワード。
+      incorrectExplanation: Azure コンテナー レジストリでは管理者アカウントを有効にすることができます。これにより、ユーザー名とパスワードが提供されます。 ただし、これは推奨される認証方法ではありません。
+      isCorrect: false
+    - content: Azure サービス プリンシパル。
+      isCorrect: true
+      correctExplanation: Azure サービス プリンシパルは、Azure Container Registry 内のコンテナー イメージへのきめ細かいアクセスを提供します。 サービス プリンシパルを使用すると、読み取り専用アクセスとフル アクセスをコンテナー レジストリに提供できます。
+    - content: 認証なし。
+      incorrectExplanation: Azure Container Registry はプライベート レジストリであり、アクセスするには認証が必要です。
+      isCorrect: false
+  - content: geo レプリケーションは、Container Registry Standard SKU で使用できます。
+    choices:
+    - content: True。
+      incorrectExplanation: geo レプリケーションは、Premium SKU でのみ使用できます。
+      isCorrect: false
+    - content: False。
+      isCorrect: true
+      correctExplanation: geo レプリケーションは、Premium SKU でのみ使用できます。

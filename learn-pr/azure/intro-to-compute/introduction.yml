@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.1-introduction
+title: Azure コンピューティングを使用する理由
+metadata:
+  title: Azure コンピューティングを使用する理由
+  description: Azure コンピューティングを使用する理由
+  ms.openlocfilehash: d1c83f97ddd1863d37de1d4792c562070ea1bb98
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447531"
+durationInMinutes: 5
+content: '[!include[](includes/1-introduction.md)]'

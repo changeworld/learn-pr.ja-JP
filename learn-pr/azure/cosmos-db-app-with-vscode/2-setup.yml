@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.2-setup
+metadata:
+  title: Visual Studio Code でアプリを設定する
+  description: Visual Studio Code でアプリを設定する
+  ms.openlocfilehash: 34ee24d3db855076fbf4723ff625624a5bd59888
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43412015"
+title: Visual Studio Code でアプリを設定する
+durationInMinutes: 10
+content: '[!include[](includes/2-setup.md)]'

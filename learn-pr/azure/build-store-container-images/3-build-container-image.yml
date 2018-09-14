@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.build-image
+interactive: bash
+metadata:
+  title: Azure Container Registry を使用してコンテナー イメージをビルドする
+  description: Azure Container Registry を使用してコンテナー イメージをビルドする
+  ms.openlocfilehash: efd1d1214c56dca12d47644d41303b78773246f4
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43317768"
+title: Azure Container Registry を使用してコンテナー イメージをビルドする
+durationInMinutes: 15
+content: '[!include[](includes/3-build-images.md)]'

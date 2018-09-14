@@ -1,0 +1,46 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+title: 監視と分析を使用して運用に関する分析情報を得る
+metadata:
+  title: 監視と分析を使用して運用に関する分析情報を得る
+  description: このユニットでは、監視と分析を使用して運用に関する分析情報を得る方法について説明します
+  ms.openlocfilehash: 5191e8d92a0b316b8a88b7d4ec12bd378b30bbe6
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43826061"
+durationInMinutes: 8
+content: >
+  [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
+quiz:
+  title: 知識チェック - 監視と分析を使用して運用に関する分析情報を得る
+  questions:
+  - content: 次のうち、アプリケーションで実行時の例外をトラブルシューティングする際に使用するものはどれですか?
+    choices:
+    - content: Service Health
+      isCorrect: false
+      incorrectExplanation: Azure Service Health では、Azure サービスの正常性に関する分析情報は提供されますが、アプリケーションに関する分析情報は提供されません。
+    - content: Network Watcher
+      isCorrect: false
+      incorrectExplanation: Azure Network Watcher は、ネットワークのパフォーマンスの問題のトラブルシューティングには役立ちますが、アプリケーションに関する分析情報は提供されません。
+    - content: アクティビティ ログ
+      isCorrect: false
+      incorrectExplanation: Azure アクティビティ ログでは、Azure プラットフォーム上のリソースで実行されたイベントがログに記録されますが、アプリケーションに関する分析情報は提供されません。
+    - content: Application Insights
+      isCorrect: true
+      correctExplanation: Application Insights は、問題を検出して診断し、実行時の例外など、Web アプリとサービスの使用状況を把握するのに役立ちます。
+  - content: 次のサービスのうち、仮想マシンを削除したユーザーを特定するのに使用するものはどれですか?
+    choices:
+    - content: Service Health
+      isCorrect: false
+      incorrectExplanation: Azure Service Health では、Azure サービスの正常性に関する分析情報は提供されますが、リソースで実行されたアクションに関する分析情報は提供されません。
+    - content: Network Watcher
+      isCorrect: false
+      incorrectExplanation: Azure Network Watcher は、ネットワークのパフォーマンスの問題のトラブルシューティングには役立ちますが、リソースで実行されたアクションに関する分析情報は提供されません。
+    - content: アクティビティ ログ
+      isCorrect: true
+      correctExplanation: Azure アクティビティ ログでは、リソースの削除を含む、Azure プラットフォーム上のリソースで実行されたイベントがログに記録されます。
+    - content: Application Insights
+      isCorrect: false
+      incorrectExplanation: Application Insights は、問題を検出して診断し、Web アプリとサービスの使用状況を把握するのに役立ちますが、リソースで実行されたアクションに関する分析情報は提供されません。

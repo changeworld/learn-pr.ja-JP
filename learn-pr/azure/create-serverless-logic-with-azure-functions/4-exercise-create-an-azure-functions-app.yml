@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.4-exercise-create-an-azure-functions-app
+title: 演習 - Azure 関数アプリの作成
+metadata:
+  title: 演習 - Azure 関数アプリの作成
+  description: 演習 - Azure 関数アプリの作成
+  ms.openlocfilehash: 44398df3a502dab5d674adad9f68e82348f21870
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447633"
+durationInMinutes: 10
+content: '[!include[](includes/4-exercise-create-an-azure-functions-app.md)]'

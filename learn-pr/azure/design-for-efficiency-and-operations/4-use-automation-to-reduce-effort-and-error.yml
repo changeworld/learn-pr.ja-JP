@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+title: Automation を使用して労力とエラーを減らす
+metadata:
+  title: Automation を使用して労力とエラーを減らす
+  description: このユニットでは、Automation を使用して労力とエラーを減らす方法について説明します
+  ms.openlocfilehash: 82b0c97fd9d37a1e0b112bab4659d911800dc028
+  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43824514"
+durationInMinutes: 12
+content: >
+  [!include[](includes/4-use-automation-to-reduce-effort-and-error.md)]
+quiz:
+  title: 知識チェック - Automation を使用して労力とエラーを減らす
+  questions:
+  - content: 次のうち、インフラストラクチャのデプロイを自動化するのに使用できないものはどれですか?
+    choices:
+    - content: Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Azure PowerShell では、スクリプトを作成してインフラストラクチャの展開を自動化できます。
+    - content: Azure CLI
+      isCorrect: false
+      incorrectExplanation: Azure CLI では、スクリプトを作成してインフラストラクチャの展開を自動化できます。
+    - content: Resource Manager テンプレート
+      isCorrect: false
+      incorrectExplanation: Resource manager テンプレートでは、インフラストラクチャの展開を完全に自動化できます。
+    - content: Azure Storage Explorer
+      isCorrect: true
+      correctExplanation: Azure Storage Explorer は、ストレージ アカウントを管理するためのユーティリティです。 インフラストラクチャの展開を自動化する機能は提供されません。
+  - content: Azure Automation を使用して、業務時間外での仮想マシンの開始/停止を自動化することができます。
+    choices:
+    - content: "True"
+      isCorrect: true
+      correctExplanation: Azure Automation は、業務時間外での仮想マシンの開始/停止を自動化するための優れた方法です。
+    - content: "False"
+      isCorrect: false
+      incorrectExplanation: Azure Automation は、業務時間外での仮想マシンの開始/停止を自動化するための優れた方法です。

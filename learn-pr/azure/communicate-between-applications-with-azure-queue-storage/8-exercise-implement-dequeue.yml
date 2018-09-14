@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
+title: キューからメッセージを取得する
+metadata:
+  title: キューからメッセージを取得する
+  description: キューからメッセージを取得する
+  ms.openlocfilehash: 384ef2458c85dd7f4ccd13ae19ea8cab2f34cb30
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43316447"
+interactive: bash-editor
+durationInMinutes: 10
+content: '[!include[](includes/8-exercise-implement-dequeue.md)]'

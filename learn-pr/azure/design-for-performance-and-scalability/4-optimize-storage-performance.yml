@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
+title: ストレージのパフォーマンスを最適化する
+metadata:
+  title: ストレージのパフォーマンスを最適化する
+  description: このユニットでは、アーキテクチャのストレージのパフォーマンスを最適化する方法について説明します
+  ms.openlocfilehash: 32524382aa06c0a14f56c8faf49a0b4123c945e4
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675595"
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-optimize-storage-performance.md)]
+quiz:
+  title: 知識チェック - ストレージのパフォーマンスを最適化する
+  questions:
+  - content: ポリグロットな永続化とはどのようなことですか?
+    choices:
+    - content: Azure SQL Database を使用してすべてのデータを格納すること
+      isCorrect: false
+      incorrectExplanation: "\"単一のテクノロジにすべてのデータを格納すること\" は、ポリグロットな永続化の定義ではありません。"
+    - content: データ転送のために接続を維持する方法
+      isCorrect: false
+      incorrectExplanation: データ転送のために接続を維持する方法はキープアライブであり、ポリグロットな永続化とは無関係です。
+    - content: アプリケーションで目的に応じて異なるデータ ストレージ テクノロジを使用すること
+      isCorrect: true
+      correctExplanation: ポリグロットな永続化とは、目的に応じて異なるデータ ストレージ テクノロジを使用することです。
+    - content: 一時的なデータ障害を処理する方法
+      isCorrect: false
+      incorrectExplanation: 一時的なデータ障害の処理はアプリケーション アーキテクチャで役立ちますが、ポリグロットな永続化とは無関係です。
+  - content: Redis Cache を使用すると、データのスナップショットをメモリに格納することによって、アプリケーションのパフォーマンスを向上させることができます。
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: Redis Cache ではアプリケーション データをメモリに格納します。これにより、取得時間が短縮され、頻繁にアクセスされるデータに関連するアプリケーションのパフォーマンスが向上します。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: Redis Cache ではアプリケーション データをメモリに格納します。これにより、取得時間が短縮され、頻繁にアクセスされるデータに関連するアプリケーションのパフォーマンスが向上します。

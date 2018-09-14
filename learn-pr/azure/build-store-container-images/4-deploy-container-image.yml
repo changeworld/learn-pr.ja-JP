@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.deploy-image
+interactive: bash
+metadata:
+  title: Azure Container Registry からイメージをデプロイする
+  description: Azure Container Registry からイメージをデプロイする
+  ms.openlocfilehash: 135879d504b2759c37ba6b1452eb5ac63794600e
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43317870"
+title: Azure Container Registry からイメージをデプロイする
+durationInMinutes: 20
+content: '[!include[](includes/4-deploy-image.md)]'
