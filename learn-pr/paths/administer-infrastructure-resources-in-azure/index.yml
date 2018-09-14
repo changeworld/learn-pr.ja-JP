@@ -3,27 +3,34 @@ uid: learn.administer-infrastructure-resources-in-azure
 metadata:
   title: Azure でコンテナーを管理する
   description: 仮想マシンのリソースを作成、管理、セキュリティ保護、スケーリングする方法について説明します。
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b2f545d53629e759bbd900df3baccae5b5ab40ab
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 1fa8be6d0ce6ce16e59dddb8a168150d6032ec6c
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307758"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45554493"
 title: Azure でインフラストラクチャ リソースを管理する
 summary: 仮想マシンのリソースを作成、管理、セキュリティ保護、スケーリングする方法について説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
 levels:
 - beginner
 roles:
 - administrator
 products:
 - azure
+- azure-virtual-machines
+- azure-storage
+- azure-portal
+- azure-monitor
+- azure-clis
+- azure-resource-manager
 modules:
 - learn.introduction-to-azure-virtual-machines
 - learn.create-linux-vm-in-azure

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.6-grant-access-powershell
+metadata:
+  title: RBAC と Azure PowerShell を使用してアクセスを許可する
+  description: Azure PowerShell を使用してリソース グループ内に仮想マシンを作成して管理するために、ユーザーにアクセス権を付与する方法について学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f05922f6048219adc45ed0e467861c72cdd3c030
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44344452"
+title: RBAC と Azure PowerShell を使用してアクセスを許可する
+durationInMinutes: 10
+content: '[!include[](includes/6-grant-access-powershell.md)]'

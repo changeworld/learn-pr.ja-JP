@@ -10,4 +10,5 @@
 
 ## <a name="prerequisites"></a>前提条件
 
+<!---TODO: Update for sandbox?--->
 - D シリーズ VM へのアクセス権を持つ Azure サブスクリプション 

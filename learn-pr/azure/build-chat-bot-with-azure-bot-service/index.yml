@@ -8,30 +8,38 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6b250aeb54c796d8eff4ff216bd15dcfe9c5660f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 8c4cca7d4cb8aa920da8d5435864f295641b0ec1
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231284"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45554635"
 title: Azure Bot Service を使用してチャット ボットを構築する
 summary: Azure Bot Service と Microsoft QnA Maker を組み合わせると、さまざまなサービスを使用してユーザーと自然に対話するインテリジェント ボットを構築して発行するために開発者が必要とするツールが提供されます。
 abstract: >
   このモジュールでは、次のことを行います。
-    - ボットをホストするための Azure Web アプリ ボットを作成します
-    - ナレッジ ベースを作成し、データを設定して、ボットに接続します
-    - コードでボットを実装し、ビルドしたボットをデバッグします
-    - ボットを発行し、継続的インテグレーションを使用して最新の状態に維持します
-    - Visual Studio Code と Microsoft Bot Framework Emulator を使用してローカルでボットをデバッグします
-    - ボットを Skype に接続して対話します
+
+  - ボットをホストするための Azure Web アプリ ボットを作成します
+
+  - ナレッジ ベースを作成し、データを設定して、ボットに接続します
+
+  - コードでボットを実装し、ビルドしたボットをデバッグします
+
+  - ボットを発行し、継続的インテグレーションを使用して最新の状態に維持します
+
+  - Visual Studio Code と Microsoft Bot Framework Emulator を使用してローカルでボットをデバッグします
+
+  - ボットを Skype に接続して対話します
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- vs
+- vs-code
 units:
 - learn.build-azure-bot-services-bot.1-introduction
 - learn.build-azure-bot-services-bot.2-create-web-app-bot

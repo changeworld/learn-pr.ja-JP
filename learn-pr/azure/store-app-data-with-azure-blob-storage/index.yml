@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9fb7811710d20a8a0f106f1cf5faf49b208b9ece
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 636b580a243112d866cd7f407f1d897d7849fa0e
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248369"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537366"
 title: Azure Blob ストレージを使用してアプリケーション データを格納する
 summary: Azure Blob ストレージを使用してユーザー ファイルを格納するアプリを作成します。
 abstract: >
@@ -22,7 +22,7 @@ abstract: >
     - BLOB を保持するストレージ リソースを作成する
     - Azure Blob Storage でのデータの保存と取得
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
 levels:
 - beginner
 roles:

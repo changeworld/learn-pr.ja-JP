@@ -3,27 +3,33 @@ uid: learn.connect-your-services-together
 metadata:
   title: サービスの接続
   description: Azure では、さまざまなコンポーネント (Web サイトのフロントエンド、バックエンド サービス、およびオンデマンド コンピューティング サービスを実行するトリガーされた関数) で構成されたアプリケーションを作成することができます。 Azure には、これらさまざまなコンポーネントが相互にデータを渡せるようにするためのさまざまな通信方法も含まれています。 これらの通信サービスを活用して、テスト可能なコンポーネントから拡張性の高い、効率的なソリューションを作成する方法について説明します。
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8f3945a38a2e218eed119125e84dcc00d05de2a9
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 3dd52035d9da3ec2c199c9092009935efd4ce4e2
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44236656"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45555681"
 title: サービスの接続
 summary: Azure では、さまざまなコンポーネント (Web サイトのフロントエンド、バックエンド サービス、およびオンデマンド コンピューティング サービスを実行するトリガーされた関数) で構成されたアプリケーションを作成することができます。 Azure には、これらさまざまなコンポーネントが相互にデータを渡せるようにするためのさまざまな通信方法も含まれています。 これらの通信サービスを活用して、テスト可能なコンポーネントから拡張性の高い、効率的なソリューションを作成する方法について説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/connect-your-services-together.svg
 levels:
 - beginner
+- intermediate
 roles:
 - developer
 products:
 - azure
+- azure-service-bus
+- azure-event-grid
+- azure-event-hubs
+- azure-storage
 modules:
 - learn.choose-messaging-model
 - learn.implement-message-workflows-with-service-bus

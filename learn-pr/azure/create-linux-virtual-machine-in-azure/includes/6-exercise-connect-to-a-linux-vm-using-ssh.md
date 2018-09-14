@@ -20,33 +20,31 @@ SSH クライアントを使って Azure VM に接続するには、次が必要
 
 1. **仮想マシンへの接続**ブレード内で、**IP アドレス**および**ポート番号**設定をメモします。 **SSH**タブ上で、VM に接続するためにローカルで実行する必要があるコマンドも表示されています。 これをクリップボードにコピーします。
 
-<!-- TODO: this will be necessary if we ever have inline portal integration 
+<!-- TODO: This will be necessary if we ever have inline portal integration. 
 
-### Open the Azure Cloud Shell
+### Open Azure Cloud Shell
 
-Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account.
+Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account:
 
-1. Switch back to the **Dashboard** by clicking the Dashboard button in the Azure sidebar.
+1. Switch back to the **Dashboard** by clicking the **Dashboard** button in the Azure sidebar.
 
-1. Open the Cloud Shell by clicking the shell button in the top toolbar.
+1. Open Cloud Shell by clicking the **shell** button in the top toolbar.
 
-    ![Open the Azure Cloud Shell](../media-drafts/6-cloud-shell.png)
+    ![Screenshot of the Azure portal top navigation bar with the Azure Cloud Shell button highlighted.](../media/6-cloud-shell.png)
 
 1. Select **Bash** as the shell type. PowerShell is also available if you are a Windows administrator.
-
-    ![Select bash shell in the portal](../media-drafts/6-use-bash-shell.png)
 
 -->
 
 ## <a name="connect-with-ssh"></a>SSH を使用した接続
 
-1. SSH タブから入手したコマンドラインを Cloud Shell に貼り付けます。 次のようになります。ただし、IP アドレスは異なります (また、**jim** を使用しなかった場合はユーザー名もおそらく異なります)。
+1. Azure Cloud Shell に、[SSH] タブから取得したコマンドラインを貼り付けます。 この処理のようになりますただし、別の IP アドレスになります (おそらく、別のユーザー名を使用しなかった場合、 **jim**!)。
 
     ```bash
     ssh jim@137.117.101.249
     ```
 
-1. このコマンドを使用すると、Secure Shell 接続が開き、Linux 用の従来のシェル コマンド プロンプトに移動します。
+1. このコマンドは、Secure Shell 接続を開くし、Linux 用の従来のシェルのコマンド プロンプトで配置します。
 
 1. ここで Linux コマンドをいくつか実行して見てください。
     - `ls -la /` を使ってディスクのルートを表示します。
@@ -58,21 +56,21 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
 
 ## <a name="initialize-data-disks"></a>データ ディスクの初期化
 
-最初から作成した追加のドライブはすべて、初期化して、フォーマットする必要があります。 これは、物理ディスクへ行う処理と同一です。
+最初から作成した追加のドライブはすべて、初期化して、フォーマットする必要があります。 これを行うためのプロセスは、物理ディスクと同じです。
 
-1. まず、ディスクを特定します。 これは上記で行いました。 `dmesg | grep SCSI` を使用して、SCSI デバイス用のカーネルからのすべてのメッセージを一覧表示することもできます。
+1. まず、ディスクを特定します。 これは上記で行いました。 使用することも`dmesg | grep SCSI`、これは、カーネルの SCSI デバイスからのすべてのメッセージを一覧表示します。
 
-1. 初期化が必要なドライブ（`sdc`）を特定したら、`fdisk` を使ってそれを行うことができます。 `sudo` を使ってコマンドを実行し、パーティションを行いたいディスクを供給する必要があります。
+1. 初期化が必要なドライブ（`sdc`）を特定したら、`fdisk` を使ってそれを行うことができます。 コマンドを実行する必要があります`sudo`パーティションを作成ディスクを指定します。
 
     ```bash
     sudo fdisk /dev/sdc
     ```
-1. `n` コマンドを使用して新しいパーティションを追加します。  この例では、プライマリ パーティション用の p も選択し、残りの既定値はそのまま使用します。 出力は次の例のようになります。   
+1. `n` コマンドを使用して新しいパーティションを追加します。 この例でも選択**p**のプライマリ パーティションを作成し、残りの既定値をそのまま使用します。 出力は次の例のようになります。   
 
     ```output
     Device does not contain a recognized partition table.
     Created a new DOS disklabel with disk identifier 0x1f2d0c46.
-    
+
     Command (m for help): n
     Partition type
        p   primary (0 primary, 0 extended, 4 free)
@@ -81,9 +79,9 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
     Partition number (1-4, default 1): 1
     First sector (2048-2145386495, default 2048):
     Last sector, +sectors or +size{K,M,G,T,P} (2048-2145386495, default 2145386495):
-    
+
     Created a new partition 1 of type 'Linux' and of size 1023 GiB.
-    ```    
+    ```
 
 1. `p` コマンドを使ってパーティション テーブルを出力します。 これは、次のようになります。
 
@@ -94,14 +92,14 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
     I/O size (minimum/optimal): 4096 bytes / 4096 bytes
     Disklabel type: dos
     Disk identifier: 0x1f2d0c46
-    
+
     Device     Boot Start        End    Sectors  Size Id Type
     /dev/sdc1        2048 2145386495 2145384448 1023G 83 Linux
     ```
-    
+
 1. `w` コマンドを使って変更を書き込みます。 これによってツールが終了します。
 
-1. 次に、`mkfs` コマンドを使ってパーティションにファイル システムを書き込む必要があります。 ファイル システムの種類と、`fdisk` の出力から取得したデバイス名を指定する必要があります。
+1. 次に、`mkfs` コマンドを使ってパーティションにファイル システムを書き込む必要があります。 先ほど取得したファイル システムの種類とデバイス名を指定する必要がありますが、`fdisk`出力。
     - `-t ext4` を渡して_ext4_ ファイル システムを作成します。
     - デバイス名は `/dev/sdc` です。
 
@@ -120,24 +118,24 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
             32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
             4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
             102400000, 214990848
-    
+
     Allocating group tables: done
     Writing inode tables: done
     Creating journal (262144 blocks): done
     Writing superblocks and filesystem accounting information: done
     ```
 
-1. 次に、出力マウント ポイントとして使用するディレクトリを作成します。 `data` フォルダがあるとします。
+1. 次は、マウント ポイントとして使用してディレクトリを作成します。 仮定を`data`フォルダー。
 
     ```bash
     sudo mkdir /data
     ```
-1. 最後に、`mount` を使ってディスクをマウント ポイントにアタッチします。
+1. 最後に、使用して`mount`ディスク マウント ポイントを接続します。
 
     ```bash
     sudo mount /dev/sdc1 /data
     ```
-    これで、マウントされたドライブを、`lsblk` を使って表示できるようになります。
+    使用できる必要があります`lsblk`マウントされたドライブのように表示します。
     
     ```output
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -154,7 +152,7 @@ Let's use the Cloud Shell in the Azure Portal. If you generated the SSH key loca
 
 ### <a name="mounting-the-drive-automatically"></a>自動的にドライブをマウントする
 
-再起動後にドライブが確実に自動でマウントされるようにするには、そのドライブを `/etc/fstab` ファイルに追加する必要があります。 ドライブを参照するときは、デバイス名 (`/dev/sdc1` など) だけでなく、UUID (汎用一意識別子) を `/etc/fstab` で使用することも強くお勧めします。 UUID を使用すると、OS が起動中にディスク エラーを検出した場合に、間違ったディスクが特定の場所にマウントされるのを防ぐことができます。 その後、残りのデータ ディスクは、その同じデバイス ID に割り当てられます。 新しいドライブの UUID を確認するには、`blkid` ユーティリティを使用します。
+再起動後にドライブが確実に自動でマウントされるようにするには、そのドライブを `/etc/fstab` ファイルに追加する必要があります。 UUID (汎用一意識別子) が使用されることをも強くお勧め`/etc/fstab`デバイス名だけではなく、ドライブを参照する (など`/dev/sdc1`)。 UUID を使用すると、OS が起動中にディスク エラーを検出した場合に、間違ったディスクが特定の場所にマウントされるのを防ぐことができます。 その後、残りのデータ ディスクは、その同じデバイス ID に割り当てられます。 新しいドライブの UUID を確認するには、`blkid` ユーティリティを使用します。
 
 ```bash
 sudo -i blkid
@@ -168,7 +166,7 @@ sudo -i blkid
 /dev/sdc1: UUID="e311c905-e0d9-43ab-af63-7f4ee4ef108e" TYPE="ext4"
 ```
 
-1. `/dev/sdc1` ドライブの UUID をコピーし、テキスト エディタで `/etc/fstab` のファイルを開きます。
+1. UUID をコピー、`/dev/sdc1`ドライブし、開く、`/etc/fstab`ファイルをテキスト エディターで。
 
     ```bash
     sudo vi /etc/fstab
@@ -183,19 +181,19 @@ sudo -i blkid
 
 1. **End** キーを押して、行の末尾に移動します。 または、矢印キーを使うこともできます。 **ENTER** を押して新規行に移動します。
 
-1. エディタに以下のラインを入力してします。 複数の値は、スペースまたはタブで区切ることができます。 各列の詳細については、ドキュメントをご覧ください。
+1. エディタに以下のラインを入力してします。 複数の値は、スペースまたはタブで区切ることができます。 各列の詳細については、ドキュメントを確認します。
 
     ```output
     UUID=<uuid-goes-here>    /data    ext4    defaults,nofail    1    2
     ```
-1. **ESC** を押し、**:w!** と入力して ファイルを書き込み、**:q** と入力してエディタを終了します。
+1. **ESC** を押し、**:w!** と入力して ファイルの書き込みと **: q**エディターを終了します。
 
-1. 最後に、マウント ポイントの更新を OS に要求することによって、入力が正しいことを確認してみましょう。
+1. 最後に、マウント ポイントを更新する OS を要求することによって、エントリが正しいことを確認しましょう。
 
     ```bash
     sudo mount -a
     ```
-    
+
     もしエラーが返された場合、ファイルを編集して問題を探します。
 
 > [!TIP]
@@ -203,15 +201,15 @@ sudo -i blkid
 
 ## <a name="install-software-onto-the-vm"></a>VM 上にソフトウェアをインストールする
 
-VM 上にソフトウェアをインストールするに際して、いくつかの方法があります。 最初に、前に説明したように、`scp` を使用してお使いのコンピューターから VM にローカル ファイルをコピーできます。 これによってデータまたは実行したいカスタム アプリケーションのコピーが可能です。
+VM 上にソフトウェアをインストールするに際して、いくつかの方法があります。 最初に、前に説明したように、`scp` を使用してお使いのコンピューターから VM にローカル ファイルをコピーできます。 これにより、データまたはを実行するカスタム アプリケーションをコピーできます。
 
-Secure Shell を使用してソフトウェアをインストールすることもできます。 Azure マシンは既定でインターネットに接続されています。 標準のコマンドを使用して、標準的なリポジトリから人気のあるソフトウェア パッケージを直接インストールできます。 この方法を使って Apache をインストールしてみましょう。
+Secure Shell を使用してソフトウェアをインストールすることもできます。 Azure マシンは、既定では、インターネットに接続します。 標準のコマンドを使用して、標準的なリポジトリから人気のあるソフトウェア パッケージを直接インストールできます。 この方法を使って Apache をインストールしてみましょう。
 
-### <a name="install-apache-web-server"></a>Apache web サーバーのインストール
+### <a name="install-the-apache-web-server"></a>Apache web サーバーをインストールします。
 
-Apache は Ubuntu のデフォルト ソフトウェア レポジトリ内で利用可能ですので、従来のパッケージ管理ツールを使ってインストールします。
+Apache は Ubuntu の既定のソフトウェア リポジトリ内で使用できる従来のパッケージ管理ツールを使用してインストールします。
 
-1. 最初に、ローカル パッケージ インデックスを更新して、最新のアップストリームの変更を反映します。
+1. 最新のアップ ストリームの変更を反映するように、ローカル パッケージのインデックスを更新することで開始します。
 
     ```bash
     sudo apt-get update
@@ -220,9 +218,9 @@ Apache は Ubuntu のデフォルト ソフトウェア レポジトリ内で利
 1. 次に、Apache をインストールします。
 
     ```bash
-    sudo apt-get install apache2
+    sudo apt-get install apache2 -y
     ```
-    
+
 1. これは自動で開始されるはずです。状態は `systemctl` を使用して確認できます。
 
     ```bash
@@ -243,7 +241,7 @@ Apache は Ubuntu のデフォルト ソフトウェア レポジトリ内で利
                ├─11156 /usr/sbin/apache2 -k start
                ├─11158 /usr/sbin/apache2 -k start
                └─11159 /usr/sbin/apache2 -k start
-    
+
     test-web-eus-vm1 systemd[1]: Starting The Apache HTTP Server...
     test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
     test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
@@ -251,6 +249,6 @@ Apache は Ubuntu のデフォルト ソフトウェア レポジトリ内で利
 
 1. 最後に、パブリック IP アドレスを使用して既定のページを取得できます。 既定のページが返されるはずです。
 
-    ![Apache の既定の Web ページ](../media-drafts/6-apache-works.png)
+    ![新しい Linux VM の ip アドレスでホストされている Apache 既定の web ページを表示する web ブラウザーのスクリーン ショット。](../media/6-apache-works.png)
 
-ご覧のとおり、SSH を使うことでローカルコンピューターと同様に Linux VM を操作できます。 この VM を、他の Linux コンピュータと同じように、ソフトウェアのインストール、役割の設定、機能の調整および毎日のタスクの管理などを行うことができます。 ただし、それは手動プロセスです。常にインストールする必要があるソフトウェアがある場合は、スクリプトを使用してプロセスの自動化を検討します。
+ご覧のとおり、SSH を使うことでローカルコンピューターと同様に Linux VM を操作できます。 他の Linux コンピューターと同様、この VM を管理することができます。 ソフトウェアをインストールする、ロールの構成、機能、およびその他の日常的なタスクを調整します。 ただし、それは手動プロセスです。常にインストールする必要があるソフトウェアがある場合は、スクリプトを使用してプロセスの自動化を検討します。

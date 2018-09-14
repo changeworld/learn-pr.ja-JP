@@ -9,11 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 72e0dc3f09d5ea2f160603744522fd94b2130f45
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 1d6e4220205f19c2bf3a3c5faa3347c199a051ff
+  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246448"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45531566"
+labId: 45998
 durationInMinutes: 15
 content: '[!include[](includes/5-train-your-first-deep-learning-model.md)]'
