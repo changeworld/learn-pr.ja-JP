@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.2-assess-your-database
+title: <span data-ttu-id="5a523-101">Data Migration Assistant (DMA) の使用</span><span class="sxs-lookup"><span data-stu-id="5a523-101">Using the Data Migration Assistant (DMA)</span></span>
+metadata:
+  title: <span data-ttu-id="5a523-102">Data Migration Assistant (DMA) の使用</span><span class="sxs-lookup"><span data-stu-id="5a523-102">Using the Data Migration Assistant (DMA)</span></span>
+  description: <span data-ttu-id="5a523-103">Data Migration Assistant (DMA) の使用</span><span class="sxs-lookup"><span data-stu-id="5a523-103">Usuing the Data Migration Assistant (DMA)</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0ddf46f054877c446cfe3325ebebc808ad8848b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232865"
+durationInMinutes: 5
+content: '[!include[](includes/2-assess-your-database.md)]'

@@ -1,54 +1,58 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.3q-docker
-title: <span data-ttu-id="25506-101">知識 チェック</span><span class="sxs-lookup"><span data-stu-id="25506-101">Knowledege Check</span></span>
+title: <span data-ttu-id="0dbfa-101">知識 チェック</span><span class="sxs-lookup"><span data-stu-id="0dbfa-101">Knowledege Check</span></span>
 metadata:
-  title: <span data-ttu-id="25506-102">知識 チェック</span><span class="sxs-lookup"><span data-stu-id="25506-102">Knowledege Check</span></span>
-  description: <span data-ttu-id="25506-103">Docker とディープ ラーニング 知識 チェック</span><span class="sxs-lookup"><span data-stu-id="25506-103">Docker + Deep Learning Knowledege Check</span></span>
-  displayType: one-column
-  ms.openlocfilehash: 1327473f4e03e1d186b07e110c14c3439d7acb3b
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: <span data-ttu-id="0dbfa-102">知識 チェック</span><span class="sxs-lookup"><span data-stu-id="0dbfa-102">Knowledege Check</span></span>
+  description: <span data-ttu-id="0dbfa-103">Docker とディープ ラーニング 知識 チェック</span><span class="sxs-lookup"><span data-stu-id="0dbfa-103">Docker + Deep Learning Knowledege Check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 083fc6a378cf9502b0f58ec211c17393c2d1ebb2
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43835189"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245292"
 durationInMinutes: 2
-content: <span data-ttu-id="25506-104">次に答えて続行してください。</span><span class="sxs-lookup"><span data-stu-id="25506-104">Answer the following to continue</span></span>
+content: <span data-ttu-id="0dbfa-104">次に答えて続行してください。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-104">Answer the following to continue</span></span>
 quiz:
-  title: <span data-ttu-id="25506-105">Docker ディープ ラーニングのクイズ</span><span class="sxs-lookup"><span data-stu-id="25506-105">Docker Deep Learning Quiz</span></span>
+  title: <span data-ttu-id="0dbfa-105">Docker ディープ ラーニングのクイズ</span><span class="sxs-lookup"><span data-stu-id="0dbfa-105">Docker Deep Learning Quiz</span></span>
   questions:
-  - content: <span data-ttu-id="25506-106">CUDA とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="25506-106">What is CUDA?</span></span>
+  - content: <span data-ttu-id="0dbfa-106">CUDA とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="0dbfa-106">What is CUDA?</span></span>
     choices:
-    - content: <span data-ttu-id="25506-107">CUDA は、並列コンピューティング プラットフォームおよび API です。</span><span class="sxs-lookup"><span data-stu-id="25506-107">CUDA is a parallel computing platform and API.</span></span>
+    - content: <span data-ttu-id="0dbfa-107">CUDA は、並列コンピューティング プラットフォームおよび API です。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-107">CUDA is a parallel computing platform and API.</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="25506-108">60 年代の有名な hotrod にちなんだ愛称である CUDA は、Nvidia が提供する非常に強力な GPU モデルです。</span><span class="sxs-lookup"><span data-stu-id="25506-108">CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.</span></span>
+    - content: <span data-ttu-id="0dbfa-108">60 年代の有名な hotrod にちなんだ愛称である CUDA は、Nvidia が提供する非常に強力な GPU モデルです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-108">CUDA is a super powerful GPU model provided by Nvidia and nicknamed after a famous hotrod from the 60s.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="25506-109">CUDA は、画像の分類に使用されるディープ ラーニング アーキテクチャです。</span><span class="sxs-lookup"><span data-stu-id="25506-109">CUDA is a deep learning architecture used for image classification.</span></span>
+    - content: <span data-ttu-id="0dbfa-109">CUDA は、画像の分類に使用されるディープ ラーニング アーキテクチャです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-109">CUDA is a deep learning architecture used for image classification.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="25506-110">Docker とは何ですか。</span><span class="sxs-lookup"><span data-stu-id="25506-110">What is docker?</span></span>
+  - content: <span data-ttu-id="0dbfa-110">Docker とは何ですか。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-110">What is docker?</span></span>
     choices:
-    - content: <span data-ttu-id="25506-111">Docker は、ニューラル ネットワークをトレーニングするためのフレームワークです。</span><span class="sxs-lookup"><span data-stu-id="25506-111">Docker is a framework for training neural networks.</span></span>
+    - content: <span data-ttu-id="0dbfa-111">Docker は、ニューラル ネットワークをトレーニングするためのフレームワークです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-111">Docker is a framework for training neural networks.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="25506-112">Docker は、オープン プラットフォーム分散アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="25506-112">Docker is an open platform distributed applications.</span></span>
-      correctExplanation: <span data-ttu-id="25506-113">Docker は、ラップトップ、データ センター VM、またはクラウドのどこからでも、分散アプリケーションをビルド、出荷、および実行する開発者やシステム管理者向けのオープン プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="25506-113">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span>
+    - content: <span data-ttu-id="0dbfa-112">Docker は、オープン プラットフォーム分散アプリケーションです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-112">Docker is an open platform distributed applications.</span></span>
+      correctExplanation: <span data-ttu-id="0dbfa-113">Docker は、ラップトップ、データ センター VM、またはクラウドのどこからでも、分散アプリケーションをビルド、出荷、および実行する開発者やシステム管理者向けのオープン プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-113">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="25506-114">Docker は、Web アプリ向けプラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="25506-114">Docker is a platform for webapps.</span></span>
+    - content: <span data-ttu-id="0dbfa-114">Docker は、Web アプリ向けプラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-114">Docker is a platform for webapps.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="25506-115">Nvidia-Docker と Docker の主な違いは何ですか。</span><span class="sxs-lookup"><span data-stu-id="25506-115">What is the main difference between Nvidia-Docker and Docker?</span></span>
+  - content: <span data-ttu-id="0dbfa-115">Nvidia-Docker と Docker の主な違いは何ですか。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-115">What is the main difference between Nvidia-Docker and Docker?</span></span>
     choices:
-    - content: <span data-ttu-id="25506-116">Docker は Windows で実行され、Docker は Linux でのみ実行されます。</span><span class="sxs-lookup"><span data-stu-id="25506-116">Docker runs on windows and Nvidia-Docker runs only on linux.</span></span>
+    - content: <span data-ttu-id="0dbfa-116">Docker は Windows で実行され、Docker は Linux でのみ実行されます。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-116">Docker runs on windows and Nvidia-Docker runs only on linux.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="25506-117">この回答は正しいですが、主な違いではありません。</span><span class="sxs-lookup"><span data-stu-id="25506-117">While this answer is correct, it is not the main difference.</span></span>
-    - content: <span data-ttu-id="25506-118">Nvidia Docker は、Docker として CPU のみをサポートする Nidia GPU のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="25506-118">Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs</span></span>
+      incorrectExplanation: <span data-ttu-id="0dbfa-117">この回答は正しいですが、主な違いではありません。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-117">While this answer is correct, it is not the main difference.</span></span>
+    - content: <span data-ttu-id="0dbfa-118">Nvidia Docker は、Docker として CPU のみをサポートする Nidia GPU のサポートを提供します。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-118">Nvidia Docker provides support for Nvidia GPUs where as a Docker supports only CPUs</span></span>
       isCorrect: true
-    - content: <span data-ttu-id="25506-119">Docker はすべての GPU をサポートしますが、Nvidia-Docker は Nividia GPU のみサポートすればよいため、より軽量です。</span><span class="sxs-lookup"><span data-stu-id="25506-119">Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.</span></span>
+    - content: <span data-ttu-id="0dbfa-119">Docker はすべての GPU をサポートしますが、Nvidia-Docker は Nividia GPU のみサポートすればよいため、より軽量です。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-119">Docker supports all GPUs Nvidia-Docker is more light weight since it only needs ot support Nvidia GPUs.</span></span>
       isCorrect: false
-  - content: <span data-ttu-id="25506-120">DSVM を使用する際に直面する主な依存関係の課題とは何でしょうか。</span><span class="sxs-lookup"><span data-stu-id="25506-120">What is one of the main dependency challenges faced when using the DSVM?</span></span>
+  - content: <span data-ttu-id="0dbfa-120">DSVM を使用する際に直面する主な依存関係の課題とは何でしょうか。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-120">What is one of the main dependency challenges faced when using the DSVM?</span></span>
     choices:
-    - content: <span data-ttu-id="25506-121">DSVM はサンド ボックス化されており、新しいパッケージをインストールするための直接的なサポートは提供しません。</span><span class="sxs-lookup"><span data-stu-id="25506-121">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
-      incorrectExplanation: <span data-ttu-id="25506-122">事前にインストールされ、構成された Azure 仮想マシン イメージである DSVM は、事前インストール、構成、データ分析、機械学習、ディープ ラーニング トレーニングでよく使用される、いくつかの一般的なツールでテスト済みであり、カスタマイズ可能です。</span><span class="sxs-lookup"><span data-stu-id="25506-122">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.</span></span>
+    - content: <span data-ttu-id="0dbfa-121">DSVM はサンド ボックス化されており、新しいパッケージをインストールするための直接的なサポートは提供しません。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-121">The DSVM is sandboxed and doesn't provide direct support for installing new packages.</span></span>
+      incorrectExplanation: <span data-ttu-id="0dbfa-122">事前にインストールされ、構成された Azure 仮想マシン イメージである DSVM は、事前インストール、構成、データ分析、機械学習、ディープ ラーニング トレーニングでよく使用される、いくつかの一般的なツールでテスト済みであり、カスタマイズ可能です。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-122">DSVMs are Azure Virtual Machine images, pre-installed, configured, and tested with several popular tools that are commonly used for data analytics, machine learning, and deep learning training, they are customizable.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="25506-123">DSVM は、CNTK と Cognitive Service の依存関係のみをサポートします。</span><span class="sxs-lookup"><span data-stu-id="25506-123">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
-      incorrectExplanation: <span data-ttu-id="25506-124">DSVM はそのままで、PyTorch、Chainer、Tensorflow など、多くの一般的なフレームワークをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="25506-124">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
+    - content: <span data-ttu-id="0dbfa-123">DSVM は、CNTK と Cognitive Service の依存関係のみをサポートします。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-123">The DSVM only supports CNTK and Cognitive Service dependencies.</span></span>
+      incorrectExplanation: <span data-ttu-id="0dbfa-124">DSVM はそのままで、PyTorch、Chainer、Tensorflow など、多くの一般的なフレームワークをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-124">DSVMs provide out of the box support for many popular frameworks such as PyTorch, Chainer, and Tensorflow.</span></span>
       isCorrect: false
-    - content: <span data-ttu-id="25506-125">一部のディープ ラーニング フレームワークやパッケージでは、異なる環境、GPU、ドライバー、およびバイナリ パッケージが必要です。</span><span class="sxs-lookup"><span data-stu-id="25506-125">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
+    - content: <span data-ttu-id="0dbfa-125">一部のディープ ラーニング フレームワークやパッケージでは、異なる環境、GPU、ドライバー、およびバイナリ パッケージが必要です。</span><span class="sxs-lookup"><span data-stu-id="0dbfa-125">Certain deep learning frameworks and packages require different enviorments, GPU drivers and binary packages</span></span>
       isCorrect: true

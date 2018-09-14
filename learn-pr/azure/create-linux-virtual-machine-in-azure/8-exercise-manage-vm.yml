@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
-title: <span data-ttu-id="04a3e-101">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-101">Configure network settings</span></span>
+title: <span data-ttu-id="58748-101">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="58748-101">Configure network settings</span></span>
 metadata:
-  title: <span data-ttu-id="04a3e-102">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-102">Configure network settings</span></span>
-  description: <span data-ttu-id="04a3e-103">ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="04a3e-103">Configure network settings</span></span>
+  title: <span data-ttu-id="58748-102">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="58748-102">Configure network settings</span></span>
+  description: <span data-ttu-id="58748-103">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="58748-103">Configure network settings</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
