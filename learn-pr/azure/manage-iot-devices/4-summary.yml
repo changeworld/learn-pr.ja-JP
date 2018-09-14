@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: <span data-ttu-id="cf0e1-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="cf0e1-101">Summary</span></span>
+  description: <span data-ttu-id="cf0e1-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="cf0e1-102">Summary</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b498e6007fd1652fc008a6c564c3243fce57238d
+  ms.sourcegitcommit: 7f0d04f185ea550e32ce0e4560fe190e4cf439f4
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45556906"
+title: <span data-ttu-id="cf0e1-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="cf0e1-103">Summary</span></span>
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-summary.md)]
+
+  # <a name="todo-fix-quiz-responses"></a><span data-ttu-id="cf0e1-104">TODO: 修正クイズ応答</span><span class="sxs-lookup"><span data-stu-id="cf0e1-104">TODO: Fix quiz responses</span></span>
+quiz:
+  title: <span data-ttu-id="cf0e1-105">サポート技術情報の確認 - IT 管理者は、IoT デバイスを管理します。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-105">Knowledge Check - Managing IoT devices as an IT Admin</span></span>
+  questions:
+  - content: <span data-ttu-id="cf0e1-106">IoT Hub は、保管や処理のために IoT デバイスから大量の利用統計情報をクラウドに取り込むことを可能にする Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-106">IoT Hub is an Azure service that enables you to ingest high volumes of telemetry from your IoT devices into the cloud for storage or processing.</span></span>
+    choices:
+    - content: <span data-ttu-id="cf0e1-107">○</span><span class="sxs-lookup"><span data-stu-id="cf0e1-107">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="cf0e1-108">×</span><span class="sxs-lookup"><span data-stu-id="cf0e1-108">False</span></span>
+      isCorrect: false
+  - content: '<span data-ttu-id="cf0e1-109">F1 キーを使用することができます。 Free レベルのみをテストするため、推奨は、IoT Hub をセットアップします。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-109">You can use the F1: Free Tier to setup IoT Hub, however it is only recommended for testing.</span></span>'
+    choices:
+    - content: <span data-ttu-id="cf0e1-110">○</span><span class="sxs-lookup"><span data-stu-id="cf0e1-110">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="cf0e1-111">×</span><span class="sxs-lookup"><span data-stu-id="cf0e1-111">False</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="cf0e1-112">共有アクセス ポリシーのうち、どれが既定では作成されませんか。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-112">Which one of the shared access policies is not created by default?</span></span>
+    choices:
+    - content: <span data-ttu-id="cf0e1-113">iothubowner</span><span class="sxs-lookup"><span data-stu-id="cf0e1-113">iothubowner</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cf0e1-114">既定では、このポリシーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-114">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="cf0e1-115">service</span><span class="sxs-lookup"><span data-stu-id="cf0e1-115">service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cf0e1-116">既定では、このポリシーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-116">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="cf0e1-117">device</span><span class="sxs-lookup"><span data-stu-id="cf0e1-117">device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="cf0e1-118">既定では、このポリシーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-118">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="cf0e1-119">registryWrite</span><span class="sxs-lookup"><span data-stu-id="cf0e1-119">registryWrite</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="cf0e1-120">RegistryWrite としてこのようなポリシーはありません。</span><span class="sxs-lookup"><span data-stu-id="cf0e1-120">There is no such policy as registryWrite.</span></span>
