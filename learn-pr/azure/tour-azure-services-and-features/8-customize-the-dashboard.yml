@@ -1,20 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.8-customize-the-dashboard
-title: <span data-ttu-id="a5bfe-101">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="a5bfe-101">Azure Portal dashboards</span></span>
+title: <span data-ttu-id="4a58e-101">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="4a58e-101">Azure Portal dashboards</span></span>
 metadata:
-  title: <span data-ttu-id="a5bfe-102">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="a5bfe-102">Azure Portal dashboards</span></span>
-  description: <span data-ttu-id="a5bfe-103">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="a5bfe-103">Azure Portal dashboards</span></span>
+  title: <span data-ttu-id="4a58e-102">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="4a58e-102">Azure Portal dashboards</span></span>
+  description: <span data-ttu-id="4a58e-103">Azure portal のダッシュボード</span><span class="sxs-lookup"><span data-stu-id="4a58e-103">Azure Portal dashboards</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 164eb1efa9fc5dfb2d9da655a0db8ee6e9a03964
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 65144ad93f193736a2cb66a498cd704543bd58a8
+  ms.sourcegitcommit: fd4e34e44b14230dd1242c04ae28c45ebd8f050b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310699"
-azureSandbox: true
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45539459"
 durationInMinutes: 10
 content: '[!include[](includes/8-customize-the-dashboard.md)]'

@@ -1,20 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.9-exercise-customize-the-dashboard
-title: <span data-ttu-id="dabdc-101">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="dabdc-101">Customize the dashboard</span></span>
+title: <span data-ttu-id="7e0d4-101">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="7e0d4-101">Customize the dashboard</span></span>
 metadata:
-  title: <span data-ttu-id="dabdc-102">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="dabdc-102">Customize the dashboard</span></span>
-  description: <span data-ttu-id="dabdc-103">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="dabdc-103">Customize the dashboard</span></span>
+  title: <span data-ttu-id="7e0d4-102">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="7e0d4-102">Customize the dashboard</span></span>
+  description: <span data-ttu-id="7e0d4-103">ダッシュボードをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="7e0d4-103">Customize the dashboard</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 92ddd82d212691e609f931de0920e96e0e3ebe11
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 1fdf60505383d75c9a14b9f6d2bb82b30560a4f0
+  ms.sourcegitcommit: fd4e34e44b14230dd1242c04ae28c45ebd8f050b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44311056"
-azureSandbox: true
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45539596"
 durationInMinutes: 10
 content: '[!include[](includes/9-exercise-customize-the-dashboard.md)]'

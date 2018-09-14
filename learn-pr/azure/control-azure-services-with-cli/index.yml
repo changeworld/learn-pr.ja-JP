@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 3d693d34c115f7f29c1e73b5cf8664ad496179e1
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 29748ad87922d9a2eb62c100d1b4c692fb213266
+  ms.sourcegitcommit: 4d3d995e220b696d35237a19740a6d619134d6ca
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233732"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45537556"
 title: CLI を使用した Azure サービスの制御
 summary: Azure CLI をローカルにインストールし、それを使用して Azure リソースを管理します。
 abstract: >
@@ -30,7 +30,7 @@ prerequisites: >
   - リソース グループなど、Azure の基本的な概念に関する知識
 
   - Azure portal を使用した Azure リソースの管理経験
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/control-azure-services-with-cli.svg
 levels:
 - beginner
 roles:

@@ -3,27 +3,31 @@ uid: learn.store-data-in-azure
 metadata:
   title: Azure にデータを格納する
   description: Azure には、非構造化、アーカイブ、リレーショナルなど、データを格納するさまざまな方法があります。 Azure でのストレージ管理の基本、ストレージ アカウントの作成方法、およびクラウドに保存するデータに適したモデルの選択方法について説明します。
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d589cae8cff05615d8e52d567c253d6db9e96f10
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: b6d50140ba18e22cf8d522e2236fb1e4a5c9752d
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44242589"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45555086"
 title: Azure にデータを格納する
 summary: Azure には、非構造化、アーカイブ、リレーショナルなど、データを格納するさまざまな方法があります。 Azure でのストレージ管理の基本、ストレージ アカウントの作成方法、およびクラウドに保存するデータに適したモデルの選択方法について説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/store-data-in-azure.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-storage
+- azure-portal
+- azure-cloud-shell
 modules:
 - learn.choose-storage-approach-in-azure
 - learn.create-azure-storage-account

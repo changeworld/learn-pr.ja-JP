@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b843d8723ea3b8998f8bf14e80eea00156968ca4
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: b9bacf7e1c4d9dd646e08ca3e02405449db76472
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244765"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45555273"
 title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
 summary: Azure の新しい Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
 abstract: >
@@ -32,10 +32,11 @@ abstract: >
   - ご利用の MongoDB データのオブジェクト モデリング用に mongooseJS を追加する
 
   - MEAN スタックが動作していることを確認するシンプルな Web アプリを作成する
-    - ご利用の VM から Web アプリケーションを一般に使用できるようにする
+
+  - ご利用の VM から Web アプリケーションを一般に使用できるようにする
 prerequisites: >
   - Bash コマンドライン インターフェイスのエクスペリエンス
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
 levels:
 - beginner
 roles:
@@ -43,6 +44,7 @@ roles:
 products:
 - azure
 - azure-virtual-machines
+- azure-cloud-shell
 units:
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.1-introduction
 - learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.2-decide-if-mean-is-right-for-you

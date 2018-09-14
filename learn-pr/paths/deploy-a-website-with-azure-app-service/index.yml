@@ -3,27 +3,29 @@ uid: learn.deploy-a-website-with-azure-app-service
 metadata:
   title: Azure App Service を使用して Web サイトを Azure にデプロイする
   description: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
+  brand: azure
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2278a66a927883590cf4fe3b4afa72e338eb8a16
-  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.openlocfilehash: b8f60686567d51f0a5cef10df5ceef0da81f75fe
+  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44371547"
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45555851"
 title: Azure App Service を使用して Web サイトを Azure にデプロイする
 summary: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/deploy-a-website-with-azure-app-service.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-portal
 modules:
 - learn.host-a-web-application-with-azure-app-service
 - learn.publish-azure-web-app-with-visual-studio
