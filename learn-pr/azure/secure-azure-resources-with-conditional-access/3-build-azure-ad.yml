@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
 metadata:
-  title: <span data-ttu-id="211c1-101">ディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="211c1-101">Build your directory</span></span>
-  description: <span data-ttu-id="211c1-102">ディレクトリを作成し、一時的なライセンスを取得する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="211c1-102">Learn how to to create a directory and get temporary licenses in place.</span></span>
+  title: <span data-ttu-id="2819f-101">ディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="2819f-101">Build your directory</span></span>
+  description: <span data-ttu-id="2819f-102">ディレクトリを作成し、一時的なライセンスを取得する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="2819f-102">Learn how to to create a directory and get temporary licenses in place.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: a96291a348f5097f1a89636ec0915d845c05c427
-  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
+  ms.openlocfilehash: 863b5c78b8e8d49db8499dc4ba6a7833864106a1
+  ms.sourcegitcommit: 8fd7e2e04388cfcae1204c7bd49dfab9af74e4c3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44503905"
-title: <span data-ttu-id="211c1-103">ディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="211c1-103">Build your directory</span></span>
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45599295"
+title: <span data-ttu-id="2819f-103">ディレクトリを作成する</span><span class="sxs-lookup"><span data-stu-id="2819f-103">Build your directory</span></span>
+labId: 46071
 durationInMinutes: 5
 content: '[!include[](includes/3-build-azure-ad.md)]'
