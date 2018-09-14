@@ -1,20 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.6-summary
 metadata:
-  title: <span data-ttu-id="bcf0a-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcf0a-101">Summary</span></span>
-  description: <span data-ttu-id="bcf0a-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcf0a-102">Summary</span></span>
+  title: <span data-ttu-id="82f0e-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="82f0e-101">Summary</span></span>
+  description: <span data-ttu-id="82f0e-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="82f0e-102">Summary</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0e43c598029df9ca108e7716b7174994cf4fb6ad
-  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
+  ms.openlocfilehash: 745cc00a0ff1675cf527afa6f1dc989ce8b69d29
+  ms.sourcegitcommit: 36ad58bcbe9d89cfae6943e7183fadb140139b74
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44695884"
-title: <span data-ttu-id="bcf0a-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcf0a-103">Summary</span></span>
-azureSandbox: true
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45612170"
+title: <span data-ttu-id="82f0e-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="82f0e-103">Summary</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'
