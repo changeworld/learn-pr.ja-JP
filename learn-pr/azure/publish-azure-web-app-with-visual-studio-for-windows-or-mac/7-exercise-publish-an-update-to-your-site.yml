@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.publish-azure-web-app-with-visual-studio.7-exercise-publish-an-update-to-your-site
+title: 更新プログラムをサイトに発行する
+metadata:
+  title: 更新プログラムをサイトに発行する
+  description: 更新プログラムをサイトに発行する
+  ms.openlocfilehash: fa14db546e2cc46c8e96941e4c964f7987afd479
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43459449"
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-publish-an-update-to-your-site.md)]'

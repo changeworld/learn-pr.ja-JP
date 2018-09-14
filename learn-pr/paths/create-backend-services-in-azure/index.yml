@@ -1,0 +1,26 @@
+### YamlMime:LearningPath
+uid: learn.create-backend-services-in-azure
+title: Azure 内でバックエンド サービスを作成する
+summary: Azure Functions では、さまざまな外部イベントによってトリガーできるオンデマンド コンピューティング システムである、イベント駆動型の作成が可能です。 サーバー側のロジックを実行して、サーバーレス アーキテクチャを構築するための機能を活用する方法について説明します。
+cardDescription: Azure Functions では、さまざまな外部イベントによってトリガーできるオンデマンド コンピューティング システムである、イベント駆動型の作成が可能です。 サーバー側のロジックを実行して、サーバーレス アーキテクチャを構築するための機能を活用する方法について説明します。
+iconUrl: http://via.placeholder.com/120x120
+prerequisites: なし
+metadata:
+  title: Azure 内でバックエンド サービスを作成する
+  description: Azure Functions では、さまざまな外部イベントによってトリガーできるオンデマンド コンピューティング システムである、イベント駆動型の作成が可能です。 サーバー側のロジックを実行して、サーバーレス アーキテクチャを構築するための機能を活用する方法について説明します。
+  ms.openlocfilehash: ae2db007519a6568ff3ea644debc68e359790c42
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447579"
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+modules:
+- learn.create-serverless-logic-with-functions
+- execute-azure-function-with-triggers
+achievement: learn.create-backend-services-in-azure.trophy
