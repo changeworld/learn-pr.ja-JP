@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.3-create-a-resource-group
+title: <span data-ttu-id="4d661-101">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="4d661-101">Create a resource group</span></span>
+metadata:
+  title: <span data-ttu-id="4d661-102">リソース グループの作成</span><span class="sxs-lookup"><span data-stu-id="4d661-102">Create a resource group</span></span>
+  description: <span data-ttu-id="4d661-103">Azure CLI を使用して新しいリソース グループを作成する</span><span class="sxs-lookup"><span data-stu-id="4d661-103">Use the Azure CLI to create a new resource group</span></span>
+  ms.openlocfilehash: a036dea383d150d6d2ab0076ba6abf705cd44af2
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447743"
+interactive: bash
+durationInMinutes: 3
+content: '[!include[](includes/3-create-a-resource-group.md)]'

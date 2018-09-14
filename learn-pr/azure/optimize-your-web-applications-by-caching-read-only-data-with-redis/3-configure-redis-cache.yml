@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.3-configure-redis-cache
+title: <span data-ttu-id="9ccca-101">Redis Cache を構成する</span><span class="sxs-lookup"><span data-stu-id="9ccca-101">Configure Redis cache</span></span>
+metadata:
+  title: <span data-ttu-id="9ccca-102">Redis Cache を構成する</span><span class="sxs-lookup"><span data-stu-id="9ccca-102">Configure Redis cache</span></span>
+  description: <span data-ttu-id="9ccca-103">Redis Cache を構成する</span><span class="sxs-lookup"><span data-stu-id="9ccca-103">Configure Redis cache</span></span>
+  ms.openlocfilehash: 97146e54b1e46659f765149a3199b57701933a2b
+  ms.sourcegitcommit: bf091e3a389138b59573865ca54775e38a4ffa1f
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43154662"
+durationInMinutes: 5
+content: '[!include[](includes/3-configure-redis-cache.md)]'

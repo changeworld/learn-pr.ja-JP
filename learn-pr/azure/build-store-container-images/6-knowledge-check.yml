@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.knowledge-check
+title: <span data-ttu-id="80385-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80385-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="80385-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80385-102">Knowledge check</span></span>
+  description: <span data-ttu-id="80385-103">Azure Container Registry 知識チェック。</span><span class="sxs-lookup"><span data-stu-id="80385-103">Azure Container Registry knowledge check.</span></span>
+  ms.openlocfilehash: 6477ce7e69188d1ef0b8f73248f00bd386068cde
+  ms.sourcegitcommit: a29274a7a22a1b88016cd49c067921557992c945
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/30/2018
+  ms.locfileid: "43315436"
+durationInMinutes: 5
+quiz:
+  title: <span data-ttu-id="80385-104">テスト タイトル</span><span class="sxs-lookup"><span data-stu-id="80385-104">Quiz title</span></span>
+  questions:
+  - content: <span data-ttu-id="80385-105">Azure Container Registry を使用する利点として、次の中で正しくないのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="80385-105">Which of the following is not a benefit of using Azure Container Registry?</span></span>
+    choices:
+    - content: <span data-ttu-id="80385-106">多くの Azure データセンターにコンテナー イメージをレプリケートします。</span><span class="sxs-lookup"><span data-stu-id="80385-106">Replicate container images to many Azure datacenters.</span></span>
+      incorrectExplanation: <span data-ttu-id="80385-107">これは Azure Container Registry の geo レプリケーション機能によって可能になります。</span><span class="sxs-lookup"><span data-stu-id="80385-107">The Azure Container Registry geo-replication feature enables this.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80385-108">Docker コンテナーに関連するテクノロジを使用して、Container Registry からコンテナー イメージをプルします。</span><span class="sxs-lookup"><span data-stu-id="80385-108">Pull container images from Container Registry using any Docker container-related technology.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80385-109">Container Registry は、Docker に関連するすべてのテクノロジで使用できます。</span><span class="sxs-lookup"><span data-stu-id="80385-109">Container Registry can be used with all Docker-related technology.</span></span>
+    - content: <span data-ttu-id="80385-110">コンテナー イメージをプル操作に使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="80385-110">Make container images publicly available for pull operations.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="80385-111">Container Registry はプライベート レジストリです。</span><span class="sxs-lookup"><span data-stu-id="80385-111">Container Registry is a private registry.</span></span> <span data-ttu-id="80385-112">Container Registry に格納されているイメージにアクセスするには認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="80385-112">Images stored in Container Registry cannot be accessed without authentication.</span></span>
+    - content: <span data-ttu-id="80385-113">ローカルにインストールされた Docker ツールを使用せずにコンテナー イメージをビルドします。</span><span class="sxs-lookup"><span data-stu-id="80385-113">Build container images without the need for locally installed Docker tools.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80385-114">コンテナー イメージは、Azure Container Registry Build を使用してクラウドでビルドできます。</span><span class="sxs-lookup"><span data-stu-id="80385-114">Container images can be built in the cloud using Azure Container Registry Build.</span></span>
+  - content: <span data-ttu-id="80385-115">Azure Container Registry に推奨される認証方法は何ですか?</span><span class="sxs-lookup"><span data-stu-id="80385-115">What is the recommended authentication method for Azure Container Registry?</span></span>
+    choices:
+    - content: <span data-ttu-id="80385-116">管理者アカウント。</span><span class="sxs-lookup"><span data-stu-id="80385-116">Admin account.</span></span>
+      incorrectExplanation: <span data-ttu-id="80385-117">Azure Container Registry 用の管理者アカウントを作成できますが、これは推奨される認証方法ではありません。</span><span class="sxs-lookup"><span data-stu-id="80385-117">Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80385-118">ユーザー名とパスワード。</span><span class="sxs-lookup"><span data-stu-id="80385-118">User name and password.</span></span>
+      incorrectExplanation: <span data-ttu-id="80385-119">Azure コンテナー レジストリでは管理者アカウントを有効にすることができます。これにより、ユーザー名とパスワードが提供されます。</span><span class="sxs-lookup"><span data-stu-id="80385-119">An Azure container registry can be admin-account enabled, which provides a user name and password.</span></span> <span data-ttu-id="80385-120">ただし、これは推奨される認証方法ではありません。</span><span class="sxs-lookup"><span data-stu-id="80385-120">However, this is not the recommended authentication method.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80385-121">Azure サービス プリンシパル。</span><span class="sxs-lookup"><span data-stu-id="80385-121">Azure service principal.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="80385-122">Azure サービス プリンシパルは、Azure Container Registry 内のコンテナー イメージへのきめ細かいアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="80385-122">Azure service principals provide granular access to container images in Azure Container Registry.</span></span> <span data-ttu-id="80385-123">サービス プリンシパルを使用すると、読み取り専用アクセスとフル アクセスをコンテナー レジストリに提供できます。</span><span class="sxs-lookup"><span data-stu-id="80385-123">Using a service principal, read-only and full access can be provided to the container registry.</span></span>
+    - content: <span data-ttu-id="80385-124">認証なし。</span><span class="sxs-lookup"><span data-stu-id="80385-124">No authentication.</span></span>
+      incorrectExplanation: <span data-ttu-id="80385-125">Azure Container Registry はプライベート レジストリであり、アクセスするには認証が必要です。</span><span class="sxs-lookup"><span data-stu-id="80385-125">Azure Container Registry is a private registry and cannot be accessed without authentication..</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="80385-126">geo レプリケーションは、Container Registry Standard SKU で使用できます。</span><span class="sxs-lookup"><span data-stu-id="80385-126">Geo-replication is available in the Container Registry Standard SKU.</span></span>
+    choices:
+    - content: <span data-ttu-id="80385-127">True。</span><span class="sxs-lookup"><span data-stu-id="80385-127">True.</span></span>
+      incorrectExplanation: <span data-ttu-id="80385-128">geo レプリケーションは、Premium SKU でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="80385-128">Geo-replication is only available in the Premium SKU.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="80385-129">False。</span><span class="sxs-lookup"><span data-stu-id="80385-129">False.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="80385-130">geo レプリケーションは、Premium SKU でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="80385-130">Geo-replication is only available in the Premium SKU.</span></span>

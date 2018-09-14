@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.migrate-sql-server-relational-data.1-introduction
+title: <span data-ttu-id="20314-101">リレーショナル データを Azure SQL Database に移行する</span><span class="sxs-lookup"><span data-stu-id="20314-101">Migrate your relational data to an Azure SQL database</span></span>
+metadata:
+  title: <span data-ttu-id="20314-102">リレーショナル データを Azure SQL Database に移行する</span><span class="sxs-lookup"><span data-stu-id="20314-102">Migrate your relational data to an Azure SQL database</span></span>
+  description: <span data-ttu-id="20314-103">リレーショナル データを Azure SQL Database に移行する</span><span class="sxs-lookup"><span data-stu-id="20314-103">Migrate your relational data to an Azure SQL database</span></span>
+  ms.openlocfilehash: 361a655b9b42bf157b61bc6caebf044e77c1768b
+  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43460664"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

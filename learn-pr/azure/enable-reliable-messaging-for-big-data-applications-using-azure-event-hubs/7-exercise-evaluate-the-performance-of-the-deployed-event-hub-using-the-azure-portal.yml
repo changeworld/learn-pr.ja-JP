@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+title: <span data-ttu-id="434ae-101">Azure portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する</span><span class="sxs-lookup"><span data-stu-id="434ae-101">Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="434ae-102">Azure portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する</span><span class="sxs-lookup"><span data-stu-id="434ae-102">Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>
+  description: <span data-ttu-id="434ae-103">Azure portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する</span><span class="sxs-lookup"><span data-stu-id="434ae-103">Evaluate the performance of the deployed Event Hub using the Azure portal</span></span>
+  ms.openlocfilehash: a61476e2a48545098138b7fb3d662c87428f0009
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43792477"
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal.md)]'

@@ -1,0 +1,16 @@
+<span data-ttu-id="5e883-101">Azure はクラウド プラットフォームであり、クラウドでホストされるアプリケーションの構築に必要なコンピューティング リソース、ストレージ リソース、ネットワーク リソースを提供します。</span><span class="sxs-lookup"><span data-stu-id="5e883-101">Azure is a cloud platform that provides the compute, storage, and networking resources needed to build cloud-hosted applications.</span></span> <span data-ttu-id="5e883-102">新しいユーザーが Azure とやり取りするための主要な方法となるのが Azure portal です。</span><span class="sxs-lookup"><span data-stu-id="5e883-102">As a new user, the Azure Portal is likely to be the primary way you will interact with Azure.</span></span> <span data-ttu-id="5e883-103">Azure portal では、すべての Azure リソースを作成し、管理できます。</span><span class="sxs-lookup"><span data-stu-id="5e883-103">The Azure Portal lets you create and manage all your Azure resources.</span></span> <span data-ttu-id="5e883-104">たとえば、新しいデータベースを設定したり、仮想マシンの計算処理能力を増やしたり、毎月のコストを監視したりできます。</span><span class="sxs-lookup"><span data-stu-id="5e883-104">For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs.</span></span> <span data-ttu-id="5e883-105">利用できるすべてのリソースを監視したり、ガイド付きのウィザードを利用して必要なリソースを作成したりできるので、学習ツールとしても優れています。</span><span class="sxs-lookup"><span data-stu-id="5e883-105">It's also a great learning tool since you can survey all available resources and use guided wizards to create the ones you need.</span></span>
+
+<span data-ttu-id="5e883-106">ここでは、Azure アカウントを作成し、ポータルにサインインし、ポータルのインターフェイスを操作する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="5e883-106">Here you will learn how to create an Azure account, sign in to the portal, and navigate the portal interface.</span></span> <span data-ttu-id="5e883-107">最も重要なサービスを簡単に見つけて監視できるように、ダッシュボードをカスタマイズします。</span><span class="sxs-lookup"><span data-stu-id="5e883-107">You will customize the dashboard, so it is convenient to locate and monitor your most essential services.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="5e883-108">学習の目的</span><span class="sxs-lookup"><span data-stu-id="5e883-108">Learning objectives</span></span>
+
+<span data-ttu-id="5e883-109">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="5e883-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="5e883-110">Azure アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="5e883-110">Create an Azure account</span></span>
+- <span data-ttu-id="5e883-111">Azure portal 内の移動</span><span class="sxs-lookup"><span data-stu-id="5e883-111">Navigate the Azure portal</span></span>
+- <span data-ttu-id="5e883-112">ダッシュボードのカスタマイズ</span><span class="sxs-lookup"><span data-stu-id="5e883-112">Customize the dashboard</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="5e883-113">前提条件</span><span class="sxs-lookup"><span data-stu-id="5e883-113">Prerequisites</span></span>
+
+- <span data-ttu-id="5e883-114">基本的なクラウド コンピューティングの用語と概念の知識</span><span class="sxs-lookup"><span data-stu-id="5e883-114">Knowledge of basic cloud computing terms and concepts</span></span>
+- <span data-ttu-id="5e883-115">Azure に登録する有効なクレジット カード</span><span class="sxs-lookup"><span data-stu-id="5e883-115">A valid credit card to register with Azure</span></span>

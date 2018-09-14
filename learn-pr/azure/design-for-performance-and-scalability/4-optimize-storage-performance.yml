@@ -1,0 +1,40 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.4-optimize-storage-performance
+title: <span data-ttu-id="bb0c9-101">ストレージのパフォーマンスを最適化する</span><span class="sxs-lookup"><span data-stu-id="bb0c9-101">Optimize storage performance</span></span>
+metadata:
+  title: <span data-ttu-id="bb0c9-102">ストレージのパフォーマンスを最適化する</span><span class="sxs-lookup"><span data-stu-id="bb0c9-102">Optimize storage performance</span></span>
+  description: <span data-ttu-id="bb0c9-103">このユニットでは、アーキテクチャのストレージのパフォーマンスを最適化する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="bb0c9-103">In this unit we'll discuss how to optimize storage performance for your architecture</span></span>
+  ms.openlocfilehash: 32524382aa06c0a14f56c8faf49a0b4123c945e4
+  ms.sourcegitcommit: 2df436853854bfcb39bc82ee461d7011bf8531ca
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/04/2018
+  ms.locfileid: "43675595"
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-optimize-storage-performance.md)]
+quiz:
+  title: <span data-ttu-id="bb0c9-104">知識チェック - ストレージのパフォーマンスを最適化する</span><span class="sxs-lookup"><span data-stu-id="bb0c9-104">Knowledge Check - Optimize storage performance</span></span>
+  questions:
+  - content: <span data-ttu-id="bb0c9-105">ポリグロットな永続化とはどのようなことですか?</span><span class="sxs-lookup"><span data-stu-id="bb0c9-105">What is polyglot persistence?</span></span>
+    choices:
+    - content: <span data-ttu-id="bb0c9-106">Azure SQL Database を使用してすべてのデータを格納すること</span><span class="sxs-lookup"><span data-stu-id="bb0c9-106">Using Azure SQL Database to store all of your data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb0c9-107">"単一のテクノロジにすべてのデータを格納すること" は、ポリグロットな永続化の定義ではありません。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-107">Storing all data in a single technology is not the definition of polyglot persistence.</span></span>
+    - content: <span data-ttu-id="bb0c9-108">データ転送のために接続を維持する方法</span><span class="sxs-lookup"><span data-stu-id="bb0c9-108">A way to keep connections alive for data transfers</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb0c9-109">データ転送のために接続を維持する方法はキープアライブであり、ポリグロットな永続化とは無関係です。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-109">Keepalives are methods of keeping connections alive for data transfers and are not related to polyglot persistence.</span></span>
+    - content: <span data-ttu-id="bb0c9-110">アプリケーションで目的に応じて異なるデータ ストレージ テクノロジを使用すること</span><span class="sxs-lookup"><span data-stu-id="bb0c9-110">The usage of different data storage technologies for different purposes in your application</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bb0c9-111">ポリグロットな永続化とは、目的に応じて異なるデータ ストレージ テクノロジを使用することです。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-111">Polyglot persistence is the usage of different data storage technologies for different purposes.</span></span>
+    - content: <span data-ttu-id="bb0c9-112">一時的なデータ障害を処理する方法</span><span class="sxs-lookup"><span data-stu-id="bb0c9-112">An approach to deal with transient data faults</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb0c9-113">一時的なデータ障害の処理はアプリケーション アーキテクチャで役立ちますが、ポリグロットな永続化とは無関係です。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-113">While dealing with transient data faults is beneficial in an application architecture, it is not related to polyglot persistence.</span></span>
+  - content: <span data-ttu-id="bb0c9-114">Redis Cache を使用すると、データのスナップショットをメモリに格納することによって、アプリケーションのパフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-114">Redis Cache can be used to improve the performance of your application by storing a snapshot of data in memory.</span></span>
+    choices:
+    - content: <span data-ttu-id="bb0c9-115">○</span><span class="sxs-lookup"><span data-stu-id="bb0c9-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bb0c9-116">Redis Cache ではアプリケーション データをメモリに格納します。これにより、取得時間が短縮され、頻繁にアクセスされるデータに関連するアプリケーションのパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-116">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>
+    - content: <span data-ttu-id="bb0c9-117">×</span><span class="sxs-lookup"><span data-stu-id="bb0c9-117">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bb0c9-118">Redis Cache ではアプリケーション データをメモリに格納します。これにより、取得時間が短縮され、頻繁にアクセスされるデータに関連するアプリケーションのパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="bb0c9-118">Redis Cache will store application data in memory, leading to fast retrieval times and an improvement in application performance related to frequently accessed data.</span></span>

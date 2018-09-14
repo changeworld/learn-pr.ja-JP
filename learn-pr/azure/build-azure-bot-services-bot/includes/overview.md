@@ -1,0 +1,19 @@
+<span data-ttu-id="a1cd2-101">[Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/) と [Microsoft QnA Maker](https://www.qnamaker.ai/) を組み合わせることで、さまざまなサービスを使用してユーザーと自然にやりとりするインテリジェント ボットをビルドして発行するために開発者が必要とするツールが提供されます。</span><span class="sxs-lookup"><span data-stu-id="a1cd2-101">The [Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/), combined with [Microsoft QnA Maker](https://www.qnamaker.ai/), provide the tools developers need to build and publish intelligent bots that interact naturally with users using a range of services.</span></span> <span data-ttu-id="a1cd2-102">このモジュールでは、Azure Bot Service を使用してボットを作成し、QnA Maker でビルドされたナレッジ ベースに接続します。</span><span class="sxs-lookup"><span data-stu-id="a1cd2-102">In this module, you will create a bot using the Azure Bot Service and connect it to a knowledge base built with QnA Maker.</span></span> <span data-ttu-id="a1cd2-103">その後、Azure Bot Service でビルドされたボットを統合できる多くの人気のあるサービスの 1 つである Skype を使用して、ボットとやりとりします。</span><span class="sxs-lookup"><span data-stu-id="a1cd2-103">Then, you will interact with the bot using Skype — one of many popular services with which bots built with the Azure Bot Service can integrate.</span></span>
+
+### <a name="learning-objectives"></a><span data-ttu-id="a1cd2-104">学習の目的</span><span class="sxs-lookup"><span data-stu-id="a1cd2-104">Learning objectives</span></span>
+
+<span data-ttu-id="a1cd2-105">このラボで行うこと</span><span class="sxs-lookup"><span data-stu-id="a1cd2-105">In this lab, you will:</span></span>
+
+- <span data-ttu-id="a1cd2-106">ボットをホストするための Azure Web アプリ ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="a1cd2-106">Create an Azure web app bot to host a bot</span></span>
+- <span data-ttu-id="a1cd2-107">ナレッジ ベースを作成し、データを設定して、ボットに接続する</span><span class="sxs-lookup"><span data-stu-id="a1cd2-107">Create a knowledge base, populate it with data, and connect it to a bot</span></span>
+- <span data-ttu-id="a1cd2-108">コードでボットを実装し、ビルドしたボットをデバッグする</span><span class="sxs-lookup"><span data-stu-id="a1cd2-108">Implement bots in code and debug the bots that you build</span></span>
+- <span data-ttu-id="a1cd2-109">ボットを発行し、継続的インテグレーションを使用して最新の状態に維持する</span><span class="sxs-lookup"><span data-stu-id="a1cd2-109">Publish bots and use continuous integration to keep them up-to-date</span></span>
+- <span data-ttu-id="a1cd2-110">Visual Studio Code と Microsoft Bot Framework Emulator を使用してローカルでボットをデバッグする</span><span class="sxs-lookup"><span data-stu-id="a1cd2-110">Debug bots locally using Visual Studio Code and the Microsoft Bot Framework Emulator</span></span>
+- <span data-ttu-id="a1cd2-111">ボットを Skype に接続してやりとりする</span><span class="sxs-lookup"><span data-stu-id="a1cd2-111">Plug a bot into Skype and interact with it there</span></span>
+
+### <a name="prerequisites"></a><span data-ttu-id="a1cd2-112">前提条件</span><span class="sxs-lookup"><span data-stu-id="a1cd2-112">Prerequisites</span></span>
+- [<span data-ttu-id="a1cd2-113">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="a1cd2-113">Visual Studio Code</span></span>](http://code.visualstudio.com)
+- [<span data-ttu-id="a1cd2-114">Git</span><span class="sxs-lookup"><span data-stu-id="a1cd2-114">Git</span></span>](https://git-scm.com)
+- [<span data-ttu-id="a1cd2-115">Microsoft Bot Framework Emulator</span><span class="sxs-lookup"><span data-stu-id="a1cd2-115">Microsoft Bot Framework Emulator</span></span>](https://emulator.botframework.com/)
+- [<span data-ttu-id="a1cd2-116">Node.js</span><span class="sxs-lookup"><span data-stu-id="a1cd2-116">Node.js</span></span>](https://nodejs.org)
+- <span data-ttu-id="a1cd2-117">[Skype](https://www.skype.com/en/download-skype/skype-for-computer/).</span><span class="sxs-lookup"><span data-stu-id="a1cd2-117">[Skype](https://www.skype.com/en/download-skype/skype-for-computer/).</span></span>

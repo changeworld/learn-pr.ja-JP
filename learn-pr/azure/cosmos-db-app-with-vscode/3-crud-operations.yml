@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.3-crud-operations
+metadata:
+  title: <span data-ttu-id="20e9f-101">ドキュメントをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="20e9f-101">Create, read, update, and delete documents programmatically</span></span>
+  description: <span data-ttu-id="20e9f-102">ドキュメントをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="20e9f-102">Create, read, update, and delete documents programmatically</span></span>
+  ms.openlocfilehash: 875df1e7f446d190669953157ebcc310040a2fd2
+  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/01/2018
+  ms.locfileid: "43413612"
+title: <span data-ttu-id="20e9f-103">ドキュメントをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="20e9f-103">Create, read, update, and delete documents programmatically</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/3-crud-operations.md)]'

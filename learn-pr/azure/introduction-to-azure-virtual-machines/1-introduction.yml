@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.1-introduction
+title: <span data-ttu-id="52618-101">Azure Virtual Machines の概要</span><span class="sxs-lookup"><span data-stu-id="52618-101">Introduction to Azure Virtual Machines</span></span>
+metadata:
+  title: <span data-ttu-id="52618-102">Azure Virtual Machines の概要</span><span class="sxs-lookup"><span data-stu-id="52618-102">Introduction to Azure Virtual Machines</span></span>
+  description: <span data-ttu-id="52618-103">Azure Virtual Machines の概要</span><span class="sxs-lookup"><span data-stu-id="52618-103">Introduction to Azure Virtual Machines</span></span>
+  ms.openlocfilehash: 4f5f3944470f34af29eb8c8827296fe37cde3c48
+  ms.sourcegitcommit: ee277f4207efa50a4f7c657b47725be7f8c45489
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/02/2018
+  ms.locfileid: "43475683"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

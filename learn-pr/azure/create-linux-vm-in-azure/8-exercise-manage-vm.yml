@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
+title: <span data-ttu-id="5786e-101">演習 - ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="5786e-101">Exercise - Configure network settings</span></span>
+metadata:
+  title: <span data-ttu-id="5786e-102">演習 - ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="5786e-102">Exercise - Configure network settings</span></span>
+  description: <span data-ttu-id="5786e-103">演習 - ネットワークの設定を構成する</span><span class="sxs-lookup"><span data-stu-id="5786e-103">Exercise - Configure network settings</span></span>
+  ms.openlocfilehash: d0e9cf41364cf1cb6bfdd3a2d707f1ff25068e4e
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43790337"
+durationInMinutes: 10
+content: '[!include[](includes/8-exercise-manage-vm.md)]'

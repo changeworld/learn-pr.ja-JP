@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.4-comparison-azore-storage-and-on-prem-storage
+title: <span data-ttu-id="99d02-101">Azure Storage とオンプレミス ストレージの比較</span><span class="sxs-lookup"><span data-stu-id="99d02-101">Comparison between Azure storage and on-prem storage</span></span>
+metadata:
+  title: <span data-ttu-id="99d02-102">Azure Storage とオンプレミス ストレージの比較</span><span class="sxs-lookup"><span data-stu-id="99d02-102">Comparison between Azure storage and on-prem storage</span></span>
+  description: <span data-ttu-id="99d02-103">Azure Storage とオンプレミス ストレージの比較</span><span class="sxs-lookup"><span data-stu-id="99d02-103">Comparison between Azure storage and on-prem storage</span></span>
+  ms.openlocfilehash: 84ba76940ecc590142ca3168c92b61fa6513d94b
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446058"
+durationInMinutes: 5
+content: '[!include[](includes/4-comparison-azore-storage-and-on-prem-storage.md)]'

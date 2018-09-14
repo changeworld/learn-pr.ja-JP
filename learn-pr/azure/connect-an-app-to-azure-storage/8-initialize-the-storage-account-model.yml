@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.8-initialize-the-storage-account-model
+title: <span data-ttu-id="eb4f9-101">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="eb4f9-101">Initialize the storage account model</span></span>
+metadata:
+  title: <span data-ttu-id="eb4f9-102">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="eb4f9-102">Initialize the storage account model</span></span>
+  description: <span data-ttu-id="eb4f9-103">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="eb4f9-103">Initialize the storage account model</span></span>
+  ms.openlocfilehash: 715903c0ad4e4983bf62229fa514b3a1ffd4ffc8
+  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/29/2018
+  ms.locfileid: "43230685"
+durationInMinutes: 5
+content: '[!include[](includes/8-initialize-the-storage-account-model.md)]'

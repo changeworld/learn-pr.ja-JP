@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.4-exercise-create-a-vm
+title: <span data-ttu-id="26671-101">演習 - Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="26671-101">Exercise - Create a Linux virtual Machine with the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="26671-102">演習 - Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="26671-102">Exercise - Create a Linux virtual Machine with the Azure portal</span></span>
+  description: <span data-ttu-id="26671-103">演習 - Azure portal で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="26671-103">Exercise - Create a Linux virtual Machine with the Azure portal</span></span>
+  ms.openlocfilehash: b49d53898af07799b8b71e3d1ddeb2a192b00bf2
+  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43791340"
+durationInMinutes: 20
+content: '[!include[](includes/4-exercise-create-a-vm.md)]'
