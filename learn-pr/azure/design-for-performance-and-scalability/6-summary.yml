@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.6-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 7b3ed494435c737078698d4ebcbfcb088dfc2764
+  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2018
+  ms.locfileid: "43728143"
+durationInMinutes: 2
+content: '[!include[](includes/6-summary.md)]'

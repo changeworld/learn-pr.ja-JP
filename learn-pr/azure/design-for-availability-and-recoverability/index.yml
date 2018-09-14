@@ -1,0 +1,34 @@
+### YamlMime:Module
+uid: learn.design-for-availability-and-recoverability
+metadata:
+  title: 可用性と回復性のための設計
+  description: Azure アーキテクチャの可用性を高め、障害から復旧できるようにする
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 1113bd1dc8af6a65c57c33ed8cee30fbf6539d4a
+  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43853913"
+title: 可用性と回復性のための設計
+summary: インフラストラクチャの 1 つ以上のコンポーネントが失われた場合、アーキテクチャはそれに対処できますか? データの損失が発生した、または ID データの破損が確認された場合、データを復旧できますか? 顧客のシステムの可用性とディザスター リカバリーの要件を把握していますか? 可用性と回復性をアーキテクチャに組み込む方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure サービスを利用して高可用性アプリケーションを設計する
+    - Azure のディザスター リカバリー機能をアーキテクチャに組み込む
+    - Azure でのバックアップと復元によってデータの損失や破損からアプリケーションを保護する
+cardDescription: Azure アーキテクチャの可用性を高め、障害から復旧できるようにする
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- solution-architect
+achievement: learn.placeholder.badge
+products:
+- azure
+units:
+- learn.design-for-availability-and-recoverability.1-introduction
+- learn.design-for-availability-and-recoverability.2-high-availability
+- learn.design-for-availability-and-recoverability.3-disaster-recovery
+- learn.design-for-availability-and-recoverability.4-backup-and-restore
+- learn.design-for-availability-and-recoverability.5-summary

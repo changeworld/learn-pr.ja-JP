@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.8-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 614d5f8088bb2d9653fcea4d68ab7bace51b1449
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310155"
+durationInMinutes: 5
+content: '[!include[](includes/8-summary.md)]'
