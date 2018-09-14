@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.6-install-nodejs
+title: Node.js をインストールする
+metadata:
+  title: Node.js をインストールする
+  description: Node.js をインストールする
+  ms.openlocfilehash: 878006257c98c8e3dbfcba36f33da04102778d9a
+  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/25/2018
+  ms.locfileid: "42927133"
+durationInMinutes: 5
+content: '[!include[](includes/6-install-nodejs.md)]'

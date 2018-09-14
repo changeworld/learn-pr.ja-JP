@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.6-choose-event-grid
+title: Azure Event Grid を選択する
+metadata:
+  title: Azure Event Grid を選択する
+  description: Azure Event Grid を選択する
+  ms.openlocfilehash: 3662d311fea7dd0b5a74cf9fa93118bd7d9ee9fe
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40442734"
+durationInMinutes: 10
+content: '[!include[](includes/6-choose-event-grid.md)]'
