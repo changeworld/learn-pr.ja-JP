@@ -1,20 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.3-exercise-create-an-event-hub-using-azure-cli
-title: <span data-ttu-id="3bfaa-101">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3bfaa-101">Use the Azure CLI to Create an Event Hub</span></span>
+title: <span data-ttu-id="3f832-101">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3f832-101">Use the Azure CLI to Create an Event Hub</span></span>
 metadata:
-  title: <span data-ttu-id="3bfaa-102">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3bfaa-102">Use the Azure CLI to Create an Event Hub</span></span>
-  description: <span data-ttu-id="3bfaa-103">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3bfaa-103">Use the Azure CLI to Create an Event Hub</span></span>
+  title: <span data-ttu-id="3f832-102">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3f832-102">Use the Azure CLI to Create an Event Hub</span></span>
+  description: <span data-ttu-id="3f832-103">Azure CLI を使用してイベント ハブを作成する</span><span class="sxs-lookup"><span data-stu-id="3f832-103">Use the Azure CLI to Create an Event Hub</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: feab26f3a0f86e99175abce72d9d95d384ca9237
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: e2fb13a716519ef37c811bdfa5f3e0a0d108ba55
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310223"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44695578"
+interactive: bash
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-create-an-event-hub-using-azure-cli.md)]'

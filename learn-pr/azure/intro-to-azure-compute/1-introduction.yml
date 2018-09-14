@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.1-introduction
-title: <span data-ttu-id="a30e7-101">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="a30e7-101">Why use Azure compute?</span></span>
+title: <span data-ttu-id="8bda7-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="8bda7-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="a30e7-102">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="a30e7-102">Why use Azure compute?</span></span>
-  description: <span data-ttu-id="a30e7-103">Azure コンピューティングを使用する理由</span><span class="sxs-lookup"><span data-stu-id="a30e7-103">Why use Azure compute?</span></span>
+  title: <span data-ttu-id="8bda7-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="8bda7-102">Introduction</span></span>
+  description: <span data-ttu-id="8bda7-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="8bda7-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fa09082ba754601cbfd1a9300c09f47ba6b2ebb5
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 38be8198039c76f6274b6aa447c627cbdd24cf4e
+  ms.sourcegitcommit: 18f983ffeecf4f3b544a13de28b6d494fa204ee3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233593"
-durationInMinutes: 2
+  ms.lasthandoff: 09/13/2018
+  ms.locfileid: "45511239"
+durationInMinutes: 1
 content: '[!include[](includes/1-introduction.md)]'
