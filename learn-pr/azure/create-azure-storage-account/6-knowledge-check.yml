@@ -5,21 +5,26 @@ durationInMinutes: 3
 metadata:
   title: '知識チェック: ストレージ アカウントを作成する'
   description: ストレージ アカウントのプロパティと作成に関する質問。
-  ms.openlocfilehash: ab689dd2ef9802ce036ec683909b291c3b342370
-  ms.sourcegitcommit: c07e11980180ae35cb3485548f81e16152d77781
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e406c0e7cf2b81a7cae86ee7ea4ef715994e3c29
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43471761"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237030"
 quiz:
   title: '知識チェック: ストレージ アカウントを作成する'
   questions:
-  - content: 'BLOB として保存されたビデオ ファイルが 2 つあるとします。 ビデオの 1 つはビジネスに不可欠で、地理的に多様なデータセンター間で複数のコピーを作成するレプリケーション ポリシーが必要です。 その他のビデオは一般用で、ローカルのレポリケーション ポリシーは十分です。 True または False: これらの制約を満たすには、2 つの BLOB は別のストレージ アカウント内にある必要があります。'
+  - content: 'BLOB として保存されたビデオ ファイルが 2 つあるとします。 ビデオの 1 つはビジネスに不可欠で、地理的に多様なデータセンター間で複数のコピーを作成するレプリケーション ポリシーが必要です。 その他のビデオは一般用であり、ローカルのレポリケーション ポリシーで十分です。 はい/いいえ: これらの制約を満たすには、2 つの BLOB を別のストレージ アカウント内に配置する必要があります。'
     choices:
-    - content: "True"
+    - content: はい
       isCorrect: true
       correctExplanation: レプリケーション ポリシーは、ストレージ アカウントの特性です。 ストレージ アカウントのすべてのメンバーが、同じポリシーを使用する必要があります。 一部のデータは geo レプリケーション戦略を使用し、その他のデータはローカル レプリケーション戦略を使用する必要がある場合、ストレージ アカウントは 2 つ必要になります。
-    - content: "False"
+    - content: いいえ
       isCorrect: false
   - content: ストレージ アカウントの名前は次のようにする必要があります。
     choices:
@@ -27,15 +32,15 @@ quiz:
       isCorrect: false
     - content: Azure サブスクリプション内で一意。
       isCorrect: false
-    - content: グローバルに一意
+    - content: グローバルに一意。
       isCorrect: true
       correctExplanation: ストレージ アカウント名は、API アクセス用の URI の一部として使用されるため、グローバルに一意である必要があります。
-  - content: '一般的なプロジェクトでは、いつストレージ アカウントを作成しますか? '
+  - content: 一般的なプロジェクトでは、いつストレージ アカウントを作成しますか?
     choices:
-    - content: 開始時のプロジェクトのセットアップ中。
+    - content: 最初 (プロジェクトのセットアップ中)。
       isCorrect: true
-      correctExplanation: 通常、ストレージ アカウントは、プロジェクトの有効期間中は安定しています。 プロジェクトの開始時に作成するのが一般的です。
-    - content: 開発後のプロジェクトの実行中。
+      correctExplanation: 通常、ストレージ アカウントは、プロジェクトの有効期間中不変です。 プロジェクトの開始時に作成するのが一般的です。
+    - content: デプロイ後 (プロジェクトの実行中)。
       isCorrect: false
-    - content: 最後のリソースのクリーンアップ時。
+    - content: 最後 (リソースのクリーンアップ中)。
       isCorrect: false
