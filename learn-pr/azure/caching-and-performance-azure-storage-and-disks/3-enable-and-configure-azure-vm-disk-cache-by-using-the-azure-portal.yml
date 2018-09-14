@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.3-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
-title: Enable and configure Azure VM disk cache by using the Azure portal
+title: 有効にして、Azure portal を使用して Azure VM ディスクのキャッシュを構成します。
 metadata:
-  title: Enable and configure Azure VM disk cache by using the Azure portal
-  description: Enable and configure Azure VM disk cache by using the Azure portal
+  title: 有効にして、Azure portal を使用して Azure VM ディスクのキャッシュを構成します。
+  description: 有効にして、Azure portal を使用して Azure VM ディスクのキャッシュを構成します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

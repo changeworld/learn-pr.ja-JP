@@ -1,40 +1,37 @@
 ### YamlMime:Module
 uid: learn.design-for-security
 metadata:
-  title: Design for security in Azure
-  description: Security is arguably the most important aspect of any architecture. From financial institutions handling millions of dollars in transactions a day, to  health care organizations dealing with sensitive patient records, ensuring that your environment and data are secure is critical to the success of your business. In this module, we’ll talk through key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
+  title: Azure でのセキュリティの設計
+  description: セキュリティは、ほぼ間違いなく、すべてのアーキテクチャの最も重要な側面です。 1 日に何億円ものトランザクションを処理する金融機関から、機密性の高い患者の記録を扱う医療組織に至るまで、環境とデータの安全を確保することは、ビジネスの成功に不可欠です。 このモジュールでは、クラウド上の環境を設計するときのアーキテクチャのセキュリティに関する重要な考慮事項について説明します。 これを基礎として使用し、顧客と組織のデータの安全を保つための適切な措置を講じることができます。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for security in your cloud infrastructure
-summary: Review key architectural security considerations as you design an environment on the cloud. Using this as a groundwork, you can ensure you have the right pieces in place to keep your customer and institutional data secure.
-abstract:  | 
-  In this module, you will:
-  - Learn how to take a defense in depth approach to securing your architecture
-  - Learn how to protect your identities
-  - Learn what technologies are available to protect your Azure infrastructure
-  - Learn how and where to use encryption to secure your data
-  - Learn how to protect your architecture at the network level
-  - Learn how to leverage application security best practices to integrate security into your application
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: クラウド インフラストラクチャにおけるセキュリティのための設計
+summary: クラウド上の環境を設計するときのアーキテクチャのセキュリティに関する重要な考慮事項を確認します。 これを基礎として使用し、顧客と組織のデータの安全を保つための適切な措置を講じることができます。
+abstract: |
+  このモジュールでは、次のことを行います。
+  - アーキテクチャを保護するために多層防御を採用する方法について学習する
+  - ID を保護する方法について学習する
+  - Azure インフラストラクチャの保護に使用できるテクノロジについて学習する
+  - データを保護するための暗号化を使用する方法と場所について学習する
+  - ネットワーク レベルでアーキテクチャを保護する方法について学習する
+  - アプリケーションのセキュリティのベスト プラクティスを利用してセキュリティをアプリケーションに統合する方法について学習する
+prerequisites: なし
+iconUrl: /learn/achievements/design-for-security-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.design-for-security.1-introduction
-- learn.design-for-security.2-defense-in-depth
-- learn.design-for-security.3-identity-management
-- learn.design-for-security.4-infrastructure-protection
-- learn.design-for-security.5-encryption
-- learn.design-for-security.6-network-security
-#TODO: Add - learn.design-for-security.7-application-security
-- learn.design-for-security.8-summary
+  - learn.design-for-security.1-introduction
+  - learn.design-for-security.2-defense-in-depth
+  - learn.design-for-security.3-identity-management
+  - learn.design-for-security.4-infrastructure-protection
+  - learn.design-for-security.5-encryption
+  - learn.design-for-security.6-network-security
+  - learn.design-for-security.8-summary
 achievement: learn.design-for-security.badge

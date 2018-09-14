@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
-title: Customize your CI/CD pipelines
+title: CI/CD パイプラインをカスタマイズします。
 metadata:
-  title: Customize your CI/CD pipelines
-  description: Modify the out of the box CI/CD pipelines from an Azure DevOps project to create a customized CI/CD pipeline experience.
+  title: CI/CD パイプラインをカスタマイズします。
+  description: カスタマイズされた CI/CD パイプラインのエクスペリエンスを作成する Azure DevOps プロジェクトからボックス CI/CD パイプラインの既定を変更します。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -12,4 +12,3 @@ metadata:
 durationInMinutes: 10
 content: |
   [!include[](includes/3-customizing-your-ci-cd-pipelines.md)]
-  

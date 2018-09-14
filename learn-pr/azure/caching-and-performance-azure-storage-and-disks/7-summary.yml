@@ -9,11 +9,43 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ce5e1852bec8bd2fae48d5abc05ccc41c6ddd368
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233222"
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: |
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: '知識チェック: キャッシュと Azure storage とディスクのパフォーマンス'
+  questions:
+    - content: キャッシュ オプションは、ログ ファイルを格納するなどの書き込み負荷の高い操作に最適ですか。
+      choices:
+        - content: 読み取り専用
+          isCorrect: false
+          incorrectExplanation: 読み取り専用キャッシュには、データ ディスクを TempDB のデータを含むに適しています。 ただし、書き込み負荷の高い操作のパフォーマンスが向上しないと、パフォーマンスにわずかな低下を起こす可能性があります。
+        - content: 読み取り/書き込み
+          isCorrect: false
+          incorrectExplanation: これは、必要なときに、永続ディスクにキャッシュされたデータを書き込む、アプリが正しく処理する場合に適したオプションです。
+        - content: なし
+          isCorrect: true
+          correctExplanation: 書き込み負荷の高い操作は通常、キャッシュのメリットはありません。 'None' はおそらくログ ファイルに専用のディスクの最適な選択肢です。
+    - content: ディスクの種類は Azure VM を再起動、キャッシングの種類を変更するにはでしょうか。
+      choices:
+        - content: データ
+          isCorrect: false
+          incorrectExplanation: データ ディスクのキャッシュ設定を変更するがデタッチされますと、ターゲット ディスクが再接続されるとは、VM を再起動しません。
+        - content: オペレーティング システム (OS)
+          isCorrect: true
+          correctExplanation: OS ディスクのキャッシュ設定を変更するには、VM の再起動が必要です。
+        - content: 一時
+          isCorrect: false
+          incorrectExplanation: 一時ディスクのキャッシュ オプションを変更することはできません。
+        - content: ゾーン冗長ストレージ (ZRS)
+          isCorrect: false
+          incorrectExplanation: Premium storage アカウントには、ZRS をサポートしていません。
+    - content: VM を管理する Azure PowerShell を使用するいるとします。 VM を表すローカル オブジェクトがあるし、そのローカルのオブジェクトに複数の更新プログラムを行いました。 実際の VM にローカル変更を適用するには、PowerShell コマンドレットを使用でしょうか。
+      choices:
+        - content: Update-AzureRmVM
+          isCorrect: true
+          correctExplanation: このコマンドレットは、バーチャル マシン オブジェクトの状態を Azure の仮想マシンの状態を更新します。
+        - content: Set-AzureRmVM
+          isCorrect: false
+        - content: New-AzureRmVM
+          isCorrect: false

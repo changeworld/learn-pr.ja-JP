@@ -1,10 +1,10 @@
-Before we delve too deep into the implementations let’s first answer some higher level questions.
+これについては、実装にすぎない、前にいくつかより高いレベルの質問に回答しましょう最初。
 
-## How to calculate the emotion of a face?
+## <a name="how-to-calculate-the-emotion-of-a-face"></a>顔の感情を計算する方法でしょうか。
 
-Calculating emotion is one of the easiest parts of the application. We use the [FaceAPI](https://azure.microsoft.com/services/cognitive-services/face/?WT.mc_id=mojifier-sandbox-ashussai), part of the Azure Cognitive Services offering.
+感情の計算では、アプリケーションの最もアクセスしやすい部分の 1 つです。 使用して、 [FaceAPI](https://azure.microsoft.com/services/cognitive-services/face/)Azure Cognitive Services ソリューションの一部であります。
 
-The FaceAPI takes as input an image and returns information about the image, including if it detected any faces, the locations of the faces in the image and if requested it will also calculate and return the emotions of the faces as well, like so:
+イメージを返すなど、イメージ内の顔の場所の任意の顔が検出された場合と、要求された場合、イメージに関する情報を計算し、同様に、顔の感情を返すの入力として FaceAPI 受け取るようになります。
 
 ```json
 {
@@ -19,15 +19,15 @@ The FaceAPI takes as input an image and returns information about the image, inc
 }
 ```
 
-Take for instance this image:
+たとえばこのイメージを実行します。
 
-![Example Face](/media-drafts/example-face.jpg)
+![顔の例](/media-drafts/example-face.jpg)
 
-To process this image, you would make a POST request to an API endpoint like this:
+このイメージを処理するには、このような API エンドポイントに POST 要求をするつもり。
 
-    https://<region>.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion
+https://xxxxxxxxx.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion
 
-We provide the image in the body like so:
+本文内のイメージを提供しましたようになります。
 
 ```json
 {
@@ -35,15 +35,17 @@ We provide the image in the body like so:
 }
 ```
 
-> **Note**
+> **注**
 >
-> The API by default doesn’t return the emotion, you need to explicitly specify the query param `returnFaceAttributes=emotion`
+> 既定では、API、emotion を返さない、するは、クエリ パラメーターを明示的に指定する必要があります。 `returnFaceAttributes=emotion`
 
-The API is authenticated by the use of a secret key; we need to send this key with the header
+秘密キーの使用認証 APIこのキーは、ヘッダーを送信する必要があります。
 
-    Ocp-Apim-Subscription-Key: <your-subscription-key>
+```
+Ocp-Apim-Subscription-Key: <your-subscription-key>
+```
 
-The API with the query params above would return a JSON like so:
+上記のクエリ パラメーターを使用して API は、JSON を返すようになります。
 
 ```json
 [
@@ -70,37 +72,37 @@ The API with the query params above would return a JSON like so:
 ]
 ```
 
-It returns an array of results, one per face detected in the image. For each face, it returns the size/location of the face as `faceRectangle` and the emotions represented as a number from 0 to 1 as `faceAttributes`.
+イメージで検出された顔ごとに 1 つの結果の配列を返します。 顔ごととして面のサイズと位置を返します`faceRectangle`と感情の 0 からとして 1 の数値として表されます`faceAttributes`します。
 
-> **Tip**
+> **ヒント**
 >
-> You can start playing around with Cognitive Services even _without_ having an Azure account, simply go to [this page](https://azure.microsoft.com/try/cognitive-services/?api=face-api&WT.mc_id=mojifier-sandbox-ashussai) and enter your email address to get trial access.
+> Cognitive Services にもいろいろを開始する_せず_には、Azure アカウントを持つ、[このページ](https://azure.microsoft.com/try/cognitive-services/?api=face-api&WT.mc_id=mojifier-sandbox-ashussai)試用版へのアクセスを取得する電子メール アドレスを入力します。
 
-## How to map an emotion to an emoji?
+## <a name="how-to-map-an-emotion-to-an-emoji"></a>絵文字を感情をマップする方法でしょうか。
 
-Imagine there were only two emotions, fear and happiness, with values ranging from 0 to 1. Then every face could be plotted in a 2D _emotional space_ based on the emotion of the user, like so:
+2 つだけの感情、恐怖および幸福、0 から 1 までの値があったことを想像してください。 あらゆる顔の識別を 2D にプロットする可能性がありますし、_感情的な領域_ユーザーの感情に基づくようになります。
 
-![Euclidean Distance 1](/media-drafts/graph-1.jpg)
+![ユークリッド距離 1](/media-drafts/graph-1.jpg)
 
-Imagine then that we also figured out the emotional point for each emoji, and plotted those on the 2D emotional space as well. Then if we calculate the distance between your face and all the other emojis in this 2D emotional space we can figure out the closest emoji to your emotion, like so:
+私たちも各の絵文字の感情的なポイントを見つけプロットも感情的な 2 次元空間では、想像してください。 文字盤の感情に最も近い絵文字を考えてこの 2D 感情的な領域に他のすべての絵文字間の距離を計算する場合、次のようにします。
 
-![Euclidean Distance 2](/media-drafts/graph-2.png)
+![ユークリッド距離 2](/media-drafts/graph-2.png)
 
-This calculation is called the `euclidian distance`, and this is precisely what we used but not in 2D emotional space, in an 8D emotional space with (anger, contempt, disgust, fear, happiness, neutral, sadness, surprise).
+この計算と呼ばれる、 `euclidian distance`、使用しましたが、(怒り、軽蔑、嫌悪感、恐怖、喜び、中立、悲しみ、驚き) と 8 D 感情的なスペースに含まれないの 2D 感情的な領域です。
 
-> **Tip**
+> **ヒント**
 >
-> To make like easier we used the npm package called euclidean-distance, <https://www.npmjs.com/package/euclidean-distance>.
+> ユークリッド距離と呼ばれる、npm パッケージを使用して容易にするように<https://www.npmjs.com/package/euclidean-distance>します。
 
-## Shared Code
+## <a name="shared-code"></a>共有コード
 
-The sample starter project comes with a shared folder with code that already handles a lot of the use cases above.
+サンプルのスタート プロジェクトには既に、多くの上記のユース ケースを処理するコードに共有フォルダー。
 
-### EmotivePoint
+### <a name="emotivepoint"></a>EmotivePoint
 
-If you look closely at the `EmotivePoint` class in `shared/emmotive-point.ts` you will notice a few things
+よく見る場合、`EmotivePoint`クラス`shared/emmotive-point.ts`はいくつかの点に注意してください。
 
-The contructor takes as input an object containing emotive information and stores as local member variables, like so:
+Emotive 情報と、ローカル メンバー変数としてストアを含むオブジェクトを入力としてコンス トラクターが次のようにします。
 
 ```typescript
  constructor({
@@ -124,7 +126,7 @@ The contructor takes as input an object containing emotive information and store
   }
 ```
 
-It also has a function called distance which we can use to calcualte the euclidian distance between two emotive points, like so:
+Emotive の 2 点間のユークリッド距離を計算に使用できる距離という名前の関数も次のようにします。
 
 ```typescript
   distance(other) {
@@ -134,7 +136,7 @@ It also has a function called distance which we can use to calcualte the euclidi
   }
 ```
 
-We therefore can create two emotive points and calculate how close they are like so:
+そのため、私たち emotive の 2 つのポイントを作成して閉じる方法は計算ようになります。
 
 ```typescript
 let a = new EmotivePoint({
@@ -146,18 +148,18 @@ let b = new EmotivePoint({
 let distance = a.distance(b);
 ```
 
-### Face
+### <a name="face"></a>Face
 
-Another helper class is the `Face` class, this combines a few different properties including the `EmotivePoint` of a face and also the rectangle defining the face in the image, we use the `Rect` class for that.
+別のヘルパー クラスは、`Face`クラスなど、いくつかの異なるプロパティを組み合わせることによって、`EmotivePoint`面とも、イメージの表面を定義する四角形の使用、`Rect`するためのクラス。
 
-If you look closely at the `Face` class constructor in `shared/face.ts` you will notice this line of code:
+よく見る場合、`Face`クラス コンス トラクターの`shared/face.ts`のコード行を確認します。
 
 ```typescript
 this.moji = this.chooseMoji(this.emotivePoint);
 ```
 
-`emotivePoint` is the emotive point of the face itself.
-`chooseMoji` returns an appropriate emoji based on the emotivePoint of the face.
+`emotivePoint` emotive 自体の表面のポイントです。
+`chooseMoji` 顔の emotivePoint に基づいて適切な絵文字を返します。
 
 ```typescript
   chooseMoji(point) {
@@ -175,12 +177,12 @@ this.moji = this.chooseMoji(this.emotivePoint);
   }
 ```
 
-`MOJIS` is the list of emotive points for all the emojis, we'll discuss how to generate these in the next lecture.
+`MOJIS` 一覧は、すべての絵文字の emotive ポイントは、の次の講義でこれらを生成する方法を示します。
 
-The `chooseMoji` fucntion simply caclualtes the distance between this face and all the emojies, returning the closest one.
+`chooseMoji`関数は、この面と、最も近いものを返すすべての絵文字間の距離を計算します。
 
-# Summary
+# <a name="summary"></a>まとめ
 
-For each emoji we calcualte a point in _emotional_ space, this is called _calibration_ and we will cover this in the next chapter.
+各絵文字の特定の時点を計算します_感情的な_というこれは、スペース、_調整_し、[次へ] の章でこれについて説明します。
 
-Then using the Azure Face API we get a list of faces in an images with the emotional point of each face. Then using the euclidian distance algorithm to find the closest emoji to each face.
+Azure の Face API を使用して、画像の顔ごとの感情的なポイントでの顔の一覧を取得しました。 顔ごとに最も近い絵文字を検索するのには、ユークリッド距離アルゴリズムを使用しています。

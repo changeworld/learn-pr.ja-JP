@@ -9,12 +9,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7df24242a2751b212cd00be63a6e0f97b6e278bd
-  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44495264"
 labId: 45999
 durationInMinutes: 12
-content: '[!include[](includes/8-publish-to-azure.md)]'
+content: |
+  [!include[](includes/8-publish-to-azure.md)]

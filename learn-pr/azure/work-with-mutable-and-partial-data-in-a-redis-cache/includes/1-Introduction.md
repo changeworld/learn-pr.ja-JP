@@ -1,13 +1,12 @@
-Imagine you're building an instant messaging mobile application. Your application allows users to send messages to all members of a specific user-defined group. There's some data that needs to be stored about each user like their username, email, and password. So you decide to use SQL Server to create a relational database for that information. However, the messages themselves need to be sent and accessed quickly and a relational database is too slow for that.
+インスタント メッセージのモバイル アプリケーションを構築していることを想像してください。 アプリケーションでは、特定のユーザー定義グループのすべてのメンバーにメッセージを送信することができます。 ユーザー名、電子メールとパスワードのように、各ユーザーについて格納する必要があるいくつかのデータがあります。 SQL Server を使用して、詳細については、リレーショナル データベースを作成すること。 ただし、メッセージ自体が送信され、すばやくアクセスする必要があります、リレーショナル データベースが遅すぎるのです。
 
-You decide to create a Redis cache because of the number of benefits it provides. For example, you'll use transactions to ensure a message with a picture and text are sent together. You'll use data expiration to reset the name of the group chat after an hour. Finally, you'll use eviction policies to make sure the oldest messages are being deleted first when you're running low on memory.
+そのメリットの数のために Azure Redis Cache を作成すること。 たとえば、画像を使用してメッセージを確実に使用するトランザクションと一緒に送信されるテキスト。 データの有効期限を使用して、1 時間後にグループ チャットの名前をリセットします。 最後に、最も古いメッセージが削除されている最初のメモリ不足を実行しているかどうかを確認する削除ポリシーを使用します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
-- Group multiple operations into a transaction
-- Set an expiration time on your data
-- Manage out of memory conditions
-- Use the cache-aside pattern
+このモジュールでは、次のことを行います。
 
-
+- グループのトランザクションに複数の操作
+- データの有効期限を設定します。
+- メモリ不足の条件を管理します。
+- キャッシュ アサイド パターンを使用します。

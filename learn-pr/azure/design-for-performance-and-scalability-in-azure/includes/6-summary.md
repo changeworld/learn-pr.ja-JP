@@ -1,28 +1,28 @@
-Congratulations, you have completed the module on Performance and Scalability. Let's recap what we have covered:
+おめでとうございます。パフォーマンスとスケーラビリティに関するモジュールはこれで完了です。 説明した内容を確認しましょう。
 
-## Scaling up and scaling out
+## <a name="scaling-up-and-scaling-out"></a>スケールアップとスケールアウト
 
-- The difference between scaling up/down (the level of resource provisioned on an instance) and scaling in/out (increasing or decreasing the number of available instances). We also discussed examples in Azure of each.
-- The considerations to be made when scaling in/out around state management and application startup times.
-- Autoscale, and how it can help you scale the number of instances based on a schedule or the demand of an application.
-- Discussed alternate technologies that may help with scalability, including serverless and containers.
+- スケールアップ/ダウン (インスタンスでプロビジョニングされているリソースのレベル) とスケールイン/アウト (使用可能なインスタンスの数の増減) の違い。 それぞれについての Azure での例も説明しました。
+- スケールイン/アウトを行うときの状態管理とアプリケーション起動時間に関する考慮事項。
+- 自動スケーリングについて、およびスケジュールまたはアプリケーションの需要に基づいてインスタンス数をスケーリングするときの自動スケーリングの効果。
+- サーバーレスやコンテナーなど、スケーラビリティに役立つ可能性のある代替テクノロジについて説明しました。
 
-## Optimize network performance
+## <a name="optimize-network-performance"></a>ネットワークのパフォーマンスを最適化する
 
-- Network latency is a measure in delay of data being sent from a sender to a receiver.
-- In a cloud environment, chattier applications may see a performance impact compared to on-premises as resources are no longer immediately co-located.
-- Co-locating APIs near to a database write endpoint could provide a performance benefit, as we are reducing the network latency between the two resources.
-- Azure Traffic Manager could be used to route users to the deployed instance with the lowest network latency.
-- Azure Content Delivery Networks (CDN) could be used to offload compute from the main application and speed up application load times by caching content on a CDN edge node near to a user.
+- ネットワーク待機時間は、送信側から受信側に送信されたデータの遅延のメジャーです。
+- クラウド環境では、リソースがすぐに併置されなくなったため、通信の多いアプリケーションではオンプレミスよりパフォーマンスに影響する可能性があります。
+- API をデータベース書き込みエンドポイントの近くに置くと、2 つのリソース間のネットワーク待機時間が減るので、パフォーマンスが向上します。
+- Azure Traffic Manager を使用すると、最低のネットワーク遅延でデプロイされているインスタンスにユーザーをルーティングできます。
+- Azure Content Delivery Network (CDN) を使用すると、コンピューティングをメイン アプリケーションからオフロードでき、ユーザーの近くにある CDN エッジ ノードでコンテンツをキャッシュすることによってアプリケーションの読み込み時間を高速化できます。
 
-## Optimize storage performance
+## <a name="optimize-storage-performance"></a>ストレージのパフォーマンスを最適化する
 
-- There are three main types of disks available for IaaS deployments. Standard HDD disks (inconsistent latency and lower levels of throughput), Standard SSD disks (consistent latency and lower levels of throughput), and Premium SSD disks (consistent latency and high levels of throughput).
-- Caching could be used in the application layer to improve the load times of an application. Frequently requested information could be stored in a cache in front of the database, which could then optimize for data load times of the most requested information.
-- Using the appropriate back-end data store for the job (polyglot persistence) should be considered when building out your solution.
+- 次の 3 つの主な種類のディスクは IaaS デプロイ用に使用できます。 Standard HDD ディスク (一定ではない待機時間と低レベルのスループット)、Standard SSD ディスク (一定の待機時間と低レベルのスループット)、Premium SSD ディスク (一定の待機時間と高レベルのスループット) です。
+- アプリケーション レイヤーでキャッシュを使用して、アプリケーションの読み込み時間を短縮できます。 頻繁に要求される情報をデータベースの前にキャッシュに格納でき、最も多く要求される情報のデータ読み込み時間を最適化できます。
+- ソリューションを構築するときは、ジョブに適したバックエンド データ ストアを使用すること (ポリグロットな永続化) を考慮する必要があります。
 
-## Identify performance bottlenecks
+## <a name="identify-performance-bottlenecks"></a>パフォーマンスのボトルネックを特定する
 
-- Importance of understanding the expectations of the application before architecting or building any operations.
-- Understanding how effective DevOps strategies can help build more robust and well-performing applications.
-- Summarized the monitoring options available in Azure, including Azure Monitor (pane of glass for monitoring on Azure), Azure Log Analytics (log ingestion and IaaS monitoring), and Application Insights (application performance monitoring including availability, performance, and exception information).
+- 操作を設計または構築する前に、アプリケーションの期待値を理解することの重要性。
+- 効果的な DevOps 戦略が堅牢でパフォーマンスの高いアプリケーションの構築にどのように役立つかを理解すること。
+- Azure Monitor (Azure での監視用ウィンドウ)、Azure Log Analytics (ログの取り込みと IaaS の監視)、Application Insights (可用性、パフォーマンス、例外情報などのアプリケーション パフォーマンス監視) など、Azure で使用できる監視オプションをまとめました。

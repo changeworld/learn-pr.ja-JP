@@ -1,17 +1,17 @@
-Suppose you work as a network manager at a global pharmaceutical company that sequences genes to create formulas for proprietary and commercially confidential medicines. These formulas are used by your manufacturing plants around the world. The company wants to implement Microsoft Azure and transfer part of its gene sequencing functions into cloud-based virtual machines. The gene sequencing results need to be available to several regions around the world. Data processing is currently carried out in on-premises datacenters, with virtual private networking (VPN) used to connect the datacenters in each region.
+グローバルな製薬会社で、ネットワーク マネージャーとして働いているとします。この会社では、遺伝子の配列を決定して、独自の商業上部外秘である薬品の化学式を作成しています。 これらの化学式は、世界各地の製造工場で使用されます。 クラウド ベースの仮想マシンにその gene シーケンス処理関数の Microsoft Azure と転送の一部を実装するために考えています。 Gene シーケンス処理の結果は、世界各地の複数のリージョンに使用する必要があります。 データ処理は、仮想プライベート ネットワーク (VPN) 各リージョン内のデータ センターを接続するために使用すると、オンプレミスのデータ センターで現在に行われます。
 
-You've been tasked to assess how Microsoft Azure implements networking and to identify whether it will provide suitable security for the transfer of data. Secure data transfer is required between your on-premises datacenter and Microsoft Azure, and between Microsoft Azure regions. You'll use Azure Virtual Network, Azure VPN Gateway, and Azure ExpressRoute technologies.
+Microsoft Azure ネットワークを実装する方法を評価して、データの転送に関する適切なセキュリティが、かどうかを識別するためにする仕事しました。 セキュリティで保護されたデータ転送が、オンプレミス データ センターと Microsoft Azure の間、および Microsoft Azure リージョン間で必要です。 Azure Virtual Network、Azure VPN Gateway、および Azure ExpressRoute テクノロジを使用します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-By the end of this module, you will be able to:
+このモジュールを完了すると、次のことができるようになります。
 
-- Describe Azure Virtual Network
-- Describe Azure VPN Gateway
-- Describe Azure ExpressRoute
+- Azure Virtual Network について説明する
+- Azure VPN Gateway について説明する
+- Azure ExpressRoute について説明する
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Experience of creating Azure virtual machines
-- Thorough understanding of on-premises networking
+- Azure 仮想マシン作成の経験
+- オンプレミス ネットワークの十分な理解
 - Azure PowerShell

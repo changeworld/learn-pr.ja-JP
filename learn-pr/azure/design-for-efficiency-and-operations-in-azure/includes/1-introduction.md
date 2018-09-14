@@ -1,16 +1,16 @@
-How efficient is your cloud environment? Are you maximizing your resources and minimizing your cloud spend? Are you able to assess the health of your infrastructure? Are adverse events visible and actionable? Are you provisioning resources manually, or have you automated them to reduce risk and increase efficiency? Here, you will learn how to answer these questions to improve the efficiency of your Azure cloud deployments.
+クラウド環境はどれくらい効率的ですか? リソースを最大化し、クラウド支出を最小化していますか? インフラストラクチャの正常性を評価できますか? 有害事象を確認し、対処できますか? リソースを手動でプロビジョニングする、またはする自動化されたリスクを軽減し、効率を向上するでしょうか。 ここでは、これらの質問に答え、Azure クラウド デプロイの効率を向上させる方法を学習します。
 
-As we learn about improving operational efficiency, we'll see how one fictional Azure customer puts these principles to work. Lamna Healthcare is a national healthcare provider with several thousand physicians and clinicians across multiple facilities throughout the country. Their IT organization has recently undertaken an effort to reduce their datacenter footprint and move the majority of their IT systems to Azure. They have a mixture of in-house developed applications, open source, and off-the-shelf applications, with varying architectures and technology platforms. They want to make their journey to the cloud successful and would like to learn what they need to focus on to help make it possible.
+運用効率の向上について学習するために、ある架空の Azure 顧客がこれらの原則を適用する方法を確認します。 Lamna Healthcare は国営医療機関であり、全国の複数の施設に数千人の患者と医師がいます。 その IT 組織では最近、データセンターのフットプリントを減らし、IT システムの多くを Azure に移行する取り組みを行っています。 組織内で開発されたアプリケーション、オープン ソース、および市販のアプリケーションをさまざまなアーキテクチャおよびテクノロジ プラットフォームと組み合わせています。 同社は、クラウドに適切に移行するために、重点を置く必要がある内容を把握したいと考えています。
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> この章で説明する概念は、包括的なではありませんが、クラウドでソリューションを構築するときに重要な考慮事項を示します。 Microsoft では、パターン、ガイドライン、および Azure でアプリケーションの設計上の例の広範なセットを公開します。 内容に目を通すことを強くお勧め、 [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)の計画とアーキテクチャの設計を開始するとします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Learn how to maximize the efficiency of your cloud environment.
-- Learn how to use monitoring and analytics to gain operational insights.
-- Learn how to use automation to reduce effort and error.
+- 使用しているクラウド環境の効率を最大化する方法を学習します。
+- 監視と分析を使用して、運用に関する分析情報を得る方法を学習します。
+- Automation を使用して労力とエラーを減らす方法を学習します。
 
-Let's get started!
+それでは作業を始めましょう。

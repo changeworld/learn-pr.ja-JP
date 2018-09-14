@@ -1,55 +1,54 @@
-::: zone pivot="csharp"
-Let's integrate the Azure Storage client library into your .NET Core console application.
+ゾーン pivot ="csharp"を .NET Core コンソール アプリケーションに、Azure Storage クライアント ライブラリに統合しましょう。
 
-The Azure storage client library for .NET is distributed with NuGet. You will want to add the **WindowsAzure.Storage** package to your .NET or .NET Core applications.
+.NET 用 Azure storage クライアント ライブラリは NuGet を使って配布されます。 追加するには、 **WindowsAzure.Storage** .NET または .NET Core アプリケーションをパッケージします。
 
-## Add the Azure Storage NuGet package
+## <a name="add-the-azure-storage-nuget-package"></a>Azure Storage NuGet パッケージを追加する
 
-1. Switch to the correct folder if you are using the Cloud Shell.
+1. Cloud Shell で`cd`PhotoSharingApp ディレクトリされていない場合があります。
 
-1. Add the **WindowsAzure.Storage** package to the application.
+1. 追加、 **WindowsAzure.Storage**パッケージをアプリケーションにします。
 
     ```bash
     dotnet add package WindowsAzure.Storage
     ```
 
-1. This should result in some console activity while the client library and all the required dependencies are downloaded. Once it's done, go ahead and build and run the app again to make sure everything is ready to go.
+1. これにより、クライアント ライブラリと必要なすべての依存関係がダウンロード中にいくつかのコンソールのアクティビティ。 これを完了すると、ビルドしてすべて準備が整っているかどうかを確認するには、もう一度アプリを実行します。
 
     ```bash
     dotnet run
     ```
 
-1. As before, it should output "Hello, World!".
+1. 同様に、"Hello World!"と出力されます。
 
 ::: zone-end
 
-::: zone-pivot="javascript"
+::: zone pivot="javascript"
 
-Let's integrate the **Microsoft Azure Storage Client Library for Node.js and JavaScript** into your application.
+統合しましょう、 **Node.js、JavaScript 用の Microsoft Azure Storage クライアント ライブラリ**をアプリケーションにします。
 
-The client library for Node.js is available through the Node Package manager (NPM). You will want to add the **azure-storage** package to your **packages.json** file.
+Node.js 用クライアント ライブラリは、ノード パッケージ マネージャー (NPM) を利用します。 追加するには、 **azure storage**をパッケージ化、 **packages.json**ファイル。
 
 > [!NOTE]
-> The **Microsoft Azure Storage Client Library for Node.js and JavaScript** is intended for server applications. If you are doing client-side JavaScript, you will want to use the **Azure Storage Client Library for JavaScript** which provides the same functionality but is tailored to running in a browser.
+> **Node.js、JavaScript 用の Microsoft Azure Storage クライアント ライブラリ**サーバー アプリケーションが対象としています。 使用するとして、クライアント側の JavaScript を実行している場合、 **JavaScript 用の Azure Storage クライアント ライブラリ**は、ブラウザーで実行されていることにお応えが同じ機能を提供します。
 
-## Add the Azure Storage package
+## <a name="add-the-azure-storage-package"></a>Azure Storage パッケージを追加します。
 
-1. Switch to the correct folder if you are using the Cloud Shell.
+1. Cloud Shell で`cd`PhotoSharingApp ディレクトリされていない場合があります。
 
-1. Add the **azure-storage** package to the application. Make sure to supply the `--save` option so it persists to **packages.json**.
+1. 追加、 **azure storage**パッケージをアプリケーションにします。 指定することを確認、`--save`それを維持するためのオプション**packages.json**します。
 
     ```bash
     npm install azure-storage --save
     ```
 
-1. This should result in some console activity while the client library and all the required dependencies are downloaded. Once it's done, go ahead and build and run the app again to make sure everything is ready to go.
+1. これにより、クライアント ライブラリと必要なすべての依存関係がダウンロード中にいくつかのコンソールのアクティビティ。 これを完了すると、ビルドしてすべて準備が整っているかどうかを確認するには、もう一度アプリを実行します。
 
     ```bash
     node index.js
     ```
 
-1. As before, it should output "Hello, World!".
+1. 同様に、「こんにちは, World!」と出力されます。
 
 ::: zone-end
 
-Now that we have the necessary libraries in place, let's look at the common tasks you'll do in your code to work with Azure storage.
+場所に必要なライブラリをしたら、次のコードを Azure storage で作業を行い、一般的なタスクを見てみましょう。

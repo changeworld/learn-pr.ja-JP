@@ -1,9 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.1-introduction
-title: Introduction
+title: はじめに
 metadata:
-  title: Introduction
-  description: Begin your cloud journey and align your career to this exciting revolution.
+  title: はじめに
+  description: クラウドの知識を開始し、このエキサイティングな revolution キャリアを整列します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 1
 content: |
   [!include[](includes/1-introduction.md)]

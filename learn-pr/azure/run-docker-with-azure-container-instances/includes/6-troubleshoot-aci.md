@@ -5,7 +5,7 @@
 まず、このユニットで使用するコンテナーを作成します。 このモジュールで作成した最初のコンテナーがまだある場合は、この手順はスキップします。
 
 ```azurecli
-az container create --resource-group myResourceGroup --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
+az container create --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --image microsoft/aci-helloworld --ports 80 --ip-address Public
 ```
 
 ## <a name="get-logs-from-a-container-instance"></a>コンテナー インスタンスからのログの取得
@@ -13,7 +13,7 @@ az container create --resource-group myResourceGroup --name mycontainer --image 
 アプリケーション コードからコンテナー内のログを表示するために、`az container logs` コマンドを使用できます。
 
 ```azazurecli
-az container logs --resource-group myResourceGroup --name mycontainer
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 Web アプリが数回アクセスされた後のコンテナー例からのログ出力は次のとおりです。
@@ -31,7 +31,7 @@ listening on port 80
 `az container attach` コマンドからは、コンテナーの起動中の診断情報が出力されます。 コンテナーが起動すると、ご利用のローカル コンソールに STDOUT と STDERR もストリーミングされます。
 
 ```azazurecli
-az container attach --resource-group myResourceGroup --name mycontainer
+az container attach --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer
 ```
 
 出力例:
@@ -56,7 +56,7 @@ Azure Container Instances は、実行中のコンテナーでのコマンドの
 この例では、実行中のコンテナーで対話型のターミナル セッションを開始します。
 
 ```azurecli
-az container exec --resource-group myResourceGroup --name mycontainer --exec-command /bin/sh
+az container exec --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --exec-command /bin/sh
 ```
 
 コマンドが完了すると、実質的にコンテナー内で作業していることになります。 この例では、作業ディレクトリの内容を表示する `ls` コマンドを実行しました。
@@ -74,7 +74,7 @@ index.js           package-lock.json
 CPU とメモリの使用量に関するメトリックをプルしたい場合があります。 これを行うには、まず、Azure コンテナー インスタンスの ID を取得します。 この例では、ID は `CONTAINER_ID` という名前の変数に配置されています。
 
 ```azurecli
-CONTAINER_ID=$(az container show --resource-group myResourceGroup --name mycontainer --query id --output tsv)
+CONTAINER_ID=$(az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer --query id --output tsv)
 ```
 
 ここで、`az monitor metrics list` コマンドを使用して、CPU の使用量の情報を戻します。
@@ -135,15 +135,8 @@ Timestamp            Name              Average
 
 ![Azure Container Instances の CPU とメモリ使用量の情報を示す Azure portal のビュー](../media-draft/cpu-memory.png)
 
-## <a name="clean-up"></a>クリーンアップ
-<!---TODO: Update for sandbox?--->
-
-これは、Azure Container Instances のラーニング モジュールの最後のユニットです。 この時点で、リソース グループを削除することにより、作成したリソースをクリーンアップすることができます。 これを行うには、**az group delete** コマンドを使用します。
-
-```azurecli
-az group delete --name myResourceGroup --no-wait
-```
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
 ## <a name="summary"></a>まとめ
 
-このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナ― インスタンスにアタッチするなどの、いくつかのトラブルシューティング操作を学習しました。
+このユニットでは、コンテナー ログ、コンテナー イベントをプルし、それをコンテナー インスタンスにアタッチするなどの、いくつかのトラブルシューティング操作を学習しました。

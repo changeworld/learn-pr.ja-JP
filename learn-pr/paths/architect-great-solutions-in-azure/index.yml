@@ -1,28 +1,27 @@
 ### YamlMime:LearningPath
 uid: learn.architect-great-solutions-in-azure
 metadata:
-  title: Azure で最適なソリューションを設計する
-  description: すべての適切なアーキテクチャで見つかった核となる原則を調べることによって、Azure 上でセキュリティで保護され、スケーラブルかつパフォーマンスが良いソリューションを設計および構築する方法について説明します。
+  title: Azure での優れたソリューションを設計します。
+  description: 設計および基本原則については、すべての優れたアーキテクチャを調べることで Azure でのセキュリティで保護された、スケーラブルで、パフォーマンスの高いソリューションを構築する方法について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: e6c1cf319aaf8df24d5245be7501b32799f8ad50
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43824531"
-title: Azure で最適なソリューションを設計する
-summary: すべての適切なアーキテクチャで見つかった核となる原則を調べることによって、Azure 上でセキュリティで保護され、スケーラブルかつパフォーマンスが良いソリューションを設計および構築する方法について説明します。
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Azure での優れたソリューションを設計します。
+summary: 設計および基本原則については、すべての優れたアーキテクチャを調べることで Azure でのセキュリティで保護された、スケーラブルで、パフォーマンスの高いソリューションを構築する方法について説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /achievements/architect-great-solutions-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
+  - azure
 modules:
-- learn.design-a-great-azure-architecture
-- learn.design-for-security
-- learn.design-for-performance-and-scalability
-- learn.design-for-efficiency-and-operations
+  - learn.pillars-of-a-great-azure-architecture
+  - learn.design-for-security
+  - learn.design-for-performance-and-scalability
+  - learn.design-for-efficiency-and-operations
+  - learn.design-for-availability-and-recoverability
 achievement: learn.architect-great-solutions-in-azure.trophy

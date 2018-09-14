@@ -9,11 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ea230dbf4f3bf2c9595c48dbef7ea7675019b009
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248216"
 durationInMinutes: 5
-content: '[!include[](includes/0-introduction.md)]'
+content: |
+  [!include[](includes/0-introduction.md)]

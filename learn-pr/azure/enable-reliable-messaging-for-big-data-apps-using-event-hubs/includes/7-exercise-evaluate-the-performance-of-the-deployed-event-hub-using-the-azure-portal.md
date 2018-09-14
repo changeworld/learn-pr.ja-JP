@@ -2,7 +2,7 @@
 
 ## <a name="view-event-hub-activity"></a>イベント ハブのアクティビティの確認
 
-1. [Azure Portal](https://portal.azure.com?azure-portal=true) にサインインします。
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
 1. 検索バーを使用してイベント ハブを検索し、それを開きます。
 
@@ -10,7 +10,7 @@
 
     ![イベント ハブのメッセージの確認](../media-draft/6-view-messages.png)
 
-1. SimpleSend アプリケーションと EventProcessorSample アプリケーションは、100 件のメッセージを送信/受信するように構成されています。 イベント ハブが、SimpleSend アプリケーションからの 100 件のメッセージを処理し、EventProcessorSample アプリケーションに 100 件のメッセージを送信したことを確認します。
+1. SimpleSend アプリケーションと EventProcessorSample アプリケーションは、100 件のメッセージを送信/受信するように構成されています。 イベント ハブが SimpleSend アプリケーションから 100 件のメッセージが処理し、EventProcessorSample アプリケーションに 100 件のメッセージが転送されることを確認します。
 
 ## <a name="test-event-hub-resilience"></a>イベント ハブの回復力のテスト
 
@@ -22,7 +22,6 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/SimpleSend
     java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. "**Send Complete...**" と表示されたら、Enter キーを押します。
@@ -43,7 +42,6 @@
     cd ~
     cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
     java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
-    ENTER
     ```
 
 1. メッセージがコンソールに表示されなくなったら、Enter キーを押します。

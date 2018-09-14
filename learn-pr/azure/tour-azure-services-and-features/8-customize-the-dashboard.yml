@@ -9,12 +9,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 164eb1efa9fc5dfb2d9da655a0db8ee6e9a03964
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310699"
 azureSandbox: true
 durationInMinutes: 10
-content: '[!include[](includes/8-customize-the-dashboard.md)]'
+content: |
+  [!include[](includes/8-customize-the-dashboard.md)]

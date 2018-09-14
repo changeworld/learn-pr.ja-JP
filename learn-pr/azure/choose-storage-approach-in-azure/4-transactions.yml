@@ -3,35 +3,31 @@ uid: learn.choose-storage-approach-in-azure.4-transactions
 metadata:
   title: トランザクションで複数の操作をグループ化する
   description: トランザクションで複数の操作をグループ化する
-  ms.openlocfilehash: a6a19c7092ce390eacbddd832ddd25050cfc1ab9
-  ms.sourcegitcommit: 1663afb13d55c1fce5f2dc4c0f78ef2d74902c33
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/31/2018
-  ms.locfileid: "43363653"
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: トランザクションで複数の操作をグループ化する
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/4-transactions.md)]
 quiz:
   title: トランザクション
   questions:
-  - content: 商品データに必要なシステムの種類
-    choices:
-    - content: OLAP
-      isCorrect: false
-      incorrectExplanation: 不正解です。OLAP システムは、複雑なクエリやトランザクションを必要とし、低遅延である必要はないデータに最適です。 製品データはすばやく変更する必要があり、これには低遅延で高スループットのシステムが必要です。
-    - content: OLTP
-      isCorrect: true
-      correctExplanation: 正解です。OLTP システムでは、多数のユーザーがサポートされ、応答時間が速く、大量のデータが処理され、高可用性であり、通常は小規模または比較的シンプルなトランザクションが処理されます。これは、製品データ セットに最適です。
-  - content: 在庫を更新して支払い処理するための操作が同じトランザクション内にある場合、ユーザーが電話とラップトップから ACID 準拠のデータベースに対してまったく同じ注文を送信すると、どうなるでしょうか。
-    choices:
-    - content: 1 番目の注文は完了し、クレジット残高が 0 に変更されます。2 番目の注文は、ユーザーに店内のクレジット残高がないことを示すように更新されます。
-      isCorrect: false
-      incorrectExplanation: 不正解です。トランザクション データベースの分離性のため、2 つのトランザクションは独立して処理され、2 番目のトランザクションが完了して失敗するまで、1 番目のトランザクションによって 2 番目の処理中のトランザクションが変更されることはありません。
-    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は買い物かごの中の商品の在庫残を更新しますが、注文は完了しません。
-      isCorrect: false
-      incorrectExplanation: 不正解です。トランザクション データベースでの原子性のため、2 番目の注文によって、失敗した注文に対する在庫残は更新されません。
-    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は処理されません。
-      isCorrect: true
-      correctExplanation: 正解です。2 番目の注文では、店内クレジットが既に使用されていることを認識すると、トランザクションがロールバックされます。
+    - content: 製品のデータに最も適したトランザクション データベース システムの種類が正しくありません。
+      choices:
+        - content: OLAP
+          isCorrect: false
+        - content: OLTP
+          isCorrect: true
+          correctExplanation: OLTP システムで、ユーザーの大規模なセットをサポートして、迅速な応答時間は、大量のデータをハンドルがあるが高可用性をおよびは小規模または比較的単純なトランザクションに適しています。
+    - content: インベントリを更新する操作をたとえばし、支払の処理が同じトランザクション内ではします。 ユーザーがフルの金額のストアのクレジットを適用しようと電話とラップトップ コンピューターを使用して厳密に同じ順序を同時に送信します。 バック グラウンドでのデータベースでは、何が起こる、ACID 準拠のデータベースですか。
+      choices:
+        - content: 両方注文は処理され、ストアにクレジットを使用します。
+          isCorrect: false
+        - content: 1 つの注文の処理とバスケット内の項目の残りの在庫を更新が、順序を完了できませんが、ストアでクレジットの使用とその他の順序。
+          isCorrect: false
+        - content: 1 つの注文の処理し、ストアでのクレジットを使用して、別の順序は処理できません。
+          isCorrect: true
+          correctExplanation: 2 番目の注文では、ストアにクレジットが既に使用されていることを確認、それはトランザクションをロールバックします。

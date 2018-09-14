@@ -8,12 +8,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9567386b22d5260a676518610006f6fcc485e367
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231641"
 title: コンテナーの概要
 durationInMinutes: 10
-content: '[!include[](includes/1-introduction.md)]'
+content: |
+  [!include[](includes/1-introduction.md)]

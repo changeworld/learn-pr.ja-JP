@@ -9,12 +9,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8c7ec8f040b0b423eedd178881577a4b6c1e5716
-  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44495193"
 labId: 45999
 durationInMinutes: 7
-content: '[!include[](includes/5-create-an-azure-functions-mobile-backend.md)]'
+content: |
+  [!include[](includes/5-create-an-azure-functions-mobile-backend.md)]

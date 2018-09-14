@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.5-exercise-configure-a-load-balancer-in-azure
+title: 演習 - Azure でのロード バランサーの構成
+metadata:
+  title: 演習 - Azure でのロード バランサーの構成
+  description: 演習 - Azure でのロード バランサーの構成
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 20
+content: |
+  [!include[](includes/5-exercise-configure-a-load-balancer-in-azure.md)]

@@ -1,1 +1,28 @@
-We discussed how to make your application available and recoverable by architecting for high availability, disaster recovery, and backups. High availability is the ability to handle the loss or severe degradation of a component of a system. Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data. And, backups refer to restoring your data after a disaster has occurred. Following these three principles will help ensure your application is resilient.
+高可用性、ディザスター リカバリー、バックアップに構築でき、回復可能なアプリケーションを作成する方法を説明しました。 重要なポイントをいくつか見てをみましょう。
+
+## <a name="high-availability"></a>高可用性
+
+- 高可用性とは、システムのコンポーネントの損失または大幅なパフォーマンスの低下に対処する機能です。
+- 次の 3 つの主要な領域に重点を置いた高可用性のため、アプリケーションを評価します。
+  - 定義された SLA。
+  - アプリケーションの HA 機能。
+  - 依存するアプリケーションの HA 機能。
+- Azure で可用性セットと可用性ゾーンを使用して、VM ワークロード向けの HA を提供します。
+- 負荷分散サービスの使用可能なシステム間で負荷を配布するには、Azure Traffic Manager、Azure Application Gateway、および Azure Load Balancer などを使用します。
+- PaaS サービス構築された HA、可能なため、アーキテクチャでこれらのサービスを活用します。
+
+## <a name="disaster-recovery"></a>ディザスター リカバリー
+
+- ディザスター リカバリーとは、ダウンタイムやデータの損失につながる*影響の大きいイベントからの復旧*です。
+- 手順、責任、および障害から回復するために必要なアクティビティを定義するディザスター リカバリー計画を作成します。
+- アプリケーションの DR の要件を決定するために、アプリケーションの RTO と RPO を定義します。
+- バックアップとレプリケーションを使用すると、システムおよびに回復するのにデータのコピーを提供します。
+- DR プロセスの復旧機能をアプリケーションの Azure Site Recovery を使用します。
+- ギャップと手順の関連性を識別するために、ディザスター リカバリー計画をテストします。
+
+## <a name="backup-and-restore"></a>バックアップと復元
+
+- または、DR 戦略のより分離されたデータ損失のシナリオの一部としてデータを復元するのにバックアップを使用します。
+- 完全な VM バックアップ、ファイルとフォルダーのバックアップと、オンプレミスの環境内のシステムのバックアップには、Azure Backup を使用します。
+- バックアップ機能は、Azure SQL Database や Azure App Service などの PaaS サービスに組み込まれている多くの場合。 可能であれば、これらのバックアップ機能の活用、その既定の構成と全体的な機能を理解します。
+- 復元のプロセスと手順は有効であり、十分なことを確認するには、定期的にテストします。

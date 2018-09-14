@@ -1,128 +1,130 @@
-It's rare that we can exactly predict the load on our system: public facing applications might grow rapidly or an internal application might need to support a larger user base as the business grows. Even when we can predict load, it's rarely flat: retailers have more demand during the holidays and sports websites peak during playoffs. Here, we'll define _scaling up/down_ and _scaling out/in_, cover some ways Azure can improve your scaling capabilities, and look at how serverless and container technologies can improve your architecture's ability to scale.
+システムの負荷を正確に予測できることはほとんどありません。公開されているアプリケーションの負荷が急に増えたり、ビジネスの成長に伴い内部アプリケーションでサポートする必要のあるユーザー ベースが大きくなったりする可能性があります。 負荷を予測できる場合でも、フラットになることはあまりありません。小売りサイトは休日には需要が増え、スポーツ Web サイトはプレーオフの間にピークになります。 ここでは、"_スケールアップ/スケールダウン_" と "_スケールアウト/スケールイン_" を定義し、Azure でスケーリング機能を向上させる方法を説明した後、サーバーレス技術とコンテナー技術でお使いのアーキテクチャのスケーリング機能を向上させる方法を見ていきます。
 
-## What is scaling?
+## <a name="what-is-scaling"></a>スケーリングの対象
 
-_Scaling_ is the process of managing your resources to help your application meet a set of performance requirements.  When we have too many resources serving users, we won't be using it efficiently and we'll be wasting money. Too few available resources means that the performance of our application could be impacted. The goal is to meet our defined performance requirements while optimizing for cost. 
+"_スケーリング_" とは、アプリケーションが一連のパフォーマンス要件を満たすようにリソースを管理するプロセスです。  ユーザーに提供するリソースが多すぎると、リソースを効率的に使用できず、コストが無駄になります。 使用できるリソースが少なすぎると、アプリケーションのパフォーマンスが低下することを意味します。 目標は、コストを最適化しながら、定義されているパフォーマンス要件を満たすことです。 
 
-"_Resources_" can refer to anything we need to manage to run our applications. Memory and CPU for virtual machines are the most obvious resources, but some Azure services might require you to consider bandwidth or abstractions, like Cosmos DB Request Units.
+"_リソース_" は、アプリケーションを実行するために管理する必要のあるすべてのものを指す場合があります。 仮想マシンのメモリと CPU は最も明らかなリソースですが、一部の Azure サービスでは帯域幅または Cosmos DB 要求ユニットのような抽象化の考慮が必要になる場合があります。
 
-In a world where application demand is constant, it's easy to predict the right amount of resources you'll need. In the real world, the demands of applications change over time, so the right amount of resources you'll need can be harder to predict. If you're lucky, that change will be predictable or seasonal, but that is not typical of all applications. Ideally, you want to provision the right amount of resources to meet demand and adjust as demand changes.
+アプリケーションの需要が定数の世界では、簡単にする必要がありますのリソースの量を適切に予測できます。 実際には、適切な量のリソースにする必要がありますは予測が困難になることができますのでアプリケーションの需要は時間の経過と共に変更します。 運がよければ、その変化は予測可能であったり、季節的であったりしますが、すべてのアプリケーションでそれが一般的なわけではありません。 需要に見合った適切な量のリソースをプロビジョニングし、需要の変化に応じて調整するのが理想的です。
 
-Scaling is difficult in an on-premises scenario, where you purchase and manage your own servers. Adding resources can be costly and often takes too much time to bring online, sometimes longer than your actual need for the increased capacity. It can be just as difficult to then reduce capacity during times of low demand on the system, so you may be stuck with the increased cost.
+ユーザーが独自にサーバーを購入して管理するオンプレミスのシナリオでは、スケーリングは困難です。 リソースを追加すると、コストがかかる場合があり、オンラインにするまでに時間がかかりすぎ、場合によっては増えた容量に対して実際に必要な時間より長くなることもあります。 システムの需要が低下しているときに容量を減らすのが困難な場合があり、コストが増加したままの状態になる可能性があります。
 
-Easy scaling is a key benefit of Azure. Most Azure resources let you easily add or remove resources as demand changes, and many services have automated options so they monitor demand and adjust for you. This automatic scaling capability, commonly known as autoscaling, lets you set thresholds for the minimum and maximum level of instances that should be available, and will add or remove instances based upon a performance metric (for example, CPU utilization).
+スケーリングの容易さは Azure の主な利点です。 ほとんどの Azure リソースについては需要の変化に応じてリソースを簡単に追加または削除でき、多くのサービスには要求を自動的に監視して調整するオプションがあります。 この自動的なスケーリング機能は自動スケーリングと呼ばれ、使用できる必要があるインスタンスの最小レベルと最大レベルのしきい値を設定でき、パフォーマンス メトリック (CPU 使用率など) に基づいてインスタンスが追加または削除されます。
 
-## What is scaling up or down?
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yBWi]
 
-Scaling up is the process where we increase the capacity of a given instance. A virtual machine could be increased from 1 vCPU and 3.5 GB of RAM to 2 vCPUs and 7 GB of RAM to provide more processing capacity. On the other hand, scaling down is the process where we lower the capacity of a given instance. For example, reducing a virtual machine's capacity from 2 vCPUs and 7 GB of RAM to 1 vCPU and 3.5 GB of RAM, reducing both capacity and cost. The following illustration shows an example of changing the size of a virtual machine.
+## <a name="what-is-scaling-up-or-down"></a>スケールアップやスケールダウンとは
 
-![An illustration showing scaling up and scaling down of a virtual machine to change the performance capabilities.](../media/2-ScaleUpDown.png)
+スケールアップとは、特定のインスタンスの容量を増やすプロセスのことです。 仮想マシンでは、1 vCPU と 3.5 GB の RAM を、2 vCPU と 7 GB の RAM に増やして、より多くの処理能力を提供することができます。 一方、スケールダウンとは、特定のインスタンスの容量を減らすプロセスのことです。 たとえば、仮想マシンの容量を 2 vCPU と 7 GB の RAM から 1 vCPU と 3.5 GB の RAM に減らすと、容量とコストの両方が減ります。 次の図は、仮想マシンのサイズを変更する例を示します。
 
-Let's take a look at what scaling up or down means in the context of Azure resources:
+![スケール アップとスケール ダウンのパフォーマンス機能の変更を仮想マシンを示す図。](../media/2-ScaleUpDown.png)
 
-- In Azure virtual machines, you scale based upon a virtual machine size. That size has a certain amount of vCPUs, RAM, and local storage associated with it. For example, we could scale up from a Standard_DS1_v2 virtual machine (1 vCPU and 3.5 GB of RAM) to a Standard_DS2_v2 virtual machine (2 vCPUs and 7 GB of RAM).
-- Azure SQL Database is a platform as a service (PaaS) implementation of Microsoft SQL Server.  You can scale up a database based upon the number of database transaction units (DTUs) or vCPUs. DTUs are an abstraction of underlying resources and are a blend of CPU, IO, and memory. You could scale your database instance from 500 DTUs to 250 DTUs.
-- Azure App Service is a PaaS website-hosting service on Azure. Websites run on a virtual server farm, also known as an App Service plan. You can scale the App Service plan up or down between tiers and have capacity options within tiers. For example, an S1 App Service plan has 1 vCPU and 1.75 GB of RAM per instance. We could scale up to an S2 App Service plan, which has 2 vCPUs and 3 GB of RAM per instance.
+Azure リソースのコンテキストでスケールアップやスケールダウンがどのような意味を持つかを見ていきましょう。
 
-To have these capabilities in an on-premises environment you typically have to wait for procurement of the needed hardware and installation before you can start using the new level of scale. In Azure, the physical resources are already deployed and available for you. You simply need to select the alternate level of scale that you are looking to use.
+- Azure 仮想マシンでは、仮想マシンのサイズに基づいてスケーリングします。 仮想マシンのサイズでは、一定の量の vCPU、RAM、ローカル ストレージが仮想マシンに関連付けられています。 たとえば、Standard_DS1_v2 の仮想マシン (1 vCPU、3.5 GB の RAM) から Standard_DS2_v2 の仮想マシン (2 vCPU、7 GB の RAM) にスケールアップできます。
+- Azure SQL Database は、Microsoft SQL Server のサービスとしてのプラットフォーム (PaaS) の実装です。  データベース トランザクション ユニット (DTU) または vCPU の数に基づいて、データベースをスケールアップできます。 基になっているリソースを抽象化したものが DTU であり、CPU、IO、メモリの組み合わせです。 データベース インスタンスは 500 DTU から 250 DTU にスケーリングできます。
+- Azure App Service は、Azure 上の PaaS Web サイト ホスティング サービスです。 Web サイトは、App Service プランとも呼ばれる仮想サーバー ファーム上で実行されます。 App Service プランはレベル間でスケールアップまたはスケールダウンでき、レベル内には容量のオプションがあります。 たとえば、S1 App Service プランでは、インスタンスごとに 1 vCPU と 1.75 GB RAM があります。 これを、インスタンスごとに 2 vCPU と 3 GB RAM の S2 App Service プランにスケールアップできます。
 
-You may need to consider the impact of scaling up in your solution, depending upon the cloud services that you have chosen.
+オンプレミス環境でこれらの機能を利用するには、通常、必要なハードウェアを購入してインストールするまで待ってからでないと、新しいレベルのスケールを使用できません。 Azure では、物理リソースが既にデプロイされており、使用可能です。 後は、使用しようとしているスケールの代替レベルを選択するだけです。
 
-For example, if you choose to scale up in Azure SQL Database, the service deals with scaling up individual nodes and continues the operation of your service. Changing the service tier and/or performance level of a database creates a replica of the original database at the new performance level, and then switches connections over to the replica. No data is lost during this process, and there's only a brief interruption (typically less than four seconds) when the service switches over to the replica.
+選択したクラウド サービスによっては、お使いのソリューションでのスケールアップの影響を考慮することが必要になる場合があります。
 
-Alternatively, if you choose to scale up or down a virtual machine, you do so by selecting a different instance size. In most cases this requires a restart of the VM, so it's best to have the expectation that a reboot will be required and you'll need to account for when performing this activity.
+たとえば、Azure SQL Database でのスケールアップを選択した場合、サービスによって個々のノードのスケールアップが処理され、サービスの操作は続行されます。 データベースのサービス レベルやパフォーマンス レベルを変更すると、新しいパフォーマンス レベルで元のデータベースのレプリカが作成され、接続先がそのレプリカに切り替えられます。 このプロセスの間にデータが失われることはなく、サービスがレプリカに切り替わるときに短い中断 (通常は 4 秒未満) があるだけです。
 
-Finally, you should always look for places where scaling down is an option. If your application can provide adequate performance at a lower price tier, your Azure bill could be significantly reduced.
+代わりに、仮想マシンをスケールアップまたはスケールダウンする場合は、異なるインスタンス サイズを選択することで行います。 ほとんどの場合、これには VM の再起動が必要なので、再起動が必要なものと想定するのが最善であり、この作業を行うときはそれを見込んでおく必要があります。
 
-## What is scaling out or in?
+最後に、スケールダウンが可能な場所を常に探すようにする必要があります。 もっと低い価格レベルでもアプリケーションで十分なパフォーマンスが提供できる場合、Azure の料金を大幅に削減できる可能性があります。
 
-Where scaling up and down adjusts the amount of resources a single instance has available, scaling out and in adjusts the total number of instances.
+## <a name="what-is-scaling-out-or-in"></a>スケールアウトやスケールインとは
 
-_Scaling out_ is the process of adding more instances to support the load of your solution. For example, if our website front end were hosted on virtual machines, we could increase the number of virtual machines if the level of load increased.
+スケールアップとスケールダウンが単一のインスタンスで使用可能なリソースの量を調整することであるのに対し、スケールアウトとスケールインはインスタンスの総数を調整することです。
 
-_Scaling in_ is the process of removing instances that are no longer needed to support the load of your solution. If the website front ends have low usage, we may want to lower the number of instances to save cost. The following illustration shows an example of changing the number of virtual machine instances.
+_スケール アウト_ とは、ソリューションの負荷をサポートするためにインスタンスをさらに追加するプロセスです。 たとえば、Web サイトのフロントエンドが仮想マシンでホストされている状態で、負荷のレベルが上がった場合は仮想マシンの数を増やすことができます。
+
+_スケールイン_ とは、ソリューションの負荷をサポートするために必要なくなったインスタンスを削除するプロセスです。 Web サイトのフロントエンドの使用率が低い場合は、インスタンスの数を減らしてコストを削減できます。 次の図は、仮想マシン インスタンスの数を変更する例を示します。
 
 
-![An illustration showing scaling out the resources to handle demand and scaling in the resources to reduce costs.](../media/2-ScaleInOut.png)
+![スケール アウト コストを削減するオンデマンドとリソースのスケーリングを処理するためにリソースを示す図。](../media/2-ScaleInOut.png)
 
-Here are some examples of what scaling out or in means in the context of Azure resources:
+Azure リソースのコンテキストでのスケールアウトやスケールインの意味についていくつかの例を示します。
 
-- For the infrastructure layer, you would likely use virtual machine scale sets to automate the addition and removal of extra instances.
-  - Virtual machine scale sets let you create and manage a group of identical, load balanced VMs.
-  - The number of VM instances can automatically increase or decrease in response to demand or a defined schedule.
-- In an Azure SQL Database implementation, you could share the load across database instances by sharding. _Sharding_ is a technique to distribute large amounts of identically structured data across a number of independent databases.
-- In Azure App Service, the App Service plan is the virtual web server farm hosting your content. Scaling out in this way means that you're increasing the number of virtual machines in the farm. As with virtual machine scale sets, the number of instances can be automatically raised or lowered in response to certain metrics or a schedule.
+- インフラストラクチャ レイヤーでは、仮想マシン スケール セットを使用してインスタンスの追加と削除を自動化できます。
+  - 仮想マシン スケール セットでは、同一の負荷分散された VM のグループを作成して管理できます。
+  - 需要または定義されたスケジュールに応じて、VM インスタンスの数を自動的に増減させることができます。
+- Azure SQL Database の実装では、シャーディングによってデータベース インスタンス間に負荷を分散させることができます。 _シャーディング_ とは、同じ構造を持つ大量のデータを複数の独立したデータベースに分散する手法です。
+- Azure App Service では、App Service プランはコンテンツをホストする仮想 Web サーバー ファームです。 この方法でのスケールアウトは、ファーム内の仮想マシンの数を増やすことを意味します。 仮想マシン スケール セットと同様に、特定のメトリックまたはスケジュールに応じてインスタンスの数を自動的に増減できます。
 
-Scaling out is typically easily performed in the Azure portal, command-line tools, or Resource Manager templates, and in most cases is seamless to the end user.
+通常は、Azure portal、コマンド ライン ツール、または Resource Manager テンプレートでスケールアウトを簡単に実行でき、ほとんどの場合はエンド ユーザーが気付くことはありません。
 
-### Autoscale
+### <a name="autoscale"></a>自動スケーリング
 
-You can configure some of these services to use a feature called autoscale. With autoscale you no longer have to worry about scaling services manually. Instead, you can set a minimum and maximum threshold of instances and scale based upon specific metrics (queue length, CPU utilization) or schedules (weekdays between 5:00 PM and 7:00 PM). The following illustration shows how the autoscale feature manages instances to handle the load.
+自動スケーリングと呼ばれる機能を使用するように、これらのサービスの一部を構成できます。 自動スケーリングを使用すると、サービスを手動でスケーリングする必要はなくなります。 代わりに、インスタンス数の最小と最大のしきい値を設定し、特定のメトリック (キューの長さ、CPU 使用率など) またはスケジュール (平日午後 5 時から午後 7 時の間など) に基づいてスケーリングできます。 次の図は、自動スケール機能が、負荷を処理するインスタンスを管理する方法を示します。
 
-![An illustration showing how autoscale monitors the CPU levels of a pool of virtual machines and adds instances when the CPU utilization is above the threshold.](../media/2-autoscale.png)
+![自動スケールの仮想マシンのプールの CPU のレベルを監視し、CPU 使用率がしきい値を超えるインスタンスが追加されますを示す図。](../media/2-autoscale.png)
 
-### Considerations when scaling in and out
+### <a name="considerations-when-scaling-in-and-out"></a>スケールインおよびスケールアウトを行うときの考慮事項
 
-When scaling out, the startup time of your application can impact how quickly your application can scale. If your web app takes two minutes to start up and be available for users, that means each of your instances will take two minutes until they are available to your users. You'll want to take this startup time into consideration when determining how fast you want to scale.
+スケールアウトでは、アプリケーションの起動時間がアプリケーションをスケーリングできる速さに影響する可能性があります。 Web アプリを起動してからユーザーが使用できるようになるまでに 2 分かかる場合は、ユーザーが各インスタンスを使用できるようになるのに 2 分かかることを意味します。 スケーリングの速さを決めるときは、この起動時間を考慮します。
 
-You'll also need to think about how your application handles state. When the application scales in, any state stored on the machine is no longer available. If a user connects to an instance that doesn't have its state, it could force them to sign in or re-select data, leading to a poor user experience. A common pattern is to externalize state to another service like Redis Cache or SQL Database, making your web servers stateless. Now that our web front ends are stateless, we don't need to worry about which individual instances are available. They are all doing the same job and are deployed in the same way.
+また、アプリケーションが状態を処理する方法についても考慮する必要があります。 アプリケーションをスケールインすると、マシンに格納されているすべての状態は使用できなくなります。 状態を持たないインスタンスにユーザーが接続する場合、サインインまたはデータの再選択を強制され、ユーザー エクスペリエンスが低下する可能性があります。 一般的なパターンでは、Redis Cache や SQL Database などの別のサービスに状態を外部化し、Web サーバーをステートレスにします。 これで Web フロントエンドはステートレスになり、個々のインスタンスが使用可能であることを心配する必要はなくなります。 すべてのインスタンスでは同じジョブが実行され、同じ方法でデプロイされます。
 
-## Throttling
+## <a name="throttling"></a>調整
 
-We've established that the load on an application will vary over time. This may be due to the number of active or concurrent users and the activities being performed. While we could use autoscaling to add capacity, we could also use a throttling mechanism to limit the number of requests from a source. We can safeguard performance limits by putting known limits into place at the application level, preventing the application from breaking. Throttling is most frequently used in applications exposing API endpoints.
+アプリケーションの負荷は時間と共に変わることを示しました。 その原因は、アクティブなユーザーや同時実行ユーザーおよび実行されているアクティビティの数である場合があります。 自動スケーリングを使用して容量を追加できますが、調整メカニズムを使用してソースからの要求の数を制限することもできます。 アプリケーション レベルで既知の制限を設定することによってパフォーマンスの限界を保護し、アプリケーションが壊れるのを防ぐことができます。 調整が最もよく使用されるのは、API エンドポイントを公開しているアプリケーションです。
 
-Once the application has identified that it would breach a limit, throttling could begin and ensure the overall system SLA isn't breached. For example, if we exposed an API for customers to get data, we could limit the number of requests to 100 per minute. If any single customer exceeded this limit, we could respond with an HTTP 429 status code, including the wait time before another request can successfully be submitted.
+アプリケーションが制限を超えることがわかったら、調整を開始して、システムの全体的な SLA が確実に損なわれないようにすることができます。 たとえば、顧客がデータを取得するための API を公開する場合は、1 分あたり 100 個の要求に制限するといったことができます。 ある 1 人の顧客がこの制限を超えた場合、HTTP 429 状態コードで応答し、別の要求を正常に送信できるようになるまでに待機時間を設けることができます。
 
-## Serverless
+## <a name="serverless"></a>サーバーレス
 
-Serverless computing provides a cloud-hosted execution environment that runs your apps but completely abstracts the underlying environment. You create an instance of the service, and you add your code; no infrastructure management or maintenance is required, or even allowed.
+サーバーレス コンピューティングとは、ユーザーのアプリを実行するクラウドでホストされた実行環境ですが、基になる環境が完全に抽象化されています。 サービスのインスタンスを作成して、コードを追加します。インフラストラクチャを管理またはメンテナンスする必要はありませんが、許可されていることもあります。
 
-You configure your serverless apps to respond to events. This could be a REST endpoint, a timer, or a message received from another Azure service. The serverless app runs only when it's triggered by an event.
+イベントに応答するようにサーバーレス アプリを構成します。 REST エンドポイント、タイマー、別の Azure サービスから受信したメッセージなどのイベントがあります。 イベントでトリガーされた場合にのみ、サーバーレス アプリが実行されます。
 
-Infrastructure isn't your responsibility. Scaling and performance are handled automatically, and you are billed only for the exact resources you use. There's no need to even reserve capacity. Azure Functions, Azure Container Instances, and Logic Apps are examples of serverless computing available on Azure.
+ユーザーにはインフラストラクチャに関する責任はありません。 スケーリングとパフォーマンスは自動的に処理され、使用した正確なリソースに対してのみ課金されます。 容量を予約する必要すらありません。 Azure で利用できるサーバーレス コンピューティングの例としては、Azure Functions、Azure Container Instances、Logic Apps などがあります。
 
-Let's revisit the Lamna Healthcare example. There could be some potential for cost saving and ease of management. Consider an API endpoint. Instead of hosting the API in Azure App Service, where they must pay for reserved capacity, they could use an Azure Function App triggered by an HTTP request. Azure functions would enable the team to pay only for the resources required to process each transaction. The cost and scale would be directly in line with the number of transactions in the system.
+Lamna Healthcare の例を再び見てみましょう。 コストを削減して管理を容易にできる可能性があります。 API エンドポイントについて検討します。 予約された容量に対して支払う必要がある Azure App Service で API をホストするのではなく、HTTP 要求によってトリガーされる Azure 関数アプリを使用できます。 Azure 関数を使用すると、チームは各トランザクションの処理に必要なリソースに対して支払うだけで済みます。 コストとスケールは、システム内のトランザクションの数に直接対応するようになります。
 
-## Containers
+## <a name="containers"></a>コンテナー
 
-A container is a method running applications in a virtualized environment. A virtual machine is virtualized at the hardware level, where a hypervisor makes it possible to run multiple virtualized operating systems on a single physical server. Containers take the virtualization up a level. The virtualization is done at the OS level, making it possible to run multiple identical application instances within the same OS.
+コンテナーとは、仮想化された環境でアプリケーションを実行する方法です。 仮想マシンはハードウェア レベルで仮想化されており、ハイパーバイザーによって単一の物理サーバーで複数の仮想化されたオペレーティング システムを実行できます。 コンテナーによって仮想化がレベルアップされます。 仮想化は OS レベルで行われるようになり、同じ OS 内で複数の同じアプリケーション インスタンスを実行できます。
 
-Containers are well suited to scale out scenarios. They are meant to be lightweight and are designed to be created, scaled out, and stopped dynamically as environment and demand change.
+コンテナーは、スケールアウトのシナリオに適しています。 コンテナーは軽量になるように意図され、環境や需要の変化に応じて動的に作成、スケールアウト、停止されるように設計されています。
 
-A benefit of using containers is the ability to run multiple isolated applications on each virtual machine. Since containers themselves are secured and isolated at a kernel level, you don't necessarily need separate VMs for separate workloads.
+コンテナーを使用する利点は、複数の独立したアプリケーションを各仮想マシンで実行できることです。 コンテナー自体がカーネル レベルでセキュリティ保護されて分離されるため、異なるワークロードごとに VM を分ける必要は必ずしもありません。
 
-While you can run containers on virtual machines, there are a couple of Azure services that focus on easing the management and scaling of containers:
+仮想マシンでコンテナーを実行できますが、コンテナーの管理とスケーリングを容易にすることを目的とする 2 つの Azure サービスがあります。
 
 - **Azure Kubernetes Service (AKS)**
 
-  Azure Kubernetes Service allows you to set up virtual machines to act as your nodes. Azure hosts the Kubernetes management plane and only bills for the running worker nodes that host your containers.
+  Azure Kubernetes Service を使用すると、ノードとして機能するように仮想マシンを設定できます。 Azure によって Kubernetes の管理プレーンがホストされ、コンテナーをホストする実行している worker ノードに対してのみ課金されます。
 
-  To increase the number of your worker nodes in Azure, you could use the Azure CLI to increase that manually. At time of writing, there is a preview of Cluster Autoscaler on AKS available that enables autoscaling of your worker nodes. On your Kubernetes cluster, you could use the Horizontal Pod Autoscaler to scale out the number of instances of the container to be deployed.
+  Azure 内の worker ノードの数は、Azure CLI を使用して手動で増やすことができます。 この記事を書いている時点で、worker ノードの自動スケーリングを可能にするプレビュー機能の Cluster Autoscaler を AKS で使用できます。 Kubernetes クラスターでは、Horizontal Pod Autoscaler を使用して、展開されるコンテナーのインスタンスの数をスケールアウトできます。
 
-  AKS can also scale with the Virtual Kubelet described below.
+  次に説明する Virtual Kubelet を使用して AKS をスケーリングすることもできます。
 
 - **Azure Container Instances (ACI)**
   
-  Azure Container Instances is a serverless approach that lets you create and execute containers on demand. You're charged only for the execution time per second.
+  Azure Container Instances はサーバーレス アプローチであり、オンデマンドでコンテナーを作成して実行できます。 1 秒あたりの実行時間に対してのみ課金されます。
 
-  You can use Virtual Kubelet to connect Azure Container Instances into your Kubernetes environment, including AKS. With Virtual Kubelet, when your Kubernetes cluster demands additional container instances, those demands can be met from ACI. Since ACI is serverless, there is no need to have reserved capacity. You can therefore take advantage of the control and flexibility of Kubernetes scaling with the per-second-billing of serverless. At time of writing, the Virtual Kubelet is described as experimental software and should not be used in production scenarios.
+  Virtual Kubelet を使用して、AKS などの Kubernetes 環境に Azure Container Instances を接続できます。 Virtual Kubelet では、Kubernetes クラスターでさらに多くのコンテナー インスタンスが必要になったときは、ACI で要求を満たすことができます。 ACI はサーバーレスであるため、容量を予約する必要はありません。 そのため、サーバーレスの 1 秒あたりの課金で、Kubernetes の制御と柔軟性を利用できます。 この記事を書いている時点では、Virtual Kubelet は実験的なソフトウェアと説明されており、運用シナリオでは使用できません。
 
-## Scaling at Lamna Healthcare
+## <a name="scaling-at-lamna-healthcare"></a>Lamna Healthcare でのスケーリング
 
-Lamna Healthcare operates a patient management and booking system. The management system handles appointment bookings and patient records across dozens of hospitals and medical facilities. The local health service is running at full capacity, and no growth is expected at the moment. The system is running on a PHP website hosted in Azure App Service.
+Lamna Healthcare では患者管理および予約システムが運用されています。 管理システムでは、数十の病院および医療施設における予定の予約と患者のレコードが処理されます。 ローカル ヘルス サービスは最大能力で実行されており、現時点で拡張は予定されていません。 システムは、Azure App Service でホストされる PHP Web サイトで実行されています。
 
-The load pattern of the application is predictable, as they primarily operate Monday to Friday between the hours of 9 to 5.  From Tuesday through to Friday, the system averages 1,200 transactions per hour across the entire system. During the weekend, it handles 500 transactions per hour. After the quiet of the weekend, Mondays are busy with an average of 2,000 transactions per hour.
+主に使用されるのは月曜日から金曜日までの 9 時から 5 時の間であるため、アプリケーションの負荷パターンは予測可能です。  火曜日から金曜日までは、システム全体での 1 時間あたりのトランザクションの平均数は 1,200 となります。 週末は、1 時間あたり 500 件のトランザクションが処理されます。 処理量が少ない週末の後、月曜日には 1 時間あたりのトランザクションの平均数が 2,000 に増えます。
 
-The application is hosted on an S1 App Service plan, but the operations team have noticed a high level of CPU utilization (over 95%) across all instances. The high usage is having an impact on the processing and loading times of the application. In a cloud environment, having highly utilized resources is not necessarily a bad thing. It means that they are getting value for their money, as the resources deployed are being well used. 
+アプリケーションは S1 App Service プランでホストされていますが、運用チームはすべてのインスタンスで CPU 使用率が高レベル (95% を超える) であることに気付いています。 高い使用率が、アプリケーションの処理と読み込みの時間に影響しています。 クラウド環境では、リソースの使用率が高いのは必ずしも悪いことではありません。 デプロイされているリソースが十分に使用されているので、コストに見合う価値を得ていることを意味します。 
 
-The team decide to _scale up_ the App Service plan level for the deployed instances from S1 (1 vCPU and 1.75 GB of RAM) to S2 (2 vCPUs and 3 GB of RAM). They easily achieve this using the Azure portal, but could have achieved the same thing using a single command in the Azure CLI, Azure PowerShell, or using Resource Manager templates.
+チームは、デプロイされているインスタンスの App Service プランのレベルを S1 (1 vCPU、1.75 GB の RAM) から S2 (2 vCPU、3 GB の RAM) に _スケールアップ_ することを決定しています。 Azure portal を使用してこれを簡単に実現できますが、Azure CLI の単一のコマンド、Azure PowerShell、または Resource Manager テンプレートを使用して、同じことを実現することもできます。
 
-The team decide that they want to automate the number of instances deployed based upon a schedule, as their load profile is predictable. They configure the App Service plan's autoscale schedule. Let's assume two instances sufficiently handle 500 transactions per hour. The team could then scale to six instances for Tuesday - Friday and eight instances for a Monday to meet the requirements (based upon insight and monitoring from load tests).
+チームは、負荷プロファイルが予測可能であるため、デプロイされるインスタンスの数をスケジュールに基づいて自動化することにします。 チームは、App Service プランの自動スケーリングのスケジュールを構成します。 1 時間あたり 500 件のトランザクションを処理するには 2 つのインスタンスで十分であるものと仮定します。 そうすると、火曜日から金曜日までは 6 インスタンス、月曜日は 8 インスタンスにスケーリングすると要件を満たすことができます (分析情報とロード テストの監視に基づきます)。
 
-Autoscale also gives them an added benefit, preparing for those unforeseen scenarios. The site may suddenly take higher than expected load on the weekend (more appointments in the winter season because of colds and flu). The team can set up autoscale to increase by one instance when CPU percentage is above 90% and reduce by one instance when usage is below 15%.
+自動スケーリングには、次のような予測できないシナリオに対応できるメリットもあります。 週末にサイトの負荷が予想以上に急増する可能性があります (冬期の風邪やインフルエンザによる予約の増加)。 チームは、CPU 使用率が 90% を超えたらインスタンスを 1 つ増やし、使用率が 15% を下回ったらインスタンスを 1 つ減らすように、自動スケーリングを設定できます。
 
-The team have used the throttling pattern inside of the patient booking API they have exposed behind an Azure API Management instance. This helps prevent the system from performing poorly by only allowing a certain volume of throughput through the system.
+チームは、Azure API Management インスタンスの背後で公開している患者予約 API の内部で調整パターンを使用しています。 これにより、一定の量のスループットだけがシステムを通過できるようにすることで、システムのパフォーマンス低下を防ぐことができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-We've talked about scaling up and down and scaling in and out, and how you can leverage these options in your architecture. We've also looked at how serverless technologies and containers can help evolve your scaling capabilities. Next, we'll take a look at how network performance can impact your application, and different ways we can optimize the network.
+スケールアップとスケールダウン、スケールインとスケールアウト、そしてアーキテクチャでこれらのオプションを使用する方法について説明しました。 また、サーバーレス テクノロジとコンテナーがスケーリング機能の向上にどのように役立つかについても説明しました。 次に、ネットワークのパフォーマンスがアプリケーションに与える影響と、ネットワークを最適化できるさまざまな方法について説明します。

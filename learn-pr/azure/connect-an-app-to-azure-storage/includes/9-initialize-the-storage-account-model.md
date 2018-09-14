@@ -1,17 +1,17 @@
-The Azure Storage client library provides an object model that is used to interact with Azure storage accounts. It's used to quickly connect to an Azure storage account and use the Azure Storage service APIs. 
+Azure Storage クライアント ライブラリでは、Azure ストレージ アカウントとのやりとりに使用されるオブジェクト モデルが提供されます。 これは Azure ストレージ アカウントにすばやく接続して、Azure Storage サービス API を使用するために使用されます。 
 
-## Azure Storage client library object model
+## <a name="azure-storage-client-library-object-model"></a>Azure Storage クライアント ライブラリ オブジェクト モデル
 
 ::: zone pivot="csharp"
 
-The foundation of the storage account object model in the .NET Core client library is the class `CloudStorageAccount`. The simplest way to initialize the object model is to use `CloudStorageAccount.Parse` or `CloudStorageAccount.TryParse` to parse the connection string.
+.NET Core のクライアント ライブラリでは、ストレージ アカウント オブジェクト モデルの基礎はクラス`CloudStorageAccount`します。 オブジェクト モデルを初期化するための最もシンプルな方法は、`CloudStorageAccount.Parse` または `CloudStorageAccount.TryParse` を使用して接続文字列を解析することです。
 
 > [!NOTE]
-> The client library will not attempt to connect until an operation is invoked that requires it. `Parse()` and `TryParse()` only guarantee that the connection string is well-formatted; they don't verify that the account exists or that the key is correct. 
+> クライアント ライブラリでは、必要な操作が呼び出されるまで接続が試行されません。 `Parse()` と `TryParse()` は、接続文字列が適切な形式になることを保証するだけで、アカウントが存在することやキーが正しいことの検証は行いません。 
 
-The resulting `CloudStorageAccount` instance returned from the `Parse()` or `TryParse()` method call exposes methods to create a client objects to access the Azure Blob, Files, Queue and Table storage services. 
+その結果、`CloudStorageAccount`から返されるインスタンス、`Parse()`または`TryParse()`メソッドの呼び出しは、クライアントを Azure Blob、ファイル、キュー、およびテーブル ストレージ サービスにアクセスするオブジェクトを作成するメソッドを公開します。 
 
-The code snippet below shows an example of creating a client to use for blob storage:
+次のコード スニペットでは、Blob Storage に使用するクライアントを作成する例を示します。
 
 ```csharp
 using Microsoft.WindowsAzure.Storage;
@@ -21,11 +21,11 @@ CloudStorageAccount storageAccount = CloudStorageAccount.Parse("your-storage-key
 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient()
 ```
 
-`CloudStorageAccount` and the client objects are lightweight and can be created on demand or created up front to be shared within your application. A standard approach is to use `CloudStorageAccount.TryParse()` near the entry point of your application to create an instance, and make it available within your application for creating client instances.
+`CloudStorageAccount` とクライアント オブジェクトは軽量であり、オンデマンドで作成または事前に作成して、アプリケーション内で共有することができます。 標準的なアプローチは、アプリケーションのエントリ ポイントの近くで `CloudStorageAccount.TryParse()` を使用してインスタンスを作成し、それをアプリケーション内でクライアント インスタンスを作成するために使用できるようにすることです。
 
-Once you have a client object to a specific storage type, you can use methods to perform actual work. Methods which make network calls are intentionally asynchronous - in .NET we use the `async` and `await` keywords to work with these methods efficiently.
+特定の記憶域の種類をクライアント オブジェクトを作成したら、実際の作業を実行するのにメソッドを使用できます。 ネットワーク呼び出しを行うメソッドは意図的に非同期 - .NET で使用して、`async`と`await`効率的にこれらのメソッドを使用するキーワード。
 
-As an example, we can use the `CloudBlobClient` to create a _blob container_ and upload a file to blob storage.
+例として、使用できる、`CloudBlobClient`を作成する、 _blob コンテナー_し、blob storage にファイルをアップロードします。
 
 ```csharp
 // Create a local CloudBlobContainer object. No network call.
@@ -47,27 +47,27 @@ await blob.UploadFromFileAsync(fileName);
 
 ::: zone-end
 
-::: zone-pivot="javascript"
+::: zone pivot="javascript"
 
-The foundation of the storage account object model in the **Microsoft Azure Storage Client Library for Node.js and JavaScript** is the `azurestorage` object. This is created by adding the **azure-storage** module to your app through a `require` statement.
+ストレージ アカウントのオブジェクト モデルでの基盤となる、 **Node.js、JavaScript 用の Microsoft Azure Storage クライアント ライブラリ**は、`azurestorage`オブジェクト。 追加することによってこれが作成される、 **azure storage**モジュールを使用してアプリケーションを`require`ステートメント。
 
 ```javascript
 const storage = require('azure-storage');
 ```
 
-This object provides a series of _factory_ methods that create specific objects to work with each facet of Azure storage. You call `createXXX` methods to create each object.
+このオブジェクトには、一連の_ファクトリ_を Azure storage の各ファセットを使用する特定のオブジェクトを作成するメソッド。 呼び出す`createXXX`各オブジェクトを作成する方法。
 
-| Type | Method | Returns |
+| 種類 | 方法 | 戻り値 |
 |--------|---------|-------------|
-| **Blob** | `createBlobService` | `BlobService` |
-| **Table** | `createTableService` | `TableService` |
-| **Queue** | `createQueueService` | `QueueService` |
-| **File** | `createFileService` | `FileService` |
+| **BLOB** | `createBlobService` | `BlobService` |
+| **テーブル** | `createTableService` | `TableService` |
+| **キュー** | `createQueueService` | `QueueService` |
+| **ファイル** | `createFileService` | `FileService` |
 
 > [!NOTE]
-> The client library will not attempt to connect until an operation is invoked that requires it. Each of these `create` methods return a lightweight object representing access to the storage type - it does not validate the connection or the access key being used. 
+> クライアント ライブラリでは、必要な操作が呼び出されるまで接続が試行されません。 これらの各`create`メソッドは、ストレージの種類へのアクセスを表す軽量のオブジェクトを返す&mdash;接続または使用されているアクセス キーを検証しません。
 
-Once you have a service object to a specific storage type, you can use methods to perform actual work. Methods which make network calls are intentionally asynchronous. The library current supports _callbacks_ to return asynchronous results. For example, here is code that creates a blob container.
+特定の記憶域の種類のサービス オブジェクトを作成したら、実際の作業を実行するのにメソッドを使用できます。 ネットワーク呼び出しを行うメソッドでは、意図的に非同期です。 ライブラリは現在サポートされている_コールバック_非同期の結果を返します。 たとえば、blob コンテナーを作成するコードを次に示します。
 
 ```javascript
 var azure = require('azure-storage');
@@ -81,9 +81,9 @@ blobService.createContainerIfNotExists('myblobcontainer', function(err, result, 
 });
 ```
 
-This approach works fine, but tends to lead to a lot of code being added into the callbacks which can get unmanagement. A better approach in JavaScript is to use _promises_ to work with these methods. There are several great libraries which will convert callback-style methods into promises - you can pick the one you prefer.
+このアプローチは、正常に動作が、大量のコードを管理できなくなる可能性のコールバックに追加する傾向があります。 JavaScript でのより優れたアプローチは、使用することです。 _promise_これらのメソッドを使用します。 Promise コールバック スタイルのメソッドに変換されますが、いくつかの優れたライブラリがある&mdash;必要に応じて 1 つを選択することができます。
 
-Here, we'll use the `util.promisify` feature from Node and use the `BlobService` to create the container and upload a file to blob storage. In addition, we'll use the `async` and `await` keywords to work with the promises a bit more naturally.
+ここでは、使用、`util.promisify`ノードと使用から機能、`BlobService`コンテナーを作成し、blob ストレージにファイルをアップロードします。 さらに、使用を`async`と`await`少し当然ながら、promise を使用するキーワード。
 
 ```javascript
 const util = require('util');
@@ -114,4 +114,4 @@ main();
 ```
 ::: zone-end
 
-Let's try this in our app.
+アプリでこれを試してみましょう。

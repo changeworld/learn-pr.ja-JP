@@ -1,115 +1,113 @@
-Designing for high availability helps keep an application or process running despite unfavorable events and adverse conditions. But what do you do when something so significant happens that you've lost data and it's impossible to keep your apps and processes from going down? When disaster strikes, you need to have a plan. You should know what your goals and expectations are for recovering, what are the costs and limitations of your plan, and how to execute on it.
+高可用性のための設計は、好ましくないイベントや悪条件にもかかわらずアプリケーションまたはプロセスの稼働を継続するために役立ちます。 しかし、何らかの重大事象が発生してデータが失われ、アプリやプロセスがダウンすることを回避できない場合はどうしますか? 災害に見舞われたときに必要なのはプランです。 目標や予想されるか、回復するコストと、プランの制限事項とその上で実行する方法を把握する必要があります。
 
-## What is disaster recovery?
+## <a name="what-is-disaster-recovery"></a>ディザスター リカバリーとは
 
-Disaster recovery is about *recovering from high-impact events* that result in downtime and loss of data. A disaster is a single, major event with an impact much larger and long-lasting than the application can mitigate through the high-availability portion of its design.
+ディザスター リカバリーは*影響の大きいイベントから復旧*ダウンタイムと損失やデータが発生します。 災害は、高可用性のためのアプリケーション設計によって軽減できる範囲をはるかに超えた長期的な影響を生じさせる単一の大きなイベントです。
 
-The word "disaster" often evokes thoughts of *natural* disasters and external events (earthquakes, floods, tropical storms, and so on) but many other kinds of disasters exist as well. A deployment or upgrade that goes horribly wrong can leave an app in an unrecognizable state. Subtle implementation or configuration errors can write bad data or delete data that's assumed to be permanent. Malicious hackers can corrupt or delete data and inflict other kinds of damage that take an app offline or eliminate some of its functionality.
+「障害」は多くの場合の考えを想起*自然*災害と外部イベント (地震、洪水、古代ストーム、およびなど) が、災害の他の多くの種類にも存在します。 デプロイまたはアップグレードの致命的な失敗によって、アプリが認識不能な状態に陥る可能性があります。 悪意のあるハッカーは、暗号化またはデータを削除してアプリをオフラインにするか、その機能の一部を排除する他の種類の損害を与えることができます。
 
-Regardless of its cause, the only remedy for a disaster once it has occurred is a well-defined, tested disaster recovery plan and an application that actively supports disaster recovery efforts through its design.
+その原因にかかわらず、いったん発生した災害に対する唯一の対処法は、明確に定義されていてテスト済みのディザスター リカバリー プランと、その設計を通じてディザスター リカバリーの取り組みを積極的にサポートするアプリケーションです。
 
-## How to create a disaster recovery plan
+## <a name="how-to-create-a-disaster-recovery-plan"></a>ディザスター リカバリー プランの作成方法
 
-A disaster recovery plan is a single document that details the procedures that are required to recover from data loss and downtime caused by a disaster, and identifies who's in charge of directing those procedures. Operators should be able to use the plan as a manual to restore application connectivity and recover data after a disaster occurs. A detailed, written plan that's dedicated to disaster recovery is critical to ensuring a favorable outcome. The process of creating the plan will help to assemble a complete picture of the application. The resulting written steps will promote good decision-making and follow-through in the panicked, chaotic aftermath of a disaster event.
+ディザスター リカバリー計画は、データが失われると、障害によって発生するダウンタイムから回復するために必要な手順の詳細を示す 1 つのドキュメントし、それらの手順を指示する責任はだれを識別します。 オペレーターは、災害発生後にアプリケーションの接続を復元してデータを復旧するためのマニュアルとしてこのプランを使用できる必要があります。 詳細な記述のプラン専用のディザスター リカバリーでは、有利な結果を確保するのには重要です。 プランを作成するプロセスは、アプリケーションの全体像をアセンブルするのに役立ちます。 結果として得られる手順は、障害イベントのパニック、混沌強力で、適切な意思決定およびいたらないを昇格します。
 
-Creating a disaster recovery plan requires expert knowledge of the application's workflows, data, infrastructure, and dependencies.
+ディザスター リカバリー プランの作成には、アプリケーションのワークフロー、データ、インフラストラクチャ、および依存関係に関する専門知識が必要です。
 
-### Risk assessment and process inventory
+### <a name="risk-assessment-and-process-inventory"></a>リスク評価とプロセス インベントリ
 
-The first step in creating a disaster recovery plan is performing a risk analysis that examines the impact of different kinds of disasters on the application. The exact nature of a disaster isn't as important to the risk analysis as its potential impact through data loss and application downtime. Explore various kinds of hypothetical disasters and try to be specific when thinking about their effects. For example, a targeted malicious attack may modify code or data that results in a different kind of impact than an earthquake that disrupts network connectivity and datacenter availability.
+ディザスター リカバリー プラン作成の最初のステップは、さまざまな種類の災害がアプリケーションに及ぼす影響を調べるリスク分析の実行です。 リスク分析にとっては、災害の性質そのものよりも、データ損失やアプリケーションのダウンタイムという形で現れる災害の潜在的な影響のほうが重要です。 さまざまな種類の仮想的な災害を調べ、その影響について考えるときに特定するようにしてください。 たとえば、悪意のある攻撃対象となるには、コードまたは別の種類のネットワーク接続とデータ センターの可用性を中断する地震より影響になるデータを変更できます。
 
-The risk assessment needs to consider *every* process that can't afford unlimited downtime, and every category of data that can't afford unlimited loss. When a disaster that affects multiple application components occurs, it's critical that the plan owners can use the plan to take a complete inventory of what needs attention and how to prioritize each item.
+リスク評価では、際限のないダウンタイムが許されない*すべての*プロセスと、際限のない損失が許されないすべてのデータ カテゴリを検討する必要があります。 複数のアプリケーション コンポーネントに影響を及ぼす災害が発生したときに、プランの所有者がそのプランを使用して、注意が必要な事項、および各項目の優先順位を決める方法の完全なインベントリを実行できることが重要です。
 
-Some apps may only constitute a single process or classification of data. This is still important to note, as the application will likely be one component of a larger disaster recovery plan that includes multiple applications with the organization.
+一部のアプリは、単一のプロセスまたはデータ分類を構成するだけの場合があります。 アプリケーションは、組織の複数のアプリケーションを含むより大規模なディザスター リカバリー プランの構成要素の 1 つになる可能性が高いため、これはやはり重要な注意点です。
 
-### Recovery objectives
+### <a name="recovery-objectives"></a>復旧目標
 
-A complete plan needs to specify two critical business requirements for each process implemented by the application:
+完全なプランでは、アプリケーションによって実装されるプロセスごとに、2 つの重要なビジネス要件を指定する必要があります。
 
-* **Recovery Point Objective (RPO)**: The maximum duration of acceptable data loss. RPO is measured in units of time, not volume: "30 minutes of data", "four hours of data", and so on. RPO is about limiting and recovering from data *loss*, not data *theft*.
-* **Recovery Time Objective (RTO)**: The maximum duration of acceptable downtime, where "downtime" needs to be defined by your specification.
+* **目標復旧時点 (RPO)**: 許容されるデータ損失の最大継続時間。 RPO はボリュームではなく時間単位で測定されます:「30 分間のデータ」、「データの 4 つの時間」など。 RPO はデータの*損失*の限定および復旧に関連した概念であり、データの*盗難*には関連しません。
+* **目標復旧時間 (RTO)**: 許容されるダウンタイムの最大継続時間。「ダウンタイム」は仕様によって定義する必要があります。 たとえば、許容されるダウンタイム期間が 8 時間、災害が発生した場合は 8 時間は、RPO に。
 
-![RTO and RPO](../media-draft/rto-rpo.png)
+![RTO と RPO](../media/rto-rpo.png)
 
-Each major process or workload that's implemented by an app should have separate RPO and RTO values. Even if you arrive at the same values for different processes, each one should be generated through a separate analysis that examines disaster scenario risks and potential recovery strategies for each respective process.
+各メジャーのプロセスまたはアプリケーションによって実装されているワークロードには、RPO と RTO の個別の値がある場合があります。 異なるプロセスに対して値が同じになったとしても、それぞれの値は、災害シナリオのリスクと潜在的な復旧戦略をプロセスごとに精査する個別の分析に基づいて算出されたものである必要があります。
 
-The process of specifying an RPO and RTO is effectively the creation of disaster recovery requirements for your application. It requires establishing the priority of each workload and category of data and performing a cost-benefit analysis. The analysis includes concerns, such as implementation and maintenance cost, operational expense, process overhead, performance impact, and the impact of downtime and lost data. You'll need to define exactly what "downtime" means for your application, and in some cases, you may establish separate RPO and RTO values for different levels of functionality. Specifying RPO and RTO should be more than simply choosing arbitrary values. Much of the value of a disaster recovery plan comes from the research and analysis that goes into discovering the potential impact of a disaster and the cost of mitigating the risks.
+RPO と RTO を指定するプロセスによって、アプリケーションのディザスター リカバリー要件が実質的に作成されます。 これは、各ワークロードの優先度とカテゴリのデータを確立して、費用便益分析を実行する必要があります。 分析には、実装、および保守のコスト、運用費が、プロセス オーバーヘッド、パフォーマンスに与える影響、およびダウンタイムとデータ損失の影響などの問題が含まれています。 場合によっては、さまざまなレベルの機能に対して、複数の RPO および RTO の値を確立することし、正確にどのような「ダウンタイム」は、アプリケーションのことを意味を定義する必要があります。 RPO と RTO の指定は、単に任意の値を選べばよいというものではありません。 ディザスター リカバリー プランの価値の多くは、災害の潜在的な影響やリスク軽減のコストの算定にまで踏み入った調査と分析から生み出されます。
 
-RPO and RTO are *objectives*. Disasters are unpredictable, and you may not be able to meet your established RPO and RTO for a given event. The business has agreed to take on the costs required to maintain the agreed-upon RPO and RTO values, and in return those targets should generally be achieved in a disaster recovery scenario. All disaster events should include a post-recovery retrospective that examines strengths and weaknesses, but disasters that result in a failure to meet RPO or RTO merit special attention.
+### <a name="detailing-recovery-steps"></a>復旧手順の詳述
 
-### Detailing recovery steps
+最終的なプランでは、失われたデータやアプリケーションの接続性を復元するために実施すべき正確な手順を詳しく記述する必要があります。 手順には多くの場合、以下に関する情報が含まれます。
 
-The final plan should go into detail about exactly what steps should be taken to restore lost data and application connectivity. Steps often include information about:
+* **バックアップ**: 作成されたどのくらいの頻度、保存されている場合、およびそれらからデータを復元する方法。
+* **データのレプリカ**: レプリカ、レプリケートされたデータの性質と整合性の特性と、別のレプリカに切り替える方法の場所と数。
+* **展開**: 展開の実行方法、ロールバックが発生するしくみとデプロイのエラー シナリオ。
+* **インフラストラクチャ**: オンプレミスとクラウド リソース、ネットワーク インフラストラクチャ、ハードウェア インベントリされます。
+* **依存関係**: 連絡先情報および Sla を含め、アプリケーションによって使用される外部のサービスです。
+* **構成と通知**: フラグまたはアプリケーションを低下させることが設定できるオプションとサービス アプリケーションへの影響のユーザーに通知するために使用します。
 
-* **Backups**: How often they're created, where they're located, and how to restore data from them.
-* **Data replicas**: The number and locations of replicas, the nature and consistency characteristics of the replicated data, and how to switch over to a different replica.
-* **Deployments**: How deployments are executed, how rollbacks occur, and failure scenarios for deployments.
-* **Infrastructure**: On-premises and cloud resources, network infrastructure, and hardware inventory.
-* **Dependencies**: External services that are used by the application, including SLAs and contact information.
-* **Configuration and notification**: Flags or options that can be set to gracefully degrade the application, and services that are used to notify users of application impact.
+必要とされる正確な手順は、計画の更新を保持する重要なので、アプリの実装の詳細によって大きく異なります。 プランの定期的なテストは、ギャップや古くなった内容を特定するために役立ちます。
 
-The exact steps that are required will depend heavily on implementation details of the app, making it important to keep the plan updated. Routinely testing the plan will help identify gaps and outdated sections.
+## <a name="designing-for-disaster-recovery"></a>ディザスター リカバリーのための設計
 
-## Designing for disaster recovery
+ディザスター リカバリーは自動的な機能ではありません。 設計し、構築し、テストする必要があります。 強固なディザスター リカバリー戦略をサポートする必要があるアプリは、最初からディザスター リカバリーを念頭に置いて構築する必要があります。 Azure は、ディザスター リカバリーをサポートするアプリの作成に役立つサービス、機能、およびガイダンスを提供しますが、それらを設計に組み込むことは開発者の責任です。
 
-Disaster recovery is not an automatic feature. It must be designed, built, and tested. An app that needs to support a solid disaster recovery strategy must be built from the ground up with disaster recovery in mind. Azure offers services, features, and guidance to help you create apps that support disaster recovery, but it's up to you to include them in your design.
+ディザスター リカバリーのための設計には、2 つの主な懸念事項があります。
 
-Designing for disaster recovery has two main concerns:
+* **データ復旧**: バックアップとレプリケーションを使用して失われたデータを復元する。
+* **プロセス復旧**: サービスを復旧し、コードをデプロイすることによって障害から復旧する。
 
-* **Data recovery**: Using backups and replication to restore lost data.
-* **Process recovery**: Recovering services and deploying code to recover from outages.
+### <a name="data-recovery-and-replication"></a>データの復旧とレプリケーション
 
-### Data recovery and replication
+レプリケーションは、保存されたデータを複数のデータ ストア レプリカに複製します。 *バックアップ*では、復旧に使用するデータの読み取り専用スナップショットが作成され、長期間保持されますが、レプリケーションではそれと異なり、ライブ データのリアルタイムまたはほぼリアルタイムのコピーが作成されます。 レプリケーションの目標は、アプリケーションの応答性を維持しながら、できるだけ少ない待機時間でレプリカを同期し続けることです。 レプリケーションは、高可用性とディザスター リカバリーを設計するための重要なコンポーネントであり、実稼働グレードのアプリケーションの一般的な機能です。
 
-Replication duplicates stored data between multiple data store replicas. Unlike *backup*, which creates long-lived, read-only snapshots of data for use in recovery, replication creates real-time or near-real-time copies of live data. The goal of replication is to keep replicas synchronized with as little latency as possible while maintaining application responsiveness. Replication is a key component of designing for high availability and disaster recovery, and is a common feature of production-grade applications.
+レプリケーションは、*フェールオーバー*を実行することによって、データ ストアの障害または到達不能の影響を緩和するために使用されます。フェールオーバーとは、アプリケーションの構成を変更して、正常動作中のレプリカにデータ要求をルーティングすることです。 多くの場合、フェールオーバーは自動化され、データ ストレージ製品に組み込まれたエラー検出、または独自の監視ソリューションを使用して独自に実装する検出によってトリガーされます。 実装およびシナリオによっては、システム オペレーターが手動でフェールオーバーを実行する必要があります。
 
-Replication is used to mitigate a failed or unreachable data store by executing a *failover*: changing application configuration to route data requests to a working replica. Failover is often automated, triggered by error detection built into a data storage product, or detection that you implement through your monitoring solution. Depending on the implementation and the scenario, failover may need to be manually executed by system operators.
+レプリケーションはゼロから実装するものではありません。 ほとんどのフル機能のデータベース システムやその他のデータ ストレージ製品およびサービスには、それらに求められる機能面およびパフォーマンス面の要件を満たすために、何らかの種類のレプリケーションが、密接に統合された機能として含まれています。 ただし、アプリケーションの設計にこれらの機能を組み込んで適切に利用することは開発者の役割です。
 
-Replication is not something you implement from scratch. Most fully featured database systems and other data storage products and services include some kind of replication as a tightly integrated feature due to its functional and performance requirements. However, it's up to you to include these features in your application design and make appropriate use of them.
+各種の Azure サービスで、さまざまなレベルおよび概念のレプリケーションがサポートされます。 例:
 
-Different Azure services support various levels and concepts of replication. For example:
+* **Azure Storage**レプリケーション機能依存のレプリケーションの種類のストレージ アカウント用に選択します。 このレプリケーションは、ローカル (内のデータ センター) (データ センター間のリージョン内で)、ゾーン ベース、またはリージョン (リージョン) の間。 アプリケーションもオペレーターも、直接的に操作することはありません。 フェールオーバーは自動的かつ透過的であり、必要なのは、コストとリスクのバランスが取れたレプリケーション レベルを選択することだけです。
+* **Azure SQL Database** レプリケーションは、小規模であれば自動的ですが、Azure データセンターまたはリージョンの全面的な障害からの復旧には geo レプリケーションが必要です。 手動、geo レプリケーションの設定ですが、サービスおよびドキュメントでサポートされているもの優れた機能です。
+* **Cosmos DB** はグローバル分散データベース システムであり、レプリケーションはその実装の中心です。 Azure Cosmos db で直接、レプリケーションを構成する代わりにオプションを構成するパーティション分割とデータの整合性に関連します。
 
-* **Azure Storage** replication is effectively automatic. Neither your application nor your operators interact with it directly. Failovers are automatic and transparent, and you simply need to select a replication level that balances cost and risk.
-* **Azure SQL Database** replication is automatic at a small scale, but recovery from a full Azure datacenter or regional outage requires geo-replication. Setting up geo-replication is manual, but it's a first-class feature of the service and well supported by documentation.
-* **Cosmos DB** is a globally distributed database system, and replication is central to its implementation. With Azure Cosmos DB, instead of configuring replication directly, you configure options related to partitioning and data consistency.
+データの整合性、パフォーマンス、およびコストに異なった優先順位を付ける、さまざまなレプリケーション設計が存在します。 *アクティブ* レプリケーションでは、複数のレプリカで同時に更新が行われることが必須であり、スループットを犠牲に整合性を保証します。 これに対し、*パッシブ*レプリケーションは、アプリケーションのパフォーマンスを制約としてレプリケーションの削除が RPO を増やす、バック グラウンドで同期を実行します。 *アクティブ-アクティブ*または*マルチマスター* レプリケーションでは、複数のレプリカの同時使用を可能にすることで負荷分散を実現しますが、代償としてデータ整合性が複雑化します。一方、*アクティブ-パッシブ* レプリケーションでは、フェールオーバー中に限ったライブ使用のためにレプリカを予約します。
 
-Many different replication designs exist that place different priorities on data consistency, performance, and cost. *Active* replication requires updates to take place on multiple replicas simultaneously, guaranteeing consistency at the cost of throughput. In contrast, *passive* replication performs synchronization in the background, removing replication as a constraint on application performance, but increasing RPO. *Active-active* or *multi-master* replication enables multiple replicas to be used simultaneously, enabling load balancing at the cost of complicating data consistency, while *active-passive* replication reserves replicas for live use only during failover.
-
-![Azure SQL Database geo-replication](../media-draft/geo-replication.png)
+![Azure SQL Database geo レプリケーション](../media/geo-replication.png)
 
 > [!IMPORTANT]
-> **Neither replication nor backup are complete disaster recovery solutions on their own**. Data recovery is only one component of disaster recovery, and replication will not fully satisfy many kinds of disaster recovery scenarios. For example, in a data corruption scenario, the nature of the corruption may allow it to spread from the primary data store to the replicas, rendering all the replicas useless and requiring a backup for recovery.
+> **レプリケーションもバックアップも、単独では完全なディザスター リカバリー ソリューションではありません**。 データ復旧はディザスター リカバリーの一部でしかなく、レプリケーションは多くの種類のディザスター リカバリーのシナリオを完全に満たすものではありません。 たとえば、データ破損のシナリオでは、破損の性質によっては、プライマリ データ ストアからレプリカに破損が広がり、すべてのレプリカが役に立たなくなって復旧用のバックアップが必要になる可能性があります。
 
-### Process recovery
+### <a name="process-recovery"></a>プロセス復旧
 
-After a disaster, business data isn't the only asset that needs recovering. Disaster scenarios will also commonly result in downtime, whether it's due to network connectivity problems, datacenter outages, or damaged VM instances or software deployments. The design of your application needs to enable you to restore it to a working state.
+災害発生後、復旧が必要な資産はビジネス データだけではありません。 災害のシナリオでは、ネットワーク接続の問題、データセンターの障害、VM インスタンスまたはソフトウェア デプロイの損害など、原因はさまざまですが、結果的にダウンタイムも発生するのが一般的です。 正常稼働の状態に復元できるようにアプリケーションを設計する必要があります。
 
-In most cases, process restoration involves failover to a separate, working deployment. Depending on the scenario, geographic location may be a critical aspect. For example, a large-scale natural disaster that brings an entire Azure region offline will necessitate restoring service in another region. Your application's disaster recovery requirements, especially RTO, should drive your design and help you decide how many replicated environments you should have, where they should be located, and whether they should be maintained in a ready-to-run state or should be ready to accept a deployment in the event of disaster.
+ほとんどの場合、プロセスの復元は、正常稼働している別のデプロイへのフェールオーバーを伴います。 シナリオによっては、重要な側面が地理的な場所にあります。 たとえば、Azure リージョン全体オフラインをもたらす大規模な自然災害が必要になります別のリージョンでサービスを復元します。 アプリケーションのディザスター リカバリーの要件、特に RTO は、する必要がありますドライブの設計と実行の準備完了状態で維持する必要がありますかする必要がありますかと、配置されている必要がある場合が必要数の複製環境を判断するのに役立ちます障害が発生した場合の展開を受け入れるように準備できます。
 
-Depending on the design of your application, there are a few different strategies and Azure services and features that you can take advantage of to improve your app's support for process recovery after a disaster.
+アプリケーションの設計によってはいくつかの異なる戦略および Azure サービスと機能の利用を行うには、障害発生後の復旧のプロセス、アプリのサポートを向上させるためにします。
 
-#### Azure Site Recovery
+#### <a name="azure-site-recovery"></a>Azure Site Recovery
 
-Azure Site Recovery is a service that's dedicated to managing process recovery for workloads running on VMs deployed to Azure, VMs running on physical servers, and workloads running directly on physical servers. Site Recovery replicates workloads to alternate locations and helps you to fail over when an outage occurs and supports testing of a disaster recovery plan.
+Azure Site Recovery とは、専用のプロセスの復旧、物理サーバーで実行されている Vm を Azure にデプロイされた Vm で実行されているワークロードと物理サーバー上で直接実行されているワークロードを管理するサービスです。 Site Recovery はワークロードを別の場所にレプリケートし、障害発生時にフェールオーバーを支援し、ディザスター リカバリー プランのテストをサポートします。
 
-![Azure Site Recovery](../media-draft/asr.png)
+![Azure Site Recovery](../media/asr.png)
 
-Site Recovery supports replicating whole VMs and physical server images as well as individual *workloads*, where a workload may be an individual application or an entire VM or operating system with its applications. Any application workload can be replicated, but Site Recovery has first-class integrated support for many Microsoft server applications, such as SQL Server and SharePoint, as well as a handful of third-party applications like SAP.
+Site Recovery は、個別の*ワークロード*に加えて VM 全体および物理サーバー イメージのレプリケーションをサポートします。このワークロードは、個別のアプリケーションを指す場合もあれば、VM またはオペレーティング システムとそのアプリケーションの全体を指す場合もあります。 任意のアプリケーション ワークロードをレプリケート可能ですが、Site Recovery の特色は、SQL Server、SharePoint などの多数の Microsoft サーバー アプリケーションや、SAP などの一部のサード パーティ製アプリケーションの統合サポートです。
 
-Any app that runs on VMs or physical servers should at least investigate the use of Azure Site Recovery. It's a great way to discover and explore scenarios and possibilities for process recovery.
+Vm または物理サーバーで実行されているすべてのアプリは、Azure Site Recovery の使用を少なくとも調べる必要があります。 理解し、検証のシナリオとプロセスの復旧の可能性に優れた方法です。
 
-#### Service-specific features
+#### <a name="service-specific-features"></a>サービス固有の機能
 
-For apps that run on Azure PaaS offerings like App Service, most such services offer features and guidance for supporting disaster recovery. In many cases, disaster recovery is automatic and performed transparently by Azure. For certain scenarios, you can use service-specific features to support fast recovery. For example, Azure SQL Server supports geo-replication for quickly restoring service in another region. Azure App Service has a Backup and Restore feature, and the documentation includes guidance for using Azure Traffic Manager to support routing traffic to a secondary region.
+App Service のような Azure PaaS 製品で動作するアプリについては、ディザスター リカバリーをサポートするための機能およびガイダンスがほとんどのサービスで提供されます。 特定のシナリオでは、サービス固有の機能を使用して高速復旧を実現できます。 たとえば、Azure SQL Server は、別のリージョンにサービスを迅速に復元するための geo レプリケーションをサポートしています。 Azure App Service にはバックアップと復元の機能があり、ドキュメントには、Azure Traffic Manager を使用してセカンダリ リージョンにトラフィックをルーティングするためのガイダンスが含まれています。
 
-![Region pairs](../media-draft/AzRegionPairs.png)
+![リージョンのペア](../media/AzRegionPairs.png)
 
-## Testing a disaster recovery plan
+## <a name="testing-a-disaster-recovery-plan"></a>ディザスター リカバリー プランのテスト
 
-Disaster recovery planning doesn't end once you have a completed plan in hand. Testing the plan is a crucial aspect of disaster recovery, to ensure that the directions and explanations are clear and up-to-date.
+ディザスター リカバリーの計画は、プランを完成させるだけで終わるわけではありません。 プランをテストし、指示や説明が明確かつ最新であることを確認することは、ディザスター リカバリーの重要な側面です。
 
-Choose intervals to perform different types and scopes of tests, such as testing backups and failover mechanisms every month, and performing a full-scale disaster recovery simulation every six months. Always follow the steps and details exactly as they're documented in the plan, and consider having someone unfamiliar with the plan give perspective on anything that could be made clearer.
+間隔を選択し、さまざまな種類や範囲のテストを実行します。たとえば、バックアップとフェールオーバーのメカニズムを毎月テストし、ディザスター リカバリーの完全シミュレーションを 6 か月おきに実行します。 次の手順と詳細がいる、プランに記載されているとおりに常をわかりやすくを何も観点を提供するプランに不慣れな人を検討してください。 テストを実行すると、ギャップの向上、および自動化し、プランにこれらの拡張機能を追加する場所の領域を特定します。
 
-Make sure to include your monitoring system in your testing as well. For example, if your application supports automated failover, introduce failures in a dependency or other critical component to ensure that the application behaves correctly end-to-end, including detection of the failure and triggering of the automated failover.
+テストを同様に、監視システムを含めるに確認します。 たとえば、アプリケーションで自動フェールオーバーをサポートしている場合、依存要素またはその他の重要コンポーネントに障害を発生させて、アプリケーションが完全に正しく動作することを確認します。たとえば、自動フェールオーバーの失敗が検出されること、自動フェールオーバーが正しくトリガーされることなどを確認します。
 
- By carefully identifying your requirements and laying out a plan, you'll be able to determine what types of services you'll need to use to meet your recovery objectives. Azure provides several services and features to help you meet these objectives.
+ 要件を注意深く識別してプランを作成することによって、復旧の目標を達成するためにはどのような種類のサービスを使用する必要があるかを判断できます。 Azure では、これらの目標を達成するために役立つ、さまざまなサービスおよび機能を提供しています。

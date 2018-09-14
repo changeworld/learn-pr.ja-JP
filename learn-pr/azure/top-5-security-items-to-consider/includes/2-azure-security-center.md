@@ -1,69 +1,70 @@
-One of the biggest problems with security is being able to see all the areas you need to protect and to find vulnerabilities before hackers do. Azure provides a service which makes this much easier called Azure Security Center.
+セキュリティの最大の課題の 1 つは、保護をハッカーの実行前に脆弱性を検出する必要があるすべての領域を表示できることです。 Azure では、はるかに簡単に、このサービスという Azure Security Center を提供します。
 
-## What is Azure Security Center?
+## <a name="what-is-azure-security-center"></a>Azure Security Center とは
 
-Azure Security Center (ASC) is a monitoring service that provides threat protection across all of your services both in Azure, and on-premises. It can:
+Azure Security Center (ASC) は、すべての Azure とオンプレミスの両方で、サービスでの脅威保護を提供する監視サービスです。 操作を行います。
 
-- Provide security recommendations based on your configurations, resources, and networks.
-- Monitor security settings across on-premises and cloud workloads and automatically apply required security to new services as they come online.
-- Continuously monitor all your services and perform automatic security assessments to identify potential vulnerabilities before they can be exploited.
-- Use machine learning to detect and block malware from being installed in your services and virtual machines. You can also white-list applications to ensure that only the apps you validate are allowed to execute.
-- Analyze and identify potential inbound attacks and help to investigate threats and any post-breach activity which might have occurred.
-- Just-In-Time access control for ports, reducing your attack surface by ensuring the network only allows traffic you require.
+- 構成、リソース、およびネットワークに基づいて、セキュリティに関する推奨事項を提供します。
+- オンプレミス間のセキュリティ設定を監視およびクラウドのワークロードとオンラインに戻ったときに、新しいサービスに必要なセキュリティを自動的に適用します。
+- 継続的に、すべてのサービスを監視し、攻撃を受ける前に、潜在的な脆弱性を識別するために自動セキュリティ評価を実行します。
+- 機械学習を検出してから、サービスと仮想マシンにインストールされているマルウェアをブロックを使用します。 ホワイト リスト アプリケーションを検証するアプリのみの実行が許可されていることを確認することもできます。
+- 分析を受信攻撃の可能性を特定し、脅威と侵害後アクティビティが発生した可能性の調査に役立ちます。
+- ポート、ネットワークをのみを確認して、攻撃対象領域を減らすことのジャストイン タイムのアクセス制御は、必要なトラフィックを許可します。
 
-ASC is part of the [Center for Internet Security](https://www.cisecurity.org/cis-benchmarks/) (CIS) recommendations.
+ASC の一部である、[のインターネット セキュリティ センター](https://www.cisecurity.org/cis-benchmarks/) (CIS) の推奨事項。
 
-## Activating Azure Security Center
+## <a name="activating-azure-security-center"></a>Azure Security Center をアクティブ化します。
 
-Given the benefits of ASC, the security team at your company has decided that it be turned on for all subscriptions at your office. You got an email this morning to turn it on for your applications - so let's look at how to do that.
+Azure Security Center は、統合セキュリティ管理とのハイブリッド クラウド ワークロードの高度な脅威保護を提供し、2 つのレベルで提供されます。 Free と Standard。 Free レベルでは、Standard レベルには、堅牢な脅威インテリジェンスをなどの機能のセットが用意されています。 セキュリティ ポリシー、評価、および推奨事項を提供します。
 
-1. Open the [Azure portal](https://portal.azure.com?azure-portal=true) and select **Azure Security Center** from the left hand menu, if you don't see it there, you can select **All services** and find **Security Center** in the security section as shown below.
+ASC の利点がありますを指定するには、会社のセキュリティ チームしました、オフィスでのすべてのサブスクリプションのオンにすることです。 電子メール今朝になったアプリケーションに対してオン - その方法を見てみましょう。
 
-![Open Azure Security Center](../media-draft/ASC-Menu.png)
+1. 開く、 [Azure portal](https://portal.azure.com?azure-portal=true)選択**Azure Security Center**左側のメニューから、表示されない場合を選択**すべてのサービス**を見つけて**Security Center**セキュリティ セクションの下に示すようにします。
 
-2. If you have never opened ASC, the blade will start on the **Getting started** entry which might ask you to upgrade your subscription. Ignore that for now, select **Skip** at the bottom of the page, and then select **Overview**.
-    - This will display the "big security picture" across all the elements available in your subscription.
-    - This has a ton of great information you can explore.
+![Azure セキュリティ センターを開く](../media-draft/ASC-Menu.png)
 
-3. Next, select **Coverage**, under "Policy and Compliance". This will display what subscription elements are being covered (or not covered) by ACS. Here you can turn on ACS for any subscription you have access to. Try switching between the three coverage areas: "Not covered", "Basic coverage" and "Standard coverage".
+2. ASC、開いていない場合、ブレードで開始されます、 **Getting started**エントリ、サブスクリプションをアップグレードすることを確認することがあります。 ここでは、選択を無視した**スキップ**クリックして、ページの下部にある**概要**します。
+    - サブスクリプションで使用可能なすべての要素の間で、「大きなセキュリティの画像」が表示されます。
+    - これは、さまざまな優れた情報を調べることができます。
 
-4. Subscriptions that are not covered will have a prompt to activate ACS. You can press the "Upgrade Now" button to enable ACS for all the resources in the subscription.
+3. 次に、選択**カバレッジ**、[ポリシーおよびコンプライアンス]。 サブスクリプションの要素がされるはどのように表示されます対象 (または未カバー) ACS によって。 ここで ACS で任意のサブスクリプションにアクセスするのにできます。 次の 3 つのカバレッジ領域の間で切り替えてみてください:「未カバー」、「基本的なカバレッジ」および「標準的なカバレッジ」。
 
-![Upgrade Coverage](../media-draft/Upgrade-Now.png)
+4. 掲載されていないサブスクリプションが必要で ACS をアクティブ化を求めるメッセージがあります。 サブスクリプション内のすべてのリソースを ACS を有効にする"今すぐアップグレード ボタンを押すことができます。
 
-### Free vs. Standard pricing tier
+![カバレッジをアップグレードします。](../media-draft/Upgrade-Now.png)
 
-While you can use a free Azure subscription tier with ASC, it is limited to assessments and recommendations of Azure resources only. To really leverage ASC, you will need to upgrade to a Standard tier subscription as shown above. You can upgrade your subscription through the "Upgrade Now" button in the **Coverage** blade as noted above. You can also switch to the **Getting Started** blade in the ASC menu which will walk you through changing your subscription level. The pricing and features may change based on the region, you can get a full overview on the [pricing page](https://azure.microsoft.com/en-us/pricing/details/security-center/). 
+### <a name="free-vs-standard-pricing-tier"></a>無料の vs します。Standard 価格レベル
+
+ASC では、無料の Azure サブスクリプション レベルを使用できる、中には、評価と推奨事項の Azure リソースのみに制限されます。 ASC を実際に活用するには、上記のように Standard レベルのサブスクリプションにアップグレードする必要があります。 "今すぐアップグレード ボタンでサブスクリプションをアップグレードすることができます、**カバレッジ**上に示したブレード。 切り替えることもできます、 **Getting Started**いただくことで、サブスクリプション レベルを変更する、ASC メニュー ブレード。 価格と機能可能性がありますベースの変更、リージョンでの完全な概要を取得できます、[価格のページ](https://azure.microsoft.com/en-us/pricing/details/security-center/)します。 
 
 > [!NOTE]
-> To upgrade a subscription to the Standard tier, you must be assigned the role of Subscription Owner, Subscription Contributor, or Security Admin.
+> サブスクリプションを Standard レベルにアップグレードするには、サブスクリプションの所有者、サブスクリプションの共同作成者、またはセキュリティ管理者の役割が割り当てられている必要があります。
 
 > [!IMPORTANT]
-> After the 60-day trial period is over, ASC is priced at **$15/node per month** and will be billed to your account.
+> ASC が価格の 60 日間の試用期間が終了したら**1 か月あたり 15 ドル/ノード**され、自分のアカウントに課金されます。
 
-## Turning off Azure Security Center
+## <a name="turning-off-azure-security-center"></a>Azure Security Center をオフにします。
 
-For production systems, you will definitely want to keep Azure Security Center turned on so it can monitor all your resources for threats. However, if you are just playing with ASC and turned it on, you will likely want to disable it to ensure you are not charged. Let's do that now.
+実稼働システムでは、Azure Security Center の脅威に対して、すべてのリソースを監視できるように、オンのままには間違いなくたいです。 ただし、ASC で再生して、おそらくはこれをオンの場合は、課金されないことを確保するために無効にします。 今すぐに操作してみましょう。
 
-1. Open the [Azure portal](https://portal.azure.com?azure-portal=true) and select **Azure Security Center** from the left hand menu, if you don't see it there, you can select **All services** and find **Security Center** in the security section as shown below.
+1. 開く、 [Azure portal](https://portal.azure.com?azure-portal=true)選択**Azure Security Center**左側のメニューから、表示されない場合を選択**すべてのサービス**を見つけて**Security Center**セキュリティ セクションの下に示すようにします。
 
-![Open Azure Security Center](../media-draft/ASC-Menu.png)
+![Azure セキュリティ センターを開く](../media-draft/ASC-Menu.png)
 
-2. Select **Security Policy** from the left hand menu.
+2. 選択**セキュリティ ポリシー**左側にあるメニューから。
 
-3. Next, select **Edit settings >**, next to the subscription for which you want to downgrade ASC.
+3. 次に、選択**設定の編集 >** ASC をダウン グレードするサブスクリプションの横にします。
 
-4. On the next screen select "Pricing Tier" from the left hand menu.
+4. 次の画面には、左側のメニューから「価格レベル」を選択します。
 
-5. A new page will appear that looks like the image below. Click on the box on the left that says "Free (for Azure resources only)".
+5. 次の図のような新しいページが表示されます。 "Free (Azure リソースのみ) の"ことを示す左側にあるボックスをクリックします。
 
-![Pricing Tier](../media-draft/Pricing-Tier.png)
+![価格レベル](../media-draft/Pricing-Tier.png)
 
-6. Press the "save" button at the top of the screen.
+6. 画面の上部にある [保存] ボタンを押します。
 
-You have now downgraded your subscription to the free tier of Azure Security Center.
+Azure Security Center の free レベルのサブスクリプションをダウン グレードがあるようになりました。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-<!-- TODO: need link to module -->
-Congratulations, you have taken your first (and most important) step to securing your application, data and network! <!--If you want to learn more about Azure Security Center, you can go through the **Protect your resources with Azure Security Center** learning module.-->
+<!-- TODO: need link to module --> これで、アプリケーション、データ、およびネットワークのセキュリティ保護に、最初の (そして最も重要な) の手順を実行しました。 <!--If you want to learn more about Azure Security Center, you can go through the **Protect your resources with Azure Security Center** learning module.-->

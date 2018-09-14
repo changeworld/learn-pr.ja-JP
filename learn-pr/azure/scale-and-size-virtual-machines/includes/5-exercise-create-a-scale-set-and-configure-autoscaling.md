@@ -1,103 +1,103 @@
-In this exercise, you will use the Azure portal to create a virtual machine scale set with rules for autoscaling.
+この演習では、仮想マシン スケール セットの自動スケール規則を作成するのに、Azure portal を使用します。
 
-## Create a virtual machine scale set
+## <a name="create-a-virtual-machine-scale-set"></a>仮想マシン スケール セットを作成する
 
-1. In the Azure portal, click **Create a resource**.
+1. Azure Portal で、**[リソースの作成]** をクリックします。
 
-1. In the search box, type **scale set** and press ENTER. In the **Results** blade, click **Virtual machine scale set**, and in the **Virtual machine scale set** blade, click **Create**.
+1. 検索ボックスに「**スケール セット**ENTER キーを押します。 **結果**ブレードで、 をクリックして**仮想マシン スケール セット**、し、**仮想マシン スケール セット**ブレードで、をクリックして**作成**です。
 
-1. In the **Create virtual machine scale set** blade, enter the following values (replacing `<your initials>`, `<date>`, and `<time>` with relevant data), and then click **Create**.
+1. **仮想マシン スケール セットを作成**ブレードで、次の値を入力します (交換`<your initials>`、 `<date>`、および`<time>`関連データを使用)、順にクリックします**作成**します。
 
-    |Setting|Value|
+    |設定|値|
     |---|---|
-    |Virtual machine scale set name|WebServerSS|
-    |Resource group|Use existing - ExerciseRG|
-    |Username|LocalAdmin|
-    |Password and Confirm password|Adm1nPa$$word|
-    |Instance count|2|
-    |Instance size|D2s_v3|
-    |Choose load balancing options|Load balancer|
-    |Public IP address name|WebServerPubIP|
-    |Domain name label|`<your initials><date><time>` (for example ja0904181202)|
+    |仮想マシン スケール セットの名前|WebServerSS|
+    |リソース グループ|既存の使用<rgn>[サンド ボックス リソース グループ名]</rgn>|
+    |ユーザー名|LocalAdmin|
+    |パスワードとパスワードの確認|Adm1nPa$ $ word|
+    |インスタンス数|2|
+    |インスタンスのサイズ|D2s_v3|
+    |負荷分散のオプションを選択します。|Load Balancer|
+    |パブリック IP アドレス名|WebServerPubIP|
+    |ドメイン名のラベル|`<your initials><date><time>` (たとえば ja0904181202)|
 
-1. Wait for the scale set to be created.
+1. スケール セットを作成するを待ちます。
 
-1. Navigate to the **ExerciseRG** resource group. In the **ExerciseRG** blade, click the **WebServerSS** object, and in the **WebServerSS** blade, click **Instances**. Note the two virtual machine instances running within the scale set.
+1. 移動し、 **<rgn>[サンド ボックス リソース グループ名]</rgn>** リソース グループ。 **<rgn>[サンド ボックス リソース グループ名]</rgn>** ブレードで、をクリックして、 **WebServerSS**オブジェクト、および、 **WebServerSS**ブレードで、をクリックします**インスタンス**します。 スケール セット内で実行される 2 つの仮想マシン インスタンスに注意してください。
 
-## Create and apply autoscale rules
+## <a name="create-and-apply-autoscale-rules"></a>作成し、自動スケール ルールを適用
 
-1. In the **WebServerSS** blade, click **Scaling**. On the **WebServerSS - Scaling** blade, click **Enable autoscale**.
+1. **WebServerSS**ブレードで、をクリックして**スケーリング**します。 **WebServerSS - スケーリング**ブレードで、をクリックして**自動スケールを有効にする**します。
 
-1. On the **WebServerSS - Scaling** blade, click **Add a rule**.
+1. **WebServerSS - スケーリング**ブレードで、をクリックして**規則を追加する**します。
 
-1. In the Scale rule blade, enter the following information to create a rule to scale out an extra two virtual machines when average CPU usage is more than 75% over a five-minute period, and then click **Add**.
+1. **スケール ルール**ブレードで、平均 CPU 使用率が 75% 以上の場合、5 分間とクリックし、追加の 2 つの仮想マシンをスケールする規則を作成する次の情報を入力します。**追加**します。
 
-    |Setting|Value|
+    |設定|値|
     |---|---|
-    |Time aggregation|Average|
-    |Metric name|Percentage CPU|
-    |Time grain statistic|Average|
-    |Operator|Greater than|
-    |Threshold|75|
-    |Duration (in minutes)|5|
-    |Operation|Increase count by|
-    |Instance count|2|
-    |Cool down (minutes)|5|
+    |時間の集計|平均|
+    |メトリックの名前|Percentage CPU|
+    |時間グレインの統計|平均|
+    |operator|より大きい|
+    |しきい値|75|
+    |期間 (分)|5|
+    |Operation|カウントを増やす量|
+    |インスタンス数|2|
+    |クールダウン (分)|5|
 
-1. On the **WebServerSS - Scaling** blade, click **Add a rule**.
+1. **WebServerSS - スケーリング**ブレードで、をクリックして**規則を追加する**します。
 
-1. In the Scale rule blade, enter the following information to create a rule to scale in one server at a time when average CPU usage is below 30% over a five-minute period, and then click **Add**.
+1. **スケール ルール**ブレードは、平均 CPU 使用率が 30% を下回る上に 5 分間では、一度に 1 つのサーバーをスケールインするルールを作成するには、次の情報を入力し、クリックして**追加**します。
 
-    |Setting|Value|
+    |設定|値|
     |---|---|
-    |Time aggregation|Average|
-    |Metric name|Percentage CPU|
-    |Time grain statistic|Average|
-    |Operator|Less than|
-    |Threshold|30|
-    |Duration (in minutes)|5|
-    |Operation|Decrease count by|
-    |Instance count|1|
-    |Cool down (minutes)|5|
+    |時間の集計|平均|
+    |メトリックの名前|Percentage CPU|
+    |時間グレインの統計|平均|
+    |operator|より小さい|
+    |しきい値|30|
+    |期間 (分)|5|
+    |Operation|カウントを減らす量|
+    |インスタンス数|1|
+    |クールダウン (分)|5|
 
-1. On the **WebServerSS - Scaling** blade, in the **Autoscale setting name** box, type **WebAutoscaleSetting**. Next to **Instance limits**, set the following values and then click **Save**.
+1. **WebServerSS - スケーリング**ブレードで、**自動スケール設定の名前**ボックスに「 **WebAutoscaleSetting**します。 横に**インスタンスの制限**、次の値を設定し、クリックして**保存**します。
 
-    |Setting|Value|
+    |設定|値|
     |---|---|
-    |Minimum|2|
-    |Maximum|8|
-    |Default|2|
+    |最小値|2|
+    |最大値|8|
+    |既定値|2|
 
-## Generate load to demonstrate autoscaling
+## <a name="generate-load-to-demonstrate-autoscaling"></a>自動スケールを示すために負荷を生成します。
 
-Now you will use the CPUStress.exe tool to generate load on the virtual machines in the scale set and demonstrate automatic scaling out.
+ここでは、スケール セット内の仮想マシンの負荷を生成し、自動スケール アウトを説明 CPUStress.exe ツールを使用します。
 
-1. To determine the public IP address to connect to, browse to the **ExerciseRG** resource group. In the **ExerciseRG** blade, click the **WebServerSSlb** object.
+1. 接続するパブリック IP アドレスを確認するのを参照、 **ExerciseRG**リソース グループ。 **ExerciseRG**ブレードで、をクリックして、 **WebServerSSlb**オブジェクト。
 
-1. On the **WebServerSSlb** blade, click Frontend IP configuration and make a note of the public IP address shown. Close the **LoadBalancerFrontEnd** blade.
+1. **WebServerSSlb**ブレードで、をクリックして**フロント エンド IP 構成**と表示されるパブリック IP アドレスをメモしておきます。 閉じる、 **LoadBalancerFrontEnd**ブレード。
 
-1. To determine the port number to connect to, on the **WebServerSSlb** blade, click **Inbound NAT rules**. Note down the custom port number in the Service column for each virtual machine.
+1. に接続するポート番号を特定する、 **WebServerSSlb**ブレードで、をクリックして**受信 NAT 規則**します。 各仮想マシンの [サービス] 列でカスタム ポート番号をメモします。
 
-1. On your local computer, start the **Remote Desktop Connection**. In the **Computer** box, type the public IP address of the load balancer, followed by a colon and then the port number value for Instance 0, (for example, 40.67.191.221:50000) and then click Connect.
+1. ローカル コンピューターでを起動、**リモート デスクトップ接続**します。 **コンピューター**ボックスで、コロンで後に、ロード バランサーのパブリック IP アドレスを入力し、ポート番号値のインスタンス 0 (たとえば、40.67.191.221:50000) をクリックし、 **Connect**します。
 
-1. In the **Windows Security** dialog box, click **More choices**, click **Use a different account**, in the **User name** box type **LocalAdmin**, in the **Password** box type **Adm1nPa$$word**, and then click **OK**.
+1. **Windows セキュリティ**ダイアログ ボックスで、をクリックして**より多くの選択肢**、順にクリックします**別のアカウントを使用して、** します。 **ユーザー名**ボックスに「 **LocalAdmin**します。 **パスワード**ボックスに「 **Adm1nPa$ $word**順にクリックします**OK**します。
 
-1. In the **Remote Desktop Connection** dialog box, click **Yes**.
+1. **リモート デスクトップ接続**ダイアログ ボックスで、をクリックして**はい**します。
 
-1. In the virtual machine remote desktop, open Internet Explorer, and in the **Set up Internet Explorer** dialog box, click **OK**.
+1. リモート デスクトップの仮想マシンで Internet Explorer を開きとで、 **Internet Explorer を設定**ダイアログ ボックスで、をクリックして **[ok]**。
 
-1. In **Internet Explorer**, in the address bar, type **http://download.sysinternals.com/files/CPUSTRES.zip** and press ENTER. In the **Internet Explorer** dialog box, click **Add**. In the **Trusted Sites** dialog box, click **Add** and then click **Close**.
+1. **Internet Explorer**、アドレス バーに「 **http://download.sysinternals.com/files/CPUSTRES.zip** ENTER キーを押します。 **Internet Explorer**ダイアログ ボックスで、をクリックして**追加**します。 **信頼済みサイト**ダイアログ ボックスで、をクリックして**追加**順にクリックします**閉じる**します。
 
-1. If the download prompt does not appear automatically, you may need to enter the URL again and press ENTER. In the **Internet Explorer** dialog box, click **Save**. Once the download is complete, click **Open folder**.
+1. ダウンロードのプロンプトが自動的に表示されない場合は、URL をもう一度入力し、enter キーを必要があります。 **Internet Explorer**ダイアログ ボックスで、をクリックして**保存**します。 ダウンロードが完了したら、クリックして**フォルダーを開く**します。
 
-1. In the **Downloads** folder, double-click **CPUSTRES**, and then double-click the **CPUSTRES** application. In the **Compressed (zipped) folders** dialog box, click **Run**.
+1. **ダウンロード**フォルダーをダブルクリック**CPUSTRES**、し、ダブルクリック、 **CPUSTRES**アプリケーション。 **圧縮 (zip 形式) フォルダー**ダイアログ ボックスで、をクリックして**実行**します。
 
-1. In the **CPU Stress** window, under **Thread 1**, in the **Activity** drop-down, select **Maximum**. Under **Thread 2**, click the **Active** checkbox, and in the **Activity** drop-down, select **Maximum**.
+1. **CPU Stress**ウィンドウで、**スレッド 1**で、**アクティビティ**ドロップダウン リストで選択**最大**。 [**スレッド 2**、] をクリックして、 **Active**チェック ボックスをオンし、**アクティビティ**ドロップダウン リストで選択**最大**。
 
-1. Click the Start button, then click **Task Manager**. In Task Manager, click **More details**, and confirm that the CPU is over 75%.
+1. スタート ボタンをクリックし、**タスク マネージャー**します。 タスク マネージャーで、**詳細**CPU が 75% を超えることを確認します。
 
-1. Repeat the installation and launch of **CPUSTRES** on the other virtual machine in the scale set and then wait for five minutes.
+1. インストールと起動の繰り返し**CPUSTRES**スケール内の他の仮想マシンで設定すると、および 5 分間待機します。
 
-1. In the Azure portal, browse to the **ExerciseRG** resource group, and in the **ExerciseRG** blade, click the **WebServerSS** object, and in the **WebServerSS** blade, click **Instances**. Note how many virtual machine instances are displayed within the scale set and the status.
+1. Azure portal の でを参照、 **ExerciseRG**リソース グループ。 **ExerciseRG**ブレードで、をクリックして、 **WebServerSS**オブジェクト。 **WebServerSS**ブレードで、をクリックして**インスタンス**します。 スケール セットと、ステータス内の仮想マシン インスタンスの数が表示されるに注意してください。
 
-Here, you created a virtual machine scale set with two virtual machines. You then created rules to automatically scale out and scale in the scale set and added the rules to an autoscale profile.
+ここでは、仮想マシン スケール セットで 2 つの仮想マシンを作成します。 自動的にスケール アウトし、スケール セットのスケールイン ルールを作成し、自動スケール プロファイルに規則を追加します。

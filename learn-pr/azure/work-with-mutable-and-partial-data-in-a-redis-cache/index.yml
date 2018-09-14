@@ -1,34 +1,37 @@
 ### YamlMime:Module
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache
 metadata:
-  title: Work with mutable and partial data in a Redis cache
-  description: Learn how to create transactions, manage memory, and use the cache-aside pattern with Azure Redis Cache
+  title: Azure Redis Cache での変更可能なおよび部分的なデータを扱う
+  description: トランザクションを作成、メモリを管理および Azure Redis Cache でキャッシュ アサイド パターンを使用する方法について説明します
   ms.date: 09/24/2018
-title: Work with mutable and partial data in a Redis cache
-summary: Use Azure Redis Cache to store frequently accessed data. Learn how to create transactions, manage memory, and use the cache-aside pattern.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: Azure Redis Cache での変更可能なおよび部分的なデータを扱う
+summary: データの格納が頻繁にアクセスするには、Azure Redis Cache を使用します。 トランザクションを作成、メモリを管理およびキャッシュ アサイド パターンを使用する方法について説明します。
 abstract: |
-  In this module, you will:
-  - Group multiple operations into a transaction
-  - Set an expiration time on your data
-  - Manage out of memory conditions
-  - Use the cache-aside pattern
-cardDescription: Working with mutable and partial data in a Redis cache
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - グループのトランザクションに複数の操作
+  - データの有効期限を設定します。
+  - メモリ不足の条件を管理します。
+  - キャッシュ アサイド パターンを使用します。
+prerequisites: なし
+iconUrl: /learn/achievements/work-with-mutuable-and-partial-data-in-a-redis-cache.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-set-eviction-policy
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
-- learn.work-with-mutable-and-partial-data-in-a-redis-cache.9-summary
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-set-eviction-policy
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
+  - learn.work-with-mutable-and-partial-data-in-a-redis-cache.9-summary
 achievement: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
-

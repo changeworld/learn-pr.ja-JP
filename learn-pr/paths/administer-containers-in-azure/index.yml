@@ -7,24 +7,18 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6b26cde78f068bb1338e0942bcd7fdd78717fd00
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44236486"
 title: Azure でコンテナーを管理する
 summary: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /achievements/administer-containers-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- administrator
+  - administrator
 products:
-- azure
+  - azure
 modules:
-- learn.intro-to-containers
-- learn.azure-container-registry
-- learn.run-docker-containers-aci
+  - learn.intro-to-containers
+  - learn.azure-container-registry
+  - learn.run-docker-containers-aci
 achievement: learn.administer-containers-in-azure.trophy

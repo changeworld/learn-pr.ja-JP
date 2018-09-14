@@ -1,36 +1,36 @@
-Let's start by creating a Redis cache instance in Azure, then create a simple transaction that inserts two data values into the cache.
+ここで Azure Redis Cache のインスタンスを作成して起動し、キャッシュに 2 つのデータ値を挿入する単純なトランザクションを作成します。
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create an Azure Redis Cache
+## <a name="create-an-azure-redis-cache"></a>Azure Redis Cache の作成
 
-Let's start by creating an Azure Redis Cache with the Azure CLI. Use the Cloud Shell on the right side of the browser window to interact with Azure.
+Azure CLI を使用した Azure Redis Cache を作成してみましょう。 Azure とやり取りするブラウザー ウィンドウの右側にある Cloud Shell を使用します。
 
-We'll use the `azure rediscache create` command to create a new Azure Redis Cache. It takes several parameters. Here are the most common (to get a full list, check the documentation).
+使用して、`azure rediscache create`新しい Azure Redis Cache を作成するコマンド。 いくつかのパラメーターを受け取ります。 最も一般的な (完全な一覧取得のマニュアルを参照する) を示します。
 
 > [!div class="mx-tableFixed"]
-> | Parameter | Description |
+> | パラメーター | 説明 |
 > |-----------|-------------|
-> | `--name`    | The name of the cache - this must be globally unique and composed of letters, numbers and dashes. |
-> | `--resource-group` | Use the pre-created Resource Group <rgn>[Sandbox resource group name]</rgn> which is part of the Azure Sandbox. |
-> | `--location` | Specify the location where the cache should be located. Normally, you will want to choose a location close to the data consumers. In this case, you are limited to the locations available in the Azure Sandbox. Select the closest one to you. |
-> | `--size` | Size of the Redis Cache. Valid values are [C0, C1, C2, C3, C4, C5, C6, P1, P2, P3, P4] |
-> | `--sku` | Redis SKU. Valid values are [Basic, Standard, Premium] |
-> | `--enable-non-ssl-port` | Add this flag if you want to enable the Non SSL Port for your cache. |
+> | `--name`    | -キャッシュの名前グローバルに一意の文字、数字、ダッシュで構成されをする必要がありますこれ。 |
+> | `--resource-group` | 事前に作成したリソース グループを使用して、 <rgn>[サンド ボックス リソース グループ名]</rgn>、Azure サンド ボックスの一部です。 |
+> | `--location` | キャッシュが配置される場所を指定します。 通常、データ コンシューマーに近い場所を選択するされます。 この場合は、Azure サンド ボックス内で使用できる場所に制限しています。 最も近いものを選択します。 |
+> | `--size` | Azure Redis Cache のサイズ。 有効な値は、[C0、C1、C2、C3、C4、C5、C6、P1、P2、P3、P4] です。 |
+> | `--sku` | Azure Redis Cache の SKU。 有効な値は、[Basic、Standard、Premium] です。 |
+> | `--enable-non-ssl-port` | キャッシュの非 SSL ポートを有効にする場合は、このフラグを追加します。 |
 
-### Selecting a location
+### <a name="selecting-a-location"></a>場所の選択
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. Create a cache using the following options:
-    - Size: C0
-    - SKU: Basic
+1. 次のオプションを使用してキャッシュを作成します。
+    - サイズ: C0
+    - SKU: 基本
     - EnableNonSslPort
     
-1. Here's an example command line, make sure to replace the **[name]** and **[location]** with valid values.
+1. コマンドラインの例を次に示します。 置き換えてください、 **[name]** と **[場所]** を有効な値。
 
-    ```bash
+    ```azurecli
     azure rediscache create \
         --name [name] \
         --resource-group <rgn>[Sandbox resource group name]</rgn> \
@@ -38,106 +38,106 @@ We'll use the `azure rediscache create` command to create a new Azure Redis Cach
         --size C0 --sku Basic
     ```
 
-1. It will take a few minutes to create the cache.
+キャッシュの作成には数分をかかります。
 
-## Create a .NET Core Console application
+## <a name="create-a-net-core-console-application"></a>.NET Core コンソール アプリケーションを作成する
 
-Next, create a .NET Core C#-based console application, which will be used to insert data values into our Azure Redis Cache.
+次に、Azure Redis Cache にデータ値を挿入するために使用する .NET Core c# ベースのコンソール アプリケーションを作成します。
 
-1. Create a new .NET Core application using the integrated Cloud Shell on the right hand side of the window. Name it "RedisData".
+1. ウィンドウの右側に統合された Cloud Shell を使用して、新しい .NET Core アプリケーションを作成します。 "RedisData"名前を付けます。
 
     ```bash
     dotnet new console --name RedisData
     ```
     
-1. Change into the new directory created for your app.
+1. アプリの作成、新しいディレクトリに変更します。
 
     ```bash
     cd RedisData
     ```
     
-1. You should find a project file, and a single **Program.cs** source file.
+1. プロジェクト ファイルでは、および 1 つを検索する必要があります**Program.cs**ソース ファイル。
 
-1. Build and run the application - it should output "Hello, World!".
+1. 「こんにちは, World!」を出力する必要があります - をビルドして、アプリケーションの実行
 
     ```bash
     dotnet run
     ```
     
-## Add the ServiceStack.Redis NuGet package
+## <a name="add-the-servicestackredis-nuget-package"></a>ServiceStack.Redis NuGet パッケージを追加します。
 
-Now that we have our console application, we need to add the **ServiceStack.Redis** NuGet package. This will allow us to connect to the Redis Cache and issue commands in C#.
+あるので、コンソール アプリケーションを追加する必要があります、 **ServiceStack.Redis** NuGet パッケージ。 これにより、c# でのコマンドを発行、Azure Redis Cache に接続することができます。
 
-1. Add the NuGet package **ServiceStack.Redis** using the terminal shell.
+1. NuGet パッケージを追加**ServiceStack.Redis**ターミナル シェルを使用します。
 
     ```bash
     dotnet add package ServiceStack.Redis
     ```
     
-1. Build and run the application again to make sure it all compiles. It should still output "Hello, World!"
+1. ビルドして、すべてコンパイルかどうかを確認するには、もう一度アプリケーションを実行します。 「こんにちは, World!」とも出力されます。
 
-## Get your Azure Redis Cache connection string
+## <a name="get-your-azure-redis-cache-connection-string"></a>Azure Redis Cache 接続文字列を取得します。
 
-To connect to your Azure Redis Cache, you need a connection string that contains your password and URL. This connection string is unique to **ServiceStack.Redis** and is in the form of: `[password]@[host name]:[port]`
+Azure Redis Cache に接続するには、パスワード、および URL を含む接続文字列必要があります。 この接続文字列は一意に**ServiceStack.Redis**の形式であり:`[password]@[host name]:[port]`します。
 
-You can retrieve this key with the Azure portal, or with the command line. Let's use the latter here since we used the portal approach in the **Optimize your web applications by caching read-only data with Redis** module.
+Azure portal またはコマンドラインを使用した、このキーを取得できます。 「Redis で読み取り専用のデータをキャッシュすることによって、web アプリケーションの最適化」モジュールでポータルによるアプローチを使用したため、後者のここを使用してみましょう。
 
-Use the `azure rediscache list-keys` command to get the access keys. You will need to supply the name and resource group as shown below:
+使用して、`azure rediscache list-keys`アクセス キーを取得するコマンド。 次に示すよう、名とリソース グループを指定する必要は。
 
-```bash
+```azurecli
 azure rediscache list-keys \
     --name [name] \
     --resource-group <rgn>[Sandbox resource group name]</rgn>
 ```
 
-This will return something like
+次のようなものが戻ります。
 
 ```output
 Primary Key   : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
 Secondary Key : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
 ```
 
-1. Copy your **Primary** key to the clipboard.
+1. コピー、**プライマリ**キーをクリップボードにします。
 
-1. The hostname will be the name you gave to the cache when you created it with the suffix `.redis.cache.windows.net`.
+1. ホスト名は、サフィックスを持つ、作成したときに、キャッシュに付けた名前になります`.redis.cache.windows.net`します。
 
-1. The port should be **6379**.
+1. ポートは**6379**します。
 
-1. You can verify all of that information in the console with the `azure rediscache list` command which will show you all the Redis cache instances in your active subscription (in this case, the Azure Sandbox).
+1. すべてのコンソールにその情報を確認することができます、`azure rediscache list`コマンド。このコマンドによって、(この例では、Azure サンド ボックス) では、アクティブなサブスクリプションで Azure Redis Cache のすべてのインスタンスがわかります。
 
-## Add the connection string to your app
+## <a name="add-the-connection-string-to-your-app"></a>アプリへの接続文字列を追加します。
 
-1. Make sure you are in the app folder. The **Program.cs** should be in the current folder if you type `ls` or `dir`.
+1. アプリ フォルダーにいることを確認します。 **Program.cs**を入力する場合、現在のフォルダーにあります`ls`または`dir`します。
 
-1. Open the built-in editor by typing `code .` in the app folder.
+1. 組み込みのエディターを開く」と入力して`code .`アプリ フォルダーにします。
 
-1. Select the **Program.cs** source file.
+1. 選択、 **Program.cs**ソース ファイル。
 
-1. Create the following field in the `Program` class.
+1. 次のフィールドを作成、`Program`クラス。
 
     ```csharp
     static string redisConnectionString = "";
     ```
 
-1. Paste in your connection string in the **redisConnectionString** field you just created and use **6379** as your port number. Remember, your connection string is in the form of: `[password]@[host name]:[port]`
+1. 接続文字列での貼り付け、 **redisConnectionString**で作成した、フィールドし、使用**6379**として使用するポート番号。 形式で、接続文字列は、注意してください:`[password]@[host name]:[port]`します。
 
-An example connection string would look something like this:
+接続文字列の例は次のようになります。
 
 ```output
 ToOosHLZw9Gwyr46ZlxcNeCCIzS35IBkEtwsCt1Xu4c=@myname.redis.cache.windows.net:6379
 ```
     
-## Insert two data values into your Azure Redis Cache
+## <a name="insert-two-data-values-into-your-azure-redis-cache"></a>Azure Redis Cache に 2 つのデータ値を挿入します。
 
-Finally, we're going to add data into your Azure Redis Cache.
+最後に、Azure Redis Cache にデータを追加お見せします。
 
-1. Add the following using statement to the top of the **Program.cs** file.
+1. 次の追加`using`ステートメントの先頭に、 **Program.cs**ファイル。
 
     ```csharp
     using ServiceStack.Redis;
     ```
 
-1. Add the following snippet of code in your **Main** method. This will add two values transitionally.
+1. 次のコードのスニペットを追加、 **Main**メソッド。 これにより、2 つの値が整合性追加されます。
 
     ```csharp
     using (RedisClient redisClient = new RedisClient(redisConnectionString))
@@ -158,26 +158,26 @@ Finally, we're going to add data into your Azure Redis Cache.
             Console.WriteLine("Transaction failed to commit");
     }
     ```
-1. Run the application through the command prompt at the bottom of the editor window and verify that the console says **Transaction committed**. 
+1. エディター ウィンドウの下部にあるコマンド プロンプトでアプリケーションを実行し、コンソールに表示されることを確認**トランザクションがコミットされた**します。 
 
     ```bash
     dotnet run
     ```
     
-## Verify your data
+## <a name="verify-your-data"></a>データの検証
 
-To finish off, let's verify that the data we added is in our Azure Redis Cache.
+を完了するには、データを追加しましたが、Azure Redis Cache をしましょうを確認します。
 
-1. Sign into the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Locate your Redis cache by selecting **All Resources** in the left-hand sidebar and using the filter box on the left to select Redis Cache instances. Alternatively, you can use the search box at the top and type the name of the cache.
+1. 選択して、Azure Redis Cache を見つけます**すべてのリソース**左側のサイドバーと左側にフィルター ボックスを使用した Azure Redis Cache インスタンスを選択します。 または、上部にある検索ボックスを使用し、キャッシュの名前を入力できます。
 
-1. Select your Redis cache instance.
+1. Azure Redis Cache インスタンスを選択します。
 
-1. In the **Overview** blade for your Redis Cache, select **Console**. This will open a Redis console, which allows you to enter low-level Redis commands.
+1. **概要**Azure Redis Cache、選択ブレード**コンソール**します。 これにより、低レベルの Azure Redis Cache コマンドを入力することができます、Azure Redis Cache コンソールが開きます。
 
-1. Type **get MyKey1**. Verify that the value returned is **MyValue1**.
+1. 型**取得 MyKey1**します。 返される値があることを確認**MyValue1**します。
 
-1. Type **get MyKey2**. Verify that the value returned is **MyValue2**.
+1. 型**取得 MyKey2**します。 返される値があることを確認**MyValue2**します。
 
-    ![Screenshot of the Azure Redis console showing the values of MyKey1 and MyKey2.](../media/4-redis-console.png)
+    ![MyKey1 と MyKey2 の値を表示する Azure Redis Cache のコンソールのスクリーン ショット。](../media/4-redis-console.png)

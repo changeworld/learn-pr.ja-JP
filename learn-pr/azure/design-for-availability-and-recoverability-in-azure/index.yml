@@ -1,34 +1,32 @@
 ### YamlMime:Module
 uid: learn.design-for-availability-and-recoverability
 metadata:
-  title: Design for availability and recoverability in Azure
-  description: Make your Azure architecture highly available and able to recover from failures
+  title: 可用性と Azure で回復性の設計
+  description: Azure アーキテクチャの可用性を高め、障害から復旧できるようにする
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for availability and recoverability
-summary: If you were to lose one or more components of your infrastructure, could your architecture handle it? If you experience a loss of data or identify data corruption, could you recover the data? Do you know what your requirements are to your customers for system availability and disaster recovery? Learn how to incorporate availability and recoverability into your architecture.
+title: 可用性と回復性のための設計
+summary: インフラストラクチャの 1 つ以上のコンポーネントが失われた場合、アーキテクチャはそれに対処できますか? データの損失が発生した、またはデータの破損が確認された場合、データを復旧できますか? 顧客のシステムの可用性とディザスター リカバリーの要件を把握していますか? 可用性と回復性をアーキテクチャに組み込む方法について説明します。
 abstract: |
-  In this module, you will:
-    - Leverage Azure services to design a highly available application
-    - Incorporate Azure disaster recovery capabilities into your architecture
-    - Back up and restore on Azure to protect your application from data loss or corruption
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+    - Azure サービスを利用して高可用性アプリケーションを設計する
+    - Azure のディザスター リカバリー機能を組み込むのアーキテクチャ
+    - バックアップおよび復元を Azure にアプリケーション データの消失または破損から保護します。
+prerequisites: なし
+iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
-#TODO: Update achievement
-achievement: learn.placeholder.badge
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.design-for-availability-and-recoverability.1-introduction
-- learn.design-for-availability-and-recoverability.2-high-availability
-- learn.design-for-availability-and-recoverability.3-disaster-recovery
-- learn.design-for-availability-and-recoverability.4-backup-and-restore
-- learn.design-for-availability-and-recoverability.5-summary
+  - learn.design-for-availability-and-recoverability.1-introduction
+  - learn.design-for-availability-and-recoverability.2-high-availability
+  - learn.design-for-availability-and-recoverability.3-disaster-recovery
+  - learn.design-for-availability-and-recoverability.4-backup-and-restore
+  - learn.design-for-availability-and-recoverability.5-summary
+achievement: learn.design-for-availability-and-recoverability.badge

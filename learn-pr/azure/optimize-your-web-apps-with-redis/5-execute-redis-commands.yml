@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.optimize-web-app-with-redis.5-execute-redis-commands
-title: Explore the client API to interact with Redis
+title: Redis と対話するクライアント API を詳細します。
 metadata:
-  title: Explore the client API to interact with Redis
-  description: Explore the StackExchange.Redis API to interact with Redis
+  title: Redis と対話するクライアント API を詳細します。
+  description: Redis と対話する StackExchange.Redis API を確認します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

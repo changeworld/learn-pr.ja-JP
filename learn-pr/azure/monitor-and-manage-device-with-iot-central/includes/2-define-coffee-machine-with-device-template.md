@@ -1,102 +1,101 @@
-In Azure IoT Central, the data that a device can exchange with your application is specified in a device template that defines the behavior and capabilities of a device or in this case, a coffee machine. When you create a device template, a simulated device is generated from the template. The simulated device generates telemetry that enables you to test the behavior of your application before a physical/real device is connected. 
+Azure IoT Central では、アプリケーションとデバイスを交換できるデータは動作と、デバイスの機能を定義するデバイス テンプレートで、またはこの場合、コーヒー マシンに指定されました。 デバイス テンプレートを作成すると、シミュレートされたデバイスがテンプレートから生成されます。 シミュレートされたデバイスには、テレメトリ、または real の物理デバイスを接続する前に、アプリケーションの動作をテストすることができますが生成されます。 
 
-In this unit, you create a device template for a coffee machine that specifies the following capabilities and behaviors:
-* **Measurements**: The data that comes from your device. You can add multiple measurements to your device template to match the capabilities of your device.
-    * Telemetry measurements : The numerical data points that your device collects over time. They're represented as a continuous stream. In this scenario, the telemetry measurements are air humidity and water temperature. 
+このユニットでは、次の機能と動作を指定するコーヒー マシン用のデバイス テンプレートを作成します。
+* **測定**: デバイスから取得したデータ。 デバイスの機能と一致するように、複数の測定値をデバイス テンプレートに追加できます。
+    * 遠隔測定: 数値データ ポイント、デバイスは、時間の経過と共に収集します。 連続するストリームとして表されます。 このシナリオで、テレメトリの測定値は空気湿度、水の温度 
 
-    * State measurements : The state of the device or its components over a period of time. In this scenario, you set states as Brewing/Not Brewing, Cup Detected/Cup Not Detected
+    * 測定の状態: デバイスまたは時間の期間にわたってそのコンポーネントの状態。 このシナリオで Cup 検出/Cup が検出されない強み、Brewing かどうかを考えてとして状態を設定します。
 
-* **Settings**: You use settings to send configuration data to a device from your application. In this scenario, you adjust the optimal water temperature in settings and send it to the coffee machine. When the setting is updated, it is marked as pending in the UI until the device acknowledges that it has responded to the setting change.
+* **設定**: 設定を使用して、アプリケーションからデバイスに構成データを送信します。 このシナリオでは、設定で最適な水の温度を調整し、コーヒー マシンに送信します。 保留中とマークされている設定が更新されたときに、デバイスが、設定の変更に応答したことを認識するまで、UI にします。
 
-* **Properties**: 
-The device metadata that's associated with the device. There are two types of properties.
-    * You use *application properties* to record information about your device in your application. In this scenario, you use application properties to set the ideal water temperature range of the coffee machine. Application properties are stored in the application and do not synchronize with the device. 
+* **プロパティ**: デバイスに関連付けられているデバイスのメタデータ。 2 種類のプロパティがあります。
+    * 使用する*アプリケーション プロパティ*アプリケーションで、デバイスに関する情報を記録します。 このシナリオでは、コーヒー マシンの理想的な水の温度の範囲を設定するのにアプリケーション プロパティを使用します。 アプリケーションのプロパティは、アプリケーションでは保存され、デバイスと同期されません。 
 
-    * You use *device properties* to enable a device to send property values to your application. These properties can only be changed by the device. In this scenario, you configure the Device Property called Device Warranty Expired in IoT Central. The Device Warranty Expired field remains empty until the coffee machine is connected to IoT Central. Once connected, the coffee machine sends the warranty status to the application. 
+    * "*デバイス プロパティ*" は、デバイスがプロパティ値をアプリケーションに送信できるようにするために使用します。 これらのプロパティは、デバイスのみが変更できます。 このシナリオでは、IoT Central でデバイスの保証期間が切れたと呼ばれるデバイスのプロパティを構成します。 IoT Central にコーヒー マシンが接続されるまで、デバイスの保証期間が切れたフィールドは空のままです。 接続されると、コーヒー マシン保証の状況をアプリケーションに送信します。 
 
-* **Commands**: You use commands to remotely manage your device from your application. You can directly run commands on the device from the cloud to control the devices. In this scenario, you run the commands on your coffee machine to set it to maintenance or start brewing. 
+* **コマンド**: コマンドを使用して、アプリケーションからデバイスをリモートで管理します。 クラウドから直接デバイス上でコマンドを実行して、デバイスを制御できます。 このシナリオでは、メンテナンスを設定または準備コーヒー マシン上のコマンドを実行します。 
 
-## Create a device template for the coffee maker
-A device template defines the behavior and capabilities of a device or in this case, a coffee maker.
+## <a name="create-a-device-template-for-the-coffee-maker"></a>コーヒー メーカーのデバイス テンプレートを作成する
+デバイス テンプレートでは、動作、またはこの場合は、コーヒー メーカーで、デバイスの機能を定義します。
 
-1. Navigate to the Home page and choose **Create Device Templates**.
+1. ホーム ページに移動し、選択**デバイス テンプレートの作成**です。
 
-1. Enter *Connected Coffee Maker* for your custom device template. 
+1. 入力*コーヒー メーカーの接続されている*カスタム デバイス テンプレートの。 
  
-1. Choose **Create**. You’ve created a blank device template for the coffee maker where you define the behavior and capabilities of the machine. 
+1. **[作成]** を選択します。 動作と、マシンの機能を定義する、コーヒー メーカーの空白のデバイス テンプレートを作成しました。 
 
-## Define Telemetry measurement temperature and humidity
-1.	In the **Connected Coffee Maker** device template, make sure you are on the **Measurements** page where you define the telemetry. 
+## <a name="define-telemetry-measurement-temperature-and-humidity"></a>テレメトリ測定の温度と湿度を定義する
+1.  **Connected Coffee Maker** デバイス テンプレートで、テレメトリを定義する **[測定]** ページを表示していることを確認します。 
 
-1.	To add the temperature telemetry measurement, choose **+ New Measurement**. Then choose **Telemetry** as the measurement type.
+1.  温度テレメトリを追加する **+ 新しい測定**します。 クリックして**テレメトリ**測定値の型として。
 
-1.	Each type of telemetry you define for a device template includes configuration options such as:
-    * Display options.
-    * Details of the telemetry.
-    * Simulation parameters.
+1.  デバイス テンプレートに対して定義するテレメトリの各種類には、次のような構成オプションがあります。
+    * 表示オプション。
+    * テレメトリの詳細。
+    * シミュレーションのパラメーター。
 
-    To configure your temperature and humidity telemetry, use the information in the following table. When creating telemetry items, you need to add a new measurement by choosing **+ New Measurement** for each item in the table.
+    で、温度と湿度のテレメトリを構成するには、次の表に情報を使用します。 テレメトリ項目を作成するときに選択して新しい測定値を追加する必要があります。 **+ 新しい測定**テーブル内の各項目にします。
     
-    |Display Name|Field Name|Units|Min|Max|Decimal Places|
+    |表示名|フィールド名|単位|最小|最大|小数点以下の桁数|
     |---|---|---|---|---|---|
-    |Water Temperature|waterTemperature|Celsius|86|100|1|
-    |Air Humidity|airHumidity|%|20|100|0|
+    |水温|waterTemperature|摂氏|86|100|1|
+    |湿度|airHumidity|%|20|100|0|
    
-    You can also choose a color for the telemetry display. To save the telemetry definition, choose **Save**. As you create more definitions for measurements, settings, properties, and commands in the remaining unit, remember to save whenever you're finished.  
+    テレメトリの表示色を選択することもできます。 製品利用統計情報の定義を保存する**保存**します。 残りの単位で測定値、設定、プロパティ、およびコマンドの詳細についての定義を作成するには、完了するたびを保存してください。  
     
-    ![Create a device template](../images/2-device-template-a.png)
+    ![デバイス テンプレートを作成する](../images/2-device-template-a.png)
 
-    Enter field names exactly as shown in the table in the device template. If the field names do not match the property names in the corresponding device code, the telemetry cannot be displayed in the application. Do the same when you enter settings and properties information. 
+    デバイス テンプレートでの表に示すとおり、フィールド名を入力します。 フィールド名に対応するデバイス コードのプロパティ名が一致しない場合は、アプリケーションのテレメトリを表示できません。 設定およびプロパティ情報を入力するときに同じようにします。 
 
-## Define State measurement for brewing/not brewing, cup detected/cup not detected
-Add the following states in the **Measurements** page by choosing **+ New Measurement**. Then choose **State** as the measurement type:
+## <a name="define-state-measurement-for-brewingnot-brewing-cup-detectedcup-not-detected"></a>状態測定 (抽出している/抽出していない、カップあり/カップなし) を定義する
+次の状態を追加、**測定**を選択してページ **+ 新しい測定**します。 次に、測定の種類として **[状態]** を選択します。
     
-   |Display Name|Field Name|Value 1|Display Name 1|Value 2|Display Name 2|
+   |表示名|フィールド名|値 1|表示名 1|値 2|表示名 2|
    |---|---|---|---|---|---|
-   |Brewing|stateBrewing|true|Brewing|false|Not Brewing|
-   |Cup Detected|stateCupDetected|true|Cup Detected|false|Cup Not Detected|
+   |抽出している|stateBrewing|true|抽出している|false|抽出していない|
+   |カップあり|stateCupDetected|true|カップあり|false|カップなし|
 
 
-On the State > Brewing page, you add the value as true. Add the other value as false with the optional display name as Not Brewing by clicking **+** next to **Values**.
+状態に > true として値を追加するページを抽出します。 クリックして、強みを考えていないとして false オプションの表示名としてその他の値を追加**+** 横に**値**します。
 
 > [!NOTE]
-> After you define Telemetry and State, you see the simulated data generated from the device template on the device screen. The simulated data enables you to test the behavior of your application before you connect a physical device to IoT Central. 
+> 製品利用統計情報と状態を定義した後、デバイスの画面上のデバイス テンプレートから生成された、シミュレートされたデータを参照してください。 シミュレートされたデータでは、IoT Central への物理デバイスを接続する前に、アプリケーションの動作をテストすることができます。 
 
-## Use Settings to set the optimal temperature of the coffee machine
-Navigate to the Settings page, the tab next to Measurements. Turn on **Design Mode**. Add the following **Number** setting under **Library** on the **Settings** page:
+## <a name="use-settings-to-set-the-optimal-temperature-of-the-coffee-machine"></a>[設定] を使用してコーヒー メーカーの適温を設定する
+設定ページで、測定値の横にあるタブに移動します。 **[デザイン モード]** をオンにします。 次の追加**数**設定**ライブラリ**上、**設定**ページ。
 
-|Display Name|Field Name|Units|Decimals|Min|Max|Initial|
+|表示名|フィールド名|単位|小数点|最小|最大|初期|
 |---|---|---|---|---|---|---|---|
-|Optimal Temperature|setTemperature|Celsius|1|86|100|95|
+|適温|setTemperature|摂氏|1|86|100|95|
 
-## Use Properties to store warranty info and water temperature range
+## <a name="use-properties-to-store-warranty-info-and-water-temperature-range"></a>[プロパティ] を使用して保証情報と水温範囲を格納する
 
-Add the following **Number** properties on the **Properties** page by first turning on **Design Mode**:
+次の追加**数**プロパティを**プロパティ**を最初に有効にしてページ**デザイン モード**:
 
-|Display Name|Field Name|Units|Decimal Places|Min|Max|Initial
+|表示名|フィールド名|単位|小数点以下の桁数|最小|最大|初期
 |---|---|---|---|---|---|---|
-|Coffee Makers Min Temperature|propertyMinTemperature|Celsius|1|88|92|90|
-|Coffee Makers Max Temperature|propertyMaxTemperature|Celsius|1|96|99|98| 
+|コーヒー メーカー最低温度|propertyMinTemperature|摂氏|1|88|92|90|
+|コーヒー メーカー最高温度|propertyMaxTemperature|摂氏|1|96|99|98| 
 
-Add the following **Device Property** on the **Properties** page:
+**[プロパティ]** ページで次の**デバイス プロパティ**を追加します。
 
-   |Display Name|Field Name|Data Type|
+   |表示名|フィールド名|データ型|
    |---|---|---|
-   |Device Warranty Expired|propertyWarrantyExpired|number|
+   |デバイスの保証期限切れ|propertyWarrantyExpired|number|
 
 > [!NOTE]
-> Device Property is sent by your device, in this case, your coffee machine. Once you connect the coffee machine to Azure IoT Central, Device Property Warranty is then sent to the application and displayed in the Device Warranty Expired field. 
+> デバイス プロパティがデバイス (ここではコーヒー メーカー) によって送信されます。 いったんコーヒー メーカーを Azure IoT Central に接続すると、デバイスの保証期限プロパティがアプリケーションに送信され、[デバイスの保証期限切れ] フィールドに表示されます。 
 
-## Use Commands to set maintenance mode and start brewing
+## <a name="use-commands-to-set-maintenance-mode-and-start-brewing"></a>コマンドを使用してメンテナンス モードを設定し抽出を開始する
 
-Add the following commands on the **Commands** page by first turning on **Design Mode**.
+最初に **[デザイン モード]** を有効にして、**[コマンド]** ページで次のコマンドを追加します。
 
-|Display Name|Field Name|Default Timeout|Data Type|
+|表示名|フィールド名|[Default Timeout]\(既定のタイムアウト\)|データ型|
 |---|---|---|---|---|---|---|
-|Set Maintenance Mode|cmdSetMaintenance|30|text| 
-|Start Brewing|cmdStartBrewing|30|text|
+|メンテナンス モードを設定します。|cmdSetMaintenance|30|text| 
+|抽出開始|cmdStartBrewing|30|text|
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you created a new device type, a coffee machine, using the device template. In the device template, you specified the data that a coffee machine can exchange with your application. You defined the telemetry such as temperature and humidity, as well as the state such as whether the coffee is brewing or not. You further defined the behavior and capabilities of the coffee machine by configuring settings, properties, and commands. 
+このユニットで、新しいデバイスの種類、コーヒー マシンでは、デバイスのテンプレートを使用して作成しました。 デバイス テンプレートで、アプリケーションでコーヒー マシンを交換するデータを指定します。 水温と湿度のようなテレメトリと、コーヒーを抽出中かどうかといった状態を定義しました。 設定、プロパティ、およびコマンドを構成することで、動作やコーヒー マシンの機能を定義さらにします。 
 

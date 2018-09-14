@@ -1,37 +1,37 @@
-When building an application, you want to provide a great user experience, and a part of that is quick data retrieval. Retrieving data from a database is typically a slow process and if this data is read often, this could provide a poor user experience. The cache-aside pattern describes how you can implement a cache in conjunction with a database to return the most commonly accessed data as quickly as possible.
+優れたユーザー エクスペリエンスを提供するアプリケーションを構築する場合と、利用するは、データをすばやく取得します。 低速な処理では、通常は、データベースからデータを取得して場合、このデータは、多くの場合、読み取りは、ユーザー エクスペリエンスの低下を提供できます。 キャッシュ アサイド パターンでは、最もアクセス頻度の低い可能な限り早く返される、データベースを組み合わせて、キャッシュを実装する方法について説明します。
 
-Here, you'll learn how the cache-aside pattern can be used to ensure your important data is quickly accessible.
+ここでは、キャッシュ アサイド パターンを使用して、重要なデータにすばやくアクセスできるようにする方法を学習します。
 
-## What is the cache-aside pattern?
+## <a name="what-is-the-cache-aside-pattern"></a>キャッシュ アサイド パターンとは何ですか。
 
-The cache-aside pattern dictates that when you need to retrieve data from a data source, like a relational database, you should first check for the data in your cache. If the data is in your cache, use it. If the data is not in your cache, then query the database, and when you're returning the data back to the user add it to your cache. This will then allow you to access the data from your cache the next time it's needed.
+キャッシュ アサイド パターンは、リレーショナル データベースなどのデータ ソースからデータを取得する必要があるときにする必要があります最初を確認して、データ キャッシュ内のによって決まります。 データがキャッシュ内にある場合を使用します。 データが、キャッシュ、データベースのクエリではなくを使用して、ユーザーにデータを返す場合の場合は、キャッシュを追加します。 これはしにより必要な次の時間、キャッシュからデータにアクセスすることです。
 
-## When to implement cache-aside pattern?
+## <a name="when-to-implement-the-cache-aside-pattern"></a>キャッシュ アサイド パターンを実装するときにしますか。
 
-Reading data from a database is usually a slow process because it involves compilation of a complex query, preparation of a query execution plan, execution of the query, and then preparation of the result. In some cases, this process may read data from the disk as well. There are optimizations that can be done on the database level like having pre-compiling the queries, and loading some of the data in memory. However, execution of the query and preparation of the result will always happen when retrieving data from a database.
+データベースからデータの読み取りは、通常は低速なプロセスです。 複雑なクエリのコンパイル、クエリの実行プランの準備、クエリの実行し、結果の準備が必要があります。 場合によっては、このプロセスは、同様のディスクからデータを読み取ることができます。 これには、クエリをプリコンパイルして、メモリ内のデータの読み込みなど、データベース レベルで実行できる最適化があります。 ただし、クエリの実行と結果の準備は常に発生、データベースからデータを取得するときにします。
 
-We can solve this problem using cache-aside pattern. In the cache-aside pattern, we still have the application and the database, but now we also have a cache. A cache stores its data in memory, so it doesn't have to interact with the file system. Caches also store data in very simple data structures, like key value pairs, so they don't have to execute complex queries to gather data or maintain indexes when writing data. Because of this, a cache is typically more performant than a database. When you use an application, it will try to read data from the cache first. If the requested data is not in the cache, the application will retrieve it from the database, like it always has done. However, then it stores the data in the cache for subsequent requests. Next time when any user requests the data, it will return it from the cache directly.
+キャッシュ アサイド パターンを使用して、この問題を解決できます。 キャッシュア サイド パターンで、アプリケーションと、データベースがまだあるが、キャッシュもあるようになりました。 キャッシュは、ファイル システムと対話する必要はありませんので、メモリ内のデータを格納します。 キャッシュは、データを収集してデータを書き込むときにインデックスを維持する複雑なクエリを実行する必要のないようにもデータと、キー値のペアなどの非常に単純なデータ構造で格納します。 このため、キャッシュには通常よりパフォーマンスが向上するデータベースです。 アプリケーションを使用するときに最初に、キャッシュからデータの読み取りを試みます。 要求されたデータがキャッシュにない場合は、アプリケーションから取得されますが、データベースでは、常に行ったように。 ただし、データをキャッシュに格納後続の要求。 すべてのユーザーが、データを要求するときに [次へ] の時刻を返しますが、キャッシュから直接。
 
-![Load Data to Cache](../media-draft/cache-aside-set-cache.png)
+![キャッシュへのデータ読み込みのダイアグラム](../media-draft/cache-aside-set-cache.png)
 
-### How to manage updating data
+### <a name="how-to-manage-updating-data"></a>データの更新を管理する方法
 
-When you implement the cache-aside pattern, you introduce a small problem. Since your data is now stored in a cache and a data store, you can run into problems when you try to make an update. For example, to update your data, you would need to update both the cache and the data store.
+キャッシュ アサイド パターンを実装する場合は、小さな問題を紹介します。 データはキャッシュとデータ ストアに格納されるようになりました、ためには、更新を作成するときに問題が発生実行できます。 たとえば、データを更新することになるキャッシュとデータ ストアの両方を更新します。
 
-The solution to this problem in the cache-aside pattern is to invalidate the data in the cache. When you update date in your application you should first delete the data in the cache and then make the changes to the data source directly. By doing this, next time the data is requested, it won't be present in the cache, and the process will repeat. 
+キャッシュ アサイド パターンでは、この問題を解決する、キャッシュ内のデータが無効にすることです。 アプリケーションでデータを更新するときに、最初に、キャッシュ内のデータを削除し、直接データ ソースに変更を行います。 これにより、次回、データが要求された、キャッシュに存在することはできませんし、この手順を繰り返します。 
 
-![Invalidate Cached Data](../media-draft/cache-aside-invalidate.png)
+![キャッシュされたデータを無効化の図](../media-draft/cache-aside-invalidate.png)
 
-## Considerations for using the cache-aside pattern
+## <a name="considerations-for-using-the-cache-aside-pattern"></a>キャッシュ アサイド パターンの使用に関する注意点
 
-Carefully consider which data we should put in the cache. Not all data is suitable to be cached.
+キャッシュに格納するデータを慎重に検討してください。 すべてのデータは、キャッシュに適しています。
 
-- **Lifetime**: For cache-aside to be effective, make sure that the expiration policy matches the access frequency of the data. Making the expiration period too short can cause applications to continually retrieve data from the data store and add it to the cache.
+- **有効期間**: を有効にするには、キャッシュ アサイドの有効期限ポリシーがデータのアクセスの頻度と一致することを確認します。 有効期間が短すぎるため継続的に、データからデータを取得する原因のアプリケーションを格納してキャッシュに追加します。
 
-- **Evicting**: Caches have a limited size compared to typical data stores, and they'll evict data if necessary. Make sure you choose an appropriate eviction policy for your data.
+- **削除**: キャッシュがある一般的なデータ ストアの場合と比較して制限されたサイズと必要な場合にデータが削除されます。 データの適切な削除ポリシーを選択することを確認します。
 
-- **Priming**: To make the cache-aside pattern effect, many solutions will prepopulate the cache with data that they think will be accessed often.
+- **準備**: 多くのソリューションが、キャッシュに頻繁にアクセスすると思われるデータを事前キャッシュ アサイド パターンを有効にします。
 
-- **Consistency**: Implementing the Cache-Aside pattern doesn't guarantee consistency between the data store and the cache. Data in a data store can be changed without notifying the cache. This can lead to serious synchronization issues.
+- **整合性**: キャッシュ アサイド パターンを実装すると、データ ストアとキャッシュの間の一貫性が保証されません。 データ ストア内のデータは、キャッシュ通知することがなく変更できます。 これは、同期の深刻な問題につながります。
 
-The cache-aside pattern is useful when you're required to access data frequently from a data source that uses a disk. Using the cache-aside pattern, you'll store important data in a cache to help increase the speed of retrieving it. 
+キャッシュア サイド パターンができたときに必要なデータにアクセスする多くの場合、ディスクを使用するデータ ソースからです。 キャッシュ アサイド パターンを使用して、取得の速度を高めるために、キャッシュに重要なデータを格納します。 

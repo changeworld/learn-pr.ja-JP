@@ -20,9 +20,9 @@ Azure Container Instances でコンテナーを作成する場合、3 つの再�
 
 次の `az container create` コマンドを使用してコンテナー例を実行します。
 
-```azureclu
+```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --image microsoft/aci-wordcount:latest \
     --restart-policy OnFailure
@@ -34,7 +34,7 @@ Azure Container Instances によってコンテナーが開始され、そのア
 
 ```azurecli
 az container show \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name mycontainer-restart-demo \
     --query containers[0].instanceView.currentState.state
 ```
@@ -42,7 +42,7 @@ az container show \
 コンテナー例の状態が**終了**と表示されたら、コンテナー ログを表示してタスクの出力を確認できます。 **az container logs** コマンドを実行して、スクリプトの出力を表示します。
 
 ```azurecli
-az container logs --resource-group myResourceGroup --name mycontainer-restart-demo
+az container logs --resource-group <rgn>[Sandbox resource group name]</rgn> --name mycontainer-restart-demo
 ```
 
 出力:

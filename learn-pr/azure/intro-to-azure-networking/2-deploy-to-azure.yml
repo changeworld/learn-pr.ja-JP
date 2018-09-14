@@ -4,37 +4,32 @@ title: サイトを Azure にデプロイする
 metadata:
   title: サイトを Azure にデプロイする
   description: Azure での基本的な 3 層アプリケーションがどのようなものかをご覧ください。
-  ms.openlocfilehash: 3bbacd16929ffb05448a2d3e60cd37c637275229
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477616"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/2-deploy-to-azure.md)]
 quiz:
   title: '知識チェック: サイトを Azure にデプロイする'
   questions:
-  - content: Azure _リージョン_とは何ですか?
-    choices:
-    - content: 特定の地理的な場所内にある Azure データ センター。
-      isCorrect: true
-      correctExplanation: Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。 米国西部と北ヨーロッパはその例です。
-    - content: ネットワークをより小さなネットワークに分割する方法です。
-      isCorrect: false
-      incorrectExplanation: Azure のネットワークは、_サブネット_に分割されています。
-    - content: Azure に出入りできるトラフィックを定義するファイアウォール規則。
-      isCorrect: false
-      incorrectExplanation: _ネットワーク セキュリティ グループ_を使用して、ファイアウォール規則を定義します。
-  - content: 仮想ネットワークについて正しいのは、次のうちどれですか?
-    choices:
-    - content: 仮想ネットワークは、ソフトウェアを介して構成します。
-      isCorrect: true
-      correctExplanation: ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。 物理ハードウェアは、Azure によってメンテナンスされます。
-    - content: 仮想ネットワークは、すべてのポートでネットワーク トラフィックを受け入れます。 ファイアウォールは、仮想マシンを通じて構成します。
-      isCorrect: false
-      incorrectExplanation: 仮想ネットワークをネットワーク セキュリティ グループと関連付けることで、クラウド レベルのファイアウォールとして機能させることができます。
-    - content: 仮想ネットワークはインターネットから常に到達可能です。
-      isCorrect: false
-      incorrectExplanation: 既定では、仮想ネットワークはインターネットから常に到達可能になっていますが、プライベート ネットワークなど、自分のネットワークに到達できるネットワークを構成することができます。
+    - content: Azure _リージョン_とは何ですか?
+      choices:
+        - content: 特定の地理的な場所内にある Azure データ センター。
+          isCorrect: true
+          correctExplanation: Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。 米国西部と北ヨーロッパはその例です。
+        - content: ネットワークをより小さなネットワークに分割する方法です。
+          isCorrect: false
+        - content: Azure の内外のトラフィックのフローを定義するファイアウォール規則。
+          isCorrect: false
+    - content: 仮想ネットワークについて正しいのは、次のうちどれですか?
+      choices:
+        - content: 仮想ネットワークは、ソフトウェアを介して構成します。
+          isCorrect: true
+          correctExplanation: ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。 物理ハードウェアは、Azure によってメンテナンスされます。
+        - content: 仮想ネットワークは、すべてのポートでネットワーク トラフィックを受け入れます。 ファイアウォールは、仮想マシンを通じて構成します。
+          isCorrect: false
+        - content: 仮想ネットワークはインターネットから到達可能では常に。
+          isCorrect: false

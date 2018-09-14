@@ -1,17 +1,19 @@
-Imagine you're managing storage for an online retailer. You need tools to create, update, and delete your user and product data. Azure Cosmos DB provides SDKs for .NET, .NET Core, Java, Node.js, and Python.
+オンライン小売業者のストレージを管理しているとします。 ユーザーおよび製品データを作成、更新、削除するためのツールが必要です。
 
-In this module, you will build a .NET Core console application in Visual Studio Code to create, update, and delete user records, query your data, and perform stored procedures using C#.
+このモジュールでは、Visual Studio Code で .NET Core コンソール アプリケーションをビルドして、C# を使用してユーザー レコードの作成、更新、削除、データのクエリを行い、ストアド プロシージャを実行します。
 
-Visual Studio has a convenient extension for Azure Cosmos DB so you can easily see the database, collection, and documents you created in the previous modules, plus you can create new resources using the extension, and copy your connection string without having to open the Azure portal.
+データをデータベース、コレクション、および前のモジュールで作成されたドキュメントを簡単に確認できるように、便利な Visual Studio Code 拡張機能を持ち、Azure Cosmos DB に格納され、拡張機能を使用して新しいリソースを作成することができ、コピー、Azure ポータルを開くことがなく接続文字列。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:  
+このモジュールでは、次のことを行います。  
 
-- Create an application to store and query data in Azure Cosmos DB
-- Use the Integrated Terminal in Visual Studio Code to quickly create a console application
-- Add Azure Cosmos DB functionality with the help of the Azure Cosmos DB extension for Visual Studio Code
+- 格納および Azure Cosmos DB でデータを照会するアプリケーションを作成します。
+- Visual Studio code 統合ターミナルを使用して、コンソール アプリケーションをすばやく作成するには
+- Visual Studio Code 用 Azure Cosmos DB の拡張機能を利用して Azure Cosmos DB の機能を追加します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Must have [Visual Studio Code](https://code.visualstudio.com/) installed
+- 必要があります[Visual Studio Code](https://code.visualstudio.com/)インストール
+- 必要があります[.NET Core 2.1](https://www.microsoft.com/net/download)インストール
+- 必要があります、 [Azure アカウント](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)拡張機能を Visual Studio Code のインストール

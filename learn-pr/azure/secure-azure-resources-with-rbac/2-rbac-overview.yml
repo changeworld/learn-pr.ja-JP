@@ -8,12 +8,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7a4846729dc96f8f11b2940381c9a7a71e91c7bd
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44230298"
 title: RBAC とは
 durationInMinutes: 10
-content: '[!include[](includes/2-rbac-overview.md)]'
+content: |
+  [!include[](includes/2-rbac-overview.md)]

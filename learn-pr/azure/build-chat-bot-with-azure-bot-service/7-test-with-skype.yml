@@ -9,12 +9,7 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9d4eb1555a788015e19b2a7563798ee7aec531ba
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44306789"
-azureSandbox: true
+labId: 45995
 durationInMinutes: 10
-content: '[!include[](includes/7-test-with-skype.md)'
+content: |
+  [!include[](includes/7-test-with-skype.md)

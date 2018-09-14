@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
-title: Eviction policies
+title: 削除ポリシー
 metadata:
-  title: Eviction policies
-  description: Eviction policies
+  title: 削除ポリシー
+  description: 削除ポリシー
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

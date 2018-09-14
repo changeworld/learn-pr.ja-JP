@@ -9,7 +9,7 @@ Azure Container Instances で Azure ファイル共有を使用するには、�
 ```azurecli
 ACI_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
 
-az storage account create --resource-group myResourceGroup --name $ACI_PERS_STORAGE_ACCOUNT_NAME --location eastus --sku Standard_LRS
+az storage account create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACI_PERS_STORAGE_ACCOUNT_NAME --sku Standard_LRS
 ```
 
 次のコマンドを実行して、環境変数 *AZURE_STORAGE_CONNECTION_STRING* にストレージ アカウントの接続文字列を設定します。 この環境変数は、Azure CLI によって認識され、ストレージ関連の操作で使用できます。
@@ -31,14 +31,14 @@ Azure Container Instances 内のボリュームとして Azure ファイル共�
 上のスクリプトを使用した場合、ストレージ アカウント名は最後にランダムな値を付加して作成されています。 最後の文字列 (ランダムな部分を含む) のクエリを実行するには、次のコマンドを使用します。
 
 ```azurecli
-STORAGE_ACCOUNT=$(az storage account list --resource-group myResourceGroup --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
+STORAGE_ACCOUNT=$(az storage account list --resource-group <rgn>[Sandbox resource group name]</rgn> --query "[?contains(name,'$ACI_PERS_STORAGE_ACCOUNT_NAME')].[name]" --output tsv)
 echo $STORAGE_ACCOUNT
 ```
 
 共有名は既にわかっているので (aci-share-demo)、あとはストレージ アカウント キーです。このキーを見つけるには、次のコマンドを使用します。
 
 ```azurecli
-STORAGE_KEY=$(az storage account keys list --resource-group myResourceGroup --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
+STORAGE_KEY=$(az storage account keys list --resource-group <rgn>[Sandbox resource group name]</rgn> --account-name $STORAGE_ACCOUNT --query "[0].value" --output tsv)
 echo $STORAGE_KEY
 ```
 
@@ -48,7 +48,7 @@ Azure ファイル共有をコンテナーのボリュームとしてマウン�
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-files \
     --image microsoft/aci-hellofiles \
     --ports 80 \
@@ -62,7 +62,7 @@ az container create \
 コンテナーが作成された後、パブリック IP アドレスを取得します。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-files --query ipAddress.ip -o tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-files --query ipAddress.ip -o tsv
 ```
 
 ブラウザーを開き、コンテナーの IP アドレスに移動します。 シンプルなフォームが表示されます。 いくつかのテキストを入力して、**[送信]** をクリックします。 これにより、ここで入力したテキストを本体とするファイルが Azure Files 共有で作成されます。
@@ -74,7 +74,6 @@ az container show --resource-group myResourceGroup --name aci-demo-files --query
 ![コンテンツ デモ アプリケーションのサンプル テキスト ファイル](../media-draft/sample-text.png)
 
 Azure Files 共有に格納されているファイルとデータに何らかの価値がある場合は、この共有を新しいコンテナー インスタンスに再マウントして、ステートフルなデータを提供できます。
-
 
 ## <a name="summary"></a>まとめ
 

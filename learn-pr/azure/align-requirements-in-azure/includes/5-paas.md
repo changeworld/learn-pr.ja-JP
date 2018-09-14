@@ -1,27 +1,27 @@
-Platform as a service (PaaS) is a complete development and deployment environment in the cloud. With PaaS, you can build and deploy everything from simple cloud-based apps to sophisticated, cloud-enabled enterprise applications. You purchase the resources from a cloud service provider on a pay-as-you-go basis and access them over a secure Internet connection. Like IaaS, PaaS includes infrastructure such as servers, storage, and networking. In addition, it also includes middleware, development tools, and other services. PaaS supports the complete web application lifecycle: building, testing, deploying, managing, and updating. PaaS removes the need to manage software licenses, middleware, and infrastructure of the services. You manage the applications and services you develop, and the cloud service provider typically manages everything else.
+サービスとしてのプラットフォーム (PaaS) は、クラウドでの開発とデプロイの完全な環境です。 PaaS を使用すると、シンプルなクラウドベースのアプリからクラウド対応の高度なエンタープライズ アプリケーションまで、あらゆるものをビルドしてデプロイすることができます。 リソースは、クラウド サービス プロバイダーから従量課金制で購入し、セキュリティで保護されたインターネット接続を経由してそれらのリソースにアクセスします。 IaaS 同様 PaaS にも、サーバー、ストレージ、およびネットワークなどのインフラストラクチャが含まれています。 その他に、ミドルウェア、開発ツール、およびその他のサービスも含まれています。 PaaS は、Web アプリケーションのライフサイクル全体 (ビルド、テスト、デプロイ、管理、更新) をサポートしています。 PaaS により、ソフトウェア ライセンス、ミドルウェア、およびサービスのインフラストラクチャを管理する必要がなくなります。 ユーザーは自分で開発したアプリケーションとサービスを管理し、それ以外はすべて、クラウド サービス プロバイダーが管理するのが一般的です。
 
-### Common scenarios
+### <a name="common-scenarios"></a>一般的なシナリオ
 
-Let's imagine your healthcare company needs a website to describe a product. Your developers want to use PHP. Using PaaS, your developers have the option to *create a web app*. The infrastructure details such as creating a virtual machine, installing a web server, and installing middleware are abstracted away. You don't need to care what operating system it runs on or what physical hardware is required. Your developers deploy the website files to the cloud and your website is available on the Internet.
+勤務先の医療関連企業で、製品を説明するための Web サイトが必要だとします。 開発者は、PHP を使用したがっています。 PaaS を使用すると、開発者に *Web アプリを作成する*という選択肢ができます。 仮想マシンの作成、Web サーバーのインストール、ミドルウェアのインストールなどのインフラストラクチャの詳細は、抽象化されます。 実行するオペレーティング システムの種類や物理ハードウェアの要件を気にする必要はありません。 開発者がクラウドに Web サイトのファイルをデプロイすると、その Web サイトがインターネットで利用可能になります。
 
-Let's imagine another scenario. Your company needs a SQL database to support data analysts for a special project. You don't have infrastructure to accommodate the request. You can quickly provision a SQL Server in the cloud that meets the need of the project. The data analysts can connect to the server. The SQL Server database is provided as a service. Therefore, you don't worry about updates, security patches, or optimizing physical storage for reads and writes.
+別のシナリオを考えてみましょう。 あなたの勤務先の企業で、特別なプロジェクトのデータ アナリストをサポートするために SQL データベースが必要になったとします。 企業にはこの要求に対応できるインフラストラクチャはありません。 あなたはクラウドで、プロジェクトのニーズに合った SQL Server をすばやくプロビジョニングすることができます。 データ アナリストは、サーバーに接続することができます。 SQL Server データベースは、サービスとして提供されます。 そのため、あなたは、更新プログラム、セキュリティ更新プログラム、または読み取りと書き込みに対する物理ストレージの最適化を心配する必要はありません。
 
-Some other common scenarios include:
+その他の一般的なシナリオには、次のようなものがあります。
 
-**Development framework:** PaaS provides a framework that developers can build upon to develop or customize cloud-based applications. Similar to the way you create an Excel macro, PaaS lets developers create applications using built-in software components. Cloud features such as scalability, high-availability, and multi-tenant capability are included, reducing the amount of coding that developers must do.
+**開発フレームワーク:** PaaS では、開発者がクラウドベースのアプリケーションを開発またはカスタマイズするための基礎となるフレームワークが提供されます。 Excel マクロの作成方法と同様に、PaaS では開発者が組み込みのソフトウェア コンポーネントを使用してアプリケーションを作成することができます。 スケーラビリティ、高可用性、マルチテナント機能などのクラウド機能が含まれており、開発者が行う必要があるコーディングの量を減らすことができます。
 
-**Analytics or business intelligence:** Analysis tools provided as a service allows you to analyze and mine data. Organizations can find insights and patterns to predict outcomes to improve forecasting, product design decisions, investment returns, and other business decisions.
+**分析またはビジネス インテリジェンス:** サービスとして提供される分析ツールでは、データの分析とデータ マイニングが行えます。 組織は、結果を予測するための分析情報とパターンを見つけて、予測、製品設計上の決定、投資利益とその他のビジネスの意思決定を改善することができます。
 
-### Advantages
+### <a name="advantages"></a>長所
 
-By delivering infrastructure as a service, PaaS has similar advantages as IaaS. But its additional features including middleware, development tools, and other business tools provide additional advantages:
+サービスとしてインフラストラクチャを提供することで、PaaS には IaaS と同様の利点があります。 ただし、ミドルウェア、開発ツール、およびその他のビジネス ツールを含む追加の機能により、次のような利点もあります。
 
-**Reduced development time:** PaaS development tools can reduce development time for new applications. Developers can use pre-coded application components built into the platform, such as workflow, directory services, security features, and search. Platform as a service components can give your development team new capabilities without you needing to add staff having the required skills.
+**開発時間の短縮:** PaaS 開発ツールにより、新しいアプリケーションの開発時間を短縮できます。 開発者は、プラットフォームに組み込まれている、あらかじめコード化されたアプリケーション コンポーネント (ワークフロー、ディレクトリ サービス、セキュリティ機能、検索など) を使用できます。 サービス コンポーネントとしてのプラットフォームにより、開発チームに必要なスキルを持つスタッフを加えることなく、新しい機能を提供できます。
 
-**Develop for multiple platforms:** Some service providers give you development options for multiple platforms, such as desktop, mobile devices, and browsers making cross-platform apps quicker and easier to develop.
+**複数のプラットフォーム向けの開発:** 一部のサービス プロバイダーでは、デスクトップ、モバイル デバイスおよびブラウザーなどの複数のプラットフォーム向けの開発オプションを提供して、クロスプラットフォーム対応のアプリをすばやく簡単に開発できるようにしています。
 
-**Use sophisticated tools affordably:** A pay-as-you-go model makes it possible for individuals or organizations to use sophisticated development software and business intelligence and analytics tools that they could not afford to purchase outright.
+**高度なツールを低コストで使用:** 従量課金制モデルにより、個人や組織が、高価で手が出せない高度な開発ソフトウェアやビジネス インテリジェンスおよび分析ツールを使用できるようになります。
 
-**Support geographically distributed development teams:** Because the development environment is accessed over the Internet, development teams can work together on projects even when team members are at remote locations.
+**地理的に分散した開発チームのサポート:** 開発環境にはインターネット経由でアクセスするため、開発チームのメンバーが離れた場所にいても、チームが一緒にプロジェクトに取り組むことができます。
 
-**Efficiently manage the application lifecycle:** PaaS provides all of the capabilities that you need to support the complete web application lifecycle: building, testing, deploying, managing, and updating within the same integrated environment.
+**アプリケーションのライフサイクルを効率的に管理:** PaaS では、Web アプリケーションのライフサイクル全体 (同じ統合環境内でのビルド、テスト、デプロイ、管理、更新) をサポートするために必要なすべての機能が提供されます。

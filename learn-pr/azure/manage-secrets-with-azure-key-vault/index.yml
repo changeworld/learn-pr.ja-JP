@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.manage-secrets-with-azure-key-vault
 metadata:
-  title: Manage secrets in your server apps with Azure Key Vault
-  description: In this module, you’ll learn how to create a Key Vault and store a secret in it. You’ll see how to configure a web application to use a managed identity to enable secure access to the vault without any configuration, and finally you’ll implement an ASP.NET Core web application that retrieves secrets from the vault.
+  title: Azure Key Vault を使用して、サーバー アプリケーションでシークレットを管理します。
+  description: このモジュールでは、Key Vault を作成し、そこにシークレットを格納する方法を学習します。 管理対象 id を使用して、構成を行わなくても、資格情報コンテナーに安全にアクセスを有効にする web アプリケーションを構成する方法について説明し、最後に、資格情報コンテナーからシークレットを取得する ASP.NET Core web アプリケーションを実装します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Manage secrets in your server apps with Azure Key Vault
-summary: Your application requires service passwords, connection strings, and other secret configuration values to do its job. Storing and handling secret values is risky, and every usage introduces the possibility of leakage. Azure Key Vault, in combination with managed identities for Azure resources, enables your Azure web app to access secret configuration values easily and securely without needing to store any secrets in your source control or configuration.
-abstract:  | 
-  In this module, you will:
-  - Explore what types of information can be stored in Azure Key Vault
-  - Create an Azure Key Vault and use it to store secret configuration values
-  - Enable secure access to the vault from an Azure App Service web app with managed identities for Azure resources
-  - Implement a web application that retrieves secrets from the vault
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: Azure Key Vault を使用して、サーバー アプリケーションでシークレットを管理します。
+summary: アプリケーションがジョブを実行するには、サービスのパスワード、接続文字列、およびその他のシークレット構成値が必要です。 シークレット値の保存と取り扱いはリスクが高く、使用のたびに漏えいの可能性が生じます。 Azure のリソースの管理対象の id と組み合わせて、azure Key Vault はシークレット構成値をソース管理または構成ですべてのシークレットを格納することがなく簡単かつ安全にアクセスする Azure web アプリを使用できます。
+abstract: |
+  このモジュールでは、次のことを行います。
+  - 探索の種類の情報は、どのような Azure Key Vault に格納されています。
+  - Azure Key Vault を作成し、シークレット構成値の格納に使用
+  - Azure リソースの管理対象 id での Azure App Service web アプリからコンテナーにセキュリティで保護されたアクセスを有効にします。
+  - 資格情報コンテナーからシークレットを取得する web アプリケーションを実装します。
+prerequisites: なし
+iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-key-vault
+  - azure
+  - azure-key-vault
 units:
-- learn.manage-secrets-with-azure-key-vault.1-introduction
-- learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
-- learn.manage-secrets-with-azure-key-vault.3-creating-vaults-storing-secrets
-- learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
-- learn.manage-secrets-with-azure-key-vault.5-access-secrets-from-web-app
-- learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
-- learn.manage-secrets-with-azure-key-vault.7-summary
+  - learn.manage-secrets-with-azure-key-vault.1-introduction
+  - learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
+  - learn.manage-secrets-with-azure-key-vault.3-creating-vaults-storing-secrets
+  - learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+  - learn.manage-secrets-with-azure-key-vault.5-access-secrets-from-web-app
+  - learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
+  - learn.manage-secrets-with-azure-key-vault.7-summary
 achievement: learn.manage-secrets-with-azure-key-vault.badge

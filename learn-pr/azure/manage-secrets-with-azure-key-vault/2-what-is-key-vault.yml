@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.2-what-is-key-vault
-title: What is Azure Key Vault?
+title: Azure Key Vault とは
 metadata:
-  title: What is Azure Key Vault?
-  description: What is Azure Key Vault?
+  title: Azure Key Vault とは
+  description: Azure Key Vault とは
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

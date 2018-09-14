@@ -9,11 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c6abb35dd9c06e430e4faf1c39e482d18cd43fcc
-  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44371510"
 durationInMinutes: 8
-content: '[!include[](includes/3-benefits-of-cloud-computing.md)]'
+content: |
+  [!include[](includes/3-benefits-of-cloud-computing.md)]

@@ -1,17 +1,18 @@
-Suppose you work at an online retailer. It's your responsibility to make sure your database is as secure as possible, to protect both your customer data and your business data. 
+オンラインの小売店舗で操作するとします。 データベースが可能であれば、顧客データと、ビジネス データの両方を保護する場合ほど安全で確認するユーザーの責任になります。
 
-Data security is critical when protecting your customer's privacy and your organization’s reputation. Businesses have closed due to financial damage or ruined reputations. Customers have had their data accessed unlawfully because of security breaches exposing their personal details, and again, possibly causing financial harm.  
+お客様のプライバシーと組織の評判を保護する場合、データのセキュリティが重要です。 財務の破損または評判の跡が原因の企業が閉じました。 お客様は、データのセキュリティ侵害が、個人の詳細を公開するためにアクセスされていたし、もう一度、危害を及ぼす場合によっては、財務します。
 
-A data breach happens when a hacker has gained access to critical information held in a database. This data is private and often highly sensitive information that is confidential to customers. It could include information to allow identity theft, it may hold passwords that customers use on other sites, or it might include details on associations that could be used to blackmail your customers. 
+ハッカーがデータベースに保持されている重要な情報へのアクセスを得られるデータ侵害が発生します。 このデータは、顧客に機密情報がプライベートであり、多くの場合、非常に機微な情報です。 Id の盗難を許可する情報を含めることができます、顧客が他のサイトで使用するパスワードを保持可能性があります。 または blackmail お客様にされる可能性がありますの関連付けの詳細を含めることができます。
 
-In many countries, there's legislation on security breaches that must be adhered to.
+多くの国では、法規制遵守すべきセキュリティ侵害に。
 
-It's critical to monitor your database for potential threats to make sure you protect your customers' data. We'll look at ways to secure your database by configuring the database firewall, defining authentication levels, encrypting communication, and other techniques for database security. 
+顧客のデータを保護するかどうかを確認する潜在的な脅威については、データベースを監視するために重要です。 データベース ファイアウォールの構成、認証レベルを定義する、通信、およびその他の手法のデータベース セキュリティの暗号化、データベースをセキュリティで保護する方法について説明します。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
 
-- Configure the firewall for the Azure SQL Server database
-- Control user access at the database and Active Directory levels
-- Manage encryption between the client and server
-- Add auditing and threat monitoring to the Azure SQL Server database
+このモジュールでは、次のことを行います。
+
+- Azure SQL Server データベースのファイアウォールを構成します。
+- データベース レベルの Active Directory でユーザー アクセスの制御
+- クライアントとサーバー間の暗号化を管理します。
+- 追加の監査と脅威の Azure SQL Server データベースを監視

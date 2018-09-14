@@ -1,20 +1,20 @@
-Azure Key Vault uses **Azure Active Directory** to authenticate users and applications that try to access a vault. To grant our web application access to the vault, we first need to register our app with Azure Active Directory. Registering creates an identity for the app. Once the app has an identity, we can assign vault permissions to it.
+Azure Key Vault では、**Azure Active Directory** を使用してコンテナーにアクセスを試行するユーザーとアプリケーションを認証します。 コンテナーへのアクセスを Web アプリケーションに付与するには、まず Azure Active Directory にアプリを登録する必要があります。 登録すると、アプリに対して ID が作成されます。 アプリに ID が作成されたら、それにコンテナーのアクセス許可を割り当てることができます。
 
-Apps and users authenticate to Key Vault using an Azure Active Directory authentication token. Getting a token from Azure Active Directory requires a secret or certificate, because anyone with a token could use the application identity to access all of the secrets in the vault.
+アプリおよびユーザーは、Azure Active Directory の認証トークンを使用して、Key Valut に対して認証を行います。 トークンを持っているすべてのユーザーはアプリケーション ID を使用して、コンテナーのすべてのシークレットにアクセスできるので、Azure Active Directory からトークンを取得するには、シークレットまたは証明書が必要です。
 
-Our application secrets are secure in the vault, but we still need to keep a secret or certificate outside of the vault in order to access them! This problem is called the *bootstrapping problem*, and Azure has a solution for it.
+アプリケーションのシークレットは、コンテナーでセキュリティで保護されていますが、それにアクセスするために、コンテナー外でもシークレットまたは証明書を保持する必要があります。 この問題は、*ブートストラップの問題*と呼ばれており、Azure にはそのソリューションがあります。
 
-## Managed identities for Azure resources
+## <a name="managed-identities-for-azure-resources"></a>Azure リソースのマネージド ID
 
-Managed identities for Azure resources is an Azure feature that your app can use to access Key Vault and other Azure services without having to manage even a single secret outside of the vault. Using a managed identity is a simple and secure way to take advantage of Key Vault from your web app.
+Azure リソースの管理対象 id は、アプリでも、コンテナーの外部でシークレットを 1 つを管理することがなく Key Vault と他の Azure サービスへのアクセスに使用できる Azure の機能です。 管理対象 id を使用するとは、web アプリから Key Vault を活用するために単純かつ安全な方法です。
 
-When you enable managed identity on your web app, Azure activates a separate token-granting REST service specifically for use by your app. Your app will request tokens from this service instead of directly from Azure Active Directory. Your app needs to use a secret to access this service, but that secret is injected into your app's environment variables by App Service when it starts up. You don't need to manage or store this secret value anywhere, and nothing outside of your app can access this secret or the managed identity token service endpoint.
+Web アプリの管理対象 id を有効にすると Azure では、アプリからの専用の個別トークン許可 REST サービスがアクティブにします。 アプリはトークンを Azure Active Directory に直接要求するのではなく、このサービスに要求します。 アプリはシークレットを使ってこのサービスにアクセスする必要がありますが、そのシークレットは、アプリの起動時に App Service によってご利用のアプリの環境変数に挿入されます。 管理や任意の場所では、この秘密の値を格納する必要はありませんし、このシークレットまたは管理対象 id のトークン サービス エンドポイントにアクセスできるアプリの外部で何もします。
 
-Managed identities for Azure resources also registers your app in Azure Active Directory for you, and will delete the registration if you delete the web app or disable its managed identity.
+Azure リソースの管理対象 id は、Azure Active Directory でアプリを登録します。 また web アプリを削除するか、またはそのマネージド id が無効にする場合、登録が削除されます。
 
-Managed identities are available in all editions of Azure Active Directory, including the Free edition included with an Azure subscription. Using it in App Service has no extra cost and requires no configuration, and it can be enabled or disabled on an app at any time.
+管理対象 id を Azure サブスクリプションに含まれている無償のエディションを含む、Azure Active Directory のすべてのエディションで利用できます。 これを App Service で使用する場合、追加コストや構成が不要です。またアプリでいつでも有効または無効にできます。
 
 > [!NOTE]
-> Managed identities for Azure resources is not currently supported for Linux or Container web apps.
+> Linux またはコンテナーの web アプリの Azure リソースの管理対象の id が現在サポートされていません。
 
-Enabling a managed identity for a web app requires only a single Azure CLI command with no configuration. We'll do it later on when we set up an App Service app and deploy to Azure. Before that, though, we're going to apply our knowledge of managed identities to write the code for our app.
+Web アプリの管理対象 id を有効にするには、構成なしで 1 つの Azure CLI コマンドのみが必要です。 これは、後ほど App Service アプリを設定し、Azure にデプロイするときに行います。 その前に、ただし、ここをアプリのコードを記述する管理対象 id の知識を適用します。

@@ -1,6 +1,6 @@
 会社ではコンテナー イメージを使用して、社内のコンピューティング ワークロードを管理しています。 ローカルの Docker ツールを使用して、ご自分のコンテナー イメージをビルドします。 Azure Container Registry の使用を決断することにより、クラウド内でコンテナー イメージをビルドできるようになりました。 
 
-Azure Container Registry Build を使用することで これらのコンテナーをビルドできるようになりました｡ また、Container Registry Build では、ソース コードのコミット時に DevOps プロセスと自動化されたビルドを統合できます。
+Azure Container Registry Build を使用することで、これらのコンテナーをビルドできるようになりました。 また、Container Registry Build では、ソース コードのコミット時に DevOps プロセスと自動化されたビルドを統合できます。
 
 Azure Container Registry Build を使用してコンテナー イメージの作成を自動化してみましょう。
 

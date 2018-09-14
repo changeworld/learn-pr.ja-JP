@@ -1,77 +1,76 @@
-If your virtual machine (VM) hosts a disk-intensive application, you should consider using premium storage for the virtual hard drives (VHDs).
+仮想マシン (VM) は、ディスクを要するアプリケーションをホストしている場合は、仮想ハード ドライブ (Vhd) の premium storage の使用を検討してください。
 
-For example, you decide to add a VHD to store outgoing mail on your SMTP server VM. To optimize disk performance, you decide on premium storage for outgoing mail. 
+たとえば、SMTP サーバー VM で発信メールを格納する VHD を追加します。 ディスクのパフォーマンスを最適化するためには、送信メール用の premium storage を決定します。
 
-Let's add a premium SSD to the VM. 
+VM に premium SSD を追加してみましょう。
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Azure へのサインイン
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-## Create a premium storage account
+## <a name="create-a-premium-storage-account"></a>Premium Storage アカウントを作成する
 
-All premium storage VHDs must be stored in a premium storage account. Follow these steps to create a premium storage account.
+すべての premium storage Vhd は、premium storage アカウントに格納する必要があります。 Premium storage アカウントを作成する次の手順に従います。
 
-1. Select **Storage accounts** under **FAVORITES** in the left-hand menu of the portal.
+1. 選択**ストレージ アカウント****お気に入り**ポータルの左側のメニューでします。
 
-1. Select **+ Add** at the top left of the **Storage accounts** screen.
+1. 選択 **+ 追加**での左上、**ストレージ アカウント**画面。
 
-1. In the **Create storage account** pane that opens, set the following properties.
+1. **ストレージ アカウントを作成する**ウィンドウが開いたら、次のプロパティを設定します。
 
-|Property  |Value  |Notes  |
+|プロパティ  |値  |メモ  |
 |---------|---------|---------|
-|Name     |    *A unique name (see note)*     |   This name must be unique across all existing storage account names in Azure. It must be 3 to 24 characters long, and can contain only lowercase letters and numbers.      |
-|Account kind     |  **Storage (general-purpose v1)**       |         |
-|Location     |  *Select the same location as the VM you created earlier*       |         |
-|Replication     |   **Locally redundant storage (LRS)**      |  Select this value from the dropdown. If you recall, we're creating a premium storage account, and premium storage supports only LRS replication.       |
-|Performance     |  **Premium**       | Premium storage accounts are backed by solid-state drives and offer consistent, low-latency performance.        |
-|Resource group     |  *Select **Use existing** and then  **MailInfrastructure***      |  We want to keep all resources together under the same resource group.       |
+|名前     |    *一意の名前 (注を参照してください)*     |   この名前は、既存のすべてのストレージ アカウント名が Azure の間で一意である必要があります。 3 ~ 24 文字である必要があり、小文字と数字のみを含めることができます。      |
+|アカウントの種類     |  **ストレージ (汎用 v1)**       |         |
+|場所     |  *先ほど作成した VM と同じ場所を選択します。*       |         |
+|レプリケーション     |   **ローカル冗長ストレージ (LRS)**      |  この値をドロップダウン リストから選択します。 ご存じのように、premium storage アカウントを作成し、premium storage は、LRS レプリケーションのみをサポートしています。       |
+|[パフォーマンス]     |  **Premium**       | Premium ストレージ アカウントは、ソリッド ステート ドライブに支えし、一貫性があり、低待機時間のパフォーマンスを提供します。        |
+|リソース グループ     |  *選択**既存**し<rgn>[サンド ボックス リソース グループ名]</rgn>*      |  同じリソース グループの下にすべてのリソースを維持するように指定します。       |
 
-When you've filled out this dialog, it should look like the following screenshot. 
+このダイアログ ボックスに情報を入力したら、次のスクリーン ショットのようになります。 
 
-!["Create storage account" dialog showing all properties set as instructed.](../media-draft/create-premium-sa.png)
+![すべてのプロパティに従って設定を表示する"ストレージ アカウントの作成 ダイアログ。](../media-draft/create-premium-sa.png)
 
-1. Select **Create** to start the storage account creation process. This process can take a few moments to complete. 
+1. 選択**作成**ストレージ アカウントの作成プロセスを開始します。 このプロセスを完了にしばらく時間がかかることができます。 
 
-1. When you receive a notification that deployment of the new storage account finished successfully, select **Refresh** in the storage accounts list to display the premium storage account we created. Note the name of this account, as it will be used in the next step.
+1. 新しいストレージ アカウントのデプロイが正常に完了したことを通知するメッセージが表示されたら、選択**更新**作成した premium storage アカウントを表示する、ストレージ アカウントを一覧表示します。 次の手順で使用するには、このアカウントの名前を注意してください。
 
-## Create VHD in the premium storage account
+## <a name="create-vhd-in-the-premium-storage-account"></a>Premium storage アカウントに VHD を作成します。
 
-Now you can add a new VHD to the VM and specify the premium storage account as its location. Follow these steps:
+今すぐ新しい VHD を VM に追加でき、その場所として premium storage アカウントを指定できます。 次の手順を実行します。
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. 左側のナビゲーションで **お気に入り**を選択します**仮想マシン**。
 
-1. In the list of VMs, select **MailSenderVM**.
+1. Vm の一覧で選択**MailSenderVM**します。
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. **設定**の**MailSenderVM**構成左側のメニューで、**ディスク**します。
 
-1. Under **Data disks**, select **Add data disk**.
+1. **データ ディスク**、**データ ディスクの追加**します。
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. **非管理対象ディスクをアタッチ**ペインで、次のプロパティを設定します。
 
 
-|Property  |Value  |Notes  |
+|プロパティ  |値  |メモ  |
 |---------|---------|---------|
-|Name     |   **MailSenderVMOutgoing**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Premium SSD**       |  Select this value from the dropdown.        |
+|名前     |   **MailSenderVMOutgoing**      |         |
+|ソースの種類     |  **新しい (空のディスク)**       |   この値をドロップダウン リストから選択します。       |
+|アカウントの種類     |  **Premium SSD**       |  この値をドロップダウン リストから選択します。        |
 
-1. To the left of the **Storage container** field, select **Browse**.
+1. 左側に、**ストレージ コンテナー**フィールドで、**参照**します。
 
-1. In the list of storage accounts, find and select the premium storage account you created earlier in this unit. The type of the entry will be listed as **Premium-LRS**.
+1. ストレージ アカウントの一覧で検索し、この単位で作成した premium storage アカウントを選択します。 エントリの型として示されます**Premium LRS**します。
 
-1. In the list of containers, select __+ Container__.
+1. コンテナーの一覧で選択 __+ コンテナー__します。
 
-1. In the **New container** pane, in the **Name** textbox, type **vhds** and then select **OK**.
+1. **新しいコンテナー**  ウィンドウで、**名前** ボックスに「 **vhd**し、 **ok**します。
 
-1. In the list of containers, select **vhds** and then choose **Select**.
+1. コンテナーの一覧で選択**vhd**選び、**選択**します。
 
-1. Back on the **Attach unmanaged disk** pane, select **OK**.
+1. 戻り、**非管理対象ディスクをアタッチ**ペインで、 **OK**します。
 
-1. Back on the **MailSenderVM - Disks** pane, select **Save**. Azure adds the new premium storage disk to the VM.
+1. 戻り、 **MailSenderVM - ディスク**ペインで、**保存**します。 Azure では、VM に新しい premium storage ディスクを追加します。
 
-Our virtual machine has an operating system disk, a standard disk, and a premium SSD-based disk.
+バーチャル マシンは、オペレーティング システム ディスク、標準のディスクと premium (SSD) ベースのディスクをが。
 
 > [!NOTE]
-> The new disk must be initialized, partitioned, and formatted before it can store data. To avoid repetition, these steps have been omitted from this exercise. If you want to complete these tasks, complete the steps in the [Partition and format a data disk](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk) section of the preceding exercise.
+> 新しいディスクの初期化、パーティション分割、およびデータを格納する前にフォーマットする必要があります。 繰り返しを避けるためには、次の手順がこの演習から省略されました。 これらのタスクを完了する場合の手順を完了、[パーティション分割とフォーマット、データ ディスク](../3-exercise-add-data-disks-to-azure-virtual-machines.yml##partition-and-format-a-data-disk)前の演習のセクション。

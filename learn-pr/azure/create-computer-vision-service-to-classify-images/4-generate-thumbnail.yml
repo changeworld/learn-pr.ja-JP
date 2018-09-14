@@ -1,21 +1,17 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.4-generate-thumbnail
-title: サムネイルを生成する
+title: サムネイルの生成
 metadata:
-  title: サムネイルを生成する
-  description: サムネイルを生成する
+  title: サムネイルの生成
+  description: サムネイルの生成
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4b011d7a179976f7a5c499c77c29c2b70387b647
-  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44386198"
+labId: 45986
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5
-content: '[!include[](includes/4-generate-thumbnail.md)]'
+content: |
+  [!include[](includes/4-generate-thumbnail.md)]

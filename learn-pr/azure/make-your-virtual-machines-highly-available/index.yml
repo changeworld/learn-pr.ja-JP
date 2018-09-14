@@ -1,41 +1,40 @@
 ### YamlMime:Module
 uid: learn.make-your-virtual-machines-highly-available
 metadata:
-  title: Make your virtual machines highly available
-  description: Use Azure Load Balancer as a public load balancer to distribute public inbound traffic across multiple Azure virtual machines. Understand the purpose of a load balancer. Work with Azure Load Balancer in the portal, identify a VM scale set to route traffic to, and monitor your traffic.
+  title: 仮想マシンの可用性を高める
+  description: 使用して Azure Load Balancer とパブリックはロード バランサーをパブリックの受信トラフィックを複数の Azure 仮想マシンに分散です。 ロード バランサーの目的を理解します。 ポータルで Azure Load Balancer の操作、VM スケール セットには、トラフィックをルーティングし、トラフィックを監視するを指定します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Make your virtual machines highly available
-summary: Distribute public inbound traffic across multiple virtual machines with Load Balancer.
+title: 仮想マシンの可用性を高める
+summary: パブリックの受信トラフィックをロード バランサーで複数の仮想マシンに分散します。
 abstract: |
-  In this module, you will:
-  - Decide when to use a load balancer
-  - Identify the differences between the basic and standard load balancer editions
-  - Create a new load balancer
-  - Create virtual networks associated with a load balancer
-  - Configure load balancer rules
-  - Configure a load balancer health probe
+  このモジュールでは、次のことを行います。
+  - ロード バランサーを使用するタイミングを決定します。
+  - Basic と standard の load balancer のエディション間の違いを特定します。
+  - 新しいロード バランサーを作成します。
+  - ロード バランサーに関連付けられた仮想ネットワークを作成します。
+  - ロード バランサー規則を構成します。
+  - ロード バランサーの正常性プローブを構成する
 prerequisites: |
-  - Experience administering Azure resources using the Azure portal
-  - Experience with Azure Virtual Machines
-  - Some knowledge of virtual-machine networking and public IP addresses
-iconUrl: http://via.placeholder.com/120x120
+  - Azure portal を使用した Azure リソースの管理経験
+  - Azure Virtual Machines でのエクスペリエンス
+  - ある程度の知識の仮想マシンのネットワークとパブリック IP アドレスします。
+iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-virtual-machines
+  - azure
+  - azure-virtual-machines
 units:
-- learn.make-your-virtual-machines-highly-available.1-introduction
-- learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
-- learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
-- learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
-- learn.make-your-virtual-machines-highly-available.5-exercise–configure-a-load-balancer-in-azure
-- learn.make-your-virtual-machines-highly-available.6-summary
+  - learn.make-your-virtual-machines-highly-available.1-introduction
+  - learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+  - learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
+  - learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
+  - learn.make-your-virtual-machines-highly-available.5-exercise-configure-a-load-balancer-in-azure
+  - learn.make-your-virtual-machines-highly-available.6-summary
 achievement: learn.make-your-virtual-machines-highly-available.badge

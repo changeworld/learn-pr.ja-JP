@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
-title: Cache-aside pattern
+title: キャッシュ アサイド パターン
 metadata:
-  title: Cache-aside pattern
-  description: Cache-aside pattern
+  title: キャッシュ アサイド パターン
+  description: キャッシュ アサイド パターン
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

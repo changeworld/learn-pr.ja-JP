@@ -1,8 +1,8 @@
-The Azure Sandbox allows you to create resources in the following locations. Please select the closest of these regions to create your resources in:
+Azure のサンド ボックスでは、次の場所でリソースを作成できます。 これらのリージョンでリソースの作成先の最も近いを選択してください。
 
-- Region A
-- Region B
-- Region C
+- リージョン A
+- リージョン B
+- 地域 C
 
 > [!NOTE]
-> This is a limited set compared to the full list of regions available on the public Azure platform. When you are building in your personal Azure subscription, you will be able to leverage any of the 54 global regions, across 140 countries. Click here to see the [full list of Azure regions](https://azure.microsoft.com/global-infrastructure/regions/).
+> これは、パブリック Azure プラットフォームで利用可能なリージョンの完全な一覧と比較して、限定されたセットです。 個人の Azure サブスクリプションを作成しているときに、54 のグローバル リージョンのいずれかの 140 の国で利用できるようになります。 ここをクリックして、[の Azure リージョンの完全な一覧](https://azure.microsoft.com/global-infrastructure/regions/)します。

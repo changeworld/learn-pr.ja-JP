@@ -9,13 +9,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7229c52ae9f874c5e08e386f203eddc7c4472e5d
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44308490"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 4
-content: '[!include[](includes/9-managing-vms.md)]'
+content: |
+  [!include[](includes/9-managing-vms.md)]

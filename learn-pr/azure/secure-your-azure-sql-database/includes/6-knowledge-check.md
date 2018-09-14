@@ -1,1 +1,1 @@
-Having a quiz on security can only go so far. Check and monitor your database for security issues routinely. Before taking this quiz, be sure to read the previous units to be as prepared as possible. Be vigilant.
+セキュリティ上のクイズをしなくてはこれまで移動のみできます。 確認し、セキュリティの問題については、データベースを定期的に監視します。 このクイズを実行する前に、読み取り可能にする準備として、前のユニットを必ず。 注意します。

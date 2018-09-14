@@ -1,130 +1,130 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now want to make sure that you can configure the same server level firewall rules in Azure.
+オンプレミスの PostgreSQL データベースを使用するいると仮定します。 セキュリティのあらゆる面を管理しているし、標準的な PostgreSQL サーバー レベルのファイアウォール規則を使用して、サーバーにすべてのアクセスをロックしました。 Azure のファイアウォール規則のようにサーバー レベルの同じ構成できることを確認するようになりました。
 
-## Server Security Considerations and Connection Methods
+## <a name="server-security-considerations-and-connection-methods"></a>サーバーのセキュリティに関する考慮事項との接続方法
 
-You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases. Network access can be restricted at a network, server, or database level. You can use any of the following options:
+多くの Azure Database for PostgreSQL サーバーとデータベースへのアクセスを制限するオプションがあります。 ネットワーク アクセスは、ネットワーク、サーバー、またはデータベース レベルで制限できます。 次のオプションのいずれかを使用することができます。
 
-- User accounts to restrict database access
-- Virtual networks to restrict network access
-- Firewall rules to restrict server access
+- データベースへのアクセスを制限するユーザー アカウント
+- 仮想ネットワークのネットワーク アクセスを制限するには
+- サーバーへのアクセスを制限するファイアウォール規則
 
-### Authentication and authorization
+### <a name="authentication-and-authorization"></a>認証と権限承認
 
-Azure Database for PostgreSQL server supports native PostgreSQL authentication. You can connect and authenticate to server with the server's admin login. You'll also create users to connect to specific databases to limit access.
+Azure Database for PostgreSQL サーバーは、ネイティブ PostgreSQL 認証をサポートします。 接続し、サーバーの管理者ログインを持つサーバーに対して認証できます。 ユーザー アクセスを制限する特定のデータベースに接続を作成することもあります。
 
-### What is a Virtual Network?
+### <a name="what-is-a-virtual-network"></a>仮想ネットワークとは何ですか?
 
-A virtual network is a logically isolated network created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources.
+仮想ネットワークとは、Azure ネットワーク内で作成される論理的に分離されたネットワークです。 仮想ネットワークを使用して、他のリソースに接続できる Azure リソースを制御することができます。
 
-Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network based upon a range of IP addresses.
+データベースに接続する web アプリケーションを実行していることを想像してください。 ネットワークのさまざまな部分を分離するのにサブネットを使用します。 サブネットは、範囲の IP アドレスに基づくネットワークの一部です。
 
-To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet would have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+これらのサブネットを構成するには仮想ネットワークを作成し、ネットワークをサブネットに分割します。 Web アプリケーションは、1 つのサブネットと別のサブネット上のデータベースで動作します。 各サブネットは、独自の規則とその他のネットワークの間の通信を行うためにがあります。 これらのルールでは、データベースから web アプリケーションへのアクセスを制限する機能を提供します。
 
-Creating a virtual network is beyond the scope of this module. If you need more information, please explore other learning modules related to virtual networks.
+仮想ネットワークの作成はこのモジュールの範囲外です。 詳細については、必要がある場合は、仮想ネットワークに関連するその他のラーニング モジュールを探索してください。
 
-### What is a firewall?
+### <a name="what-is-a-firewall"></a>ファイアウォールとは何ですか。
 
-A firewall is a service that grants server access based on the originating IP address of each request. You create firewall rules that specify ranges of IP addresses. Only clients from these granted IP addresses, will be allowed to access the server. Firewall rules generally speaking also includes specific network protocol and port information. For example, a PostgreSQL server by default listens to TCP requests on port 5432.
+ファイアウォールは、各要求の発信元 IP アドレスに基づいてサーバーへのアクセスを許可するサービスです。 IP アドレスの範囲を指定するファイアウォール規則を作成します。 IP アドレスは、サーバーへのアクセスを許可するこれらのクライアントのみが与えられます。 ファイアウォール規則、一般に、含めることも特定のネットワーク プロトコルとポート情報。 たとえば、既定では、PostgreSQL サーバーは、ポート 5432 での TCP 要求をリッスンします。
 
-### Azure Database for PostgreSQL server firewall
+### <a name="azure-database-for-postgresql-server-firewall"></a>Azure Database for PostgreSQL サーバーのファイアウォール
 
-The Azure Database for PostgreSQL server firewall prevents all access to your database server until you specify which computers have permission. The firewall configuration allows you to specify a range of IP addresses that are allowed to connect to the server. The server always uses the default PostgreSQL connection information.
+Azure Database for PostgreSQL サーバーのファイアウォールでは、どのコンピューターに権限を指定するまで、データベース サーバーにすべてのアクセスができなくなります。 ファイアウォールの構成サーバーへの接続を許可する範囲の IP アドレスを指定することができます。 サーバーは、常に既定の PostgreSQL の接続情報を使用します。
 
-![Azure firewall functional diagram](../media-draft/7-firewall-diagram.png)
+![Azure のファイアウォール機能図](../media-draft/7-firewall-diagram.png)
 
-### Azure Database for PostgreSQL server SSL connections
+### <a name="azure-database-for-postgresql-server-ssl-connections"></a>PostgreSQL サーバーの SSL 接続用の azure データベース
 
-Azure Database for PostgreSQL prefers your client applications connects to the PostgreSQL service using Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against "man in the middle" and similar attacks by encrypting the data between the server and client. Enabling SSL requires the exchange of keys and strict authentication between client and server for the connection to work. Details about using SSL are beyond the scope of this learning module. If you need more information, please explore other learning modules related to SSL.
+Azure Database for PostgreSQL では、クライアント アプリケーションが Secure Sockets Layer (SSL) を使用して、PostgreSQL サービスに接続するが優先されます。 "Man in the middle"に対して保護により、データベース サーバーとクライアント アプリケーションの間の SSL 接続を適用して、サーバーとクライアント間のデータを暗号化することで同様の攻撃です。 SSL を有効にするには、キーと動作するには、クライアントとサーバー接続の間の厳密な認証の交換する必要があります。 SSL の使用に関する詳細については、この機械学習モジュールの範囲を超えています。 詳細については、必要がある場合は、SSL に関連するその他の学習モジュールを探索してください。
 
-## Configure Connection Security
+## <a name="configure-connection-security"></a>接続のセキュリティを構成します。
 
-Let's look at the decisions and steps you make to configure an Azure Database for PostgreSQL server firewall. You'll also see how to connect to the server you've created earlier.
+決定し、Azure Database for PostgreSQL サーバーのファイアウォールを構成する手順を見てみましょう。 先ほど作成したサーバーに接続する方法を確認します。
 
-First, you'll open the [Azure portal](https://portal.azure.com?azure-portal=true) and navigate to the server resource for which you would like to create a firewall rule.
+最初に開きます、 [Azure portal](https://portal.azure.com?azure-portal=true)ファイアウォール規則を作成するサーバー リソースに移動します。
 
-Then you'll select the **Connection Security** option to open the connection security blade to the right.
+選択し、**接続のセキュリティ**オプション、右側に接続のセキュリティ ブレードを開きます。
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![PostgreSQL データベースのリソース ブレードの接続のセキュリティ セクションを示す Azure portal のスクリーン ショット](../media-draft/7-db-security-settings.png)
 
-On this screen, you have several options. You can:
+この画面では、いくつかのオプションがあります。 次のようにすることができます。
 
-- Add the IP address you use to access the portal as a firewall entry by clicking on the **+ Add client IP** button
-- Allow access to Azure services. By default all Azure services **don't** have access to the PostgreSQL server
-- Add firewall rules by entering ranges of IP addresses
-- Enforce SSL connections. This option forces you client to connect to the server using an SSL certificate.
+- をクリックしてファイアウォールのエントリとして、ポータルにアクセスするために使用する IP アドレスを追加、**クライアント IP の追加**ボタンをクリックします。
+- Azure サービスへのアクセスを許可します。 既定では、すべての Azure サービスによって**しない**PostgreSQL サーバーにアクセスします。
+- IP アドレスの範囲を入力して、ファイアウォール規則を追加します。
+- SSL 接続を強制します。 このオプションは、SSL 証明書を使用してサーバーに接続するようにクライアントを強制します。
 
-Always remember to click on the **Save** icon above the entry fields to save the updated configuration once you've made changes.
+をクリックしてください、**保存**変更を行った後に、更新された構成を保存する、入力フィールドの上のアイコン。
 
-### Allow access to Azure services
+### <a name="allow-access-to-azure-services"></a>Azure サービスへのアクセス許可
 
-To use Azure Cloud Shell to access or configure your server, make sure to enable **Allow Access to Azure Services**. This step is going to add a firewall rule to the server configuration to allow access from Cloud Shell. This rule will not show as one of the custom rules you add though.
+Azure Cloud Shell にアクセスしたり、サーバーの構成を使用することを有効にすることを確認して**Azure サービスへのアクセスを許可する**します。 この手順は、Cloud Shell からのアクセスを許可するサーバーの構成にファイアウォール規則を追加しようとしています。 このルールは、追加したカスタムの規則の 1 つとして表示されません。
 
-You also need to disable **Enforce SSL connection**. PowerShell cann't connect to the server if SSL is required for client connections.
+無効にする必要がありますも**強制 SSL 接続**します。 PowerShell は、SSL がクライアント接続に必要な場合は、サーバーに接続できません。
 
-Both of these options will result in an error message displayed on the command line if not configured correctly.
+これらのオプションの両方により、コマンドラインに表示しない場合に、正しく構成されているエラー メッセージが発生します。
 
-For example, if access is not allowed to Azure services and enforce SSL connections is enabled then you'll see something similar to this error when the firewall is blocking access.
+たとえば、アクセスが Azure サービスが許可されていないと、SSL 接続を強制が有効な場合、ファイアウォールがアクセスをブロックしているときにこのエラーのような画面が表示されます。
 
-> psql: FATAL: no pg_hba.conf entry for host "123.45.67.89", user "adminuser", database "postgres", SSL on FATAL:  SSL connection is required. Please specify SSL options and retry.
+> psql: FATAL: pg_hba.conf エントリのホスト「123.45.67.89」ユーザー「管理者」データベース"postgres", SSL の致命的なエラー: SSL 接続が必要です。 Please specify SSL options and retry. (SSL のオプションを指定して再試行してください。)
 
-### Create a firewall rule using the portal
+### <a name="create-a-firewall-rule-using-the-portal"></a>ポータルを使用してファイアウォール規則を作成します。
 
-Let's say, you want to create a firewall rule that provides access from any IP address.
+たとえば、任意の IP アドレスからのアクセスを提供するファイアウォール規則を作成したいとします。
 
 > [!WARNING]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Eventhough clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications.
+> このファイアウォール規則を作成、サーバーに接続しようとしています。 インターネット経由で任意の IP アドレスを許可します。 いなくてもクライアントでは、ユーザー名とパスワードなしのサーバーにアクセスできませんをする、慎重にこの規則を有効にする、およびセキュリティへの影響を理解することはありません。
 
-You create a new firewall rule by entering the following data in the labeled fields:
+新しいファイアウォール規則を作成するには、ラベル付きのフィールドに次のデータを入力します。
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
+- ルール名: `AllowAll`
+- 開始 IP: `0.0.0.0`
+- 終了 IP: `255.255.255.255`
 
-To remove a firewall rule, you'll click the ellipsis at the end of the rule you want to delete. Click the Delete button to delete the rule.
+ファイアウォール規則を削除するには、削除するルールの末尾にある省略記号 (...) をクリックします。 をクリックして、**削除**ルールを削除するボタンをクリックします。
 
-Click on the **Save** icon above the entry fields to commit the deletion of the rule.
+をクリックして、**保存**ルールの削除をコミットする入力フィールドの上のアイコン。
 
-### Create a firewall rule using the Azure CLI
+### <a name="create-a-firewall-rule-using-the-azure-cli"></a>Azure CLI を使用してファイアウォール規則を作成します。
 
-You use the Azure CLI to add firewall rules to your server with the `az postgres server firewall-rule create` command using Azure CloudShell.
+Azure CLI を使用して、ファイアウォール規則を使用してサーバーを追加する、 `az postgres server firewall-rule create` Azure CloudShell を使用してコマンドします。
 
-Let's say you want to create the same rules as above You'' use the following command:
+たとえば、上記と同じ規則を作成したいとします。 次のコマンドを使用します。
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule create --resource-group <resource_group_name> --server <server-name> --name AllowAll --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
   ```
 
-You remove firewall rules from your server with the command `az postgres server firewall-rule delete`.
+コマンドを使用してサーバーからファイアウォール規則を削除する`az postgres server firewall-rule delete`します。
 
-Let's say you want to delete the firewall you created then use the following command:
+たとえば、作成したファイアウォールを削除するとします。 次のコマンドを使用します。
 
-  ```bash
+  ```azurecli
   az postgres server firewall-rule delete --name AllowAll --resource-group <resource_group_name> --server-name <server-name>
   ```
 
-## Connecting to your server
+## <a name="connecting-to-your-server"></a>サーバーに接続します。
 
-Like any modern database, PostgreSQL requires regularly server administration to achieve best performance. You have a number of options to connect and manage your Azure Database for PostgreSQL server. We'll use `psql` to connect to the server.
+など、最新のデータベースは、PostgreSQL には、最高のパフォーマンスを実現するために通常のサーバー管理が必要です。 さまざまな接続し、Azure Database for PostgreSQL サーバーを管理するオプションがあります。 使用して`psql`サーバーに接続します。
 
-### What is psql?
+### <a name="what-is-psql"></a>Psql とは何ですか。
 
-The command-line tool called `psql` is the PostgreSQL distributed interactive terminal for working with PostgreSQL server and databases. `psql` works with Azure Database for PostgreSQL the same as with any other PostgreSQL implementation and is included with the Azure Cloud Shell. The `psql` tool allows you to manage databases as well as execute structure queries against these databases.
+コマンド ライン ツールと呼ばれる`psql`は、PostgreSQL の PostgreSQL サーバーおよびデータベースを操作するための対話型ターミナルに分散します。 `psql` Azure database for PostgreSQL と同様に機能の他の PostgreSQL の実装を含むと Azure Cloud Shell に含まれています。 `psql`ツールでは、データベースを管理できるだけでなく、これらのデータベースに対して構造のクエリを実行することができます。
 
-Using `psql` requires a successful connection to a PostgreSQL server. There are a number of command-line parameters available for use when working with `psql`.
+使用して`psql`PostgreSQL サーバーに成功した接続が必要です。 使用する場合、多数のコマンド ライン パラメーターを使用できるしてある`psql`します。
 
-- `--host` - the host to which you'd like to connect
-- `--username` - the user name/i.d. with which to connect
-- `--dbname` - the name of the database to connect to.
+- `--host` -をしたい接続ホスト。
+- `--username` -ユーザー名と接続先となる ID。
+- `--dbname` -に接続するデータベースの名前。
 
 > [!Note]
-> You'll typically connect to the `postgres` management database when managing your server access and databases configuration.
+> 接続します通常、`postgres`管理データベース サーバーのアクセスとデータベースの構成を管理するときにします。
 
-Here is the complete command:
+完全なコマンドを次に示します。
 
   ```bash
   psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=<database>
   ```
 
-Once connected, you'll be presented with a command prompt and can execute commands to your server and databases.
+接続すると後、は、コマンド プロンプトが表示され、サーバーとデータベースにコマンドを実行できます。
 
-You've now seen the steps you take to configure an Azure Database for PostgreSQL security settings. In the next unit, you'll configure an  Azure Database for PostgreSQL security settings. You'll also connect to the server using Cloud Shell.
+今すぐ PostgreSQL セキュリティ設定を Azure データベースを構成するために実行する手順を説明しました。 次の単位では、PostgreSQL のセキュリティ設定用 Azure データベースを構成します。 Cloud Shell を使用してサーバーに接続することもあります。

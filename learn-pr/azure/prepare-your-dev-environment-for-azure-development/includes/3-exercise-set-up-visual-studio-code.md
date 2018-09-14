@@ -20,18 +20,18 @@
 
 1. Visual Studio Code.app を Applications フォルダーにドラッグし、Launchpad で使用できるようにします。
 
-1. アイコンを右クリックし、[オプション] > [Dock に追加] の順に選択し、Dock に VS Code を追加します。
+1. アイコンを右クリックし、オプションを選択して、ドッキング ステーションと VS Code の追加 > ドッキング ステーションにしてください。
 
 ### <a name="linux--debian-and-ubuntu"></a>Linux - Debian と Ubuntu
 
-1. グラフィカル ソフトウェア センター (使用できる場合) またはコマンド ラインを使用して [.deb package (64 ビット)](https://go.microsoft.com/fwlink/?LinkID=760868) をダウンロードしてインストールします (`<file>` はダウンロードした .deb ファイル名で置き換えます)。
+1. ダウンロードしてインストール、 [.deb パッケージ (64 ビット)](https://go.microsoft.com/fwlink/?LinkID=760868)またはコマンドラインを使用して、使用できる場合、グラフィカル ソフトウェア センターを通じた (交換`<file>`ダウンロードした .deb ファイル名を持つ)。
 
     ```bash
     sudo dpkg -i <file>.deb
     sudo apt-get install -f # Install dependencies
     ```
 
-### <a name="linux--rhel-fedora-and-centos"></a>Linux - RHEL、Fedora、および CentOS
+### <a name="linux--rhel-fedora-and-centos"></a>Linux - RHEL、Fedora、CentOS
 
 1. 次のスクリプトを使用して、キーとリポジトリをインストールします。
 
@@ -80,4 +80,4 @@ VS Code のインストールが完了したら開きます。
 
     ![[拡張機能] タブが表示され、検索結果で Azure App Service 拡張機能が強調表示されている VS Code のスクリーンショット。](../media/3-install-azure-extension.png)
 
-これで、拡張機能がインストールされます。 Azure サブスクリプションに接続し、Web、モバイル、または API アプリを開発して Azure App Service にデプロイする準備が整います。
+これで、拡張機能がインストールされます。 Azure サブスクリプションに接続し、web、モバイル、または API アプリを Azure App Service にデプロイする準備ができました。

@@ -22,15 +22,12 @@ Azure Cosmos DB でこれらのトランザクションを実行するには、�
 
 次のサンプルは、現在のコンテキストを取得して "Hello, World" と表示する応答を送信する、簡単な HelloWorld ストアド プロシージャです。 ストアド プロシージャには、Azure Cosmos DB ドキュメントのように、ID 値があることに注意してください。
 
-```java
-var helloWorldStoredProc = {
-    id: "helloWorld",
-    serverScript: function () {
-        var context = getContext();
-        var response = context.getResponse();
+```javascript
+function helloWorld() {
+    var context = getContext();
+    var response = context.getResponse();
 
-        response.setBody("Hello, World");
-    }
+    response.setBody("Hello, World");
 }
 ```
 
@@ -42,35 +39,31 @@ UDF は、Azure Cosmos DB の SQL クエリ言語の文法を拡張し、プロ�
 
 ## <a name="user-defined-function-example"></a>ユーザー定義関数の例
 
-次のサンプルでは、UDF を作成し、注文の合計に基づいて割引を計算して、割引に基づいて変更された注文の合計を返します。
+次の例では、架空の会社での製品の税ベースの製品のコストを計算する UDF を作成します。
 
-```java
-var discountUdf = {
-    id: "discount",
-    serverScript: function discount(orderTotal) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-        if(orderTotal == undefined) 
-            throw 'no input';
+    var amount = parseFloat(price);
 
-        if (orderTotal < 50) 
-            return orderTotal * 0.9;
-        else if (orderTotal < 100) 
-            return orderTotal * 0.8;
-        else
-            return orderTotal * 0.7;
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
-## <a name="create-a-stored-procedure-in-the-portal"></a>ポータルでストアド プロシージャを作成する
+## <a name="create-a-stored-procedure-in-the-portal"></a>ポータルでストアド プロシージャを作成
 
-ポータルで新しいストアド プロシージャを作成しましょう。 ポータルでは、コレクション内の最初の項目を取得するシンプルなストアド プロシージャが自動的に生成されるため、まずこのストアド プロシージャを実行します。
+ポータルで新しいストアド プロシージャを作成しましょう。 ポータルでは、コレクション内の最初の項目を取得する簡単なストアド プロシージャが自動的に生成されるので、まずこのストアド プロシージャを実行します。
 
 1. データ エクスプローラーで、**[新しいストアド プロシージャ]** をクリックします。
 
-    データ エクスプローラーでは、サンプルのストアド プロシージャを含む新しいタブが表示されます。
-
-  <!--TODO: Insert animated .gif of creating the stored procedure.-->
+    データ エクスプローラーで、サンプルのストアド プロシージャを含む新しいタブが表示されます。
 
 2. **[Stored Procedure Id]\(ストアド プロシージャの ID\)** ボックスに、「*sample*」という名前を入力して、**[保存]**、**[実行]** の順にクリックします。
 
@@ -87,54 +80,56 @@ var discountUdf = {
 
 1. データ エクスプローラーで、**[新しいストアド プロシージャ]** をクリックします。 このストアド プロシージャに *createDocuments* という名前を付けて、**[保存]**、**[実行]** の順にクリックします。
 
-    ```java
-    var createDocumentStoredProc = {
-        id: "createMyDocument",
-        productid: "5"
-        serverScript: function createMyDocument(documentToCreate) {
-            var context = getContext();
-            var collection = context.getCollection();
-    
-            var accepted = collection.createDocument(collection.getSelfLink(),
-                  documentToCreate,
-                  function (err, documentCreated) {
-                      if (err) throw new Error('Error' + err.message);
-                      context.getResponse().setBody(documentCreated.id)
-                  });
-            if (!accepted) return;
-        }
-    }
-    ```
+```javascript
+function createMyDocument(id, productid, name, description, price) {
+    var context = getContext();
+    var collection = context.getCollection();
 
-<!--TODO: Need to fix code above.-->
+    var doc = {
+        "id": id,
+        "productId": productid,
+        "description": description,
+        "price": price    
+    };
 
-2. パーティション キーの値「*3*」を入力し、**[実行]** をクリックします。
+    var accepted = collection.createDocument(collection.getSelfLink(),
+        doc,
+        function (err, documentCreated) {
+            if (err) throw new Error('Error' + err.message);
+            context.getResponse().setBody(documentCreated)
+        });
+    if (!accepted) return;
+}
+```
 
-    データ エクスプローラーには、新しく作成されたドキュメントが表示されます。 
+2. [入力パラメーター] ボックスで、パーティション キー値を入力*999*順にクリックします**新しいパラメーターを追加**値を入力し、id のキーを押します**新しいパラメーターを追加**もう一度値を入力しますproductId 用。 アカウント名、説明、およびその順序での価格の名前の同じ操作を実行し、 **Execute**します。
+
+    そうすると、データ エクスプ ローラーでは、新しく作成されたドキュメントが表示されます。 
 
 ## <a name="create-a-user-defined-function"></a>ユーザー定義関数を作成する
 
 次に、データ エクスプローラーで UDF を作成しましょう。
 
-データ エクスプローラーで、**[New UDF]\(新しい UDF\)** をクリックします。 次のコードをウィンドウにコピーし、UDF に *tax* という名前を付けて、**[保存]** をクリックします。 ポータルから UDF を実行する方法はありませんが、今後のモジュールで UDF を使用することになります。
+データ エクスプローラーで、**[New UDF]\(新しい UDF\)** をクリックします。 ウィンドウに次のコードをコピー、名前を UDF *producttax*、 をクリックし、**保存**します。
 
-```java
-function userDefinedFunction(){
-    var taxUdf = {
-        id: "tax",
-        serverScript: function tax(income) {
+```javascript
+function producttax(price) {
+    if (price == undefined) 
+        throw 'no input';
 
-            if(income == undefined) 
-                throw 'no input';
+    var amount = parseFloat(price);
 
-            if (income < 1000) 
-                return income * 0.1;
-            else if (income < 10000) 
-                return income * 0.2;
-            else
-                return income * 0.4;
-        }
-    }
+    if (amount < 1000) 
+        return amount * 0.1;
+    else if (amount < 10000) 
+        return amount * 0.2;
+    else
+        return amount * 0.4;
 }
 ```
 
+ユーザー定義関数を定義すると、でしたしに対して実行するコレクションで、次のクエリを実行しています。
+
+```sql
+SELECT c.id, c.productId, c.price, udf.producttax(c.price) AS producttax FROM c
+```

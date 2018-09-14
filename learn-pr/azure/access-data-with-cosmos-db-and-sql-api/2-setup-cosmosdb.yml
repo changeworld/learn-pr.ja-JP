@@ -1,21 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
 metadata:
-  title: Cosmos DB データベースとコレクションを設定する
-  description: Cosmos DB データベースとコレクションを設定する
+  title: Azure Cosmos DB データベースとコレクションをセットアップします。
+  description: Azure Cosmos DB データベースとコレクションをセットアップします。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 007affefbcce8a7ef65f704d915aa8222125e4e0
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44308000"
-title: Cosmos DB データベースとコレクションを設定する
+title: Azure Cosmos DB データベースとコレクションをセットアップします。
 durationInMinutes: 5
 interactive: bash
 azureSandbox: true
-content: '[!include[](includes/2-setup-cosmosdb.md)]'
+content: |
+  [!include[](includes/2-setup-cosmosdb.md)]

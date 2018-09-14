@@ -1,183 +1,184 @@
-You have an on-premises datacenter that you plan to keep, but you want to use Azure to offload peak traffic using virtual machines (VMs) hosted in Azure. You want to keep your existing IP addressing scheme and network appliances, while ensuring that any data transfer is secure.
+オンプレミスのデータ センターを維持する予定があるが、Azure でホストされる仮想マシン (Vm) を使用して、ピーク時のトラフィックの負荷を軽減する Azure を使用します。 すべてのデータ転送が安全であることを確認中にスキームおよびネットワーク アプライアンスをアドレス指定、既存の IP を保持するには。
 
-## What is Azure virtual networking?
+## <a name="what-is-azure-virtual-networking"></a>Azure の仮想ネットワークとは何ですか。
 
-**Azure virtual networks** enable Azure resources, such as virtual machines, web apps, and databases, to communicate with: each other, users on the Internet, and on-premises client computers. You can think of an Azure network as a set of resources that links other Azure resources.
+**Azure 仮想ネットワーク**仮想マシン、web アプリ、およびとの通信に、データベースなどの Azure リソースを有効にする: インターネット、およびオンプレミスのクライアント コンピューターで、他の各ユーザーです。 Azure ネットワークは、他の Azure リソースとリンクするリソースのセットと見なすことができます。
 
-Azure virtual networks provide key networking capabilities:
+Azure 仮想ネットワークは、主なネットワーク機能を提供します。
 
-- Isolation and segmentation
-- Internet communications
-- Communicate between Azure resources
-- Communicate with on-premises resources
-- Route network traffic
-- Filter network traffic
-- Connect virtual networks
+- 分離とセグメント化
+- インターネット通信
+- Azure リソース間の通信
+- オンプレミス リソースとの通信
+- ネットワーク トラフィックのルーティング
+- ネットワーク トラフィックのフィルター処理
+- 仮想ネットワークの接続
 
-### Isolation and segmentation
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEve]
 
-Azure allows you to create multiple isolated virtual networks. When you set up a virtual network, you define a private Internet Protocol (IP) address space, using either public or private IP address ranges. You can then segment that IP address space into subnets, and allocate part of the defined address space to each named subnet.
+### <a name="isolation-and-segmentation"></a>分離とセグメント化
 
-For name resolution, you can use the name resolution service that's built in to Azure, or you can configure the virtual network to use either an internal or an external Domain Name System (DNS) server.
+Azure では、分離された仮想ネットワークを複数作成できます。 仮想ネットワークを設定するときは、パブリックまたはプライベート IP アドレスの範囲を使用して、プライベートのインターネット プロトコル (IP) アドレス空間が定義します。 次に、その IP アドレス空間をサブネットに分割し、定義されたアドレス空間の一部をそれぞれの名前付きサブネットに割り当てることができます。
 
-### Internet communications
+名前解決を Azure に組み込まれている名前解決サービスを使用することができます。 または内部または外部のドメイン ネーム システム (DNS) サーバーを使用して仮想ネットワークを構成することができます。
 
-A VM in Azure can connect to the Internet by default. However, you need to connect to and control that VM, with either the Azure CLI, Remote Desktop Protocol (RDP), or Secure Shell (SSH). You can enable incoming communications by defining a public IP address or a public load balancer.
+### <a name="internet-communications"></a>インターネット通信
 
-### Communicate between Azure resources
+Azure での VM は、既定では、インターネットに接続できます。 ただしに接続し、Azure CLI、リモート デスクトップ プロトコル (RDP) または Secure Shell (SSH) でその VM を制御する必要があります。 パブリック IP アドレスまたはパブリック ロード バランサーを定義することで、受信の通信を有効にできます。
 
-You'll want to enable Azure resources to communicate securely with each other. You can do that in one of two ways:
+### <a name="communicate-between-azure-resources"></a>Azure リソース間の通信
 
-- **Virtual networks**
+Azure リソースを安全に相互に通信を有効にします。 次の 2 つの方法のいずれかでこれを実現します。
+
+- **仮想ネットワーク**
     
-    Virtual networks can connect not only VMs, but other Azure resources, such as the App Service Environment, Azure Kubernetes Service, and Azure virtual machine scale sets.
+    だけでなく、Vm、App Service Environment、Azure の Kubernetes サービスなどの他の Azure リソースの仮想ネットワークを接続できるし、Azure の仮想マシン スケール セットします。
 
-- **Service endpoints**
+- **サービス エンドポイント**
      
-     You can use service endpoints to connect to other Azure resource types, such as Azure SQL databases and storage accounts. This approach enables you to link multiple Azure resources to virtual networks, thereby improving security and providing optimal routing between resources.
+     サービス エンドポイントは、Azure SQL データベース、ストレージ アカウントなど、他の Azure リソースの種類への接続に使用できます。 この方法を使用すると、複数の Azure リソースを仮想ネットワークにリンクすることが可能になり、セキュリティの向上とリソース間の最適なルーティングを実現できます。
 
-### Communicate with on-premises resources
+### <a name="communicate-with-on-premises-resources"></a>オンプレミス リソースとの通信
 
-Azure virtual networks enable you to link resources together in your on-premises environment and within your Azure subscription, in effect creating a network that spans both your local and cloud environments. There are three mechanisms for you to achieve this connectivity:
+Azure 仮想ネットワークでは、オンプレミス環境内と、両方のローカルにわたるネットワークを作成して Azure のサブスクリプションでリソースを相互にリンクすることを有効にして、クラウド環境。 この接続を実現するためのメカニズムが 3 つあります。
 
-- **Point-to-site Virtual Private Networks**
+- **ポイント対サイト仮想プライベート ネットワーク**
 
-   This approach is like a Virtual Private Network (VPN) connection that a computer outside your organization makes back into your corporate network, except that it's working in the opposite direction. In this case, the client computer initiates an encrypted VPN connection to Azure, connecting that computer to the Azure virtual network.
+   この方法は、それが逆の方向で動作する点を除いて、組織外のコンピューターが企業ネットワークに、仮想プライベート ネットワーク (VPN) 接続などです。 この場合、クライアント コンピューターが、そのコンピューターを Azure 仮想ネットワークに接続して、Azure への暗号化された VPN 接続を開始します。
 
-- **Site-to-site Virtual Private Networks**
-    A site-to-site VPN links your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network. In effect, the devices in Azure can appear as being on the local network. The connection is encrypted and works over the Internet.
+- **サイト対サイト仮想プライベート ネットワーク**サイト対サイト VPN が、オンプレミス VPN デバイスまたは仮想ネットワークで Azure VPN ゲートウェイにゲートウェイをリンクします。 実際には、Azure 内のデバイスはローカル ネットワーク上にあるものとして表示できます。 接続が暗号化されており、インターネット経由での動作します。
 
 - **Azure ExpressRoute**
 
-    For environments where you need greater bandwidth and even higher levels of security, Azure ExpressRoute is the best approach. Azure ExpressRoute provides dedicated private connectivity to Azure that does not travel over the Internet.
+    帯域幅が大きいとより高いレベルのセキュリティの必要がある環境では、Azure ExpressRoute は、最適なアプローチです。 Azure ExpressRoute は、インターネット経由で送信されない azure 専用プライベート接続を提供します。
 
-### Route network traffic
+### <a name="route-network-traffic"></a>ネットワーク トラフィックのルーティング
 
-By default, Azure will route traffic between subnets on any connected virtual networks, on-premises networks, and the Internet. However, you can control routing and override those settings as follows:
+既定では、Azure のルーティングのいずれかのサブネット間のトラフィックは、仮想ネットワーク、オンプレミスのネットワークおよびインターネット接続されています。 ただし、次のようにルーティングを制御して各設定をオーバーライドできます。
 
-- **Route tables**
+- **ルート テーブル**
 
-    A route table allows you to define rules as to how traffic should be directed. You can create custom route tables that control how packets are routed between subnets.
+    ルート テーブルを使用して、トラフィックが送られるに関するルールを定義できます。 サブネット間でパケットがルーティングされる方法を制御する、カスタム ルート テーブルを作成できます。
 
-- **Border Gateway Protocol**
+- **ボーダー ゲートウェイ プロトコル**
 
-    Border Gateway Protocol (BGP) works with Azure VPN gateways or ExpressRoute to propagate on-premises BGP routes to Azure virtual networks.
+    Azure VPN ゲートウェイとボーダー ゲートウェイ プロトコル (BGP) が動作するか、ExpressRoute を伝達するオンプレミスの Azure 仮想ネットワークを BGP のルート。
 
-### Filter network traffic
+### <a name="filter-network-traffic"></a>ネットワーク トラフィックのフィルター処理
 
-Azure virtual networks enable you to filter traffic between subnets by using the following approaches:
+Azure 仮想ネットワークでは、次の方法を使用してサブネット間のトラフィックをフィルター処理できます。
 
-- **Network security groups**
+- **ネットワーク セキュリティ グループ**
 
-    A network security group is an Azure resource that can contain multiple inbound and outbound security rules. You can define these rules to allow or block traffic, based on factors such as source and destination IP address, port, and protocol.
+    ネットワーク セキュリティ グループは、複数の受信と送信セキュリティ規則を含むことのできる Azure リソースです。 送信元と送信先の IP アドレス、ポート、プロトコルなどの要素に基づいて、トラフィックを許可またはブロックする各規則を定義できます。
 
-- **Network virtual appliances**
+- **ネットワーク仮想アプライアンス**
     
-    A network virtual appliance is a specialized VM that can be compared to a hardened network appliance. A network virtual appliance carries out a particular network function, such as running a firewall or performing WAN optimization.
+    ネットワーク仮想アプライアンスは、セキュリティ強化のネットワーク アプライアンスに比較できる特殊な VM です。 ネットワーク仮想アプライアンスは、ファイアウォールを実行して、WAN の最適化を実行するなどの特定のネットワーク機能を実行します。
 
-## Connect virtual networks
+## <a name="connect-virtual-networks"></a>仮想ネットワークの接続
 
-You can link virtual networks together using virtual network _peering_. Peering enables resources in each virtual network to communicate with each other. These virtual networks can be in separate regions, allowing you to create a global interconnected network through Azure.
+仮想ネットワークの _ピアリング_ を使用して、仮想ネットワークをリンクできます。 ピアリングを使用すると、各仮想ネットワーク内のリソースを相互に通信させることができます。 異なるリージョンに各仮想ネットワークを配置し、Azure を通じてグローバルに相互接続されたネットワークを作成できます。
 
-## Azure virtual network settings
+## <a name="azure-virtual-network-settings"></a>Azure の仮想ネットワークの設定
 
-You can create and configure Azure virtual networks from the Azure portal, Azure PowerShell on your local computer, or Azure Cloud Shell.
+作成し、ローカル コンピューター上の Azure PowerShell または Azure Cloud Shell は、Azure portal から Azure の仮想ネットワークを構成します。
 
-### Create a virtual network
+### <a name="create-a-virtual-network"></a>仮想ネットワークの作成
 
-When you create an Azure virtual network, you configure a number of basic settings. You'll have the option to configure advanced settings, such as multiple subnets, distributed denial of service (DDoS) protection, and service endpoints.
+Azure の仮想ネットワークを作成するときに、いくつかの基本的な設定を構成します。 複数のサブネット、分散型の拒否 (DDoS) のサービスの保護、およびサービス エンドポイントのなどの高度な設定を構成するオプションがあります。
 
-![Screenshot of the Azure portal showing an example of the Create virtual network blade fields.](../media/2-create-virtual-network.PNG)
+![仮想ネットワークの作成の例 ブレードのフィールドを示す Azure portal のスクリーン ショット。](../media/2-create-virtual-network.PNG)
 
-You'll configure the following settings for a basic virtual network:
+基本的な仮想ネットワークの次の設定を構成します。
 
-- **Network name**
+- **ネットワーク名**
 
-    The network name must be unique in your subscription, but does not need to be globally unique. Make the name a descriptive one that is easy to remember and identified from other virtual networks.
+    ネットワーク名は、サブスクリプション内で一意である必要がありますが、全体で一意にする必要はありません。 名前は覚えやすいと他の仮想ネットワークから特定されたわかりやすいものを作成します。
 
-- **Address space**
+- **アドレス空間**
     
-    When you set up a virtual network, you define the internal address space in Classless Inter-Domain Routing (CIDR) format. This address space needs to be unique within your subscription and any other networks that you connect to.
+    仮想ネットワークを設定するときは、Classless Inter-domain Routing (CIDR) 形式で、内部アドレス空間を定義します。 このアドレス空間は、サブスクリプションに接続する他のネットワーク内で一意である必要があります。
     
-    Let's assume, you choose an address space of 10.0.0.0/24 for your first virtual network. The addresses defined in this address space ranges from 10.0.0.1 - 10.0.0.254. You the create a second virtual network and choose an address space of 10.1.0.0./8. The address in this address space ranges from 10.0.0.1 - 10.255.255.254. Some of the address overlap and can't be used for the two virtual networks.
+    仮定、最初の仮想ネットワークの 10.0.0.0/24 のアドレス空間を選択します。 10.0.0.1 ~ からこのアドレス空間の範囲で定義されているアドレス 10.0.0.254 します。 作成する 2 つ目の仮想ネットワークし、10.1.0.0./8 のアドレス空間を選択します。 このアドレス空間内のアドレスの範囲 10.0.0.1 ~ 10.255.255.254 までです。 アドレスの一部が重複し、2 つの仮想ネットワークは使用できません。
 
-    However, you can use 10.0.0.0/16, with addresses ranging from 10.0.0.1 - 10.0.255.254, and 10.1.0.0/16, with addresses ranging from 10.1.0.1 - 10.1.255.254. You can assign these address spaces to your virtual networks since there's no address overlap.
+    ただし、アドレス 10.0.0.1 からまでの範囲を持つ、10.0.0.0/16 を使用することができます - 10.0.255.254、および 10.1.0.1 からアドレスを持つ、10.1.0.0/16 で 10.1.255.254 します。 アドレスの重複がないために、virtual network にこれらのアドレス空間を割り当てることができます。
 
     > [!NOTE] 
-    > You can add address spaces after creating the virtual network.
+    > 仮想ネットワークを作成した後は、アドレス空間を追加できます。
 
-- **Subscription**
+- **サブスクリプション**
 
-    Only applies if you have multiple subscriptions to choose from.
+    複数のサブスクリプションがある場合にのみ適用されます。
 
-- **Resource group**
+- **[リソース グループ]**
     
-    Like any other Azure resource, a virtual network needs to exist in a resource group. You can either select an existing resource group or create a new one.
+    他の Azure リソースと同様に、仮想ネットワークは、リソース グループに存在する必要があります。 既存のリソース グループを選択するか、新しく作成できます。
     
-- **Location**
+- **場所**
 
-    Select the location where you want the virtual network to exist.
+    仮想ネットワークが存在する場所を選択します。
 
-- **Subnet**
+- **サブネット**
     
-    Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. Routing between subnets will then depend on the default traffic routes, or you can define custom routes. Alternatively, you can define one subnet that encompasses all the virtual networks' address ranges.
+    各仮想ネットワークのアドレス範囲内を仮想ネットワークのアドレス空間をパーティション分割する 1 つまたは複数のサブネットを作成できます。 次に、サブネット間のルーティングは既定のトラフィックのルーティングに依存するか、またはカスタム ルートを定義できます。 または、すべての仮想ネットワークのアドレス範囲を含む 1 つのサブネットを定義できます。
 
     > [!NOTE]
-    > Subnet names must begin with a letter or number, end with a letter, number or underscore, and may contain only letters, numbers, underscores, periods, or hyphens.
+    > サブネット名は、先頭にはアルファベットまたは数字、末尾にはアルファベット、数字、またはアンダースコアを使用する必要があります。また、使用できるのは、アルファベット、数字、アンダースコア、ピリオド、ハイフンのみです。
 
-- **Distributed Denial of Service (DDoS) protection**
+- **分散型サービス拒否 (DDoS) protection**
 
-    You can select either Basic or Standard DDoS protection. Standard DDoS Protection is a premium service. The [Azure DDoS Protection Standard](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview) provides for more information on Standard DDoS protection. 
+    Basic または Standard の DDoS 保護を選択することができます。 Standard の DDoS Protection はプレミアム サービスです。 [Azure DDoS Protection Standard](https://docs.microsoft.com/azure/virtual-network/ddos-protection-overview)標準の DDoS protection で詳細情報を提供します。 
 
-- **Service Endpoints**
+- **サービス エンドポイント**
     
-    Here, you enable service endpoints, and then select from the list which Azure service endpoints you want to enable. Options include Azure Cosmos DB, Azure Service Bus, Azure Key Vault, and so on.
+    ここでは、有効にするサービス エンドポイント、および有効にする Azure サービス エンドポイントの一覧から選択します。 オプションは、Azure Cosmos DB では、Azure Service Bus では、Azure Key Vault を含めるし、具合です。
 
-When you have configured these settings, click the **Create** button.
+これらの設定を構成したら、**[作成]** ボタンをクリックします。
 
-### Define additional settings
+### <a name="define-additional-settings"></a>追加の設定を定義します。
 
-After creating a virtual network, you can then define further settings. These include:
+仮想ネットワークを作成したら、さらに追加設定を定義できます。 次に例を示します。
 
-- **Network security group**
+- **ネットワーク セキュリティ グループ**
     
-    Network security groups have security rules that enable you to filter the type of network traffic that can flow in and out of virtual network subnets and network interfaces. You create the network security group separately, and then associate it with the virtual network.
+    ネットワーク セキュリティ グループでは、仮想ネットワーク サブネットとネットワーク インターフェイスに出入りできるネットワーク トラフィックの種類をフィルター処理するためのセキュリティ規則があります。 別に、ネットワーク セキュリティ グループを作成してから、仮想ネットワークと関連付けること。
 
-- **Route table**
+- **ルート テーブル**
 
-    Azure automatically creates a route table for each subnet within an Azure virtual network and adds system default routes to the table. However, you can add custom route tables to modify traffic between virtual networks.
+    Azure では、Azure 仮想ネットワークのサブネットごとにルート テーブルが自動的に作成され、既定のシステム ルートがテーブルに追加されます。 ただし、カスタム ルート テーブルを追加して、仮想ネットワーク間のトラフィックを変更できます。
 
-You can also amend the service endpoints.
+また、サービス エンドポイントを修正することもできます。
 
-![Screenshot of the Azure portal showing an example blade for editing virtual network settings.](../media/2-virtual-network-additional-settings.PNG)
+![仮想ネットワークの設定を編集するため、例のブレードを表示する Azure ポータルのスクリーン ショット。](../media/2-virtual-network-additional-settings.PNG)
 
-### Configure virtual networks
+### <a name="configure-virtual-networks"></a>仮想ネットワークを構成する
 
-When you have created a virtual network, you can change any further settings from the Virtual Networks blade in the Azure portal. Alternatively, you can use PowerShell commands or commands in Cloud Shell to make changes.
+仮想ネットワークを作成したら、さらなる設定はすべて Azure Portal の [仮想ネットワーク] ブレードから変更できます。 または、変更を加える Cloud Shell で PowerShell コマンドやコマンドを使用できます。
 
-![Screenshot of the Azure portal showing an example blade for configuring a virtual network.](../media/2-configure-virtual-network.PNG)
+![仮想ネットワークを構成するため、例のブレードを表示する Azure ポータルのスクリーン ショット。](../media/2-configure-virtual-network.PNG)
 
-You can then review and change settings in further sub-blades.
-These settings include:
+次に、さらなるサブ ブレードで設定の確認と変更を行うことができます。
+これらの設定には、以下が含まれます。
 
-- Address spaces
+- アドレス空間
 
-    You can add further address spaces to the initial definition
+    追加できますさらにアドレス空間、初期定義
 
-- Connected devices
+- 接続されているデバイス
 
-    Use the virtual network to connect machines
+    仮想ネットワークを使用して、マシンを接続するには
 
-- Subnets
+- サブネット
 
-    Add further subnets
+    さらにサブネットを追加します。
 
-- Peerings
+- ピアリング
 
-    Link virtual networks in peering arrangements
+    配置のピアリングで仮想ネットワークをリンク
 
-You can also monitor and troubleshoot virtual networks, or create an automation script to generate the current virtual network.
+また、仮想ネットワークの監視やトラブルシューティングを行ったり、現在の仮想ネットワークを生成するために自動化スクリプトを作成したりすることもできます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Virtual networks are powerful and highly configurable mechanisms for connecting entities in Azure. You can connect Azure resources to one another or to resources you have on-premises. You can isolate, filter and route your network traffic, and Azure allows you to increase security where you feel you need it.
+仮想ネットワークは、Azure 内のエンティティを接続するための強力なメカニズムであり、自由に構成することができます。 Azure リソースを相互に接続したり、またはオンプレミスのリソースに接続したりできます。 分離、フィルター処理して、ネットワーク トラフィックをルーティングすることができ、Azure で必要があると感じるするセキュリティを向上することができます。

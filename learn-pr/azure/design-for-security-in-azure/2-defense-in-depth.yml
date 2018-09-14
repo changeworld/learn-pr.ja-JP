@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: 多層防御
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: 多層防御
+  description: このユニットでは、多層防御を実践する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
@@ -14,27 +13,27 @@ durationInMinutes: 5
 content: |
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: 知識チェック - 多層防御
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
-    choices:
-    - content: 'Deallocating virtual machines when not in use'
-      isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
-      isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
-      isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
-      isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
-    choices:
-    - content: 'True'
-      isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
-      isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+    - content: 次のうち、多層防御セキュリティ戦略を使用するのが適切な戦術はどれですか?
+      choices:
+        - content: 使用中でないときに仮想マシンの割り当てを解除
+          isCorrect: false
+          incorrectExplanation: これは、有効なセキュリティ戦略の手法ではありませんが、コストを削減する戦術です。
+        - content: CPU の割合が 90% を超過した場合に警告されるように設定する
+          isCorrect: false
+          incorrectExplanation: これにより、アプリケーションでは、パフォーマンスの問題を識別するために重要な監視メトリックがありますが、セキュリティ戦略の 1 つの方法ではありません。
+        - content: 構成ファイルに接続文字列を保存する
+          isCorrect: false
+          incorrectExplanation: 構成ファイルで接続文字列を格納する、セキュリティ上のリスクし、セキュリティ戦略の 1 つの方法ではありません。
+        - content: すべての管理レベル アカウントに対して MFA を適用
+          isCorrect: true
+          correctExplanation: 管理者レベルのすべてのアカウントに対して MFA を適用、高 privliged アカウントの保護の追加のレイヤーを追加し、多層防御戦略の一部として有効な戦術は、します。
+    - content: クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。
+      choices:
+        - content: はい
+          isCorrect: false
+          incorrectExplanation: クラウドに移行すると、クラウド プロバイダーに責任の一部はオフロードしますが、責任を分担のモデルは引き続き有効です。
+        - content: いいえ
+          isCorrect: true
+          correctExplanation: クラウドに移行すると、クラウド プロバイダーに責任の一部はオフロードしますが、責任を分担のモデルは引き続き有効です。

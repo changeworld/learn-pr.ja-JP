@@ -1,10 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.6-summary
-title: Summary
+title: まとめ
 metadata:
-  title: Summary
-  description: Review what you've learned and discover how to continue your cloud journey.
-  zone_pivot_groups: platform-cloud
+  title: まとめ
+  description: 何と学習した、クラウドの知識を続行する方法を説明を確認します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 1
 content: |
   [!include[](includes/6-summary.md)]

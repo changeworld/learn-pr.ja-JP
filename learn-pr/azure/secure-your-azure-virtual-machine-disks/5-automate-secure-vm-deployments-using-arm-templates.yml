@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.5-automate-secure-vm-deployments-using-arm-templates
-title: ARM テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
+title: Azure Resource Manager テンプレートを暗号化してセキュリティで保護された VM のデプロイを自動化します。
 metadata:
-  title: ARM テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
-  description: ARM テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
-  ms.openlocfilehash: f2e35ea43b7a661237d3b13b1d350de75ba87937
-  ms.sourcegitcommit: 56db32ad6f98b7d769f2b1201825d4f6d9b7362d
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43730309"
+  title: Azure Resource Manager テンプレートを暗号化してセキュリティで保護された VM のデプロイを自動化します。
+  description: Azure Resource Manager テンプレートを暗号化してセキュリティで保護された VM のデプロイを自動化します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 5
-content: '[!include[](includes/5-automate-secure-vm-deployments-using-arm-templates.md)]'
+content: |
+  [!include[](includes/5-automate-secure-vm-deployments-using-arm-templates.md)]

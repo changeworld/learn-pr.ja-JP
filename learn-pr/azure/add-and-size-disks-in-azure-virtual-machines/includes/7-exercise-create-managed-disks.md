@@ -1,20 +1,19 @@
-In this short exercise, we'll learn how to migrate an existing, unmanaged VHD to a managed VHD. 
+この短い演習では、管理されていない既存の VHD を管理対象 VHD を移行する方法説明します。 
 
-## Sign in to Azure
-<!---TODO: Update for sandbox?--->
+## <a name="sign-in-to-azure"></a>Azure へのサインイン
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-## Migrate our disks to managed disks
+## <a name="migrate-our-disks-to-managed-disks"></a>ディスクを managed disks に移行します。
 
-1. In the Azure portal, in the navigation on the left, select **Virtual machines**.
+1. 左側のナビゲーションで、Azure portal で次のように選択します。**仮想マシン**します。
 
-1. In the list of virtual machines, select our virtual machine,  **MailSenderVM**.
+1. 仮想マシンの一覧で、仮想マシンを選択します。 **MailSenderVM**します。
 
-1. In the **MailSenderVM** pane, under **SETTINGS**, select **Disks**.
+1. **MailSenderVM**  ウィンドウで、**設定**を選択します**ディスク**します。
 
-1. In the **MailSenderVM - Disks** page, select **Migrate to managed disks**.
+1. **MailSenderVM - ディスク**] ページで、[ **managed disks に移行**します。
 
-1. In the **Migrate to managed disks** page, select **Migrate**. Azure stops the VM, migrates the disks, and then restarts the VM. This process may take several minutes.
+1. **Managed disks に移行**] ページで、[**移行**します。 Azure VM を停止するには、ディスクを移行し、VM を再起動します。 このプロセスには数分かかることがあります。
 
-We migrated our disks to managed disks in this exercise. By using managed disks, you don't have to configure storage accounts for those disks because Azure manages them for you.
+この演習では管理ディスクにディスクを移行したとします。 管理ディスクを使用して、Azure では、それらを管理するために、これらのディスクのストレージ アカウントを構成する必要はありません。

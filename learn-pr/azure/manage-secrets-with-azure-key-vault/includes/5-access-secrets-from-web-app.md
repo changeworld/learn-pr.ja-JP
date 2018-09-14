@@ -1,4 +1,4 @@
-これまでに、MSI を有効にして、認証に使用できる自社アプリ用の ID を作成する方法を学習しました。次は、その ID を使用してコンテナー内のシークレットにアクセスするアプリを作成してみましょう。
+管理を有効にする方法を理解できたところの Azure リソースの id が認証に使用するアプリの id を作成、資格情報コンテナーのアクセス シークレットをその id を使用するアプリを作成します。
 
 ## <a name="reading-secrets-in-an-aspnet-core-app"></a>ASP.NET Core アプリでシークレットを読み取る
 
@@ -9,7 +9,7 @@ Azure Key Vault API は、キーとコンテナーのすべての管理と使用
 > [!TIP]
 > 特別な理由がない限り、アプリのビルドに使用するフレームワークや言語に関係なく、アプリの起動時にシークレット値をローカルにキャッシュするか、メモリに読み込んでください。 必要なときに毎回コンテナーから直接読み取ると、不必要に低速でコストも高くなります。
 
-`AddAzureKeyVault` には入力としてコンテナー名のみが必要です。コンテナー名はローカル アプリの構成から取得します。 また、MSI が有効な Azure App Service にデプロイされたアプリに使用すると、MSI 認証 &mdash; が自動的に処理され、MSI トークン サービスが検出され、認証に使用されます。 これはほとんどのシナリオに適しており、すべてのベスト プラクティスが実装されているので、このユニットの演習に使用します。
+`AddAzureKeyVault` には入力としてコンテナー名のみが必要です。コンテナー名はローカル アプリの構成から取得します。 管理対象 id の認証も自動的に処理&mdash;管理対象 id は、トークン サービスと、認証に使用が検出を有効になっている Azure リソースの管理対象の id と Azure App Service にデプロイされたアプリで使用する場合。 これはほとんどのシナリオに適しており、すべてのベスト プラクティスが実装されているので、このユニットの演習に使用します。
 
 ## <a name="handling-secrets-in-an-app"></a>アプリでシークレットを処理する
 
@@ -71,9 +71,10 @@ namespace KeyVaultDemoApp
                     var vaultUrl = $"https://{builtConfig["VaultName"]}.vault.azure.net/";
 
                     // Load all secrets from the vault into configuration. This will automatically
-                    // authenticate to the vault using MSI. If MSI is not available, it will
-                    // check if Visual Studio and/or the Azure CLI are installed locally and
-                    // see if they are configured with credentials that can access the vault.
+                    // authenticate to the vault using a managed identity. If a managed identity
+                    // is not available, it will check if Visual Studio and/or the Azure CLI are
+                    // installed locally and see if they are configured with credentials that can
+                    // access the vault.
                     config.AddAzureKeyVault(vaultUrl);
                 })
                 .UseStartup<Startup>();
@@ -89,7 +90,7 @@ namespace KeyVaultDemoApp
 次にコントローラー: `SecretTestController.cs` という `Controllers` フォルダーに新しいファイルを作成し、次のコードを貼り付けます。
 
 > [!TIP]
-> 新しいファイルを作成するには、シェルで `touch` コマンドを使用します。 例では `touch Controllers/SecretTestController.cs`が使用されます。 表示するには、エディターの [ファイル] ウィンドウの [更新] ボタンをクリックする必要があります。
+> 新しいファイルを作成するには、シェルで `touch` コマンドを使用します。 例では `touch Controllers/SecretTestController.cs` が使用されます。 表示するには、エディターの [ファイル] ウィンドウの [更新] ボタンをクリックする必要があります。
 
 ```csharp
 using System;

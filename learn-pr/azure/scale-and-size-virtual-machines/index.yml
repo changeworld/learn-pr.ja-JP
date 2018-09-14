@@ -1,34 +1,38 @@
 ### YamlMime:Module
 uid: learn.scale-and-size-virtual-machines
 metadata:
-  title: Scale and size virtual machines
-  description: You can change the CPU and memory resources of your virtual machines as needed to handle demand and control costs. Manual adjustment can work when demand is predictable and changes infrequently. An automated solution is better when your workload changes unpredictably or frequently. Here, you will see how to control the power of your virtual machines by modifying the size of individual servers or changing the number of available machines. We'll cover how to do this both manually and with scale sets and AutoScaling.
+  title: スケーリングしてサイズの仮想マシン
+  description: オンデマンドと管理のコストを処理するために必要に応じて、仮想マシンの CPU およびメモリ リソースを変更できます。 需要が予測可能なと変更頻度が低いときに、手動の調整を操作できます。 自動化されたソリューションは、または頻繁に予期しないワークロードが変更されたとき。 ここでは、個々 のサーバーのサイズを変更または使用可能なマシンの数を変更して、仮想マシンの電源を制御する方法が表示されます。 これは両方手動で、スケール セットと自動スケールする方法について説明します。
   ms.date: 09/24/2018
-title: Scale and size virtual machines
-summary: Adjust your virtual machine compute and storage power manually or using AutoScale.
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: スケーリングしてサイズの仮想マシン
+summary: 手動または自動スケールを使用して、バーチャル マシンのコンピューティングおよび記憶域の電源を調整します。
 abstract: |
-  In this module, you will:
-  - Vertically scale virtual machines by resizing
-  - Horizontally scale virtual machines using scale sets
-  - Configure autoscaling
+  このモジュールでは、次のことを行います。
+  - サイズを変更して、仮想マシンを垂直方向にスケーリングします。
+  - スケール セットを使用して仮想マシンを水平方向にスケール
+  - 自動スケールを構成します。
 prerequisites: |
-  - Experience with a command-line interface such as PowerShell or Bash
-  - Knowledge of basic Azure concepts such as resource groups and virtual machines
-  - Experience administering Azure resources using the Azure portal
-iconUrl: http://via.placeholder.com/120x120
+  - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
+  - リソース グループと仮想マシンなどの基本的な Azure 概念に関する知識
+  - Azure portal を使用して Azure リソースを管理した経験
+iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-virtual-machines
+  - azure
+  - azure-virtual-machines
 units:
-- learn.scale-and-size-virtual-machines.1-introduction
-- learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
-- learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
-- learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
-- learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
-- learn.scale-and-size-virtual-machines.6-knowledge-check
-- learn.scale-and-size-virtual-machines.7-summary
+  - learn.scale-and-size-virtual-machines.1-introduction
+  - learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
+  - learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+  - learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+  - learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
+  - learn.scale-and-size-virtual-machines.6-knowledge-check
+  - learn.scale-and-size-virtual-machines.7-summary
 achievement: learn.scale-and-size-virtual-machines.badge

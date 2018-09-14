@@ -1,13 +1,10 @@
-If I showed you text written in ALL CAPITAL LETTERS, what emotions would it convey? If a book review I wrote claims that "the ending was unpredictable", is that statement a good or bad thing? How can I find out programmatically what language an email was written in? Text Analytics is about understanding and analyzing unstructured text to answer these kinds of questions. It covers sentiment analysis, key phrase extraction, language detection and more.  
+すべて大文字で書かれたテキスト示しましたが場合、どのような感情はそれを伝達しますか。 要求を書いた私の書籍レビューの場合は、ステートメント良くも悪くもことは「終了が予測可能な」でないでしょうか。 プログラムでどのような言語、電子メールで記述されたアウト見つかりますか。 Text Analytics では、について理解し、この種の質問に回答する非構造化テキストを分析します。 センチメント分析、キー フレーズ抽出、言語検出などについて説明します。
 
- In this module, we're going to focus our attention on sentiment analysis. We'll learn about the Text Analytics API. This cloud-based service from Microsoft provides advanced natural language processing over raw text. When you've completed the module, you'll have built a solution with Azure Functions that sorts text feedback based on sentiment.
+ このモジュールでは、センチメント分析に焦点を当てていきます。 Text Analytics API について説明します。 この Microsoft のクラウド ベース サービスでは、高度な自然言語が未加工のテキスト処理を提供します。 モジュールを完了すると、ときに、Azure Functions をセンチメントに基づくテキスト フィードバックを並べ替えると、ソリューションを構築します。
 
-### What you'll learn
+## <a name="what-youll-learn"></a>学習内容
 
-- Learn about Text Analytics API
-- Sign up for a Text Analytics API key
-- Design and build a service with Azure Functions that uses the Text Analytics API to sort text feedback
-- Read and write Azure Queue storage messages in a function app with the help of bindings
-
-
-[!INCLUDE [resource-group-note](./rg-notice.md)]
+- Text Analytics API について説明します
+- Text Analytics API キーをサインアップします。
+- 設計およびテキスト フィードバックを並べ替え、Text Analytics API を使用して Azure Functions でのサービスの構築
+- バインドのヘルプで関数アプリで Azure Queue storage のメッセージの読み書き

@@ -4,26 +4,23 @@ title: Azure Load Balancer を使用したスケーリング
 metadata:
   title: Azure Load Balancer を使用したスケーリング
   description: Azure Load Balancer が地理的リージョン内のスケーリングと回復性の実現にどのように役立つかについて学習します。
-  ms.openlocfilehash: 6174280c8013e6c2ca5cec461cc6352734f0f6a5
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477768"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/3-scale-load-balancer.md)]
 quiz:
   title: '知識チェック: Azure Load Balancer を使用したスケーリング'
   questions:
-  - content: Azure Load Balancer について正しいのはどれですか?
-    choices:
-    - content: Azure で実行されている仮想マシン間でトラフィックを分散する場合は、Azure Load Balancer を使用する必要があります。
-      isCorrect: false
-      incorrectExplanation: Azure Load Balancer を使用することも、仮想マシンに負荷分散ソフトウェアを自分で構成することもできます。
-    - content: Azure Load Balancer は、インターネットに接続するトラフィックでのみ動作します。
-      isCorrect: false
-      incorrectExplanation: インターネットまたはプライベート ネットワークからのみ到達可能なシステム間でトラフィックを分散するように Azure Load Balancer を構成することができます。
-    - content: Azure Load Balancer は、同様のシステム間でトラフィックを分散して、サービスの可用性をさらに高めます。
-      isCorrect: true
-      correctExplanation: 1 つのシステムが使用不能になると、Azure Load Balancer はそのシステムへのトラフィックの送信を停止します。 そして応答しているサーバーのいずれかにトラフィックを送信します。
+    - content: Azure Load Balancer について正しいのはどれですか?
+      choices:
+        - content: Azure で実行されている仮想マシン間でトラフィックを分散する場合は、Azure Load Balancer を使用する必要があります。
+          isCorrect: false
+        - content: Azure Load Balancer は、インターネットに接続するトラフィックのみで動作します。
+          isCorrect: false
+        - content: Azure Load Balancer は、同様のシステム間でトラフィックを分散して、サービスの可用性をさらに高めます。
+          isCorrect: true
+          correctExplanation: 1 つのシステムが使用不能になると、Azure Load Balancer はそのシステムへのトラフィックの送信を停止します。 そして応答しているサーバーのいずれかにトラフィックを送信します。

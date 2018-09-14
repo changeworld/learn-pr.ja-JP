@@ -1,23 +1,22 @@
-::: zone pivot="csharp"
-Let's add support to our .NET core application to retrieve a connection string from a configuration file. We'll start by adding the necessary plumbing to manage configuration in a JSON file.
+ゾーン pivot ="csharp"は、構成ファイルから接続文字列を取得するように .NET core アプリケーションをサポートを追加しましょう。 JSON ファイルで構成を管理するために必要なプラミングを追加することから始めます。
 
-## Create a JSON configuration file
+## <a name="create-a-json-configuration-file"></a>JSON 構成ファイルを作成する
 
-1. Make sure you are in the correct working directory for your project.
+1. プロジェクトの正しい作業ディレクトリにいることを確認します。
 
-1. Use the `touch` tool on the command line to create a file named **appsettings.json**.
+1. 使用して、`touch`という名前のファイルを作成するコマンド ライン ツール**appsettings.json**します。
 
     ```bash
     touch appsettings.json
     ```
 
-1. Open the project with the interactive editor, if you are working locally, use your editor of choice - we recommend **Visual Studio Code** which is an extensible cross-platform IDE. The following commands are for the Cloud Shell editor, but are very similar to VS Code.
-    
+1. 対話型のエディターでプロジェクトを開きます。 ローカルで作業している場合は、任意のエディターを使用します。 お勧め**Visual Studio Code**、拡張可能なクロスプラット フォーム IDE であります。 次のコマンドは、Cloud Shell エディター向けですが、VS Code によく似ています。
+
     ```bash
     code .
     ```
 
-1. Select the **appsettings.json** file in the editor and add the following text. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. 選択、 **appsettings.json**エディターでファイルを開き、次のテキストを追加します。 ファイルを保存します。 オンライン エディターで、一般的なファイル操作が右上隅のメニューですがあります。
 
     ```json
     {
@@ -25,9 +24,9 @@ Let's add support to our .NET core application to retrieve a connection string f
     }
     ```
 
-1. Next, select the project file (**PhotoSharingApp.csproj**) to open it in the editor.
+1. 次に、プロジェクト ファイルを選択 (**PhotoSharingApp.csproj**)、エディターで開きます。
 
-1. Add the following configuration block to include the new file in the project and copy it to the output folder. This ensures that the app configuration file is placed in the output directory when the app is compiled/built.
+1. プロジェクトに新しいファイルを含めるし、出力フォルダーにコピーする次の構成ブロックを追加します。 これにより、アプリがコンパイル/ビルドされたとき、構成ファイルが出力ディレクトリに確実に配置されます。
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -40,32 +39,32 @@ Let's add support to our .NET core application to retrieve a connection string f
     </Project>
     ```
 
-1. Save the file. (Make sure you do this or you will lose the change when you add the package below!)
+1. ファイルを保存します。 (これを行うか、以下のパッケージを追加すると、変更が失われますことを確認してください。)
 
-## Add support to read a JSON configuration file
+## <a name="add-support-to-read-a-json-configuration-file"></a>JSON 構成ファイルを読み込むためのサポートを追加する
 
-A .NET Core application requires additional NuGet packages to read a JSON configuration file.
+.NET Core アプリケーションでは、JSON 構成ファイルの読み取りに NuGet パッケージの追加が必要です。
 
-1. In the command prompt section of the window, add a reference to the  **Microsoft.Extensions.Configuration.Json** NuGet package.
+1. ウィンドウの [コマンド プロンプト] セクションへの参照を追加、 **Microsoft.Extensions.Configuration.Json** NuGet パッケージ。
 
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.Json
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>構成ファイルを読み取るコードを追加します。
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our console application.
+読み取り構成を有効にするために必要なライブラリが追加されたので、コンソール アプリケーション内でその機能を有効にする必要があります。
 
-1. Select **Program.cs** in the editor.
+1. 選択**Program.cs**エディターでします。
 
-1. At the top of the file, a **using System;** line is present. Underneath that line, add the following lines of code:
+1. ファイルの一番上に **using System;** 行があります。 その行の下に次のコード行を追加します。
 
     ```csharp
     using Microsoft.Extensions.Configuration;
     using System.IO;
     ```
 
-1. Replace the contents of the **Main** method with the following code. This code initializes the configuration system to read from the **appsettings.json** file.
+1. 内容を置き換える、 **Main**メソッドを次のコード。 このコードにより、**appsettings.json** ファイルから読み込む構成システムが初期化されます。
 
     ```csharp
     var builder = new ConfigurationBuilder()
@@ -75,7 +74,7 @@ Now that we have added the required libraries to enable reading configuration, w
     var configuration = builder.Build();
     ```
 
-Your **Program.cs** file should now look like the following:
+**Program.cs** ファイルは次のようになります。
 
 ```csharp
 using System;
@@ -100,54 +99,54 @@ namespace PhotoSharingApp
 
 ::: zone-end
 
-::: zone-pivot="javascript"
+::: zone pivot="javascript"
 
-Let's add support to our Node.js application to retrieve a connection string from a configuration file. We'll start by adding the necessary plumbing to manage configuration from our JavaScript file.
+Node.js アプリケーション構成ファイルから接続文字列を取得するには、サポートを追加してみましょう。 JavaScript ファイルから構成を管理するために必要なプラミングを追加することから始めます。
 
-## Create a .env configuration file
+## <a name="create-a-env-configuration-file"></a>.Env 構成ファイルを作成します。
 
-1. Make sure you are in the correct working directory for your project.
+1. プロジェクトの正しい作業ディレクトリにいることを確認します。
 
-1. Use the `touch` tool on the command line to create a file named **.env**.
+1. 使用して、`touch`という名前のファイルを作成するコマンド ライン ツール **.env**します。
 
     ```bash
     touch .env
     ```
 
-1. Open the project with the interactive editor, if you are working locally, use your editor of choice - we recommend **Visual Studio Code** which is an extensible cross-platform IDE. The following commands are for the Cloud Shell editor, but are very similar to VS Code.
+1. オープン、対話型エディターを使用してプロジェクトをローカルで作業している場合を使用して、任意のエディターをお勧め**Visual Studio Code**クロスプラット フォーム対応の拡張可能な IDE であります。 次のコマンドは、Cloud Shell のエディターしますが、VS Code とよく似ています。
     
     ```bash
     code .
     ```
 
-1. Select the **.env** file in the editor and add the following text. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. 選択、 **.env**エディターでファイルを開き、次のテキストを追加します。 メニューがファイルを保存、-オンライン エディターでは、ページの右上にあるが一般的なファイル操作であります。
 
     ```
     AZURE_STORAGE_CONNECTION_STRING=<value>
     ```
 
     > [!TIP]
-    > The **AZURE_STORAGE_CONNECTION_STRING** value is a hard-coded environment variable used for Storage APIs to look up access keys. You can use your own name if you prefer - but you must supply the name to the when you create the `BlobService` object.
+    > **AZURE_STORAGE_CONNECTION_STRING**値は、ハード コーディングされた環境変数を Storage Api のアクセス キーを検索するために使用します。 独自の名前を使用するには、必要に応じてが、名前を指定する必要がありますを作成するときに、`BlobService`オブジェクト。
 
-1. Save the file.
+1. ファイルを保存します。
 
-## Add support to read an environment configuration file
+## <a name="add-support-to-read-an-environment-configuration-file"></a>環境の構成ファイルを読み取るサポートを追加します。
 
-Node.js apps can include support to read from the **.env** file by adding the **dotenv** package.
+Node.js アプリからの読み取りのサポートを含めることができます、 **.env**ファイルを追加することで、 **dotenv**パッケージ。
 
-1. In the command prompt section of the window, add a dependency to the  *dotenv** package.
+1. ウィンドウの [コマンド プロンプト] セクションで追加する依存関係、 *dotenv** を使用してパッケージ化`npm`します。
 
     ```bash
-    node install dotenv --save
+    npm install dotenv --save
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>構成ファイルを読み取るコードを追加します。
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our application.
+構成の読み取りを有効にする必要なライブラリを追加しましたが、アプリケーション内でその機能を有効にする必要があります。
 
-1. Select *index.js** in the editor.
+1. 選択*index.js**、エディターでします。
 
-1. At the top of the file, a **#!/usr/bin/env node** line is present. Underneath that line, add a `require` statement to load the **dotenv** package. This will make environment variables defined in our **.env** file available to the program.
+1. ファイルの上部にある、 **#!/usr/bin/env ノード**行が存在します。 、その行の下に追加、`require`を読み込むステートメント、 **dotenv**パッケージ。 定義されている環境変数をこのように、 **.env**ファイルをプログラムに使用します。
 
     ```javascript
     #!/usr/bin/env node
@@ -156,34 +155,34 @@ Now that we have added the required libraries to enable reading configuration, w
     ```
 ::: zone-end
 
-## Add the connection string to the configuration file
+## <a name="add-the-connection-string-to-the-configuration-file"></a>構成ファイルへの接続文字列を追加します。
 
-Now we need to get the storage account connection string and place it into the configuration for our app.
+次に、ストレージ アカウント接続文字列を取得し、それをアプリの構成に配置します。
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-1. Navigate to your storage account. You can use the **All Resources** section to find the storage account, or search by name from the _search box_ at the top of the portal window. 
+1. ストレージ アカウントに移動します。 使用することができます、**すべてのリソース**、ストレージ アカウントを検索するセクションまたはから名前で検索することができます、_検索ボックス_ポータル ウィンドウの上部にあります。
 
-1. Select the **Access Keys** blade of the storage account in the portal.
+1. 選択、**アクセスキー**ポータルでストレージ アカウントのブレード。
 
-1. Copy the **key1** Connection string.
+1. コピー、 **key1**接続文字列。
 
-1. Paste in the contents of the access key you copied from the portal as the value for the connection string configuration variable.
+1. 接続文字列の構成変数の値として、ポータルからコピーしたアクセス キーの内容を貼り付けます。
 
-Your configuration should now look similar to the following:
+これで構成が次のようになるはずです。
 
 ::: zone pivot="csharp"
-    ```json
-    {
-        "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net"
-    }
-    ```
+```json
+{
+    "StorageAccountConnectionString": "DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net"
+}
+```
 ::: zone-end
 
-::: zone-pivot="javascript"
-    ```
-    AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net
-    ```
+::: zone pivot="javascript"
+```
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=[account-name];AccountKey=[account-key];EndpointSuffix=core.windows.net
+```
 ::: zone-end
 
-Now that we have that all wired up, we can start adding code to use our storage account.
+できたことすべてワイヤード (有線)、ストレージ アカウントを使用するコードを追加し始めることができます。

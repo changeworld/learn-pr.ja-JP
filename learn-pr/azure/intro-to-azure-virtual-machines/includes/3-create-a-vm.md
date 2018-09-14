@@ -1,84 +1,88 @@
-You've planned out the network infrastructure and identified a few VMs to migrate to the cloud. You have several choices for creating your VMs. The choice you make depends on the environment you are comfortable with. Azure supports a web-based portal for creating and administering resources. You can also choose to use command-line tools that run on MacOS, Windows, and Linux.
+あなたはネットワーク インフラストラクチャを十分に計画し、クラウドに移行する VM をいくつか特定しました。 VM を作成する際、いくつかの選択肢があります。 選択肢は自分にとって快適な環境によって決まります。 Azure では、リソースを作成し、管理するための Web ベースのポータルがサポートされています。 macOS、Windows、Linux で実行されるコマンドライン ツールを使用することもできます。
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
+
+最初に Azure portal を見てみましょう。Azure はここから始めるのが最も簡単です。
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+## <a name="azure-portal"></a>Azure portal
+
+**Azure portal**作成して、すべての Azure リソースを管理できるようにするブラウザー ベースの使いやすいユーザー インターフェイスを提供します。 たとえば、新しいデータベースを設定したり、仮想マシンの計算処理能力を増やしたり、毎月のコストを監視したりできます。 使用可能なすべてのリソースを調査してガイド付きのウィザードを使用する必要があるものを作成した後も優れた学習ツールになります。
+
+ログインすると、2 つの主要領域が表示されます。 最初は、リソースの作成、リソースを監視および課金を管理するためのオプションのメニューです。 2 つ目はカスタマイズ可能なダッシュボードであり、Azure にデプロイした重要なサービスがすべてスナップショット表示されます。 Azure の利用を始めるとき、このポータルから始めると最も快適に進むでしょう。
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> ポータルで選択を行うときに表示されるビューは_ブレード_とも呼ばれています。 ブレードはメニュー構造として機能し、構成パネルとして機能します。 Azure portal 内を移動して UI が左から右に積み上げられたする web ビューポートは上の現在のブレードを表示するスライドします。 下部にあるスライダーを使用し、親ビューまで簡単に移動できます。
 
-Let's explore the Azure portal first - it's the easiest way to start with Azure.
+### <a name="create-an-azure-vm-with-the-azure-portal"></a>Azure portal で Azure VM を作成する
 
-## Azure portal
+WordPress Web サイトを実行する VM を作成するとします。 サイトの設定は難しくありませんが、留意すべき点がいくつかあります。 オペレーティング システムを構成し、Web サイトを構成し、データベースをインストールし、ファイアウォールなどを考慮する必要があります。 VM の作成は後続のモジュールで扱いますが、ここで 1 つ作成し、どのくらい簡単なのか見てみましょう。 すべての選択肢を試すことしないので、各選択肢の詳細については **VM の作成**モジュールの 1 つをご覧ください。
 
-The **Azure portal** provides an easy-to-use browser-based user interface that allows you to create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool, since you can survey all available resources and use guided wizards to create the ones you need.
+#### <a name="select-a-location"></a>場所を選択します。
 
-Once logged in, you're presented with two main areas. The first is a menu with the options to help you create resources, monitor resources, and manage billing. The second is a customizable dashboard that provides you with a snapshot view of all the essential services you've deployed to Azure. You'll most likely find the portal the most comfortable option to use when you start using Azure.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-> [!NOTE]
-> The views that are presented as you make selections in the portal are often called _blades_. A blade may act as both a menu structure or a configuration panel. As you navigate throughout the Azure portal, UI will be stacked from left to right, and the web viewport will slide over to show the current blade. You can use the slider at the bottom to quickly move back to parent views.
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 Azure リソースの作成と管理 メニューは、左辺と画面の残りの部分を入力するダッシュ ボードで表示されます。
 
-### Create an Azure VM with the Azure portal
+    ![Azure portal メイン ダッシュボード](../media-draft/3-dashboard-page.png)
 
-Let's assume you want to create a VM running a WordPress website. Setting up a site isn't difficult, but there are a couple of things to keep in mind. You need to install and configure an operating system, configure a website, install a database, and worry about things like firewalls. We're going to cover creating VMs in the next few modules, but let's create one here to see how easy it is. We won't go through all the options - check out one of the **Create a VM** modules to get complete details on each option.
+1. ポータル ページの左上隅にある **[リソースの作成]** オプションをクリックします。 これで Azure Marketplace ブレードが開きます。 左側のスライドバーが折りたたまれている場合、緑の "プラス" が表示されます。 展開キャレットをクリックしてサイドバーを展開すると、上のイメージのように完全なテキストが表示されます。
 
-1. Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). You'll see the Azure resource creation and management menu on your left and the dashboard filling the rest of the screen.
+    ![Azure Marketplace](../media-draft/3-create-new-resource.png)
 
-    ![Main Azure portal dashboard](../media-draft/3-dashboard-page.png)
+    ご覧のとおり、選択可能なオプションがたくさんあります。 WordPress web サイトを実行する VM を作成することに注意してください。 VM は Azure コンピューティング リソースです。そこで、利用可能リストから **[コンピューティング]** オプションを選択し、WordPress VM イメージを検索します。 クリックすることができます**すべて「** 完全な一覧を取得します。
 
-1. Click on the **Create a resource** option in the top left corner of the portal page. This will open the Azure Marketplace blade. If the left-hand sidebar is collapsed, it will be a green "plus". You can expand the sidebar by clicking the expand caret to see the full text as shown in the image above.
+1. 使用して、 **Marketplace を検索**検索バー、および"WordPress"を参照してください。 オプションの一覧が表示されます。 **[WordPress Certified by Bitnami]** と書いてあるオプションを選択します。
 
-    ![The Azure Marketplace](../media-draft/3-create-new-resource.png)
+    ![Azure Marketplace の検索](../media-draft/3-search-vm-image.png)
 
-    As you can see, there are many selectable options. Remember, we want to create a VM running a WordPress website. VMs are Azure compute resources, so select the **Compute** option on the available list and then search for WordPress VM images.
+    次に開いたブレードには、これから使用するイメージのライセンス情報が表示されます。 **[作成]** をクリックします。
 
-1. Use the **Search the Marketplace** search bar, and look for "WordPress". You should now see a list of options. Select the option that reads **WordPress Certified by Bitnami**.
+    ![選択し、WordPress サイトの作成](../media-draft/3-create-vm-image.png)
 
-    ![Search the Azure Marketplace](../media-draft/3-search-vm-image.png)
+1. 用意されています、**仮想マシンを作成する**ブレード。 ウィザードベースの手法にご注目ください。これを VM の公正に使用します。
 
-    The blade that opens next will present licensing information for the image we're about to use. Click on **Create**.
+    ![構成手順 1](../media-draft/3-create-vm-1.png)
 
-    ![Select and Create the WordPress site](../media-draft/3-create-vm-image.png)
+    WordPress 仮想マシンの基本パラメーターを構成する必要があります。 一部のオプションの時点でがない場合に使い慣れた、[ok] です。 このようなオプションについては、今後のモジュールでご説明いたします。 ここで使用されている値をそのまま使用しても問題ありません。
 
-1. You're presented with the **Create virtual machine** blade. Notice the wizard-based approach we can use to configure the VM.
+1. **[基本]** タブの次の値を使用します。
+    - 無料のサブスクリプションを選択し、 <rgn>[サンド ボックス リソース グループ名]</rgn>リソース グループ。
+    - VM の **[名前]** を入力します。ここでは `test-wp1-eus-vm` を使用しました。
+    - 近くの **[リージョン]** を選択します。 ドロップダウン リストから上記一覧の利用可能な場所を選択してください。
+    - 可用性オプションには **[なし]** を選択します。 これは、高可用性は、別のモジュールについて説明します。
+    - **イメージ**する必要があります、**して Bitnami WordPress**マーケットプ レースから選択したオプション。
+    - ままに、**サイズ**- 既定値として表示されます、1 つのコアと 3.5 GB のメモリで、単純な web サイトに対して十分である必要があります。
+    - 切り替えて**パスワード**認証に「」と、ユーザー名とパスワードを入力します。
+    - 選択**選択したポートを許可する**、し、ドロップダウン リストで次のように選択します。 **http**します。
 
-    ![Config Step 1](../media-draft/3-create-vm-1.png)
+    ![HTTP ポートを開く](../media-draft/3-open-http-port.png)
 
-    We need to configure the basic parameters of our WordPress virtual machine. If some of the options at this point are unfamiliar to you, that is OK. Remember, we're going to discuss all of these options in a future module. You're welcome to copy the values used here.
+1. 他にもタブがいくつかあり、VM 作成時に利用できる設定があります。 設定が完了したら、**[確認および作成]** をクリックして設定を確認し、妥当性を検証します。
 
-<!-- TODO: fix subscription + resource group -->
-1. Use the following values on the **Basics** tab.
-    - Select the free subscription and a Resource Group.
-    - Enter a **Name** for the VM: here we've used `test-wp1-eus-vm`.
-    - Select a **Region** close to you. You can use the drop-down list to select the location.
-    - Choose **None** for the availability options. This is for high availability, which we cover in another module.
-    - The **Image** should be the **WordPress by Bitnami** option we selected from the Marketplace.
-    - Leave the **Size** as the default - it will give you a single core and 3.5 GB of memory, which should be sufficient for a simple website.
-    - Switch to **Password** for the authentication type, and enter a username and password.
-    - Open the **Select public inbound ports** drop-down list, and select **http** as shown below.
+    ![構成手順 2](../media-draft/3-review-create-vm.png)
 
-    ![Open the HTTP port](../media-draft/3-open-http-port.png)
+1. 確認画面で Azure により設定の妥当性が検証されます。 すべての設定を設定し、をクリックし、確認**作成**デプロイし、VM を作成します。
 
-1. There are several other tabs you can explore to see the settings you can influence during the VM creation. Once you are finished exploring, click **Review + create** to review and validate the settings.
+1. **[通知]** パネルでデプロイを監視できます。 上部のツール バーにあるアイコンをクリックし、パネルを表示します。
 
-    ![Config Step 2](../media-draft/3-review-create-vm.png)
+    ![デプロイの進行状況を監視する](../media-draft/3-deploying.png)
 
-1. On the review screen, Azure will validate your settings. Verify all the settings are set the way you want, and then click **Create** to deploy and create the VM.
+1. VM のデプロイ プロセスが完了するまでに数分かかる場合があります。 デプロイが正常に完了したことを知らせる通知が届きます。 メッセージをクリックし、VM に作成したすべての要素を含むリソース グループに移動します。
 
-1. You can monitor the deployment through the **Notifications** panel. Click the icon in the top toolbar to display the panel.
+    ![デプロイされた VM](../media-draft/3-deployment-succeeded.png)
 
-    ![Monitor the deployment progress](../media-draft/3-deploying.png)
+1. VM エントリを選択し、最初の 1 つ必要がある - 指定した名前になります。
 
-1. The VM deployment process takes a few minutes to complete. You'll receive a notification informing you that the deployment succeeded. Click on the message to go to the resource group with all the elements that were created for your VM.
+    ![リソース グループで VM を選択します。](../media-draft/3-open-vm-properties.png)
 
-    ![VM deployed](../media-draft/3-deployment-succeeded.png)
+1. 作成した仮想マシンの **[概要]** に移動します。 ここでは、新しく作成した WordPress VM の情報と構成オプションをすべて表示できます。 情報の 1 つに **[パブリック IP アドレス]** があります。
 
-1. Select the VM entry - it should be the first one, and it will have the name you specified.
+    ![VM にパブリック IP アドレスを与える](../media-draft/3-public-ip-address.png)
 
-    ![Select the VM in the Resource Group](../media-draft/3-open-vm-properties.png)
+11. IP アドレスをコピーし、ブラウザーで新しいタブを開いて貼り付けます。 新しい WordPress サイトを参照する必要があります。
 
-1. That will navigate to the **Overview** of the virtual machine you have created. Here you can see all the information and configuration options for your newly created WordPress VM. One of the pieces of information is the **Public IP Address**.
+    ![新しい WordPress サイトが有効](../media-draft/3-my-new-blog.png)
 
-    ![Get your public IP address to the VM](../media-draft/3-public-ip-address.png)
-
-11. Copy the IP address, open a new tab in your browser, and paste it in. It should browse to a brand-new WordPress site.
-
-    ![New WordPress site is alive](../media-draft/3-my-new-blog.png)
-
-Congratulations! With a few steps, you deployed a VM that runs Linux, has a database installed, and has a functional website. Let's explore some other ways we could have created a VM.
+お疲れさまでした。 いくつかの手順では、Linux を実行し、インストールされているデータベースを持ち、機能の web サイトを持つ VM をデプロイします。 それでは、他の VM 作成方法を見てみましょう。

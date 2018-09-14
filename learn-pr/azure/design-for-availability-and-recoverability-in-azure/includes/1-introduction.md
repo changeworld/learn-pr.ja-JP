@@ -1,16 +1,16 @@
-Your business relies on access to the systems and data that make it run. If something happened to cause a loss of availability, even for a short period of time, it could be disastrous for the bottom line. Every minute that your customers or your internal workers don’t have access to what they need results in a loss of revenue. It is our job to make sure that doesn’t happen.
+お客様のビジネスは、システムおよび実行できるようにするデータへのアクセスに依存します。 短時間の場合でも、可用性の損失が発生する問題が発生しました、一番下の行は悲惨なが考えられます。 お客様または、内部のワーカーが何にアクセスするがないことの 1 分ごとの収益が失われる結果が必要です。 ジョブを確認が行われないとき。
 
-As we learn about architecting our cloud solutions to be highly available and to have the capability to recover from localized and widespread issues, we'll see how one fictional Azure customer puts these principles to work:
+架空の方法の 1 つの Azure を見て、高可用性と、ローカライズされたと広範囲にわたる問題から回復する機能が、クラウド ソリューションを設計について説明します、顧客は、これらの原則を機能します。
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare は、国営の医療機関です。 同社の IT 部門は、最近 IT システムの大部分を Azure に移行し始めました。 カスタム アプリ、オープン ソース アプリ、市販のアプリケーションで、さまざまなアーキテクチャとテクノロジ プラットフォームの混在があります。 システムを維持しながら、クラウドに移行するために必要な内容について説明し、データをセキュリティで保護します。
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It's highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> この章で説明する概念は、包括的なではありませんが、クラウドでソリューションを構築するときに重要な考慮事項を示します。 Microsoft では、パターン、ガイドライン、および Azure でアプリケーションの設計上の例の広範なセットを公開します。 内容に目を通すことを強くお勧め、 [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)の計画とアーキテクチャの設計を開始するとします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Leverage Azure services to design a highly available application
-- Incorporate Azure disaster recovery capabilities into your architecture
-- Back up and restore on Azure to protect your application from data loss or corruption
+- Azure サービスを利用して高可用性アプリケーションを設計する
+- Azure のディザスター リカバリー機能を組み込むのアーキテクチャ
+- バックアップおよび復元を Azure にアプリケーション データの消失または破損から保護します。

@@ -1,89 +1,90 @@
-Setting up a CI/CD pipeline has always been challenging to do quickly. Now, it is incredibly easy to go from nothing at all to a full end to end Azure DevOps project. And in the Azure DevOps project, you get the following:
+迅速に実行、CI/CD パイプラインの設定は常に困難されています。 ここで、完全なエンド ツー エンドの Azure DevOps プロジェクトをまったく何もから移動するのには驚くほど簡単です。 Azure DevOps プロジェクトで、次の取得します。
 
-1. Infrastructure provisioned for you in Azure.
+1. インフラストラクチャを Azure でプロビジョニングします。
 
-2. A Team Project in a VSTS instance.
+2. VSTS のインスタンス内のチーム プロジェクト。
 
-3. Source code for a sample app in the language that you picked in the repo of your VSTS instance.
+3. VSTS インスタンスのリポジトリで選択した言語でサンプル アプリのソース コードです。
 
-4. A build and release pipeline that makes sense for the technologies picked.
+4. ビルドとリリース パイプラインの意味のあるテクノロジの選択。
 
-And when its's done, the Azure DevOps project takes the sample app, builds and releases it through the pipelines into the infrastructure it provisions for you up in Azure. And you get all of this with just a couple of clicks.
+そのが終了したら、Azure DevOps プロジェクトのサンプル アプリは、ビルド、および、パイプラインを介してプロビジョニングするので、Azure インフラストラクチャにそれを解放します。 またこの数回のクリックだけですべてを実現できます。
 
-## Create an Azure DevOps project
+## <a name="create-an-azure-devops-project"></a>Azure DevOps プロジェクトを作成する
 
-You create an Azure DevOps project from the Azure portal.
+Azure DevOps プロジェクトを作成するには、Azure portal から。
 
-1. Head to the [Azure Portal](https://portal.azure.com) and click `Create a resource`  
-![](/media-draft/1-azureportal.png)
+1. ヘッド、 [Azure Portal](https://portal.azure.com)  をクリック `Create a resource`  
+![AzurePortal](../media-drafts/1-azureportal.png)
 
-2. Click `DevOps Project`  
-![Pick DevOps Project](/media-draft/1-pickdevopsproject.png)
+2. [`DevOps Project`] をクリックします。  
+![DevOps プロジェクトを選択します。](../media-drafts/1-pickdevopsproject.png)
 
-3. The next screen is where you get to pick what language you want to use. Notice how you can choose .NET (of course), java, node, php, python, ruby, and go. You can even bring your own code in from a git repo. For this unit, let’s go ahead and create a Node.js app. Click Node.js and click Next  
-![Pick Node.js for language](/media-draft/1-picknodejsforlang.png)
+3. 次の画面は、使用する言語を選択できます。 .NET (当然) を選択する方法、java、ノード、php、python、ruby、および移動に注意してください。 Git リポジトリからも、独自のコードを表示できます。 このユニットの Node.js アプリを作成してみましょう。 Node.js をクリックし、[次へ] をクリックします。  
+![Node.js の言語を選択します。](../media-drafts/1-picknodejsforlang.png)
 
-4. Next it's going to ask you what node.js framework you want to use. For this unit, pick Simple Node.js app and click Next  
-![Pick Simple Node](/media-draft/1-picksimplenode.png)
+4. 次に使用する node.js フレームワークを依頼する予定です。 このユニットのシンプルな Node.js アプリを選択し、[次へ] をクリックします。  
+![単純なノードを選択します](../media-drafts/1-picksimplenode.png)
 
-5. Next, it's going to ask you what infrastructure do you want to provision and run your app in? For this unit, let’s provision and deploy into a Kubernetes cluster using Azure Kubernetes Service. Select Kubernetes Service and click Next  
-![Pick Kubernetes](/media-draft/1-pickkubernetes.png)
+5. 次に、どのようなインフラストラクチャをプロビジョニングしするようにアプリの実行を依頼することはでしょうか。 このユニットをプロビジョニングして、次の Azure Kubernetes サービスを使用して、Kubernetes クラスターにデプロイしてみましょう。 Kubernetes サービスを選択し、[次へ] をクリックします。  
+![Kubernetes を選択します。](../media-drafts/1-pickkubernetes.png)
 
-6. And now, you can either create a brand new instance of VSTS or choose an existing one. You also get to set up where and how you want your kubernetes cluster to run. For this unit, go ahead and create a new VSTS instance by choosing Select new and give your VSTS instance a unique name. Enter Learn for the Project name, pick your azure subscription, name the Cluster Name LearnCluster, select East US for the location, and click Done  
-![Final Confirmation Screen](/media-draft/1-finalconfirmation.png)
+6. 次に、VSTS の新しいインスタンスを作成か、既存のものを選択します。 取得することも実行する kubernetes クラスターが必要な場所と方法を設定します。 このユニットの新規の選択を選択して、VSTS の新しいインスタンスを作成して、VSTS のインスタンスに一意の名前します。 プロジェクト名の情報を入力します。、azure サブスクリプションを選択、名前をクラスター名 LearnCluster の場所、およびクリックして、米国東部を選択します  
+![](../media-drafts/1-finalconfirmation2.png)
 
-And that is literally it! This takes a while so kick back, relax and just let Azure do its thing. Most of the time will be spent provisioning and configuring your Azure infrastructure. For this module, this will be your Azure Kubernetes Service and Azure Container Registry.
+およびそれでは文字どおり! これは、時間がかかりますので、戻って、緩和され、そのことを Azure に任せるだけです。 ほとんどの場合は、プロビジョニングと、Azure インフラストラクチャの構成に費やされます。 このモジュールには、これに、Azure Kubernetes Service と Azure Container Registry になります。
 
-## A lap around the finished Azure DevOps Project
+## <a name="a-lap-around-the-finished-azure-devops-project"></a>簡単な完成した Azure DevOps プロジェクト
 
-When Azure is done, you will be notified in your Alerts
+Azure を完了すると、アラートで通知されます。
 
-1. Click on the alert and then Go to resource  
-![Go To Resource From Alert](/media-draft/1-gotoresourcefromalert.png)
+1. [アラート] をクリックし、リソースに移動し、  
+![アラートからリソースに移動します。](../media-drafts/1-gotoresourcefromalert.png)
 
-2. This takes you to a portal blade that displays everything provisioned. On the left-hand side is your CI/CD pipeline. You have your code repository, your build definition, and also your release definition. All the links are deep links that take you directly into the resource in VSTS. And on the right-hand side, you see all the infrastructure deployed for you in Azure. You have your Kubernetes cluster with your sample app already deployed and also application insight. Once again, all these links are deep links to the resources in Azure.  
-![Portal DevOps Project](/media-draft/1-pickdevopsproject.png)
+2. プロビジョニングされたすべてのものを表示するポータル ブレードに移動します。 左側にある、CI/CD パイプラインです。 コード リポジトリ、ビルド定義、およびリリース定義があります。 すべてのリンクは、VSTS でのリソースに直接移動するディープ リンクです。 する、右側にあるすべてのインフラストラクチャを Azure でデプロイを参照してください。 既にデプロイされているサンプル アプリでの Kubernetes クラスターともアプリケーションの分析情報があります。 もう一度、これらすべてのリンクは、Azure 内のリソースへのディープ リンクです。  
+![ポータルの DevOps プロジェクト](../media-drafts/1-portaldevopsproj.png)
 
-3. Click on the link for your source code  
-![Link to Source](/media-draft/1-linktosource.png)
+3. ソース コードは、リンクをクリックします  
+![ソースへのリンク](../media-drafts/1-linktosource.png)
 
-4. This takes you to the git repo in your VSTS project. Notice this is just a normal git repo holding the sample node.js app with helm charts.  
-![VSTS Repo](/media-draft/1-vstsrepo.png)
+4. Azure のコードでの git リポジトリに移動します。 これは、helm チャートを使ってサンプル node.js アプリを保持している通常の git リポジトリに注意してください。  
+![Azure リポジトリ](../media-drafts/1-azurerepo.png)
 
-5. Go into the builds  
-![Link to Builds](/media-draft/1-navtobuild.png)
+5. ビルドに移動します。  
+![ビルドへのリンクします。](../media-drafts/1-linktobuild.png)
 
-6. Edit the created build by clicking on the build and then click Edit  
-![](/media-draft/1-editbuildlink.png)
+6. ビルドをクリックして作成されたビルドを編集し、[編集] をクリックしてください  
+![ビルドのリンクを編集します。](../media-drafts/1-editbuildlink2.png)
 
-7. You will see a build pipeline that makes sense for the technologies picked. Since we picked a node.js app into a Kubernetes cluster, we get a build pipeline that uses Docker tasks to build the Node.js app, create the image container image and then Helm tasks to create a Helm package.  
-![Build Pipeline](/media-draft/1-buildpipeline.png)
+7. ピッキング テクノロジにとって合理的なビルド パイプラインが表示されます。 Kubernetes クラスターに node.js アプリを選択しましたので、Docker タスクを使用して Node.js アプリをビルド、イメージのコンテナー イメージを作成し、Helm Helm パッケージを作成するタスクをパイプラインのビルドを取得します。  
+![パイプラインを作成します。](../media-drafts/1-buildpipeline2.png)
 
-8. Go to the Release pipeline by clicking `Releases`  
-![Go to Releases](/media-draft/1-gotoreleases.png)
+8. クリックしてリリース パイプラインに移動します。 `Releases`  
+![リリースのリンク](../media-drafts/1-gotoreleaselink.png)
 
-9. You'll see the release pipeline created. Edit it by clicking on the release and selecting `Edit pipeline`  
-![Edit Release](/media-draft/1-editrelease.png)
+9. 作成されたリリース パイプラインが表示されます。 リリースをクリックし、選択の編集します。 `Edit pipeline`  
+![リリースを編集します。](../media-drafts/1-editrelease2.png)
 
-10. Azure has created a release pipeline that makes sense for the technologies picked. A node app running in a container hosted in a Kubernetes cluster.
-![Release Pipeline](/media-draft/1-releasepipeline.png)
+10. Azure では、選択テクノロジにとって合理的なリリース パイプラインを作成しました。 Kubernetes クラスターでホストされているコンテナーで実行されているノードのアプリ。
+![リリース パイプライン](../media-drafts/1-releasepipeline2.png)  
+![リリース パイプラインのステップ](../media-drafts/1-pipelinesteps.png)
 
-11. Go back to the Azure portal and click on the external endpoint for the kubernetes service  
-![](/media-draft/1-clickonendpoint.png)
+11. Azure portal に戻り、kubernetes サービスの外部エンドポイントをクリックします  
+![](../media-drafts/1-clickonendpoint.png)
 
-12. You should see the sample app build and deployed into your AKS cluster  
-![App Running](/media-draft/1-apprunning.png)
+12. サンプル アプリをビルドする必要がありますを参照してくださいし、AKS クラスターにデプロイします。  
+![実行中のアプリ](../media-drafts/1-apprunning.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you created an Azure DevOps project that consists of:
+このユニット内で構成される Azure DevOps プロジェクトの作成。
 
-1. Infrastructure for your app - Azure Kubernetes Service and Application Insight
+1. Azure Kubernetes サービスと Application Insight - アプリのインフラストラクチャ
 
-2. A Team Project in a VSTS instance.
+2. VSTS のインスタンス内のチーム プロジェクト。
 
-3. Source code for a Node.js sample app running in a container in the repo of your VSTS instance.
+3. VSTS インスタンスのリポジトリ内のコンテナーで実行される Node.js のサンプル アプリのソース コードです。
 
-4. A build and release pipeline for a Node.js container app running in your Azure Kubernetes Service instance.
+4. Azure Kubernetes サービス インスタンスで実行されている Node.js コンテナー アプリのビルドとリリース パイプライン。
 
-Next, learn how to replace the sample app with your real app.
+次に、サンプル アプリを実際のアプリに置き換える方法について説明します。

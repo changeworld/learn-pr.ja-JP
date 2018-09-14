@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.10-integrate-with-slack
+metadata:
+  title: Slack と、Mojifier を統合します。
+  description: Slack と Azure Functions を接続し、slack に作成_スラッシュ_コマンドを Azure Functions を呼び出すし、Slack のウィンドウで、結果として得られる mojified イメージを表示します。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: Slack と、Mojifier を統合します。
+durationInMinutes: 10
+content: |
+  [!include[](includes/10-integrate-with-slack.md)]

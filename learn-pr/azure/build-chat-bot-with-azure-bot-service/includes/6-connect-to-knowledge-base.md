@@ -1,18 +1,18 @@
-In this unit, you will connect your bot to the QnA Maker knowledge base you built earlier so the bot can carry on an intelligent conversation. Connecting to the knowledge base involves retrieving some information from the QnA Maker portal, copying it into the Azure portal, updating the bot code, and then redeploying the bot to Azure.
+このユニットでは、前に作成した QnA Maker のナレッジ ベースにボットを接続して、ボットがインテリジェントな会話を実行できるようにします。 ナレッジ ベースに接続するには、QnA Maker ポータルからいくつかの情報を取得し、それを Azure portal にコピーし、ボット コードを更新してから Azure にボットを再デプロイする必要があります。
 
-1. Return to the [QnA Maker portal](https://www.qnamaker.ai/) and click your name in the upper-right corner. Select **Manage endpoint keys** from the menu that drops down. Click **Show** to show the primary endpoint key, and **Copy** to copy it to the clipboard. Then, paste it into a text file so you can easily retrieve it in a moment.
+1. [QnA Maker ポータル](https://www.qnamaker.ai/)に戻り、右上隅にある自分の名前をクリックします。 ドロップダウン メニューから **[エンドポイント キーの管理]** を選択します。 **[表示]** をクリックしてプライマリ エンドポイント キーを表示し、**[コピー]** をクリックしてそれをクリップボードにコピーします。 次に、それをテキスト ファイルに貼り付けて、すぐに取得できるようにします。
 
-1. Click **My knowledge bases** in the menu at the top of the page. Then, click **View Code** for the knowledge base that you created earlier.
+1. ページの上部にあるメニューで **[My knowledge bases]\(マイ ナレッジ ベース\)** をクリックします。 次に、先ほど作成したナレッジ ベースの **[コードの表示]** をクリックします。
 
-1. Copy the knowledge base ID from the first line and the host name from the second line. Paste them into a text file, as well. Then, close the dialog. **Do not** include the "https://" prefix in the host name that you copy.
+1. 1 行目からナレッジ ベース ID、2 行目からホスト名をコピーします。 それらもテキスト ファイルに貼り付けます。 その後、ダイアログを閉じます。 コピーするホスト名に "https://" プレフィックスを**含めないでください**。
 
-    ![Screenshot of the QnA Maker portal showing the Sample HTTP Request with the endpoint knowledge base ID and host name highlighted.](../media/6-copy-endpoint-info.png)
+    ![強調表示されているエンドポイントのナレッジ ベース ID とホスト名とサンプルの HTTP 要求を表示する QnA Maker ポータルのスクリーン ショット。](../media/6-copy-endpoint-info.png)
 
-1. Return to the web app bot in the Azure portal. Click **Application settings** in the menu on the left and scroll down until you find application settings named "QnAKnowledgebaseId," "QnAAuthKey," and "QnAEndpointHostName." Paste the knowledge base ID and host name obtained in Step 3 and the endpoint key obtained in Step 1 into these fields. Then, click **Save**.
+1. Azure portal で Web アプリ ボットに戻ります。 左にあるメニューで **[アプリケーション設定]** をクリックし、"QnAKnowledgebaseId"、"QnAAuthKey"、"QnAEndpointHostName" という名前のアプリケーション設定が見つかるまで下にスクロールします。 手順 3 で取得したナレッジ ベース ID およびホスト名と、手順 1 で取得したエンドポイント キーを、これらのフィールドに貼り付けます。 その後、**[保存]** をクリックします。
 
-    ![Screenshot of the Azure portal showing the bot blade and Application Settings details with the Application Settings menu item and appropriate setting keys highlighting.](../media/6-enter-app-settings.png)
+    ![ブレードと、アプリケーション設定のメニュー項目の強調表示に適した設定キーとアプリケーション設定の詳細は、ボットを示す Azure portal のスクリーン ショット。](../media/6-enter-app-settings.png)
 
-1. Return to Visual Studio Code and replace the contents of **app.js** with the code below. Then, save the file.
+1. Visual Studio Code に戻り、**app.js** の内容を次のコードで置き換えます。 その後、ファイルを保存します。
 
     ```JavaScript
     var restify = require('restify');
@@ -61,10 +61,10 @@ In this unit, you will connect your bot to the QnA Maker knowledge base you buil
     ```
 
     > [!Note]
-    > The call to create a `QnAMakerDialog` instance on line 30. This creates a dialog that integrates a bot built with the Azure Bot Service with a knowledge base built Microsoft QnA Maker.
+    > 作成の呼び出しを`QnAMakerDialog`30 行上のインスタンス。 これにより、Azure Bot Service でビルドされたボットと、Microsoft QnA Maker で構築されたナレッジ ベースを統合するダイアログが作成されます。
 
-1. Click the **Source Control** button in the activity bar in Visual Studio Code. Type "Connected to knowledge base" into the message box, and click the check mark to commit your changes. Then, click the ellipsis and use the **Publish Branch** command to push these changes to the remote repository (and therefore. to the Azure Web App).
+1. Visual Studio Code のアクティビティ バーで **[ソース管理]** ボタンをクリックします。 メッセージ ボックスに「ナレッジ ベースに接続済み」と入力し、チェック マークをクリックして変更をコミットします。 次に、省略記号をクリックし、**[ブランチの発行]** コマンドを使用してこれらの変更をリモート リポジトリ (したがって、 Azure Web アプリ) にプッシュします。
 
-1. Return to the web app bot in the Azure portal and click **Test in Web Chat** on the left to open the test console. Type "What's the most popular software programming language in the world?" into the box at the bottom of the chat window and press **Enter**. Confirm that the bot responds.
+1. Azure portal で Web アプリ ボットに戻り、左側にある **[Test in Web Chat]\(Web チャットでのテスト\)** をクリックしてテスト コンソールを開きます。 チャット ウィンドウの下部にあるボックスに、「世界で最も普及しているソフトウェア プログラミング言語は何ですか?」 と入力し、**Enter** キーを押します。 ボットが応答していることを確認します。
 
-Now that the bot is connected to the knowledge base, the final step is to test it in the wild. And what could be wilder than testing it with Skype?
+ボットがナレッジ ベースに接続されたので、最後の手順はそれを実際にテストすることです。 そして、Skype を使ってこのテストをすると面白いテストになります。

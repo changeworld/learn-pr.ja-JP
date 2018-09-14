@@ -9,12 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 3ebdb7759b74d2aff172072a19013acff6e9facb
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44309305"
-azureSandbox: true
 durationInMinutes: 10
-content: '[!include[](includes/8-exercise-create-resource-using-script.md)]'
+content: |
+  [!include[](includes/8-exercise-create-resource-using-script.md)]

@@ -1,93 +1,91 @@
-After creating an Azure DevOps project, the first thing everyone ask is how do you replace the sample app with your own app? It's quite simple and in this unit, you will learn two ways to do it.
+Azure DevOps プロジェクトを作成すると、最初の要求のすべてのユーザーは、サンプル アプリを独自のアプリでする置換方法でしょうか。 非常に簡単と、このユニットでは、これを行う 2 つの方法を学習します。
 
-1. Replacing the code in the VSTS git repository with your real code
+1. VSTS git リポジトリにコードを実際のコードに置き換えます
 
-2. Pointing your build pipeline to an external git repo holding your real code
+2. ビルド パイプラインを実際のコードを保持する、外部の git リポジトリを指す
 
-## Replacing code in VSTS git repository
+## <a name="replacing-code-in-vsts-git-repository"></a>VSTS git リポジトリ内のコードを置き換える
 
-One simple way is by cloning the git repo in VSTS onto your hard drive, replacing everything with your own code, uploading back to VSTS and voila. Your code will now be built and deployed through the CI/CD pipeline.
+1 つの簡単な方法は、すべてアップロード VSTS に戻ると、独自のコードに置き換えて、ハード ドライブ上に vsts git リポジトリを複製することです。 コードのビルドし、CI/CD パイプラインを使用してデプロイされたようになりましたが。
 
-For this unit, you will start by downloading and storing the source code to the node.js app onto your hard drive.
+このユニットは、ダウンロードして、ハード ドライブ上に node.js アプリのソース コードを格納する始めます。
 
-1. Download the source code from <https://abelsharedblob.blob.core.windows.net/microsoftlearn/MicrosoftLearnDevOps.zip>
+1. ソース コードをダウンロードします。 <https://abelsharedblob.blob.core.windows.net/microsoftlearn/MicrosoftLearnDevOps.zip>
 
-2. Extract the contents of MicrosoftLearnDevOps.zip somewhere on your hard drive. For this example `C:\users\abel\Downloads\MicrosoftLearnDevOps` was used  
-![Unzipped Directory](/media-draft/2-unzippedfolder.png)
+2. ハード ドライブのどこかに MicrosoftLearnDevOps.zip の内容を抽出します。 この例の`C:\users\abel\Downloads\MicrosoftLearnDevOps`が使用されました  
+![解凍したディレクトリ](../media-drafts/2-unzippedfolder.png)
 
-Next, you need to clone the repo onto your hard drive and replace the sample app with the real node.js app. This unit assumes you already have git installed on your computer.
+次に、ハード ドライブ上にリポジトリを複製し、実際の node.js アプリでサンプル アプリを置き換える必要があります。 このユニットは、コンピューターにインストールされている git が既にあると仮定します。
 
-1. From Azure portal browse to your Azure DevOps Project and click on the code repository link.  
-![](/media-draft/2-browsetorepolink.png)
+1. Azure portal からは、Azure DevOps プロジェクトを参照し、コード リポジトリのリンクをクリックします。  
+![](../media-drafts/2-browsetorepolink.png)
 
-2. Click on Clone and copy the url for the git repo in the upper right-hand side.  
-![Copy Clone Url](/media-draft/2-copycloneurl.png)  
-This will copy the repo url to your clipboard
+2. [複製] をクリックし、右上に git リポジトリの url をコピーします。  
+![リポジトリを複製](../media-drafts/2-clonerepo2.png)このリポジトリの url をクリップボードにコピーされます
 
-3. Clone the repo to your hard drive  
-![Git Clone](/media-draft/2-gitclone.png)  
-In this example the repo was cloned to C:\Users\abel\Source\TripleCrown\DevOps
+3. ハード ドライブにリポジトリを複製します。  
+![Git クローン](../media-drafts/2-gitclone.png)  
+この例では、リポジトリが C:\Users\abel\Source\TripleCrown\DevOps に複製されました
 
-4. Delete everything from your local repo except for the `.git` directory  
-![Delete Repo of Everything](/media-draft/2-deleterepoofeverything.png)
+4. すべてのもの以外のローカル リポジトリから削除、`.git`ディレクトリ  
+![すべてのリポジトリを削除します。](..//media-drafts/2-deleterepoofeverything.png)
 
-5. Copy the source code for the downloaded node.js app into the repo folder  
-![Replaced Code](/media-draft/2-replacedeverything.png)
+5. リポジトリ フォルダーにダウンロードした node.js アプリのソース コードをコピーします。  
+![置き換えられたコード](../media-drafts/2-replacedeverything.png)
 
-6. Add all the changes to your local repo by typing `git add *` from the command line  
-![Git Add All](/media-draft/2-gitaddall.png)
+6. 」と入力して、ローカル リポジトリにすべての変更が加え`git add *`コマンド ラインから  
+![Git は、すべてを追加します。](../media-drafts/2-gitaddall.png)
 
-7. Commit changes to your local repo by typing `git commit -m "replace sample app with real code"`  
-![Git Commit](/media-draft/2-gitcommit.png)
+7. 」と入力して、ローカル リポジトリに変更をコミットします。 `git commit -m "replace sample app with real code"`  
+![Git コミット](../media-drafts/2-gitcommit.png)
 
-8. Push changes back to the git repo in VSTS with `git push`  
-![Git Push](/media-draft/2-gitpush.png)
+8. 変更を使用した VSTS の git リポジトリにプッシュします。 `git push`  
+![Git プッシュ](../media-drafts/2-gitpush.png)
 
-9. After pushing changes back to VSTS, this should send the real app code through the build  
-![Build Kicked Off](/media-draft/2-buildkickedoff.png)  
-![Build in Action](/media-draft/2-buildinaction.png)
- and release pipeline all the way to azure  
- ![Release Running](/media-draft/2-releaserunning.png)
+9. 変更を VSTS に戻すには後、ビルドからの実際のアプリ コードを送信このする必要があります。  
+![ビルド開始オフ](../media-drafts/2-buildkickedoff2.png)
+![ビルド実行](../media-drafts/2-buildrunning2.png)と azure に至るリリース パイプライン  
+ ![実行しているリリース](../media-drafts/2-releaserunning2.png)
 
- After the deployment finishes, you can verify the real app was deployed by going back to the Azure portal
+ デプロイが完了すると、Azure portal に戻って実際のアプリが展開されたことを確認できます。
 
- 1. Go to the Azure portal, browse to your Azure DevOps project, and click on your deployed app on the right-hand side  
- ![Launch Sample App Link](/media-draft/2-launchapp.png)
+ 1. 移動する Azure portal の Azure DevOps プロジェクトを参照し、右側にあるデプロイされているアプリをクリックします  
+ ![サンプル アプリのリンクを起動します。](../media-drafts/2-launchapp.png)
 
- 2. This launches the running app in your browser  
- ![App Running](/media-draft/2-apprunning.png)
+ 2. これにより、ブラウザーで実行中のアプリが起動します。  
+ ![実行中のアプリ](../media-drafts/2-apprunning.png)
 
-## Using external git repo
+## <a name="using-external-git-repo"></a>外部の git リポジトリの使用
 
-Another way to swap out the sample app with your real app code is by pointing the build pipeline to an external git repository that holds your app code. For this example, upload the real app code to a github repository.
+別の方法を実際のアプリ コードを使ってサンプル アプリを入れ替えるビルド パイプラインをアプリのコードを保持する外部の git リポジトリを指すことです。 この例では、実際のアプリのコードを github リポジトリにアップロードします。
 
-After uploading the real code to github, do the following to point the build pipeline to this github repository
+実際のコードを github にアップロードした後、ビルド パイプラインを指すこちらの github リポジトリには、次の操作を行います
 
-1. From the Azure portal, browse to your Azure DevOps project and click on the build link  
-![Build Link](/media-draft/2-buildlink.png)
+1. Azure portal から Azure DevOps プロジェクトを参照し、ビルド リンクをクリックします  
+![リンクを構築します。](../media-drafts/2-buildlink.png)
 
-2. This takes you to the build pipelines, click your build pipeline and then `Edit`  
-![Click Edit Build](/media-draft/2-clickeditbuildlink.png)
+2. ビルド パイプラインに移動、ビルド パイプラインをクリックし、 `Edit`  
+![エディット ビルド パイプラインをクリックします。](../media-drafts/2-editbuildpipelinelink.png)
 
-3. This takes you to the build editor, click on `Get sources`  
-![Click Get Source](/media-draft/2-clickgetsource.png)
+3. ビルド エディターに移動をクリックします `Get sources`  
+![取得元のタスクをクリックします。](../media-drafts/2-clickgetsourcetask.png)
 
-4. This takes you to the Select a source page. Notice how you can not only use VSTS Git, but also GitHub, GitHub Enterprise, Subversion, Bitbucket Cloud, and any external Git based repo for the build pipeline. For this exercise, select GitHub  
-![Select GitHub](/media-draft/2-selectgithub.png)
+4. すると、選択するソース ページ。 方法はしか使用できません VSTS の Git も GitHub、GitHub Enterprise、Subversion、Bitbucket Cloud、および任意の外部 Git ベースのビルド パイプラインのリポジトリ。 この演習では、GitHub を選択します。  
+![GitHub を選択します。](../media-drafts/2-selectgithub2.png)
 
-5. This takes you to the GitHub connection page. Either use OAuth or a Personal Access Token to connect with your GitHub account
+5. GitHub の [接続] ページに移動します。 OAuth または個人用アクセス トークンを使用するか、GitHub アカウントに接続するには
 
-6. Select the github repo holding the real app code and click `Save & queue`  
-![Save and Queue](/media-draft/2-saveandqueue.png)
+6. 実際のアプリのコードを保持している github リポジトリを選択し、をクリックしてください `Save & queue`  
+![保存してキュー](../media-drafts/2-saveandqueue2.png)
 
-7. Click the `Save & queue` button  
-![](/media-draft/2-saveandqueuedialog.png)
+7. をクリックして、`Save & queue`ボタン  
+![保存して、ボタンのキュー](../media-drafts/2-saveandqueuebutton.png)
 
-8. This action saves and kicks off the build, sending the real app code hosted in GitHub through our build and release pipelines all the way to Azure  
-![Build Running](/media-draft/2-buildrunning.png)
+8. このアクションは、保存とオフは、実際のアプリを送信する、ビルドが開始され、ビルド経由でホストされている GitHub のコードしリリース パイプラインを Azure に  
+![ビルドを実行中](../media-drafts/2-buildpipelinerunning.png)
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned two different ways to replace the sample code in the DevOps project with real app code. This can be done either by replacing the code in the VSTS git repo, or by linking the build pipeline with another external repo which holds your app code.
+このユニットでは、DevOps プロジェクトのサンプル コードを実際のアプリ コードに置き換えますに 2 つの方法について説明しました。 これは、VSTS git リポジトリでコードを置き換えることで、または、アプリのコードを保持する別の外部リポジトリとビルド パイプラインをリンクすることで実行できます。
 
-Next learn how to customize the build and release pipelines.
+次に、ビルドのカスタマイズし、リリース パイプラインの方法について説明します。

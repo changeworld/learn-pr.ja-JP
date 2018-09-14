@@ -1,42 +1,37 @@
-In order to connect to a data source we have to configure an *input binding*. This binding will make it possible to write minimal code to create a message. You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+構成しなければならないデータ ソースに接続するために、*入力バインド*します。 このバインディング可能になりますメッセージを作成する最小限のコードを記述します。 記憶域の接続を開くなどのタスクのコードを記述する必要はありません。 Azure Functions ランタイムとバインドをそれらのタスクの処理できます。
 
-## Input binding types
+## <a name="input-binding-types"></a>入力バインドの種類
 
-There are multiple types of input, however not all types support both input and output. You'll use them anytime you want to ingest data of that type. Here, we'll look at the types that support input bindings and when to use them.
+複数の種類の入力がある、ただしすべての種類をサポートして、入力し出力します。 その型のデータを取り込むときにいつでも使用します。 ここでは、入力バインディングとそれらを使用する場合をサポートする型を紹介します。
 
-- **Blob Storage**
-    The blob storage bindings allow you to read from a blob.
+- **Blob Storage** blob storage のバインドを使用すると、blob から読み取る。
 
-- **Cosmos DB**
-    The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function. The document ID or query parameters can be determined based on the trigger that invokes the function.
+- **Cosmos DB** Azure Cosmos DB 入力バインドでは、SQL API を使用して、1 つを取得するか、Azure Cosmos DB の詳細を文書化し、関数の入力パラメーターに渡します。 ドキュメント ID またはクエリ パラメーターは、関数を呼び出したトリガーに基づいて決定することができます。
 
-- **Microsoft Graph**
-    Microsoft Graph input bindings allow you to read files from OneDrive, read data from Excel, and get auth tokens so you can interact with any Microsoft Graph API.
-- **Mobile Apps**
-    The Mobile Apps input binding loads a record from a mobile table endpoint and passes it into your function.
+- **Microsoft Graph** Microsoft Graph の入力バインドでは、OneDrive からファイルを読み取り、Excel からデータを読み取るし、Microsoft Graph API で操作できるように、認証トークンを取得することができます。
+- **Mobile Apps** Mobile Apps 入力バインドを選択し、モバイル テーブル エンドポイントからレコードを読み込んで関数に渡します。
 
-- **Table storage**
-    You can read data and work with Azure Table storage.
+- **テーブル ストレージ**データを読み取るし、Azure Table storage を使用できます。
 
-## How to create an input binding?
+## <a name="how-to-create-an-input-binding"></a>入力バインディングを作成する方法でしょうか。
 
-In order to define a binding an input, you must define the `direction` as `in`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
+バインドを定義するには、入力を定義する必要あります、`direction`として`in`します。
+バインドの種類ごとにパラメーターが異なる場合がありますにも記載されているもの[Microsoft のドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings?azure-portal=true)
 
-## What is a binding expression?
+## <a name="what-is-a-binding-expression"></a>バインド式とは何ですか。
 
-A binding expression is specialized text in function.json, function parameters, or code that is evaluated when the function is invoked to yield a value. For example, you can use a binding expression to get the current time or retrieve a value from app settings.
+バインディング式は、function.json の関数のパラメーター、またはコードに値を生成する関数が呼び出されたときに評価される特殊なテキストです。 たとえば、現在の時刻を取得またはアプリ設定の値を取得するバインディング式を使用できます。
 
-### Types of binding expressions
+### <a name="types-of-binding-expressions"></a>バインディング式の種類
 
-- App settings
-- Trigger file name
-- Trigger metadata
-- JSON payloads
-- New GUID
-- Current date and time
-- Binding expressions
+- アプリケーション設定
+- トリガー ファイル名
+- トリガー メタデータ
+- JSON ペイロード
+- 新しい GUID
+- 現在の日付と時刻
+- バインド式
 
-Most expressions are identified by wrapping them in curly braces. However, app setting binding expressions are identified differently from other binding expressions: they are wrapped in percent signs rather than curly braces. For example if the blob output binding path is `%Environment%/newblob.txt` and the Environment app setting value is Development, a blob will be created in the Development container.
+ほとんどの式は、それを中かっこで囲むことによって識別されます。 ただし、アプリ設定のバインド式は、その他のバインディング式から異なる方法で識別されるは。 中かっこではなく、パーセント記号でラップされます。 たとえば、blob 出力バインディング パスが`%Environment%/newblob.txt`環境アプリケーション設定の値は、開発とは、開発のコンテナーに blob が作成されます。
 
-Input bindings allow us to connect our function to a data source. There are several types of data sources we can connect to and the parameters for each vary. We can use binding expressions in the function.json, function parameters or code, to resolve values from various sources.
+入力バインディング、関数をデータ ソースに接続を許可します。 接続できるデータ ソースおよび各 vary のパラメーターのいくつかの種類があります。 さまざまなソースから値を解決するのには、function.json の関数パラメーターまたはコード、バインディング式を使用できます。

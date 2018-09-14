@@ -1,35 +1,35 @@
-Now that all the requirements are in place, you can write code that creates a new storage queue and adds a message. We would typically place this code in our front-end apps that generate the data.
+これですべての要件が満たされましたので、新しいストレージ キューの作成およびメッセージの追加を行うコードを記述することができます。 通常、このコードは、データを生成するフロント エンド アプリ内に置きます。
 
-## Add the client library for Azure Storage
+## <a name="add-the-client-library-for-azure-storage"></a>Azure Storage 用クライアント ライブラリを追加する
 
-Let's start by adding the **Azure Storage Client Library for .NET** to our app. It can be installed with NuGet (a .NET package manager). 
+**.NET 用 Azure Storage クライアント ライブラリ**をアプリに追加することから始めてみましょう。 これは、NuGet (.NET パッケージ マネージャー) を使用してインストールできます。 
 
 > [!NOTE]
-> Even though a new Cloud Shell was created, your files are all still present. However, you will need to switch into the `QueueApp` folder since you will now be at the root of your storage area. Just type `cd QueueApp` to switch folders. Make sure to do this before attempting to add the package since the .NET app is in that folder.
+> 新しい Cloud Shell が作成されましたが、ご利用のファイルはまだすべて存在しています。 ただし、今度はご利用のストレージ領域の root が表示されるので、`QueueApp` フォルダーに切り替える必要があります。 「`cd QueueApp`」と入力して、フォルダーを切り替えます。 .NET アプリはそのフォルダー内にあるので、パッケージの追加を試みる前に必ずその操作を行います。
 
-1. Change the current directory to the `QueueApp` folder.
+1. 現在のディレクトリを `QueueApp` フォルダーに変更します。
 
-1. Install the `WindowsAzure.Storage` package to the project with the `dotnet add package` command.
+1. `dotnet add package` コマンドを使用してプロジェクトに `WindowsAzure.Storage` パッケージをインストールします。
 
 ```azurecli
 dotnet add package WindowsAzure.Storage
 ```
 
-## Add a method to send a news alert
+## <a name="add-a-method-to-send-a-news-alert"></a>ニュース速報を送信するメソッドを追加する
 
-Next, let's create a new method to send a news story into a queue.
+次に、ニュース記事をキューに送信する新しいメソッドを作成しましょう。
 
-1. Open the code editor by typing `code .`
+1. 「`code .`」と入力して、コード エディターを開きます。
 
-1. Open the `Program.cs` file.
+1. `Program.cs` ファイルを開きます。
 
-1. At the top of the file, add the following namespaces. We'll be using types from both of these to connect to Azure Storage and then to work with queues.
+1. ファイルの先頭に次の名前空間を追加します。 次の両方からの型を使用して Azure Storage に接続して、キューを操作します。
 
     - System.threading.task
     - Microsoft.WindowsAzure.Storage
     - Microsoft.WindowsAzure.Storage.Queue
 
-1. Create a static method in the `Program` class named `SendArticleAsync` that takes a `string` and returns a `Task`. We'll use this method to send a news article in to our service. Name the input parameter `newsMesasage` as shown below.
+1. `string` を取り、`Task` を返す `SendArticleAsync` という名前の `Program` クラス内に静的メソッドを作成します。 このメソッドを使用して、利用しているサービスにニュース記事を送信します。 次に示すように、入力パラメーターの名前を `newsMesasage` とします。
 
     ```csharp
     ...
@@ -46,20 +46,21 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
     
-1. In your new method, use the static `CloudStorageAccount.Parse` method to parse your connection string (recall we placed it into a constant string). This method returns a `CloudStorageAccount` object that needs to be stored in a variable.
+1. ご自分の新しいメソッド内で、静的メソッド `CloudStorageAccount.Parse` を使用してご利用の接続文字列を解析します (それを定数文字列内に配置したことを思い出してください)。 このメソッドからは、変数内に格納する必要がある `CloudStorageAccount` オブジェクトが返されます。
 
-1. Call the `CreateCloudQueueClient()` method on the storage account object to get a client object and store that in a variable.
+1. ストレージ アカウント オブジェクトに対して `CreateCloudQueueClient()` メソッドを呼び出すことで、クライアント オブジェクトを取得し、それを変数内に格納します。
 
-1. Next, call `GetQueueReference` method on the client object and pass the string `"newsqueue"` for the queue name. This returns a `CloudQueue` object that we can use to work with the queue. It's OK if the queue does not exist yet.
+1. 次に、そのクライアント オブジェクトに対して `GetQueueReference` メソッドを呼び出し、キュー名として文字列 `"newsqueue"` を渡します。 これにより、キューを操作するのに使用できる `CloudQueue` オブジェクトが返されます。 キューがまだ存在していなくても問題ありません。
 
-1. Call `CreateIfNotExistsAsync()` on the `CloudQueue` object to ensure the queue is ready for use. This will create the queue if necessary.
-    - Since this is an asynchronous method, use the C# `await` keyword to ensure we work properly with it. That also means you need to decorate the _method_ with the `async` keyword. 
-    - `CreateIfNotExistsAsync` returns a `bool` value that will be `true` if the queue was created and `false` if it already exists. Output a message to the console if we created the queue.
-    - Here's an example if you need some help.
+1. `CloudQueue` オブジェクトに対して `CreateIfNotExistsAsync()` を呼び出して、確実にキューが使用できる状態になるようにします。 この場合は、必要に応じて、キューが作成されます。
+    - これは非同期メソッドであるため、C# の `await` キーワードを使用して、確実にその適切な操作が行えるようにします。 そのことはまた、_メソッド_を `async` キーワードで修飾する必要があることを意味します。 
+    - `CreateIfNotExistsAsync` によって `bool` 値が返されます。その値はキューが作成された場合は `true` となり、キューが既に存在する場合は `false` となります。 キューを作成した場合は、コンソールにメッセージが出力されます。
+    - ヘルプが必要な場合は、次の例を参照してください。
 
     ```csharp
     static async Task SendArticleAsync(string newsMessage)
     {
+        // Not Shown here - code from prior steps
         ...
         bool createdQueue = await queue.CreateIfNotExistsAsync();
         if (createdQueue)
@@ -69,13 +70,13 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
 
-1. Create an instance of a `CloudQueueMessage`. 
-    - It takes a `string` parameter, pass in the method parameter (`newsMessage`). This will be the _body_ of the message. There is also a static method named  that can create a binary message payload.
+1. `CloudQueueMessage` のインスタンスを作成します。 
+    - これは `string` パラメーターを取り、メソッド パラメーターを渡します (`newsMessage`)。 これは、メッセージの_本文_となります。 バイナリ メッセージ ペイロードを作成できる  という名前の静的メソッドもあります。
     
 
-1. Call `AddMessageAsync` on the `CloudQueue` object to add the message to the queue. This is also an asynchronous method and you will need to use the `await` keyword to ensure we properly interact with it.
+1. `CloudQueue` オブジェクトに対して `AddMessageAsync` を呼び出して、キューにメッセージを追加します。 これも非同期メソッドであるので、確実にその適切な操作が行えるようにするために `await` キーワードを使用する必要があります。
 
-1. Save the file and build it by typing `dotnet build` into the command window. Fix any errors, you can use the following code to check your work.
+1. ファイルを保存し、コマンド ウィンドウに「`dotnet build`」と入力してそれをビルドします。 エラーがある場合は修正します。次のコードを使用して、ご自分の作業内容をチェックすることができます。
 
     ```csharp
     static async Task SendArticleAsync(string newsMessage)
@@ -96,22 +97,22 @@ Next, let's create a new method to send a news story into a queue.
     }
     ```
 
-## Add code to send a message
+## <a name="add-code-to-send-a-message"></a>メッセージを送信するためのコードを追加する
 
-Let's modify the `Main` method to pass any parameters received into our new method so we can test our new send method.
+この新しい送信メソッドをテストするために、受信したパラメーターが新しいメソッドに渡されるように `Main` メソッドを修正してみましょう。
 
-1. Locate the `Main` method.
+1. `Main` メソッドを検索します。
 
-1. Check the passed `args` parameter to see if any data was passed to the command line. If so, use `String.Join` to create a single string from all the words using a space as the separator.
+1. 渡された `args` パラメーターを調べて、任意のデータがコマンドラインに渡されたかどうかを確認します。 そうである場合は、`String.Join` を使用して、区切り記号としてスペースを使用しているすべての単語から、単一の文字列を作成します。
 
-1. Pass that to the new `SendArticleAsync` method. 
+1. それを新しい `SendArticleAsync` メソッドに渡します。 
 
-1. Once it returns, use `Console.WriteLine` to output the message we sent.
+1. そのメソッドから制御が返されたら、`Console.WriteLine` を使用して、送信してあるメッセージを出力します。
 
-1. Save the file and build the program (`dotnet build`), you can use the code below to check your work.
+1. ファイルを保存し、プログラムをビルドします (`dotnet build`)。次のコードを使用することで、作業内容を確認することができます。
 
 > [!NOTE]
-> Since our method is technically asynchronous, we normally would want to use the `await` keyword, however that feature isn't available on your `Main` method unless you are using C# 7.2 (it's a new feature). To ensure we can use this on older versions of the language, just call `Wait()` on the method to actually block waiting for the method to return.
+> このメソッドは技術的には非同期であるため、通常は、`await` キーワードを使用します。ただし、その機能は C# 7.2 を使用していない限り、ご自分の `Main` では利用できません (それは新しい機能です)。 これを言語の以前のバージョンで確実に使用できるようにするためには、メソッド上で `Wait()` を呼び出すだけとして、そのメソッドから制御が戻されるのを実際にブロック状態で待機します。
 
     ```csharp
     static void Main(string[] args)
@@ -125,30 +126,30 @@ Let's modify the `Main` method to pass any parameters received into our new meth
     }
     ```
 
-## Execute the application
+## <a name="execute-the-application"></a>アプリケーションを実行する
 
-The application can now send messages. To test it, you can run it from the command line with the `dotnet run` command. Any additional strings are passed as parameters to the application. As an example, you can type:
+アプリケーションでは、メッセージを送信できるようになりました。 それをテストするには、`dotnet run` コマンドを使用してコマンド ラインから実行します。 任意の追加の文字列がパラメーターとしてアプリケーションに渡されます。 たとえば、次のように入力することができます。
 
     ```azurecli
     dotnet run Send this message
     ```
 
 > [!WARNING]
-> Make sure you have saved all the files in the online editor before you build and run the program.
+> 必ず、オンライン エディターですべてのファイルが保存されていることを確認してから、プログラムをビルドして実行します。
 
-This should add the string `"Send this message"` into the queue.
+これにより、文字列 `"Send this message"` がキューに追加されます。
 
-## Check your results
+## <a name="check-your-results"></a>結果を確認する
 
-You can check queues in the Azure portal using the **Storage Explorer**, if you open that product it will let you explore the data in each storage account you own.
+Azure portal 内で **ストレージ エクスプローラー** を使用してキューを確認することができます。その製品を開くと、自分が所有している各ストレージ アカウント内のデータを探索できるようになります。
 
-Alternatively, you can use the Azure CLI or PowerShell. Try this command in the shell, replacing the `<connection-string>` value with your specific connection string:
+別の方法として、Azure CLI または PowerShell を使用することもできます。 このコマンドをシェル内で試してみます。それには、`<connection-string>` 値をご自分の特定の接続文字列に置換します。
 
 ```azurecli
 az storage message peek --queue-name newsqueue --connection-string <connection-string> 
 ```
 
-This should dump the information for your message, which will look something like this:
+これによりご自分のメッセージに関する情報がダンプされます。それは次のようになります。
 
 ```json
 [
@@ -164,9 +165,9 @@ This should dump the information for your message, which will look something lik
 ]
 ```
 
-There are several other commands available that you can try with the tools - check out both `az storage queue --help` and `az storage message --help` to explore them.
+上記のツールを使用して試すことができるコマンドが他にもいくつか用意されています。それらを調べるには、`az storage queue --help` と `az storage message --help` の両方をチェックアウトします。
 
 > [!TIP]
-> Put your connection string value into an environment variable named `AZURE_STORAGE_CONNECTION_STRING` to save yourself from having to type the `--connection-string` parameter every time!
+> `AZURE_STORAGE_CONNECTION_STRING` という名前の環境変数にご自分の接続文字列値を格納し、`--connection-string` を毎回入力しなくても済むようにします。
 
-Now that we have sent a message, the last step is to add support to _receive_ the message.
+これでメッセージの送信は完了しました。最後の手順は、メッセージを_受信_するためのサポートを追加することです。

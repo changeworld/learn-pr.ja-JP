@@ -1,92 +1,92 @@
-The app and Azure Function are now complete and running locally. In this unit, you publish the function to Azure to run in the cloud.
+アプリと Azure 関数が完成し、ローカルで実行されています。 このユニットでは、関数を Azure に発行してクラウドで実行します。
 
-> In this unit, you will publish your function from Visual Studio. This is a great way to get started for proof-of-concepts, prototypes, and learning, but for a production-quality app you should **not** use this method. You should use some form of CI-based deployment. You can read more about doing this in the [Azure Functions Deployment docs](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment).
->
+> [!Note]
+> Visual Studio から関数を発行します。 これは概念実証、プロトタイプ、学習を始める方法として優れていますが、運用品質のアプリにはこの手法を利用**しないで**ください。 何らかの形式の CI ベースのデプロイを利用してください。 この方法に関する詳細は、[Azure Functions のデプロイに関するドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-continuous-deployment)を参照してください。
 
-## Publishing your app to Azure
+## <a name="publishing-your-app-to-azure"></a>アプリを Azure に発行する
 
-Azure functions can be published to Azure from inside Visual Studio.
+Azure 関数は Visual Studio 内から Azure に発行できます。
 
-1. Stop the local Azure Functions runtime if it's still running from the previous unit.
+1. ローカルの Azure Functions ランタイムが前の演習から引き続き実行されている場合は、これを停止します。
 
-1. Right-click on the `ImHere.Functions` app in the solution explorer and select *Publish...*.
+1. ソリューション エクスプローラーで `ImHere.Functions` アプリを右クリックし、*[発行]* を選択します。
 
-    ![Right-click publish on the Functions app](../media-drafts/8-right-click-publish.png)
+    ![Functions アプリで右クリック発行する](../media/8-right-click-publish.png)
 
-1. From the **Pick a publish target** dialog, select *Azure Function App*, and for **Azure App Service**, select *Create New*. Click **Publish**.
+1. **[発行先の選択]** ダイアログから *[Azure 関数アプリ]* を選択し、**[Azure App Service]** には *[新規作成]* を選択します。 **[発行]** をクリックします。
 
-    ![Creating a new Azure App Service to publish to](../media-drafts/8-pick-publish-target.png)
+    ![発行先の Azure App Service を新しく作成する](../media/8-pick-publish-target.png)
 
-1. Select your Azure account from the drop-down in the top-right corner; if you have more than one Azure accounts and the right one isn't selected.
+1. Azure アカウントを複数持っていて、必要なアカウントを選択していない場合は、右上隅のドロップダウンから Azure アカウントを選択します。
 
-1. Give your Functions app a name. This name needs to be globally unique across all the Functions apps in the whole of Azure, so use something like "ImHere-\<YourName\>".
+1. Function App に名前を付けます。 この名前は、Azure 全体のすべての Functions アプリで一意にする必要があります。"ImHere-\<YourName\>" のような名前を使用してください。
 
-1. Select the subscription you want to create this Functions app under.
+1. この Functions アプリを作成するサブスクリプションを選択します。
 
-1. Create a new resource group for this Functions app by clicking the **New...** button next to the **Resource Group** drop-down and giving it a name such as "ImHere". Resource group names need to be unique to your subscription, not globally unique across Azure. Then, click **OK**.
+1. **[リソース グループ]** ドロップダウンの横にある **[新規]** ボタンをクリックし、"ImHere" のような名前を付けることで、この Functions アプリに新しいリソース グループを作成します。 リソース グループ名は、Azure 全体で一意にするのではなく、サブスクリプションに対して一意にする必要があります。 次に、 **[OK]** をクリックします
 
-    ![Create a new resource group](../media-drafts/8-create-new-resource-group.png)
+    ![新しいリソース グループを作成する](../media/8-create-new-resource-group.png)
 
-   Creating a new resource group makes it easier to cleanup later. You can delete the resource group and know that everything you've created for this Functions app will all be deleted at the same time.
+   新しいリソース グループを作成すると、後のクリーンアップが簡単になります。 リソース グループを削除すると、この Functions アプリに作成したすべてが同時に削除されます。
 
-1. Create a new hosting plan by clicking the **New...** button next to the **Hosting Plan** drop-down. The App Service plan name will default to your app name with "Plan" on the end. Set the **Location** to the closest location to you and make sure **Size** is set to consumption. Then, click **OK**.
+1. **[ホスティング プラン]** ドロップダウンの横にある **[新規]** ボタンをクリックし、新しいホスティング プランを作成します。 App Service プランの名前は、既定でアプリ名の末尾に "Plan" が付く形式になります。 **[場所]** をお住まいの地域に最も近い場所に設定し、**[サイズ]** を消費に設定します。 次に、 **[OK]** をクリックします
 
-    ![Configure the hosting plan](../media-drafts/8-configure-hosting-plan.png)
+    ![ホスティング プランを構成する](../media/8-configure-hosting-plan.png)
 
-1. Create a new storage account by clicking the **New...** button next to the **Storage Account** drop-down. A default name will be provided, so keep all the default values and click **OK**.
+1. **[ストレージ アカウント]** ドロップダウンの横にある **[新規]** ボタンをクリックし、新しいストレージ アカウントを作成します。 既定の名前が与えられます。既定値をすべてそのまま選択し、**[OK]** をクリックします。
 
-    ![Create a storage account](../media-drafts/8-create-storage-account.png)
+    ![ストレージ アカウントを作成する](../media/8-create-storage-account.png)
 
-1. Click **Create** to provision all the resources on Azure and publish your Azure Functions app.
+1. **[作成]** をクリックし、Azure にすべてのリソースをプロビジョニングし、Azure Functions アプリを発行します。
 
-    ![Create the App Service](../media-drafts/8-create-app-service.png)
+    ![App Service を作成する](../media/8-create-app-service.png)
 
-Provisioning will take a couple of minutes or so to run. The following resources will be provisioned:
+プロビジョニングの実行には 2、3 分かかります。 次のリソースがプロビジョニングされます。
 
-- A storage account to store the files needed for the Azure Functions app
-- An App Service plan to manage the compute resources needed by the Azure Functions app
-- The App Service that runs the Azure function
+- Azure Functions アプリに必要なファイルを格納するためのストレージ アカウント
+- Azure Functions アプリに必要なコンピューティング リソースを管理する App Service プラン
+- Azure 関数を実行する App Service
 
-The function will now be published and available to call at https://<your-app-name>.azurewebsites.net/api/SendLocation.
+関数が発行され、 https://<your-app-name>.azurewebsites.net/api/SendLocation で呼び出せるようになります。
 
-## Configuring your app
+## <a name="configuring-your-app"></a>アプリの構成
 
-When the Azure function was running locally, it was using Twilio credentials that were stored in a `local.settings.json` file. As the name suggests, this file is for local settings, not Azure settings. Before the Azure function can be called inside Azure, the `TwilioAccountSid` and `TwilioAuthToken` settings need to be configured.
+Azure 関数がローカルで実行されていたとき、`local.settings.json` ファイルに格納されていた Twilio 資格情報が使用されていました。 名前が示すように、このファイルは Azure 設定ではなく、ローカル設定用です。 Azure 内で Azure 関数を呼び出すには、`TwilioAccountSid` 設定と `TwilioAuthToken` 設定を構成する必要があります。
 
-1. From the Publish tab, click the **Manage Application Settings** option.
+1. [発行] タブから **[アプリケーション設定の管理]** オプションをクリックします。
 
-    ![The Manage Application Settings option](../media-drafts/8-application-settings-option.png)
+    ![[アプリケーション設定の管理] オプション](../media/8-application-settings-option.png)
 
-1. Click the **Add** button to add a new setting. Name it "TwilioAccountSid" and set the value to your Twilio account SID. Repeat this step for your Auth Token using the name "TwilioAuthToken".
+1. **[追加]** ボタンをクリックして、新しい設定を追加します。 これに "TwilioAccountSid" という名前を付け、値を Twilio アカウント SID に設定します。 "TwilioAuthToken" という名前を使用し、認証トークンに対してこの手順を繰り返します。
 
-    ![Setting the Twilio credentials in the application settings](../media-drafts/8-set-creds-in-app-settings.png)
+    ![アプリケーション設定で Twilio 資格情報を設定する](../media/8-set-creds-in-app-settings.png)
 
-1. Click **OK**.
+1. **[OK]** をクリックします。
 
-1. Click **Publish** to republish the Azure Functions app with the new application settings.
+1. **[発行]** をクリックし、新しいアプリケーション設定で Azure Functions アプリを再発行します。
 
-    ![The publish button](../media-drafts/8-publish-application-button.png)
+    ![[発行] ボタン](../media/8-publish-application-button.png)
 
-## Pointing the mobile app to Azure
+## <a name="pointing-the-mobile-app-to-azure"></a>モバイル アプリを Azure にポイントする
 
-1. From the Publish tab, copy the **Site URL** using the copy button next to the value.
+1. [発行] タブから、値の横にあるコピー ボタンを使用して **[サイト URL]** をコピーします。
 
-    ![Copy the site URL from the publish tab](../media-drafts/8-copy-site-url.png)
+    ![[発行] タブからサイトの URL をコピーする](../media/8-copy-site-url.png)
 
-1. Open the `MainViewModel` from the `ImHere` project.
+1. `ImHere` プロジェクトから `MainViewModel` を開く
 
-1. Update the value of the `baseUrl` field to be the site URL copied from the Publish tab.
+1. [発行] タブからコピーしたサイト URL に `baseUrl` フィールドの値を変更します。
 
-1. Change the protocol for this value from `http` to `https`. The site URL is always given using HTTP, but you have to use HTTPS to call an Azure function.
+1. この値のプロトコルを `http` から `https` に変更します。 サイト URL は常に HTTP の使用で与えられますが、Azure 関数を呼び出すには HTTPS を使用する必要があります。
 
-## Test it out
+## <a name="test-it-out"></a>テストする
 
-1. Set the `ImHere.UWP` app as the startup app and run it.
+1. `ImHere.UWP` アプリをスタートアップ アプリとして設定し、実行します。
 
-1. Enter a phone number and click the **Send Location** button.
+1. 電話番号を入力し、**[場所の送信]** ボタンをクリックします。
 
-1. You should receive the location as an SMS message.
+1. 場所は SMS メッセージとして受信してください。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to publish an Azure Functions project to Azure from inside Visual Studio and configure application settings.
+この演習では、Azure Functions プロジェクトを Visual Studio 内から Azure に発行し、アプリケーション設定を構成する方法について学習しました。

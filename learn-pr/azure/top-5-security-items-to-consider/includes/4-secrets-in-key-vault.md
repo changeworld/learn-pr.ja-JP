@@ -1,28 +1,29 @@
-Secrets aren't secrets if they are shared with everyone. Storing confidential items like connection strings, security tokens, certificates and passwords in your code is just inviting someone to take them and use them for something other than what you intended them for. Even storing this sort of data in your web configuration is a bad idea - you are essentially allowing anyone who has access to the source code or web server access to your private data.
+シークレットでは、すべてのユーザーと共有されている場合、シークレットはありません。 接続文字列などの機密情報の項目を格納するには、セキュリティ トークン、証明書とパスワードをコードでは、だけ招待すること、それらを目的には、異なる目的しを使用します。 不適切な考え方は、web の構成にもこの種のデータを格納する - ソース コードへのアクセスまたはプライベート データへの web サーバーのアクセスを持つユーザーを本質的に許可されています。
 
-Instead, you should always put these secrets into **Azure Key Vault**.
+これらのシークレットを配置するは常に代わりに、 **Azure Key Vault**します。
 
-## What is Azure Key Vault
-Azure Key Vault is a *secret store*: a centralized cloud service for storing application secrets. Key Vault keeps your confidential data safe by keeping application secrets in a single central location and providing secure access, permissions control, and access logging.
+## <a name="what-is-azure-key-vault"></a>Azure Key Vault とは
+Azure Key Vault は、*シークレット ストア*: アプリケーション シークレットを格納するための一元的なクラウド サービスです。 Key Vault では、1 つの場所にアプリケーション シークレットを保持し、セキュリティで保護されたアクセス、アクセス許可の制御、およびアクセスのログを提供することによって安全に機密データを維持します。
 
-Secrets are stored in individual *vaults*, each with their own configuration and security policies to control access. You can then get to your data through a REST API, or through a client SDK available for most languages.
+個人の機密情報が格納されている*コンテナー*、それぞれに独自のアクセスを制御するポリシーの構成とセキュリティ ポリシー。 REST API、またはクライアント SDK のほとんどの言語で利用可能なデータを取得できます。
 
 > [!IMPORTANT]
-> **Key Vault is designed to store configuration secrets for server applications.** It's not intended for storing data belonging to your app's users, and it shouldn't be used in the client-side part of an app. This is reflected in its performance characteristics, API, and cost model.
+> **Key Vault は、サーバー アプリケーションの構成のシークレットを格納するよう設計されています。** アプリのユーザーに属するデータを格納するものではなく、アプリのクライアント側の部分で使用することはできません。 このことは、そのパフォーマンス特性、API、およびコスト モデルに反映されています。
 >
-> User data should be stored elsewhere, such as in an Azure SQL database with Transparent Data Encryption, or a storage account with Storage Service Encryption. Secrets used by your application to access those data stores can be kept in Key Vault.
+> ユーザー データは、Transparent Data Encryption を使用する Azure SQL データベース、Storage Service Encryption を使用するストレージ アカウントなど、別の場所に保存する必要があります。 Key Vault には、そうしたデータ ストアにアクセスするためにアプリケーションで使用されるシークレットを保持できます。
 
-## Why use a Key Vault for my secrets
+## <a name="why-use-a-key-vault-for-my-secrets"></a>自分のシークレットを Key Vault を使用する理由
 
-Key management and storing secrets can be complicated and error-prone when performed manually. Rotating certificates manually means potentially going without for a few hours, or days. As mentioned above, saving your connections strings in your configuration file or code repository means someone could steal your credentials.
+キー管理とシークレットを格納するは、複雑でエラーが発生しやすい手動での実行時に指定できます。 証明書を手動で交換すると、可能性のあるいくつかの時間や数日間せずを意味します。 前述のように、構成で接続文字列を保存ファイルやコード リポジトリを意味、資格情報を盗んだりユーザーできます。
 
-Key Vault allows users to store connection strings, secrets, passwords, certificates, access policies, file locks (making items in Azure read-only), and automation scripts.  It also logs access and activity, allows you to monitor access control (IAM) in your subscription, and it also has diagnostic, metrics, alerts and troubleshooting tools, to ensure you have the access you need.
+Key Vault では、接続文字列、シークレット、パスワード、証明書、アクセス ポリシー、ファイルのロック (項目で行う Azure 読み取り専用)、および自動化スクリプトを格納することができます。  ログに記録へのアクセスとアクティビティ、サブスクリプションでアクセス制御 (IAM) を監視することができ、診断、メトリック、アラート、および必要なアクセス権があることを確認して、トラブルシューティングのツールもあります。
 
 ![Azure Key Vault](../media-draft/Key-Vault.png)
 
 <!-- TODO: get link to TC module -->
-You can learn more about using a Key Vault in the module **Managing secrets with Azure Key Vault**.
+<!--
+You can learn more about using a Key Vault in the module [Manage secrets in your server apps with Azure Key Vault](learn/modules/manage-secrets-with-azure-key-vault).-->
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Credential theft, manual key rotation and certificate renewal can be a thing of the past if you manage your secrets well, using Azue Key Vault.
+資格情報の盗難、手動のキー ローテーションと証明書を管理する場合、シークレット、Azue Key Vault を使用して、更新は、過去のものにできます。

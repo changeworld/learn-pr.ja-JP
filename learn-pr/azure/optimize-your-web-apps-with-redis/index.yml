@@ -1,41 +1,38 @@
 ### YamlMime:Module
 uid: learn.optimize-web-app-with-redis
 metadata:
-  title: Optimize your web applications by caching read-only data with Redis
-  description: Use Redis caching in Azure to reduce the load on databases. Apply different caching architectures to support larger loads in distributed and high-volume environments.
+  title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+  description: データベースの負荷を軽減するのにには、Azure での Redis キャッシュを使用します。 分散型かつ高ボリュームの環境でより高い負荷をサポートするためにさまざまなキャッシュのアーキテクチャを適用します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Optimize your web applications by caching read-only data with Redis
-summary: Use Redis caching in Azure to reduce the load on databases. Apply different caching architectures to support larger loads in distributed and high-volume environments.
-abstract:  | 
-  In this module, you will:
-    - Describe what a Redis cache is and how you can use it for your business needs
-    - Create a design and plan to use a Redis cache
-    - Provision a Redis cache in Azure
-    - Connect a web app to the cache
+title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+summary: データベースの負荷を軽減するのにには、Azure での Redis キャッシュを使用します。 分散型かつ高ボリュームの環境でより高い負荷をサポートするためにさまざまなキャッシュのアーキテクチャを適用します。
+abstract: |
+  このモジュールでは、次のことを行います。
+  - キャッシュは、どのような Redis とお客様のビジネス ニーズの使用方法について説明します
+  - デザインを作成、Redis cache の使用を検討してください。
+  - Azure Redis cache をプロビジョニングします。
+  - キャッシュに web アプリを接続します。
 prerequisites: |
-  - Experience with app development
-  - Experience using data in apps
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  - アプリの開発経験
+  - アプリでデータを使用した経験
+iconUrl: /learn/achievements/optimize-your-web-apps-with-redis.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-redis-cache
+  - azure
+  - azure-redis-cache
 units:
-#TODO: None of these units have a knowledge task or task validation component (need to add somewhere so users don't get marked complete solely by viewing the pages).
-- learn.optimize-web-app-with-redis.1-introduction
-- learn.optimize-web-app-with-redis.2-decide-if-you-want-use-redis-in-azure
-- learn.optimize-web-app-with-redis.3-configure-redis-cache
-- learn.optimize-web-app-with-redis.4-exercise-create-redis-cache
-- learn.optimize-web-app-with-redis.5-execute-redis-commands
-- learn.optimize-web-app-with-redis.6-exercise-connect-an-app-to-the-cache
-- learn.optimize-web-app-with-redis.7-summary
+  - learn.optimize-web-app-with-redis.1-introduction
+  - learn.optimize-web-app-with-redis.2-decide-if-you-want-use-redis-in-azure
+  - learn.optimize-web-app-with-redis.3-configure-redis-cache
+  - learn.optimize-web-app-with-redis.4-exercise-create-redis-cache
+  - learn.optimize-web-app-with-redis.5-execute-redis-commands
+  - learn.optimize-web-app-with-redis.6-exercise-connect-an-app-to-the-cache
+  - learn.optimize-web-app-with-redis.7-summary
 achievement: learn.optimize-web-app-with-redis.badge

@@ -9,11 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9badc59c650ff39f397903d0de156d9688793753
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246397"
 durationInMinutes: 2
-content: '[!include[](includes/3-docker.md)]'
+content: |
+  [!include[](includes/3-docker.md)]

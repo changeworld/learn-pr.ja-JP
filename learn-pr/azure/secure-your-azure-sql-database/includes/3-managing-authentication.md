@@ -1,55 +1,55 @@
-Let's assume you're running a website and an attacker gained access to your database. The attacker gained access to a dbo account in the attack and can perform any operation on the database. A dbo account can access and manipulate information such as metadata and perform all levels of access. 
+Web サイトとデータベースへのアクセス権を得た攻撃者を実行するいると仮定します。 攻撃者は攻撃では、dbo アカウントへのアクセスを得られるし、データベースで操作を実行することができます。 Dbo アカウントは、アクセスし、メタデータなどの情報を操作し、すべてのレベルのアクセスを実行できます。
 
-If the attacker only gained access to a regular user account, then they could only access tables, views, stored procedures, and other objects defined for that user account. For example, if a website accessing a database was compromised due to a SQL injection attack, then the attacker would be limited in what they could do. 
+攻撃者は、通常のユーザー アカウントへのアクセスのみ獲得場合、でしたのみアクセス テーブル、ビュー、ストアド プロシージャ、およびそのユーザー アカウントに対して定義されているその他のオブジェクト。 たとえば、データベースにアクセスする web サイトは、SQL インジェクション攻撃によって侵害された場合、自分の仕事でした攻撃者を制限は。
 
-In case a security breach happens, it helps to reduce the impact of the breach. Let's look at how to restrict access to the SQL Azure database at the user layer.
+セキュリティ違反が発生した場合は、侵害の影響を軽減する役立ちます。 ユーザー層で SQL Azure データベースへのアクセスを制限する方法を見てみましょう。
 
-## Reduce the attack surface of the database
+## <a name="reduce-the-attack-surface-of-the-database"></a>データベースの攻撃対象領域を減らす
 
-To reduce the impact of any security breach, you restrict the surface area of the attack. If you're connecting to your database using a dbo or administrator account and an attacker gets access to the database, the attacker will have access to perform all operations on the database. Access could include querying the database metadata, determining what data is available and/or sensitive, and exploiting this information. 
+セキュリティ侵害の影響を減らすために、攻撃の対象範囲を制限します。 Dbo または管理者アカウントを使用して、データベースに接続しているし、攻撃者は、データベースへのアクセスを取得、攻撃者は、データベースのすべての操作を実行するアクセスがあります。 アクセスには、データベースのメタデータのクエリを実行する、どのようなデータが使用可能なまたは機密情報で確認してこの情報を悪用を含めることができます。
 
-You avoid this security risk by creating database users that have restricted permissions. We'll use the term least-privilege here, as the users should only have access to the tables, views, stored procedures, and other entities needed to do their work. 
+アクセス許可が制限されているデータベース ユーザーを作成して、このセキュリティ リスクを回避します。 ここでは、ユーザーは、テーブル、ビュー、ストアド プロシージャ、およびその作業を行うために必要なその他のエンティティへのアクセスにのみがある、最低限の特権の用語を使用します。
 
-## Create a database user
+## <a name="create-a-database-user"></a>データベース ユーザーの作成
 
-To create a user with reduced privileges, you'll create a database user and then associate that user with the database. Let's create a SQL Server user and give the user permissions to the database. 
+低い特権でのユーザーを作成するにはデータベース ユーザーを作成し、そのユーザーをデータベースに関連付けます。 SQL Server ユーザーを作成し、データベースにユーザーのアクセス許可を付与してみましょう。
 
 > [!Note]
-> There are thirteen (13) types of users in SQL Server. If you need to create another type of database user, use the appropriate link to find out the right syntax. See [Create a database user](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-database-user?view=sql-server-2017). 
+> 13 個 (13) SQL Server でのユーザーの種類があります。 別の種類のデータベース ユーザーを作成する必要がある場合は、適切なリンクを使用して、正しい構文を確認します。 参照してください[データベース ユーザーを作成](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-database-user?view=sql-server-2017)です。
 
-Preferred practice is to create the user at a database level. This step prevents user permissions from going outside the boundaries of the database that you are trying to protect. 
+推奨されるプラクティスでは、データベース レベルでユーザーを作成します。 この手順では、保護しようとしているデータベースの継続的境界の外からは、ユーザー アクセスを許可できないようにします。
 
-1. First, select the database.
-2. Then, create the user using the following query: 
-   
+1. まず、データベースを選択します。
+2. 次に、次のクエリを使用してユーザーを作成します。
+
    ```sql
    CREATE USER MyWebAppUser WITH PASSWORD = '<YourSuperStrongPassword>';
    ```
-   
-   The previous query creates the user *MyWebUser*. By default the user will not have access to any tables, views, or stored procedures.  
-   
-3. Now, create appropriate permissions for the user by adding them to roles such as db_datareader and db_datawriter.
-   
-   The db_datareader role will allow the user access to all user tables and views within the database. Likewise, the db_datawriter role will allow the user access to read, write, update, and delete rows in the database. 
-   
+
+   前のクエリでは、ユーザーを作成します。 *MyWebUser*します。 既定では、ユーザーに任意のテーブル、ビュー、またはストアド プロシージャへのアクセスはありません。
+
+3. 次に、db_datareader、db_datawriter などのロールに追加することで、ユーザーの適切なアクセス許可を作成します。
+
+   Db_datareader ロールでは、すべてのユーザー テーブルおよびデータベース内のビューをユーザーのアクセスが許可されます。 同様に、db_datawriter ロールは、ユーザーに読み取り、書き込み、更新、アクセスを許可して、データベース内の行を削除します。
+
    ```sql
    ALTER ROLE db_datareader ADD MEMBER MyWebAppUser;
    ALTER ROLE db_datawriter ADD MEMBER MyWebAppUser;
    ```
 
-You can deny a user's access to other elements within the database using the DENY operator. Here you're denying the user MyWebAppUser the ability to select data from the Customers table.
+DENY 演算子を使用して、データベース内の他の要素へのユーザーのアクセスを拒否することができます。 ここで、Customers テーブルからデータを選択する機能がユーザー MyWebAppUser を拒否しています。
 
 ```sql
-DENY SELECT ON Customers TO MyWebAppUser; 
+DENY SELECT ON Customers TO MyWebAppUser;
 ```
 
-You can also use the GRANT permission to explicitly give permissions to a user or role.
+ユーザーまたはロールにアクセス許可を明示的に付与するのにアクセス許可を付与を使用することもできます。
 
 ```sql
 GRANT SELECT ON Customers TO MyWebAppUser;
 ```
 
-You'll continue to refine the operations on the database in order to get the user to the level of access needed. Instead of a user, you can create a role with the minimum permissions needed and then add the user to the role. 
+データベースの操作を絞り込むために必要なアクセスのレベルにユーザーを取得するために進みます。 、ユーザーの代わりには、必要な最小のアクセス許可を持つロールを作成し、ロールにユーザーを追加します。
 
-If you have multiple users that have the same permissions, you could create those users as part of the role. The user will have access only to things that they need, once all the access permissions have been granted or denied. 
-If an attacker gains access to the database through the newly created user, they will only see and execute the same data and operations the user can. Locking down user access greatly reduces the surface area of attack on the database. 
+同じ権限を持つ複数のユーザーがある場合は、役割の一部としてそれらのユーザーを作成できます。 ユーザーは、すべてのアクセス許可を許可または拒否されていると、必要なものにのみアクセスがあります。
+場合は、攻撃者は、新しく作成したユーザーを使用して、データベースへのアクセスを参照してくださいし、同じデータと、ユーザーが操作を実行するがのみ。 データベースへの攻撃の範囲を縮小が大幅にユーザーのアクセスをロックします。

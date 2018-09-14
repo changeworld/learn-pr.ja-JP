@@ -1,18 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.5-exercise-connect-to-a-windows-vm-using-rdp
-title: Connect to a Windows virtual machine using RDP
+title: RDP を利用して Windows 仮想マシンに接続する
 metadata:
-  title: Connect to a Windows virtual machine using RDP
-  description: Connect to a Windows virtual machine using RDP
+  title: RDP を利用して Windows 仮想マシンに接続する
+  description: RDP を利用して Windows 仮想マシンに接続する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
 durationInMinutes: 10
-# TODO:Add Azure Portal Interactivity
-# interactive: azure-portal
 azureSandbox: true
 content: |
   [!include[](includes/5-exercise-connect-to-a-windows-vm-using-rdp.md)]

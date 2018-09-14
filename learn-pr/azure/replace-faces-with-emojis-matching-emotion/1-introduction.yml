@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.the-mojifier.1-introduction
 metadata:
-  title: Introduction
-  description: TheMojifier is a Slack _slash_ command which replaces peoples faces in images with emojis matching their emotion.
+  title: はじめに
+  description: TheMojifier は、Slack_スラッシュ_peoples に代わるコマンドに、感情に一致する絵文字をイメージに直面します。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction
-durationInMinutes: 10
+title: はじめに
+durationInMinutes: 3
 content: |
   [!include[](includes/1-intro.md)]

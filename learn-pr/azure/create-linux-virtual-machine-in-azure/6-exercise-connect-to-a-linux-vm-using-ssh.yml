@@ -9,13 +9,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 273997e855c262ac30b6f0ee0a221f3a7e18f29b
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307911"
 durationInMinutes: 15
 interactive: bash
 azureSandbox: true
-content: '[!include[](includes/6-exercise-connect-to-a-linux-vm-using-ssh.md)]'
+content: |
+  [!include[](includes/6-exercise-connect-to-a-linux-vm-using-ssh.md)]

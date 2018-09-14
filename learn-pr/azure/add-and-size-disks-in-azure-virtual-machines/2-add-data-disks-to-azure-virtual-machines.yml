@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.2-add-data-disks-to-azure-virtual-machines
-title: Understand storage options for virtual machines (VMs)
+title: 仮想マシン (Vm) のストレージ オプションを理解します。
 metadata:
-  title: Understand storage options for virtual machines (VMs)
-  description: Understand storage options for virtual machines (VMs)
+  title: 仮想マシン (Vm) のストレージ オプションを理解します。
+  description: 仮想マシン (Vm) のストレージ オプションを理解します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

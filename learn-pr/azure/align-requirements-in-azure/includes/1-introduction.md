@@ -1,12 +1,13 @@
-Cloud computing provides configurable computing resources and services that can be quickly provisioned with minimal management effort. There are Azure services for almost any business computing need. Do you need an interactive website? A back end for a mobile app? Secure storage for your client data? All of these and more are available. And these resources are available when you need them, and you're typically only charged for the amount you use.
+クラウド コンピューティングには構成可能なコンピューティング リソースとサービスが用意されているため、最小限の管理作業で迅速にプロビジョニングできます。 ほぼすべてのビジネス コンピューティングのニーズに合う Azure サービスがあります。 対話型の Web サイトが必要ですか? モバイル アプリ用のバック エンドは? ご利用のクライアント データに対するセキュリティで保護されたストレージは? これらの他にもあらゆるサービスが利用できます。 そして、これらのリソースは、必要なときに利用できます。また、通常は使用した量に対してのみ課金されます。
 
-Hopefully, the cloud is an attractive option, but what if you already have existing on-premises infrastructure? Or you have highly sensitive data that you're not willing or able to store off-site?
+うまくいけばクラウドは魅力的な選択肢ですが、オンプレミスのインフラストラクチャが既に存在する場合はどうでしょうか? また、オフサイトに保存する予定がない、または保存できない機密性の高いデータがある場合はどうでしょうか?
 
-Azure provides several configurations allowing you to blend or transition between on-premises and a solution hosted completely in the cloud.
+Azure には複数の構成が用意されているので、オンプレミスと、クラウド内で完全にホストされているソリューションとを混在させたり、それらを切り替えたりすることができます。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
 
-- Compare each cloud computing deployment model (public, private, and hybrid).
-- Understand the advantages of each cloud computing service model.
-- Decide which deployment and service model you should use for your services.
+このモジュールでは、次のことを行います。
+
+- 各クラウド コンピューティング デプロイ モデル (パブリック、プライベート、およびハイブリッド) を比較します。
+- 各クラウド コンピューティング サービス モデルの利点について理解します。
+- ご自分のサービスに対して使用する必要のあるデプロイ モデルとサービス モデルを判断します。

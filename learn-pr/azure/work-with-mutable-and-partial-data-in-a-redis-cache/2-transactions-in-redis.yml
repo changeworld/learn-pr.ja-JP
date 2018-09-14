@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
-title: Transactions in Redis
+title: Azure Redis Cache でのトランザクション
 metadata:
-  title: Transactions in Redis
-  description: Transactions in Redis
+  title: Azure Redis Cache でのトランザクション
+  description: Azure Redis Cache でのトランザクション
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark

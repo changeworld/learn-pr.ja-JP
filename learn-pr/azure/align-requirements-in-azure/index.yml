@@ -8,34 +8,28 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 83da62562b914a7c1881648b6dd6d2bd96b98f5d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44232467"
 title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整する
 summary: Azure では、クラウド リソースのデプロイに対する 3 つのアプローチ (パブリック クラウド、プライベート クラウド、およびハイブリッド クラウド) がサポートされます。 3 つのどのクラウドを選択するかによって、Azure の利用を開始する際のサービスの複数の要因 (コスト、メンテナンス要件、セキュリティなど) が変わります。 このモジュールでは、3 種類のクラウドをすべて確認し、サービスに活用するクラウドに関して情報に基づく決定を行えるよう支援します。 また、Azure でサポートされるサービス モデルを簡単に確認します。これは、Azure のデプロイについて計画する際の最初のサービスを決定するために役立ちます。
-abstract: >
+abstract: |
   このモジュールでは、次のことを行います。
-    - 各クラウド コンピューティング デプロイ モデル (パブリック、プライベート、およびハイブリッド) を比較します。
-    - 各クラウド コンピューティング サービス モデルの利点について理解します。
-    - ご自分のサービスに対して使用する必要のあるデプロイ モデルとサービス モデルを判断します。
+  - 各クラウド コンピューティングのデプロイ モデル (パブリック、プライベート、およびハイブリッド) の比較します。
+  - 各クラウド サービス モデルのコンピューティングの利点を理解します。
+  - どの展開とサービス モデルは、サービスの使用する必要がありますを判断します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/align-requirements-in-azure.svg
 levels:
-- beginner
+  - beginner
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
-achievement: learn.align-requirements-in-azure.badge
+  - azure
 units:
-- learn.align-requirements-in-azure.1-introduction
-- learn.align-requirements-in-azure.2-public-private-hybrid
-- learn.align-requirements-in-azure.3-service-models
-- learn.align-requirements-in-azure.4-iaas
-- learn.align-requirements-in-azure.5-paas
-- learn.align-requirements-in-azure.6-saas
-- learn.align-requirements-in-azure.7-knowledge-check
-- learn.align-requirements-in-azure.8-summary
+  - learn.align-requirements-in-azure.1-introduction
+  - learn.align-requirements-in-azure.2-public-private-hybrid
+  - learn.align-requirements-in-azure.3-service-models
+  - learn.align-requirements-in-azure.4-iaas
+  - learn.align-requirements-in-azure.5-paas
+  - learn.align-requirements-in-azure.6-saas
+  - learn.align-requirements-in-azure.7-knowledge-check
+  - learn.align-requirements-in-azure.8-summary
+achievement: learn.align-requirements-in-azure.badge

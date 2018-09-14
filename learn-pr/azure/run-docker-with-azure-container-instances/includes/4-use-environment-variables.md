@@ -1,30 +1,30 @@
-Setting environment variables in your container instances allows you to provide dynamic configuration of the application or script run by the container. Environment variables are set using the Azure CLI, PowerShell, or the Azure portal at container creation time. Secured environment variables are used to prevent sensitive information from being displayed in container operations output.
+Container Instances で環境変数を設定すると、コンテナーによって実行されるアプリケーションまたはスクリプトの動的な構成を提供できます。 環境変数の設定は、コンテナーの作成時に Azure CLI、PowerShell、または Azure portal を使用して行います。 コンテナー操作の出力に機密情報が表示されるのを防ぐには、セキュリティで保護された環境変数を使います。
 
-In this unit, an Azure Cosmos DB instance is created, and then an Azure container instance runs with the connection information of the Azure Cosmos DB instance stored as environment variables. An application in the container uses the variables to write and read data from Azure Cosmos DB. In this unit, you will create both an environment variable and a secured environment variable.
+このユニットでは、Azure Cosmos DB インスタンスが作成され、その後に Azure コンテナー インスタンスが環境変数として格納された Azure Cosmos DB インスタンスの接続情報を使って実行されます。 コンテナー内のアプリケーションは、Azure Cosmos DB からのデータの読み書きに変数を使用します。 このユニットでは、環境変数と、セキュアな環境変数の双方を作成します。
 
-## Deploy Azure Cosmos DB
+## <a name="deploy-azure-cosmos-db"></a>Azure Cosmos DB の展開
 
-Create the Azure Cosmos DB instance with the `az Azure Cosmos DB create` command. This example will also place the Azure Cosmos DB endpoint address in a variable named *COSMOS_DB_ENDPOINT*.
+`az Azure Cosmos DB create` コマンドを使用して Azure Cosmos DB インスタンスを作成します。 また、この例では、Azure Cosmos DB のエンドポイント アドレス *COSMOS_DB_ENDPOINT* という名前の変数に設定します。
 
-This command can take a few minutes to complete:
-
-```azurecli
-COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group myResourceGroup --name aci-cosmos --query documentEndpoint -o tsv)
-```
-
-Next, get the Azure Cosmos DB connection key with the `az cosmosdb list-keys` command and store it in a variable named *COSMOS_DB_MASTERKEY*:
+このコマンドの完了には数分を要することがあります。
 
 ```azurecli
-COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group myResourceGroup --name aci-cosmos --query primaryMasterKey -o tsv)
+COSMOS_DB_ENDPOINT=$(az cosmosdb create --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query documentEndpoint -o tsv)
 ```
 
-## Deploy a container instance
+次に、`az cosmosdb list-keys` のコマンドを使って Azure Cosmos DB 接続キーを取得し、*COSMOS_DB_MASTERKEY* という名の変数内に保存します。
 
-Create an Azure container instance using the `az container create` command. Take note that two environment variables are created, `COSMOS_DB_ENDPOINT` and `COSMOS_DB_ENDPOINT`. These variables hold the values needed to connect to the Azure Cosmos DB instance:
+```azurecli
+COSMOS_DB_MASTERKEY=$(az cosmosdb list-keys --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-cosmos --query primaryMasterKey -o tsv)
+```
+
+## <a name="deploy-a-container-instance"></a>コンテナー インスタンスの展開
+
+`az container create` のコマンドを使って Azure コンテナー インスタンスを作成します。 2 つの環境変数の値 `COSMOS_DB_ENDPOINT` と `COSMOS_DB_ENDPOINT` が作成されたことを確認します。 これらの変数は、Azure Cosmos DB への接続に必要な値を保持します。
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -32,29 +32,29 @@ az container create \
     COSMOS_DB_MASTERKEY=$COSMOS_DB_MASTERKEY
 ```
 
-Once the container has been created, get the IP address with the `az container show` command:
+コンテナーが作成されたら、`az container show` のコマンドを使って IP アドレスを取得します。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query ipAddress.ip --output tsv
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query ipAddress.ip --output tsv
 ```
 
-Open up a browser and navigate to the IP address of the container. You should see the following application. When casing a vote, the vote is stored in the Azure Cosmos DB instance.
+ブラウザーを開き、コンテナーの IP アドレスに移動します。 次のアプリケーションが表示されます。 投票を行うと、投票は Azure Cosmos DB インスタンス内に保存されます。
 
-![Azure voting application with two choices, cats or dogs.](../media-draft/azure-vote.png)
+![猫または犬という 2 つの選択肢がある Azure 投票アプリケーション。](../media-draft/azure-vote.png)
 
-## Secured environment variables
+## <a name="secured-environment-variables"></a>セキュリティで保護された環境変数
 
-In the previous exercise, a container was created with connection information for Azure Cosmos DB stored in two environment variables. By default, environment variables are displayed in the Azure portal and command-line tools in plain text.
+上の演習では、コンテナーは 2 つの環境変数に格納されている Azure Cosmos DB に対する接続情報を使用して作成されました。 デフォルトでは、環境変数は Azure portal およびコマンドライン ツールに平文で表示されます。
 
-For example, if you get information about the container created in the previous exercise with the `az container show` command, the environment variables are accessible in plain text:
+たとえば、`az container show` のコマンドを使って前回の練習で作成されたコンテナーに関する情報を取得する場合、環境変数は平文でアクセス可能となります。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo --query containers[0].environmentVariables
 ```
 
-Example output:
+出力例:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",
@@ -69,13 +69,13 @@ Example output:
 ]
 ```
 
-Secure environment variables prevent clear text output. To use secure environment variables, replace the `--environment-variables` argument with the `--secure-environment-variables` argument.
+セキュリティで保護された環境変数を使用するとクリア テキストで出力されなくなります。 セキュリティで保護された環境変数を使用するには、`--environment-variables` 引数を `--secure-environment-variables` 引数に置き換えます。
 
-Run the following example to create a container named *aci-demo-secure* that utilizes secured environment variables:
+次の例を実行して、セキュリティで保護された環境変数を利用する *aci-demo-secure* という名前のコンテナーを作成します。
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name aci-demo-secure \
     --image microsoft/azure-vote-front:cosmosdb \
     --ip-address Public \
@@ -83,15 +83,15 @@ az container create \
     COSMOS_DB_MASTERKEY=$COSMOS_KEY
 ```
 
-Now, when the container is returned with the `az container show` command, the environment variables are not displayed:
+これで、`az container show` のコマンドを使ってコンテナーが返される際、環境変数は表示されなくなります。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name aci-demo-secure --query containers[0].environmentVariables
+az container show --resource-group <rgn>[Sandbox resource group name]</rgn> --name aci-demo-secure --query containers[0].environmentVariables
 ```
 
-Example output:
+出力例:
 
-```bash
+```json
 [
   {
     "name": "COSMOS_DB_ENDPOINT",
@@ -106,8 +106,8 @@ Example output:
 ]
 ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you created an Azure Cosmos DB instance and an Azure container instance. Environment variables were set in the container instance such that the application running inside of the container was able to connect to the Azure Cosmos DB instance.
+このユニットでは、Azure Cosmos DB インスタンスおよび Azure コンテナー インスタンスの作成を行いました。 環境変数はコンテナー インスタンス内にセットされ、コンテナー内で実行されるアプリケーションが Azure Cosmos DB インスタンスにアクセスできるようになっていました。
 
-In the next unit, you will mount data volumes to an Azure container instance for data persistence.
+次のユニットでは、データ保持のために Azure コンテナー インスタンスへデータ ボリュームをマウントする方法を紹介します。

@@ -1,215 +1,225 @@
-As a technology professional, you likely have expertise in a specific area. Perhaps you're a storage admin or virtualization expert, or maybe you focus on the latest security practices. If you're a student, you may still be exploring what interests you most.
+プロフェッショナル、テクノロジとしては特定の領域に専門知識をある可能性があります。 おそらく、記憶域の管理者または仮想化エキスパート、またはおそらくに集中すること、最新のセキュリティ プラクティスをできました。 学生なら、する可能性がありますも利用する最も必要なもの。
 
 ::: zone pivot="windows-cloud"
 
-No matter your role, most people get started with the cloud by creating a virtual machine. Here you'll bring up a virtual machine running Windows Server 2016.
+自分の役割に関係なくほとんどの人を使ってみるクラウド仮想マシンを作成します。 ここで Windows Server 2016 を実行する仮想マシンを取り込みます。
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-No matter your role, most people get started with the cloud by creating a virtual machine. Here you'll bring up a virtual machine running Ubuntu 16.04.
+自分の役割に関係なくほとんどの人を使ってみるクラウド仮想マシンを作成します。 ここで Ubuntu 16.04 を実行する仮想マシンを取り込みます。
 
 ::: zone-end
 
-There are many ways to create a virtual machine on Azure. Here, you'll bring up a Windows or Linux VM using an interactive terminal called Cloud Shell. If you work from the terminal on a daily basis, you know this is often the fastest way to get the job done.
+Azure で仮想マシンを作成する多くの方法はあります。 ここでは、Cloud Shell と呼ばれる対話型ターミナルを使用して、Windows または Linux 仮想マシンを取り込みます。 日常的に、ターミナルから作業している場合、ジョブの実行を取得する最も簡単な方法は、多くの場合、これがわかります。
 
 ::: zone pivot="windows-cloud"
 
 > [!TIP]
-> Prefer Linux or want to try something new? Select **Linux** from the top of this page to run a Linux VM.
+> Linux を好むか、何か新しいですか。 選択**Linux** Linux 仮想マシンを実行するには、このページの上部から。
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
 > [!TIP]
-> Prefer Windows or want to try something new? Select **Windows** from the top of this page to run a Windows Server VM.
+> Windows またはを新しいものをご試用いただけますか。 選択**Windows** Windows Server 仮想マシンを実行するには、このページの上部から。
 
 ::: zone-end
 
-Let's review some basic terms and get your first virtual machine up and running.
+いくつかの基本的な用語を確認し、稼働している最初の仮想マシンを取得してみましょう。
 
-## What is a virtual machine?
+## <a name="what-is-a-virtual-machine"></a>仮想マシンとは何ですか。
 
-A virtual machine, or VM, is a software emulation of a physical computer. Because VMs exist as software, dozens, hundreds, or even thousands of Azure VMs can be generated in minutes, then deleted when you don't need them anymore. With low-cost, per-minute billing, you pay only for the compute resources you use, for as long as you are using them. Plus, there are many ways to configure the VMs to fit your needs.
+仮想マシン、または VM、物理コンピューターのソフトウェア エミュレーションにです。 Vm は、ソフトウェア、数十、数百台、存在するか、千もの Azure Vm は分単位で生成できる、不要になったときに削除されます。 低コストで分単位の課金でそれらを使用しているだけの期間を使用するコンピューティング リソースに対してのみ支払います。 さらに、ニーズに合わせて Vm を構成する方法はたくさんあります。
 
 ::: zone pivot="windows-cloud"
 
-A snapshot of a running VM is called an _image_. Azure provides images for Windows and several flavors of Linux. You can also create your own preconfigured images to make deployments go faster. Here you'll bring up a Windows Server 2016 VM, provided by Microsoft.
+実行中の VM のスナップショットと呼ばれる、_イメージ_します。 Azure では、Windows と Linux の一部のエディションのイメージを提供します。 展開の速度を上げるようにする、独自の事前構成済みイメージを作成することもできます。 ここで Microsoft によって提供される、Windows Server 2016 VM を取り込みます。
+
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-A snapshot of a running VM is called an _image_. Azure provides images for Windows and several flavors of Linux. You can also create your own preconfigured images to make deployments go faster. Here you'll bring up an Ubuntu 16.04 VM, provided by Canonical.
+実行中の VM のスナップショットと呼ばれる、_イメージ_します。 Azure では、Windows と Linux の一部のエディションのイメージを提供します。 展開の速度を上げるようにする、独自の事前構成済みイメージを作成することもできます。 ここで Canonical によって提供される、Ubuntu 16.04 VM を取り込みます。
+
 ::: zone-end
 
-## What defines a virtual machine on Azure?
+## <a name="what-defines-a-virtual-machine-on-azure"></a>Azure で仮想マシンを定義しますか。
 
-A virtual machine is defined by a number of factors, including its size and location. Before you bring up your VM, let's briefly cover what's involved.
+仮想マシンは、そのサイズや場所など、さまざまな要因の数によって定義されます。 VM を起動する前に簡単に紹介する手順します。
 
 :::row:::
     :::column:::
-        **Size**
+        **サイズ**
     :::column-end:::
-    :::column span="3":::
-A VM's _size_ defines its processor speed, amount of memory, initial amount of storage, and expected network bandwidth. Some sizes even include specialized hardware such as GPUs for heavy graphics rendering and video editing.
+    列のスパン =「3」: VM の_サイズ_プロセッサ速度、メモリの量、ストレージ、および予期されるネットワーク帯域幅の初期量を定義します。 いくつかのサイズには、大量のグラフィックスのレンダリングやビデオ編集の Gpu などの特殊なハードウェアも含まれます。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Region**
+        **[リージョン]**
     :::column-end:::
-    :::column span="3":::
-Azure is made up of data centers distributed throughout the world. A _region_ is a set of Azure data centers in a named geographic location. Every Azure resource, including virtual machines, is assigned a region. East US and North Europe are examples of regions.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        **Network**
-    :::column-end:::
-    :::column span="3":::
-A _virtual network_ is a logically isolated network on Azure. Each virtual machine on Azure is associated with a virtual network. Azure provides cloud-level firewalls for your virtual networks called _network security groups_.
+    列のスパン =「3」: Azure は、世界中の分散データ センターの構成されます。 A_リージョン_は名前付きの地理的な場所での Azure データ センターのセットです。 仮想マシンを含む、すべての Azure リソースには、リージョンが割り当てられます。 米国東部と北ヨーロッパ リージョンの例に示します。
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        **Resource groups**
+        **ネットワーク**
     :::column-end:::
-    :::column span="3":::
-Virtual machines and other cloud resources are grouped into logical containers called _resource groups_. Groups are typically used to organize sets of resources that are deployed together as part of an application or service. You refer to a resource group by its name.
+    列のスパン =「3」: A_仮想ネットワーク_は Azure で論理的に分離されたネットワークです。 Azure では、各仮想マシンは、仮想ネットワークに関連付けられます。 Azure と呼ばれる仮想ネットワークのクラウド レベルのファイアウォールを提供する_ネットワーク セキュリティ グループ_します。
     :::column-end:::
 :::row-end:::
 
-## What is Azure Cloud Shell?
+:::row:::
+    :::column:::
+        **リソース グループ**
+    :::column-end:::
+    列のスパン =「3」: 仮想マシンとその他のクラウド リソースと呼ばれる論理コンテナーにグループ化されます_リソース グループ_します。 グループは通常、アプリケーションまたはサービスの一部として一緒にデプロイされるリソースの整理に使用されます。 リソース グループを参照するには、名前でします。
+    :::column-end:::
+:::row-end:::
 
-Azure Cloud Shell is a browser-based command-line experience for managing and developing Azure resources. Think of Cloud Shell as an interactive console that you run in the cloud.
+## <a name="what-is-azure-cloud-shell"></a>Azure Cloud Shell とは
 
-Cloud Shell provides two experiences to choose from: Bash and PowerShell. Both include access to the Azure CLI, the command-line interface for Azure.
+Azure Cloud Shell は、管理および Azure リソースを開発するためのブラウザー ベースのコマンド ライン エクスペリエンスです。 Cloud Shell は対話型コンソールが、クラウドで実行されると考えます。
 
-You can use any Azure management interface, including the Azure portal, Azure CLI, and Azure PowerShell, to manage any kind of VM. For learning purposes, here you'll use PowerShell if you're creating a Windows VM, or the Azure CLI if you're creating a Linux VM.
+Cloud Shell から選択する 2 つのエクスペリエンスを提供します。 Bash と PowerShell。 Azure CLI、azure コマンド ライン インターフェイスへのアクセス機能があります。
+
+Azure CLI、および Azure PowerShell は、Azure ポータルを含む、任意の Azure 管理インターフェイスを使用すると、任意の種類の VM を管理します。 学習目的の場合、ここを CLI を使用する Azure 作成して、Windows または Linux VM を管理します。
 
 ::: zone pivot="windows-cloud"
 
-## Create a Windows VM
+## <a name="create-a-windows-vm"></a>Windows VM を作成する
 
-Let's get your Windows VM up and running. First, we create security credentials so you can later log in to your VM.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. From Cloud Shell on the right side of this page, run these commands to generate a credential object. Replace "Password" with a password you'll remember later.
+稼働している Windows VM を取得します。
 
-    > [!NOTE]
-    > Choose a password that contains at least 8 characters with a combination of upper and lowercase letters, numbers, and symbols. Don't use a password you use elsewhere.
+<!--
 
-    ```powershell
-    $pass = ConvertTo-SecureString "Password" -AsPlainText -Force
+TODO: Omitted for sandbox. Possibly re-insert later for non-sandbox workflow.
+
+1. From Cloud Shell on the right side of this page, run the `az group create` command to create a resource group named **myResourceGroup** in the East US region.
+
+    ```azurecli
+    az group create \
+      --location eastus \
+      --name myResourceGroup
     ```
-    ```powershell
-    $cred = New-Object System.Management.Automation.PSCredential ("azureuser", $pass)
-    ```
-    **azureuser** specifies the user name. You can change it if you'd like.
- 
-1. Run the `New-AzureRmVm` cmdlet to create your VM.
+-->
 
-    ```powershell
-    New-AzureRmVm `
-      -Image "Win2016Datacenter" `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM" `
-      -Size "Standard_DS2_v2" `
-      -Location "East US" `
-      -VirtualNetworkName "myVnet" `
-      -SubnetName "mySubnet" `
-      -SecurityGroupName "myNetworkSecurityGroup" `
-      -PublicIpAddressName "myPublicIpAddress" `
-      -OpenPorts 80 `
-      -Credential $cred `
-      -Verbose
+1. このページの右側にある Cloud Shell から実行、 `az vm create` VM を作成するコマンド。 次に示すいずれかの後でわかりやすいパスワードを変更することをお勧めします。
+
+      > [!NOTE]
+    > 大文字と小文字の英字、数字、記号と少なくとも 8 文字を含むパスワードを選択します。
+
+    ```azurecli
+    az vm create \
+      --name myWindowsVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --image Win2016Datacenter \
+      --size Standard_DS2_v2 \
+      --admin-username azureuser \
+      --admin-password "Password1234&"
     ```
 
     > [!TIP]
-    > This is a long command. You can use the **Copy** button to copy it. To paste it, right click on the new line in the Cloud Shell window and select **Paste**.
+    > 使用することができます、**コピー**各コマンドをコピー ボタンをクリックします。 これを貼り付けるには、Cloud Shell ウィンドウに新しい行を右クリックし、選択**貼り付けます**します。
 
-    Your VM will take about five minutes to come up. Compare that to the time it takes to purchase, rack, and configure a system in your data center. Quite a difference!
+    VM を 4 ~ 5 分になります。 購入、ラック取り付け、およびデータ センター内のシステムの構成にかかる時間を比較します。 かなりの違いです。
 
-While you're waiting, let's review the command you just ran.
+待機しているときに実行したコマンドを確認してみましょう。
 
-* **Win2016Datacenter** specifies the Windows Server 2016 VM image.
-* The resource group, or the VM's logical container, is named **myResourceGroup**.
-* The VM is named **myVM**. This name identifies the VM in Azure. It also becomes the VM's internal hostname, or computer name.
-* **Standard_DS2_v2** refers to the size of the VM. This size has two virtual CPUs and 7 GB of memory.
-* The VM exists in the **East US** location, or region.
-* The command also assigns a public IP address to the VM. You can configure a VM to be accessible from the Internet or only from the internal network.
-* The network firewall allows inbound traffic on port 80 to allow HTTP traffic to your web server.
-* The credential object specifies your username and password.
-* `-Verbose` is an optional parameter you can provide to get detailed information about the operation, similar to a trace or transaction log. You can use this parameter to learn what's happening during the operation or to troubleshoot failures.
+* VM の名前は**myWindowsVM**します。 この名前は、Azure で VM を識別します。 これはまた、VM の内部ホスト名、またはコンピューター名になります。
+* リソース グループ、または、VM の論理的なコンテナーの名前が **<rgn>[サンド ボックス リソース グループ名]</rgn>** します。
+* **Win2016Datacenter** Windows Server 2016 VM イメージを指定します。
+* **Standard_DS2_v2** VM のサイズを示します。 このサイズは、2 つの仮想 Cpu と 7 GB のメモリがします。
+* ユーザー名とパスワードを使用すると、後で、VM に接続できます。 たとえばを使用して、システムを構成するには、リモート デスクトップまたは WinRM 経由で接続できます。
 
-You can also check out this short video about some of the options you have to create and manage VMs.
+既定では、Azure は、VM にパブリック IP アドレスを割り当てます。 インターネットまたは内部ネットワークからのみアクセスできるように VM を構成できます。
+
+この短いビデオを作成して Vm を管理する必要があるオプションの一部についても確認できます。
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
 
-When the process completes, you see information in Cloud Shell about your new VM. Here's an example.
+VM 準備ができたら、それに関する情報を参照してください。 次に例を示します。
 
 ```console
-ResourceGroupName        : myResourceGroup
-Id                       : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM
-VmId                     : 6684cc9a-ef9f-47dd-92ed-ce1dbcd98396
-Name                     : myVM
-Type                     : Microsoft.Compute/virtualMachines
-Location                 : eastus
-Tags                     : {}
-HardwareProfile          : {VmSize}
-NetworkProfile           : {NetworkInterfaces}
-OSProfile                : {ComputerName, AdminUsername, WindowsConfiguration, Secrets}
-ProvisioningState        : Succeeded
-StorageProfile           : {ImageReference, OsDisk, DataDisks}
-FullyQualifiedDomainName : myvm-edce6d.East US.cloudapp.azure.com
+{
+  "fqdns": "",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myWindowsVM",
+  "location": "eastus",
+  "macAddress": "00-0D-3A-1E-1B-3B",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.5",
+  "publicIpAddress": "104.211.9.245",
+  "resourceGroup": "myResourceGroup",
+  "zones": ""
+}
 ```
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-## Create a Linux VM
+## <a name="create-a-linux-vm"></a>Linux VM の作成
 
-Here, you'll bring up an Ubuntu VM using Cloud Shell.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
+稼働している Linux VM を取得します。
+
+<!--
+
+TODO: Omitted for sandbox. Possibly re-insert later for non-sandbox workflow.
+ 
 1. From Cloud Shell on the right side of this page, run the `az group create` command to create a resource group named **myResourceGroup** in the East US region.
 
     ```azurecli
-    az group create --location eastus --name myResourceGroup
+    az group create \
+      --location eastus \
+      --name myResourceGroup
     ```
+-->
 
-1. Run the `az vm create` command to create your VM.
+1. このページの右側にある Cloud Shell から実行、 `az vm create` VM を作成するコマンド。
 
     ```azurecli
-    az vm create -n myVM -g myResourceGroup --image UbuntuLTS --size Standard_DS2_v2 --generate-ssh-keys
+    az vm create \
+      --name myLinuxVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --image UbuntuLTS \
+      --size Standard_DS2_v2 \
+      --generate-ssh-keys
     ```
 
-Your VM will take about two minutes to come up. Compare that to the time it takes to purchase, rack, and configure a system in your data center. Quite a difference!
+    > [!TIP]
+    > 使用することができます、**コピー**各コマンドをコピー ボタンをクリックします。 これを貼り付けるには、Cloud Shell ウィンドウに新しい行を右クリックし、選択**貼り付けます**します。
 
-While you're waiting, let's review the command you just ran.
+    VM を約 2 分になります。 購入、ラック取り付け、およびデータ センター内のシステムの構成にかかる時間を比較します。 かなりの違いです。
 
-* **UbuntuLTS** specifies the Ubuntu 16.04 LTS VM image.
-* The resource group, or the VM's logical container, is named **myResourceGroup**.
-* The VM is named **myVM**. This name identifies the VM in Azure. It also becomes the VM's internal hostname, or computer name.
-* **Standard_DS2_v2** refers to the size of the VM. This size has two virtual CPUs and 7 GB of memory.
-* The VM exists in the **East US** location, or region.
-* The command also assigns a public IP address to the VM. You can configure a VM to be accessible from the Internet or only from the internal network.
-* The `--generate-ssh-keys` option creates an SSH key pair to enable you to log in to the VM.
+待機しているときに実行したコマンドを確認してみましょう。
 
-You can also check out this short video about some of the options you have to create and manage VMs.
+* VM の名前は**myLinuxVM**します。 この名前は、Azure で VM を識別します。 これはまた、VM の内部ホスト名、またはコンピューター名になります。
+* リソース グループ、または、VM の論理的なコンテナーの名前が **<rgn>[サンド ボックス リソース グループ名]</rgn>** します。
+* **UbuntuLTS** Ubuntu 16.04 LTS VM イメージを指定します。
+* **Standard_DS2_v2** VM のサイズを示します。 このサイズは、2 つの仮想 Cpu と 7 GB のメモリがします。
+* `--generate-ssh-keys`オプションは、VM にログインするための SSH キー ペアを作成します。
+
+既定では、Azure は、VM にパブリック IP アドレスを割り当てます。 インターネットまたは内部ネットワークからのみアクセスできるように VM を構成できます。
+
+この短いビデオを作成して Vm を管理する必要があるオプションの一部についても確認できます。
 
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yJKx]
 
-When the VM is ready, you see information about it. Here's an example.
+VM 準備ができたら、それに関する情報を参照してください。 次に例を示します。
 
 ```console
 {
     "fqdns": "",
-    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM",
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myLinuxVM",
     "location": "eastus",
     "macAddress": "00-0D-3A-1D-EB-02",
     "powerState": "VM running",
@@ -222,8 +232,8 @@ When the VM is ready, you see information about it. Here's an example.
 
 ::: zone-end
 
-## Summary
+## <a name="summary"></a>まとめ
 
-With just a few concepts under your belt, you're able to spin up a VM on Azure in just a few minutes. Many of these concepts, such as a VM's size and firewall rules, are likely familiar to you already.
+身に付ければ、いくつかの概念、Azure 上に VM をわずか数分で迅速に作成することができました。 VM のサイズとファイアウォール ルールなど、これらの概念の多くは見慣れたに、既にします。
 
-Next, you'll connect to your VM, install a web server, and configure your web server to serve up a basic web site.
+次に、VM に web サーバーをインストールし、基本的な web サイトを処理するために、web サーバーを構成します。

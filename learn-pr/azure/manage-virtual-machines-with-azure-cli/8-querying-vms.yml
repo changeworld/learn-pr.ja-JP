@@ -9,13 +9,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 255d8492e85f6a4a9ff12bd64071f8149be1f23a
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310971"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10
-content: '[!include[](includes/8-querying-vms.md)]'
+content: |
+  [!include[](includes/8-querying-vms.md)]

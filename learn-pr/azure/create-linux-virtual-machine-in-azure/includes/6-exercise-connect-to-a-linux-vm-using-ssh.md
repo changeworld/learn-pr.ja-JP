@@ -1,71 +1,55 @@
-We have our Linux VM deployed and running, but it's not configured to do any work. Let's connect to it with SSH and configure Apache, so we have a running web server.
+Linux VM をデプロイして実行させましたが、作業を行うようには構成していません。 SSH で VM に接続して Apache を構成し、Web サーバーを実行させましょう。
 
-## Connect to the VM with SSH
+## <a name="connect-to-the-vm-with-ssh"></a>SSH を使って VM に接続する
 
-To connect to an Azure VM with an SSH client, you will need:
+SSH クライアントを使って Azure VM に接続するには、次が必要になります。
 
-- SSH client software (present on most modern operating systems)
-- The public IP address of the VM (or private if the VM is configured to connect to your network)
+- SSH クライアント ソフトウェア (ほとんどの最新オペレーティング システムに存在します)
+- VM のパブリック IP アドレス (または、ユーザーのネットワークに接続するように VM を構成する場合はプライベート)。
 
-### Get the public IP address
+### <a name="get-the-public-ip-address"></a>パブリック IP アドレスの取得
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel has a lot of information about the VM.
+1. [Azure portal](https://portal.azure.com?azure-portal=true) 内で、以前に作成した仮想マシンの**概要**パネルが開いていることを確認します。 もしパネルを開く必要がある場合は、**すべてのリソース**下で VM を見つけることができます。 概要パネルには、VM に関する多数の情報があります。
 
-    - You can see whether the VM is running
-    - Stop or restart it
-    - Get the public IP address to connect to the VM
-    - See the activity of the CPU, disk, and network
+    - VM が実行中か否かを確認可能
+    - VM の停止または再起動
+    - VM へ接続するためのパブリック IP アドレスを取得
+    - CPU、ディスク、およびネットワークのアクティビティを確認
 
-1. Click the **Connect** button at the top of the pane.
+1. ウィンドウ最上部の**接続**ボタンをクリックします。
 
-1. In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings. On the **SSH** tab, you will also find the command you need to execute locally to connect to the VM. Copy this to the clipboard.
+1. **仮想マシンへの接続**ブレード内で、**IP アドレス**および**ポート番号**設定をメモします。 **SSH**タブ上で、VM に接続するためにローカルで実行する必要があるコマンドも表示されています。 これをクリップボードにコピーします。
 
-<!-- TODO: This will be necessary if we ever have inline portal integration. 
+## <a name="connect-with-ssh"></a>SSH を使用した接続
 
-### Open Azure Cloud Shell
-
-Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account:
-
-1. Switch back to the **Dashboard** by clicking the **Dashboard** button in the Azure sidebar.
-
-1. Open Cloud Shell by clicking the **shell** button in the top toolbar.
-
-    ![Screenshot of the Azure portal top navigation bar with the Azure Cloud Shell button highlighted.](../media/6-cloud-shell.png)
-
-1. Select **Bash** as the shell type. PowerShell is also available if you are a Windows administrator.
-
--->
-
-## Connect with SSH
-
-1. Paste the command line you got from the SSH tab into Azure Cloud Shell. It should look something like this; however, it will have a different IP address (and perhaps a different username if you didn't use **jim**!):
+1. Azure Cloud Shell に、[SSH] タブから取得したコマンドラインを貼り付けます。 この処理のようになりますただし、別の IP アドレスになります (おそらく、別のユーザー名を使用しなかった場合、 **jim**!)。
 
     ```bash
     ssh jim@137.117.101.249
     ```
 
-1. This command will open a Secure Shell connection and place you at a traditional shell command prompt for Linux.
+1. このコマンドは、Secure Shell 接続を開くし、Linux 用の従来のシェルのコマンド プロンプトで配置します。
 
-1. Try executing a few Linux commands
-    - `ls -la /` to show the root of the disk
-    - `ps -l` to show all the running processes
-    - `dmesg` to list all the kernel messages
-    - `lsblk` to list all the block devices - here you will see your drives
+1. ここで Linux コマンドをいくつか実行して見てください。
+    - `ls -la /` を使ってディスクのルートを表示します。
+    - `ps -l` を使って実行中のプロセスをすべて表示します。
+    - `dmesg` を使ってカーネル メッセージ一覧をすべて表示します。
+    - `lsblk` を使ってブロック デバイス一覧を全て表示します。ここにお使いのドライブが表示されます。
 
-The more interesting thing to observe in the list of drives is what is _missing_. Notice that our **Data** drive (`sdc`) is present but not mounted into the file system. Azure added a VHD but didn't initialize it.
+ドライブの一覧でさらに興味深いことは、"_表示されていない_" デバイスです。 **データ** ドライブ（`sdc`）が存在しているが、ファイル システムにはマウントされていないことに注意してください。 Azure で VHD が追加されていますが、初期化はされていません。
 
-## Initialize data disks
+## <a name="initialize-data-disks"></a>データ ディスクの初期化
 
-Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical disk:
+一から作成した追加ドライブはすべて、初期化してフォーマットする必要があります。 これを行うためのプロセスは、物理ディスクと同じです。
 
-1. First, identify the disk. We did that above. You could also use `dmesg | grep SCSI`, which will list all the messages from the kernel for SCSI devices.
+1. まず、ディスクを特定します。 これは上記で行いました。 使用することも`dmesg | grep SCSI`、これは、カーネルの SCSI デバイスからのすべてのメッセージを一覧表示します。
 
-1. Once you know the drive (`sdc`) you need to initialize, you can use `fdisk` to do that. You will need to run the command with `sudo` and supply the disk you want to partition:
+1. 初期化が必要なドライブ（`sdc`）を特定したら、`fdisk` を使ってそれを行うことができます。 コマンドを実行する必要があります`sudo`パーティションを作成ディスクを指定します。
 
     ```bash
     sudo fdisk /dev/sdc
     ```
-1. Use the `n` command to add a new partition. In this example, we also choose **p** for a primary partition and accept the rest of the default values. The output will be similar to the following example:   
+1. `n` コマンドを使用して新しいパーティションを追加します。 この例でも選択**p**のプライマリ パーティションを作成し、残りの既定値をそのまま使用します。 出力は次の例のようになります。   
 
     ```output
     Device does not contain a recognized partition table.
@@ -83,7 +67,7 @@ Any additional drives you create from scratch will need to be initialized and fo
     Created a new partition 1 of type 'Linux' and of size 1023 GiB.
     ```
 
-1. Print the partition table with the `p` command. It should look something like this:
+1. `p` コマンドを使ってパーティション テーブルを出力します。 これは、次のようになります。
 
     ```output
     Disk /dev/sdc: 1023 GiB, 1098437885952 bytes, 2145386496 sectors
@@ -97,17 +81,17 @@ Any additional drives you create from scratch will need to be initialized and fo
     /dev/sdc1        2048 2145386495 2145384448 1023G 83 Linux
     ```
 
-1. Write the changes with the `w` command. This will exit the tool.
+1. `w` コマンドを使って変更を書き込みます。 これによってツールが終了します。
 
-1. Next, we need to write a file system to the partition with the `mkfs` command. We will need to specify the file system type and device name that we got from the `fdisk` output:
-    - Pass `-t ext4` to create an _ext4_ filesystem.
-    - The device name is `/dev/sdc`.
+1. 次に、`mkfs` コマンドを使ってパーティションにファイル システムを書き込む必要があります。 先ほど取得したファイル システムの種類とデバイス名を指定する必要がありますが、`fdisk`出力。
+    - `-t ext4` を渡して_ext4_ ファイル システムを作成します。
+    - デバイス名は `/dev/sdc` です。
 
     ```bash
     sudo mkfs -t ext4 /dev/sdc1
     ```
     
-    This command will take a few minutes to complete.
+    このコマンドの完了には数分を要します。
 
     ```output
     mke2fs 1.44.1 (24-Mar-2018)
@@ -125,17 +109,17 @@ Any additional drives you create from scratch will need to be initialized and fo
     Writing superblocks and filesystem accounting information: done
     ```
 
-1. Next, create a directory we will use as our mount point. Let's assume we will have a `data` folder:
+1. 次は、マウント ポイントとして使用してディレクトリを作成します。 仮定を`data`フォルダー。
 
     ```bash
     sudo mkdir /data
     ```
-1. Finally, use `mount` to attach the disk to the mount point:
+1. 最後に、使用して`mount`ディスク マウント ポイントを接続します。
 
     ```bash
     sudo mount /dev/sdc1 /data
     ```
-    You should be able to use `lsblk` to see the mounted drive now:
+    使用できる必要があります`lsblk`マウントされたドライブのように表示します。
     
     ```output
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -150,15 +134,15 @@ Any additional drives you create from scratch will need to be initialized and fo
     sr0      11:0    1  628K  0 rom
     ```
 
-### Mounting the drive automatically
+### <a name="mounting-the-drive-automatically"></a>自動的にドライブをマウントする
 
-To ensure that the drive is mounted automatically after a reboot, it must be added to the `/etc/fstab` file. It is also highly recommended that the UUID (universally unique identifier) is used in `/etc/fstab` to refer to the drive rather than just the device name (such as `/dev/sdc1`). If the OS detects a disk error during boot, using the UUID avoids the incorrect disk being mounted to a given location. Remaining data disks would then be assigned those same device IDs. To find the UUID of the new drive, use the `blkid` utility:
+再起動後にドライブが確実に自動でマウントされるようにするには、そのドライブを `/etc/fstab` ファイルに追加する必要があります。 UUID (汎用一意識別子) が使用されることをも強くお勧め`/etc/fstab`デバイス名だけではなく、ドライブを参照する (など`/dev/sdc1`)。 UUID を使用すると、OS が起動中にディスク エラーを検出した場合に、間違ったディスクが特定の場所にマウントされるのを防ぐことができます。 その後、残りのデータ ディスクは、その同じデバイス ID に割り当てられます。 新しいドライブの UUID を確認するには、`blkid` ユーティリティを使用します。
 
 ```bash
 sudo -i blkid
 ```
 
-It will return something like:
+次のような結果が返されます。
 
 ```output
 /dev/sda1: UUID="36a59c42-c04c-4632-b83f-7015abd10358" TYPE="ext4"
@@ -166,68 +150,70 @@ It will return something like:
 /dev/sdc1: UUID="e311c905-e0d9-43ab-af63-7f4ee4ef108e" TYPE="ext4"
 ```
 
-1. Copy the UUID for the `/dev/sdc1` drive and open the `/etc/fstab` file in a text editor:
+1. UUID をコピー、`/dev/sdc1`ドライブし、開く、`/etc/fstab`ファイルをテキスト エディターで。
 
     ```bash
     sudo vi /etc/fstab
     ```
 
 > [!WARNING]
-> Improperly editing the `/etc/fstab` file could result in an unbootable system. If unsure, refer to the distribution's documentation for information on how to properly edit this file. It is also recommended that a backup of the file is created before editing when you are working with production systems.
+> `/etc/fstab` ファイルを不適切に編集すると、システムが起動できなくなる可能性があります。 編集方法がはっきりわからない場合は、このファイルを適切に編集する方法について、ディストリビューションのドキュメントを参照してください。 また、運用システムで作業を行っている際は、ファイルを編集する前にバックアップの作成を推奨します。
 
-1. Press **G** to move to the last line in the file.
+1. **G** を押してファイルの最後の行に移動します。
 
-1. Press **I** to enter INSERT mode. It should indicate the mode at the bottom of the screen.
+1. **I** を押して挿入モードにします。 画面最下部に、モードが表示されるはずです。
 
-1. Press the **END** key to move to the end of the line. Alternatively, you can use the arrow keys. Press **ENTER** to move to a new line.
+1. **End** キーを押して、行の末尾に移動します。 または、矢印キーを使うこともできます。 **ENTER** を押して新規行に移動します。
 
-1. Type the following line into the editor. The values can be space or tab separated. Check the documentation for more information on each of the columns:
+1. エディタに以下のラインを入力してします。 複数の値は、スペースまたはタブで区切ることができます。 各列の詳細については、ドキュメントを確認します。
 
     ```output
     UUID=<uuid-goes-here>    /data    ext4    defaults,nofail    1    2
     ```
-1. Press **ESC**, then type **:w!** to write the file and **:q** to quit the editor.
+1. **ESC** を押し、**:w!** と入力して ファイルの書き込みと **: q**エディターを終了します。
 
-1. Finally, let's check to make sure the entry is correct by asking the OS to refresh the mount points:
+1. 最後に、マウント ポイントを更新する OS を要求することによって、エントリが正しいことを確認しましょう。
 
     ```bash
     sudo mount -a
     ```
 
-    If it returns an error, edit the file to find the problem.
+    もしエラーが返された場合、ファイルを編集して問題を探します。
 
 > [!TIP]
-> Some Linux kernels support TRIM to discard unused blocks on disks. This feature is available on Azure disks and can save you money if you create large files and then delete them. Learn how to [turn this feature on](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#trimunmap-support-for-linux-in-azure) in our documentation.
+> 一部の Linux カーネルでは、ディスク上の未使用ブロックを破棄する TRIM がサポートされています。 この機能は Azure ディスクで利用可能で、もし大きなファイルを作成してそれを削除する場合に使用すると、コストを節約できます。 [この機能を有効にする](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#trimunmap-support-for-linux-in-azure)方法は、ドキュメントをご覧ください。
 
-## Install software onto the VM
+## <a name="install-software-onto-the-vm"></a>VM 上にソフトウェアをインストールする
 
-You have several options to install software onto the VM. First, as mentioned, you can use `scp` to copy local files from your machine to the VM. This lets you copy over data or custom applications you want to run.
+ご覧のとおり、SSH を使うことでローカルコンピューターと同様に Linux VM を操作できます。 他の Linux コンピューターと同様、この VM を管理することができます。 ソフトウェアをインストールする、ロールの構成、機能、およびその他の日常的なタスクを調整します。 少しのソフトウェアのインストールに注目しましょう。
 
-You can also install software through Secure Shell. Azure machines are, by default, internet connected. You can use standard commands to install popular software packages directly from standard repositories. Let's use this approach to install Apache.
+VM 上にソフトウェアをインストールするに際して、いくつかの方法があります。 最初に、前に説明したように、`scp` を使用してお使いのコンピューターから VM にローカル ファイルをコピーできます。 これにより、データまたはを実行するカスタム アプリケーションをコピーできます。
 
-### Install the Apache web server
+Secure Shell を使用してソフトウェアをインストールすることもできます。 Azure マシンは、既定では、インターネットに接続します。 標準のコマンドを使用して、標準的なリポジトリから人気のあるソフトウェア パッケージを直接インストールできます。 この方法を使って Apache をインストールしてみましょう。
 
-Apache is available within Ubuntu's default software repositories, so we will install it using conventional package management tools:
+### <a name="install-the-apache-web-server"></a>Apache web サーバーをインストールします。
 
-1. Start by updating the local package index to reflect the latest upstream changes:
+Apache は Ubuntu の既定のソフトウェア リポジトリ内で使用できる従来のパッケージ管理ツールを使用してインストールします。
+
+1. 最新のアップ ストリームの変更を反映するように、ローカル パッケージのインデックスを更新することで開始します。
 
     ```bash
     sudo apt-get update
     ```
     
-1. Next, install Apache:
+1. 次に、Apache をインストールします。
 
     ```bash
-    sudo apt-get install apache2
+    sudo apt-get install apache2 -y
     ```
 
-1. It should start automatically - we can check the status using `systemctl`:
+1. これは自動で開始されるはずです。状態は `systemctl` を使用して確認できます。
 
     ```bash
     sudo systemctl status apache2
     ```
 
-    This should return something like:
+    次のような結果が返されます。
 
     ```output
     apache2.service - The Apache HTTP Server
@@ -246,9 +232,9 @@ Apache is available within Ubuntu's default software repositories, so we will in
     test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
     test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
     ```
+    > [!NOTE]
+    > 場合常にいくつかのソフトウェアをインストールする必要があります手動プロセスでは、このようなコマンドを実行する単純なは、可能性があるプロセスを自動化するスクリプトを使用します。
+    
+1. 最後に、パブリック IP アドレスを使用して既定のページを取得できます。 ただし、web サーバーが、VM で実行している場合でも、有効な接続または応答を得られません。 その理由をご存知ですか。
 
-1. Finally, we can try retrieving the default page through the public IP address. It should return a default page.
-
-    ![Screenshot of a web browser showing the Apache default web page hosted at the IP of the new Linux VM.](../media/6-apache-works.png)
-
-As you can see, SSH allows you to work with the Linux VM just like a local computer. You can administer this VM as you would any other Linux computer: installing software, configuring roles, adjusting features, and other everyday tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+Web サーバーと対話できるもう 1 つの手順を実行する必要があります。 バーチャル ネットワークが、着信要求をブロックしている - これは既定の動作です。 これは構成を変更できます。 次に見てみましょう。

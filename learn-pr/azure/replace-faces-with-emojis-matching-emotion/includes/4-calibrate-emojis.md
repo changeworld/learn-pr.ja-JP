@@ -1,57 +1,64 @@
-We can’t pass an image of the emoji to the Face API to get it’s emotion because, well because it’s not human. So for each emoji, I needed a human proxy, me.
+絵文字の画像の感情を取得ためなどは人間ではないために Face API に渡すことはできません。 人間のプロキシでは、各の絵文字の必要ようにします。
 
-I took pictures of myself _accurately_ mimicking each emoji, and used the _emotional point_ for that image as the proxy for the emoji. To keep things interesting I also chose people from my team and associated them with emojis as well, like so:
+自分の写真を撮った_正確に_各の絵文字を模倣し、使用、_感情的なポイント_の絵文字をプロキシとしてそのイメージ。 また私のチームからユーザーを選択して、それらに関連付けられている絵文字も法令遵守するようになります。
 
-![Team Moji](/media-drafts/team.jpg)
+![チームの文字](/media-drafts/team.jpg)
 
-For the emoji of love eyes (😍) I chose a picture of my wife ❤️. In memory of [Stephen Hawking](https://en.wikipedia.org/wiki/Stephen_Hawking) I picked a picture of him to represent 🤔.
+各絵文字のプロキシのイメージの一覧を表示できます、`bin/proxy-images`フォルダーに関連付けられたこのチュートリアルのサンプル コード。
 
-You can see the list of proxy images for each emoji in the `bin/proxy-images` folder in the sample code associated with this tutorial.
+## <a name="goal"></a>目標
 
-In this chapter you will generate a key so you can use the Azure Face API and then use the Face API to calibrate all the emojies using proxied images of me.
+この章では、Azure の Face API を使用して自分のプロキシのイメージを使用してすべての絵文字を調整する Face API を使用するために必要な認証キーを生成します。
 
-## Generate an Azure Face API Key
+## <a name="learning-objectives"></a>学習の目的
 
-<!-- To make calls to the Azure Face API we will need a special authorization key.
+- API を生成する方法は、Cognitive Services で使用するキーします。
+- Face API を介してイメージを実行し、感情の情報を抽出する方法。
 
-We are going to create one using the `az` CLI. -->
+## <a name="generate-an-azure-face-api-key"></a>Azure の Face API キーを生成します。
 
-To use the Azure Face API we need a special authentication key, head over to https://azure.microsoft.com/try/cognitive-services/ and signup to trial the Face API.
+Azure の Face API を使用するには、認証キー必要があります。
 
-![Team Moji](/media-drafts/4.calibrating-emojis.get-face-api.png)
+キーを取得する最も簡単な方法は、することですに https://azure.microsoft.com/try/cognitive-services/?api=face-apiFace API の試用版にサインアップします。
 
-> TODO: Find az commands to create faceAPI and grab keys
+1 回をサインアップの後で格納する必要がある情報のいくつかのビットが提供されます。
 
-<!-- > NOTE the Azure Face API doesn't return the emotion information by default, we need to switch on this behavior by setting some query parameters, like so:
-> https://westeurope.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=false&returnFaceLandmarks=false&returnFaceAttributes=emotion -->
+1. 取得、_エンドポイント_します。 ように表示されます。 https://westcentralus.api.cognitive.microsoft.com/face/v1.0
 
-## Setup the environment variables
+2. (問題ありませんが 1 つ) 後で使用するストアの 1 つ、2 つの API キーを表示します。
 
-The calibration script needs to know your Face API URL and Key in order to make the correct calls, rather than hardcoding these in the script we are going to use environment varialbes, run these commands in the terminal you expect to run the application in:
+## <a name="setup-the-environment-variables"></a>環境変数を設定します。
+
+ハード コーディング環境変数を使用して、ターミナルで次のコマンドを実行するスクリプトでこれらアプリケーションを実行する予定するのではなく、調整のスクリプトは、正しい呼び出しを実行するには、Face API URL とキーを知る必要があります。
 
 ```bash
-FACE_API_URL=<the-face-api-url>
-FACE_API_KEY=<your-face-api-key>
+export FACE_API_URL=<the-face-api-url>
+export FACE_API_KEY=<your-face-api-key>
 ```
 
-<!-- > NOTE
-> Don't forget to add the query param returnFaceAttributes=emotion to ensure the Face API returns emotion as well -->
+という名前のパッケージを使用しても`dotenv`ノード アプリケーションでします。 このパッケージみましょうストアを使用する環境変数ローカルという名前のファイルで`.env`します。 `dotenv`パッケージは、このファイル内の変数を読み込むし、に、アプリケーションを環境変数として提示します。
 
-## Create some proxy images for emojis
+> **注**
+>
+> チェックインしない`.env`ファイルをソース管理にします。
 
-I've provided all the proxy images myself, but feel free to generate your own!
+Azure Functions を使用して環境変数を処理する別の方法がある、`local.settings.json`ファイルの詳細は後述します。
 
-For each emoji in the `bin/proxy-images` folder, take a picture of yourself mimicking that emoji and replace the image with your image.
+## <a name="create-some-proxy-images-for-emojis"></a>絵文字をいくつかプロキシ イメージを作成します。
 
-## Try it out
+自身が自由に独自の生成、プロキシのすべてのイメージを提供しています。
 
-Now comes the fun part! We are going to run each of the images in the `bin/proxy-images` through the Face API to calculate an emotional point for that emoji in _emotional space_, run:
+各絵文字での`bin/proxy-images`フォルダー、その絵文字を模倣して自分の写真を撮るし、イメージ、イメージを置き換えます。
+
+## <a name="try-it-out"></a>試してみる
+
+おもしろいの一部です。 内のイメージのそれぞれを実行しようとして、`bin/proxy-images`を計算する感情的なポイントでは、その絵文字を Face API を通じて_感情的な領域_を実行。
 
 ```bash
 node bin/calibrate.js
 ```
 
-The output of this command should look something like so:
+このコマンドの出力は何かになりますようになります。
 
 ```json
 ...
@@ -76,6 +83,6 @@ Processing 😆
 }
 ```
 
-It will first print out the emoji's it is processing and then finally print out to the console an array which defines the `EmotivePoint` of all the emoji's. This is the same format as the array in `shared/mojis.ts`.
+まず、絵文字の処理とし、最後コンソールに出力を定義する配列を出力、`EmotivePoint`のすべての絵文字。 これは、配列と同じ形式`shared/mojis.ts`します。
 
-If you changed some of the proxied images then copy the output of this script to the relevant section of `mojis.ts`
+プロキシのイメージの一部を変更した場合の関連するセクションにこのスクリプトの出力をコピーし、 `mojis.ts`

@@ -4,17 +4,12 @@ metadata:
   title: Azure Portal でのクエリの実行
   description: Azure Portal を使用することによって、Azure Cosmos DB 内のデータにクエリを実行する方法について説明します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 59ef9337ff6f8a32b097dc8b19212da7e70999af
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310580"
 azureSandbox: true
 title: Azure Portal でのクエリの実行
-durationInMinutes: 10
-content: '[!include[](includes/5-run-queries.md)]'
+durationInMinutes: 5
+content: |
+  [!include[](includes/5-run-queries.md)]

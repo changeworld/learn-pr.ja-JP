@@ -1,18 +1,18 @@
-Security is currently top-of-mind for most people working in IT, and this is especially true when it comes to software. It seems we are constantly hearing about companies and governments that we entrusted our private data to, being compromised. When this happens - either maliciously or accidentally, it costs them customers and, ultimately money.
+セキュリティは現在上部心をテクノロジでの作業の多くの場合で、これはソフトウェアに関しては、特に当てはまります。 企業や政府機関、プライベート データを委任危害をについてお知らせは絶えずようです。 この場合のか、故意または偶然、コストがかかりますそれらの顧客と、最終的にはコスト。
 
-Did you know that the most common cause of data breaches is poor security in software? It's true.  This means that the pressure is on for software developers to be more diligent than ever. But where do they start? This module is the start of your journey into the world of application security, with the top five defenses for web applications. Learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
+データ侵害の最も一般的な原因は、のソフトウェアのセキュリティ レベルが低いことをご存知でしたか。 本当です。  これは、ソフトウェア開発者はこれまでよりもより賢明なをするので、不足であることを意味します。 しかし、開始位置を示すでしょうか。 このモジュールは、web アプリケーションの上位 5 つの防御機能で、アプリケーションのセキュリティの世界を旅の開始です。 Azure 上の web アプリケーションをセキュリティで保護し、最も一般的で危険な web アプリケーションの攻撃から保護する方法について説明します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-* Use Azure Security Center
-* Verify your application's inputs and outputs
-* Store your secrets into Key Vault
-* Ensure you are using the latest version of your framework, and its security features
-* Validate that your program dependencies and libraries are safe to use
+* Azure Security Center の使用
+* アプリケーションの入力と出力を確認します。
+* Key Vault にシークレットを格納します。
+* お使いの framework とそのセキュリティ機能の最新バージョンを使用していることを確認します。
+* プログラムの依存関係やライブラリが安全に使用できることを確認します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-* Learners should be experienced web developers.
-* Learners should have access to Azure.
+* 学習器には、経験豊富な web 開発者必要があります。
+* 学習器は、Azure へのアクセスに必要です。

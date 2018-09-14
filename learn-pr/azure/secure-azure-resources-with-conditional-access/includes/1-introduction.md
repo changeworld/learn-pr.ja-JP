@@ -7,11 +7,10 @@ Azure Multi-Factor Authentication は、すべてのユーザーにすべての�
 ## <a name="learning-objectives"></a>学習の目的
 
 このモジュールでは、次のことを行います。
-- テスト ユーザーと使用グループを作成する
-- Multi-Factor Authentication を必要とする条件付きアクセス ポリシーを有効にする
+
+- テスト ユーザー アカウントとユーザー グループを作成します。
+- Multi-factor Authentication (MFA) を必要とする条件付きアクセス ポリシーを有効にします。
 
 ## <a name="prerequisites"></a>前提条件
 
-- リソース グループやサブスクリプションなど、Azure の基本的な概念に関する知識
-- Azure サブスクリプションへのアクセス
-- ディレクトリを作成するためのアクセス許可
+- リソース グループやサブスクリプションなど、基本的な Azure の概念に関する知識。

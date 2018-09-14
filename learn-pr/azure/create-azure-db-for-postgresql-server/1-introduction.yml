@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.introduction
-title: Introduction to Azure Database for PostgreSQL
+title: Azure Database for PostgreSQL の概要
 metadata:
-  title: Introduction to Azure Database for PostgreSQL
-  description: Introduction to Azure Database for PostgreSQL
+  title: Azure Database for PostgreSQL の概要
+  description: Azure Database for PostgreSQL の概要
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

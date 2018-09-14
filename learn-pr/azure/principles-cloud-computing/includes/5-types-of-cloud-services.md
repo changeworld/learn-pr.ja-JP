@@ -2,21 +2,37 @@
 
 ## <a name="explore-the-three-categories-of-cloud-computing"></a>クラウド コンピューティングの 3 つのカテゴリを確認する
 
-<!-- TODO: replace video link? -->
-
 > [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEbs]
 
-### <a name="infrastructure-as-a-service-iaas"></a>サービスとしてのインフラストラクチャ (IaaS)
+:::row:::
+  :::column:::
+    ![IaaS のアイコン](../media/5-iaas.png)
+  :::column-end:::
+  列のスパン =「3」:**サービス (IaaS) としてのインフラストラクチャ**
 
 サービスとしてのインフラストラクチャは、クラウド サービスの最も柔軟なカテゴリです。 これは、アプリケーションを実行するハードウェアを完全に制御できるようにすることを目的としています。 IaaS では、ハードウェアを購入するのではなくレンタルします。
+  :::column-end:::
+:::row-end:::
 
-### <a name="platform-as-a-service-paas"></a>サービスとしてのプラットフォーム (PaaS)
+:::row:::
+  :::column:::
+    ![PaaS のアイコン](../media/5-paas.png)
+  :::column-end:::
+  列のスパン =「3」: **(PaaS) サービスとしてのプラットフォーム**
 
 PaaS では、ソフトウェア アプリケーションを構築、テスト、デプロイするための環境が提供されます。 PaaS の目的は、基になるインフラストラクチャの管理を気にせずに、できるだけ速やかにアプリケーションを作成できるよう支援することです。 たとえば、PaaS を使用して Web アプリケーションをデプロイするときは、オペレーティング システムや Web サーバーだけでなく、システムの更新プログラムもインストールする必要はありません。
+  :::column-end:::
+:::row-end:::
 
-### <a name="software-as-a-service-saas"></a>サービスとしてのソフトウェア (SaaS)
+:::row:::
+  :::column:::
+    ![SaaS のアイコン](../media/5-saas.png)
+  :::column-end:::
+  列のスパン =「3」: **(SaaS) サービスとしてのソフトウェア**
 
 SaaS は、エンド カスタマーのために一元的にホストされ、管理されるソフトウェアです。 通常は、アプリケーションの 1 つのバージョンがすべての顧客に使用され、月単位のサブスクリプションまたは年間サブスクリプションによってライセンスされるアーキテクチャに基づいています。 Office 365 は SaaS ソフトウェアの好例です。
+  :::column-end:::
+:::row-end:::
 
 ## <a name="think-about-service-categories-as-layers"></a>レイヤーとしてのサービス カテゴリについて考える
 

@@ -1,9 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.2-what-is-azure
-title: What is Azure?
+title: Azure とは
 metadata:
-  title: What is Azure?
-  description: Learn what cloud computing means and how Azure is more than just a place to run your VMs.
+  title: Azure とは
+  description: コンピューティングの手段をクラウドと Azure の仮想マシンを実行するだけで複数の場所の方法について説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 3
 content: |
   [!include[](includes/2-what-is-azure.md)]

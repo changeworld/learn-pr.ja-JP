@@ -1,11 +1,16 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.4-add-web-server
-title: Add a web server
+title: Web サーバーを追加します。
 metadata:
-  title: Add a web server
-  description: Bring your virtual machine to life by configuring a web server and serving some custom content.
+  title: Web サーバーを追加します。
+  description: Web サーバーを構成して、いくつかのカスタム コンテンツを提供して、仮想マシンを実現します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-interactive: powershell
+interactive: bash
 azureSandbox: true
 durationInMinutes: 7
 content: |

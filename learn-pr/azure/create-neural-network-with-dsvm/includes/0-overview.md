@@ -1,4 +1,4 @@
-Linux 用の **Data Science Virtual Machine** は、データ サイエンスの使用の開始を簡単にする仮想マシン イメージです。 すぐに起動して実行できるように、複数のツールが既に構築、インストール、および構成されています。 Jupyter や TensorFlow のように、NVIDIA GPU ドライバー、NVIDIA CUDA、NVIDIA CUDA ディープ ニューラル ネットワーク (cuDNN) ライブラリも含まれます。 事前にインストールされているフレームワークはすべて、GPU 対応ですが、CPU でも動作します。
+**データ サイエンス仮想マシン**Linux データ サイエンスの概要を簡単にする仮想マシン イメージのです。複数のツールが既に構築された、インストールされと簡単になるを取得するように構成します。 Jupyter や TensorFlow のように、NVIDIA GPU ドライバー、NVIDIA CUDA、NVIDIA CUDA ディープ ニューラル ネットワーク (cuDNN) ライブラリも含まれます。 事前にインストールされているフレームワークはすべて、GPU 対応ですが、CPU でも動作します。
 
 ## <a name="learning-objectives"></a>学習の目的
 
@@ -11,8 +11,9 @@ Linux 用の **Data Science Virtual Machine** は、データ サイエンスの
 
 ### <a name="prerequisites"></a>前提条件
 <!---TODO: This is really long, need to make more concise and also add to index.yml--->
+<!---TODO: Update for free sandbox.--->
 
-このモジュールを完了するには、Azure サブスクリプションと Xfce リモートデスクトップ クライアントが必要です。 詳細については、前提条件のセクションを参照してください。 Azure サブスクリプションをお持ちでない場合は、開始する前に[無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)を作成してください。
+このモジュールを完了するには、Azure サブスクリプションと Xfce リモート デスクトップ クライアントを必要があります。
 
  1. **Microsoft Azure アカウント**: このモジュールには有効かつアクティブな Azure アカウントが必要です。 アカウントがない場合でも、[無料試用版](https://azure.microsoft.com/free/)にサインアップできます
 

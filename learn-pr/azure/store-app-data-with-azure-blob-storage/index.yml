@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.store-app-data-with-azure-blob-storage
 metadata:
-  title: Store application data with Azure Blob storage
-  description: Build an app that stores user files with Azure Blob storage.
+  title: Azure Blob ストレージを使用してアプリケーション データを格納する
+  description: Azure Blob ストレージを使用してユーザー ファイルを格納するアプリを作成します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Store application data with Azure Blob storage
-summary: Build an app that stores user files with Azure Blob storage.
+title: Azure Blob ストレージを使用してアプリケーション データを格納する
+summary: Azure Blob ストレージを使用してユーザー ファイルを格納するアプリを作成します。
 abstract: |
-  In this module, you will:
-    - Organize your data with Azure Blob Storage
-    - Create storage resources to hold blobs
-    - Store and retrieve data from Azure Blob Storage
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+    - Azure Blob Storage でデータを整理する
+    - BLOB を保持するストレージ リソースを作成する
+    - Azure Blob Storage でのデータの保存と取得
+prerequisites: なし
+iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-storage
+  - azure
+  - azure-storage
 units:
-- learn.store-app-data-with-azure-blob-storage.1-introduction
-- learn.store-app-data-with-azure-blob-storage.2-what-are-blobs
-- learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-- learn.store-app-data-with-azure-blob-storage.4-create-storage-resources
-- learn.store-app-data-with-azure-blob-storage.5-configure-and-initialize-the-client-library
-- learn.store-app-data-with-azure-blob-storage.6-getting-blob-references
-- learn.store-app-data-with-azure-blob-storage.7-blob-uploads-and-downloads
-- learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
+  - learn.store-app-data-with-azure-blob-storage.1-introduction
+  - learn.store-app-data-with-azure-blob-storage.2-what-are-blobs
+  - learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
+  - learn.store-app-data-with-azure-blob-storage.4-create-storage-resources
+  - learn.store-app-data-with-azure-blob-storage.5-configure-and-initialize-the-client-library
+  - learn.store-app-data-with-azure-blob-storage.6-getting-blob-references
+  - learn.store-app-data-with-azure-blob-storage.7-blob-uploads-and-downloads
+  - learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
 achievement: learn.store-app-data-with-azure-blob-storage.badge

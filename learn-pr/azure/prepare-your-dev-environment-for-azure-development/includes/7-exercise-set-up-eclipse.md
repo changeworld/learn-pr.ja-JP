@@ -1,54 +1,54 @@
-In this unit, you will install Eclipse on your local machine and then install the Azure Toolkit, preparing you for developing Java applications with Azure integration. The installation is quick and simple. At the end of the exercise, you will have everything set up that you need to start your first Java application, taking advantage of the features and services of Azure.
+このユニットでは、ローカル コンピューターに、Eclipse と Azure Toolkit をインストールします。 インストールはすばやくかつシンプルに実行できます。 この演習の末尾には、Azure で初めての Java アプリケーションを作成する必要があるすべてがあります。
 
-## Install Eclipse IDE
+## <a name="install-eclipse-ide"></a>Eclipse IDE をインストールする
 
-1. Download the Eclipse version that suits your operating system from http://www.eclipse.org/downloads/packages/installer.
+1. http://www.eclipse.org/downloads/packages/installer からお使いのオペレーティング システムに適した Eclipse バージョンをダウンロードします。
 
-1. Start the Eclipse installer once downloaded.
+1. ダウンロードした Eclipse インストーラーを起動します。
 
-    1. On Windows, double-click the downloaded file.
+    1. Windows の場合は、ダウンロードしたファイルをダブルクリックします。
 
-    1. On macOS and Linux, unzip the installer from the downloaded file. Then start the installer once unzipped.
+    1. MacOS および Linux でダウンロードしたファイルからインストーラーを解凍して実行します。
 
         > [!NOTE]
-        > The installer may prompt you to install the Java Development Kit, if it is missing.
+        > Java Development Kit がインストールされていない場合、インストールするように求められることがあります。
 
-1. Select the packages to install. For Java developers, choose either the Java or Java EE Eclipse IDE option.
+1. インストールするパッケージを選択します。 Java 開発者の場合は、Java または Java EE Eclipse IDE オプションを選択します。
 
-1. Select the installation destination on your machine.
+1. マシン上のインストール先を選択します。
 
-1. Launch Eclipse to validate that it installed correctly.
+1. Eclipse を起動して、正しくインストールされていることを確認します。
 
-## Install Azure Toolkit for Eclipse
+## <a name="install-azure-toolkit-for-eclipse"></a>Azure Toolkit for Eclipse をインストールする
 
-Installing the Azure Toolkit is the same across Windows, macOS, and Linux.
+Azure Toolkit のインストールは、Windows、macOS、Linux で同じです。
 
-1. Start Eclipse.
+1. Eclipse を起動します。
 
-1. Go to **Help** > **Install New Software...**.
+1. **[Help]\(ヘルプ\)** > **[Install New Software]\(新しいソフトウェアのインストール\)** に移動します。
 
-    The following screenshot shows the menu location of the **Install New Software...** item.
+    次のスクリーンショットは、**[Install New Software]\(新しいソフトウェアのインストール\)** 項目のメニューの場所を示しています。
 
-    ![Screenshot of the Install New Software option highlighted within the Help menu of Eclipse.](../media/7-eclipse-install-new-software.png)
+    ![Eclipse の [Help]\(ヘルプ\) メニュー内で強調表示されている [Install New Software]\(新しいソフトウェアのインストール\) オプションのスクリーンショット](../media/7-eclipse-install-new-software.png)
 
-1. The **Available Software** dialog will open. In the **Work with:** text box, type `http://dl.microsoft.com/eclipse/` and press Enter.
+1. **[Available Software]\(使用できるソフトウェア\)** ダイアログが開きます。 **[Work with:]\(操作対象:\)** テキスト ボックスに「`http://dl.microsoft.com/eclipse/`」と入力し、Enter キーを押します。
 
-1. In the results, check the **Azure Toolkit for Java** option. Make sure you uncheck the **Contact all update sites during install to find required software** option, if it isn't already.
+1. 結果の **[Azure Toolkit for Java]** オプションをオンにします。 **[Contact all update sites during install to find required software]\(インストール時にすべての更新プログラム サイトに接続して必要なソフトウェアを検索する\)** オプションがまだオフではない場合はオフにします。
 
-    The following screenshot shows the **Available Software** install configuration as described above.
+    次のスクリーンショットは、前述の **[Available Software]\(使用できるソフトウェア\)** のインストール構成を示しています。
 
-    ![Screenshot of the Available Software window in Eclipse, with boxes highlighting the configuration necessary to find and install the Azure Toolkit for Java.](../media/7-eclipse-download-azure-toolkit-for-java.png)
+    ![Eclipse の [Available Software]\(使用できるソフトウェア\) ウィンドウのスクリーンショット。Azure Toolkit for Java を検索してインストールするために必要な構成が強調表示されています。](../media/7-eclipse-download-azure-toolkit-for-java.png)
 
-1. Click **Next**.
+1. **[Next]\(次へ\)** をクリックします。
 
-1. Review and accept the license agreements when prompted, and click **Finish**.
+1. プロンプトが表示されたらライセンス契約を確認して同意し、**[Finish]\(完了\)** をクリックします。
 
-1. Eclipse will download and install the Azure Toolkit.
+1. Azure Toolkit が Eclipse によってダウンロードされてインストールされます。
 
-1. Restart Eclipse if required.
+1. 必要に応じて Eclipse を再起動します。
 
-1. Validate installation of Azure Toolkit by verifying that you can find a **Tools** > **Azure** menu option in Eclipse.
+1. 検索できる確認することで Azure Toolkit のインストールの検証、**ツール** > **Azure** Eclipse のメニュー オプション。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you installed Eclipse for Java, and prepared it to take advantage of the integration with Azure services and products. The installation is quick and straightforward, making Eclipse ideal for the task of Java development with cloud services integration.
+このユニットでは、Eclipse のインストールし、Azure サービスおよび製品との統合を活用するために準備します。

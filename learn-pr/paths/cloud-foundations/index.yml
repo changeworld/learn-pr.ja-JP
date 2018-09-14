@@ -4,28 +4,27 @@ metadata:
   title: クラウドの基礎
   description: クラウドに関心があっても、その機能についてはあまりご存知ないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 42a739267fee3c7b403b72bfc3a07d631f408c17
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826869"
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: クラウドの基礎
 summary: クラウドに関心があっても、その機能についてはあまりご存知ないのではないでしょうか? このラーニング パスは出発点です。 クラウド コンピューティングの利点、時間と費用を節約できる Azure 内の機能、クラウドへ移行するための基本的な戦略などについて説明します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /achievements/cloud-foundations.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- solution-architect
-- administrator
+  - developer
+  - solution-architect
+  - administrator
 products:
-- azure
+  - azure
 modules:
-- principles-cloud-computing
-- learn.azure-services-features
-- learn.intro-to-compute
-- learn.intro-to-data-in-azure
-- learn.intro-to-azure-networking
+  - learn.principles-cloud-computing
+  - learn.azure-services-features
+  - learn.intro-to-compute
+  - learn.intro-to-data-in-azure
+  - learn.introduction-to-security
+  - learn.intro-to-azure-networking
 achievement: learn.cloud-foundations.trophy

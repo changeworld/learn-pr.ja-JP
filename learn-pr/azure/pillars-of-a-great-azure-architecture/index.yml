@@ -1,35 +1,33 @@
 ### YamlMime:Module
 uid: learn.pillars-of-a-great-azure-architecture
 metadata:
-  title: Pillars of a great Azure architecture
-  description: Learn how to make your architecture a success on Azure
+  title: 優れた Azure アーキテクチャの重要な要素
+  description: Azure でアーキテクチャを成功させる方法について説明します
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Pillars of a great Azure architecture
-summary: You want to build great things on Azure, but you’re not sure exactly what that means. There is a wealth of tools and services at your disposal on Azure, but what’s important to make sure you’re successful? How do you instill confidence in your customers that their data is secure? Could your architecture handle a spike in traffic if a media report goes viral? Could your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible? Using key principles throughout your architecture regardless of technology choice, can help you design, build, and continuously improve your architecture.
+title: 優れた Azure アーキテクチャの重要な要素
+summary: Azure で優れたものを構築したいと考えていますが、それが厳密に何を意味するのかは分かっていません。 Azure では豊富なツールやサービスが利用できますが、成功を確実にするために重要なものは何でしょうか? データが安全であるという確信を顧客に与えるにはどうすればよいでしょうか? アーキテクチャは、メディア報道が過熱した場合のトラフィック急増に耐えられますか? アーキテクチャは、1 つ以上のクリティカル コンポーネントの障害に対処できますか? 考えられる範囲で最も効率的な方法でリソースを使用していますか? テクノロジの選択にかかわらず、アーキテクチャ全体で重要な原則を使用することで、アーキテクチャの設計、構築、継続的な改善に役立てることができます。
 abstract: |
-  In this module, you will:
-  - Identify key pillars for architecting a solution in the cloud
-  - Apply key principles for creating a solid architectural foundation
-prerequisites: None
-#TODO: Update icon URL with real image
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - クラウドでソリューションを設計するための主な利点を識別します。
+  - 強固なアーキテクチャ基盤を構築するための重要原則を適用する
+prerequisites: なし
+iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.pillars-of-a-great-azure-architecture.1-introduction
-- learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
-- learn.pillars-of-a-great-azure-architecture.3-design-for-security
-- learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
-- learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
-- learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
-- learn.pillars-of-a-great-azure-architecture.7-summary
+  - learn.pillars-of-a-great-azure-architecture.1-introduction
+  - learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+  - learn.pillars-of-a-great-azure-architecture.3-design-for-security
+  - learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+  - learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+  - learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+  - learn.pillars-of-a-great-azure-architecture.7-summary
 achievement: learn.pillars-of-a-great-azure-architecture.badge

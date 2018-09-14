@@ -1,87 +1,87 @@
-You can get the resources you need using either one large virtual machine or several small VMs with a load balancer to distribute requests among the VMs.
+リソースを入手することができます、Vm 間で要求を分散するロード バランサーを使って大規模な仮想マシンを 1 つまたは複数の小さな Vm のいずれかを使用する必要があります。
 
-The VM pool has the nice advantage that you can add or remove VMs quickly when demand changes. In the toy company scenario, this strategy would be useful to handle unexpected spikes in demand. You could add VMs to the pool when demand increased and remove them when demand returned to normal. The pool also gives you redundancy; if one VM fails, the others can continue to handle requests with no interruption in service.
+VM プールには、追加または需要が変更されたときに、Vm をすばやく削除できる便利な利点があります。 Toy 企業シナリオでは、この方法は、予期しない需要の急増を処理すると便利になります。 需要が増加し、要求が正常に返されるときに、それらを削除する場合は、プールに Vm を追加できます。 プールも提供の冗長性。1 つの VM が失敗した場合は、サービスを中断させずに要求を処理するために、他のユーザー続行できます。
 
-In this section, you will see how to provision multiple VMs using scale sets and how to automatically add and remove instances in response to changing demand. 
+このセクションでは、スケール セットを使用して複数の Vm をプロビジョニングする方法と自動的に追加し、需要の変化に応じてインスタンスを削除する方法がわかります。 
 
-## What is horizontal scaling?
+## <a name="what-is-horizontal-scaling"></a>水平方向のスケーリングとは
 
-*Horizontal scaling* is the process of adding or removing virtual machines from a pool to adjust the amount of available resources. Adding machines is called _scaling out_ and removing machines is called _scaling in_. Solutions that use horizontal scaling include a load balancer or gateway to distribute requests among the VMs in the pool. The following illustration shows an example of changing the number of virtual machine instances.
+*水平方向のスケーリング*を追加または使用可能なリソースの量を調整するプールから仮想マシンを削除するプロセスです。 マシンの追加といいます_スケール アウト_、マシンを削除すると呼びます_スケールイン_します。 水平方向のスケーリングを使用するソリューションには、ロード バランサーまたはプール内の Vm 間で要求を分散するゲートウェイが含まれます。 次の図は、仮想マシン インスタンスの数を変更する例を示します。
 
-![An illustration showing scaling out the resources to handle demand and scaling in the resources to reduce costs.](../media/4-ScaleInOut.png)
+![スケール アウト コストを削減するオンデマンドとリソースのスケーリングを処理するためにリソースを示す図。](../media/4-ScaleInOut.png)
 
-This technique works best for applications that can be run across multiple, identical servers. For example, you can duplicate your web server and web pages on multiple VMs and they will all give the same response no matter which server receives the request. On the other hand, a VM that runs your backend database is not an ideal candidate because running multiple copies of the database requires some effort to keep the copies in sync.
+この手法は、複数の同一サーバー間で実行できるアプリケーションを最適です。 たとえば、web サーバーおよび複数の Vm 上の web ページを複製することができ、それらはすべての提供先のサーバーに関係なく同じ応答が要求を受信します。 その一方で、バックエンドのデータベースを実行する VM は最適な候補の同期コピーを維持するために、データベースの複数のコピーを実行している必要があるためです。
 
-## What is a scale set?
+## <a name="what-is-a-scale-set"></a>スケールの設定とは?
 
-A *scale set* is a pool of identical virtual machines, a load balancer or gateway to distribute requests, and an optional set of rules that control when VMs are added or removed from the pool. Here, "identical" means that each VM in the set is created using the same image and has the same size.
+A*スケール セット*の同一の仮想マシン、ロード バランサーまたは、要求を分散するゲートウェイ プールであり、省略可能な Vm を追加またはプールから削除するときを制御する規則のセット。 ここでは、「同一」は、セット内の各 VM が同じイメージを使用して作成され、サイズは同じことです。
 
-You have some flexibility in how a new VM is configured with the software you need. You can start with a predefined image for the base OS and then use scripts to install or copy files automatically after the OS is set up. Alternately, you can create a custom virtual machine image with the operating system and your application software already installed.
+いくつかの柔軟性のあるソフトウェアと新しい VM を構成する方法にする必要があります。 基本 OS の定義済みのイメージで開始し、インストール、または OS の設定後に自動的にファイルをコピーするスクリプトを使用できます。 または、オペレーティング システムと、アプリケーション ソフトウェアを既にインストールされているカスタム仮想マシン イメージを作成できます。
 
-## How to distribute requests
+## <a name="how-to-distribute-requests"></a>要求を分散する方法
 
-You can use either a load balancer or an Application Gateway to distribute requests to the VM instances in a scale set.
+スケール セット内の VM インスタンスに要求を分散するのにロード バランサーまたはアプリケーション ゲートウェイのいずれかを使用することができます。
 
-An Azure load balancer operates at OSI layer 4 (TCP and UDP) and routes traffic based on source IP address and port combined with the destination IP address and port. It can provide affinity, where traffic from the same source IP address is routed to the same destination server to provide consistency across a client session. The load balancer also has a health probe mechanism that determines the availability of server instances. If a virtual machine becomes unresponsive to the health probe, the load balancer will avoid routing any new connections to that machine.
+Azure ロード バランサーは OSI レイヤー 4 (TCP および UDP) で動作し、発信元 IP アドレスとポートと宛先 IP アドレスとポートを組み合わせてに基づいてトラフィックをルーティングします。 クライアント セッションの間で一貫性を保つため、同じ移行先サーバーに、同じソース IP アドレスからのトラフィックのルーティング先のアフィニティを提供できます。 ロード バランサーには、サーバー インスタンスの可用性を決定する正常性プローブのメカニズムもあります。 仮想マシンは、正常性プローブに応答しなくなると、そのマシンに新しい接続をルーティング、load balancer が回避されます。
 
-An Application Gateway operates at OSI layer 7 (the application layer). For example, if your VMs are running a web server, then the gateway can use the requested URL to perform routing. This means you could forward requests with `*/customers*` in the URL to one pool of servers and requests with `*/partners*` in the URL to a different pool. The Application Gateway can also provide HTTP to HTTPS redirection, Secure Sockets Layer (SSL) termination to reduce the processing requirement on the virtual machines for encryption, and a Web application firewall (WAF) that uses rules to detect known web exploits and prevent these requests from reaching the web servers.
+Application gateway は、OSI レイヤー 7 (アプリケーション層) で動作します。 などの Vm で web サーバーを実行している場合、ゲートウェイことができますを使用して、要求された URL ルーティングを実行します。 これは、要求を転送することは意味`*/customers*`サーバーとの要求の 1 つのプールの URL を`*/partners*`で別のプールへの URL。 アプリケーション ゲートウェイは HTTP を HTTPS へのリダイレクト、暗号化は、仮想マシンと既知の web を検出する規則を使用する web アプリケーション ファイアウォール (WAF) の処理要件を減らすために Secure Sockets Layer (SSL) の終了を指定もできます。悪用し、これらの要求が web サーバーに到達するを防止します。
 
-## What is autoscaling?
+## <a name="what-is-autoscaling"></a>自動スケールとは何ですか。
 
-_Autoscaling_ is the process of automatically scaling out or in based on a set of rules. The rules can be triggered by machine load or a schedule. The following illustration shows how the autoscale feature manages instances to handle the load.
+_自動スケール_が自動的にスケール アウトまたはスケールインのプロセスを一連のルールに基づいています。 ルールは、マシンの負荷またはスケジュールによってトリガーできます。 次の図は、自動スケール機能が、負荷を処理するインスタンスを管理する方法を示します。
 
-![An illustration showing how autoscale monitors the CPU levels of a pool of virtual machines and adds instances when the CPU utilization is above the threshold.](../media/4-autoscale.png)
+![自動スケールの仮想マシンのプールの CPU のレベルを監視し、CPU 使用率がしきい値を超えるインスタンスが追加されますを示す図。](../media/4-autoscale.png)
 
-To enable autoscaling for a scale set, you must create an autoscale profile. The profile defines the minimum and maximum number of VM instances for the set and the scaling rules. Autoscale rules have the following elements:
+スケール セットの自動スケールを有効にするには、自動スケール プロファイルを作成する必要があります。 プロファイルは、セットおよびスケーリング ルール用の VM インスタンスの最小値と最大数を定義します。 自動スケール ルールでは、次の要素があります。
 
-* Metric source - the source of information or data that triggers the autoscale rule. There are four options:
-  * *Current scale set* provides host-based metrics that do not require any additional agents.
-  * *Storage account* the Azure diagnostic extension writes performance metrics to Azure storage that are used to trigger autoscale rules.
-  * *Service Bus Queue* can specify application-based or other Azure Service Bus messages to trigger autoscaling.
-  * *App Insights* uses an instrumentation package that needs to be installed in the application running on the scale set to stream metric data direct from the application.
-* Rule criteria - This is the specific metric you want to use to trigger an autoscale rule. If you are using host-based metrics, this can include aspects such as CPU usage, volume of network traffic, disk operations, or CPU credits. For example, you could configure a rule to scale out if disk write operations per second exceed a threshold. Using the Azure diagnostic extension or App Insights enables you to use any available measure to trigger the rule but requires configuration of the appropriate agent.
-* Aggregation type - This specifies how you want to measure the metric data and will be one of the following options:
-  * Average
-  * Minimum
-  * Maximum
-  * Total
-  * Last
+* メトリック ソースの情報または自動スケール ルールをトリガーするデータのソース。 4 つのオプションがあります。
+  * *現在のスケール セット*追加のエージェントを必要としない、ホストベースのメトリックを提供します。
+  * *[ストレージ アカウント]*。 Azure 診断拡張機能は、パフォーマンス メトリックを Azure Storage に書き込みます。 これらのメトリックは、自動スケール ルールをトリガーに使用されます。
+  * *Azure Service Bus キュー*自動スケールをトリガーする、アプリケーション ベースまたはその他の Azure Service Bus メッセージを指定できます。
+  * *Azure Application Insights*スケール、アプリケーションから直接、メトリック データのストリーム セットで実行されているアプリケーションにインストールする必要があるインストルメンテーション パッケージを使用します。
+* ルール条件 - これは、特定のメトリックを使用して、自動スケール ルールをトリガーします。 ホスト ベースのメトリックを使用している場合は、CPU 使用率、ネットワーク トラフィック量、ディスクの操作の CPU クレジットなどの側面を含めるこのことができます。 たとえば、1 秒あたりのディスク書き込み操作は、しきい値を超えた場合は、スケール アウトするルールを構成できます。 Azure 診断拡張機能または Application Insights を使用して、利用可能なメジャーを使用してルールをトリガーすることができますが、適切なエージェントの構成が必要です。
+* 集計の種類 - このメトリック データを測定する方法を指定します、次のオプションのいずれかになります。
+  * 平均
+  * 最小値
+  * 最大値
+  * 合計
+  * Last (最後へ)
   * Count
-* Operator - The operator denotes how a metric must be different to a defined threshold to trigger the rules action. This is particularly important when identifying whether the rule will scale out or in. Operators can be:
-  * Greater than
-  * Greater than or equal to
-  * Less than
-  * Less than or equal to
-  * Equal to
-  * Not equal to
-* Action - This determines how the number of instances will change when the rule is triggered. The following actions are available:
-  * *Increase count by* a fixed number of virtual machines.
-  * *Increase percent by* a percentage of existing instances.
-  * *Increase count to* a specific number of virtual machines.
-  * *Decrease count by* a fixed number of virtual machines.
-  * *Decrease percent by* a percentage of existing instances.
-  * *Decrease count to* a specific number of virtual machines.
+* 演算子の演算子は、どのメトリックがルールのアクションをトリガー定義されたしきい値に異なる必要がありますを表します。 これは、ルールはスケール アウトまたはスケールインするかどうかを識別するときに特に重要です。 演算子があります。
+  * より大きい
+  * 以上
+  * より小さい
+  * 以下
+  * 等しい
+  * 等しくない
+* 操作 - ルールがトリガーされたときのインスタンスの数の変更方法を指定します。 次の操作を使用できます。
+  * *別の数を増やす*仮想マシンの固定数。
+  * *パーセントを増やす*既存のインスタンスの割合。
+  * *数を増やす*仮想マシンの特定の数。
+  * *別の数を減らす*仮想マシンの固定数。
+  * *パーセントを減らす*既存のインスタンスの割合。
+  * *数を減らす*仮想マシンの特定の数。
 
-You can also create autoscale rules that trigger on a schedule. For example, you might define a rule that scales out in the morning when you know demand is high and then scales in after lunch when demand typically decreases.
+スケジュールでトリガーする自動スケール ルールを作成することもできます。 たとえば、需要が高いがわかって朝にスケール アウトし、需要が通常が減少昼食後で拡大または縮小するルールを定義する可能性があります。
 
-## How to create a scale set
+## <a name="how-to-create-a-scale-set"></a>スケール セットを作成する方法
 
-You can create a scale set using the Azure portal, Azure PowerShell, or the Azure command-line interface (CLI).
+スケール セット、Azure portal、Azure PowerShell、または Azure CLI を使用して作成できます。
 
-### Portal
+### <a name="portal"></a>ポータル
 
-If you use the Azure portal to create the scale set, you will specify the operating system image to use for the virtual machines and how many VM instances to create at startup. You will also specify the size of virtual machine for each instance and whether to use the Azure load balancer or the Application Gateway for load balancing. If you choose a load balancer, the portal will create a default health probe on port 80 for it.
+Azure portal を使用して、スケール セットを作成する場合は、起動時に作成する VM インスタンスの数と、仮想マシンに使用するオペレーティング システム イメージを指定します。 また、各インスタンスであり、Azure load balancer を使用するかどうかのまたは負荷分散用のアプリケーション ゲートウェイのサイズを指定します。 ロード バランサーを選択した場合、ポータルは既定の正常性プローブをそのポート 80 で作成します。
 
-### PowerShell
+### <a name="powershell"></a>PowerShell
 
-You can create a virtual machine scale set with the **New-AzureRmVmss** PowerShell cmdlet. This cmdlet can create a new scale set, a load balancer, and control IP address and virtual network assignments. Unless specified in the cmdlet, **New-AzureRmVmss** will use the following default settings:
+仮想マシン スケール セットを作成することができます、 **New-azurermvmss** PowerShell コマンドレット。 このコマンドレットは、次のように新しいスケール セット、ロード バランサーを作成し、IP アドレスと仮想ネットワークの割り当てを制御できます。 コマンドレットでは、設定が指定されない限り**New-azurermvmss**次の既定の設定が使用されます。
 
-* Create two virtual machine instances
-* Use the Windows Server 2016 Datacenter image
-* Use the Standard DS1_v2 virtual machine size
-* Create a load balancer
-* Create load balancer rules for ports 3389 and 5985 for Windows, port 22 for Linux
+* 2 つの仮想マシン インスタンスを作成します。
+* Windows Server 2016 Datacenter イメージを使用します。
+* 標準の DS1_v2 仮想マシンのサイズを使用して、
+* ロード バランサーの作成
+* Windows、Linux 用のポート 22 のポート 3389 と 5985 のロード バランサー規則を作成します。
 
-**New-AzureRmVmss** does not create a health probe for the load balancer. Best practice would be to create this using **Add-AzureRmLoadBalancerProbeConfig** after you have created the scale set.
+**New-azurermvmss** load balancer の正常性プローブを作成できません。 使用してこれを作成するがベスト プラクティス**Add-azurermloadbalancerprobeconfig**スケール セットを作成した後。
 
-Horizontal scaling with scale sets gives you multiple servers to run your application. Using multiple servers lets you handle high loads and ensures your services remain available even if a server crashes. You can add autoscale to your scale sets, so your system automatically adjusts to unexpected changes in demand.
+スケール セットで水平方向のスケーリングと、アプリケーションを実行する複数のサーバーを提供します。 高を処理する複数のサーバーによりを使用して読み込みをサーバーがクラッシュした場合でも、サービスが使用可能な維持されます。 システムは、予期しない需要の変化を自動的に調整するために、スケール セットに自動スケールを追加できます。

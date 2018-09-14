@@ -1,20 +1,19 @@
-Let's face it, we all want to know what our customers think of our brand, our product, our message. How does their opinion change over time? Looking for sentiment in what they write can unlock some clues. Sentiment analysis helps answer the question: *What do our customers really want?* It's used to analyze tweets and other social media content, customer reviews, and emails. 
+現実を弊社のブランド、製品、メッセージの顧客の意見を知るを望んでいます。 強い意見は、時間の経過と共にどのように変更しますか。 何を書いているセンチメントを探して手掛かりのロックを解除できます。 センチメント分析の質問に答えるのに役立ちます:*何もお客様よろしいでしょうか。* ツイートし、その他のソーシャル メディア コンテンツ、顧客レビュー、および電子メールの分析に使用されます。
 
- A popular approach to sentiment analysis is to train machine  learning models that detect sentiment. However, that process is complex. It involves having good quality training data that is labeled, creating features from that data, training a classifier and then using the classifier to predict sentiment of new pieces of text. Not every company has the money and expertise to invest in building AI solutions from scratch. Thankfully, Microsoft and other companies can, and do, invest in state-of-the-art research in these areas. As developers, we get to benefit from their findings through the APIs, SDKs, and platforms they ship. Microsoft Cognitive Services is one such offering.
+ センチメント分析の一般的なアプローチでは、センチメントを検出する機械学習モデルをトレーニングします。 ただし、そのプロセスは複雑です。 それは、というラベルの付いたトレーニング データが高品質、そのデータから特徴を作成、分類モデルをトレーニング、および新しい部分のテキストのセンチメントを予測する分類器を使用します。 すべての企業では、お金と AI ソリューションをゼロから構築に投資する専門知識を持ちます。 さいわいにも、Microsoft と他社ことができますと、これらの分野で最新の研究投資します。 開発者は、Api、Sdk、および出荷されるのプラットフォームを通じて、調査結果の恩恵を取得します。 Microsoft Cognitive Services とは、このような 1 つのソリューションです。
 
-![Sentiment extracted from text and display on a gauge from negative to positive.](../media-draft/sentiment-analysis.png)
+![センチメントのテキストと正の数に負の値からゲージに表示から抽出します。](../media/sentiment-analysis.png)
 
+## <a name="microsoft-cognitive-services"></a>Microsoft Cognitive Services
 
-## Microsoft Cognitive Services
+Microsoft Api、Sdk、および、バナーの下でのサービスのセットが同梱されている*Microsoft Cognitive Services*しばらくの間。 目標は、開発者がそれぞれのアプリよりインテリジェントで魅力的な探索可能にします。
 
-Microsoft has been shipping a set of APIs, SDKs, and services under the banner of *Microsoft Cognitive Services* for a while. The goal is to help developers make their apps more intelligent, engaging, discoverable.  
+Microsoft Cognitive Services では、視覚、音声、言語、知識、および検索でインテリジェントなアルゴリズムを提供します。 プランにあるものを表示するチェック アウト、 [Cognitive Services ディレクトリ](https://azure.microsoft.com/services/cognitive-services/directory/)します。 各サービスを無料で試すことができます。 これらのサービスの 1 つ以上をアプリケーションに統合する場合は、サインアップする有料サブスクリプション。 このモジュールで使用して、サービスが、Text Analytics API をしましょうについての詳細をご覧は。
 
-Microsoft Cognitive Services offers intelligent algorithms in vision, speech, language, knowledge, and search. To see what's on offer, check out the [Cognitive Services Directory](https://azure.microsoft.com/services/cognitive-services/directory/). You can try each service for free. When you decide to integrate one or more of these services into your applications, you sign up for a paid subscription. The service we'll use throughout this module is the Text Analytics API, so let's hear more about it. 
+## <a name="text-analytics-api"></a>Text Analytics API
 
-## Text Analytics API
+Text Analytics API は、Cognitive Service テキストから情報を抽出するために設計されています。  サービスを通じて言語を識別、センチメントを検出、キーのフレーズを抽出してテキストから既知のエンティティを検出します。 さらに、サービスを試す場合書店で、[テキスト分析デモ](https://azure.microsoft.com/services/cognitive-services/text-analytics/)公式ドキュメント。
 
-Text Analytics API is a Cognitive Service designed to help you extract information from text.  Through the service  you can identify language, discover sentiment, extract key phrases, and detect well-known entities from text. If you're eager to try out the service, head on over to the [Text Analytics demo](https://azure.microsoft.com/services/cognitive-services/text-analytics/) in the official documentation. 
+このレッスンでは、この API のセンチメント分析の一部を把握するいたします。 実際には、サービスは 0 ~ 1 のセンチメント スコアを生成するのに機械学習分類アルゴリズムを使用します。  1 に近いスコアは肯定的センチメント、0 に近いスコアは否定的センチメントを示します。 0.5 に近いスコアは、センチメントなしまたはニュートラル ステートメントを示します。 アルゴリズムの実装の詳細について心配する必要はありません。 アプリから呼び出すことで、サービスを使用して集中できます。  構造体すぐ表示されるよう、 **POST**要求を送信する、`/sentiment`エンドポイントを示す JSON 応答を受信して、*センチメント スコア*。
 
-In this lesson, we'll get to know the sentiment analysis part of this API. Under the covers, the service uses a machine learning classification algorithm to generate a sentiment score between 0 and 1.  Scores closer to 1 indicate positive sentiment, while scores closer to 0 indicate negative sentiment. A score close to 0.5 indicates no sentiment  or a neutral statement. You don't have to worry about the implementation details of the algorithm. You focus on using the service by making calls to it from your app.  As we'll see shortly, you structure a **POST** request, send it to the `/sentiment` endpoint and receive a JSON response that tells you a *sentiment score*.
-
-We'll first experiment with the Text Analytics API using an online API testing console. Once we're comfortable with the API, we'll use it in a scenario to detect sentiment in messages so that we can sort them for further processing.
+まず、オンラインの API テスト コンソールを使用して、Text Analytics API を確認しましたみます。 私たちは、API に慣れて後、は、さらに処理しました並べ替えたりすることができるように、メッセージのセンチメントを検出するのにシナリオで使用します。

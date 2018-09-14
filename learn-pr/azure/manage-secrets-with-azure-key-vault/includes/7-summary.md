@@ -1,7 +1,7 @@
-このモジュールでは、Azure Key Vault でアプリのシークレット構成をセキュリティ保護しました。 このアプリ コードでは、マネージド サービス ID を使用してコンテナーへの認証が行われ、起動時にコンテナーから ASP.NET Core の構成システムにシークレットが自動的に読み込まれます。
+このモジュールでは、Azure Key Vault でアプリのシークレット構成をセキュリティ保護しました。 今回のアプリケーション コードでは、管理対象 id を持つ資格情報コンテナーを認証し、ASP.NET Core の構成のシステムの起動時に資格情報コンテナーからシークレットを自動的に読み込まれます。
 
 ## <a name="clean-up"></a>クリーンアップ
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+<!---TODO: Update for sandbox?--->
 
 Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 
@@ -26,5 +26,5 @@ Cloud Shell ストレージをクリーンアップするには、`KeyVaultDemoA
 
 - [Key Vault のドキュメント](https://docs.microsoft.com/azure/key-vault/)
 - [AddAzureKeyVault とその高度なオプションの詳細](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration?view=aspnetcore-2.1&tabs=aspnetcore2x)
-- [このチュートリアル](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application)では、MSI の代わりにクライアント シークレットを使用して Azure Active Directory への認証を手動で行う手順を含め、`KeyVaultClient` の使用手順について説明します。
-- 認証ワークフローを自分で実装するための [MSI トークン サービスのドキュメント](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)
+- [このチュートリアル](https://docs.microsoft.com/azure/key-vault/key-vault-use-from-web-application)を使用して説明`KeyVaultClient`、手動で、管理対象 id を使用する代わりに、クライアント シークレットを使用して Azure Active Directory への認証などです。
+- [Azure リソースのトークン サービスのドキュメントの id を管理](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity#using-the-rest-protocol)、自分で認証ワークフローを実装します。

@@ -1,10 +1,10 @@
-In this module, you've seen how security can be applied against the database. Remember, any one security vulnerability still makes your database vulnerable. It's important to make sure you have everything possible to reduce threats to your database. 
+このモジュールでは、データベースに対して、セキュリティを適用する方法を説明しました。 任意の 1 つのセキュリティの脆弱性も受けやすくなります、データベースに注意してください。 すべてのデータベースに対する脅威を軽減することがあるかどうかを確認する重要です。
 
-You've learned how to:
+学習した方法。
 
-- Configure the firewall for the Azure SQL Server database
-- Control user access at the database and Active Directory levels
-- Manage encryption between the client and server
-- Add auditing and threat monitoring to the Azure SQL Server database
+- Azure SQL Server データベースのファイアウォールを構成します。
+- データベース レベルの Active Directory でユーザー アクセスの制御
+- クライアントとサーバー間の暗号化を管理します。
+- 追加の監査と脅威の Azure SQL Server データベースを監視
 
-All of the aspects work together to secure your database. Your customers are important, your reputation is important, and that makes your database security important. 
+すべての項目が連携して、データベースのセキュリティ保護します。 お客様は、重要なでは、お客様の評判は重要でありするにより、データベースのセキュリティが重要です。

@@ -1,37 +1,33 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Traffic Manager を使用して待ち時間を短縮する
+title: Azure Traffic Manager での待機時間を短縮します。
 metadata:
-  title: Traffic Manager を使用して待ち時間を短縮する
+  title: Azure Traffic Manager での待機時間を短縮します。
   description: Traffic Manager を使用することで、どのように待ち時間を短縮し、地理的リージョン全体での回復性を高められるかを学習します。
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477816"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: >
+content: |
   [!include[](includes/4-reduce-latency-traffic-manager.md)]
 quiz:
   title: '知識チェック: Traffic Manager を使用して待ち時間を短縮する'
   questions:
-  - content: Traffic Manager により、待ち時間はどのように短縮されますか?
-    choices:
-    - content: Traffic Manager では、エンドポイント間で最も高速なネットワークのみが選択されます。
-      isCorrect: false
-      incorrectExplanation: 特定のネットワークの速度は考慮されません。
-    - content: ユーザーの DNS サーバーに最も近いエンドポイントが選択されます。
-      isCorrect: true
-      correctExplanation: ユーザーに最も近いサーバーを選択することが、待ち時間を短縮するための早道です。
-    - content: コンテンツ配信ネットワークと同様に、Traffic Manager もコンテンツをキャッシュします。
-      isCorrect: false
-      incorrectExplanation: Traffic Manager では、クライアントとサーバー間を通過するトラフィックを認識することはなく、コンテンツをキャッシュすることもありません。
-  - content: あなたはイギリスに住んでいますが、DNS サーバーはイタリアにあります。 Traffic Manager によりトラフィックはどのように送信されますか?
-    choices:
-    - content: イギリスに最も近いサービスを選択します。
-      isCorrect: false
-      incorrectExplanation: Traffic Manager は、ユーザーの場所ではなく、ユーザーに最も近い _DNS サーバー_を使用して、トラフィックを送信します。
-    - content: イタリアに最も近いサービスを選択します。
-      isCorrect: true
-      correctExplanation: Traffic Manager は、ユーザーの場所ではなく、ユーザーに最も近い _DNS サーバー_を使用して、トラフィックを送信します。
+    - content: Azure Traffic Manager が、待機時間を短縮する方法
+      choices:
+        - content: Traffic Manager では、エンドポイント間で最も高速なネットワークのみが選択されます。
+          isCorrect: false
+        - content: ユーザーの DNS サーバーに最も近いエンドポイントが選択されます。
+          isCorrect: true
+          correctExplanation: ユーザーに最も近いサーバーを選択することが、待ち時間を短縮するための早道です。
+        - content: コンテンツ配信ネットワークと同様に、Traffic Manager もコンテンツをキャッシュします。
+          isCorrect: false
+    - content: 、イングランドに住んでいるが、イタリアの DNS サーバーがあるとします。 Traffic Manager によりトラフィックはどのように送信されますか?
+      choices:
+        - content: イギリスに最も近いサービスを選択します。
+          isCorrect: false
+        - content: イタリアに最も近いサービスを選択します。
+          isCorrect: true
+          correctExplanation: Traffic Manager を使用して、 _DNS server_トラフィックをユーザーに最も近いです。

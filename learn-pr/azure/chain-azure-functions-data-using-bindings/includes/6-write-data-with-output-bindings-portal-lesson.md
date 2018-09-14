@@ -1,54 +1,40 @@
-Similar to input bindings, there are multiple types of output bindings.
+入力バインドと同様は複数の出力バインドの種類です。
 
-There are multiple types of output bindings, however not all types support both input and output. You'll use them anytime you want to send or store data. Here, we'll look at the types that support output bindings and when to use them.
+複数の種類の出力バインドがある、ただしすべての種類をサポートして、入力し出力します。 送信またはデータを格納するときにいつでも使用します。 ここでは、出力バインドと使用すると、その使用をサポートする型を紹介します。
 
-## Output binding types
+## <a name="output-binding-types"></a>出力バインドの種類
 
-- **Blob Storage**
-   You can use the blob output binding to write blobs.
+- **Blob Storage** blob 出力を書き込む blob へのバインドを使用することができます。
 
-- **Cosmos DB**
-    The Azure Cosmos DB output binding lets you write a new document to an Azure Cosmos DB database using the SQL API.
+- **Cosmos DB** Azure Cosmos DB 出力バインドを使用して SQL API を使用して Azure Cosmos DB データベースに新しいドキュメントを記述できます。
 
-- **Event Hubs**
-    Use the Event Hubs output binding to write events to an event stream. You must have send permission to an event hub to write events to it.
+- **Event Hubs** Event Hubs 出力をイベント ストリームにイベントを記述するバインドを使用します。 イベントを書き込むには、イベント ハブへの送信アクセス許可が必要です。
 
-- **HTTP**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **HTTP** HTTP 出力の HTTP 要求送信者に応答するバインドを使用します。 このバインドには、HTTP トリガーが必要です。このバインドを使用すると、トリガーの要求に関連付けられている応答をカスタマイズすることができます。
 
-- **Microsoft Graph**
-    Microsoft Graph output bindings allow you to write to files in OneDrive, modify Excel data, and send email through Outlook.
+- **Microsoft Graph** Microsoft Graph の出力バインドでは、OneDrive でファイルに書き込むし、Excel データを変更して、Outlook で電子メールを送信することができます。
 
-- **Mobile Apps**
-    The Mobile Apps output binding writes a new record to a Mobile Apps table.
+- **Mobile Apps** Mobile Apps 出力バインドの書き込みを Mobile Apps テーブルに新しいレコード。
 
-- **Notification Hubs**
-    You can send push notifications with Notification Hubs output bindings.
+- **Notification Hubs** Notification Hubs の出力バインドでプッシュ通知を送信することができます。
 
-- **Queue Storage**
-    Use the Azure Queue storage output binding to write messages to a queue.
+- **Queue Storage** Azure Queue storage の出力をキューにメッセージを書き込むバインドを使用します。
 
-- **Send Grid**
-    Send emails using SendGrid bindings.
+- **グリッドの送信**における SendGrid のバインディングを使用してメールを送信します。
 
-- **Service Bus**
-    Use Azure Service Bus output binding to send queue or topic messages.
+- **Service Bus**使用して Azure Service Bus キューまたはトピック メッセージを送信するバインドを出力します。
 
-- **Table storage**
-    Use an Azure Table storage output binding to write to a table in an Azure Storage account.
+- **テーブル ストレージ**使用して、Azure Table storage の出力を Azure Storage アカウント内のテーブルへの書き込みにバインドします。
 
-- **Twilio**
-    Send text messages with Twilio.
+- **Twilio**を Twilio でテキスト メッセージを送信します。
 
-- **Webhooks**
-    Use the HTTP output binding to respond to the HTTP request sender. This binding requires an HTTP trigger and allows you to customize the response associated with the trigger's request.
+- **Webhook** HTTP 出力の HTTP 要求送信者に応答するバインドを使用します。 このバインドには、HTTP トリガーが必要です。このバインドを使用すると、トリガーの要求に関連付けられている応答をカスタマイズすることができます。
 
+## <a name="how-to-create-an-output-binding"></a>出力バインドを作成する方法は?
+バインドを定義するには、入力を定義する必要あります、`direction`として`out`します。
+バインドの種類ごとにパラメーターが異なる場合がありますにも記載されているもの[Microsoft のドキュメント](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)
 
-## How to create an output binding?
-In order to define a binding an input, you must define the `direction` as `out`.
-The parameters for each type of binding may differ, those are well documented in [Microsoft's Documentation](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings#supported-bindings)
+## <a name="combining-input-and-output-bindings"></a>結合の入力呼び出し力バインド 
+1 つの関数に複数のバインドを適用することになります。 これにより、入力と出力の両方のバインドを定義することができます。
 
-## Combining input and output bindings 
-it's possible to apply multiple bindings to a single function. This allows you to define both input and output bindings.
-
-And the input and output can even be the same binding type .....
+同じバインドの種類は、入力と出力ですることもできます.

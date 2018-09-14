@@ -1,42 +1,35 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.2-classify-data
 metadata:
-  title: データを分類する
-  description: データを分類する
+  title: 知識チェック
+  description: 知識チェック
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9d1dcb52b1221e2a4c804a94cc38e5bf4e2f308e
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44237302"
 title: データを分類する
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/2-classify-data.md)]
 quiz:
-  title: データの分類
+  title: 知識チェック
   questions:
-  - content: オンライン小売りアプリケーションではユーザー データも格納され、それにはユーザーの配送先住所、過去の注文、およびプロフィール情報 (提供されている場合) が含まれます。 ユーザー データには、将来の特定のユーザー用に他のフィールドが含まれる場合があります。 このデータ セットをどのように分類しますか。
-    choices:
-    - content: 構造化
-      isCorrect: false
-      incorrectExplanation: すべてのユーザーの情報が同じわけではないので、構造化された形式でこのデータを格納するのは理想的ではありません。
-    - content: 半構造化
-      isCorrect: true
-      correctExplanation: 正解です。すべてのユーザーがプロファイル情報を持っているわけではなく、将来一部のユーザーに新しいフィールドを追加する可能性があるため、このユーザー データは半構造化されています。 これは、すべてのデータが同じスキーマに従うわけではなく、データの各部分が固有の構造を持つ可能性があることを示すので、半構造化されたデータです。
-    - content: 非構造化
-      isCorrect: false
-      incorrectExplanation: 非構造化形式のデータを処理するのは難しいので、非構造化データとしてユーザー データを格納することはお勧めできません。
-  - content: 非構造化データに構造化されたメタデータを関連付けることはできますか。
-    choices:
-    - content: はい
-      isCorrect: true
-      correctExplanation: 正解です。構造化されていないデータに、タイムスタンプ、場所スタンプ、デバイス ID などのメタデータを関連付けることができます。 メタデータを非構造化データに関連付けても、メイン エンティティの内部構造が構造化されていないという事実は変わりません。
-    - content: いいえ
-      isCorrect: false
-      incorrectExplanation: 残念ですが、正解ではありません。
+    - content: JSON ファイルは、データの種類の例ですか。
+      choices:
+        - content: 構造化
+          isCorrect: false
+        - content: 半構造化
+          isCorrect: true
+          correctExplanation: '半構造化データには、データの編成と階層を明らかにするタグが含まれています。 '
+        - content: 非構造化
+          isCorrect: false
+    - content: ビデオでは、データの種類の例ですか。
+      choices:
+        - content: 構造化
+          isCorrect: false
+        - content: 半構造化
+          isCorrect: false
+        - content: 非構造化
+          isCorrect: true
+          correctExplanation: 多くの場合、非構造化データはファイルで配信されます。 ビデオは、全体的な構造を必要がありますが、ビデオ自体を構成するデータが構造化されていません。

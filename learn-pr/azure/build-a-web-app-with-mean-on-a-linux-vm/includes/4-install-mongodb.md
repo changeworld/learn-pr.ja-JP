@@ -1,18 +1,18 @@
-Most applications need a data store. MongoDB, the "M" in the MEAN stack, is one of the most popular NoSQL data store solutions, and it's free and open source. A NoSQL data store doesn't require data to be structured in a pre-defined way as it would with a relational database like SQL Server or MySQL.
+ほとんどのアプリケーションにはデータ ストアが必要です。 MongoDB (MEAN スタックの "M") は、最も人気のある NoSQL データ ストア ソリューションの 1 つであり、無料のオープン ソースです。 NoSQL データ ストアの場合、SQL Server や MySQL などのリレーショナル データベースのように、事前に定義された方法でデータを構築する必要はありません。
 
-MongoDB stores its data in JSON-like documents that don't require rigid data structures. We then interact with MongoDB using queries and commands sent as JavaScript Object Notation (JSON).
+MongoDB では、厳格なデータ構造を必要としない JSON に似たドキュメントにデータが格納されます。 その後、JavaScript Object Notation (JSON) として送信されるクエリとコマンドを使用して、MongoDB とやりとりします。
 
-## MongoDB versions
+## <a name="mongodb-versions"></a>MongoDB バージョン
 
-There are two versions of MongoDB available:
+利用可能な MongoDB のバージョンには次の 2 つがあります。
 
 - MongoDB Community Server
 - MongoDB Enterprise Server
 
-In this module, we're going to use MongoDB Community Server, version 3.6 at the time of this writing, for our web application data store.
+このモジュールでは、Web アプリケーション データ ストアとして MongoDB Community Server (執筆時点ではバージョン 3.6) を使用します。
 
-## How to install MongoDB
+## <a name="how-to-install-mongodb"></a>MongoDB をインストールする方法
 
-MongoDB can be installed on Linux, macOS, and Windows. We will be installing it on our Ubuntu Linux VM for this module, but the recommended package manager differs by OS and distribution. The installation process for all operating systems is well-documented in the [MongoDB install documentation](https://docs.mongodb.com/manual/administration/install-community/).
+MongoDB は Linux、macOS、Windows にインストールできます。 このモジュールでは Ubuntu Linux VM 上にインストールしますが、推奨されるパッケージ マネージャーは OS とディストリビューションによって異なります。 すべてのオペレーティング システムのインストール プロセスはで適切に文書化されて、 [MongoDB のインストール ドキュメント](https://docs.mongodb.com/manual/administration/install-community/)します。
 
-To install on our Ubuntu VM, we will use the **apt-get** package manager.
+ここでは、Ubuntu VM にインストールするために **apt-get** パッケージ マネージャーを使用します。

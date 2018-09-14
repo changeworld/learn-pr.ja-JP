@@ -1,84 +1,88 @@
-Capturing of weather data is an important task as weather can effect everything
-from traffic patterns to how HVAC systems in retail stores are operated. In this
-exercise, you will be harnessing the online Raspberry Pi simulator to capture
-simulated weather data and capture said data via the Azure IoT Hub.
+気象データのキャプチャは、トラフィック パターン暖房、換気、および小売り店で空調 (HVAC) システムの運用に至る気象に与える影響との重要なタスクです。 この演習でシミュレートされたキャプチャの気象データと Azure IoT Hub を使用して、前の単位で学習したオンラインの Raspberry Pi シミュレーター対話するされます。
 
-While this exercise is being conducted in a simulated environment, the
-application running on the simulated device can be transferred to a real device
-in future.
+この演習は、シミュレートされた環境で実施されているが、中に、シミュレートされたデバイスで実行されているアプリケーションに転送できます実際のデバイスを今後。
 
-## Create an IoT hub
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Sign in to the [Azure portal](https://portal.azure.com/).
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. Select **Create a resource** \> **Internet of Things** \> **IoT Hub**.
+## <a name="create-an-iot-hub"></a>IoT Hub の作成
+Azure IoT Hub には、デバイスやバックエンドの開発者が堅牢なデバイス管理ソリューションを構築するために使用できる機能や拡張モデルが用意されています。 デバイスは、リソースの制約の大きいセンサーをはじめ、専用マイクロコントローラー、デバイス グループの通信をルーティングする強力なゲートウェイなど、多岐にわたります。 また、用途や IoT オペレーターの要件は業界によってかなり異なります。 このような違いがありながら、IoT Hub によるデバイス管理で提供される機能、パターン、およびコード ライブラリは、多様なデバイスとエンド ユーザーに対応することができます。
 
-![Screenshot of Azure portal navigation to IoT Hub](../media-draft/fa40d1bc51bc4490f657e3c1a8371b5b.png)
+Raspberry Pi シミュレーターからのデータの収集を開始するには、まず、IoT hub を作成する必要があります。
 
-1. In the **IoT hub** pane, enter the following information for your IoT hub:
+1. [Azure Portal](https://portal.azure.com?azure-portal=true)を開きます。
+2. Azure portal の左上隅にある **[リソースの作成]** を選択します。
+3. 選択**モ ノのインターネット**、し、 **IoT Hub**します。
 
- - **Subscription**: Choose the subscription that you want to use to create this IoT hub.
- - **Resource group**: Create a resource group to host the IoT hub or use an existing one. For more information, see [Use resource groups to manage your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-portal).
- - **Region**: Select the closest location to you.
- - **Name**: Create a name for your IoT hub. If the name you enter is available, a green check mark appears.
+![Azure Portal での IoT Hub へのナビゲーションのスクリーン ショット](../media-draft/fa40d1bc51bc4490f657e3c1a8371b5b.png)
+
+4. **[IoT Hub]** ウィンドウで、IoT Hub のために以下の情報を入力します。
+   
+   **サブスクリプション**: この例では、既定のサブスクリプションを使用します。
+   **[リソース グループ]**: IoT Hub を入れるリソース グループを作成するか、既存のリソース グループを使用します。 関連するすべてのリソースを 1 つのグループ (*TestResources* など) 内に配置することで、それらを一緒に管理できます。 たとえば、リソース グループを削除すると、そのグループに含まれているすべてのリソースが削除されます。
+   **[リージョン]**: 最も近い場所を選択します。
+   **[名前]**: IoT ハブの一意の名前を作成します。 入力した名前が使用可能な場合は、緑色のチェック マークが表示されます。
 
 > [!IMPORTANT]
-> The IoT hub will be publicly discoverable as a DNS endpoint, so make sure to avoid any sensitive information while naming it.
+> IoT ハブは DNS エンドポイントとして公開されます。そのため、名前を付ける際は機密情報を含めないようにしてください。
 
-   ![IoT Hub basics window](./../media-draft/dbb7319388673b8ee0e0b407536156c0.png)
+   ![IoT ハブの基本ウィンドウ](./../media-draft/dbb7319388673b8ee0e0b407536156c0.png)
 
-1.  Select **Next: Size and scale** to continue creating your IoT hub.
+5. **[Next: Size and scale]\(次へ: サイズとスケール\)** を選択して、IoT ハブの作成を続けます。
+6. **[価格とスケールティア]** を選択します。 この例では、選択、 **F1 - 無料**層。
 
-1.  Choose your **Pricing and scale tier**. For this article, select the **F1 - Free** tier if it's still available on your subscription. For more information, see the [Pricing and scale tier](https://azure.microsoft.com/pricing/details/iot-hub/).
+   ![IoT ハブのサイズとスケールのウィンドウ](../media-draft/b506eb3293fa4aa9d4785ad498fc476c.png)
 
-   ![IoT Hub size and scale window](../media-draft/b506eb3293fa4aa9d4785ad498fc476c.png)
+7. **[Review + create]\(レビュー + 作成\)** を選択します。
 
-1.  Select **Review + create**.
+8. IoT ハブの情報を確認してから、**[作成]** をクリックします。 IoT ハブの作成には数分かかることがあります。 **[通知]** ウィンドウで進行状況を監視できます。
 
-1.  Review your IoT hub information, then click **Create**. Your IoT hub might take a few minutes to create. You can monitor the progress in the **Notifications** pane.
-
-Now that you have created an IoT hub, locate the important information that you use to connect devices and applications to your IoT hub.
-
-In your IoT hub navigation menu, open **Shared access policies**. Select the **iothubowner** policy, and then copy the **Connection string---primary key** of your IoT hub. For more information, see [Control access to IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security).
+<!--STOPPED HERE-->
+<!--
+Now that you have created an IoT hub, it's time to locate the important information that you use to connect devices and applications to your IoT hub. In your IoT hub navigation menu, open **Shared access policies**. Select the **iothubowner** policy, and then copy the **Connection string---primary key** of your IoT hub. For more information, see [Control access to IoT Hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security).
 
 > [!NOTE]
 > You do not need this iothubowner connection string for this set-up tutorial. However, you may need it for some of the tutorials or different IoT scenarios after you complete this set-up.
 
 ![Get your IoT hub connection string](../media-draft/a4b41e6ea46ccbef653c411a9829610c.png)
+-->
 
-## Register a device in the IoT hub for your device
-------------------------------------------------
+## <a name="register-a-device"></a>デバイスの登録
+デバイスを IoT ハブに接続するには、あらかじめ IoT ハブに登録しておく必要があります。
 
-1.  In your IoT hub navigation menu, open **IoT devices**, then click **Add** to register a device in your IoT hub.
+1. IoT Hub ナビゲーション メニューの **[IoT デバイス]** を開き、**[追加]** をクリックして IoT Hub でデバイスを登録します。
 
-   ![Add a device in the IoT Devices of your IoT hub](../media-draft/ee5f177abcf06b86dd007fce3b8448ad.png)
+   ![IoT ハブの [IoT デバイス] でデバイスを追加する](../media-draft/ee5f177abcf06b86dd007fce3b8448ad.png)
 
-1.  Enter a **Device ID** for the new device. Device IDs are case sensitive.
+2. 新しいデバイスの **[デバイス ID]** を入力します。 デバイス ID には大文字と小文字の区別があります。
 
 > [!IMPORTANT]
-> The device ID may be visible in the logs collected for customer support and troubleshooting, so make sure to avoid any sensitive information while naming it.
+> デバイス ID は、カスタマー サポートとトラブルシューティング目的で収集されたログに表示される場合があります。そのため、名前を付ける際は機密情報を含めないようにしてください。
 
-1.  Click **Save**.
+3. **[保存]** をクリックします。
+4. デバイスが作成された後、**[IoT デバイス]** ウィンドウの一覧からデバイスを開きます。
+5. 後で使用するために **[接続文字列 --- 主キー]** をコピーします。
 
-1.  After the device is created, open the device from the list in the **IoT
-    devices** pane.
+   ![デバイスの接続文字列を取得する](../media-draft/fba4413dcb652be92a6ab0f6bb638561.png)
 
-1.  Copy the **Connection string---primary key** to use later.
+## <a name="send-simulated-telemetry"></a>シミュレートされた利用統計情報の送信
 
-   ![Get the device connection string](../media-draft/fba4413dcb652be92a6ab0f6bb638561.png)
+1. 開く、 [Raspberry Pi Azure IoT シミュレーター](https://azure-samples.github.io/raspberry-pi-web-simulator?azure-portal=true)します。
+2. 行 15 のプレース ホルダーをコピーした Azure IoT hub デバイスの接続文字列に置き換えます。
+3. をクリックして、`Run`ボタンまたは型`npm start`アプリケーションを実行するコンソール ウィンドウにします。
+   
+   ![デバイス接続文字列を置換します。](../media-draft/Line15.png)
 
-## Run a sample application on Pi web simulator
+センサー データと、IoT hub に送信されるメッセージを表示する次の出力を表示する必要があります。
 
-1. In coding area, make sure you are working on the default sample application. Replace the placeholder in Line 15 with the Azure IoT hub device connection string.
+![出力 - Raspberry Pi から IoT Hub に送信されるセンサー データ](../media-draft/96b28d30e317b04347abb0d613738117.png)
 
-    ![Replace the device connection string](../media-draft/92ea2c31d42f5b939fb5512e7220e957.png)
+## <a name="read-the-telemetry-from-your-hub"></a>ハブから利用統計情報を読み取る
+ これは起こっているでしょうか。 IoT hub には、シミュレートされたデバイスから送信されたデバイスからクラウドへのメッセージが受信します。 ことはしましょうを Azure IoT Hub の概要が受信データが処理を参照してください。 IoT Hub で **監視**を選択します**メトリック**します。 付けます数分の登場にデータを待機するようにします。
+   
+   ![IoT Hub メトリック](../media-draft/HubMetrics.png)
 
-2.  Click **Run** or type npm start to run the application.
-
-You should see the following output that shows the sensor data and the messages
-that are sent to your IoT hub
-
-   ![Output - sensor data sent from Raspberry Pi to your IoT hub](../media-draft/96b28d30e317b04347abb0d613738117.png)
 
 <!--Reference links
 https://docs.microsoft.com/azure/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started-->

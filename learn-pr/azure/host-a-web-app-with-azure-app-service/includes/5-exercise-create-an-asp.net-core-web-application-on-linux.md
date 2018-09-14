@@ -2,7 +2,7 @@
 
 ## <a name="aspnet-core-installation-on-linux-environment"></a>Linux 環境での ASP.NET Core のインストール
 
-Microsoft の [.NET ダウンロード ページ](https://www.microsoft.com/net/download)にアクセスし、.NET Core SDK のページで説明されているのと同じ手順に従います。 それを次に示します。 コマンドを実行するには、新しい**ターミナル** コマンド ライン インスタンスを開く必要があります。
+Microsoft の [.NET ダウンロード ページ](https://www.microsoft.com/net/download)にアクセスし、.NET Core SDK のページで説明されているのと同じ手順に従います。 以下のとおりです。 コマンドを実行するには、新しい**ターミナル** コマンド ライン インスタンスを開く必要があります。
 
 ### <a name="register-microsoft-key-and-feed"></a>Microsoft のキーとフィードを登録する
 
@@ -25,9 +25,9 @@ sudo apt-get update
 sudo apt-get install dotnet-sdk-2.1
 ```
 
-インストール プロセス中に、アカウント パスワードの入力を求められる場合があります。 パスワードを入力し、Enter キーを押して続行します。
+インストール プロセスの間に、アカウント パスワードの入力を求められる場合がします。 パスワードを入力し、Enter キーを押して続行します。
 
-インストールを確認するには、次を入力します。
+インストールを確認するには、次のコマンドを実行します。
 
 ```console
 dotnet --version
@@ -43,13 +43,13 @@ dotnet --version
 
 ## <a name="open-a-terminal-window"></a>ターミナル ウィンドウを開く
 
-最初に、ターミナル ウィンドウを開く必要があります。 ターミナル ウィンドウを使用するとコマンドを実行できます。このターミナル ウィンドウの役割は、Windows コマンド プロンプト ウィンドウと似ています。
+最初に、ターミナル ウィンドウを開く必要があります。 ターミナル ウィンドウの役割は Windows コマンド プロンプト ウィンドウと似ており、コマンドを実行することができます。
 
 ## <a name="create-a-new-web-project"></a>新しい Web プロジェクトを作成する
 
 .NET CLI ツールの中心になるのは、*dotnet* ドライバー ツールです。 このコマンドを使用して、新しい ASP.NET Core Web プロジェクトを作成します。
 
-新しい ASP.NET Core MVC アプリケーションを作成するには、単に次のコマンドを入力するだけです。
+新しい ASP.NET Core MVC アプリケーションを作成するには、次のコマンドを入力することだけが必要です。
 
 ```console
 cd ~/Documents

@@ -4,11 +4,11 @@ title: Azure SQL Database を計画する
 metadata:
   title: Azure SQL Database を計画する
   description: Azure SQL Database を計画する
-  ms.openlocfilehash: 4407f212c69632c7dba02c7f2c4204886a5e630a
-  ms.sourcegitcommit: 107578417899e44b5611917dec7bcc21d4c1582e
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/29/2018
-  ms.locfileid: "43230002"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 durationInMinutes: 7
-content: '[!include[](includes/2-plan-your-database.md)]'
+content: |
+  [!include[](includes/2-plan-your-database.md)]

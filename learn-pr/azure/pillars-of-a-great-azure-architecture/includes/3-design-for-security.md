@@ -1,47 +1,47 @@
-Your healthcare organization stores personal and potentially sensitive client data. A security incident could expose this sensitive data, which could cause personal embarrassment or financial harm. How do you ensure the integrity of their data and ensure your systems are secure? 
+医療機関では、個人的かつ機密性のあるクライアント データを保存します。 セキュリティ インシデントによってこの機密データが漏洩し、個人に不快な思いをさせたり金銭的な損害が発生したりする可能性があります。 どうすれば、データの整合性とシステムの安全性を保証できるでしょうか。 
 
-Here, we'll talk about how to approach the security of an architecture.
+ここでは、アーキテクチャのセキュリティにアプローチする方法について説明します。
 
-## What should I protect?
+## <a name="what-should-i-protect"></a>何を保護すべきか?
 
-The data your organization stores is at the heart of your securable assets. This data could be sensitive data about customers, financial information about your organization, or critical line-of-business data supporting your organization. Along with data, securing the infrastructure it exists on, and the identities we use to access it, are also critically important.
+組織のデータの保存またはハンドルは、セキュリティ保護可能な資産の中核です。 このデータは、顧客に関する機密データ、組織の財務情報、または組織を支えるクリティカルな基幹業務データである可能性があります。 データだけでなく、データを扱うインフラストラクチャや、そのインフラストラクチャへのアクセスに使用する ID をセキュリティで保護することもきわめて重要です。
 
-Your data may be subject to additional legal and regulatory requirements depending on where you are located, the type of data you are storing, or the industry that your application operates in. For instance, in the healthcare industry in the US, there is a law called the Health Insurance Portability and Accountability Act (HIPAA). Organizations that store data that is in scope for this law are required to ensure certain safeguards are in place. In Europe, the General Data Protection Regulation (GDPR) lays out the rules of how personal data is protected, and defines individuals' rights related to stored data. Some countries require that certain types of data do not leave their borders.
+国または地域、保存するデータの種類、あるいはアプリケーションの運用先の業界によっては、追加の法的要件および規制要件がデータに適用される場合があります。 例えば、米国のヘルスケア業界には、Health Insurance Portability and Accountability Act (医療保険の相互運用性と説明責任に関する法律: HIPAA) という法律があります。 金融業界で支払いカード業界データ セキュリティ標準では、クレジット カード データの処理にします。 これらの法律や標準のスコープ内のデータを保存する組織は、特定の保護機能がこのデータの保護のためにしていることを確認する必要があります。 ヨーロッパでは、General Data Protection Regulation (EU 一般データ保護規則: GDPR) によって、個人データの保護方法を規定し、保存されたデータに関連する個人の権利を定義しています。 国または地域によっては、特定の種類のデータを域内にとどめることが義務付けられます。
 
-When a security breach occurs, there can be substantial impacts to the finances and reputation of both organizations and customers. This breaks down the trust customers are willing to instill in your organization, and can impact its long-term health.
+セキュリティ違反が発生すると、組織と顧客双方の財務および評判に大きな影響を及ぼす可能性があります。 これにより、顧客が組織に対して抱くはずだった信頼が損なわれ、組織の長期的な健全性に影響が及ぶ可能性があります。
 
-## Defense in depth
+## <a name="defense-in-depth"></a>多層防御
 
-A multilayered approach to securing your environment will increase the security posture of your environment. Commonly known as _defense in depth_, we can break down the layers as follows:
+環境をセキュリティで保護するための多層的なアプローチにより、環境のセキュリティ態勢が強化されます。 一般的と呼ばれる_多層防御_レイヤーを次のように分類できます。
 
-* Data
-* Applications
-* VM/compute
-* Networking
-* Perimeter
-* Policies & access
-* Physical security
+* データ
+* アプリケーション
+* VM/コンピューティング
+* ネットワーク
+* 境界
+* ポリシーとアクセス
+* 物理セキュリティ
 
-Each layer focuses on a different area where attacks can happen and creates a depth of protection, should one layer fail or be bypassed by an attacker. If we were to just focus on one layer, an attacker would have unfettered access to your environment should they get through this layer. Addressing security in layers increases the work an attacker must do to gain access to your systems and data. Each layer will have different security controls, technologies, and capabilities that will apply. When identifying the protections to put in place, cost will often be of concern, and will need to be balanced with business requirements and overall risk to the business.
+攻撃はさまざまな領域で発生する可能性がありますが、階層ごとに異なった領域にフォーカスすることで、ある階層を攻撃者が突破または迂回した場合に備えた重層的な保護を実現します。 1 つの階層にしかフォーカスしていなければ、この階層を突破した攻撃者が無制限に環境にアクセスできてしまいます。 各階層のセキュリティへの対処は、システムおよびデータにアクセスするために攻撃者がしなければならない作業を増やします。 適用されるセキュリティ統制、テクノロジ、および機能は階層によって異なります。 実装する保護の特定にあたっては、しばしばコストが懸念事項になり、ビジネスの要件とビジネス全体のリスクのバランスを考慮する必要があります。
 
-![Security layers](../media-draft/security-layers.png)
+![セキュリティ層](../media-draft/security-layers.png)
 
-There is no single security system, control, or technology that will fully protect your architecture. Security is more than just technology, it's also about people and processes. Creating an environment that looks holistically at security, and making it a requirement by default will help ensure your organization is as secure as possible.
+アーキテクチャを完全に保護する単一のセキュリティ システム、統制、またはテクノロジは存在しません。 セキュリティとは、テクノロジだけではなく人やプロセスをも包摂した概念です。 総体的なセキュリティを備えた環境を構築し、それを既定の要件にすることで、組織のセキュリティをできる限り高めることができます。
 
-## Common attacks
+## <a name="common-attacks"></a>一般的な攻撃
 
-At each layer, there are some common attacks that you will want to protect against. These are not all-inclusive, but can give you an idea of how each layer can be attacked and what types of protections you may need to look at.
+防御策を講じることが望ましい、何種類かの一般的な攻撃が階層ごとに存在します。 以下の説明はすべてを網羅したものではありませんが、それぞれの階層で受ける可能性がある攻撃や、検討する必要がある保護の種類についてアイデアを提供します。
 
-* **Data layer**: Encryption key exposure or using weak encryption can leave your data vulnerable should unauthorized access occur.
-* **Application layer**: Malicious code injection and execution are the hallmarks of application-layer attacks. Common attacks include SQL injection and cross-site scripting (XSS).
-* **VM/compute layer**: Malware is a common method of attacking an environment, which involves executing malicious code to compromise a system. Once malware is present on a system, further attacks leading to credential exposure and lateral movement throughout the environment can occur.
-* **Networking layer**: Unnecessary open ports to the Internet are a common method of attack. These could include leaving SSH or RDP open to virtual machines. When open, these could allow brute-force attacks against your systems as attackers attempt to gain access.
-* **Perimeter layer**: Denial-of-service (DoS) attacks are often seen at this layer. These attacks attempt to overwhelm network resources, forcing them to go  offline or making them incapable of responding to legitimate requests.
-* **Policies & access layer**: This is where authentication occurs for your application. This could include modern authentication protocols such as OpenID Connect, OAuth, or Kerberos-based authentication such as Active Directory. Exposed credentials are a risk here and it's important to limit the number of identities permissions of identities. We also want to have monitoring in place to look for possible compromised accounts, such as logins coming from unusual places.
-* **Physical layer**: Unauthorized access to facilities through methods such as door drafting and theft of security badges can be seen at this layer.
+* **データ層**: 暗号化キーの漏洩または弱い暗号化の使用により、不正アクセスが発生した場合にデータが脆弱性にさらされるおそれがあります。
+* **アプリケーション層**: 悪意のあるコードの挿入と実行は、アプリケーション層に対する攻撃の顕著な特徴です。 一般的な攻撃には、SQL インジェクションやクロスサイト スクリプティング (XSS) があります。
+* **VM/コンピューティング層**: マルウェアは、環境を攻撃する一般的な方法です。これには、悪意のあるコードの実行によってシステムに危害を加える行為が含まれます。 ひとたびマルウェアがシステムに侵入すると、資格情報の漏洩や環境全体への横展開につながる、さらなる攻撃が発生するおそれがあります。
+* **ネットワーク層**: 不必要なポートをインターネットに対してオープンにすることが一般的な攻撃方法です。 これには、SSH または RDP を仮想マシンに対してオープンのままにすることが含まれます。 これらがオープンになっていると、システムへのブルートフォース攻撃によって攻撃者がアクセスを試みることを許してしまうおそれがあります。
+* **境界層**: サービス拒否 (DoS) 攻撃はこの階層でしばしば発生します。 これらの攻撃はネットワーク リソースを圧迫することで、ネットワークをダウンさせる、あるいは正当な要求への応答を不能にすることを試みます。
+* **ポリシーとアクセス層**: これは、アプリケーションの認証が行われる領域です。 これには、OpenID Connect、OAuth、あるいは、Active Directory のような Kerberos ベースの認証など、最新の認証プロトコルが含まれます。 ここでのリスクは資格情報の漏洩であり、ID の ID アクセス許可の数を制限することが重要です。 普段とは違う場所からのログインなど、アカウント侵害の可能性を識別するための監視機構を導入することも検討しています。
+* **物理層** この階層では、ドア ドラフティングやセキュリティ バッジの盗取などの方法による施設への不正侵入が発生するおそれがあります。
 
-## Shared security responsibility
+## <a name="shared-security-responsibility"></a>共有セキュリティ責任
 
-Revisiting the model of shared responsibility, we can reframe this in the context of security. Depending on the type of service you select, some security protections will be built in to the service, while others will remain your responsibility. Careful evaluation of the services and technologies you select will be necessary, to ensure you are providing the proper security controls for your architecture.
+責任の共有のモデルを再考ことができますを再構成することこれのセキュリティ コンテキストでします。 、選択したサービスの種類に応じていくつかのセキュリティ保護にビルドされます、サービスにしたまま、他のユーザーがお客様の責任です。 慎重に評価サービスとテクノロジを選択するは、アーキテクチャに関する適切なセキュリティ制御を提供することを確認するために必要になります。
 
-![Shared security responsibilities](../media-draft/shared_responsibilities.png)
+![共有のセキュリティの責任](../media-draft/shared_responsibilities.png)

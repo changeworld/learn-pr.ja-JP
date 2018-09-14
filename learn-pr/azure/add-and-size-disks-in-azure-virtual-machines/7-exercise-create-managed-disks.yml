@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.7-exercise-create-managed-disks
-title: Exercise - Migrate to managed disks
+title: 演習 - managed disks に移行
 metadata:
-  title: Exercise - Migrate to managed disks
-  description: Exercise - Migrate to managed disks
+  title: 演習 - managed disks に移行
+  description: 演習 - managed disks に移行
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+azureSandbox: true
 durationInMinutes: 5
 content: |
   [!include[](includes/7-exercise-create-managed-disks.md)]

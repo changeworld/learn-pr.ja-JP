@@ -1,21 +1,21 @@
-AngularJS is a framework for creating clear and succinct dynamic web applications. You use HTML for your content template language, but extend your HTML with data-binding syntax. Using AngularJS for data-binding and dependency-injection helps eliminate much of the code you would otherwise have to write to manage content updates. The updating of your user's content happens within the browser, which allows AngularJS to pair with any server-side hosting technology.
+AngularJS は明確で簡潔な動的 Web アプリケーションを作成するためのフレームワークです。 HTML はコンテンツ テンプレート言語に使用しますが、HTML の拡張ではデータ バインディング構文を使用します。 データ バインディングと依存関係の挿入に AngularJS を使用すると、コンテンツの更新の管理で記述しなければならないコードの多くが不要になります。 ユーザーのコンテンツの更新はブラウザー内で行われるため、AngularJS を任意のサーバー側ホスティング テクノロジと組み合わせることができます。
 
-## Angular.js information
+## <a name="angularjs-information"></a>Angular.js 情報
 
-Because AngularJS is a front-end JavaScript framework, it only needs to be made available to the clients that access the application. This can be achieved in several ways:
+AngularJS はフロントエンドの JavaScript フレームワークであるため、使用できるようにする必要があるのは、アプリケーションにアクセスしているクライアントに対してのみです。 これは、いくつかの方法で実現できます。
 
-- Reference AngularJS via a content delivery network (CDN).
-- Serve AngularJS from your hosted content as a Node.js package using npm as a package manager.
-- Serve AngularJS from your hosted content as a Bower package.
+- コンテンツ配信ネットワーク (CDN) を使用して AngularJS を参照します。
+- npm をパッケージ マネージャーとして使用して、ホストされているコンテンツの AngularJS を Node.js パッケージとして扱います。
+- ホストされているコンテンツの AngularJS を Bower パッケージとして扱います。
 
-We will be using AngularJS directly from a CDN for this module for simplicity. This passes the script file dependency to the CDN, instead of managing it on our server content directly. This can also improve download speeds based on the speed and geographical distribution of the CDN used for a given resource.
+このモジュールでは、簡略化のため CDN から直接 AngularJS を使用します。 これは、スクリプト ファイルの依存関係は、サーバーのコンテンツを直接管理するのではなく、CDN に渡します。 これにより、速度と、CDN が特定のリソース使用の地理的分布に基づいてダウンロード速度も向上します。
 
 > [!NOTE]
-> AngularJS is the predecessor to Angular, which was a complete rewrite of the web application platform. While many of the concepts are similar between the two versions, they are separate projects now. Angular will have versions of 2.x.y and higher, while AngularJS will have versions ending in 1.x.y. AngularJS is still commonly used for web application scenarios.
+> AngularJS は Angular に先行するもので、Web アプリケーション プラットフォームをまったく新しく書き換えたものです。 2 つのバージョンの多くの概念は似ていますが、現在これらは個別のプロジェクトです。 Angular には 2.x.y 以降のバージョンがありますが、AngularJS のバージョンは 1.x.y で終わります。 AngularJS は引き続き Web アプリケーション シナリオで一般的に使用されます。
 
-## How to install AngularJS via CDN
+## <a name="how-to-install-angularjs-via-cdn"></a>CDN を使用した AngularJS のインストール方法
 
-You don't really _install_ AngularJS. You just add a reference to the JavaScript file via a script tag in your HTML page. Since AngularJS is critical to any functionality of our web application, we include it within the `<head>` tag like this (as compared to later-loading of JavaScript files toward the end of the `<body>` tag).
+AngularJS は実際には_インストール_しません。 HTML ページのスクリプト タグを使用して、JavaScript ファイルへの参照を追加するだけです。 AngularJS は Web アプリケーションの機能に不可欠であるため、このような `<head>` タグ内に含めます (`<body>` タグの最後での JavaScript ファイルの以降の読み込みと比較した場合)。
 
 ```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>

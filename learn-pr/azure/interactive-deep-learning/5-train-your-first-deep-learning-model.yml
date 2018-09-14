@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.5-train-your-first-deep-learning-model
-title: Train your first deep learning model
+title: 初めてのディープ ラーニング モデルをトレーニングします
 metadata:
-  title: Train your first deep learning model
-  description: Train your first deep learning model
+  title: 初めてのディープ ラーニング モデルをトレーニングします
+  description: 初めてのディープ ラーニング モデルをトレーニングします
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+labId: 45998
 durationInMinutes: 15
 content: |
   [!include[](includes/5-train-your-first-deep-learning-model.md)]

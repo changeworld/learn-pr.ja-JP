@@ -1,17 +1,17 @@
-Now we want to complete the application by writing code to read the next message in the queue, process it, and delete it from the queue. 
+キューの次のメッセージを読み取り、処理、およびキューから削除するためのコードを記述することで、アプリケーションを完了するようになりました。 
 
-We're going to place this code into the same application and execute it when you don't pass any parameters, however in our news service scenario, we would really place this code into our middle-tier servers to process the stories.
+パラメーターが渡されなかった場合は、このコードを前と同じアプリケーションに配置して実行しますが、ニュース サービス シナリオでは、実際にこのコードを中間層サーバーに配置してストーリーを処理します。
 
-## Dequeue a message
+## <a name="dequeue-a-message"></a>メッセージをデキューする
 
-Let's add a new method that retrieves the next message from the queue.
+次のメッセージをキューから取得する新しいメソッドを追加してみましょう。
 
-1. Switch to the `QueueApp` folder in the Cloud Shell and type `code .` to open the online editor.
+1. Cloud Shell で `QueueApp` フォルダーに切り替えて、「`code .`」と入力してオンライン エディターを開きます。
  
-1. Open the `Program.cs` source file.
+1. `Program.cs` ソース ファイルを開きます。
 
-1. Create a static method in the `Program` class named `ReceiveArticleAsync` that takes no parameters and returns a `Task<string>`. We'll use this method to pull a news article from the queue and return it.
-    - Go ahead and add the `async` keyword to the method since we'll be using some asynchronous `Task`-based methods.
+1. パラメーターを取らず、`Task<string>` を返す `ReceiveArticleAsync` という名前の `Program` クラス内で静的メソッドを作成します。 このメソッドを使用して、キューからニュース記事をプルし、それを返します。
+    - さらに、メソッドに `async` キーワードを追加します。これは非同期の `Task` ベースのメソッドを使用するためです。
 
     ```csharp
     static async Task<string> ReceiveArticleAsync()
@@ -34,14 +34,14 @@ Let's add a new method that retrieves the next message from the queue.
     }
     ```
     
-1. In your `ReceiveArticleAsync` method, call the new `GetQueue` method to retrieve your queue reference and assign it to a variable.
+1. ご自分の `ReceiveArticleAsync` メソッド内で新しい`GetQueue` メソッドを呼び出して、キュー参照を取得し、それを変数に割り当てます。
 
-1. Next, call the `ExistsAsync` method on the `CloudQueue` object; this will return whether the queue has been created. If we attempt to retrieve a message from a non-existent queue, the API will throw an exception.
-    - This method is asynchronous so use `await` to get the return value.
-    - You should already have the `async` keyword on the `ReceiveArticleAsync` method, but if not add it now.
+1. 次に、`CloudQueue` オブジェクトに対して `ExistsAsync` メソッドを呼び出します。これにより、キューが作成されているかどうかが返されます。 存在しないキューからメッセージを取得しようとすると、API から例外がスローされます。
+    - このメソッドは非同期であるため、`await` を使用して戻り値を取得します。
+    - `ReceiveArticleAsync` メソッドには `async` キーワードが既に含まれているはずです。そうでない場合はここで追加します。
 
 
-1. Add an `if` block that uses the return value from `ExistsAsync`. We'll add our code to read a value from the queue into the block. Add a final return string to the method that indicates no value was read. Your method should be looking something like this:
+1. `ExistsAsync` からの戻り値を使用する `if` ブロックを追加します。 キューから値を読み取ってブロックに入れるためのコードを追加します。 値が読み取られなかったことを示すメソッドに最終的な戻り値の文字列を追加します。 メソッドは次のようになっているはずです。
 
 ```csharp
 static async Task<string> ReceiveArticleAsync()
@@ -56,13 +56,13 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
-1. Call `GetMessageAsync` on the `CloudQueue` object to get the first `CloudQueueMessage` from the queue. The return value will be `null` if the queue is empty.
+1. `CloudQueue` オブジェクトに対して `GetMessageAsync` を呼び出して、キューから最初の `CloudQueueMessage` を取得します。 キューが空の場合、戻り値は `null` になります。
 
-1. If it's non-null, use the `AsString` property on the `CloudQueueMessage` object to get the contents of the message.
+1. 値が null 以外の場合は、`CloudQueueMessage` オブジェクト上で `AsString` プロパティを使用して、メッセージの内容を取得します。
 
-1. Call `DeleteMessageAsync` on the `CloudQueue` object to delete the message from the queue.
+1. `CloudQueue` オブジェクトに対して `DeleteMessageAsync` を呼び出して、キューからメッセージを削除します。
 
-The final method implementation should resemble:
+最終的なメソッドの実装は次のようになります。
 
 ```csharp
 static async Task<string> ReceiveArticleAsync()
@@ -84,17 +84,17 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
-## Call the ReceiveArticleAsync method
+## <a name="call-the-receivearticleasync-method"></a>ReceiveArticleAsync メソッドを呼び出す
 
-Finally, let's add support to invoke our new method. We'll do this when we don't pass any parameters into the program.
+最後に、この新しいメソッドを呼び出すためのサポートを追加してみましょう。 プログラムにパラメーターを渡さない場合に、これを行います。
 
-1. Locate the `Main` method and specifically the `if` block you added earlier to look for parameters.
+1. `Main` メソッドを検索します。具体的には、前にパラメーターを検索するために追加した `if` ブロックを検索します。
 
-1. Add an `else` condition and call the `ReceiveArticleAsync` method. 
+1. `else` 条件を追加して、`ReceiveArticleAsync` メソッドを呼び出します。 
 
-1. Since it's asynchronous, we would normally want to use `await`, however as explained earlier that doesn't work in all versions of C# - so just use the `Result` property to get the return value and print it to the console window.
+1. これは非同期であるため、通常は `await` を使用しますが、前述したように C# のすべてのバージョンでそれが動作するわけではありません。そのため、`Result` プロパティのみを使用して戻り値を取得し、それをコンソール ウィンドウに出力します。
 
-Your code should look something like:
+コードは次のような内容になります。
 
 ```csharp
 if (args.Length > 0)
@@ -108,14 +108,17 @@ else
 }
 ```
 
-## Execute the application
+## <a name="execute-the-application"></a>アプリケーションを実行する
 
-The code is now complete. It can now send and retrieve messages. To test it, use `dotnet run` and pass parameters to send messages, and leave off parameters to read a single message.
+これでコードは完成しました。 このコードでは、メッセージの送信および取得を行えるようになりました。 これをテストするには、`dotnet run` を使用します。メッセージを送信するにはパラメーターを渡し、1 個のメッセージを読み取るにはパラメーターをオフのままとします。
 
-If you want to test when a queue doesn't exist, you can delete the queue (and all the data) with the Azure CLI. Make sure to replace the `<connection-string>` parameter (or set the environment variable).
+キューが存在しないときのテストを行う場合は、Azure CLI を使用してキュー (およびすべてのデータ) を削除することができます。 必ず、`<connection-string>` パラメーターを置換 (または環境変数を設定) します。
 
 ```azurecli
 az storage queue delete --name newsqueue --connection-string <connection-string> 
 ```
 
-The next time you add a message, the queue should be re-created.
+次にメッセージを追加すると、キューが再度作成されます。
+
+> [!NOTE]
+> 削除操作は実際に非同期に行われます。 完了していない場合、キューを再作成しようとしたときに、例外を発生可能性があります。

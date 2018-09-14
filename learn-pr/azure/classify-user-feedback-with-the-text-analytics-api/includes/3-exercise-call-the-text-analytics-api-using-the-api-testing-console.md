@@ -1,105 +1,107 @@
-To see the Text Analytics API in action, let's make some calls using  the built-in API testing console tool located in the online reference documentation. Before we do that, we'll need an access key to make those calls. 
+Text Analytics API の動作を表示するには、一部の呼び出しがツールを使用して、組み込み API テスト コンソールにあるオンライン リファレンス ドキュメントを作成します。 その前に、アクセス キーをそれらの呼び出しを行う必要があります。
 
-## Create an access key
+## <a name="create-an-access-key"></a>アクセス キーを作成する
 
-Every call to Text Analytics API requires a subscription key. Often called an access key, it is used to validate that you have access to make the call. We'll use the Azure portal to grab a key. 
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1.  Click **+ Create a resource**
+Text Analytics API を呼び出すたびにサブスクリプション キーが必要です。 多くの場合、アクセス キーと呼ばれる、通話へのアクセスがあるかの検証に使用されます。 キーを取得するのに、Azure portal を使用します。 
 
-1.  Under Azure Marketplace, select **AI + Machine Learning** to display a list of available APIs. Click on **See all** in the top right of the page to see the entire list of Cognitive Services APIs. 
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-1. Find **Text Analytics** in the list of Cognitive Services and select it. 
-![Screenshot of AI and Machine Learning pane, showing the Text Analytics API selected in the list.](../media-draft/select-text-analytics.PNG)
+1. クリックして**リソースの作成**
 
-1. In the create page that opens, enter the following values into each field.
+1. Azure Marketplace では、選択**ai+machine Learning**利用可能な Api の一覧を表示します。 をクリックして**すべて表示**上で Cognitive Services APIs の全体の一覧を表示するページの右。
 
+1. 検索**Text Analytics** Cognitive Services の一覧で選択します。
+    ![スクリーン ショットの AI と機械学習 ウィンドウでは、一覧で選択、Text Analytics API を表示します。](../media/select-text-analytics.PNG)
 
-|Property  | Value  | Description  |
+1. 表示された [作成] ページでは、各フィールドに、次の値を入力します。
+
+|プロパティ  | 値  | 説明  |
 |---------|---------|---------|
-|Name     |    MyTextAnalyticsAPIAccount     |  The name of the Cognitive Services account. We recommend using a descriptive name. Valid characters are `a-z`, `0-9`, and `-`.    |
-|Subscription     |  Your subscription       |   The subscription under which this new Cognitive Services API account with **Text Analytics API** is created.      |
-|Location     |  West US       |  Choose a [region](https://azure.microsoft.com/regions/) near you.       |
-|Pricing tier     | **F0 Free**     |   The cost of your Cognitive Services account depends on the actual usage and the options you choose. We recommend selecting the free tier for our purposes here.      |
-|Resource group     |  Create a new resource group and call it [!INCLUDE [resource-group-note](./rg-name.md)]       |  Name for the new resource group in which to create your Cognitive Services Text Analytics API account.       |
+|名前     |    MyTextAnalyticsAPIAccount     |  Cognitive Services アカウントの名前。 わかりやすい名前を使用することをお勧めします。 有効な文字は、`a-z`、`0-9`、および `-` です。    |
+|サブスクリプション     |  お使いのサブスクリプション       |   この新しい Cognitive Services API アカウントとサブスクリプション**Text Analytics API**が作成されます。      |
+|場所     |  米国西部       |  選択、[リージョン](https://azure.microsoft.com/regions/)近くです。       |
+|[価格レベル]      | **F0 は無料**     |   Cognitive Services アカウントのコストは、実際の使用量と選択したオプションによって異なります。 ここで、free レベルを選択することをお勧めします。      |
+|リソース グループ     |  選択**既存を使用して、** 選択<rgn>[サンド ボックス リソース グループ名]</rgn>       |  Cognitive Services Text Analytics API アカウントを作成するための新しいリソース グループの名前。       |
 
+ここでは、何のスクリーン ショット、**作成**ページがいつ完了したようになります。
 
-[!INCLUDE [resource-group-note](./rg-notice.md)]
+![すべてのフィールドで、Text Analytics アカウントを作成するためのユーザー インターフェイスのスクリーン ショットは、前の表で示されている値を持つ入力されます。](../media/create-text-analytics-account.PNG)
 
-Here's a screenshot of what the **Create** page looks like when you've completed it.
+1. 選択**作成**アカウントの作成プロセスを開始するページの下部にあります。  展開が進行中という通知を監視します。 リソース グループにアカウントが正常に展開されたことを通知し、表示されます。
 
-![Screenshot of user interface for creating a Text Analytics account with all fields filled out with values suggested in preceding table.](../media-draft/create-text-analytics-account.PNG)
+![展開には、リソースのボタンに移動し、ボタンのダッシュ ボードにピン留めを含む通知が成功しました。](../media/deploy-resource-group-success.PNG)
 
-6. Select **Create** at the bottom of the page to start the account creation process.  Watch for a notification that the deployment is in progress. You'll then get a notification that the account has been deployed successfully to your resource group.
+Cognitive Services アカウントをしたら、API の呼び出しを開始するにアクセス キーに探してみましょう。
 
-![Deployment succeeded notification with a Go to resource button and a Pin to dashboard button.](../media-draft/deploy-resource-group-success.PNG)
+1. をクリックして、**リソースに移動**のボタンでは、*デプロイメントに成功しました*通知します。 この操作は、クイック スタートのアカウントを開きます。
 
-Now that we have our Cognitive Services account, let's find the access key so we can start calling the API. 
+1. 選択、**キー**で、左側のメニューからメニュー項目、*キーを取得する*のクイック スタート セクション。  このアクションが表示されます、**キーの管理**ページ。
 
-7. Click on the **Go to resource** button on the *Deployment succeeded* notification. This action opens the account Quickstart. 
+1. コピー ボタンを使用してキーの 1 つをコピーします。
 
-1. Select the **Keys** menu item from the menu on the left, or in the *Grab your keys* section of the quickstart.  This action opens the **Manage keys** page.
-
-1. Copy one of the keys using the copy button. 
-
-![Manage keys user interface showing the name of the Cognitive Services account and the Key 1 and Key 2 entries.](../media-draft/manage-keys.PNG)
+![Cognitive Services アカウントとキー 1 と 2 のキーのエントリの名前を示すキー ユーザー インターフェイスを管理します。](../media/manage-keys.PNG)
 
 > [!IMPORTANT]
-> Always keep your access keys save and never share them. 
+> アクセス キーを常に安全し、共有することはありません。
 
-10. Store this key for the rest of this module. We'll use it shortly to make API calls from the testing console and throughout the rest od the module.
+1. このモジュールの残りの部分には、このキーを格納します。 テストのコンソールからの API 呼び出しを行い、残りの部分で、モジュールを od をすぐに使用します。
 
-Now that we have our key we can head over to the testing console and take the API for a spin.
+あるので、キーのテスト コンソール に進みをスピン API を実行できます。
 
-## Call the API from the testing console
+## <a name="call-the-api-from-the-testing-console"></a>テストのコンソールから API を呼び出す
 
-1. Navigate to the [Text Analytics API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true) reference documentation in your favorite browser.
+1. 移動し、 [Text Analytics API](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7?azure-portal=true)お使いブラウザーでドキュメントを参照します。
 
-The landing page displays a menu on the left and content to the right. The menu lists the POST methods you can call on the Text Analytics API. These endpoints are **Detect Language**, **Entities**, **Key Phrases**, and **Sentiment**.  To call one of these operations, we need to do a few things.
-- Select the method we want to call.
-- Select a testing console that matches the region or location we selected earlier in this lesson. 
-- Add the access key that we saved earlier in the lesson to each call.
+    ランディング ページには、左側と右側にコンテンツをメニューが表示されます。 メニューには、Text Analytics API を呼び出すことができます、POST メソッドが表示されます。 これらのエンドポイントは**検出言語**、**エンティティ**、**キー フレーズ**、および**センチメント**します。  これらの操作のいずれかを呼び出すには、いくつかの作業を行う必要があります。
 
-2. Front the left menu, select **Sentiment**. This selection opens the Sentiment documentation to the right. As the documentation shows, we'll be making a REST call in the following format:
+    - 呼び出すメソッドを選択します。
+    - テストの地域に一致するコンソールまたはこのレッスンの前半で選択した場所を選択します。
+    - 各呼び出しにレッスンの前半で保存されているアクセス キーを追加します。
 
-`https://[location].api.cognitive.microsoft.com/text/analytics/v2.0/sentiment` 
+1. 前面の左側のメニューで **センチメント**します。 この選択は、右側にセンチメントのドキュメントを開きます。 ドキュメントが示すように加える REST 呼び出しで、次の形式。
 
-We'll pass in our subscription key, or access key, in the **ocp-Apim-Subscription-Key** header.
+    `https://[location].api.cognitive.microsoft.com/text/analytics/v2.0/sentiment`
 
-## Make some API calls
+サブスクリプション キー、またはアクセス キーを渡す、 **ocp Apim サブスクリプション キー**ヘッダー。
 
-1. Select a region from the list on this page that matches the location we picked when creating our Cognitive Services account earlier in this lesson.  For example, if we chose *West US* earlier when creating the account, then select it here as follows.
-![Screenshot of Text Analytics API reference site with Sentiment menu item selected, followed by West US.](../media-draft/select-testing-console-region.png)
+## <a name="make-some-api-calls"></a>一部の API 呼び出しを行う
 
-1.  The next page that opens is a live, interactive, API console.  Paste the access key you saved earlier into the field on the page labeled **Ocp-Apim-Subscription-Key**. Notice that the key is written automatically into the HTTP request window as a header value.
+1. このレッスンの前半で、Cognitive Services アカウントを作成するときに選択場所と一致するこのページの一覧からリージョンを選択します。  たとえば、選択した場合*米国西部*以前の選択と、そのアカウントを作成し、ここで次のようにします。
+    ![センチメントのメニュー項目の Text Analytics API のスクリーン ショット参照サイトでは、選択されている、米国西部で後にします。](../media/select-testing-console-region.png)
 
-1. Scroll to the bottom of the page and click **Send**. Let's break down what happens by looking at this screen in detail.
+1. 表示された次のページは、API コンソールで、インタラクティブなライブです。  というラベルの付いたページ上のフィールドに以前保存したアクセス キーを貼り付ける**Ocp Apim サブスクリプション キー**します。 ヘッダー値として HTTP 要求ウィンドウに、キーが自動的に書き込まれることに注意してください。
 
-In the Headers section of the user interface, we set the access, or subscription, key in the header of our request.
+1. ページの一番下までスクロールし、をクリックして**送信**します。 この画面の詳細を調べることでの動作を分割してみましょう。
 
-![Screenshot of headers section.](../media-draft/2-marker.PNG)
+ユーザー インターフェイスの [ヘッダー] セクションでは、要求のヘッダーにアクセス、またはサブスクリプションの場合、キーを設定します。
 
-Next we have the request body section which  holds a **documents** array. Each document in the array as three properties. The properties are *"language"*, *"id"*, *"text"*. The *"id"* is a number in this example, but can be anything you want as long as it's unique in the documents array. In this example we're also passing in documents written in three different languages. Over 15 languages are supported in the Sentiment feature of the Text Analytics API. For more info, check out [Supported languages in the Text Analytics API](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages). The maximum size of a single document is 5,000 characters and one request can have up to 1,000 documents. 
+![ヘッダー セクションのスクリーン ショット。](../media/2-marker.PNG)
 
-![Screenshot of Request Body section](../media-draft/3-marker.PNG)
+次に、要求本文があるどの保留のセクションを**ドキュメント**配列。 3 つのプロパティとして、配列内の各ドキュメント。 プロパティは、 *「言語」*、 *"id"*、 *"text"* します。 *"Id"* は、この例では数値ですが、ドキュメントの配列内で一意である限り、必要なものにすることができます。 この例では 3 つの異なる言語で記述されたドキュメントも渡しています。 Text Analytics API の感情機能では、15 を超える言語がサポートされています。 詳細については、チェック アウト[Text Analytics API でサポートされる言語](https://docs.microsoft.com//azure/cognitive-services/text-analytics/text-analytics-supported-languages)します。 1 つのドキュメントの最大サイズは、5,000 文字と 1 つの要求は、最大 1,000 個のドキュメントを持つことができます。
 
-The complete request, including the headers and the request URL are displayed in the next section. In this example, you can see that the requests are routed to a URL that begin with `westus`. The URL differs depending on the region you selected.  
+![要求本文のスクリーン ショット セクション](../media/3-marker.PNG)
 
-![Section number four.](../media-draft/4-marker.PNG) 
-![Section number five.](../media-draft/5-marker.PNG) 
+次のセクションでは、ヘッダーと要求の URL を含む、完全な要求が表示されます。 この例で確認できますで始まる URL に要求がルーティングされる`westus`します。 URL は、選択したリージョンによって異なります。
 
-Then we have info about the response. In the example, we see that the request was a success and code `200` was returned. We can also see that the round trip took 38 ms.
+![セクション番号 4 です。](../media/4-marker.PNG)
+![数 5 つのセクションします。](../media/5-marker.PNG)
 
-![Section number five.](../media-draft/6-marker.PNG)  
+応答に関する情報があります。 私たちの例で、要求が成功したコードを参照してください`200`が返されました。 ラウンド トリップが 38 ms をしたこともわかります。
 
-Finally, we see the response to our request. The response holds the insight the Text Analytics API had about our documents. An array of documents is returned to us, without the original text. We get back an *"id"* and *"score"* for each document. The API returns a numeric score between 0 and 1. Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment. A score of 0.5 indicates the lack of sentiment, a neutral statement. In this example,  we have two pretty positive documents and one negative document. 
-![Section number five.](../media-draft/7-marker.PNG)  
+![セクション数 5 つです。](../media/6-marker.PNG)
 
-Congratulations! You've made your first call to the Text Analytics API without writing a line of code. Feel free to stay in the console and try out more calls. Here are some suggestions:
+最後に、この要求に対する応答がわかります。 応答は、Text Analytics API をに関するドキュメントが、その情報を保持します。 ドキュメントの配列は、元のテキストなしに、返されます。 返されます、 *"id"* と *"score"* ドキュメントごとにします。 API は、0 から 1 までの数値スコアを返します。 1 に近いスコアは正のセンチメントを表し、0 に近いスコアは負のセンチメントを表します。 スコアが 0.5 のでは、センチメント、ニュートラル ステートメントがないことを示します。 この例では、2 つの非常に肯定ドキュメントと負の値の 1 つのドキュメントがあります。
 
-- Change the documents in section number 2 and see what the API returns. 
-- Try the other methods, **Detect Language**, **Entities** and **Key Phrases**, using the same  subscription key.
-- Try to make a call from a different region with your subscription and observe what happens. 
+![セクション数 5 つです。](../media/7-marker.PNG)
 
-The API testing console is a great way to explore the capabilities of this API. Now that you've explored for yourself, let's move on to putting this intelligence into a real-world scenario.
+お疲れさまでした。 コードを記述しなくても、最初の Text Analytics API の呼び出しを加えました。 自由に、コンソールより多くの呼び出しを再試行してください。 推奨事項を次に示します。
+
+- セクション数 2 内のドキュメントを変更し、API が返しますを参照してください。
+- 他の方法をお試しください**検出言語**、**エンティティ**と**キー フレーズ**、同じサブスクリプション キーを使用して。
+- サブスクリプション別のリージョンからの呼び出しを行い、動作を確認してください。
+
+API のテスト コンソールは、この API の機能を探索する優れた方法です。 自分で見てきました、これでは、このインテリジェンスを実際のシナリオに配置することに移りましょう。

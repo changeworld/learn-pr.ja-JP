@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.7-create-an-azure-function-project
+metadata:
+  title: Azure 関数プロジェクトを作成します。
+  description: 作成し、最初の Azure 関数の HTTP トリガーをデバッグします。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: Azure 関数プロジェクトを作成します。
+durationInMinutes: 10
+content: |
+  [!include[](includes/7-create-an-azure-function-project.md)]

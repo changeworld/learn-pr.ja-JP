@@ -1,12 +1,3 @@
-Here, you learned how to use a load balancer as part of a solution for delivering high availability for virtual machines hosted in Azure. This included the load balancer itself, the associated virtual networks, rules to control the balancing algorithm, and health probes that identify which virtual machines are running correctly.
+ここでは、Azure でホストされている仮想マシンの高可用性を提供するためのソリューションの一部としてロード バランサーを使用する方法を学習しました。 これは、load balancer 自体では、関連する仮想ネットワーク、負荷分散のアルゴリズムを制御するルールに含まれ、どの仮想マシンを特定する正常性プローブが正しく実行されています。
 
-## Clean up
-<!---TODO: Update for sandbox?--->
-
-Running virtual machines and scale sets incurs costs against your subscription. You should remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group; this will also delete all the resources in the group. When you are finished with this module, please run the following Azure PowerShell cmdlet:
-
-```powershell
-Remove-AzureRmResourceGroup -Name woodgrove-RG
-```
-
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

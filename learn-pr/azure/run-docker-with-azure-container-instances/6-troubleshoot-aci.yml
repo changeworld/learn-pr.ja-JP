@@ -8,14 +8,9 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d8f1d74092ad4329987c7870d6056d7b598dbe00
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44309849"
 title: Azure Container Instances のトラブルシューティング
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10
-content: '[!include[](includes/6-troubleshoot-aci.md)]'
+content: |
+  [!include[](includes/6-troubleshoot-aci.md)]

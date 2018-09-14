@@ -2,13 +2,13 @@
 
 ## <a name="prepare-your-development-environment"></a>開発環境を準備する
 
-Visual Studio 2017 には、Web サイトを作成し、発行して、Azure に展開するために必要な 2 つのワークロードあります。 これらのワークロードには、ASP.NET サイト用のすべてテンプレートが含まれ、サイトを Azure に接続して展開する機能が備わっています。
+Visual Studio 2017 では、作成、発行、および、web サイトを Azure にデプロイする必要がある 2 つのワークロードがあります。 これらのワークロードには、ASP.NET サイト用のすべてテンプレートが含まれ、サイトを Azure に接続して展開する機能が備わっています。
 
 次のワークロードがインストールされていることを確認する必要があります。
 
 - ASP.NET と Web 開発
 
-Visual Studio 2017 の Web 開発ワークロードは、ASP.NET と HTML や JavaScript のような標準ベースのテクノロジを使用した Web アプリケーション開発の生産性が最大になるように設計されています。
+Visual Studio 2017 における web 開発ワークロードは、ASP.NET と HTML および JavaScript のような標準ベースのテクノロジを使用して web アプリケーションの開発で生産性が最大に設計されています。
 
 - Azure の開発
 

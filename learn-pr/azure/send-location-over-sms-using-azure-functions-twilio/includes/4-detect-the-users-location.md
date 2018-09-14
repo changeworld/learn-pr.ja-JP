@@ -8,7 +8,7 @@
 
 1. **[機能]** タブに移動して、*位置情報*機能をオンにします。
 
-    ![UWP の [機能] タブ](../media-drafts/4-uwp-location-capability.png)
+    ![UWP の [機能] タブ](../media/4-uwp-location-capability.png)
 
 > Android や iOS をサポートする場合は、アクセス許可を個別に構成する必要があります。 詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=android#getting-started)を参照してください。
 
@@ -49,7 +49,7 @@ async Task SendLocation()
 
 アプリを実行し、**[場所の送信]** ボタンをクリックして UI で場所を表示します。
 
-![ユーザーの場所を示す実行中のアプリ](../media-drafts/4-running-app-showing-location.png)
+![ユーザーの場所を示す実行中のアプリ](../media/4-running-app-showing-location.png)
 
 > このアプリでは最新の場所を使用します。 運用品質アプリで、タイムアウトを設定して現在の正確な場所を取得する必要があります。時間内に見つからない場合は、最新の場所にフォールバックします。 これを行う方法の詳細については、[Xamarin.Essentials の地理的位置情報に関するドキュメント](https://docs.microsoft.com/xamarin/essentials/geolocation?tabs=uwp#using-geolocation)を参照してください。このアプリではエラー処理は行われません。 運用品質のアプリでは、場所を使用できなかった場合など、発生した例外を処理する必要があります。
 

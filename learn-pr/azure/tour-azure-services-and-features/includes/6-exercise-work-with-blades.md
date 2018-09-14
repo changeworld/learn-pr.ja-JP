@@ -1,51 +1,51 @@
-In this unit, you will learn how to work with blades in the Azure portal user interface (UI).
+このユニットでは、Azure portal ユーザー インターフェイス (UI) のブレードの操作方法について学習します。
 
-## Working with blades
+## <a name="working-with-blades"></a>ブレードの使用
 
-1. In a browser, navigate to [https://portal.azure.com](https://portal.azure.com?azure-portal=true), and sign in.
+1. ブラウザーで [https://portal.azure.com](https://portal.azure.com?azure-portal=true) にアクセスし、サインインします。
 
-2. Let's start by creating a resource. In the left-hand pane, click **Create a resource**.
+2. まず、リソースを作成します。 左側のウィンドウで、**[リソースの作成]** をクリックします。
 
-3. The **New** blade displays a list of categories of items to create on the left-hand side, with the **Get started** option selected. This is like the "Favorites" menu, with some of the most common options visible. Under **Get started**, you have the option to create resources such as a Windows Server 2016 VM, an Ubuntu Server VM, a web app, a SQL database, and so on. Each of these items includes a quickstart tutorial.
+3. **[新規]** ブレードには、左側で作成する項目の一覧が表示されます。**[開始]** オプションが選択されています。 これは "お気に入り" メニューに似ています。最も一般的なオプションが表示されます。 **[開始]** の下には、Windows Server 2016 VM、Ubuntu Server VM、Web アプリ、SQL データベースなどのリソースを作成するためのオプションがあります。 これらの各項目には、クイック スタート チュートリアルが含まれています。
 
-4. Click **Quickstart tutorial** under Windows Server 2016 VM. This lists the Windows VM tutorials. Close this new tab to return to the Azure portal.
+4. Windows Server 2016 VM の下にある **[クイック スタート チュートリアル]** をクリックします。 Windows VM のチュートリアルが一覧表示されます。 この新しいタブを閉じると、Azure portal に戻ります。
 
-## Viewing resources
+## <a name="viewing-resources"></a>リソースの表示
 
-1. Under Azure Marketplace, click **Compute** to show more compute options, such as Red Hat Enterprise, Reserved VM instances, Web app for Containers, and so on. This list is a subset of the entire range of computing resources available.
+1. Azure Marketplace の下で **[コンピューティング]** をクリックすると、Red Hat Enterprise、予約 VM インスタンス、Web App for Containers など、コンピューティング オプションがさらに表示されます。 この一覧は、使用可能なコンピューティング リソースの範囲全体のサブセットです。
 
-2. To the right of **Featured**, click **See all** to see the full range of available resources. The full list of VMs now appears.
+2. **[おすすめ]** の右にある **[すべて表示]** をクリックすると、利用できるリソースが全範囲で表示されます。 VM の完全一覧が表示されます。
 
-3. Under **Recommended**, click **Windows Server**. The **Windows Server** blade appears.
+3. **[推奨]** の下にある **[Windows Server]** をクリックします。 **[Windows Server]** ブレードが表示されます。
 
-4. To the right of the **Pin** icon, click the **Maximize** icon. The Windows Server blade now fills the screen, except for the left-hand pane. Scroll down the list to see the other Windows Server images available.
+4. **ピン** アイコンの右にある**最大化**アイコンをクリックします。 左側のウィンドウを除き、[Windows Server] ブレードが画面を埋めます。 一覧を下方向にスクロールし、利用できる他の Windows Server イメージを表示します。
 
-    ![Maximize button in the Azure blade](../media-draft/6-maximize-button.png)
+    ![Azure のブレードの最大化ボタン](../media-draft/6-maximize-button.png)
 
-5. Click the **X** at the top right-hand corner to close the **Windows Server** blade.
+5. 右上隅の **X** をクリックすると、**[Windows Server]** ブレードが閉じられます。
 
-## Filtering results
+## <a name="filtering-results"></a>結果のフィルタリング
 
-1. To refine this list further, on the **Compute** blade, click **Filter**. The **Filter** blade now appears.
+1. この一覧をさらに絞り込むには、**[コンピューティング]** ブレードで **[フィルター]** をクリックします。 **[フィルター]** ブレードが表示されます。
 
-    ![Filter button in the Azure Marketplace](../media-draft/6-filter.png)
+    ![Azure Marketplace のフィルター ボタン](../media-draft/6-filter.png)
 
-2. Select the filter option for **Virtual Machine Images**, and then click **Done**.
+2. **[仮想マシン イメージ]** のフィルター オプションを選択し、**[完了]** をクリックします。
 
-3. Click the **X** in the top right-hand corner of the **Filter** blade.
+3. 右上隅の **X** をクリックして **[フィルター]** ブレードを閉じます。
 
-1. On the **Compute** blade, look down the list of available VM images and then, at the bottom, click **Load More**.
+1. **[コンピューティング]** ブレードで利用できる VM イメージの一覧を見て、下部にある **[さらに読み込む]** をクリックします。
 
-1. Continue to click **Load More** a few times to appreciate just how many types of VMs Azure provides.
+1. さらに数回 **[さらに読み込む]** をクリックすると、Azure がどれだけたくさんの種類の VM を提供しているかがわかります。
 
-1. Click the **X** at the top right-hand corner to close the **Compute** blade.
+1. 右上隅の **X** をクリックして **[コンピューティング]** ブレードを閉じます。
 
-1. Click the **X** at the top right-hand corner to close the **Marketplace** blade.
+1. 右上隅の **X** をクリックして **[マーケットプレース]** ブレードを閉じます。
 
-1. Click the **X** at the top right-hand corner to close the **New** blade.
+1. 右上隅の **X** をクリックして **[新規]** ブレードを閉じます。
 
-The default dashboard now appears.
+既定のダッシュボードが表示されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you connected to the Azure portal, signed in, and then discovered how blades work to present UI information. In the next exercise, you will view and configure additional settings in Azure.
+この演習では、Azure portal に接続し、サインインし、ブレードに UI 情報を表示するしくみを確認しました。 次の演習では、Azure で追加設定を表示し、構成します。

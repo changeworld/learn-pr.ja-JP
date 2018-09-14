@@ -1,5 +1,5 @@
-## Clean up
+## <a name="clean-up"></a>クリーンアップ
 
-Although the Azure Sandbox will clean up your resources automatically for you when you are finished with this module, it is best practice at the end of a project to identify whether or not you still need the resources you created during it. Resources left running can cost you money. 
+Azure サンド ボックスはリソースをクリーンアップする、自動的にするはこのモジュールで終了するときに、これもその中に作成したリソースが必要かどうかを識別するために、プロジェクトの最後にベスト プラクティス。 リソースの左側実行中はコストがかかるします。 
 
-To remove all the resources that you created, you can delete them one-by-one, or just delete the resource group. Deleting a resource group will delete all the resources in the group.
+作成したすべてのリソースを削除する場合、リソースを 1 つずつ削除する方法と、リソース グループを削除する方法があります。 リソース グループを削除すると、グループ内のすべてのリソースが削除されます。

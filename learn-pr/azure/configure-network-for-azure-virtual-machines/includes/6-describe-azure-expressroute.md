@@ -1,111 +1,111 @@
-As your company deals with highly sensitive data and has large amounts of information it will store in Azure, there are some concerns about the security and reliability of connections over the public Internet. The company isn't willing to migrate wholesale to Azure unless it can demonstrate higher levels of connectivity, security, and reliability.
+セキュリティと接続の信頼性に関する問題が、会社では、機密性の高いデータを処理し、大量の情報を Azure に格納されますが、パブリック インターネット経由であります。 会社がより高いレベルの接続性、セキュリティ、および信頼性を示すことができる場合を除き、Azure に全面的に移行するつもりはありません。
 
-Here, we'll go beyond connections that run over the Internet to dedicated lines direct into the Azure datacenters.
+ここでは、Azure データ センターに直接専用の行に、インターネット経由で実行する接続を超えるしましょう。
 
-## Azure ExpressRoute
+## <a name="azure-expressroute"></a>Azure ExpressRoute
 
-Microsoft Azure ExpressRoute enables organizations to extend their on-premises networks into the Microsoft Cloud over a private connection implemented by a connectivity provider. This arrangement means that the connectivity to the Azure datacenters doesn't go over the Internet but across a dedicated link. ExpressRoute also facilitates efficient connections with other Microsoft cloud-based services, such as Office 365 and Dynamics 365.
+Microsoft Azure ExpressRoute を使用することにより、自社のオンプレミス ネットワークを接続プロバイダーによって実装されたプライベート接続経由で Microsoft クラウドに拡張します。 この配置では、Azure データ センターへの接続は、インターネット経由であっても専用のリンクに移動しないことを意味します。 ExpressRoute は、Office 365 や Dynamics 365 などの他の Microsoft Cloud ベース サービスとの効率的な接続も促進します。
 
-Advantages that ExpressRoute provides include:
+ExpressRoute が提供する利点は次のとおりです。
 
-- Faster speeds, from 50 Mbps to 10 Gbps, with dynamic bandwidth scaling
+- 帯域幅の動的スケーリングがある 50 Mbps から 10 Gbps のより速い速度
 
-- Lower latency
+- より短い待機時間
 
-- Greater reliability though built-in peering
+- 組み込みのピアリングを介して信頼性が向上
 
-- Highly secure
+- より高度なセキュリティ
 
-ExpressRoute brings a number of further benefits, such as:
+ExpressRoute には、さらに次のような利点もあります。
 
-- Connectivity to all supported Azure services
+- サポートされているすべての Azure サービスへの接続性
 
-- Global connectivity to all regions (requires premium add-on)
+- すべてのリージョンへのグローバル接続 (Premium アドオンが必要)
 
-- Dynamic routing over Border Gateway Protocol
+- Border Gateway Protocol 経由での動的ルーティング
 
-- Service-level agreements (SLAs) for connection uptime
+- 接続アップタイムのサービス レベル アグリーメント (Sla)
 
-- Quality of Service (QoS) for Skype for Business
+- Skype for Business のサービスの品質 (QoS)
 
-Additionally, there's the ExpressRoute premium add-on, which offers benefits such as increased route limits, global service connectivity, and increased virtual network links per circuit.
+さらに、ExpressRoute premium アドオンは、ルート制限の増加、グローバル サービスの接続、および回路ごとの強化された仮想ネットワーク リンクなどの利点があります。
 
-## ExpressRoute connectivity models
+## <a name="expressroute-connectivity-models"></a>ExpressRoute 接続モデル
 
-Connections into ExpressRoute can be through the following mechanisms:
+ExpressRoute への接続には、次のメカニズムを使用できます。
 
-- IP VPN network (any-to-any)
+- IP VPN ネットワーク (任意の環境間)
 
-- Virtual cross-connection through an Ethernet exchange
+- イーサネット交換による仮想交差接続
 
-- Point-to-point Ethernet connection
+- ポイント ツー ポイントのイーサネット接続
 
- ExpressRoute capabilities and features are all identical across all of the above connectivity models.
+ ExpressRoute の機能は上記の接続モデルのすべてに共通しています。
 
-### What is layer 3 connectivity?
+### <a name="what-is-layer-3-connectivity"></a>レイヤー 3 接続とは
 
-Microsoft uses an industry-standard dynamic routing protocol (BGP) to exchange routes between your on-premises network, your instances in Azure, and Microsoft public addresses. We establish multiple BGP sessions with your network for different traffic profiles.
+Microsoft は業界標準の動的ルーティング プロトコル (BGP) を交換するでは、パブリック アドレスを Azure のインスタンス、オンプレミス ネットワークと Microsoft の間にルーティングします。 さまざまなトラフィック プロファイルに合わせ、ネットワークとさまざまな BGP セッションを確立します。
 
-### Any-to-any (IPVPN) networks
+### <a name="any-to-any-ipvpn-networks"></a>任意の環境間 (IPVPN) ネットワーク
 
-IPVPN providers typically provide connectivity between branch offices and your corporate datacenter over managed layer 3 connections. With ExpressRoute, the Azure datacenters appear as if they were another branch office.
+通常、IPVPN プロバイダーは、管理対象レイヤー 3 接続経由でブランチ オフィスと企業のデータ センター間の接続を提供します。 Expressroute では、Azure データ センターでは、別のブランチ オフィスがあった場合とが表示されます。
 
-### Virtual cross-connection through an Ethernet Exchange
+### <a name="virtual-cross-connection-through-an-ethernet-exchange"></a>仮想交差接続、イーサネット交換経由
 
-If your organization is co-located with a cloud exchange facility, you request cross-connections to the Microsoft Cloud though your provider's Ethernet exchange. These cross-connections to the Microsoft Cloud can operate at either layer 2 or layer 3 managed connections, as in the networking OSI model.
+組織がクラウドの exchange の施設に併置されている場合を要求する、Microsoft Cloud へのクロス接続は、プロバイダーのイーサネット交換。 Microsoft Cloud へのこれらクロス接続は、レイヤー 2 またはレイヤー 3 のいずれかで動作できるネットワーク OSI モデルのように、接続を管理します。
 
-### Point-to-point Ethernet connection
+### <a name="point-to-point-ethernet-connection"></a>ポイント ツー ポイントのイーサネット接続
 
-Point-to-point Ethernet links can provide layer 2 or managed layer 3 connections between your on-premises datacenters or offices to the Microsoft Cloud.
+ポイント ツー ポイントのイーサネット リンクでは、Microsoft のクラウドをオンプレミス データ センターまたはオフィス間のレイヤー 2 または管理対象レイヤー 3 接続を提供できます。
 
-## How ExpressRoute works
+## <a name="how-expressroute-works"></a>ExpressRoute のしくみ
 
-Azure ExpressRoute uses a combination of ExpressRoute circuits and routing domains to provide high-bandwidth connectivity to the Microsoft Cloud.
+Azure ExpressRoute では、ExpressRoute 回線とルーティング ドメインの組み合わせを使用して、Microsoft クラウドに高帯域幅接続を提供します。
 
-### What are ExpressRoute circuits
+### <a name="what-are-expressroute-circuits"></a>ExpressRoute 回線とは
 
-An ExpressRoute circuit is the logical connection between your on-premises infrastructure and the Microsoft Cloud. A connectivity provider implements that connection, although some organizations use multiple connectivity providers for redundancy reasons. Each circuit has a fixed bandwidth of either 50, 100, 200 Mbps or 500 Mbps, or 1 Gbps or 10 Gbps, and each of those circuits map to a connectivity provider and a peering location. In addition, each ExpressRoute circuit has default quotas and limits.
+ExpressRoute 回線は、オンプレミス インフラストラクチャと Microsoft のクラウド間の論理接続です。 接続プロバイダーがその接続を実装しますが、組織によっては冗長性を確保するために複数の接続プロバイダーを使用します。 各回線は 50、100、200 のいずれかの固定の帯域幅 Mbps または 500 Mbps、または 1 Gbps または 10 Gbps、およびこれらの回線のそれぞれが、接続プロバイダーとピアリングの場所にマップします。 また、各 ExpressRoute 回線には既定のクォータと制限があります。
 
-An ExpressRoute circuit isn't equivalent to a network connection or a network device. Each circuit is defined by a GUID, called a _service_ or _s-key_. This s-key provides the connectivity link between Microsoft, your connectivity provider, and your organization - it isn't a cryptographic secret. Each s-key has a one-to-one mapping to an Azure ExpressRoute circuit.
+ExpressRoute 回線は、ネットワーク接続またはネットワーク デバイスと同じです。 各回線はという GUID を_サービス_または_s キー_します。 この s キーは、Microsoft、接続プロバイダー、および組織間の接続リンクを提供します。-暗号化シークレットはありません。 各 s キーには、Azure ExpressRoute 回線への 1 対 1 マッピングがあります。
 
-Each circuit can have up to three peerings, which are a pair of BGP sessions that are configured for redundancy. They are:
+各回線は、最大 3 つのピアリング、冗長性のために構成されている BGP セッションのペアであることができます。 次に例を示します。
 
-- Azure private
-- Azure public
+- Azure プライベート
+- Azure パブリック
 - Microsoft
 
-### Routing domains
+### <a name="routing-domains"></a>ルーティング ドメイン
 
-ExpressRoute circuits then map to routing domains, with each ExpressRoute circuit having multiple routing domains. These domains are the same as the three peerings listed above. In an active-active configuration, each pair of routers would have each routing domain configured identically, thus providing high availability. The Azure public and Azure private peering names represent the IP addressing schemes.
+ExpressRoute 回線は、複数のルーティング ドメインを持つ各 ExpressRoute 回線とルーティング ドメインは、しにマップします。 これらのドメインは、上記 3 のピアリングの場合と同じです。 アクティブ/アクティブ構成では、ルーターの各ペアの各ルーティング ドメインの構成が同じであるため、高可用性が実現されます。 Azure パブリックと Azure プライベート ピアリング名前は、IP アドレス指定スキームを表します。
 
-#### Azure private peering
+#### <a name="azure-private-peering"></a>Azure プライベート ピアリング
 
-Azure private peering connects to Azure compute services such as virtual machines and cloud services that are deployed with a virtual network. As far as security goes, the private peering domain is simply an extension of your on-premises network into Azure. You then enable bidirectional connectivity between that network and any Azure virtual networks, making the Azure VM IP addresses visible within your internal network.
-
-> [!NOTE]
-> You can connect only one virtual network to the private peering domain.
-
-#### Azure public peering
-
-Azure public peering enables private connections to services that are available on public IP addresses, such as Azure Storage, Azure SQL databases, and Azure web services. With public peering, you can connect to those service public IP addresses without your traffic being routed over the Internet. Connectivity is always from your WAN to Azure, not the other way around. This is also an all-or-nothing approach, as you can't select the services for which you want public peering enabled.
+Azure プライベート ピアリングは、仮想マシンなどの Azure コンピューティング サービスと仮想ネットワークにデプロイされているクラウド サービスに接続します。 セキュリティに関しては、プライベート ピアリング ドメインは単にオンプレミス ネットワークを Azure に拡張したものです。 そのネットワークと Azure の仮想ネットワーク間の双方向接続を有効にし、内部ネットワーク内で Azure VM の IP アドレスを公開します。
 
 > [!NOTE]
-> For Azure PaaS services, it's recommended to use Microsoft peering rather than public peering.
+> プライベート ピアリング ドメインには、1 つだけの仮想ネットワークを接続できます。
 
-#### Microsoft peering
+#### <a name="azure-public-peering"></a>Azure パブリック ピアリング
 
-Microsoft peering supports connections to cloud-based SaaS offerings, such as Office 365 and Dynamics 365. This peering option provides bi-directional connectivity between your company's WAN and Microsoft cloud services.
+Azure Storage、Azure SQL database、Azure の web サービスなどのパブリック IP アドレスで使用可能なサービスにプライベート接続を有効に azure パブリック ピアリングします。 パブリック ピアリングでは、せずに、インターネット経由でルーティングされるトラフィックをそれらサービスのパブリック IP アドレスに接続できます。 接続は常に WAN から Azure であり、他の方法では行われません。 これはまた融通の利かないパブリック ピアリングを有効にするサービスを選択することはできません。
 
-### ExpressRoute health
+> [!NOTE]
+> Azure PaaS サービスでは、Microsoft のパブリック ピアリングではなく、ピアリングを使用するがお勧めします。
 
-As with most features in Microsoft Azure, you can monitor ExpressRoute connections to ensure that they are performing satisfactorily. Monitoring includes coverage of the following areas:
+#### <a name="microsoft-peering"></a>Microsoft ピアリング
 
-- Availability
-- Connectivity to virtual networks
-- Bandwidth utilization
+Microsoft ピアリングには、Office 365 や Dynamics 365 など SaaS クラウド ベース サービスへの接続をサポートしています。 このピアリング オプションでは、会社の WAN と Microsoft クラウド サービス間の双方向接続が提供されます。
 
-The key tool for this monitoring activity is Network Performance Monitor, particularly NPM for ExpressRoute.
+### <a name="expressroute-health"></a>ExpressRoute の正常性
 
-## Summary
+Microsoft Azure のほとんどの機能と同様に、ExpressRoute 接続を監視して、正常に実行されていることを確認できます。 監視には、次の領域の対象範囲が含まれます。
 
-Azure ExpressRoute is used to create private connections between Azure datacenters and infrastructure on your premises or in a colocation environment. ExpressRoute connections don't go over the public Internet, and they offer more reliability, faster speeds, and lower latencies than typical Internet connections.
+- 可用性
+- 仮想ネットワークへの接続
+- 帯域幅の使用率
+
+この監視アクティビティの主要ツールは Network Performance Monitor (特に ExpressRoute 用の NPM) です。
+
+## <a name="summary"></a>まとめ
+
+Azure ExpressRoute は、Azure のデータセンターとオンプレミスや共用環境にあるインフラストラクチャの間でプライベート接続を作成するために使用されます。 ExpressRoute 接続はパブリックなインターネットを経由しないし、詳細の信頼性、速度、および一般的なインターネット接続よりも低い待機時間を提供します。

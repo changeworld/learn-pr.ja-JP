@@ -2,7 +2,7 @@
 
 ## <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure Hybrid Benefit
 
-多くのお客様が Windows Server ライセンスに投資しており、Azure ではこの投資を別の用途に使いたいと考えます。 Azure ハイブリッド特典では、Azure で仮想マシン用にこれらのライセンスを使用する権利がお客様に与えられます。 つまり、Windows Server ライセンスに対する料金は発生せず、代わりに Linux 料金で課金されます。 
+多くのお客様が Windows Server ライセンスに投資しており、Azure ではこの投資を別の用途に使いたいと考えます。 Azure ハイブリッド特典では、Azure で仮想マシン用にこれらのライセンスを使用する権利がお客様に与えられます。 つまり、Windows Server ライセンスに対する料金は発生せず、代わりに Linux 料金で課金されます。
 
 この特典を受けるには、Windows ライセンスがソフトウェア アシュアランスの対象である必要があります。 次のガイドラインも適用されます。
 
@@ -31,7 +31,7 @@ Azure SQL Database の場合、Azure ハイブリッド特典は次のように�
 
 次の図は、SQL Server ライセンスの Azure ハイブリッド特典が与えられている場合、各サービスで利用できる vCore ベースのオプションを示しています。
 
-![Azure ハイブリッド特典を使用し、既存の SQL サーバー ライセンス値を最大化する方法の例を示す図。](../media-drafts/5-sql-tradein-value.png)
+![Azure ハイブリッド特典を使用し、既存の SQL サーバー ライセンス値を最大化する方法の例を示す図。](../media/5-sql-tradein-value.png)
 
 Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は次のようになります。
 
@@ -49,7 +49,7 @@ Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は
 
 Enterprise Agreement のお客様で、既に SQL Server ライセンスに投資しており、Azure へのリソースの移動時にライセンスが解放された場合、**ライセンス持ち込み** (BYOL) イメージを Azure Marketplace からプロビジョニングでき、未使用のライセンスを利用して Azure VM のコストを削減することができます。 これは Windows VM をプロビジョニングし、手動で SQL Server をインストールすることで常に行うことはできましたが、マイクロソフト認定イメージを活用することで作成プロセスが簡略化されます。 これらのイメージを見つけるには、Marketplace で **BYOL** を検索します。
 
-![Azure の SQL Server 用 BYOL](../media-drafts/5-byol-sql-server.png)
+![SQL Server 用 BYOL オプションを示す Azure ポータルのスクリーン ショット。](../media/5-byol-sql-server.png)
 
 > [!IMPORTANT]
 > 認定されたこれらの BYOL イメージを使用するには、Enterprise Agreement サブスクリプションが必要です。
@@ -58,12 +58,12 @@ Enterprise Agreement のお客様で、既に SQL Server ライセンスに投�
 
 多くの人は、SQL Server Developer Edition が**非運用環境用**の無料の製品であることに気付いていません。 Developer Edition には Enterprise Edition と同じ機能がすべてありますが、非運用ワークロードでは、ライセンス コストを大幅に節約できます。
 
-このような場合、Azure Marketplace で Developer Edition 用の SQL Server イメージを見つけて、開発やテスト目的に使用することで、SQL Server にかかる追加コストを削減できます。 
+このような場合、Azure Marketplace で Developer Edition 用の SQL Server イメージを見つけて、開発やテスト目的に使用することで、SQL Server にかかる追加コストを削減できます。
 
 > [!TIP]
 > ライセンスについて詳しくは、[料金ガイダンスに関するドキュメント](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance)を参照してください。
 
-## <a name="use-constrained-instance-sizes-for-database-workloads"></a>データベース ワークロードで制約付きインスタンス サイズを使用する 
+## <a name="use-constrained-instance-sizes-for-database-workloads"></a>データベース ワークロードで制約付きインスタンス サイズを使用する
 
 多くのお客様はメモリ、ストレージ、および I/O 帯域幅に対する高い要求を持っていますが、CPU コアについては少ない数に抑えたいと考えます。 このようなよくある要求に基づき、Microsoft では新しいサイズで最もよく使われる VM サイズ (DS、ES、GS、MS) を利用できるようにしました。これにより、同じメモリ、ストレージ、および I/O 帯域幅を維持しながら、vCPU 数が元の VM サイズの半分または 4 分の 1 に制限されます。
 
@@ -74,4 +74,4 @@ Enterprise Agreement のお客様で、既に SQL Server ライセンスに投�
 | Standard_GS5      | 32 | 448    | 64 | 80,000 IOPS または 2 GB/秒   |           |           |
 | Standard_GS5-8    | **8**  | 448    | 64 | 80,000 IOPS または 2 GB/秒   | 75% 削減 | 42% 削減 |
 
-SQL Server や Oracle などのデータベース製品のライセンスは CPU ごとに供与されるため、お客様は最大で 75% ライセンス コストを削減でき、データベースで必要なハイ パフォーマンスを引き続き維持できます。 
+SQL Server や Oracle などのデータベース製品のライセンスは CPU ごとに供与されるため、お客様は最大で 75% ライセンス コストを削減でき、データベースで必要なハイ パフォーマンスを引き続き維持できます。

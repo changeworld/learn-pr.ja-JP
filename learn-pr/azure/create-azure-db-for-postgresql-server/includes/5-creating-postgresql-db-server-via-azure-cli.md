@@ -1,53 +1,27 @@
-Let's assume you're using an on-premises PostgreSQL database. Your company is now looking at expanding device support, availability, data tracking, and processing features by moving your server into Azure. You'll investigate how much effort it takes to automate the creation of an Azure Database for PostgreSQL.
+オンプレミスの PostgreSQL データベースを使用するいると仮定します。 会社は、サーバーを Azure に移動することによって、デバイスのサポート、可用性、データの追跡、および処理の機能を展開するを見るようになりました。 Azure Database for PostgreSQL サーバーの作成を自動化にかかる労力を詳しく見ていきます。
 
-Creating a single Azure Database for PostgreSQL server using the Azure portal is easy. Creating more than one database and running ongoing maintenance using only the portal may become tedious. You'll use the Azure CLI to create scripts when you want to automate management tasks.
+単一の Azure Database for PostgreSQL サーバーを Azure portal を使用して作成するは簡単です。 1 つ以上のデータベースを作成して、ポータルのみを使用して継続的なメンテナンスを実行しているは、煩雑になる可能性があります。 Azure CLI を使用して、管理タスクを自動化する場合は、スクリプトを作成します。
 
-Creating almost any resource within Microsoft Azure can be automated using the Azure CLI. In this unit, you'll learn how to automate management of your Azure Database for PostgreSQL servers using the Azure CLI.
+Microsoft Azure 内のほぼすべてのリソースの作成を自動化できます Azure CLI を使用しています。 このユニットでは、Azure Database for PostgreSQL サーバーの Azure CLI の使用の管理を自動化する方法を学習します。
 
-## What is Azure CLI?
+## <a name="what-is-the-azure-cli"></a>Azure CLI とは
 
-[Azure CLI](https://docs.microsoft.com/cli/azure/) is Microsoft’s cross-platform command-line environment for managing Azure resources. You can use the Azure CLI from your browser with Azure Cloud Shell, or you can install Azure CLI locally on Mac OS X, Linux, or Windows. The Azure CLI is run from a local command line using bash or Powershell. Running Azure CLI locally however requires additional setup. We'll use the Azure Cloud Shell for executing Azure CLI commands.
+[Azure CLI](https://docs.microsoft.com/cli/azure/)は Azure リソースを管理するための Microsoft のクロス プラットフォーム コマンド ライン環境です。 Azure CLI を使用するには、Azure Cloud Shell で、ブラウザーから、または Mac OS X、Linux、または Windows で Azure CLI をローカルにインストールできます。 Azure CLI は、bash または PowerShell を使用してローカルのコマンドラインから実行されます。 Azure CLI をローカルで実行するには、追加のセットアップが必要です。 Azure CLI コマンドを実行するため、Azure Cloud Shell を使用します。
 
-## What is Azure Cloud Shell?
+## <a name="what-is-azure-cloud-shell"></a>Azure Cloud Shell とは
 
-Azure Cloud Shell is a browser-based shell experience that is hosted in the cloud and allows you to connect to Azure using an authenticated session. You can execute Azure CLI commands to automate the management of an Azure Database for PostgreSQL. Common Azure CLI tools are pre-installed and configured in Cloud Shell for you to use with your account.
+Azure Cloud Shell は、ブラウザー ベースのシェル エクスペリエンス、クラウドでホストされ、認証されたセッションを使用して Azure に接続することができますです。 Azure Database for PostgreSQL サーバーの管理を自動化する Azure CLI コマンドを実行することができます。 Azure CLI の一般的なツールがプレインストールされ、アカウントを使用するための Cloud Shell で構成されています。
 
 > [!NOTE]
-> Cloud Shell requires an Azure storage resource to persist any files you create while working in the Cloud Shell. On first launch Cloud Shell prompts to create a resource group, storage account, and Azure Files share on your behalf. This is a one-time step and will be automatically attached for all future Cloud Shell sessions.
+> Cloud Shell には、Azure storage のリソースを Cloud Shell で作業中に作成するすべてのファイルを保持する必要があります。 最初の起動時に Cloud Shell は、リソース グループとストレージ アカウントを作成するように求められ、Azure ファイル共有をします。 これは 1 回限りの手順であり、今後のすべての Cloud Shell セッションを自動的にアタッチされます。
 
-## Create an Azure Database for PostgreSQL server using Azure CLI
+## <a name="create-an-azure-database-for-postgresql-server-using-the-azure-cli"></a>Azure Database for PostgreSQL サーバーの Azure CLI を使用した作成します。
 
-You'll use Azure Cloud Shell to create an Azure Database for PostgreSQL server using Azure CLI. Let's look at the steps you'll take.
+Azure Database for PostgreSQL サーバーの Azure CLI を使用して作成するのに、右側に、Azure Cloud Shell のターミナルを使用します。
 
-First, sign into the Azure portal.
+使用可能なすべてのパラメーターを示す Azure CLI server 作成コマンド使用状況ヘルプは、次の例のようになります。
 
-Open the Cloud Shell from the Azure portal. Open your browser and go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
-
-Cloud Shell allows you to run your commands either in `bash` or `PowerShell`. We'll use the `bash` command-line option for all examples.
-
-If you have several subscriptions, make sure you activate the appropriate subscription with the following command, replacing the zeros with your subscription identifier.
-
-   ```bash
-   az account set --subscription 00000000-0000-0000-0000-000000000000
-   ```
-
-You'll run the following command to list all your subscriptions.
-
-   ```bash
-   az account list --output table
-   ```
-
-The next step is to create a resource group to manage the server and where the resource group will be located. Recall, you'll use a resource group to manage all the resources related to your server. The location option allows you to specify where the server is created physically. You'll run the next command and replace the `<resource_group_name>` and `<location>` respectively with appropriate values.
-
-   ```bash
-   az group create --name <resourcegroup> --location <location>
-   ```
-
-The last step is to create the Azure Database for PostgreSQL server.
-
-   The Azure CLI server creation command usage help showing all available parameters looks like the following example:
-
-   ```bash
+   ```azurecli
    az postgres server create [-h] [--verbose] [--debug]
                              [--output {json,jsonc,table,tsv}]
                              [--query JMESPATH]
@@ -65,34 +39,34 @@ The last step is to create the Azure Database for PostgreSQL server.
 
    ```
 
-   The following command line shows the required set of parameters to create an Azure Database for PostgreSQL server. You'll notice some are optional parameters and aren't listed.
+次のコマンド ラインでは、必要な Azure Database for PostgreSQL サーバーを作成するパラメーターのセットを示します。 いくつかのパラメーターは省略可能と記載されていないことがわかります。
 
-   ```bash
+   ```azurecli
    az postgres server create --resource-group <resource_group_name> --name <new_server_name> --admin-user <admin_user_name> --admin-password <server_admin_password> --sku-name <sku> --version <version_number>  --location <region_name> --storage-size <size> --backup-retention <days>
    ```
 
-### Parameter descriptions
+### <a name="parameter-descriptions"></a>パラメーターの説明
 
-The `--resource-group <resource_group_name>` parameter specifies the resource group within which to create the server.
+`--resource-group <resource_group_name>`パラメーターは、サーバーを作成するリソース グループを指定します。
 
-The server `admin-user` and `admin-password` that you specify is required to sign in to the server and its databases. Remember or record this information for later when interacting with the new server.
+サーバー`admin-user`と`admin-password`サーバーとそのデータベースにサインインするために必要なを指定することができます。 新しいサーバーと対話するときに後でこの情報を記録したりします。
 
-You use the `--sku-name` parameter is used to specify part of the pricing tier, in this case compute resource. The value follows the convention `{pricing tier}_{compute generation}_{vCores}`.
+使用する、`--sku-name`価格レベルの一部をここで指定するには、コンピューティング リソースのパラメーター。 値は規則に従って`{pricing tier}_{compute generation}_{vCores}`します。
 
-Examples:
+次に例を示します。
 
-- `--sku-name B_Gen4_4` maps to Basic, Gen 4, and 4 vCores.
-- `--sku-name GP_Gen5_32` maps to General Purpose, Gen 5, and 32 vCores.
-- `--sku-name MO_Gen5_2` maps to Memory Optimized, Gen 5, and 2 vCores.
+- `--sku-name B_Gen4_4` は、"Basic、Gen 4、および 4 個の仮想コア" にマップされます。
+- `--sku-name GP_Gen5_32` は、"汎用、Gen 5、および 32 個の仮想コア" にマップされます。
+- `--sku-name MO_Gen5_2` は、"メモリ最適化、Gen 5、および 2 個の仮想コア" にマップされます。
 
-Recall, we discussed the three pricing tiers in the unit where we create the server using the portal.
+ポータルを使用してサーバーを作成した単位の 3 つの価格レベルを説明したことを思い出してください。
 
-Let's assume you want to use a Basic, Gen 5, and 1 vCore compute resource, you'll then specify the parameter as `--sku-name B_Gen5_1`.
+Basic、汎用の 5 を使用して、1 仮想コアのコンピューティング リソースと仮定します。 指定します、パラメーターとして`--sku-name B_Gen5_1`します。
 
-You use the `--storage-size` parameter is also used the specify part of the pricing tier. If the value isn't specified, then it defaults to 5,120 MB. Valid storage sizes range from 5,120 MB and increases in additional increments of 1,024 MB up to 1,048,576 MB.
+使用する、`--storage-size`の価格レベルを指定するパラメーター。 値が指定されていない場合、既定で 5,120 MB にします。 有効なストレージの 5,120 MB の範囲のサイズし、最大 1,024 MB 単位で増加 1,048, 576 MB です。
 
-The `--backup-retention` parameter is used when you need to specify the retention period for backups specified in days. If the value isn't specified, then it defaults to seven days.
+`--backup-retention`を日数で指定されるバックアップの保有期間を指定する必要があるときにパラメーターを使用します。 値が指定されていない場合、既定で 7 日間です。
 
-You use the `--version` parameter is used to specify the major version of PostgreSQL you would like to use.
+使用する、`--version`パラメーターを使用したい PostgreSQL のメジャー バージョンを指定します。
 
-You've now seen the steps to create an Azure Database for PostgreSQL using Azure CLI. In the next unit, you'll create an Azure Database for PostgreSQL server using Azure CLI.
+これで、Azure Database for PostgreSQL サーバーの Azure CLI を使用して作成する手順を説明しました。 次の単位では、Azure Database for PostgreSQL サーバーの Azure CLI を使用してを作成します。

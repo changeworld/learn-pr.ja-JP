@@ -1,11 +1,11 @@
-顧客関係管理 (CRM) システムのテストに使用する Azure リソースの管理ツールを選択する必要があるとします。 実行する必要がある主な操作は、リソース グループの作成と仮想マシン (VM) のプロビジョニングです。
+顧客関係管理 (CRM) システムのテストに使用する Azure リソースの管理ツールを選択する必要があるとします。 テストでは、リソース グループを作成し、仮想マシン (Vm) をプロビジョニングする必要があります。
 
-管理者が簡単に習得できて、複数の仮想マシン (VM) のインストールと設定を自動化できるか、完全なアプリケーション環境をスクリプト化できる強力な機能があるツールを探しています。 利用できるツールは複数あります。スタッフとタスクに最適なツールを見つける必要があります。
+何かについては、管理者は容易がインストールおよび複数の仮想マシンのセットアップの自動化または完全なアプリケーション環境のスクリプトを作成するのに十分である場合します。 利用できるツールは複数あります。スタッフとタスクに最適なツールを見つける必要があります。
 
 ## <a name="what-tools-are-available"></a>使用できるツール
-Azure には、次の 3 つの管理ツールがあります。 
+Azure には、次の 3 つの管理ツールがあります。
 
-- Azure portal 
+- Azure portal
 - Azure CLI
 - Azure PowerShell
 
@@ -21,7 +21,7 @@ Azure portal は、Azure サブスクリプションのリソースを作成、�
 ## <a name="what-is-the-azure-cli"></a>Azure CLI とは
 Azure CLI は、Azure に接続して Azure リソース上で管理コマンドを実行することができるクロスプラットフォームのコマンドライン プログラムです。 たとえば、VM を作成するには、次のようなコマンドを使用します。
 
-```bash
+```azurecli
 az vm create \
   --resource-group CrmTestingResourceGroup \
   --name CrmUnitTests \
@@ -34,7 +34,7 @@ Azure CLI を使用するには、Azure Cloud Shell 経由のブラウザー内�
 ## <a name="what-is-azure-powershell"></a>Azure PowerShell とは
 Azure PowerShell は、Windows PowerShell または PowerShell Core に追加し、Azure サブスクリプションに接続してリソースを管理することができるモジュールです。 Azure PowerShell を使用するには、PowerShell が機能している必要があります。 PowerShell は、シェル ウィンドウ、コマンド解析などのサービスを提供します。 Azure PowerShell で、Azure 固有のコマンドが追加されます。
 
-たとえば Azure PowerShell には、Azure サブスクリプション内に仮想マシンを作成する **New-AzureRmVM** コマンドがあります。 使用するには、PowerShell アプリケーションを起動し、次のようなコマンドを発行します。
+たとえば、Azure PowerShell には、 **New-azurermvm** Azure サブスクリプション内で仮想マシンを作成するコマンド。 使用するには、PowerShell アプリケーションを起動し、次のようなコマンドを発行します。
 
 ```powershell
 New-AzureRmVm `

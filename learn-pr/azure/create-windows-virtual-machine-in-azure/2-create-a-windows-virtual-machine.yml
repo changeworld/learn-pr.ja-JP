@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
-title: Windows virtual machines in Azure
+title: Azure での Windows 仮想マシン
 metadata:
-  title: Windows virtual machines in Azure
-  description: Windows virtual machines in Azure
+  title: Azure での Windows 仮想マシン
+  description: Azure での Windows 仮想マシン
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

@@ -20,9 +20,9 @@ Azure CLI には、Azure 内の仮想マシンを操作するための `vm` コ�
 
 | パラメーター | 説明 |
 |-----------|-------------|
-| `resource-group` | その仮想マシンを所有するリソース グループです |
-| `name` | 仮想マシンの名前であり、リソース グループ内で一意である必要があります |
-| `image` | VM の作成に使用するオペレーティング システム イメージです |
+| `resource-group` | 仮想マシンを所有するリソース グループ。 |
+| `name` | 仮想マシンの名前は、リソース グループ内で一意である必要があります。 |
+| `image` | 使用して VM を作成するオペレーティング システム イメージ。 |
 
 さらに、`--verbose` フラグを追加して VM の作成の進行状況を表示すると便利です。 
 
@@ -31,7 +31,7 @@ Azure CLI には、Azure 内の仮想マシンを操作するための `vm` コ�
 新しい Linux 仮想マシンを作成してみます。 Azure Cloud Shell で次のコマンドを実行します。
 
 ```azurecli
-az vm create --resource-group ExerciseResources --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
+az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --verbose 
 ```
 
 このコマンドでは、新しい **Debian** Linux 仮想マシンが `SampleVM` という名前で作成されます。 VM が作成されている間、Azure CLI ツールがブロックされることに注意してください。 スクリプトでコマンドを実行している場合などで待ちたくない場合は、`--no-wait` オプションを使用して、すぐに戻るよう Azure CLI ツールに指示できます。 後でスクリプトの中で `azure vm wait --name [vm-name]` コマンドを使用して、VM の作成が完了するのを待機します。
@@ -55,6 +55,8 @@ Accepted: vm_deploy_vzKnQDyyq48yPUO4VrSDfFIi81vHKZ9g (Microsoft.Resources/deploy
 
 VM の作成が完了すると、JSON 応答が返されます。この応答の中に、仮想マシンの現在の状態と、Azure によって割り当てられたパブリックとプライベートの IP アドレスが記述されています。
 
+<!-- TODO: find out the default location! -->
+
 ```json
 {
   "fqdns": "",
@@ -68,6 +70,8 @@ VM の作成が完了すると、JSON 応答が返されます。この応答の
   "zones": ""
 }
 ```
+
+<!-- TODO: find out the default location! -->
 
 > [!NOTE]
 > VM が作成された場所が **eastus** であることに注目してください。 既定では、仮想マシンが作成される場所は所有するリージョンによって決まります。 VM を既存のリージョンに関連付けることが必要である場合でも、実際には別の場所で VM が作成されます。 このようにするには、オプション `--location` パラメーターを `az vm create` コマンドで指定します。

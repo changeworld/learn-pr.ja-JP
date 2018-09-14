@@ -1,69 +1,69 @@
-Let's create an Azure Redis Cache instance to store and return commonly used values.
+一般的に使用される値を格納して返す Azure Redis Cache インスタンスを作成してみましょう。
 
 <!-- TODO: do we need to activate the sandbox here? -->
 
-## Create a Redis cache in Azure
+## <a name="create-a-redis-cache-in-azure"></a>Azure Redis cache を作成します。
 
-1. Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-1. Click **Create a resource**, click **Databases**, and click **Redis Cache**.
+1. クリックして**リソースの作成**、 をクリックして**データベース**、 をクリック**Redis Cache**します。
 
-    The following screenshot shows the Redis Cache location within the various database resource options on the Azure portal.
+    次のスクリーン ショットでは、Azure portal のさまざまなデータベース リソース オプション内の Redis Cache の場所を示しています。
 
-    ![Screenshot showing the Azure portal database options, with the Create a resource, Database, and Redis Cache options highlighted.](../media/4-create-a-cache-1.png)
+    ![[Create a resource]\(リソースの作成\)、[データベース]、[Redis Cache] オプションが強調表示された、Azure portal データベースのオプションを示すスクリーンショット。](../media/4-create-a-cache-1.png)
 
-### Identify the location for the cache
+### <a name="identify-the-location-for-the-cache"></a>キャッシュの場所を指定します。
 
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-### Configure your cache
+### <a name="configure-your-cache"></a>キャッシュを構成する
 
-Apply the following settings on the cache.
+キャッシュでは、次の設定を適用します。
 
-1. **DNS Name:** Create a globally unique name such as **ContosoSportsApp1028**.
+1. **DNS 名:** **ContosoSportsApp1028** など、グローバルに一意の名前を作成します。
 
-1. **Subscription:** Select the Azure Sandbox subscription.
+1. **サブスクリプション:** Azure サンド ボックス サブスクリプションを選択します。
 
-1. **Resource group:** Select <rgn>[Sandbox resource group name]</rgn> for the Resource Group.
+1. **リソース グループ:** 選択<rgn>[サンド ボックス リソース グループ名]</rgn>リソース グループ。
 
-1. **Location:** Normally, you would select a location near your customers - in this case, the East Coast. However, the Azure Sandbox only allows specific regions to be selected for resources as noted above. Please select one of those locations.
+1. **場所:** 通常は、お客様 - ここでは、東海岸の近くの場所を選択します。 ただし、Azure サンド ボックスは、前述のリソースを選択する特定のリージョンのみを許可します。 これらの場所のいずれかを選択してください。
 
-1. **Pricing tier:** Select **Basic C0**. This is the lowest tier you can use. Production apps would likely want to store more data and utilize some of the Premium features such as clustering which would require a higher tier selection.
+1. **価格レベル**: **[Basic C0]** を選択します。 これは、最下位の層を使用することができます。 実稼働アプリする理由より多くのデータを格納しより高いレベルの選択が必要なクラスタ リングなどの Premium 機能を使用します。
 
-1. Click **Create**.
+1. **[作成]** をクリックします。
 
-    The following screenshot shows a representative configuration used to create a new Redis Cache resource. Note that yours will be slightly different due to the Azure Sandbox.
+    次のスクリーンショットは、新しい Redis Cache のリソースの作成に使用された、代表的な構成を示しています。 Azure サンド ボックスによって若干異なる自分がありますに注意してください。
 
-    ![Screenshot showing the Azure portal blade when creating a new Redis Cache resource, populated with an example configuration DNS name, subscription, new resource group, location, and pricing tier.](../media/4-create-a-cache-2.png)
+    ![DNS 名、サブスクリプション、新しいリソース グループ、場所、価格レベルの構成例が入力された、新しい Redis Cache のリソースを作成するときの Azure portal のブレードのスクリーンショット。](../media/4-create-a-cache-2.png)
 
 > [!IMPORTANT]
-> You will have to wait until the cache is deployed before continuing. This process might take some time.
+> 続行する前に、キャッシュがデプロイされるまで待つ必要があります。 このプロセスにはしばらく時間がかかることがあります。
 
-## Verify your data
+## <a name="verify-your-data"></a>データの検証
 
-You can use the **Console** feature in the Azure portal to issue commands to your Redis cache instance after it has been created.
+使用することができます、**コンソール**Redis cache インスタンスが作成された後にコマンドを発行する Azure ポータルで機能します。
 
-1. Locate your Redis cache by selecting **All Resources** in the left-hand sidebar and using the filter box on the left to select Redis Cache instances. Alternatively, you can use the search box at the top and type the name of the cache.
+1. Redis cache を選択して検索**すべてのリソース**で左側のサイド バーと左側に、フィルター ボックスを使用して Redis Cache を選択するインスタンスします。 または、上部にある検索ボックスを使用し、キャッシュの名前を入力できます。
 
-1. Select your Redis cache instance.
+1. Redis cache インスタンスを選択します。
 
-1. In the **Overview** blade for your Redis Cache, select **Console**. This will open a Redis console, which allows you to enter low-level Redis commands.
+1. **概要**の選択、Redis Cache ブレード**コンソール**します。 これにより、低レベルの Redis コマンドを入力することができます、Redis コンソールが開きます。
 
-1. Type **ping**. Verify that the value returned is **PONG**.
+1. 型**ping**します。 返される値があることを確認**PONG**します。
 
-1. Type **set test one**. Verify that the value returned is **OK**.
+1. 型**セットは、いずれかをテスト**します。 返される値があることを確認**OK**します。
 
-1. Type **get test**. Verify that the value returned is **"one"**.
+1. 型**テスト**します。 返される値があることを確認 **「一」** します。
 
-1. Switch back to the **Overview** panel either through the breadcrumb bar on the top, or use the scrollbar to slide the view back to the left.
+1. 戻り、**概要**パネルの一番上に、階層リンク バーからいずれかまたは左にスライドするスクロール バーを使用します。
 
-## Retrieve the access keys and host name
+## <a name="retrieve-the-access-keys-and-host-name"></a>アクセス キーおよびホスト名を取得する
 
-1. Select **Settings** > **Access keys**. 
+1. 選択**設定** > **アクセス キー**します。 
 
-1. Copy the **Primary connection string (StackExchange.Redis)** to a safe place, you will need it for the next exercise.
+1. コピー、**プライマリ接続文字列 (StackExchange.Redis)** 安全な場所に必要になる、次の手順。
 
-    This key includes your primary key and host name in a complete connection string for use within your application settings for the **StackExchange.Redis** package we are going to use.
+    このキーには、プライマリ キーとホスト名にはでのアプリケーションの設定内で使用する完全な接続文字列が含まれています、 **StackExchange.Redis**パッケージを使用しようとしました。
 
-Next, let's learn about some of the commands we can use to interrogate the cache.
+次に、一部のコマンドを使用して、キャッシュの調査をについて説明します。

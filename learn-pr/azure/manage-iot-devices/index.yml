@@ -1,33 +1,31 @@
 ### YamlMime:Module
 uid: learn.manage-iot-devices
 metadata:
-  title: Learn how to manage IoT devices as an IT Admin
-  description: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
+  title: IT 管理者は、IoT デバイスを管理する方法について説明します
+  description: 上昇は、IoT の採用をどのようなツールを Microsoft は、デプロイ、管理し、保護に役立つ操作と大量のデバイスについて説明します。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Learn how to manage IoT devices as an IT Admin
-summary: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
-abstract: | 
- In this module, you will:
-  - TBD
-  - TBD
-# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
-iconUrl: http://via.placeholder.com/120x120
-# Review the Docs Contributor Guide for level, role, and product options
-levels: 
-- beginner
-roles: 
-- administrator
-products: 
-- azure
-# Listing of all of the unit uids, in the order they should be displayed to the user in
+title: IT 管理者は、IoT デバイスを管理する方法について説明します
+summary: 上昇は、IoT の採用をどのようなツールを Microsoft は、デプロイ、管理し、保護に役立つ操作と大量のデバイスについて説明します。
+abstract: |
+  このモジュールでは、次のことを行います。
+   - IoT を概要します。
+   - Raspberry Pi シミュレーターとの対話します。
+   - データをキャプチャする Azure IoT Hub を構成します。
+prerequisites: なし
+iconUrl: /learn/achievements/manage-iot-devices.svg
+levels:
+  - beginner
+roles:
+  - administrator
+products:
+  - azure
 units:
-- learn.manage-iot-devices.1-intro-to-ops-in-iot
-- learn.manage-iot-devices.2-raspberry-pi-emulator
-- learn.manage-iot-devices.3-connect-device
-- learn.manage-iot-devices.4-provision-iot-device
-- learn.manage-iot-devices.5-summary
+  - learn.manage-iot-devices.1-intro-to-ops-in-iot
+  - learn.manage-iot-devices.2-raspberry-pi-emulator
+  - learn.manage-iot-devices.3-connect-device
+  - learn.manage-iot-devices.4-summary
 achievement: learn.manage-iot-devices.badge

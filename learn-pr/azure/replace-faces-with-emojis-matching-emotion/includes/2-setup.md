@@ -1,97 +1,61 @@
-First things first we need to make sure you are setup with a few accounts and have the sample code working locally.
+まず最初にローカル複製スタート コードをいくつかのアカウントが設定されていてかどうかを確認する必要があります。
 
-## Create an Azure Account
+## <a name="create-an-azure-account"></a>Azure アカウントを作成します。
 
-You will need an accout on Azure. If you don’t already have one then you can signup and get a free years worth of services by following this link:
+Azure のアカウントが必要です。 既にがないかどうかは、サインアップすることができ、以下のこのリンク サービスの年間無料分を表示。
 
-[Crate Azure Account](https://azure.microsoft.com/free)
+[Azure アカウントの作成](https://azure.microsoft.com/free)
 
-## Create a Slack Workspace
+## <a name="create-a-slack-workspace"></a>Slack のワークスペースを作成します。
 
-To create a slack command you need admin privillages on a slack workspace.
+Slack のコマンドを作成するには、slack のワークスペースの管理者特権が必要です。
 
-So you eiher need to make sure you have admin privillages on an existing workspace or create a brand new slack workspace, like so:
+したがって既存のワークスペースの管理者特権を持っているか、まったく新しい slack ワークスペースを作成するかどうかを確認する必要がありますかなど。
 
-[Crate Slack Account](https://slack.com/create)
+[Slack のワークスペースを作成します。](https://slack.com/create)
 
-## Clone the starter code
+## <a name="clone-the-starter-code"></a>スタート コードを複製します。
 
-This module is designed so you follow a set of instructions step by step.
+このモジュール最大限にスタート コードを複製し、手順、お勧めします。
 
-We'll provide all the code you need to write in order to create a completed application.
+アプリケーションを完了する必要があるすべてのコードだけではなく、開始するためのいくつか最初のブートス トラップ コードを提供いたします。
 
-We do provide some initial bootstrap code to get you started, so to begin you must clone this _stater_ code to your local computer.
-
-> TODO - Where is the code going?
+開始するこの複製_stater_コードをローカル コンピューターにします。
 
 ```bash
-git clone [github-url]
+git clone https://github.com/jawache/mojifier-slack.git
 ```
 
-Then install the required pacakges using:
+次を使用して、必要なパッケージをインストールします。
 
 ```bash
 npm install
 ```
 
-> We recommend you follow this module step by step. However if you become stuck and need help then you can find the completed code in the `completed` branch, like so:
+このモジュールの手順に従うことをお勧めします。 ただし場合のままになる、ヘルプを必要として、検索できますで完成したコード、`completed`ブランチでは、次のようにします。
 
 ```bash
 git checkout completed
 ```
 
-We will be coding up our application in `TypeScript`. NodeJS does not know how to run TypeScript, so as we develop we need to convert our `TypeScript` code to `JavaScript`. All the required tooling was installed int he step above so to convert the TypeScript run the command:
+使用して、アプリケーションを記述する`TypeScript`します。 NodeJS が把握していない方法**実行**`TypeScript`に変換する必要がありますを開発すると、当社`TypeScript`コードを`JavaScript`します。 変換するためには、上記の手順で変換を実行するすべての必要なツールがインストールされている、`TypeScript`このコマンドを実行します。
 
 ```bash
 npm run build
 ```
 
-If the avove command ran success fully next to the `*.ts` files you should now also see `*.js` and `*.map` files.
+上記のコマンドが横に正常に実行された場合、`*.ts`ファイルも表示するようになりました`*.js`と`*.map`ファイル。
 
-> NOTE: Keep this command running in a terminal shell, this will continuously watch for any changed to the TypeScript file and convert them to JavaScript files.
+> **注**
 >
-> If for some reason the files are not getting converted then check the console output in the terminal window, there may be errors in your TypeScript code.
+> ターミナル シェルで実行されているこのコマンドでこの TypeScript ファイルを変更するを監視し、JavaScript ファイルに変換されます。
+>
+> ファイルがないいくつかの理由は、コンソール出力ターミナル ウィンドウでのチェック変換を取得し場合があるエラー、TypeScript コードで。
 
-## Install the Azure Command Line Tools
+## <a name="install-visual-studio-code--azure-functions-extention"></a>Visual Studio Code と Azure Functions の拡張機能をインストールします。
 
-We will be interacting with Azure usin the Azure CLI, follow the instructions here to install the tool locally on your computer: https://docs.microsoft.com/cli/azure/install-azure-cli
+Azure では、Visual Studio Code と関連付けられている Azure Functions の拡張機能プラグインを使用する Azure とやり取りしますこのモジュールでの対話方法はたくさんあります。
 
-Once installed, try loging in with your Azure credentials.
+1. ダウンロードしてから visual studio code のインストール https://code.visualstudio.com/
 
-```bash
-az login -o table
-```
-
-The above command will open a browser window, you may need to authenticate, once authetication is complete you the browser will close and the terminal will print some output, like so:
-
-```bash
-You have logged in. Now let us find all the subscriptions to which you have access...
-```
-
-## Install the Azure Functions Runtime
-
-We will be hosting our code on the Azure Functions service.
-
-In order to run and debug Azure Functions locally we also need to install the Function Tools, instructions can be found here: https://docs.microsoft.com/azure/azure-functions/functions-run-local
-
-<!-- ## Install Visual Studio Code & Azure Functions Extension
-
-There are many ways you can interact with Azure, in this module we will be interacting with Azure using Visual Studio Code and the associated Azure Functions Extensions plugin.
-
-1. Download and install visual studio code from https://code.visualstudio.com/
-
-2. Install the Azure Functions Code Extensions by following the instructions here: https://code.visualstudio.com/tutorials/functions-extension/getting-started -->
-
-<!-- ## Install the Azure CLI
-
-We will also be using the Azure Command Line Interface, install it using the most appropriate method for your OS using the information here:
-
-[Install Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli)
-
-## Install the Function Tools CLI
-
-In order to run and debug Azure Functions locally we also need to install the Function Tools, instructions can be found here:
-
-[Install Function CLI](https://docs.microsoft.com/azure/azure-functions/functions-run-local)
-
-> Please install the V2 version of the Functon Tools -->
+2. 次の手順は、ここでは、Azure Functions コード拡張機能をインストールします。 https://code.visualstudio.com/tutorials/functions-extension/getting-started

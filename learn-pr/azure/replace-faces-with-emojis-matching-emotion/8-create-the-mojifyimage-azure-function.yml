@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.8-create-the-mojifyimage-azure-function
+metadata:
+  title: MojifyImage Azure 関数を作成します。
+  description: Mojified イメージを返す HTTP エンドポイントを作成します。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+labId: 45987
+title: MojifyImage Azure 関数を作成します。
+durationInMinutes: 15
+content: |
+  [!include[](includes/8-create-the-mojifyimage-azure-function.md)]

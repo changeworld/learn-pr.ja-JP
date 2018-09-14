@@ -1,50 +1,50 @@
-When you created an Azure web app bot in [Exercise 1](#Exercise1), an Azure web app was deployed to host it. But the bot does require some code, and it still needs to be deployed to the Azure web app. Fortunately, the code was generated for you by the Azure Bot Service. In this unit, you will use Visual Studio Code to place the code in a local Git repository and publish the bot to Azure by pushing changes from the local repository to a remote repository connected to the Azure web app that hosts the bot — a process known as [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration).
+[演習 1](#Exercise1) で Azure Web アプリ ボットを作成したときに、それをホストするために Azure Web アプリがデプロイされました。 しかし、ボットにはいくつかのコードが必要であり、それも Azure Web アプリにデプロイする必要があります。 さいわい、コードは Azure Bot Service によって生成されています。 このユニットでは、Visual Studio Code を使用してそのコードをローカル Git リポジトリに配置して、ローカル リポジトリから、ボットをホストする Azure Web アプリに接続されているリモート リポジトリに変更をプッシュして、ボットを Azure に発行します ([継続的インテグレーション](https://en.wikipedia.org/wiki/Continuous_integration)として知られるプロセス)。
 
-1. If [Git](https://git-scm.com/) isn't installed on your PC, go to https://git-scm.com/downloads and install the Git client for your operating system. Git is a free and open-source distributed version control system, and it integrates seamlessly into Visual Studio Code. If you aren't sure whether Git is installed, open a Command Prompt or terminal window and execute the following command:
+1. ご使用の PC に [Git](https://git-scm.com/) がインストールされていない場合は、 https://git-scm.com/downloads に移動して、ご使用のオペレーティング システムの Git クライアントをインストールします。 Git は無料のオープン ソースの分散バージョン管理システムで、Visual Studio Code にシームレスに統合されます。 Git がインストールされているかどうかが不明な場合は、コマンド プロンプトまたはターミナル ウィンドウを開き、次のコマンドを実行します。
 
     ```bash
     git --version
     ```
 
-    If a version number is displayed, then the Git client is installed.
+    バージョン番号が表示された場合は、Git クライアントがインストールされています。
 
-1. If Node.js isn't installed on your PC, go to https://nodejs.org/ and install the latest LTS version. You can determine whether Node.js is installed by opening a Command Prompt or terminal window and typing the following command:
+1. ご使用の PC に Node.js がインストールされていない場合は、 https://nodejs.org/ に移動して最新の LTS バージョンをインストールします。 Node がインストールされているかどうかを判断するには、コマンド プロンプトまたはターミナル ウィンドウを開き、次のコマンドを入力します。
 
     ```bash
     node --version
     ```
 
-    If Node is installed, the version number will be displayed.
+    Node がインストールされている場合は、バージョン番号が表示されます。
 
-1. If Visual Studio Code isn't installed on your PC, go to https://code.visualstudio.com/ and install it now.
+1. ご使用の PC に Visual Studio Code がインストールされていない場合は、 https://code.visualstudio.com/ に移動して今すぐインストールします。
 
-1. Create a folder named "Factbot" in the location of your choice on your hard disk to hold the bot's source code.
+1. ボットのソース コードを保持するため、自分のハード ディスク上の任意の場所に、"Factbot" という名前のフォルダーを作成します。
 
 <!---TODO: Update for sandbox?--->
-1. Return to the Azure portal and open the "factbot-rg" resource group. Then, click the web app bot you created in the prior exercise.
+1. Azure portal に戻り、"factbot-rg" リソース グループを開きます。 前の演習で作成した web アプリのボットをクリックします。
 
-1. Click **Build** in the menu on the left, and then click **Download zip file** to prepare a zip file containing the bot's source code. Once the zip file is prepared, click the **Download zip file** button to download it. When the download is complete, copy the contents of the zip file to the "Factbot" folder that you created in Step 4.
+1. 左側のメニューで **[ビルド]** をクリックし、**[Download zip file]\(ZIP ファイルのダウンロード\)** をクリックして、ボットのソース コードを含む ZIP ファイルを準備します。 ZIP ファイルの準備ができたら、**[Download zip file]\(ZIP ファイルのダウンロード\)** ボタンをクリックしてダウンロードします。 ダウンロードが完了したら、ZIP ファイルの内容を手順 4 で作成した "Factbot" フォルダーにコピーします。
 
-1. Still on the "Build" blade, click **Configure continuous deployment**. Click **Setup** at the top of the ensuing blade, followed by **Choose Source**. Then, select **Local Git Repository** as the deployment source and click **OK**.
+1. 引き続き [ビルド] ブレードで、**[Configure continuous deployment]\(継続的デプロイの構成\)** をクリックします。 **[ソースの選択]** に続いて表示されるブレードの上部で **[セットアップ]** をクリックします。 次に、デプロイ ソースとして **[ローカル Git リポジトリ]** を選択し、**[OK]** をクリックします。
 
-1. Close the "Deployments" blade and click **All App service settings** in the menu on the left.
+1. [デプロイ] ブレードを閉じ、左側のメニューで **[All App service settings]\(すべての App Service の設定\)** をクリックします。
 
-1. Click **Deployment credentials**, and then enter a user name and password. You will probably have to enter a user name other than "FactbotAdministrator" because the name must be unique within Azure. Then, click **Save** and close the blade.
+1. **[デプロイ資格情報]** をクリックしてから、ユーザー名とパスワードを入力します。 ユーザー名は Azure 内で一意である必要があるので、"FactbotAdministrator" 以外のユーザー名を入力する必要があります。 次に、**[保存]** をクリックして、ブレードを閉じます。
 
-    ![Screenshot of the Azure portal showing the new bot App Service blade displaying the Deployment credentials screen with the Deployment credentials menu item and Save button highlighted.](../media/4-portal-enter-ci-creds.png)
+    ![新しいボットを導入、展開資格情報 画面を表示する App Service ブレードを表示する Azure ポータルのスクリーン ショットでは、メニュー項目を資格情報し、保存 ボタンが強調表示されます。](../media/4-portal-enter-ci-creds.png)
 
-1. Start Visual Studio Code and use the **File** > **Open Folder...** command to open the "Factbot" folder that you copied the bot's source code to in Step 6.
+1. Visual Studio Code を起動し、**[ファイル]** > **[フォルダーを開く]** コマンドを使用して、手順 6 でボットのソース コードをコピーした "Factbot" フォルダーを開きます。
 
-1. Click the **Source Control** button in the activity bar on the left side of Visual Studio Code, and click the **Initialize Repository** icon at the top. Then, click the **Initialize Repository** button in the ensuing dialog.
+1. Visual Studio Code の左側のアクティビティ バーで **[ソース管理]** ボタンをクリックし、上部の **[リポジトリの初期化]** アイコンをクリックします。 その後、続いて表示されるダイアログで、**[リポジトリの初期化]** ボタンをクリックします。
 
-1. Type "First commit." into the message box, and then click the check mark to commit your changes.
+1. メッセージ ボックスに「最初のコミット」と入力し、 チェック マークをクリックして変更をコミットします。
 
-1. Select **Integrated Terminal** from Visual Studio Code's **View** menu to open an integrated terminal. Then, execute the following command in the integrated terminal, replacing BOT_NAME in two places with the bot name you entered in Exercise 1, Step 3.
+1. Visual Studio Code の **[表示]** メニューから **[統合端末]** を選択し、統合端末を開きます。 次に、統合端末で以下のコマンドを実行します。2 か所の BOT_NAME を演習 1 の手順 3 で入力したボット名に置き換えます。
 
     ```bash
     git remote add qna-factbot https://BOT_NAME.scm.azurewebsites.net:443/BOT_NAME.git
     ```
 
-1. Click the ellipsis (the three dots) at the top of the SOURCE CONTROL panel and select **Publish Branch** from the menu to push the bot code from the local repository to Azure. If prompted for credentials, enter the user name and password you specified in Step 9 of this exercise.
+1. ソース管理パネルの上部にある省略記号 (3 つのドット) をクリックし、メニューから **[ブランチの発行]** を選択して、ボット コードをローカル リポジトリから Azure にプッシュします。 資格情報を求められた場合は、この演習の手順 9 で指定したユーザー名とパスワードを入力します。
 
-Your bot has been published to Azure. But before you test it there, let's run it locally and learn how to debug it in Visual Studio Code.
+ボットは Azure に発行されています。 しかし、それをここでテストする前に、ローカルで実行して、Visual Studio Code でデバッグする方法について学習します。

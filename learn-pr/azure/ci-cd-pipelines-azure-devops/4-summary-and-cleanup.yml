@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.4-summary-and-cleanup
-title: Summary and cleanup
+title: 知識チェック
 metadata:
-  title: Summary and cleanup
-  description: A summary or the steps taken and cleanup instructions to clean up the provisioned Azyre resources.
+  title: 知識チェック
+  description: クイック知識チェック
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -12,4 +12,3 @@ metadata:
 durationInMinutes: 2
 content: |
   [!include[](includes/4-summary-and-cleanup.md)]
-  

@@ -1,6 +1,6 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.11-cleanup
-title: 概要とクリーンアップ
+title: まとめとクリーンアップ
 metadata:
   title: まとめとクリーンアップ
   description: このモジュールで使用したリソースをクリーンアップする
@@ -9,13 +9,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e8b49f2707030b3c9f29c08cdfd272e81497b2b6
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44309033"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 2
-content: '[!include[](includes/11-cleanup.md)]'
+content: |
+  [!include[](includes/11-cleanup.md)]

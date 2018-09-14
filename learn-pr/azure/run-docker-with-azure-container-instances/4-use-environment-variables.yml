@@ -8,14 +8,9 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 121d22c224c33875cf10038d9c63596882a3b1f4
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44308217"
 title: 環境変数を設定する
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10
-content: '[!include[](includes/4-use-environment-variables.md)]'
+content: |
+  [!include[](includes/4-use-environment-variables.md)]

@@ -1,75 +1,73 @@
-We're going to look at the factors that affect disk performance in Azure, and at how caching can help optimize performance. 
+Azure、およびキャッシュに役立てる方法のパフォーマンスを最適化でディスクのパフォーマンスに影響する要因を見ていきます。
 
-### Disk caching
+### <a name="disk-caching"></a>ディスク キャッシュ
 
-A cache is a specialized component in a computer that stores data so it can be accessed faster, typically in memory. The data in a cache is often data that has been read previously, or is data that resulted from an earlier calculation. The goal is to access data faster than getting it from disk.
+キャッシュは、データを格納するため、高速でアクセスできる通常メモリでコンピューターに特殊なコンポーネントです。 キャッシュ内のデータは、多くの場合、以前は、読み取られた、または以前の計算の結果として生じたデータ データです。 目標は、データにアクセスすることをディスクから取得するよりも高速です。
 
-Caching uses specialized, and sometimes expensive, temporary storage that has faster read and/or write performance than permanent storage. Because this cache storage is often limited, decisions need to be made as to what data operations will benefit most from caching. But even where the cache can be made widely available, such as in Azure, it's still important to know the workload patterns of each disk before deciding on what caching type to use.
+特殊化されたキャッシュの使用とも高価な一時的な記憶域を持つ高速読み取りまたは書き込みのパフォーマンスをより永続的なストレージ。 このキャッシュ ストレージが多くの場合、制限されているため、意思決定をどのようなデータ操作が最も大きいメリット キャッシュしたりできるようにする必要があります。 でも、キャッシュが広く利用できるなど、Azure を使用するどのようなキャッシュの種類を決定する前に各ディスクのワークロード パターンを確認することも重要です。
 
-**Read caching** tries to speed up data retrieval. Instead of reading from permanent storage, the data is read from the faster cache. Data reads hit the cache under the following conditions:
+**読み取りキャッシュ**高速化するデータの取得を試みます。 永続的なストレージから読み取りではなく、データは高速のキャッシュから読み取られます。 データの読み取りには、次の条件下で、キャッシュがヒットします。
 
-- The data has been read before and exists in the cache.
-- And the cache is large enough to hold all of this data.
+- データは、前に読み取られ、キャッシュ内に存在します。
+- キャッシュはすべてのデータを保持するのに十分な大きさです。
 
-It's important to note that read caching helps when there is some _predictability_ to the read queue, such as a set of sequential reads. For random I/O, where the data you're accessing is scattered across storage, caching will be of little or no benefit, and can even reduce disk performance.
+いくつかを使用する必要がある場合に、読み取りキャッシュことに注意してください。_予測可能性_を一連の順次読み取りなどの読み取りキュー。 場所にアクセスして、データは、ストレージに分散しているが、ランダムの I/O のキャッシュはほとんどまたはまったくの特典のなりディスク パフォーマンスが低下することもできます。
 
-**Write caching** tries to speed up writing data to storage. By using a write cache, the app can consider the data to be saved. In reality, the data is queued up in a cache, waiting to be written to permanent storage. As you can imagine, this mechanism can be a potential point of failure, like if the system shuts down before this cached data is flushed to disk. Some systems, such as SQL Server, handle writing cached data to persistent disk storage themselves.  
+**書き込みキャッシュ**ストレージへのデータの書き込みを高速化を試みます。 書き込みキャッシュを使用すると、アプリ データを保存することもできます。 実際には、データがキューに入れ、キャッシュで永続的なストレージに書き込むを待機しています。 ご想像のとおり、このメカニズムは、潜在的な障害点を指定できますなど、システムのシャット ダウン前に、このキャッシュされたデータがフラッシュされるディスクにします。 SQL Server など、一部のシステムでは、永続的なディスク ストレージへのキャッシュされたデータの書き込みは自体を処理します。
 
-### Azure disk caching
+### <a name="azure-disk-caching"></a>Azure ディスク キャッシュ
 
-There are two types of disk caching that concern disk storage:
+その問題のディスク記憶域のキャッシュ ディスクの 2 種類あります。
 
-- Azure storage caching
-- Azure virtual machine (VM) disk caching
+- Azure storage のキャッシュ
+- Azure の仮想マシン (VM) ディスクのキャッシュ
 
-Azure storage caching provides cache services for Azure Blob storage, Azure Files, and other content in Azure. Configuration of these types of cache is beyond the scope of this module.
+Azure storage のキャッシュには、Azure Blob storage、Azure Files、および Azure 内の他のコンテンツのキャッシュ サービスが提供します。 これらの種類のキャッシュの構成では、このモジュールの範囲外です。
 
-Azure virtual machine disk caching is about optimizing read and write access to the virtual hard disk (VHD) files attached to Azure VMs. We'll focus on disk caching in this module.
+Azure 仮想マシン ディスクのキャッシュは、読み取りおよび書き込みアクセスを Azure Vm にアタッチされている仮想ハード_ディスク (VHD) ファイルを最適化する方法です。 このモジュールでディスクのキャッシュに注目します。
 
-### Azure virtual machine disk types
+### <a name="azure-virtual-machine-disk-types"></a>Azure 仮想マシン ディスクの種類
 
-There are three types of disks used with Azure VMs:
+Azure Vm で使用されるディスクの 3 つの種類があります。
 
-- **OS disk**: When you create an Azure VM, Azure automatically attaches a VHD for the operating system (OS). The VHD is stored as a page blob in Azure storage.
-- **Temporary disk**: When you create an Azure VM, Azure also automatically adds a temporary disk. This disk is used for data, such as page and swap files. The data on this disk may be lost during maintenance or a VM redeploy. So, don't use it for storing permanent data, such as database files or transaction logs.
-- **Data disks**: A data disk is a VHD that's attached to a virtual machine to store application data or other data you need to keep.
+- **OS ディスク**: Azure VM を作成するときに Azure に自動的にオペレーティング システム (OS) の VHD をアタッチします。 VHD は、Azure storage にページ blob として格納されます。
+- **一時ディスク**: Azure VM を作成するときに Azure も自動的に一時ディスクを追加します。 このディスクは、ページとスワップ ファイルなどのデータに使用されます。 このディスク上のデータは、メンテナンスまたは VM の再デプロイ中に失われる可能性があります。 そのため、使用しないでください、データベース ファイルまたはトランザクション ログなどの永続的なデータを格納するため。
+- **データ ディスク**: データ ディスクはアプリケーション データまたは保持する必要があるその他のデータを格納する仮想マシンにアタッチされている VHD です。
 
-OS disks and data disks take advantage of Azure VM disk caching. The cache size for a VM disk depends on the VM instance size and on the number of disks mounted on the VM. Caching can be enabled for only up to four data disks.
+OS ディスクとデータ ディスクを Azure VM ディスクのキャッシュの活用します。 VM ディスクのキャッシュ サイズは、VM インスタンスのサイズと、VM にマウントされているディスクの数によって異なります。 最大 4 つだけのデータ ディスクのキャッシュを有効にすることができます。
 
-## Cache options for Azure VMs
+## <a name="cache-options-for-azure-vms"></a>Azure Vm のキャッシュ オプション
 
-There are three common options for VM disk caching:
+VM ディスクのキャッシュに 3 つの一般的なオプションがあります。
 
-- **Read/write** – Write-back cache. Use this option only if your application properly handles writing cached data to persistent disks when needed.
-- **Read-only** - Reads are performed from cache.
-- **None** - No cache. Select this option for write-only and write-heavy disks. Log files are a good candidate because they're write-heavy operations.
+- **読み取り/書き込み**– ライト バック キャッシュします。 必要なときに、永続ディスクにキャッシュされたデータの書き込みアプリケーションを正しく処理する場合にのみ、このオプションを使用します。
+- **読み取り専用**-読み取りはキャッシュから実行されます。
+- **None** -キャッシュはありません。 書き込み専用、書き込み負荷の高いディスクは、このオプションを選択します。 書き込み負荷の高い操作になるために、ログ ファイルは適切な候補が。
 
-Not every caching option is available for each type of disk. The following table shows you the caching options for each disk type:
+すべてのキャッシュ オプションは、各種類のディスク使用できます。 次の表では、各ディスクの種類のキャッシュ オプションを示します。
 
-| |**Read-only**  |**Read/write**  |**None**  |
+| |**読み取り専用**  |**読み取り/書き込み**  |**なし**  |
 |---------|---------|---------|---------|
-|OS disk     |   yes      |   yes (default)     |   yes      |
-|Data disk     |   yes (default)      |  yes       |  yes       |
-|Temporary disk     |  no       |   no      |   no      |
+|OS ディスク     |   はい      |   [はい] (既定値)     |   はい      |
+|データ ディスク     |   [はい] (既定値)      |  はい       |  はい       |
+|一時ディスク     |  ×       |   ×      |   ×      |
 
 > [!NOTE]
-> Disk caching options can't be changed for L-Series and B-series virtual machines.
+> L シリーズと B シリーズ仮想マシンのディスクのキャッシュ オプションを変更できません。
 
-## Performance considerations for Azure VM disk caching
+## <a name="performance-considerations-for-azure-vm-disk-caching"></a>Azure VM ディスクのキャッシュのパフォーマンスに関する考慮事項
 
-So, how can your cache settings affect the performance of your workloads running on Azure VMs?
+そのため、キャッシュの設定、Azure Vm で実行されているワークロードのパフォーマンスにする方法でしょうか。
 
-### OS disk
+### <a name="os-disk"></a>OS ディスク
 
-For a VM OS disk, the default behavior is to use the cache in read/write mode. If you have applications that store data files on the OS disk, and the applications do lots of random read/write operations to data files, consider moving those files to a data disk that has the caching turned off. Why is that? Well, if the read queue does not contain sequential reads, caching will be of little or no benefit. The overhead of maintaining the cache, as if the data was sequential, can reduce disk performance.
+VM の OS ディスクの場合は、既定の動作は、読み取り/書き込みモードでキャッシュを使用するのには。 OS ディスク上のデータ ファイルを保存するアプリケーションがあり、アプリケーションは、多くのデータ ファイルへのランダム読み取り/書き込み操作を行う場合を検討してくださいを持つ、キャッシュのデータ ディスクにそれらのファイルを移動をオフになっています。 なぜですか? 読み取りのキューに順次読み取りが含まれていない場合がほとんどまたはまったくない特典になりますキャッシュします。 データが、連続したかのように、キャッシュを維持するためのオーバーヘッドがディスク パフォーマンスが低下することができます。
 
-### Data disks
+### <a name="data-disks"></a>データ ディスク
 
-For performance-sensitive applications, you should use data disks rather than the OS disk. Using separate disks allows you to configure the appropriate cache settings for each disk.
+パフォーマンス重視のアプリケーションでは、OS ディスクではなく、データ ディスクを使用する必要があります。 別のディスクを使用するディスクごとに適切なキャッシュの設定を構成することができます。
 
-For example, on Azure VMs running SQL Server, enabling **Read-only** caching on the data disks (for regular and TempDB data) can result in significant performance improvements. Log files, on the other hand, are good candidates for data disks with no caching.
+たとえば、Azure Vm で SQL Server を実行して、有効にする**読み取り専用**大幅なパフォーマンス向上につながる (標準モードと TempDB データ) のデータ ディスクにキャッシュします。 ログ ファイルには、キャッシュなしのデータ ディスクに適した候補一方でです。
 
 > [!WARNING]
-> Changing the cache setting of an Azure disk detaches and then reattaches the target disk. If it's the operating system disk, the VM is restarted. Stop all applications/services that might be affected by this disruption before changing the disk cache setting.
->
->
+> Azure ディスクのキャッシュ設定を変更して、デタッチ、ターゲット ディスクを再アタッチされます。 オペレーティング システム ディスクである場合、VM が再起動します。 ディスク キャッシュの設定を変更する前に、この中断の影響を受ける可能性があるすべてのアプリケーションまたはサービスを停止します。

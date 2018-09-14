@@ -1,16 +1,16 @@
-Whether you're running a public-facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks, and optimizing your storage performance are important things you can do to ensure your users have the best experience. In this module, we'll talk through details of how to make your application perform at its best.
+膨大な量のトラフィック処理が必要な、一般公開されているアプリケーションを実行しているか、内部システム用の重要なデータを処理する内部ビジネス API を実行しているかにかかわらず、ユーザーはパフォーマンスの高いシステムを期待します。 ユーザーに最良のエクスペリエンスを確実に提供するためにできる重要なことは、負荷を処理できるようにシステムをスケーリングすること、ネットワークのボトルネックを特定すること、ストレージのパフォーマンスを最適化することです。 このモジュールでは、アプリケーションを最良の状態で実行する方法について詳しく説明します。
 
-As we learn about architecting our cloud solutions for performance and scalability, we'll see how one fictional Azure customer puts these principles to work. Lamna Healthcare is a national healthcare provider with several thousand physicians and clinicians across multiple facilities throughout the country. Their IT organization has recently undertaken an effort to reduce their datacenter footprint and move the majority of their IT systems to Azure. They have a mixture of in-house developed applications, open source, and off-the-shelf applications, with varying architectures and technology platforms. They want to make their journey to the cloud successful, and would like to learn what they need to focus on to help make it possible.
+パフォーマンスとスケーラビリティを実現するクラウド ソリューションの設計について説明するために、ある架空の Azure ユーザーが、どのようにしてこれらの原則を実際に適用するかを見ていきます。 Lamna Healthcare は国営医療機関であり、全国の複数の施設に数千人の医師と臨床医がいます。 その IT 組織では最近、データセンターのフットプリントを減らし、IT システムの多くを Azure に移行する取り組みを行っています。 組織内で開発されたアプリケーション、オープン ソース、市販のアプリケーションをさまざまなアーキテクチャおよびテクノロジ プラットフォームと組み合わせています。 クラウドに適切に移行するために、重点を置く必要がある内容を把握したいと考えています。
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> この章で説明する概念は、包括的なではありませんが、クラウドでソリューションを構築するときに重要な考慮事項を示します。 Microsoft では、パターン、ガイドライン、および Azure でアプリケーションの設計上の例の広範なセットを公開します。 内容に目を通すことを強くお勧め、 [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)の計画とアーキテクチャの設計を開始するとします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Learn how scaling up and scaling out allows you to dynamically adjust capacity to your workload.
-- Learn how to optimize network performance.
-- Learn how to optimize storage and database performance.
+- スケールアップとスケールアウトにより、ワークロードに合わせて容量を動的に調整する方法を学習します。
+- ネットワーク パフォーマンスを最適化する方法を学習します。
+- ストレージとデータベースのパフォーマンスを最適化する方法を学習します。
 
-Let's get started!
+それでは作業を始めましょう。

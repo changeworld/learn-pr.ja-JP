@@ -1,40 +1,38 @@
 ### YamlMime:Module
 uid: learn.choose-messaging-model
 metadata:
-  title: Choose a messaging model in Azure to loosely connect your services
-  description: When you have an application that consists of components running on different computers, servers, and mobile devices, reliable communications between those components can be difficult and unreliable. Azure provides several technologies that you can use to communicate more reliably, including Storage queues, Event Hubs, Event Grid, and Service Bus. This module shows you how to choose the best technology for your communication task.
+  title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
+  description: 1 つのアプリケーションを構成するコンポーネントがそれぞれ異なるコンピューター、サーバー、およびモバイル デバイスで実行されているときは、これらのコンポーネント間での通信の信頼性を維持することが難しくなる可能性があります。 Azure では、通信の信頼性を高めるためにさまざまなテクノロジが提供されており、たとえばストレージ キュー、Event Hubs、Event Grid、Service Bus などを使用できます。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Choose a messaging model in Azure to loosely connect your services
-summary: When you have an application that consists of components running on different computers, servers, and mobile devices, reliable communications between those components can be difficult and unreliable. Azure provides several technologies that you can use to communicate more reliably, including Storage queues, Event Hubs, Event Grid, and Service Bus. This module shows you how to choose the best technology for your communication task.
+title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
+summary: 1 つのアプリケーションを構成するコンポーネントがそれぞれ異なるコンピューター、サーバー、およびモバイル デバイスで実行されているときは、これらのコンポーネント間での通信の信頼性を維持することが難しくなる可能性があります。 Azure では、通信の信頼性を高めるためにさまざまなテクノロジが提供されており、たとえばストレージ キュー、Event Hubs、Event Grid、Service Bus などを使用できます。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を説明します。
 abstract: |
-  In this module, you will:
-  - Describe events and messages, and the challenges you can use them to solve in a distributed application
-  - Identify scenarios in which Storage queue is the best messaging technology for an application
-  - Identify scenarios in which Event Grid is the best messaging technology for an application
-  - Identify scenarios in which Event Hubs is the best messaging technology for an application
-  - Identify scenarios in which Service Bus is the best messaging technology for an application
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - イベントとメッセージ、およびそれらを使用するには、分散アプリケーションで解決するために課題について説明します
+  - ストレージ キューはメッセージング テクノロジをアプリケーションに最適なシナリオを特定します。
+  - Event Grid が、アプリケーションのメッセージング テクノロジであるシナリオを特定します。
+  - Event Hubs は、アプリケーションのメッセージング テクノロジをシナリオを識別します。
+  - Service Bus のメッセージング テクノロジ、アプリケーションのシナリオを特定します。
+prerequisites: なし
+iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-service-bus
-- azure-event-grid
-- azure-event-hubs
+  - azure
+  - azure-service-bus
+  - azure-event-grid
+  - azure-event-hubs
 units:
-- learn.choose-messaging-model.1-introduction
-- learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-- learn.choose-messaging-model.3-choose-azure-storage-queues
-- learn.choose-messaging-model.4-choose-event-grid
-- learn.choose-messaging-model.5-choose-azure-event-hubs
-- learn.choose-messaging-model.6-summary
+  - learn.choose-messaging-model.1-introduction
+  - learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
+  - learn.choose-messaging-model.3-choose-azure-storage-queues
+  - learn.choose-messaging-model.4-choose-event-grid
+  - learn.choose-messaging-model.5-choose-azure-event-hubs
+  - learn.choose-messaging-model.6-summary
 achievement: learn.choose-messaging-model.badge

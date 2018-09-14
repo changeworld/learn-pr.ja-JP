@@ -1,19 +1,19 @@
-Security is one of the most important aspects of any architecture. Ensuring that your business data and customer data are secure is critical. A public data breach can ruin a company's reputation as well as cause significant personal and financial harm. In this module, we’ll discuss key architectural security considerations as you design an environment on the cloud.
+セキュリティは、すべてのアーキテクチャの最も重要な側面の 1 つです。 ビジネス データと顧客データの安全性が保証されることは重要です。 パブリック データ侵害できる企業の評判に支障をきたすだけでなく個人用と財務の重大な損害を与えます。 このモジュールでは、ユーザーがクラウドに環境を設計するときに、セキュリティ アーキテクチャ上考慮する必要のある重要な事項について説明します。
 
-As we learn about architecting our cloud solutions with security as a primary consideration, we'll see how one fictional Azure customer puts these principles to work:
+架空の方法の 1 つの Azure を見て、セキュリティの主な考慮事項として、クラウド ソリューションを設計について説明します、顧客は、これらの原則を機能します。
 
-Lamna Healthcare is a national healthcare provider. Their IT organization has recently started to move the majority of their IT systems to Azure. They have a mixture of custom apps, open-source apps, and off-the-shelf applications, with varying architectures and technology platforms. We'll learn what they need to do to migrate to the cloud while keeping their systems and data secure.
+Lamna Healthcare は、国営の医療機関です。 同社の IT 部門は、最近 IT システムの大部分を Azure に移行し始めました。 カスタム アプリ、オープン ソース アプリ、市販のアプリケーションで、さまざまなアーキテクチャとテクノロジ プラットフォームの混在があります。 システムを維持しながら、クラウドに移行するために必要な内容について説明し、データをセキュリティで保護します。
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> この章で説明する概念は、包括的なではありませんが、クラウドでソリューションを構築するときに重要な考慮事項を示します。 Microsoft では、パターン、ガイドライン、および Azure でアプリケーションの設計上の例の広範なセットを公開します。 内容に目を通すことを強くお勧め、 [Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)の計画とアーキテクチャの設計を開始するとします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Learn how to take a defense in depth approach to securing your architecture.
-- Learn how to protect your identities.
-- Learn what technologies are available to protect your Azure infrastructure.
-- Learn how and where to use encryption to secure your data.
-- Learn how to protect your architecture at the network level.
-- Learn how to leverage application security best practices to integrate security into your application.
+- アーキテクチャを保護するために多層防御を行う方法について学習します。
+- ID を保護する方法について学習します。
+- Azure インフラストラクチャの保護に使用できるテクノロジについて学習します。
+- データを保護するために暗号化を使用する方法と場所について学習します。
+- ネットワーク レベルでアーキテクチャを保護する方法について学習します。
+- アプリケーションのセキュリティのベスト プラクティスを利用してセキュリティをアプリケーションに統合する方法について学習します。

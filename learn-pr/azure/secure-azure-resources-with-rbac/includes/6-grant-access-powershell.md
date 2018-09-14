@@ -6,17 +6,17 @@
 
 1. ポータルの上部で、**[Cloud Shell]** をクリックして、[Cloud Shell] ウィンドウを開きます。
 
-    ![[Cloud Shell] ボタン](../media-draft/6-cloud-shell-button.png)
+    ![[Cloud Shell] ボタン](../media/6-cloud-shell-button.png)
 
 1. 左上の [Cloud Shell] ウィンドウで、Cloud Shell が **[PowerShell]** に設定されていることを確認します。 **[Bash]** に設定されている場合は、**[PowerShell]** に変更します。
 
     読み込みにしばらく時間がかかる場合があります。 完了すると、次のようになります。
 
-    ![Cloud Shell PowerShell](../media-draft/6-cloud-shell-powershell.png)
+    ![Cloud Shell PowerShell](../media/6-cloud-shell-powershell.png)
 
 ## <a name="grant-access"></a>アクセス権を付与する
 
-Azure PowerShell を使用してユーザーにアクセス権を付与するには、[New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment) コマンドを使用します。 セキュリティ プリンシパル、ロールの定義、およびスコープを指定する必要があります。
+Azure PowerShell を使用してユーザーにアクセスを許可するには、New-azurermroleassignment コマンドを使用します。 セキュリティ プリンシパル、ロールの定義、およびスコープを指定する必要があります。
 
 次の手順に従って、Virtual Machine Contributor ロールをリソース グループ スコープで **LabUser-_XXXXXXX_** ユーザーに割り当てます。
 
@@ -44,7 +44,7 @@ Azure PowerShell を使用してユーザーにアクセス権を付与するに
 
 ## <a name="list-access"></a>アクセス権を一覧表示する
 
-リソース グループのアクセス権を確認するには、[Get-AzureRmRoleAssignment](/powershell/module/azurerm.resources/get-azurermroleassignment) コマンドを使用して、ロールの割り当てを一覧表示します。
+リソース グループのアクセスを確認するには、Get-azurermroleassignment-スクリーンショット コマンドを使用するロールの割り当てを一覧表示します。
 
 次の手順に従って、リソース グループ スコープで **LabUser-XXXXXXX** ユーザーに対するすべてのロールの割り当てを一覧表示します。
 
@@ -59,7 +59,7 @@ Azure PowerShell を使用してユーザーにアクセス権を付与するに
     RoleAssignmentId   : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX/providers/Microsoft.Authorization/roleAssignments/33333333-3333-3333-3333-333333333333
     Scope              : /subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/FirstUpConsultantsRG1-XXXXXXX
     DisplayName        : LabUser-XXXXXXX
-    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com 
+    SignInName         : LabUser-XXXXXXX@xxxxxxxxxxxx.onmicrosoft.com
     RoleDefinitionName : Virtual Machine Contributor
     RoleDefinitionId   : 9980e02c-c2be-4d73-94e8-173b1dc7cf3c
     ObjectId           : 11111111-1111-1111-1111-111111111111
@@ -71,11 +71,11 @@ Azure PowerShell を使用してユーザーにアクセス権を付与するに
 
     Azure portal でリソース グループの **[アクセス制御 (IAM)]** ブレードを更新すると、ロールの割り当てはこのようになります。
 
-    ![リソース グループ スコープでのユーザーのロールの割り当て](../media-draft/6-cloud-shell-access-control.png)
+    ![リソース グループ スコープでのユーザーのロールの割り当て](../media/6-cloud-shell-access-control.png)
 
 ## <a name="remove-access"></a>アクセス権を削除する
 
-ユーザー、グループ、アプリケーションのアクセス権を削除するには、[Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment) を使用して、ロールの割り当てを削除します。
+ユーザー、グループ、およびアプリケーションへのアクセスを削除するには、ロールの割り当てを削除するのに Remove-azurermroleassignment を使用します。
 
 次の手順に従ってリソース グループ スコープでの **LabUser-_XXXXXX_** ユーザーへの Virtual Machine Contributor ロールの割り当てを削除します。
 
@@ -91,8 +91,7 @@ Azure PowerShell を使用してユーザーにアクセス権を付与するに
 
 1. PowerShell ウィンドウで閉じる (**[X]**) ボタンをクリックして、ウィンドウを閉じます。
 
-    ![Cloud Shell の閉じるボタン](../media-draft/6-cloud-shell-close.png)
-
+    ![Cloud Shell の閉じるボタン](../media/6-cloud-shell-close.png)
 
 ## <a name="summary"></a>まとめ
 

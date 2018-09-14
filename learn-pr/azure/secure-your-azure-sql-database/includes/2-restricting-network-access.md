@@ -1,199 +1,249 @@
-Let's assume you're running an online business, and you're publishing your database to Azure. By default, an Azure SQL Server database will be accessible to any Azure application or service running within Azure. Even if you only allow services within Azure to connect, you should still restrict connections to the database to approved applications and services. 
+オンライン ビジネスを実行しているし、データベースを Azure に発行すると仮定します。 既定では、Azure SQL Server データベースは、Azure アプリケーションまたは Azure 内で実行されているサービスにアクセスできるになります。 のみに接続する Azure 内のサービスを許可する場合でも、データベースへの接続を制限する承認されたアプリケーションやサービスにする必要があります。
 
-In this unit, we'll look at how to restrict access to the Azure SQL database via IP address ranges. 
+このユニットでは、IP アドレスの範囲を使用して Azure SQL database へのアクセスを制限する方法を紹介します。
 
-## Overview
+## <a name="overview"></a>概要
 
-A new Azure SQL database will, by default, only allow Azure services to connect to it. This configuration doesn’t mean a connecting service can gain access to the database contents, only that it can try to authenticate against the database. Requiring a service to authenticate is safer than unrestricted public internet access. You should still restrict access to your database to only the applications and services that need it.
+新しい Azure SQL database は、既定では、のみを許可する Azure サービスに接続します。 この構成接続サービスは、データベースに対する認証を試みることがそれだけで、データベースの内容にアクセスできるとは限りません。 サービスが認証を必要とするは、パブリック インターネット アクセスが制限よりも安全です。 アプリケーションとサービスが必要なだけに、データベースへのアクセスも制限する必要があります。
 
-For example, you may have an ASP.NET Core application talking to an Azure SQL database. It's the ASP.NET Core application that should access your Azure SQL Server database. Let’s look at how we would restrict the network access to the database from the web application.
+など、ASP.NET Core アプリケーションを Azure SQL database との対話があります。 これは ASP.NET Core アプリケーション、Azure SQL Server データベースにアクセスする必要があります。 Web アプリケーションからどのようにデータベースにネットワーク アクセスを制限しましたは見てみましょう。
 
-## Restricting network access to the database
+## <a name="restricting-network-access-to-the-database"></a>データベースへのネットワーク アクセスを制限します。
 
-You restrict network access to your database by only allowing access from a specific IP address range. 
+データベースにネットワーク アクセスを制限するには、のみ、特定の IP アドレス範囲からのアクセスを許可します。
 
-![Restricting access by limiting IP access](../media-draft/2-setting-ip-address-ranges-on-firewall.png)
+![追加説明されている IP 制限の構成で、サーバーのファイアウォール ルールの作成を示す Azure ポータルのスクリーン ショット。](../media-draft/2-setting-ip-address-ranges-on-firewall.png)
 
-To create a server firewall rule, you'll enter a rule name, the starting IP address, and the ending IP address. Then click Save to record the changes. Only the IP addresses listed in the rules you create will have access to the database. 
+1. サーバーのファイアウォール規則を作成するを入力します、**ルール名**、**開始 IP**アドレス、および**終了 IP**アドレス。
+1. クリックして**保存**変更を記録します。
 
-## Locking down access at the database level 
+作成した規則の一覧の IP アドレスだけでは、データベースへのアクセスがあります。
 
-Let's assume you're running an Azure SQL Server failover group. With a failover group, the secondary servers are normally located at different regions. If the main server goes offline, the server firewall rules may no longer apply. Server firewall rules are set up per server hosting the database. Setting up a firewall rule at the database level will ensure that your rules replicate to the backup databases.
+## <a name="locking-down-access-at-the-database-level"></a>データベース レベルのアクセスをロック
 
-To create a database firewall rule, connect to the database using either SQL Server Management Studio or SQL Operations Studio and create a new query. You'll create a database rule using the following convention, where you pass in the rule name, the starting IP address, and the ending IP address.
+Azure SQL Server のフェールオーバー グループを実行するいると仮定します。 フェールオーバー グループとは、セカンダリ サーバーは異なるリージョンにある通常にあります。 メイン サーバーがオフラインになった場合、サーバーのファイアウォール規則が適用されません。 データベースをホストするサーバーごとサーバーのファイアウォール規則が設定されます。 データベース レベルのファイアウォール ルールの設定、バックアップ データベースにルールをレプリケートすることが保証されます。
+
+データベースのファイアウォール規則を作成するには、SQL Server Management Studio または SQL Operations Studio を使用してデータベースに接続し、新しいクエリを作成します。 次の規則を使用して、ルールの名前、開始 IP アドレス、および終了 IP アドレスには、渡すデータベース ルールを作成します。
 
 ```sql
 EXECUTE sp_set_database_firewall_rule N'<Rule Name>', '<From IP Address>', '<To IP Address>'
 ```
 
-For example, to restrict access to the database from the IP address range 10.21.2.33 – 10.21.2.54, you'll use a rule similar to the following SQL:
+たとえば、IP アドレス範囲 – 10.21.2.33 10.21.2.54 から、データベースへのアクセスを制限する、次の SQL のようなルールを使用します。
 
 ```sql
 EXECUTE sp_set_database_firewall_rule N'Web Apps Firewall Rule', '10.21.2.33', '10.21.2.54'
-```  
+```
 
-## Enabling Transparent Data Encryption (TDE)
+## <a name="enabling-transparent-data-encryption-tde"></a>Transparent Data Encryption (TDE) を有効にします。
 
-### What is Transparent Data Encryption?
-Transparent Data Encryption (TDE)  performs real-time encryption and decryption of the database, backup files, and log files.
+### <a name="what-is-transparent-data-encryption"></a>Transparent Data Encryption とは何ですか。
 
-When new Azure SQL databases are created, they'll have TDE enabled by default.
+Transparent Data Encryption (TDE) は、データベース、バックアップのファイルおよびログ ファイルのリアルタイムの暗号化と解読を実行します。
 
-It's important to check that data encryption hasn’t been turned off, and older Azure SQL Server databases may not have TDE enabled. 
+新しい Azure SQL データベースが作成されると、TDE が既定で有効になっているが必要です。
 
-To verify and enable TDE:
-1. Select the database in the portal.
-1. Select the 'Transparent data encryption' option.
-1. In the data encryption option, select 'On'.
-1. Click 'Save'.
+データの暗号化をオフにされていないし、古い Azure SQL Server データベースを TDE を有効になっていない可能性があることを確認する重要です。
 
-## Create a secure connection to the server
+確認し、TDE を有効にします。
 
-Your applications should connect to your databases in a secure manner. You use a connection string with the right level of security to create a secure connection. These connections need to be encrypted to reduce the likelihood of a man-in-the-middle attack.
+1. ポータルで、データベースを選択します。
+1. 'Transparent data encryption' オプションを選択します。
+1. データの暗号化オプションで、'On' を選択します。
+1. [保存] をクリックします。
 
-Let's look at how to get the connection string for a database.
+## <a name="create-a-secure-connection-to-the-server"></a>サーバーへのセキュリティで保護された接続を作成します。
 
-Using the portal, navigate to your SQL Server. Select the database you wish to gain access to.
+アプリケーションは、安全な方法で、データベースに接続する必要があります。 セキュリティで保護された接続を作成するのにには、適切なレベルのセキュリティと接続文字列を使用します。 これらの接続は、中間者攻撃の可能性を低減する暗号化する必要があります。
 
-Select the *Show Database Connection Strings* option. 
+データベースの接続文字列を取得する方法を見てみましょう。
 
-Now, from the available options, select the tab that matches your programming language and copy the displayed connection string. You'll have to complete the password, as it is kept secret and not displayed here. 
+ポータルを使用して、SQL Server に移動します。 アクセスするデータベースを選択します。
 
-![Restricting access by limiting IP access](../media-draft/2-viewing-connection-strings.png) 
+選択、*データベース接続文字列の表示*オプション。
 
-It's important to protect the connection string from outside eyes. Connection strings should be stored in Azure Key Vault, not in your project, version control, or continuous integration systems. 
+ここで、使用可能なオプションをプログラミング言語と一致するタブを選択し、表示されている接続文字列をコピーします。 ここでシークレットと非表示に保持されますとしては、パスワードを完了する必要があります。
 
-### What is the Azure Key Vault?
+![選択した ADO.NET と強調表示されている指定された値のフィールドがデータベース接続文字列 セクションを示す Azure ポータルのスクリーン ショット。](../media-draft/2-viewing-connection-strings.png)
 
-The Azure Key Vault is a tool used to securely store credentials and other keys and secrets. These secrets can be protected either by software or hardware.
+外部の目から接続文字列を保護するために重要です。 接続文字列は、プロジェクト、バージョン コントロール、または継続的インテグレーション システムではなく、Azure Key Vault に格納する必要があります。
 
-## Open the correct ports for server access
+### <a name="what-is-the-azure-key-vault"></a>Azure Key Vault とは何ですか。
 
-Your Azure database allows outbound communication over port 1433. If you don’t have access to this port, talk to your network administrators to allow network traffic.
+Azure Key Vault は、資格情報およびその他のキーとシークレットを安全に保管するために使用するツールです。 ソフトウェアまたはハードウェアによっては、これらのシークレットを保護できます。
 
-## Restrict server access with Azure virtual networks
+## <a name="open-the-correct-ports-for-server-access"></a>サーバーへのアクセスの正しいポートを開く
 
-### What is a virtual network?
+Azure データベースは、ポート 1433 経由で送信方向の通信を許可します。 このポートへのアクセスを持っていない場合は、ネットワーク トラフィックを許可する、ネットワーク管理者に問い合わせてください。
 
-A virtual network is a logically isolated network created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources. 
+## <a name="restrict-server-access-with-azure-virtual-networks"></a>Azure の仮想ネットワークとサーバーへのアクセスを制限します。
 
-Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network based upon a range of IP addresses. 
+### <a name="what-is-a-virtual-network"></a>仮想ネットワークとは何ですか?
 
-To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet will have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+仮想ネットワークでは、Azure のネットワーク内に作成された論理的に分離されたネットワークです。 仮想ネットワークを使用して、他のリソースに接続できる Azure リソースを制御することができます。
 
-### What is a network security group?
-A network security group defines rules, which allow or deny network traffic to and from source and destination addresses. Each subnet will have a network security group assigned to it. 
+データベースに接続する web アプリケーションを実行していることを想像してください。 ネットワークのさまざまな部分を分離するのにサブネットを使用します。 サブネットは、範囲の IP アドレスに基づいてネットワークの一部です。
 
-The diagram below shows an example of the groupings that are created. The web subnet allows access to the internet, but only for HTTP connections. The database subnet only allows access from the web subnet. Setting up the virtual network adds restrictions about how services can be accessed, and acts as a firewall around hosted services. 
+これらのサブネットを構成するには仮想ネットワークを作成し、ネットワークをサブネットに分割します。 Web アプリケーションは、1 つのサブネットと別のサブネット上のデータベースで動作します。 各サブネットは、独自の規則とその他のネットワークの間の通信を行うためにがあります。 これらのルールでは、データベースから web アプリケーションへのアクセスを制限する機能を提供します。
 
-![Virtual Network for a web application with a connected database](../media-draft/2-virtualnetwork-overview.png) 
- 
-The next example assumes you're using virtual machines that will act as your web hosts and connect to your database. Let’s look at how to create a virtual network to set up this planned infrastructure. 
+### <a name="what-is-a-network-security-group"></a>ネットワーク セキュリティ グループとは何ですか。
 
-1. From the Azure portal, select the Create a resource link. 
+ネットワーク セキュリティ グループは、許可または拒否して、ソースと宛先アドレスのネットワーク トラフィック規則を定義します。 各サブネットは、ネットワーク セキュリティ グループに割り当てられている必要があります。
 
-2. From the Marketplace, select Virtual network. For the virtual network, if it requests to select a deployment model, select Resource Manager, and then click the Create button.
+次の図は、作成されるグループの例を示します。 Web のサブネットでは、HTTP 接続のみが、インターネットにアクセスを許可します。 データベースのサブネットは、web のサブネットからのアクセスのみを許可します。 仮想ネットワークを設定すると、サービスのアクセスできるし、ホステッド サービスに対するファイアウォールとして機能に関する制限事項が追加されます。
 
-3. Enter the name for the virtual network and an address space that can be used. An address space is a way of outlining a range of IP addresses. In our example, 172.16.0.0/16 refers to a range of addresses from 172.16.0.0 to 172.16.255.255. 
-   An address space that is not already in use will be recommended. Where a IP address is detected from this range, it will be defined as being on this subnet.
+![接続されているデータベースと web アプリケーション用の仮想ネットワーク](../media-draft/2-virtualnetwork-overview.png)
 
-4. Select your subscription and either create or select a resource group. 
-   
-5. Enter the name of the subnet that you will create and its address range.
-   
-6. Click the Create button to create the virtual network.
+次の例では、仮想マシンは、web ホストとして動作させ、データベースへの接続を使用している前提としています。 この計画的なインフラストラクチャを設定する仮想ネットワークを作成する方法を見てみましょう。
 
-![Create a virtual network.](../media-draft/2-create-virtual-network-settings.png)  
+1. Azure portal から、選択、**リソースの作成**リンク。
+1. Azure マーケットプ レースから選択**ネットワーク** > **仮想ネットワークの**します。 デプロイ モデルを選択することを要求する場合は、選択**Resource Manager**
+1. **[作成]** ボタンをクリックします。
+1. 入力、**名前**仮想ネットワーク。
+1. 提供、**アドレス空間**を使用できます。 アドレス空間は、範囲の IP アドレスをアウトライン表示の方法です。 この例では`172.16.0.0/16`で区切られます 172.16.255.255 に 172.16.0.0 からアドレスの範囲を指します。
 
-You'll receive a notification once the virtual network is created. Click on the *Go to resource* button. 
+   まだ使用されていないアドレス空間が推奨されます。 この範囲から IP アドレスが検出されると、場所は、このサブネット上にあるものとして定義されます。
 
-You'll now be taken to the virtual network settings. Select the Subnets configuration section. At this point, you'll have the subnet you created when you set up the initial network, called web_subnet. 
+1. Azure を選択します。**サブスクリプション**します。
+1. 選択するか、新しい作成**リソース グループ**します。
+1. 入力、**名前**のサブネットを作成します。
+1. 提供、**アドレス範囲**します。
+1. をクリックして、**作成**仮想ネットワークを作成するボタンをクリックします。
 
-You need to create another subnet that will represent the IP addresses for the database servers. Click on the + Subnet button to start the process of adding a new subnet for the database. 
+![説明されている構成と仮想ネットワーク ブレードの作成を示す Azure ポータルのスクリーン ショット。](../media-draft/2-create-virtual-network-settings.png)
 
-![Create the database subnet](../media-draft/2-create-database-subnet.png) 
- 
-Enter a name for the subnet. In the above example you called it database_subnet. You'll see that the address range is again populated with a range that isn't in conflict with other subnets in the system.
+仮想ネットワークが作成されると、通知を受け取ります。 をクリックして、**リソースに移動**通知では、ボタンをクリックします。
 
-Network security group is a core setting that you'll need to apply to the subnet. For now, leave this setting blank. Later you'll create the network security group and come back and set this value.
+仮想ネットワーク ブレードに移動しますようになりました。 選択、**設定** > **サブネット**構成セクション。 この時点では、web_subnet と呼ばれる、最初のネットワークをセットアップするときに作成したサブネットが必要があります。
 
-Click the **OK** button to save the subnet. 
+データベース サーバーの IP アドレスを表す別のサブネットを作成する必要があります。
 
-## Creating a network security group
+1. をクリックして、 __+ サブネット__データベースの新しいサブネットの追加のプロセスを開始するボタンをクリックします。
 
-Select + Create a resource and select Network security group. The job of the network security group is to act as a firewall, and it controls the flow of traffic in and out of a subnet. You'll create two network security groups. One is the web application subnet, and the other is for the database subnet. 
+1. 入力、**名前**サブネット。 上記の例では、私たちと呼ばれる、database_subnet。
 
-If asked to select a deployment model after clicking + Create a resource, select Azure Resource Manager.
- 
-Select the Create button and name of the network security group, the subscription, and resource group and location. 
-   
-![Define the network security group for the web subnet.](../media-draft/2-define-nsg-for-web-subnet.png) 
+1. レビュー、**アドレス範囲 (CIDR ブロック)** します。 アドレス範囲をシステムに他のサブネットと競合してない範囲で再作成することを確認します。
 
-After the network security group has been created, it's then time to set up the inbound and outbound traffic rules for the security group. 
+1. **ネットワーク セキュリティ グループ**はサブネットに適用する必要がある主要な設定です。 ここでは、この設定を空白のままにします。 後でするネットワーク セキュリティ グループを作成し、戻ってこの値を設定します。
 
-Select the network security group, and on the Overview display you'll see the list of inbound and outbound rules that have been created. There are default rules already created that are used for internal Azure access. While these rules can't be deleted, you can create additional rules with a higher priority that will take precedence over these rules. 
+1. をクリックして、 **OK**サブネットを保存するボタンをクリックします。
 
-![Restricting access by limiting IP access](../media-draft/2-view-web-apps-security-group-rules.png)  
+![説明の構成とサブネットの追加 ブレードを表示する Azure ポータルのスクリーン ショット。](../media-draft/2-create-database-subnet.png)
 
-To select new rules, select Inbound security rules for the network security group and then select the + Add button. From here, you can configure the details for the network security rules. 
+## <a name="creating-a-network-security-group"></a>ネットワーク セキュリティ グループを作成します。
 
-By default, you'll see the advanced view to configure the rule, but by clicking the Basic button, you'll be able to select the protocol you want to allow. 
+ネットワーク セキュリティ グループの仕事は、ファイアウォールとして動作して、サブネットに出入りするトラフィックのフローを制御します。 2 つのネットワーク セキュリティ グループを作成します。 1 は、web アプリケーションのサブネットで、もう 1 つは、データベース サブネットのです。
 
-You want to allow access to HTTP services from the internet. To filter for the HTTP protocol, you'll select the Source as Service Tag, and then set the Source service tag to Internet. Set the port ranges values to 80,443 to represent the ports that are used to access this service. Port 80 is used for HTTP, and port 443 is used for HTTPS access. Select TCP for the Protocol, and set Action to Allow. 
+1. 選択**リソースの作成**選択**ネットワーク** > **ネットワーク セキュリティ グループ**します。 デプロイ モデルの選択を要求された場合は、リソース マネージャーを選択します。
+1. 提供、**名前**ネットワーク セキュリティ グループ。
+1. Azure サブスクリプション、リソース グループ、および目的の場所を選択します。
+1. **[作成]** ボタンをクリックします。
 
-Give the rule a Priority value of 100. The lower the number, the more important the rule is.
+![Web のサブネット用に選択した web セキュリティ グループを示す Azure ポータルのスクリーン ショット。](../media-draft/2-define-nsg-for-web-subnet.png)
 
-![Add an inbound security rule for the web subnet.](../media-draft/2-add-inbound-security-rule-for-web-nsg.png)  
+ネットワーク セキュリティ グループが作成された後は、セキュリティ グループの受信と送信のトラフィック規則を設定する時間。
 
-Now it’s time to set up the network security group settings for the database. For the database, you are going to set up a single incoming rule that allows for SQL requests from the IP range of the web applications subnet, and then deny other incoming and outgoing traffic. This will allow you to control access to the database and make sure that only database requests get through to the system from the website, and that no other access to the database is allowed. 
+1. 新しいネットワーク セキュリティ グループを選択します。
+1. **概要**表示、作成された受信と送信の規則の一覧を表示します。 既定値がある内部 Azure へのアクセスに使用される規則が既に作成されています。
 
-Click on the + Create a resource to link a resource and again create a network security group that uses Resource Manager as the deployment model. This time you'll create one for the database. Click the Create button to create the new network security group.
+    > [!NOTE]
+    > これらの規則を削除することはできません、これらの規則より優先される優先度が高い追加の規則を作成できます。
 
-![Create the database network security group.](../media-draft/2-create-database-network-security-group.png)  
+![ネットワーク セキュリティ グループの事前構成済みの受信と送信セキュリティ規則を示す Azure ポータルのスクリーン ショット。](../media-draft/2-view-web-apps-security-group-rules.png)
 
-You'll need to wait until the network security group is created. Once done, select the Go to resource option to start configuring the rules for the network security group you created.
+1. 新しいルールを作成するには、選択、**受信セキュリティ規則**ネットワーク セキュリティ グループのセクション。
+1. **[追加]** をクリックします。 ここでは、ネットワーク セキュリティ規則の詳細を構成できます。
 
-For the network security group, the main focus is to allow database requests from the web application subnet only. You need to set up incoming TCP requests on port 1433 from the IP range of the web subnet. 
+    > [!NOTE]
+    > 既定では、ルールを構成する詳細ビューが表示されますをクリックして、**基本**ボタン、ことができますを許可するプロトコルを選択します。
 
-On the Inbound security rules, select the + Add button to create a new rule. In this case, you want to only allow access from the web application subnet. You'll create an inbound rule that sets the Source to IP Addresses. 
+1. インターネットから HTTP サービスへのアクセスを許可するには。 選択する HTTP プロトコルに対してフィルター処理、**サービス タグ**として、**ソース**値。
+1. 次に、確認、**ソース サービス タグ**に設定されている**インターネット**。
+1. ポートの範囲の値セット`80,443`をこのサービスへのアクセスに使用されるポートを表します。 (HTTP にポート 80 を使用および HTTPS アクセス用ポート 443 を使用)。
+1. **[プロトコル]** で **[TCP]** を選択します。
+1. 設定**アクション**に**許可**します。
+1. 規則に付けます、**優先度**@property`100`します。
 
-When the Source IP addresses/CIDR ranges are displayed, enter the CIDR range from the web subnet that was created earlier. For the destination port ranges, enter 1433 to indicate Azure SQL Server access only. You want to allow access and give it a priority and appropriate rule name.  Click Add to add the rule. 
+    > [!NOTE]
+    > 低いルールは、数値より重要です。
 
-![Restricting access by limiting IP access](../media-draft/2-create-inbound-rule-for-db-security-group.png)  
+![指定の構成とソース サービス タグ (インターネット)、および宛先ポートで追加の受信セキュリティ規則 ブレードを表示する Azure ポータルのスクリーン ショットの範囲 (80,443) フィールドが強調表示されます。](../media-draft/2-add-inbound-security-rule-for-web-nsg.png)
 
-The basic security rules are now in place to limit access to the database system. What is left is to assign the network security groups to the subnets. 
+これで、データベースのネットワーク セキュリティ グループの設定を設定する時間になります。 データベースは、web アプリケーションのサブネットの IP 範囲からの SQL 要求を許可する 1 つの受信規則を設定して、し、その他の受信および送信トラフィックを拒否します。 これは、使用すると、データベースへのアクセスを制御し、データベース要求のみが、web サイトからにシステムに取得して、データベースへの他のアクセスが許可されないことを確認できます。
 
-Open the virtual network you created earlier. Select Subnets, and then select the web subnet. Select the Network security group option, and then select the network security group that was created specifically for the web. 
+1. をクリックして、**リソースの作成**別に作成するには、もう一度**ネットワーク** > **ネットワーク セキュリティ グループ**デプロイメント モデルとして Resource Manager を使用します。
 
-![Setting the network security group for the subnet](../media-draft/2-define-nsg-for-web-subnet.png)  
+    この時点のデータベースに 1 つを作成します。
 
-Select the Save option and the network security group will be applied against the subnet. 
+1. 提供、**名前**ネットワーク セキュリティ グループ。
+1. Azure サブスクリプション、リソース グループ、および目的の場所を選択します。
+1. をクリックして、**作成**新しいネットワーク セキュリティ グループを作成するボタンをクリックします。
 
-You want to repeat the same process for the database subnet. Navigate back to the subnets, select the database subnet, and then set its network security group to the network security group for the database. 
+    ![サンプル構成を作成するネットワーク セキュリティ グループのブレードを表示する Azure ポータルのスクリーン ショット。](../media-draft/2-create-database-network-security-group.png)
 
-![Setting the network security group for the database](../media-draft/2-define-nsg-for-db-subnet.png)  
+    ネットワーク セキュリティ グループが作成されるまで待機する必要があります。
 
-Select Save to save the changes. 
+1. 完了すると、選択、**リソースに移動**通知で作成したネットワーク セキュリティ グループの規則の構成を開始するオプション。
 
-Now that you've configured access, it is a matter of applying the virtual networks and subnets against the database server and web servers. 
+ネットワーク セキュリティ グループの主な焦点では web アプリケーションのサブネットのみからのデータベース要求を許可するのには。 Web のサブネットの IP 範囲からポート 1433 で着信する TCP 要求を設定する必要があります。
 
-Let’s begin with the database server. Select the database, and from the database select the Firewalls and virtual networks configuration setting. 
+1. **受信セキュリティ規則**設定の選択、**追加**新しいルールを作成するボタンをクリックします。 この場合は、web アプリケーションのサブネットからのアクセスのみが許可します。
+1. 設定する受信規則を作成します、**ソース**に**IP アドレス**します。
+1. ときに、**ソース IP アドレス/CIDR 範囲**が表示されたら、以前に作成された web サブネットから CIDR 範囲を入力してください。
+1. **宛先ポート範囲**、入力`1433`を Azure SQL Server のアクセスのみを示します。
+1. 設定、**プロトコル**に**TCP**をさらに着信接続を制限します。
+1. **許可**アクセス**アクション**します。
+1. 付けます、**優先度**の`100`します。
+1. **名前**適切にセキュリティの規則。
+1. クリックして**追加**規則を追加します。
 
-On the left, you'll see details about the configuration. You have a number of settings at play here. First, turn Allow access to Azure services to OFF. This is to ensure that only the services that you want to use are enabled. 
-You'll also notice that it shows a Client IP address. The Client IP address is the IP address of your computer connecting to the Azure SQL Server database. You could have added a Client IP to the rule name list. This is useful if you want to connect SQL Server Management Studio or SQL Operations Studio to your server. It will add a rule that indicates which IP addresses can connect. You won’t be doing that in this case, but you'll be setting up the virtual network. 
+![説明されている構成で受信セキュリティ規則の追加 ブレードを表示する Azure ポータルのスクリーン ショット。](../media-draft/2-create-inbound-rule-for-db-security-group.png)
 
-Click on + Add existing virtual network, and you will be presented with an options screen to enter the details for the new rule. Enter the name of the rule you would like to use, and select the subscription that you were using. Most importantly, select the virtual network that you are using, then select the subnet with the appropriate network security group rules for database access. 
+基本的なセキュリティ規則は、データベース システムへのアクセスを制限するようになりました。 ネットワーク セキュリティ グループをサブネットに割り当てるには残骸は残っています。
 
-![Select the Add existing virtual network option.](../media-draft/2-select-add-existing-virtual-network.png) 
+1. 先ほど作成した仮想ネットワークを開きます。 選択、**設定** > **サブネット**セクション。
+1. 先ほど作成した web のサブネットを選択します。
+1. 選択、**ネットワーク セキュリティ グループ**具体的には、web のオプションとネットワーク セキュリティ グループを作成します。
+1. クリックして**保存**され、サブネットに対してネットワーク セキュリティ グループが適用されます。
 
-After you have configured all the settings, select the Enable button. It will then apply the database to the subnet within your virtual network. 
+    ![Web のサブネットに適用されている、ネットワーク セキュリティ グループを示す Azure ポータルのスクリーン ショット](../media-draft/2-define-nsg-for-web-subnet.png)
 
-Once the database subnet is configured, you will perform similar steps with the web server. Regardless of how you've configured your application, it is a matter of ensuring that the web applications use the subnet for web access. 
+データベースのサブネットに対して同じ処理を繰り返しますしたいです。
 
-If you have a single virtual machine or a load balancer with virtual machines in a scale set, make sure that they are using the web subnet so they have access to the database. When you create resources such as virtual machines, make sure that their virtual network and subnets are configured to control the information that goes in and out of those services.
+1. サブネットに移動します。
+1. データベースのサブネットを選択します。
+1. 設定の**ネットワーク セキュリティ グループ**データベースのネットワーク セキュリティ グループにします。
+1. **[保存]** をクリックして変更を保存します。
 
-![Select the Add existing virtual network option.](../media-draft/2-configure-virtual-machine-with-subnet.png) 
+    ![データベースのサブネット用に選択した適用済みのネットワーク セキュリティ グループを示す Azure ポータルのスクリーン ショット。](../media-draft/2-define-nsg-for-db-subnet.png)
 
-Once the subnets are applied to both the database and the virtual machines running the web apps, then the appropriate configuration will be in place. Then there is tighter access between your apps and database.
+アクセスを構成したら、これで、仮想ネットワークとサブネットに対して、データベース サーバーと web サーバーに適用する問題です。
 
-Network security is the first core point of protection. Making sure that only the apps and services that should connect to the database do connect to the database will make your system more secure. 
+データベース サーバーから始めましょう。
+
+1. データベースを選択します。
+1. データベースから選択、**ファイアウォールと仮想ネットワーク**構成設定。
+
+左側で、構成に関する詳細が表示されます。 さまざまな設定がある次のとおりです。
+
+1. まず、 **Azure サービスへのアクセスを許可する**に**OFF**します。 これは、使用するサービスのみが有効になっていることを確認します。
+
+    クライアント IP アドレスが表示されることもわかります。 クライアント IP アドレスは、Azure SQL Server データベースに接続するコンピューターの IP アドレスです。 ルール名の一覧にクライアント IP を追加した可能性があります。 これは、SQL Server Management Studio または SQL Operations Studio のサーバーに接続する場合に便利です。 これにより、接続する IP アドレスを示すルールが追加されます。 行いませんが、ここでは、するは、仮想ネットワークを設定します。
+
+1. をクリックして**既存の仮想ネットワークを追加**、し、新しいルールの詳細を入力するには、オプション画面が表示されます。
+
+1. 入力、**名前**ルールを使用したいのです。
+1. 使用していたサブスクリプションを選択します。
+1. 最も重要なは、使用している仮想ネットワークを選択します。
+1. データベースへのアクセスの適切なネットワーク セキュリティ グループ規則を使用して、サブネットを選択します。
+1. すべての設定を構成した後、選択、**を有効にする**ボタンをクリックします。 データベースを仮想ネットワーク内のサブネットに適用されます。
+
+データベースのサブネットを構成した後は、web サーバーと同様の手順を実行します。 どのアプリケーションを構成したらに関係なく、web アプリケーションが web アクセスのサブネットを使用することを確認する問題です。
+
+スケール セットで単一の仮想マシンまたは仮想マシンでのロード バランサーをある場合は、使用される web サブネット、データベースにアクセスできるようにを確認します。 仮想マシンなどのリソースを作成するときに、それらのサービスとアウトの書き込まれる情報を制御する、仮想ネットワークとサブネットが構成されていることを確認します。
+
+![仮想ネットワークとサブネットの値が設定されている新しい仮想マシンの作成、設定ブレードの手順を示す Azure ポータルのスクリーン ショット。](../media-draft/2-configure-virtual-machine-with-subnet.png)
+
+サブネットが、データベースと web アプリを実行する仮想マシンの両方に適用されるを適切な構成が場所になります。 アプリとデータベース間の厳密なアクセスがあります。
+
+ネットワーク セキュリティは、保護の最初の中核となるポイントです。 アプリとデータベースに接続するサービスのみをデータベースに接続しないでことを確認すると、システムがセキュリティを強化。

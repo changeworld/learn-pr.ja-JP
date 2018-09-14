@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
-title: Inputs and Outputs
+title: 入力と出力
 metadata:
-  title: Inputs and Outputs
-  description: Inputs and Outputs
+  title: 入力と出力
+  description: 入力と出力
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
@@ -13,47 +13,47 @@ durationInMinutes: 10
 content: |
   [!include[](includes/3-inputs-and-outputs.md)]
 quiz:
-  title: 'Knowledge Check - Azure Security center'
+  title: サポート技術情報の確認 - Azure Security center
   questions:
-  - content: 'Which of the following data sources need to be sanitized?'
-    choices:
-    - content: 'Data from a 3rd party API.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data from the URL parameter.'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Data collected from the user via an input field.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'All of the above'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-  - content: 'Which of the following data needs to be output encoded?'
-    choices:
-    - content: 'Data saved to the database'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data to be output to the screen'
-      isCorrect: true
-      correctExplanation: 'TBD.'
-    - content: 'Data sent to a 3rd party API'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data in the URL parameters'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-  - content: 'Parameterized queries (stored procedures in SQL) are always a more secure choice for talking to the database because:'
-    choices:
-    - content: 'They are more organized than inline database commands, and therefore less confusing for users.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'There is a clear outline of the script in the stored procedure, ensuring better visibility.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Hackers don’t understand how to program in SQL.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.'
-      isCorrect: true
-      correctExplanation: 'TBD.'
+    - content: 次のデータ ソースのうちを検証する必要でしょうか。
+      choices:
+        - content: データをサード パーティの API。
+          isCorrect: false
+          incorrectExplanation: これは、検証する必要がある多くのソースの 1 つにすぎません。
+        - content: URL パラメーターからのデータ。
+          isCorrect: false
+          incorrectExplanation: これは、検証する必要がある多くのソースの 1 つです。
+        - content: データ入力フィールドを使用して、ユーザーから収集されます。
+          isCorrect: false
+          incorrectExplanation: これは、検証する必要がある多くのソースの 1 つにすぎません。
+        - content: 上記のすべて。
+          isCorrect: true
+          correctExplanation: そうです。 これらのデータ ソースのすべてを検証する必要があります。  変更されたすべてのデータを信頼しません。
+    - content: 出力をエンコードする必要がある、次のデータのでしょうか。
+      choices:
+        - content: データベースに保存されるデータ
+          isCorrect: false
+          incorrectExplanation: データベースに保存されるデータは、データが適切に検証する必要がありますが出力をエンコードする必要はありません。
+        - content: 画面に出力されるデータ
+          isCorrect: true
+          correctExplanation: 正しいデータ画面に出力を常にする必要があるコードとして解釈されることを確実にエンコードされます。
+        - content: サード パーティの API に送信されるデータ
+          isCorrect: false
+          incorrectExplanation: サード パーティの API に送信されるデータは、データが適切に検証する必要があります、出力をエンコードする必要はありません。
+        - content: URL パラメーターのデータ
+          isCorrect: false
+          incorrectExplanation: URL パラメーターからのデータは、アプリケーションで使用される前に検証する必要があるがそれを出力にエンコードする必要はありません。
+    - content: パラメーター化されたクエリ (SQL でストアド プロシージャ) は、ために、データベースと通信するためのより安全な選択肢では常に。
+      choices:
+        - content: インライン データベース コマンドより系統的なしたがってユーザーの混乱が少なくします。
+          isCorrect: false
+          incorrectExplanation: コードの組織は、パラメーター化クエリでインライン SQL より安全である理由ではありません。
+        - content: 良い可視性を確保、ストアド プロシージャ内のスクリプトのアウトラインのクリアがあります。
+          isCorrect: false
+          incorrectExplanation: スクリプトのアウトラインの消去は、パラメーター化クエリでインライン SQL より安全である理由ではありません。
+        - content: ハッカーは、SQL でプログラミングする方法を理解していません。
+          isCorrect: false
+          incorrectExplanation: 多くのハッカー SQL の知識は、これは適切な応答ではありません。
+        - content: パラメーター化クエリでは、つまり、変数の代わりに送信するコードの機会を回避して、クエリを実行する前に変数を置き換えてください。
+          isCorrect: true
+          correctExplanation: 'パラメーター化クエリで使用されるパラメーターのフィールドは、コードではなく、インジェクションに対する脆弱性から保護するデータとして扱われます。 パラメーター化クエリを実装する方法の詳細についてを参照してください、 [OWASP クエリ パラメーター化のチート シート]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet)します。'

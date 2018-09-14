@@ -4,40 +4,34 @@ metadata:
   title: Azure Container Instances で Docker コンテナーを実行する
   description: Azure Container Instances (ACI) で Docker コンテナーを使用してコンテナー化されたアプリを実行する方法について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: af358ec98831ef92257ef0c30648cee5fc25f404
-  ms.sourcegitcommit: 09425147d998035edf9d2d36006a54d85e3cf75d
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43847437"
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 title: Azure Container Instances で Docker コンテナーを実行する
 summary: Azure Container Instances (ACI) で Docker コンテナーを使用してコンテナー化されたアプリを実行する方法について説明します。
-abstract: >
+abstract: |
   このモジュールでは、次のことを行います。
-
-  - Azure Container Instances でコンテナーを実行します。
-
-  - コンテナーの再起動の動作を制御します。
-
-  - コンテナーで環境変数を使用します。
-
-  - Azure Container Instances にデータ ボリュームをアタッチします。
-
-  - Azure Container Instances のトラブルシューティングについて学習します。
+  - Azure Container Instances でコンテナーを実行します
+  - コンテナーの再起動動作を制御します
+  - コンテナーで環境変数を使用します
+  - Azure Container Instances にデータ ボリュームをアタッチします
+  - Azure Container Instances のトラブルシューティングについて学習します
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/run-docker-with-azure-container-instances.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- administrator
+  - administrator
 products:
-- azure-container-instances
+  - azure
+  - azure-container-instances
 units:
-- learn.run-docker-containers-aci.1-introduction
-- learn.run-docker-containers-aci.2-run-aci
-- learn.run-docker-containers-aci.3-restart-policy
-- learn.run-docker-containers-aci.4-use-environment-variables
-- learn.run-docker-containers-aci.5-use-data-volumes
-- learn.run-docker-containers-aci.6-troubleshoot-aci
-- learn.run-docker-containers-aci.7-knowledge-check
+  - learn.run-docker-containers-aci.1-introduction
+  - learn.run-docker-containers-aci.2-run-aci
+  - learn.run-docker-containers-aci.3-restart-policy
+  - learn.run-docker-containers-aci.4-use-environment-variables
+  - learn.run-docker-containers-aci.5-use-data-volumes
+  - learn.run-docker-containers-aci.6-troubleshoot-aci
+  - learn.run-docker-containers-aci.7-knowledge-check
 achievement: learn.run-docker-containers-aci.badge

@@ -9,31 +9,25 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 1d7c1fe08e193a2c03779ffa5ca7bada0e30384d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244612"
 durationInMinutes: 20
-content: >
+content: |
   [!include[](includes/2-estimate-costs-with-the-azure-pricing-calculator.md)]
 quiz:
   title: Azure 料金計算ツールでコストを見積もる
   questions:
-  - content: Azure 料金計算ツールのどのタブで見積もり式を作りますか?
-    choices:
-    - content: 見積もり
-      isCorrect: false
-      incorrectExplanation: このタブには、以前に保存した見積もりがすべて表示されます。
-    - content: '[成果物]'
-      isCorrect: true
-      correctExplanation: このタブには、すべての Azure サービスが一覧表示されます。このタブで見積もり式を作成するサービスを追加したり削除したりします。
-  - content: Excel スプレッドシートや URL を介して見積もりを共有できます。
-    choices:
-    - content: "True"
-      isCorrect: true
-      correctExplanation: 見積もりの下部にある <b>[エクスポート]</b> をクリックすると、共有可能な Excel スプレッドシートがエクスポートされます。あるいは、<b>[共有]</b> をクリックすると、チームと共有可能な URL を取得できます。
-    - content: "False"
-      isCorrect: false
-      incorrectExplanation: 見積もりの下部にある <b>[エクスポート]</b> をクリックすると、共有可能な Excel スプレッドシートがエクスポートされます。あるいは、<b>[共有]</b> をクリックすると、チームと共有可能な URL を取得できます。
+    - content: Azure 料金計算ツールのどのタブで見積もり式を作りますか?
+      choices:
+        - content: 見積もり
+          isCorrect: false
+          incorrectExplanation: このタブには、以前に保存した見積もりがすべて表示されます。
+        - content: '[成果物]'
+          isCorrect: true
+          correctExplanation: このタブには、すべての Azure サービスが一覧表示されます。このタブで見積もり式を作成するサービスを追加したり削除したりします。
+    - content: Excel スプレッドシートや URL を介して見積もりを共有できます。
+      choices:
+        - content: はい
+          isCorrect: true
+          correctExplanation: '見積もりの下部にある <b>[エクスポート]</b> をクリックすると、共有可能な Excel スプレッドシートがエクスポートされます。あるいは、<b>[共有]</b> をクリックすると、チームと共有可能な URL を取得できます。'
+        - content: いいえ
+          isCorrect: false
+          incorrectExplanation: '見積もりの下部にある <b>[エクスポート]</b> をクリックすると、共有可能な Excel スプレッドシートがエクスポートされます。あるいは、<b>[共有]</b> をクリックすると、チームと共有可能な URL を取得できます。'

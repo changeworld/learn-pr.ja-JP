@@ -1,9 +1,9 @@
-In this module, we discussed the basic concepts for protecting your infrastructure and data when you work in the cloud.
+このモジュールでは、クラウドで作業する場合は、インフラストラクチャとデータを保護するための基本的な概念について説明します。
 
-**Defense in depth** is the overriding theme - thinking about security as a multi-layer, multi-vector concern. Threats come from places we don't expect, and they can come with strength that will surprise us.
+**多層防御**複数層、複数ベクターの懸案事項としてセキュリティについて考える - オーバーライドする側のテーマします。 しない予定の場所からの脅威、驚きは強度に来たことができます。
 
-Azure has out-of-the-box help for a great deal of the security issues we face. One of the first steps we should take is assessing how much help from Azure we can use based on whether we're leveraging IaaS, PaaS, or SaaS.
+Azure では、私たちが直面するセキュリティの問題の多くのボックスのヘルプには。 使用して Azure からどの程度のヘルプがかどうか IaaS、PaaS、または SaaS を利用してに基づいてを実行する必要があります最初の手順のいずれかを評価します。
 
-Azure Security Center centralizes much of the help Azure has to offer. It provides a single dashboard, with a view into many of your services, and helps make sure you are following best practices. Continuously updated machine learning algorithms help identify whether the latest threats are aimed at your resources. And it helps your organization mitigate threats.
+Azure Security Center は、Azure で提供するメリットの大部分を一元化します。 サービスの多くにビューを使用して単一のダッシュ ボードを提供し、ベスト プラクティスをフォローしていることを確認するのに役立ちます。 継続的に更新された機械学習アルゴリズムでは、最新の脅威は、リソースを目的としたかどうかを識別するのに役立ちます。 組織の脅威を軽減するのに役立ちます。
 
-Of course, this module is introductory. Security is a deep and complex topic, so whatever your cloud approach, an ongoing security education is necessary. But this module should get you started in the right direction, so you know what you need to learn next.
+もちろん、このモジュールは、入門です。 セキュリティは、どのクラウド アプローチを継続的なセキュリティ教育が必要なために、詳細で複雑なトピックでは、です。 ただし、このモジュールは、次に学習する必要がありますを認識できるように、正しい方向で開始するを取得する必要があります。

@@ -1,73 +1,74 @@
-Every function must have one, and only one, trigger binding. It defines how our code is triggered to run. In addition to a trigger, we can define bindings that connect us to data sources. If you remember from our diagram of the solution, we want to send messages to three queues. So, we'll define those connections as output bindings in our function. We could create those bindings through the **Output binding** UI. However, to save time, we'll edit the config file directly.
+すべての関数がトリガーの 1 つだけ必要です。 実行するコードをトリガーする方法を定義します。 だけでなく、トリガー、データ ソースに接続するバインディングを定義できます。 ソリューションの図からわかる場合は、3 つのキューにメッセージを送信いたします。 そのため、関数でそれらの接続の出力バインドとして定義します。 これらのバインドを作成することも、**出力バインド**UI。 ただし、時間を節約することが構成ファイルを直接編集します。
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. この関数を選択します[!INCLUDE [func-name-discover](./func-name-discover.md)]、関数アプリのポータルでします。
 
-1. Expand the **View files** menu on the right of the screen.
+1. 展開、**ファイルを表示**画面の右側のメニュー。
 
-1. Under the **View files** tab, select **function.json** to open the config file in the editor.
+1. 下、**ファイルを表示**] タブで [ **function.json**をエディターで、構成ファイルを開きます。
 
-1. Replace the entire content of the config file with the following JSON. 
+1. 構成ファイルの内容全体を次の JSON に置き換えます。
 
 [!code-json[](../code/function.json)]
 
-We've added three new bindings to the config.
+構成、3 つの新しいバインドを追加しました。
 
-- Each new binding is of type `queue`. These bindings are for the three queues that we'll populate with our feedback messages to once we know the sentiment of the feedback.
-- Each binding has a direction defined as `out`, since we'll post messages to these queues.
-- Each binding uses the same connection to our storage account.
-- Each binding has a unique `queueName` and `name`.
+- 型の新しい各バインドは、`queue`します。 これらのバインディングは、フィードバックのセンチメントを確認したら、フィードバック メッセージを設定しますが、3 つのキュー。
+- 各バインドは、方向として定義されている`out`、ため、これらのキューにメッセージを掲載します。
+- 各バインドでは、ストレージ アカウントと同じ接続を使用します。
+- 各バインドに一意`queueName`と`name`します。
 
-Posting a message to a queue is as easy as saying, for example,  `context.bindings.negativeFeedbackQueueItem = "<message>"`.
+キューにメッセージを投稿など、同じくらい簡単は`context.bindings.negativeFeedbackQueueItem = "<message>"`します。
 
-## Update implementation to sort feedback into queues based on sentiment score
+## <a name="update-implementation-to-sort-feedback-into-queues-based-on-sentiment-score"></a>更新プログラムをセンチメント スコアに基づいてキューへのフィードバックを並べ替える実装
 
-The goal of our feedback sorter is to sort feedback into three buckets, positive, neutral, and negative. So far, we have our input queue, our code to call Text Analytics API, and we've defined our output queues. In this section, we'll add the logic to move messages into those queues based on sentiment.
+フィードバック、並べ替えの目的は、正、中立、および負の値の 3 つのバケットにフィードバックを分類します。 これまでに、入力のキューに Text Analytics API を呼び出すコードがあり、定義したので、出力キュー。 このセクションでは、センチメントに基づいてこれらのキューにメッセージを移動するためのロジックを追加します。
 
-1. Navigate to our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], and  open `index.js` in the code editor again.
+1. 関数に移動します[!INCLUDE [func-name-discover](./func-name-discover.md)]、開き`index.js`コード エディターをもう一度でします。
 
-1. Replace the implementation with the following update.
+1. 次の更新プログラムの実装に置き換えます。
+
 [!code-javascript[](../code/discover-sentiment+sort.js?highlight=25-48)]
 
-We've added the highlighted code to our implementation. The code parses the response from the Text Analytics API cognitive service. Based on the sentiment score, the message is forwarded to one of or three output queues. The code to post the message is just setting the correct binding parameter.
+今回の実装を強調表示されたコードが追加されました。 コードでは、Text Analytics API cognitive service からの応答を解析します。 センチメント スコアに基づいて、メッセージを転送の 1 つに、または 3 つの出力キュー。 メッセージの投稿先のコードは、正しいバインド パラメーターを設定だけです。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-To test the updated implementation, we'll head back to the Storage Explorer. 
+更新された実装をテストするには、ストレージ エクスプ ローラーにヘッドします。
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+1. リソース グループに移動し、**リソース グループ**ポータルのセクション。
 
-1. Select the resource group used in this lesson.
+1. このレッスンで使用されるリソース グループを選択します。
 
-1. In the **Resource group** panel that opens, locate the Storage Account entry and select it.
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. **リソース グループ**パネルが開きがストレージ アカウント エントリを検索して、選択します。
+    ![リソース グループ ウィンドウで選択したストレージ アカウントをスクリーン ショット。](../media/select-storage-account.png)
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage.
-![Screenshot of storage explorer showing our storage account, with one queue currently.](../media-draft/storage-explorer-menu-inputq.png)
+1. 選択**ストレージ エクスプ ローラー (プレビュー)** ストレージ アカウントのメイン ウィンドウの左側のメニュー。  この操作は、ポータル内で Azure Storage Explorer を開きます。 この段階で画面に次のスクリーン ショットのようになります。
+    ![現在、1 つのキューで、ストレージ アカウントを表示するストレージ エクスプ ローラーのスクリーン ショット。](../media/storage-explorer-menu-inputq.png)
 
-We have one queue listed under the **Queues** collection. This queue is [!INCLUDE [input-q](./q-name-input.md)],  the input queue we defined in the preceding test section of the module.
+下に表示する 1 つのキューがある、**キュー**コレクション。 このキューは[!INCLUDE [input-q](./q-name-input.md)]モジュールの前のテスト セクションで定義した入力キューです。
 
-1. Select [!INCLUDE [input-q](./q-name-input.md)] in the left-hand menu to see the data explorer for this queue. As expected, the queue had no data. Let's add a message to the queue using the **Add Message** command at the top of the window. 
+1. 選択[!INCLUDE [input-q](./q-name-input.md)]で、左側のメニューにこのキューのデータ エクスプ ローラーを参照してください。 予想どおり、キューのデータがありません。 使用してキューにメッセージを追加してみましょう、**メッセージの追加**ウィンドウの上部にあるコマンド。
 
-1. In the **Add Message** dialog, enter "I'm having fun with this exercise!" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. **メッセージの追加**ダイアログ ボックスで、「がこの演習を楽しむ!」を入力します。 **メッセージ テキスト**フィールドし、をクリックして**OK**ダイアログの下部にあります。
 
-1. The message is displayed in the data window for [!INCLUDE [input-q](./q-name-input.md)]. After a few seconds, click **Refresh** at the top of the data view to refresh the view of the queue. Observe that the message disappears after a while. So, where did it go?
+1. [データ] ウィンドウで、メッセージが表示される[!INCLUDE [input-q](./q-name-input.md)]します。 数秒後に、後に次のようにクリックします。**更新**、キューのビューを更新するデータ ビューの上部にあります。 しばらくしてから、メッセージが消えることを確認します。 そのため、これはどこですか。
 
-1. Right-click on the **QUEUES** collection in the left-hand menu. Observe that a *new* queue has appeared.
-![Screenshot of Storage Explorer with showing a new queue has been created in the collection. The queue has one message.](../media-draft/sa-new-output-q.png)
+1. 右クリックし、**キュー**の左側のメニュー内のコレクション。 観察、*新しい*キューが表示されています。
+    ![コレクション内では、新しいキューの表示と Storage Explorer のスクリーン ショットが用意されています。 キューでは、1 つのメッセージがあります。](../media/sa-new-output-q.png)
 
-The queue [!INCLUDE [positive-q](./q-name-positive.md)] was automatically created when a message was posted to it for the first time. With Azure Functions queue output bindings, you don't have to manually create the output queue before posting to it! Now that we see an incoming message has been sorted by our function into [!INCLUDE [positive-q](./q-name-positive.md)], let's see where the following messages land.
+キュー[!INCLUDE [positive-q](./q-name-positive.md)]を最初にメッセージが投稿されたときに自動的に作成されました。 Azure Functions キューの出力バインドに投稿する前に、出力キューを手動で作成する必要はありません。 これで、関数ににより受信メッセージが並べ替えられていることがわかります[!INCLUDE [positive-q](./q-name-positive.md)]、land メッセージ、次の場所を見てみましょう。
 
-5. Using the same steps as above, add the following messages to [!INCLUDE [input-q](./q-name-input.md)].
+1. 次のメッセージを追加して、上記と同じ手順を使用して[!INCLUDE [input-q](./q-name-input.md)]します。
 
-- "I like broccoli!"
-- "Microsoft is a company"
+- "ブロッコリーを like は!"
+- 「Microsoft では、企業」
 
-6. Click **Refresh** until [!INCLUDE [input-q](./q-name-input.md)] is empty once again. This process might take a few moments and require several refreshes.
+1. クリックして**更新**まで[!INCLUDE [input-q](./q-name-input.md)]がもう一度空です。 このプロセスは、しばらく時間がかかる場合がありますをいくつかの更新が必要です。
 
-1. Right-click on the **QUEUES** collection and observe two more queues appearing. The queues are named [!INCLUDE [neutral-q](./q-name-neutral.md)] and [!INCLUDE [negative-q](./q-name-negative.md)]. This might take a few seconds, so continue refreshing the **QUEUES** collection until new queues. When complete, your queue list should look like the following.
+1. 右クリックし、**キュー**コレクションが表示される 2 つの複数のキューを確認します。 キューの名前は[!INCLUDE [neutral-q](./q-name-neutral.md)]と[!INCLUDE [negative-q](./q-name-negative.md)]します。 これまで数秒かかる場合、ため引き続き更新する可能性があります、**キュー**まで新しいキューのコレクション。 完了すると、キューの一覧は次のようになります。
 
-![Screenshot of Storage Explorer menu showing four queues in the QUEUES collection.](../media-draft/sa-final-q-list.png)
+![ストレージ エクスプ ローラーのスクリーン ショット メニューのキューのコレクション内の 4 つのキューを表示します。](../media/sa-final-q-list.png)
 
-Click on each queue in the list to see whether they have messages. If you added the suggested messages, you should see one message in [!INCLUDE [positive-q](./q-name-positive.md)], [!INCLUDE [neutral-q](./q-name-neutral.md)], and [!INCLUDE [negative-q](./q-name-negative.md)].
+各キュー メッセージがあるかどうかを確認するリスト内をクリックします。 推奨されるメッセージを追加した場合で 1 つのメッセージが表示されます[!INCLUDE [positive-q](./q-name-positive.md)]、 [!INCLUDE [neutral-q](./q-name-neutral.md)]、および[!INCLUDE [negative-q](./q-name-negative.md)]します。
 
-Congratulations! We now have a working feedback sorter! As messages arrive in the input queue, our function uses the Text Analytics API service to get a sentiment score. Based on that score, the function forwards the messages to the appropriate queue. While it seems like the function processes only one queue item at a time, the Azure Functions runtime will actually read batches of queue items and spin up other instances of our function to process them in parallel. 
+お疲れさまでした。 作業のフィードバックの並べ替えアイコンがあるようになりました。 入力キューにメッセージの着信時、関数は、Text Analytics API サービスを使用して、センチメント スコアを取得します。 関数はそのスコアに基づいて、適切なキューにメッセージを転送します。 ように思えます関数プロセス キュー項目が 1 つだけで、Azure Functions ランタイムは実際にキュー項目のバッチを読み取り、並列処理を行うための関数の他のインスタンスを起動します。

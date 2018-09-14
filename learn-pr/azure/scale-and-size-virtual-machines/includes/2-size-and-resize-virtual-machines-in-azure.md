@@ -1,61 +1,61 @@
-Your server needs enough resources to handle daily demand. A typical strategy is to choose a VM size at creation that is sufficient for typical workloads and then resize it when demand changes.
+サーバーには、日単位の要求を処理するために十分なリソースが必要があります。 一般的な戦略では、一般的なワークロードのための十分なの作成時の VM サイズを選択し、需要の変化時にサイズを変更します。
 
-In the toy company scenario, this strategy would be useful to manage resources for your medium-term growth. You can increase the size of your VM to handle the added demand as your business grows.
+Toy 企業シナリオでは、この方法は、中期的な成長のリソースを管理すると便利になります。 ビジネスの成長に応じて、追加の要求を処理するために、VM のサイズを大きくことができます。
 
-## What is virtual machine size?
+## <a name="what-is-virtual-machine-size"></a>仮想マシンのサイズとは何ですか。
 
-The _size_ of a virtual machine is a measure of its CPU, memory, disk, and expected network bandwidth. Virtual machines are available in a predetermined number of sizes. For example, the **Standard_F32s_v2** size has 32 virtual CPUs, 64 GiB of memory, a 256 GiB local SSD, and 14,000 of Mbps expected network bandwidth.
+_サイズ_の仮想マシンは、CPU、メモリ、ディスク、および予期されるネットワーク帯域幅の測定単位です。 仮想マシン サイズのあらかじめ決められた数で利用できます。 たとえば、 **Standard_F32s_v2**サイズが 32 個の仮想 Cpu、64 GiB のメモリ、256 GiB ローカル SSD および想定されるネットワーク帯域幅の 14,000 Mbps。
 
-When you create a new virtual machine in Azure, you must choose a size. Larger sizes cost more. The goal is to choose a size that can handle your workload without configuring more power than you need.
+Azure で新しい仮想マシンを作成すると、サイズを選択する必要があります。 サイズを大きくコストの詳細。 目標は、必要以上の電力を構成しなくても、ワークロードを処理できるサイズを選択します。
 
-## What is virtual machine type?
+## <a name="what-is-virtual-machine-type"></a>仮想マシンの種類とは何ですか。
 
-The _type_ of a virtual machine is the workload for which the VM has been optimized. For example, some VMs are targeted at CPU-intensive tasks like hosting a web server. Others are intended for storage-focused jobs like running a database.
+_型_の仮想マシンは、VM が最適化されているワークロード。 たとえば、web サーバーをホストしているように CPU を消費するタスクにいくつかの Vm が対象となります。 他のユーザーは、データベースを実行するようにジョブをストレージに重点を置いたを意図しています。
 
-There are _types_ that correspond to each core hardware component in a modern computer: **compute**, **memory**, **storage**, and **GPU**. There's also a **general purpose** type if you need a balanced combination of resources. The following table lists the types and the VM sizes that are part of that type along with a brief description of the target workload.
+ある_型_最近のコンピューター内の各コアのハードウェア コンポーネントに対応する:**コンピューティング**、**メモリ**、**ストレージ**、および**GPU**します。 **汎用**リソースのバランスの取れた組み合わせが必要な場合に入力します。 次の表は、型とは、対象のワークロードの簡単な説明と共に、各型の一部である VM のサイズを示します。
 
-|Type|Sizes|Description|
+|種類|サイズ|説明|
 |---|---|---|
-|General purpose|B, Ds_v3, D_v3, some DS_v2, some D_v2, A_v2|General purpose machines have a balanced CPU to memory ratio. General purpose machines are good for testing or development servers, also small to medium database, or low to medium traffic web servers.|
-|Compute optimized|Fs_v2, Fs, F|Compute optimized virtual machines have a higher CPU to memory ratio than general purpose machines, for tasks that require extra processing power, such as application servers, network appliances, or medium traffic web servers.|
-|Memory optimized|Es_v3, E_v3, M, GS, G, some DS_v2, some D_v2|Memory optimized virtual machines have a high memory to CPU ratio. These machines are good for relational database servers, servers that require or perform a lot of caching, or perform in-memory analytics.|
-|Storage optimized|Ls|These virtual machines are configured for high disk throughput and IO operations to suit Big Data, SQL, and NoSQL databases.|
-|GPU|NV, NC, NC_v2, NC_v3, ND|GPU virtual machines are specialized for tasks such as heavy duty graphic rendering or video editing, also model training and inferencing (ND series) with deep learning. You can choose single or multiple GPUs for these machines.|
-|High performance compute|H|The fastest, most powerful CPUs are available in these virtual machines. You can also add high-throughput network interfaces (RDMA).|
+|汎用|B Ds_v3、D_v3、いくつか DS_v2、いくつか D_v2 A_v2|汎用のマシンでは、バランスのとれた CPU 対メモリ比があります。 汎用のマシンはテストまたは開発のサーバー、小規模中規模のデータベースからまたはトラフィックが中程度に不足している web サーバーに適しています。|
+|コンピューティング最適化|Fs_v2、Fs、F|コンピューティングに最適化された仮想マシンがあるアプリケーション サーバー、ネットワーク アプライアンス、またはメディア トラフィックの web サーバーなどの追加の処理能力を必要とするタスクの汎用マシンよりもより高い CPU 対メモリ比。|
+|メモリ最適化|Es_v3、E_v3、M、GS、G、DS_v2 によって、いくつか D_v2|仮想マシンのメモリ最適化では、高いメモリ対 CPU 比があります。 これらのマシンはリレーショナル データベース サーバー、サーバーが必要と、キャッシュの多くを実行またはメモリ内分析を実行するサーバーに適しています。|
+|ストレージ最適化|Ls|これらの仮想マシンが高いディスク スループットと IO 操作に合わせて、SQL、ビッグ データ用に構成されたデータベースと NoSQL データベースです。|
+|GPU|NV, NC, NC_v2, NC_v3, ND|GPU 仮想マシンは高負荷なグラフィックスのレンダリングやビデオ編集、モデルのトレーニングと推論 (ND シリーズ) でディープ ラーニングなどのタスクに特化されています。 これらのマシンの 1 つまたは複数の Gpu を選択できます。|
+|ハイ パフォーマンス コンピューティング|H|高速で、最も強力な Cpu は、これらの仮想マシンで利用できます。 高スループットのネットワーク インターフェイス (RDMA) を追加することもできます。|
 
-## Clusters
+## <a name="clusters"></a>クラスター
 
-The physical server hardware in Azure regions is grouped together into clusters. Each cluster can support several different virtual machine sizes based on the physical hardware.
+Azure リージョン内の物理サーバー ハードウェアは、クラスターにグループ化されます。 各クラスターには、物理ハードウェアに基づくいくつかの別の仮想マシン サイズをサポートできます。
 
-When you create a virtual machine and choose a specific size, the virtual machine is provisioned to an appropriate hardware cluster for that size. Although you can resize virtual machines after creation, the resizing options may be limited by the hardware cluster chosen for the initial size.
+仮想マシンを作成、特定のサイズを選択すると、そのサイズを適切なハードウェア クラスターに仮想マシンがプロビジョニングされます。 仮想マシンのサイズを変更するには、作成後に、サイズ変更オプションを初期サイズの選択、ハードウェア クラスターによって制限される可能性が。
 
-## What is vertical scaling?
+## <a name="what-is-vertical-scaling"></a>垂直方向のスケーリングとは
 
-_Vertical scaling_ is the process of changing the _size_ of a virtual machine. You can _scale up_ by choosing a more powerful size to handle increased demand or _scale down_ to allocate fewer resources and reduce costs. The following illustration shows an example of changing the size of a virtual machine.
+_垂直方向のスケーリング_を変更するプロセスは、_サイズ_の仮想マシン。 できます_スケール アップ_要求の増加を処理するより強力なサイズを選択してまたは_スケール ダウン_より少ないリソースを割り当てるし、コストを削減します。 次の図は、仮想マシンのサイズを変更する例を示します。
 
-![An illustration showing scaling up and scaling down of a virtual machine to change the performance capabilities.](../media/2-ScaleUpDown.png)
+![スケール アップとスケール ダウンのパフォーマンス機能の変更を仮想マシンを示す図。](../media/2-ScaleUpDown.png)
 
-You can resize a VM using the Azure portal, Azure PowerShell, or the Azure command-line interface (CLI).
+Azure portal、Azure PowerShell、または Azure CLI を使用して VM のサイズを変更することができます。
 
-### Resize in the portal
+### <a name="resize-in-the-portal"></a>ポータルでのサイズを変更します。
 
-In the Azure portal, you can resize a virtual machine by selecting the virtual machine, clicking the **Size** entry, and selecting an entry from the **Choose a size** blade. 
+Azure portal の仮想マシンをサイズをクリックすると、仮想マシンを選択して、**サイズ**エントリ、およびからエントリを選択すると、**サイズの選択**ブレード。 
 
-If the virtual machine is running at the time, the available sizes you can select from will depend on the available sizes in your region. You will only see resize options compatible with the same hardware cluster that the virtual machine is currently running on; this is sometimes called a *size family*. If you choose a new size while the virtual machine is running, the VM will be restarted automatically to apply the new size.
+仮想マシンが、時に実行している場合にお住まいの地域で利用可能なサイズから選択できる利用可能なサイズによって異なります。 のみが表示されます、仮想マシンは; で現在実行中の同じハードウェア クラスターと互換性のあるオプションのサイズを変更します。これと呼ぶことが、*サイズ ファミリ*します。 仮想マシンの実行中に、新しいサイズを選択した場合、VM が新しいサイズを適用する自動的に再起動されます。
 
-If the size you are looking for is not visible in the portal when the virtual machine is running, then you can shut down the virtual machine to see more options. When the machine is in the **stopped (deallocated)** state, you will be able to select sizes from other hardware in the same region.
+仮想マシンが実行されているときに探しているサイズが、ポータルで表示されない場合より多くのオプションを表示する仮想マシンをシャットすることができます。 マシンの場合、**停止 (割り当て解除)** 状態では、同じリージョン内の他のハードウェアからサイズを選択することができます。
 
-### Resize with PowerShell
+### <a name="resize-with-powershell"></a>PowerShell を使用したサイズを変更します。
 
-You can use PowerShell to perform vertical scaling interactively or with scripts. Scripts are good for complex scenarios; for example, if you need to resize several VMs at once. They are also convenient if you need to perform the resize during non-working hours to avoid user disruption.
+PowerShell を使用して、対話形式またはスクリプトを使用した垂直方向のスケーリングを実行することができます。 スクリプトは複雑なシナリオに適してたとえば、次のように一度に複数の Vm のサイズを変更する必要がある場合です。 ユーザーの混乱を避けるために非稼働時間中にサイズ変更を実行する必要がある場合に便利ですもいます。
 
-The following cmdlet lists VM sizes of the same size-family as the current hardware:
+次のコマンドレットは、現在のハードウェアと同じサイズ ファミリの VM サイズを一覧表示します。
 
 ```PowerShell
 Get-AzureRmVMSize -ResourceGroupName "myResourceGroup" -VMName "MyVM"
 ```
 
-If the desired size is displayed, use the following cmdlet to change the virtual machine size:
+目的のサイズが表示されている場合は、仮想マシンのサイズを変更する次のコマンドレットを使用します。
 
 ```PowerShell
 $vm = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -VMName "MyVM"
@@ -63,7 +63,7 @@ $vm.HardwareProfile.VmSize = "<newVMsize>"
 Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 ```
 
-If the desired size is not displayed with the machine running, use the following commands to deallocate the virtual machine, resize the machine, and start the machine again:
+実行しているマシンで目的のサイズが表示されない場合は、次のコマンドを使用して、仮想マシンの割り当て解除、マシンのサイズ変更、マシンをもう一度起動を。
 
 ```PowerShell
 Stop-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM" -Force
@@ -73,4 +73,4 @@ Update-AzureRmVM -VM $vm -ResourceGroupName "myResourceGroup"
 Start-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "MyVM"
 ```
 
-Virtual machines in Azure can be resized as needed to increase performance or decrease costs. Performing the resize manually, either with the portal or a script, is useful to handle gradual business growth or when you know about a change in demand ahead-of-time. In the toy-company scenario, they could scale up before a holiday to handle the spike in demand and then scale down afterward.
+パフォーマンスを向上させる、コストを削減したり、必要に応じて、Azure の仮想マシンのサイズを変更できます。 ポータルまたはスクリプトを手動で、サイズ変更を実行することは、ハンドルの段階的なビジネスの成長または事前に需要の変更についてわかっている場合に便利です。 Toy 会社では、休日を需要の急増を処理し、後でスケール ダウンする前に拡大、でした。

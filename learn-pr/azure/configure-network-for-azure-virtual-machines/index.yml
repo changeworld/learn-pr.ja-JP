@@ -1,37 +1,35 @@
 ### YamlMime:Module
 uid: learn.configure-the-network-for-your-virtual-machines
 metadata:
-  title: Configure the network for your virtual machines
-  description: You will learn how external services communicate to virtual machines and other Azure resources, either over the internet or by using dedicated private connections. You will cover how to connect your local on-premises networks into Azure using virtual networks, VPN gateways, and Azure ExpressRoute. 
+  title: 仮想マシンのネットワークを構成する
+  description: について説明しますが、インターネット経由でまたはを使用して専用プライベート接続で外部サービスは、仮想マシンを他の Azure リソース通信、する方法。 ローカル オンプレミス ネットワークを仮想ネットワーク、VPN ゲートウェイ、および Azure ExpressRoute を使用して Azure に接続する方法を取り上げます。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Configure the network for your virtual machines
-summary: Learn how to configure networking in a secure way for your Azure virtual machines.
+title: 仮想マシンのネットワークを構成する
+summary: Azure 仮想マシンのネットワークを安全に構成する方法について説明します。
 abstract: |
-  In this module, you will:
-  - Describe Azure Virtual Network
-  - Describe Azure VPN Gateway
-  - Describe Azure ExpressRoute
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - Azure Virtual Network について説明する
+  - Azure VPN Gateway について説明する
+  - Azure ExpressRoute について説明する
+prerequisites: なし
+iconUrl: /learn/achievements/configure-network-for-azure-virtual-machines.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.configure-the-network-for-your-virtual-machines.1-introduction
-- learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
-- learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
-- learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
-- learn.configure-the-network-for-your-virtual-machines.5-exercise-create-azure-vpn-gateway
-- learn.configure-the-network-for-your-virtual-machines.6-describe-azure-expressroute
-- learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
-- learn.configure-the-network-for-your-virtual-machines.8-summary
+  - learn.configure-the-network-for-your-virtual-machines.1-introduction
+  - learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
+  - learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
+  - learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
+  - learn.configure-the-network-for-your-virtual-machines.5-exercise-create-azure-vpn-gateway
+  - learn.configure-the-network-for-your-virtual-machines.6-describe-azure-expressroute
+  - learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+  - learn.configure-the-network-for-your-virtual-machines.8-summary
 achievement: learn.configure-the-network-for-your-virtual-machines.badge

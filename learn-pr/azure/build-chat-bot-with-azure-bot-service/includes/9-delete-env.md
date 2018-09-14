@@ -1,13 +1,13 @@
-In this unit, you will delete the resource group containing the bot and all the resources associated with it. Deleting the resource group deletes everything in it and prevents any further charges from being incurred for it. Resource groups that are deleted can't be recovered, so be certain you're finished using it before deleting it.
+このユニットでは、ボットとそれに関連付けられているすべてのリソースを含むリソース グループを削除します。 リソース グループを削除すると、グループ内のすべてのものが削除されるため、今後料金が発生することを防ぐことができます。 削除したリソース グループを復旧することはできないため、必ずグループの使用が終了していることを確認してから、削除してください。
 
 <!---TODO: Do we need cleanup instructions for free education access?--->
 
-1. Return to the blade for the "factbot-rg" resource group. Then, click **Delete resource group** at the top of the blade.
+1. "factbot-rg" リソース グループのブレードに戻ります。 次に、ブレードの上部にある **[リソース グループの削除]** をクリックします。
 
-1. For safety, you are required to type in the resource group's name. (Once deleted, a resource group cannot be recovered.) Type the name of the resource group. Then, click the **Delete** button to remove all traces of this exercise from your Azure subscription.
+1. 安全のため、リソース グループの名前を入力する必要があります。 (リソース グループは、削除すると復旧することはできません。)リソース グループの名前を入力します。 次に、**[削除]** ボタンをクリックして、この演習のすべてのトレースを Azure サブスクリプションから削除します。
 
-After a few minutes, the resource group and all of its resources will be deleted. Billing stops when you click **Delete**, so you're not charged for the time required to delete the resources. Similarly, billing doesn't start until the resources are fully and successfully deployed.
+数分後、リソース グループとそのリソースのすべてが削除されます。 **[削除]** クリックすると課金が停止するため、リソースを削除するために必要な時間に対しては課金されません。 同様に、リソースが完全かつ正常にデプロイされるまで、課金は発生しません。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-There is much more that you can do to leverage the power of the Azure Bot Service by incorporating [Dialogs](http://aihelpwebsite.com/Blog/EntryId/9/Introduction-To-Using-Dialogs-With-The-Microsoft-Bot-Framework), [FormFlow](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/07/14/building-a-microsoft-bot-using-microsoft-bot-framework-using-formflow/), and [Microsoft Language Understanding and Intelligence Services (LUIS)](https://docs.botframework.com/node/builder/guides/understanding-natural-language/). With these and other features, you can build sophisticated bots that respond to users' queries and commands and interact in a fluid, conversational, and non-linear manner. For more information, and for ideas to get you started, see [What is Microsoft Bot Framework Overview](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/04/05/what-is-microsoft-bot-framework-overview/).
+[ダイアログ](http://aihelpwebsite.com/Blog/EntryId/9/Introduction-To-Using-Dialogs-With-The-Microsoft-Bot-Framework)、[FormFlow](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/07/14/building-a-microsoft-bot-using-microsoft-bot-framework-using-formflow/)、[Microsoft Language Understanding Intelligence Services (LUIS)](https://docs.botframework.com/node/builder/guides/understanding-natural-language/) を組み込むと、Azure Bot Service の機能を活用するためにできることがさらに増えます。 これらの機能により、ユーザーのクエリとコマンドに応答し、滑らかな会話型の非線形の方法で対話する高度なボットをビルドすることができます。 詳細および開始するためのアイデアについては、「[What is Microsoft Bot Framework Overview](https://blogs.msdn.microsoft.com/uk_faculty_connection/2016/04/05/what-is-microsoft-bot-framework-overview/)」 (Microsoft Bot Framework の概要) を参照してください。

@@ -1,8 +1,8 @@
-Redis cache can improve the performance and scalability of systems that rely heavily on databases. Performance is improved by temporarily copying frequently accessed data to fast storage located close to the application. With Redis cache, this fast storage is located in-memory with Redis cache instead of being loaded from disk by a database.
+Redis Cache により、データベースに大きく依存するシステムのパフォーマンスやスケーラビリティを向上させることができます。 アプリケーションに近い場所にある高速ストレージに、アクセス頻度が高いデータを一時的にコピーすることでパフォーマンスが向上します。 Redis Cache を使用すると、この高速ストレージは、データベースによってディスクから読み込まれずに、Redis Cache を利用したメモリ内に配置されます。
 
 <!-- Cleanup sandbox -->
 [!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-## Additional resources
+## <a name="additional-resources"></a>その他のリソース
 
-[Migrate from Managed Cache Service to Azure Redis Cache](https://docs.microsoft.com/en-us/azure/redis-cache/cache-migrate-to-redis)
+[Managed Cache Service から Azure Redis Cache に移行します。](https://docs.microsoft.com/en-us/azure/redis-cache/cache-migrate-to-redis)

@@ -1,38 +1,36 @@
 ### YamlMime:Module
 uid: learn.secure-azure-resources-with-rbac
 metadata:
-  title: Secure your Azure resources with role-based access control (RBAC)
-  description: Role-based access control (RBAC) is a system that provides fine-grained access management of resources in Azure. Using RBAC, you can segregate duties within your team and grant only the amount of access to users that they need to perform their jobs. This module shows you how to use RBAC to manage access to resources in Azure.
+  title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+  description: ロールベースのアクセス制御 (RBAC) は、Azure のリソースのアクセス権を詳細に管理できるシステムです。 RBAC を使用して、チーム内で職務を分離し、職務に必要なアクセス許可のみをユーザーに付与します。 このモジュールでは、RBAC を使用して Azure 内のリソースへのアクセスを管理する方法を示します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure your Azure resources with role-based access control (RBAC)
-summary: Learn how to use RBAC to manage access to resources in Azure.
+title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+summary: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
 abstract: |
-  In this module, you will:
-  - Verify access to resources for yourself and others
-  - Grant access to resources
-  - View activity logs of RBAC changes
+  このモジュールでは、次のことを行います。
+  - 自分や他のユーザーのリソースへのアクセスを確認する
+  - リソースへのアクセス権を付与する
+  - RBAC の変更のアクティビティ ログを表示する
 prerequisites: |
-  - Knowledge of basic Azure concepts, such as the Azure portal and resource groups
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- beginner
-roles: 
-- administrator
-products: 
-- azure
+  - Azure portal やリソース グループなど、Azure の基本的な概念に関する知識
+iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+levels:
+  - beginner
+roles:
+  - administrator
+products:
+  - azure
 units:
-- learn.secure-azure-resources-with-rbac.1-introduction
-- learn.secure-azure-resources-with-rbac.2-rbac-overview
-- learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
-- learn.secure-azure-resources-with-rbac.4-list-access
-- learn.secure-azure-resources-with-rbac.5-grant-access
-- learn.secure-azure-resources-with-rbac.6-view-activity-logs
-- learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
-- learn.secure-azure-resources-with-rbac.8-summary
+  - learn.secure-azure-resources-with-rbac.1-introduction
+  - learn.secure-azure-resources-with-rbac.2-rbac-overview
+  - learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
+  - learn.secure-azure-resources-with-rbac.4-list-access
+  - learn.secure-azure-resources-with-rbac.5-grant-access
+  - learn.secure-azure-resources-with-rbac.6-view-activity-logs
+  - learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+  - learn.secure-azure-resources-with-rbac.8-summary
 achievement: learn.secure-azure-resources-with-rbac.badge

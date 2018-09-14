@@ -4,24 +4,23 @@
 
 Azure では_リソース グループ_を使用して、仮想マシンやデータベースなどの関連リソースがまとめてグループ化されます。 また、リソース グループでは特定の場所 ("リージョン" と呼ばれる) が識別され、これによって、リソースが配置されるデータ センターが決定します。
 
-実験ですので、`ExerciseResources` という名前のリソース グループを作成し、それを `eastus` リージョンに配置することから始めます。
+> [!NOTE]
+> Azure のサンド ボックスという名前の事前に作成したリソース グループを提供する<rgn>[サンド ボックス リソース グループ名]</rgn>します。 次の手順を実行する必要はありません。 ただし、作成するとき、_独自_実際のプロジェクトのリソースは、これらは、コマンドを実行する必要があります。 Azure のサンド ボックスでは、直接、リソース グループを作成できません。
 
-<!-- TODO: replace with free ed-tier -->
-
-Azure Cloud Shell で次の Azure CLI コマンドを入力して、ご利用のサブスクリプション内にリソース グループを作成します。
+例として、内のリソース グループを作成する Azure Cloud Shell で次の Azure CLI コマンドを入力する可能性があります、**米国東部**リージョン。 置換が **[リソース グループ]** アクティブのサブスクリプション内で一意である、有効な名前。
 
 ```azurecli
-az group create --name ExerciseResources --location eastus
+az group create --name [resource-group] --location eastus
 ```
 
-これにより、リソース グループが作成されたことを示す JSON ブロックが返されます。 その内容は次のようなものとなります。
+これにより、リソース グループが作成されたことを示す JSON ブロックが返されます。
 
 ```json
 {
-  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/ExerciseResources",
+  "id": "/subscriptions/abc13b0c-d2c4-64b2-9ac5-2f4cb819b752/resourceGroups/<resourcegroup>",
   "location": "eastus",
   "managedBy": null,
-  "name": "ExerciseResources",
+  "name": "<resourcegroup>",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -31,4 +30,4 @@ az group create --name ExerciseResources --location eastus
 
 応答の一部として、サブスクリプションの一意の識別子、場所、および名前が返されていることに注目してください。 これらを使用して、リソース グループが適切なサブスクリプションおよび場所で作成されているかどうかを確認することができます。
 
-これでリソース グループの準備ができたので、次に新しい仮想マシンを作成しましょう。
+リソース グループを作成する方法がわかっているので、新しい仮想マシンを作成しましょう。

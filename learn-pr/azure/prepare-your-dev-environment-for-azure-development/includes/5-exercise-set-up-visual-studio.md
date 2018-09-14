@@ -1,4 +1,4 @@
-このユニットでは、Visual Studio を Windows または macOS コンピューターにインストールします。 Windows 上には、Azure 開発ワークロードをインストールする必要があります。 そして Visual Studio for Mac では、組み込みの接続済みサービス ワークフローにより、Azure App Service 用にアプリを構築します。 最後には、アプリケーションを作成する準備が完了し、それを Azure に公開できるようになります。
+このユニットでは、Visual Studio を Windows または macOS コンピューターにインストールします。 Windows 上には、Azure 開発ワークロードをインストールする必要があります。 Visual studio for Mac では、組み込みの接続済みサービスのワークフローを有効に Azure App Service のアプリを作成することをはします。 最後には、アプリケーションを作成する準備が完了し、それを Azure に公開できるようになります。
 
 ## <a name="exercise-steps"></a>演習の手順
 
@@ -8,7 +8,7 @@ Visual Studio を Windows と macOS にインストールする場合には、�
 
 1. Visual Studio のインストーラーを、 https://visualstudio.microsoft.com/downloads/ からダウンロードします。
 
-1. インストーラーを実行すると、ワークロード ウィンドウが開きます。
+1. ワークロード ウィンドウが開きますインストーラーを実行します。
 
 1. **[Azure の開発]** ワークロードを選びます。
 
@@ -32,11 +32,11 @@ Visual Studio を Windows と macOS にインストールする場合には、�
 
 1. https://visualstudio.microsoft.com/ に移動し、Visual Studio for Mac インストーラーをダウンロードします。
 
-1. VisualStudioInstaller.dmg ファイルをクリックしてインストーラーをマウントし、ロゴをダブルクリックして実行します。
+1. インストーラーをマウントし、ロゴをダブルクリックして実行 VisualStudioInstaller.dmg ファイルをクリックします。
 
 1. 表示されたらプライバシーとライセンス条項に同意します。
 
-1. インストーラーにより、どのコンポーネントをインスト―ルするか尋ねられます。 Azure のコンポーネントは既に Visual Studio for Mac の一部ですが、Azure 用の Web エクスペリエンスを開発するには、**.NET Core** プラットフォームをインストールすることが推奨されます。
+1. インストーラーにより、どのコンポーネントをインストールするかたずねられます。 Azure のコンポーネントは既に Visual Studio for Mac の一部ですが、Azure 用の Web エクスペリエンスを開発するには、**.NET Core** プラットフォームをインストールすることが推奨されます。
 
     次のスクリーン ショットは、Visual Studio for Mac で Azure を開発する機能を追加するために必要な .NET Core プラットフォームを示しています。
 

@@ -1,21 +1,21 @@
-Azure Storage provides a Representational State Transfer (REST) based web API to work with the containers and data stored in each account. There are independent APIs available to work with each type of data you can store. Recall that we have four specific data types:
+Azure Storage では、コンテナーと各アカウントに格納されたデータを操作に基づく Representational State Transfer (REST) web API を提供します。 格納できるデータの各種類で使用できる独立した Api があります。 次の 4 つの特定のデータ型があることを思い出してください。
 
-- **Blobs** for unstructured data such as binary and text files.
-- **Queues** for persistent messaging.
-- **Tables** for structured storage of key/values.
-- **Files** for traditional SMB file shares.
+- **Blob**バイナリ、テキスト ファイルなどの非構造化データ。
+- **キュー**の永続的なメッセージングします。
+- **テーブル**キー/値の構造化ストレージ用です。
+- **ファイル**従来の smb ファイル共有。
 
-## Using the REST API
+## <a name="using-the-rest-api"></a>REST API の使用
 
-The Storage REST APIs are accessible from services running in Azure over a virtual network, or over the Internet from any application that can send an HTTP/HTTPS request and receive an HTTP/HTTPS response.
+ストレージ REST Api では、HTTP または HTTPS 要求を送信したり、HTTP/HTTPS 応答を受信して、インターネット経由で仮想ネットワーク経由で、任意のアプリケーションから Azure で実行するサービスからアクセスできます。
 
-For example, if you wanted to list all the blobs in a container, you would send something like:
+たとえば、コンテナー内のすべての blob を一覧表示する場合は、ような送信は。
 
 ```http
 GET https://[url-for-service-account]/?comp=list&include=metadata
 ```
 
-This would return an XML block with data specific to the account:
+返されますデータと XML ブロックを特定のアカウントに。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
@@ -65,27 +65,20 @@ This would return an XML block with data specific to the account:
 </EnumerationResults>  
 ```
 
-However, this approach requires a lot of manual parsing and creation of HTTP packets to work with each API. For this reason, Azure provides pre-built _client libraries_ that make working with the service easier for common languages and frameworks.
+ただし、このアプローチは、多くの手動解析し、各 API を使用する HTTP パケットの作成が必要です。 このため、Azure には、事前に構築された_クライアント ライブラリ_サービスの操作を一般的な言語とフレームワークを簡単に構成します。
 
-## Using a client library
+## <a name="using-a-client-library"></a>クライアント ライブラリを使用します。
 
-Client libraries can save a significant amount of work for application developers because the API is tested and it often provides nicer wrappers around the data models sent and received by the REST API.
+クライアント ライブラリは、API がテストされ、REST API によって送受信されたデータ モデルのより良いラッパーを提供する多くの場合、ために、大量のアプリケーションの開発者の作業を節約できます。
 
 :::row:::
     :::column:::
-        Microsoft has Azure client libraries that support a number of languages and frameworks including:
-        - .NET
-        - Java
-        - Python
-        - Node.js
-        - Go
-    :::column-end::::
-    :::column:::
-        <br> ![Sample logos of supported frameworks you can use with Azure](../media/4-common-tools.png)
+        Microsoft はさまざまな言語となどのフレームワークをサポートする Azure クライアント ライブラリ: .NET、Java、Python、Node.js - Go :::column-end:::: :::column:::
+        <br> ![Azure で使用できるサポートされているフレームワークのサンプルのロゴ](../media/4-common-tools.png)
     :::column-end:::
 :::row-end:::
 
-For example, to retrieve the same list of blobs in C#, we could use the following code snippet:
+たとえば、同じ c# 内の blob の一覧を取得するには、次のコード スニペットを使用しますでした。
 
 ```csharp
 CloudBlobDirectory directory = ...;
@@ -97,7 +90,7 @@ foreach (IEnumerable<IListBlobItem> blob in directory.ListBlobs(
 }
 ```
 
-Or in JavaScript:
+または、JavaScript で。
 
 ```javascript
 const containerName = "...";
@@ -113,6 +106,6 @@ blobService.listBlobsSegmented(containerName, null, function (error, results) {
 ```
 
 > [!NOTE]
-> The client libraries are just thin _wrappers_ over the REST API. They are doing exactly what you would do if you used the web services directly. These libraries are also open source making them very transparent. Look for them on GitHub.
+> クライアント ライブラリは、シンだけ_ラッパー_ REST API 経由でします。 正確にこのような場合は、web サービスを直接使用するように操作します。 これらのライブラリがオープン ソースの非常に透明にすることもできます。 GitHub でそれらを探します。
 
-Let's add the client library support for our application.
+アプリケーションへのクライアント ライブラリのサポートを追加してみましょう。

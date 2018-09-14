@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-app-service.4-using-asp.net-core-on-linux
+title: Linux 上の ASP.NET Core の操作
+metadata:
+  title: Linux 上の ASP.NET Core の操作
+  description: Linux 上の ASP.NET Core の操作
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+durationInMinutes: 10
+content: |
+  [!include[](includes/4-using-asp.net-core-on-linux.md)]

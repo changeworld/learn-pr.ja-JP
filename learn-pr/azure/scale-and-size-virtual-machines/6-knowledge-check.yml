@@ -1,38 +1,38 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.6-knowledge-check
-title: "Knowledge check: Scale and size virtual machines"
+title: '知識チェック: スケールと仮想マシンのサイズ'
 durationInMinutes: 3
-
 metadata:
-  title: "Knowledge check: Scale and size virtual machines"
-  description: Questions about scaling and sizing virtual machines in Azure.
-
+  title: '知識チェック: スケールと仮想マシンのサイズ'
+  description: スケーリングと Azure の仮想マシンのサイズ変更に関する質問。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
 quiz:
-  title: "Knowledge check: Scale and size virtual machines"
+  title: '知識チェック: スケールと仮想マシンのサイズ'
   questions:
- 
-  - content: "True or false: when using virtual machine scale sets with autoscale, the autoscale rules can be configured to change the _size_ of the virtual machines in your scale set."
-    choices:
-    - content: "True"
-      isCorrect: false
-    - content: "False"
-      isCorrect: true
-      correctExplanation: "Autoscale changes the number of instances in your scale set, it does not change the size of the instances."
-
-  - content: "What is typically the most important criterion to use when choosing a _type_ for your virtual machine?"
-    choices:
-    - content: "Your workload; that is, the kind of operations you expect the virtual machine to perform most often."
-      isCorrect: true
-      correctExplanation: "Virtual machine _type_ describes the mix of CPU, GPU, memory, storage, and networking bandwidth allocated to a VM. Your goal is to find the best match of resources for your workload."
-    - content: "The brand of the underlying hardware."
-      isCorrect: false
-    - content: "The operating systems and images that the type supports."
-      isCorrect: false
-       
-  - content: "Suppose you work for a government department responsible for severe-weather alerts. You can achieve the performance you need using one large VM or two small VMs with a load balancer. Which configuration is likely to be a better choice?"
-    choices:
-    - content: "One VM"
-      isCorrect: false
-    - content: "Two VMs and a load balancer"
-      isCorrect: true
-      correctExplanation: "Multiple VMs is appropriate because it provides redundancy. If one of the VMs crashes, the other can continue to service requests."
+    - content: 'True または false: を変更する自動スケール ルールを構成できます自動スケールと仮想マシン スケール セットを使用する場合、_サイズ_スケール内の仮想マシンの設定。'
+      choices:
+        - content: はい
+          isCorrect: false
+        - content: いいえ
+          isCorrect: true
+          correctExplanation: 自動スケールは、スケール セット内のインスタンスの数を変更します。 インスタンスのサイズは変わりません。
+    - content: 通常は、選択するときに使用する最も重要な条件を_型_仮想マシンのでしょうか。
+      choices:
+        - content: ワークロード。つまり、操作の種類最も頻繁に実行する仮想マシンが必要です。
+          isCorrect: true
+          correctExplanation: 仮想マシン_型_CPU、GPU、メモリ、ストレージ、および VM に割り当てられているネットワークの帯域幅の組み合わせについて説明します。 目標は、ワークロードのリソースの最適な一致を検索することです。
+        - content: 基になるハードウェアのブランド。
+          isCorrect: false
+        - content: オペレーティング システムと、型をサポートするイメージ。
+          isCorrect: false
+    - content: 悪天候の予報アラートを担当する政府部門を操作するとします。 1 つの大規模な VM または 2 つの小さな Vm、ロード バランサーを使用して必要なパフォーマンスを実現できます。 構成はことをお勧めする可能性がありますか。
+      choices:
+        - content: One VM
+          isCorrect: false
+        - content: 2 つの Vm とロード バランサー
+          isCorrect: true
+          correctExplanation: 複数の Vm の構成は、冗長性を提供するために適しています。 Vm のいずれかがクラッシュした場合は、サービス要求を他の続行できます。

@@ -1,14 +1,14 @@
-Every system, architecture, and application needs to be designed with security in mind. A denial of service attack prevents you from doing business. Defacement of your website damages your reputation. And a data breach is perhaps worst of all. It can ruin hard-earned trust and cause significant personal and financial harm. As administrators, developers, and IT management, we all must work to guarantee the security of our systems. 
+すべてのシステム、アーキテクチャ、およびアプリケーションは、セキュリティを考慮して設計する必要があります。 サービス拒否攻撃には、ビジネスを実行できないようにします。 お客様の評判を破損する web サイトの結果を招きます。 データ侵害が一番困るはおそらくことです。 信頼の得がたいに支障をきたすおよび重要な個人や財務の損害を与えることがことができます。 管理者、開発者、IT 管理とシステムのセキュリティを保証するために私たち作業する必要があります。 
 
-Let's say you work for shipping and logistics company Contoso Shipping. Contoso Shipping is in the process of moving a lot of their infrastructure to the cloud. Several physical servers in their datacenter are moving over to Azure virtual machines. The current plans involve a hybrid solution, with some of the servers remaining on-premises, but they will need a secure, high-quality connection between the new virtual machines and the existing network.
+配布の作業を行い、物流担当会社 Contoso 配布とします。 Contoso の配布は、インフラストラクチャの多くをクラウドに移行中です。 自社データ センターで複数の物理サーバーは Azure の仮想マシンに経由で移動します。 一部の残りのオンプレミスのサーバーでのハイブリッド ソリューション、現在のプランが、新しい仮想マシンと既存のネットワークの間のセキュリティで保護された、高品質な接続必要があります。
 
-Additionally, Contoso Shipping has some out-of-network devices that are part of its operations. They are using network-enabled sensors in their trucks that send data to Azure Event Hubs. And delivery drivers use mobile apps to get route maps and record signatures for receipt of shipments. These devices and apps must be securely authenticated before data can be sent to or from them.
+さらに、Contoso の配布には、その操作の一部である一部のネットワークのデバイスがあります。 Azure Event Hubs にデータを送信している、トラックで、ネットワーク対応のセンサーを使用しています。 配送ドライバーでは、モバイル アプリを使用して、ルート マップと荷物の受領のシグネチャはレコードを取得します。 これらのデバイスとアプリする必要がありますに安全に前に認証されるとそれらの間にデータを送信できます。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Learn how security responsibility is shared with Azure
-- Learn how identity management provides protection, even outside your network
-- Learn how encryption capabilities built in to Azure can protect your data
-- Learn how to protect your network and virtual networks
+- Azure でのセキュリティの責任を共有する方法について説明します。
+- Id 管理が、ネットワークの外部でも、保護を提供する方法について説明します。
+- Azure に組み込まれている暗号化機能が、データを保護する方法について説明します。
+- ネットワークと仮想ネットワークを保護する方法について説明します

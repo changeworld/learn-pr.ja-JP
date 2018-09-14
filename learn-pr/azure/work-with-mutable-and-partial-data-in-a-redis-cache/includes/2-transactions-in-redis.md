@@ -1,32 +1,28 @@
-There are times where you must guarantee that multiple operations execute together. For example, in your instant messaging application, users can send: an individual picture, an individual text message, or a picture and text message together. When the user chooses to send a picture and text message together, we must ensure that other members of the group receive them at the same time. This is important because if a picture and text message are not received together, it’s possible that a separate message could be sent in between the picture and text message, which could make the overall conversation confusing.
+複数の操作を一緒に実行を保証する必要があります。 たとえば、インスタント メッセージング アプリケーションで送信できます個々 の画像や、個々 のテキスト メッセージ、画像およびテキスト メッセージをまとめて。 一緒に画像とテキスト メッセージを送信するユーザーを選択すると、グループの他のメンバーの受信を同時にことを確認する必要があります。 これは、機能は、画像とテキスト メッセージが同時に受信されていない場合、画像とテキスト メッセージの間に個別のメッセージを送信するでした可能性があるため重要です。 全体的なメッセージ交換使用混乱することができます。
 
-Here, we'll look at how to create a transaction in Redis to guarantee multiple operations are executed together.
+ここでは、複数の操作が同時に実行されることを保証するために Azure Redis Cache でトランザクションを作成する方法を紹介します。
 
-## How to create a transaction
+## <a name="how-to-create-a-transaction"></a>トランザクションを作成する方法
 
-To create a transaction, you need to have a transaction block. This is a queue that contains the commands that will be executed together. The `MULTI` command is used to create a transaction block and all subsequent commands are queued for atomic execution.
+トランザクションを作成するには、トランザクション ブロックを用意する必要があります。 これは、一緒に実行されるコマンドを含むキューです。 `MULTI`コマンドを使用して、トランザクション ブロックを作成し、すべての後続のコマンドはアトミック実行のキューに登録します。
 
-## How to execute a transaction
+## <a name="how-to-execute-a-transaction"></a>トランザクションを実行する方法
 
-To execute the commands in a transaction block, you use the `EXEC` command. This will execute all queued commands and restore the connection state to normal. If you decide you don't want to execute a transaction, you can use the `DISCARD` command, which will clear out the transaction block and set the connection state to normal.
+使用するトランザクション ブロックで、コマンドを実行、`EXEC`コマンド。 すべてのキューに登録されたコマンドの実行を正常に接続状態を復元します。 トランザクションを実行する場合は、使用できます、`DISCARD`コマンドはトランザクション ブロックをオフにし、通常への接続状態を設定します。
 
-One important thing to understand about Redis transactions is that they don't support rollbacks. This means that if a command inside a transaction fails, the remaining commands will still be executed.
+Azure Redis Cache のトランザクションを理解するために 1 つの重要な点は、ロールバックをサポートしていないことです。 これは、トランザクション内でのコマンドが失敗した場合、その他のコマンドが実行されることを意味します。
 
-## What is ServiceStack.Redis?
+## <a name="what-is-servicestackredis"></a>ServiceStack.Redis とは何ですか。
 
-In the previous module, **Optimize your web application by caching read-only data with Redis** we used the **StackExchange.Redis** client. Here, we're going to try out another popular client, **ServiceStack.Redis**.
-
-**ServiceStack.Redis** is a C# client library for interacting with a Redis cache. This means that instead of using low-level Redis commands, we can use C# classes and methods.
-
-For example, to create a transaction, we normally must use the Redis `MULTI` command. However, using **ServiceStack.Redis** we can create a transaction using the `CreateTransaction()` method.
+**ServiceStack.Redis**は Azure Redis Cache を操作する (C#) クライアント ライブラリです。 これは低レベルの Azure Redis Cache コマンドを使用する代わりに使用できる c# クラスとメソッドを意味します。 使用する代わりに、たとえば、`MULTI`と`EXEC`でトランザクションを実行するコマンド**ServiceStack.Redis**を作成、`IRedisTransaction`オブジェクトを使用して、`CreateTransaction()`メソッド。
 
 ```csharp
 var transaction = redisClient.CreateTransaction();
 ```
 
-## Create a transaction using C# and the ServiceStack.Redis client
+## <a name="create-a-transaction-using-c-and-the-servicestackredis-client"></a>C# と ServiceStack.Redis クライアントを使用してトランザクションを作成します。
 
-Here's an example of using **ServiceStack.Redis** to create a transaction that can send a message that includes a picture and text.
+使用する例を次に示します**ServiceStack.Redis**画像とテキストを含むメッセージを送信できるトランザクションを作成します。
 
 ```csharp
 public bool SendPictureAndText(string groupChatID, string text, string pictureURL)
@@ -47,4 +43,4 @@ public bool SendPictureAndText(string groupChatID, string text, string pictureUR
     }
 }
 ```
-Transactions ensure that multiple operations are executed together. You create a transaction using the `MULTI` command, however, using a client library like **ServiceStack.Redis**, you can use the `CreateTransaction()` method.
+トランザクションは、複数の操作が同時に実行されることを保証します。 使用してトランザクションを作成する、`MULTI`コマンド。 などのクライアント ライブラリを使用している場合**ServiceStack.Redis**、使用することができます、`CreateTransaction()`メソッド。

@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
-# Unit uids are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
 uid: learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-the-text-analytics-api-using-the-api-testing-console
 metadata:
-  title: Exercise - Call the Text Analytics API from the online testing console
-  description: In this unit, we'll make real calls to the sentiment endpoint of the Text Analytics API without writing a line of code, thanks to the online API testing console.
-  displayType: two-column
-title: Exercise - Call the Text Analytics API from the online testing console
-#interactive: azure-portal
+  title: 演習 - オンラインのテスト コンソールから、Text Analytics API を呼び出す
+  description: このユニットで online API のテスト コンソールに協力してくれたのコード行も記述せず、Text Analytics API のセンチメント エンドポイントへの実際の呼び出しを行ったします。
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: 演習 - オンラインのテスト コンソールから、Text Analytics API を呼び出す
 azureSandbox: true
 durationInMinutes: 10
 content: |
   [!include[](includes/3-exercise-call-the-text-analytics-api-using-the-api-testing-console.md)]
-
-

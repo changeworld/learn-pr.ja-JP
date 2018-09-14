@@ -1,26 +1,26 @@
-Azure is Microsoft's cloud computing platform. But before we go further, let's define briefly what cloud computing is.
+Azure は Microsoft のクラウド コンピューティング プラットフォームです。 どのようなクラウド定義について簡単に進む前にさらに、コンピューティングとです。
 
-## What is cloud computing?
+## <a name="what-is-cloud-computing"></a>クラウド コンピューティングとは
 
-Cloud computing is the delivery of computing services over the Internet using a **pay-as-you-go** pricing model. Put another way, it's a way to rent compute power and storage from someone else's data center.
+クラウド コンピューティングを使用して、インターネット経由でコンピューティング サービスの配信、**従量課金制**価格モデル。 別の言い方を行うには、コンピューティング能力と他のユーザーのデータ センターから記憶域をレンタルする方法です。
 
-Instead of maintaining CPUs and storage in your data center, you rent them for the time that you need them. You can treat cloud resources like you would your resources in your own data center. When you're done using them, you just give them back. You're billed only for what you use.
+Cpu とストレージ、データ センターを維持するには、代わりにレンタルそれらに必要な時間。 独自のデータ センターで、リソースの場合と同様に、クラウド リソースを扱うことができます。 完了したら、だけを付けると戻ります。 使用する場合にのみ課金されます。
 
-While this is all great, the real value of the cloud is that it enables you to quickly solve your toughest business challenges and bring cutting edge solutions to your users.
+これはすばらしい、クラウドの実際の値をすばやく、難しいビジネス上の課題を解決および cutting edge ソリューションをユーザーに配置できます。
 
-## What can I do on Azure?
+## <a name="what-can-i-do-on-azure"></a>Azure では、どうすればでしょうか。
 
-Azure provides over 100 services that enable you to do everything from running your existing applications on virtual machines to exploring new software paradigms such as intelligent bots and mixed reality.
+Azure は 100 を超えるサービスを提供しています。仮想マシン上で既存のアプリケーションを実行するサービスから、インテリジェント ボットや複合現実などの新しいソフトウェア パラダイムを探索するサービスまであらゆるサービスがそろっています。
 
-Many teams start exploring the cloud by moving their existing applications to virtual machines that run in Azure. While migrating your existing apps to VMs is a great start, the cloud is more than just "a different place to run your VMs".
+多くのチームでは、既存のアプリケーションを Azure で実行する仮想マシンを移動することによって、クラウドの探索を開始します。 有効な出発点は、仮想マシンに既存のアプリを移行する、クラウドが単「別の場所に仮想マシンを実行」。
 
-For example, Azure provides AI and machine-learning services that can naturally communicate with your users through vision, hearing, and speech. It also provides storage solutions that dynamically grow to accommodate massive amounts of data. Azure services enable solutions that are simply not feasible without the power of the cloud.
+たとえば、Azure は、AI とビジョン、聴覚、および音声を使用するユーザーと自然と通信できる machine learning サービスを提供します。 また、膨大な量のデータを対応するために動的に拡張記憶域ソリューションも提供します。 Azure サービスはなく、クラウドの機能を実現するソリューションが有効にします。
 
 > [!TIP]
-> Have you ever attended a hackathon? A hackathon is an event where people from all disciplines get together and use technology to tackle tough business problems. Rather than laying cable and racking servers, you can use Azure as an efficient and low-cost way to let your team explore new ideas. Thousands of innovations are driven by experimentation on Azure. Later, be sure to check the case study discussing how [Study123 expanded learning from school to anywhere](https://microsoft.github.io/techcasestudies/azure%20functions/2017/07/19/Study123AzureFunctions.html) with Azure Functions and Media Services.
+> これまで、ハッカソンを出席したでしょうか。 ハッカソンは、get の分野のすべての人の社員まとめてイベントは、およびテクノロジを使用して難しいビジネス上の問題に取り組みます。 ケーブルをレイアウトし、サーバー ラック構成ではなく、チームが新しいアイデアを探索する効率的で低コストの方法として Azure を使用できます。 Azure では、何千もの技術革新の実験で駆動されます。 後で、ケース スタディについての説明を確認することを確認する方法[Study123 展開の任意の場所に学校からの learning](https://microsoft.github.io/techcasestudies/azure%20functions/2017/07/19/Study123AzureFunctions.html) Azure Functions と Media Services でします。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Cloud computing enables you to rent compute power and storage instead of buying physical assets such as CPUs and storage.
+クラウド コンピューティングによってをレンタルすることはコンピューティング能力および Cpu やストレージなどの物理資産を購入する代わりに記憶域になります。
 
-Azure is Microsoft's cloud computing platform, and it provides many kinds of services that go well beyond what you can do with commodity hardware. These services range from cost-efficient virtual machines and storage that you manage to complete software solutions that we host and manage for you.
+Azure は Microsoft のクラウド コンピューティング プラットフォームで、さまざまな種類の汎用的なハードウェアで何ができるよりはるかに優れたサービスを提供します。 コスト効率に優れた仮想マシンおよびホスト、管理ソフトウェア ソリューションを完了するように管理する記憶域からのこれらのサービス範囲

@@ -2,7 +2,7 @@
 
 このユニットでは、前の演習で作成した VM にある Ubuntu デスクトップにリモートで接続します。 この操作を行うには、Linux 用のライトウェイト デスクトップ環境である、[Xfce](https://xfce.org/) をサポートするクライアントが必要です。 背景について、および Data Science Virtual Machine (DSVM) に接続できるさまざまな方法の概要については、「[Linux データ サイエンス仮想マシンにアクセスする方法](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro#how-to-access-the-data-science-virtual-machine-for-linux)」を参照してください。
 
-1. まだ Xfce クライアントをインストールしていない場合は、この演習を続ける前に、[X2Go クライアント](https://wiki.x2go.org/doku.php/download:start)をダウンロードしてインストールしてください。 X2Go は無料であり、Windows や OS X などのさまざまなオペレーティング システム上で動作するオープンソースの Xfce ソリューションです。このユニットの手順では X2Go を使用することを想定していますが、Xfce をサポートする任意のクライアントを使用できます。
+1. まだ Xfce クライアントをインストールしていない場合は、この演習を続ける前に、[X2Go クライアント](https://wiki.x2go.org/doku.php/download:start)をダウンロードしてインストールしてください。 X2Go では、無料かつオープン ソース Xfce ソリューションにはさまざまな Windows および OS X を含め、オペレーティング システムで動作です。このユニット内の手順では、X2Go を使用して Xfce をサポートする任意のクライアントを使用することが前提としています。
 
 1. Azure portal 内の **data-science-rg** リソース グループに戻ります。 **data-science-vm** リソースをクリックしてポータル内で開きます。
 
@@ -20,7 +20,7 @@
 
     ![新しいセッションの開始](../media-draft/2-new-session-2.png)
 
-1. [演習 1](#Exercise1)で指定したパスワードを入力して、**[OK]** ボタンをクリックします。 ホスト キーを信頼するかどうかの確認が表示された場合は、**[はい]** を選択してください。 また、SSH デーモンが起動しないことを示すエラー メッセージは無視します。
+1. 最後の単位で指定したパスワードを入力し、クリックして、 **OK**ボタンをクリックします。 ホスト キーを信頼するかどうかの確認が表示された場合は、**[はい]** を選択してください。 また、SSH デーモンが起動しないことを示すエラー メッセージは無視します。
 
     ![VM へのログイン](../media-draft/2-new-session-3.png)
 

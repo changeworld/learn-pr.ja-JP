@@ -9,11 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ff3b711c5d58bf5ccc7bc1317a48fc4fc025f800
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243303"
 durationInMinutes: 5
-content: '[!include[](includes/4-work-with-the-cli.md)]'
+content: |
+  [!include[](includes/4-work-with-the-cli.md)]

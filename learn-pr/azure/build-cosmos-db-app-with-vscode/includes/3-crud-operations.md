@@ -1,27 +1,27 @@
 <!--TODO: explain Etag in knowledge needed-->
 
-Once the connection to Azure Cosmos DB has been made, the next step is to create, read, replace, and delete the documents that are stored in the database. In this unit, you will create User documents in your WebCustomer collection, then you'll retrieve them by ID, replace them, and delete them.
+Azure Cosmos DB への接続が完了した後、次の手順としてデータベースに保存された文書の作成、読み込み、置換、削除を行います。 このユニットでは、WebCustomer コレクション内にユーザー ドキュメントを作成します。その後、ID を使った読み込み、置換、および削除を行います。
 
-## Working with documents programmatically
+## <a name="working-with-documents-programmatically"></a>プログラムによるドキュメントの操作
 
-Data is stored in JSON documents in Azure Cosmos DB. [Documents](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents) can be created, retrieved, replaced, or deleted in the portal, as shown in the previous module, or programmatically, as described in this module. Azure Cosmos DB provides client-side SDKs for .NET, .NET Core, Java, Node.js, and Python, each of which supports these operations. In this module we'll be using the .NET Core SDK to perform CRUD (create, retrieve, update, and delete) operations. 
+データは、Azure Cosmos DB 内の JSON ドキュメントに格納されます。 前のモジュールで示したようにポータルで、またはこのモジュールで説明するようにプログラムを使用して、[ドキュメント](https://docs.microsoft.com/azure/cosmos-db/sql-api-resources#documents)を作成、取得、置換、または削除できます。 Azure Cosmos DB では .NET、.NET Core、Java、Node.js、Python 用のクライアント側 SDK が提供されており、いずれもこれらの操作をサポートします。 このモジュールでは、.NET Core SDK を使用して CRUD (作成、取得、更新、削除) 操作を実行します。 
 
-The main operations for Azure Cosmos DB documents are part of the [DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) class:
+Azure Cosmos DB ドキュメントに対する主要な操作は、[DocumentClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient?view=azure-dotnet) クラスの一部です。
 * [CreateDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.createdocumentasync?view=azure-dotnet)
 * [ReadDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.readdocumentasync?view=azure-dotnet)
 * [ReplaceDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.replacedocumentasync?view=azure-dotnet)
-* [UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet). Upsert performs a create or replace operation depending on whether the document already exists.
+* [UpsertDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.upsertdocumentasync?view=azure-dotnet). アップサートでは、ドキュメントが既に存在するかどうかに応じて、作成または置換操作が実行されます。
 * [DeleteDocumentAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.documentclient.deletedocumentasync?view=azure-dotnet)
 
-To perform any of these operations, you need to create a class that represents the object stored in the database. Because we're working with a database of users, you'll want to create a **User** class to store primary data such as their first name, last name, and user id (which is required, as that's the partition key to enable horizontal scaling) and subclasses for shipping preferences and order history.
+これらの操作を実行するには、データベースに格納されているオブジェクトを表すクラスを作成する必要があります。 ユーザーのデータベースを使って作業を行っているため、ユーザーの姓名ならびにユーザー ID（水平スケーリングを可能とするためのパーティション キーとなるため、必須です）などのプライマリ データならびに発送用情報や注文履歴のためのサブクラスを格納するための **User** クラスの作成を行う必要があります。
 
-Once you have those classes created to represent your users, you'll create new user documents for each instance, and then we'll perform some simple CRUD operations on the documents.
+ユーザーを表すこれらのクラスを作成した後、インスタンスごとに新しいユーザー ドキュメントを作成し、ドキュメントに対していくつかのシンプルな CRUD 操作を実行します。
 
-## Create documents
+## <a name="create-documents"></a>ドキュメントの作成
 
-1. First, create a **User** class that represents the objects to store in Azure Cosmos DB. We will also create **OrderHistory** and **ShippingPreference** subclasses that are used within **User**. Note that documents must have an **Id** property serialized as **id** in JSON.
+1. 最初に、Azure Cosmos DB に格納するオブジェクトを表す **User** クラスを作成します。 また、**User** の内部で使用される **OrderHistory** および **ShippingPreference** サブクラスも作成します。 ドキュメントには、JSON で **id** としてシリアル化される **Id** プロパティが必要であることに注意してください。
 
-    To create these classes, copy and paste the following **User**, **OrderHistory**, and **ShippingPreference** classes underneath the **BasicOperations** method.
+    これらのクラスを作成するためには、**BasicOperations** メソッド下にある **User**、**OrderHistory**、および **ShippingPreference** の各クラスをコピーしてペーストします。
 
     ```csharp
     public class User
@@ -82,13 +82,13 @@ Once you have those classes created to represent your users, you'll create new u
     }
     ```
 
-1. In the integrated terminal, type the following command to run the program to ensure it runs.
+1. 統合ターミナルで、次のコマンドを入力してプログラムを実行し、プログラムが実行されることを確認します。
 
     ```csharp
     dotnet run
     ```
 
-1. Now copy and paste the **CreateUserDocumentIfNotExists** task under the **ShippingPreference** class.
+1. 次に、**CreateUserDocumentIfNotExists** タスクをコピーして、**ShippingPreference** クラスの下に貼り付けます。
 
     ```csharp
     private async Task CreateUserDocumentIfNotExists(string databaseName, string collectionName, User user)
@@ -113,7 +113,7 @@ Once you have those classes created to represent your users, you'll create new u
         }
     ```
 
-1. Then add the following to the **BasicOperations** method.
+1. そして、次のコードを **BasicOperations** メソッドに追加します。
 
     ```csharp
      User yanhe = new User
@@ -192,13 +192,13 @@ Once you have those classes created to represent your users, you'll create new u
                 await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. 統合ターミナルで、もう一度、次のコマンドを入力してプログラムを実行し、実行されていることを確認します。
 
     ```csharp
     dotnet run
     ```
 
-    The terminal displays the following output, indicating that both user records were successfully created.
+    両方のユーザー レコードが正常に作成されたことを示す次の出力が、ターミナルに表示されます。
 
     ```
     Database and collection validation complete
@@ -209,9 +209,9 @@ Once you have those classes created to represent your users, you'll create new u
     End of demo, press any key to exit.
     ```
 
-## Read documents
+## <a name="read-documents"></a>ドキュメントを読み取る
 
-1. To read documents from the database, copy in the following code and place it at the end of the Program.cs file.
+1. データベースからドキュメントを読み取るには、次のコードをコピーし、Program.cs ファイルの末尾に配置します。
     
     ```csharp
     private async Task ReadUserDocument(string databaseName, string collectionName, User user)
@@ -235,18 +235,18 @@ Once you have those classes created to represent your users, you'll create new u
     }
     ```
 
-1.  Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.
+1.  次のコードをコピーし、**BasicOperations** メソッドの最後の `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 行の後に貼り付けます。
 
     ```csharp
     await this.ReadUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Save the Program.cs file and then, in the integrated terminal, run the following command.
+1. Program.cs ファイルを保存し、統合ターミナルで次のコマンドを実行します。
 
     ```
     dotnet run
     ```
-    The terminal displays the following output, where the output "Read user 1" indicates the document was retrieved.
+    「Read user 1」の出力によって文書の読み込みが行われた状態で、ターミナルは次の出力を表示します。
 
     ```
     Database and collection validation complete
@@ -259,11 +259,11 @@ Once you have those classes created to represent your users, you'll create new u
     End of demo, press any key to exit.
     ```
 
-## Replace documents
+## <a name="replace-documents"></a>ドキュメントを置換する
 
-Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a user record to account for a change to their last name.
+Azure Cosmos DB は、JSON ドキュメントの置換をサポートします。 ここでは、姓の変更を反映するようにユーザー レコードを更新します。
 
-1. Copy and paste the **ReplaceFamilyDocument** method at the end of the Program.cs file.
+1. **ReplaceFamilyDocument** メソッドをコピーし、Program.cs ファイルの末尾に貼り付けます。
 
     ```csharp
     private async Task ReplaceUserDocument(string databaseName, string collectionName, User updatedUser)
@@ -287,19 +287,19 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     }
     ```
 
-1. Copy and paste the following code to the end of the **BasicOperations** method, after the `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` line.
+1. 次のコードをコピーし、**BasicOperations** メソッドの最後の `await this.CreateUserDocumentIfNotExists("Users", "WebCustomers", nelapin);` 行の後に貼り付けます。
 
     ```csharp
     yanhe.LastName = "Suh";
     await this.ReplaceUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. Save the Program.cs file and then, in the integrated terminal, run the following command.
+1. Program.cs ファイルを保存し、統合ターミナルで次のコマンドを実行します。
 
     ```
     dotnet run
     ```
-    The terminal displays the following output, where the output "Replaced last name for Suh" indicates the document was replaced.
+    ターミナルに次の出力が表示されます。"Replaced last name for Suh" という出力は、ドキュメントが置き換えられたことを示します。
 
     ```
     Database and collection validation complete
@@ -314,9 +314,9 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     End of demo, press any key to exit.
     ```
 
-## Delete documents
+## <a name="delete-documents"></a>ドキュメントの削除
 
-1. Copy and paste the **DeleteUserDocument** method underneath your **ReplaceUserDocument** method.
+1. **DeleteUserDocument** メソッドをコピーし、**ReplaceUserDocument** メソッドの下に貼り付けます。
     
     ```csharp
     private async Task DeleteUserDocument(string databaseName, string collectionName, User deletedUser)
@@ -340,19 +340,19 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     }
     ```
 
-1. Copy and paste the following code to your **BasicOperations** method underneath the second query execution.
+1. 次のコードをコピーし、**BasicOperations** メソッドの 2 回目のクエリ実行のすぐ下に貼り付けます。
 
     ```csharp
     await this.DeleteUserDocument("Users", "WebCustomers", yanhe);
     ```
 
-1. In the integrated terminal, run the following command.
+1. 統合ターミナルで、次のコマンドを実行します。
 
     ```
     dotnet run
     ```
 
-    The terminal displays the following output, where the output "Deleted user 1" indicates the document was deleted.
+    「Read user 1」の出力によって文書の削除が行われた状態で、ターミナルは次の出力を表示します。
 
     ```
     Database and collection validation complete
@@ -368,6 +368,6 @@ Azure Cosmos DB supports replacing JSON documents. In this case, we'll update a 
     End of demo, press any key to exit.
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit you created, replaced, and deleted documents in your Azure Cosmos DB database.
+このユニットでは、Azure Cosmos DB データベース内のドキュメントを作成、置換、削除しました。

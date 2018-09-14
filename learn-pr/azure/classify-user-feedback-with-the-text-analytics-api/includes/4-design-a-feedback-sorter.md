@@ -1,50 +1,48 @@
-Let's put our knowledge of Text Analytics to work in a practical solution. Our solution will focus on Sentiment Analysis  of text documents. Let's set the context by describing the problem we want to tackle. 
+テキスト分析に実用的な解決策では機能に関する知識を開始しましょう。 ソリューションのテキスト ドキュメントの感情分析に焦点を当てます。 対処する問題を記述することで、コンテキストを設定しましょう。
 
-## Manage customer feedback more efficiently
+## <a name="manage-customer-feedback-more-efficiently"></a>お客様からのフィードバックをより効率的に管理します。
 
-Social media is active with talk of your company's product. Your feedback email alias is also active with customers eager to share their opinion of your product.
+ソーシャル メディアでは、会社の製品の説明でアクティブです。 フィードバック電子メール エイリアスは、顧客、製品の意見を共有する eager とアクティブなもあります。
 
-As is the case with any new startup, you live by the mantra of listening to your customers. However, the success of your product has made keeping this promise easier said than done. It's a good problem but a problem all the same. 
+新しいスタートアップの場合と同様は、live、顧客にリッスンしているので。 ただし、保持するこの約束簡単口で言うほど行った、製品の成功が。 すべてが同じ問題が、適切な問題になります。
 
-The team can't keep up with the volume of feedback anymore. They need help sorting the feedback so that issues can be managed as efficiently as possible. As the lead developer in the organization, you have been asked to build a solution. 
+チームに対応できないフィードバックのボリュームできなくなります。 問題できる限り効率的に管理できるように、フィードバックを並べ替えヘルプが必要です。 組織のリード開発者として、ソリューションを構築するように依頼されました。
 
-Let's look at some high-level requirements:
+いくつかの高度な要件を見てみましょう。
 
-
-|Requirement  | Details  |
+|要件  | 詳細  |
 |---------|---------|
-|Categorize feedback so we can react to it.     |   Not all feedback is equal. Some is glowing testimony. Other feedback is scathing criticism from a frustrated customer.  Perhaps you can't tell what the customer wants in other cases. <br/><br/>At a minimum, having an indication of the sentiment, or tone, of feedback would help us categorize it.     |
-|The solution should scale up or down to meet demand.    |   We're a startup. Fixed costs are difficult to justify and we haven't figured out  the exact pattern of feedback traffic. We'll need a solution that can tackle bursts of activity, but cost as little as possible during quiet times. <br/><br/> A serverless architecture billed on a consumption plan is a good candidate in this case.     |
-| Produce a Minimal Viable Product (MVP), but make the solution adaptable.    | Today we want to categorize feedback so we can apply our limited resources to the feedback that matters. If a customer is frustrated, we want to know immediately and start chatting to them.  In the future, we'll enhance this solution to do more. One idea for a new feature is to examine key phrases in feedback to detect pain points before they reach critical mass with our customers.   Another idea is to automate responses back to customers who are either positive or neutral. Even though they love us, we want them to know we are still listening to their feedback. <br/><br/>A solution that offers a plug-and-play architecture is a good fit here. We could, for example, use queues as a form of factory line. You perform one task, then place the result into a queue for the next part of the system to pick it up and process.   |
-|Deliver quickly.     |   We've all heard this one before! Remember, this solution is an MVP and we want to test it with our scenario quickly. To deliver at speed and with quality will mean writing less code. <br/><br/> Taking advantage of the Text Analytics API means we don't have to train a model to detect sentiment.  Using Azure Functions and binding to queues declaratively reduces the amount of code we have to write.  A serverless solution also means we don't have to worry about server management.   |
+|これに対処できるように、フィードバックを分類します。     |   すべてのフィードバックと同じです。 いくつかは、発光証拠です。 その他のフィードバックはような痛快な不満の顧客から批判します。  おそらく、それ以外の場合、ユーザーの希望を判断できません。 <br/><br/>少なくとも、センチメント、またはフィードバックの声のトーンを示す値を持つ役立つに分類します。     |
+|上下のニーズに応じて、ソリューションを拡張する必要があります。    |   私たちは、起動します。 固定コストは正当化して、見つかっていないフィードバック トラフィックの正確なパターンです。 アクティビティ時間帯の中にできるだけ少なくコストの急増に対処できるソリューション必要があります。 <br/><br/> 従量課金プランで課金されますサーバーレス アーキテクチャでは、適切な候補をここでは。     |
+| 生成を最小限に抑える実行可能な製品 (MVP) が、適応性のあるソリューションを作成します。    | 現在、重要なフィードバックには、限られたリソースを適用できるように、フィードバックを分類します。 顧客が不満の場合をすぐに理解し、それらにチャットを開始いたします。  今後、さらに活用するのには、このソリューションを向上させします。 新機能の 1 つの考え方では、フィードバックをお客様の重要な大容量に到達する前に、問題点を検出するために含まれるキー フレーズを確認します。   別のアイデアは、正またはニュートラルのいずれかであるお客様への応答を自動化することです。 私たちを好む場合でも、フィードバックを引き続きリッスン私たちを通知します。 <br/><br/>プラグ アンド プレイ アーキテクチャを実現するソリューションは、ここで適してします。 工場出荷時の行の形式としてキューの使用など。 1 つのタスクを実行し、結果をシステムを選択し、セットアップ プロセスの次の部分のキューに配置します。   |
+|迅速に提供します。     |   耳の前に、この 1 つです。 ただし、このソリューションは、MVP とをこのシナリオでのテストを簡単にします。 速度と品質を提供するには、と、少ないコードします。 <br/><br/> Text Analytics API を活用すると、センチメントを検出するためにモデルをトレーニングする必要はないを意味します。  Azure Functions を使用して、キューへのバインドを宣言によって記述する必要のあるコードの量が減ります。  サーバーレス ソリューションでは、サーバーの管理について心配する必要はありませんも意味します。   |
 
-Our proposed solution for each requirement in the preceding table offers a glimpse into how to map requirements to solutions.  Let's now see  what a solution might look like based on Azure.
+上の表では、各要件の提案されたソリューションの要件をソリューションにマップする方法を紹介しています。  今すぐを見てみましょうソリューションのよう Azure に基づきます。
 
-## A solution based on Azure Functions, Azure Queue Storage, and Text Analytics API
+## <a name="a-solution-based-on-azure-functions-azure-queue-storage-and-text-analytics-api"></a>Azure Functions、Azure Queue Storage、および Text Analytics API に基づいたソリューション
 
-The following diagram is a design proposal for a solution. It uses three core components of Azure - Azure Queue Storage, Azure Functions, and Microsoft Cognitive Services on Azure.
+次の図は、ソリューションの設計案です。 Azure で 3 つのコア コンポーネント Azure - Azure Queue Storage、Azure Functions、および Microsoft Cognitive Services を使用します。
 
-![Conceptual diagram of a feedback sorting architecture.](../media-draft/proposed-solution.PNG)
+![アーキテクチャの並べ替えに関するフィードバックの概念図。](../media/proposed-solution.PNG)
 
-The idea is that text documents containing user feedback are placed into a queue that we've named *new-feedback-q* in the preceding diagram. The arrival of a text document into the queue triggers, or starts, an Azure Function. The function reads the new documents from the input queue and sends them for analysis to the Text Analytics API. Based on the results that the API returns, the document is placed into an output queue for further processing.
+つまり、ユーザーからのフィードバックを含むテキスト ドキュメントをしたという名前のキューに配置する*新しいフィードバック q*上の図。 テキスト ドキュメントを含む、キューにメッセージの到着をトリガーし、または関数の実行を開始します。 関数は、入力キューから新しいドキュメントを含むメッセージを読み取るし、Text Analytics API への分析のため送信します。 ドキュメントを含む新しいメッセージは、API が返す結果に基づいて、さらに処理するため、出力キューに格納されます。
 
-The result we get back for each document is a sentiment score. The output queues are used to store feedback sorted into positive, neutral, and negative. Hopefully the negative queue will always be empty! :-)   Once we've bucketed each incoming piece of feedback into an output queue based on sentiment, you can imagine adding logic to take action on the messages in each queue. 
+各ドキュメントに戻る結果は、センチメント スコアです。 出力キューを使用して、正、中立、負の値に並べ替えられたフィードバックを格納します。 うまくいけば負のキューは空に常になります! :-)  センチメントに基づいて出力キューにフィードバックの受信した各部分をバケット化した後、は、各キュー内のメッセージに対処するロジックを追加すると想像できます。
 
-Let's look at a flowchart next to see what the function logic needs to do.
+行う必要がある関数のロジックを表示するには、次のフローチャートを見てみましょう。
 
-![Flowchart of the logic inside the Azure function to sort text documents by sentiment into output queues.](../media-draft/flow.PNG)
+![出力キューに感情でテキスト ドキュメントを分類する Azure 関数の内部ロジックのフローチャート。](../media/flow.PNG)
 
-Our logic is like a router. It takes text input and routes it to an output queue based on the sentiment score of the text. We have a dependency on Text Analytics API. While the logic seems trivial, this function will remove the need for people on the team to analyze feedback manually.
+このロジックは、ルーターと似ています。 テキスト入力を受け取り、テキストのセンチメント スコアに基づいて、出力キューにルーティングします。 Text Analytics API の依存関係を持っています。 ロジックは、単純なと、この関数は、チームのユーザーを手動でフィードバックを分析する必要性を削除します。
 
-## Steps to implement our solution
+## <a name="steps-to-implement-our-solution"></a>今回のソリューションを実装する手順
 
-To implement the solution described in this unit, we'll need to complete the following steps.
+このユニットで説明するソリューションを実装するために、次の手順を完了する必要になります。
 
-1. Create a function app to host our solution.
+1. 今回のソリューションをホストする関数アプリを作成します。
 
-1. Look for sentiment in incoming feedback messages using the Text Analytics API. We'll use our access key from the preceding exercise and write some code to send the requests.
+1. Text Analytics API を使用してフィードバック メッセージのセンチメントを探します。 前の手順で、アクセス キーを使用し、要求を送信するコードを記述します。
 
-1. Post feedback to processing queues based on sentiment.
+1. センチメントに基づいてキューを処理するためのフィードバックを投稿します。
 
-
-Let's move on to creating our function and function app. 
+関数アプリの作成に進みましょう。

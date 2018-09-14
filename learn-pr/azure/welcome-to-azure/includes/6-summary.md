@@ -1,10 +1,11 @@
-Great work! With your first virtual machine under your belt, you now have a sense of how Azure works and how easy it is to bring up a system, configure some software, and tear everything down when it's no longer needed.
+よくやりました! 身に初めて仮想マシンを使用するようになりましたの Azure のしくみや、システムを起動、一部のソフトウェアを構成するがいかに簡単か理解し、破棄すべて不要になったときにします。
 
-Azure provides services that can help transform the way your organization delivers new features to your users in ways you simply can't do without the power of the cloud.
+Azure では、組織には、クラウドの電源のないことはできませんの方法でユーザーに新機能を提供する方法を変えるに役立つサービスを提供します。
 
-## Continue your Azure journey
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
 
-Microsoft Learn provides learning paths based on your role and interests.
+## <a name="continue-your-azure-journey"></a>Azure の旅を続ける
 
-A great next step is to check out the
-[Cloud foundations](/learn/paths/cloud-foundations/) learning path. You'll learn the fundamental concepts behind cloud computing and how Azure services such as compute, storage, networking, and security can help you unlock the power of the cloud and create that next great breakthrough idea.
+Microsoft の学習は、ユーザーのロールと関心に基づいてラーニング パスを提供します。
+
+適切な次の手順がチェック アウトするには、[クラウド基盤](/learn/paths/cloud-foundations/)ラーニング パス。 コンピューティング、ストレージ、ネットワークなどのクラウド コンピューティングと Azure サービスの背後にある基本的な概念について説明し、セキュリティのヘルプをクラウドの機能のロックを解除し、その次の優れた画期的なアイデアを作成できます。

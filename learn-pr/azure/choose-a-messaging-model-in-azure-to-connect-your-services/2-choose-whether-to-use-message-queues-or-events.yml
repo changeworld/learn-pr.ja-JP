@@ -9,23 +9,16 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 00474301121987cab2098cdfa80cb15e98a4a36f
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245972"
 durationInMinutes: 10
-content: >
+content: |
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: メッセージング モデル
+  title: 知識チェック
   questions:
-  - content: '分散アプリケーションには、ユーザーを認証する Web サービスがあります。 ユーザーがログオンすると、Web サービスは、ユーザーのすべてのコンピューターで実行されるデスクトップ アプリケーションと通信して、そのユーザーの状態を "オンライン" として表示する必要があります。 true または false: これは分散アプリケーションのメッセージの例です。'
-    choices:
-    - content: "True"
-      incorrectExplanation: これは分散アプリケーションのイベントの例です。 通信はすべてのサブスクライバーにルーティングされます。パブリッシャーは、その通信をサブスクライバーがどのように扱うかについて認識も好みも持つことはなく、サブスクライバーの数がどれだけあるかも認識しません。
-      isCorrect: false
-    - content: "False"
-      correctExplanation: 正解です。 これはイベント通知であり、これによって何らかのアクションがトリガーされます。 これは、イベントを使用する最適なケースです。
-      isCorrect: true
+    - content: 'ユーザーを認証する web サービスと分散アプリケーションがあるとします。 ユーザーがログオンしたときに、web サービスは、すべての"Online"の状態を表示するクライアント アプリケーションと通信します。 true または false: これは分散アプリケーションのメッセージの例です。'
+      choices:
+        - content: はい
+          isCorrect: false
+        - content: いいえ
+          correctExplanation: 通常、メッセージには、たとえば、メディア ファイル、生データ自体が含まれます。 このような状況でユーザーの状態を表すデータの簡単なピースお送りしています。 また、データを送信すると、イベントを使用するための最適な場合、アクションに応答しているいます。
+          isCorrect: true

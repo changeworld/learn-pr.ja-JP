@@ -1,40 +1,36 @@
-You have added the required client libraries to your application and are ready to connect to your Azure storage account.
+アプリケーションに必要なクライアント ライブラリを追加し、Azure ストレージ アカウントに接続する準備が整いました。
 
-To work with data in a storage account, your app will need two pieces of data:
+ストレージ アカウント内のデータを使用するには、アプリは 2 つのデータ必要があります。
 
-1. [An access key](#access-key)
-1. [The REST API endpoint](#rest-endpoint)
+1. アクセス キー
+1. REST API エンドポイント
 
-<a name="access-key"></a>
+## <a name="security-access-keys"></a>セキュリティのアクセス キー
 
-## Security access keys
+各ストレージ アカウントに一意の 2 つ_アクセス キー_ストレージ アカウントをセキュリティ保護に使用します。 を、アプリが複数のストレージ アカウントに接続する必要がある場合、アプリが必要になりますアクセス キーの各ストレージ アカウント。
 
-Each storage account has two unique _access keys_ that are used to secure the storage account. If your app needs to connect to multiple storage accounts, then your app will require an access key for each storage account.
+![アプリケーションの図解は、クラウド内の 2 つの異なるストレージ アカウントに接続します。 各ストレージ アカウントは一意のキーを使用してアクセスできます。](..\media\6-multiple-accounts.png)
 
-![An illustration showing an application connected to two different storage accounts in the cloud. Each storage account is accessible with a unique key.](..\media\6-multiple-accounts.png)
+## <a name="rest-api-endpoint"></a>REST API エンドポイント
 
-<a name="rest-endpoint"></a>
+ストレージ アカウントへの認証、アクセス キーだけでなく、アプリは、REST 要求を発行するストレージ サービス エンドポイントを把握する必要があります。 
 
-## REST API endpoint
+REST エンドポイントでは、ストレージ アカウントの組み合わせ_名前_データ型、および既知のドメイン。 例:
 
-In addition to access keys for authentication to storage accounts, your app will need to know the storage service endpoints to issue the REST requests. 
-
-The REST endpoint is a combination of your storage account _name_, the data type, and a known domain. For example:
-
-| Data type | Example endpoint |
+| データ型 | たとえば、エンドポイント |
 |-----------|------------------|
-| Blobs     | `https://[name].blob.core.windows.net/` |
-| Queues    | `https://[name].queue.core.windows.net/` |
-| Table     | `https://[name].table.core.windows.net/` |
-| Files     | `https://[name].file.core.windows.net/` |
+| BLOB     | `https://[name].blob.core.windows.net/` |
+| キュー    | `https://[name].queue.core.windows.net/` |
+| テーブル     | `https://[name].table.core.windows.net/` |
+| ファイル     | `https://[name].file.core.windows.net/` |
 
-If you have a custom domain tied to Azure, then you can also create a custom domain URL for the endpoint.
+Azure に関連付けられているカスタム ドメインがあれば、エンドポイントのカスタム ドメイン URL も作成できます。
 
-## Connection strings
+## <a name="connection-strings"></a>Connection strings
 
-The simplest way to handle this information is to use a **storage account connection string** A connection string provides all needed connectivity information in a single text string.
+この情報を処理する最も簡単な方法が使用するには、**ストレージ アカウント接続文字列**します。 接続文字列は、必要なすべての 1 つのテキスト文字列で接続情報を提供します。
 
-Azure Storage connection strings look similar to the example below but with the access key and account name of your specific storage account:
+Azure Storage 接続文字列は、下の例と類似していますが、ご利用の特定のストレージ アカウントのアクセス キーとアカウント名が使用されたものである必要があります。
 
 ```
 DefaultEndpointsProtocol=https;AccountName={your-storage};
@@ -42,29 +38,29 @@ DefaultEndpointsProtocol=https;AccountName={your-storage};
    EndpointSuffix=core.windows.net
 ```
 
-## Security
+## <a name="security"></a>セキュリティ
 
-Access keys are critical to providing access to your storage account and as a result, should not be given to any system or person that you do not wish to have access to your storage account. Access keys are the equivalent of a username and password to access your computer.
+アクセス キーは、ストレージ アカウントにアクセスするために重要で、ストレージ アカウントにアクセスを許可したくないシステムまたはユーザーには知らせないようにする必要があります。 アクセス キーは、コンピューターにアクセスするためのユーザー名とパスワードと同じです。
 
-Typically, storage account connectivity information is stored within an environment variable, database, or configuration file.
+通常、ストレージ アカウントの接続情報は、環境変数、データベース、または構成ファイルに格納されます。
 
 > [!IMPORTANT]
-> It is important to note that storing this information in a configuration file can be dangerous if you include that file in source control and store it in a public repository. This is a common mistake and means that anyone can browse your source code in the public repository and see your storage account connection information.
+> この情報を格納する構成ファイルでは危険なソース管理にそのファイルを含めるし、パブリック リポジトリに格納する場合に重要です。 これはよく行われる間違いで、パブリック リポジトリにあるソース コードのストレージ アカウントの接続情報は、すべてのユーザーが参照できてしまいます。
 
-Each storage account has two access keys. The reason for this is to allow keys to be rotated (regenerated) periodically as part of security best practice in keeping your storage account secure. This process can be done from the Azure portal or the Azure CLI / PowerShell command line tool.
+各ストレージ アカウントには、アクセス キーが 2 つあります。 これは、ストレージ アカウントを安全に保つためのセキュリティ上のベスト プラクティスとして、キーを定期的にローテーション (再生成) するためです。 このプロセスは、Azure portal または Azure CLI から実行できる PowerShell コマンド ライン ツール。
 
-Rotating a key will invalidate the original key value immediately and will revoke access to anyone who obtained the key inappropriately. With support for two keys, you can rotate keys without causing downtime in your applications that use them. Your app can switch to using the alternate access key, while the other key is regenerated. If you have multiple apps using this storage account, they should all use the same key to support this technique. Here's the basic idea:
+キーをローテーションすると元のキー値が即座に無効になり、キーを不正に取得したユーザーのアクセスが取り消されます。 2 つのキーがサポートされているため、キーのローテーション時に、キーを使用するアプリケーションでダウンタイムが発生しないようにできます。 その他のキーが再生成中に、代替アクセス キーを使用するアプリを切り替えることができます。 このストレージ アカウントを使用するアプリが複数ある場合、このテクニックを使用するために、すべてで同じキーを使用するようにする必要があります。 基本的な考え方を次に示します。
 
-1. Update the connection strings in your application code to reference the secondary access key of the storage account.
-2. Regenerate the primary access key for your storage account using the Azure portal or command line tool.
-3. Update the connection strings in your code to reference the new primary access key.
-4. Regenerate the secondary access key in the same manner.
+1. ストレージ アカウントのセカンダリ アクセス キーを参照するようにアプリケーション コードの接続文字列を更新します。
+2. Azure ポータルまたはコマンド ライン ツールを使用して、ストレージ アカウントのプライマリ アクセス キーを再生成します。
+3. 新しいプライマリ アクセス キーを参照するようにアプリケーション コードの接続文字列を更新します。
+4. 同様に、セカンダリ アクセス キーを再生成します。
 
 > [!TIP]
-> It's highly recommended that you periodically rotate your access keys to ensure they remain private - just like changing your passwords. If you are using the key in a server application, you can use an **Azure Key Vault** to store the access key for you. Key Vaults include support to synchronize directly to the Storage Account and automatically rotate the keys periodically. Using a Key Vault provides an additional layer of security so your app never has to work directly with an access key.
+> パスワードを変更すると同じように、プライバシーが保たれるように、アクセス キーを定期的にローテーションすることを強くお勧めします。 サーバー アプリケーションでキーを使用する場合は、使用、 **Azure Key Vault**のアクセス キーを格納します。 Key Vault には、ストレージ アカウントに直接同期し、自動的にキーを定期的にローテーションのサポートが含まれます。 Key Vault を使用して、アプリは、アクセス キーを直接操作することはありませんがある、セキュリティの追加の層を提供します。
 
-### Shared access signatures (SAS)
+### <a name="shared-access-signatures-sas"></a>Shared Access Signatures (SAS)
 
-Access keys are the easiest approach to authenticating access to a storage account, however they provide full access to anything in the storage account - similar to a root password on a computer. 
+アクセス キーは、ストレージ アカウントへのアクセスを認証する最も簡単な方法です。 ただし、コンピューターのルート パスワードのようなストレージ アカウント内のあらゆるものへのフル アクセスを提供します。
 
-Storage accounts offer a separate authentication mechanism called _shared access signatures_ that support expiration and limited permissions for scenarios where you need to grant limited access. You should use this approach when you are allowing other users to read and write data to your storage account. There are links to our documentation on this advanced topic at the end of the module.
+ストレージ アカウントと呼ばれる別の認証メカニズムには、 _shared access signature_制限付きアクセスを付与する必要があるシナリオの有効期限とアクセス許可が制限をサポートします。 ストレージ アカウントにデータを読み書きする他のユーザーを許可しているときに、この方法を使用する必要があります。 モジュールの最後にこの高度なトピックに関するドキュメントへのリンクがあります。

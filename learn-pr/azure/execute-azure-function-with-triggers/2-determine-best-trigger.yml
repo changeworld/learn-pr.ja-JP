@@ -9,11 +9,6 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 1e11b752a8122f908fc0d2d6d12b4abce099bd39
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235024"
 durationInMinutes: 4
-content: '[!include[](includes/2-determine-best-trigger.md)]'
+content: |
+  [!include[](includes/2-determine-best-trigger.md)]

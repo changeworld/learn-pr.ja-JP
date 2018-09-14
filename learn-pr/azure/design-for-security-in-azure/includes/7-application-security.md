@@ -1,72 +1,72 @@
-Hosting applications on a cloud platform provides a number of advantages when compared to traditional on-premises deployments. The cloud's shared-responsibility model moves security at the physical network, building, and host levels under the control of the cloud provider. An attacker trying to compromise the platform at this level would see diminishing returns versus the considerable investment and insight providers make in securing and monitoring their infrastructure.
+クラウド プラットフォーム上でアプリケーションをホストすることで、従来のオンプレミス デプロイと比べて、多くの利点が得られます。 クラウドの共有が責任を負うモデルでは、物理ネットワーク、構築、およびクラウド プロバイダーの管理下にあるホスト レベルでセキュリティを移動します。 このレベルでプラットフォームを侵害しようとする攻撃者は、収穫逓減と、プロバイダーによるインフラストラクチャの保護と監視に関する多額の投資と分析情報を比較します。
 
-It's therefore far more effective for attackers to pursue vulnerabilities introduced at the application level by cloud-platform customers. Furthermore, by adopting Platform as a Service (PaaS) to host their applications, customers are able to free resources from managing operating system security and deploy them to harden application code and monitor the identity perimeter around the application. In this unit we will discuss some of the ways application security can be improved through design.
+したがって、クラウド プラットフォームのお客様が発生させたアプリケーション レベルでの脆弱性を追求する攻撃者にとってははるかに効率的です。 さらに、アプリケーションをホストするサービスとしてのプラットフォーム (PaaS) を導入することで、お客様はオペレーティング システム セキュリティの管理からリソースを解放し、リソースをデプロイしてアプリケーション コードを強化し、アプリケーションの周囲の ID 境界を監視できます。 このユニットでは、設計によりアプリケーション セキュリティを強化できる方法をいくつか説明します。
 
-## Scenario
+## <a name="scenario"></a>シナリオ
 
-Lamna Healthcare customers require access to their personal medical records through an online web portal. Compliance with the Health Insurance Portability and Accountability Act (HIPAA) is mandatory and puts the company at significant risk of financial penalties if a breach of personal data occurs; therefore, securing the application and personal data it interacts with is paramount.
+Lamna Healthcare のお客様は、オンライン Web ポータルから個人の医療記録にアクセスする必要があります。 正常性の保険の携行性と責任に関する法律 (HIPAA) への準拠は必須であり、個人データのセキュリティ侵害が発生した場合に、罰金の重大な危険にさらさにより、企業そのため、アプリケーションとやり取りする個人データをセキュリティで保護することは非常に重要です。
 
-The primary areas that concern customer applications are:
+お客様のアプリケーションに関連する主な領域は次のとおりです。
 
-- Secure application design
-- Data security
-- Identity and access management
-- Endpoint security
+- セキュリティで保護されたアプリケーションの設計
+- データのセキュリティ
+- ID 管理とアクセス管理
+- エンドポイントのセキュリティ
 
-## Security Development Lifecycle
+## <a name="security-development-lifecycle"></a>セキュリティ開発ライフサイクル
 
-Microsoft's [Security Development Lifecycle](https://www.microsoft.com/sdl) (SDL) process can be used during the application design stage to ensure security concerns are incorporated in the software development lifecycle. Security and compliance issues are far easier to address when designing an application and can mitigate many common errors that can lead to security flaws in the final product. Fixing issues early in the software development journey is also far less costly. The typical sequence of SDL steps a software project can use are as follows:
+Microsoft の[セキュリティ開発ライフサイクル](https://www.microsoft.com/sdl) (SDL) プロセスをアプリケーションの設計段階で使用することで、確実にソフトウェア開発ライフサイクルにセキュリティに関する懸念事項を組み込むことができます。 セキュリティとコンプライアンスの問題は、アプリケーションの設計時に対処するほうがはるかに簡単であり、最終製品のセキュリティの欠陥につながる可能性のある多くの一般的なエラーを減らすことができます。 ソフトウェア開発の早い段階で問題を解決することで、コストははるかに低くなります。 ソフトウェア プロジェクトで使用できる SDL の一般的な一連の手順は次のとおりです。
 
-1. Training
+1. トレーニング
 
-    - Core security training
+    - コア セキュリティのトレーニング
 
-1. Requirements
+1. 要件
 
-    - Define requirements and quality gates
-    - Analyze security and privacy risks
+    - 要件と品質ゲートを定義する
+    - セキュリティとプライバシーのリスクを分析します。
  
-1. Design
+1. 設計
 
-    - Attack surface analysis
-    - Threat modeling
+    - 攻撃対象領域の分析
+    - 脅威のモデル化
  
-1. Implementation
+1. 実装
 
-    - Specify tools to ensure code quality can be measured
-    - Enforce banned APIs and functions
-    - Perform static code analysis
-    - Scan repositories for stored secrets
+    - コードの品質を測定できることを確認するためのツールを指定する
+    - 禁止されている Api と関数を適用します。
+    - 静的コード分析を実行します。
+    - リポジトリをスキャンして格納されたシークレットを調べる
  
-1. Verification
+1. 検証
 
-    - Dynamic/Fuzz testing
-    - Verify threat models/attack surface
+    - 動的/ファジー テスト
+    - 脅威モデル/攻撃対象領域を検証する
  
-1. Release
+1. 解放
 
-    - Form security response plan
-    - Perform a final security review
-    - Release archive
+    - セキュリティ対応計画を立てる
+    - 最終的なセキュリティ レビューを行う
+    - アーカイブの解放
  
-1. Response 
+1. 対応 
 
-    - Execute threat response execution
+    - 脅威に対応する
 
-![Security development lifecycle](../media/sdl.png)
+![セキュリティ開発ライフサイクル](../media/sdl.png)
 
-The SDL is as much a cultural aspect as it is a process or set of tools. Building a culture where security is a primary focus and requirement of any application development can make great strides in evolving an organization's capabilities around security.
+SDL は、ツールのセットやプロセスであると同時に文化的側面でもあります。 セキュリティに重点を置きましたあり、アプリケーション開発の要件と組織のセキュリティ機能の進化における進歩、カルチャを構築します。
 
 <!-- Bear in mind that the migration of un-modified applications (especially COTS procured software systems) will not be able to perform many of the steps listed above.
  -->
 
-## Operational security assessment
+## <a name="operational-security-assessment"></a>運用上のセキュリティの評価
 
-Once an application has been deployed, it's essential to continually evaluate its security posture, determine how to mitigate any issues that are discovered, and feed the knowledge back into the software development cycle. The depth to which this is performed is a factor of the maturity level of the software development and operational teams as well as the data privacy requirements.
+アプリケーションがデプロイされているとは、継続的に、セキュリティに対する姿勢を評価、検出、およびソフトウェアの開発サイクルにナレッジをフィードのある問題を軽減する方法を決定するために不可欠です。 これが実行される深さは、データのプライバシー要件と、ソフトウェア開発および運用チームの成熟度レベルの要因となります。
 
-Security vulnerability scanning software services are available to help automate this process and assess security concerns on a regular cadence, without burdening teams with costly manual processes, such as penetration testing.
+セキュリティの脆弱性をスキャンするソフトウェア サービスは、このプロセスを自動化し、侵入テストなど、コストのかかる手動プロセスでチームに負担をかけることなく、一定のリズムでセキュリティに関する懸念事項を評価するのに役立ちます。
 
-Azure Security Center is a free service, now enabled by default for all Azure subscriptions, that is tightly integrated with other Azure application level services, such as Azure Application Gateway and Azure Web Application Firewall. By analyzing logs from these services, ASC can report on known vulnerabilities in real time, recommend responses to mitigate them, and even be configured to automatically execute playbooks in response to attacks.
+Azure Security Center は無料のサービスであり、すべての Azure サブスクリプションに対して既定で有効になるようになりました。Azure Application Gateway や Azure Web アプリケーション ファイアウォールなどの他の Azure アプリケーション レベルのサービスと緊密に統合されています。 これらのサービスからのログを分析することでは ASC がリアルタイムでの既知の脆弱性をレポートできますをそれらを軽減するために応答をお勧めします、でも、攻撃への応答でプレイブックを自動的に実行するように構成します。
 
 <!-- SDL culture
 Key Vault / MSI
@@ -75,23 +75,23 @@ Mention approach of code scanning & SDL
 Scanning for passwords - Git
  -->
 
-## Identity as the perimeter
+## <a name="identity-as-the-perimeter"></a>境界としての ID
 
-Identity validation is becoming the first line in defense for applications. Restricting access to a web application by authenticating and authorizing sessions can drastically reduce the attack surface area. Azure AD and Azure AD B2C offer an effective way to offload the responsibility of identity and access to a fully managed service. Azure AD conditional access policies, privileged identity management, and Identity Protection controls further enhance a customer's ability to prevent unauthorized access and audit changes.
+ID 検証は、アプリケーションに関する防御の最前線になりつつあります。 セッションを認証して承認し、Web アプリケーションへのアクセスを制限することで、攻撃対象領域を大幅に減らすことができます。 Azure AD と Azure AD B2C では、ID の責任を軽減し、フル マネージドのサービスにアクセスする効果的な方法が提供されます。 Azure AD 条件付きアクセス ポリシー、privileged identity management、および Identity Protection のコントロールをさらに、未承認のアクセスを防止し、変更を監査する顧客の機能を強化します。
 
-## Data protection
+## <a name="data-protection"></a>データ保護
 
-Customer data is the target for most, if not all attacks against web applications. The secure storage and transport of data between an application and its data storage layer is paramount.
+顧客データは、Web アプリケーションに対するほぼすべての攻撃の対象となります。 アプリケーションとそのデータ ストレージ層の間のデータの保管と転送をセキュリティで保護することが重要です。
 
-Lamna Healthcare stores and accesses particularly sensitive patient medical record data. HIPAA, enacted by the United States Congress in 1996, among other controls, defines the national standards for electronic healthcare transactions by healthcare providers and employers. Lamna must ensure patients and authorized parties, such as their physicians, have secure access to medical data.
+Lamna Healthcare では、特に機密性の高い患者の医療記録データを格納し、このデータにアクセスしています。 特に、1996 年に米国議会で制定された HIPAA では、医療機関や雇用主による電子医療記録のトランザクションに関する国家規格が定義されています。 Lamna は、患者となど、医師にとっては、承認されたパーティの医療データに安全にアクセスがあることを確認する必要があります。
 
-To comply with these requirements, Lamna Healthcare has modified their applications to encrypt all patient data at rest and in transit. For example, Transport Layer Security (TLS) is used to encrypt data exchanged between the web application and back-end SQL databases. Data is also encrypted at rest in SQL Server using Transparent Data Encryption (TDE), ensuring that even if the environment is compromised, data is effectively useless to anyone without the correct decryption keys.
+これらの要件の遵守、Lamna 医療機関が保存時と転送中のすべての患者データを暗号化するためにアプリケーションを変更します。 たとえば、Web アプリケーションとバックエンドの SQL データベースの間で交換されるデータを暗号化するためにトランスポート層セキュリティ (TLS) が使用されます。 データは、SQL Server の Transparent Data Encryption (TDE) を使用して、環境が侵害された場合でもデータが、適切な復号化キーを持たないすべてのユーザーを効果的に役に立たないことを確認の残りの部分でも暗号化されます。
 
-To encrypt data stored in blob storage, client-side encryption can be used to encrypt the data in memory before it's written to the storage service. Libraries supporting this encryption are available for .NET, Java, and Python, and enable the integration of data encryption directly into applications to enhance data integrity.
+Blob ストレージに格納されたデータを暗号化するには、ストレージ サービスに書き込まれる前に、メモリ内のデータを暗号化するクライアント側の暗号化を使用できます。 この暗号化がサポートされているライブラリを .NET、Java、および Python で利用でき、データの暗号化をアプリケーションに直接統合してデータの整合性を高めることができます。
 
-### Secure key and secret storage
+### <a name="secure-key-and-secret-storage"></a>キーとシークレットのストレージをセキュリティで保護する
 
-Separating application secrets (connection strings, passwords, etc.) and encryption keys from the application used to access data is vital. Encryption keys and application secrets should never be stored in the application code of configuration files. Instead, a secure store such as Azure Key Vault should be used. Access to this sensitive data can then be limited to application identities through Managed Service Identities, and keys can be rotated on a regular basis to limit exposure in the case of encryption key leakage. Customers can also choose to use their own encryption keys generated by on-premises Hardware Security Modules (HSM) and even mandate that Azure Key Vault instances are implemented in single-tenant, discrete HSMs.
+アプリケーション シークレット (接続文字列やパスワードなど) と暗号化キーを、データにアクセスするために使用するアプリケーションから分離させることが重要です。 暗号化キーとアプリケーション シークレットを構成ファイルのアプリケーション コードに格納しないでください。 代わりに、Azure Key Vault などの安全なストアを使用してください。 この機密データへのアクセスがサービス Id の管理をアプリケーション id に制限できますしとを定期的に暗号化キーの漏えいの場合の公開を制限するキーを回転することができます。 顧客にもオンプレミス ハードウェア セキュリティ モジュール (HSM) によって生成された独自の暗号化キーを使用して、必須で、シングル テナントとして Azure Key Vault インスタンスを実装することもできます不連続 Hsm します。
 
 <!-- ### Secure and immutable file storage
 

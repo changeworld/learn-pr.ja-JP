@@ -1,39 +1,37 @@
 ### YamlMime:Module
 uid: learn.design-for-efficiency-and-operations
 metadata:
-  title: Design for efficiency and operations in Azure
-  description: How efficient is your cloud environment? Are you maximizing the use of your cloud spend and minimizing the amount of waste? When something happens in your environment, do you have visibility and alerting in place, so you can take action? How advanced is your automation, and how much manual work is your organization performing? These are all questions we’ll answer in this module focused on design principles for efficiency and operations.
+  title: 効率性と Azure での操作のための設計します。
+  description: クラウド環境はどれくらい効率的ですか? クラウド支出を最大限に活用し、無駄を最小限に抑えていますか? 環境内で何か起きたときに、それを確認して適切に警告し、対処することはできますか? Automation はどれくらい高度なものですか? また、組織で行っている手作業はどれくらいですか? これらは、効率性と運用に関する設計原則に重点を置いたこのモジュールで答えるすべての質問です。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for efficiency and operations in your cloud infrastructure
-summary: How efficient is your cloud environment? Are you maximizing the use of your cloud spend and minimizing the amount of waste? When something happens in your environment, do you have visibility and alerting in place, so you can take action? How advanced is your automation, and how much manual work is your organization performing? These are all questions we’ll answer in this module focused on design principles for efficiency and operations.
-abstract:  | 
-  In this module, you will:
-    - Learn how to maximize the efficiency of your cloud environment
-    - Learn how to use monitoring and analytics to gain operational insights
-    - Learn how to use automation to reduce effort and error
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+title: クラウド インフラストラクチャで効率性と運用のための設計を行う
+summary: クラウド環境はどれくらい効率的ですか? クラウド支出を最大限に活用し、無駄を最小限に抑えていますか? 環境内で何か起きたときに、それを確認して適切に警告し、対処することはできますか? Automation はどれくらい高度なものですか? また、組織で行っている手作業はどれくらいですか? これらは、効率性と運用に関する設計原則に重点を置いたこのモジュールで答えるすべての質問です。
+abstract: |
+  このモジュールでは、次のことを行います。
+    - 使用しているクラウド環境の効率を最大化する方法を学習する
+    - 監視と分析を使用して、運用に関する分析情報を得る方法を学習する
+    - Automation を使用して労力とエラーを減らす方法を学習する
+prerequisites: なし
+iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- solution-architect
+  - solution-architect
 products:
-- azure
-- azure-cost-management
-- azure-advisor
-- azure-monitor
-- azure-application-insights
-- azure-log-analytics
+  - azure
+  - azure-cost-management
+  - azure-advisor
+  - azure-monitor
+  - azure-application-insights
+  - azure-log-analytics
 units:
-- learn.design-for-efficiency-and-operations.1-introduction
-- learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
-- learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
-- learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
-- learn.design-for-efficiency-and-operations.5-summary
+  - learn.design-for-efficiency-and-operations.1-introduction
+  - learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+  - learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+  - learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+  - learn.design-for-efficiency-and-operations.5-summary
 achievement: learn.design-for-efficiency-and-operations.badge

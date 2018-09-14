@@ -1,14 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.the-mojifier.3-conceptual-overview
 metadata:
-  title: Conceptual overview
-  description: Let’s first answer some higher level questions about emotion detection.
+  title: 概念の概要
+  description: 最初にいくつかのより高いレベル質問感情の検出についてお答えしておきましょう。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Conceptual overview
-durationInMinutes: 10
+labId: 45987
+title: 概念の概要
+durationInMinutes: 7
 content: |
   [!include[](includes/3-conceptual-overview.md)]

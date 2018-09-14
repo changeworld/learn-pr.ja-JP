@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.8-summary
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: まとめ
+durationInMinutes: 2
+content: |
+  [!include[](includes/8-summary.md)]

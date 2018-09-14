@@ -1,61 +1,54 @@
-In this module you will create a simple console app using the integrated terminal, install NuGet packages, and use the Azure Cosmos DB extension to see databases and collections created in the previous module. You'll retrieve your Azure Cosmos DB connection string from the extension, and then start configuring the connection to Azure Cosmos DB to create your User database.
+このモジュールでは、統合ターミナルを使用してシンプルなコンソール アプリを作成し、NuGet パッケージをインストールします。また、Azure Cosmos DB 拡張機能を使用して、前のモジュールで作成したデータベースとコレクションを確認します。 拡張機能から Azure Cosmos DB 接続文字列を取得し、Azure Cosmos DB への接続を開始してユーザー データベースを作成します。
 
-## Create a console app
+## <a name="create-a-console-app"></a>コンソール アプリを作成する
 
-1. Create a folder where you will be working.
+1. Visual Studio Code を開き、**[ファイル]** > **[フォルダーを開く]** の順に選択します。
 
-1. Open a command prompt and navigate into the folder.
+1. 新しい C# プロジェクトとなる新しいフォルダーを作成し、**[フォルダーの選択]** をクリックします。
 
-1. Create a new .NET Core console application
+1. そのファイルの自動確認ファイル メニューをクリックし、チェック保存が有効になっている**自動保存**が空の場合。
 
-```bash
-dotnet new console 
-```
+1. Visual Studio Code から統合ターミナルを選択して開きます**ビュー** > **ターミナル**メイン メニューから。
 
-1. Open Visual Studio Code, and then select **File** > **Open Folder**.
+1. ターミナル ウィンドウで、次のコマンドを入力します。
 
-1. Create a new folder where you want your new C# project to be, and then click **Select Folder**.
+    ```
+    dotnet new console
+    ```
 
-1. Ensure that file auto save is enabled by clicking on the File menu and checking Auto Save if it is blank.
+    このコマンドにより、フォルダーに **learning-module.csproj** という名前の C# プロジェクト ファイルとともに、シンプルな "Hello World" プログラムが既に記述されている **Program.cs** ファイルが作成されます。
 
-1. Open the integrated terminal from Visual Studio Code by selecting **View** > **Integrated Terminal** from the main menu.
-
-1. In the terminal window, type **dotnet new console**.
-
-    This command creates a **Program.cs** file in your folder with a simple "Hello World" program already written, along with a C# project file named **learning-module.csproj**.
-
-1. In the terminal window, type the following command to run the "Hello World" program. 
+1. ターミナル ウィンドウで、次のコマンドを入力して "Hello World" プログラムを実行します。 
 
     ```
     dotnet run
     ```
 
-    The terminal window displays "Hello world!" as output.
+    ターミナル ウィンドウには、出力として "Hello world!" が 表示されます。
 
-## Connect the app to Azure Cosmos DB
+## <a name="connect-the-app-to-azure-cosmos-db"></a>Azure Cosmos DB にアプリを接続する
 
-1. Sign in to Azure by clicking **View** > **Command Palette** and typing **Azure: Sign In**.
+1. **[表示]** > **[コマンド パレット]** の順にクリックし、「**Azure: Sign In**」と入力して、Azure にサインインします。
 
-    Follow the prompts to copy and paste the code provided in the web browser, which authenticates your Visual Studio Code session.
+    プロンプトに従って、Web ブラウザーで提供されるコードをコピーして貼り付けます。これにより、Visual Studio Code セッションが認証されます。
 
-1. Click the ![Explorer icon](../media/2-setup/visual-studio-code-explorer-icon.png) **Explorer** icon on the left menu, and then expand **Azure Cosmos DB**.
+1. をクリックして、 ![Azure アイコン](../media/2-setup/visual-studio-code-explorer-icon.png) **Azure**左側のメニューのアイコンを順に展開**Azure Cosmos DB**します。
 
-1. Expand your Azure subscription > Azure Cosmos DB account. If you created the **Products** database and **Clothing** collection in the previous modules, the extension displays them.
+1. Azure サブスクリプション、Azure Cosmos DB アカウントの順に展開します。 前のモジュールで **Products** データベースと **Clothing** コレクションを作成した場合は、拡張機能でそれらが表示されます。
 
-   ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/azure-cosmos-db-vs-code-extension.png) 
+   ![Azure Cosmos DB の Visual Studio Code 拡張機能](../media/2-setup/azure-cosmos-db-vs-code-extension.png) 
 
-1. Now let's create a new database and collection for your customers.
+1. 次は、顧客用の新しいデータベースとコレクションを作成します。
 
-    In the Explorer window, right-click your account, and then click **Create Database**. 
+    Azure ウィンドウで、自分のアカウントを右クリックし、 **Create Database**します。
     
-    In the text box at the top of the screen, type **Users** for the database name > **Enter** > **WebCustomers** for the collection name > **Enter** > **userId** for the partition key > **Enter** > **1000** for the initial throughput capacity > **Enter**.
+    画面の上部にあるテキスト ボックスで、データベース名として「**Users**」を入力 > **Enter**  > コレクション名として「**WebCustomers**」 を入力 > **Enter** >  パーティション キーとして「**userId**」を入力 > **Enter** > 初期スループット容量として「**1000**」を入力 > **Enter** の順に進みます。
 
-    ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
-    <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Azure Cosmos DB の Visual Studio Code 拡張機能](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
 
-    The new Users database and WebCustomers collection are displayed in the Explorer window.
+    新しい Users データベースと WebCustomers コレクションがエクスプローラー ウィンドウに表示されます。
 
-1. In the integrated terminal, run each of the following commands at a new prompt to install the required NuGet packages.
+1. 統合ターミナルでは、新しいプロンプトで以下のコマンドをそれぞれ実行して、必要な NuGet パッケージをインストールします。
 
     ```
     dotnet add package System.Net.Http
@@ -69,9 +62,9 @@ dotnet new console
     dotnet restore
     ```
 
-1. At the top of the Explorer pane, click **Program.cs** to open the file.
+1. エクスプローラー ウィンドウの上部にある **Program.cs** をクリックしてファイルを開きます。
 
-1. Add the following using statements after `using System;`.
+1. 次の using ステートメントを `using System;` の後に追加します。
 
     ```csharp
     using System.Configuration;
@@ -83,7 +76,7 @@ dotnet new console
     using Newtonsoft.Json;
     ```
 
-1. Create a new file named App.config in the learning-module folder, and add the following code.
+1. learning-module フォルダーに App.config という名前の新しいファイルを作成し、次のコードを追加します。
   
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -95,27 +88,25 @@ dotnet new console
     </configuration>
     ```
 
-1. Copy your connection string from the Azure Cosmos DB extension by right-clicking the learning-module account, and clicking **Copy Connection String**.
+1. learning-module アカウントを右クリックし、**[Copy Connection String]\(接続文字列のコピー\)** をクリックして、Azure Cosmos DB 拡張機能から接続文字列をコピーします。
 
-    ![Azure Cosmos DB Visual Studio Code extension](../media/2-setup/vs-code-copy-connection-string.gif) 
+1. 接続文字列をテキスト ファイルに貼り付け、そのテキスト ファイルから **AccountEndpoint** 部分を App.config 内の **accountEndpoint** にコピーします。
 
-1. Paste the connection string into a text file, and then copy the **AccountEndpoint** portion from the text file into the **accountEndpoint** in App.config.
-
-    The accountEndpoint should look like the following code:
+    accountEndpoint は次のコードのようになります。
 
     ```xml
     <add key="accountEndpoint" value="https://<account-name>.documents.azure.com:443/" />
     ```
 
-1. Now copy the **AccountKey** value from the text value into the **accountKey** value in App.config.
+1. ここで、テキスト値から **AccountKey** 値を App.config 内の **accountKey** 値にコピーします。
 
-1. In the integrated terminal, type the following command to run the program to ensure it runs.
+1. 統合ターミナルで、次のコマンドを入力してプログラムを実行し、プログラムが実行されることを確認します。
 
     ```csharp
     dotnet run
     ```
 
-1. Add a new asynchronous task to create a new client, and check whether the Users database exists by adding the following method after the main method.
+1. 新しい非同期タスクを追加して新しいクライアントを作成し、main メソッドの後に次のメソッドを追加して、Users データベースが存在するかどうかを確認します。
     
     ```csharp
     private async Task BasicOperations()
@@ -128,13 +119,13 @@ dotnet new console
     }
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. 統合ターミナルで、もう一度、次のコマンドを入力してプログラムを実行し、実行されていることを確認します。
 
     ```csharp
     dotnet run
     ```
 
-1. Copy and paste the following code into the **Main** method, overwriting the current `Console.WriteLine("Hello World!");` line.
+1. 次のコードを **Main** メソッドにコピーして貼り付け、現在の `Console.WriteLine("Hello World!");` 行を上書きします。
 
     ```csharp
     try
@@ -159,19 +150,19 @@ dotnet new console
             }
     ```
 
-1. In the integrated terminal, again, type the following command to run the program to ensure it runs.
+1. 統合ターミナルで、もう一度、次のコマンドを入力してプログラムを実行し、実行されていることを確認します。
 
     ```csharp
     dotnet run
     ```
 
-    The console displays the following output.
+    コンソールには次の出力が表示されます。
     
     ```
     Database and collection validation complete
     End of demo, press any key to exit.
     ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you set up the groundwork for your Azure Cosmos DB application. You set up your development environment in Visual Studio Code, created a simple HelloWorld project, connected the project to the Azure Cosmos DB endpoint, and ensured your database and collection exist.
+このユニットでは、Azure Cosmos DB アプリケーション用の基盤を設定しました。 Visual Studio Code で開発環境を設定し、シンプルな HelloWorld プロジェクトを作成し、そのプロジェクトを Azure Cosmos DB エンドポイントに接続して、データベースとコレクションが存在することを確認しました。

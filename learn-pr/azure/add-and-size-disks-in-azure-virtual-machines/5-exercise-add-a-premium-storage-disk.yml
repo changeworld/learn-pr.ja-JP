@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.5-exercise-add-a-premium-storage-disk
-title: Exercise - Add a premium storage disk to an existing VHD
+title: 演習 - 既存の VHD を premium storage ディスクを追加
 metadata:
-  title: Exercise - Add a premium storage disk to an existing VHD
-  description: Exercise - Add a premium storage disk to an existing VHD
+  title: 演習 - 既存の VHD を premium storage ディスクを追加
+  description: 演習 - 既存の VHD を premium storage ディスクを追加
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+azureSandbox: true
 durationInMinutes: 10
 content: |
   [!include[](includes/5-exercise-add-a-premium-storage-disk.md)]

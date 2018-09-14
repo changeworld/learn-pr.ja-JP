@@ -52,7 +52,7 @@ var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 
 アプリケーションの機能の 1 つに、API からの BLOB の一覧を取得する必要があるものがあります。 前述のパターンを使用して、コンテナーのすべての BLOB を列挙します。 一覧を処理してゆくと、各 BLOB の名前を取得できます。
 
-エディターで `BlobStorage.cs` を開き、`GetNames` を次のコードで置き換えて変更内容を保存します。
+エディターを使用して置き換える`GetNames`で`BlobStorage.cs`を次のコードと、変更を保存します。
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()

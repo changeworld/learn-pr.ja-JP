@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.publish-azure-web-app-with-visual-studio.7-exercise-publish-an-update-to-your-site
-title: Publish an update to your site
+title: 更新を自分のサイトに発行する
 metadata:
-  title: Publish an update to your site
-  description: Publish an update to your site
+  title: 更新を自分のサイトに発行する
+  description: 更新を自分のサイトに発行する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

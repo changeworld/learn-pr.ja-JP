@@ -1,36 +1,34 @@
 ### YamlMime:Module
 uid: learn.intro-to-azure-networking
 metadata:
-  title: Introduction to Azure networking
-  description: Running your app or service in the cloud requires a fast and secure network. Learn some of the Azure networking basics and how Azure networking helps improve resiliency and reduce latency.
+  title: Azure のネットワークの概要
+  description: クラウドでアプリまたはサービスを実行するには、セキュリティで保護された高速なネットワークが必要です。 Azure のネットワークの基本についていくつか学習し、Azure のネットワークが回復性の向上と待ち時間の短縮にどのように役立つかについて学習します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Introduction to Azure networking
-summary: Running your app or service in the cloud requires a fast and secure network. Learn some of the Azure networking basics and how Azure networking helps improve resiliency and reduce latency.
+title: Azure のネットワークの概要
+summary: クラウドでアプリまたはサービスを実行するには、セキュリティで保護された高速なネットワークが必要です。 Azure のネットワークの基本についていくつか学習し、Azure のネットワークが回復性の向上と待ち時間の短縮にどのように役立つかについて学習します。
 abstract: |
-  In this module, you will:
-  - Learn how virtual networking helps you isolate network and compute resources
-  - Learn how Azure Load Balancer helps improve resiliency, or the ability to recover when your service goes down
-  - Learn how Traffic Manager Traffic Manager can route traffic to different endpoints, including the endpoint with the lowest latency to the user
-prerequisites: None
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - 仮想ネットワークはネットワークを分離してコンピューティング リソースについて説明します
+  - Azure Load Balancer で回復性、または、サービスがダウンした場合に回復する機能を向上させる方法について説明します
+  - Traffic Manager による Traffic Manager がユーザーに待機する時間を最も短いエンドポイントを含む、さまざまなエンドポイントにトラフィックをルーティングする方法について説明します。
+prerequisites: なし
+iconUrl: /learn/achievements/intro-to-azure-networking.svg
 levels:
-- beginner
+  - beginner
 roles:
-- developer
-- administrator
-- solution-architect
+  - developer
+  - administrator
+  - solution-architect
 products:
-- azure
+  - azure
 units:
-- learn.intro-to-azure-networking.1-introduction
-- learn.intro-to-azure-networking.2-deploy-to-azure
-- learn.intro-to-azure-networking.3-scale-load-balancer
-- learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-- learn.intro-to-azure-networking.5-summary
+  - learn.intro-to-azure-networking.1-introduction
+  - learn.intro-to-azure-networking.2-deploy-to-azure
+  - learn.intro-to-azure-networking.3-scale-load-balancer
+  - learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+  - learn.intro-to-azure-networking.5-summary
 achievement: learn.intro-to-azure-networking.badge

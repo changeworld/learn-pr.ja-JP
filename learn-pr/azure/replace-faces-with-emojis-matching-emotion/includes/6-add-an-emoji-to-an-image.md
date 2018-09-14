@@ -1,43 +1,43 @@
-At this point in the flow of the application we know:
+この時点で、アプリケーションのフローでわかっています。
 
-1.  The list of faces in the image (if any).
-2.  The emoji to use for each face.
-3.  The bounding rectangle of each face in the image.
+1.  (該当する場合) は、イメージ内の顔のリスト。
+2.  顔ごとに使用する絵文字。
+3.  イメージ内の顔ごとの外接する四角形。
 
-So for each face discovered in the image, we need to layer an emoji over the face, resizing the emoji to fit the face.
+イメージ内で検出された顔ごとに、必要があります、表面上、絵文字をレイヤーに顔を合わせて絵文字のサイズを変更します。
 
-To implement this functionality, we will use the open source image manipulation library [Jimp](https://www.npmjs.com/package/jimp).
+オープン ソースの画像操作ライブラリを使用してこの機能を実装する[Jimp](https://www.npmjs.com/package/jimp)します。
 
-The goal of this lecture is to learn how to use the `Jimp` library to manipulate images and specifically to learn how to layer an emoji over a face and save that image back out to disk.
+この講義の目標を使用する方法を理解する、`Jimp`面の上に絵文字をレイヤーし、そのイメージを保存する方法を具体的には、イメージを操作するライブラリ ディスクにバックアップします。
 
-We are going to expand on the `bin/mojify.ts` script we started in the previous lecture by fleshing out the `createMojifiedImage` function.
+さらにここでは、`bin/mojify.ts`肉づけ前の講義でまずスクリプト、`createMojifiedImage`関数。
 
-> NOTE
-> We will be re-using all the code from this script when we create the Slack command and Azure Function in later lectures. It's not wasted effort!
+> **注**
+>
+> このスクリプトからのすべてのコードは、以降の講義で Slack コマンドと Azure 関数を作成したとき再利用します。 労力を浪費するがしません。
 
-## Steps
+## <a name="add-the-required-imports"></a>必要なインポートを追加します。
 
-### Required Imports
-
-To play around with Jimp and manipulate files on our filesystem we need to import a few packages at the top
+ファイルの上部にある、いくつかのパッケージをインポートする Jimp、いろいろをシステム上のファイルの操作は、次のようにします。
 
 ```typescript
 import * as Jimp from "jimp";
 import * as path from "path";
 ```
 
-> NOTE
-> `path` is needed because we want to load files from disk
+> **注**
+>
+> `path` ディスクからファイルをロードするために必要
 
-### Basic Use Case
+## <a name="simplified-use-case"></a>簡略化されたユース ケース
 
-Let's strip away a lot of the complexity and ask what it would take to:
+複雑さの多くを取り除き、だけにかかるよう依頼としましょう。
 
-1. Load up an image
-2. Place the 😕 emoji in the top right corner (resized to 50x50px)
-3. Save the image
+1. イメージを読み込む
+2. 場所、😕右上隅 (50x50px にサイズ変更) での絵文字
+3. イメージを保存します。
 
-We can implement all the functionality above in 6 lines of code, like so:
+6 行のコードで上記のすべての機能を実装します次のようにします。
 
 ```typescript
 async function createMojifiedImage(imageUrl) {
@@ -53,53 +53,68 @@ async function createMojifiedImage(imageUrl) {
 }
 ```
 
-We'll break it down step by step.
+中断が発生することステップ バイ ステップ。
 
-To load an image using `Jimp` we use the `Jimp.read` function, like so:
+使用してをイメージを読み込む`Jimp`使用してを`Jimp.read`関数の場合、次のように。
 
 ```typescript
 let sourceImage = await Jimp.read(imageUrl);
 ```
 
-We have a directory of png files for each emoji in `shared/emojis`. Each emoji png is named as <emoji>.png, so `😕.png` is a file that contains a png of the 😕 emoji.
+各絵文字の png ファイルのディレクトリがある`shared/emojis`します。 各絵文字 png という<emoji>.png のため、`😕.png`の png を含むファイル、😕絵文字。
 
-We load up `😕.png` like so:
+読み込んでいます`😕.png`ようになります。
 
 ```typescript
 let mojiPath = path.resolve(__dirname, "../shared/emojis/😕.png");
 let emojiImage = await Jimp.read(mojiPath);
 ```
 
-Next up we need to resize the emojiImage to 50 pixels width x 50 pixels height, we can do that by using the resize function like so:
+サイズを変更する必要がありますを次に、 `emojiImage` 50 ピクセル幅 x 50 ピクセルの高さにそのためにサイズ変更関数を使用して次のようにします。
 
 ```typescript
 emojiImage.resize(50, 50);
 ```
 
-The `emojiImage` has now been resized to fit in a 50x50 px space.
+`emojiImage` 50 x 50 ピクセルの領域に収まるようにサイズ変更されたようになりました。
 
-We now need to _place_ the emojiImage over the sourceImage in the top left corner, like so:
+今すぐ必要があります_配置_、`emojiImage`経由で、`sourceImage`左上隅で次のようにします。
 
 ```typescript
 sourceImage = sourceImage.composite(emojiImage, 0, 0);
 ```
 
-We use the `composite` function, which places `emojiImage` ontop of `sourceImage` 0 pixels from the top and 0 pixels down. The `composite` fucntion doesn't alter `sourceImage` in place, instead it returns a copy of `sourceImage` with the `emojiImage` placed on top.
+使用して、`composite`関数で、配置`emojiImage`の上に`sourceImage`、最後の 2 つの引数は、場所を定義、`emojiImage`は、配置配置される上および 0 ピクセルから 0 ピクセル ダウンします。
 
-Finally we save the output image to disk like so:
+`composite`関数は変更されません`sourceImage`インプレース; 代わりにコピーを返しますの`sourceImage`で、`emojiImage`上に配置される、このため、結果を代入 sourceImage に戻る `sourceImage = ...`
+
+最後に、出力の画像をディスクに保存しました次のようにします。
 
 ```typescript
 sourceImage.write(path.join(__dirname, "..", "mojified.jpg"));
 ```
 
-### Full Use Case
+## <a name="try-it-out"></a>試してみる
 
-Hopefully by now you have a good understanding of how `Jimp` works and how we can use it to composite images. So now when we go through the full code for the `createMojifiedImage` function it should make a lot more sense.
+自分では、このコードを実行してください。 次のようにします。
 
-Copy and paste the bellow code into your `createMojifiedImage` function in `bin/mojify.ts`.
+```bash
+node bin/mojify.js [url-to-image]
+```
+
+このプロジェクトのルートにファイルを保存し、呼び出された場合`mojified.jpg`ような形式。
+
+![単純なイメージ](/media-drafts/6.simple-mojified-image.jpg)
+
+## <a name="full-use-case"></a>完全なユース ケース
+
+うまくいけば、これがある方法をよく理解`Jimp`works と複合イメージを使用しましたか。 完全なコードを進めていくときに今すぐ、`createMojifiedImage`関数が、はるかに多くの意味をする必要があります。
+
+コピーして貼り付け、下記のコードを`createMojifiedImage`関数`bin/mojify.ts`します。
 
 ```typescript
 async function createMojifiedImage(imageUrl) {
+  let sourceImage = await Jimp.read(imageUrl);
   // Create a composite image, we will "append" to this composite an emoji image for each face found
   let compositeImage = sourceImage;
 
@@ -127,9 +142,9 @@ async function createMojifiedImage(imageUrl) {
 }
 ```
 
-The above code is very similar to the base case we just went through, rather than hardcoding an emoji and poisition however we are deciding which emoji to composite and where to place it based on the array of faces passed in.
+上記のコードを調べていく簡略化された場合によく似ています、ハードコーディング、絵文字、位置ではなくただし、どの絵文字を合成するかを決定しましたおよびに渡される顔の配列に基づいてそれを配置する場所。
 
-The array of faces comes from the `getFaces` function we fleshed out in the last lecture, it's all connected up together in the main function, like so:
+顔の配列に由来、`getFaces`最後の講義で肉付け関数はすべてをメインの関数で相互に接続されたようになります。
 
 ```typescript
 async function main() {
@@ -141,17 +156,19 @@ async function main() {
 main();
 ```
 
-We call `getFaces` with the passed in `imageUrl` to get the array of `Face` instances.
-We pass this array to the `createMojifiedImage` function along with the original image, this function composites emojis on peoples faces and saves the resulting file to the project root folder as `mojified.jpg`
+呼び出して`getFaces`で渡されたで`imageUrl`の配列を取得する`Face`インスタンス。
+この配列を渡して、`createMojifiedImage`元の画像では、この関数の合成絵文字 peoples でと共に関数 faces し、としてプロジェクトのルート フォルダーに生成されたファイルを保存します。 `mojified.jpg`
 
-### Try it out
+## <a name="try-it-out"></a>試してみる
 
-Try this code out yourself, like so:
+自分では、このコードを実行してください。 次のようにします。
 
 ```bash
 node bin/mojify.js <url>
 ```
 
-If this worked then a mojified version of the source fil should be stored in the project root called `mojified.jpg`.
+この代替 mojified バージョンのソース ファイルがプロジェクト ルートに保存し、呼び出された場合`mojified.jpg`、次のようにします。
 
-Try it out with different images!
+![複雑なイメージ](/media-drafts/6.complex-mojified-image.jpg)
+
+試して、さまざまなイメージを!

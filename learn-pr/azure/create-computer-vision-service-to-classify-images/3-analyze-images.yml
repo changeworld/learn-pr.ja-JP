@@ -1,17 +1,17 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.3-analyze-images
-title: Analyzing images with Computer Vision
+title: 画像内にあるビジュアル コンテンツに関する情報を取得します。
 metadata:
-  title: Analyzing images with Computer Vision
-  description: Analyzing images with Computer Vision
+  title: 画像内にあるビジュアル コンテンツに関する情報を取得します。
+  description: 画像内にあるビジュアル コンテンツに関する情報を取得します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+labId: 45986
 interactive: bash
 azureSandbox: true
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/3-analyze-images.md)]

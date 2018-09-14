@@ -1,6 +1,8 @@
 Xamarin および Azure 関数と Twilio バインディングを使用してクロスプラットフォーム モバイル アプリを正しく作成できました。
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up"></a>クリーンアップ
+
+<!---TODO: Update for sandbox?--->
 
 この Azure Functions アプリケーションの作業が終わったら、チュートリアルの間に作成したすべてのリソースを、Azure portal を使用して削除できます。
 
@@ -10,21 +12,18 @@ Xamarin および Azure 関数と Twilio バインディングを使用してク
 
 1. リソース グループの作成に使用したサブスクリプションを展開します。 "ImHere" リソース グループを右クリックし、*[ポータルで開く]* を選択します。
 
-    ![Cloud Explorer ウィンドウからポータルでリソース グループを開く](../media-drafts/9-open-resource-group-in-portal.png)
+    ![Cloud Explorer ウィンドウからポータルでリソース グループを開く](../media/9-open-resource-group-in-portal.png)
 
 1. 必要な場合は、ブラウザーで Azure portal にログインします。
 
 1. ポータルで "ImHere" リソース グループが開きます。 **[リソース グループの削除]** ボタンをクリックします。
 
-    ![リソース グループを削除します](../media-drafts/9-delete-resource-group.png)
-
 1. リソース グループの名前を入力して削除を確認し、**[削除]** をクリックします。
-
-    ![リソース グループの名前を入力して、削除を確定します。](../media-drafts/9-confirm-delete-resource-group.png)
 
 ## <a name="summary"></a>まとめ
 
 このモジュールでは、次の方法を説明しました。
+
 - Xamarin.Essentials を使用するクロスプラットフォームの Xamarin.Forms アプリを作成しました。
 - ViewModel のアプリケーション ロジックを含む XAML を使用してクロスプラットフォームの UI を作成し、UI に ViewModel のプロパティをバインドしました。
 - ユーザーの場所を検出しました。

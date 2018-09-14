@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.11-deploy-to-azure
+metadata:
+  title: '[Deploy to Azure (Azure へのデプロイ)]'
+  description: Azure 関数をクラウドにデプロイし、コードの新しい運用バージョンを使用する slack の構成を更新します。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: '[Deploy to Azure (Azure へのデプロイ)]'
+durationInMinutes: 8
+content: |
+  [!include[](includes/11-deploy-to-azure.md)]

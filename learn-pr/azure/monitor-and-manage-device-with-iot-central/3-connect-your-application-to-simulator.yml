@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
-title: Connect your simulated coffee machine to the application
+title: アプリケーションに、シミュレートされたコーヒー マシンを接続します。
 metadata:
-  title: Connect your simulated coffee machine to the application
-  description: Connect your simulated coffee machine to the application
+  title: アプリケーションに、シミュレートされたコーヒー マシンを接続します。
+  description: アプリケーションに、シミュレートされたコーヒー マシンを接続します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

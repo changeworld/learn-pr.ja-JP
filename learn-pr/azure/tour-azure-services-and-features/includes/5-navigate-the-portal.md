@@ -1,10 +1,10 @@
-Now that we have an account, we can sign into the **Azure portal**. The portal is a web-based administration site that lets you interact with all of your subscriptions and resources you have created. Almost everything you do with Azure can be done through this web interface.
+アカウントを作成したら、**Azure portal** にサインインできます。 ポータルは、作成したすべてのサブスクリプションとリソースを操作できる Web ベースの管理サイトです。 Azure で行うほぼすべてのことを、この Web インターフェイスから実行できます。
 
-## Azure portal layout
+## <a name="azure-portal-layout"></a>Azure portal のレイアウト
 
-The Azure portal is the primary graphical user interface (GUI) for controlling Microsoft Azure. You can carry out the majority of management actions in the portal, and it is typically the best interface for carrying out single tasks or where you want to look at the configuration options in detail.
+Azure portal は、Microsoft Azure を制御するための主要な GUI (グラフィカル ユーザー インターフェイス) です。 管理操作の大半はポータルで実行できます。一般に、ポータルはシングル タスクを実行する場合や、構成オプションの詳細を確認する場合に最適なインターフェイスです。
 
-![The Azure portal](../media-draft/5-portal.png)
+![Azure portal](../media-draft/5-portal.png)
 
 :::row:::
 
@@ -24,77 +24,77 @@ The Azure portal is the primary graphical user interface (GUI) for controlling M
 
 :::row-end:::
 
-The remainder of the portal view is for the specific elements you are working with. The default (main) page is the _dashboard_. We'll cover this a bit later, but this represents a customizable birds-eye-view of your resources. You can use it to jump into specific resources you want to manage, or search for resources with the **All resources** entry in the resource panel. When you are managing a resource, such as a virtual machine or a web app, you will work with a _blade_ that presents specific information about the resource.
+ポータル ビューの残りの部分は、作業中の特定の要素に対応しています。 既定の (メイン) ページは "_ダッシュボード_" です。 これについては後ほど説明しますが、これはリソースのカスタマイズ可能な鳥瞰図を表しています。 ダッシュボードを使用して、管理する特定のリソースにジャンプしたり、リソース パネルの **[すべてのリソース]** エントリでリソースを検索したりできます。 仮想マシンや Web アプリなどのリソースを管理するときは、そのリソースに関する具体的な情報が表示される "_ブレード_" を使用します。
 
-## What is a blade?
+## <a name="what-is-a-blade"></a>ブレードとは
 
-The Azure portal uses a blades model for navigation. A _blade_ is a slide-out panel containing the UI for a single level in a navigation sequence. For example, each of these elements in this sequence would be represented by a blade: **Virtual machines** > **Compute** > **Ubuntu Server**.
+Azure portal では、ナビゲーションにブレード モデルが使用されます。 _ブレード_とはスライド式のパネルであり、ナビゲーション シーケンスにおけるシングル レベルの UI が含まれます。 たとえば、**仮想マシン**  >  **コンピューティング**  >  **Ubuntu Server** というシーケンスのそれぞれの要素が 1 つのブレードで表されます。
 
-Each blade contains some information and configurable options. Some of these options generate another blade, which reveals itself to the right of any existing blade. On the new blade, any further configurable options will spawn another blade, and so on. Pretty soon, you can end up with several blades open at the same time. You can maximize blades as well so that they fill the entire screen.
+各ブレードには、情報と構成可能なオプションが含まれています。 これらのオプションの中には、別のブレードが生成されるものもあります。そのブレードは既存のブレードの右側に表示されます。 新しいブレードでは、さらに構成可能なオプションによって別のブレードが生成され、そのブレードからも別のブレードが生成されるというように続きます。 すぐに、いくつかのブレードを同時に開くようになります。 ブレードを最大化して画面全体に表示することもできます。
 
-Since new blades are always added to the right of the owner, you can use the scrollbar at the bottom of the window to go backwards to see how you got to this spot in the configuration. Alternatively, you can close blades individually by clicking the `X` button in the top corner of the blade. If you have unsaved changes, Azure will prompt you to let you know that the changes will be lost if you continue.
+新しいブレードは常に所有者の右側に追加されるので、ウィンドウの下部にあるスクロールバーを使って戻ることで、構成内の現在の場所にどのように到達したかを確認できます。 また、ブレードの上隅にある `X` ボタンをクリックして、ブレードを個別に閉じることもできます。 保存していない変更がある場合は、続行すると変更内容が失われることを通知するメッセージが表示されます。
 
-## Configuring settings in the Azure portal
+## <a name="configuring-settings-in-the-azure-portal"></a>Azure portal での設定の構成
 
-The Azure portal displays several configuration options, mostly in the status bar at the top-right of the screen.
+Azure portal には、構成オプションがいくつか表示されます。ほとんどの場合、画面右上のステータス バーに表示されます。
 
-### Notifications
+### <a name="notifications"></a>通知
 
-Clicking the bell icon displays the **Notifications** pane. This pane lists the last actions that have been carried out, along with their status.
+ベルのアイコンをクリックすると、**[通知]** ウィンドウが表示されます。 このウィンドウには、実行された過去のアクションとそのステータスが一覧表示されます。
 
-### Cloud Shell
+### <a name="cloud-shell"></a>Cloud Shell
 
-If you click the **Cloud Shell** icon (>_), you will create a new Azure Cloud Shell session. Azure Cloud Shell is an interactive, browser-accessible shell for managing Azure resources. It provides the flexibility of choosing the shell experience that best suits the way you work. Linux users can opt for a Bash experience, while Windows users can opt for PowerShell. This browser-based terminal lets you control and administer all of your Azure resources in the current subscription through a command-line interface built right into the portal.
+**Cloud Shell** アイコン (>_) をクリックすると、新しい Azure Cloud Shell セッションが作成されます。 Azure Cloud Shell は、Azure リソースを管理するための、ブラウザーからアクセスできる対話型シェルです。 Azure Cloud Shell は、作業に最適なシェル エクスペリエンスを選択できる柔軟性を備えています。 Linux ユーザーは Bash エクスペリエンスを選ぶことができ、Windows ユーザーは PowerShell を選ぶことができます。 このブラウザベースのターミナルでは、ポータルに組み込まれているコマンド ライン インターフェイスを使用して、現在のサブスクリプション内のすべての Azure リソースを制御および管理できます。
 
-### Settings
+### <a name="settings"></a>設定
 
-Click the **gear** icon to change the Azure portal settings. These settings include:
+Azure portal 設定を変更するには、**歯車**アイコンをクリックします。 これらの設定には、以下が含まれます。
 
-- Logout time
-- Color and contrast themes
-- Toast notifications (to a mobile device)
-- Language and regional format
+- ログアウト時
+- 色およびコントラストのテーマ
+- (モバイル デバイスへの) トースト通知
+- 言語と地域の形式
 
-![Portal settings](../media-draft/5-settings-blade.png)
+![ポータル設定](../media-draft/5-settings-blade.png)
 
-When you have changed settings, click **Apply** to accept your changes.
+設定を変更したら、**[適用]** をクリックして変更を確定します。
 
-### Feedback blade
+### <a name="feedback-blade"></a>[フィードバック] ブレード
 
-The **smiley face** icon opens the **Send us feedback** blade. Here you can send feedback to Microsoft about Azure. Note that you can specify whether Microsoft can respond to your feedback by email.
+**笑顔アイコン**をクリックすると、**[フィードバックの送信]** ブレードが開きます。 ここで Azure に関するフィードバックを Microsoft に送信できます。 Microsoft がメールでフィードバックに回答できるかどうかを指定できます。
 
-### Help blade
+### <a name="help-blade"></a>[ヘルプ] ブレード
 
-Click the **question mark** icon to show the **Help** blade. Here you choose from several options, including:
+**疑問符**のアイコンをクリックすると、**[ヘルプ]** ブレードが表示されます。 ここでは、次のようなオプションから選択します。
 
-- What's new
-- Azure roadmap
-- Launch guided tour
-- Keyboard shortcuts
-- Show diagnostics
-- Privacy + terms
+- 新機能
+- Azure のロードマップ
+- ガイド付きツアーの起動
+- キーボード ショートカット
+- 診断の表示
+- プライバシーと使用条件
 
-### Directory and subscription
+### <a name="directory-and-subscription"></a>ディレクトリとサブスクリプション
 
-Click the **Book and Filter** icon to show the **Directory + subscription** blade.
+**本とフィルター**のアイコンをクリックすると、**[ディレクトリ + サブスクリプション]** ブレードが表示されます。
 
-Azure allows you to have more than one subscription associated with one directory. On the **Directory + subscription** blade, you can change between subscriptions. Here, you can change your subscription or change to another directory.
+Azure では、1 つのディレクトリに複数のサブスクリプションを関連付けることができます。 **[ディレクトリ + サブスクリプション]** ブレードで、サブスクリプションを切り替えることができます。 ここでは、サブスクリプションを変更するか、別のディレクトリに変更できます。
 
-![Directory](../media-draft/5-directory-blade.png)
+![ディレクトリ](../media-draft/5-directory-blade.png)
 
-### Profile settings
+### <a name="profile-settings"></a>プロファイルの設定
 
-If you click on your name in the top right-hand corner, you can then change your profile settings.
-Options include:
+右上隅にある自分の名前をクリックすると、自分のプロファイル設定を変更できます。
+次のオプションがあります。
 
-- Sign out of Azure
-- Change password
-- Change contact information
-- View permissions
-- Submit an idea to the Azure team
-- View your bill
-- Switch directory (shows the **Directory + subscription** blade as in the previous section)
+- Azure からサインアウトする
+- パスワードの変更
+- 連絡先情報の変更
+- アクセス許可の表示
+- Azure チームにアイデアを送信する
+- 課金状況の表示
+- ディレクトリを切り替えます (前のセクションと同じように、**[ディレクトリ + サブスクリプション]** ブレードが表示されます)。
 
-If you now click **View my bill**, Azure takes you to the **Cost Management + Billing - Invoices** page, which helps you analyze where Azure is generating costs.
+**[明細の表示]** をクリックすると、**[コスト管理 + 課金 - 請求書]** ページが表示されます。このページは、Azure におけるコストの発生場所の分析に役立ちます。
 
-Azure is a large product, and the Azure portal user interface (UI) reflects this. The sliding blade approach allows you to navigate back and forth through the various administration tasks with ease. Let's experiment a bit with this UI so you get some practice.
+Azure は大規模な製品であり、Azure portal UI (ユーザー インターフェイス) もこれを反映しています。 スライド式ブレードのアプローチにより、さまざまな管理タスク間を簡単に移動できます。 練習のために、この UI を少し使ってみましょう。

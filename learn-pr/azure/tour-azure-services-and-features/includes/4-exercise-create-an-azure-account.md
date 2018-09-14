@@ -1,26 +1,26 @@
-To create and use Azure services, you will eventually need an account. If you already have an Azure account, you can skip this unit and move onto the next one where we will begin to explore the Azure Portal.
+Azure サービスを作成して使用するには、最終的にアカウントが必要になります。 Azure アカウントが既にある場合は、このユニットをスキップして、次のユニットで Azure portal ポータルの探索を始めることができます。
 
-If you don't have an account, we will walk through creating a free Azure account now.
+アカウントを持っていない場合は、ここで無料の Azure アカウントの作成方法を説明します。
 
 > [!NOTE]
-> You need a valid credit card for age and identity validation. Your card will _not be charged_ until you decide to upgrade the trial / free account to a full subscription.
+> 年齢と身元を確認するために、有効なクレジット カードが必要です。 試用版/無料アカウントを有料のサブスクリプションにアップグレードするまで、カードへの "_請求は行われません_"。
 
-## Sign up for a free account
+## <a name="sign-up-for-a-free-account"></a>無料のアカウントに申し込む
 
-1. In a web browser, navigate to [azure.microsoft.com](https://azure.microsoft.com?azure-portal=true), and click **Free Account**.
+1. Web ブラウザーでに移動します。 [azure.microsoft.com](https://azure.microsoft.com?azure-portal=true)、 をクリック**無料アカウント**します。
 
-1. On the **Create your Azure free account today** page, click **Start free >** button. 
+1. **[Azure の無料アカウントを今すぐ作成しましょう]** ページで **[無料で開始する >]** ボタンをクリックします。 
 
-1. You'll be prompted to sign in with your Microsoft account. Sign in with your Microsoft credentials or create a new free Microsoft account.
+1. お持ちの Microsoft アカウントを使ってサインインするように求められます。 Microsoft 資格情報を使ってサインインするか、新しい無料の Microsoft アカウントを作成します。
 
-1. On the **About you** page, select your correct country or region, and then enter your first and last names, along with your email address and phone number. Depending on your country, you may see additional fields, such as VAT number. Click **Next** to continue.
+1. **[自分の情報]** ページで、お住まいの国と地域を選択し、氏名、メール アドレス、電話番号を入力します。 お住まいの国によっては、VAT 番号など、追加のフィールドが表示されることがあります。 **[次へ]** をクリックして続行します。
 
-1. On the **Identity verification by phone** screen, select your country code, and type the number of a telephone to which you have immediate access.
+1. **電話による本人確認**の画面で、国番号を選択し、自分がすぐに使える電話の番号を入力します。
 
-1. You have the option of text or callback to obtain a verification code. Click the relevant button, type the code in the **Verification code** box, and click **Verify code**.
+1. テキストまたは通話で確認コードを取得できます。 関連するボタンをクリックし、**[確認コード]** ボックスにコードを入力し、**[コードの確認]** をクリックします。
 
-1. If the verification code is correct, you will now be asked to enter details of a valid credit card. Enter the card number, the expiration date, the CVV number, your name as it is written on the card, the address to which the card is registered, along with the postal or ZIP code, and then click **Next**.
+1. 確認コードが正しければ、有効なクレジット カードの詳細を入力するように求められます。 カード番号、有効期限、CVV 番号、カードに記載されているとおりの名前、カードが登録されている住所、郵便番号を入力し、**[次へ]** をクリックします。
 
-1. Finally, check the box to accept the subscription agreement, privacy statement, and communications policy. The second checkbox is optional. Now click **Sign up**.
+1. 最後に、サブスクリプション契約、プライバシーに関する声明、コミュニケーション ポリシーに同意するボックスをオンにします。 2 つ目のチェックボックスは任意で選択してください。 **[サインアップ]** をクリックします。
 
-You have now successfully set up a free account, and you will be taken to the Azure portal home page. Let's explore that next.
+これで無料のアカウントが正常に設定されました。Azure portal のホーム ページに移動します。 これについてこれから見ていきましょう。

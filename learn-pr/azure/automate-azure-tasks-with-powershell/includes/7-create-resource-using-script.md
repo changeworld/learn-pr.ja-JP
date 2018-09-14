@@ -30,7 +30,7 @@ PowerShell スクリプト ファイルには **.ps1** ファイル拡張子が�
 PowerShell には、一般的なプログラミング言語で見られる多くの機能があります。 変数の定義、ブランチとループの使用、コマンド ライン パラメーターのキャプチャ、関数の記述、コメントの追加などを行うことができます。 このスクリプトには、変数、ループ、パラメーターという 3 つの機能が必要です。
 
 ### <a name="variables"></a>variables
-PowerShell では変数がサポートされます。 **$** を使用して、変数と **=** を宣言し、値を割り当てます。 例: 
+PowerShell では変数がサポートされます。 **$** を使用して、変数と **=** を宣言し、値を割り当てます。 例:
 
 ```powershell
 $loc = "East US"
@@ -63,7 +63,7 @@ For ($i = 1; $i -lt 3; $i++)
 ```
 
 ### <a name="parameters"></a>parameters
-スクリプトを実行するときに、コマンド ラインで引数を渡すことができます。 パラメーターごとに名前を指定でき、スクリプトで値を抽出するのに役立ちます。 例: 
+スクリプトを実行するときに、コマンド ラインで引数を渡すことができます。 パラメーターごとに名前を指定でき、スクリプトで値を抽出するのに役立ちます。 例:
 
 ```powershell
 .\setupEnvironment.ps1 -size 5 -location "East US"
@@ -75,7 +75,7 @@ For ($i = 1; $i -lt 3; $i++)
 param([string]$location, [int]$size)
 ```
 
-コマンド ラインでは名前を省略することができます。 例: 
+コマンド ラインでは名前を省略することができます。 例:
 
 ```powershell
 .\setupEnvironment.ps1 5 "East US"
@@ -88,6 +88,7 @@ param([int]$size, [string]$location)
 ```
 
 ## <a name="how-to-create-a-linux-virtual-machine"></a>Linux 仮想マシンを作成する方法
+
 Azure PowerShell では、仮想マシンを作成するための **New-AzureRmVm** コマンドレットが提供されます。 コマンドレットには多くのパラメーターがあり、それを使用して数多くの VM 構成設定を処理することができます。 ほとんどのパラメーターに適切な既定値があるため、指定する必要があるのは次の 5 つのみです。
 
 - **ResourceGroupName**: 新しい VM が配置されるリソース グループ。

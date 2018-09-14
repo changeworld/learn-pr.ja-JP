@@ -9,23 +9,23 @@ metadata:
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 15
 content: |
   [!include[](includes/2-azure-security-center.md)]
 quiz:
-  title: 'Knowledge Check - Azure Security center'
+  title: サポート技術情報の確認 - Azure Security center
   questions:
-  - content: 'Which one of the items below is not an Azure Security Center feature?'
-    choices:
-    - content: 'Actionable Recommendations'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Mitigation Reporting'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-    - content: 'Just-In-Time access control'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Threat Protection'
-      isCorrect: false
-      correctExplanation: 'TBD.'
+    - content: 次の項目のうち、どれが、Azure Security Center の機能ではないですか。
+      choices:
+        - content: 実践的な推奨事項
+          isCorrect: false
+          incorrectExplanation: これは、Azure Security Center の機能です。
+        - content: 使用状況とレポートの価格
+          isCorrect: true
+          correctExplanation: そうです！  使用状況と料金レポートは、ASC の一部ではないです。
+        - content: ジャストイン タイム アクセスの制御
+          isCorrect: false
+          incorrectExplanation: これは、Azure Security Center の機能です。
+        - content: Threat Protection
+          isCorrect: false
+          incorrectExplanation: これは、Azure Security Center の機能です。

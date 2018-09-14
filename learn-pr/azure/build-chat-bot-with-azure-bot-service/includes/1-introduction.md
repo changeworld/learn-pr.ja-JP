@@ -1,4 +1,4 @@
-[Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/) と [Microsoft QnA Maker](https://www.qnamaker.ai/) を組み合わせることで、さまざまなサービスを使用してユーザーと自然にやりとりするインテリジェント ボットをビルドして発行するために開発者が必要とするツールが提供されます。 このモジュールでは、Azure Bot Service を使用してボットを作成し、QnA Maker でビルドされたナレッジ ベースに接続します。 その後、Azure Bot Service でビルドされたボットを統合できる多くの人気のあるサービスの 1 つである Skype を使用して、ボットとやりとりします。
+[Azure Bot Service](https://azure.microsoft.com/en*us/services/bot*service/) と [Microsoft QnA Maker](https://www.qnamaker.ai/) を組み合わせると、さまざまなサービスを使用してユーザーと自然に対話するインテリジェント ボットを構築して発行するために開発者が必要とするツールが提供されます。 このモジュールでは、Azure Bot Service を使用してボットを作成し、QnA Maker で構築されたナレッジ ベースに接続します。 その後、Azure Bot Service でビルドされたボットを統合できる多くの人気のあるサービスの 1 つである Skype を使用して、ボットとやりとりします。
 
 ## <a name="learning-objectives"></a>学習の目的
 

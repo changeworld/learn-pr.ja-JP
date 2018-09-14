@@ -1,44 +1,44 @@
-A large percentage of code present in modern applications are the libraries and dependencies chosen by you: the developer. This is a common practice that saves time and money. However, the downside is that you are now responsible for this code, even though others wrote it, because you used it in your project. If a researcher (or worse, a hacker) discovers a vulnerability in one of these 3rd party libraries, then the same flaw will likely also be present in your app.
+最新のアプリケーションに存在するコードの大部分は、ライブラリと選択した依存関係: 開発者。 これは、時間と費用を節約するための一般的な方法です。 ただし、欠点は、しているようになりましたこのコードは、責任を負う場合でも、他のユーザーが書いた、プロジェクトで使用するために。 研究者 (または、さらに悪いことで、ハッカー) 同じ問題が可能性がありますが、これらのサード パーティ ライブラリのいずれかの脆弱性を検出する場合も、アプリで発生します。
 
-Using components with known vulnerabilities is a huge problem in our industry. It is so problematic that is has made the [OWASP top ten list](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) of worst web application vulnerabilities, holding at #9 for several years.
+業界に大きな問題は、既知の脆弱性でコンポーネントを使用します。 それほど問題でが行われて、 [OWASP トップ 10 リスト](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project)最悪 web アプリケーションの脆弱性、9 で数年間保持します。
 
-## Track known security vulnerabilities
+## <a name="track-known-security-vulnerabilities"></a>既知のセキュリティの脆弱性を追跡します。
 
-The problem we have is knowing when an issue is discovered. Keeping our libraries and dependencies updated (#4 in our list!) will of course help, but it's a good idea to keep track of identified vulnerabilities that might impact your application.
+ある問題を認識するには、問題が検出されたとき。 ライブラリと依存関係を維持する方法、更新 (4 一覧に!) が役立つが、アプリケーションに影響を与えかねない、識別された脆弱性を追跡することをお勧めです。
 
 > [!IMPORTANT]
-> When a system has a known vulnerability, it is much more likely also to have exploits available, code that people can use to attack those systems. If an exploit is made public, it is crucial that any affected systems are updated immediately.
+> システムに既知の脆弱性がある場合は、ユーザーがこれらのシステムの攻撃に使用できる、使用可能な悪用コードがある場合にも可能性が高くなります。 悪用が行われたパブリック場合は、任意の影響を受けるシステムがすぐに更新される非常に重要です。
 
-**Mitre** is a non-profit organization that maintains the [Common Vulnerabilities and Exposures list](https://cve.mitre.org). This list is a publicly searchable set of known cybersecurity vulnerabilities in apps, libraries, and frameworks. **If you find a library or component in the CVE database, it has known vulnerabilities**.
+**Mitre**が管理している非営利組織、[一般的な脆弱性と脅威の一覧](https://cve.mitre.org)します。 この一覧は、アプリ、ライブラリ、およびフレームワークの既知のサイバー セキュリティの脆弱性の検索可能なパブリックに設定します。 **CVE データベースで、ライブラリまたはコンポーネントを検索することと脆弱性がわかっている**します。
 
-Issues are submitted by the security community when a security flaw is found in a product or component. Each published issue is assigned an ID and contains the date discovered, a description of the vulnerability, and references to published workarounds or vendor statements about the issue.
+問題は、製品またはコンポーネントのセキュリティ上の欠陥が見つかったときに、セキュリティ コミュニティによって送信されます。 パブリッシュされた各問題は、ID が割り当てられている検出されると、日付、脆弱性の説明が含まれ、パブリッシュされた回避策や、問題に関するベンダー ステートメントへの参照します。
 
-### How to verify if you have known vulnerabilities in your 3rd party components
+### <a name="how-to-verify-if-you-have-known-vulnerabilities-in-your-3rd-party-components"></a>かどうか、サード パーティ製コンポーネントの脆弱性を正常があることを確認する方法
 
-You could put a daily task into your phone to go and check this list, but luckily for us, many tools exist to allow us to verify if our dependencies are vulnerable. You can run these tools against your codebase, or better yet, add them to your CI/CD pipeline to automatically check for issues as part of the development process.
+この一覧を確認するには、携帯電話に、毎日のタスクを配置する可能性がありますが幸運にも、多くのツールが存在かどうか、依存関係は脆弱性のあることを確認できるようにするため。 コードベースに対してこれらのツールを実行したり、さらに、開発プロセスの一環として、問題を自動的に確認、CI/CD パイプラインに追加できます。
 
-- [OWASP Dependency Check](https://www.owasp.org/index.php/OWASP_Dependency_Check), which has a [Jenkins plugin](https://wiki.jenkins.io/display/JENKINS/OWASP+Dependency-Check+Plugin)
+- [OWASP 依存関係の確認](https://www.owasp.org/index.php/OWASP_Dependency_Check)を持つ、 [Jenkins プラグイン](https://wiki.jenkins.io/display/JENKINS/OWASP+Dependency-Check+Plugin)
 - [OWASP SonarQube](https://www.owasp.org/index.php/OWASP_SonarQube_Project)
-- [Synk](https://snyk.io), which is free for open source repositories in GitHub
-- [Black Duck](https://www.blackducksoftware.com) which is used by many enterprises
-- [RubySec](https://rubysec.com) an advisory database just for Ruby
-- [Retire.js](https://github.com/retirejs/retire.js/) a tool for verifying if your JavaScript libraries are out of date; can be used as a plugin for various tools, including [Burp Suite](https://www.portswigger.net)
+- [Synk](https://snyk.io)GitHub でオープン ソース リポジトリの無料
+- [黒アヒル](https://www.blackducksoftware.com)多くの企業が使用します。
+- [RubySec](https://rubysec.com) Ruby 用だけアドバイザリのデータベース
+- [Retire.js](https://github.com/retirejs/retire.js/)を検証するためのツール、JavaScript ライブラリが期限切れ場合として使用できます、プラグインなど、さまざまなツールの[Burp スイート](https://www.portswigger.net)
 
-Some tools made specifically for static code analysis can be used for this as well.
+静的コード分析の専用に行われたいくつかのツールは、これも使用できます。
 
-- [Roslyn Security Guard](https://dotnet-security-guard.github.io)
-- [Puma Scan](https://pumascan.com)
-- [PT Application Inspector](https://www.ptsecurity.com/ww-en/products/ai/)
-- [Apache Maven Dependency Plugin](http://maven.apache.org/plugins/maven-dependency-plugin/)
-- [Source Clear](https://www.sourceclear.com)
+- [Roslyn のセキュリティ保護](https://dotnet-security-guard.github.io)
+- [Puma スキャン](https://pumascan.com)
+- [PT Application インスペクター](https://www.ptsecurity.com/ww-en/products/ai/)
+- [Apache Maven の依存関係のプラグイン](http://maven.apache.org/plugins/maven-dependency-plugin/)
+- [ソースのクリア](https://www.sourceclear.com)
 - [Sonatype](https://ossindex.sonatype.org)
-- [Node Security Platform](https://nodesecurity.io)
+- [ノード セキュリティ プラットフォーム](https://nodesecurity.io)
 - [WhiteSource](https://www.whitesourcesoftware.com/what-is-whitesource/)
 - [Hdiv](https://hdivsecurity.com)
-- [And many more...](https://www.owasp.org/index.php/Source_Code_Analysis_Tools)
+- [その他.](https://www.owasp.org/index.php/Source_Code_Analysis_Tools)
 
-For more information on the risks involved in using vulnerable components visit the [OWASP page](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities) dedicated to this topic.
+脆弱性のあるコンポーネントを使用して関連するリスクの詳細については、次を参照してください。、 [OWASP ページ](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities)このトピックを特集します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-When you use libraries or other 3rd party components as part of your application you are also taking on any risks they may have. The best way to reduce this risk is to ensure that you are only using components that have no known vulnerabilities associated with them.
+すべてのリスクで行ったも、アプリケーションの一部としてライブラリまたは他のサード パーティ製コンポーネントを使用する場合があります。 このリスクを軽減する最善の方法では、それらに関連付けられている既知の脆弱性がないコンポーネントを使用してのみことを確認します。

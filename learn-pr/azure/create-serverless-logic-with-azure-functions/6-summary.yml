@@ -9,12 +9,37 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7f01289f6e6f74cca4daa8e53157514fa982c207
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307979"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: |
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 知識チェック
+  questions:
+    - content: サーバーレス ロジックを定義する次のでしょうか。
+      choices:
+        - content: コードを記述するサーバーでは実行されません。
+          isCorrect: false
+        - content: サーバーで実行することを記述するコードを管理します。
+          isCorrect: false
+        - content: クラウド プロバイダーのサーバーで実行されるを記述するコードを管理します。
+          isCorrect: true
+          correctExplanation: サーバーレスは、サーバーがないことを示すわけではなく、開発者がサーバーについて心配する必要がないことを示しているだけです。 代わりに、Azure などのクラウド プロバイダーは、サーバーを管理します。
+    - content: コンテナー グループの管理を簡素化、展開、およびリソースの共有の論理単位に関数が呼び出されます。
+      choices:
+        - content: リソース グループ
+          isCorrect: false
+        - content: 関数アプリ
+          isCorrect: true
+          correctExplanation: 関数アプリは、整理し、関数をまとめて管理する方法です。 関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。 関数アプリ内のすべての関数は、同じ価格プラン、継続的なデプロイとランタイムのバージョンを共有します。
+        - content: 関数のコレクション
+          isCorrect: false
+    - content: 特定の関数を要求することで、関数に対して HTTP 呼び出し元が不明なセキュリティで保護 API キーは、各呼び出しで渡されます。 このキーを格納する必要がある HTTTP 要求の名前のヘッダーは、次のですか。
+      choices:
+        - content: x の関数キー
+          isCorrect: true
+          correctExplanation: 「コード」という名前のクエリ文字列変数に含まれる API または x の関数キー HTTP ヘッダーに入れることができます。
+        - content: x-要求の使用
+          isCorrect: false
+        - content: x-csrf-token
+          isCorrect: false

@@ -9,57 +9,43 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e6bf0ac0acc384f527141dfa0c1899e30af0e87e
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241076"
 durationInMinutes: 2
 quiz:
   title: 知識の確認 - IaaS、PaaS、SaaS
   questions:
-  - content: 次のシナリオの場合、使用するのに最適なクラウド サービス モデルは何ですか?  短期プロジェクトのために、SQL Server データベースが必要です。 IT 部門には、データベースをデプロイするためのパフォーマンス要件を満たしている利用可能なハードウェアまたはリソースがありません。 プロジェクトは、次の週に始まります。 プロジェクトが終了すると、データベースは必要なくなります。
-    choices:
-    - content: IaaS
-      incorrectExplanation: 仮想マシンを作成して、SQL Server をインストールすることはできますが、 データベースはすぐに必要です。 誰かがプロジェクト用に SQL Database をインストールして管理する必要があります。
-      isCorrect: false
-    - content: PaaS
-      correctExplanation: 直ちに必要で、利用できるハードウェアがなく、短期であるため、PaaS が最適なオプションです。 たとえば、ソリューションとして Azure SQL Database を使用できます。
-      isCorrect: true
-    - content: SaaS
-      incorrectExplanation: 要件は、サービスとして提供される SQL Database です。 SaaS はこのシナリオには適用されません。
-      isCorrect: false
-  - content: 次のシナリオの場合のクラウド サービス モデルとは?  クラウド内でいくつかの仮想マシンを作成します。 VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。 VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。 1 つの仮想マシンは、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。 画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。
-    choices:
-    - content: IaaS
-      correctExplanation: このシナリオで使用されるリソースはすべて、IaaS を使用して実装できます。
-      isCorrect: true
-    - content: PaaS
-      incorrectExplanation: ソリューションの一部のみを PaaS を使用して実装できます。
-      isCorrect: false
-    - content: SaaS
-      incorrectExplanation: これはカスタム ソリューションのため、この機能を提供する SaaS サービスはないと推測されます。
-      isCorrect: false
-  - content: 次のシナリオの場合に最適なクラウド サービス モデルとは?  小さなスタートアップ企業を設立します。 共同作業を行う必要がある従業員が少数います。 従業員は電子メール、予定表のスケジュール、およびドキュメントを保存する場所が必要です。 チームは技術職ですが、ソリューションを実装および管理するための時間やハードウェアはありません。
-    choices:
-    - content: IaaS
-      incorrectExplanation: 仮想マシンを使ってコラボレーション ソフトウェアをインストールすることで機能を得ることができますが、インストールや管理を行うには時間がかかります。 チームにはこのオプションを使うための時間がありません。
-      isCorrect: false
-    - content: PaaS
-      incorrectExplanation: チームには、要件を満たす PaaS ソリューションを作成する時間がありません。
-      isCorrect: false
-    - content: SaaS
-      correctExplanation: Office 365 などの SaaS ソリューションが、コラボレーションの要件に最適なソリューションです。
-      isCorrect: true
-  - content: 次のシナリオの場合のクラウド サービス モデルとは?  お客様の組織にはデータセンターが 2 か所あります。 一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。 もう一方のデータセンターからそのデータベースにアクセスする必要があります。 2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。
-    choices:
-    - content: IaaS
-      correctExplanation: このソリューションを実装するには、IaaS VPN を使用できます。
-      isCorrect: true
-    - content: PaaS
-      incorrectExplanation: VPN はインフラストラクチャ リソースです。 VPN は PaaS ソリューションではありません。
-      isCorrect: false
-    - content: SaaS
-      incorrectExplanation: VPN はインフラストラクチャ リソースです。 VPN は SaaS ソリューションではありません。
-      isCorrect: false
+    - content: どのクラウド サービス モデルは、次のような状況に最適なものになりますか。 短期プロジェクトのために、SQL Server データベースが必要です。 IT 部門には、パフォーマンス要件またはデプロイするためのリソースを満たしている利用可能なハードウェアがありません。 プロジェクトは、次の週に始まります。 プロジェクトが終了すると、データベースは必要なくなります。
+      choices:
+        - content: IaaS
+          isCorrect: false
+        - content: PaaS
+          isCorrect: true
+          correctExplanation: PaaS の場合、即時の必要性と有効期間が短いため、最適なオプションは。 たとえば、ソリューションとして Azure SQL Database を使用できます。 IaaS は時間と労力既成の PaaS サービスを使用するよりも仮想マシンを作成して、SQL Server のインストールが必要があるためには、任意に適していません。
+        - content: SaaS
+          isCorrect: false
+    - content: どのクラウド サービス モデルは、次のシナリオに記載されているでしょうか。 クラウド内でいくつかの仮想マシンを作成します。 VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。 VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。 1 つの仮想マシンは、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。 画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。
+      choices:
+        - content: IaaS
+          isCorrect: true
+          correctExplanation: このシナリオで使用されるリソースはすべて、IaaS を使用して実装できます。 適切な選択肢はならないため、PaaS を使用して、ソリューションの一部のみを実装できます。 これはカスタム ソリューションのため、この機能を提供する SaaS サービスはないと推測されます。
+        - content: PaaS
+          isCorrect: false
+        - content: SaaS
+          isCorrect: false
+    - content: どのクラウド サービス モデルは、次のような状況に最適なものになりますか。 新興企業で操作するには共同作業を行う必要がある従業員の数が少ない。 従業員は電子メール、予定表のスケジュール、およびドキュメントを保存する場所が必要です。 チームは技術職ですが、ソリューションを実装および管理するための時間やハードウェアはありません。
+      choices:
+        - content: IaaS
+          isCorrect: false
+        - content: PaaS
+          isCorrect: false
+        - content: SaaS
+          isCorrect: true
+          correctExplanation: Office 365 などの SaaS ソリューションが、コラボレーションの要件に最適なソリューションです。
+    - content: どのクラウド サービス モデルは、次のシナリオに記載されているでしょうか。 お客様の組織にはデータセンターが 2 か所あります。 一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。 もう一方のデータセンターからそのデータベースにアクセスする必要があります。 2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。
+      choices:
+        - content: IaaS
+          isCorrect: true
+          correctExplanation: VPN は IaaS リソースなので、IaaS ソリューションと思われるこれです。
+        - content: PaaS
+          isCorrect: false
+        - content: SaaS
+          isCorrect: false

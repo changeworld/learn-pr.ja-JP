@@ -2,18 +2,18 @@ Custom Vision Service で画像分類モデルを構築するための最初の�
 
 1. ブラウザーで [Custom Vision Service ポータル](https://www.customvision.ai/)を開きます。 **[サインイン]** をクリックします。
 
-    ![Custom Vision Service ポータルへのサインイン](../media-draft/1-portal-sign-in.png)
+    ![Custom Vision Service ポータルへのサインイン](../media/1-portal-sign-in.png)
 
 1. サインインを求められたら、Microsoft アカウントの資格情報を使用してサインインします。 このアプリにユーザー情報へのアクセスを許可するように求められたら、**[はい]** をクリックし、プロンプトが表示されたらサービス使用条件に同意します。
 
 1. **[新しいプロジェクト]** をクリックして新しいプロジェクトを作成します。
-  
-    ![Custom Vision Service プロジェクトの作成](../media-draft/1-portal-click-new-project.png)
+
+    ![Custom Vision Service プロジェクトの作成](../media/1-portal-click-new-project.png)
 
 1. [新しいプロジェクト] ダイアログで、プロジェクトに "Artworks" と名前を付け、ドメインとして **[全般]** が選択されていることを確認して、**[プロジェクトの作成]** をクリックします。
 
     > ドメインは、指定した種類の画像に合わせてモデルを最適化しています。 たとえば、含まれている食品の種類別または料理の民族性別に食品の画像を分類することが目標の場合は、[食料] ドメインを選択すると便利です。 提供されているどのドメインとも一致しないシナリオの場合、または選択するドメインがわからない場合は、[全般] ドメインを選択します。
 
-   ![Custom Vision Service プロジェクトの作成](../media-draft/1-portal-create-project.png)
+   ![Custom Vision Service プロジェクトの作成](../media/1-portal-create-project.png)
 
 次の手順は、プロジェクトに画像をアップロードし、それらの画像にタグを割り当てて分類することです。

@@ -1,70 +1,70 @@
-For most organizations, data is the most valuable and irreplaceable asset. Encryption serves as the last and strongest line of defense in a layered security strategy. 
+ほとんどの組織のデータは、最も役に立つとかけがえのない資産です。 暗号化は多層防御を多層型セキュリティ戦略の最後と最も強力な行として機能します。 
 
-Contoso Shipping knows that encryption is the only protection their data has once it leaves the datacenter as it heads to those mobile apps.
+Contoso の配布には、暗号化が、データ センターを離れるヘッドが、これらのモバイル アプリへのデータ アクセスのみの保護が認識しています。
 
-## What is encryption?
+## <a name="what-is-encryption"></a>暗号化とは
 
-Encryption is the process of making data unreadable and unusable. To use or read the encrypted data, it must be *decrypted*, which requires the use of a secret key. There are two top-level types of encryption: **symmetric** and **asymmetric**.
+暗号化は、データを読み取れなくし、使用できなくするためのプロセスです。 暗号化されたデータを使用または読み取るには、*復号化*する必要があります。その場合、秘密鍵を使用する必要があります。 暗号化の最上位 2 つの種類があります:**対称**と**非対称**します。
 
-Symmetric encryption uses the same key to encrypt and decrypt the data. Consider a desktop password manager application. You enter your passwords and they are encrypted with your own personal key (your key is often derived from your master password). When the data needs to be retrieved, the same key is used and the data is decrypted.
+対称暗号化では、データの暗号化と復号化で同じキーが使用されます。 たとえば、デスクトップのパスワード マネージャー アプリケーションがあるとします。 パスワードを入力すると、そのパスワードは自分の個人キーで暗号化されます (多くの場合、キーはマスター キーワードから派生します)。 データを取得する必要がある場合、同じキーが使用され、データが復号化されます。
 
-Asymmetric encryption uses a public key and private key pair. Either key can encrypt but a single key can't decrypt its own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like Transport Layer Security (TLS) (used in HTTPS) and data signing.
+非対称暗号化では公開鍵と秘密鍵のペアが使用されます。 どちらのキーを暗号化できますが、1 つのキーには、独自の暗号化されたデータが復号化ことはできません。 を復号化するには、ペアになっているキーが必要です。 非対称暗号化は、トランスポート層セキュリティ (TLS) が (HTTPS で使用) やデータの署名に使用されます。
 
-Both symmetric and asymmetric encryption play a role in properly securing your data. 
+対称と非対称の両方の暗号化は、データを適切に保護する役割を果たします。 
 
-Encryption is typically approached in two ways: encryption at rest and encryption in transit.
+暗号化は通常、保存時の暗号化と転送中の暗号化という 2 つの方法で行われます。
 
-## Encryption in transit
+## <a name="encryption-in-transit"></a>転送中の暗号化
 
-Data in transit is the data actively moving from one location to another, such as across the internet or through a private network. Secure transfer can be handled by several different layers. It could be done by encrypting the data at the application layer prior to sending it over a network. HTTPS is an example of application layer in transit encryption. 
+転送中のデータとは、インターネット上やプライベート ネットワーク経由などで、ある場所から別の場所に頻繁に移動されるデータのことです。 セキュリティで保護された転送は、いくつかの異なるレイヤーで処理できます。 これは、ネットワーク経由で送信する前に、アプリケーション層でデータを暗号化することで実行できます。 HTTPS では、転送中の暗号化でのアプリケーション レイヤーの例を示します。 
 
-You can also set up a secure channel, like a virtual private network (VPN), at a network layer, to transmit data between two systems. 
+2 つのシステム間でデータを送信する、ネットワーク層で仮想プライベート ネットワーク (VPN) などのセキュリティで保護されたチャネルを設定することもできます。 
 
-Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure. 
-
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption in transit](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
-
-
-## Encryption at rest
-
-Data at rest is the data that has been stored on a physical medium. This could be data stored on the disk of a server, data stored in a database, or data stored in a storage account. Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker was to obtain a hard drive with encrypted data and did not have access to the encryption keys, the attacker would not compromise the data without great difficulty.
-
-The actual data that is encrypted could vary in its content, usage, and importance to the organization. This could be financial information critical to the business, intellectual property that has been developed by the business, personal data about customers or employees that the business stores, and even the keys and secrets used for the encryption of the data itself.
+転送中のデータを暗号化することで、外部のオブザーバーからデータが保護され、露出のリスクを制限しながらデータを転送するためのメカニズムが提供されます。 
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Encryption at rest](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
+![転送中の暗号化](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-in-transit.png)
 
-## Encryption on Azure
 
-Let's take a look at some ways that Azure enables you to encrypt data across services.
+## <a name="encryption-at-rest"></a>保存時の暗号化
 
-### Encrypt raw storage
+保存データは、物理メディアに格納されているデータです。 サーバーのディスク上に格納されているデータ、データベース内に格納されているデータ、ストレージ アカウントに格納されているデータなどがあります。 ストレージ メカニズムに関係なく、保存データの暗号化により、復号化に必要なキーとシークレットなしでは格納されているデータを読み取れなくなります。 場合は、攻撃者は、暗号化キーへのアクセスがないと、ハード ドライブを暗号化されたデータを取得するが、攻撃者がデータを侵害するを伴いました。
 
-Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. With this feature, the Azure storage platform automatically encrypts your data before persisting it to Azure Managed Disks, Azure Blob storage, Azure Files, or Azure Queue storage, and decrypts the data before retrieval. The handling of encryption, encryption at rest, decryption, and key management in Storage Service Encryption is transparent to applications using the services.
+暗号化されている実際のデータは、その内容、使用状況、組織での重要性によって異なる場合があります。 これは、財務情報は、ビジネス、顧客またはビジネス ストア、従業員の個人データによって開発されている知的財産権、ビジネスに不可欠であるし、も、キーとシークレット自体のデータの暗号化に使用される可能性があります.
 
-### Encrypt virtual machines
+<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
+![保存時の暗号化](../media-COPIED-FROM-DESIGNFORSECURITY/encryption-at-rest.png)
 
-Storage Service Encryption provides low-level encryption protection for data written to physical disk, but how do you protect the virtual hard disks (VHDs) of virtual machines? If a malicious attacker gained access to your Azure subscription and exfiltrated the VHDs of your virtual machines, how would you ensure they would be unable to access data stored on the VHD?
+## <a name="encryption-on-azure"></a>Azure での暗号化
 
-Azure Disk Encryption is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. Azure Disk Encryption leverages the industry-standard BitLocker feature of Windows and the dm-crypt feature of Linux to provide volume encryption for the OS and data disks. The solution is integrated with Azure Key Vault to help you control and manage the disk encryption keys and secrets (and you can use managed service identities for accessing Key Vault).
+Azure で複数のサービスにまたがるデータを暗号化できる方法をいくつか見ていきましょう。
 
-For Contoso Shipping, using VMs was one of their first moves toward the cloud. Having all the VHDs encrypted is a very easy, low-impact way to ensure they are doing all they can to secure their data.
+### <a name="encrypt-raw-storage"></a>生の記憶域を暗号化します。
 
-### Encrypt databases
+保存データ用の Azure Storage Service Encryption は、組織のセキュリティとコンプライアンス コミットメントを満たすためにデータを保護するのに役立ちます。 この機能を使用すると、Azure Storage プラットフォームではデータが Azure Managed Disks、Azure Blob Storage、Azure Files、または Azure Queue Storage に保存される前に自動的に暗号化され、データは取得される前に復号化されます。 Storage Service Encryption での暗号化、保存時の暗号化、キー管理の処理は、サービスを使用するアプリケーションに対して透過的に行われます。
 
-Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all newly deployed Azure SQL Database instances.
+### <a name="encrypt-virtual-machines"></a>仮想マシンを暗号化します。
 
-TDE encrypts the storage of an entire database by using a symmetric key called the database encryption key. By default, Azure provides a unique encryption key per logical SQL Server instance and handles all the details. Bring your own key (BYOK) is also supported with keys stored in Azure Key Vault.
+Storage Service Encryption は、物理ディスクに書き込まれたデータの保護を低レベルの暗号化を提供しますが、仮想マシンの仮想ハード ディスク (Vhd) を保護する方法でしょうか。 悪意のある攻撃者は、Azure サブスクリプションと exfiltrated 仮想マシンの Vhd へのアクセスが獲得された場合、はように VHD に格納されているデータにアクセスできませんが、ですか。
 
-Because TDE is enabled by default, Contoso Shipping can be confident they have the proper protections in place for data stored in their databases.
+Azure Disk Encryption は、Windows と Linux の IaaS 仮想マシン ディスクを暗号化するのに役立つ機能です。 Azure Disk Encryption では、Windows の業界標準の BitLocker 機能とボリュームの暗号化、OS とデータ ディスクを Linux の dm-crypt 機能を活用します。 ソリューションは制御およびディスクの暗号化キーとシークレットの管理に役立つ Azure Key Vault と統合されています (および Key Vault にアクセスするため、管理対象サービス id を使用することができます)。
 
-### Encrypt secrets
+Contoso が出荷用 Vm を使用するが、クラウドに向けた最初の移動のいずれか。 暗号化されたすべての Vhd は、すべてのデータをセキュリティで保護できるようなことを確認するとても簡単で、影響の少ない方法です。
 
-We've seen that the encryption services all use keys to encrypt and decrypt data, so how do we ensure that the keys themselves are secure? Corporations may also have passwords, connection strings, or other sensitive pieces of information that they need to securely store.
+### <a name="encrypt-databases"></a>データベースを暗号化します。
 
-Azure Key Vault is a cloud service that works as a secure secrets store. Key Vault allows you to create multiple secure containers, called vaults. These vaults are backed by hardware security modules (HSMs). Vaults help reduce the chances of accidental loss of security information by centralizing the storage of application secrets. Key vaults also control and log the access to anything stored in them. Azure Key Vault can handle requesting and renewing TLS certificates, providing the features required for a robust certificate life cycle management solution. Key Vault is designed to support any type of secret. These secrets could be passwords, database credentials, API keys, and certificates.
+透過的なデータ暗号化 (TDE) は、悪意のあるアクティビティの脅威から Azure SQL Database と Azure Data Warehouse を保護するのに役立ちます。 アプリケーションに変更を加えることなく、データベース、関連付けられているバックアップ、保存されているトランザクション ログ ファイルがリアルタイムに暗号化および復号化されます。 既定では、新しく展開されるすべての Azure SQL Database インスタンスの TDE が有効にします。
 
-Because Azure AD identities can be granted access to use Azure Key Vault secrets, applications with managed service identities enabled can automatically and seamlessly acquire the secrets they need.
+TDE では、データベース暗号化キーと呼ばれる対称キーを使用して、データベース全体のストレージが暗号化されます。 既定は、Azure は、論理 SQL Server インスタンスごとの一意の暗号化キーを提供し、すべての詳細を処理します。 独自のキーを持ち込む (BYOK) が Azure Key Vault に格納されたキーでもサポートされています。
 
-Encryption is often the last layer of defense from attackers and is an important piece of a layered approach to securing your systems. Azure provides built-in capabilities and services to encrypt and protect data from unintended exposure. Protection of customer data stored within Azure services is of paramount importance to Microsoft and should be included in any design. Foundational services such as Azure Storage, Azure Virtual Machines, Azure SQL Database, and Azure Key Vault can help secure your environment through encryption.
+既定では、TDE が有効に Contoso の配布は、データベースに格納されているデータの場所に適切な保護があることを確信できます。
+
+### <a name="encrypt-secrets"></a>シークレットを暗号化します。
+
+暗号化、データの暗号化を解除し、どのようにしてキーを使用してすべて暗号化サービス、どうすれば、キー自体が安全であるきましたか。 企業は、パスワード、接続文字列、またはその他の機密性の高い部分を安全に保管するために必要な情報のこともできます。
+
+Azure Key Vault は、セキュリティで保護されたシークレット ストアとして機能するクラウド サービスです。 Key Vault を使用すると、コンテナーと呼ばれるセキュリティで保護されたコンテナーを複数作成できます。 これらのコンテナーは、ハードウェア セキュリティ モジュール (HSM) によってサポートされています。 コンテナーでは、アプリケーション シークレットを一元的に保管することで、セキュリティ情報が過って失われる可能性が低くなります。 キー コンテナーもを制御し、アクセス権をそれらに格納されているものにログインします。 Azure Key Vault は、TLS 証明書の更新の要求と堅牢な証明書のライフ サイクル管理ソリューションに必要な機能を提供することを処理できます。 Key vault は、あらゆる種類のシークレットをサポートするよう設計されています。 これらのシークレットのパスワード、データベースの資格情報、API キー、および証明書を使用できます。
+
+Azure AD の id の Azure Key Vault のシークレットを使用するアクセスを許可するため、有効になっている管理対象サービス id を持つアプリケーションは自動的に実行でき、シームレスに必要なシークレットを取得します。
+
+暗号化は、攻撃者からの防御の最後のレイヤーでは多くの場合と、システムのセキュリティ保護する階層型アプローチの重要な部分です。 Azure では、組み込みの機能との暗号化し、意図しない公開からデータを保護するためにサービスを提供します。 Azure サービス内で保存される顧客データの保護は Microsoft にとってきわめて重要で、どのような設計に含める必要があります。 Azure Storage、Azure Virtual Machines、Azure SQL Database、Azure Key Vault などの基礎となるサービスは、暗号化を使用して環境をセキュリティで保護するのに役立ちます。

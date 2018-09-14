@@ -1,14 +1,15 @@
 ### YamlMime:ModuleUnit
-# Unit uids are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
 uid: learn.classify-user-feedback-with-the-text-analytics-api.4-design-a-feedback-sorter
 metadata:
-  title: Design a feedback sorter
-  description: Let's consider a real-world scenario for when sentiment analysis might come in handy. Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.
-  displayType: two-column
-title: Design a feedback sorter
-#interactive: azure-portal
+  title: フィードバックの並べ替えアイコンを設計します。
+  description: 感情分析が役に立つの実際のシナリオを考えてみましょう。 ここで、シナリオと Azure Functions と Text Analytics API を使用して実装する方法について説明します。
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: フィードバックの並べ替えアイコンを設計します。
 azureSandbox: true
 durationInMinutes: 6
 content: |
   [!include[](includes/4-design-a-feedback-sorter.md)]
-

@@ -1,25 +1,24 @@
-::: zone pivot="csharp"
-Let's add code to retrieve the connection string from configuration and use it to connect to the Azure storage account.
+ゾーン pivot ="csharp"が構成から接続文字列を取得し、Azure ストレージ アカウントへの接続に使用するコードを追加してみましょう。
 
-## Retrieve the connection string
+## <a name="retrieve-the-connection-string"></a>接続文字列を取得する
 
-1. Select **Program.cs** to open it in the code editor.
+1. 選択**Program.cs**コード エディターで開きます。
 
-1. Add a `using` statement at the top of the file to reference the `Microsoft.WindowsAzure.Storage` namespace:
+1. 追加、`using`参照するファイルの上部にあるステートメント、`Microsoft.WindowsAzure.Storage`名前空間。
 
     ```csharp
     using Microsoft.WindowsAzure.Storage;
     ```
-1. At the end of the `Main` method, add the following line to retrieve the Azure storage account connection string from the configuration file. The passed _key_ must match the name used in your **appsettings.json** file.
+1. 最後に、`Main`メソッドでは、構成ファイルから Azure storage アカウント接続文字列を取得するには、次の行を追加します。 渡された_キー_で使用される名前に一致する必要があります、 **appsettings.json**ファイル。
 
     ```csharp
     var connectionString = configuration["StorageAccountConnectionString"];
     ```
 
-## Create a blob client
+## <a name="create-a-blob-client"></a>BLOB クライアントを作成する
 
-1. Use the static `CloudStorageAccount.TryParse` method to create a `CloudStorageAccount` object - it takes the connection string and an `out` parameter to return the created object. It returns a `bool` value indicating whether it successfully parsed the string.
-    - If it fails, output a message to the console and return from the method.
+1. 静的なを使用して、`CloudStorageAccount.TryParse`メソッドを作成する、`CloudStorageAccount`オブジェクト - 接続文字列と`out`パラメーターを作成したオブジェクトを返します。 返します、`bool`に正常に文字列を解析するかどうかを示す値。
+    - 失敗した場合は、コンソールにメッセージを出力し、メソッドから返します。
 
     ```csharp
     if (!CloudStorageAccount.TryParse(connectionString, 
@@ -30,27 +29,27 @@ Let's add code to retrieve the connection string from configuration and use it t
     }
     ```
 
-1. Use the returned `CloudStorageAccount` object to create a blob client.
+1. 使用して、返された`CloudStorageAccount`blob クライアントを作成するオブジェクト。
 
     ```csharp
     var blobClient = storageAccount.CreateCloudBlobClient();
     ```
 
-1. Next, use the blob client to retrieve a reference to a container named "photoblobs". Much like the account names, the Blob container names must be lowercase and composed of letters and numbers.
+1. 次に、blob クライアントを使用して、"photoblobs"という名前のコンテナーへの参照を取得します。 はるかなどのアカウント名を Blob コンテナー名がありますの文字と数字で構成され、小文字。
 
     ```csharp
     var blobContainer = blobClient.GetContainerReference("photoblobs");
     ```
 
-1. Use the `CreateIfNotExistsAsync` method to create the container. This returns a `bool` indicating whether the container was created. Store this in a variable named `created`.
-    - Notice that this is an **async** method - that means it will perform an actual network call.
-    - You will need to use the `await` keywords to get the `bool` result.
+1. 使用して、`CreateIfNotExistsAsync`コンテナーを作成します。 これにより返されます、`bool`コンテナーが作成されているかどうかを示します。 このという名前の変数に格納`created`します。
+    - これは、通知、 **async**メソッド - ことを意味する実際のネットワーク呼び出しが実行されます。
+    - 使用する必要があります、`await`キーワードを取得する、`bool`結果。
 
     ```csharp
     bool created = await blobContainer.CreateIfNotExistsAsync();
     ```
 
-1. Because we are using the `await` keyword, go ahead and change the signature for the `Main` method to be `async` and return a `Task`.
+1. 使用しているため、`await`キーワード、さあ、署名の変更、`Main`メソッド`async`戻って、`Task`します。
 
     ```csharp
     static async Task Main(string[] args)
@@ -59,15 +58,15 @@ Let's add code to retrieve the connection string from configuration and use it t
     }
     ```
 
-1. Finally, output whether we created the Blob container.
+1. 最後に、Blob コンテナーを作成したかどうかを出力します。
 
     ```csharp
     Console.WriteLine(created ? "Created the Blob container" : "Blob container already exists.");
     ```
 
-1. Save the file.
+1. ファイルを保存します。
 
-The final file should look like this if you'd like to check your work.
+最終的なファイルは、作業内容を確認したい場合もこれのようになります。
 
 ```csharp
 using System;
@@ -106,11 +105,11 @@ namespace PhotoSharingApp
 }
 ```
 
-## Use C# 7.1 to build our app
+## <a name="use-c-71-to-build-our-app"></a>C# 7.1 を使用して、アプリを構築するには
 
-Support for `async` and `await` on `Main` methods was added to C# 7.1. This might not be the default version of the compiler you are using. Let's make sure we use that version of the compiler by setting it in our configuration file.
+サポート`async`と`await`で`Main`c# 7.1 にメソッドが追加されました。 既定のバージョンのコンパイラを使用している可能性がありますできません。 そのバージョンのコンパイラを使用して、構成ファイルで設定することでを確認しましょう。
 
-1. Open the `PhotoSharingApp.csproj` and add `<LangVersion>7.1</LangVersion>` to the `PropertyGroup` that specifies the `TargetFramework`. It should look like this when you're finished:
+1. 開く、`PhotoSharingApp.csproj`追加`<LangVersion>7.1</LangVersion>`を`PropertyGroup`を指定する、`TargetFramework`します。 完了したら、次のように表示する必要があります。
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -123,11 +122,11 @@ Support for `async` and `await` on `Main` methods was added to C# 7.1. This migh
     </Project>
     ```
 
-1. Save the file.
+1. ファイルを保存します。
 
-## Run the app
+## <a name="run-the-app"></a>アプリの実行
 
-1. Build and run the application. **Note:** make sure you're in the correct working directory.
+1. アプリケーションをビルドし、実行します。 **注:** 正しい作業ディレクトリにしているかどうかを確認します。
 
     ```bash
     dotnet run
@@ -135,14 +134,13 @@ Support for `async` and `await` on `Main` methods was added to C# 7.1. This migh
 
 ::: zone-end
 
-::: zone-pivot="javascript"
-Let's add code to connect to the Azure storage account using our stored connection string. The Azure client library will automatically use the **AZURE_STORAGE_CONNECTION_STRING** environment variable to get the connection string.
+ゾーン pivot ="javascript"は、保存されている接続文字列を使用して Azure ストレージ アカウントに接続するコードを追加してみましょう。 Azure クライアント ライブラリが自動的に使用、 **AZURE_STORAGE_CONNECTION_STRING**環境変数、接続文字列を取得します。
 
-## Create a blob client
+## <a name="create-a-blob-client"></a>BLOB クライアントを作成する
 
-1. Open **index.js** in the code editor.
+1. 開いている**index.js**コード エディターにします。
 
-1. Start by including the **azure-storage** module. Store the module in a variable named **storage**.
+1. 開始を含めることによって、 **azure storage**モジュール。 モジュールをという名前の変数に格納**ストレージ**します。
 
     ```javascript
     #!/usr/bin/env node
@@ -151,25 +149,25 @@ Let's add code to connect to the Azure storage account using our stored connecti
     const storage = require('azure-storage');
     ```
 
-1. Next, right after that, use the **storage** object to create the `BlobService` object and store it in a global named **blobService**. Remember, these are light-weight objects representing access to the storage account.
+1. 次に、右その後、使用して、**ストレージ**オブジェクトを作成する、`BlobService`オブジェクトし、グローバルという名前で保存**blobService**します。 これらは、ストレージ アカウントへのアクセスを表す軽量のオブジェクトに注意してください。
 
     ```javascript
     const blobService = storage.createBlobService();
     ```
 
-1. Add a constant to represent the container we want to create. We'll name the container "photoblobs".
+1. 作成するコンテナーを表す定数を追加します。 コンテナーを"photoblobs"名前します。
 
     ```javascript
     const containerName = 'photoblobs';
     ```
 
-## Create a container
+## <a name="create-a-container"></a>コンテナーの作成
 
-We can use the `BlobService` object to work with blob APIs in Azure storage. As mentioned before, all the APIs that make network calls are asynchronous to keep the app responsive. The `createContainerIfNotExists` method is one such method. We'll use _promises_ to handle the callback which contains the response.
+使用して、 `BlobService` Azure storage に blob Api を使用するオブジェクト。 前述のように、ネットワーク呼び出しを行うすべての Api は、アプリの応答性を維持するために非同期にします。 `createContainerIfNotExists`メソッドは、このような 1 つのメソッド。 使用して_promise_応答が含まれるコールバックを処理します。
 
-1. Use `util.promisify` to take the callback version of `createContainerIfNotExists` and turn it into a promise-returning method.
-    - Since the callback method is on an object, make sure to add a `bind` call at the end to connect it to that context.
-    - Assign the return value to a constant at the top of the file named `createContainerAsync` as shown below.
+1. 使用`util.promisify`するのコールバック バージョン`createContainerIfNotExists`promise を返すメソッドにします。
+    - オブジェクトにコールバック メソッドがあるので、追加することを確認して、`bind`呼び出しの末尾に、そのコンテキストに接続します。
+    - という名前のファイルの上部にある定数を戻り値を割り当てる`createContainerAsync`以下に示すようにします。
 
 ```javascript
 const storage = require('azure-storage');
@@ -180,12 +178,12 @@ const createContainerAsync = util.promisify(blobService.createContainerIfNotExis
 const containerName = 'photoblobs';
 ```
 
-1. Remove the "Hello, World!" output from `main()`.
+1. 「こんにちは, World!」を削除します。 出力`main()`します。
 
-1. Call your new `createContainerAsync` promise.
-    - Pass it the **containerName** constant.
-    - Apply the `await` keyword to the call.
-    - Wrap the call in a `try` / `catch` construct and output any error.
+1. 新しい呼び出し`createContainerAsync`約束。
+    - 渡す、 **containerName**定数。
+    - 適用、`await`呼び出しにキーワード。
+    - 呼び出しをラップ、 `try`  /  `catch`を構築し、すべてのエラーを出力します。
 
     ```javascript
     try {
@@ -196,7 +194,7 @@ const containerName = 'photoblobs';
     }
     ```
     
-1. The `createContainerAsync` promise returns the first value from the underlying `createContainerIfNotExists` which is the container result. This includes information on whether the container was created or not. Capture the result in a variable and output whether the container was created based on the `result.created` property.
+1. `createContainerAsync` Promise では、最初の値を返します、基礎となる`createContainerIfNotExists`コンテナーの結果であります。 これには、コンテナーかどうかを作成したかどうかに関する情報が含まれます。 変数に結果をキャプチャし、出力コンテナーが作成されているかどうかに基づいて、`result.created`プロパティ。
 
     ```javascript
     try {
@@ -213,11 +211,11 @@ const containerName = 'photoblobs';
     }
     ```
 
-1. Finally, decorate the `main` function with the `async` keyword.
+1. 最後に、装飾、`main`関数と、`async`キーワード。
         
-1. Save the file.
+1. ファイルを保存します。
 
-The final file should look like this if you'd like to check your work.
+作業内容を確認したい場合、最終的なファイルは、ようになります。
 
 ```javascript
 #!/usr/bin/env node
@@ -250,9 +248,9 @@ async function run() {
 run();
 ```
 
-## Run the app
+## <a name="run-the-app"></a>アプリの実行
 
-1. Build and run the application. **Note:** make sure you're in the correct working directory.
+1. アプリケーションをビルドし、実行します。 **注:** 正しい作業ディレクトリにしているかどうかを確認します。
 
     ```bash
     node index.js
@@ -260,23 +258,23 @@ run();
 
 ::: zone-end
 
-It should report that the blob container was created. If you run it a second time, it should tell you it already exists.
+Blob コンテナーが作成されたことを報告する必要があります。 を実行する場合に、2 回目にするように指示されますが既に存在します。
 
-To verify the container:
+コンテナーを確認します。
 
-1. Sign in to the [Azure Portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure Portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-1. Navigate to your storage account. You can use the **All Resources** section to find the storage account, or search by name from the _search box_ at the top of the portal window. 
+1. ストレージ アカウントに移動します。 使用することができます、**すべてのリソース**から名前で、ストレージ アカウントまたは検索を検索するセクション、_検索ボックス_ポータル ウィンドウの上部にあります。 
 
-1. Select the **Blobs** entry of the storage account in the **Blob services** section.
+1. 選択、 **Blob**でストレージ アカウントのエントリ、 **Blob service**セクション。
 
-1. You should see your **photoblobs** container in the Blobs panel. You can delete the container through the "..." menu on the right hand side of the entry to try re-creating it with your app.
+1. 表示する必要があります、 **photoblobs** Blob パネル内のコンテナー。 アプリで再作成することをお試しくださいするエントリの右側にある [...] メニューからコンテナーを削除することができます。
 
 > [!NOTE]
-> The container will disappear from the portal very quickly, but it takes a few minutes to actually delete. You will get an error response from Azure while it is being deleted if you attempt to recreate it.
+> コンテナーは、非常に高速のポータルから表示されませんが、実際に削除するまで数分かかります。 Azure から削除中である場合は再作成しようとしたときにエラー応答が表示されます。
 
-## Delete the app
-If you decide you don't want to keep the application source code in your Cloud Shell environment, you can use the following command to remove the folder and all the contents.
+## <a name="delete-the-app"></a>アプリを削除します。
+クラウド シェル環境内のアプリケーションのソース コードを保持したくない場合は、フォルダーとすべての内容を削除する、次のコマンドを使用することができます。
 
 ```bash
 rm -r PhotoSharingApp/

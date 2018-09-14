@@ -1,40 +1,40 @@
-Suppose you have chosen Azure PowerShell as your automation solution. Your administrators prefer to run their scripts locally rather than in the Azure Cloud Shell. The team uses machines that run Linux, macOS, and Windows. You need to get Azure PowerShell working on all their devices. 
+あなたが自動化ソリューションとして Azure PowerShell を選択したとします。 管理者は、Azure Cloud Shell ではなくローカルでスクリプトを実行しようとします。 チームは、Linux、macOS、および Windows を実行するマシンを使用しています。 これらのすべてのデバイスで Azure PowerShell が実行される必要があります。 
 
-## What must be installed?
-We'll go through the actual installation instructions in the next unit, but let's look at the two components which make up Azure PowerShell.
+## <a name="what-must-be-installed"></a>何をインストールしなければならないでしょう。
+次のユニットでは、実際のインストール手順について説明しますが、ここで Azure PowerShell を構成する 2 つのコンポーネントを見てみましょう。
 
-- **The base PowerShell product** This comes in two variants: PowerShell on Windows, and PowerShell Core on macOS and Linux.
-- **The Azure PowerShell module** This extra module must be installed to add the Azure-specific commands to PowerShell.
-
-> [!NOTE]
-> PowerShell is included with Windows (but might have an update available). You will need to install PowerShell Core on Linux and macOS.
-
-Once the base product is installed, you then add the Azure PowerShell module to your installation.
-
-## How to install PowerShell Core
-On both Linux and macOS, you use a package manager to install PowerShell Core. The recommended package manager differs by OS and distribution.
+- **ベース PowerShell 製品**: これには、Windows 上の PowerShell と、macOS および Linux 上の PowerShell Core という 2 つのバリエーションがあります。
+- **Azure PowerShell モジュール**: PowerShell に Azure 固有のコマンドを追加するには、この追加のモジュールをインストールする必要があります。
 
 > [!NOTE]
-> PowerShell Core is available in the Microsoft repository, so you'll first need to add that repository to your package manager.
+> PowerShell は Windows に含まれています (ただし、更新プログラムを適用できる場合があります)。 Linux および macOS では、PowerShell Core をインストールする必要があります。
 
-### Linux
-On Linux, the package manager will change based on the Linux distribution you choose.
+ベース製品がインストールされたら、インストールに Azure PowerShell モジュールを追加します。
 
-| Distribution(s)  | Package manager |
+## <a name="how-to-install-powershell-core"></a>PowerShell Core をインストールする方法
+Linux および macOS では、パッケージ マネージャーを使用して PowerShell Core をインストールします。 推奨されるパッケージ マネージャーは、OS とディストリビューションによって異なります。
+
+> [!NOTE]
+> PowerShell Core は Microsoft リポジトリ内で利用できるので、まずパッケージ マネージャーにそのリポジトリを追加する必要があります。
+
+### <a name="linux"></a>Linux
+Linux では、選択した Linux ディストリビューションに基づいてパッケージ マネージャーが変更されます。
+
+| ディストリビューション  | パッケージ マネージャー |
 |------------------|-----------------|
-| Ubuntu, Debian   | `apt-get`       |
-| Red Hat, CentOS  | `yum`           |
+| Ubuntu、Debian   | `apt-get`       |
+| Red Hat、CentOS  | `yum`           |
 | OpenSUSE         | `zypper`        |
 | Fedora           | `dnf`           |
 
-### Mac
-On macOS, you will use `Homebrew` to install PowerShell Core.
+### <a name="mac"></a>Mac
+macOS では、`Homebrew` を使用して PowerShell Core をインストールします。
 
-## How to install Azure PowerShell
-Once you have PowerShell installed, the preferred installation method for the Azure PowerShell module is to use the `Install-Module` command from within PowerShell. You'll need elevated privileges to install modules.
+## <a name="how-to-install-azure-powershell"></a>Azure PowerShell をインストールする方法
+PowerShell をインストールした後は、Azure PowerShell モジュールの推奨されるインストール方法として、PowerShell 内から `Install-Module` コマンドを使用します。 モジュールをインストールするには、昇格された特権が必要です。
 
-- On Windows you must run PowerShell as an administrator
-- On Linux and macOS, you will use the `sudo` command to obtain elevated privileges
+- Windows では、PowerShell を管理者として実行する必要があります
+- Linux および macOS では、`sudo` コマンドを使用して、昇格された特権を取得します
 
-## Summary
-On Windows, PowerShell is built-in, but you must install the Azure PowerShell module. On Linux and macOS, you must install both PowerShell Core and the Azure PowerShell module. In the next section, you will go through the detailed installation steps for some common platforms.
+## <a name="summary"></a>まとめ
+Windows では、PowerShell は組み込み済みですが、Azure PowerShell モジュールをインストールする必要があります。 Linux および macOS では、PowerShell Core と Azure PowerShell モジュールの両方をインストールする必要があります。 次のセクションでは、いくつかの一般的なプラットフォームでの詳細なインストール手順について説明します。

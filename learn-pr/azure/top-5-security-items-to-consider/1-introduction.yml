@@ -9,11 +9,6 @@ metadata:
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: a26bf32a1f08d8cb55ca94ed22eb38eacbc2f6d4
-  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44503361"
 durationInMinutes: 2
-content: '[!include[](includes/1-introduction.md)]'
+content: |
+  [!include[](includes/1-introduction.md)]

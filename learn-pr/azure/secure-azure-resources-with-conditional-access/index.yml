@@ -1,35 +1,34 @@
 ### YamlMime:Module
 uid: learn.secure-access-azure-ad-multi-factor-authentication
 metadata:
-  title: Secure your Azure resources with conditional access
-  description: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
+  title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+  description: 多くの組織は、セキュリティ体制の強化を望んでいますが、この要件とユーザーにとってのアクセスの簡単さのバランスを取りたいと考えています。 Azure AD では、条件付きアクセスでこのバランスをサポートするためのメカニズムを提供します。 組織は特定の状況において、Azure Multi-Factor Authentication (MFA) のような代替制御を必要とする場合があります。 Azure Active Directory での条件付きアクセスの利用方法について学習します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure your Azure resources with conditional access
-summary: Many organizations want to increase their security posture, but they want to balance this requirement with ease of access for their users. Azure AD provides a mechanism to support this balance in conditional access. Organizations can require compensating controls like Azure Multi-Factor Authentication (MFA) in specific circumstances. Learn how to use conditional access with Azure Active Directory.
+title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+summary: 多くの組織は、セキュリティ体制の強化を望んでいますが、この要件とユーザーにとってのアクセスの簡単さのバランスを取りたいと考えています。 Azure AD では、条件付きアクセスでこのバランスをサポートするためのメカニズムを提供します。 組織は特定の状況において、Azure Multi-Factor Authentication (MFA) のような代替制御を必要とする場合があります。 Azure Active Directory での条件付きアクセスの利用方法について学習します。
 abstract: |
-  In this module, you will:
-  - Create a test user and a user group
-  - Enable a conditional access policy that requires Multi-Factor Authentication (MFA)
+  このモジュールでは、次のことを行います。
+  - テスト ユーザーとユーザー グループを作成します。
+  - Multi-factor Authentication (MFA) を必要とする条件付きアクセス ポリシーを有効にします。
 prerequisites: |
-  - Knowledge of basic Azure concepts, such as resource groups and subscriptions
-#TODO: Update icon URL with real image 
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- intermediate
-roles: 
-- administrator
-products: 
-- azure-active-directory
+  - リソース グループやサブスクリプションなど、Azure の基本的な概念に関する知識
+iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+levels:
+  - intermediate
+roles:
+  - administrator
+products:
+  - azure
+  - azure-active-directory
 units:
-- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
-- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
-- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
-- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
-- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
-- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+  - learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+  - learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+  - learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+  - learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+  - learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+  - learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

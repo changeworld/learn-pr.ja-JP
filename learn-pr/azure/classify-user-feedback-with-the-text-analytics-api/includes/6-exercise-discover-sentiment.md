@@ -1,83 +1,83 @@
-Let's update our function implementation to call the Text Analytics API service and get back a sentiment score.
+Text Analytics API サービスを呼び出すし、センチメント スコアを取得する、関数の実装を更新してみましょう。
 
-1. Select our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], in the Function Apps portal.
+1. 当社の関数を選択する[!INCLUDE [func-name-discover](./func-name-discover.md)]ポータルで関数アプリでします。
 
-1. Expand the **View files** menu on the right of the screen.
+1. 展開、**ファイルを表示**画面の右側のメニュー。
 
-1. Under the **View files** tab, select **index.js** to open the code file in the editor.
+1. 下、**ファイルを表示**] タブで [ **index.js**をエディターでコード ファイルを開きます。
 
-1. Replace the entire content of the code file with the following JavaScript.
+1. 内容全体を置き換える**index.js**で次の JavaScript と**保存**します。
 
 [!code-javascript[](../code/discover-sentiment-sort.js?highlight=7)]
 
-Let's look at what's happening in this code:
+このコードで何が起こっているかを見てみましょう。
 
-- To call the text analytics service, set `accessKey`, highlighted in the code snippet, to the key you saved earlier.
-- Update `uri` to the region from which you obtained your access key, if that region is different than *westus* shown in this example.
-- At the bottom of the code file, we've defined a `documents` array. This array is the payload we send to the Text Analytics service. 
-- The `documents` array has a single entry in this case, which is the queue message that triggered our function. Although we only have one document in our array, it doesn't mean that our solution can only handle one message at a time. The Azure Functions runtime retrieves and processes messages in batches, calling several instances of our function *in parallel*. Currently, the default batch size is 16 and the maximum batch size is 32.
-- The `id` must be unique within the array. The `language` property specifies the language of the document text.  
-- We then call our method `get_sentiments`, which uses the HTTPS module to make the call to Text Analytics API. Notice that we pass our subscription, or access, key in the header of every request.
-- When the service returns, our `response_handler` is called and we log the response to the console using `context.log` 
+- テキスト分析サービスを呼び出すには、次のように設定します。 `accessKey`、以前に保存したキーに、コード スニペットの強調表示します。
+- Update`uri`から取得したアクセス キー、そのリージョンが異なる場合、リージョンに*westus*この例に示すようにします。
+- コード ファイルの下部には、定義した、`documents`配列。 この配列は、Text Analytics サービスに送信ペイロードを示します。
+- `documents`配列が 1 つのエントリここでは、これは、関数をトリガーしたキュー メッセージ。 のみ 1 つのドキュメントが配列で、当社のソリューションが一度にで 1 つのメッセージを処理できるだけこととは限りません。 Azure Functions ランタイムを取得し、関数の複数のインスタンスを呼び出すバッチでメッセージを処理*並列*します。 現時点では、既定のバッチ サイズは 16 および最大バッチ サイズは 32 です。
+- `id`配列内で一意である必要があります。 `language`プロパティは、ドキュメントのテキストの言語を指定します。
+- 次のメソッドを呼び出して`get_sentiments`、Text Analytics api の呼び出しに HTTPS モジュールを使用します。 すべての要求のヘッダーで、サブスクリプション、または、アクセス キーを渡していることを確認します。
+- サービスが返されるときに、`response_handler`が呼び出されを使用して、コンソールへの応答を記録しています `context.log`
 
-## Try it out
 
-Before we look at sorting into queues, let's take what we have for a test run. 
+## <a name="try-it-out"></a>試してみる
 
-1.  With our function, [!INCLUDE [func-name-discover](./func-name-discover.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+キューに並べ替えを見ると、前に、どのようなテストを実行しました見てみましょう。
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+1. この関数を使用した[!INCLUDE [func-name-discover](./func-name-discover.md)]、展開に一番左にあるテスト メニュー項目をクリックして、関数アプリのポータルで選択されている。
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+1. 選択、**テスト**メニュー項目し、テストのパネルが開いていることを確認します。 次のスクリーン ショット、どのようなようになります。
 
-3. Add a string of text into the request body as shown in the screenshot. 
+    ![関数のテストのパネルを示すスクリーン ショットが展開されます。](../media/test-panel-open-small.png)
 
-1.  Click **Run** at the bottom of the test panel.
+1. スクリーン ショットに示すように、要求本文にテキストの文字列を追加します。
 
-1. Make sure the **Logs** tab is expanded at the bottom left of the main screen, under the code editor. 
+1.  クリックして**実行**テスト パネルの下部にあります。
 
-1. Verify that the **Logs** tab displays log information that the function completed. The window will also display the response from the Text Analytics API call. 
+1. 確認、**ログ**コード エディターの下のメイン画面の左下にあるタブが展開されています。
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/sentiment-response-log1.png)
+1. いることを確認、**ログ** タブには、関数が完了したログ情報が表示されます。 ウィンドウは、Text Analytics API の呼び出しからの応答にも表示されます。
 
-Congratulations! The [!INCLUDE [func-name-discover](./func-name-discover.md)] works as designed. In  this example, we passed in a very upbeat message and received a score of over 0.98. Try changing the message to something less optimistic, rerun the test and note the response.
+![パネルのテストと成功したテストの結果を示すスクリーン ショット。](../media/sentiment-response-log1.png)
 
-## Try it out again (optional)
+お疲れさまでした。 [!INCLUDE [func-name-discover](./func-name-discover.md)]設計どおりに動作します。 この例では非常に長旅メッセージで渡され、0.98 経由でのスコアを受信しました。 何かの小さいオプティミスティックにメッセージを変更してください、テストを再実行し、応答に注意してください。
 
-Let's repeat the test. This time, instead of using the Test window of the portal, we'll actually place a message into the input queue and watch what happens. 
+## <a name="add-a-message-to-the-queue"></a>メッセージをキューに追加する
 
-1. Navigate to your resource group in the **Resource Groups** section of the portal.
+テストをもう一度見てみましょう。 今回は、ポータルの [テスト] ウィンドウを使用せずが実際にメッセージを入力キューに配置され処理内容を見る。
 
-1. Select the resource group used in this lesson.
+1. リソース グループに移動し、**リソース グループ**ポータルのセクション。
 
-1. In the **Resource group** panel that appears, locate the Storage 
-Account entry and select it.
+1. このレッスンで使用されるリソース グループを選択します。
 
-![Screenshot storage account selected in the Resource Group window.](../media-draft/select-storage-account.png)
+1. **リソース グループ**パネルが表示されたら、ストレージ アカウント エントリを検索して選択します。
 
-1. Select **Storage Explorer (preview)** from the left menu of the Storage Account main window.  This action opens the Azure Storage Explorer inside the portal. Your screen should look like the following screenshot at this stage. 
+    ![リソース グループ ウィンドウで選択したストレージ アカウントをスクリーン ショット。](../media/select-storage-account.png)
 
-![Screenshot of storage explorer showing our storage account, with no queues currently.](../media-draft/sa-no-queue.png)
+1. 選択**ストレージ エクスプ ローラー (プレビュー)** ストレージ アカウントのメイン ウィンドウの左側のメニュー。  この操作は、ポータル内で Azure Storage Explorer を開きます。 この段階で画面に次のスクリーン ショットのようになります。
 
-As you can see, we don't have any queues in this storage account yet, so let's fix that.
+![現在キューなしで、ストレージ アカウントを表示するストレージ エクスプ ローラーのスクリーン ショット。](../media/sa-no-queue.png)
 
-1. If you remember from earlier in this lesson, we named the queue associated with our trigger **new-feedback-q**. Right-click on the **Queues** item in the storage explorer and select *Create Queue*.
+ご覧のように、このストレージ アカウントに、キューがまだある、それではこれを修正しましたはありません。
 
-1. In the dialog that opens, enter **new-feedback-q** and click **OK**. We now have our input queue. 
+5. このレッスンでは以前から覚えて場合、トリガーに関連付けられたキューという名前**新しいフィードバック q**します。 右クリックし、**キュー**ストレージ エクスプ ローラーでアイテムを選択します*Create Queue*します。
 
-1. Select the new queue in the left-hand menu to see the data explorer for this queue. As expected, the queue is empty. Let's add a message to the queue using the **Add Message** command at the top of the window.
+1. 表示されたダイアログ ボックスで、次のように入力します。**新しいフィードバック q**  をクリック**OK**します。 この入力キューがあるようになりました。
 
-1. In the **Add Message** dialog, enter "This message came from our input queue, new-feedback-q" into the **Message text** field and click **OK** at the bottom of the dialog. 
+1. このキューのデータ エクスプ ローラーを参照してください。 左側のメニューで、新しいキューを選択します。 予想どおり、キューが空です。 使用してキューにメッセージを追加してみましょう、**メッセージの追加**ウィンドウの上部にあるコマンド。
 
-1. Observe the message, similar to the message in the following screenshot, in the data explorer.
-![Screenshot of storage explorer showing our storage account, with the message we created in the queue.](../media-draft/message-in-input-queue.png)
+1. **メッセージの追加**ダイアログ ボックスで、入力"このメッセージの送信元、入力キューでは、新しいフィードバック q"に、**メッセージ テキスト**フィールドし、をクリックして **[ok]** ダイアログの下部にあります。
 
-1. After a few seconds, click **Refresh** to refresh the view of the queue. Observe that the queue is empty once again. Something must have read the message from the queue. 
+1. データ エクスプ ローラーで、次のスクリーン ショットのようなメッセージを確認します。
+    ![キューで作成したメッセージと、ストレージ アカウントを表示するストレージ エクスプ ローラーのスクリーン ショット。](../media/message-in-input-queue.png)
 
-1. Navigate back to our function in the portal and open the **Monitor** tab. Select the newest message and in the list. Observe that our function processed the queue message we had posted to the new-feedback-q.
+1. 数秒後に、後に次のようにクリックします。**更新**キューの表示を更新します。 キューが空であるもう一度確認します。 キューからメッセージを読み取る何かする必要があります。
 
-![Screenshot of Monitor dashboard showing an entry that tells us that our function processed the queue message that we posted to new-feedback-q.](../media-draft/message-in-monitor.png)
+1. ポータルで開く、関数に戻り、**モニター**タブ。最新のメッセージを選択し、ボックスの一覧。 この関数が新しいフィードバック q に投稿してキュー メッセージを処理することを確認します。
 
-In this test, we did a complete round trip of posting something into our queue and then seeing the function process it.
+![関数が新しいフィードバック q を掲載したキュー メッセージを処理することを示すエントリを示すスクリーン ショットの監視ダッシュ ボード。](../media/message-in-monitor.png)
 
-We're making progress with our solution! Our function is now doing something useful. It's receiving text from our input queue and then calling out to the Text Analytics API service to get a sentiment score.  We've also learned how to test our function through the Azure portal and the Storage Explorer. In the next exercise, we'll see how easy it is to write to queues using output bindings.
+このテストでは、キューに投稿するものとし、それを処理する関数が表示される完全なラウンド トリップを行いました。
+
+進行状況は、ソリューションを加えています。 関数は何かの便利な行っていますようになりました。 テキストを入力キューから受信され、センチメント スコアを取得する、Text Analytics API サービスを呼び出すことです。  また、Azure portal と、ストレージ エクスプ ローラーで、関数をテストする方法を学習しました。 次の手順で出力バインドを使用してキューに書き込むがいかに簡単か見ていきます。

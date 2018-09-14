@@ -1,87 +1,83 @@
-The out of the box experience with an Azure DevOps Project creates build and release pipelines that make sense for the technologies picked. For this module, you created a build and release pipeline that makes sense for a node.js app running in a container hosted in a Kubernetes cluster. 
+エクスペリエンスでは、Azure DevOps プロジェクトの出力がビルドを作成し、リリース パイプラインをうえで適したテクノロジを選択します。 このモジュールには、Kubernetes クラスターでホストされているコンテナーで実行されている node.js アプリにとって合理的なビルドとリリース パイプラインを作成しました。 
 
-Often times we need to customize the build and release pipelines to do specific things for our project. The build and release pipelines in VSTS are 100% customizable. You can make the pipelines do whatever you need it to do.
+プロジェクトの特定の作業を行うビルドとリリース パイプラインをカスタマイズする多くの場合に必要があります。 VSTS のビルドとリリース パイプラインは、カスタマイズ可能な 100% です。 必要なことを行うには、パイプラインを行うことができます。
 
-In this unit, learn how to customize your build and release pipelines.
+このユニットでは、ビルドのカスタマイズやリリース パイプラインの方法を説明します。
 
-## Customize the build pipeline
+## <a name="customize-the-build-pipeline"></a>パイプラインのビルドをカスタマイズします。
 
-The build engine in VSTS is just a task runner, doing one task, after another. To customize the build, you just add or remove tasks and fill out the correct parameters for the task.
+VSTS でビルド エンジンは、のみ、タスク ランナー、もう 1 つのタスクを実行します。 ビルドをカスタマイズするには、だけ追加またはタスクを削除し、タスクの正しいパラメーターを入力します。
 
-Out of the box, VSTS comes with about 100 tasks that you can use. If you need to do something that doesn't exist out of the box, check the marketplace where there are over 700 build and release tasks ready to be downloaded and used. You also have the ability to write your own custom tasks.
+すぐに使える VSTS に使用できる約 100 個のタスクが付属します。 すぐに存在しないことを行うため必要がある場合は、marketplace を確認してください。 700 を超えるがビルドおよびリリースのダウンロードおよび使用の準備完了のタスクがないです。 また、独自のカスタム タスクを記述する機能があります。
 
-For this unit, you will customize the build pipeline by installing the marketplace tasks WhiteSource Bolt to do security scanning of our code.
+このユニットの marketplace タスク コードのセキュリティのスキャンを行う WhiteSource Bolt をインストールすることで、パイプラインのビルドをカスタマイズします。
 
-1. Browse to the Azure DevOps Project in the Azure portal and click on the build definition link  
-![Build Link](/media-draft/3-buildlink.png)
+1. Azure portal で Azure DevOps プロジェクトを参照し、ビルド定義のリンクをクリックします  
+![リンクを構築します。](../media-drafts/3-buildlink.png)
 
-2. This takes you to the build pipelines page. Click on the build and select `Edit`  
-![Edit Build](/media-draft/3-editbuild.png)
+2. ビルド パイプラインのページに移動します。 ビルド を選択します `Edit`  
+![ビルドを編集します。](../media-drafts/3-editbuild2.png)
 
-3. This takes you to the build definition. Click on the `+` to add a task to Agent Job 1  
-![Add Task](/media-draft/3-addtask.png)
+3. ビルド定義に移動します。 をクリックして、`+`エージェント ジョブの 1 にタスクを追加するには  
+![タスクを追加します。](../media-drafts/3-addtask2.png)
 
-4. In the text field, type `bolt` and click `Get it free`  
-![Get it free](/media-draft/3-getitfree.png)
+4. テキスト フィールドに「 `bolt`  をクリック `Get it free`  
+![白いソース ボルトを取得します。](../media-drafts/3-getwhitesourcebolt.png)
 
-5. This takes you to the WhiteSource Bolt Marketplace page. Click `Get it free`  
-![Get White Source Bolt Free](/media-draft/3-getwhitesourceboltfree.png)
+5. WhiteSource Bolt の Marketplace ページに移動します。 [`Get it free`] をクリックします。  
+![WhiteSource Bolt の無料の取得します。](../media-drafts/3-getwhitesourceboltfree2.png)
 
-6. Choose your VSTS organization and then click `Install`  
-![Install](/media-draft/3-install.png)
+6. Azure DevOps 組織を選択し、順にクリックします `Install`  
+![インストール](../media-drafts/3-installwsb.png)
 
-7. Activate WhiteSource Bolt by following the directions here <https://www.whitesourcesoftware.com/whitesource_bolt_visualstudio_2017/#activate>
+7. ここで説明された手順に従って、WhiteSource Bolt をアクティブ化します。 <https://www.whitesourcesoftware.com/whitesource_bolt_visualstudio_2017/#activate>
 
-8. Go back to your Azure portal with the DevOps project loaded and click the build pipeline link  
-![Build Pipeline Link](/media-draft/3-buildpipelinelink.png)
+8. DevOps プロジェクトが読み込まれ、ビルド パイプライン リンクをクリックして、Azure portal に戻る  
+![パイプライン リンクを構築します。](../media-drafts/3-buildpipelinelink.png)
 
-9. Select your build and click `Edit`  
-![Edit Build](/media-draft/3-editbuild.png)
+9. ビルドを選択し、をクリックしてください `Edit`  
+![ビルドを編集します。](../media-drafts/3-editbuild2.png)
 
-10. Click the `+` Add a task to Agent job 1, type in `bolt` in the search field and click `Add`  
-![Add Bolt](/media-draft/3-addbolt.png)
+10. をクリックして、`+`エージェント ジョブにタスクを追加、入力`bolt`検索フィールドをクリックします `Add`  
+![ボルトを追加します。](../media-drafts/3-addwsbolt.png)
 
-11. This adds the WhiteSource Bolt task to the bottom of the task list, drag it to the top  
-![Bolt at Top](/media-draft/3-boltattop.png)
+11. WhiteSource Bolt タスク、タスク一覧の下部に追加されます、一番上にドラッグします  
+![ボルトをページのトップへ移動します。](../media-drafts/3-moveboltototopoftasklist.png)
 
-12. Click `Save & queue` and select `Save & queue`  
-![Save and Queue](/media-draft/3-saveandqueue.png)
+12. クリック`Save & queue`し選択します `Save & queue`  
+![保存してキュー](../media-drafts/3-saveandqueue2.png)
 
-13. Click `Save & queue`  
-![Save and Queue Dialog](/media-draft/3-saveandqueuedialog.png)
+13. [`Save & queue`] をクリックします。  
+![保存して、ボタンのキュー](../media-drafts/3-saveandqueuebutton.png)
 
-This saves the modified build pipeline and queues the build. After the build finishes, looking at the build `WhiteSource Bolt Build Report`, you can see the source code was scanned by WhiteSource Bolt looking for security vulnerabilities.
+これにより、変更済みのビルド パイプラインを保存し、ビルドをキューします。 ビルドの終了後は、ビルドを見て`WhiteSource Bolt Build Report`セキュリティの脆弱性を探して WhiteSource Bolt によってスキャンされたソース コードを参照してください。
 
-![Build report](/media-draft/3-buildreport.png)
+![白のソース レポート](../media-drafts/3-whitesourcereport.png)
 
-## Customize the release pipeline
+## <a name="customize-the-release-pipeline"></a>リリース パイプラインをカスタマイズします。
 
-Like the build, the release pipeline is task runner and can be customized the same way. For this unit, you will add a web performance test at the end of the release. This will verifying that your app is deployed and running successfully in the Kubernetes cluster.
+リリース パイプラインは、ビルドのようにタスク ランナーは、しと同じ方法をカスタマイズできます。 このユニットでは、リリースの最後に、web パフォーマンス テストを追加します。 これにより、アプリが展開されていることを確認して、Kubernetes クラスターに正常に実行します。
 
-1. Browse to the DevOps project in the Azure Portal and click on the link for the release pipeline  
-![Release Link](/media-draft/3-releaselink.png)
+1. Azure Portal で DevOps プロジェクトを参照し、リリース パイプラインは、リンクをクリックします  
+![リリースのリンク](../media-drafts/3-releaselink.png)
 
-2. This takes you to the release pipeline page. Click your release pipeline and click on `Edit`  
-![Edit Release Pipeline](/media-draft/3-editreleasepipeline.png)
+2. リリース パイプラインのページに移動します。 リリース パイプラインをクリックし、をクリックしてください `Edit`  
+![リリースを編集します。](../media-drafts/3-editreleasebutton.png)
 
-3. Click on the tasks in your release `Dev` stage  
-![Release Stage](/media-draft/3-releasestage.png)
+3. リリース内のタスクでクリックして`Dev`ステージ  
+![リリース ステージ](../media-drafts/3-releasestage2.png)
 
-4. Click on the `+` Add a task to Phase1, type `web test` in the search field and click `Add` for the Cloud-based Web Performance Test task  
-![Add Web Test](/media-draft/3-addwebtest.png)
+4. をクリックして、`+`タスクの種類、フェーズ 1 を追加`web test` をクリックし、検索フィールドで`Add`クラウド ベースの Web パフォーマンス テスト タスク  
+![Web テストを追加します。](../media-drafts/3-addwebtest2.png)
 
-5. Edit the Quick Web Performance Test task by clicking on it and adding the url to your app in the Website URL (to find the url, go to the Azure portal DevOps project page and on the right-hand side, right-click your sample app external endpoint and copy link) and then for TestName, enter in `Ping Test`  
-![Copy URL](/media-draft/3-copyurl.png)  
-![Edit Web Test Task](/media-draft/3-editwebtesttask.png)
+5. クイック Web パフォーマンス テストのタスクをクリックして、(url の確認、ポータル、Azure DevOps プロジェクト ページにし、右側にある、サンプル アプリ外部エンドポイントとコピーのリンクを右クリックして) を web サイトの URL とアプリへの url を追加し、テスト ビルダーの編集します。tName に入力`Ping Test` をクリック `Save`  
+![URL のコピー](../media-drafts/3-copyurl.png)  
+![Web テストを保存します。](../media-drafts/3-savewebtest.png)
 
-6. Click `Save`  
-![Save Release](/media-draft/3-saverelease.png)
+ここで、新しい helm パッケージを展開した後、リリースを実行するときに web テストによっては、アプリの url を正常に達するを実行します。
 
-Now, when you run a release, after deploying the new helm package, a web test is run hitting the app url successfully.
+![Web テストの実行](../media-drafts/3-webtestrun.png)
 
-![Web Test](/media-draft/3-webtest.png)
+## <a name="summary"></a>まとめ
 
-
-## Summary
-
-In this unit, you learned how to customize your build and release pipelines. You also learned how to install and use tasks from the Marketplace.
+このユニットでは、ビルドのカスタマイズやリリース パイプラインの方法を学習しました。 インストールして、Marketplace からタスクを使用する方法も学習しました。

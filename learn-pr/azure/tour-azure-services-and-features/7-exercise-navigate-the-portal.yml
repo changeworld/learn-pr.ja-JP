@@ -1,17 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.7-exercise-navigate-the-portal
-title: Use the Azure portal
+title: Azure ポータルの使用
 metadata:
-  title: Use the Azure portal
-  description: Use the Azure portal
+  title: Azure ポータルの使用
+  description: Azure ポータルの使用
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-# TODO: Consider Azure Portal Interactivity
-# interactive: azure-portal
 azureSandbox: true
 durationInMinutes: 10
 content: |

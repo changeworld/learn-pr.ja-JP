@@ -1,21 +1,11 @@
-In this module, you learned about Azure disk caching and how it potentially improves performance. We used the Azure portal and Azure PowerShell to manage disk caching for our VM. 
+このモジュールでは、Azure ディスク キャッシュと、パフォーマンスが可能性のある向上する方法について説明しました。 VM のディスクのキャッシュを管理するのに、Azure portal と Azure PowerShell を使用しました。
 
-Once you have an Azure VM disk caching strategy in place, you can then quickly and easily deploy new VMs and disks with the optimum disk cache settings by using scripts and templates.
+キャッシュ戦略に Azure VM ディスクを作成したら、し、迅速かつ簡単にデプロイできます新しい Vm とディスクの最適なディスク キャッシュ設定でスクリプトとテンプレートを使用しています。
 
-## Further reading
+## <a name="further-reading"></a>参考資料
 
-- [Azure Premium Storage: Design for High Performance](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance)
-- [Get started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-6.8.1)
-- [Azure Computer Cmdlets Reference](https://docs.microsoft.com/powershell/module/azurerm.compute/?view=azurermps-6.8.1#vm_disks)
+- [高パフォーマンス用の azure Premium Storage: 設計](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance)
+- [Azure PowerShell の概要](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-6.8.1)
+- [コンピューターの azure コマンドレット リファレンス](https://docs.microsoft.com/powershell/module/azurerm.compute/?view=azurermps-6.8.1#vm_disks)
 
-
-## Cleanup
-<!---TODO: Update for sandbox?--->
-
-Running Azure VMs incurs costs against your subscription. Remove unneeded resources to avoid unnecessary charges. The easiest way to clean up your Azure subscription is to remove the resource group. Deleting a resource group deletes all the resources in that group. When you're finished with this module, run the following Azure PowerShell cmdlet:
-
-```powershell
-Remove-AzureRmResourceGroup -Name "fotoshare-rg"
-```
-
-When asked to confirm the deletion, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

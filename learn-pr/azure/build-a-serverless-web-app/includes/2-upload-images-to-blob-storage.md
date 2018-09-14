@@ -1,4 +1,4 @@
-あなたが作成しているアプリケーションは、フォト ギャラリーです。 このアプリケーションでは、クライアント側 JavaScript を使用して API を呼び出し、画像をアップロードおよび表示します。 このモジュールでは、時間制限付き URL を生成して画像をアップロードするサーバーレス関数を使用して、API を作成します。 この Web アプリケーションでは、[Blob Storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api) を使って Blob Storage に画像をアップロードするために、生成済み URL が使用されます。
+構築しているアプリケーションは、フォト ギャラリーです。 このアプリケーションでは、クライアント側 JavaScript を使用して API を呼び出し、画像をアップロードおよび表示します。 このユニットは、イメージをアップロードする時間制限付き URL を生成するサーバーレス関数を使用して API を作成します。 Web アプリケーションでは、この URL を使用して、使用して Blob ストレージにイメージをアップロード、 [Blob storage REST API](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api)します。
 
 ## <a name="create-a-blob-storage-container-for-images"></a>画像用の Blob Storage コンテナーを作成する
 
@@ -6,40 +6,39 @@
 
 1. Azure Cloud Shell (Bash) に引き続きサインインしていることを確認します。 そうでない場合は、**[Enter focus mode]\(フォーカス モードにする\)** を選択して、Cloud Shell ウィンドウを開きます。
 
-1.  すべての BLOB へのパブリック アクセスを持つストレージ アカウント内に **images** という名前の新しいコンテナーを作成します。
+1.  という名前のストレージ アカウントで新しいコンテナーを作成**イメージ**のすべての blob へのパブリック アクセスを使用してストレージ アカウントにします。
 
     ```azurecli
     az storage container create -n images --account-name <storage account name> --public-access blob
     ```
 
-## <a name="create-an-azure-functions-app"></a>Azure Functions アプリを作成する
+## <a name="create-a-function-app"></a>関数アプリの作成
 
 Azure Functions はサーバーレス関数を実行するためのサービスです。 サーバーレス関数は、HTTP 要求などのイベントによって、または BLOB がストレージ コンテナーに作成されたときに、トリガーする (呼び出す) ことができます。
 
-Azure Functions アプリは、1 つ以上のサーバーレス関数のためのコンテナーです。
+関数アプリは、サーバーレス関数を 1 つまたは複数のコンテナーです。
 
-- 新しい Functions アプリを、先に作成した **first-serverless-app** リソース グループ内に作成し、一意の名前を付けます。 Functions アプリには、ストレージ アカウントが必要です。 このチュートリアルでは、既存のストレージ アカウントを使用します。
+- 一意の名前で新しい function app を作成、**サーバーレス アプリの最初**先ほど作成したリソース グループ。 関数アプリでは、ストレージ アカウントが必要です。 このユニットでは、最後の単位で作成した既存のストレージ アカウントを使用します。
 
     ```azurecli
-    az functionapp create -n <function app name> -g first-serverless-app -s <storage account name> -c westcentralus
+    az functionapp create -n <function app name> -g <rgn>[Sandbox resource group name]</rgn> -s <storage account name>
     ```
 
 ## <a name="create-an-http-triggered-serverless-function"></a>HTTP によってトリガーされるサーバーレス関数を作成する
 
 画像を Blob Storage に安全にアップロードするため、フォト ギャラリー Web アプリでは、サーバーレス関数に HTTP 要求を行い、時間制限付き URL を生成します。 関数は HTTP 要求によってトリガーされます。この関数では Azure Storage SDK が使用されます。これにより、セキュリティで保護された URL が生成され、返されます。
 
-1. Functions アプリが作成されたら、**検索**ボックスを使用して Azure portal 内でそのアプリを検索します。 アプリをクリックして開きます。
+1. Function app を作成すると後でそれを検索、 [Azure portal](https://portal.azure.com/?azure-portal=true)を使用して、**検索**ボックス。 アプリをクリックして開きます。
 
-    ![Functions アプリを開く](../media/2-search-function-app.png)
+    ![関数アプリを開く](../media/2-search-function-app.png)
 
-
-1. 左側のナビゲーションの Functions アプリ ウィンドウで、**[関数]** をポイントし、プラス記号 (+) をクリックして新しいサーバーレス関数を作成します。
+1. ポイントして、関数アプリのウィンドウの左側のナビゲーションで**関数**新しいサーバーレス関数を作成するには、プラス記号 (+) をクリックします。
 
     ![新しい関数を作成する](../media/2-new-function.png)
 
 1. **[カスタム関数]** をクリックして、関数テンプレートの一覧を表示します。
 
-1. **HttpTrigger** テンプレートを見つけて、使用する言語 (C# または JavaScript) をクリックします。
+1. 検索、 **HttpTrigger**テンプレート (C#) または JavaScript をクリックします。
 
 1. 次の値を使用して、BLOB のアップロード URL を生成する関数を作成します。
 
@@ -47,37 +46,33 @@ Azure Functions アプリは、1 つ以上のサーバーレス関数のため�
     | --- | --- | ---|
     | **言語** | C# または JavaScript | 使用する言語を選びます。 |
     | **関数名の指定** | GetUploadUrl | アプリケーションから関数を検出できるように、この名前を、表示されているとおりに入力します。 |
-    | **承認レベル** | Anonymous | 関数にパブリックにアクセスできるようにします。 |
+    | **承認レベル** | Anonymous | により、パブリックにアクセスする関数。 |
 
     ![HTTP によってトリガーされる新しい関数の設定を入力する](../media/2-new-function-httptrigger.png)
 
 1. **[作成]** をクリックして、関数を作成します。
 
 ::: zone pivot="csharp"
-1. **C#** 
-
-    関数のソース コードが表示されたら、**run.csx** ファイル内のすべての内容を [**csharp/GetUploadUrl/run.csx**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx) ファイルの内容で置き換えます。
+1. (C#)関数のソース コードが表示されたら、すべてのコンテンツを置換、 **run.csx**でコンテンツを含むファイル、 [ **csharp/GetUploadUrl/run.csx** ](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/csharp/GetUploadUrl/run.csx)ファイル。
 
 ::: zone-end
 
 ::: zone pivot="javascript"
-1. **JavaScript** 
+1. (JavaScript) この関数には、npm の `azure-storage` パッケージが必要です。 このパッケージによって、セキュリティで保護された URL を構築するために必要な Shared Access Signature (SAS) トークンが生成されます。 npm パッケージをインストールするには、左側のナビゲーションで Functions アプリをクリックし、**[プラットフォーム機能]** をクリックします。
 
-    1. (JavaScript) この関数には、npm の `azure-storage` パッケージが必要です。 このパッケージによって、セキュリティで保護された URL を構築するために必要な Shared Access Signature (SAS) トークンが生成されます。 npm パッケージをインストールするには、左側のナビゲーションで Functions アプリをクリックし、**[プラットフォーム機能]** をクリックします。
+1. (JavaScript) **[コンソール]** をクリックしてコンソール ウィンドウを表示します。
 
-    1. (JavaScript) **[コンソール]** をクリックしてコンソール ウィンドウを表示します。
+    ![コンソール ウィンドウを開く](../media/2-open-console.jpg)
 
-        ![コンソール ウィンドウを開く](../media/2-open-console.jpg)
+1. (JavaScript) `cd d:\home\site\wwwroot` コマンドを実行して、現在のディレクトリが **d:\home\site\wwwroot** であることを確認します。
 
-    1. (JavaScript) `cd d:\home\site\wwwroot` コマンドを実行して、現在のディレクトリが **d:\home\site\wwwroot** であることを確認します。
+1. (JavaScript) `npm init -y` コマンドを実行して、空の **package.json** ファイルを作成します。
 
-    1. (JavaScript) `npm init -y` コマンドを実行して、空の **package.json** ファイルを作成します。
+1. (JavaScript) パッケージをインストールするには、コンソールでコマンド `npm install --save azure-storage` を実行します。 パッケージを **package.json** として保存します。 操作が完了するまで数分かかることがあります。
 
-    1. (JavaScript) パッケージをインストールするには、コンソールでコマンド `npm install --save azure-storage` を実行します。 パッケージを **package.json** として保存します。 操作が完了するまで数分かかることがあります。
+1. (JavaScript) 左側のナビゲーションで関数 (**GetUploadUrl**) をクリックして、関数を表示します。 **index.js** ファイルのすべての内容を、[**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js) ファイルの内容で置き換えます。
 
-    1. (JavaScript) 左側のナビゲーションで関数 (**GetUploadUrl**) をクリックして、関数を表示します。 **index.js** ファイルのすべての内容を、[**javascript/GetUploadUrl/index.js**](https://raw.githubusercontent.com/Azure-Samples/functions-first-serverless-web-application/master/javascript/GetUploadUrl/index.js) ファイルの内容で置き換えます。
-    
-        ![更新後の index.js の内容](../media/2-paste-js.jpg)
+    ![更新後の index.js の内容](../media/2-paste-js.jpg)
 
 ::: zone-end
 
@@ -85,12 +80,12 @@ Azure Functions アプリは、1 つ以上のサーバーレス関数のため�
 
 1. **[保存]** をクリックします。 関数が正常にコンパイルされていることを、ログ パネルで確認します。
 
-この関数により、Blob Storage にファイルをアップロードするために使用する Shared Access Signature (SAS) URL と呼ばれるものが生成されます。 SAS URL の有効期間は短く、この URL でアップロードが許可されるのは 1 つのファイルだけです。 [Shared Access Signature の使用方法](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)については、Blob Storage のドキュメントを参照してください。
+関数は、Blob storage にファイルをアップロードするために使用する共有アクセス署名 (SAS) URL を生成します。 SAS URL は短時間有効で、アップロードする 1 つのファイルのみを許可します。 詳細については、Blob storage のドキュメントを参照してください[shared access signature を使用する方法](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)します。
 
 
 ## <a name="add-an-environment-variable-for-the-storage-connection-string"></a>ストレージ接続文字列に環境変数を追加する
 
-作成した関数で SAS URL を生成できるようにするには、ストレージ アカウントの接続文字列が必要です。 接続文字列は、関数本体でハードコーディングするのではなく、アプリケーション設定として格納できます。 アプリケーション設定には、Functions アプリ内のすべての関数が環境変数としてアクセスできます。
+作成した関数で SAS URL を生成できるようにするには、ストレージ アカウントの接続文字列が必要です。 接続文字列は、関数本体でハードコーディングするのではなく、アプリケーション設定として格納できます。 アプリケーションの設定では、関数アプリ内のすべての関数で環境変数としてアクセスできます。
 
 1. Cloud Shell で、ストレージ アカウント接続文字列のクエリを実行し、**STORAGE_CONNECTION_STRING** という名前の Bash 変数に保存します。
 
@@ -134,11 +129,11 @@ Azure portal には、関数の作成と編集だけでなく、関数をテス�
     ![関数が正常に実行されたことを示すログ](../media/2-test-function.png)
 
 
-## <a name="configure-cors-in-the-functions-app"></a>Functions アプリで CORS を構成する
+## <a name="configure-cors-in-the-function-app"></a>関数アプリでの CORS を構成する
 
-関数のフロントエンドは Blob Storage でホストされているため、そのドメイン名は、Azure Functions アプリとは異なります。 作成した関数がクライアント側の JavaScript によって正常に呼び出されるように、Functions アプリをクロス オリジン リソース共有 (CORS) 用に構成する必要があります。
+関数のフロント エンドが Blob storage でホストされているため、関数アプリの別のドメイン名があります。 正常に作成した関数を呼び出すクライアント側の JavaScript 関数アプリは、クロス オリジン リソース共有 (CORS) 用に構成する必要があります。
 
-1. 関数アプリ ウィンドウの左側のナビゲーション バーで、お使いの Functions アプリの名前をクリックします。
+1. 関数アプリのウィンドウの左側のナビゲーションで、関数アプリの名前をクリックします。
 
 1. **[プラットフォーム機能]** をクリックして、高度な機能の一覧を表示します。
 
@@ -146,27 +141,28 @@ Azure portal には、関数の作成と編集だけでなく、関数をテス�
 
     ![CORS を選択する](../media/2-open-cors.jpg)
 
-1. 前のモジュールのアプリケーション URL の許可されたオリジンを、末尾のスラッシュ (/) を省略して追加します。 例: `https://firstserverlessweb.z4.web.core.windows.net`。
+1. 前の単位で作成した web サイトの URL を許可配信元を追加し、末尾にスラッシュ (/) を省略します。 たとえば、「`https://firstserverlessweb.z4.web.core.windows.net`」のように入力します。
 
     ![追加されたサーバーレス Web アプリの URL を示す CORS 設定](../media/2-add-cors.png)
 
 1. **[保存]** をクリックします。
 
-1. **C#**:
+::: zone pivot="csharp"
+1. (C#) `GetUploadUrl` 関数に戻り、**[統合]** タブを選択します。
 
-   1. (C#) `GetUploadUrl` 関数に戻り、**[統合]** タブを選択します。
+1. (C#) **[選択した HTTP メソッド]** で、**[OPTIONS]** を選択します。
 
-   1. (C#) **[選択した HTTP メソッド]** で、**[OPTIONS]** を選択します。
+    **[GET]**、**[POST]**、および **[OPTIONS]** がすべて選択されている必要があります。 CORS では **OPTIONS** メソッドが使用されます。C# 関数の既定では、これは選択されていません。  
 
-      **[GET]**、**[POST]**、および **[OPTIONS]** がすべて選択されている必要があります。 CORS では **OPTIONS** メソッドが使用されます。C# 関数の既定では、これは選択されていません。  
+1. (C#) **[保存]** をクリックします。
 
-   1. (C#) **[保存]** をクリックします。
+::: zone-end
 
-1. 引き続き Azure portal で、Functions アプリに移動します。 **[概要]** タブを選択します。**[再起動]** をクリックして、CORS への変更が有効になっていることを確認します。
+1. 引き続き、Azure portal で function app に移動します。 **[概要]** タブを選択します。**[再起動]** をクリックして、CORS への変更が有効になっていることを確認します。
 
 ## <a name="configure-cors-in-the-storage-account"></a>ストレージ アカウントで CORS を構成する
 
-Functions アプリでは Blob Storage に対してクライアント側 JavaScript 呼び出しを実行して、ファイルをアップロードするため、ストレージ アカウントを CORS 用に構成する必要があります。
+関数アプリでは、ファイルをアップロードする Blob storage へのクライアント側 JavaScript の呼び出しでためには、CORS のストレージ アカウントを構成する必要があります。
 
 - 次のコマンドを実行して、すべてのオリジンが、ファイルをストレージ アカウントにアップロードできるようにします。
 
@@ -177,7 +173,7 @@ Functions アプリでは Blob Storage に対してクライアント側 JavaScr
 
 ## <a name="modify-the-web-app-to-upload-images"></a>Web アプリを変更して画像をアップロードする
 
-Web アプリでは、**settings.js** という名前のファイルから設定を取得します。 次の手順では、Cloud Shell を使用してファイルを作成します。 `window.apiBaseUrl` を Functions アプリの URL に設定し、`window.blobBaseUrl` を Azure Blob Storage エンドポイントの URL に設定します。
+Web アプリでは、**settings.js** という名前のファイルから設定を取得します。 次の手順では、Cloud Shell を使用してファイルを作成します。 設定する`window.apiBaseUrl`、関数アプリの url と`window.blobBaseUrl`Azure Blob ストレージ エンドポイントの URL にします。
 
 1. Cloud Shell で、現在のディレクトリが **www/dist** フォルダーであることを確認します。
 
@@ -185,57 +181,39 @@ Web アプリでは、**settings.js** という名前のファイルから設定
     cd ~/functions-first-serverless-web-application/www/dist
     ```
 
-1. Functions アプリの URL のクエリを実行し、**FUNCTION_APP_URL** という名前の Bash 変数に格納します。
+1. コマンドを入力して、Cloud Shell のエディターを開く`code`します。
 
     ```azurecli
-    export FUNCTION_APP_URL="https://"$(az functionapp show -n <function app name> -g first-serverless-app --query "defaultHostName" --output tsv)
+    code
     ```
 
-    変数が正しく設定されていることを確認します。
+1. Cloud Shell ウィンドウで、エディターの下で、関数アプリの URL をクエリします。
 
     ```azurecli
-    echo $FUNCTION_APP_URL
+    echo "https://"$(az functionapp show -n <function app name> -g first-serverless-app --query "defaultHostName" --output tsv)
     ```
 
-1. Functions アプリに API 呼び出しのベース URI を設定するには、**settings.js** ファイルを作成します。 次の例のように、Functions アプリの URL を追加します。
+1. 前の手順で取得した関数アプリの URL を使用して、エディター ウィンドウに次の行を追加します。
 
-    `window.apiBaseUrl = 'https://fnapp@lab.GlobalLabInstanceId.azurewebsites.net'`
+    ```
+    window.apiBaseUrl = '<function app url>'
+    ```
 
-    変更を行うには、次のコマンドを実行するか、VIM などのコマンド ライン エディターを使用します。
+1. Cloud Shell ウィンドウで、エディターの下で、Azure Blob Storage エンドポイントの URL をクエリします。
 
     ```azurecli
-    echo "window.apiBaseUrl = '$FUNCTION_APP_URL'" > settings.js
+    echo $(az storage account show -n <storage account name> -g first-serverless-app --query primaryEndpoints.blob -o tsv | sed 's/\/$//')
     ```
 
-    ファイルが正常に書き込まれたことを確認します。
+1. 前の手順で取得したストレージ エンドポイントの URL を使用して、エディター ウィンドウに 2 つ目の行を追加します。
 
-    ```azurecli
-    cat settings.js
+    ```
+    window.blobBaseUrl = '<blob storage endpoint url>'
     ```
 
-1. Blob Storage のベース URL のクエリを実行し、**BLOB_BASE_URL** という名前の Bash 変数に格納します。
+1. ファイルに保存します**settings.js**エディターを閉じます。
 
-    ```azurecli
-    export BLOB_BASE_URL=$(az storage account show -n <storage account name> -g first-serverless-app --query primaryEndpoints.blob -o tsv | sed 's/\/$//')
-    ```
-
-    変数が正しく設定されていることを確認します。
-
-    ```azurecli
-    echo $BLOB_BASE_URL
-    ```
-
-1. API 呼び出しのベース URI をお使いの Functions アプリに設定するには、次の例のように、Blob Storage URL を **settings.js** ファイルに追加します。
-
-    `window.blobBaseUrl = 'https://mystorage.blob.core.windows.net'`
-
-    変更を行うには、次のコマンドを実行するか、VIM などのコマンド ライン エディターを使用します。
-
-    ```azurecli
-    echo "window.blobBaseUrl = '$BLOB_BASE_URL'" >> settings.js
-    ```
-
-    ファイルが正常に書き込まれたこと、および 2 行が含まれていることを確認します。
+1. ファイルが正常に書き込まれたこと、および 2 行が含まれていることを確認します。
 
     ```azurecli
     cat settings.js
@@ -246,7 +224,6 @@ Web アプリでは、**settings.js** という名前のファイルから設定
     ```azurecli
     az storage blob upload -c \$web --account-name <storage account name> -f settings.js -n settings.js
     ```
-
 
 ## <a name="test-the-web-application"></a>Web アプリケーションをテストする
 
@@ -268,7 +245,6 @@ Web アプリでは、**settings.js** という名前のファイルから設定
     az storage blob delete-batch -s images --account-name <storage account name>
     ```
 
-
 ## <a name="summary"></a>まとめ
 
-このユニットでは、Azure Functions アプリを作成しました。また、サーバーレス関数を使用して、Web アプリケーションで画像を Blob Storage にアップロードできるようにする方法を学習しました。 次は、BLOB によってトリガーされるサーバーレス関数を使用して、アップロードされた画像のサムネイルを作成する方法を説明します。
+このユニットでは、Azure Functions アプリを作成しました。また、サーバーレス関数を使用して、Web アプリケーションで画像を Blob Storage にアップロードできるようにする方法を学習しました。 次に、blob によってトリガーされるサーバーレス関数を使用してアップロードされた画像のサムネイルを作成する方法を学習します。

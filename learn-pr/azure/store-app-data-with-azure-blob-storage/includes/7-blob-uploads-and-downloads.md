@@ -22,7 +22,7 @@ BLOB 間のデータ移動は、時間がかかるネットワーク操作です
 
 BLOB をアップロードするには、コンテナーから `CloudBlockBlob` を取得する `GetBlockBlobReference` を使用して `BlobStorage.Save` メソッドを実装します。 `FilesController.Upload` からは `Save` にファイル ストリームが渡されるので、効率を最大限に高めるために `UploadFromStreamAsync` を使用してアップロードを実行することができます。
 
-エディターで `BlobStorage.cs` を開き、`Save` を次のコードで置き換えます。
+エディターで、置き換える`Save`で`BlobStorage.cs`を次のコード。
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -61,22 +61,22 @@ public Task<Stream> Load(string name)
 アプリ名はグローバルに一意である必要があるため、独自の名前を選んで `<your-unique-app-name>` に入力する必要があります。
 
 ```azurecli
-az appservice plan create --name blob-exercise-plan --resource-group blob-exercise-group
-az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group blob-exercise-group
+az appservice plan create --name blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
+az webapp create --name <your-unique-app-name> --plan blob-exercise-plan --resource-group <rgn>[Sandbox resource group name]</rgn>
 CONNECTIONSTRING=$(az storage account show-connection-string --name <your-unique-storage-account-name> --output tsv)
-az webapp config appsettings set --name <your-unique-app-name> --resource-group blob-exercise-group --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
+az webapp config appsettings set --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --settings AzureStorageConfig:ConnectionString=$CONNECTIONSTRING AzureStorageConfig:FileContainerName=files
 ```
 
 ここでアプリをデプロイします。 以下のコマンドによってサイトを `pub` フォルダーに発行し、`site.zip` として圧縮した後、その zip を App Service にデプロイします。
 
 > [!NOTE]
-> シェルが次のコマンドの `FileUploader` ディレクトリにあることを確認します。
+> シェルがの中で確認して、`mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start`次のコマンドを実行する前にディレクトリ。
 
 ```azurecli
 dotnet publish -o pub
 cd pub
 zip -r ../site.zip *
-az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group blob-exercise-group
+az webapp deployment source config-zip --src ../site.zip --name <your-unique-app-name> --resource-group <rgn>[Sandbox resource group name]</rgn>
 ```
 
 ブラウザーで `https://<your-unique-app-name>.azurewebsites.net` を開いて、実行中のアプリを表示します。 次の図のようになります。

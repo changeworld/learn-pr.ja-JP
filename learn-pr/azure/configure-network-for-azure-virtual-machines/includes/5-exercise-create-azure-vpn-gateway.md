@@ -1,63 +1,63 @@
-You want to ensure that you can connect clients or sites within your environment into Azure using encrypted tunnels across the public Internet. In this unit, you'll create a point-to-site VPN gateway, and then connect to that gateway from a client computer. You'll use native Azure certificate authentication connections for security.
+パブリック インターネット経由で暗号化されたトンネルを使用して環境内のクライアントまたはサイトを Azure に接続できるようにする必要があります。 このユニットでは、ポイント対サイト VPN ゲートウェイを作成し、クライアント コンピューターからそのゲートウェイに接続し。 セキュリティを確保するためにネイティブの Azure 証明書認証接続を使用します。
 
-You will carry out the following process:
+次のプロセスを実行します。
 
-1. Create a RouteBased VPN gateway.
+1. RouteBased VPN ゲートウェイを作成します。
 
-1. Upload the public key for a root certificate for authentication purposes.
+1. 認証用にルート証明書の公開キーをアップロードします。
 
-1. Generate a client certificate from the root certificate, and then install the client certificate on each client computer that will connect to the virtual network for authentication purposes.
+1. ルート証明書からクライアント証明書を生成し、認証のために、仮想ネットワークに接続する各クライアント コンピューターにクライアント証明書をインストールします。
 
-1. Create VPN client configuration files, which contain the necessary information for the client to connect to the virtual network.
+1. VPN クライアントにクライアントが仮想ネットワークに接続するために必要な情報を含む構成ファイルを作成します。
 
-## Before you begin
+## <a name="before-you-begin"></a>開始する前に
 <!---TODO: These should be prerequisites in the first unit and on the index.yml--->
 
-To complete this module, you must have:
+このモジュールを完了するには、が必要です。
 
-- Azure PowerShell installed
+- Azure PowerShell のインストール
 
-- A folder named **C:\cert**
+- という名前のフォルダー **C:\cert**
 
-To install Azure PowerShell:
+Azure PowerShell をインストールするには:
 
-1. Right-click the Windows button and click **PowerShell (Admin)**.
+1. Windows ボタンを右クリックし、をクリックして**PowerShell (管理者)** します。
 
-1. In the **User Account Control** message box, click **Yes**.
+1. **[ユーザー アカウント制御]** メッセージ ボックスで、**[はい]** をクリックします。
 
-1. In the PowerShell window, type the following command and press Enter:
+1. PowerShell ウィンドウで、次のコマンドを入力し、Enter キーを押します。
 
     ```PowerShell
     Import-Module AzureRM
     ```
 
-1. At the security prompt, type A and press Enter.
+1. セキュリティのプロンプトで、「A」と入力し、Enter キーを押します。
 
-## Sign in and set variables
+## <a name="sign-in-and-set-variables"></a>サインインと変数の設定
 
-To sign in and set variables, carry out the following steps:
+サインインし、変数を設定するには、次の手順を実行します。
 
-1. Connect to Azure by entering the following command and pressing Enter:
+1. 次のコマンドを入力して Enter キーを押すことで、Azure に接続します。
 
     ```PowerShell
     Connect-AzureRmAccount
     ```
 
-1. Get a list of your Azure subscriptions.
+1. Azure サブスクリプションの一覧を取得します。
 
     ```PowerShell
     Get-AzureRmSubscription
     ```
 
-1. Specify the subscription that you want to use.
+1. 使用するサブスクリプションを指定します。
 
     ```PowerShell
     Select-AzureRmSubscription -SubscriptionName "{Name of your subscription}"
     ```
 
-    Replace "Name of subscription" with your subscription name.
+    "Name of subscription" をサブスクリプション名に置き換えます。
 
-1. Enter the following variables and press Enter after each one.
+1. 次の変数を入力し、それぞれの入力後に Enter キーを押します。
 
     ```PowerShell
     $VNetName  = "VNetData"
@@ -77,15 +77,15 @@ To sign in and set variables, carry out the following steps:
     $GWIPconfName = "gwipconf"
     ```
 
-## Configure a virtual network
+## <a name="configure-a-virtual-network"></a>仮想ネットワークを構成する
 
-1. Create a resource group.
+1. リソース グループを作成します。
 
     ```PowerShell
     New-AzureRmResourceGroup -Name $RG -Location $Location
     ```
 
-1. Create subnet configurations for the virtual network. These have the name **FrontEnd, BackEnd**, and **GatewaySubnet**. All of these subnets exist within the virtual network prefix.
+1. 仮想ネットワークのサブネット構成を作成します。 これらの名前は **FrontEnd、BackEnd**、**GatewaySubnet** です。 これらすべてのサブネットが仮想ネットワークのプレフィックス内に存在します。
 
     ```PowerShell
     $fesub = New-AzureRmVirtualNetworkSubnetConfig -Name $FESubName -AddressPrefix $FESubPrefix
@@ -93,40 +93,40 @@ To sign in and set variables, carry out the following steps:
     $gwsub = New-AzureRmVirtualNetworkSubnetConfig -Name $GWSubName -AddressPrefix $GWSubPrefix
     ```
 
-1. Create the virtual network using the subnet values and a static DNS server.
+1. サブネットの値と静的 DNS サーバーを使用して仮想ネットワークを作成します。
 
     > [!IMPORTANT]
-    > Ignore the warning message, and then wait for the command to finish.
+    > 警告メッセージを無視し、コマンドが完了するまで待ちます。
 
     ```PowerShell
     New-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG -Location $Location -AddressPrefix $VNetPrefix1,$VNetPrefix2 -Subnet $fesub, $besub, $gwsub -DnsServer 10.2.1.3
     ```
 
-1. Now specify the variables for this network that you have just created.
+1. ここで、先ほど作成したこのネットワークでの変数を指定します。
 
     ```PowerShell
     $vnet = Get-AzureRmVirtualNetwork -Name $VNetName -ResourceGroupName $RG
     $subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
     ```
 
-1. Request a dynamically assigned public IP address.
+1. 動的に割り当てられたパブリック IP アドレスを要求します。
 
     ```PowerShell
     $pip = New-AzureRmPublicIpAddress -Name $GWIPName -ResourceGroupName $RG -Location $Location -AllocationMethod Dynamic
     $ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GWIPconfName -Subnet $subnet -PublicIpAddress $pip
     ```
 
-## Create the VPN gateway
+## <a name="create-the-vpn-gateway"></a>VPN ゲートウェイを作成する
 
-When creating this VPN gateway:
+この VPN ゲートウェイを作成する場合:
 
-- GatewayType must be Vpn
-- VpnType must be RouteBased
+- GatewayType は Vpn である必要があります
+- Vpn の種類は RouteBased である必要があります。
 
 > [!NOTE]
-> Note that this part of the exercise can take up to 45 minutes to complete, depending on the value of GatewaySku.
+> この部分の演習を GatewaySku の値によっては、完了までに最大 45 分かかることに注意してください。
 
-1. To create the VPN gateway, run the following command and press Enter.
+1. VPN ゲートウェイを作成するには、次のコマンドを実行し、Enter キーを押します。
 
     ```PowerShell
     New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
@@ -134,22 +134,22 @@ When creating this VPN gateway:
     -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1 -VpnClientProtocol "IKEv2"
     ```
 
-1. Wait for the command output to appear.
+1. コマンド出力が表示されるまで待ちます。
 
-## Add the VPN client address pool
+## <a name="add-the-vpn-client-address-pool"></a>VPN クライアント アドレス プールの追加
 
-1. Run the following command and press Enter.
+1. 次のコマンドを実行し、Enter キーを押します。
 
     ```PowerShell
     $Gateway = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG -Name $GWName
     Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $Gateway -VpnClientAddressPool $VPNClientAddressPool
     ```
 
-1. Wait for the command output to appear.
+1. コマンド出力が表示されるまで待ちます。
 
-## Generate a client certificate
+## <a name="generate-a-client-certificate"></a>クライアント証明書の生成
 
-1. Create the self-signed root certificate.
+1. 自己署名ルート証明書を作成します。
 
     ```PowerShell
     $cert = New-SelfSignedCertificate -Type Custom -KeySpec Signature `
@@ -158,7 +158,7 @@ When creating this VPN gateway:
     -CertStoreLocation "Cert:\CurrentUser\My" -KeyUsageProperty Sign -KeyUsage CertSign
     ```
 
-1. Generate a client certificate.
+1. クライアント証明書を生成します。
 
     ```PowerShell
     New-SelfSignedCertificate -Type Custom -DnsName P2SChildCert -KeySpec Signature `
@@ -168,35 +168,35 @@ When creating this VPN gateway:
     -Signer $cert -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.2")
     ```
 
-1. Export the root certificate public key. On your client computer, type the following command and press Enter.
+1. ルート証明書の公開キーをエクスポートします。 クライアント コンピューターで、次のコマンドを入力し、Enter キーを押します。
 
     ```PowerShell
     certmgr
     ```
 
-1. Navigate to Personal/Certificates. Right-click P2SRootCert, click **All tasks**, and then select **Export**.
+1. [個人]/[証明書] に移動します。 P2SRootCert を右クリックし、をクリックして**すべてのタスク**、し、**エクスポート**します。
 
-1. In the Certificate Export Wizard, click **Next**.
+1. 証明書のエクスポート ウィザードで **[次へ]** をクリックします。
 
-1. Ensure that **No, do not export the private key** is selected, and then click **Next**.
+1. いることを確認**秘密キーをエクスポートしません**が選択されているし、をクリックし、**次**。
 
-1. On the **Export File Format** page, ensure that **Base-64 encoded X.509 (.CER)** is selected, and then click **Next**.
+1. **エクスポート ファイルの形式**いることを確認 ページで、 **Base 64 でエンコードされた X.509 (します。CER)** が選択されているし、をクリックし、**次**します。
 
-1. In the **File to Export** page, under **File name**, enter **C:\cert\P2SRootCert.cer**, and then click Next.
+1. **エクスポートするファイル**] ページ [**ファイル名**、入力**C:\cert\P2SRootCert.cer**、[次へ] を順にクリックします。
 
-1. On the **Completing the Certificate Export Wizard** page, click **Finish**.
+1. **[証明書のエクスポート ウィザードを完了しています]** ページで、**[完了]** をクリックします。
 
-1. On the **Certificate Export Wizard** message box, click **OK**.
+1. **[証明書のエクスポート ウィザード]** メッセージ ボックスで **[OK]** をクリックします。
 
-## Upload the root certificate public key information
+## <a name="upload-the-root-certificate-public-key-information"></a>ルート証明書の公開キー情報のアップロード
 
-1. In the PowerShell window, execute the following command to declare a variable for the certificate name:
+1. PowerShell ウィンドウで、次のコマンドを実行して証明書名の変数を宣言します。
 
     ```PowerShell
     $P2SRootCertName = "P2SRootCert.cer"
     ```
 
-1. Execute the following command:
+1. 次のコマンドを実行します。
 
     ```PowerShell
     $filePathForCert = "C:\cert\P2SRootCert.cer"
@@ -205,64 +205,64 @@ When creating this VPN gateway:
     $p2srootcert = New-AzureRmVpnClientRootCertificate -Name $P2SRootCertName -PublicCertData $CertBase64
     ```
 
-1. Now upload the certificate to Azure. Azure then recognizes it as a trusted root certificate.
+1. ここで Azure に証明書をアップロードします。 Azure では、それが信頼されたルート証明書として認識されます。
 
     ```PowerShell
     Add-AzureRmVpnClientRootCertificate -VpnClientRootCertificateName $P2SRootCertName -VirtualNetworkGatewayname "VNetDataGW" -ResourceGroupName "TestRG" -PublicCertData $CertBase64
     ```
 
-## Configure the native VPN client
+## <a name="configure-the-native-vpn-client"></a>ネイティブ VPN クライアントの構成
 
-1. Execute the following command to create VPN client configuration files in .ZIP format.
+1. VPN クライアント構成ファイルを作成する次のコマンドを実行します。ZIP 形式です。
 
     ```PowerShell
     $profile=New-AzureRmVpnClientConfiguration -ResourceGroupName "TestRG" -Name "VNetDataGW" -AuthenticationMethod "EapTls"
     $profile.VPNProfileSASUrl
     ```
 
-1. Copy the URL returned in the output from this command and paste it into your browser. Your browser should start downloading a .ZIP file. Unzip it and put it in a suitable location.
+1. このコマンドの出力で返される URL をコピーして、お使いのブラウザーに貼り付けます。 お使いのブラウザーが .ZIP ファイルのダウンロードを開始します。 これを解凍し、適切な場所に配置します。
 
-1. In the extracted folder, navigate to either the WindowsAmd64 folder (for 64-bit Windows computers) or the WindowsZX86 folder (for 32-bit computers).
+1. 抽出したフォルダー (64 ビット Windows コンピューター) の場合、WindowsAmd64 フォルダーまたは WindowsZX86 フォルダー (32 ビット コンピューター) の場合のいずれかに移動します。
 
-1. Double-click on the VpnClientSetupxxxxx.exe file, depending on your architecture.
+1. アーキテクチャによっては、VpnClientSetupxxxxx.exe ファイルをダブルクリックします。
 
-1. In the **Windows protected your PC** screen, click **More info**, and then click **Run anyway**.
+1. **Windows PC を保護する**画面で、**詳細**、順にクリックします**実行**します。
 
-1. In the **User Account Control** dialog box, click **Yes**.
+1. **[ユーザー アカウント制御]** ダイアログ ボックスで、**[はい]** をクリックします。
 
-1. In the **VNetData** dialog box, click **Yes**.
+1. **[VNetData]** ダイアログ ボックスで、**[はい]** をクリックします。
 
-## Connect to Azure
+## <a name="connect-to-azure"></a>Azure への接続
 
-1. Press the Windows key, type **Settings** and press Enter.
+1. Windows キーを押し、「**設定**」と入力して Enter キーを押します。
 
-1. In the **Settings** window, click **Network and Internet**.
+1. **[設定]** ウィンドウで、**[ネットワークとインターネット]** をクリックします。
 
-1. In the left-hand pane, click **VPN**.
+1. 左側のウィンドウで、**[VPN]** をクリックします。
 
-1. In the right-hand pane, click **VNetData**, and then click **Connect**.
+1. 右側のウィンドウで次のようにクリックします。 **VNetData**、 をクリックし、 **Connect**します。
 
-1. In the VNetData window, click **Connect**.
+1. [VNetData] ウィンドウで、**[接続]** をクリックします。
 
-1. In the next VNetData window, click **Continue**.
+1. [VNetData] ウィンドウで、**[続行]** をクリックします。
 
-1. In the **User Account Control** message box, click **Yes**.
+1. **[ユーザー アカウント制御]** メッセージ ボックスで、**[はい]** をクリックします。
 
 > [!NOTE]
-> If these steps do not work, you may need to restart your computer.
+> 次の手順が機能しない場合は、コンピューターを再起動する必要があります。
 
-## Verify your connection
+## <a name="verify-your-connection"></a>接続を確認する
 
-1. Press the Windows key, type **cmd** and press Enter. The **Command Prompt** window appears.
+1. Windows キーを押し、「**cmd**」と入力して Enter キーを押します。 **[コマンド プロンプト]** ウィンドウが表示されます。
 
-1. Type `IPCONFIG /ALL` and press Enter.
+1. 「`IPCONFIG /ALL`」と入力して Enter キーを押します。
 
-1. Copy the IP address under PPP adapter VNetData, or write it down.
+1. PPP アダプター VNetData の下の IP アドレスをコピーするか、メモしておきます。
 
-1. Confirm that IP address is in the **VPNClientAddressPool range of 172.16.201.0/24**.
+1. IP アドレスが **172.16.201.0/24 の VPNClientAddressPool 範囲**内にあることを確認します。
 
-1. You have successfully made a connection to the Azure VPN gateway.
+1. Azure VPN ゲートウェイへの接続が正常に行われました。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You just set up a VPN gateway, allowing you to make an encrypted client connection to a virtual network in Azure. This approach is great with client computers and smaller site-to-site connections.
+設定した VPN ゲートウェイでは、Azure で仮想ネットワークに暗号化されたクライアント接続を作成することができます。 この方法は、クライアント コンピューターと小規模なサイト間接続に優れています。

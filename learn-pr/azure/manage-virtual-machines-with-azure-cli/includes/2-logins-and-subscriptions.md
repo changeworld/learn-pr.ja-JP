@@ -9,21 +9,18 @@ az [command] [subcommand] [--parameter --parameter]
 部分的なコマンドを入力することで、コマンド、サブコマンド、パラメーターの一覧を表示できます。 たとえば、コマンド ラインで「`az`」と入力すると最上位レベルのヘルプ画面が表示され、「`az vm`」と入力すると仮想マシンに対するすべてのサブコマンドが表示されます。 この方法は、Azure CLI ツールを調べるのにとても便利な場合があります。
 
 > [!NOTE]
-> ここでは、ブラウザーでホストされた Azure Cloud Shell から Azure CLI を使用します。 ローカル コンピューターを使用する方がよい場合は、[Azure CLI をインストールする](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)ことにより、ここで説明するすべてのコマンドをコマンド ラインから実行することもできます。
+> ここでは、ブラウザーでホストされた Azure Cloud Shell から Azure CLI を使用します。 ローカル コンピューターを使用する方がよい場合は、[Azure CLI をインストールする](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)ことにより、ここで説明するすべてのコマンドをコマンド ラインから実行することもできます。 このタスクの説明、 **Azure CLI を使用したコントロールの Azure サービス**モジュール。
 
-## <a name="log-in-to-azure"></a>Azure にログインする
+## <a name="login-to-azure"></a>Azure にログインする
 
-Azure CLI を使用するときは、最初に、お使いの Azure アカウントにログインします。 それには、`login` コマンドを使用します。 Cloud Shell を使用している場合は、Azure にサインインするためのボタンがあります。
+通常、まず、Azure CLI を使用する場合に行いますが、Azure アカウントにサインインするは。 それには、`az login` コマンドを使用します。 このコマンドにより、ブラウザー ウィンドウが起動されて、使用する Microsoft アカウントを選択できます。 使用している Azure サンド ボックスで、この手順は必要に応じて後は、代わりに、Azure サンド ボックスをアクティブ化する必要があります。
 
-```azurecli
-az login
-```
-
-このコマンドにより、ブラウザー ウィンドウが起動されて、使用する Microsoft アカウントを選択できます。
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 ## <a name="working-with-subscriptions"></a>サブスクリプションの使用
 
-このモジュールではプレイグラウンドとして作成された一時サブスクリプションで作業しますが、通常は、自分のアカウントのサブスクリプションを使用します。 複数のサブスクリプションがある場合は、`az account list --output table` ステートメントを使用して、わかりやすく書式設定されたサブスクリプションの一覧を取得できます。
+このモジュールで、サブスクリプションの一時いたしますが、自分のアカウントからサブスクリプションを使用する通常。 複数のサブスクリプションがある場合は、`az account list --output table` ステートメントを使用して、わかりやすく書式設定されたサブスクリプションの一覧を取得できます。
 
 ```
 Name                                  CloudName    SubscriptionId                        State    IsDefault

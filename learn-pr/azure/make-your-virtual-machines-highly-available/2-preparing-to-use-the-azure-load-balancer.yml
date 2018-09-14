@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
-title: Preparing to use Azure Load Balancer
+title: Azure Load Balancer を使用する準備
 metadata:
-  title: Preparing to use Azure Load Balancer
-  description: Preparing to use Azure Load Balancer
+  title: Azure Load Balancer を使用する準備
+  description: Azure Load Balancer を使用する準備
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

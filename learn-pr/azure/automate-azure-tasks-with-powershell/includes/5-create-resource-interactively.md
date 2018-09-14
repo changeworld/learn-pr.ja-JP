@@ -58,7 +58,7 @@ Azure PowerShell のローカル インストールを使用している場合�
 Connect-AzureRmAccount
 ```
 
-### <a name="create"></a>Create
+### <a name="create"></a>作成
 **New-AzureRmResourceGroup** コマンドレットを実行すると、リソース グループが作成されます。 名前と場所を指定する必要があります。 この名前はサブスクリプション内で一意である必要があります。 この場所によって、お使いのリソース グループのメタデータが保存される場所が決定されます (コンプライアンス上の理由から重要となる場合があります)。 "West US"、"North Europe"、"West India" などの文字列を使用して場所を指定します。 ほとんどの Azure コマンドレットと同様に、**New-AzureRmResourceGroup** にはオプション パラメーターがたくさんありますが、中心的な構文は次のようになります。
 
 ```powershell

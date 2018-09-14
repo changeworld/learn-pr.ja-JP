@@ -1,37 +1,36 @@
 ### YamlMime:Module
 uid: learn.secure-your-azure-sql-database
 metadata:
-  title: Secure an Azure SQL Server database
-  description: Secure an Azure SQL Server database to keep the information safe and diagnose potential security concerns as they happen.
+  title: Azure SQL Server データベースをセキュリティで保護します。
+  description: 情報を安全に保つことが行われると、潜在的なセキュリティ上の問題を診断し、Azure SQL Server データベースをセキュリティで保護します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Secure an Azure SQL Server database
-summary: Secure an Azure SQL Server database to keep the information safe and diagnose potential security concerns as they happen.
-abstract:  | 
-  In this module, you will:
-  - Configure the firewall for the Azure SQL Server database
-  - Control user access at the database and Active Directory levels
-  - Manage encryption between the client and server
-  - Add auditing and threat monitoring to the Azure SQL Server database
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
-levels: 
-- intermediate
-roles: 
-- administrator
-products: 
-- azure
-- azure-portal
+title: Azure SQL Server データベースをセキュリティで保護します。
+summary: 情報を安全に保つことが行われると、潜在的なセキュリティ上の問題を診断し、Azure SQL Server データベースをセキュリティで保護します。
+abstract: |
+  このモジュールでは、次のことを行います。
+  - Azure SQL Server データベースのファイアウォールを構成します。
+  - データベース レベルの Active Directory でユーザー アクセスの制御
+  - クライアントとサーバー間の暗号化を管理します。
+  - 追加の監査と脅威の Azure SQL Server データベースを監視
+prerequisites: なし
+iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
+levels:
+  - intermediate
+roles:
+  - administrator
+products:
+  - azure
+  - azure-portal
 units:
-- learn.secure-your-azure-sql-database.1-introduction
-- learn.secure-your-azure-sql-database.2-restricting-network-access
-- learn.secure-your-azure-sql-database.3-managing-authentication
-- learn.secure-your-azure-sql-database.4-application-level-security
-- learn.secure-your-azure-sql-database.5-monitoring-your-database
-- learn.secure-your-azure-sql-database.6-knowledge-check
-- learn.secure-your-azure-sql-database.7-summary
+  - learn.secure-your-azure-sql-database.1-introduction
+  - learn.secure-your-azure-sql-database.2-restricting-network-access
+  - learn.secure-your-azure-sql-database.3-managing-authentication
+  - learn.secure-your-azure-sql-database.4-application-level-security
+  - learn.secure-your-azure-sql-database.5-monitoring-your-database
+  - learn.secure-your-azure-sql-database.6-knowledge-check
+  - learn.secure-your-azure-sql-database.7-summary
 achievement: learn.secure-your-azure-sql-database.badge

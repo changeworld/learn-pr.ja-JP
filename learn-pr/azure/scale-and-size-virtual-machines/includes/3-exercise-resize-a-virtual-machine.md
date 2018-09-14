@@ -1,58 +1,62 @@
-In this exercise, you will create a virtual machine and then resize it using the portal and Azure PowerShell.
+この演習では、仮想マシンを作成し、ポータルと Azure PowerShell を使用してのサイズを変更します。
 
-## Create a VM
+## <a name="create-a-vm"></a>VM の作成
 
-1. In your web browser, navigate to the [Azure Portal](https://portal.azure.com?azure-portal=true) and sign into your account.
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. In the Azure portal, create a new resource. In the **New** blade, type **virtual machine** in the search box, and then press ENTER.
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. In the **Everything** blade, under **Results**, click **Windows Server 2016 Datacenter**.
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. Azure portal では、新しいリソースを作成します。 **新規**ブレードで、「**仮想マシン**で検索ボックスに、ENTER キーを押します。
 
-1. In the **Basics** blade, complete the details using the following information, and then click **OK**.
+1. **すべて**ブレードで、**結果**、 をクリックして**Windows Server 2016 Datacenter**します。
 
-    |Setting|Value|
+1. **Windows Server 2016 Datacenter**ブレードで、をクリックして**作成**です。
+
+1. **基本**ブレードで、次の情報を使用して、詳細をクリックして**OK**します。
+
+    |設定|値|
     |---|---|
-    |Name|DB01|
-    |Username|LocalAdmin|
-    |Password and Confirm password|Adm1nPa$$word|
-    |Resource group|ExerciseRG|
-    |Location|Central US|
+    |名前|DB01|
+    |ユーザー名|LocalAdmin|
+    |パスワードとパスワードの確認|Adm1nPa$ $ word|
+    |リソース グループ|<rgn>[サンド ボックス リソース グループ名]</rgn>|
+    |場所|*一覧からリージョンを選択します。*|
 
-1. On the **Choose a size** blade, select **D2s_v3**, and then click **Select**.
+1. **サイズを選択する**ブレードで、 **D2s_v3**、順にクリックします**選択**します。
 
-1. On the **Settings** blade, under **Select public inbound ports** select **HTTP**, **HTTPS**, and **RDP (3389)**, under **Boot diagnostics** click **Disabled**, leave all other settings at the default value, and then click **OK**.
+1. **設定**ブレードで、**パブリック受信ポートを選択します**選択**HTTP**、 **HTTPS**と**RDP (3389)**. [**ブート診断**、] をクリックして**無効**します。 その他のすべての設定の既定値のままにして、クリックして**OK**します。
 
-1. On the **Create** blade, click **Create**.
+1. **[作成]** ブレードで、**[作成]** をクリックします。
 
-1. Wait until the deployment is complete before continuing the exercise.
+1. この演習を続行する前に、デプロイが完了するまで待機します。
 
-## Resize using the portal
+## <a name="resize-using-the-portal"></a>ポータルを使用してサイズを変更します。
 
-1. In the Azure portal, browse to the ExerciseRG resource group, and in the **ExerciseRG** blade, click the **DB01** virtual machine object.
+1. Azure ポータルの「ExerciseRG のリソース グループとでの使用」を参照してください。、 **ExerciseRG**ブレードで、[] をクリックして、 **DB01**バーチャル マシン オブジェクト。
 
-1. On the **DB01** blade, click **Size**. Note the currently highlighted size is the size you selected when creating the virtual machine.
+1. **DB01**ブレードで、をクリックして**サイズ**します。 現在強調表示されているサイズは、仮想マシンの作成時に選択したサイズに注意してください。
 
-1. On the **Choose a size** blade, try to find the **F2s_v2** size - it should not be available in the list of sizes because the VM is currently running and that size is from a different family. Close the **Choose a size** blade.
+1. **サイズを選択する**ブレードで、検索しようとしています、 **F2s_v2**サイズ - するサイズの一覧で使用できるため、VM が現在実行されていると、そのサイズは、さまざまなファミリからは。 閉じる、**サイズの選択**ブレード。
 
-1. In the **DB01** blade, click **Stop**. In the **Stop this virtual machine** dialog box, click **Yes**, and wait for the virtual machine status to show **Stopped (deallocated)**.
+1. **DB01**ブレードで、をクリックして**停止**します。 **この仮想マシンを停止**ダイアログ ボックスで、をクリックして **[はい]**、仮想マシンの状態を表示するまで待機**停止済み (割り当て解除)** します。
 
-1. On the **DB01** blade, click **Size**. On the **Choose a size** blade, select **F2s_v2** and then click **Select**. Notice the notification about resizing the virtual machine.
+1. **DB01**ブレードで、をクリックして**サイズ**します。 **サイズを選択する**ブレードで、 **F2s_v2**順にクリックします**選択**します。 仮想マシンのサイズ変更について通知を確認します。
 
-1. On the **DB01** blade, click **Overview**, then click **Start**.
+1. **DB01**ブレードで、をクリックして**概要**、順にクリックします**開始**します。
 
-## Resize using PowerShell
+## <a name="resize-using-powershell"></a>PowerShell を使用してサイズを変更します。
 
-1. In the Azure portal, open the Cloud Shell.
+1. Azure portal では、Azure Cloud Shell を開きます。
 
-1. Use the following cmdlet to get the list of available virtual machine sizes.
+1. 使用可能な仮想マシンのサイズの一覧を取得するのにには、次のコマンドレットを使用します。
 
     ```PowerShell
     Get-AzureRmVMSize -ResourceGroupName ExerciseRG -VMName DB01
     ```
 
-1. Use the following cmdlet to resize the virtual machine to an F4s_v2 size.
+1. F4s_v2 サイズの仮想マシンのサイズを変更するのにには、次のコマンドレットを使用します。
 
     ```PowerShell
     $vm = Get-AzureRmVM -ResourceGroupName ExerciseRG -VMName DB01
@@ -60,6 +64,6 @@ In this exercise, you will create a virtual machine and then resize it using the
     Update-AzureRmVM -VM $vm -ResourceGroupName ExerciseRG
     ```
 
-1. Click the Refresh button in the DB01 blade while you are waiting for the PowerShell command to complete - you should notice that the virtual machine is restarting to accommodate the change in size.
+1. PowerShell コマンドが完了するを待機しているときに、DB01 ブレードで 更新 ボタンをクリックします。 サイズ変更に対応する仮想マシンを再起動することがわかります。
 
-In this exercise, you created a virtual machine and resized it with two different tools. A good tip to keep in mind is that the target size may not be available while the virtual machine is running; stopping the virtual machine lets you choose more sizes.
+この演習では、仮想マシンを作成し、2 つの異なるツールを使用してサイズを変更します。 留意するヒントは、ターゲットのサイズが使用できないこと、仮想マシンの実行中に仮想マシンを停止すると、他のサイズを選択できます。

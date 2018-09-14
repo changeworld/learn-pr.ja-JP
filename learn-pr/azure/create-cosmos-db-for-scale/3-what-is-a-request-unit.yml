@@ -4,47 +4,36 @@ metadata:
   title: Azure Cosmos DB 要求ユニットとは?
   description: Azure Cosmos DB 要求ユニットとは?
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7c9979b14a3922875dbe7a3ef35bdb1b22517ab4
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245734"
 title: 要求ユニットとは?
 durationInMinutes: 8
-content: "[!include[](includes/3-what-is-a-request-unit.md)] \n"
+content: |
+  [!include[](includes/3-what-is-a-request-unit.md)] 
 quiz:
   title: 知識チェック
   questions:
-  - content: Azure Cosmos DB アカウントを作成し、アプリケーションのニーズに応じてアカウントが確実に拡張するようにしたい場合、スループットとして設定する最小値は何ですか。
-    choices:
-    - content: 400 RU/秒
-      isCorrect: false
-      incorrectExplanation: 400 RU/秒は、Azure Cosmos DB に設定できる最小のスループットです。ただし、元のスループットとして 400 RU/秒を指定して作成されたデータベースは、自動スケーリングされません。
-    - content: 1000 RU/秒
-      isCorrect: true
-      correctExplanation: 正解です。 1000 RU/秒のスループットは、データベースの自動スケーリングを有効にする最小値です。
-    - content: 1400 RU/秒
-      isCorrect: false
-      incorrectExplanation: スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。
-    - content: 250,000 RU/秒
-      isCorrect: false
-      incorrectExplanation: スループットを 1400 RU/秒に設定すると、データベースの自動スケーリングが有効になります。ただし、自動スケーリングを有効にするために設定できる最小値ではありません。
-  - content: 4 KB のドキュメントを Azure Cosmos DB データベースに 100 回書き込み、4 KB のドキュメントを 500 回読み込むことを予定している場合、アカウントにレート制限が適用されないようにするには、何個の要求ユニットをプロビジョニングする必要がありますか。
-    choices:
-    - content: 400 RU/秒
-      isCorrect: false
-      incorrectExplanation: 残念ながら、このシナリオに対して 400 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
-    - content: 1000 RU/秒
-      isCorrect: false
-      incorrectExplanation: 残念ながら、このシナリオに対して 1000 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
-    - content: 1300 RU/秒
-      isCorrect: false
-      incorrectExplanation: 残念ながら、このシナリオに対して 1300 RU/秒しかプロビジョニングしなかった場合は、レート制限が適用されます。 表を参照して、1 秒あたり 500 回の読み取りと 1 秒あたり 100 回の書き込みを必要とする 4 KB のドキュメントを探してください。
-    - content: 1400 RU/秒
-      isCorrect: true
-      correctExplanation: 正解です。 表は、このシナリオには最低 1350 RU/秒が必要であることを示しています。 レート制限が適用されないようにするには、1400 RU/秒をプロビジョニングする必要があります。なぜなら、1350 RU/秒よりも多く必要であり、要求ユニットは 100 の単位 (1300、1400、1500 など) でプロビジョニングされるからです。
+    - content: Azure Cosmos DB アカウントを作成し、アプリケーションのニーズに応じてアカウントが確実に拡張するようにしたい場合、スループットとして設定する最小値は何ですか。
+      choices:
+        - content: 400 RU/秒
+          isCorrect: false
+        - content: 1000 RU/秒
+          isCorrect: true
+          correctExplanation: 1000 RU/秒のスループットは、データベースの自動スケーリングを有効にする最小値です。
+        - content: 1400 RU/秒
+          isCorrect: false
+        - content: '250,000 RU/秒'
+          isCorrect: false
+    - content: 書き込みをする場合、4 KB のドキュメント 100 回/秒、2 つ目の方法あたり 500 回を読み取り、Azure Cosmos DB データベースに多くの要求ユニットでは、アカウントがレート制限ではないことを確認するための規定か。
+      choices:
+        - content: 400 RU/秒
+          isCorrect: false
+        - content: 1000 RU/秒
+          isCorrect: false
+        - content: 1300 RU/秒
+          isCorrect: false
+        - content: 1400 RU/秒
+          isCorrect: true
+          correctExplanation: 'このシナリオをサポートする 1350 RU/秒の最低限必要があります。 複数の 1350 RU/秒にする必要があるし、100 要求ユニットをプロビジョニングにレート制限がないことを確認するには、1400 RU/秒をプロビジョニングする必要があります (1300、1400, 1500 など。)。'

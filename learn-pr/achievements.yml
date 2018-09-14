@@ -1,274 +1,422 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.placeholder.badge
-  type: badge
-  iconUrl: http://via.placeholder.com/120x120
-  title: モジュール プレースホルダー バッジ
-  summary: サンプル モジュール トロフィーの概要
-- uid: learn.sample-module-cloudshell.badge
-  type: badge
-  title: CloudShell を使用するサンプル モジュールのバッジ
-  summary: "\"CloudShell を使用するサンプル モジュール\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.build-a-serverless-web-app.badge
-  type: badge
-  title: サーバーレス Web アプリの構築のバッジ
-  summary: "\"サーバーレス Web アプリの構築\" モジュールのバッジ。"
-  iconUrl: /learn/azure/build-a-serverless-web-app/achievement/build-a-serverless-web-app.svg
-- uid: learn.cd-pipeline-github-to-azure-web-app.badge
-  type: badge
-  title: GitHub から Azure Web App への継続的デプロイの作成のバッジ
-  summary: GitHub から Azure Web App への継続的デプロイの作成のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.connect-app-to-azure-storage.badge
-  type: badge
-  title: Azure Storage へのアプリの接続
-  summary: Azure Storage へのアプリの接続
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-azure-storage-account.badge
-  type: badge
-  title: Azure Storage へのアプリの接続のバッジ
-  summary: Azure Storage へのアプリの接続のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-serverless-logic-with-functions.badge
-  type: badge
-  title: Azure Functions を使用したサーバーレス ロジックの作成
-  summary: Azure Functions を使用したサーバーレス ロジックの作成
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.host-a-web-application-with-azure-web-apps.badge
-  type: badge
-  title: Azure Web Apps での Web アプリケーションのホストのバッジ
-  summary: Azure Web Apps での Web アプリケーションのホストのバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.publish-azure-web-app-with-visual-studio.badge
-  type: badge
-  title: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
-  summary: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.administer-containers-in-azure.trophy
-  type: trophy
-  title: Azure でのコンテナーの管理のトロフィー
-  summary: "\"Azure でのコンテナーの管理\" ラーニング パスのトロフィー"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-serverless-applications.trophy
-  type: trophy
-  title: サーバーレス アプリケーションの作成のトロフィー
-  summary: "\"サーバーレス アプリケーションの作成\" ラーニング パスのトロフィー"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.administer-infrastructure-resources-in-azure.trophy
-  type: trophy
-  title: Azure でインフラストラクチャ リソースを管理するのトロフィー
-  summary: "\"Azure でインフラストラクチャ リソースを管理する\" ラーニング パスのトロフィー"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cloud-foundations.trophy
-  type: trophy
-  title: クラウドの基礎のトロフィー
-  summary: "\"クラウドの基礎\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.connect-your-services-together.trophy
-  type: trophy
-  title: サービスの接続のトロフィー
-  summary: "\"サービスの接続\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.architect-great-solutions-in-azure.trophy
-  type: trophy
-  title: Azure で最適なソリューションを設計するのトロフィー
-  summary: "\"Azure で最適なソリューションを設計する\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-to-develop-apps-on-azure.trophy
-  type: trophy
-  title: Azure でアプリを開発するための準備のトロフィー
-  summary: "\"Azure でアプリを開発するための準備\" ラーニング パスのトロフィー"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-with-azure-app-service.trophy
-  type: trophy
-  title: Azure App Service で Web サイトをデプロイするのトロフィー
-  summary: "\"Azure App Service で Web サイトをデプロイする\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
-  type: trophy
-  title: Azure Cosmos DB の NoSQL データを扱うのトロフィー
-  summary: "\"Azure Cosmos DB の NoSQL データを扱う\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.work-with-relational-data-in-azure.trophy
-  type: trophy
-  title: Azure でリレーショナル データを操作するのトロフィー
-  summary: "\"Azure でリレーショナル データを操作する\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.secure-your-cloud-data.trophy
-  type: trophy
-  title: クラウド データのセキュリティ保護のトロフィー
-  summary: "\"クラウド データのセキュリティ保護のトロフィー\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.store-data-in-azure.trophy
-  type: trophy
-  title: Azure へのデータの格納のトロフィー
-  summary: "\"Azure へのデータの格納\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.automate-azure-tasks-with-powershell.badge
-  type: badge
-  title: PowerShell でのスクリプトを使用した Azure タスクの自動化のバッジ
-  summary: PowerShell でのスクリプトを使用した Azure タスクの自動化の概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-azure-db-for-postgresql.badge
-  type: badge
-  title: Azure CLI による PostgreSQL DB サーバーの作成のバッジ
-  summary: Azure CLI による PostgreSQL DB サーバーの作成の概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-linux-vm-in-azure.badge
-  type: badge
-  title: Azure での Linux 仮想マシンの作成のバッジ
-  summary: Azure での Linux 仮想マシンの作成の概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-messaging-model.badge
-  type: badge
-  title: メッセージング モデルの選択のバッジ
-  summary: メッセージング モデルの選択のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
-  type: badge
-  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
-  summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.prepare-azure-dev-environment.badge
-  type: badge
-  title: Azure 開発環境の準備のバッジ
-  summary: Azure 開発環境の準備のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-resources-with-azure-portal.badge
-  type: badge
-  title: Azure portal でのリソースの管理のバッジ
-  summary: Azure portal でのリソースの管理のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.explore-azure-services-for-web-devs.badge
-  type: badge
-  title: Web 開発者のための Azure サービスの探求のバッジ
-  summary: Web 開発者のための Azure サービスの探求のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.control-azure-services-with-cli.badge
-  type: badge
-  title: CLI を使用した Azure サービスの制御のバッジ
-  summary: CLI を使用した Azure サービスの制御のバッジの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.azure-services-features.badge
-  type: badge
-  title: Azure サービスと機能のツアーのバッジ
-  summary: Azure サービスと機能のツアーの概要
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.migrate-sql-server-relational-data.badge
-  type: badge
-  title: SQL Serer のリレーショナル データを Azure SQL に移行する
-  summary: SQL Serer のリレーショナル データを Azure SQL に移行する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.communicate-between-applications-with-azure-queue-storage.badge
-  type: badge
-  title: アプリケーションと Azure キュー ストレージの間の通信
-  summary: アプリケーションと Azure キュー ストレージの間の通信
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-a-windows-vm-in-azure.badge
-  type: badge
-  title: Azure で Windows 仮想マシンを作成する
-  summary: Azure で Windows 仮想マシンを作成する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-web-hosting.badge
-  type: badge
-  title: Azure で Web ホスティング オプションを選択する
-  summary: Azure で Web ホスティング オプションを選択する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.interactive-iot-deployments.badge
-  type: badge
-  title: Azure での対話型 IoT デプロイの操作
-  summary: Azure での対話型 IoT デプロイの操作
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.iot-for-ops.badge
-  type: badge
-  title: 運用のための IoT Suite
-  summary: 運用のための IoT Suite
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.web-app-with-mean-on-linux-vm.badge
-  type: badge
-  title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
-  summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.optimize-web-app-with-redis.badge
-  type: badge
-  title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
-  summary: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-secrets-with-azure-key-vault.badge
-  type: badge
-  title: Azure Key Vault を使用して Web アプリのシークレットを管理する
-  summary: Azure Key Vault を使用して Web アプリのシークレットを管理する
-  iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
-- uid: learn.secure-azure-resources-with-rbac.badge
-  type: badge
-  title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
-  summary: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
-  type: badge
-  title: Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信するのバッジ
-  summary: "\"Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信する\" モジュールのバッジ"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-vms-with-azure-cli-data.badge
-  type: badge
-  title: Azure CLI を使用して仮想マシンを管理する
-  summary: Azure CLI を使用して仮想マシンを管理する
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
-  type: trophy
-  title: Azure Virtual Machines を使用して Web サイトをデプロイするのトロフィー
-  summary: "\"Azure Virtual Machines を使用して Web サイトをデプロイする\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.store-app-data-with-azure-blob-storage.badge
-  type: badge
-  title: Azure Blob Storage に Web アプリケーション データを保存する
-  summary: Azure Blob Storage に Web アプリケーション データを保存する
-  iconUrl: /learn/modules/store-app-data-with-azure-blob-storage/achievement/store-app-data-with-azure-blob-storage.svg
-- uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
-  type: badge
-  title: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にする
-  summary: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にするモジュール
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-compute.badge
-  type: badge
-  title: コンピューティングの概要のバッジ
-  summary: "\"コンピューティングの概要\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.intro-to-data-in-azure.badge
-  type: badge
-  title: Azure でのデータの概要のバッジ
-  summary: "\"Azure でのデータの概要\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.cosmos-db-app-with-vscode.badge
-  type: badge
-  title: Visual Studio Code での Azure Cosmos DB アプリの作成
-  summary: "\"Visual Studio Code での Azure Cosmos DB アプリの作成\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.create-cosmos-db-for-scale.badge
-  type: badge
-  title: スケーリングするようにビルドされた Azure Cosmos DB データベースを作成する
-  summary: "\"スケーリングのためにビルドされた Azure Cosmos DB データベースを作成する\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.manage-resources-in-azure.trophy
-  type: trophy
-  title: Azure でのリソースの管理のトロフィー
-  summary: "\"Azure でのリソースの管理\" ラーニング パスのトロフィー。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.align-requirements-in-azure.badge
-  type: badge
-  title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整するのバッジ
-  summary: "\"Azure でクラウドの種類とサービス モデルに合わせて要件を調整する\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-- uid: learn.choose-storage-approach-in-azure.badge
-  type: badge
-  title: Azure での保存方法を選択するのバッジ
-  summary: "\"Azure での保存方法を選択する\" モジュールのバッジ。"
-  iconUrl: http://via.placeholder.com/120x120
-metadata:
-  ms.openlocfilehash: 693a03cb55f823b85d8daa4246a9cdf16fdab8ce
-  ms.sourcegitcommit: 91b4553dbbbf6d8b6b359142332d0654aae326e8
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43252131"
+  - uid: learn.build-a-serverless-web-app.badge
+    type: badge
+    title: サーバーレス Web アプリを構築する
+    summary: '"サーバーレス Web アプリの構築" モジュールのバッジ。'
+    iconUrl: /learn/achievements/build-a-serverless-web-app.svg
+  - uid: learn.connect-app-to-azure-storage.badge
+    type: badge
+    title: Azure Storage へのアプリの接続
+    summary: Azure Storage へのアプリの接続
+    iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
+  - uid: learn.create-azure-storage-account.badge
+    type: badge
+    title: Azure Storage アカウントの作成
+    summary: Azure Storage へのアプリの接続のバッジ
+    iconUrl: /learn/achievements/create-azure-storage-account.svg
+  - uid: learn.create-serverless-logic-with-functions.badge
+    type: badge
+    title: Azure Functions を使用したサーバーレス ロジックの作成
+    summary: Azure Functions を使用したサーバーレス ロジックの作成
+    iconUrl: /learn/achievements/create-serverless-logic-with-azure-functions.svg
+  - uid: learn.host-a-web-application-with-azure-app-service.badge
+    type: badge
+    title: Azure App service で web アプリケーションをホストします。
+    summary: Azure Web Apps での Web アプリケーションのホストのバッジ
+    iconUrl: /learn/achievements/host-a-web-app-with-azure-app-service.svg
+  - uid: learn.publish-azure-web-app-with-visual-studio.badge
+    type: badge
+    title: Visual Studio for Windows または Visual Studio for Mac での Azure Web アプリの発行
+    summary: Visual Studio for Windows または Visual Studio for Mac での Azure Web App の発行
+    iconUrl: /learn/achievements/publish-azure-web-app-with-visual-studio.svg
+  - uid: learn.administer-containers-in-azure.trophy
+    type: trophy
+    title: Azure でのコンテナーの管理のトロフィー
+    summary: '"Azure でのコンテナーの管理" ラーニング パスのトロフィー'
+    iconUrl: /learn/achievements/administer-containers-in-azure.svg
+  - uid: learn.create-serverless-applications.trophy
+    type: trophy
+    title: サーバーレス アプリケーションの作成のトロフィー
+    summary: '"サーバーレス アプリケーションの作成" ラーニング パスのトロフィー'
+    iconUrl: /learn/achievements/create-serverless-applications.svg
+  - uid: learn.administer-infrastructure-resources-in-azure.trophy
+    type: trophy
+    title: Azure でインフラストラクチャ リソースを管理するのトロフィー
+    summary: '"Azure でインフラストラクチャ リソースを管理する" ラーニング パスのトロフィー'
+    iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
+  - uid: learn.cloud-foundations.trophy
+    type: trophy
+    title: クラウドの基礎のトロフィー
+    summary: '"クラウドの基礎" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/cloud-foundations.svg
+  - uid: learn.connect-your-services-together.trophy
+    type: trophy
+    title: サービスの接続のトロフィー
+    summary: '"サービスの接続" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/connect-your-services-together.svg
+  - uid: learn.architect-great-solutions-in-azure.trophy
+    type: trophy
+    title: Azure で最適なソリューションを設計するのトロフィー
+    summary: '"Azure で最適なソリューションを設計する" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/architect-great-solutions-in-azure.svg
+  - uid: learn.deploy-a-website-with-azure-app-service.trophy
+    type: trophy
+    title: Azure App Service で Web サイトをデプロイするのトロフィー
+    summary: '"Azure App Service で Web サイトをデプロイする" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/deploy-a-website-with-azure-app-service.svg
+  - uid: learn.work-with-nosql-data-in-azure-cosmos-db.trophy
+    type: trophy
+    title: Azure Cosmos DB の NoSQL データを扱うのトロフィー
+    summary: '"Azure Cosmos DB の NoSQL データを扱う" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
+  - uid: learn.work-with-relational-data-in-azure.trophy
+    type: trophy
+    title: Azure でリレーショナル データを操作するのトロフィー
+    summary: '"Azure でリレーショナル データを操作する" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/work-with-relational-data-in-azure.svg
+  - uid: learn.secure-your-cloud-data.trophy
+    type: trophy
+    title: クラウド データのセキュリティ保護のトロフィー
+    summary: '"クラウド データのセキュリティ保護のトロフィー" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/secure-your-cloud-data.svg
+  - uid: learn.store-data-in-azure.trophy
+    type: trophy
+    title: Azure へのデータの格納のトロフィー
+    summary: '"Azure へのデータの格納" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/store-data-in-azure.svg
+  - uid: learn.automate-azure-tasks-with-powershell.badge
+    type: badge
+    title: PowerShell でのスクリプトを使用した Azure タスクの自動化のバッジ
+    summary: PowerShell でのスクリプトを使用した Azure タスクの自動化の概要
+    iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
+  - uid: learn.create-azure-db-for-postgresql.badge
+    type: badge
+    title: Azure CLI による PostgreSQL DB サーバーの作成のバッジ
+    summary: Azure CLI による PostgreSQL DB サーバーの作成の概要
+    iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
+  - uid: learn.create-linux-vm-in-azure.badge
+    type: badge
+    title: Azure での Linux 仮想マシンの作成のバッジ
+    summary: Azure での Linux 仮想マシンの作成の概要
+    iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
+  - uid: learn.choose-messaging-model.badge
+    type: badge
+    title: メッセージング モデルの選択のバッジ
+    summary: メッセージング モデルの選択のバッジの概要
+    iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
+  - uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.badge
+    type: badge
+    title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+    summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+    iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+  - uid: learn.prepare-azure-dev-environment.badge
+    type: badge
+    title: Azure 開発環境の準備のバッジ
+    summary: Azure 開発環境の準備のバッジの概要
+    iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
+  - uid: learn.manage-resources-with-azure-portal.badge
+    type: badge
+    title: Azure portal でのリソースの管理のバッジ
+    summary: Azure portal でのリソースの管理のバッジの概要
+    iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+  - uid: learn.control-azure-services-with-cli.badge
+    type: badge
+    title: CLI を使用した Azure サービスの制御のバッジ
+    summary: CLI を使用した Azure サービスの制御のバッジの概要
+    iconUrl: /learn/achievements/control-azure-services-with-cli.svg
+  - uid: learn.azure-services-features.badge
+    type: badge
+    title: Azure サービスと機能のツアーのバッジ
+    summary: Azure サービスと機能のツアーの概要
+    iconUrl: /learn/achievements/tour-azure-services-and-features.svg
+  - uid: learn.migrate-sql-server-relational-data.badge
+    type: badge
+    title: SQL Serer リレーショナル データを Azure SQL に移行する
+    summary: SQL Serer リレーショナル データを Azure SQL に移行する
+    iconUrl: /learn/achievements/migrate-sql-server-to-azure-sql.svg
+  - uid: learn.communicate-between-applications-with-azure-queue-storage.badge
+    type: badge
+    title: アプリケーションと Azure キュー ストレージの間の通信
+    summary: アプリケーションと Azure キュー ストレージの間の通信
+    iconUrl: /learn/achievements/communicate-between-apps-with-storage-queues.svg
+  - uid: learn.caching-and-performance-azure-storage-and-disks.badge
+    type: badge
+    title: キャッシュと Azure Storage とディスクのパフォーマンス
+    summary: キャッシュと Azure Storage とディスクのパフォーマンス
+    iconUrl: /learn/achievements/caching-and-performance-azure-storage-and-disks.svg
+  - uid: learn.create-a-windows-vm-in-azure.badge
+    type: badge
+    title: Azure で Windows 仮想マシンを作成する
+    summary: Azure で Windows 仮想マシンを作成する
+    iconUrl: /learn/achievements/create-windows-virtual-machine-in-azure.svg
+  - uid: learn.web-app-with-mean-on-linux-vm.badge
+    type: badge
+    title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+    summary: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
+    iconUrl: /learn/achievements/build-a-web-app-with-mean-on-a-linux-vm.svg
+  - uid: learn.optimize-web-app-with-redis.badge
+    type: badge
+    title: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+    summary: Redis で読み取り専用データをキャッシュすることにより Web アプリケーションを最適化する
+    iconUrl: /learn/achievements/optimize-web-apps-with-redis.svg
+  - uid: learn.manage-secrets-with-azure-key-vault.badge
+    type: badge
+    title: Azure Key Vault を使用して Web アプリのシークレットを管理する
+    summary: Azure Key Vault を使用して Web アプリのシークレットを管理する
+    iconUrl: /learn/achievements/manage-secrets-with-azure-key-vault.svg
+  - uid: learn.secure-azure-resources-with-rbac.badge
+    type: badge
+    title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+    summary: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+    iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+  - uid: learn.secure-access-azure-ad-multi-factor-authentication.badge
+    type: badge
+    title: あなたは、Azure AD、条件付きアクセス、Azure Multi-Factor Authentication を使用して、リソースへのアクセスをセキュリティで保護します。
+    summary: あなたは、Azure AD、条件付きアクセス、Azure Multi-Factor Authentication を使用して、リソースへのアクセスをセキュリティで保護します。
+    iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+  - uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.badge
+    type: badge
+    title: Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信するのバッジ
+    summary: '"Azure Functions と Twilio を利用し、スマートフォンから SMS 経由で位置情報を送信する" モジュールのバッジ'
+    iconUrl: /learn/achievements/send-location-over-sms-from-mobile-using-azure-functions-twilio.svg
+  - uid: learn.manage-vms-with-azure-cli-data.badge
+    type: badge
+    title: Azure CLI を使用して仮想マシンを管理する
+    summary: Azure CLI を使用して仮想マシンを管理する
+    iconUrl: /learn/achievements/manage-vms-with-azure-cli.svg
+  - uid: learn.deploy-a-website-with-azure-virtual-machines.trophy
+    type: trophy
+    title: Azure Virtual Machines を使用して Web サイトをデプロイするのトロフィー
+    summary: '"Azure Virtual Machines を使用して Web サイトをデプロイする" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/deploy-a-website-with-azure-virtual-machines.svg
+  - uid: learn.store-app-data-with-azure-blob-storage.badge
+    type: badge
+    title: Azure Blob Storage に Web アプリケーション データを保存する
+    summary: Azure Blob Storage に Web アプリケーション データを保存する
+    iconUrl: /learn/achievements/store-app-data-with-azure-blob-storage.svg
+  - uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.badge
+    type: badge
+    title: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にする
+    summary: Azure Event Hubs を使用してビッグ データ アプリケーションの信頼性の高いメッセージングの有効にするモジュール
+    iconUrl: /learn/achievements/enable-reliable-messaging-for-big-data-apps-using-azure-event-hubs.svg
+  - uid: learn.secure-your-azure-sql-database.badge
+    type: badge
+    title: Azure の SQL Server データベースをセキュリティで保護します。
+    summary: Azure の SQL Server データベースをセキュリティで保護します。
+    iconUrl: /learn/achievements/secure-your-azure-sql-database.svg
+  - uid: learn.intro-to-compute.badge
+    type: badge
+    title: コンピューティングの概要のバッジ
+    summary: '"コンピューティングの概要" モジュールのバッジ。'
+    iconUrl: /learn/achievements/intro-to-azure-compute.svg
+  - uid: learn.intro-to-data-in-azure.badge
+    type: badge
+    title: Azure でのデータの概要のバッジ
+    summary: '"Azure でのデータの概要" モジュールのバッジ。'
+    iconUrl: /learn/achievements/intro-to-azure-networking.svg
+  - uid: learn.introduction-to-azure-virtual-machines.badge
+    type: badge
+    title: Azure Virtual Machines の概要
+    summary: Azure Virtual Machines の概要
+    iconUrl: /learn/achievements/intro-to-azure-virtual-machines.svg
+  - uid: learn.cosmos-db-app-with-vscode.badge
+    type: badge
+    title: Visual Studio Code での Azure Cosmos DB アプリの作成
+    summary: '"Visual Studio Code での Azure Cosmos DB アプリの作成" モジュールのバッジ。'
+    iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
+  - uid: learn.create-cosmos-db-for-scale.badge
+    type: badge
+    title: スケーリングするようにビルドされた Azure Cosmos DB データベースを作成する
+    summary: '"スケーリングのためにビルドされた Azure Cosmos DB データベースを作成する" モジュールのバッジ。'
+    iconUrl: /learn/achievements/create-cosmos-db-for-scale.svg
+  - uid: learn.manage-resources-in-azure.trophy
+    type: trophy
+    title: Azure でのリソースの管理のトロフィー
+    summary: '"Azure でのリソースの管理" ラーニング パスのトロフィー。'
+    iconUrl: /learn/achievements/manage-resources-with-azure-portal.svg
+  - uid: learn.ci-cd-pipelines-azure-devops.badge
+    type: badge
+    title: Azure DevOps バッジを使用して継続的インテグレーション/継続的配置パイプラインを作成できます。
+    summary: '''ビルドの継続的インテグレーション/継続的デプロイ パイプラインを Azure DevOps を使用して'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/build-ci-cd-pipelines-using-azure-devops.svg
+  - uid: learn.top-5-security-items-to-consider.badge
+    type: badge
+    title: 運用環境にプッシュする前に考慮すべきセキュリティ項目を上位 5 件
+    summary: 運用環境にプッシュする前に考慮すべきセキュリティ項目を上位 5 件
+    iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
+  - uid: learn.interactive-deep-learning.badge
+    type: badge
+    title: 対話的なディープのバッジをラーニング 5 つの手順
+    summary: '''より対話的なディープ ラーニングを 5 つの手順'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/interactive-deep-learning.svg
+  - uid: learn.create-computer-vision-service.badge
+    type: badge
+    title: コンピューター ビジョン サービスを作成します。
+    summary: モジュールのコンピューター ビジョン サービスの作成 のバッジ。
+    iconUrl: /learn/achievements/create-computer-vision-service-to-classify-images.svg
+  - uid: learn.monitor-manage-device-with-iotcentral.badge
+    type: badge
+    title: 監視し、Azure IoT Central バッジでコーヒー マシンを管理
+    summary: バッジを付けるため、' モニターで Azure IoT Central コーヒー マシンを管理および ' モジュール。
+    iconUrl: /learn/achievements/monitor-and-manage-device-with-iot-central.svg
+  - uid: learn.align-requirements-in-azure.badge
+    type: badge
+    title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整するのバッジ
+    summary: '"Azure でクラウドの種類とサービス モデルに合わせて要件を調整する" モジュールのバッジ。'
+    iconUrl: /learn/achievements/align-requirements-in-azure.svg
+  - uid: learn.choose-storage-approach-in-azure.badge
+    type: badge
+    title: Azure での保存方法を選択するのバッジ
+    summary: '"Azure での保存方法を選択する" モジュールのバッジ。'
+    iconUrl: /learn/achievements/choose-storage-approach-in-azure.svg
+  - uid: learn.azure-container-registry.badge
+    type: badge
+    title: ビルドし、コンテナー イメージを Azure Container Registry のバッジを保存します。
+    summary: '[ビルドし、Azure Container Registry のコンテナーのイメージを格納] モジュールのバッジ。'
+    iconUrl: /learn/achievements/build-and-store-container-images.svg
+  - uid: learn.build-azure-bot-services-bot.badge
+    type: badge
+    title: Azure Bot Service バッジが付いたチャット ボットをビルドします。
+    summary: Azure Bot Service とのチャット ボットをビルド モジュールのバッジ。
+    iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
+  - uid: learn.classify-images-with-custom-vision-services.badge
+    type: badge
+    title: Microsoft は Custom Vision Service バッジを使用したイメージを分類します。
+    summary: Microsoft の Custom Vision Service を使用したイメージの分類' モジュールのバッジ。
+    iconUrl: /learn/achievements/classify-images-with-custom-vision-service.svg
+  - uid: learn.create-neural-network-with-dsvm.badge
+    type: badge
+    title: TensorFlow と Azure データ サイエンス仮想マシンのバッジのニューラル ネットワークの構築
+    summary: 「TensorFlow と Azure データ サイエンス仮想マシン構成のニューラル ネットワーク」モジュールのバッジ。
+    iconUrl: /learn/achievements/create-neural-network-with-dsvm.svg
+  - uid: learn.design-for-efficiency-and-operations.badge
+    type: badge
+    title: バッジの効率性と操作のための設計します。
+    summary: '''効率性と操作の仕様'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/design-for-efficiency-and-operations-in-azure.svg
+  - uid: learn.design-for-performance-and-scalability.badge
+    type: badge
+    title: パフォーマンスとスケーラビリティのバッジを設計します。
+    summary: '''のパフォーマンスとスケーラビリティの仕様'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
+  - uid: learn.design-for-security.badge
+    type: badge
+    title: セキュリティのバッジのデザイン
+    summary: '''セキュリティの仕様'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/design-for-security-in-azure.svg
+  - uid: learn.execute-azure-function-with-triggers.badge
+    type: badge
+    title: トリガーのバッジで Azure 関数を実行します。
+    summary: '''トリガーで Azure 関数の実行'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/execute-azure-function-with-triggers.svg
+  - uid: learn.intro-to-containers.badge
+    type: badge
+    title: コンテナーのバッジの概要
+    summary: '"コンテナーの概要"モジュールのバッジ。'
+    iconUrl: /learn/achievements/intro-to-containers.svg
+  - uid: learn.predict-costs-and-optimize-spending.badge
+    type: badge
+    title: コストを予測し、Azure バッジの支出を最適化します。
+    summary: '''コストを予測し、Azure の支出を最適化'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/predict-costs-optimize-spending-on-azure.svg
+  - uid: learn.principles-cloud-computing.badge
+    type: badge
+    title: クラウド コンピューティングのバッジの原則
+    summary: ''' 原則 of Cloud Computing'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/principles-cloud-computing.svg
+  - uid: learn.provision-azure-sql-db.badge
+    type: badge
+    title: アプリケーション データのバッジを格納する Azure SQL database をプロビジョニングします。
+    summary: アプリケーション データを格納する Azure SQL database をプロビジョニングする' モジュールのバッジ。
+    iconUrl: /learn/achievements/provision-azure-sql-db.svg
+  - uid: learn.run-docker-containers-aci.badge
+    type: badge
+    title: Azure Container Instances (ACI) バッジで Docker コンテナーを実行します。
+    summary: '''を実行する Docker コンテナーでは、Azure Container Instances (ACI)'' のモジュールのバッジ。'
+    iconUrl: /learn/achievements/run-docker-with-azure-container-instances.svg
+  - uid: learn.access-data-with-cosmos-db-and-sql-api.badge
+    type: badge
+    title: Cosmos DB SQL API のバッジとデータの格納とアクセス
+    summary: '''アクセス データの格納と Cosmos DB と SQL API による'' モジュールのバッジ。'
+    iconUrl: /learn/achievements/access-data-with-cosmos-db-and-sql-api.svg
+  - uid: learn.configure-the-network-for-your-virtual-machines.badge
+    type: badge
+    title: 仮想マシンのネットワークを構成する
+    summary: 仮想マシンのネットワークを構成する
+    iconUrl: /learn/achievements/configure-network-for-azure-virtual-machines.svg
+  - uid: learn.introduction-to-security.badge
+    type: badge
+    title: Azure のセキュリティの概要
+    summary: Azure のセキュリティの概要
+    iconUrl: /learn/achievements/intro-to-security-in-azure.svg
+  - uid: learn.secure-your-azure-virtual-machine-disks.badge
+    type: badge
+    title: Azure 仮想マシンのディスクをセキュリティで保護する
+    summary: Azure 仮想マシンのディスクをセキュリティで保護する
+    iconUrl: /learn/achievements/secure-your-azure-virtual-machine-disks.svg
+  - uid: learn.make-your-virtual-machines-highly-available.badge
+    type: badge
+    title: 仮想マシンの可用性を高める
+    summary: 仮想マシンの可用性を高める
+    iconUrl: /learn/achievements/make-your-virtual-machines-highly-available.svg
+  - uid: learn.implement-message-workflows-with-service-bus.badge
+    type: badge
+    title: Azure Service Bus を使用してメッセージ ベースの通信ワークフローを実装する
+    summary: Azure Service Bus を使用してメッセージ ベースの通信ワークフローを実装する
+    iconUrl: /learn/achievements/implement-message-workflows-with-service-bus.svg
+  - uid: learn.intro-to-azure-networking.badge
+    type: badge
+    title: Azure のネットワーク バッジの概要
+    summary: Azure のネットワークの概要
+    iconUrl: /learn/achievements/intro-to-azure-networking.svg
+  - uid: learn.pillars-of-a-great-azure-architecture.badge
+    type: badge
+    title: 優れた Azure アーキテクチャのバッジの重要な要素
+    summary: 優れた Azure アーキテクチャのバッジの重要な要素
+    iconUrl: /learn/achievements/pillars-of-a-great-azure-architecture.svg
+  - uid: learn.add-and-size-disks-in-azure-virtual-machines.badge
+    type: badge
+    title: 追加し、Azure Virtual Machines でのディスクのサイズ
+    summary: 追加し、Azure Virtual Machines でのディスクのサイズ
+    iconUrl: /learn/achievements/add-and-size-disks-in-azure-virtual-machines.svg
+  - uid: learn.scale-and-size-virtual-machines.badge
+    type: badge
+    title: スケールと Azure の仮想マシンのサイズ
+    summary: スケールと Azure の仮想マシンのサイズ
+    iconUrl: /learn/achievements/scale-and-size-virtual-machines.svg
+  - uid: learn.manage-iot-devices.badge
+    type: badge
+    title: 運用のための IoT Suite
+    summary: 運用のための IoT Suite
+    iconUrl: /learn/achievements/manage-your-iot-devices.svg
+  - uid: learn.the-mojifier.badge
+    type: badge
+    title: Mojifier
+    summary: Mojifier バッジ
+    iconUrl: /learn/achievements/replace-faces-with-emojis-matching-emotion.svg
+  - uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
+    type: badge
+    title: Redis cache で変更可能なおよび部分的なデータを扱う
+    summary: Redis cache で変更可能なおよび部分的なデータを扱う
+    iconUrl: /learn/achievements/work-with-mutable-and-partial-data-in-a-redis-cache.svg
+  - uid: learn.chain-azure-functions-data-using-input-output-bindings.badge
+    type: badge
+    title: I/O バインドを使用してデータを Azure Functions のチェーン
+    summary: I/O バインドを使用してデータを Azure Functions のチェーン
+    iconUrl: /learn/achievements/chain-azure-functions-data-using-bindings.svg
+  - uid: learn.design-for-availability-and-recoverability.badge
+    type: badge
+    title: 可用性と Azure で回復性の設計
+    summary: 可用性と Azure で回復性の設計
+    iconUrl: /learn/achievements/design-for-availability-and-recoverability-in-azure.svg
+  - uid: learn.welcome-to-azure.badge
+    type: badge
+    title: Azure へようこそ
+    summary: Azure へようこそ
+    iconUrl: /learn/achievements/welcome-to-azure.svg
+  - uid: learn.classify-user-feedback-with-the-text-analytics-api.badge
+    type: badge
+    title: Text Analytics API を使用したテキストのセンチメントを検出します。
+    summary: Text Analytics API を使用したテキストのセンチメントを検出します。
+    iconUrl: /learn/achievements/classify-user-feedback-with-the-text-analytics-api.svg

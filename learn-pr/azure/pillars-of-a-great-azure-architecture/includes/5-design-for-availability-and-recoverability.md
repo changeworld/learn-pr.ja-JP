@@ -1,25 +1,30 @@
-Clinicians at your organization have little tolerance for downtime. Applications must be able to handle failures with minimal impact to their users. How do they ensure their applications remain operational, both for localized incidents and large-scale disasters? 
+Lamna 医療の医師では、ダウンタイムのほとんどの許容範囲がありません。 常に最高品質管理を提供していることを確認するには、24 時間の医療の IT システムにアクセスする必要があります。 Lamna 医療のアプリケーションは、医師の 24 時間体制の需要を満たすためには、そのユーザーに影響を最小限のエラーを処理できる必要があります。 局所的なインシデントと大規模災害のどちらが発生した場合でもアプリケーションの継続稼働を保証する方法はあるのでしょうか。
 
-Here, we'll talk through how to include availability and recoverability in your architecture design.
+ここでは、可用性と回復性をアーキテクチャの設計に含める方法について説明します。
 
-## Availability and recoverability
+## <a name="availability-and-recoverability"></a>可用性と回復性
 
-In a complex application, any number of things can go wrong at any scale. Individual servers and hard drives can fail. A deployment issue could unintentionally drop all tables in a database. Whole datacenters may become unreachable. A ransomware incident could maliciously encrypt all your data.
+複雑なアプリケーションでは、いくつもの箇所でさまざまな規模の問題が発生する可能性があります。 個々のサーバーやハード ドライブが故障する可能性があります。 デプロイの問題により、データベースのすべてのテーブルが意図せず削除されてしまう可能性があります。 データセンター全体が到達不能になる可能性があります。 ランサムウェアのインシデントでは、すべてのデータが悪意を持って暗号化されてしまう可能性があります。
 
-Designing for *availability* focuses on maintaining uptime through small-scale incidents and temporary conditions like partial network outages. You can ensure your application can handle localized failures by integrating high availability into each component of an application and eliminating single points of failure. Such a design also minimizes the impact of infrastructure maintenance. High-availability designs typically aim to solve problems quickly and automatically.
+*可用性*のための設計では、小規模なインシデントの間、また部分的なネットワーク停止などの一時的な条件下で稼働を維持することに重点を置きます。 アプリケーションの各コンポーネントに高可用性を統合して単一障害点を排除すれば、局所的な障害をアプリケーションで確実に処理できるようになります。 そうした設計により、インフラストラクチャのメンテナンスの影響も最小化されます。 高可用性の設計は、通常、迅速かつ自動的には、インシデントの影響を排除し、影響なしにほとんど要求を処理するシステムを続けることを目指します。
 
-Designing for *recoverability* focuses on recovery from data loss and from larger scale disasters. Recovery from these types of incidents isn't automatic, and may result in some amount of downtime or permanently lost data. Disaster recovery is as much about careful planning as it is about execution.
+*回復性*のための設計では、データの損失や大規模災害からの復旧に重点を置きます。 多くの場合、これらの種類のインシデントからの復旧には、自動回復の手順は、回復するために必要な時間を短縮できますが、アクティブな操作が含まれます。 これらの種類のインシデントのある程度のダウンタイムやデータの完全に失われた可能性があります。 ディザスター リカバリーには、実行と同じくらい入念な計画が必要です。
 
-Including high availability and recoverability in the design of your architecture protects your business from financial losses resulting from downtime and lost data. They ensure your reputation isn't negatively impacted by a loss of trust from your customers.
+アーキテクチャの設計に高可用性と回復性を含めることで、ダウンタイムやデータ損失の結果として生じる金銭的損失からビジネスを守ります。 顧客からの信頼を失うことによってビジネスの評判が失墜するのを防ぎます。
 
-## Architecting for availability and recoverability
+## <a name="architecting-for-availability-and-recoverability"></a>可用性と回復性のための設計
 
-Architecting for availability and recoverability ensures that your application can meet the commitments you make to your customers.
+可用性と回復性のための設計は、顧客に対するコミットメントをアプリケーションが果たせることを保証します。
 
-For availability, identify the service-level agreement (SLA) you're committing to. Examine the potential high-availability capabilities of your application relative to your SLA, and identify where you have proper coverage and where you'll need to make improvements. The goal is to add redundancy to components of the architecture so that you are less likely to experience an outage. Examples of high-availability design components include clustering and load balancing. Clustering replaces a single VM with a set of coordinated VMs. When one VM fails or becomes unreachable, services can fail over to another one that can service the requests. Load balancing spreads requests across many instances of a service, detecting failed instances and preventing requests from being routed to them.
+可用性については、コミットしているサービス レベル アグリーメント (SLA) を識別します。 アプリケーションの潜在的な高可用性機能を SLA を基準にして確認し、適切なカバレッジがある箇所と改善が必要な箇所を特定します。 目標は、障害が発生する可能性が下がるよう、アーキテクチャのコンポーネントに冗長性を追加することです。 高可用性設計コンポーネントの例には、クラスタリングや負荷分散があります。 クラスタリングは、協調動作する VM のセットで 1 つの VM を置き換えます。 1 つの VM で障害が発生するか VM が到達不能になったら、要求を処理できる別の VM にサービスをフェールオーバーできます。 負荷分散は、サービスの多数のインスタンスに要求を分散すると同時に、障害が発生したインスタンスを検出し、それらのインスタンスに要求がルーティングされないようにします。
 
-For recoverability, perform an analysis that examines possible data loss and major downtime scenarios. The analysis should include an exploration of recovery strategies and the cost-benefit tradeoff for each. This exercise will give you important insight into your organization's priorities and help clarify the role of your application. The results should include the application's recovery point objective (RPO) and recovery time objective (RTO), or the maximum levels of data loss and downtime deemed acceptable given the investment made in disaster recovery. With RPO and RTO defined, you can design backup and restore capabilities into your architecture to cover for data loss, and replication to mitigate downtime.
+回復性については、可能性のあるデータ損失や大規模なダウンタイムのシナリオを検証する分析を実行します。 分析には、復旧方法の調査や、方法ごとの費用と便益のトレードオフを含める必要があります。 この演習は、組織の優先事項に関する重要な洞察を提供し、アプリケーションの役割を明確にするために役立ちます。 結果には、アプリケーションの目標復旧時点 (RPO) と目標復旧時間 (RTO) を含める必要があります。
 
-Every cloud provider offers a suite of services and features you can use to improve your application's availability and recoverability. When possible, use existing services and best practices, and try to resist creating your own.
+* **回復ポイントの目標**: 許容されるデータ損失の最大期間。 RPO はボリュームではなく時間単位で測定されます:「30 分間のデータ」、「データの 4 つの時間」など。 RPO はデータの*損失*の限定および復旧に関連した概念であり、データの*盗難*には関連しません。
+* **目標復旧時間**: 許容されるダウンタイムは、「ダウンタイム」が、仕様によって定義される必要がある最大期間。 たとえば、許容されるダウンタイム期間が 8 時間、災害が発生した場合は 8 時間は、RPO に。
 
-Hard drives can fail, datacenters can become unreachable, and hackers can attack. It's important that you maintain a good reputation with your customers using availability and recoverability. Availability focuses on maintaining uptime through conditions like network outages, and recoverability focuses on retrieving data after a disaster.
+RPO と RTO が定義されている、これらの目標を達成するアーキテクチャにバックアップ、復元、レプリケーション、および復旧の機能を設計できます。
+
+すべてのクラウド プロバイダーは、アプリケーションの可用性と回復性を向上させるために使用できるサービスおよび機能一式を提供します。 可能であれば、既存のサービスやベスト プラクティスを利用し、独自に作成することはできるだけ避けてください。
+
+ハード ドライブの故障、データセンターの到達不能、ハッカーの攻撃はどれも可能性があります。 可用性と回復性を備えることで、顧客からの高い評判を維持することが重要です。 可用性はネットワーク停止などの条件下で稼働状態を維持することに重点を置いており、回復性は障害発生後のデータ取得に重点を置いています。

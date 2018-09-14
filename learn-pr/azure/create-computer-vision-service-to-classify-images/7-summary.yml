@@ -1,48 +1,47 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: 概要とサポート技術情報の確認
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: 概要とサポート技術情報の確認
+  description: 概要とサポート技術情報の確認
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-durationInMinutes: 10
+durationInMinutes: 5
 content: |
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: '知識チェック: Computer Vision サービスを使用した画像処理'
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
-    choices:
-    - content: 'Landmarks '
-      isCorrect: false
-    - content: 'Celebrities'
-      isCorrect: false
-    - content: 'Movies'
-      isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
-    choices:
-    - content: 'Shapes'
-      isCorrect: true
-    - content: 'Image categorization'
-      isCorrect: false
-    - content: 'Tags'
-      isCorrect: false
-    - content: 'Textual description'
-      isCorrect: false
-    - content: 'Faces'
-      isCorrect: false
-    - content: 'Colors'
-      isCorrect: false
-    - content: 'Adult and suggestive content'
-      isCorrect: false
-  - content: 'What does smart cropping do?'
-    choices:
-    - content: 'Crops pictures from the top left'
-      isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
-      isCorrect: true
+    - content: Computer Vision API を使用してイメージを分析するときにを返す visual 機能の種類を指定できます。  Visual 機能が有効な型は、'analyze' 操作を呼び出すときに、次のうちはでしょうか。
+      choices:
+        - content: 'ムービー '
+          isCorrect: false
+          incorrectExplanation: 映画は有効なビジュアル機能の種類ではありません。
+        - content: 動物
+          isCorrect: false
+          incorrectExplanation: 動物は有効なビジュアル機能の種類ではありません。
+        - content: 有名人
+          isCorrect: true
+          correctExplanation: 指定できます 2 つの機能を visual 型では、著名人およびランドマークです。
+    - content: 次の点について説明します*スマート トリミング*とサムネイルを生成するときに、`generateThumbnail`操作でしょうか。
+      choices:
+        - content: これは、左上からイメージをトリミングします。
+          isCorrect: false
+          incorrectExplanation: 左上からイメージをトリミングで目的のリージョンとも呼ばれる、イメージのかなりの部分を削除することがあります。
+        - content: 「関心領域」のサムネイルを中央に揃えます。
+          isCorrect: true
+          correctExplanation: '''SmartCropping'' パラメーターが true の場合、API は、''関心領域'' に縮小表示の中央にスマート トリミングを適用します。 それ以外の場合、それだけトリミング センターにします。'
+    - content: Computer Vision API は、ソリューションに統合しています。 アカウントを作成した、cognitives サービス Computer Vision サービス eastus リージョンにします。 アクセスするための正しいアドレスには、次の中、`ocr`操作でしょうか。
+      choices:
+        - content: eastus2.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: false
+          incorrectExplanation: このリージョンから要求するアクセス キーにサインアップするがありません。 エンドポイントのサインアップ時に選択したリージョン、サービスの URL の要求で使用されるリソースを指定してください。
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/describe
+          isCorrect: false
+          incorrectExplanation: このアドレスは、エンティティのリソースに要求を送信します。
+        - content: eastus.api.cognitive.microsoft.com/vision/v1.0/ocr
+          isCorrect: true
+          correctExplanation: エンドポイントにサインオンするときに選択したリージョン、サービスの URL および要求で使用されるリソースを指定します。

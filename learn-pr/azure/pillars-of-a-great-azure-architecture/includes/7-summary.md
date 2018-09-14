@@ -1,10 +1,10 @@
-Architecture is the foundation of your application's design. A great architecture will give you the confidence that your app can sustainably meet the needs of your customers both now and in the future.
+アーキテクチャはアプリケーションの設計の基礎です。 優れたアーキテクチャによって、アプリが現在も将来も、持続可能な形で顧客のニーズに応えられるという確信が得られます。
 
-The architectural priorities and needs of every app are different, but the four pillars of architecture are an excellent guidepost you can use to make sure that you have given enough attention to every aspect of your application:
+アーキテクチャの優先事項と各アプリのニーズは異なりますが、アーキテクチャの 4 本の柱は、アプリケーションのあらゆる側面に十分な注意を払っているという確証を得るために使用できる優れた指標です。
 
-- **Security**: Safeguarding access and data integrity and meeting regulatory requirements
-- **Performance and scalability**: Efficiently meeting demand in every scenario
-- **Availability and recoverability**: Minimizing downtime and avoiding permanent data loss
-- **Efficiency and operations**: Maximizing maintainability and ensuring requirements are met with monitoring
+- **セキュリティ**: アクセスとデータの整合性を保護し、規制面の要件を満たします
+- **パフォーマンスとスケーラビリティ**: すべてのシナリオで効率的に需要に応えます
+- **可用性と回復性**: ダウンタイムを最小化し、永久的なデータ損失を回避します
+- **効率性と運用**: 保守性を最大化し、要件が満たされることを監視によって保証します
 
-Focusing on these pillars when designing your architecture will ensure you're laying a solid foundation for your applications in the cloud. With a solid foundation, you'll be able to drive innovation through your environment, build solutions that your users will love, and foster the trust of your customers.
+アーキテクチャを設計する際、これらの柱にフォーカスすることで、クラウド内のアプリケーションのための強固な基盤が確実に得られます。 強固な基盤があれば、環境全体でイノベーションを推進し、ユーザーに愛されるソリューションを構築し、顧客の信頼を勝ち得ることができます。

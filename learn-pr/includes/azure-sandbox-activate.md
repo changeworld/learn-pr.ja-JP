@@ -1,2 +1,2 @@
 > [!NOTE]
-> Make sure you have activated the Azure Sandbox before proceeding with these instructions.
+> これらの手順に進む前に、Azure サンド ボックスをアクティブ化したことを確認します。

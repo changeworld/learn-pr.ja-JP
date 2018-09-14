@@ -1,17 +1,17 @@
-Azure Load Balancer can help scale your cloud applications and improve the availability of your services.
+Azure Load Balancer は、クラウド アプリケーションをスケールし、サービスの可用性の向上に役立ちます。
 
-Suppose you work as the server administrator responsible for your on-premises Enterprise Resource Planning (ERP) application. The application is business-critical, and you want to minimize the downtime that results from server failure.
+たとえば、オンプレミスのエンタープライズ リソース プランニング (ERP) アプリケーションを担当するサーバー管理者として作業するとします。 アプリケーションがビジネスに不可欠なサーバーの障害に起因するダウンタイムを最小限にする.
 
-Your company is looking to take advantage of some of the scalability options in the cloud and wants to determine if the ERP application can be made highly available by adding more servers and load balancing network traffic. Your job is to determine if a load balancer is appropriate for this type of application, and if so, how to deploy and configure the system.
+会社は、クラウドの拡張性のオプションの一部の活用を検討していると、かどうか ERP アプリケーションがサーバーを追加して高可用性を実行でき、負荷分散ネットワーク トラフィックを決定する必要があります。 ジョブは、ロード バランサーがこの種類のアプリケーションの適切な場合とそうである場合を判断することです。 展開して、システムを構成する方法。
 
-Here, you will identify internal and external workloads that are suitable for load balancing. You will learn how to choose between the basic and standard load balancer products. Finally, you will see how to create a load balancer, associate the load balancer with virtual servers, and configure the associated rules and probes.
+ここでは、負荷分散に適している内部および外部のワークロードが識別されます。 Basic と standard の load balancer の製品間で選択する方法を学習します。 最後に、ロード バランサーの作成、ロード バランサーを関連付ける仮想サーバーを使用して、関連付けられているルールとプローブを構成する方法が表示されます。
 
-## Learning objectives:
+## <a name="learning-objectives"></a>学習目標:
 
-In this module, you will:
-- Decide when to use a load balancer
-- Identify the differences between the basic and standard Load Balancer editions
-- Create a new load balancer
-- Create virtual networks associated with a load balancer
-- Configure load balancer rules
-- Configure a load balancer health probe
+このモジュールでは、次のことを行います。
+- ロード バランサーを使用するタイミングを決定します。
+- Basic と standard Load Balancer のエディション間の違いを特定します。
+- 新しいロード バランサーを作成します。
+- ロード バランサーに関連付けられた仮想ネットワークを作成します。
+- ロード バランサー規則を構成します。
+- ロード バランサーの正常性プローブを構成する

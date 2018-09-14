@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: まとめ
+  description: まとめ
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+title: まとめ
+durationInMinutes: 7
+content: |
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: サポート技術情報の確認 - IT 管理者は、IoT デバイスを管理します。
+  questions:
+    - content: IoT Hub は、保管や処理のために IoT デバイスから大量の利用統計情報をクラウドに取り込むことを可能にする Azure サービスです。
+      choices:
+        - content: はい
+          isCorrect: true
+          correctExplanation: そうです。
+        - content: いいえ
+          isCorrect: false
+          incorrectExplanation: 正しくありません。
+    - content: 次の領域のうちで IoT 可能性が最も高く IT 運用とは
+      choices:
+        - content: 航空
+          isCorrect: false
+          incorrectExplanation: 正しくありません。
+        - content: データのセキュリティ
+          isCorrect: true
+          correctExplanation: そうです。
+        - content: Bioengineering
+          isCorrect: false
+          incorrectExplanation: 正しくありません。
+        - content: 自動車
+          isCorrect: false
+          incorrectExplanation: 正しくありません。
+    - content: 共有アクセス ポリシーのうち、どれが既定では作成されませんか。
+      choices:
+        - content: iothubowner
+          isCorrect: false
+          incorrectExplanation: 既定では、このポリシーが作成されます。
+        - content: service
+          isCorrect: false
+          incorrectExplanation: 既定では、このポリシーが作成されます。
+        - content: device
+          isCorrect: false
+          incorrectExplanation: 既定では、このポリシーが作成されます。
+        - content: registryWrite
+          isCorrect: true
+          correctExplanation: RegistryWrite としてこのようなポリシーはありません。

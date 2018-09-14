@@ -1,103 +1,103 @@
-Imagine you receive an alert from your company's security administrator that a potential security breach has been detected on your network. In order to protect your database servers, you decide to add auditing and monitoring.
+会社のセキュリティ管理者が潜在的なセキュリティ侵害が、ネットワーク上で検出されたことからアラートを受け取ったことを想像してください。 データベース サーバーを保護するために監査および監視を追加すること。
 
-In this unit, we look at how auditing is configured against a database, and how to use these audits.
+このユニットで、データベースに対する監査を構成する方法、およびこれらの監査を使用する方法に注目します。
 
-## Configure auditing
+## <a name="configure-auditing"></a>監査を構成します。
 
-You'll enable auditing to store the operations that occur on the database for later inspection, or have automated tools analyze them. Auditing is also used for compliance management or understanding how your database is used. Auditing is also required if you wish to use Azure threat detection on your Azure SQL database. 
+以降の検査のためのデータベースで発生する操作を格納する監査を有効にします。 またはが自動化されたツールに分析します。 コンプライアンスの管理や、データベースの使用方法については、監査も。 監査は、Azure 脅威の検出を Azure SQL database で使用する場合にも必要です。
 
-In order to store audits of the database, an Azure storage account will be needed to store the audit history.  
+データベースの監査を格納するためには、Azure ストレージ アカウントを監査履歴を格納する必要になります。
 
-Let's look at the steps you take to set up auditing on your system.
+システムの監査を設定するための手順を見てみましょう。
 
-1. Select the Azure SQL Server in the portal.
- 
-2. Navigate to the Auditing item in the left configuration options. You will find it in the Security category. 
- 
-3. Auditing is turned off by default. To enable it on your database server, tap the ON button. 
+1. ポータルで Azure SQL サーバーを選択します。
 
-4. Once the ON button is selected, select the Configure button to define the storage account. You can select an existing storage account or create a new storage account to store your audits. The storage account must be configured to use the same region as your server. 
+2. 左側の構成オプションで監査項目に移動します。 これは、セキュリティ カテゴリで表示されます。
 
-5. Click the 'Save' button in the toolbar to save your changes. 
+3. 監査については、既定でオフにします。 データベース サーバーで有効にするには、ON ボタンをタップします。
 
-These actions configure the audits at the database server level. You can also configure auditing to happen at a database level. 
+4. ボタンを選択すると、ストレージ アカウントを定義する構成 ボタンを選択します。 既存のストレージ アカウントを選択したり、監査を格納する新しいストレージ アカウントを作成できます。 ストレージ アカウントは、サーバーと同じリージョンを使用するように構成する必要があります。
 
-You'll now configure Advanced Threat Protection. 
+5. 変更を保存するには、ツールバーで、[保存] ボタンをクリックします。
 
-## Configure Advanced Threat Protection
+これらのアクションは、データベースのサーバー レベルの監査を構成します。 データベース レベルで発生する監査を構成することもできます。
 
-The Advanced Threat Protection system analyzes audit logs to look for potential problems and threats against your database.
+Advanced Threat Protection を今すぐ構成します。
 
-Let's look at the steps you take to configure Advanced Threat Protection on your system.
+## <a name="configure-advanced-threat-protection"></a>Advanced Threat Protection を構成します。
 
-1. Select the Azure SQL Server in the portal.
+Advanced Threat Protection のシステムでは、潜在的な問題と、データベースに対する脅威を探すように監査ログを分析します。
 
-2. Navigate to the Advanced Threat Protection item in the left configuration options. You'll find it in the Security category.
+システムで Advanced Threat Protection を構成するための手順を見てみましょう。
 
-3. Click the 'Enable Advanced Threat Protection on the server' button. 
+1. ポータルで Azure SQL サーバーを選択します。
 
-4. Change the Advanced Threat Protection switch to ON. 
- 
-5. Select View Advanced Threat Protection server settings to see the options for the database system. 
+2. 左側の構成オプションの Advanced Threat Protection の項目に移動します。 セキュリティ カテゴリを検索します。
 
-6. Next, define where notification emails will be delivered as a list of semicolon separated email addresses. Select Email service and co-administrators to send the threats to the service administrators. 
+3. '高度な脅威保護の有効化、サーバー上で' ボタンをクリックします。
 
-7. You'll now specify the subscription and storage account that will be analyzed for any threats on the system. This should be the subscription and Azure storage account configured for auditing. You also need to set the number of days to retain the audit history. Setting the value to zero means that the audit will be stored forever. 
+4. Advanced Threat Protection スイッチを ON に変更します。
 
-Next, select the Storage access key to connect to the audits. Once you have configured the options, press OK.
+5. データベース システムのオプションを表示するビューの Advanced Threat Protection サーバーの設定を選択します。
 
-Finally, set the Threat Detection types. The preferred option is All.
+6. 次に、通知電子メールがセミコロンのリストとして配信する区切りのメール アドレスを定義します。 電子メール サービスと共同管理者、サービス管理者への脅威の送信を選択します。
 
-All represents the following values:
+7. 今すぐサブスクリプションと、システム上のいずれかの脅威の分析されるストレージ アカウントを指定します。 サブスクリプションと Azure storage にはこのアカウントの監査用に構成します。 監査履歴を保持する日数を設定する必要があります。 0 に監査が永久に格納される値を設定します。
 
-- SQL injection reports where SQL injections attacks have occurred;
-- SQL injection vulnerability reports where the possibility of a SQL injection is likely; and
-- Anomalous client login looks at logins that are irregular and could be cause for concern, such as a potential attacker gaining access.  
+次に、監査に接続するためのストレージ アクセス キーを選択します。 オプションを構成した後は、[ok] を押します。
 
-Click the **Save** button to apply the changes. 
+最後に、脅威検出の種類を設定します。 推奨されるオプションです。
 
-You'll receive email notifications as vulnerabilities are detected. The email will outline what occurred and the actions to take. 
+すべては、次の値を表します。
 
-## Enable Advanced Threat Protection
+- SQL インジェクションのレポートが、SQL インジェクション攻撃が発生しました。
+- SQL インジェクションの脆弱性のレポートが SQL インジェクションの可能性がある可能性があります。そして
+- 異常なクライアント ログインのログインを正規表現ではなく、潜在的な攻撃者アクセスなどの問題の原因になる可能性がありますを見ます。
 
-Once you've configured the server for Advanced Threat Protection, you enable the option on each individual database. Navigate to the individual databases and enable Advanced Threat Protection by selecting 'Enable Advanced Threat Protection on the server'. 
+をクリックして、**保存**変更を適用するボタンをクリックします。
 
-You can turn on periodic recurring scans that will scan the system every seven days to look for vulnerabilities. 
+脆弱性が検出されると、電子メール通知を受け取ります。 何が発生し、アクションを電子メールは概要を示します。
 
-When you select the Periodic recurring scan option, a scan will run immediately after saving the settings. 
+## <a name="enable-advanced-threat-protection"></a>Advanced Threat Protection を有効にします。
 
-Click the **Save** button to save your changes. 
+Advanced Threat Protection のサーバーを構成したら、個々 のデータベースのオプションが有効にします。 個々 のデータベースに移動し、' 高度な脅威保護の有効化、サーバー上で ' を選択して、Advanced Threat Protection を有効にします。
 
-You'll receive an email notification notifying you of any security issues. Make sure to address the threat immediately. You may get a notification for a number of reasons:
+スキャンして、システムは 7 日おきの脆弱性を検索する定期的な反復スキャンを有効にできます。
 
-![An example notification warning from Advanced Threat Protection](../media-draft/5-email-with-warning.png)
+定期的な定期的なスキャンのオプションを選択すると、スキャンが、設定を保存した後すぐに実行されます。
 
-Selecting the Advanced Threat Protection option when Advanced Threat Protection is running, you'll see a list of issues presented. This list may include Data Discovery & Classification problems such as sensitive data, a list of vulnerabilities on the system, and potential threats.  
+**[保存]** をクリックして、変更を保存します。
 
-![Data Discovery & Classification](../media-draft/5-data-discovery-and-classification.png)
+セキュリティ上の問題を通知する電子メール通知を受け取ります。 脅威にすぐに対応するを確認します。 さまざまな理由から、通知が表示可能性があります。
 
-The Data Discovery & Classification panel shows columns within your tables that need to be protected. Some of the columns may have sensitive information, or would be considered classified in different countries or regions.  
+![Advanced Threat Protection からの例の通知警告](../media-draft/5-email-with-warning.png)
 
-Click on the Data Discovery & Classification panel. 
+Advanced Threat Protection が実行されている場合は、Advanced Threat Protection オプションを選択すると、表示する問題の一覧が表示されます。 この一覧には、データの検出と分類の問題の機密データなど、システム、および潜在的な脅威の脆弱性の一覧を含めることができます。
 
-A message will be displayed if any columns need protection configured. This message will be in the form of *"We have found 10 columns with classification recommendations"*. You can click on the text to view the recommendations. 
+![データの検出と分類](../media-draft/5-data-discovery-and-classification.png)
 
-Select the columns that you want to classify by clicking the checkmark next to the column, or select the checkbox to the left of the schema header. Select the Accept selected recommendations options to apply the classification recommendations.
+データの検出と分類のパネルには、保護する必要がある、テーブル内の列が表示されます。 一部の列、機密情報があります。 またはと思われる異なる国や地域に分類されています。
 
-You'll edit the columns and then define the information type and the sensitivity label for the database. Click on the Save button to save the changes. 
+データの検出と分類のパネルをクリックします。
 
-No active recommendations should be listed once you've managed the recommendations successfully.
+すべての列には、保護構成が必要がある場合、メッセージが表示されます。 このメッセージの形式になります *「分類の推奨事項の 10 個の列を発見しました」* します。 推奨事項を表示するテキストをクリックすることができます。
 
-![Vulnerability Assessment Dashboard](../media-draft/5-vunrability-assessment-dashboard.png)
+列の横にあるチェック マークをクリックして分類する列を選択またはスキーマ ヘッダーの左側にあるチェック ボックスを選択します。 分類の推奨事項を適用する Accept が選択されている推奨事項のオプションを選択します。
 
-The Vulnerability Assessment lists configuration issues on your database and the associated risk. For example, in the image above, you can see the server-level firewall needs to be set up.
+列を編集し、情報の種類とデータベースの機密ラベルを定義します。 変更を保存する [保存] ボタンをクリックします。
 
-Click on the Vulnerability Assessment panel to review a full list of vulnerabilities. From here, you'll click on each individual vulnerability. 
+アクティブな推奨事項は表示されません、推奨事項を正常に管理しました。
 
-On that page you will see the details such as the risk level, which database it applies to, a description of the vulnerability, and the recommended remediation to fix the issue. You'll apply the remediation to fix the issue or issues. Make sure to address all the vulnerabilities.
- 
-![Threat Detection](../media-draft/5-threat-detection-dashboard.png)
+![脆弱性評価のダッシュ ボード](../media-draft/5-vulnerability-assessment-dashboard.png)
 
-The last chart displays a list of threat detections. For example, in this list you'll see a number of potential SQL injection attacks. 
- 
-Like the vulnerabilities, click on the Threat Detection panel to navigate to the list of entries to see what the threat is. Then address that issue by following the recommendations.  For issues such as the SQL injection warnings, you'll be able to look at the query and work backward to where that query is being executed in code. Once found, you'll rewrite the code so it will no longer have the issue. 
+脆弱性評価では、データベースと、関連するリスクの構成の問題が一覧表示します。 たとえば、上記の図で確認できますサーバー レベルのファイアウォールを設定する必要があります。
+
+脆弱性の完全な一覧を確認する脆弱性評価のパネルをクリックします。 ここには、それぞれ個別の脆弱性をクリックします。
+
+そのページで、脆弱性、および問題を解決する推奨される修復方法の説明に適用されるデータベースのリスク レベルなどの詳細が表示されます。 問題を解決する修復を適用します。 すべての脆弱性に対処してください。
+
+![脅威の検出](../media-draft/5-threat-detection-dashboard.png)
+
+最後のグラフには、脅威検出の一覧が表示されます。 たとえば、この一覧に潜在的な SQL インジェクション攻撃の数値が表示されます。
+
+脆弱性のようには、脅威を確認するエントリの一覧に移動する脅威検出のパネルをクリックします。 推奨事項に従ってその問題に対処します。  SQL インジェクションの警告などの問題については、ことができますを調べて、クエリ、さかのぼって、コードでそのクエリが実行されている場所にします。 見つかると、問題がある不要になったため、コードを書き換えるします。

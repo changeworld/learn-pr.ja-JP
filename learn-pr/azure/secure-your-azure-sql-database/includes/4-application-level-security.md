@@ -1,31 +1,31 @@
-Imagine that a hacker is trying to access your database. Applications that connect to the database are vulnerable spots to attack. Those applications may not be connecting to the database using secure methods.
+ハッカーがデータベースにアクセスしようとしていることを想像してください。 データベースに接続するアプリケーションは、攻撃に対して脆弱スポットです。 これらのアプリケーションをセキュリティで保護されたメソッドを使用してデータベースに接続されていない可能性があります。
 
-Databases need their own security, but how the database is accessed can play an important role in data security. Successful database breaches are normally the result of SQL injection attacks. SQL injection attacks are the result of applications not using preferred practices for accessing a database. 
+データベースには、独自のセキュリティが必要がありますが、データのセキュリティの重要な役割を果たしますデータベースへのアクセスします。 データベースの正常な侵害は、通常、SQL インジェクション攻撃の結果です。 SQL インジェクション攻撃は、データベースへのアクセスに推奨されるプラクティスを使用していないアプリケーションの結果です。
 
-Let's look at techniques to secure your database at the application layer.
+アプリケーション層では、データベースを保護するための手法を見てみましょう。
 
-## SQL injection attacks
+## <a name="sql-injection-attacks"></a>SQL インジェクション攻撃
 
-The [OWASP foundation](https://owasp.org) is a not-for-profit organization that is designed to build standards for applications to be trusted. It publishes regularly a list of the top 10 security vulnerabilities.   
+[OWASP foundation](https://owasp.org)標準を信頼するアプリケーションをビルドするように設計された非営利組織です。 定期的にその発行する上位 10 個のセキュリティの脆弱性の一覧。
 
-The most common vulnerability according to the OWASP is injection attacks, which normally take the form of SQL injection attacks. In a SQL injection attack, information that is passed to a SQL statement is modified. These modified queries either return sensitive information, or perform malicious operations on the database.
+OWASP に従って最も一般的な脆弱性は、インジェクション攻撃は、通常 SQL インジェクション攻撃の形式になります。 SQL インジェクション攻撃では、SQL ステートメントに渡される情報が変更されます。 これらの変更されたクエリは、機密情報を返すか、データベース上の悪意のある操作を実行します。
 
-Let’s look at the following ASP.NET Core code using ADO.NET to fetch the interactions with a particular customer. 
+ADO.NET を使用して、特定の顧客との対話をフェッチする次の ASP.NET Core コードを見てみましょう。
 
 ```csharp
 public List<CustomerInteraction> GetCustomerInteractions(string customerId)
 {
     var result = new List<CustomerInteraction>();
 
-    using (var conn = new SqlConnection(ConnectionString))  
-    {  
-        var sql = "select Id, CustomerId, InteractionDate, Details " + 
+    using (var conn = new SqlConnection(ConnectionString))
+    {
+        var sql = "select Id, CustomerId, InteractionDate, Details " +
             "from CustomerInteractions where CustomerId = '" + customerId + "'";
-        
-        using (var command = conn.CreateCommand())  
-        {  
+
+        using (var command = conn.CreateCommand())
+        {
             command.CommandText = sql;
-            conn.Open();  
+            conn.Open();
 
             using (var reader = command.ExecuteReader())
             {
@@ -35,52 +35,53 @@ public List<CustomerInteraction> GetCustomerInteractions(string customerId)
                         result.Add(GetInteractionsFromReader(reader));
                 }
             }
-        }  
+        }
         return result.OrderByDescending(i => i.InteractionDate).ToList();
-    } 
+    }
 }
 ```
 
-The query itself is primed for an SQL attack, as the customerId parameter isn't sanitized before going into the query and so could be modified. The website that is calling the query is passing the customerId parameter on the URL query string as follows:
+CustomerId パラメーターがクエリに進む前にサニタイズされていないため、変更できることと、SQL 攻撃は、クエリ自体が先読みです。 クエリを呼び出している web サイト パラメーターを渡して、customerId、URL クエリ文字列に次のように。
 
 .../Home/ViewInteractions?customerId=8c69a607-3c09-45ac-9beb-c59ca2de2385
 
-The problem with this strategy is that the customerId parameter can be modified. For example, you could modify the customerId parameter to put additional information into the query and select data from a different table. 
+この戦略では、問題は、customerId パラメーターを変更できます。 たとえば、クエリに追加の情報を格納し、別のテーブルからデータを選択するには、customerId パラメーターを変更できます。
 
 ```sql
-select Id, CustomerId, InteractionDate, Details from CustomerInteractions where CustomerId = '8c69a607-3c09-45ac-9beb-c59ca2de2385' 
+select Id, CustomerId, InteractionDate, Details from CustomerInteractions where CustomerId = '8c69a607-3c09-45ac-9beb-c59ca2de2385'
 ```
 
-It can now be modified to add additional information via a UNION statement to add additional information, by adding the following to the query:
+クエリに、次を追加することで、情報を追加する UNION ステートメントを使用して情報を追加するようになりました変更できます。
 
 ```sql
-union select Id, Id as CustomerId, getdate() as InteractionDate, CreditCardNumber + '/' + STR(CreditCardExpiryMonth, 2) + '/' + STR(CreditCardExpiryYear, 4) + ' cvv ' + STR(CreditCardCVV, 3) as Details from Customers --    
+union select Id, Id as CustomerId, getdate() as InteractionDate, CreditCardNumber + '/' + STR(CreditCardExpiryMonth, 2) + '/' + STR(CreditCardExpiryYear, 4) + ' cvv ' + STR(CreditCardCVV, 3) as Details from Customers --
 ```
 
-The SQL query is URL-encoded so that the value is accepted as a valid web URL part. The URL is passed to the website and the additional SQL query executed on the database. 
+SQL クエリは、URL でエンコードされた値が有効な web URL の一部として受け入れられるようにします。 URL は、web サイトに渡され、データベースで追加の SQL クエリを実行します。
 
 ```sql
 %27+union+select+Id%2C+Id+as+CustomerId%2C+getdate%28%29+as+InteractionDate%2C+CreditCardNumber+%2B+%27%2F%27+%2B+STR%28CreditCardExpiryMonth%2C+2%29+%2B+%27%2F%27+%2B+STR%28CreditCardExpiryYear%2C+4%29+%2B+%27+cvv+%27+%2B+STR%28CreditCardCVV%2C+3%29+as+Details+from+Customers+--
 ```
-This example demonstrates how not sanitizing the information from the site can lead to data security issues.
 
-![An example of a SQL injection attack via a web app](../media-draft/4-view-web-page-after-sql-injection.png)
+この例はない方法ではデータ セキュリティの問題につながる、サイトから情報をサニタイズすることです。
+
+![Web ブラウザーのアドレス バーの web アプリを使用して SQL インジェクション攻撃の試行の例を示すスクリーン ショット。](../media-draft/4-view-web-page-after-sql-injection.png)
 
 > [!Note]
-> To find out more about injection attacks, visit the [OWASP Foundation](https://www.owasp.org/). 
+> インジェクション攻撃の詳細については、次を参照してください。、 [OWASP Foundation](https://www.owasp.org/)します。
 
-## Avoiding SQL injection attacks
+## <a name="avoiding-sql-injection-attacks"></a>SQL インジェクション攻撃の回避
 
-To avoid SQL injection attacks, you should always make sure that any user-entered input is sanitized. User input used as parameters for queries shouldn't be constructed through string concatenation, but passed as actual query parameters.
+SQL インジェクション攻撃を回避するためには、常で任意のユーザーが入力した入力をサニタイズすることを確認する必要があります。 クエリにパラメーターとして使用されるユーザー入力を文字列の連結を使用して構築されたが実際のクエリ パラメーターとして渡されることはできません。
 
-In the following example, you can see how the CustomerId is now passed in as a parameter using the @ symbol. Parameters are defined explicitly and values passed into the query.
+次の例では、CustomerId が今すぐで渡す方法を使用して、パラメーターとしてを表示できます、@ 記号。 パラメーターが明示的に定義されているし、クエリに渡される値。
 
 ```csharp
 using (var command = conn.CreateCommand())
 {
     var sql = "select Id, CustomerId, InteractionDate, Details " +
         "from CustomerInteractions where CustomerId = @CustomerId order by InteractionDate";
-    
+
     command.CommandText = sql;
     var prmCustomerId = command.Parameters.Add("@CustomerId", SqlDbType.UniqueIdentifier);
     prmCustomerId.Value = Guid.Parse(customerId);
@@ -98,51 +99,49 @@ using (var command = conn.CreateCommand())
 }
 ```
 
-The core lines of code are:
+中核となる行のコードは次のとおりです。
 
 ```csharp
     var prmCustomerId = command.Parameters.Add("@CustomerId", SqlDbType.UniqueIdentifier);
     prmCustomerId.Value = Guid.Parse(customerId);
 ```
 
-Using sanitized data input and parameterized queries reduces the chances of SQL injection attacks on your database. 
+先頭が英文字のデータの入力とパラメーター化クエリを使用して、データベースで SQL インジェクション攻撃の可能性が減少します。
 
-Our example used ASP.NET Core to demonstrate the concepts. However, keep in mind that all programming systems that support access to SQL Server have mechanisms to pass parameters into the values for queries.
+この例では、概念を示す ASP.NET Core を使用します。 ただし、SQL Server へのアクセスをサポートするすべてのプログラミング システムのクエリの値にパラメーターを渡すメカニズムであることに留意してください。
 
-## Dynamic data masking
+## <a name="dynamic-data-masking"></a>動的データ マスク
 
-You might have noticed that some of the information in the database is particularly sensitive; perhaps credit card information. In a real-world system, you would never store credit card information unencrypted. Unfortunately, the credit card information is not encrypted, and you'll need to find another way to hide the data.
+お気付きかもしれません。 特に機密性の高いいくつかのデータベースの情報があります。クレジット_カード情報などです。 実際のシステムで暗号化されていないクレジット_カード情報を保存するとしないでください。 残念ながら、クレジット カード情報が暗号化されていないと、データを非表示にする別の方法を検索する必要があります。
 
-Let's assume you're building a shopping website, and during the order process the site has to display credit card details. You want to display the first 12 digits blocked out from the user, to appear like xxxx-xxxx-xxxx-1234.
+ショッピング web サイトを構築して、プロセス中に、サイトがクレジット_カードの詳細を表示すると仮定します。 Xxxx xxxx xxxx 1234 のように表示する、ユーザーからのブロック最初の 12 桁の数字を表示するには。
 
-This technique is called dynamic data masking. Dynamic data masking allows you to add masks against the columns within your database. 
+この手法では、動的データ マスクは呼び出されます。 動的データ マスク、データベース内の列に対してマスクを追加することができます。
 
-Using the portal, you select the database you want to apply the masks to, and then select the Dynamic Data Masking option from the Security setting.
+1. マスクを適用して、選択するデータベースを選択するために、ポータルを使用して、**動的データ マスク**オプションを**セキュリティ**設定します。
 
-![Select Dynamic Data Masking.](../media-draft/4-select-dynamic-data-masking.png)
+    マスク ルールの画面には、既存の動的データ マスク、および推奨事項の適用、動的データ マスクを持つ可能性のある列の一覧が表示されます。
 
-The Masking rules screen shows a list of existing dynamic data masks, and recommendations for columns that should potentially have a dynamic data mask applied. 
+    ![サンプル データベースの列をさまざまなデータベースの推奨されるマスクの一覧を示す Azure ポータルのスクリーン ショット。](../media-draft/4-view-recommended-masked-columns.png)
 
-![List of the recommended masked columns](../media-draft/4-view-recommended-masked-columns.png)
+1. 列にマスクを追加するには、クリックして、**追加マスク**列に推奨されるマスクを追加するボタンをクリックします。
 
- To add a mask to a column, click the Add mask button to add the recommended mask to the column. 
+    ![使用されるマスク関数と Auzre ポータルを表示中の推奨される適用マスクされた列のスクリーン ショット。](../media-draft/4-recommended-masks-applied.png)
 
-![The recommended masked columns once applied](../media-draft/4-recommended-masks-applied.png)
+1. 新しい各マスクは、マスク ルールの一覧に追加されます。 をクリックして、**保存**マスクを適用するボタンをクリックします。
 
-Each new mask will be added to the Masking rules list. Click the Save button to apply the masks.
+列を照会するときにデータベース管理者、元の値が引き続き表示されますが、管理者以外のユーザーはマスクの値を参照してください。
 
-When querying the columns, database administrators will still see the original values, but non-administrators will see the masked values. 
+一覧にマスクから除外する SQL ユーザーを追加することによって、マスクされた以外のバージョンを表示するには、他のユーザーを許可することができます。
 
-You can allow other users to see the non-masked versions by adding them to the SQL users excluded from masking list.  
+ご覧のとおり、マスクされたデータがどのようにと、管理者以外で照会します。
 
-You can see here what the masked data looks like when queried by a non-administrator.
+![電子メール、電話番号、SocialSecurityNumber、および CreditCardNumber を表示するデータベース クエリのスクリーン ショットには、管理者以外は表示は、マスクされた列があります。](../media-draft/4-sql-query-showing-masks.png)
 
-![List of the recommended masked columns](../media-draft/4-sql-query-showing-masks.png)
+ディスプレイ上のマスクはに基づいて推奨事項は、追加されたものすぎるマスクを手動で追加できます。 選択、+ マスク ボタンを追加して、pop over が許可すると、スキーマ、テーブル、および使用する列を選択します。 使用されるマスクを定義します。 など、使用できる標準のマスクがあります。
 
-The masks on the displays are ones added based on recommendations, but you can add a mask manually too. Select the + Add mask button, and then the popover will allow you to select the schema, table, and column to use. You then define the masking that is used. There are standard masks that can be used such as:
-
-- Default value, which displays the default value for that data type instead;
-- Credit card value, which only shows the last four digits of the number, converting all other numbers to lower case x’s;
-- Email, which hides the domain name and all but the first character of the email account name; 
-- Number, which specifies a random number between a range of values. For example, on the credit card expiry month and year, you could select random months from 1 to 12 and set the year range from 2018 to 3000; or
-- Custom string. This allows you to set the number of characters exposed from the start of the data, the number of characters exposed from the end of the data, and the characters to repeat for the remainder of the data. 
+- 既定値は、代わりに、そのデータ型の既定値を表示します
+- クレジット_カードの値は、大文字と小文字の x; その他のすべての数値に変換する番号の最後の 4 桁のみが表示されます。
+- 電子メール、名前と電子メール アカウントの名の最初の文字を除くすべてのドメインを非表示にします。
+- 数は、乱数値の範囲を指定します。 たとえば、クレジット_カードの有効期限の月と年で、1 から 12 か月間のランダムを選択して 2018 から年の範囲を 3000; に設定または
+- カスタム文字列。 これにより、データの開始、文字、データの末尾から公開されると、データの残りの部分を繰り返す文字の数から公開されている文字数を設定することができます。

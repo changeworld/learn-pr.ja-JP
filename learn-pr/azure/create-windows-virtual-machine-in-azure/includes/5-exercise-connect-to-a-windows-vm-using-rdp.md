@@ -1,100 +1,100 @@
-We have our Windows VM deployed and running, but it's not configured to do any work.
+Windows VM の展開が完了して起動されていますが、タスクを行うための設定が行われていません。
 
-Recall our scenario is a video processing system. Our platform receives files through FTP. The traffic cameras upload video clips to a known URL which is mapped to a folder on the server. The custom software on each Windows VM runs as a service and watches the folder and processes each uploaded clip. It then passes the normalized video to our algorithms running on other Azure services.
+今回使用するシナリオは映像処理システムであることを思い返してください。 プラットフォームは FTP を通じてファイルを受け取ります。 トラフィックのカメラはビデオ クリップをサーバー上のフォルダーにマップされている既知の URL にアップロードします。 各 Windows VM 上のカスタム ソフトウェアがサービスとして実行され、フォルダを監視してアップロードされたそれぞれのクリップを処理します。 その後、正規化された映像を他の Azure サービス上で実行されているアルゴリズムに渡します。
 
-There are a few things we would need to configure to support this scenario:
+このシナリオをサポートするためには、いくつかの設定を行う必要があります。
 
-- Install FTP and open the ports it needs to communicate.
-- Install the proprietary video codec unique to the city's camera system.
-- Install our transcoding service that processes uploaded videos.
+- FTP をインストールして通信を行うのに必要なポートを開ける。
+- 都市のカメラ システムにあわせた独自の映像コーデックをインストールする。
+- アップロードされた映像を処理するためのトランスコード サービスをインストールする。
 
-Many of these are typical administrative tasks we won't actually cover here, and we don't have software to install. Instead, we will walk through the steps and show you how you _could_ install custom or 3rd party software using Remote Desktop. Let's start by getting the connection information.
+これらの多くは一般的な管理タスクであり、ここでは実際に取り上げないため、インストールするソフトウェアはありません。 代わりに、手順を説明しますが、方法について説明しする_でした_リモート デスクトップを使用して、カスタムまたはサードパーティ製のソフトウェアをインストールします。 それでは、接続情報の取得から始めましょう。
 
-## Connect to the VM with Remote Desktop Protocol
+## <a name="connect-to-the-vm-with-remote-desktop-protocol"></a>Remote Desktop Protocol を使って VM に接続する
 
-To connect to an Azure VM with an RDP client, you will need:
+RDP クライアントを使って Azure VM に接続するには、次が必要になります。
 
-- The public IP address of the VM (or private if the VM is configured to connect to your network).
-- The port number.
+- VM のパブリック IP アドレス（VM がお客様のネットワークへの接続設定をされている場合はプライベート アドレス）。
+- ポート番号。
 
-You can enter this information into the RDP client, or download a pre-configured **RDP** file.
+この情報を RDP クライアントに入力するか、事前設定された **RDP** ファイルをダウンロードすることができます。
 
-### Download the RDP file
+### <a name="download-the-rdp-file"></a>RDP ファイルのダウンロード
 
-1. In the [Azure portal](https://portal.azure.com?azure-portal=true), ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel has a lot of information about the VM.
+1. [Azure portal](https://portal.azure.com?azure-portal=true) 内で、以前に作成した仮想マシンの**概要**パネルが開かれていることを確認します。 もしパネルを開く必要がある場合は、**すべてのリソース**下で VM を見つけることができます。 概要パネルには、VM に関する多数の情報があります。
 
-    - You can see whether the VM is running.
-    - Stop or restart it.
-    - Get the public IP address to connect to the VM.
-    - See the activity of the CPU, disk, and network.
+    - VM が起動中か否かを確認可能。
+    - VM の停止または再起動。
+    - VM へ接続するためのパブリック IP アドレスを取得。
+    - CPU、ディスク、およびネットワークの活動状況を確認。
 
-1. Click the **Connect** button at the top of the pane.
+1. パネル最上部の**接続**ボタンをクリックします。
 
-1. In the **Connect to virtual machine** blade, note the **IP address** and **Port number** settings, then click **Download RDP File** and save it to your computer.
+1. **仮想マシンへの接続**ブレード内で、**IP アドレス**および**ポート番号**設定を控えたあと、**RDP ファイルのダウンロード**をクリックしてコンピュータに保存します。
 
-1. Before we connect, let's adjust a few settings. On Windows, find the file using Explorer, right-click and select **Edit**. On MacOS you will need to open the file first with the RDP client and then right-click on the item in the displayed list and select **Edit**.
+1. 接続するまえに、いくつかの設定を調整しましょう。 Windows では、Explorer を使ってファイルを探し、右クリックをして**編集**を選択します。 macOS では、最初に RDP クライアントでファイルを開いてから、表示されるリストで項目を右クリックして **[編集]** を選択する必要があります。
 
-1. You can adjust a variety of settings to control the experience in connecting to the Azure VM. The settings you will want to examine are:
+1. さまざまな設定を調整して、Azure VM への接続エクスペリエンスを制御することが可能です。 調べる設定は以下のようなものがあります。
 
-    - **Display**: By default, it will be full screen. You can change this to a lower resolution, or use all your monitors if you have more than one.
-    - **Local Resources**: You can share local drives with the VM - allowing you to copy files from your PC to the VM. Click the **More** button under **Local devices and resources** to select what is shared.
-    - **Experience**: Adjust the visual experience based on your network quality.
+    - **表示**：デフォルトではフルスクリーンになっています。 この項目をより低解像度に変更したり、複数のモニタを持っている場合はすべてのモニタを使うこともできます。
+    - **ローカル リソース**：ローカル ドライブを VM と共有することで、PC から VM へファイルをコピーすることができるようになります。 **ローカルのデバイスおよびリソース**の下にある**詳細**ボタンをクリックして、共有するものを選択します。
+    - **エクスペリエンス**：ネットワーク品質に基づいてビジュアル エクスペリエンスを調整します。
 
-1. Share your Local C: drive so it will be visible to the VM.
+1. VM から可視化するために、ローカルの C: を共有します。
 
-1. Switch back to the **General** tab and click **Save** to save the changes. You can always come back and edit this file later to try other settings.
+1. **一般**タブに戻り、**保存**をクリックして変更を保存します。 他の設定を試すために、いつでもこのファイルの編集に戻ってくることができます。
 
-### Connect to the Windows VM
+### <a name="connect-to-the-windows-vm"></a>Windows VM に接続する
 
-1. Click the **Connect** button to start the connection to the VM.
+1. **接続**ボタンをクリックして、VM への接続を開始します。
 
-1. In the **Remote Desktop Connection** dialog box, note the security warning and the remote computer IP address, then click **Connect**.
+1. **リモート デスクトップ接続** ダイアログ ボックスで、セキュリティに関する警告とリモート コンピューターの IP アドレスをメモしてから **接続** をクリックします。
 
-1. In the **Windows Security** dialog box, enter your username and password that you used in steps 6 and 7.
-    
+1. **Windows Security** のダイアログ ボックス内で、手順 6 および 7 で使用したユーザー名とパスワードを入力します。
+
     > [!NOTE]
-    > If you are using a Windows client to connect to the VM, it will default to known identities on your machine. You can click the **More choices** option and select "Use a different account" to let you enter a different username/password combination.
-    
-1. In the second **Remote Desktop Connection** dialog box, note the certificate errors, then click **Yes**.
+    > VM への接続に Windows クライアントを使用している場合、マシン上の既知の ID にデフォルト設定されます。 **複数の選択肢**オプションをクリックして「違うアカウントを使用する」を選択することで、別のユーザー名、パスワードまたはその組み合わせを入力することができます。
 
-### Install worker roles
+1. 2 番目の **リモート デスクトップ接続** ダイアログ ボックスで、証明書に関するエラーをメモしてから **はい** をクリックします。
 
-The first time you connect to a Windows server VM, it will launch Server Manager. This allows you to assign a worker role for common web or data tasks. You can also launch the Server Manager through the Start Menu.
+### <a name="install-worker-roles"></a>ワーカー ロールのインストール
 
-This is where we would add the Web Server role to the server. This will install IIS and as part of the configuration you would turn off HTTP requests and enable the FTP server. Or, we could ignore IIS and install a 3rd party FTP server. We'd then configure the FTP server to allow access to a folder on our big data drive we added to the VM.
+Windows サーバー VM への初回接続時は、サーバー マネージャーが起動します。 これによって、一般的なウェブまたはデータ タスクのワーカー ロールを割り当てることができます。 Start メニューからもサーバー マネージャーを立ち上げることができます。
 
-Since we aren't going to actually configure that here, just close Server Manager.
+ここで、サーバーに Web Server のロールを追加します。 これによって IIS がインストールされ、設定の一環として HTTP リクエストがオフになり、FTP サーバーが有効になります。 または、IIS を無視して、サード パーティ製の FTP サーバーをインストールできます。 その後 FTP サーバーを設定し、VM に追加したビッグ データ ドライブのフォルダへのアクセスを有効にします。
 
-## Install custom software
+ここでは実際の設定は行いませんので、サーバー マネージャーを閉じます。
 
-We have two approaches we can use to install software. First, this VM is connected to the Internet. If the software you need has a downloadable installer, you can open a web browser in the RDP session, download the software, and install it. Second, if your software is custom - like our custom service, you can copy it from your local machine over to the VM to install it. Let's look at this latter approach.
+## <a name="install-custom-software"></a>カスタム ソフトウェアのインストール
 
-1. Open File Explorer. Click on **This PC** in the sidebar. You should see several drives:
+ソフトウェアをインストールする際に使用できる、2 種類のアプローチがあります。 先ず、この VM はインターネットに接続されています。 必要なソフトウェアがダウンロード可能なインストーラを提供している場合、RDP セッション内でウェブ ブラウザを開き、ソフトウェアをダウンロードしてインストールすることができます。 次に、ソフトウェアがカスタムである場合、ローカル マシンから VM へソフトウェアをコピーしてインストールすることができます。 後者のアプローチを見ていきましょう。
 
-    - Windows (C:) drive representing the OS.
-    - Temporary Storage (D:) drive.
-    - Your local C: drive (it will have a different name than shown below).
+1. エクスプローラーを開きます。 サイドバーにある**この PC** をクリックします。 いくつかのドライブが見えます。
 
-    ![Local drive shared with Azure](../media-drafts/6-drive-list.png)
+    - Windows（C:）ドライブは、OS を表しています。
+    - 一時ストレージ（D:）ドライブです。
+    - ローカルの C: ドライブです（下記に表示されているものと別の名前を持ちます）。
 
-With access to your local drive, you can copy the files for the custom software onto the VM and install the software. We won't actually do that since it's just a simulated scenario, but you can imagine how it would work.
+    ![Azure VM と共有するローカル ドライブを示すスクリーン ショット。](../media/6-drive-list.png)
 
-The more interesting thing to observe in the list of drives is what is _missing_. Notice that our **Data** drive is not present. Azure added a VHD but didn't initialize it.
+ローカル ドライブにアクセスしてカスタム ソフトウェアのファイルを VM にコピーし、ソフトウェアをインストールできます。 これは単なるシミュレートされたシナリオであるため、実際には行いませんが、そのしくみを想像することはできます。
 
-## Initialize data disks
+ドライブの一覧でさらに興味深いことは、_表示されていない_ものです。 **データ** ドライブが存在していないことに注目してください。 Azure は VHD を追加しましたが、初期化は行っていません。
 
-Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical drive.
+## <a name="initialize-data-disks"></a>データ ディスクの初期化
 
-1. Launch the **Disk Management** tool from the Start Menu.
+一から作成した追加ドライブはすべて、初期化してフォーマットする必要があります。 これは、物理ディスクへ行う処理と同一です。
 
-1. It will display a warning that it has detected an uninitialized disk.
+1. Start メニューから**ディスク管理**ツールを起動します。 コンピューターの管理に最初に、次に、ディスクの管理をツールまたは、スタート メニューの 「ディスクの管理」を検索してみてくださいの移動する必要があります。
 
-    ![Initialize the data disk in the VM](../media-drafts/6-disk-management.png)
+1. これによって、初期化されていないディスクを検出したという警告が表示されます。
 
-1. Click **OK** to initialize the disk. It will then show up in the list of volumes where you can format it and assign a drive letter.
+    ![VM で、初期化されていないデータ ディスクに関するディスク管理ツールの警告を示すスクリーン ショット。](../media/6-disk-management.png)
 
-1. Open File Explorer and you should now see your data drive.
+1. **OK** をクリックしてディスクを初期化します。 その後、フォーマット可能なボリューム一覧が表示され、ドライブ名が割り当てられます。
 
-1. Go ahead and close the RDP client to sign out of the VM. The server will continue to run.
+1. ファイル エクスプローラーを開くと、データ ドライブが表示されるようになりました。
 
-RDP allows you to work with the Azure VM just like a local computer. With Desktop UI access, you can administer this VM as you would any Windows computer: installing software, configuring roles, adjusting features and other common tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+1. RDP クライアントを閉じて VM からサインアウトします。 サーバーは引き続き実行中となります。
+
+RDP を使うと、ローカル コンピュータと同様の操作で Azure VM での作業が行えます。 デスクトップ UI アクセスを使って、他の Windows コンピュータと同じように、ソフトウェアのインストール、役割の設定、機能の調整およびその他の一般的なタスクなどを行うことができます。 ただし、これらはマニュアルでの処理です。もし今後何かのソフトウェアをインストールする必要がある場合、スクリプトを使った処理の自動化を検討するのも良いでしょう。

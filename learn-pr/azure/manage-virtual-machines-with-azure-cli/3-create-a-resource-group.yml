@@ -9,13 +9,8 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 29c14dde9223a6a5ea583049d3d027a3446aa65a
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310359"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/3-create-a-resource-group.md)]'
+content: |
+  [!include[](includes/3-create-a-resource-group.md)]

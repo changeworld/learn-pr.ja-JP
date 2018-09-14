@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.3-identity-and-access
-title: Identity and access
+title: ID とアクセス
 metadata:
-  title: Identity and access
-  description: In this unit, we'll discuss identities and role-based authorization.
+  title: ID とアクセス
+  description: このユニットでは、id とロール ベースの承認について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

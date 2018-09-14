@@ -16,7 +16,6 @@ Azure portal は、1 つのタスクを実行したり、ご利用のリソー�
 
 ## <a name="prerequisites"></a>前提条件  
 
-- PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
+- PowerShell または Bash などのコマンド ライン インターフェイスのエクスペリエンス
 - リソース グループなど、Azure の基本的な概念に関する知識
 - Azure portal を使用した Azure リソースの管理経験
-- 

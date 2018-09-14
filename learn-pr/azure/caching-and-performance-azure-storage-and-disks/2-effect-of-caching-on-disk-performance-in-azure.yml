@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.2-effect-of-caching-on-disk-performance-in-azure
-title: Effect of caching on disk performace in Azure
+title: Azure でのディスク パフォーマンス上のキャッシュの効果
 metadata:
-  title: Effect of caching on disk performace in Azure
-  description: Effect of caching on disk performace in Azure
+  title: Azure でのディスク パフォーマンス上のキャッシュの効果
+  description: Azure でのディスク パフォーマンス上のキャッシュの効果
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

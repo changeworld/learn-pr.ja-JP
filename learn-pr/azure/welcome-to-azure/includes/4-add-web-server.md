@@ -1,220 +1,163 @@
-Now that your VM is up and running, let's do something with it. Here you'll install a web server and serve up a basic web page that displays the VM's hostname.
+これで、VM は稼働しているが、何らかの処理にやってみましょう。 ここで、web サーバーをインストールしており、VM のホスト名を表示する基本的な web ページを使用します。
 
-To configure a VM, you have several choices. You can connect directly and interactively configure your system. For example, on Windows systems you can create a Remote Desktop session to connect to the UI of your remote Windows computer as if you were seated at it. On Linux systems, you can create an SSH connection to securely work with your remote Linux system from the terminal.
+VM を構成するには、いくつかの選択肢があります。 直接接続でき、対話形式で、システムを構成することができます。 たとえば、Windows システム上で確実に挿入されたかのように、リモートの Windows コンピューターの UI に接続するリモート デスクトップ セッションを作成できます。 Linux のシステムでは、ターミナルから、リモートの Linux システムを安全に使用する SSH 接続を作成できます。
 
-Manual configuration is a good start, but as you add systems, you can automate your deployments. Automation involves running repeatable processes such as programs and scripts that take care of the heavy lifting for you.
+手動の構成が、有効な出発点ですが、システムを追加すると、デプロイを自動化できます。 Automation では、プログラムとの面倒な作業を処理するスクリプトなどの反復可能なプロセスを実行している必要があります。
 
 ::: zone pivot="windows-cloud"
 
-Here, you'll configure IIS remotely from your Cloud Shell session using a feature of Windows-based Azure virtual machines called the Custom Script Extension.
+ここでは、Windows に基づく Azure 仮想マシンを使用するカスタム スクリプト拡張機能と呼ばれる機能を使用して Cloud Shell セッションからリモートで IIS を構成します。
 
 ::: zone-end
 
 ::: zone pivot="linux-cloud"
 
-Here, you'll interactively log into your VM and configure Nginx.
+ここでは、linux Azure 仮想マシンを使用するカスタム スクリプト拡張機能と呼ばれるの機能を使用して Cloud Shell セッションからリモートで Nginx を構成します。
 
 ::: zone-end
 
 ::: zone pivot="windows-cloud"
 
-## What is IIS?
+## <a name="what-is-iis"></a>IIS とは何ですか。
 
-Internet Information Services, or IIS, is a web server that runs on Windows. You can use IIS to serve standard web content (HTML, CSS, and JavaScript) or run ASP.NET and other kinds of web applications. IIS comes with Windows Server, but you need to activate it to start serving web pages.
+インターネット インフォメーション サービス、または、IIS は、Windows で実行されている web サーバーです。 IIS を使用して、(HTML、CSS、および JavaScript) の標準的な web コンテンツを配信するか、ASP.NET およびその他の web アプリケーションを実行することができます。 Windows server で IIS が web ページの提供を開始するようにアクティブ化する必要があります。
 
-## What's the Custom Script Extension?
+## <a name="whats-the-custom-script-extension"></a>カスタム スクリプト拡張機能とは何ですか。
 
-The Custom Script Extension is an easy way to download and run scripts on your Azure VMs. It's just one of the many ways you can configure your VM once your VM is up and running.
+カスタム スクリプト拡張機能は、ダウンロードして、Azure Vm でスクリプトを実行する簡単な方法です。 後で、VM が稼働している VM を構成するさまざまな方法の 1 つだけになります。
 
-You can store your scripts in Azure storage or in a public location such as GitHub. You can run scripts manually or as part of a more automated deployment. Here, you'll run a PowerShell command to download an IIS configuration script from GitHub and execute it on your VM.
+スクリプトは、Azure storage または GitHub などの公共の場所に格納できます。 手動または自動化された展開の一部として、スクリプトを実行できます。 ここでは、GitHub から PowerShell スクリプトをダウンロードして、VM で実行する、Azure CLI コマンドを実行します。 このスクリプトは、IIS を構成します。
 
-## Configure IIS
+## <a name="configure-iis"></a>IIS を構成します。
 
-From Cloud Shell, run this code to download and execute a PowerShell script that installs IIS and configures a basic home page.
+ここで Cloud Shell から VM にリモートで IIS を構成するのにカスタム スクリプト拡張機能を使用します。 ポート 80 (HTTP) で受信ネットワーク アクセスを許可するファイアウォールを構成することもあります。
 
-```powershell
-$settings = @'
-  {"fileUris":["https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/663af8c47dbc5f27fc98412634246883af6f6159/iis.ps1"],
-   "commandToExecute": "powershell -ExecutionPolicy Unrestricted -File iis.ps1"}
-'@
-
-Set-AzureRmVMExtension `
-    -ExtensionName "IIS" `
-    -ResourceGroupName "myResourceGroup" `
-    -VMName "myVM" `
-    -Publisher "Microsoft.Compute" `
-    -ExtensionType "CustomScriptExtension" `
-    -TypeHandlerVersion 1.4 `
-    -SettingString $settings `
-    -Location "East US" `
-    -Verbose
-```
-
-The process takes a few minutes to complete.
-
-In the meantime, you can [examine the PowerShell script](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/663af8c47dbc5f27fc98412634246883af6f6159/iis.ps1) from a separate browser tab if you'd like. The script installs IIS and configures the home page to display a welcome message along with the VM's computer name, "myVM".
-
-## Verify the configuration
-
-Now that IIS is set up, let's verify that it's running.
-
-1. From Cloud Shell, run this cmdlet to print your VM's public IP address to the console.
-
-    ```powershell
-    Get-AzureRmPublicIPAddress `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myPublicIPAddress" `
-      | select IpAddress
-    ```
-
-You see output similar to this.
-
-    ```console
-    IpAddress
-    ---------
-    40.117.84.233
-    ```
-
-In a new browser tab, navigate to your VM's IP address. You see your welcome message and your VM's name.
-
-![](../media/web-server-browser.png)
-
-::: zone-end
-
-::: zone pivot="linux-cloud"
-
-## What is Nginx?
-
-Nginx (pronounced "engine-x") is a popular, free, open-source web server that runs on Unix, Linux, and Windows. Here you'll use Nginx to serve a basic web page.
-
-## What is SSH?
-
-SSH stands for Secure Shell. It's a communication protocol that helps you connect to a remote system and work with it as if you were seated at it.
-
-SSH runs over a secure connection. There are two common ways to authenticate access: _password authentication_ and _key-based authentication_. Here you'll use key-based authentication because most consider it to be more secure.
-
-We won't go into the details of how key-based authentication works here. All you need to know for now is that key-based authentication involves two files &mdash; a _private key_ that exists on your workstation and a _public key_ that exists on the computer you want to connect to. When you created your VM, you specified the `--generate-ssh-keys` option. This option sets up these files for you.
-
-## Connect to your VM from Cloud Shell
-
-Let's connect to your Linux VM over SSH and run a few commands to get a feel for how things work.
-
-1. First, run `whoami` to get your username.
-
-    ```bash
-    whoami
-    ```
-    You see your username. Here's an example.
-    ```console
-    thomas
-    ```
-    You'll use this name to connect to your VM. By default, when you create a Linux VM from Cloud Shell, the username on the VM is the same as your Cloud Shell username.
-
-1. Run this `az vm list-ip-addresses` command to list your VM's public IP addresses.
+1. Cloud Shell から実行`az vm extension set`コマンドをダウンロードし、IIS をインストールし、基本的なホーム ページを構成する PowerShell スクリプトを実行します。
 
     ```azurecli
-    az vm list-ip-addresses -g myResourceGroup -n myVM --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" -o tsv
+    az vm extension set \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --vm-name myWindowsVM \
+      --name CustomScriptExtension \
+      --publisher Microsoft.Compute \
+      --settings '{"fileUris":["https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1"]}' \
+      --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
+    ```
+
+    この処理は、完了するまでに数分をかかります。
+
+    それまでは、実行できます[PowerShell スクリプトを調べます](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true)たい場合は、別のブラウザー タブから。 スクリプトでは、IIS をインストールし、VM のコンピューター名"myWindowsVM"と共にようこそメッセージを表示するホーム ページを構成します。
+
+1. この実行`az vm open-port`をファイアウォールでポート 80 (HTTP) を開くコマンド。
+
+    ```azurecli
+    az vm open-port \
+      --name myWindowsVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --port 80
+    ```
+
+## <a name="verify-the-configuration"></a>構成を確認する
+
+IIS がセットアップしましょうが実行されていることを確認します。
+
+1. この実行`az vm list-ip-addresses`VM のパブリック IP を一覧表示するコマンドに対応します。
+
+    ```azurecli
+    az vm list-ip-addresses \
+      --name myWindowsVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
+      --output tsv
     ```
 
     > [!NOTE]
-    > This command is pretty complex, especially `--query` argument. But you'll be a pro at this as you dig in and explore Azure.
+    > このコマンドは、特に非常に複雑な`--query`引数。 さらに、Azure を検討するとこの pro になります。
 
-    You see your VM's public IP address. Here's an example.
+    VM のパブリック IP アドレスを参照してください。 次に例を示します。
+
+    ```console
+    104.211.9.245
+    ```
+
+1. 新しいブラウザー タブでは、VM の IP アドレスに移動します。 ウェルカム メッセージと、VM の名前が表示されます。
+
+    ![](../media/iis-browser.png)
+
+::: zone-end
+
+::: zone pivot="linux-cloud"
+
+## <a name="what-is-nginx"></a>Nginx とは何ですか。
+
+Nginx (シー"エンジン-x") は、Unix、Linux、macOS、および Windows で実行されている一般的な無料、オープン ソースの web サーバーです。 ここで基本的な web ページを処理するために、Nginx を使用します。
+
+## <a name="whats-the-custom-script-extension"></a>カスタム スクリプト拡張機能とは何ですか。
+
+カスタム スクリプト拡張機能は、ダウンロードして、Azure Vm でスクリプトを実行する簡単な方法です。 後で、VM が稼働している VM を構成するさまざまな方法の 1 つだけになります。
+
+スクリプトは、Azure storage または GitHub などの公共の場所に格納できます。 手動または自動化された展開の一部として、スクリプトを実行できます。 ここでは、Bash スクリプトを GitHub からダウンロードして、VM で実行し、Azure CLI コマンドを実行します。 このスクリプトは、Nginx を構成します。
+
+## <a name="configure-nginx"></a>Nginx を構成します。
+
+ここで Cloud Shell から VM にリモートで Nginx を構成するのにカスタム スクリプト拡張機能を使用します。 ポート 80 (HTTP) で受信ネットワーク アクセスを許可するファイアウォールを構成することもあります。
+
+1. Cloud Shell から実行`az vm extension set`コマンドをダウンロードし、Nginx をインストールし、基本的なホーム ページを構成する Bash スクリプトを実行します。
+
+    ```azurecli
+    az vm extension set \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --vm-name myLinuxVM \
+      --name customScript \
+      --publisher Microsoft.Azure.Extensions \
+      --settings '{"fileUris":["https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/20fca2517fa5913150abab66b51b0d88aa3077d8/configure-nginx.sh"]}' \
+      --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
+    ```
+
+    この処理は、完了するまでに数分をかかります。
+
+    それまでは、実行できます[Bash スクリプトを調べます](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/20fca2517fa5913150abab66b51b0d88aa3077d8/configure-nginx.sh?azure-portal=true)たい場合は、別のブラウザー タブから。 スクリプトでは、Nginx をインストールし、VM のコンピューター名"myLinuxVM"と共にようこそメッセージを表示するホーム ページを構成します。
+
+1. この実行`az vm open-port`をファイアウォールでポート 80 (HTTP) を開くコマンド。
+
+    ```azurecli
+    az vm open-port \
+      --name myLinuxVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --port 80
+    ```
+
+## <a name="verify-the-configuration"></a>構成を確認する
+
+Nginx がセットアップが実行されていることを確認しましょう。
+
+1. この実行`az vm list-ip-addresses`VM のパブリック IP を一覧表示するコマンドに対応します。
+
+    ```azurecli
+    az vm list-ip-addresses \
+      --name myLinuxVM \
+      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
+      --output tsv
+    ```
+
+    > [!NOTE]
+    > このコマンドは、特に非常に複雑な`--query`引数。 さらに、Azure を検討するとこの pro になります。
+
+    VM のパブリック IP アドレスを参照してください。 次に例を示します。
+
     ```console
     137.135.110.210
     ```
 
-    Make a note of the IP address, as you'll need it near the end of this exercise.
+1. 新しいブラウザー タブでは、VM の IP アドレスに移動します。 ウェルカム メッセージと、VM の名前が表示されます。
 
-1. Create an SSH connection to your VM. Replace the username and IP address shown in this example with yours.
-
-    ```bash
-    ssh thomas@137.135.110.210
-    ```
-    When prompted, enter "yes" to connect.
-
-1. Once logged in, your commands run on the VM. Let's explore it: run `ls` to print the contents of the root directory.
-
-    ```bash
-    ls -w 40 /
-    ```
-    You see the contents of the root directory.
-    ```console
-    bin   initrd.img  mnt   sbin  usr
-    boot  lib         opt   snap  var
-    dev   lib64       proc  srv   vmlinuz
-    etc   lost+found  root  sys
-    home  media       run   tmp
-    ```
-1. As a second example, run `hostname` to print out your VM's name.
- 
-    ```bash
-    hostname
-    ```
-    You see the name of your VM, **myVM**.
-    ```console
-    myVM
-    ```
-
-## Configure Nginx
-
-Let's install Nginx on the VM and configure a basic home page.
-
-1. From your SSH connection, start by updating the `apt` cache.
-
-    ```bash
-    sudo apt-get update
-    ```
-
-    This command updates the system's package index. Keeping the package index up to date helps ensure you're getting the most up-to-date software.
-
-    > [!NOTE]
-    > The `sudo` part enables you to run commands as the `root` user. Running as `root` is required to make system changes such as installing software.
-
-1. Next, install Nginx.
-
-    ```bash
-    sudo apt-get install nginx -y
-    ```
-1. Run this command to add some initial content to the default home page, `/var/www/html/index.html`.
-
-    ```bash
-    echo "Hello, Azure! My name is $(hostname)." | sudo tee -a /var/www/html/index.html
-    ```
-    The home page displays a welcome message, along with the VM's computer name.
-
-## Verify the configuration
-
-Now that Nginx is set up, let's verify that it's running. You'll start by verifying things locally, then remotely.
-
-1. Run `curl localhost`. "Localhost" is the VM, since you're still connected to it. `curl` will fetch the homepage from the webserver locally and print its contents to the console.
-
-    ```bash
-    curl localhost
-    ```
-    You see this.
-    ```console
-    Hello, Azure! My name is myVM.
-    ```
-1. Run `exit` to end your SSH session. From this point on, your commands will no longer run in the VM, they will run in the Cloud Shell system.
-
-    ```bash
-    exit
-    ```
-1. Run this `az vm open-port` command to open port 80 (HTTP) through the firewall.
-
-    ```azurecli
-    az vm open-port --name myVM --port 80 --resource-group myResourceGroup
-    ```
-
-Now let's confirm that we can access the web server from the Internet. From a new browser tab, navigate to your VM's IP address. You see your welcome message and your VM's name.
-
-![](../media/web-server-browser.png)
+    ![](../media/nginx-browser.png)
 
 ::: zone-end
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Your VM is running and can now serve up web pages, but what does that mean for you?
+VM が実行されていると、web ページを使用できるようになりましたが、何を意味するのでしょうか。
 
-Remember, every journey starts with the basics, and almost any great innovation born in the cloud, from companies big and small, started with a similar setup to yours. As your idea evolves, it begins making a positive impact on your business and your users.
+注意してください、基本、および大量から、小規模企業から生まれたもので、クラウドでほぼすべての優れたイノベーションをすべて体験を開始する同様の設定の使用を開始します。 アイデアの進化に伴って、ビジネスとユーザーに正の影響を作成を開始します。

@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.6-manage-vm
-title: Azure virtual machine network settings
+title: Azure 仮想マシン ネットワークの設定
 metadata:
-  title: Azure virtual machine network settings
-  description: Azure virtual machine network settings
+  title: Azure 仮想マシン ネットワークの設定
+  description: Azure 仮想マシン ネットワークの設定
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

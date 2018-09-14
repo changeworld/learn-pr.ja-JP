@@ -1,36 +1,38 @@
 ### YamlMime:Module
 uid: learn.top-5-security-items-to-consider
 metadata:
-  title: Top 5 Security Items To Consider Before Pushing To Production
-  description: Organizations big and small have started to realize just how crucial system and application reliability is to their business. They’ve also learned just how difficult it is to maintain that reliability while iterating at the speed demanded by the marketplace. Site Reliability Engineering (SRE) is a proven approach to this challenge. In this module you will gain an understanding of SRE and why it matters.
+  title: 運用環境にプッシュする前に考慮すべきセキュリティ項目を上位 5 件
+  description: 大規模な組織がいかに重要なシステムを実現する開始され、アプリケーションの信頼性がビジネスには。 また、速度で反復処理の信頼性が、marketplace によって要求されることを維持するためにはどれほど困難が学びました。 サイト信頼性エンジニア リング (SRE) は、このチャレンジに実績のあるアプローチです。 このモジュールでは、SRE とその重要性の理解を得る。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Top 5 Security Items To Consider Before Pushing To Production
-summary: In this module you will learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
-abstract: | 
- In this module, you will:
-  - Use Azure Security Center
-  - Verify your application's inputs and outputs
-  - Store your secrets into Key Vault
-  - Ensure you are using the latest version of your framework, and its security features
-  - Validate that your program dependencies and libraries are safe to use
-iconUrl: http://via.placeholder.com/120x120
+title: 運用環境にプッシュする前に考慮すべきセキュリティ項目を上位 5 件
+summary: Azure 上の web アプリケーションをセキュリティで保護し、最も一般的で危険な web アプリケーションの攻撃から保護します。
+abstract: |
+  このモジュールでは、次のことを行います。
+   - Azure Security Center の使用
+   - アプリケーションの入力と出力を確認します。
+   - Key Vault にシークレットを格納します。
+   - お使いの framework とそのセキュリティ機能の最新バージョンを使用していることを確認します。
+   - プログラムの依存関係やライブラリが安全に使用できることを確認します。
+prerequisites: なし
+iconUrl: /learn/achievements/top-5-security-items-to-consider.svg
 levels:
-- beginner
-- intermediate
+  - beginner
+  - intermediate
 roles:
-- administrator
+  - developer
+  - administrator
 products:
-- azure
+  - azure
 units:
-- learn.top-5-security-items-to-consider.1-introduction
-- learn.top-5-security-items-to-consider.2-azure-security-center
-- learn.top-5-security-items-to-consider.3-inputs-and-outputs
-- learn.top-5-security-items-to-consider.4-secrets-in-key-vault
-- learn.top-5-security-items-to-consider.5-framework-updates
-- learn.top-5-security-items-to-consider.6-safe-dependencies
-- learn.top-5-security-items-to-consider.7-conclusion
+  - learn.top-5-security-items-to-consider.1-introduction
+  - learn.top-5-security-items-to-consider.2-azure-security-center
+  - learn.top-5-security-items-to-consider.3-inputs-and-outputs
+  - learn.top-5-security-items-to-consider.4-secrets-in-key-vault
+  - learn.top-5-security-items-to-consider.5-framework-updates
+  - learn.top-5-security-items-to-consider.6-safe-dependencies
+  - learn.top-5-security-items-to-consider.7-conclusion
 achievement: learn.top-5-security-items-to-consider.badge

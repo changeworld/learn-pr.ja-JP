@@ -1,66 +1,54 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now have a good understanding of how to configure the same server level firewall rules in Azure.
+オンプレミスの PostgreSQL データベースを使用するいると仮定します。 セキュリティのあらゆる面を管理しているし、標準的な PostgreSQL サーバー レベルのファイアウォール規則を使用して、サーバーにすべてのアクセスをロックしました。 Azure で同じサーバー レベルのファイアウォール規則を構成する方法の理解があるようになりました。
 
-You now have the chance to connect to one of the previous Azure Databases for PostgreSQL servers you created using `psql`.
+以前の Azure Database for PostgreSQL サーバーを使用して作成するのいずれかに接続する可能性があるようになりました`psql`します。
 
-## Allow Azure service access
+## <a name="allow-azure-service-access"></a>Azure サービスへのアクセスを許可します。
 
-Before we begin. You'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall, that you can allow access in two ways.
+始める前に、PowerShell を使用する場合は、Azure サービスへのアクセスを許可する必要がありますと`psql`サーバーに接続します。 2 つの方法でアクセスを許可できることを思い出してください。
 
-Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+最初の選択肢が有効にするには**Azure サービスへのアクセスを許可する**します。 アクセスを許可する場合は、ルールが作成したカスタムの規則の一覧で入力されていない場合でも、ファイアウォール規則が作成されます。
 
-Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+2 番目のオプションでは、すべての IP アドレスへのアクセスを許可するファイアウォール ルールを作成します。 このルールには実行に使用する PowerShell を実行しているクライアントの IP アドレスが含まれます`psql`から。
 
-You also need to disable the **Enforce SSL connection**.
+無効にする必要も、**強制 SSL 接続**オプション。
 
-Let's begin.
+始めましょう。
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). Navigate to the server resource for which you would like to create a firewall rule.
+[Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 ファイアウォール規則を作成するサーバー リソースに移動します。
 
-Select the **Connection Security** option to open the connection security blade to the right.
+選択、**接続のセキュリティ**オプション、右側に接続のセキュリティ ブレードを開きます。
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![PostgreSQL データベースのリソース ブレードの接続のセキュリティ セクションを示す Azure portal のスクリーン ショット](../media-draft/7-db-security-settings.png)
 
-Recall, you want to allow access to PowerShell clients running `psql`.
+PowerShell を実行するクライアントへのアクセスを許可することを思い出してください`psql`します。
 
-You can choose to either:
+いずれかを選択できます。
 
-- Set **Allow access to Azure services** to **ON**
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- 設定**Azure サービスへのアクセスを許可する**に**ON**
+- 設定**強制 SSL 接続**に**無効になっています。**
+- をクリックして、**保存**変更を保存するボタンをクリックします。
 
-Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+または、ファイアウォール規則を追加することですべての IP アドレスへのアクセスを許可するファイアウォール ルールを追加することができます。 次の値を使用します。
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- ルール名: `AllowAll`
+- 開始 IP: `0.0.0.0`
+- 終了 IP: `255.255.255.255`
+- 設定**強制 SSL 接続**に**無効になっています。**
+- をクリックして、**保存**変更を保存するボタンをクリックします。
 
 > [!Warning]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications. In production environments, you'll only allow access to specific client IP addresses.
+> このファイアウォール規則を作成、サーバーに接続しようとしています。 インターネット経由で任意の IP アドレスを許可します。 場合でも、クライアントはアクセスできません、サーバー ユーザー名とパスワードを使わずにできません、慎重にこの規則を有効にし、セキュリティへの影響を理解するかどうかを確認します。 運用環境では、特定のクライアント IP アドレスへのアクセスのみ許可します。
 
-For the next steps, you'll start an Azure Cloud Shell session. This lab uses `bash` as the command-line environment.
+Azure Cloud Shell で psql を次のコマンドを使用して、サーバーに接続します。
 
-- Open the Cloud Shell from the Azure portal. Go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
+```bash
+psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
+```
 
-- In case you have several subscriptions, check to make sure you're using the correct subscription when asked. You can also run the following command to set the active subscription. Remember to replace the zeros with your subscription identifier.
+リコール、 `server-name`、および`admin-user`は、サーバーの作成時に、管理者アカウントの選択した値になります。 `postgres` 既定の管理データベースは、すべての PostgreSQL でサーバーを作成します。 サーバーの作成時に指定したパスワードを求めるメッセージが表示されます。
 
-   ```bash
-   az account set --subscription 00000000-0000-0000-0000-000000000000
-   ```
+正常に接続すると、実行、`\l`すべてのデータベースを一覧表示するコマンド。 このコマンドは、返される 2 つ以上の既定データベースになります。
 
-- Connect psql to your server using the following command:
+サーバー上の psql の操作の実行が完了したら、コマンドを実行`\q`を終了する`psql`します。
 
-  ```bash
-  psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
-  ```
-
-   Recall, `server-name`, and `admin-user` are the values you chose for the administrator account when you created the server. `postgres` is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
-
-- Once successfully connected, execute the `\l` command to list all databases.
-
-   This command will result in two or more default databases returned from.
-
-- When you're finished executing psql operations on your server, execute the command `\q` to quit `psql`.
-
-- Finally, to exit Cloud Shell, execute the command `exit`.
+最後に、Cloud Shell を終了するコマンドを実行`exit`します。

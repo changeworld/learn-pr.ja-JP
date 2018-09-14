@@ -1,39 +1,38 @@
 ### YamlMime:Module
 uid: learn.add-and-size-disks-in-azure-virtual-machines
 metadata:
-  title: Add and size disks in Azure virtual machines
-  description: Selecting the right storage for your VMs is important. You have to choose between standard and premium storage, managed and unmanaged disks, disk size and other parameters. In this module, we'll explore our options and practice working with disks (VHD files).
+  title: 追加し、Azure virtual machines でのディスクのサイズ
+  description: Vm の適切なストレージを選択することが重要です。 Standard と premium storage、マネージ コードとアンマネージ ディスク、ディスクのサイズおよびその他のパラメーターの間で選択する必要があります。 このモジュールで、オプションとディスク (VHD ファイル) を操作する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Add and size disks in Azure virtual machines
-summary: Understand and create the different types of disk storage available to Azure virtual machines (VMs).
+title: 追加し、Azure virtual machines でのディスクのサイズ
+summary: 理解し、Azure virtual machines (Vm) を使用可能なディスク ストレージのさまざまな種類を作成します。
 abstract: |
-  In this module, you will:
-  - Create a Windows virtual machine (VM)
-  - Configure and attach virtual hard drives (VHDs) to an existing VM
-  - Add premium storage to an existing VM
-  - Migrate disks in a VM to managed disks
-prerequisites: None
-iconUrl: http://via.placeholder.com/120x120
+  このモジュールでは、次のことを行います。
+  - Windows 仮想マシン (VM) の作成します。
+  - 構成し、既存の VM に仮想ハード ドライブ (Vhd) をアタッチ
+  - 既存の VM に premium ストレージを追加します。
+  - VM 内のディスクを managed disks に移行します。
+prerequisites: なし
+iconUrl: /learn/achievements/add-and-size-disks-in-azure-virtual-machines.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
-- azure-virtual-machines
-- azure-portal
+  - azure
+  - azure-virtual-machines
+  - azure-portal
 units:
-- learn.add-and-size-disks-in-azure-virtual-machines.1-introduction
-- learn.add-and-size-disks-in-azure-virtual-machines.2-add-data-disks-to-azure-virtual-machines
-- learn.add-and-size-disks-in-azure-virtual-machines.3-exercise-add-data-disks-to-azure-virtual-machines
-- learn.add-and-size-disks-in-azure-virtual-machines.4-choosing-premium-storage
-- learn.add-and-size-disks-in-azure-virtual-machines.5-exercise-add-a-premium-storage-disk
-- learn.add-and-size-disks-in-azure-virtual-machines.6-choosing-managed-disks
-- learn.add-and-size-disks-in-azure-virtual-machines.7-exercise-create-managed-disks
-- learn.add-and-size-disks-in-azure-virtual-machines.8-summary
+  - learn.add-and-size-disks-in-azure-virtual-machines.1-introduction
+  - learn.add-and-size-disks-in-azure-virtual-machines.2-add-data-disks-to-azure-virtual-machines
+  - learn.add-and-size-disks-in-azure-virtual-machines.3-exercise-add-data-disks-to-azure-virtual-machines
+  - learn.add-and-size-disks-in-azure-virtual-machines.4-choosing-premium-storage
+  - learn.add-and-size-disks-in-azure-virtual-machines.5-exercise-add-a-premium-storage-disk
+  - learn.add-and-size-disks-in-azure-virtual-machines.6-choosing-managed-disks
+  - learn.add-and-size-disks-in-azure-virtual-machines.7-exercise-create-managed-disks
+  - learn.add-and-size-disks-in-azure-virtual-machines.8-summary
 achievement: learn.add-and-size-disks-in-azure-virtual-machines.badge

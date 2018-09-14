@@ -1,81 +1,81 @@
-Imagine we want to create a simple bookmark lookup service. Our service is readonly initially. If a user wants to find an entry, they send a request with the ID of the entry and we return the URL. The following diagram explains the flow.
+単純なブックマーク参照サービスを作成することを想像してください。 最初に、サービスでは readonly です。 ユーザーのエントリを検索する場合、エントリの ID を持つ要求を送信して、URL が返されます。 次の図では、フローについて説明します。
 
-![Flow diagram showing process of finding a bookmark in our Cosmos DB back-end](../media-draft/find-bookmark-flow-small.png)
+![バック エンド、Cosmos DB でのブックマークの検索のプロセスを示すフロー図](../media-draft/find-bookmark-flow-small.png)
 
-When a user sends us a request with some text, we try to find an entry in our back-end database that contains this text as a key or Id. We return a result that indicates whether we found the entry or not.
+キーまたは id としてこのテキストを含むバック エンド データベースでエントリを検索しようと、ユーザーは私たちにテキストが要求を送信します。ここには、かどうか、エントリがわかりましたかどうかを示す結果が返されます。
 
-We need to store data somewhere. In this flowchart, our data store is shown as an Azure Cosmos DB. But, how do we connect to that database from a function and read data? In the world of functions, we configure an *input binding* for that job.  Configuring a binding through the Azure Portal is straightforward. As we'll see shortly, You don't have to write code for tasks such as opening a storage connection. The Azure Functions runtime and binding take care of those tasks for you.
+どこかにデータを格納する必要があります。 このフローチャートに、データ ストアは、Azure Cosmos DB として表示されます。 しかし、方法は関数からそのデータベースに接続し、データを読み取るでしょうか。 関数の世界中で構成します、*入力バインド*ジョブ。  Azure Portal でバインドの構成は簡単です。 間もなく表示されるようは、記憶域の接続を開くなどのタスクのコードを記述する必要はありません。 Azure Functions ランタイムとバインドをそれらのタスクの処理できます。
 
 > [!IMPORTANT]
-> We're going to refer to some resources (database, function, bindings, code) that we create here in our next lab. Please keep these resources around at least until you finish this course.
+> ここで、次の実習で作成されるリソース (データベース、関数、バインディング、コード) を参照していきます。 少なくとも、これらのリソースの周囲を留意してくださいこのコースを完了するまでです。
 
-As was the case for the preceding module, we'll do everything in the Azure portal.
+前のモジュールの場合と、Azure portal 内のすべてを実行します。
 
-## Create an Azure Cosmos DB 
+## <a name="create-an-azure-cosmos-db"></a>Azure Cosmos DB を作成します。 
 
-Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+### <a name="create-a-database-account"></a>データベース アカウントの作成
 
-### Create a database account
+データベース アカウントは、1 つまたは複数のデータベースを管理するためのコンテナーです。 データベースを作成する前に、データベース アカウントを作成する必要があります。
 
-A database account is a container for managing one of more databases. Before we can create a database, we need to create a database account.
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Databases** > **Azure Cosmos DB**.
+2. 選択、**リソースの作成**ボタンで検出された、Azure portal の左上隅から選択**データベース** > **Azure Cosmos DB**します。
 
-2. In the **New account** page, enter the settings for the new Azure Cosmos DB account.
- 
-    Setting|Value|Description
+3. **[新しいアカウント]** ページで、新しい Azure Cosmos DB アカウントの設定を入力します。
+
+    設定|値|説明
     ---|---|---
-    ID|*Enter a unique name*|Enter a unique name to identify this Azure Cosmos DB account. Because *documents.azure.com* is appended to the ID that you provide to create your URI, use a unique but identifiable ID.<br><br>The ID can contain only lowercase letters, numbers, and the hyphen (-) character, and it must contain 3 to 50 characters.
-    API|SQL|The API determines the type of account to create. Azure Cosmos DB provides five APIs to suit the needs of your application: SQL (document database), Gremlin (graph database), MongoDB (document database), Azure Table, and Cassandra, each which currently require a separate account. <br><br>Select **SQL**. At this time, the Azure Cosmos DB trigger, input bindings, and output bindings only work with SQL API and Graph API accounts. 
-    Subscription|*Your subscription*|Select Azure subscription that you want to use for this Azure Cosmos DB account.
-    Resource Group|Use existing<br><br>*Then enter [!INCLUDE [resource-group-name](./rg-name.md)], the resource group we created in an earlier unit for this module's resources.*| We're selecting **Use existing**, because we want to group all resources created for this module under the same resource group.
-    Location|Auto-filled once **Use existing** is set. | Select the geographic location in which to host your Azure Cosmos DB account. Use the location that's closest to your users to give them the fastest access to the data. In this lab,  the location is pre-determined for us as the location set for the existing resource group.
-    
-Leave all other fields in the **New account** blade at their default values because we're using them in this module.  That includes **Enable geo-redundancy**, **Enable Multi Master**, **Virtual networks**.
+    ID|<*一意の名前を入力*>|この Azure Cosmos DB アカウントを識別するための一意の名前を入力します。 指定した ID に *documents.azure.com* が付加されて URI が作成されるので、ID は一意であっても識別可能なものを使用してください。<br><br>ID に含めることができるのは英小文字、数字、ハイフン (-) のみ、3 文字以上で 50 文字以内にする必要があります。
+    API|SQL|API によって、作成するアカウントの種類が決まります。 Azure Cosmos DB は、アプリケーションのニーズに合わせて 5 つの Api を提供します。 SQL (ドキュメント データベース)、Gremlin (グラフ データベース)、MongoDB (ドキュメント データベース)、Azure テーブル、および Cassandra、各現在別のアカウントが必要です。 <br><br>選択**SQL**します。 Azure Cosmos DB トリガー、入力バインディング、および出力バインドはこの時点で、のみ SQL API および Graph API のアカウントを使って作業します。 
+    サブスクリプション|*該当するサブスクリプション*|この Azure Cosmos DB アカウントに使用する Azure サブスクリプションを選択します。
+    リソース グループ|既存のものを使用<br><br>*選び<rgn>[サンド ボックス リソース グループ名]</rgn>、このモジュールのリソースの以前の単位で作成したリソース グループ。*| 選択**既存を使用して、** 同じリソース グループの下には、このモジュール用に作成されたすべてのリソースをグループ化するため、します。
+    場所|自動入力される 1 回**既存を使用して、** 設定されます。 | Azure Cosmos DB アカウントをホストする地理的な場所を選択します。 データに最も高速にアクセスできる、ユーザーに最も近い場所を使用します。 この演習では、場所は事前の既存のリソース グループの設定の場所として決まります。
 
-3. Select **Create** to provision and deploy the database account.
+他のすべてのフィールドのままに、**新しいアカウント**ブレードで、既定の値をこのモジュールでそれらを使用しているためです。  含む**geo 冗長を有効にする**、**を有効にするマルチ マスター**、**仮想ネットワーク**します。
 
-4. Deployment can take some time. So, wait for a **Deployment succeeded** message similar to the following message before proceeding.
+4. 選択**作成**をプロビジョニングして、データベース アカウントをデプロイします。
+
+5. 展開時間がかかることができます。 そのため、待機、**デプロイメントに成功しました**続行する前に、次のメッセージのようなメッセージ。
 
 <!-- TODO figure out how to center these image -->
 
-![Notification that database account deployment has completed](../media-draft/db-deploy-success.PNG)
+![データベース アカウントのデプロイが完了したことを示す通知](../media-draft/db-deploy-success.PNG)
 
-5. Congratulations! You've created and deployed your database account!
+6. お疲れさまでした。 作成し、データベース アカウントをデプロイします。
 
-6. Select **Go to resource** to navigate to the database account in the portal. We'll add a collection to the database next.
+7. 選択**リソースに移動**portal でデータベース アカウントに移動します。 次に、データベースにコレクションを追加します。
 
-### Add a collection
+### <a name="add-a-collection"></a>コレクションの追加
 
-In Cosmos DB, a *container* holds arbitrary user-generated entities. In a database the supports SQL API, a document-oriented API, a container is a *collection*. Inside a collection, we store documents. Hopefully all will be clearer once we create a collection and add some documents.
+Cosmos DB で、*コンテナー*任意のユーザーが生成したエンティティを保持します。 ドキュメント指向の API では、データベース、サポートする SQL API では、コンテナーは、*コレクション*します。 コレクション内では、ドキュメントを格納します。 うまくいけばすべてより明確になりますコレクションを作成し、いくつかのドキュメントを追加します。
 
-Let's use the Data Explorer tool in the Azure portal to create a database and collection.
+データベースとコレクションを作成するのには、Azure portal でのデータ エクスプ ローラー ツールを使用してみましょう。
 
-1. Click **Data Explorer** > **New Collection**.
+1. **[データ エクスプローラー]** > **[新しいコレクション]** をクリックします。
 
-2. In the **Add collection**, enter the settings for the new collection.
+2. **コレクションの追加**、新しいコレクションの設定を入力します。
 
     >[!TIP]
-    >The **Add Collection** area is displayed on the far right, you may need to scroll right to see it.
+    >**[コレクションの追加]** 領域が右端に表示されます。表示するには、右にスクロールする必要がある場合があります。
 
-    Setting|Suggested value|Description
+    設定|推奨値|説明
     ---|---|---
-    Database ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| Database names must contain from 1 through 255 characters, and they cannot contain /, \\, #, ?, or a trailing space.<br><br>You are free to enter whatever you want here, but we suggest [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] as the name for the new database, and that's what we'll refer to in this unit. |
-    Collection ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|Enter [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] as the name for our new collection. Collection IDs have the same character requirements as database names.
-    Storage capacity| Fixed (10 GB)|Use the default value of **Fixed (10 GB)**. This value is the storage capacity of the database.
-    Throughput|400 RU|Change the throughput to 400 request units per second (RU/s). Storage capacity must be set to **Fixed (10 GB)** in order to set throughput to 400 RU/s. If you want to reduce latency, you can scale up the throughput later.
+    データベース ID|[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]| データベース名は 1 文字以上 255 文字以内にする必要があります。/、\\、#、? は使えず、末尾にスペースを入れることもできません。<br><br>ここでは、希望の入力しますが、お勧めします[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]と、新しいデータベースの名前としては、何に言及しますこのユニット内。 |
+    コレクション ID|[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]|入力[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]として、新しいコレクションの名前。 コレクション Id には、データベース名と同じ文字要件があります。
+    ストレージの容量| 固定 (10 GB)|既定値の **[固定 (10 GB)]** を使用します。 この値は、データベースの記憶域容量です。
+    Throughput|400 RU|スループットを 400 要求ユニット (RU/秒) に変更します。 スループットを 400 RU/秒に設定するには、記憶域容量を**固定 (10 GB)** に設定する必要があります。 待ち時間を短縮する場合、後でスループットをスケールアップできます。
     
-3. Click **OK**. The Data Explorer displays the new database and collection. So, now we have a database. Inside the database, we've defined a collection. Next we'll add some data, also known as documents.
+3. **[OK]** をクリックします。 データ エクスプ ローラーでは、新しいデータベースとコレクションが表示されます。 そのためがあるため、データベース。 データベース内でコレクションを定義しました。 次のドキュメントとも呼ばれる一部のデータを追加します。
 
-### Add test data
+### <a name="add-test-data"></a>テスト データを追加します。
 
-We've defined a collection in our database called [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)], so what are we intending to store in the collection? Well, the idea is to store a URL and ID in each document, like a list of web page bookmarks. 
+コレクションと呼ばれる、データベースで定義した[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]、そのためどのようなつもり、コレクションに格納するでしょうか。 そう、考え方は、web ページのブックマークのリストのように、各ドキュメントの URL と ID を格納します。 
 
-We'll add data to our new collection using Data Explorer.
+データは、データ エクスプ ローラーを使用して、新しいコレクションに追加します。
 
-1. In Data Explorer, the new database appears in the Collections pane. Expand the [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)] database, expand the [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection, click **Documents**, and then click **New Document**.
+1. データ エクスプローラーで新しいデータベースが [コレクション] ウィンドウに表示されます。 展開、[!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]データベースを展開し、[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]コレクション、 をクリックして**ドキュメント**、順にクリックします**新しいドキュメント**します。
   
-2. Now add a document to the collection with the following structure. Each document is schema-less JSON file.
+2. ここで、次の構造のドキュメントをコレクションに追加します。 各ドキュメントは、スキーマレスの JSON ファイルです。
 
      ```json
      {
@@ -84,134 +84,131 @@ We'll add data to our new collection using Data Explorer.
      }
      ```
 
-3. Once you've added the json to the **Documents** tab, click **Save**.
+3. JSON を **[ドキュメント]** タブに追加したら、**[保存]** をクリックします。
 
-When the document is saved, notice that there are more properties than the ones we added. They all begin with an underline (_rid, _self, _etag, _attachments, _ts). These are properties generated by the system to help manage the document. The following table explains briefly what they are.
+ドキュメントを保存すると、私たちが追加されたものより多くのプロパティがあることに注意してください。 これらはすべて、下線 (_rid、_self、_etag、_attachments、_ts など) で始まります。 これらは、ドキュメントを管理するためにシステムによって生成されるプロパティです。 次の表は何かについて簡単に説明します。
 
-
-|Property  |Description  |
+|プロパティ  |説明  |
 |---------|---------|
-|_rid     |     The resource ID (_rid) is a unique identifier that is also hierarchical per the resource stack on the resource model. It is used internally for placement and navigation of the document resource.    |
-|_self     |   The unique addressable URI for the resource.      |
-|_etag     |   Required for optimistic concurrency control.     |
-|_attachments     |  The addressable path for the attachments resource.       |
-|_ts     |    The timestamp of the last update of this resource.    |
+|_rid     |     リソース ID (_rid) は、階層、リソース モデルのリソース スタックごとになっている一意の識別子です。 配置およびナビゲーションのドキュメント リソースの内部で使用されます。    |
+|_self     |   リソースの一意のアドレス指定可能な URI です。      |
+|_etag     |   オプティミスティック同時実行制御が必要です。     |
+|_attachments     |  添付ファイル リソースのアドレス指定可能なパス。       |
+|_ts     |    このリソースの最終更新タイムスタンプです。    |
  
-
-4. Let's add a few more documents into our collection. For each of the following, use the **New Document** command again to create an entry for each. Don't forget to click ##Save** to capture your additions.
+4. さらに、いくつかのドキュメントをコレクションに追加してみましょう。 次のそれぞれについて、使用、**新しいドキュメント**ごとにエントリを作成するには、もう一度コマンド。 忘れずに # Save * *、追加機能をキャプチャする をクリックします。
 
 |id  |value  |
 |---------|---------|
-|portal     |  https://portal.azure.com       |
-|learn     |   https://docs.microsoft.com/learn |
-|marketplace     |    https://azuremarketplace.microsoft.com/marketplace/apps  |
-|blog | https://azure.microsoft.com/blog |
+|ポータル     |  https://portal.azure.com       |
+|について説明します     |   https://docs.microsoft.com/learn |
+|Marketplace     |    https://azuremarketplace.microsoft.com/marketplace/apps  |
+|ブログ | https://azure.microsoft.com/blog |
 
-When you've finished, your collection should look like the following screenshot.
+確認が完了したら、コレクションのようになります次のスクリーン ショット。
 
-![Screenshot of the SQL API UI in the portal that shows the list of entries we added to our bookmarks collection.](../media-draft/db-bookmark-coll.PNG)
+![UI のスクリーン ショット、SQL API をポータルで、ブックマークのコレクションに追加するエントリの一覧が表示されます。](../media-draft/db-bookmark-coll.PNG)
 
-We now have a few entries in our bookmark collection. Our scenario will work as follows. If a request arrives with, for example, "id=docs", we'll look up that ID in our bookmarks collection and return the URL https://docs.microsoft.com/azure. Let's make an Azure function that looks up values in this collection.
+ブックマーク コレクションにいくつかのエントリがあるようになりました。 ここではとおり動作します。 要求を使用すると、たとえば、受信した場合"id = docs"、ブックマーク コレクションでその ID を検索し、URL を返す https://docs.microsoft.com/azureします。 このコレクション内の値である Azure function を作成します。
 
-## Create our function
+## <a name="create-our-function"></a>この関数を作成します。
 
-1. Navigate to the function app you created in the preceding unit.
+1. 上記の単位で作成した関数アプリに移動します。
 
-2. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+2. 関数アプリを展開し、関数のコレクションをポイントし、追加を選択します (**+**) ボタンの横に**関数**します。 このアクションは、関数の作成プロセスを開始します。 次のアニメーションは、この操作を示しています。
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![プラス記号が表示される、ユーザーが関数のメニュー項目を置いたときのアニメーション。](../media-draft/func-app-plus-hover-small.gif)
 
-3. The page shows us the complete set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+3. ページのサポートされているトリガーの完全なセットが表示されます。 選択**HTTP トリガー**、これは、次のスクリーン ショットの最初のエントリ。
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![上で最初に、表示される TTP トリガーでトリガー テンプレートの選択、UI の一部のスクリーン ショットは、イメージの左。](../media-draft/trigger-templates-small.PNG)
 
-4. Fill out the **New Function** dialog that appears to the right  using the following values.
+4. 記入、**新しい関数**次の値を使用して、右側に表示されるダイアログ ボックス。
 
-|Field  |Value  |
+|フィールド  |値  |
 |---------|---------|
-|Language     | **JavaScript**        |
-|Name     |   [!INCLUDE [func-name-find](./func-name-find.md)]     |
-| Authorization level | **Function** |
+|言語     | **JavaScript**        |
+|名前     |   [!INCLUDE [func-name-find](./func-name-find.md)]     |
+| 承認レベル | **Function** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. 選択**作成**、コード エディターで、index.js ファイルを開き、HTTP によってトリガーされる関数の既定の実装が表示される関数を作成します。
 
-You can verify what we have done so far by testing our new function as follows:
+何がここまでの処理、新しい関数を次のようにテストして確認できます。
 
-1. In your new function, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy**.
+1. 新しい関数で、右上の **[</> 関数の URL の取得]** をクリックし、**[既定値 (関数キー)]** を選択して、**[コピー]** をクリックします。
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&name=<yourname>` to the end of this URL and press the `Enter` key on your keyboard to execute the request. You should see a response similar to the following response returned by the function displayed in your browser.  
+2. ブラウザーのアドレス バーにコピーしておいた関数の URL を貼り付けます。 この URL の末尾にクエリ文字列 `&name=<yourname>` を追加し、キーボードで`Enter` キーを押して要求を実行します。 次に、ブラウザーに表示される関数によって返される応答のような応答が表示されます。  
 
-Now that we have our bare-bones function working, let's turn our attention to reading data from our Azure Cosmos DB, or in our scenario, our [!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)] collection.
+Azure Cosmos DB、またはここでは、データの読み取りに注目してみましょう、ベア ボーン関数が動作したら、[!INCLUDE [cosmos-coll-name](./cosmos-coll-name.md)]コレクション。
 
-## Add a Cosmos DB input binding
+## <a name="add-a-cosmos-db-input-binding"></a>Cosmos DB 入力バインドを追加します。
 
-We want to read data from the database we created, so enter input bindings. As you'll see, we can configure a binding that can talk to our database in just a few steps.
+作成したデータベースからデータを読み取り、ように入力バインドを入力します。 後ほど説明するように、いくつかの手順で、データベースと通信できるバインディングを構成できます。
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. 選択**統合**関数 メニューの 統合 タブを開き、左側にします。
 
-The template we used created an HTTP trigger and an HTTP output binding for us. Let's add our new Azure Cosmos DB input binding. 
+使用して、テンプレートの作成、HTTP トリガーと HTTP 出力をバインドします。 新しい Azure Cosmos DB 入力バインディングを追加してみましょう。 
 
-2. Select **+ New Input** under the **Inputs** column. A list of all possible input binding types is displayed.
+2. 選択 **+ 新しい入力**下、**入力**列。 すべての可能な入力バインドの種類の一覧が表示されます。
 
-3. Click on **Azure Cosmos DB** from the list and then the **Select** button. This action opens the Azure Cosmos DB input configuration page.
+3. をクリックして**Azure Cosmos DB**一覧からをクリックし、**選択**ボタンをクリックします。 この操作は、Azure Cosmos DB の入力の構成 ページを開きます。
 
-Next, we'll set up a connection to our database.
+次に、データベースに接続を設定します。
 
-4. In the field named **Azure Cosmos DB account connection** on this page, click on *new* to the right of the empty field. This action opens the **Connection** dialog, which already has **Azure Cosmos DB account** and your Azure subscription selected. The only thing left to do is to select a database account id.
+4. という名前のフィールドで**Azure Cosmos DB アカウント接続**このページで、クリックして*新しい*空のフィールドの右側にします。 このアクションが表示されます、**接続**ダイアログ ボックスで、既に**Azure Cosmos DB アカウント**と Azure サブスクリプションを選択します。 唯一の残りの作業では、データベース アカウントの id を選択します。
 
-5. In the section, **Create a database account**, you had to supply an ID value. Now find that value in the  *Database Account* dropdown and then click **Select**.
+5. セクションで、**データベース アカウントの作成**ID 値を指定する必要がありました。 その値を検索、*データベース アカウント*ドロップダウン順にクリックします**選択**します。
 
-A new connection to the database is configured and is shown in the **Azure Cosmos DB account connection** field. If you're curious about what is actually behind this abstract name, just click *show value* to reveal the connection string.
+データベースへの新しい接続が構成されているしに示した、 **Azure Cosmos DB アカウント接続**フィールド。 実際にこの抽象名前の背後にあるについて調べる場合は、クリックして*値を表示する*を接続文字列を表示します。
 
-We want to look up a bookmark with a specific ID, so let's tie the ID we receive to the binding.
+では、バインディングにお客様の ID を関連付ける特定の ID を持つブックマークを検索します。
 
-7. In the **Document ID (optional)** field, enter `{id}`. This is known as a *binding expression*. The function is triggered by an HTTP request that uses a query string to specify the ID to look up. Since IDs are unique in our collection, the binding will return either 0 (not found) or 1 (found) documents.
+7. **ドキュメント ID (省略可能)** フィールドに、入力`{id}`します。 これと呼ばれますが、*バインド式*します。 関数は、クエリ文字列を使用して検索のための ID を指定する HTTP 要求によってトリガーされます。 Id は、コレクション内で一意であるため、バインドで (見つかりません) 0 または 1 (見つかった) ドキュメントのいずれかを返します。
 
-8. Carefully fill out the remaining fields on this page using the values in the following table. At any time, you can click on the information icon to the right of each field name to learn more about the purpose of each field.
+8. 慎重に次の表に、値を使用してこのページの残りのフィールドに記入します。 いつでもには、各フィールドの目的に関する詳細は各フィールド名の右側に情報アイコンをクリックすることができます。
 
-
-|Setting  |Value  |Description  |
+|設定  |値  |説明  |
 |---------|---------|---------|
-|Document parameter name     |  **bookmark**       |  The name used to identify this binding in your code.      |
-|Database name     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | The database where data will be read. This is the database name we set earlier in this lesson.        |
-|Collection Name     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | The collection from which we'll read data. This setting was defined earlier in the lesson. |
-|SQL Query (optional)    |   leave blank       |   We are only retrieving one document at a time based on the ID. So, filtering with the Document ID field is a better than using a SQL Query in this instance. We could craft a SQL Query to return one entry (`SELECT * from b where b.ID = {id}`). That query would indeed return a document, but it would return it in a document collection. Our code would have to manipulate a collection unnecessarily. Use the SQL Query approach when you want to get multiple documents.   |
-|Partition key (optional)     |   leave blank      |  We can accept the default here.       |
+|ドキュメント パラメーター名     |  **ブックマーク**       |  コードでは、このバインディングを識別するために使用する名前。      |
+|データベース名     |  [!INCLUDE [cosmos-db-name](./cosmos-db-name.md)]       | データが読み取られるデータベースです。 これは、データベース名がこのレッスンの前半で設定します。        |
+|コレクション名     |  [!INCLUDE [cosmos-db-name](./cosmos-coll-name.md)]        | データを読み取り元のコレクション。 この設定は、前のレッスンで定義されました。 |
+|(省略可能) SQL クエリ    |   空白のままに       |   1 つのドキュメント ID に基づいて一度に取得のみ そのため、ドキュメント ID フィールドでフィルター処理をより詳しくは、このインスタンスで SQL クエリを使用するよりもします。 1 つのエントリを返す SQL クエリを作成する可能性があります (`SELECT * from b where b.ID = {id}`)。 クエリを実行すると、ドキュメントを実際に返すが、ドキュメント コレクションが返されます。 コードは、不必要にコレクションを操作する必要があります。 複数のドキュメントを取得する場合は、SQL クエリの手法を使用します。   |
+|パーティション キー (省略可能)     |   空白のままに      |  ここで、既定値に使用を許可します。       |
 
-9. Click **Save** to save all changes to this binding configuration. Now that we have our binding defined, it's time to use it in our function.
+9. クリックして**保存**をこのバインド構成をすべての変更を保存します。 バインディングを定義したら、関数で使用する時間を勧めします。
 
-## Update function implementation
+## <a name="update-function-implementation"></a>Update 関数の実装
 
-1. Click on our function, [!INCLUDE [func-name-find](./func-name-find.md)], to open up *index.js* in the code editor. We've added an input binding to read from our database, so let's update the logic to use this binding.
+1. この関数では、をクリックして[!INCLUDE [func-name-find](./func-name-find.md)]を開くには、 *index.js*コード エディターでします。 データベースから読み取り、このバインディングを使用するためのロジックを更新しましょうへの入力バインディングが追加されました。
 
-2. Replace all code in index.js with the code from the following snippet.
+2. Index.js 内のすべてのコードを次のスニペットをコードに置き換えます。
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-When an HTTP request causes our function to trigger, the `id` query parameter is passed to our Cosmos DB input binding. If it found a document that matches this ID, then the `bookmark` parameter will be set to it. In that case, we construct a response that contains the URL value found in the bookmark document. If no document was found matching this key, we respond with a payload and status code that tells the user the bad news.
+HTTP 要求により、関数をトリガーするときに、`id`クエリ パラメーターは、Cosmos DB 入力バインドに渡されます。 この ID に一致するドキュメントが見つかった場合、`bookmark`パラメーターに設定されます。 その場合は、ブックマーク、ドキュメントの URL 値を含む応答を構築します。 このキーに一致するドキュメントが見つかりませんでした場合、ペイロードと悪い知らせをユーザーに通知の状態コードに対応します。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. 通常どおり、 をクリックして **<>/Get 関数の URL**右側の上部にある次のように選択します。**既定 (関数キー)**、 をクリックし、**コピー** copy、関数の URL。
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. ブラウザーのアドレス バーにコピーしておいた関数の URL を貼り付けます。 この URL の末尾にクエリ文字列 `&id=docs` を追加し、キーボードで`Enter` キーを押して要求を実行します。 すべて順調だと、そのリソースへの URL を含む応答が表示されます。
 
-3. Replace `&id=docs` with `&id=missing` and observe the response.
+3. 置換`&id=docs`で`&id=missing`し、応答を確認します。
 
-4. Replace the previous query string with `&id=` and observe the response.
+4. 前のクエリ文字列を置き換える`&id=`し、応答を確認します。
 
 >[!TIP]
->You can also test the function using the **Test** tab in the function portal UI. You can add a query parameter or just supply a request body to get the same results as described in te preceding steps.
+>使用して関数をテストすることも、**テスト**関数ポータル UI のタブ。 クエリ パラメーターを追加したり、te までのステップ」の説明に従って、同じ結果を取得する要求本文を指定するだけです。
 
-In this unit, we created our first input binding  manually to read from an Azure Cosmos DB database. The amount of code we wrote to search our database and read data was minimal, thanks to bindings. We did most of our work configuring the binding declaratively and the platform took care of the rest.  
+このユニットでは、Azure Cosmos DB データベースからの読み取りに手動で、最初の入力バインドを作成しました。 データベースを検索し、データの読み取り作成したコードの量が最小限に抑え、バインドに感謝します。 ほとんどのバインディングを構成する作業を行った宣言によって、残りを処理したプラットフォームとします。  
 
-In the next unit, we'll add more data to our bookmark collection through an Azure Cosmos DB output binding.
+次の単位で、Azure Cosmos DB で、ブックマークのコレクションにより多くのデータの出力バインドを追加します。
 
 > [!TIP]
-> This unit is not intended to be a tutorial on Azure Cosmos DB. If you would like to dive deeper, here are a few resources to get you started:
+> このユニットは、Azure Cosmos DB のチュートリアルではありません。 詳しく調べる場合は、次に開始するためのいくつかのリソースを示します。
 >
->* [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+>* [Azure Cosmos DB の概要: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 >
->* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+>* [Azure Cosmos DB の技術概要](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 >
->* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+>* [Azure Cosmos DB のドキュメント](https://docs.microsoft.com/azure/cosmos-db/)

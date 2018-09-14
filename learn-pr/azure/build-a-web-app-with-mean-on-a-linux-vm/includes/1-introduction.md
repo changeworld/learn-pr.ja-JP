@@ -1,19 +1,20 @@
-You're building a new stand-alone customer-facing website for your business. The exact needs of this website haven't been defined yet, but you'll be responsible for creating the site from start to finish. You have substantial experience in JavaScript, so you want to find a solution that will play well to your strengths.
+ビジネス用にスタンドアロンの顧客向け Web サイトを新たに構築しています。 この Web サイトの正確なニーズはまだ定義されていませんが、サイトの作成を初めから終わりまで担当することになります。 JavaScript ではかなりの経験があるので、その強みを十分に生かせるソリューションを模索する必要があります。
 
-In this module, you will create a MEAN (MongoDB, Express, AngularJS, and Node.js) web application stack host on a Linux virtual machine hosted in Azure.
+このモジュールでは、Azure でホストされている Linux 仮想マシンで、MEAN (MongoDB、Express、AngularJS、および Node.js) web アプリケーション スタック ホストを作成します。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
 
-- Decide if the MEAN web stack is right for you
-- Create an Ubuntu Linux VM to host your web app
-- Add MongoDB as a data store for your web app
-- Add Node.js as a host runtime for your web app
-- Add Express as a Node.js web framework
-- Add mongooseJS for object modeling of your MongoDB data
-- Create a simple web app hosted on the MEAN stack
-- Make the web application publicly available from your VM
+このモジュールでは、次のことを行います。
 
-## Prerequisites
+- MEAN Web スタックが自分に適しているかどうかを判断する
+- ご利用の Web アプリをホストする Ubuntu Linux VM を作成する
+- ご利用の Web アプリ用のデータ ストアとして MongoDB を追加する
+- ご利用の Web アプリ用のホスト ランタイムとして Node.js を追加する
+- Node.js Web フレームワークとして Express を追加する
+- ご利用の MongoDB データのオブジェクト モデリング用に mongooseJS を追加する
+- MEAN スタックでホストされるシンプルな Web アプリを作成する
+- ご利用の VM から Web アプリケーションを一般に使用できるようにする
 
-- Experience with the Bash command-line interface
+## <a name="prerequisites"></a>前提条件
+
+- Bash コマンドライン インターフェイスを使用した経験

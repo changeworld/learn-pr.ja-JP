@@ -1,40 +1,48 @@
-Before you run a container or container-integrated application in Azure, you'll most likely work in a local development environment like your laptop. This unit helps you prepare your system for container development with Docker.
+コンテナーまたはコンテナー統合アプリケーションを Azure で実行する前に、多くの場合はご利用のノート PC のようなローカル開発環境で作業します。 ここには、システムは、Docker でコンテナーの開発用に準備します。
 
-## Docker for Windows and Mac
+## <a name="why-use-containers"></a>コンテナーを使用する理由
 
-Docker, Inc. has published two applications to install and configure local container development environments. Essentially, each application prepares your system with Docker tooling, such as the necessary CLI and automation tools. A virtual machine is also created that hosts the Docker platform. The environment is configured such that Docker commands are passed through to the virtual machine. Each of these applications is similar in functionality and includes the following features:
+コンテナーとコンテナー イメージは、ディスク領域、メモリ、および CPU などのホスト リソースを効率的に使用します。 このような効率性により、コンテナーはすぐに起動します。 場合によっては、コンテナーの新しいインスタンスはほぼ瞬時に起動します。 これにより、アプリケーションの迅速なプロビジョニングでき、オンデマンドでの処理とスケール操作の新しいモデルです。
 
-- **Docker platform:** The core components necessary to create and run containers.
-- **Docker CLI:** The command-line interface for interacting with Docker containers.
-- **Docker Compose:** Automation tooling for defining and running multi-container applications.
+このシナリオの想定: 需要の急増が確認される場合があるバッチ処理サービスを実行しています。 コンテナーを使用する新しいインスタンスを迅速にプロビジョニングして需要の増大に対応するシステムを構築できます。 それは強力なシステムですが、従来の仮想マシンを使用して実現するのは容易ではありません。
 
-Open the appropriate link below in a new tab to install Docker on your operating system. 
+コンテナーでは、「ハイパー密度」を実現することもできます。 つまり、少ない仮想または物理リソースに複数のアプリケーションとプロセスを実行できます。
+
+コンテナーは Web サーバーのような従来のワークロードを実行するのに適したプラットフォームであると同時に、負荷の急増に対応できるバッチ処理、最新の分散アーキテクチャでビルドされたアプリケーション、オンデマンド スケーリングを必要とする任意のものなど、機会を開くのにも役立ちます。
+
+## <a name="docker-for-windows-and-mac"></a>Docker for Windows および Docker for Mac
+
+Docker, Inc. がインストールしてローカルのコンテナー開発環境を構成する 2 つのアプリケーションを発行します。 アプリケーションは、Docker を使用した、システムを CLI と自動化のために必要なツールなど、ツールを準備します。 Docker プラットフォームをホストする仮想マシンも作成されます。 Docker コマンドが仮想マシンを通過するように、環境は構成されます。 これらの各アプリケーションは機能的に類似しており、次の機能が含まれています。
+
+- **Docker プラットフォーム:** を作成し、コンテナーの実行に必要なコア コンポーネント。
+- **Docker CLI:** Docker コンテナーを操作するコマンド ライン インターフェイス。
+- **Docker Compose:** オートメーション ツールを定義すると、マルチ コンテナー アプリケーションを実行します。
+
+オペレーティング システムに Docker をインストールする新しいタブで、以下の適切なリンクを開きます。 
 
 - [Docker for Windows](https://www.docker.com/docker-windows)
-- [Docker for Mac](https://www.docker.com/docker-mac)
+- [Mac 用の docker](https://www.docker.com/docker-mac)
 
-## Docker for Windows environments
+## <a name="docker-for-windows-environments"></a>Docker for Windows 環境
 
-When you use Docker for Windows, two environments are available: Linux and Windows. Using the Linux environment allows you to run Linux containers on your Windows system. You can select an environment by right-clicking on the Docker task bar icon, selecting **Switch to Linux containers**, and following the on-screen prompts.
-
-![Docker for Windows, switch to Linux containers](../media-draft/2-docker-linux.png)
+Docker for Windows を使用する場合は、Linux と Windows の 2 つの環境が利用できます。 Linux 環境を使用すると、ご利用の Windows システム上で Linux コンテナーを実行することができます。 環境を選択するには、Docker タスク バー アイコンを右クリックし、**[Switch to Linux containers]\(Linux コンテナーに切り替える\)** を選択し、画面の指示に従います。
 
 > [!NOTE]
-> The steps in this tutorial assume that your system is configured to work with Linux containers.
+> このチュートリアルの手順では、ご利用のシステムが Linux コンテナーを使用するように構成されていることを前提とします。
 
-## Docker on Linux
+## <a name="docker-on-linux"></a>Linux 上の Docker
 
-If you're working on a Linux-based system, the Docker server components and CLI tools can be manually installed. Follow the instructions found on [About Docker CE](https://docs.docker.com/install/#server) for your specific Linux distribution.
+現在、Linux のセットアップ アプリケーションはありません。 Linux ベースのシステムで作業する場合に Docker サーバー コンポーネントと CLI ツールする必要があります手動でインストールします。 上の手順に従います[Docker CE について](https://docs.docker.com/install/#server)特定の Linux ディストリビューションです。
 
-## Validate configuration
+## <a name="validate-configuration"></a>構成を検証する
 
-To validate that Docker has been successfully installed and configured, open a terminal and run the following command:
+Docker が正常にインストールおよび構成されていることを検証するには、ターミナルを開き、次のコマンドを実行します。
 
 ```bash
 docker search nginx
 ```
 
-If you see output similar to the following, your environment is ready for the next unit.
+次の単位のお使い環境が次のような出力が表示された場合。
 
 ```output
 NAME                                                   DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED
@@ -64,7 +72,3 @@ travix/nginx                                           NGinx reverse proxy      
 ansibleplaybookbundle/nginx-apb                        An APB to deploy NGINX                          0                                       [OK]
 mailu/nginx                                            Mailu nginx frontend                            0                                       [OK]
 ```
-
-## Summary
-
-In this unit, you prepared a local container development environment. In the next unit, you will learn about some basic Docker operations.

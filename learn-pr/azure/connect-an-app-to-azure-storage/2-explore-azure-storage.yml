@@ -1,11 +1,10 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.2-explore-azure-storage
-title: Explore Azure storage services
+title: Azure storage サービスを探す
 metadata:
-  title: Explore Azure storage services
-  description: Explore Azure storage services
+  title: Azure storage サービスを探す
+  description: Azure storage サービスを探す
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial

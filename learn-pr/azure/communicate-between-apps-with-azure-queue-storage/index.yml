@@ -8,38 +8,29 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 304c3ed06dad5ee78786f0ee9c9b477f814ddb74
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
-  ms.translationtype: HT
-  ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235217"
 title: アプリケーションと Azure Queue Storage の間で通信する
 summary: Azure Queue Storage を使用して、クラウドにパブリッシュ サブスクライブ パターンを実装します。
-abstract: >
+abstract: |
   このモジュールでは、次のことを行います。
-
   - キューをサポートする Azure ストレージ アカウントを作成する
-
   - C# と .NET 用 Azure Storage クライアント ライブラリを使用してキューを作成する
-
   - C# と .NET 用 Azure Storage クライアント ライブラリを使用してキューにメッセージを追加し、またキューからメッセージを取得および削除する
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/communicate-between-apps-with-azure-queue-storage.svg
 levels:
-- intermediate
+  - intermediate
 roles:
-- developer
+  - developer
 products:
-- azure
+  - azure
 units:
-- learn.communicate-between-applications-with-azure-queue-storage.1-introduction
-- learn.communicate-between-applications-with-azure-queue-storage.2-create-the-azure-storage-infrastructure
-- learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
-- learn.communicate-between-applications-with-azure-queue-storage.4-identify-a-queue
-- learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
-- learn.communicate-between-applications-with-azure-queue-storage.6-how-to-programmatically-access-a-queue
-- learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
-- learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
-- learn.communicate-between-applications-with-azure-queue-storage.9-summary
+  - learn.communicate-between-applications-with-azure-queue-storage.1-introduction
+  - learn.communicate-between-applications-with-azure-queue-storage.2-create-the-azure-storage-infrastructure
+  - learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
+  - learn.communicate-between-applications-with-azure-queue-storage.4-identify-a-queue
+  - learn.communicate-between-applications-with-azure-queue-storage.5-exercise-identify-a-queue
+  - learn.communicate-between-applications-with-azure-queue-storage.6-how-to-programmatically-access-a-queue
+  - learn.communicate-between-applications-with-azure-queue-storage.7-exercise-implement-enqueue
+  - learn.communicate-between-applications-with-azure-queue-storage.8-exercise-implement-dequeue
+  - learn.communicate-between-applications-with-azure-queue-storage.9-summary
 achievement: learn.communicate-between-applications-with-azure-queue-storage.badge

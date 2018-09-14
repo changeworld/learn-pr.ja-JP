@@ -1,25 +1,25 @@
-Your company has compute workloads deployed to several regions to make sure you have a local presence to serve your distributed customer base. 
+会社では、分散顧客ベースを提供するローカル プレゼンスを確実に確保できるように、コンピューティング ワークロードが複数のリージョンにデプロイされます。 
 
-Your aim is to place a container registry in each region where images are run. This strategy will allow for network-close operations, enabling fast, reliable image layer transfers. 
+イメージが実行される各リージョンにコンテナー レジストリを配置することを目標とします。 この戦略により、ネットワーク上の近い場所での操作が実現され、高速で信頼性の高いイメージ レイヤー転送が可能になります。 
 
-Geo-replication enables an Azure container registry to function as a single registry, serving several regions with multi-master regional registries.
+geo レプリケーションにより、Azure コンテナー レジストリが単一のレジストリとして機能することが可能になり、マルチマスター リージョン レジストリでいくつかのリージョンに対応できます。
 
-A geo-replicated registry provides the following benefits:
+geo レプリケートされたレジストリには次の利点があります。
 
-- Single registry/image/tag names can be used across multiple regions
-- Network-close registry access from regional deployments
-- No additional egress fees, as images are pulled from a local, replicated registry in the same region as your container host
-- Single management of a registry across multiple regions
+- 複数のリージョンで 1 つのレジストリ/イメージ/タグ名を使用できる
+- リージョン デプロイからネットワーク上の近い場所のレジストリにアクセスできる
+- コンテナー ホストと同じリージョンにあるレプリケートされたローカルのレジストリからイメージがプルされるので、追加のエグレス料金が発生しない
+- 複数のリージョンにまたがってレジストリを一元管理できる
 
-## Replicate an image to multiple locations
+## <a name="replicate-an-image-to-multiple-locations"></a>イメージを複数の場所にレプリケートする
 
-You'll use the `az acr replication create` Azure CLI command to replicate your container images from one region to another. In this example, you'll create a replication for the `japaneast` region. Update `<acrName>` with the name of your Container Registry.
+`az acr replication create` Azure CLI コマンドを使用して、ご利用のコンテナー イメージをリージョン間でレプリケートします。 この例では、`japaneast` リージョン用のレプリケーションを作成します。 `<acrName>` を、ご利用のコンテナー レジストリの名前で更新します。
 
 ```azurecli
 az acr replication create --registry <acrName> --location japaneast
 ```
 
-The output should look similar to the following:
+出力は次のようになります。
 
 ```console
 {
@@ -38,13 +38,13 @@ The output should look similar to the following:
 }
 ```
 
-As a final step. You are able to retrieve all container image replicas created. You'll use the `az acr replication list` command to retrieve this list. Update `<acrName>` with the name of your Container Registry.
+最後の手順。 作成されたすべてのコンテナー イメージのレプリカを取得することができます。 `az acr replication list` コマンドを使用して、この一覧を取得します。 `<acrName>` を、ご利用のコンテナー レジストリの名前で更新します。
 
 ```azurecli
 az acr replication list --registry <acrName> --output table
 ```
 
-The output should look similar to the following:
+出力は次のようになります。
 
 ```console
 NAME       LOCATION    PROVISIONING STATE    STATUS
@@ -53,19 +53,19 @@ japaneast  japaneast   Succeeded             Ready
 eastus     eastus      Succeeded             Ready
 ```
 
-Keep in mind that you are not limited to the Azure CLI to list your image replicas. From within the Azure portal, selecting `Replications` for an Azure Container Registry displays a map that details current replications. Container images can be replicated to additional regions by selecting the regions on the map.
+ご利用のイメージ レプリカを一覧表示する方法は、Azure CLI だけではないことに留意してください。 Azure portal 内から、Azure Container Registry に対して `Replications` を選択すると、現在のレプリケーションの詳細を示すマップが表示されます。 マップ上のリージョンを選択すると、追加のリージョンにコンテナー イメージをレプリケートできます。
 
-![Container replication map as seen in the Azure portal](../media/replication-map.png)
+![Azure Portal に表示されるコンテナー レプリケーション マップ](../media/replication-map.png)
 
-## Clean up
+## <a name="clean-up"></a>クリーンアップ
 <!---TODO: Update for sandbox?--->
 
-At this point, you can cleanup the created resources by deleting the resource group. To do so, use the `az group delete` command.
+この時点で、リソース グループを削除することにより、作成したリソースをクリーンアップすることができます。 そのためには、`az group delete` コマンドを使用します。
 
 ```azurecli
 az group delete --name myResourceGroup --no-wait
 ```
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You've now successfully replicated a container image to multiple Azure datacenters using the Azure CLI. 
+これで、Azure CLI を使用して、コンテナー イメージが複数の Azure データセンターに正常にレプリケートされました。 
