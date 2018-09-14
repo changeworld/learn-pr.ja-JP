@@ -6,39 +6,43 @@ Azure Storage では、特定の種類のデータ ストレージ ニーズに�
 
 ### <a name="azure-sql-database"></a>Azure SQL Database
 
-**Azure SQL Database** は、すべてのデータが格納される堅牢なフル マネージド リレーショナル クラウド データベースです。 この機能を使用すると、スタッフの個人情報やトレーニングに関する情報など、頻繁にアクセスおよび更新するデータを格納できます。 また、アプリケーションを変更することなく、既存の SQL Server データベースを移行することもできます。
+**Azure SQL Database** は、すべてのデータが格納される堅牢なフル マネージド リレーショナル クラウド データベースです。 この機能を使用すると、スタッフの個人情報やトレーニングに関する情報など、頻繁にアクセスおよび更新するデータを格納できます。 また、アプリケーションを変更することなく、既存の SQL Server データベースを移行することもできます。 Azure SQL データベースに格納されるオンライン ラーニング ポータル シナリオからのデータの種類を、次の図に示します。
 
-![AzureSQL](../media-draft/Azure_SQL.png)
+![成績証明書、認定資格、学習教材など、生徒の情報を格納するために使用する Azure SQL を示す図。](../media/3-Azure_SQL.png)
 
 ### <a name="azure-cosmos-db"></a>Azure Cosmos DB
 
-Azure Cosmos DB は、グローバル分散データベース サービスです。 このサービスでは、スキーマのないデータがサポートされ、絶えず変化するデータをサポートするための応答性に優れた *Always On* アプリケーションを構築する機能が提供されます。 この機能を使用して、世界中のユーザーからの入力に基づいて更新および保守されるデータを格納できます。
+Azure Cosmos DB は、グローバル分散データベース サービスです。 このサービスでは、スキーマのないデータがサポートされ、絶えず変化するデータをサポートするための応答性に優れた *Always On* アプリケーションを構築する機能が提供されます。 この機能を使用して、世界中のユーザーからの入力に基づいて更新および保守されるデータを格納できます。 世界各地の複数のユーザーがアクセスするデータを格納するために使用する Azure Cosmos DB データベースのサンプルを、次の図に示します。
 
-![CosmosDB](../media-draft/Azure_cosmos_db.png)
+![オンライン トレーニング シナリオにおいてコースのカタログを格納するための Azure Cosmos DB の使用状況を示す図。 カタログは管理者によって更新され、世界中の生徒からアクセスされるため、ここでは Azure Cosmos DB が適切な選択となります。](../media/3-Azure_cosmos_db.png)
 
 ### <a name="azure-blob-storage"></a>Azure BLOB ストレージ
 
-Azure Blob Storage では、大きな動画ファイルや音声ファイルを世界中の任意の場所からユーザーのブラウザーに直接ストリーミングすることができます。 Blob Storage は、バックアップと復元、ディザスター リカバリー、アーカイブのためのデータの格納にも使用されます。 Azure Blob Storage には、仮想マシン用のファイルのデータを最大 8 TB まで格納できます。
+Azure Blob Storage では、大きな動画ファイルや音声ファイルを世界中の任意の場所からユーザーのブラウザーに直接ストリーミングすることができます。 Blob Storage は、バックアップと復元、ディザスター リカバリー、アーカイブのためのデータの格納にも使用されます。 Azure Blob Storage には、仮想マシン用のファイルのデータを最大 8 TB まで格納できます。 Azure BLOB ストレージの使用例を次の図に示します。
 
-![AzureBlob](../media-draft/Azure_blob.png)
+![ビデオまたはオーディオ ファイルの格納とストリームのために使用する Azure BLOB ストレージを示す図。](../media/3-Azure_blob.png)
 
 ### <a name="azure-data-lake-storage-gen2"></a>Azure Data Lake Storage Gen2
 
 Azure Storage の Data Lake 機能を使用すると、データの使用状況を分析し、それに応じてレポートを準備できます。 Data Lake は、構造化データと非構造化データの両方を格納する大規模なリポジトリです。
 
-**Azure Data Lake Storage Gen2** では、オブジェクト ストレージのスケーラビリティおよびコスト メリットと、ビッグ データ ファイル システム機能の信頼性とパフォーマンスが結合されています。
+**Azure Data Lake Storage Gen2** では、オブジェクト ストレージのスケーラビリティおよびコスト メリットと、ビッグ データ ファイル システム機能の信頼性とパフォーマンスが結合されています。 Azure Data Lake によってどのようにすべてのビジネス データが格納され、分析のために使用可能になるのかを次の図に示します。
 
-![Data_lake_Store_concept](../media-draft/Data_lake_store_concept.png)
+![分析ツールで使用するためにデータを準備して格納する Azure Data Lake の役割を示す図。 Azure Data Lake では、リレーショナル データ、ビデオ データ、センサー データなど、さまざまな種類の入力を処理できます。](../media/3-Data_lake_store_concept.png)
 
 ### <a name="azure-files"></a>Azure Files
 
-Azure Files では、クラウドでのフル マネージド ファイル共有が提供されます。 Azure で実行されているアプリケーションでは、VM 間でファイルを簡単に共有できます。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開に対して同時に Azure ファイル共有を使用できます。
+Azure Files では、クラウドでのフル マネージド ファイル共有が提供されます。 Azure で実行されているアプリケーションでは、VM 間でファイルを簡単に共有できます。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開に対して同時に Azure ファイル共有を使用できます。 2 つの地理的な場所間でデータを共有するために使用されている Azure Files を、次の図に示します。 Azure Files では、保存時と転送中のデータの暗号化が保証されるサーバー メッセージ ブロック (SMB) プロトコルが使用されます。
 
-![Azure_Files](../media-draft/Azure_Files.png)
+![Azure Files のファイル共有機能を示す図。 ](../media/3-Azure_Files.png)
 
 ### <a name="azure-queue"></a>Azure Queue
 
 Azure Queue Storage は、世界中のどこからでもアクセスできる大量のメッセージを格納するためのサービスです。 1 つのキュー メッセージに許容されるサイズは最大 64 KB であり、1 つのキューに数百万件のメッセージを格納することができます。
+
+通常、1 つ以上の送信側コンポーネントと 1 つ以上の受信側コンポーネントがあります。 送信側コンポーネントは、メッセージをキューに追加します。 受信側コンポーネントは、キューの先頭から処理対象のメッセージを取得します。 次の図は、メッセージを Azure Queue に追加する複数の送信側アプリケーションと、メッセージを取得する 1 つの受信側アプリケーションを示しています。
+
+![Azure Queue Storage のアーキテクチャを示す概要図](../media/3-Azure_Queue.png)
 
 Queue Storage は主に次の目的で使用します。
 
@@ -46,15 +50,13 @@ Queue Storage は主に次の目的で使用します。
 - 異なる Web サーバー/インフラストラクチャの間で負荷を分散し、トラフィックの急激な増加を管理するため。
 - 複数のユーザーがデータに同時にアクセスしたときのコンポーネントの障害に対する回復力を構築するため。
 
-![Azure_Queue](../media-draft/Azure_Queue.png)
-
 ### <a name="azure-standard-storage"></a>Azure Standard Storage
 
 Azure の仮想マシンでは、オペレーティング システム、アプリケーション、およびデータを格納するためにディスクが使用されます。 Azure Standard Storage では、ミッション クリティカルではないワークロードを実行する VM 向けに、信頼性の高い低コストのディスク サポートが提供されます。 Standard Storage では、データはハード ディスク ドライブ (HDD) に格納されます。
 
-VM を使用するとき、重要度の低いワークロードには Standard SSD および HDD ディスクを使用し、ミッション クリティカルな運用アプリケーションには Premium SSD ディスクを使用できます。 エンタープライズレベルの持続性を、業界トップレベルの年間故障率 0% で一貫して提供してきました。
+VM を使用するとき、重要度の低いワークロードには Standard SSD および HDD ディスクを使用し、ミッション クリティカルな運用アプリケーションには Premium SSD ディスクを使用できます。 Azure ディスクはエンタープライズレベルの持続性を、業界トップレベルの年間故障率 0% で一貫して提供してきました。 個別のディスクを使用してさまざまなデータを格納する Azure 仮想マシンを次の図に示します。
 
-![Azure_disk](../media-draft/Azure_disks.png)
+![仮想マシン内の、オペレーティング システムを格納するディスクとデータを格納するディスクの 2 つのディスクを示す図。](../media/3-Azure_disks.png)
 
 ### <a name="storage-tiers"></a>ストレージ層
 
@@ -66,7 +68,9 @@ Azure Storage では、BLOB オブジェクト ストレージ用に 3 つのス
 
 1. **アーカイブ ストレージ層** - Azure アーカイブ ストレージ層は、ほとんどアクセスされず、少なくとも 180 日以上保管され、待ち時間の要件が柔軟であるデータの格納に適しています。 Azure のアーカイブ ストレージは、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。
 
-![Archive_Tier](../media-draft/Archive_Storage_Tier.png)
+Azure Blob Storage 層を次の図に示します。
+
+![Azure Blob Storage の 3 つの異なるストレージ層 (ホット、コールド、アーカイブ) を示す図。](../media/3-Archive_Storage_Tier.png)
 
 ### <a name="azure-storage-encryptionreplication"></a>Azure Storage の暗号化/レプリケーション
 
