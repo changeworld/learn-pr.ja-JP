@@ -5,7 +5,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 
 ::: zone pivot="linux"
 
-### <a name="linux"></a>Linux
+## <a name="linux"></a>Linux
 
 ここでは、Advanced Packaging Tool (**apt**) と Bash コマンド ラインを使用して、**Ubuntu Linux** 上に Azure CLI をインストールします。
 
@@ -37,7 +37,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 
 ::: zone pivot="macos"
 
-### <a name="macos"></a>macOS
+## <a name="macos"></a>macOS
 
 ここでは、Homebrew パッケージ マネージャーを使用して macOS に Azure CLI をインストールします。
 
@@ -60,7 +60,7 @@ Azure CLI をローカル コンピューターにインストールしてから
 
 ::: zone pivot="windows"
 
-### <a name="windows"></a>Windows
+## <a name="windows"></a>Windows
 
 ここでは、MSI インストーラーを使用して Windows に Azure CLI をインストールします。
 

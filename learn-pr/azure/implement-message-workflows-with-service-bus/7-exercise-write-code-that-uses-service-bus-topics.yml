@@ -9,11 +9,13 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8e9b05c6066bb8c404ede7d8ca5db5bb7ab9504d
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 44860e57a6c6dce04d64e2177d6ef3e600d9c452
+  ms.sourcegitcommit: 4dc3a7c7146ab87bafce63ebe81eab4a1e7b4d7a
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44234701"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45584121"
+interactive: bash-editor
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-write-code-that-uses-service-bus-topics.md)]'

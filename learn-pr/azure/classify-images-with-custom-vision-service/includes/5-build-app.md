@@ -12,7 +12,7 @@ Microsoft Custom Vision Service の真の力は、[Custom Vision の予測 API](
 
 1. Visual Studio Code で、**[表示]** > **[統合ターミナル]** を使用し、統合ターミナル ウィンドウを開きます。 次に、統合ターミナルで次のコマンドを実行し、アプリに必要なパッケージを読み込みます。
 
-    ```
+    ```console
     npm install
     ```
 
@@ -50,7 +50,7 @@ Microsoft Custom Vision Service の真の力は、[Custom Vision の予測 API](
 
 1. Visual Studio Code の統合ターミナルに戻り、次のコマンドを実行してアプリを開始します。
 
-    ```
+    ```console
     npm start
     ```
 
