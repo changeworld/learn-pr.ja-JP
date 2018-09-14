@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.4-install-mongodb
+title: MongoDB をインストールする
+metadata:
+  title: MongoDB をインストールする
+  description: MongoDB をインストールする
+  ms.openlocfilehash: 75d38f2aa1255bce89979c3ab9641121216a1abf
+  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/25/2018
+  ms.locfileid: "42927641"
+durationInMinutes: 5
+content: '[!include[](includes/4-install-mongodb.md)]'

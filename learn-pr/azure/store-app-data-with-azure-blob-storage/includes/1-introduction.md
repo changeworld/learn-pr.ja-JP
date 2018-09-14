@@ -1,14 +1,14 @@
-Blobs give you file storage in the cloud and an API that lets you build apps to access the data.
+BLOB には、クラウド内のファイル ストレージと、データにアクセスするためのアプリを構築できる API が用意されています。
 
-Suppose you work at an augmented-reality gaming company. Your game runs on every mobile platform. You want to add a new feature to let users record video clips of their gameplay and upload the clips to your servers. Users will be able to watch clips directly in the game or through your website. You plan to log every upload and viewing for use in analytics and for traceability.
+ここでは、拡張現実ゲーム企業で働いている場合を例にして説明します。 すべてのモバイル プラットフォームで動作するゲームを構築しています。 ユーザーがゲームプレイの動画を録画し、サーバーにアップロードできる新機能をこのゲームに追加したいと考えています。 ユーザーはゲーム内または Web サイトから動画を直接視聴することができます。 分析とトレーサービリティのためにアップロードと閲覧をすべて記録する機能を搭載する予定です。
 
-You need a storage solution that can handle thousands of simultaneous uploads, massive amounts of video data, and constantly growing log files. You also need to add the viewing functionality to all your mobile apps and your website, so you want API access from multiple platforms and languages.
+数千単位の同時アップロード、大量の動画データ、常に増大し続けるログ ファイルを処理できるストレージ ソリューションが必要です。 また、複数のプラットフォームや言語から API にアクセスできるように、すべてのモバイル アプリと Web サイトに閲覧機能を追加する必要があります。
 
-Here, you will see how Azure Blob storage could be appropriate for this application.
+ここでは、Azure Blob Storage がこのようなアプリケーションに適している可能性について説明します。
 
-## Learning objectives
-In this module, you will:
+## <a name="learning-objectives"></a>学習の目的
+このモジュールでは、次のことを行います。
 
-- Organize your data with Azure Blob Storage
-- Create storage resources to hold blobs
-- Store and retrieve data from Azure Blob Storage
+- Azure Blob Storage でデータを整理する
+- BLOB を保持するストレージ リソースを作成する
+- Azure Blob Storage でのデータの保存と取得

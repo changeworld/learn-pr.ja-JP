@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-vms-with-azure-cli-data.2-logins-and-subscriptions
+title: ログインとサブスクリプション
+metadata:
+  title: ログインとサブスクリプション
+  description: Azure CLI にログインし、使用するサブスクリプションを選択します
+  ms.openlocfilehash: 90dff52f35690b90c9c3783aa3fcc8958cd8e1ab
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40446349"
+interactive: bash
+durationInMinutes: 5
+content: '[!include[](includes/2-logins-and-subscriptions.md)]'

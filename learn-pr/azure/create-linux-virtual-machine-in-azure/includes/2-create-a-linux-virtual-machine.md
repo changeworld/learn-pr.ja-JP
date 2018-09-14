@@ -1,111 +1,110 @@
-We have an existing website running on a local Ubuntu Linux server. Our goal is to create an Azure virtual machine (VM), using the latest Ubuntu image, and migrate the site to the cloud. In this unit, you will learn about the options you will need to decide when creating a virtual machine in Azure.
+ローカルの Ubuntu Linux サーバーで実行中の既存のWeb サイトが存在しています。 最新の Ubuntu イメージを使って Azure 仮想マシン（VM）を作成し、サイトをクラウドへ移行することが目標です。 このユニットでは、Azure で仮想マシンを作成する際に決定が必要になるオプションについて学習します。
 
-## Introduction to Azure Virtual Machines
+## <a name="introduction-to-azure-virtual-machines"></a>Azure Virtual Machines の概要
 
-Azure Virtual Machines are an on-demand, scalable cloud-computing resource. They include processor, memory, storage, and networking resources. You can start and stop virtual machines at will and manage them from the Azure portal or with the Azure CLI. You can also use a remote Secure Shell (SSH) to connect directly to the running VM and execute commands as if you are on a local computer.
+Azure VM は、オンデマンドのスケーラブルなクラウド コンピューティング リソースです。 プロセッサ、メモリ、ストレージ、およびネットワーク リソースが含まれます。 自由に仮想マシンを開始および停止し、Azure portal から、または Azure CLI を使用して仮想マシンを管理できます。 また、リモート Secure Shell (SSH) を使用して実行中の VM に直接接続し、ローカル コンピューターの場合と同じようにコマンドを実行することもできます。
 
-### Running Linux in Azure
+### <a name="running-linux-in-azure"></a>Azure での Linux の実行
 
-Creating Linux-based VMs in Azure is easy. Microsoft has partnered with prominent Linux vendors to ensure their distributions are optimized for the Azure platform. You can create virtual machines from prebuilt images for a variety of popular Linux distributions such as SUSE, Red Hat, and Ubuntu or build your own Linux distribution to run in the cloud.
+Azure で Linux ベースの VM を作成することは簡単です。 Microsoft は主要な Linux ベンダーと提携し、ディストリビューションが Azure プラットフォーム用に確実に最適化されるようにしています。 SUSE、Red Hat、Ubuntu などのさまざまな人気のある Linux ディストリビューションの事前構築済みイメージから仮想マシンを作成することも、クラウドで実行するように独自の Linux ディストリビューションを構築することもできます。
 
-## Creating an Azure VM
+## <a name="creating-an-azure-vm"></a>Azure VM の作成
 
-VMs can be defined and deployed on Azure in several ways: the Azure portal, a script (using the Azure CLI or Azure PowerShell), or through an Azure Resource Manager template. In all cases, you will need to supply several pieces of information that we'll cover shortly.
+VM は、Azure Portal、スクリプト（Azure CLI または Azure PowerShell を使用）、または Azure Resourse Manager テンプレートなどの複数の方法で Azure での定義およびデピロイが行えます。 いずれの場合も、いくつかの情報を指定する必要があります。それについては、この後すぐに説明します。
 
-The Azure Marketplace also provides preconfigured images that include both an OS and favorite software tools installed for specific scenarios.
+Azure Marketplace には、OS と特定のシナリオ用にインストールされた人気のあるソフトウェア ツールの両方を含む、事前構成済みのイメージも用意されています。
 
-![Screenshot of the Azure portal showing several virtual machine options in the Azure Marketplace.](../media/2-marketplace-vm-choices.png)
+![Azure Marketplace の仮想マシン](../media-drafts/2-marketplace-vm-choices.png)
 
-## Resources used in a Linux VM
+## <a name="resources-used-in-a-linux-vm"></a>Linux VM で使用されるリソース
 
-When creating a Linux VM in Azure, you also create resources to host the VM. These resources work together to virtualize a computer and run the Linux operating system. These must either exist (and be selected during VM creation), or they will be created with the VM:
+Azure で Linux VM を作成する場合、VM をホストするためにリソースも作成します。 これらのリソースが連携することによってコンピューターが仮想化され、Linux オペレーティング システムが実行されます。 これらのリソースは、存在しているか (VM の作成時に選択します)、または VM と共に作成する必要があります。
 
-- A virtual machine that provides CPU and memory resources
-- An Azure Storage account to hold the virtual hard disks
-- Virtual disks to hold the OS, applications, and data
-- A virtual network (VNet) to connect the VM to other Azure services or your on-premise hardware
-- A network interface to communicate with the VNet
-- An optional public IP address so you can access the VM
+- CPU およびメモリリソースを提供する仮想マシン
+- 仮想ハード ディスクを保持する Azure Storage アカウント
+- OS、アプリケーション、およびデータを保持する仮想ディスク
+- 他の Azure サービスやオンプレミスのハードウェアに VM を接続する仮想ネットワーク (VNet)
+- VNet と通信するためのネットワーク インターフェイス
+- VM へのアクセスを可能にする省略可能なパブリック IP アドレス
 
-Like other Azure services, you'll need a **Resource Group** to contain the VM (and optionally group these resources for administration). When you create a new VM, you can either use an existing resource group or create a new one.
+他の Azure サービスと同じように、VM を格納する (および、必要に応じて管理のためにこれらのリソースをグループ化する) ための**リソース グループ**が必要です。 新しい VM を作成する場合、既存のリソース グループを使用することも、新しいリソース グループを作成することもできます。
 
-## Choose the VM image
+## <a name="choose-the-vm-image"></a>VM イメージを選択する
 
-Selecting an image is one of the first and most important decisions you'll make when creating a VM. An image is a template that's used to create a VM. These templates include an OS and often other software, such as development tools or web hosting environments.
+イメージの選択は、VM を作成するときに行う最初の最も重要な決定事項の 1 つです。 イメージとは、VM の作成に使用するテンプレートです。 これらのテンプレートには、OS と、多くの場合はその他のソフトウェア (開発ツールや Web ホスティング環境など) が含まれています。
 
-Anything that a computer can have installed can be included in an image. You can create a VM from an image that's preconfigured to precisely the tasks you need, such as hosting a web app on the Apache HTTP Server.
-
-> [!TIP]  
-> You can also create and upload custom disk images. Check the documentation for more information.
-
-## Sizing your VM
-
-Just as a physical machine has a certain amount of memory and CPU power, so does a virtual machine. Azure offers a range of VMs of differing sizes at different price points. The size that you choose will determine the VM's processing power, memory, and maximum storage capacity.
-
-> [!WARNING]
-> There are quota limits on each subscription that can impact VM creation. By default, you cannot have more than 20 virtual _cores_ across all VMs within a region. You can either split up VMs across regions or file an [online request](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) to increase your limits.
-
-VM sizes are grouped into categories, starting with the B-series for basic testing and running up to the H-series for massive computing tasks. You should select the size of the VM based on the workload you want to perform. It is possible to change the size of a VM after it's been created, but the VM must be stopped first, so it's best to size it appropriately from the start if possible.
-
-#### Here are some guidelines based on the scenario you are targeting
-
-| What are you doing? | Consider these sizes
-|-------|------------------|
-| **General use computing/web**: Testing and development, small to medium databases, or low to medium traffic web servers. | B, Dsv3, Dv3, DSv2, Dv2 |
-| **Heavy computational tasks**: Medium traffic web servers, network appliances, batch processes, and application servers. | Fsv2, Fs, F |
-| **Large memory usage**: Relational database servers, medium to large caches, and in-memory analytics. | Esv3, Ev3, M, GS, G, DSv2, Dv2 |
-| **Data storage and processing**: Big data, SQL, and NoSQL databases that need high disk throughput and I/O. | Ls |
-| **Heavy graphics rendering** or video editing, as well as model training and inferencing (ND) with deep learning. | NV, NC, NCv2, NCv3, ND |
-| **High-performance computing (HPC)**: If you need the fastest and most powerful CPU virtual machines with optional high-throughput network interfaces. | H |
-
-## Choosing storage options
-
-The next set of decisions revolve around storage. First, you can choose the disk technology. Options include a traditional platter-based hard disk drive (HDD) or a more modern solid-state drive (SSD). Just like the hardware you purchase, SSD storage costs more but provides better performance.
+コンピューターにインストールできるものはすべて、イメージに含めることができます。 Apache サーバーでの Web アプリのホスティングなど、必要なタスクに正確に対応するように事前構成されたイメージから、VM を作成できます。
 
 > [!TIP]
-> There are two levels of SSD storage available: standard and premium. Choose Standard SSD disks if you have normal workloads but want better performance. Choose Premium SSD disks if you have I/O intensive workloads or mission-critical systems that need to process data very quickly.
+> カスタム ディスク イメージを作成してアップロードすることもできます。詳しくは、ドキュメントをご覧ください。
 
-### Mapping storage to disks
-
-Azure uses virtual hard disks (VHDs) to represent physical disks for the VM. VHDs replicate the logical format and data of a disk drive but are stored as page blobs in an Azure Storage account. You can choose on a per disk basis what type of storage it should use (SSD or HDD). This allows you to control the performance of each disk, likely based on the I/O you plan to perform on it.
-
-By default, two virtual hard disks (VHDs) will be created for your Linux VM:
-
-1. The **operating system disk**: This is your primary drive and has a maximum capacity of 2048 GB. It will be labeled as `/dev/sda` by default.
-
-1. A **temporary disk**: This provides temporary storage for the OS or any apps. On Linux virtual machines, the disk is `/dev/sdb` and is formatted and mounted to `/mnt` by the Azure Linux Agent. It is sized based on the VM size and is used to store the swap file. 
+## <a name="sizing-your-vm"></a>VM のサイズ設定
+物理マシンに一定量のメモリや CPU 電源があるように、仮想マシンにも同様にあります。 Azure では、さまざまな価格ポイントで異なるサイズの VM が提供されます。 選択したサイズによって、VM の処理能力、メモリ、および最大ストレージ容量が決まります。
 
 > [!WARNING]
-> The temporary disk is not persistent. You should only write data to this disk that is not critical to the system.
+> 各サブスクリプションには、VM の作成に影響するクォータ制限があります。 既定では、1 つのリージョン内のすべての VM 全体で、20 を超える数の仮想_コア_を使用することはできません。 領域にまたがる VM を分割するか、制限を引き上げる[オンライン リクエスト](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request)を送信することができます。
 
-#### What about data?
+VM のサイズは、基本的なテストと運用向けの B シリーズから、大規模なコンピューティング タスク向けの H シリーズまで、複数のカテゴリに分類されています。 実行するワークロードに基づいて VM のサイズを選択する必要があります。 VM 作成後に VM のサイズを変更することは可能ですが、そのためにはまず VM を停止する必要があるので、可能であれば最初から適切なサイズを選択することをお勧めします。
 
-You can store data on the primary drive along with the OS, but a better approach is to create dedicated _data disks_. You can create and attach additional disks to the VM. Each disk can hold up to 4095 GB of data, with the maximum amount of storage determined by the VM size you select.
+#### <a name="here-are-some-guidelines-based-on-the-scenario-you-are-targeting"></a>対象とするシナリオに基づいたガイドラインを以下に示します。
 
-> [!NOTE]  
-> An interesting capability is to create a VHD image from a real disk. This allows you to easily migrate _existing_ information from an on-premises computer to the cloud.
+| 操作内容 | 考慮するサイズ
+|-------|------------------|
+| **汎用コンピューティング/Web**: テストと開発、小規模から中規模のデータベース、軽度から中程度のトラフィックの Web サーバー。 | B、Dsv3、Dv3、DSv2、Dv2 |
+| **高負荷のコンピューティング タスク**中アクセス規模のウェブ サーバー、ネットワーク アプライアンス、バッチ処理、およびアプリケーション サーバー。 | Fsv2、Fs、F |
+| **大容量のメモリ使用量**リレーショナル データベース サーバー、中規模から大規模のキャッシュ、およびメモリ内分析。 | Esv3、Ev3、M、GS、G、DSv2、Dv2 |
+| **データ ストレージと処理**高いディスク スループットと IO を必要とするビッグ データ、SQL、NoSQL データベース。 | Ls |
+| **負荷の高いグラフィックスのレンダリング**やビデオ編集、ディープ ラーニングを使用したモデル トレーニングと推論 (ND)。 | NV、NC、NCv2、NCv3、ND |
+| **ハイ パフォーマンス コンピューティング (HPC)**: 高スループットのネットワーク インターフェイスのオプションを備えた、最も高速かつ強力な CPU 仮想マシンが必要な場合。 | H |
 
-### Unmanaged vs. managed disks
+## <a name="choosing-storage-options"></a>ストレージ オプションを選択する
 
-The final storage choice you'll make is whether to use **unmanaged** or **managed** disks.
+次にストレージに関する一連の決定事項を示します。 まず、ディスク テクノロジを選択することができます。 オプションには、従来の円盤状の記憶媒体ベースのハード ディスク ドライブ (HDD) や、より最新のソリッドステート ドライブ (SSD) が含まれます。 ハードウェアを購入する場合と同じように、SSD ストレージは高コストですがパフォーマンスに優れています。
 
-With unmanaged disks, you are responsible for the storage accounts that are used to hold the VHDs that correspond to your VM disks. You pay the storage account rates for the amount of space you use. A single storage account has a fixed rate limit of 20,000 I/O operations/sec. This means that a single storage account is capable of supporting 40 standard virtual hard disks at full throttle. If you need to scale out, then you need more than one storage account, which can get complicated.
+> [!TIP]
+> SSD ストレージには、standard と premium という 2 つのレベルがあります。 Standard SSD ディスクは、ワークロードは標準的であるが、パフォーマンスを向上させたい場合に選択します。 I/O 集中型ワークロードまたは非常に迅速にデータを処理する必要があるミッション クリティカルなシステムの場合は、Premium SSD ディスクを選択します。
 
-Managed disks are the newer and recommended disk storage model. They elegantly solve this complexity by putting the burden of managing the storage accounts onto Azure. You specify the disk type (Premium or Standard) and the size of the disk, and Azure creates and manages both the disk _and_ the storage it uses. You don't have to worry about storage account limits, which makes them easier to scale out. They also offer several other benefits:
+### <a name="mapping-storage-to-disks"></a>ディスクへのストレージ のマッピング
 
-- **Increased reliability**: Azure ensures that VHDs associated with high-reliability VMs will be placed in different parts of Azure Storage to provide similar levels of resilience.
-- **Better security**: Managed disks are real managed resources in the resource group. This means they can use role-based access control to restrict who can work with the VHD data.
-- **Snapshot support**: Snapshots can be used to create a read-only copy of a VHD. You have to shut down the owning VM, but creating the snapshot only takes a few seconds. Once it's done, you can power on the VM and use the snapshot to create a duplicate VM to troubleshoot a production issue or roll back the VM to the point in time that the snapshot was taken.
-- **Backup support**: Managed disks can be automatically backed up to different regions for disaster recovery with Azure Backup, all without affecting the service of the VM.
+Azure では、VM 用の物理ディスクを表すために仮想ハード ディスク (VHD) が使用されます。 VHD は、論理形式とディスク ドライブのデータをレプリケートしますが、Azure Storage アカウントにページ BLOB として格納されます。 ディスクごとに使用するストレージの種類（SSD または HDD）を選択することができます。 これにより、一般にはディスクで実行する予定の I/O に基づいて、各ディスクのパフォーマンスを制御することができます。
 
-## Network communication
+既定では、2 個の仮想ハード ディスク (VHD) が Linux VM に作成されます。
 
-Virtual machines communicate with external resources using a virtual network (VNet). The VNet represents a private network in a single region that your resources communicate on. A virtual network is just like the networks you manage on-premises. You can divide them up with subnets to isolate resources, connect them to other networks (including your on-premises networks), and apply traffic rules to govern inbound and outbound connections.
+1. **オペレーティング システム ディスク**。 これはプライマリ ドライブであり、最大容量は 2,048 GB です。 既定のラベルは `/dev/sda` です。
 
-### Planning your network
+1. **一時ディスク**。 このディスクは、OS またはアプリ用の一時的なストレージを提供します。 Linux 仮想マシンでは、このディスクは `/dev/sdb` であり、Azure Linux エージェントによりフォーマットされて、`/mnt` にマウントされます。 サイズは、VM のサイズに基づいて設定され、スワップ ファイルの格納に使用されます。 
 
-When you create a new VM, you will have the option of creating a new virtual network or using an existing VNet in your region.
+> [!WARNING]
+> 一時ディスクは永続的ではありません。 このディスクには、システムにとって重大ではないデータのみを書き込む必要があります。
 
-Having Azure create the network together with the VM is simple, but it's likely not ideal for most scenarios. It's better to plan your network requirements _up front_ for all the components in your architecture and create the VNet structure separately. Then create the VMs and place them into the already-created VNets. We'll look more at virtual networks later in this module.
+#### <a name="what-about-data"></a>データについて
 
-Before we create a virtual machine, we need to decide how we'd like to administer the VM. Let's look at our options.
+プライマリ ドライブに OS だけでなくデータを格納することもできますが、専用の "_データ ディスク_" を作成する方がよい方法です。 追加のディスクを作成して VM にアタッチできます。 各ディスクは最大 4095 GB のデータを保存でき、ストレージの最大容量は、選択した VM サイズによって決まります。
+
+> [!NOTE]
+> 興味深い機能として、実際のディスクから VHD イメージを作成する機能が挙げられます。 これによって、オンプレミスのコンピュータからクラウドへ、_既存の_情報を容易に移行できます。
+
+### <a name="unmanaged-vs-managed-disks"></a>アンマネージド vs マネージド ディスク
+
+最後に行うストレージの選択は、**アンマネージド** ディスクを使用するか、または**マネージド** ディスクを使用するかです。
+
+アンマネージド ディスクを使用する場合、VM ディスクに対応する VHD を保持するために使用するストレージ アカウントを自分で管理する必要があります。 使用するスペースの容量に対応したストレージ アカウント料金を支払うことになります。 1 つのストレージ アカウントには、I/O 操作数 20,000/秒という固定レート制限があります。これは、1 つのストレージ アカウントが最大スロットルで 40 個の標準仮想ハード ディスクをサポートできることを意味します。 スケールアウトを行う必要がある場合は、複数のストレージ アカウントが必要となります。これは複雑な状況をもたらす場合があります。
+
+マネージド ディスクはより新しく、推奨されるディスク ストレージ モデルです。 ストレージ アカウントを管理する負担を Azure に移すことで、この複雑さを適切に解決します。 ユーザーはディスクの種類 (Premium または Standard) とディスクのサイズを指定し、ディスクとそれが使用するストレージ "_両方_" の作成と管理は Azure によって行われます。 ストレージ アカウント制限について気にする必要がないため、簡単にスケールアウトできます。また、他にも様々な利点があります。
+
+- **信頼性の向上**: Azure では、高信頼性の VM に関連付けられた VHD が Azure ストレージのさまざまな部分に配置されて、同等のレベルの回復力が提供されます。
+- **セキュリティの向上**: マネージド ディスクは、リソース グループ内の実際の管理対象リソースです。 つまり、ロールベースのアクセス制御を使用して、VHD データを使用できるユーザーを制限することができます。
+- **スナップショットサポート**： VHD の読み取り専用コピーの作成にスナップショットが利用可能です。 所有している VM をシャットダウンする必要がありますが、スナップショットの作成に要する時間はわずか数秒です。 完了したら、VM の電源を入れ、スナップショットを使用して重複する VM を作成し、運用環境の問題をトラブルシューティングしたり、スナップショットが作成された時点に VM をロールバックしたりできます。
+- **バックアップのサポート**: Azure Backup を使用して、ディザスター リカバリーのために、マネージド ディスクを異なるリージョンに自動的にバックアップできます。VM のサービスに影響はありません。
+
+## <a name="network-communication"></a>ネットワーク通信
+
+仮想マシンは仮想ネットワーク（VNet）を用いて外部リソースと通信を行います。 VNet は、リソースが通信を行う単一領域内のプライベート ネットワークを表します。 仮想ネットワークは、ユーザーがオンプレミスで管理するネットワークと同じようなものです。 サブネットに分割してリソースを分離したり、他のネットワーク (オンプレミスのネットワークを含む) に接続したり、トラフィック規則を適用して受信および送信接続を管理したりできます。
+
+### <a name="planning-your-network"></a>ネットワークの計画
+
+新しい VM を作成するときは、新しい仮想ネットワークの作成、またはリージョン内の既存の VNet の使用を選択できます。
+
+VM と一緒に Azure でネットワークを自動的に作成するとシンプルですが、ほとんどのシナリオに適していない可能性が高くなります。 アーキテクチャ内のすべてのコンポーネントに対するネットワーク要件を_前もって_計画し、必要な VNet 構造を別個に作成することをお勧めします。 その後、VM を作成して、既に作成されている VNet に配置します。 このモジュールでは、後で詳しく仮想ネットワークについて説明します。
+
+仮想マシンを作成する前に、VM の望ましい管理方法を決定する必要があります。 そのオプションを見てみましょう。

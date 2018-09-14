@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.2-decide-if-mean-is-right-for-you
+title: MEAN が自分に適しているかどうかを決定する
+metadata:
+  title: MEAN が自分に適しているかどうかを決定する
+  description: MEAN が自分に適しているかどうかを決定する
+  ms.openlocfilehash: 9c1aee75588b9a5c1292c9a1028e154c27a5999a
+  ms.sourcegitcommit: dae35896449c9d6194b7681727e891ae31aaae0c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/25/2018
+  ms.locfileid: "42926875"
+durationInMinutes: 5
+content: '[!include[](includes/2-decide-if-mean-is-right-for-you.md)]'

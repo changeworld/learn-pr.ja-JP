@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.5-create-an-azure-functions-mobile-backend
+title: Azure Functions プロジェクトを作成する
+metadata:
+  title: Azure Functions プロジェクトを作成する
+  description: モバイル バック エンドとして機能する 1 つの関数を使用して Azure Functions プロジェクトを作成する
+  ms.openlocfilehash: 5d578e8fa80eca70819fdc4a2fad8bea73555b76
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40445650"
+durationInMinutes: 7
+content: '[!include[](includes/5-create-an-azure-functions-mobile-backend.md)]'
