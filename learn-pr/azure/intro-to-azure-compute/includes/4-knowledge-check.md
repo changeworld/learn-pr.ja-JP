@@ -1,0 +1,1 @@
+<span data-ttu-id="0819d-101">学習した内容を忘れないようにするため、天文学チームに関係する 2 つのシナリオを参照し、関連する質問に回答してください。</span><span class="sxs-lookup"><span data-stu-id="0819d-101">To help you remember what you've learned, read the two scenarios involving the astronomy team and answer the associated questions.</span></span>

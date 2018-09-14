@@ -1,0 +1,25 @@
+### YamlMime:LearningPath
+uid: learn.deploy-a-website-to-azure-with-vm-hosting
+title: 仮想マシン ホスティングを使って Web サイトを Azure にデプロイする
+summary: Web ホスティングの要件が Azure Web アプリ プラットフォームによって直接サポートされない場合は、仮想マシンを活用して、Web サーバーのすべての側面をカスタマイズおよび制御することができます。 Web アプリをホストする Linux および Windows 上の仮想マシンを作成、構成、および管理する方法について説明します。
+cardDescription: Web ホスティングの要件が Azure Web アプリ プラットフォームによって直接サポートされない場合は、仮想マシンを活用して、Web サーバーのすべての側面をカスタマイズおよび制御することができます。 Web アプリをホストする Linux および Windows 上の仮想マシンを作成、構成、および管理する方法について説明します。
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- Azure
+prerequisites: なし
+metadata:
+  title: 仮想マシン ホスティングを使って Web サイトを Azure にデプロイする
+  description: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
+  ms.openlocfilehash: 379e583f3b2b92d0983506d421364dc37747bb7e
+  ms.sourcegitcommit: 12b4711682dac42f742a944fd9baa0e9dd09cf35
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/22/2018
+  ms.locfileid: "40447325"
+modules:
+- learn.manage-vms-with-azure-cli
+achievement: learn.deploy-a-website-to-azure-with-vm-hosting.trophy

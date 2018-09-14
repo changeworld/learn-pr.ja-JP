@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.5-summary
+title: <span data-ttu-id="d4509-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="d4509-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="d4509-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="d4509-102">Summary</span></span>
+  description: <span data-ttu-id="d4509-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="d4509-103">Summary</span></span>
+  ms.openlocfilehash: 2c25498c0974626a2f7d2487b8db5fb5a562a16a
+  ms.sourcegitcommit: cac22638c8487b2a9e567262aee73616ff0035e9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 08/24/2018
+  ms.locfileid: "42911060"
+durationInMinutes: 5
+content: '[!include[](includes/5-summary.md)]'
