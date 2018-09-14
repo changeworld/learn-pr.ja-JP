@@ -8,13 +8,12 @@ metadata:
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0e43c598029df9ca108e7716b7174994cf4fb6ad
-  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
+  ms.openlocfilehash: 745cc00a0ff1675cf527afa6f1dc989ce8b69d29
+  ms.sourcegitcommit: 36ad58bcbe9d89cfae6943e7183fadb140139b74
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44695884"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45612170"
 title: まとめ
-azureSandbox: true
 durationInMinutes: 3
 content: '[!include[](includes/6-summary.md)]'
