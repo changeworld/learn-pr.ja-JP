@@ -1,0 +1,53 @@
+<span data-ttu-id="644b7-101">Azure IoT Central アプリケーションを使用し、コーヒー マシンを Azure IoT Central に接続しました。</span><span class="sxs-lookup"><span data-stu-id="644b7-101">You’ve now worked with both the Azure IoT Central application and connected the coffee machine to Azure IoT Central.</span></span> <span data-ttu-id="644b7-102">リモート コーヒー マシンの監視と管理を開始するまでの手順を順調に進んでいます。</span><span class="sxs-lookup"><span data-stu-id="644b7-102">You are well on your way to begin to monitor and manage your remote coffee machine.</span></span> <span data-ttu-id="644b7-103">このユニットでは、少し時間を取って、先ほど定義した接続されているコーヒー メーカー テンプレートを使用して、セットアップと接続を検証します。</span><span class="sxs-lookup"><span data-stu-id="644b7-103">In this unit, you take a moment to validate your setup and connection by using the Connected Coffee Maker template that you defined earlier.</span></span> <span data-ttu-id="644b7-104">設定の最適温度を更新し、コマンドを実行してマシンの状態を確認し、ダッシュボードで接続されているコーヒー マシンを表示します。</span><span class="sxs-lookup"><span data-stu-id="644b7-104">You update the optimal temperature in settings, run commands to check for the state of your machine, and view your connected coffee machine in the dashboard.</span></span> 
+
+## <a name="update-settings-to-sync-your-application-with-the-coffee-machine"></a><span data-ttu-id="644b7-105">設定を更新してアプリケーションとコーヒー マシンを同期させる</span><span class="sxs-lookup"><span data-stu-id="644b7-105">Update settings to sync your application with the coffee machine</span></span>
+
+<span data-ttu-id="644b7-106">[設定] ページで、アプリケーションからコーヒー マシンに構成データを送信します。</span><span class="sxs-lookup"><span data-stu-id="644b7-106">On the Settings page, you send configuration data to the coffee machine from your application.</span></span> 
+
+<span data-ttu-id="644b7-107">このシナリオでは、最適温度を変更して、**[更新]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="644b7-107">In this scenario, change the optimal temperature and choose **Update**.</span></span> <span data-ttu-id="644b7-108">設定が変更されると、コーヒー マシンで設定変更に対する応答が確認されるまで、設定は UI で保留中としてマークされます。</span><span class="sxs-lookup"><span data-stu-id="644b7-108">When the setting is changed, the setting is marked as pending in the UI until the coffee machine acknowledges that it has responded to the setting change.</span></span> 
+
+> [!NOTE]
+> <span data-ttu-id="644b7-109">設定が正常に更新されると、データ フローが示され、接続が検証されます。</span><span class="sxs-lookup"><span data-stu-id="644b7-109">Successful updates in the setting indicate data flow and validate your  connection.</span></span> <span data-ttu-id="644b7-110">テレメトリ測定で最適温度の更新に応答します。</span><span class="sxs-lookup"><span data-stu-id="644b7-110">The telemetry measurements will respond to the update in Optimal  Temperature.</span></span> <span data-ttu-id="644b7-111">[測定] ページで変更を確認できます。</span><span class="sxs-lookup"><span data-stu-id="644b7-111">You can observe the change on the Measurements page.</span></span> 
+
+## <a name="run-commands-on-the-coffee-machine"></a><span data-ttu-id="644b7-112">コーヒー マシンに対してコマンドを実行する</span><span class="sxs-lookup"><span data-stu-id="644b7-112">Run commands on the coffee machine</span></span> 
+<span data-ttu-id="644b7-113">次の演習では、**[コマンド]** ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="644b7-113">Navigate to the **Commands** page for the following exercise.</span></span> <span data-ttu-id="644b7-114">コマンドのセットアップを検証するには、IoT Central からコーヒー マシンに対してリモートでコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="644b7-114">To validate the commands setup, you remotely run commands on the coffee machine from IoT Central.</span></span> <span data-ttu-id="644b7-115">正常に実行された場合は、コーヒー マシンから確認メッセージが送信されます。</span><span class="sxs-lookup"><span data-stu-id="644b7-115">If successful, confirmation messages are sent from the coffee machine.</span></span>
+
+1. <span data-ttu-id="644b7-116">**[実行]** を選択し、リモートで抽出を開始します。</span><span class="sxs-lookup"><span data-stu-id="644b7-116">Start Brewing remotely by choosing **Run**.</span></span> 
+    
+    <span data-ttu-id="644b7-117">次の 3 つの条件が満たされている場合、コーヒー マシンが起動します。</span><span class="sxs-lookup"><span data-stu-id="644b7-117">The coffee machine will start if these three conditions are satisfied:</span></span>
+    - <span data-ttu-id="644b7-118">カップが検出された</span><span class="sxs-lookup"><span data-stu-id="644b7-118">Cup detected</span></span>
+    - <span data-ttu-id="644b7-119">メンテナンス中ではない</span><span class="sxs-lookup"><span data-stu-id="644b7-119">Not in maintenance</span></span>
+    - <span data-ttu-id="644b7-120">まだ抽出していなし</span><span class="sxs-lookup"><span data-stu-id="644b7-120">Not brewing already</span></span>  
+
+    > [!NOTE]
+    > <span data-ttu-id="644b7-121">抽出が正常に開始されると、[測定] > [状態] で示されるマシンの状態が黄色に変わります。</span><span class="sxs-lookup"><span data-stu-id="644b7-121">When you've successfully started brewing, the state of the machine changes to yellow as indicated in Measurements > State.</span></span> 
+    
+    <span data-ttu-id="644b7-122">コーヒー マシンのコンソール ログで確認メッセージを探します。</span><span class="sxs-lookup"><span data-stu-id="644b7-122">Look for confirmation messages in the console log on the coffee machine.</span></span> 
+
+    ![コマンドを実行する](../images/4-commands-brewing.png)
+
+1. <span data-ttu-id="644b7-124">**[実行]** を選択して、メンテナンス モードを設定します。</span><span class="sxs-lookup"><span data-stu-id="644b7-124">Set Maintenance Mode by choosing **Run**.</span></span> <span data-ttu-id="644b7-125">まだメンテナンスになって "*いない*" 場合は、コーヒー マシンがメンテナンスに設定されます。</span><span class="sxs-lookup"><span data-stu-id="644b7-125">The coffee machine will set to maintenance if it's *not* already in maintenance.</span></span>
+    
+    <span data-ttu-id="644b7-126">コーヒー マシンのコンソール ログで確認メッセージを探します。</span><span class="sxs-lookup"><span data-stu-id="644b7-126">Look for confirmation messages in the console log on the coffee machine.</span></span> 
+
+    > [!NOTE]
+    > <span data-ttu-id="644b7-127">実際に技術者がマシンをオフラインにして必要な修理を行ってからオンラインに戻すのと同じように、クライアント コードを再起動するまで、コーヒー マシンはメンテナンス モードのままになっています。</span><span class="sxs-lookup"><span data-stu-id="644b7-127">As in real life when the technician takes the machine offline to perform necessary repairs before switching it back online, the coffee machine continues to stay in the maintenance mode until you reboot the client code.</span></span>
+
+    ![コマンドを実行する](../images/4-commands-maintenance.png)
+
+1. <span data-ttu-id="644b7-129">Node.js アプリケーションを 60 分を超えない程度で実行し、アプリケーションから不要な通知や電子メールが送信されないようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="644b7-129">It's recommended that you run the Node.js application no more than 60 minutes or so to prevent the application from sending you unwanted notifications/emails.</span></span> <span data-ttu-id="644b7-130">チュートリアルで操作していない場合はアプリケーションを停止することで、一日のメッセージ クォータを使い切ることもなくなります。</span><span class="sxs-lookup"><span data-stu-id="644b7-130">Stopping the application when you're not working on the tutorial also prevents you from exhausting the daily message quota.</span></span>
+
+## <a name="view-the-coffee-machine-in-the-dashboard"></a><span data-ttu-id="644b7-131">ダッシュボードでコーヒー マシンを表示する</span><span class="sxs-lookup"><span data-stu-id="644b7-131">View the coffee machine in the dashboard</span></span>
+<span data-ttu-id="644b7-132">コーヒー マシンに関する情報をまとめて見ることができる **[ダッシュボード]** ページに移動します。</span><span class="sxs-lookup"><span data-stu-id="644b7-132">Navigate to the **Dashboard** page where you can collectively see the relevant information about your coffee machine.</span></span> <span data-ttu-id="644b7-133">次の演習では、**[デザイン モード]** をオンにしてダッシュボードを構成します。</span><span class="sxs-lookup"><span data-stu-id="644b7-133">For the following exercise, turn on **Design Mode** to configure your dashboard.</span></span> <span data-ttu-id="644b7-134">完了するたびに、**[保存]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="644b7-134">Whenever you are finished, choose **Save**.</span></span>
+
+1. <span data-ttu-id="644b7-135">**[折れ線グラフ]** を選択し、タイトルを「テレメトリ」と入力してテレメトリ測定を表示します。</span><span class="sxs-lookup"><span data-stu-id="644b7-135">Choose **Line Chart** and enter the title as Telemetry to see the telemetry measurements.</span></span> <span data-ttu-id="644b7-136">**[時間範囲]** で **[過去 30 分]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="644b7-136">Choose **Past 30 minutes** for **Time Range**.</span></span>
+
+    ![ダッシュボードの表示](../images/4-dashboard-a.png)
+
+1. <span data-ttu-id="644b7-138">**[Settings and Properties]\(設定とプロパティ\)** を選択して、タイトルに「デバイスのプロパティ」と入力します。</span><span class="sxs-lookup"><span data-stu-id="644b7-138">Choose **Settings and Properties** and enter the title as Device Properties.</span></span> <span data-ttu-id="644b7-139">**[追加/削除]** で、コーヒー メーカー最高温度、コーヒー メーカー最低温度、デバイスの保証期限切れを選択します。</span><span class="sxs-lookup"><span data-stu-id="644b7-139">In **Add/Remove**, choose Coffee Makers Max Temperature, Coffee Makers Min Temperature, Device Warranty Expired.</span></span> 
+
+1. <span data-ttu-id="644b7-140">**[Settings and Properties]\(設定とプロパティ\)** を選択して、タイトルに「最適温度」と入力します。</span><span class="sxs-lookup"><span data-stu-id="644b7-140">Choose **Settings and Properties** and enter the title as Optimal Temperature.</span></span> <span data-ttu-id="644b7-141">**[追加/削除]** で、[最適温度] を選択します。</span><span class="sxs-lookup"><span data-stu-id="644b7-141">In **Add/Remove**, choose Optimal  Temperature.</span></span> 
+
+## <a name="summary"></a><span data-ttu-id="644b7-142">まとめ</span><span class="sxs-lookup"><span data-stu-id="644b7-142">Summary</span></span>
+
+<span data-ttu-id="644b7-143">このユニットでは、少し時間を取ってコーヒー マシンと Azure IoT Central の間の接続を検証しました。</span><span class="sxs-lookup"><span data-stu-id="644b7-143">In this unit, you spent some time to validate the connection between the coffee machine and Azure IoT Central.</span></span> <span data-ttu-id="644b7-144">コマンドを実行し、最適温度を更新することで検証を行いました。</span><span class="sxs-lookup"><span data-stu-id="644b7-144">You achieved validation by updating the optimal temperature, running the commands.</span></span> <span data-ttu-id="644b7-145">最後に、コーヒー マシンに関して見たい情報を定義することで、マシンを 1 か所で監視するようにダッシュボードを設定しました。</span><span class="sxs-lookup"><span data-stu-id="644b7-145">Finally you set up the dashboard to monitor your machine in one place by defining the information you'd like to see about your coffee machine.</span></span> <span data-ttu-id="644b7-146">これらの検証手順は、次のユニットの他のタスクに進む前に必要です。</span><span class="sxs-lookup"><span data-stu-id="644b7-146">These validation steps are necessary before moving on to other tasks in the next unit.</span></span> 

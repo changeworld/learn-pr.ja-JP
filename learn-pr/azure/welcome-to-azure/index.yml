@@ -1,0 +1,37 @@
+### YamlMime:Module
+uid: learn.welcome-to-azure
+title: Azure へようこそ
+summary: Azure を使用して、クラウドで初めての仮想マシンを作成して構成します。
+cardDescription: Azure を使用して、クラウドで初めての仮想マシンを作成します。
+iconUrl: http://via.placeholder.com/120x120
+achievement: learn.placeholder.badge
+levels:
+- beginner
+roles:
+- developer
+- administrator
+- solution-architect
+products:
+- azure
+metadata:
+  title: Azure へようこそ
+  description: Azure を使用して、クラウドで初めての仮想マシンを作成します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b725b0c2ad3ffa71860f04525ce600d43e7a4c0d
+  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44495451"
+abstract: "* 世界を変えたり理想の仕事を見つけたりするために必要な基本スキルの習得を始めます。 \n* Microsoft Azure とはどのようなもので、クラウド コンピューティングにどのように関係するのかについて学習します。\n* 初めての仮想マシンを稼働させ、Web サーバーを追加し、より多くの能力が必要になったときにサーバーをスケールアップすることがいかに簡単かをご覧ください。\n"
+units:
+- learn.welcome-to-azure.1-introduction
+- learn.welcome-to-azure.2-what-is-azure
+- learn.welcome-to-azure.3-create-a-vm
+- learn.welcome-to-azure.4-add-web-server
+- learn.welcome-to-azure.5-scale-up
+- learn.welcome-to-azure.6-summary
