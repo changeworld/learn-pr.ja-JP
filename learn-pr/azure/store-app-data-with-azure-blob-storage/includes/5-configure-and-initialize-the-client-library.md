@@ -8,7 +8,7 @@ Azure Blob Storage を使用するアプリの一般的なワークフローを�
 
 ## <a name="configure-your-connection-string"></a>接続文字列の構成
 
-コードを記述する前に、使用するストレージ アカウント用の接続文字列が必要になります。
+アプリを実行する前に、使用するストレージ アカウント用の接続文字列が必要になります。 Azure portal、Azure CLI、Azure PowerShell などの Azure 管理インターフェイスを使用して取得できます。 このモジュールの最後近くにあるコードを実行するように Web アプリを設定するときは、Azure CLI を使用して、前に作成したストレージ アカウントに対する接続文字列を取得します。
 
 ストレージ アカウント接続文字列には、アカウント キーが含まれます。 アカウント キーはシークレットとみなし、安全に格納する必要があります。 ここで、App Service アプリケーション設定内に接続文字列を格納することにします。 App Service アプリケーション設定は、アプリケーション シークレットにとって安全な場所ですが、この設計ではローカル開発をサポートしていないため、単独では堅牢なエンドツーエンド ソリューションとはなりません。
 
@@ -49,15 +49,13 @@ CloudBlobContainer container = blobClient.GetContainerReference(containerName);
 
 まず、GitHub からスターター アプリを複製してみましょう。 Cloud Shell ターミナルで、次のコマンドを実行してソース コードのコピーを取得し、それをエディターで開きます。
 
-**TODO 最終的なリポジトリの URL を更新してください**
-
 ```console
-git clone https://github.com/nickwalkmsft/FileUploader.git
-cd FileUploader
+git clone https://github.com/MicrosoftDocs/mslearn-store-data-in-azure.git
+cd mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start
 code .
 ```
 
-ファイル `Controllers/FilesController.cs` を開きます。 ここで作業することはありませんが、アプリで行われることを簡単に見ていきます。
+エディターで `Controllers/FilesController.cs` ファイルを開きます。 ここで作業することはありませんが、アプリで行われることを簡単に見ていきます。
 
 このコントローラーでは、次の 3 つのアクションによって API が実装されます。
 
@@ -78,15 +76,15 @@ dotnet restore
 
 これにより、確実に BLOB ストレージ クライアント ライブラリの最新バージョンを使用することになります。
 
-### <a name="configure"></a>構成
+### <a name="configure"></a>構成する
 
-アプリを実行するために必要な構成値は、ストレージ アカウント接続文字列と、ファイルを格納するためにアプリによって使用されるコンテナーの名前です。 このユニットでは、Azure App Service でアプリを実行するだけなので、App Service のベスト プラクティスに従って、値を App Service アプリケーション設定に格納します。 これは、App Service インスタンスを作成するときに行うので、現時点では何もする必要はありません。
+必要な構成値は、ストレージ アカウントの接続文字列と、ファイルを格納するためにアプリによって使用されるコンテナーの名前です。 このモジュールでは、Azure App Service でアプリを実行するだけなので、App Service のベスト プラクティスに従い、値を App Service アプリケーションの設定に格納します。 これは、App Service インスタンスを作成するときに行うので、現時点では何もする必要はありません。
 
 構成の*使用*に関しては、対象のスターター アプリに必要としているプラミングが既に含まれています。 `BlobStorage` 内の `IOptions<AzureStorageConfig>` コンストラクター パラメーターには 2 つのプロパティがあります。ストレージ アカウントの接続文字列と、アプリによって BLOB が格納されるコンテナーの名前です。 `Startup.cs` の `ConfigureServices` メソッド内には、アプリの起動時に構成から値を読み込むコードがあります。
 
-### <a name="initialize"></a>初期化
+### <a name="initialize"></a>初期化する
 
-`Models/BlobStorage.cs` を開きます。 ファイルの先頭に次の `using` ステートメントを追加して、演習中に追加するコード用に準備します。
+エディターで `Models/BlobStorage.cs` を開きます。 ファイルの先頭に次の `using` ステートメントを追加して、演習中に追加するコード用に準備します。
 
 ```csharp
 using System.Linq;

@@ -1,7 +1,7 @@
 このモジュールでは、Azure Blob Storage を使用して Web アプリケーションのデータを格納する方法について説明しました。 Web アプリで BLOB ストレージを使用するための戦略を作成するためのヒント、および Azure Storage SDK for .NET Core を使用して BLOB に書き込みまたは BLOB から読み取る方法について説明しました。 作成したアプリが、ユーザーからのファイルのアップロードを受け取り、それを BLOB ストレージに格納し、ダウンロードできるようにします。
 
-## <a name="cleanup"></a>クリーンアップ
-<!---TODO: Do we need to include cleanup for the free education tier?--->
+## <a name="clean-up"></a>クリーンアップ
+<!---TODO: Update for sandbox?--->
 
 Azure サブスクリプションをクリーンアップするには、Azure Cloud Shell で次を実行して、このモジュールで作成したすべてのリソースを含むリソース グループを削除します。
 
@@ -9,7 +9,7 @@ Azure サブスクリプションをクリーンアップするには、Azure Cl
 az group delete --name blob-exercise-group --yes --no-wait
 ```
 
-Cloud Shell ストレージをクリーンアップするには、`FileUploader` ディレクトリを削除します。
+Cloud Shell ストレージをクリーンアップするには、`mslearn-store-data-in-azure` ディレクトリを削除します。
 
 ## <a name="further-reading"></a>参考資料
 

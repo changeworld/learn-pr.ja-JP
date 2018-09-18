@@ -10,7 +10,9 @@ Azure SQL Database が稼働しているので、お気に入りの SQL Server �
 
 Azure Cloud Shell を使用すると、データベースの操作を簡単に開始できます。 Cloud Shell から Azure CLI にアクセスできます。そのため、Azure リソースに関する情報を取得できます。 また、Cloud Shell には `sqlcmd` などの他の一般的なユーティリティも多く用意されているので、新しいデータベースをすぐに使用できます。
 
-## <a name="cleanup"></a>クリーンアップ
+## <a name="clean-up"></a>クリーンアップ
+
+<!---TODO: Update for sandbox?--->
 
 Azure SQL Database のインストールを使用して、他にも自由に実験してみてください。 終わった後にデータベースを削除する最も簡単な方法は、親リソース グループを削除することです。
 
@@ -19,8 +21,6 @@ Azure SQL Database のインストールを使用して、他にも自由に実�
 1. **logistics-db-rg** を選択します。
 
 1. **[リソース グループの削除]** をクリックします。
-
-    ![リソース グループを削除する](../media-draft/delete-rg.png)
 
 1. プロンプトで「logistics-db-rg」と入力し、**[削除]** をクリックします。
 

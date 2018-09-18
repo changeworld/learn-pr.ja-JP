@@ -1,4 +1,4 @@
-次に Azure でアプリを実行します。 Azure App Service アプリを作成し、MSI とコンテナー構成を使用してそのアプリを設定してから、コードをデプロイする必要があります。
+次に Azure でアプリを実行します。 Azure App Service アプリを作成し、マネージド ID とコンテナー構成を使用してそのアプリを設定してから、コードをデプロイする必要があります。
 
 ## <a name="create-the-app-service-plan-and-app"></a>App Service のプランとアプリを作成する
 
@@ -21,9 +21,9 @@ Azure へのデプロイでは、App Service のベスト プラクティスに�
 az webapp config appsettings set --name <your-unique-app-name> --resource-group keyvault-exercise-group --settings VaultName=<your-unique-vault-name>
 ```
 
-## <a name="enable-msi"></a>MSI を有効化する
+## <a name="enable-managed-identity"></a>マネージド ID を有効にする
 
-アプリでの MSI の有効化は 1 行で指定できます。
+アプリでマネージド ID を有効にするのは 1 行で済みます。
 
 ```azurecli
 az webapp identity assign --name <your-unique-app-name> --resource-group keyvault-exercise-group
@@ -36,7 +36,7 @@ JSON の出力結果から、**principalId** の値をコピーします。 prin
 次に、アプリの ID に対して、運用環境の資格情報コンテナーからシークレットを取得して一覧表示するためのアクセス許可を付与する必要があります。 前の手順でコピーした **principalId** の値を、以下のコマンドの **object-id** の値として使用します。
 
 ```azurecli
-az keyvault set-policy --name <your-unique-vault-name> --object-id <your-msi-principleid> --secret-permissions get list
+az keyvault set-policy --name <your-unique-vault-name> --object-id <your-managed-identity-principleid> --secret-permissions get list
 ```
 
 ## <a name="deploy-the-app-and-try-it-out"></a>アプリをデプロイし、試してみる

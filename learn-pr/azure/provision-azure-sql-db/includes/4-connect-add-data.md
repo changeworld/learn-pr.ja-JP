@@ -1,6 +1,6 @@
 データベースをアプリに接続する前に、データベースに接続し、基本的なテーブルを追加し、サンプル データを操作できることを確認する必要があります。
 
-Azure SQL Database のインフラストラクチャ、ソフトウェア更新プログラム、修正プログラムは Microsoft で保持しています。 Azure SQL Database のそれ以外の部分については、他の SQL Server インストールと同様に扱うことができます。 たとえば、Visual Studio、SQL Server Management Studio、またはその他のツールを使用して、Azure SQL Database を管理することができます。
+Azure SQL Database のインフラストラクチャ、ソフトウェア更新プログラム、修正プログラムは Microsoft で保持しています。 Azure SQL Database のそれ以外の部分については、他の SQL Server インストールと同様に扱うことができます。 たとえば、Visual Studio、SQL Server Management Studio、SQL Server Operations Studio、またはその他のツールを使用して、Azure SQL Database を管理することができます。
 
 データベースにアクセスしてアプリに接続する方法は任意です。 しかし、データベースの操作経験をある程度積むために、ここではポータルから直接接続し、テーブルを作成し、基本的な CRUD 操作をいくつか実行します。 学習内容:
 
@@ -31,8 +31,6 @@ Cloud Shell には、一般的なツールとテキスト エディターが含�
 
 1. ポータルの上部にある **[Cloud Shell]** をクリックします。
 
-    ![Cloud Shell を開く](../media-draft/open-cloud-shell.png)
-
 1. `az` コマンドを実行する場合、リソース グループの名前と Azure SQL 論理サーバーの名前が必要です。 入力を省略できるように、この `azure configure` コマンドを実行して既定値として指定します。
     `contoso-logistics` を Azure SQL 論理サーバーの名前に置き換えます。
 
@@ -45,7 +43,7 @@ Cloud Shell には、一般的なツールとテキスト エディターが含�
     ```azurecli
     az sql db list
     ```
-    出力として大きなブロックの JSON が表示されます。 
+    出力として大きなブロックの JSON が表示されます。
 
 1. データベース名のみが必要なので、このコマンドをもう一度実行します。 今回は、出力を `jq` にパイプして、名前フィールドのみを出力します。
     ```azurecli
@@ -62,7 +60,7 @@ Cloud Shell には、一般的なツールとテキスト エディターが含�
       }
     ]
     ```
-    **Logistics** はデータベースです。 SQL Server と同様に、**master** には、ログオン アカウントやシステム構成設定などのサーバー メタデータが含まれています。
+    **Logistics** はデータベースです。 SQL Server と同様に、**master** には、サインイン アカウントやシステム構成設定などのサーバー メタデータが含まれています。
 
 1. この `az sql db show` コマンドを実行すると、**Logistics** データベースに関する詳細情報が得られます。
 
@@ -136,14 +134,14 @@ CRUD は、**作成** (create)、**読み取り** (read)、**更新** (update)�
     name
     --------------------------------------------------------------------------------------------------------------------------------
     Drivers
-    
+
     (1 rows affected)
     ```
 
 1. この `INSERT` T-SQL ステートメントを実行して、サンプル行をテーブルに追加します。 これは**作成**操作です。
 
     ```sql
-    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Orton', 'Erick', 'Springfield');
+    INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
     GO
     ```
 
@@ -166,14 +164,14 @@ CRUD は、**作成** (create)、**読み取り** (read)、**更新** (update)�
     DriverID
     -----------
             123
-    
+
     (1 rows affected)
     ```
 
 1. この `UPDATE` T-SQL ステートメントを実行して、`DriverID` が 123 のドライバーについて出発地を "Springfield" から "Springfield, OR" に変更します。 これは**更新**操作です。
 
     ```sql
-    UPDATE Drivers SET OriginCity='Springfield, OR' WHERE DriverID=123;
+    UPDATE Drivers SET OriginCity='Springfield, AK' WHERE DriverID=123;
     GO
     ```
 
@@ -189,7 +187,7 @@ CRUD は、**作成** (create)、**読み取り** (read)、**更新** (update)�
     DELETE FROM Drivers WHERE DriverID=123;
     GO
     ```
-    
+
     ```console
     (1 rows affected)
     ```
@@ -206,7 +204,7 @@ CRUD は、**作成** (create)、**読み取り** (read)、**更新** (update)�
     ```console
     -----------
               0
-    
+
     (1 rows affected)
     ```
 

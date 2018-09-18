@@ -1,23 +1,31 @@
 ### YamlMime:Module
 uid: learn.create-neural-network-with-dsvm
 metadata:
-  title: Azure Data Science Virtual Machine 上で TensorFlow を使用してニューラル ネットワークを構築する
+  title: Azure Data Science Virtual Machine 上で TensorFlow を使用してニューラル ネットワークを作成する
   description: TensorFlow を使用して Azure Data Science Virtual Machine 上でディープ ニューラル ネットワークをトレーニングする方法について学習します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 79ac3231f183a0fbb92ac35a22550b93f431d945
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d57dad0f868d8d634dcfa8e8949bc86248b0e360
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826554"
-title: Azure Data Science Virtual Machine 上で TensorFlow を使用してニューラル ネットワークを構築する
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233324"
+title: Azure Data Science Virtual Machine 上で TensorFlow を使用してニューラル ネットワークを作成する
 summary: TensorFlow を使用して Azure Data Science Virtual Machine 上でディープ ニューラル ネットワークをトレーニングする方法について学習します。
 abstract: >
   このモジュールでは、次のことを行います。
-    - Azure で Linux Data Science Virtual Machine を作成する
-    - リモート デスクトップを使って DSVM に接続する
-    - イメージを、ホットドッグが含まれているものと、含まれていないものに分類できるように、TensorFlow モデルをトレーニングします。
-    - Python アプリでモデルを使用する
+
+  - Azure で Linux Data Science Virtual Machine を作成する
+
+  - リモート デスクトップを使って DSVM に接続する
+
+  - イメージを、ホットドッグが含まれているものと、含まれていないものに分類できるように、TensorFlow モデルをトレーニングします。
+
+  - Python アプリでモデルを使用する
 prerequisites: >
   - [X2Go](https://wiki.x2go.org/doku.php/download:start) などの [Xfce](https://xfce.org/) リモートデスクトップ クライアント
 iconUrl: http://via.placeholder.com/120x120

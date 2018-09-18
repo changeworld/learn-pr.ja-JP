@@ -1,8 +1,10 @@
-このモジュールでは、HTML ベースのユーザー インターフェイスを表示するシンプルな Web アプリケーションをデプロイします。 サーバーレス バックエンドにより、アプリケーションで画像をアップロードし、その画像について説明するキャプションを自動的に取得できます。
+このモジュールでは、HTML ベースのユーザー インターフェイスを表示するシンプルな Web アプリケーションをデプロイします。 サーバーレス バックエンドにより、アプリケーションで画像をアップロードし、説明キャプションを自動的に生成できます。
 
 ![Web アプリの実行](../media/0-app-screenshot-finished.png)
 
 次の図では、アプリケーションによって使用されている Azure サービスを示します。
+
+![ソリューションのアーキテクチャ図](../media/0-architecture.jpg)
 
 1. Azure Blob Storage は静的 Web コンテンツ (HTML、CSS、JS) を提供し、画像が格納されます。
 2. Azure Functions によって、画像のアップロード、サイズ変更、およびメタデータ ストレージが管理されます。
@@ -10,20 +12,10 @@
 4. Azure Logic Apps によって、Cognitive Services Computer Vision API から画像のキャプションが取得されます。
 5. Azure Active Directory によりユーザー認証が管理されます。
 
-![ソリューションのアーキテクチャ図](../media/0-architecture.jpg)
-
-このユニットでは、以下の方法について説明します。
-> [!div class="checklist"]
-> * 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。
-> * Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。
-> * Azure Functions を使用して、画像のサイズを変更します。
-> * 画像のメタデータを Azure Cosmos DB に格納します。
-> * Cognitive Services Vision API を使用して、画像のキャプションを自動生成します。
-> * Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護します。
-
-Azure Blob Storage は、静的ファイルをホストする際に使用できる、低コストで非常にスケーラブルなサービスです。 このチュートリアルでは、Blob Storage を使用して、ビルドする Web アプリの静的コンテンツ (HTML、JavaScript、CSS など) を提供します。
+Azure Blob Storage は、静的ファイルをホストする際に使用できる、低コストで非常にスケーラブルなサービスです。 このモジュールでは、Blob Storage を使用して、構築する Web アプリに静的コンテンツ (たとえば、HTML、JavaScript、CSS) を提供します。
 
 ## <a name="create-an-azure-storage-account"></a>Azure Storage アカウントの作成
+<!---TODO: Update for sandbox?--->
 
 Azure Storage アカウントは、テーブル、キュー、ファイル、BLOB (オブジェクト)、仮想マシン ディスクを格納できる Azure リソースです。
 
@@ -35,7 +27,7 @@ Azure Storage アカウントは、テーブル、キュー、ファイル、BLO
     az group create -n first-serverless-app -l westcentralus
     ```
 
-1. このチュートリアルの静的コンテンツ (HTML、CSS、および JavaScript ファイル) は Blob Storage でホストされます。 Blob Storage にはストレージ アカウントが必要です。 リソース グループにストレージ アカウント (汎用 V2) を作成します。 `<storage account name>` を一意の名前に置き換えます。
+1. このチュートリアルの静的コンテンツ (HTML、CSS、および JavaScript ファイル) は Blob Storage でホストされます。 Blob Storage にはストレージ アカウントが必要です。 リソース グループに汎用 v2 (GPv2) ストレージ アカウントを作成します。 `<storage account name>` を一意の名前に置き換えます。
 
     ```azurecli
     az storage account create -n <storage account name> -g first-serverless-app --kind StorageV2 -l westcentralus --https-only true --sku Standard_LRS
@@ -63,7 +55,7 @@ Azure Storage アカウントは、テーブル、キュー、ファイル、BLO
 
     リポジトリは `/home/<username>/functions-first-serverless-web-application` に複製されます。
 
-1. クライアント側の Web アプリケーションは **www** フォルダーにあり、Vue.js JavaScript フレームワークを使用して構築されています。 このフォルダーに移動した後、**npm** コマンドを実行してアプリケーションの依存関係をインストールし、アプリケーションをビルドします。 これらのコマンドの最後は、完了に数分かかることがあります。
+1. クライアント側の Web アプリケーションは **www** フォルダーにあり、Vue.js JavaScript フレームワークを使用して構築されています。 **www** フォルダーを開き、**npm** コマンドを実行してアプリケーションの依存関係をインストールして、アプリケーションをビルドします。 これらのコマンドの最後は、完了に数分かかることがあります。
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www
@@ -80,11 +72,11 @@ Azure Storage アカウントは、テーブル、キュー、ファイル、BLO
     az storage blob upload-batch -s . -d \$web --account-name <storage account name>
     ```
 
-1. アプリケーションを表示するには、Web ブラウザーで Storage の静的な Web サイトのプライマリ エンドポイント URL を開きます。
+1. アプリケーションを表示するには、Web ブラウザーで静的な Web サイトのプライマリ エンドポイント URL を開きます。
 
     ![最初のサーバーレス Web アプリのホーム ページ](../media/1-app-screenshot-new.png)
 
 
 ## <a name="summary"></a>まとめ
 
-このユニットでは、ストレージ アカウントを含む **first-serverless-app** という名前のリソース グループを作成しました。 ストレージ アカウント内の **$web** という名前の BLOB コンテナーに Web アプリケーションの静的コンテンツを格納し、コンテンツを公開しました。 次に、サーバレス関数を使用して、この Web アプリケーションから Blob Storage に画像をアップロードする方法を説明します。
+このユニットでは、ストレージ アカウントを含む **first-serverless-app** という名前のリソース グループを作成しました。 ストレージ アカウント内の **$web** という名前の BLOB コンテナーに Web アプリケーションの静的コンテンツを格納し、コンテンツを公開しました。 次に、サーバーレス関数を使用して、この Web アプリケーションから Blob Storage に画像をアップロードする方法を説明します。
