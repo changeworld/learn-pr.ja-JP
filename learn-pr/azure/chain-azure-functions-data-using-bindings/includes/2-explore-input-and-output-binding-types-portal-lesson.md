@@ -1,59 +1,53 @@
-Accessing and processing data are key tasks in many software solutions. Consider some of these scenarios:
+多くのソフトウェア ソリューションにおいて、データへのアクセスとデータの処理は重要なタスクです。 次のシナリオを考えてみましょう。
 
-* You've been asked to implement a way to move incoming data from blob storage to Azure Cosmos DB.
-* You want to post incoming messages to a queue for processing by another component in your enterprise.
-* Your service needs to grab gamer scores from a queue and update an online scoreboard.
+* 受信データを Blob Storage から Azure Cosmos DB に移動する方法を実装するよう依頼された。
+* 社内の別のコンポーネントで処理するために、受信メッセージをキューに送信したい。
+* サービスでキューからゲーマー スコアを取得し、オンライン スコアボードを更新する必要がある。
 
-All of these examples are about moving data. The data source and destinations differ from scenario to scenario, but the pattern is similar. You connect to a data source, you read and write data. Azure Functions helps you integrate with data and services using bindings. 
+これらの例はすべて、データの移動に関するものです。 データ ソースと送信先はシナリオによって異なりますが、パターンは似ています。 データ ソースに接続し、データを読み書きします。 Azure Functions では、バインディングを使用してデータやサービスとの統合できるようにします。 
 
-## What is a binding?
+## <a name="what-is-a-binding"></a>バインディングとは
 
-In functions, bindings provide a declarative way to connect to data from within your code. They make it easier to integrate with data streams consistently in a function. A trigger defines how a function is invoked. You can only have one trigger, but you can have multiple bindings in a function. This is powerful because you can connect to your data sources without having to hard code the values, like for instance, the *connection string*.
+関数では、バインディングによって、コード内からデータに接続する宣言型の方法が提供されます。 バインディングにより、関数内で一貫した方法でデータ ストリームと簡単に統合できるようになります。 トリガーでは関数を呼び出す方法を定義します。 使用できるトリガーは 1 つだけですが、1 つの関数で複数のバインディングを使用できます。 これが強力なのは、"*接続文字列*" などの値をハード コードしなくても、データ ソースに接続できるためです。
 
-### Two kinds of bindings
+### <a name="two-kinds-of-bindings"></a>2 種類のバインディング
 
-There are two kinds of bindings you can use for your functions:
+関数に使用できるバインディングには、次の 2 種類があります。
 
-1. **Input binding**
-    An input binding is a connection to a data **source**. Our function reads data from this source.
+1. **入力バインディング**: 入力バインディングとは、データ **ソース**への接続です。 関数はこのソースからデータを読み取ります。
 
-1. **Output binding**
-    An output binding is a connection to a data **destination**. Our function writes data to this destination.
+1. **出力バインディング**: 出力バインディングとは、データの**送信先**への接続です。 関数はこの送信先にデータを書き込みます。
 
-### Types of supported bindings
+### <a name="types-of-supported-bindings"></a>サポートされるバインディングの種類
 
-The *type* of binding defines where we are reading or sending data. There is a binding to respond to web requests and a large selection of bindings to interact with storage.
+バインディングの "*種類*" では、データの読み取り先または送信先を定義します。 Web 要求に応答するためのバインディングと、ストレージと対話するためのさまざまなバインディングがあります。
 
-Here's a list of commonly used bindings:
-- Blob
-- Queue
+よく使用されるバインディングを次に示します。
+- BLOB
+- キュー
 - CosmosDB
 - Event Hubs
-- External Files
-- External Tables
+- 外部ファイル
+- 外部テーブル
 - HTTP
 
-### Binding properties
+### <a name="binding-properties"></a>バインディングのプロパティ
 
-There are four properties that are required in all bindings. You may have to supply additional properties based on the type of binding and/or storage you are using.
+すべてのバインディングで必要な 4 つのプロパティがあります。 使用しているバインディングやストレージの種類に基づいて、追加のプロパティを提供することが必要な場合があります。
 
-- **Name**
-    The `name` property defines the function parameter through which you access the data. For example, in a queue input binding, this is the name of the function parameter that receives the queue message content. 
+- **名前**: `name` プロパティでは、データにアクセスするために使用する関数パラメーターを定義します。 たとえば、キュー入力バインディングでは、これはキュー メッセージの内容を受け取る関数パラメーターの名前になります。 
 
-- **Type**
-    The `type` property identifies the type of binding, i.e., the type of data or service we want to interact with.
+- **種類**: `type` プロパティでは、バインディングの種類 (対話するデータまたはサービスの種類) を指定します。
 
-- **Direction**
-    The `direction` property identifies the direction data is flowing ie. is it an input or output binding?
+- **方向**: `direction` プロパティでは、データが流れる方向 (入力バインディングか、出力バインディングか) を指定します。
 
-- **Connection**
-    The `connection` property is the name of an app setting that contains the connection string, not the connection string itself. Bindings use connection strings stored in app settings to enforce the best practice that function.json does not contain service secrets.
+- **接続**: `connection` プロパティは、接続文字列自体ではなく、接続文字列を含むアプリ設定の名前です。 バインディングでは、"function.json にはサービス シークレットを含めない" というベスト プラクティスを適用するために、アプリ設定に保存された接続文字列を使用します。
 
-## Create a binding
+## <a name="create-a-binding"></a>バインディングを作成する
 
-Bindings are defined in JSON. A binding is configured in your function's configuration file, which is named `function.json` and lives in the same folder as your function code.
+バインディングは JSON で定義されます。 バインディングは関数の構成ファイルで構成されます。このファイルは `function.json` という名前で、関数コードと同じフォルダーにあります。
 
- Let's examine a sample of an *input binding*:
+ "*入力バインディング*" のサンプルを詳しく見てみましょう。
 
 ```json
     ...
@@ -67,18 +61,18 @@ Bindings are defined in JSON. A binding is configured in your function's configu
     ...
 ```
 
-To create this binding we:
+このバインディングを作成するには、次の手順に従います。
 
-1. Create a binding in our `function.json` file.
+1. `function.json` ファイルにバインディングを作成します。
 
-1. Provide the value for the `name` variable. In this example, the variable will hold the blob data.
+1. `name` 変数の値を指定します。 この例では、変数に BLOB データが保持されます。
 
-1. Provide the storage `type`, in the preceding example, we are using Blob storage.
+1. ストレージの `type` を指定します。前の例では、Blob Storage を使用しています。
 
-1. Provide the `path`, which specifies the container and the item name which goes in it. The `path` property is required for Blobs.
+1. コンテナーとそこに格納される項目名を指定する、`path` を指定します。 BLOB の場合、`path` プロパティは必須です。
 
-1. Provide the `connection` string setting name defined in the application's settings file. It's used as a lookup to find the connection string to connect to your storage.
+1. アプリケーションの設定ファイルで定義されている `connection` 文字列設定名を指定します。 これは、ストレージに接続する際の接続文字列を見つけるための参照として使用されます。
 
-1. Define the `direction` as `in`, it will read data from the Blob.
+1. BLOB からデータを読み取るため、`direction` を `in` として定義します。
 
-Bindings are used to connect to data into your function. In the example we looked at, we used an input binding to connect user images to be processed by our function as thumbnails.
+バインディングは、関数へのデータに接続するために使用されます。 この例では、入力バインディングを使用して、関数によってサムネイルとして処理されるユーザー画像に接続しました。

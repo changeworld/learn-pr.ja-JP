@@ -11,21 +11,21 @@
 
 Azure Service Bus における名前空間とは、キュー、トピック、およびリレー用の一意の完全修飾ドメイン名を持つコンテナーです。 まず名前空間の作成から始める必要があります。
 
-各名前空間には、プライマリおよびセカンダリの Shared Access Signature (SAS) 暗号化キーもあります。 送信側または受信側のコンポーネントは、名前空間内のオブジェクトに対するアクセス権を得るために、接続時にこれらのキーを提供する必要があります。
+各名前空間には、プライマリおよびセカンダリの Shared Access Signature 暗号化キーもあります。 送信側または受信側のコンポーネントは、名前空間内のオブジェクトに対するアクセス権を得るために、接続時にこれらのキーを提供する必要があります。
 
 Azure portal を使用して Service Bus 名前空間を作成するには、次の手順を実行します。
 
-1. ブラウザーで [Azure portal](https://portal.azure.com/) に移動し、通常の Azure アカウントの資格情報でログインします。
+1. ブラウザーで [Azure portal](https://portal.azure.com/) に移動し、通常の Azure アカウントの資格情報を使用してログインします。
 
 1. 左側のナビゲーションで、**[すべてのサービス]** をクリックします。
 
-1. **[すべてのサービス]** ブレードで、**[統合]** セクションまでスクロールし、**[Service Bus]** をクリックします。
+1. **[すべてのサービス]** ブレードで、**[統合]** セクションまで下へスクロールし、**[Service Bus]** をクリックします。
 
-    ![Service Bus 名前空間を作成する](../media-draft/3-create-namespace-1.png)
+    ![Service Bus 名前空間を作成する](../media/3-create-namespace-1.png)
 
 1. **[Service Bus]** ブレードの左上にある **[追加]** をクリックします。
 
-1. **[名前]** ボックスに、名前空間の一意の名前を入力します。 たとえば、「salesteamapp」 + *自分のイニシャル* + *現在の日付*を入力します。
+1. **[名前]** ボックスに、名前空間の一意の名前を入力します。 たとえば、「salesteamapp」 + "*自分のイニシャル*" + "*現在の日付*" を入力します。
 
 1. **[価格レベル]** ドロップダウン リストで **[Standard]** を選択します。
 
@@ -35,7 +35,7 @@ Azure portal を使用して Service Bus 名前空間を作成するには、次
 
 1. **[場所]** ドロップダウン リストで、近くの場所を選択し、**[作成]** をクリックします。 新しい Service Bus 名前空間が作成されます。
 
-    ![Service Bus 名前空間を作成する](../media-draft/3-create-namespace-2.png)
+    ![Service Bus 名前空間を作成する](../media/3-create-namespace-2.png)
 
 ## <a name="create-a-service-bus-queue"></a>Service Bus キューを作成する
 
@@ -49,7 +49,7 @@ Azure portal を使用して Service Bus 名前空間を作成するには、次
 
 1. **[キューの作成]** ブレードで、**[名前]** ボックスに「**salesmessages**」と入力し、**[作成]** をクリックします。 名前空間にキューが作成されます。
 
-    ![キューの作成](../media-draft/3-create-queue.png)
+    ![キューの作成](../media/3-create-queue.png)
 
 ## <a name="create-a-service-bus-topic-and-subscriptions"></a>Service Bus トピックとサブスクリプションを作成する
 
@@ -59,9 +59,9 @@ Azure portal を使用して Service Bus 名前空間を作成するには、次
 
 1. **[Service Bus 名前空間]** ブレードで **[+ トピック]** をクリックします。
 
-1. **[トピックの作成]** ブレードで、**[名前]** ボックスに「**salesperformancemessages**」と入力し、**[作成]** をクリックします。 Azure で名前空間にトピックが作成されます。
+1. **[トピックの作成]** ブレードで、**[名前]** ボックスに「**salesperformancemessages**」と入力し、**[作成]** をクリックします。 名前空間にトピックが作成されます。
 
-    ![トピックの作成](../media-draft/3-create-topic.png)
+    ![トピックの作成](../media/3-create-topic.png)
 
 1. トピックが作成されたら、**[Service Bus 名前空間]** ブレードの **[エンティティ]** で **[トピック]** をクリックします。
 

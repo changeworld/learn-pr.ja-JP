@@ -1,4 +1,4 @@
-In the module, we saw how Redis can help improve our application's performance in many ways. We first saw how transactions can be used to ensure that multiple operations are invoked together without being interrupted. We then saw how to use data expiration to help clear out data that is no longer being used. However, you can still sometimes have memory issues when using a cache and we talked about how eviction policies can be used to make room for new data. Finally, we looked at the cache-aside pattern to make sure your most common data is stored in a cache to help speed up the time required to retrieve it.
+このモジュールでは、Redis を使用して、さまざまな方法でアプリケーションのパフォーマンスを向上させる方法を説明しました。 まず、トランザクションを使用して、複数の操作を中断なしにまとめて呼び出す方法を確認しました。 次に、データの有効期限を使用して、使用されなくなったデータを削除する方法を確認しました。 ただし、キャッシュを使用すると、メモリの問題が発生する場合もあるので、削除ポリシーを使用して、新しいデータのための領域を確保する方法について説明しました。 最後に、データの取得に要する時間を短縮できるように、よく使用するデータをキャッシュに確実に格納するキャッシュ アサイド パターンについて説明しました。
 
 <!-- Cleanup sandbox -->
 [!include[](../../../includes/azure-sandbox-cleanup.md)]

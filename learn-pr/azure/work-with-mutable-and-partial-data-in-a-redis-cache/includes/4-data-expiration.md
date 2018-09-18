@@ -1,32 +1,32 @@
-Data is not always permanent and there are times you would like to delete it at a specific time. For example, in your instant messaging application, users can set the display name of the group chat, however, you want the name to reset after one hour. You could accomplish this by writing your own server-side logic that set an hour timer and deleted the name. However, Redis supports data expiration, which is a feature that does this automatically without writing additional logic.
+データは常に永続的であるとは限りません。特定の時点で削除したい場合もあります。 たとえば、インスタント メッセージング アプリケーションでは、ユーザーはグループ チャットの表示名を設定できますが、1 時間後にこの名前をリセットするとします。 これを実現するには、1 時間のタイマーを設定し、名前を削除する独自のサーバー側ロジックを記述します。 ただし、Redis では、データの有効期限がサポートされています。これは、追加のロジックを記述しなくても、これを自動的に実行する機能です。
 
-Here, you'll learn about the common Redis commands to implement data expiration.
+ここでは、データの有効期限を実装するための一般的な Redis コマンドについて説明します。
 
-## What is data expiration?
+## <a name="what-is-data-expiration"></a>データの有効期限とは
 
-Data expiration is a feature that can automatically delete a key and value in the cache after a set amount of time.
+データの有効期限は、一定時間の経過後に、キャッシュ内のキーと値を自動的に削除できる機能です。
 
-## Why use data expiration?
+## <a name="why-use-data-expiration"></a>データの有効期限を使用する理由
 
-Data expiration is commonly used in situations where the data you're storing is short-lived.  This is important because Redis is an in-memory database and you don't have as much memory available to use as you would if you were storing on disk. Since you have limited storage with Redis, you want to make sure you're only storing data that is important. If the data doesn't need to be around for a long time, make sure you set an expiration.
+データの有効期限は、保存するデータの有効期間が短い場合によく使用されます。  これが重要なのは、Redis はメモリ内データベースであり、ディスクに保存する場合のように多くのメモリを使用することはできないためです。 Redis ではストレージ容量が限られているため、重要なデータのみを保存する必要があります。 データが長期間存在する必要がない場合は、有効期限を設定してください。
 
-## How to use data expiration in Redis
+## <a name="how-to-use-data-expiration-in-redis"></a>Redis でデータの有効期限を使用する方法
 
-There are different commands to implement and manage data expiration in Redis:
+Redis でデータの有効期限を実装して管理するためのさまざまなコマンドがあります。
 
-- `EXPIRE`: Sets the timeout of a key in seconds
-- `PEXIRE`: Sets the timeout of a key in milliseconds
-- `EXPIREAT`: Sets the timeout of a key using an absolute Unix timestamp in seconds
-- `PEXPIREAT`: Sets the timeout of a key using an absolute Unix timestamp in milliseconds
-- `TTL`: Returns the remaining time a key has to live in seconds
-- `PTTL`: Returns the remaining time a key has to live in milliseconds
-- `PERSIST`: Makes a key never expire
+- `EXPIRE`: キーのタイムアウトを秒単位で設定します。
+- `PEXIRE`: キーのタイムアウトをミリ秒単位で設定します。
+- `EXPIREAT`: 絶対 UNIX タイムスタンプ (秒単位) を使用してキーのタイムアウトを設定します。
+- `PEXPIREAT`: 絶対 UNIX タイムスタンプ (ミリ秒単位) を使用してキーのタイムアウトを設定します。
+- `TTL`: キーの有効期間の残り時間を秒単位で返します。
+- `PTTL`: キーの有効期間の残り時間をミリ秒単位で返します。
+- `PERSIST`: キーを無期限にします。
 
-The most common command is `EXPIRE` and we'll use it throughout this module.
+最も一般的なコマンドは `EXPIRE` であり、このモジュール全体を通じて使用します。
 
-### Example of data expiration using C# and ServiceStack.Redis
+### <a name="example-of-data-expiration-using-c-and-servicestackredis"></a>C# と ServiceStack.Redis を使用したデータの有効期限の例
 
-Remember, when using a client library like **ServiceStack.Redis**, we don't have to worry about remembering the low-level Redis commands. Instead, we can use simple C# methods.
+**ServiceStack.Redis** などのクライアント ライブラリを使用する場合は、下位の Redis コマンドを覚えておく必要はありません。 代わりに、単純な C# メソッドを使用できます。
 
 ```csharp
 public static void SetGroupChatName(string groupChatID, string chatName)
@@ -45,4 +45,4 @@ public static void SetGroupChatName(string groupChatID, string chatName)
 }
 ```
 
-Redis allows you to delete data automatically after a set amount of time using data expiration. This is important because Redis is an in-memory database, and you don't have as much memory available as you would with storing data on disk. If the data you're storing doesn't need to be around for a long time, make sure you set an expiration.
+Redis では、データの有効期限を使用して、一定時間の経過後にデータを自動的に削除できます。 これが重要なのは、Redis はメモリ内データベースであり、データをディスクに保存する場合のように多くのメモリを使用することはできないためです。 保存するデータが長期間存在する必要がない場合は、有効期限を設定してください。

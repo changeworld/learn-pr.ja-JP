@@ -1,16 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-set-eviction-policy
-title: Set an eviction policy
+title: 削除ポリシーを設定する
 metadata:
-  title: Set an eviction policy
-  description: Set an eviction policy
+  title: 削除ポリシーを設定する
+  description: 削除ポリシーを設定する
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-#interactive: azure-portal
+  ms.openlocfilehash: 9548b89344552ffc5f27145d6466c7273dcf69f7
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44350502"
 azureSandbox: true
 durationInMinutes: 5
-content: |
-  [!include[](includes/7-set-eviction-policy.md)]
+content: '[!include[](includes/7-set-eviction-policy.md)]'

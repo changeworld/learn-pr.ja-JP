@@ -1,8 +1,8 @@
-Here, you'll add an expiration time to our data in the Azure Redis Cache.
+ここでは、Azure Redis Cache でデータに有効期限を追加します。
 
-## Add an expiration time
+## <a name="add-an-expiration-time"></a>有効期限を追加する
 
-In the last exercise, we left off with the following code in **Program.cs**.
+前回の演習では、**Program.cs** に次のコードを追加したところで終わりました。
 
 ```csharp
 using (RedisClient redisClient = new RedisClient(redisConnectionString))
@@ -24,9 +24,9 @@ using (RedisClient redisClient = new RedisClient(redisConnectionString))
 }
 ```
 
-Let’s add an expiration of 15 seconds to both **MyKey1** and **MyKey2**.
+**MyKey1** と **MyKey2** の両方に 15 秒の有効期限を追加しましょう。
 
-1. Add the following code before you commit the transaction
+1. トランザクションをコミットする前に次のコードを追加します。
 
     ```csharp
     //Add an expiration time
@@ -34,26 +34,26 @@ Let’s add an expiration of 15 seconds to both **MyKey1** and **MyKey2**.
     transaction.QueueCommand(c => ((RedisNativeClient)c).Expire("MyKey2", 15));
     ```
 
-    In this code, the **Expire** method is a part of the **RedisNativeClient**. To access the method, we must first cast our object.
+    このコードでは、**Expire** メソッドは **RedisNativeClient** の一部です。 このメソッドにアクセスするには、まずオブジェクトをキャストする必要があります。
 
-## Verify the expiration
+## <a name="verify-the-expiration"></a>有効期限を確認する
 
-Now that we added the code to expire our data, lets run the program and check that the data is removed from Redis.
+データを期限切れにするコードを追加したので、プログラムを実行し、Redis からデータが 削除されていることを確認しましょう。
 
-1. Run the program.
+1. プログラムを実行します。
 
     ```bash
     dotnet run
     ```
     
-1. Switch back to the Azure Redis Console in the Azure portal.
+1. Azure portal の Azure Redis コンソールに戻ります。
 
-1. To verify that the data is still there, issue the following command:
+1. データがまだ存在することを確認するために、次のコマンドを発行します。
 
     ```
     get MyKey1
     ```
 
-1. After 15 seconds, issue the command again. You should see that the data is no longer there.
+1. 15 秒後に、コマンドをもう一度発行します。 データがなくなっていることがわかります。
 
-    ![Screenshot of the Azure Redis console showing the Value of MyKey1 being nil.](../media/6-redis-console-data-expiration.png)
+    ![MyKey1 の値が nil であることを示す Azure Redis コンソールのスクリーンショット。](../media/6-redis-console-data-expiration.png)

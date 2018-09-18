@@ -1,52 +1,52 @@
-This module was all about integrating data and services into your functions. We started off with a quick tour of the binding types that show up when you add them to a function. We then looked at reading data from an Azure Cosmos DB using an input binding. The platform takes care of managing connection strings and we saw how easy it is to read data in our code using the binding. Finally we focused our attention on writing data different sources with the help of output bindings. This journey is summarized in the following table.
+このモジュールでは、関数へのデータとサービスの統合について説明しました。 バインディングの種類と、どのような場合にそれらを関数に追加するのかを説明するクイック ツアーから始めました。 次に、入力バインディングを使用して、Azure Cosmos DB からデータを読み取る方法を説明しました。 接続文字列の管理はプラットフォームによって行われるので、バインディングを使用してコード内でデータを読み取ることがいかに簡単であるかがわかりました。 最後に、出力バインディングを使用して、さまざまなソースにデータを書き込む方法に注目しました。 この学習内容を次の表にまとめます。
 
 [!INCLUDE [summary table](./summary-table.md)]
 
-You can apply the approaches you have learned here to add and test bindings in your functions. Here are a few interesting ideas to get more practice with bindings and to build on what you have learned here.
+ここで学習した方法を適用して、関数にバインディングを追加し、テストすることができます。 バインディングの使い方をさらに練習し、ここで学んだことを活かすための興味深いアイデアをいくつか紹介します。
 
-* Create another function to read from Blob Storage and other input bindings that we haven't used in this module.
+* Blob Storage から読み取る別の関数と、このモジュールで使用しなかった他の入力バインディングを作成します。
 
-* Create another function to write to more destinations using other supported output binding types.
+* サポートされている他の出力バインディングの種類を使用して、より多くの送信先に書き込む別の関数を作成します。
 
-* In the last unit, we introduced a queue and posted messages to it with an output binding. As a next step, consider adding another function that reads the messages in the queue and prints out the **MESSAGE TEXT** to the console with `Console.Log()`.
+* 最後のユニットでは、キューを導入し、出力バインディングを使用してキューにメッセージを送信しました。 次のステップとして、キュー内のメッセージを読み取り、`Console.Log()` を使用して**メッセージ テキスト**をコンソールに出力する別の関数を追加することを検討してください。
 
-As we saw in this module, the Azure portal offers easy-to-use features to start building functions and connecting them to data and other services.
+このモジュールで説明したように、Azure portal には、関数を作成し、それらをデータや他のサービスに接続する作業を開始するための使いやすい機能が用意されています。
 
-## Clean up resources
+## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-*Resources* in Azure refers to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
+Azure の "*リソース*" とは、関数アプリ、関数、ストレージ アカウントなどを指します。 これらは "*リソース グループ*" に分類されており、グループを削除することでグループ内のすべてのものを削除できます。
 
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
+このモジュールを完了するためにリソースを作成しました。 これらのリソースには、[アカウントの状態](https://azure.microsoft.com/account/)と[サービスの価格](https://azure.microsoft.com/pricing/)に応じて課金される場合があります。 リソースの必要がなくなった場合にそれらを削除する方法を、次に示します。
 
-1. In the Azure portal, go to the **Resource group** page.
+1. Azure Portal で、**[リソース グループ]** ページに移動します。
 
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
+   Function App ページからこのページに移動するには、**[概要]** タブを選択し、**[リソース グループ]** の下のリンクを選択します。
 
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
+   ダッシュボードからこのページに移動するには、**[リソース グループ]** を選択し、このモジュールで使用したリソース グループを選択します。 
 
 > [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
+> このモジュールで推奨されるリソース グループの既定の名前は [!INCLUDE [resource-group-name](./rg-name.md)] でしたが、別の名前を使用していた可能性があります。
 
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
+2. **[リソース グループ]** ページで、含まれているリソースの一覧を見直し、それらが削除の対象であることを確認します。
 
-3. Select **Delete resource group**, and follow the instructions.
+3. **[リソース グループの削除]** を選択し、指示に従います。
 
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
+   削除には数分かかることがあります。 実行されると、通知が数秒間表示されます。 ページの上部にあるベルのアイコンを選択して、通知を表示することもできます。
 
-## Further Reading
+## <a name="further-reading"></a>参考資料
 
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
+この一覧は包括的なものではありませんが、このモジュールで取り上げたトピックに関連し、興味を持たれるかもしれないリソースを紹介しています。
 
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
+ * [Azure Functions のドキュメント](https://docs.microsoft.com/azure/azure-functions/)
 
-* [The Azure Functions Challenge](https://aka.ms/afc)
+* [Azure Functions Challenge](https://aka.ms/afc)
 
-* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
+* [Azure サーバーレス コンピューティング クックブック](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
 
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
+ * [Node.js から Queue ストレージを使用する方法](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+ * [Azure Cosmos DB の概要: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+* [Azure Cosmos DB の技術概要](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+* [Azure Cosmos DB のドキュメント](https://docs.microsoft.com/azure/cosmos-db/)

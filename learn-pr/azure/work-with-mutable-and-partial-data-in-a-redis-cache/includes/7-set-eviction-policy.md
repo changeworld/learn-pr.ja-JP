@@ -1,15 +1,15 @@
-Here you'll add an eviction policy to our Azure Redis Cache.
+ここでは、Azure Redis Cache に削除ポリシーを追加します。
 
-## Set an eviction policy
+## <a name="set-an-eviction-policy"></a>削除ポリシーを設定する
 
-To set an eviction policy in Azure, we simply use a drop-down menu in the portal.
+Azure で削除ポリシーを設定するには、ポータルでドロップダウン メニューを使用します。
 
-1. Open your Redis Cache in the Azure portal.
+1. Azure portal で Redis Cache を開きます。
 
-1. Select the **Advanced settings** blade.
+1. **[詳細設定]** ブレードを選択します。
 
-1. Use the **maxmemory-policy** drop-down menu and select **allkeys-random**.
+1. **[maxmemory-policy]** ドロップダウン メニューを使用し、**[allkeys-random]** を選択します。
 
-1. Click **Save**. 
+1. **[保存]** をクリックします。 
 
-At this point, if you run out of memory, Redis will select a random key to delete to make room for your new data.
+この時点で、メモリ不足になると、Redis は新しいデータのための領域を確保するために、ランダム キーを選択して削除します。
