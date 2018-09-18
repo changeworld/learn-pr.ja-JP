@@ -1,0 +1,41 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: <span data-ttu-id="19ec8-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="19ec8-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="19ec8-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="19ec8-102">Knowledge check</span></span>
+  description: <span data-ttu-id="19ec8-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="19ec8-103">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 54ce7dfa4c2f3a2d7b7d2d4c112f79aad7d2eb9c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236469"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="19ec8-104">Azure 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="19ec8-104">Azure Virtual Machine</span></span>
+  questions:
+  - content: <span data-ttu-id="19ec8-105">仮想マシンでネットワーク アプライアンスを実行するとします。</span><span class="sxs-lookup"><span data-stu-id="19ec8-105">Suppose you want to run a network appliance on a virtual machine.</span></span> <span data-ttu-id="19ec8-106">どのワークロード オプションを選択しますか。</span><span class="sxs-lookup"><span data-stu-id="19ec8-106">Which workload option will you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="19ec8-107">汎用</span><span class="sxs-lookup"><span data-stu-id="19ec8-107">General purpose</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="19ec8-108">コンピューティング最適化</span><span class="sxs-lookup"><span data-stu-id="19ec8-108">Compute optimized</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="19ec8-109">メモリ最適化</span><span class="sxs-lookup"><span data-stu-id="19ec8-109">Memory optimized</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="19ec8-110">ストレージ最適化</span><span class="sxs-lookup"><span data-stu-id="19ec8-110">Storage optimized</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="19ec8-111">既存の Azure 仮想マシンのコピーをデプロイするとします。</span><span class="sxs-lookup"><span data-stu-id="19ec8-111">Assume you want to deploy a copy of an existing Azure virtual machine.</span></span> <span data-ttu-id="19ec8-112">このジョブを完了するためにどのオプションを選択しますか?</span><span class="sxs-lookup"><span data-stu-id="19ec8-112">Which option will you choose to complete the job?</span></span>
+    choices:
+    - content: <span data-ttu-id="19ec8-113">PowerShell</span><span class="sxs-lookup"><span data-stu-id="19ec8-113">PowerShell</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="19ec8-114">Resource Manager テンプレート</span><span class="sxs-lookup"><span data-stu-id="19ec8-114">Resource Manager Templates</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="19ec8-115">Azure CLI</span><span class="sxs-lookup"><span data-stu-id="19ec8-115">Azure CLI</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="19ec8-116">Azure クライアント SDK</span><span class="sxs-lookup"><span data-stu-id="19ec8-116">Azure Client SDK</span></span>
+      isCorrect: false

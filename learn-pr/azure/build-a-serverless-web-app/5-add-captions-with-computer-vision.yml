@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.5-add-captions-with-computer-vision
-title: <span data-ttu-id="abd2b-101">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="abd2b-101">Add image captions with Cognitive Services Computer Vision</span></span>
+title: <span data-ttu-id="a4ad4-101">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="a4ad4-101">Add image captions with Cognitive Services Computer Vision</span></span>
 metadata:
-  title: <span data-ttu-id="abd2b-102">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="abd2b-102">Add image captions with Cognitive Services Computer Vision</span></span>
-  description: <span data-ttu-id="abd2b-103">Cognitive Services Computer Vision を使用して画像のキャプションを追加します。</span><span class="sxs-lookup"><span data-stu-id="abd2b-103">Add image captions with Cognitive Services Computer Vision.</span></span>
-  ms.openlocfilehash: 72663b32a0a7e8730b0ebbf3407806b859b91785
-  ms.sourcegitcommit: b97ed72bd7e3fb77b49de71e8ef35d3f70dfd636
+  title: <span data-ttu-id="a4ad4-102">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="a4ad4-102">Add image captions with Cognitive Services Computer Vision</span></span>
+  description: <span data-ttu-id="a4ad4-103">Cognitive Services Computer Vision を使用して画像のキャプションを追加する</span><span class="sxs-lookup"><span data-stu-id="a4ad4-103">Add image captions with Cognitive Services Computer Vision</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d258156e24fe77ba3b3d47f3f83b8b561de0f82d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/05/2018
-  ms.locfileid: "43791102"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232270"
 durationInMinutes: 9
 interactive: bash-editor
 content: '[!include[](includes/5-add-captions-with-computer-vision.md)]'

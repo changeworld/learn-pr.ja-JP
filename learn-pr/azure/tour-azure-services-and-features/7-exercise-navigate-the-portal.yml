@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.7-exercise-navigate-the-portal
-title: <span data-ttu-id="fe8bb-101">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="fe8bb-101">Use the Azure portal</span></span>
+title: <span data-ttu-id="049b1-101">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="049b1-101">Use the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="fe8bb-102">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="fe8bb-102">Use the Azure portal</span></span>
-  description: <span data-ttu-id="fe8bb-103">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="fe8bb-103">Use the Azure portal</span></span>
+  title: <span data-ttu-id="049b1-102">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="049b1-102">Use the Azure portal</span></span>
+  description: <span data-ttu-id="049b1-103">Azure portal の使用</span><span class="sxs-lookup"><span data-stu-id="049b1-103">Use the Azure portal</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9cfc8af394550c1ea181406b27c7d10a1f76b6cb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: eef6c827ce5a8ae6c7a25439f9fd9f5828f056dc
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243434"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45784256"
 durationInMinutes: 10
 content: '[!include[](includes/7-exercise-navigate-the-portal.md)]'

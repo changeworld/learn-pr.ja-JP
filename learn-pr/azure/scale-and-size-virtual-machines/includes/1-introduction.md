@@ -1,0 +1,12 @@
+<span data-ttu-id="1b52e-101">Azure には、仮想マシンの数とサイズを管理するために必要なツールが用意されています。</span><span class="sxs-lookup"><span data-stu-id="1b52e-101">Azure gives you the tools you need to manage the size and number of your virtual machines.</span></span> 
+
+<span data-ttu-id="1b52e-102">子供のおもちゃをオンラインで販売している企業で働いているとします。</span><span class="sxs-lookup"><span data-stu-id="1b52e-102">Suppose you work at a company that sells children’s toys online.</span></span> <span data-ttu-id="1b52e-103">Web サーバーは、Azure 仮想マシン上で動作しています。</span><span class="sxs-lookup"><span data-stu-id="1b52e-103">You web server runs on an Azure virtual machine.</span></span> <span data-ttu-id="1b52e-104">需要の多くは季節的で予測できます。たとえば、休暇シーズンの前にサーバーの負荷が増加します。</span><span class="sxs-lookup"><span data-stu-id="1b52e-104">Much of your demand is seasonal and predictable; for example, the load on your server increases before major holidays.</span></span> <span data-ttu-id="1b52e-105">需要はたまに予期せず急増します。たとえば、思いがけずヒットした映画のために、関連するおもちゃの需要が増加することがあります。</span><span class="sxs-lookup"><span data-stu-id="1b52e-105">Demand will sometimes spike without warning; for example, the unexpected success of a movie can drive demand for related toys.</span></span>
+
+<span data-ttu-id="1b52e-106">目標は、年間をとおして予期される負荷を特定することです。</span><span class="sxs-lookup"><span data-stu-id="1b52e-106">Your goal is to identify the expected loads throughout the year.</span></span> <span data-ttu-id="1b52e-107">そして、仮想マシンが需要を処理するために十分な CPU、メモリ、およびストレージ ハードウェアを持つように、管理計画を作成します。</span><span class="sxs-lookup"><span data-stu-id="1b52e-107">You will then create a management plan to ensure your virtual machines have enough CPU, memory, and storage hardware to handle the demand.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="1b52e-108">学習の目的</span><span class="sxs-lookup"><span data-stu-id="1b52e-108">Learning objectives</span></span>
+
+<span data-ttu-id="1b52e-109">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="1b52e-109">In this module, you will:</span></span>
+- <span data-ttu-id="1b52e-110">サイズ変更によって仮想マシンを垂直にスケーリングする</span><span class="sxs-lookup"><span data-stu-id="1b52e-110">Vertically scale virtual machines by resizing</span></span>
+- <span data-ttu-id="1b52e-111">スケール セットを使用して水平に仮想マシンをスケーリングする</span><span class="sxs-lookup"><span data-stu-id="1b52e-111">Horizontally scale virtual machines using scale sets</span></span>
+- <span data-ttu-id="1b52e-112">自動スケールを構成する</span><span class="sxs-lookup"><span data-stu-id="1b52e-112">Configure autoscaling</span></span>

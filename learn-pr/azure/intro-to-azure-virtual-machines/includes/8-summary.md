@@ -1,0 +1,17 @@
+<span data-ttu-id="33221-101">このモジュールでは、仮想マシンを作成する前に行う必要があった意思決定を確認しました。</span><span class="sxs-lookup"><span data-stu-id="33221-101">In this module, you looked at the decisions you need to make before creating a virtual machine.</span></span> <span data-ttu-id="33221-102">これらの決定とは、VM のサイズ、使用するディスクの種類、選択したオペレーティング システムのイメージ、作成したリソースの種類などです。</span><span class="sxs-lookup"><span data-stu-id="33221-102">These decisions include aspects such as the VM size, types of disks used, operating system image selected, and the types of resources created.</span></span>
+
+<span data-ttu-id="33221-103">また、Azure で仮想マシンを作成および管理するオプションも確認しました。</span><span class="sxs-lookup"><span data-stu-id="33221-103">You also looked at the options to create and manage virtual machines in Azure.</span></span> <span data-ttu-id="33221-104">ポータルを使用した VM の作成と管理がどれだけ簡単か、また Resource Manager テンプレート、PowerShell、Azure CLI、Azure クライアント SDK をいつ使用するかがわかりました。</span><span class="sxs-lookup"><span data-stu-id="33221-104">You saw how easy it is to create and manage VMs using the portal and when to use Resource Manager templates, PowerShell, the Azure CLI, and the Azure Client SDK.</span></span>
+
+<span data-ttu-id="33221-105">最後に、VM をより簡単に管理するために利用可能な拡張機能とサービスを確認しました。</span><span class="sxs-lookup"><span data-stu-id="33221-105">Finally, you looked at the extensions and services available to more easily administer your VMs.</span></span>
+
+## <a name="clean-up"></a><span data-ttu-id="33221-106">クリーンアップ</span><span class="sxs-lookup"><span data-stu-id="33221-106">Clean up</span></span>
+<!---TODO: Update for sandbox?--->
+
+<span data-ttu-id="33221-107">(OS がシャットダウンされていたとしても) ハードウェアを予約していて、領域がディスク用に使用されている限り、仮想マシンの毎月の料金が発生し続けることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="33221-107">Remember that virtual machines continue to generate a monthly charge as long as you have hardware reserved (even if the OS is shut down!) and space used for disks.</span></span> <span data-ttu-id="33221-108">ポータルで VM を停止してコンピューティング サービスの課金を停止することも可能ですが、ストレージについては引き続き課金されます。</span><span class="sxs-lookup"><span data-stu-id="33221-108">You can stop the VM in the portal to stop billing for compute services, but the storage will continue to generate a bill.</span></span> <span data-ttu-id="33221-109">テスト目的でリソースを作成した場合、それらをすべて削除する簡単な方法は、それが含まれる**リソース グループ**を削除することです。</span><span class="sxs-lookup"><span data-stu-id="33221-109">If you create resources for testing purposes, an easy way to get rid of them all is to delete the **resource group** they are part of.</span></span>
+
+> [!TIP]
+> <span data-ttu-id="33221-110">管理を容易にするには、すべてのテスト リソースを同じリソース グループに入れます。</span><span class="sxs-lookup"><span data-stu-id="33221-110">Make sure to place all your test resources into the same resource group for easy management.</span></span>
+
+<span data-ttu-id="33221-111">リソース グループを削除するには、それを **[リソース グループ]** パネル (サイドバーの **[リソース グループ]** をクリック) で見つけます。</span><span class="sxs-lookup"><span data-stu-id="33221-111">To delete a resource group, locate it through the **Resource Groups** panel (click on **Resource Groups** in the sidebar).</span></span> <span data-ttu-id="33221-112">次に、リソース グループの横の [`...`] 省略記号メニューをクリックし、ここに示すとおり、ポップアップ メニューから **[リソース グループの削除]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="33221-112">Then click the `...` ellipse menu next to the resource group, and select **Delete resource group** from the pop-up menu as shown here.</span></span>
+
+![リソース グループの削除](../media-draft/7-delete-rgs.png)

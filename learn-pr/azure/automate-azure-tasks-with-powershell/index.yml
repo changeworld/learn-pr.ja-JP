@@ -8,27 +8,31 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 57659ea3106318d4ab11dcd67c561cb4fcc5c425
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 47423e278d086c6baa1c6a96bd6b3161e765bfd1
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235755"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45783199"
 title: PowerShell でスクリプトを使用して Azure タスクを自動化する
 summary: ローカルで Azure PowerShell をインストールし、それを使用して Azure リソースを管理します。
 abstract: >
   このモジュールでは、次のことを行います。
-    - Azure PowerShell が自分の Azure 管理タスク用の適切なツールかどうかを判断する
-    - Azure PowerShell を Linux、macOS、または Windows にインストールする
-    - Azure PowerShell を使用して Azure サブスクリプションに接続する
-    - Azure PowerShell を使用して Azure リソースを作成する
+
+  - Azure PowerShell が自分の Azure 管理タスク用の適切なツールかどうかを判断する
+
+  - Azure PowerShell を Linux、macOS、または Windows にインストールする
+
+  - Azure PowerShell を使用して Azure サブスクリプションに接続する
+
+  - Azure PowerShell を使用して Azure リソースを作成する
 prerequisites: >
   - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
 
   - リソース グループや Virtual Machines など、Azure の基本的な概念に関する知識
 
   - Azure portal を使用した Azure リソースの管理経験
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/automate-azure-tasks-with-powershell.svg
 levels:
 - beginner
 roles:

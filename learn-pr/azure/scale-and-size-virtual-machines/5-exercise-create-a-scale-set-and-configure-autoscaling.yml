@@ -1,14 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
-title: <span data-ttu-id="0f026-101">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="0f026-101">Exercise - Create a scale set and configure autoscaling</span></span>
+title: <span data-ttu-id="960ee-101">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="960ee-101">Exercise - Create a scale set and configure autoscaling</span></span>
 metadata:
-  title: <span data-ttu-id="0f026-102">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="0f026-102">Exercise - Create a scale set and configure autoscaling</span></span>
-  description: <span data-ttu-id="0f026-103">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="0f026-103">Exercise - Create a scale set and configure autoscaling</span></span>
-  ms.openlocfilehash: ca265df828582f0b74003b36a4e33b824a111290
-  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  title: <span data-ttu-id="960ee-102">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="960ee-102">Exercise - Create a scale set and configure autoscaling</span></span>
+  description: <span data-ttu-id="960ee-103">課題 - スケール セットの作成と自動スケールの構成</span><span class="sxs-lookup"><span data-stu-id="960ee-103">Exercise - Create a scale set and configure autoscaling</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5cf3cb0d1bbc8fa928f722f9b0cead96a1aabc68
+  ms.sourcegitcommit: 87602488fb13c785daee0e5831ace59668a85d52
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44255384"
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45992305"
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-create-a-scale-set-and-configure-autoscaling.md)]'

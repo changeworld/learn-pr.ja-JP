@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.7-conclusion
+title: <span data-ttu-id="444ee-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="444ee-101">Conclusion</span></span>
+metadata:
+  title: <span data-ttu-id="444ee-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="444ee-102">Conclusion</span></span>
+  description: <span data-ttu-id="444ee-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="444ee-103">Conclusion</span></span>
+  ms.openlocfilehash: c9b97fde052f94baa0d919075f6a0861811413c5
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255402"
+durationInMinutes: 10
+content: '[!include[](includes/7-conclusion.md)]'

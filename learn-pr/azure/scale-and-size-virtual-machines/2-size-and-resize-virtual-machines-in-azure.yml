@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
-title: <span data-ttu-id="e7fde-101">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="e7fde-101">Size and resize virtual machines in Azure</span></span>
+title: <span data-ttu-id="36a27-101">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="36a27-101">Size and resize virtual machines in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="e7fde-102">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="e7fde-102">Size and resize virtual machines in Azure</span></span>
-  description: <span data-ttu-id="e7fde-103">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="e7fde-103">Size and resize virtual machines in Azure</span></span>
-  ms.openlocfilehash: 093b33d13758a5566620df100e3e494167eaaa11
-  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  title: <span data-ttu-id="36a27-102">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="36a27-102">Size and resize virtual machines in Azure</span></span>
+  description: <span data-ttu-id="36a27-103">Azure で仮想マシンのサイズを決定および変更する</span><span class="sxs-lookup"><span data-stu-id="36a27-103">Size and resize virtual machines in Azure</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ba023d88efa2578af6979e9d30dd84d739a2241a
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44255321"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45781213"
 durationInMinutes: 5
 content: '[!include[](includes/2-size-and-resize-virtual-machines-in-azure.md)]'

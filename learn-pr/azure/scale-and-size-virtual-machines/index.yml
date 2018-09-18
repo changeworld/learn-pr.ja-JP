@@ -1,0 +1,45 @@
+### YamlMime:Module
+uid: learn.scale-and-size-virtual-machines
+metadata:
+  title: 仮想マシンをスケーリングおよびサイズ設定する
+  description: 仮想マシンの CPU およびメモリ リソースを必要に応じて変更して、需要に対応し、コストを制御することができます。 需要を予測できて変更頻度が低い場合は、手動の調整で対応できます。 ワークロードが予測できず、頻繁に変化する場合は、自動化されたソリューションの方が適しています。 ここでは、個々のサーバーのサイズを変更するか、使用できるマシンの数を変更して、仮想マシンのパワーを制御する方法を示しています。 この方法を、手動での場合と、スケール セットおよび自動スケールを使用する場合の両方で説明します。
+  ms.date: 09/24/2018
+  ms.openlocfilehash: 9fc53319159149702ab7ab831ec54694aa6f5e2c
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256057"
+title: 仮想マシンをスケーリングおよびサイズ設定する
+summary: 仮想マシンのコンピューティングとストレージのパワーを、手動で、または自動スケールを使用して調整します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - サイズ変更によって仮想マシンを垂直にスケーリングする
+
+  - スケール セットを使用して水平に仮想マシンをスケーリングする
+
+  - 自動スケールを構成する
+prerequisites: >
+  - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
+
+  - リソース グループや仮想マシンなど、Azure の基本的な概念に関する知識
+
+  - Azure portal を使用した Azure リソースの管理経験
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-virtual-machines
+units:
+- learn.scale-and-size-virtual-machines.1-introduction
+- learn.scale-and-size-virtual-machines.2-size-and-resize-virtual-machines-in-azure
+- learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
+- learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+- learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
+- learn.scale-and-size-virtual-machines.6-knowledge-check
+- learn.scale-and-size-virtual-machines.7-summary
+achievement: learn.scale-and-size-virtual-machines.badge

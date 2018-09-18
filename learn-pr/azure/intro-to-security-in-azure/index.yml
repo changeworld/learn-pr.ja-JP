@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.introduction-to-security
+metadata:
+  title: Azure のセキュリティの概要
+  description: クラウドで作業するときにインフラストラクチャとデータを保護するための基本的な概念について説明します。 自分の責任とそれに対応する Azure の処理について確認してください。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 048b1505d2e6b282f89682446ebc26c4a8f10b64
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247064"
+title: Azure のセキュリティの概要
+summary: クラウドで作業するときにインフラストラクチャとデータを保護するための基本的な概念について説明します。 自分の責任とそれに対応する Azure の処理について確認してください。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure とセキュリティの責任を共有する方法について学習する
+
+  - ID 管理を通じてネットワーク外で保護を提供する方法について学習する
+
+  - Azure に組み込まれている暗号化機能でデータをどのように保護できるかについて学習する
+
+  - ネットワークおよび仮想ネットワークを保護する方法について学習する
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+- administrator
+- solution-architect
+products:
+- azure
+units:
+- learn.introduction-to-security.1-introduction
+- learn.introduction-to-security.2-shared-responsibility
+- learn.introduction-to-security.3-identity-and-access
+- learn.introduction-to-security.4-encryption
+- learn.introduction-to-security.5-network-security
+- learn.introduction-to-security.6-summary
+achievement: learn.introduction-to-security.badge

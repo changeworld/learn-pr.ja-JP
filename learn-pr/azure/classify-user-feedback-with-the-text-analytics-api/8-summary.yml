@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.8-summary
+title: <span data-ttu-id="cc2a3-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="cc2a3-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="cc2a3-102">学習内容</span><span class="sxs-lookup"><span data-stu-id="cc2a3-102">What we've learned</span></span>
+  description: <span data-ttu-id="cc2a3-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="cc2a3-103">Summary</span></span>
+  ms.openlocfilehash: fbf3a4c7bbe9fd426001759c10eee9143ed65425
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258449"
+durationInMinutes: 2
+content: '[!include[](includes/8-summary.md)]'

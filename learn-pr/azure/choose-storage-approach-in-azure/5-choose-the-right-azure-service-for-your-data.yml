@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for-your-data
 metadata:
-  title: <span data-ttu-id="61520-101">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="61520-101">Choose a storage solution on Azure</span></span>
-  description: <span data-ttu-id="61520-102">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="61520-102">Choose a storage solution on Azure</span></span>
+  title: <span data-ttu-id="28d0c-101">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="28d0c-101">Choose a storage solution on Azure</span></span>
+  description: <span data-ttu-id="28d0c-102">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="28d0c-102">Choose a storage solution on Azure</span></span>
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: mimig1
+  ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dc90f1e1d665d0714606b109adb5248582bf86d1
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 876fd01b6b8bae7be183b10ba667c229884282eb
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44241433"
-title: <span data-ttu-id="61520-103">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="61520-103">Choose a storage solution on Azure</span></span>
-durationInMinutes: 10
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45759316"
+title: <span data-ttu-id="28d0c-103">Azure 上のストレージ ソリューションを選択する</span><span class="sxs-lookup"><span data-stu-id="28d0c-103">Choose a storage solution on Azure</span></span>
+durationInMinutes: 7
 content: '[!include[](includes/5-choose-the-right-azure-service-for-your-data.md)]'

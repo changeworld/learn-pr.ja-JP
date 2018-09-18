@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-security.2-shared-responsibility
+title: <span data-ttu-id="2e5d7-101">クラウドのセキュリティは共同責任</span><span class="sxs-lookup"><span data-stu-id="2e5d7-101">Cloud security is a shared responsibility</span></span>
+metadata:
+  title: <span data-ttu-id="2e5d7-102">クラウドのセキュリティは共同責任</span><span class="sxs-lookup"><span data-stu-id="2e5d7-102">Cloud security is a shared responsibility</span></span>
+  description: <span data-ttu-id="2e5d7-103">クラウドのセキュリティは共同責任</span><span class="sxs-lookup"><span data-stu-id="2e5d7-103">Cloud security is a shared responsibility</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9800e5401a70e79595e93d4fa3ffee8a6d6e9c73
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241528"
+durationInMinutes: 5
+content: '[!include[](includes/2-shared-responsibility.md)]'

@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.the-mojifier
+metadata:
+  title: Mojifier - 人の顔を感情にマッチした絵文字に置き換えるボットを作成する
+  description: 画像を取得し、感情を計算して絵文字にマッチさせ、顔を絵文字に置き換える方法を説明します。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0dd9d8a7b3a070e8bcb3365db0ae5a7f27e1dd31
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44256248"
+title: Mojifier - 人の顔を感情にマッチした絵文字に置き換えるボットを作成する
+summary: 画像を取得し、感情を計算して絵文字にマッチさせ、顔を絵文字に置き換える方法を説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+   - TBD
+   - TBD
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.the-mojifier.1-introduction
+- learn.the-mojifier.2-setup
+- learn.the-mojifier.3-conceptual-overview
+- learn.the-mojifier.4-calibrate-emojis
+- learn.the-mojifier.5-matching-faces-to-emojis
+- learn.the-mojifier.6-add-an-emoji-to-an-image
+- learn.the-mojifier.7-create-the-mojifyimage-azure-function
+- learn.the-mojifier.8-create-the-respondtoslackcommand-function
+- learn.the-mojifier.9-integrate-with-slack
+- learn.the-mojifier.10-deploy-to-azure
+achievement: learn.the-mojifier.badge

@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: a5c3a2241db3defb45ea95ac5f249893687e90eb
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 070902844ea24a0a53c9a47990022b5bbda398ac
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243065"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766743"
 title: Azure サービスと機能のツアー
 summary: Azure アカウントを作成し、利用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
 abstract: >
@@ -28,10 +28,12 @@ prerequisites: >
   - 基本的なクラウド コンピューティングの用語と概念の知識
 
   - Azure に登録する有効なクレジット カード
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/tour-azure-services-and-features.svg
 levels:
-- intermediate
+- beginner
 roles:
+- administrator
+- solution-architect
 - developer
 products:
 - azure

@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.2-raspberry-pi-emulator
+metadata:
+  title: <span data-ttu-id="53a7d-101">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="53a7d-101">Using the Raspberry Pi emulator</span></span>
+  description: <span data-ttu-id="53a7d-102">これは、"テキストのみ" のコンテンツのサンプルです (ラボまたは知識チェックのコンポーネントはありません)。</span><span class="sxs-lookup"><span data-stu-id="53a7d-102">This is a sample of "text-only" content (no lab or knowledge check components).</span></span>
+  ms.openlocfilehash: a773d5ba303a5047f96485ae97d20b6fcf40931a
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258289"
+title: <span data-ttu-id="53a7d-103">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="53a7d-103">Using the Raspberry Pi emulator</span></span>
+durationInMinutes: 11
+content: '[!include[](includes/2-raspberry-pi-emulator.md)]'
