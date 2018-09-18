@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.provision-azure-sql-db.3-create-your-database
-title: <span data-ttu-id="d211a-101">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="d211a-101">Create your Azure SQL database</span></span>
+title: <span data-ttu-id="36cf5-101">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="36cf5-101">Create your Azure SQL database</span></span>
 metadata:
-  title: <span data-ttu-id="d211a-102">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="d211a-102">Create your Azure SQL database</span></span>
-  description: <span data-ttu-id="d211a-103">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="d211a-103">Create your Azure SQL database</span></span>
+  title: <span data-ttu-id="36cf5-102">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="36cf5-102">Create your Azure SQL database</span></span>
+  description: <span data-ttu-id="36cf5-103">Azure SQL データベースを作成する</span><span class="sxs-lookup"><span data-stu-id="36cf5-103">Create your Azure SQL database</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 170930125e5110d04cc119f6cfdcf1178904110b
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44310835"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45784273"
 azureSandbox: true
 durationInMinutes: 20
 content: '[!include[](includes/3-create-your-database.md)]'

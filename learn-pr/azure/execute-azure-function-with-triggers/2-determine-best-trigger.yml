@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.execute-azure-function-with-triggers.2-determine-best-trigger
-title: <span data-ttu-id="1c5ff-101">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1c5ff-101">Determine the best trigger for your Azure function</span></span>
+title: <span data-ttu-id="1679e-101">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1679e-101">Determine the best trigger for your Azure function</span></span>
 metadata:
-  title: <span data-ttu-id="1c5ff-102">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1c5ff-102">Determine the best trigger for your Azure function</span></span>
-  description: <span data-ttu-id="1c5ff-103">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1c5ff-103">Determine the best trigger for your Azure function</span></span>
+  title: <span data-ttu-id="1679e-102">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1679e-102">Determine the best trigger for your Azure function</span></span>
+  description: <span data-ttu-id="1679e-103">Azure 関数の最適なトリガーを決定します</span><span class="sxs-lookup"><span data-stu-id="1679e-103">Determine the best trigger for your Azure function</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1e11b752a8122f908fc0d2d6d12b4abce099bd39
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44235024"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45779241"
 durationInMinutes: 4
 content: '[!include[](includes/2-determine-best-trigger.md)]'

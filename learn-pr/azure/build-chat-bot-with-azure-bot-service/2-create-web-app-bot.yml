@@ -1,21 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-azure-bot-services-bot.2-create-web-app-bot
-title: <span data-ttu-id="6c8da-101">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="6c8da-101">Create an Azure web app bot</span></span>
+title: <span data-ttu-id="52fa5-101">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="52fa5-101">Create an Azure web app bot</span></span>
 metadata:
-  title: <span data-ttu-id="6c8da-102">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="6c8da-102">Create an Azure web app bot</span></span>
-  description: <span data-ttu-id="6c8da-103">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="6c8da-103">Create an Azure web app bot</span></span>
+  title: <span data-ttu-id="52fa5-102">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="52fa5-102">Create an Azure web app bot</span></span>
+  description: <span data-ttu-id="52fa5-103">Azure Web App ボットを作成する</span><span class="sxs-lookup"><span data-stu-id="52fa5-103">Create an Azure web app bot</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: db676393b215b4f9688742440bf9b449866d9a26
-  ms.sourcegitcommit: 1c45ea8b740761474e8cb320f14c88ae71a13261
+  ms.openlocfilehash: 1f63245b19fa00984bf6374a31fd0ef449bfc93e
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44383703"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45776348"
 labId: 45995
-azureSandbox: true
-durationInMinutes: 10
+durationInMinutes: 7
 content: '[!include[](includes/2-create-web-app-bot.md)]'

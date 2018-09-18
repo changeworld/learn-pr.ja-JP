@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-containers.1-introduction
 metadata:
-  title: <span data-ttu-id="274c2-101">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="274c2-101">Introduction to containers</span></span>
-  description: <span data-ttu-id="274c2-102">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="274c2-102">Introduction to containers</span></span>
+  title: <span data-ttu-id="4389a-101">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="4389a-101">Introduction to containers</span></span>
+  description: <span data-ttu-id="4389a-102">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="4389a-102">Introduction to containers</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9567386b22d5260a676518610006f6fcc485e367
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: f109bf3f07bbf4ac21caeb8fec6456cf2e471e9d
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44231641"
-title: <span data-ttu-id="274c2-103">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="274c2-103">Introduction to containers</span></span>
-durationInMinutes: 10
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45759217"
+title: <span data-ttu-id="4389a-103">コンテナーの概要</span><span class="sxs-lookup"><span data-stu-id="4389a-103">Introduction to containers</span></span>
+durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

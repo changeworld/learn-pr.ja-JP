@@ -2,22 +2,30 @@
 uid: learn.secure-your-azure-virtual-machine-disks
 metadata:
   title: Azure 仮想マシンのディスクをセキュリティで保護する
-  description: Azure で保存時のデータを暗号化するためのオプションを調べ、Azure Disk Encryption (ADE) と Storage Service Encryption (SSE) を比較します。 Azure portal および PowerShell のコマンドとスクリプトを使用して、既存の VM の OS ディスクとデータ ディスクを暗号化します。 Azure Resource Manager (ARM) テンプレートを使用して、新しく展開される VM が自動的に暗号化されるようにします。
+  description: Azure で保存時のデータを暗号化するためのオプションを調べ、Azure Disk Encryption (ADE) と Storage Service Encryption (SSE) を比較します。 Azure portal および PowerShell のコマンドとスクリプトを使用して、既存の VM の OS ディスクとデータ ディスクを暗号化します。 Azure Resource Manager テンプレートを使用し、新しくデプロイされる VM が自動的に暗号化されるようにします。
   ms.date: 09/24/2018
-  ms.openlocfilehash: a99f3a48f6f464da0925da7b970784df24a5511e
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 15f2470a3447740cdf8e774c449baecfd88f4709
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43827421"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240886"
 title: Azure 仮想マシンのディスクをセキュリティで保護する
 summary: Azure Disk Encryption (ADE) を使用して、既存の VM と新しい VM の OS ディスクとデータ ディスクを暗号化します。
 abstract: >
   このモジュールでは、次のことを行います。
-    - 特定の VM に最適な暗号化方法を決定します
-    - Azure portal を使用して既存の VM ディスクを暗号化します
-    - PowerShell を使用して既存の VM ディスクを暗号化します
-    - ARM テンプレートを変更して、新しい VM でのディスクの暗号化を自動化します
+
+  - 特定の VM に最適な暗号化方法を決定します
+
+  - Azure portal を使用して既存の VM ディスクを暗号化します
+
+  - PowerShell を使用して既存の VM ディスクを暗号化します
+
+  - Azure Resource Manager テンプレートを変更して、新しい VM でのディスクの暗号化を自動化する
 prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:

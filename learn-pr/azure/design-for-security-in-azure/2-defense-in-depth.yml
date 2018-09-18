@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: <span data-ttu-id="194d7-101">多層防御</span><span class="sxs-lookup"><span data-stu-id="194d7-101">Defense in depth</span></span>
+metadata:
+  title: <span data-ttu-id="194d7-102">多層防御</span><span class="sxs-lookup"><span data-stu-id="194d7-102">Defense in depth</span></span>
+  description: <span data-ttu-id="194d7-103">このユニットでは、多層防御を実践する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="194d7-103">In this unit we'll discuss how to practice defense in depth</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 577b11fddc545e411822c986a2da706bb8701025
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240685"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: <span data-ttu-id="194d7-104">知識チェック - 多層防御</span><span class="sxs-lookup"><span data-stu-id="194d7-104">Knowledge Check - Defense in depth</span></span>
+  questions:
+  - content: <span data-ttu-id="194d7-105">次のうち、多層防御セキュリティ戦略を使用するのが適切な戦術はどれですか?</span><span class="sxs-lookup"><span data-stu-id="194d7-105">Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?</span></span>
+    choices:
+    - content: <span data-ttu-id="194d7-106">使用していない仮想マシンの割り当てを解除する</span><span class="sxs-lookup"><span data-stu-id="194d7-106">Deallocating virtual machines when not in use</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="194d7-107">コストを削減するには効果的な戦術かもしれませんが、セキュリティ戦略のための戦術ではありません。</span><span class="sxs-lookup"><span data-stu-id="194d7-107">This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.</span></span>
+    - content: <span data-ttu-id="194d7-108">CPU の割合が 90% を超過した場合に警告されるように設定する</span><span class="sxs-lookup"><span data-stu-id="194d7-108">Setting up alerts for CPU percentage exceeds 90%</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="194d7-109">アプリケーションのパフォーマンスの問題を特定するための重要な監視メトリックですが、セキュリティ戦略の戦術ではありません。</span><span class="sxs-lookup"><span data-stu-id="194d7-109">This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.</span></span>
+    - content: <span data-ttu-id="194d7-110">構成ファイルに接続文字列を保存する</span><span class="sxs-lookup"><span data-stu-id="194d7-110">Storing connection strings in a configuration file</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="194d7-111">構成ファイルに接続文字列を保存することはセキュリティ リスクであり、セキュリティ戦略の戦術ではありません。</span><span class="sxs-lookup"><span data-stu-id="194d7-111">Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.</span></span>
+    - content: <span data-ttu-id="194d7-112">すべての管理者レベルのアカウントに MFA を強制する</span><span class="sxs-lookup"><span data-stu-id="194d7-112">Enforcing MFA for all administrative level accounts</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="194d7-113">すべての管理者レベルのアカウントに MFA を強制すると、高度な特権を持つアカウントに対する保護層が追加され、セキュリティ戦略の多層防御の一環として効果的な戦術です。</span><span class="sxs-lookup"><span data-stu-id="194d7-113">Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.</span></span>
+  - content: <span data-ttu-id="194d7-114">クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。</span><span class="sxs-lookup"><span data-stu-id="194d7-114">By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.</span></span>
+    choices:
+    - content: <span data-ttu-id="194d7-115">○</span><span class="sxs-lookup"><span data-stu-id="194d7-115">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="194d7-116">クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。</span><span class="sxs-lookup"><span data-stu-id="194d7-116">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>
+    - content: <span data-ttu-id="194d7-117">×</span><span class="sxs-lookup"><span data-stu-id="194d7-117">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="194d7-118">クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。</span><span class="sxs-lookup"><span data-stu-id="194d7-118">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>

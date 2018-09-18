@@ -2,24 +2,28 @@
 uid: principles-cloud-computing
 metadata:
   title: クラウド コンピューティングの原則
-  description: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
+  description: クラウド コンピューティングの主要な概念とそれがビジネスに役立つしくみについて説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 11d73eff33b33397cbcebd62b0a1187be478d873
-  ms.sourcegitcommit: d6a4ffb95924e4af3bd445aaf263f34253735861
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ec20c633dd9e87b05fb8b11dde49b09ff43152f0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/02/2018
-  ms.locfileid: "43459372"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233936"
 title: クラウド コンピューティングの原則
-summary: クラウド コンピューティングの主要な概念とそれがビジネスに役立つ理由について説明します。
+summary: クラウド コンピューティングの主要な概念とそれがビジネスに役立つしくみについて説明します。
 abstract: >
   このモジュールでは、次のことを行います。
 
-  - 一般的なクラウド コンピューティング サービスについて調べます。
+  - 一般的なクラウド コンピューティング サービスについて知る
 
-  - クラウド コンピューティングのメリットについて調べます。
+  - クラウド コンピューティングのメリットについて知る
 
-  - 自分に最適なクラウド デプロイ モデルを判断します。
+  - 自分に最適なクラウド デプロイ モデルを判断する
 prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
@@ -32,8 +36,8 @@ roles:
 - solution-architect
 products:
 - azure
-- azurePortal
-- resourceManager
+- azure-portal
+- azure-resource-manager
 units:
 - principles-cloud-computing.1-motivation
 - principles-cloud-computing.2-what-is-cloud-computing

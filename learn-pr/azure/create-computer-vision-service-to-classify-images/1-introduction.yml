@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.1-intro
-title: <span data-ttu-id="02ac4-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="02ac4-101">Introduction</span></span>
+title: <span data-ttu-id="e97ef-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="e97ef-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="02ac4-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="02ac4-102">Introduction</span></span>
-  description: <span data-ttu-id="02ac4-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="02ac4-103">Introduction</span></span>
+  title: <span data-ttu-id="e97ef-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="e97ef-102">Introduction</span></span>
+  description: <span data-ttu-id="e97ef-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="e97ef-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5a031797fb2aa29de4374b618b915ff553b22b1f
-  ms.sourcegitcommit: b7caaf32cd0aac946417e0da375f4a82ae7187ab
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "44750665"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45781553"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d57dad0f868d8d634dcfa8e8949bc86248b0e360
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 4448fa9010ac9f00360d1c629d981671b572e4dd
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233324"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45778782"
 title: Azure Data Science Virtual Machine 上で TensorFlow を使用してニューラル ネットワークを作成する
 summary: TensorFlow を使用して Azure Data Science Virtual Machine 上でディープ ニューラル ネットワークをトレーニングする方法について学習します。
 abstract: >
@@ -28,13 +28,14 @@ abstract: >
   - Python アプリでモデルを使用する
 prerequisites: >
   - [X2Go](https://wiki.x2go.org/doku.php/download:start) などの [Xfce](https://xfce.org/) リモートデスクトップ クライアント
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/create-neural-network-with-dsvm.svg
 levels:
 - beginner
 roles:
 - developer
 products:
 - azure
+- azure-virtual-machines
 units:
 - learn.create-neural-network-with-dsvm.0-overview
 - learn.create-neural-network-with-dsvm.1-create-dsvm

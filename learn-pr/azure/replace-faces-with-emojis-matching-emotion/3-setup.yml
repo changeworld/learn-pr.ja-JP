@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.3-setup
+metadata:
+  title: <span data-ttu-id="aafc9-101">セットアップ</span><span class="sxs-lookup"><span data-stu-id="aafc9-101">Setup</span></span>
+  description: <span data-ttu-id="aafc9-102">最初に、いくつかのアカウントを設定し、サンプル コードをローカルで動くようにしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="aafc9-102">First things first we need to make sure you are setup with a few accounts and have the sample code working locally.</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e45e13c9534d1fa9906ddf48e4f423bf22b4363e
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45781096"
+labId: 45987
+title: <span data-ttu-id="aafc9-103">セットアップ</span><span class="sxs-lookup"><span data-stu-id="aafc9-103">Setup</span></span>
+durationInMinutes: 15
+content: '[!include[](includes/3-setup.md)]'

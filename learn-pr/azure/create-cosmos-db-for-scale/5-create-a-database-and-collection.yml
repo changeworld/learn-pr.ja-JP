@@ -1,29 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-cosmos-db-for-scale.5-create-a-database-and-collection
 metadata:
-  title: <span data-ttu-id="b28ec-101">Azure Cosmos DB でデータベースおよびコレクションを作成する</span><span class="sxs-lookup"><span data-stu-id="b28ec-101">Create a database and collection in Azure Cosmos DB</span></span>
-  description: <span data-ttu-id="b28ec-102">要求単位とパーティション分割について学習した内容を、Azure Cosmos DB データベースとスケーリング用に構築したコレクションに適用して構築します。</span><span class="sxs-lookup"><span data-stu-id="b28ec-102">Apply what you've learned about request units and partitioning to build an Azure Cosmos DB database and collection built for scale.</span></span>
-  ms.openlocfilehash: 75a6d39a494d4a2c60a08815797111a2bf4a1e0f
-  ms.sourcegitcommit: b1b68b477ab39109c48f227b504a5050cae7a718
+  title: <span data-ttu-id="de6d5-101">Azure Cosmos DB でデータベースおよびコレクションを作成する</span><span class="sxs-lookup"><span data-stu-id="de6d5-101">Create a database and collection in Azure Cosmos DB</span></span>
+  description: <span data-ttu-id="de6d5-102">要求単位とパーティション分割について学習した内容を、Azure Cosmos DB データベースとスケーリング用に構築したコレクションに適用して構築します。</span><span class="sxs-lookup"><span data-stu-id="de6d5-102">Apply what you've learned about request units and partitioning to build an Azure Cosmos DB database and collection built for scale.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 747c290e592c2c3a9281b3580cc68e950bd8dc63
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43411167"
-title: <span data-ttu-id="b28ec-103">Azure Cosmos DB でデータベースおよびコレクションを作成する</span><span class="sxs-lookup"><span data-stu-id="b28ec-103">Create a database and collection in Azure Cosmos DB</span></span>
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44309475"
+title: <span data-ttu-id="de6d5-103">Azure Cosmos DB でデータベースおよびコレクションを作成する</span><span class="sxs-lookup"><span data-stu-id="de6d5-103">Create a database and collection in Azure Cosmos DB</span></span>
+azureSandbox: true
 durationInMinutes: 3
-content: >
-  [!include[](includes/5-create-a-database-and-collection.md)]
-tasks:
-- action: exists
-  environment: azure
-  hint: <span data-ttu-id="b28ec-104">"Users" という名前のデータベースと "WebCustomers" という名前のコレクションを作成したことを確認します。</span><span class="sxs-lookup"><span data-stu-id="b28ec-104">Please make sure that you have created a database named "Users" and a collection named "WebCustomers".</span></span>
-  azure:
-    location: eastus
-- action: exists
-  environment: azure
-  azure:
-    resource:
-      type: Microsoft.Storage/storageAccounts
-      name: docsproxyppea427
-      tags:
-        triplecrown: true
+content: '[!include[](includes/5-create-a-database-and-collection.md)]'

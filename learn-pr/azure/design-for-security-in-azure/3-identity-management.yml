@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: <span data-ttu-id="04acd-101">ID 管理</span><span class="sxs-lookup"><span data-stu-id="04acd-101">Identity management</span></span>
+metadata:
+  title: <span data-ttu-id="04acd-102">ID 管理</span><span class="sxs-lookup"><span data-stu-id="04acd-102">Identity management</span></span>
+  description: <span data-ttu-id="04acd-103">このユニットでは、ご利用の ID を保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="04acd-103">In this unit we'll discuss how to protect your identities</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1a89d586446a028b7544c5a974b94057a6ee1b24
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232479"
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: <span data-ttu-id="04acd-104">知識チェック - ID 管理</span><span class="sxs-lookup"><span data-stu-id="04acd-104">Knowledge Check - Identity management</span></span>
+  questions:
+  - content: <span data-ttu-id="04acd-105">次のうち、多要素認証の要素とならないものはどれですか?</span><span class="sxs-lookup"><span data-stu-id="04acd-105">Which of the following is not a factor in multi-factor authentication?</span></span>
+    choices:
+    - content: <span data-ttu-id="04acd-106">モバイル デバイスのサムプリント スキャナー</span><span class="sxs-lookup"><span data-stu-id="04acd-106">A thumbprint scanner on a mobile device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-107">サムプリント スキャンなどの生体認証要素は、多要素認証の要素として使用できます。</span><span class="sxs-lookup"><span data-stu-id="04acd-107">Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="04acd-108">Azure Authenticator アプリケーションで生成されたトークン</span><span class="sxs-lookup"><span data-stu-id="04acd-108">A token generated from the Azure Authenticator application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-109">アプリケーションで生成されたトークンと keyfobs は、多要素認証の要素として使用できます。</span><span class="sxs-lookup"><span data-stu-id="04acd-109">Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="04acd-110">パスワード</span><span class="sxs-lookup"><span data-stu-id="04acd-110">A password</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-111">パスワードは、多要素認証の要素として使用できます。</span><span class="sxs-lookup"><span data-stu-id="04acd-111">Passwords can be used as factors in multi-factor authentication.</span></span>
+    - content: <span data-ttu-id="04acd-112">ご自分の靴のサイズ</span><span class="sxs-lookup"><span data-stu-id="04acd-112">Your shoe size</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="04acd-113">ご自分の靴のサイズは、多要素認証に使用できるものではありません。</span><span class="sxs-lookup"><span data-stu-id="04acd-113">Your shoe size is not something that can be used in multi-factor authentication.</span></span>
+  - content: <span data-ttu-id="04acd-114">次のうち、SSO による利点ではないのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="04acd-114">Which of the following is NOT a benefit SSO provides?</span></span>
+    choices:
+    - content: <span data-ttu-id="04acd-115">ユーザーへのアクセス許可の割り当てが複雑になる</span><span class="sxs-lookup"><span data-stu-id="04acd-115">Increased complexity assigning permissions to users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="04acd-116">SSO により、ユーザーに権限を割り当てるために必要な複雑さを軽減できます。</span><span class="sxs-lookup"><span data-stu-id="04acd-116">SSO can reduce the complexity needed to assign permissions to users.</span></span>
+    - content: <span data-ttu-id="04acd-117">ユーザーが記憶すべき ID とパスワードの数が減る</span><span class="sxs-lookup"><span data-stu-id="04acd-117">Fewer IDs and passwords for users to remember</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-118">ユーザーが記憶すべき ID とパスワードの数が減るのは、SSO の主な利点です。</span><span class="sxs-lookup"><span data-stu-id="04acd-118">Fewer IDs and passwords for users to remember is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="04acd-119">ユーザーのロールが変わったときや組織を離れるときの管理作業が減る</span><span class="sxs-lookup"><span data-stu-id="04acd-119">Lower adminmistration effort when users change roles or leave an organization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-120">SSO により、ユーザーの役割が変わったときや組織を離れたときに、アクセスを更新したり無効にしたりするために必要な管理作業の量が減ります。</span><span class="sxs-lookup"><span data-stu-id="04acd-120">SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization.</span></span> <span data-ttu-id="04acd-121">これは SSO の主な利点です。</span><span class="sxs-lookup"><span data-stu-id="04acd-121">This is a key benefit of SSO.</span></span>
+    - content: <span data-ttu-id="04acd-122">すべてのアプリケーションでパスワード ポリシーの一貫性を確保する</span><span class="sxs-lookup"><span data-stu-id="04acd-122">Ensures a consistent password policy across applications</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="04acd-123">SSO を使用することで、ユーザーはすべてのアカウントに対して 1 つのパスワード ポリシーを持ちます。</span><span class="sxs-lookup"><span data-stu-id="04acd-123">By using SSO, users have a single password policy for all accounts.</span></span> <span data-ttu-id="04acd-124">これは SSO の主な利点です。</span><span class="sxs-lookup"><span data-stu-id="04acd-124">This is a key benefit of SSO.</span></span>

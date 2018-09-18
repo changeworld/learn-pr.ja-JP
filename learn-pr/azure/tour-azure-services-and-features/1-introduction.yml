@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-services-features.1-introduction
-title: <span data-ttu-id="6bf5b-101">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="6bf5b-101">Introduction to Azure services and features</span></span>
+title: <span data-ttu-id="7f7dc-101">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="7f7dc-101">Introduction to Azure services and features</span></span>
 metadata:
-  title: <span data-ttu-id="6bf5b-102">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="6bf5b-102">Introduction to Azure services and features</span></span>
-  description: <span data-ttu-id="6bf5b-103">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="6bf5b-103">Introduction to Azure services and features</span></span>
+  title: <span data-ttu-id="7f7dc-102">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="7f7dc-102">Introduction to Azure services and features</span></span>
+  description: <span data-ttu-id="7f7dc-103">Azure サービスと機能の概要</span><span class="sxs-lookup"><span data-stu-id="7f7dc-103">Introduction to Azure services and features</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 468fdefad156709a53c3ef2aff78220b8b888d57
-  ms.sourcegitcommit: fd4e34e44b14230dd1242c04ae28c45ebd8f050b
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45539468"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45770010"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

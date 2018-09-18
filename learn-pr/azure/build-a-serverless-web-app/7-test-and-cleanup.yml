@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-a-serverless-web-app.7-test-and-cleanup
-title: <span data-ttu-id="09a15-101">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="09a15-101">Test and cleanup</span></span>
+title: <span data-ttu-id="54ab7-101">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="54ab7-101">Test and cleanup</span></span>
 metadata:
-  title: <span data-ttu-id="09a15-102">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="09a15-102">Test and cleanup</span></span>
-  description: <span data-ttu-id="09a15-103">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="09a15-103">Test and cleanup</span></span>
+  title: <span data-ttu-id="54ab7-102">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="54ab7-102">Test and cleanup</span></span>
+  description: <span data-ttu-id="54ab7-103">テストとクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="54ab7-103">Test and cleanup</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: bdc81260f3b4c6760478ccef2e6be8688730d870
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44311005"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766257"
 durationInMinutes: 2
 interactive: bash-editor
 azureSandbox: true

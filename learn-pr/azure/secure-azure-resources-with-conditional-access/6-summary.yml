@@ -1,50 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
 metadata:
-  title: <span data-ttu-id="c3edc-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="c3edc-101">Summary</span></span>
-  description: <span data-ttu-id="c3edc-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="c3edc-102">Summary</span></span>
+  title: <span data-ttu-id="642ee-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="642ee-101">Summary</span></span>
+  description: <span data-ttu-id="642ee-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="642ee-102">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e304ba65bbe39c289f95bc5bb300256a6554bdb1
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 158d9901df403024605a22e8d45cb6c857e6ce8d
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246533"
-title: <span data-ttu-id="c3edc-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="c3edc-103">Summary</span></span>
-durationInMinutes: 10
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503072"
+title: <span data-ttu-id="642ee-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="642ee-103">Summary</span></span>
+durationInMinutes: 5
 content: >
   [!include[](includes/6-summary.md)]
 quiz:
-  title: '<span data-ttu-id="c3edc-104">ナレッジ チェック: Azure Active Directory と条件付きアクセス</span><span class="sxs-lookup"><span data-stu-id="c3edc-104">Knowledge Check: Azure Active Directory and conditional access</span></span>'
+  title: '<span data-ttu-id="642ee-104">ナレッジ チェック: Azure Active Directory と条件付きアクセス</span><span class="sxs-lookup"><span data-stu-id="642ee-104">Knowledge Check: Azure Active Directory and conditional access</span></span>'
   questions:
-  - content: <span data-ttu-id="c3edc-105">Azure AD は Azure で実行される AD DS ドメイン コントローラーです。</span><span class="sxs-lookup"><span data-stu-id="c3edc-105">Azure AD is just an AD DS domain controller running in Azure.</span></span>
+  - content: <span data-ttu-id="642ee-105">Azure AD は Azure で実行される AD DS ドメイン コントローラーです。</span><span class="sxs-lookup"><span data-stu-id="642ee-105">Azure AD is just an AD DS domain controller running in Azure.</span></span>
     choices:
-    - content: <span data-ttu-id="c3edc-106">○</span><span class="sxs-lookup"><span data-stu-id="c3edc-106">True</span></span>
+    - content: <span data-ttu-id="642ee-106">○</span><span class="sxs-lookup"><span data-stu-id="642ee-106">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="c3edc-107">従来の AD DS と同じ機能の多くが実行されますが、Azure AD はクラウドベースのマルチテナント、ディレクトリ、ID 管理サービスです。</span><span class="sxs-lookup"><span data-stu-id="c3edc-107">While Azure AD performs many of the same functions as traditional AD DS, it's a cloud-based multi-tenant, directory, and identity management service.</span></span>
-    - content: <span data-ttu-id="c3edc-108">×</span><span class="sxs-lookup"><span data-stu-id="c3edc-108">False</span></span>
+      incorrectExplanation: <span data-ttu-id="642ee-107">従来の AD DS と同じ機能の多くが実行されますが、Azure AD はクラウドベースのマルチテナント、ディレクトリ、ID 管理サービスです。</span><span class="sxs-lookup"><span data-stu-id="642ee-107">While Azure AD performs many of the same functions as traditional AD DS, it's a cloud-based multi-tenant, directory, and identity management service.</span></span>
+    - content: <span data-ttu-id="642ee-108">×</span><span class="sxs-lookup"><span data-stu-id="642ee-108">False</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="c3edc-109">正解です。</span><span class="sxs-lookup"><span data-stu-id="c3edc-109">Correct!</span></span> <span data-ttu-id="c3edc-110">AD DS は Windows Server 上でサーバーの役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="c3edc-110">AD DS is a server role on Windows Server.</span></span> <span data-ttu-id="c3edc-111">Azure AD はクラウドベースのマルチカスタマー パブリック ディレクトリ サービスです。</span><span class="sxs-lookup"><span data-stu-id="c3edc-111">Azure AD is a cloud-based multi-customer public directory service.</span></span>
-  - content: <span data-ttu-id="c3edc-112">条件付きアクセス ポリシーが正常に機能するための 3 つの項目とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="c3edc-112">What three items should exist in a successful conditional access policy?</span></span>
+      correctExplanation: <span data-ttu-id="642ee-109">正解です。</span><span class="sxs-lookup"><span data-stu-id="642ee-109">Correct!</span></span> <span data-ttu-id="642ee-110">AD DS は Windows Server 上でサーバーの役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="642ee-110">AD DS is a server role on Windows Server.</span></span> <span data-ttu-id="642ee-111">Azure AD はクラウドベースのマルチカスタマー パブリック ディレクトリ サービスです。</span><span class="sxs-lookup"><span data-stu-id="642ee-111">Azure AD is a cloud-based multi-customer public directory service.</span></span>
+  - content: <span data-ttu-id="642ee-112">条件付きアクセス ポリシーが正常に機能するための 3 つの項目とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="642ee-112">What three items should exist in a successful conditional access policy?</span></span>
     choices:
-    - content: <span data-ttu-id="c3edc-113">ユーザーまたはグループ、アプリケーション、時刻</span><span class="sxs-lookup"><span data-stu-id="c3edc-113">User or group, application, time of day</span></span>
+    - content: <span data-ttu-id="642ee-113">ユーザーまたはグループ、アプリケーション、時刻</span><span class="sxs-lookup"><span data-stu-id="642ee-113">User or group, application, time of day</span></span>
       isCorrect: false
-      correctExplanation: <span data-ttu-id="c3edc-114">時刻は、条件付きアクセス ルールで利用できる選択肢ではありません。</span><span class="sxs-lookup"><span data-stu-id="c3edc-114">Time of day is not an option that's available in conditional access rules.</span></span>
-    - content: <span data-ttu-id="c3edc-115">ユーザーまたはグループ、アプリケーション、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="c3edc-115">User or group, application, control to be enforced</span></span>
+      correctExplanation: <span data-ttu-id="642ee-114">時刻は、条件付きアクセス ルールで利用できる選択肢ではありません。</span><span class="sxs-lookup"><span data-stu-id="642ee-114">Time of day is not an option that's available in conditional access rules.</span></span>
+    - content: <span data-ttu-id="642ee-115">ユーザーまたはグループ、アプリケーション、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="642ee-115">User or group, application, control to be enforced</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="c3edc-116">正解です。</span><span class="sxs-lookup"><span data-stu-id="c3edc-116">Correct!</span></span> <span data-ttu-id="c3edc-117">これら 3 つの項目を選択すると、自己完結型の機能的条件付きアクセス ルールが作成されます。</span><span class="sxs-lookup"><span data-stu-id="c3edc-117">Selecting these three items will create self-contained functional conditional access rules.</span></span>
-    - content: <span data-ttu-id="c3edc-118">ユーザーまたはグループ、Linux OS、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="c3edc-118">User or group, Linux OS, control to be enforced</span></span>
+      incorrectExplanation: <span data-ttu-id="642ee-116">正解です。</span><span class="sxs-lookup"><span data-stu-id="642ee-116">Correct!</span></span> <span data-ttu-id="642ee-117">これら 3 つの項目を選択すると、自己完結型の機能的条件付きアクセス ルールが作成されます。</span><span class="sxs-lookup"><span data-stu-id="642ee-117">Selecting these three items will create self-contained functional conditional access rules.</span></span>
+    - content: <span data-ttu-id="642ee-118">ユーザーまたはグループ、Linux OS、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="642ee-118">User or group, Linux OS, control to be enforced</span></span>
       isCorrect: false
-      correctExplanation: <span data-ttu-id="c3edc-119">一部のデバイス プラットフォームを対象にできますが、Linux は現在のところサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="c3edc-119">While you can target some device platforms, Linux isn't currently supported.</span></span>
-  - content: <span data-ttu-id="c3edc-120">すべてのユーザーを対象に Multi-Factor Authentication を要求するには、作成した条件付きアクセス ルールをどのように変更しますか?</span><span class="sxs-lookup"><span data-stu-id="c3edc-120">How would you modify the conditional access rule that we created to require Multi-Factor Authentication for all users?</span></span>
+      correctExplanation: <span data-ttu-id="642ee-119">一部のデバイス プラットフォームを対象にできますが、Linux は現在のところサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="642ee-119">While you can target some device platforms, Linux isn't currently supported.</span></span>
+  - content: <span data-ttu-id="642ee-120">すべてのユーザーを対象に Multi-Factor Authentication を要求するには、作成した条件付きアクセス ルールをどのように変更しますか?</span><span class="sxs-lookup"><span data-stu-id="642ee-120">How would you modify the conditional access rule that we created to require Multi-Factor Authentication for all users?</span></span>
     choices:
-    - content: <span data-ttu-id="c3edc-121">**[アクセス制御]** の **[セッション]** で **[Use application-enforced restrictions]\(アプリケーション強制制約の使用\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="c3edc-121">Under **Access Controls** > **Session**, select **Use application-enforced restrictions**.</span></span>
+    - content: <span data-ttu-id="642ee-121">**[アクセス制御]** の **[セッション]** で **[Use application-enforced restrictions]\(アプリケーション強制制約の使用\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="642ee-121">Under **Access Controls** > **Session**, select **Use application-enforced restrictions**.</span></span>
       isCorrect: false
-      correctExplanation: <span data-ttu-id="c3edc-122">そのオプションではルールは適切に変更されません。</span><span class="sxs-lookup"><span data-stu-id="c3edc-122">Sorry, that option won't modify the rule appropriately.</span></span>
-    - content: <span data-ttu-id="c3edc-123">ユーザーとグループの割り当てを **[ユーザーとグループを選択]** から **[すべてのユーザー]** に変更します。</span><span class="sxs-lookup"><span data-stu-id="c3edc-123">Change the user and group assignment from **Select users and groups** to **All users**.</span></span>
+      correctExplanation: <span data-ttu-id="642ee-122">そのオプションではルールは適切に変更されません。</span><span class="sxs-lookup"><span data-stu-id="642ee-122">Sorry, that option won't modify the rule appropriately.</span></span>
+    - content: <span data-ttu-id="642ee-123">ユーザーとグループの割り当てを **[ユーザーとグループを選択]** から **[すべてのユーザー]** に変更します。</span><span class="sxs-lookup"><span data-stu-id="642ee-123">Change the user and group assignment from **Select users and groups** to **All users**.</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="c3edc-124">正解です。</span><span class="sxs-lookup"><span data-stu-id="c3edc-124">Correct!</span></span> <span data-ttu-id="c3edc-125">すべてのユーザーを選択すると、この条件付きアクセス ルールをトリガーするあらゆるユーザーにこのポリシーが適用されます。</span><span class="sxs-lookup"><span data-stu-id="c3edc-125">Selecting all users will make this policy apply to any user who triggers this conditional access rule.</span></span> <span data-ttu-id="c3edc-126">方法がなくなった、あるいは方法を忘れてしまったとき、多要素認証を迂回しなければならない場合を考慮し、グループを作成し、それを除外リストに追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c3edc-126">It's suggested that you create a group and add it to the exclude list for instances where users may need to bypass Multi-Factor Authentication due to lost or forgotten methods.</span></span>
+      incorrectExplanation: <span data-ttu-id="642ee-124">正解です。</span><span class="sxs-lookup"><span data-stu-id="642ee-124">Correct!</span></span> <span data-ttu-id="642ee-125">すべてのユーザーを選択すると、この条件付きアクセス ルールをトリガーするあらゆるユーザーにこのポリシーが適用されます。</span><span class="sxs-lookup"><span data-stu-id="642ee-125">Selecting all users will make this policy apply to any user who triggers this conditional access rule.</span></span> <span data-ttu-id="642ee-126">方法がなくなった、あるいは方法を忘れてしまったとき、多要素認証を迂回しなければならない場合を考慮し、グループを作成し、それを除外リストに追加することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="642ee-126">It's suggested that you create a group and add it to the exclude list for instances where users may need to bypass Multi-Factor Authentication due to lost or forgotten methods.</span></span>

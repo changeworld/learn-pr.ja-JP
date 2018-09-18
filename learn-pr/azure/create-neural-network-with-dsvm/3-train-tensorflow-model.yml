@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-neural-network-with-dsvm.3-train-tensorflow-model
-title: <span data-ttu-id="c8bc2-101">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="c8bc2-101">Train a TensorFlow model</span></span>
+title: <span data-ttu-id="d91a0-101">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="d91a0-101">Train a TensorFlow model</span></span>
 metadata:
-  title: <span data-ttu-id="c8bc2-102">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="c8bc2-102">Train a TensorFlow model</span></span>
-  description: <span data-ttu-id="c8bc2-103">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="c8bc2-103">Train a TensorFlow model</span></span>
+  title: <span data-ttu-id="d91a0-102">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="d91a0-102">Train a TensorFlow model</span></span>
+  description: <span data-ttu-id="d91a0-103">TensorFlow モデルをトレーニングする</span><span class="sxs-lookup"><span data-stu-id="d91a0-103">Train a TensorFlow model</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ea503d1db48f78d7b94438eff43de62e3ecc78db
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531093"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45779683"
 labId: 45996
 durationInMinutes: 20
 content: '[!include[](includes/3-train-tensorflow-model.md)]'

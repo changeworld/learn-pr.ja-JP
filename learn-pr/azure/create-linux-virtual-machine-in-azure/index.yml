@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 0668e88c5130b22771aeb56a5d7ec4de4324b9e0
-  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
+  ms.openlocfilehash: b81dd92ad5a4e0619c9129521bf2f275e3f30b01
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/11/2018
-  ms.locfileid: "44386640"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45778954"
 title: Azure で Linux 仮想マシンを作成する
 summary: このモジュールでは、Azure portal を使用して Linux 仮想マシンを作成する方法について説明します。
 abstract: >
@@ -23,7 +23,7 @@ abstract: >
     - SSH を使用して実行中の Linux 仮想マシンに接続する
     - ソフトウェアをインストールし、Azure portal を使用して VM 上でネットワーク構成を変更する
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/create-linux-virtual-machine-in-azure.svg
 levels:
 - beginner
 roles:

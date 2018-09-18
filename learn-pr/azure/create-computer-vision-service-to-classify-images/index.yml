@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.create-computer-vision-service
+metadata:
+  title: Computer Vision サービスを作成して画像を識別する
+  description: Computer Vision サービスを作成して、画像を識別およびタグ付けする方法について説明します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bac40f45e2f3ce1f9d78b2d7ff099e640b26cabb
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247672"
+title: Computer Vision サービスを作成して画像を識別する
+summary: Computer Vision サービスを作成して、画像を識別したりタグ付けしたりする方法について説明します
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Computer Vision API サービスを作成する
+
+  - 画像を分析してその内容を特定する
+
+  - サムネイルを生成する
+
+  - 印刷されたテキストの抽出
+
+  - 手書きの単語をテキストに変換する
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+units:
+- learn.create-computer-vision-service.1-intro
+- learn.create-computer-vision-service.2-create-service
+- learn.create-computer-vision-service.3-analyze-images
+- learn.create-computer-vision-service.4-generate-thumbnail
+- learn.create-computer-vision-service.5-extract-printed-text
+- learn.create-computer-vision-service.6-extract-handwritten-text
+- learn.create-computer-vision-service.7-summary
+achievement: learn.create-computer-vision-service.badge

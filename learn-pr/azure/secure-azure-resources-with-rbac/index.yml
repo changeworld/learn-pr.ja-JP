@@ -2,24 +2,37 @@
 uid: learn.secure-azure-resources-with-rbac
 metadata:
   title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
-  description: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
-  ms.openlocfilehash: 83cc58636ac7e4b7e779d20deb86a48252b4e795
-  ms.sourcegitcommit: bb4b1f9e2a7399769ff84199f018abd14a3e73aa
+  description: ロールベースのアクセス制御 (RBAC) は、Azure のリソースのアクセス権を詳細に管理できるシステムです。 RBAC を使用して、チーム内で職務を分離し、職務に必要なアクセス許可のみをユーザーに付与します。 このモジュールでは、RBAC を使用して Azure 内のリソースへのアクセスを管理する方法を示します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 42288a93878ebcffe236cdeef8e4078265d9e231
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/01/2018
-  ms.locfileid: "43455637"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244663"
 title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
 summary: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
-abstract: ロールベースのアクセス制御 (RBAC) は、Azure のリソースのアクセス権を詳細に管理できるシステムです。 RBAC を使用して、チーム内で職務を分離し、職務に必要なアクセス許可のみをユーザーに付与します。 このモジュールでは、RBAC を使用して Azure 内のリソースへのアクセスを管理する方法を示します。
-cardDescription: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 自分や他のユーザーのリソースへのアクセスを確認する
+
+  - リソースへのアクセス権を付与する
+
+  - RBAC の変更のアクティビティ ログを表示する
+prerequisites: >
+  - Azure portal やリソース グループなど、Azure の基本的な概念に関する知識
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner
 roles:
 - administrator
 products:
-- Azure
+- azure
 units:
 - learn.secure-azure-resources-with-rbac.1-introduction
 - learn.secure-azure-resources-with-rbac.2-rbac-overview
