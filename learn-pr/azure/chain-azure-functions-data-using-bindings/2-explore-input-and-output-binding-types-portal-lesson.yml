@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
+metadata:
+  title: <span data-ttu-id="426ec-101">入力バインディングと出力バインディングの種類を確認する</span><span class="sxs-lookup"><span data-stu-id="426ec-101">Explore input and output binding types</span></span>
+  description: <span data-ttu-id="426ec-102">このユニットでは、Azure portal を使用してバインディングを理解し、サポートされている使用可能な各種バインディングの詳細を確認します。</span><span class="sxs-lookup"><span data-stu-id="426ec-102">In this unit, we'll use the Azure Portal to explore understand bindings and the array of supported bindings that are available to us.</span></span>
+  ms.date: 09/24/2018
+  author: andrewjbyrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46fef76fc4917eec60d665c1f1e7492ac7cc0a55
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44350659"
+title: <span data-ttu-id="426ec-103">入力バインディングと出力バインディングの種類を確認する</span><span class="sxs-lookup"><span data-stu-id="426ec-103">Explore input and output binding types</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/2-explore-input-and-output-binding-types-portal-lesson.md)]'
