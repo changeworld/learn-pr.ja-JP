@@ -1,21 +1,27 @@
 ### YamlMime:Module
 uid: learn.interactive-deep-learning
 metadata:
-  title: Data Science Virtual Machine での Jupyter、Docker、 PyTorch による対話型深層学習
+  title: Data Science Virtual Machine での Jupyter、Docker、PyTorch による対話型深層学習
   description: Juypter、PyTorch、Data Science Virtual Machine を使用して深層学習モデルをトレーニングする方法を学びます。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 4525fb11a8fc6e1d5a9aba1a832ad16e6cac7251
-  ms.sourcegitcommit: f6df5a988f64643099a0ffa283a522f8864c0070
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a5c41a6ca251dc97b9b98641d193ad514209b3dc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43853930"
-title: Data Science Virtual Machine での Jupyter、Docker、 PyTorch による対話型深層学習
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231983"
+title: Data Science Virtual Machine での Jupyter、Docker、PyTorch による対話型深層学習
 summary: Juypter、PyTorch、Data Science Virtual Machine を使用して深層学習モデルをトレーニングする方法を学びます。
 abstract: >
   このモジュールでは、次のことを行います。
-    - Azure で Data Science Virtual Machine をセットアップするプロセスの演習
-    - Docker から Jupyter ノートブックを実行して、PyTorch を使用したカスタム深層学習環境とのよりシームレスな対話を実現する
+
+  - Azure で Data Science Virtual Machine をセットアップするプロセスの演習
+
+  - Docker から Jupyter ノートブックを実行して、PyTorch を使用したカスタム深層学習環境とのよりシームレスな対話を実現する
 prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:

@@ -1,15 +1,19 @@
 ### YamlMime:LearningPath
 uid: learn.secure-your-cloud-data
 metadata:
-  title: Azure 内でご利用の Web データをセキュリティで保護する
+  title: Azure でクラウドのデータをセキュリティ保護する
   description: Azure はセキュリティとコンプライアンスを重視した設計になっています。 組み込みのサービスを活用してご利用の Web データを安全に格納することで、承認されたサービスおよびクライアントからしかそれらのデータにアクセスできないようにする方法について説明します。
   ms.date: 09/24/2018
-  ms.openlocfilehash: 053f7f830d915769bbd40d918e3de8a72e23054c
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 975fc7a26c651bd3187979c2f67d40247b2cd964
+  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43826095"
+  ms.lasthandoff: 09/10/2018
+  ms.locfileid: "44310036"
 title: クラウド データのセキュリティ保護
 summary: Azure はセキュリティとコンプライアンスを重視した設計になっています。 組み込みのサービスを活用してご利用の Web データを安全に格納することで、承認されたサービスおよびクライアントからしかそれらのデータにアクセスできないようにする方法について説明します。
 prerequisites: なし
@@ -21,7 +25,9 @@ roles:
 products:
 - azure
 modules:
+- learn.top-5-security-items-to-consider
 - learn.manage-secrets-with-azure-key-vault
+- learn.secure-your-azure-sql-database
 - learn.secure-access-azure-ad-multi-factor-authentication
 - learn.secure-azure-resources-with-rbac
 achievement: learn.secure-your-cloud-data.trophy
