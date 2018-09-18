@@ -1,4 +1,4 @@
-Azure Cosmos DB データベースにデータを追加するのは簡単です。 Azure portal を開いてデータベースに移動し、データ エクスプローラーを使用して JSON ドキュメントをデータベースに追加します。 データを追加するには、他にも高度な方法がありますが、データ エクスプローラーは Azure Cosmos DB によって提供される内部動作と機能を理解するのに最適なツールなので、まずはデータ エクスプローラーを使用します。
+自分の Azure Cosmos DB データベースにデータを追加するのは簡単です。 Azure portal を開いてデータベースに移動し、データ エクスプローラーを使用して JSON ドキュメントをデータベースに追加します。 データを追加するには、他にも高度な方法がありますが、データ エクスプローラーは Azure Cosmos DB によって提供される内部動作と機能を理解するのに最適なツールなので、まずはデータ エクスプローラーを使用します。
 
 ## <a name="what-is-the-data-explorer"></a>データ エクスプローラーとは
 Azure Cosmos DB データ エクスプローラーは、Azure portal に含まれるツールであり、Azure Cosmos DB に格納されているデータを管理するために使用します。 データ コレクションの表示とデータ コレクション内の移動、およびデータベース内のドキュメントの編集のための UI が提供されています。
@@ -7,9 +7,9 @@ Azure Cosmos DB データ エクスプローラーは、Azure portal に含ま�
 
 1. 前のモジュールから続けている場合は、Azure portal ウィンドウで **[データ エクスプローラー]** をクリックして、**[全画面表示で開く]** をクリックします。
 
-    それ以外の場合は、[Azure portal](https://portal.azure.com/?azure-portal=true) にサインインし、**[すべてのサービス]** > **[データベース]** > **[Azure Cosmos DB]** をクリックします。 次に、ご自分のアカウントを選択し、**[データ エクスプローラー]**、**[全画面表示で開く]** の順にクリックします
+    それ以外の場合は、[Azure portal](https://portal.azure.com/?azure-portal=true) にサインインし、**[すべてのサービス]**、**[データベース]**、**[Azure Cosmos DB]** の順にクリックします。 次に、自分のアカウントを選択し、**[データ エクスプローラー]**、**[全画面表示で開く]** の順にクリックします
  
-   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media-draft/3-azure-cosmosdb-data-explorer-full-screen.png)
+   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media/3-azure-cosmosdb-data-explorer-full-screen.png)
 
 2. **[全画面表示で開く]** ボックスで、**[開く]** をクリックします。
 
@@ -17,7 +17,7 @@ Azure Cosmos DB データ エクスプローラーは、Azure portal に含ま�
 
 3. 新しい JSON ドキュメントを作成するには、**[新しいドキュメント]** をクリックします。
 
-   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media-draft/3-azure-cosmosdb-data-explorer-new-document.png)
+   ![Azure portal のデータ エクスプローラーで新しいドキュメントを作成する](../media/3-azure-cosmosdb-data-explorer-new-document.png)
 
 4. ここで、次の構造のドキュメントをコレクションに追加します。 次のコードをコピーして、**[ドキュメント]** タブに貼り付けるだけです。
 
@@ -40,7 +40,7 @@ Azure Cosmos DB データ エクスプローラーは、Azure portal に含ま�
 
 5. JSON を **[ドキュメント]** タブに追加したら、**[保存]** をクリックします。
 
-    ![JSON データをコピーし、Azure portal のデータ エクスプローラーで [保存] をクリックします](../media-draft/3-azure-cosmosdb-data-explorer-save-document.png)
+    ![JSON データをコピーし、Azure portal のデータ エクスプローラーで [保存] をクリックします](../media/3-azure-cosmosdb-data-explorer-save-document.png)
 
 6. 次の JSON オブジェクトをデータ エクスプローラーにコピーして、**[保存]** をクリックすることによって、ドキュメントをもう 1 つ作成して保存します。
 
