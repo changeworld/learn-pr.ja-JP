@@ -1,12 +1,12 @@
-Azure gives you the tools you need to manage the size and number of your virtual machines. 
+Azure には、仮想マシンの数とサイズを管理するために必要なツールが用意されています。 
 
-Suppose you work at a company that sells children’s toys online. You web server runs on an Azure virtual machine. Much of your demand is seasonal and predictable; for example, the load on your server increases before major holidays. Demand will sometimes spike without warning; for example, the unexpected success of a movie can drive demand for related toys.
+子供のおもちゃをオンラインで販売している企業で働いているとします。 Web サーバーは、Azure 仮想マシン上で動作しています。 需要の多くは季節的で予測できます。たとえば、休暇シーズンの前にサーバーの負荷が増加します。 需要はたまに予期せず急増します。たとえば、思いがけずヒットした映画のために、関連するおもちゃの需要が増加することがあります。
 
-Your goal is to identify the expected loads throughout the year. You will then create a management plan to ensure your virtual machines have enough CPU, memory, and storage hardware to handle the demand.
+目標は、年間をとおして予期される負荷を特定することです。 そして、仮想マシンが需要を処理するために十分な CPU、メモリ、およびストレージ ハードウェアを持つように、管理計画を作成します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
-- Vertically scale virtual machines by resizing
-- Horizontally scale virtual machines using scale sets
-- Configure autoscaling
+このモジュールでは、次のことを行います。
+- サイズ変更によって仮想マシンを垂直にスケーリングする
+- スケール セットを使用して水平に仮想マシンをスケーリングする
+- 自動スケールを構成する

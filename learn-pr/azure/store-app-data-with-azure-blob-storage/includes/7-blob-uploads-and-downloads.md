@@ -22,7 +22,7 @@ BLOB 間のデータ移動は、時間がかかるネットワーク操作です
 
 BLOB をアップロードするには、コンテナーから `CloudBlockBlob` を取得する `GetBlockBlobReference` を使用して `BlobStorage.Save` メソッドを実装します。 `FilesController.Upload` からは `Save` にファイル ストリームが渡されるので、効率を最大限に高めるために `UploadFromStreamAsync` を使用してアップロードを実行することができます。
 
-エディターで `BlobStorage.cs` を開き、`Save` を次のコードで置き換えます。
+エディターで `BlobStorage.cs` の `Save` を次のコードで置き換えます。
 
 ```csharp
 public Task Save(Stream fileStream, string name)
@@ -36,7 +36,7 @@ public Task Save(Stream fileStream, string name)
 ```
 
 > [!NOTE]
-> ここに示したストリーム ベースのアップロード コードは、バイト配列にファイルを読み込んでから Azure Blob Storage に送信するよりも効率的です。 ただし、クライアントからファイルを取得するのに使用する ASP.NET Core `IFormFile` 手法は、真のエンドツーエンド ストリーミング実装ではなく、小さいファイルのアップロードを処理する場合にのみ適しています。 完全にストリーミングされたファイル アップロードについては、このモジュールの最後に記載されている「参考資料」セクションを参照してください。
+> ここに示したストリーム ベースのアップロード コードは、バイト配列にファイルを読み込んでから Azure Blob Storage に送信するよりも効率的です。 ただし、クライアントからファイルを取得するのに使用する ASP.NET Core `IFormFile` 手法は、真のエンドツーエンド ストリーミング実装ではなく、小さいファイルのアップロードを処理する場合にのみ適しています。 完全にストリーム配信されたファイル アップロードについては、このモジュールの最後に記載されている「参考資料」セクションを参照してください。
 
 ### <a name="download"></a>ダウンロード
 
@@ -70,7 +70,7 @@ az webapp config appsettings set --name <your-unique-app-name> --resource-group 
 ここでアプリをデプロイします。 以下のコマンドによってサイトを `pub` フォルダーに発行し、`site.zip` として圧縮した後、その zip を App Service にデプロイします。
 
 > [!NOTE]
-> シェルが次のコマンドの `FileUploader` ディレクトリにあることを確認します。
+> シェルが `mslearn-store-data-in-azure/store-app-data-with-azure-blob-storage/src/start` ディレクトリにあることを確認してから、次のコマンドを実行してください。
 
 ```azurecli
 dotnet publish -o pub

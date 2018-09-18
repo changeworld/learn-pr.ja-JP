@@ -1,15 +1,14 @@
 ### YamlMime:ModuleUnit
-# Unit uids are manually created by the content author and should follow the format (repo).(module-short-name).(unit-short-name). Keep it easy on yourself and keep the unit-short-name the same as the unit YAML file name.
 uid: learn.manage-iot-devices.2-raspberry-pi-emulator
 metadata:
-  title: Using the Raspberry Pi emulator
-  description: This is a sample of "text-only" content (no lab or knowledge check components).
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
-title: Using the Raspberry Pi emulator
+  title: Raspberry Pi エミュレーターの使用
+  description: これは、"テキストのみ" のコンテンツのサンプルです (ラボまたは知識チェックのコンポーネントはありません)。
+  ms.openlocfilehash: a773d5ba303a5047f96485ae97d20b6fcf40931a
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258289"
+title: Raspberry Pi エミュレーターの使用
 durationInMinutes: 11
-content: |
-  [!include[](includes/2-raspberry-pi-emulator.md)]
+content: '[!include[](includes/2-raspberry-pi-emulator.md)]'

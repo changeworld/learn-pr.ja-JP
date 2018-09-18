@@ -1,28 +1,33 @@
 ### YamlMime:Module
-# Module uids are manually created by the content author and should follow the format (repo).(module-short-name). Keep it easy on yourself and keep the module-short-name the same as the module folder name.
 uid: learn.classify-user-feedback-with-the-text-analytics-api
 metadata:
-  title: Discover sentiment in text with the Text Analytics API
-  description: Learn how to use the Text Analytics API to discover sentiment in user feedback.
+  title: Text Analytics API を使用してテキスト内の感情を発見する
+  description: Text Analytics API を使用してユーザーからのフィードバック内の感情を検出する方法について説明します。
   ms.date: 09/24/2018
-title:  Discover sentiment in text with the Text Analytics API
-summary: Understanding what your customers are really saying about your product or brand when they send feedback is critical to your business. We'll create a solution that uses Azure Functions and the intelligence of the Text Analytics API to discover sentiment in text messages. 
-abstract: |
-  In this module, you will:
-  - Learn about Text Analytics API
-  - Sign up for a Text Analytics API key
-  - Design and build a service with Azure Functions that uses the Text Analytics API to sort text feedback
-  - Read and write Azure Queue storage messages in a function app with the help of bindings
-cardDescription: Discover sentiment in text with the Text Analytics API
-# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
+  ms.openlocfilehash: c4d249788ef0276b321c988b7ed445199785d525
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258529"
+title: Text Analytics API を使用してテキスト内の感情を発見する
+summary: 顧客がフィードバックを送信する際に商品やブランドについて実際に何を言っているかを理解することは、ビジネスにとって非常に重要です。 Azure Functions と Text Analytics API のインテリジェンスを使用してテキスト メッセージ内の感情を発見するソリューションを作成します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Text Analytics API について学習します
+
+  - Text Analytics API キーにサインアップします
+
+  - Text Analytics API を使用してテキスト フィードバックを並べ替える、Azure Functions によるサービスを設計および構築します
+
+  - バインディングによる支援を受けて、関数アプリ内で Azure Queue ストレージ メッセージの読み取りと書き込みを行います
+cardDescription: Text Analytics API を使用してテキスト内の感情を発見する
 iconUrl: http://via.placeholder.com/120x120
-# `iconUrl` is the badge image 
-levels: 
+levels:
 - intermediate
-# `beginner`, `intermediate`, `advanced`; multiple values accepted
-roles: 
+roles:
 - developer
-# `developer`, `administrator`, `solutionsArchitect`, `businessUser`, `businessAnalyst`; multiple values accepted
 products:
 - azure
 - azure-cosmos-db
@@ -30,8 +35,6 @@ products:
 - azure-functions
 - azure-portal
 - azure-storage
-# `azure`; multiple values accepted
-# Listing of all of the unit uids, in the order they should be displayed to the user in
 units:
 - learn.classify-user-feedback-with-the-text-analytics-api.1-introduction
 - learn.classify-user-feedback-with-the-text-analytics-api.2-an-introduction-to-text-analytics
@@ -42,4 +45,3 @@ units:
 - learn.classify-user-feedback-with-the-text-analytics-api.7-exercise-sort-feedback
 - learn.classify-user-feedback-with-the-text-analytics-api.8-summary
 achievement: learn.placeholder.badge
-# `achievement` is the `uid` for the badge

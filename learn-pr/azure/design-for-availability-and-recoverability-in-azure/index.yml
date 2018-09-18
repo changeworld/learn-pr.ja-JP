@@ -1,28 +1,32 @@
 ### YamlMime:Module
 uid: learn.design-for-availability-and-recoverability
 metadata:
-  title: Design for availability and recoverability in Azure
-  description: Make your Azure architecture highly available and able to recover from failures
+  title: Azure での可用性と回復性のための設計
+  description: Azure アーキテクチャの可用性を高め、障害から復旧できるようにする
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for availability and recoverability
-summary: If you were to lose one or more components of your infrastructure, could your architecture handle it? If you experience a loss of data or identify data corruption, could you recover the data? Do you know what your requirements are to your customers for system availability and disaster recovery? Learn how to incorporate availability and recoverability into your architecture.
-abstract: |
-  In this module, you will:
-    - Leverage Azure services to design a highly available application
-    - Incorporate Azure disaster recovery capabilities into your architecture
-    - Back up and restore on Azure to protect your application from data loss or corruption
-prerequisites: None
+  ms.openlocfilehash: 2ce61bcbbcae0eb7b518122c280580176850e6dd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236435"
+title: 可用性と回復性のための設計
+summary: インフラストラクチャの 1 つ以上のコンポーネントが失われた場合、アーキテクチャはそれに対処できますか? データの損失が発生した場合や、データの破損が確認された場合、データを復旧できますか? 顧客のシステムの可用性とディザスター リカバリーの要件を把握していますか? 可用性と回復性をアーキテクチャに組み込む方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure サービスを利用して高可用性アプリケーションを設計する
+    - Azure のディザスター リカバリー機能をアーキテクチャに組み込む
+    - Azure でのバックアップと復元によってデータの損失や破損からアプリケーションを保護する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
 roles:
 - solution-architect
-#TODO: Update achievement
 achievement: learn.placeholder.badge
 products:
 - azure

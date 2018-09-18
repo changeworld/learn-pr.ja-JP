@@ -1,109 +1,109 @@
-There's no "easy button" for security and no solution that solves all your problems from a security perspective. Let's imagine that Lamna Healthcare has been neglecting security in their environment, but has realized that they need to put some major focus in this area. They're not exactly sure where to start, or if they can just buy a solution to make their environment secure. They know they need an overall holistic approach, but are unsure what really fits into that. Here, we'll identify key concepts of defense in depth, identify key security technologies and approaches to support a defense in depth strategy, and discuss how to apply these concepts when architecting your own Azure services.
+セキュリティには "イージー ボタン" はありません。また、セキュリティの観点からすべての問題を解決するソリューションはありません。 たとえば、Lamna Healthcare では環境内でのセキュリティを無視しているものの、この領域を特に重視する必要があることは認識しているとします。 どこから始めてよいか、あるいは環境を安全なものにするためにソリューションを購入するだけでよいのかがよくわかりません。 総合的なアプローチが必要であることはわかっていますが、何が最適であるかがわかりません。 ここでは、多層防御の主な概念と、多層防御の戦略をサポートするための主なセキュリティ テクノロジとアプローチを確認します。また、独自の Azure サービスを設計する際にこれらの概念を適用する方法について説明します。
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>セキュリティへの階層型アプローチ
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals not authorized to access it. The common principles used to define a security posture are confidentiality, integrity, and availability, known collectively as CIA.
+"*多層防御*" は、情報への不正なアクセスを目的とする攻撃の進行を遅らせる一連のメカニズムを採用する戦略です。 各層で保護が提供されるため、1 つの層が破られた場合、後続の層は既に備えができており、さらなる露出を防ぐことができます。 Microsoft は、自社の物理データセンターと Azure サービス全体で、セキュリティに階層型アプローチを適用しています。 多層防御の目的は、情報を保護し、情報へのアクセスが許可されていない個人から盗まれないようにすることです。 セキュリティ体制を定義するために使用される一般的な原則は、機密性、整合性、可用性 (CIA と総称される) です。
 
-- __Confidentiality__ - Principle of least privilege. Restricting access to information only to individuals explicitly granted access. This information includes protection of user passwords, remote access certificates, and email content.
+- __機密性__ - 最小特権の原則です。 情報へのアクセスを、アクセスが明示的に許可されている個人にのみ限定します。 この情報には、ユーザーのパスワード、リモート アクセス証明書、電子メールの内容の保護が含まれます。
 
-- __Integrity__ - The prevention of unauthorized changes to information at rest or in transit. A common approach used in data transmission is for the sender to create a unique fingerprint of the data using a one-way hashing algorithm. The hash is sent to the receiver along with the data. The data's hash is recalculated and compared to the original by the receiver to ensure the data wasn't lost or modified in transit.
+- __整合性__ - 保存中や転送中の情報に対する承認されていない変更を防ぎます。 データ転送で使用される一般的な方法は、一方向のハッシュ アルゴリズムを使用してデータの一意のフィンガープリントを作成する送信者のためのものです。 ハッシュはデータと共に受信者に送信されます。 データのハッシュは受信者によって再計算され、元のものと比較され、データが転送中に失われたり、変更されていないかを確認します。
 
-- __Availability__ - Ensure services are available to authorized users. Denial of service attacks are the most prevalent malicious example of this. Natural disasters also drive system design to prevent singe points of failure and deploy multiple instances of an application to geo-dispersed locations.
+- __可用性__ - 承認されたユーザーがサービスを利用できるようにします。 サービス拒否攻撃は、これの最も一般的な悪意のある例です。 自然災害もまた、単一障害点を回避し、アプリケーションの複数のインスタンスを地理的に分散した場所にデプロイするためのシステム設計を促すものです。
 
-## Security layers
+## <a name="security-layers"></a>セキュリティ層
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+多層防御は、同心円状の輪のセットとして視覚化でき、データは中央でセキュリティ保護されます。 各輪では、データに関するセキュリティ層が追加されます。 このアプローチでは、単一の保護層に依存する必要がなくなり、攻撃速度を落とすことができます。また、自動または手動によるアラート テレメトリが提供されます。 それでは各層を見ていきましょう。
 
-![Defense in depth](../media-draft/defense_in_depth_layers_small.PNG)
+![多層防御](../media-draft/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>データ
 
-In almost all cases, attackers are after data:
+ほとんどすべての場合、攻撃者は次のようなデータを狙っています。
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on a SaaS application such as Office 365
-- Data stored in cloud storage
+- データベースに格納されたデータ
+- 仮想マシン内のディスク上に格納されたデータ
+- Office 365 などの SaaS アプリケーションに格納されたデータ
+- クラウド ストレージに格納されたデータ
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+適切にセキュリティで保護されるように、データを格納し、データへのアクセスを制御する必要があります。 多くの場合、データの機密性、整合性、可用性を確保するために適用する必要がある制御とプロセスを示す規制上の要件があります。
 
-### Applications
+### <a name="applications"></a>アプリケーション
 
-- Ensure applications are secure and free of vulnerabilities
-- Store sensitive application secrets in a secure storage medium
-- Make security a design requirement for all application development
+- アプリケーションがセキュリティで保護されており、脆弱性がないようにします
+- 機密性の高いアプリケーション シークレットをセキュリティで保護されたストレージ メディアに格納します
+- すべてのアプリケーション開発に関する設計要件を安全なものにします
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and are making security requirements non-negotiable.
+アプリケーション開発のライフ サイクルにセキュリティを統合することは、コードにおける脆弱性の数を減らすのに役立ちます。 すべての開発チームが既定でアプリケーションをセキュリティで保護するようにし、セキュリティ要件を交渉の余地のないものにします。
 
-### Compute
+### <a name="compute"></a>コンピューティング
 
-- Secure access to virtual machines
-- Implement endpoint protection and keep systems patched and current
+- 仮想マシンへのアクセスをセキュリティで保護します
+- エンドポイント保護を実装し、システムにパッチを適用して最新の状態に保ちます
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and you have the proper controls in place to minimize security issues.
+マルウェア、パッチが適用されていないシステム、適切にセキュリティ保護されていないシステムにより、環境が攻撃を受けやすくなります。 この層では、ご利用のコンピューティング リソースが安全であり、セキュリティの問題を最小限に抑えるために適切に制御していることを確認することに重点を置きます。
 
-### Networking
+### <a name="networking"></a>ネットワーク
 
-- Limit communication between resources
-- Deny by default
-- Restrict inbound internet access and limit outbound where appropriate
-- Implement secure connectivity to on-premises networks
+- リソース間の通信を制限します
+- 既定で拒否します
+- 必要に応じて、インバウンド インターネット アクセスを限定し、アウトバウンドを制限します
+- オンプレミス ネットワークへのセキュリティで保護された接続を実装します
 
-At this layer, the focus is on limiting the network connectivity across all your resources to only allow what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+この層では、すべてのリソース間でのネットワーク接続を制限し、必要なもののみを許可することに重点を置きます。 この通信を制限することで、ネットワーク全体の侵入拡大のリスクを軽減することができます。
 
-### Perimeter
+### <a name="perimeter"></a>境界
 
-- Use distributed denial-of-service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users
-- Use perimeter firewalls to identify and alert on malicious attacks against your network
+- 分散型サービス拒否 (DDoS) 保護を使用して、エンド ユーザーに対するサービス拒否が発生する前に大規模な攻撃をフィルター処理します
+- 境界ファイアウォールを使用して、ネットワークに対する悪意のある攻撃を識別し、警告します
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+ネットワーク境界で、リソースに対するネットワークベースの攻撃から保護する目的があります。 これらの攻撃を識別し、影響を排除し、警告することは、ネットワークを安全に保つために重要なことです。
 
-### Policies & access
+### <a name="policies--access"></a>ポリシーとアクセス
 
-- Control access to infrastructure, change control
-- Use single sign-on and multi-factor authentication
-- Audit events and changes
+- インフラストラクチャへのアクセスを制御し、変更を制御します
+- シングル サインオンと多要素認証を使用します
+- イベントと変更を監査します
 
-The policy & access layer is all about ensuring identities are secure, and that access granted is only what is needed, and changes are logged.
+ポリシーとアクセス層では、ID がセキュリティで保護されていることと、付与されたアクセス権のみが必要であることと、変更がログに記録されていることを確認することに集中します。
 
-### Physical security
+### <a name="physical-security"></a>物理的なセキュリティ
 
-- Physical building security and controlling access to computing hardware within the data center is the first line of defense.
+- 物理的なセキュリティを構築し、データ センター内のコンピューティング ハードウェアへのアクセスを制御することが、防御の最前線となります。
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+物理的なセキュリティの目的は、資産へのアクセスに対する物理的な保護措置を講じることです。 これにより、他の層をバイパスできなくなり、損失や盗難が適切に処理されます。
 
-Each layer can implement one or more of the CIA concerns.
+各層では CIA の懸念事項を 1 つ以上実装できます。
 
-|#|Ring|Example|Principle
+|#|輪|例|原則
 |---|---|---|---|
-|1|Data|Data encryption at rest in Azure blob storage|Integrity|
-|2|Application|SSL/TLS encrypted sessions|Integrity|
-|3|Compute|Regularly apply OS and layered software patches|Availability|
-|4|Network|Network security rules|Confidentiality|
-|5|Perimeter|DDoS protection|Availability|
-|6|Policies & Access|Azure Active Directory user authentication|Integrity|
-|7|Physical Security|Azure data center biometric access controls|Confidentiality|
+|1|データ|Azure Blob Storage に保存中のデータの暗号化|整合性|
+|2|アプリケーション|SSL/TLS で暗号化されたセッション|整合性|
+|3|コンピューティング|OS および階層型ソフトウェア パッチを定期的に適用します|可用性|
+|4|ネットワーク|ネットワーク セキュリティ規則|機密性|
+|5|境界|DDoS 保護|可用性|
+|6|ポリシーとアクセス|Azure Active Directory ユーザー認証|整合性|
+|7|物理的なセキュリティ|Azure データ センターの生体認証アクセス制御|機密性|
 
-## Shared responsibilities
+## <a name="shared-responsibilities"></a>共同責任
 
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared by both cloud providers and customers.
+お客様が制御するデータセンターからクラウド データセンターへのコンピューティング環境の移行時に、セキュリティの責任も移行されます。 現在、セキュリティはクラウド プロバイダーとお客様の両方に共通の懸念事項です。
 
 ![shared_responsibility.png](../media-draft/shared_responsibilities.png)
 
-## Continuous improvement
+## <a name="continuous-improvement"></a>継続的な改善
 
-The threat landscape is evolving in real time and at massive scale, therefore a security architecture is never complete. Microsoft and our customers require the ability to respond to these threats intelligently, quickly, and at scale.
+脅威の状況はリアルタイムに大きく変わるため、セキュリティ アーキテクチャが完全になることはありません。 Microsoft およびお客様は、これらの脅威に対するインテリジェントですばやい大規模な対応が必要になります。
 
-[Azure Security Center](https://azure.microsoft.com/services/security-center/) provides customers with unified security management and advanced threat protection to understand and respond to security events on-premises and in Azure. In turn, Azure customers have a responsibility to continually reevaluate and evolve their security architecture.
+[Azure Security Center](https://azure.microsoft.com/services/security-center/) は、オンプレミスおよび Azure でのセキュリティ イベントを把握し、対応するための統合セキュリティ管理と高度な脅威保護を実現します。 一方、Azure のお客様には、セキュリティ アーキテクチャを継続的に再評価し、進化させる責任があります。
 
-## Defense in depth at Lamna Healthcare
+## <a name="defense-in-depth-at-lamna-healthcare"></a>Lamna Healthcare での多層防御
 
-Lamna Healthcare has put a strong focus on defense in depth across all IT teams. Since the organization is responsible for a substantial amount of sensitive health care data, they realize that a comprehensive approach is their best path forward. 
+Lamna Healthcare では、IT チーム全体の多層防御が重視されています。 組織は機密性の高い大量の医療データに対する責任があるため、包括的なアプローチが最適であることを認識しています。 
 
-They've formed a virtual team, with representatives from each IT team along with their security team, that is focused on driving this across the organization. They work on educating engineers and architects on vulnerabilities, how to address them, and provide guidance as projects move through the organization.
+各 IT チームからの担当者とそのセキュリティ チームを含む仮想チームが形成されました。その重点は組織全体でこれを推進することに置かれています。 脆弱性とその対処方法に関する技術者や設計者の教育に取り組み、組織でのプロジェクトの移動の際にガイダンスを提供します。
 
-They realize that this effort is never done, and have put in place regular policy, process, technical, and architectural reviews to ensure they are constantly looking at ways to improve security.
+この作業に終わりはありません。通常のポリシー、プロセス、技術およびアーキテクチャについて確認し、セキュリティを強化するための方法を常に模索するようにしています。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-We've looked at what a defense in depth approach to security looks like, what the layers of this approach look like, and what each layer is focused on. Using this approach to secure your architecture will put you on a path forward to ensure you're addressing security comprehensively across your environment instead of focusing on one single layer or technology.
+セキュリティへの多層防御のアプローチとこのアプローチの層がどのようなものであるかや、各層で重視されている内容を確認しました。 このアプローチを使用してアーキテクチャをセキュリティで保護することは、1 つの層やテクノロジに焦点を当てるのではなく、環境全体で包括的にセキュリティに対処できるようになることにつながります。

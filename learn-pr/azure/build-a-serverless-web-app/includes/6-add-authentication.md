@@ -1,82 +1,80 @@
-Azure App Service authentication enables turn-key authentication support in an Azure Functions app. It integrates seamlessly with Facebook, Twitter, Microsoft accounts, Google, and Azure Active Directory. You'll add App Service authentication to protect the back-end APIs of your web app.
+Azure App Service 認証を使用すると、Azure Functions アプリでターン キー認証がサポートされるようになります。 Facebook、Twitter、Microsoft アカウント、Google、および Azure Active Directory とシームレスに統合されます。 Web アプリのバックエンド API を保護するには、App Service 認証を追加します。
 
-## Enable App Service authentication
+## <a name="enable-app-service-authentication"></a>App Service 認証を有効にする
 
-1. Open the function app in the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) で関数アプリを開きます。
 
-1. Under **Platform features**, select **Authentication/Authorization**.
+1. **[プラットフォーム機能]** で、**[認証/承認]** を選択します。
 
-    ![Select Authentication and Authorization](../media/6-authorization.jpg)
+    ![認証と承認を選択する](../media/6-authorization.jpg)
 
-1. Select the following values:
+1. 次の値を選択します。
     
-    | Setting      |  Suggested value   | Description                                        |
+    | 設定      |  推奨値   | 説明                                        |
     | --- | --- | ---|
-    | **App Service Authentication** | On | Enable authentication. |
-    | **Action when request is not authenticated** | Sign in with Azure Active Directory. | Select a configured authentication method (See below). |
-    | **Authentication Providers** | See below. | See below. |
-    | **Token store** | On | Allow App Service to store and manage tokens. |
-    | **Allowed external redirect URLs** | The URL of your application, for example https://firstserverlessweb.z4.web.core.windows.net/. | URLs that App Service is allowed to redirect to, after a user is authenticated. |
+    | **App Service 認証** | On | 認証を有効にします。 |
+    | **要求が認証されない場合のアクション** | Azure Active Directory でサインインします。 | 構成済みの認証方法 (下記) を選択します。 |
+    | **認証プロバイダー** | 次を参照してください。 | 次を参照してください。 |
+    | **トークン ストア** | On | App Service でトークンを格納および管理できるようになります。 |
+    | **許可される外部リダイレクト URL** | アプリケーションの URL。例: https://firstserverlessweb.z4.web.core.windows.net/。 | ユーザーが認証された後に App Service からリダイレクトできる URL。 |
 
-1. Select **Azure Active Directory** to reveal **Azure Active Directory Settings**.
+1. **[Azure Active Directory]** を選択して **[Azure Active Directory の設定]** を表示します。
 
-    1. Select **Express** as the **Management Mode** and fill in the following information.
+    1. **[管理モード]** として **[簡易]** を選択し、次の情報を入力します。
     
-        | Setting      |  Suggested value   | Description                                        |
+        | 設定      |  推奨値   | 説明                                        |
         | --- | --- | ---|
-        | **Management mode** | Express, Create new AD app | Automatically set up a service principal and Azure Active Directory authentication. |
-        | **Create app** | my-serverless-webapp | Enter a unique application name. |
+        | **管理モード** | [簡易]、[新しい AD アプリを作成する] | サービス プリンシパルと Azure Active Directory 認証が自動的に設定されます。 |
+        | **アプリの作成** | my-serverless-webapp | 一意のアプリケーション名を入力します。 |
     
-    1. Click **OK** to save the Azure Active Directory settings.
+    1. **[OK]** をクリックして Azure Active Directory の設定を保存します。
 
-    ![Authentication and Authorization and Azure Active Directory settings](../media/6-create-aad.png)
-
-
-1. Click **Save**.
+    ![認証と承認と Azure Active Directory の設定](../media/6-create-aad.png)
 
 
-## Modify the web app to enable authentication
+1. **[保存]** をクリックします。
 
-1. In Cloud Shell, ensure that the current directory is the **www/dist** folder.
+
+## <a name="modify-the-web-app-to-enable-authentication"></a>Web アプリを変更して認証を有効にする
+
+1. Cloud Shell で、現在のディレクトリが **www/dist** フォルダーであることを確認します。
 
     ```azurecli
     cd ~/functions-first-serverless-web-application/www/dist
     ```
 
-1. You enable authentication in your function app by modifying **settings.js**. Open the file in Cloud Shell Editor.
+1. 関数アプリで認証を有効にするには、次のコード行を **settings.js** ファイルに追加します。
+
+    `window.authEnabled = true`
+
+    次のコマンドを使用するか、VIM などのコマンド ライン エディターを使用して、変更を加え結果を表示します。
 
     ```azurecli
-    code settings.js
+    echo "window.authEnabled = true" >> settings.js
     ```
 
-1. Append the following line to the file.
-
-    ```azurecli
-    window.authEnabled = true
-    ```
-
-1. Confirm the change was made to the file.
+    ファイルが変更されたことを確認します。
 
     ```azurecli
     cat settings.js
     ```
 
-1. Upload the file to Blob storage.
+1. ファイルを Blob Storage にアップロードします。
 
     ```azurecli
     az storage blob upload -c \$web --account-name <storage account name> -f settings.js -n settings.js
     ```
 
 
-## Test the application
+## <a name="test-the-application"></a>アプリケーションをテストする
 
-1. Open the application in a browser. Click **Log in** and log in.
+1. ブラウザーでアプリケーションを開きます。 **[ログイン]** をクリックしてログインします。
 
-1. Select an image file and upload it.
+1. 画像ファイルを選択してアップロードします。
 
-    ![Sign in page](../media/6-aad-auth.png)
+    ![サインイン ページ](../media/6-aad-auth.png)
     
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you learned how to add authentication to the application using Azure App Service authentication.
+このユニットでは、Azure App Service 認証を使用してアプリケーションに認証を追加する方法について学習しました。

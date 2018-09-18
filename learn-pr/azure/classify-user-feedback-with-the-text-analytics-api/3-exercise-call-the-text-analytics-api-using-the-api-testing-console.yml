@@ -3,13 +3,18 @@ uid: learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-th
 metadata:
   title: 演習 - オンライン テスト コンソールから Text Analytics API を呼び出す
   description: このユニットでは、オンライン API テスト コンソールを利用して、コードを 1 行も記述せずに、Text Analytics API のセンチメント エンドポイントを実際に呼び出します。
-  displayType: two-column
-  ms.openlocfilehash: 9d3a1052df26d0a8906d995bf0aabfbf608ebdfc
-  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 33d03b80bc6bc5a4f39041ce543e425f00773584
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44258146"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45775348"
 title: 演習 - オンライン テスト コンソールから Text Analytics API を呼び出す
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/3-exercise-call-the-text-analytics-api-using-the-api-testing-console.md)]'

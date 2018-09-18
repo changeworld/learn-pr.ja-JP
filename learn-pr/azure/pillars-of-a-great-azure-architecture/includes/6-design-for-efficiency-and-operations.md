@@ -1,36 +1,36 @@
-Your organization has moved a majority of their systems to the cloud, but are now seeing cost increases in areas they didn't expect. After some observation, you realize you're inefficient across your environment, and are still doing manual operational work. 
+自分の組織でシステムの大部分をクラウドに移行しましたが、現在は予測していなかった領域でのコスト上昇に見舞われています。 観測を行った結果、環境全体にまたがる非効率な処理があり、いくつかはまだ手動による運用作業が行われていることに気づきました。 
 
-Here, we'll take a look at some ways they can eliminate waste and improve operational efficiencies.
+ここでは無駄を省きながら運用効率を向上させるいくつかの方法をご紹介します。
 
-## Importance of efficiency and operations
+## <a name="importance-of-efficiency-and-operations"></a>効率と運用の重要性
 
-Efficiency is focused on identifying and eliminating waste within your environment. When looking at cloud spending, this waste typically comes in the form of provisioning more capacity than demand requires. There are operational costs that go along with this as well. These operational costs show up as wasted time and increased error. Focusing on these as you design your architecture will help you identify and eliminate waste across your environment.
+環境内の無駄を特定し、排除することに関して、重点的に取り組むべき領域は効率です。 クラウド支出に着目すると、この無駄は通常、需要を超える容量のプロビジョニングとなって現れます。 これに伴って、運用コストも発生します。 こうした運用コストは、無駄な時間やエラーの増加として顕在化します。 アーキテクチャの設計時にこれらに取り組むことが、環境全体の無駄を特定し、排除することにつながります。
 
-The cloud is a pay-as-you-go service, so you want to only pay for the services you're using. That is why the cloud is great for building your applications. You only pay for the resources that you use.
+クラウドは従量課金制のサービスであるため、料金が発生するのは、実際に使用しているサービスだけです。 お客様のアプリケーションを構築するためにクラウドが最適なのは、これが理由です。 お客様は、使用するリソースの分だけ支払いを行います。
 
-Waste can show up in several ways. Let's look at a few examples:
+無駄はいくつかの形で現れます。 いくつかの例を見ていきましょう。
 
-* A virtual machine that is always 90% idle
-* Paying for a license included in a virtual machine when a license is already owned
-* Retaining infrequently accessed data on a storage medium optimized for frequent access
-* Manually repeating the build of a non-production environment
+* 常に 90% が待機状態の仮想マシン
+* 既に所有しているライセンスが仮想マシンにも含まれていて、二重に支払いを行っている
+* 高頻度のアクセスに最適化された記憶媒体で、アクセス頻繁の低いデータを保持している
+* 非運用環境の構築を手動で繰り返している
 
-In each of these cases, more money is being spent than it should, and each presents an opportunity to optimize cost reduction.
+いずれのケースも必要以上のコストが費やされており、それぞれにコスト削減による最適化の余地があります。
 
-Operationally, it's important to have a robust monitoring strategy. This can not only help you identify areas of waste, but will aid in troubleshooting issues and optimizing the performance of your application. A multilayered approach is essential. Gathering data points from components at every layer will give you the ability to alert when values are outside of acceptable values, and will allow you to track spending over time.
+運用上、しっかりした監視戦略を持つことが大切です。 そうすることで無駄な領域が特定しやすくなるだけでなく、問題のトラブルシューティングや、アプリケーションのパフォーマンスの最適化が容易になります。 多層的アプローチは不可欠です。 各層のコンポーネントからデータ ポイントを収集することで、値が許容範囲外にある場合に警告を行うことができ、経時的な支出の追跡も行えます。
 
-## Efficiency best practices
+## <a name="efficiency-best-practices"></a>効率上のベスト プラクティス
 
-There are several ways to optimize your environment and maximize efficiency. A great place to start is to look at cost optimization steps like sizing virtual machines properly and deallocating virtual machines that aren't in use. Now that you are paying for what you use, you want to be sure that you aren't wasting any of these resources.
+環境の最適化と効率の最大化を行うためにはいくつかの方法があります。 仮想マシンの適切なサイジング、未使用の仮想マシンの割当解除など、コストを最適化する手順の検討から始めることをお勧めします。 お客様は実際に使用している分だけ支払いを行っているので、これらのリソースに対するいかなる無駄も省きたいとお考えのことと思います。
 
-Where possible, you want to look at moving off IaaS and onto PaaS services. PaaS services typically cost less than IaaS, and typically bring reduced operational costs along as well. With PaaS services, you don’t have to worry about patching or maintaining VMs because those activities are typically handled by the cloud provider. Not all applications can be moved to PaaS, but with the cost savings that are there with PaaS services, it's certainly something worth considering.
+可能であれば、IaaS をやめて PaaS サービスへの移行を検討したいと考えておられるでしょう。 PaaS サービスは通常 IaaS よりもコストが低く、また通常は運用コストも削減されます。 PaaS サービスにおいては、お客様は VM への修正プログラムの適用作業や保守作業を心配する必要がありません。これらの業務は通常クラウド プロバイダーによって運用されるからです。 すべてのアプリケーションを PaaS に移行できるわけではありませんが、PaaS サービスを使用することによるコスト削減の効果は、確実に検討に値します。
 
-## Operational best practices
+## <a name="operational-best-practices"></a>運用上のベスト プラクティス
 
-Automate as much as possible. The human element is costly, injecting time and error into operational activities. You can use automation to build, deploy, and administer resources. By automating common activities, you can eliminate the delay in waiting for a human to intervene.
+可能な限り自動化を適用します。 人的要素はコストが高くなり、運用業務に時間とエラーをもたらします。 リソースの構築、デプロイ、管理に、自動化を使うことができます。 一般的なアクティビティを自動化することによって、人間の介入を待つ分の遅延を削減することが可能です。
 
-Throughout your architecture, you want to have a thorough monitoring, logging, and instrumentation system. This will always give you the capability to see what’s going on. It will ensure you know when something is not right before your users are impacted. With a comprehensive approach, you'll be able to identify performance issues, cost inefficiencies, correlate events, and gain a greater ability to troubleshoot issues.
+アーキテクチャ全体で、徹底した監視、ログ記録、およびインストルメンテーション システムが必要となります。 これによって、何が起きているのかを常に把握することができるようになります。 何か問題が発生しても、ユーザーに影響が及ぶ前に把握することができます。 包括的なアプローチによって、パフォーマンスの問題、コストの非効率性、相関イベントの特定を行い、問題のトラブルシューティング能力を大幅に高めることが可能となります。
 
-Lastly, modern architectures should be designed with DevOps and continuous integration in mind. This will give you the ability to automate deployments using infrastructure as code, automate application testing, and build new environments as needed. DevOps is as much cultural as it is technical, but can bring many benefits to organizations that choose to go down this path.
+最後に、最新のアーキテクチャは DevOps と継続的インテグレーションを考慮して設計する必要があります。 これによってコードとしてのインフラストラクチャを用いたデプロイとアプリケーション テストの自動化をもたらし、必要に応じて新規環境の構築を行うことができます。 DevOps は技術と同じぐらい文化的意味合いを伴いますが、この道を選択した組織には多くの利点がもたらされます。
 
-Efficiency is about identifying and eliminating waste within your environment. With cloud computing, you're paying for what you use, so you want to make sure you aren't wasting resources. To help ensure efficiency, try to automate as much as possible, move systems from IaaS to PaaS, and design your architectures with DevOps in mind. 
+効率とは、環境内の無駄の特定と排除を行うことです。 クラウド コンピューティングにおいては、お客様は実際に使用したものに対しての支払いを行うので、無駄なリソースを使わないことが大切です。 効率を高めるために、可能な限り自動化し、IaaS から PaaS にシステムを移行して、DevOps を考慮しながらアーキテクチャの設計を行うようにしてください。 

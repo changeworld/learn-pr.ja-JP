@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.2-shared-responsibility
-title: Cloud security is a shared responsibility
+title: クラウドのセキュリティは共同責任
 metadata:
-  title: Cloud security is a shared responsibility
-  description: Cloud security is a shared responsibility
+  title: クラウドのセキュリティは共同責任
+  description: クラウドのセキュリティは共同責任
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9800e5401a70e79595e93d4fa3ffee8a6d6e9c73
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241528"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-shared-responsibility.md)]
-# quiz:
-# -	Who is responsible for securing subscription access?
-# -	Where can you find more information about Microsoft Azure compliance and how Microsoft secures Azure?
-# -	What is the most important step you can take to secure your Azure subscription?
+content: '[!include[](includes/2-shared-responsibility.md)]'

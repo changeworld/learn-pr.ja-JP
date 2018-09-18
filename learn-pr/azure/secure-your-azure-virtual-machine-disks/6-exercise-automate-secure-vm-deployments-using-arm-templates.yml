@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1f3bd0f030eaa532d3a9515bd9634404d13b4d10
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44309519"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766440"
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/6-exercise-automate-secure-vm-deployments-using-arm-templates.md)]'

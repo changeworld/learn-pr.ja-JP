@@ -29,7 +29,7 @@ Azure のキューは、送信側と受信側のコンポーネントから何�
 
 たとえば、キューにメッセージを送信するときは、`await` キーワードを指定して `QueueClient.SendAsync()` メソッドを使用します。
 
-## <a name="write-code-that-sends-to-queues"></a>キューに送信するコードを記述する 
+## <a name="write-code-that-sends-to-queues"></a>キューに送信するコードを記述する
 
 すべての送信または受信コンポーネントで、Service Bus キューを呼び出すコード ファイルに次の `using` ステートメントを追加する必要があります。
 
@@ -66,4 +66,3 @@ queueClient.RegisterMessageHandler(MessageHandler, messageHandlerOptions);
 ```C#
 await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 ```
-    

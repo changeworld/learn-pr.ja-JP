@@ -1,31 +1,31 @@
-You've discovered that spikes in traffic can overwhelm our middle-tier. To deal with this, you've decided to add a queue between the front-end and the middle tier in your article-upload application.
+トラフィックの急増により中間層に負荷がかかることがわかりました。 これに対処するため、アーティクル アップロード アプリケーションのフロントエンドと中間層の間にキューを追加することにしました。
 
-The first step in creating a queue is to create the Azure Storage Account that will store our data.
+キューを作成するための最初の手順は、データを格納する Azure ストレージ アカウントの作成です。
 
 <!-- Activate the sandbox -->
 [!include[](../../../includes/azure-sandbox-activate.md)]
 
-## Create a Storage Account with the Azure CLI
+## <a name="create-a-storage-account-with-the-azure-cli"></a>Azure CLI を使用してストレージ アカウントを作成する
 
 > [!TIP] 
-> Normally, you'd start a new project by creating a _resource group_ to hold all the associated resources. In this case, we'll be using the Azure Sandbox which provides a resource group named <rgn>[Sandbox resource group name]</rgn>.
+> 通常は、関連するすべてのリソースを保持する "_リソース グループ_" を作成することで、新しいプロジェクトを開始します。 このケースでは、Azure Sandbox を使用します。このサンドボックスでは、<rgn>[サンドボックス リソース グループ名]</rgn> という名前のリソース グループが提供されます。
 
-1. In the Cloud shell on the right, select Bash if you are given a choice.
+1. 右側の Cloud shell で選択肢がある場合は、Bash を選択します。
 
-1. Use the `az storage account create` command to create the storage account. You'll need to supply several parameters:
+1. `az storage account create` コマンドを使用して、ストレージ アカウントを作成します。 いくつかのパラメーターを指定する必要があります。
 
-| Parameter | Value |
+| パラメーター | 値 |
 |-----------|-------|
-| `--name`  | Sets the name. Remember that storage accounts use the name to generate a public URL - so it has to be unique. In addition, the account name must be between 3 and 24 characters, and be composed of numbers and lowercase letters only. We recommend you use the prefix **articles** with a random number suffix but you can use whatever you like. |
-| `-g`        | Supplies the **Resource Group**, use <rgn>[Sandbox resource group name]</rgn> as the value. |
-| `--kind`    | Sets the **Storage Account type** - use _StorageV2_ to create a general-purpose V2 account. |
-| `-l`        | Sets the **Location** independent of the Resource Group owner. It's optional, but you can use it to place the queue in a different region than the Resource Group. |
-| `--sku`     | Sets the **Replication and Storage type**, it defaults to _Standard_RAGRS_. Let's use _Standard_LRS_ which means it's only locally redundant within the data center. |
+| `--name`  | 名前を設定します。 ストレージ アカウントはその名前を使用してパブリック URL を生成するため、一意でなければなりません。 また、アカウント名の長さは 3 から 24 文字で、数字と小文字のみを使用できます。 **articles** のプレフィックスとランダムな数値のサフィックスを使用することをお勧めします。ただし、任意の文字列を使用することもできます。 |
+| `-g`        | **リソース グループ**を指定します。<rgn>[サンドボックス リソース グループ名]</rgn> を値として使用します。 |
+| `--kind`    | **ストレージ アカウントの種類**を設定します。_StorageV2_ を使用して汎用 V2 アカウントを作成します。 |
+| `-l`        | リソース グループの所有者に依存しない**場所**を設定します。 これは省略可能ですが、これにより、リソース グループとは異なるリージョンにキューを配置できるようになります。 |
+| `--sku`     | **レプリケーションとストレージの種類**を設定します。既定値は _Standard_RAGRS_ です。 単にデータ センター内でローカルで冗長になる、_Standard_LRS_ を使用しましょう。 |
 
 <!-- Resource selection -->
 [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-Here's an example command line that uses the above parameters. Make sure to change the `--name` and `--location` parameters if you decide to copy/paste this command.
+上記のパラメーターを使用するコマンド ラインの例を次に示します。 このコマンドをコピーして貼り付ける場合は、`--name` パラメーターと `--location` パラメーターを変更してください。
 
 ```azurecli
 az storage account create --name [unique-name] -g <rgn>[Sandbox resource group name]</rgn> --kind StorageV2 -l [location-name] --sku Standard_LRS

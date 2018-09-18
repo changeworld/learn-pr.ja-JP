@@ -9,13 +9,13 @@
 ## <a name="learning-objectives"></a>学習の目的
 このモジュールでは、次のことを行います。
 
-- Azure PowerShell が自分の Azure 管理タスクに対して適切なツールかどうかを判断します。
-- Azure PowerShell を Linux、macOS、Windows にインストールします。
-- Azure PowerShell を使用して Azure サブスクリプションに接続します。
-- Azure PowerShell を使用して Azure のリソースを作成します。
+- Azure PowerShell が自分の Azure 管理タスク用の適切なツールかどうかを判断する
+- Azure PowerShell を Linux、macOS、または Windows にインストールする
+- Azure PowerShell を使用して Azure サブスクリプションに接続する
+- Azure PowerShell を使用して Azure リソースを作成する
 
 ## <a name="prerequisites"></a>前提条件
 
 - PowerShell または Bash などのコマンド ライン インターフェイスの使用経験
 - リソース グループや Virtual Machines など、Azure の基本的な概念に関する知識
-- Azure Portal を使用した Azure リソースの管理経験
+- Azure portal を使用した Azure リソースの管理経験

@@ -1,66 +1,66 @@
-Microsoft Cognitive Services is a rich suite of intelligent services that we can use to enrich our apps. We explored a small part of the Text Analytics API service to find out higher-level information about text. We used the service to analyze text feedback from customers for sentiment. We created a solution hosted in Azure Functions to sort these text messages into different buckets, or queues, for further processing.
+Microsoft Cognitive Services は、アプリの強化に利用できる充実したインテリジェントなサービス スイートです。 Text Analytics API サービスのごく一部を利用して､テキストの高次の情報を調べてみました｡ お客様からのテキスト形式のフィードバックを感情面から分析しました。 それらテキスト メッセージをさらに処理するために､いくつかのバケット､あるいはキューに仕分けするため､Azure Functions でホストされるソリューションを作成しました。
 
-Once you know how to call a REST API, then you can easily integrate these intelligent services into your solutions. They all follow a similar pattern:
+REST API の呼び出し方法が分かると､これらのインテリジェント サービスをソリューションに簡単に組み込むことができます｡ こうしたことのすべてが類似のパターンに従っています｡
 
-- Sign up for an access key
-- Explore in the API testing console
-- Formulate requests using the access key and the correct region.
-- POST requests from your solution and parse the responses for insights.
+- サインアップしてアクセス キーを入手する。
+- API のテスト コンソールに表示する。
+- アクセス キーと適切なリージョンを使用して要求を作成する。
+- ソリューションからのリクエストを POST し、応答を解析して洞察を得る｡
 
-We added this intelligence to serverless logic created in Azure Functions. You can easily call these services from other types of apps. There are many client libraries, tutorials and,  quickstarts to get you started.
+私たちはこの情報を Azure Functions に作成したサーバーレス ロジックに追加しました。 これらのサービスは､他の種類のアプリからも簡単に呼び出すことができます。 すぐに取り組めるよう､数多くのクライアント ライブラリやチュートリアル、クイックスタートがあります｡
 
-## Suggestions for further enhancement of our solution
+## <a name="suggestions-for-further-enhancement-of-our-solution"></a>ソリューションをさらに充実させるために
 
-Here are some ideas for you to consider if you want to take what we did further. 
+ここでは、これまでに行ったことをさらに深めたい場合に検討すべきいくつかのアイデアを紹介します｡ 
 
-- Test the solution with more text examples and decide whether the thresholds we set to categorize sentiment scores into positive, negative, and neutral are appropriate. 
-- Consider adding another function into your function app that reads messages from the [!INCLUDE [negative-q](./q-name-negative.md)] queue and calls the Text Analytics API to find key phrases in the text.
-- Our input queue contains raw text feedback. In the real-world, we would associate feedback with some form of user ID such as email address, account number, and so on. So, enhance the input queue items to be JSON documents containing and ID field and the text. Then use that ID when working with the text message.
- - Currently our solution is "hard coded" to English. Think about what changes you would do to make it capable or handling text in all languages supported by the Text Analytics API.  
+- もっと多くのテキスト例でソリューションをテストし､感情点数を肯定的､否定的､中立的に分類するために設定したしきい値が適切かどうかを判断してください｡ 
+- [!INCLUDE [negative-q](./q-name-negative.md)] キューからメッセージを読み取り､Text Analytics API の呼び出て､テキスト内の鍵となる語句を探す関数を関数アプリに追加することを検討してください｡
+- この入力キューには、未加工のテキスト フィードバックが含まれます。 現実世界では､フィードバックは電子メール アドレスやアカウント番号などの何らかの形式のユーザー識別情報に関連付けられます｡ このため、入力キュー項目を強化して､ID フィールドとテキストを含む JSON ドキュメントにします｡ こうして､テキスト メッセージを操作するときはその ID を利用します。
+ - 現在、私たちのソリューションは英語にハード コーディングされています｡ Text Analytics API でサポートされているすべての言語のテキストを処理できるようにするためには､どのような変更を行えばよいのか考えてみてくだます。  
 
-Now that you know how to call one of these Cognitive Services APIs, take a look at some of the other services and think about how you might use them in your solutions. 
+これらの Cognitive Services API の呼び出し方法が分かったわけですから、他のサービスもいくつか検討し､それらをソリューションで利用する方法を考えてください｡ 
 
-## Further reading
+## <a name="further-reading"></a>参考資料
 
-- [Text Analytics overview](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
-- [How to detect sentiment in Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
-- [Cognitive Services Documentation](https://docs.microsoft.com/azure/cognitive-services/)
+- [Text Analytics の概要](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview)
+- [Text Analytics で感情を検出する方法](https://docs.microsoft.com/azure/cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis)
+- [Cognitive Services のドキュメント](https://docs.microsoft.com/azure/cognitive-services/)
 
-## Clean up resources
+## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-*Resources* in Azure refer to function apps, functions, storage accounts, and so forth. They are grouped into *resource groups*, and you can delete everything in a group by deleting the group.
+Azure の *リソース*とは、Function App や関数、ストレージ アカウントなどのことを意味します。 これらは*リソース グループ*に分類されており、グループを削除することでグループ内のすべてのものを削除できます。
 
-You created resources to complete this module. You may be billed for these resources, depending on your [account status](https://azure.microsoft.com/account/) and [service pricing](https://azure.microsoft.com/pricing/). If you don't need the resources anymore, here's how to delete them:
+あなたは､このモジュールを終了するためにリソースを作成しました｡ [アカウントの状態](https://azure.microsoft.com/account/)と[サービスの価格](https://azure.microsoft.com/pricing/)によっては､それらリソースは課金されてることがあります｡ リソースの必要がなくなった場合にそれらを削除する方法を、次に示します。
 
-1. In the Azure portal, go to the **Resource group** page.
+1. Azure Portal で、**[リソース グループ]** ページに移動します。
 
-   To get to that page from the function app page, select the **Overview** tab and then select the link under **Resource group**.
+   Function App ページからこのページに移動するには、**[概要]** タブを選択してから、**[リソース グループ]** の下にあるリンクを選択します。
 
-   To get to that page from the dashboard, select **Resource groups**, and then select the resource group that you used for this module. 
+   ダッシュボードからこのページに移動するには、**[リソース グループ]** を選択してから、このモジュールで使用したリソース グループを選択します。 
 
 > [!NOTE]
-> The default name of the resource group we suggested for this module was [!INCLUDE [resource-group-name](./rg-name.md)] but it is possible that you used another name.
+> このモジュールで推奨された既定のリソース グループ名は [!INCLUDE [resource-group-name](./rg-name.md)] でしたが､別の名前を使用することもできます。
 
-2. In the **Resource group** page, review the list of included resources, and verify that they are the ones you want to delete.
+2. **[リソース グループ]** ページで、含まれているリソースの一覧を確認し、削除してもよいリソースであることを確認します。
 
-3. Select **Delete resource group**, and follow the instructions.
+3. **[リソース グループの削除]** を選択し、指示に従います。
 
-   Deletion may take a couple of minutes. When it's done, a notification appears for a few seconds. You can also select the bell icon at the top of the page to view the notification.
+   削除には数分かかることがあります。 実行されると、通知が数秒間表示されます。 ページの上部にあるベルのアイコンを選択することで、通知を表示することもできます。
 
-## Further Reading
+## <a name="further-reading"></a>参考資料
 
-While this is not intended to be an exhaustive list, the following are some resources related to the topics covered in this module that you might find interesting.
+このリストはすべての資料を網羅するものではありません｡以下はこのモジュールで取り上げられ､ユーザーに有用と思われるトピックに関係しているリソースです｡
 
- * [Azure Functions documentation](https://docs.microsoft.com/azure/azure-functions/)
+ * [Azure Functions のドキュメント](https://docs.microsoft.com/azure/azure-functions/)
 
-* [The Azure Functions Challenge](https://aka.ms/afc)
+* [Azure Functions の課題](https://aka.ms/afc)
 
-* [Azure Serverless Computing Cookbook](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
+* [Azure のサーバーレス コンピューティング クックブック](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
 
- * [How to use Queue storage from Node.js](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
+ * [Node.js から Queue ストレージを使用する方法](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 
- * [Introduction to Azure Cosmos DB: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
+ * [Azure Cosmos DB の概要: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 
-* [A technical overview of Azure Cosmos DB](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
+* [Azure Cosmos DB の技術概要](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)
 
-* [Azure Cosmos DB documentation](https://docs.microsoft.com/azure/cosmos-db/)
+* [Azure Cosmos DB のドキュメント](https://docs.microsoft.com/azure/cosmos-db/)

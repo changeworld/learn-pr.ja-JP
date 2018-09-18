@@ -1,13 +1,13 @@
-End users often post content that may be inappropriate for work in their personal online interactions. As a lead developer at Contoso Beverage Distribution, you are responsible for building and maintaining a line-of-business app that lets your frontline distributors scan and upload images of store shelves where they are restocking. 
+エンドユーザーがオンラインでの個人的なやりとりの中で､仕事には不適切と思われるコンテンツを投稿することはよくあることです｡ Contoso Beverage Distribution 社の開発主任として､あなたは前線の販売業者が､在庫補充のために店舗の棚をスキャンし､その画像をアップロードするための基幹業務アプリを構築､保守する仕事を担当しています｡ 
 
-You need to validate that any images posted by users respect the content rules set by your company. Your goals are clear; the company doesn't want inappropriate content posted to company sites. Given the advancements in Artificial Intelligence, you decide that rewriting this app to include Computer Vision will proactively prevent these types of incidents from occurring. The service you create will identify images and provide many other functionalities to fulfill your company's needs.
+ユーザーの投稿画像が会社の設定したコンテンツ規則に従っていることを確認する必要があります｡ 目標は明確です。会社は、会社のサイトに不適切なコンテンツが投稿されることを望んでいません｡ AIの進歩を踏まえ､あなたは､ Computer Vision を取り込めるようこのアプリを書き換えることで､この種の事故が起きないようにすることに決定しました｡ 作成するサービスでは､画像を識別して､他の多くの機能を提供して､会社のニーズを満たせるようにします｡
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Create a Computer Vision API service
-- Analyze an image and identify its content
-- Generate thumbnails
-- Extract printed text
-- Convert handwritten words into text
+- Computer Vision API サービスを作成する
+- イメージを解析して、コンテンツを識別する
+- サムネイルを生成する
+- 印刷テキストを抽出する
+- 手書きの単語をテキストに変換する

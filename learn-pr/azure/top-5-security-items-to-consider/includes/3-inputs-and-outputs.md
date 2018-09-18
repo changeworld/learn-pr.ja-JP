@@ -1,31 +1,31 @@
-The most prevalent security weakness of applications today is to not correctly process input received from external sources, particularly _user input_. You should always take a close look at any input to make sure it has been validated before it is used. Failing to do this can result in data loss or exposure, escalation of privilege, or even execution of malicious code on other users' computers!
+今日のアプリケーションで最もよく見られるセキュリティ上の弱点は､外部ソースから受信した入力､特に_ユーザー入力_を正しく処理しないことです｡ どのような入力であれ、必ず詳細に調べて､使用する前に必ず妥当であることを検証するようにしてください｡ この検証を怠ると､データの損失や暴露､特権のエスカレーション､さらには他のユーザーのコンピューター上の悪意のあるコードの実行まで起きることがあります｡
 
-The tragic thing is that this is an easy problem to solve. Here we will cover how to treat data; when it’s received, when it’s displayed on the screen, and when it's stored for later use.
+悲劇的なことは､これが解決の容易な問題であるという点です｡ ここでは､受信時､画面への表示時､または保存時のデータの処理方法を取り上げます｡
 
-## Why do we need to validate our input?
+## <a name="why-do-we-need-to-validate-our-input"></a>なぜ私たちは入力を検証する必要があるのでしょうか。
 
-Imagine that you are building an interface to allow a user to create an account on your website. Our profile data includes a name, email, and a nickname that we will display to everyone who visits the site. What if a new user creates a profile and enters a nickname that includes some SQL commands? For example - what if our bad user enters something like:
+Web サイトでアカウントを作成できるようにするインターフェイスを構築しているときのことを考えてみてください。 プロファイル データには、サイトにアクセスするユーザーの誰にも表示する名前、電子メール、ニックネームが含まれます。 新しいユーザーがプロファイルを作成し、SQL コマンドを含むニックネームを入力したら､どうでしょう｡ 例えば､不正なユーザーが次のように入力したら｡
 
 ```output
 Eve'); DROP TABLE Users;--
 ```
 
-If we just blindly insert this value into a database, it could potentially alter the SQL statement to execute commands we absolutely don't want to run! This is referred to as a "SQL Injection" attack and is one of the _many_ types of exploits that can potentially be done when you don't properly handle inputs. So, what can we do to fix this? This unit will teach you when to sanitize input, how to encode output, and how to create parameterized queries (which solves the above exploit!). These are the three main defense techniques against malicious input being entered into your applications.
+この値がデータベースに挿入すると､絶対に実行したくないコマンドを実行するように SQL ステートメントが改変される可能性があります。 これは、「SQL インジェクション」攻撃と呼ばれ､正しく入力を処理しなかったときに発生する可能性がある_数多くある_悪用の 1つです｡ この問題を解決するためには､何をすればよいのでしょうか｡ このユニットでは、こうした悪用に対処するために入力をサニタイズするタイミングと出力のエンコード方法、パラメーター化クエリを作成する方法を学びます｡ アプリケーションに入力される悪意のある入力に対する防御手法は大きく3つあります｡
 
-## When do I need to validate input?
+## <a name="when-do-i-need-to-validate-input"></a>いつ入力を検証すればよいのでしょうか｡
 
-The answer is _always_. You must validate **every** input for your application. This includes parameters in the URL, input from the user, data from the database, data from an API and anything that is passed in the clear that a user could potentially manipulate. Always use a whitelist approach, which means you only accept "known good" input, instead of a blacklist (where you specifically look for bad input) because it's impossible to think of a complete list of potentially dangerous input.  Do this work on the server, not the client-side (or in addition to the client-side), to ensure that your defenses cannot be circumvented. Treat **ALL** data as untrusted and you will protect yourself from most of the common web app vulnerabilities.
+答えは_常に_です｡ アプリケーションに対する**あらゆる**入力を検証する必要があります。 これには、URLのパラメータ､ユーザーからの入力､データベースからのデータ、API からのデータ､その他､ユーザーが操作できる可能性があるクリアーな形式で渡されるあらゆるものが含まれます｡ 必ずブラックリストではなく､ホワイトリスト方式を採用してください｡このことは､｢問題がないことが既知｣の入力だけを受け付けることを意味します｡ブラックリスト方式では､不正な入力だけに注目することになり､危険性がある入力を完全に網羅することこは不可能なためです｡  この防御策が回避できないよう､この作業はクライアント側ではなく､サーバー側で行ってください (両方で行ってもよい)｡ **あらゆる**データを信頼できないデータとみなしてください｡そうすることで､Web アプリでよくある脆弱性の大半から身を守ることができます｡
 
-If you are using ASP.NET, the framework provides [great support for validating input](https://docs.microsoft.com/aspnet/web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites) on both the client and server side.
+ASP.NET を使用している場合、そのフレームワークには､クライアントとサーバーの双方で[入力を検証するための優れたサポート](https://docs.microsoft.com/aspnet/web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites)が用意されています｡
 
-If you are using another web framework, there are some great techniques for doing input validation available on the [OWASP Input Validation Cheatsheet](https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet).
+別の Web フレームワークを使用している場合は、[OWASP Input Validation Cheatsheet](https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet)に入力を検証するために素晴らしいテクニックがいくつか用意されています｡
 
 
-## Always use parameterized queries
+## <a name="always-use-parameterized-queries"></a>つねにパラメーター化クエリを利用する
 
-SQL databases are commonly used to store data - we might be storing our profile information in SQL Server for example.  Never create inline SQL or other database queries "on the fly" in your code and send it directly to the database, this is a recipe for disaster, as we saw above.
+SQL データベースはデータの格納に広く利用されているデータベースです｡例えば私たちは､ SQL Server にプロファイル情報を格納することができます｡  コードに大急ぎでインライン SQL やその他データベース クエリを作成して､そのままデータベースに送信しないでください｡すでに目にしたように､これは災厄の処方箋になります｡
 
-For example, **do not do this** (known as inline SQL):
+たとえば、**以下を行わないでください** (インライン SQL と呼ばれる)。
 
 ```csharp
 string userName = ... // receive input from the user BEWARE!
@@ -33,7 +33,7 @@ string userName = ... // receive input from the user BEWARE!
 string query = "SELECT *  FROM  [dbo].[users] WHERE userName = '" + userName + "'";
 ```
 
-Here we concatenate text strings together to create the query, taking the input from the user and generating a dynamic SQL query to lookup the user. Again, if an evil user realized we were doing this, or just _tried_ different input styles to see if there was a vulnerability, we could end up with a major disaster. Instead, prefer to use parameterized SQL statements, or even better - stored procedures:
+ここでは、テキスト文字列を連結して､クエリを作成しています｡ユーザーから入力を受け取り､ユーザーを検索する動的な SQL クエリを生成します。 ここでも、悪意のあるユーザーがこれを行っていることに気付いた場合、あるいは脆弱性があるかどうか見るためにいくつかの入力を_試し_ただけでも､大きな災厄になる可能性があります｡ そうではなく、パラメーター化 SQL ステートメントを利用することを優先してください｡もっと良いのは､ストアド プロシージャを利用することです。
 
 ```sql
 -- Lookup a user
@@ -45,14 +45,35 @@ CREATE PROCEDURE sp_findUser
 SELECT *  FROM  [dbo].[users] WHERE userName = @UserName
 ```
 
-Then you can invoke the procedure from your code safely, passing it the `userName` string without worrying about it being treated as part of the SQL statement.
+そうすれば､コードからそのプロシージャを安全に呼び出し､ SQL ステートメントの一部として扱われることを心配せずに `userName` の文字列を渡すことができます。
 
-## Always encode your output
+## <a name="always-encode-your-output"></a>必ず出力をエンコードする
 
-Any output you present visually or in files should always be encoded and escaped. This can protect you in case something was missed in the sanitization pass, or the code accidentally generates something that can be used maliciously. This will make sure that everything is displayed as _output_ and not inadvertently interpreted as something that should be executed. This is another very common attack technique referred to as "Cross-Site Scripting" (XSS).
+ビジュアルに､またはファイルで出力を提示する場合は､必ずエンコードして､エスケープしてください｡ そうすることで､サニタイズの過程で何かが失われても身を守ることができます｡さもないと､悪用される恐れがあるコードが誤って生成されてしまいます｡ そうすることで､あらゆるものが_出力_として表示され､実行すべきものとして解釈されることがなくなります｡ これはまた別の非常に一般的な攻撃方法であり､「クロス サイト スクリプティング」(XSS) と呼ばれます｡
 
-Since this is such as common requirement, this is another areas where ASP.NET will do the work for you. By default, [all output is already encoded](https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1). If you are using another web framework, you can verify your options for output encoding on websites with the [OWASP XSS Prevention Cheatsheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
+エンコードはそれほど一般的な要件であるため､ASP.NET が自動的に行ってくれるもう 1 つのことでもあります｡ 既定では、[あらゆる出力がすでにエンコードされています](https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1)｡ 別の web フレームワークを使用している場合は、[OWASP XSS Prevention Cheatsheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) で Web サイトでの出力エンコードに関するオプションを確認できます｡
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Santizing and validating your input is a necessary requirement to ensure your input is valid and safe to use and store. Most modern web frameworks offer built-in features which can automate some of this work - make sure to check your preferred framework's documentation and see what features it offers. Also, keep in mind that while the most common place this occurs is in web applications, other types of applications can have similar issues - so don't think you're safe if you are writing that cool desktop app! You still need to properly handle user input to ensure someone doesn't use your app to corrupt your data, or damage your company's reputation.
+入力からの不要部分の削除と検証は、入力が有効であり､安全に使用、保存できることを確認するための必須要件です。 最新の Web フレームワークには､この仕事の一部を自動化するための機能が組み込まれています｡必ず､ご利用のフレームワークのマニュアルを読んで､どんな機能があるのか確認してください｡ また、このことが最もよく起きえる場所は web アプリケーションですが､他のタイプのアプリケーションにも同様の問題がある可能性があることを忘れないでください｡ですから､素晴らしいデスクトップ アプリを作成しているとしても､安全だとは思わないでください｡ アプリを使用してデータが破壊されたり､会社の評判が落とされたりすることのないよう､いつでもユーザーの入力を適切に処理する必要があります。
+
+
+## <a name="knowledge-check"></a>知識チェック
+
+サニタイズの必要があるデータ ソースは次のどれでしょうか｡
+* 他社製 API からのデータ
+* URL パラメーターからのデータ
+* 入力フィールドから収集されたユーザーのデータ
+* 上記のすべて (正解)
+
+出力をエンコードする必要があるデータは次のどれでしょうか｡
+* データベースに保存するデータ
+* 画面に出力する日付 (正解)
+* 他社製 API に送信するデータ
+* URL パラメーターのデータ
+
+パラメーター化クエリ (SQL ではストアド プロシージャ) は、以下の理由からいつでもデータベースと通信するためのより安全な選択肢である｡
+* インライン データベース コマンドよりも体系的であり､このためユーザーの混乱が少ない｡
+* ストアド プロシージャにはスクリプトの明確なアウトラインがあり､可視性に優れている｡
+* ハッカーは SQL プログラミングを理解していない｡
+* パラメーター化クエリでは、クエリの実行前に変数が置き換えられる｡これは､変数の代わりにコードを送信する機会がなくなることを意味する｡ (正解)

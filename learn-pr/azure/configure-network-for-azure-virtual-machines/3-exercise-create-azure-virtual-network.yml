@@ -1,17 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
-title: Create an Azure virtual network
+title: Azure 仮想ネットワークを作成する
 metadata:
-  title: Create an Azure virtual network
-  description: Create an Azure virtual network
+  title: Azure 仮想ネットワークを作成する
+  description: Azure 仮想ネットワークを作成する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-interactive: bash
-azureSandbox: true
-durationInMinutes: 20
-content: |
-  [!include[](includes/3-exercise-create-azure-virtual-network.md)]
+  ms.openlocfilehash: add05024d33a676aba98817162282658b7a40794
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44245615"
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-create-azure-virtual-network.md)]'

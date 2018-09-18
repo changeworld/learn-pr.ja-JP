@@ -1,44 +1,26 @@
-Raspberry Pi boards have garnered much interest of late for testing theories or
-event making cool things. While the cost on this boards are quite low, some may
-be interested in testing out the Raspberry Pi functionality before investing in
-one.
+Raspberry Pi ボードは、最近、テスティング セオリーや、優れたものを作るイベントで、多くの関心を集めています。 このボードは非常に低コストですが、投資する前に、Raspberry Pi の機能をテストしてみたい人もいるでしょう。
 
-Microsoft has built an online Raspberry Pi simulator allowing users to control
-the emulated hardware via code. The emulator portrays a graphic of a Raspberry
-Pi connected to a temperature, humidity, pressure sensor, and a red LED via
-breadboard allowing circuits to be wired together. The displayed side panel
-allows users to enter Node.js JavaScript code to control the LED and collect
-dummy data from the simulated sensor.
+Microsoft は、エミュレートされたハードウェアをユーザーがコードを使用して制御することができる、オンラインの Raspberry Pi シミュレーターを構築しました。 エミュレーターは、回線を 1 つにつなぐことができるブレッドボードを介して、温度、湿度、圧力センサー、および赤色 LED に接続された Raspberry Pi のグラフィックを描きます。 表示されるサイド パネルで、ユーザーは Node.js JavaScript コードを入力して、LED を制御し、シミュレートされたセンサーからダミー データを収集することができます。
 
-At first run, the simulator operates a sample temperature capture program which
-is displayed via the command line. The same sample application can also be run
-on a real Pi as the simulator is designed to allow people to test code before
-transferring it to a real device.
+シミュレーターは、最初の実行時に、コマンド ラインを介して表示されるサンプル温度キャプチャ プログラムを操作します。 シミュレーターは実際のデバイスに転送する前にコードをテストできるように設計されているため、同じサンプル アプリケーションを実際の Pi でも実行することができます。
 
-## Web simulator
+## <a name="web-simulator"></a>Web シミュレーター
 
-There are three areas in the web simulator:
+Web シミュレーターには、次の 3 つの領域があります。
 
-1.  Assembly area - The default circuit is that a Pi connects with a BME280
-    sensor and an LED. The area is locked in preview version so currently you
-    cannot do customization.
+1.  アセンブリ領域 - 既定の回線は、Pi が BME280 センサーと LED に接続する回線です。 プレビュー バージョンではこの領域はロックされているため、今のところカスタマイズを行うことはできません。
 
-2.  Coding area - An online code editor for you to code with Raspberry Pi. The
-    default sample application helps to collect sensor data from BME280 sensor
-    and sends to your Azure IoT Hub. The application is fully compatible with
-    real Pi devices.
+2.  コーディング領域 - Raspberry Pi を使用してコーディングするためのオンライン コード エディター。 既定のサンプル アプリケーションは、BME280 センサーからセンサー データを収集し、、Azure IoT Hub に送信する際に役立ちます。 このアプリケーションは、実際の Pi デバイスとの完全に互換性があります。
 
-3.  Integrated console window - It shows the output of your code. At the top of
-    this window, there are three buttons.
+3.  統合されたコンソール ウィンドウ - コードの出力が表示されます。 このウィンドウの上部には、3 つのボタンがあります。
 
-    -   **Run** - Run the application in the coding area.
+    -   **[実行]** - コーディング領域でアプリケーションを実行します。
 
-    -   **Reset** - Reset the coding area to the default sample application.
+    -   **[リセット]** - コーディング領域を既定のサンプル アプリケーションにリセットします。
 
-    -   **Fold/Expand** - On the right side there is a button for you to
-        fold/expand the console window.
+    -   **[折りたたむ/展開する]** - 右側には、コンソール ウィンドウの折りたたみおよび展開を行うボタンがあります。
 
-[Overview image of Pi online simulator](./../media-draft/image1.png)
+[Pi オンライン シミュレーターの概要図](./../media-draft/image1.png)
 
 <!-- Reference links 
 -   Online Raspberry Pi Emulator:

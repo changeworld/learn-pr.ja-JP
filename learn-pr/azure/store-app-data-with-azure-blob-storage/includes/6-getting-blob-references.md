@@ -1,4 +1,4 @@
-.NET Core 向けの Azure Storage SDK の個々の BLOB の操作には、`ICloudBlob` オブジェクトのインスタンスである *BLOB 参照*が必要です。
+.NET Core 向けの Azure Storage SDK の個々の BLOB の操作には、`ICloudBlob` オブジェクトのインスタンスである "*BLOB 参照*" が必要です。
 
 `ICloudBlob` は、BLOB 名を使用して要求するか、コンテナーの BLOB 一覧から選択して取得することができます。 いずれにも、最後のユニットで入手方法を確認した、`CloudBlobContainer` が必要です。
 
@@ -6,7 +6,7 @@
 
 `CloudBlobContainer` の `GetXXXReference` メソッドの 1 つを呼び出し、名前で `ICloudBlob` を取得します。 取得する BLOB の種類がわかっている場合は、固有のメソッド (`GetBlockBlobReference`、`GetAppendBlobReference`、または`GetPageBlobReference`) のいずれかを使用して、その BLOB の種類に対応したメソッドとプロパティを含むオブジェクトを取得します。
 
-これらのいずれのメソッドもネットワーク呼び出しを行ったり、対象の BLOB が実際に存在するかどうかを確認したりすることはありません。 これらのメソッドは BLOB 参照オブジェクトをローカルで作成するだけです。このオブジェクトを使って、ネットワーク経由で操作を*行い*、ストレージ内の BLOB とやりとりするメソッドを呼び出すことができます。 別のメソッドの `GetBlobReferenceFromServerAsync` は BLOB ストレージ API を呼び出し、BLOB がまだ存在しない場合は、例外をスローします。
+これらのいずれのメソッドもネットワーク呼び出しを行ったり、対象の BLOB が実際に存在するかどうかを確認したりすることはありません。 これらのメソッドは BLOB 参照オブジェクトをローカルで作成するだけです。このオブジェクトを使って、ネットワーク経由で操作を "*行い*"、ストレージ内の BLOB とやりとりするメソッドを呼び出すことができます。 別のメソッドの `GetBlobReferenceFromServerAsync` は BLOB ストレージ API を呼び出し、BLOB がまだ存在しない場合は、例外をスローします。
 
 ## <a name="listing-blobs-in-a-container"></a>コンテナー内の BLOB を列挙する
 
@@ -52,7 +52,7 @@ var blockBlobs = resultSegment.Results.OfType<CloudBlockBlob();
 
 アプリケーションの機能の 1 つに、API からの BLOB の一覧を取得する必要があるものがあります。 前述のパターンを使用して、コンテナーのすべての BLOB を列挙します。 一覧を処理してゆくと、各 BLOB の名前を取得できます。
 
-エディターで `BlobStorage.cs` を開き、`GetNames` を次のコードで置き換えて変更内容を保存します。
+エディターを使用して、`BlobStorage.cs` の `GetNames` を次のコードで置き換えて変更内容を保存します。
 
 ```csharp
 public async Task<IEnumerable<string>> GetNames()

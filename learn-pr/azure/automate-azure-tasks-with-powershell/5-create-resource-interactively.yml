@@ -9,11 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: eb8d53e705c8ecbbb74c8e1f6a942c2b7bdadc80
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  zone_pivot_groups: platform
+  ms.openlocfilehash: 6411e4ba53d88d94ccdd501a70830d8647ba46f2
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248657"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45766491"
 durationInMinutes: 5
 content: '[!include[](includes/5-create-resource-interactively.md)]'

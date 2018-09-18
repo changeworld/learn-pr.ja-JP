@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.4-encryption
-title: Encryption
+title: 暗号化
 metadata:
-  title: Encryption
-  description: In this unit, we'll discuss how to use encryption to secure your data.
+  title: 暗号化
+  description: このユニットでは、暗号化を使用してデータをセキュリティで保護する方法について説明します
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: da995001a9b5b0507ad2c021aeb8bd639aafd3c1
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248318"
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-encryption.md)]
+content: '[!include[](includes/4-encryption.md)]'

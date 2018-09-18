@@ -1,32 +1,32 @@
-In the last chapter we learnt that `shared/mojis.ts` file has a list of emojis and their emotional points.
+最後の章では､`shared/mojis.ts` ファイルに絵文字とその感情点数の一覧であることが分かりました｡
 
-In this chapter we will learn about the rest of the code that we will use to map a face to an emoji.
+この章では、顔を絵文字に対応づけるために使用するコードの残りの部分について学びます｡
 
-You will learn how to:
+学習内容:
 
-1. Create a script where you pass in a URL of an image of a face.
-2. Calculate the emotional point of any faces in the image.
-3. Map the faces in the image to the closest emojis
+1. 顔画像の URL で渡すスクリプトを作成する｡
+2. 画像上の顔の感情点数を計算する｡
+3. 画像のすべての顔を最も近い絵文字に対応づける｡
 
-Eventually we will be implementing this functionally as a Slack command, but for now we are going to start with a simple node script that you can run on the comand line, like so:
+最終的には､この機能を Slack コマンドとして実装しますが､さしあたりここでは､このようにコマンドラインから実行できる簡単なノード スクリプトから始めましょう｡
 
 ```bash
 node bin/mojify.js <url-of-image-with-face>
 ```
 
-## Debugging TypeScript
+## <a name="debugging-typescript"></a>TypeScript のデバッグ
 
-We are writing in TypeScript but executing JavaScript. This makes debugging hard as we would have to set breakpoints and debug in the transpiled JavaScript files which can be hard to read.
+作成は TypeScript ですが､実行は JavaScript になります｡ これにより、ブレークポイントを設定したり、読みにくいトランスパイル JavaScript ファイルでデバッグする必要があるため､デバッグは難しい作業になります｡
 
-What we ideally want is to write _and_ debug in TypeScript.
+理想的には､作成_も_デバッグも TypeScript で行いたいところです｡
 
-The good news is that it's possible with vs code with just a little bit of configuration.
+グッドニュースは､ほんのわずかな構成で vs code でそのことが可能であることです｡
 
-Open up the `launch.json` file by using the command paletee `Ctrl+P > Debug: Open launch.json`
+コマンド paletee `Ctrl+P > Debug: Open launch.json` を使用して `launch.json` ファイルを開きます｡
 
-> TODO: Image
+> TODO: 画像
 
-Add in a configuration option like so:
+次のような構成オプションで追加します｡
 
 ```json
 {
@@ -48,11 +48,11 @@ Add in a configuration option like so:
 }
 ```
 
-Now in the debug menu you will see an option called `Mojify` this will run the mojify script passing in a URL as the argument. You will be able to set breakpoints in the TypeScript file and inspect variables directly from there.
+[デバッグ] メニューには､`Mojify` という名前のオプションがあります｡このオプションは､URL の引数として渡される mojify スクリプトを実行します｡ TypeScript ファイルにブレークポイントを設定し、そこから直接変数を調べることができます。
 
-## Open up `bin/mojis.ts`
+## <a name="open-up-binmojists"></a>`bin/mojis.ts` を開きます｡
 
-The file is already scaffolded with all the required imports, like so:
+このファイルには､次のように必要とされるすべてのインポートがすでに取り込まれています｡
 
 ```typescript
 require("dotenv").config();
@@ -60,17 +60,17 @@ import fetch from "node-fetch";
 import { EmotivePoint, Face, Rect } from "../shared/models";
 ```
 
-`dotenv` is a helper package which loads up the contents of a .env file in the root of your project as environment variables, useful for development.
+`dotenv` は開発に有用なヘルパー パッケージです｡このパッケージは､プロジェクトのルートにある .env ファイルの内容を環境変数としてロードします｡
 
-`node-fetch` we use to make http requests to the Azure Face API.
+Azure の Face API に http 要求を行うために使用する `node-fetch`｡
 
-`EmotivePoint` is a helper class that describes a point in _emotional space_ - we will be discussing this in more details below.
+`EmotivePoint` は､ _感情空間上の点数を表すヘルパークラス_ です｡このクラスについては､後ほど詳しく説明します｡
 
-`Rect` is a helper class to describe a rectangle shape, we use this to describe the position of a face in an image.
+`Rect` は､矩形を表すためのヘルパー クラスです｡このクラスを使用して､画像上の顔の位置を表します｡
 
-`Face` is a helper utility class which combines the rectangle and emotive point informatoin about a face in an image.
+`Face` は､画像上の顔の矩形と感情点数情報を組み合わせるヘルパー ユーティリティ クラスです。
 
-In the middle of the file you should see some stub functions, like so:
+ファイルの中ほどに､このような stub 関数がいくつかあるはずです｡
 
 ```typescript
 async function getFaces(imageUrl) {
@@ -82,9 +82,9 @@ async function createMojifiedImage(imageUrl, faces) {
 }
 ```
 
-These are the functions you will be fleshing out in this lecture and the next
+これらは、本講義と次の講義で肉付けする関数です｡
 
-At the end of the file you should see this code
+ファイルの最後には、次のコードがあるはずです｡
 
 ```typescript
 async function main() {
@@ -96,18 +96,18 @@ async function main() {
 main();
 ```
 
-## Add the environment variables
+## <a name="add-the-environment-variables"></a>環境変数を追加する
 
-We are going to call the Face API so we need to use those secret keys and urls we generated before, add this to the top of the file under the imports:
+Face API を呼び出します｡以前に生成した秘密キーと URL を利用する必要があります｡ファイルの先頭にある imports の下にこれを追加します｡
 
 ```typescript
 const API_URL = process.env["FACE_API_URL"];
 const API_KEY = process.env["FACE_API_KEY"];
 ```
 
-## Call the Face API with the provided image and get a response
+## <a name="call-the-face-api-with-the-provided-image-and-get-a-response"></a>指定画像で Face API を呼び出し、応答を取得します。
 
-To make a reques to the Face API we add this code to the top of the `getFaces` function
+Face API にリクエストを行うには､`getFaces` 関数の先頭にこのコードを追加します｡
 
 ```typescript
 let response = await fetch(API_URL, {
@@ -122,27 +122,27 @@ let resp = await response.json();
 console.log(resp);
 ```
 
-The code above uses the `fetch` command to send a `POST` request to the Face API.
+上記のコードは `fetch` コマンドを使用して Face API に`POST`要求を送信します｡
 
-We pass the `API_KEY` in the header so the Face API knows the request comes from us, otherwise the request is rejected.
+ヘッダーで `API_KEY` を渡します｡それにより、Face API は私たちの要求を認識し､そうでない場合は､拒否します｡
 
-We pass the `imageUrl` we want the Face API to analyse in the body.
+本体で Face API に分析させたい `imageUrl` を渡します｡
 
-We then get the responce from the API request and print it out.
+API 要求から応答があり､印刷します｡
 
-If you now run the script with
+スクリプトを実行すると､
 
 ```bash
 node bin/mojify.js <path-to-image>
 ```
 
-It should print out the json responce returned from passing that image to the face API.
+Face API に画像を渡すことで返された JSON 応答が印刷されます｡
 
-## Parse the responce
+## <a name="parse-the-responce"></a>応答を解析する
 
-To calculate the emojis ee need to convert each face returned in the responce from the API to an instance of a `Face` class.
+絵文字を求めるには､API からの応答で返されたそれぞれの顔を `Face` クラスの 1 つのインスタンスに変換する必要があります。
 
-We add this code just after the code to call the API in the `getFaces` fucntion:
+`getFaces` 関数で API を呼び出すコードの直後に次のコードを追加します｡
 
 ```typescript
 let faces = [];
@@ -156,20 +156,20 @@ for (let f of resp) {
 return faces;
 ```
 
-- We loop through each face returned in the responce.
-- We generate an `EmotivePoint`, a `Rect` and a `Face` from the returned json.
-- Creating the `Face` instance matches the face to an emoji
-- To see which emoji was matched we print out the `mojiicon`.
+- 応答で返される顔を順にループします。
+- 返された JSON から `EmotivePoint` と `Rect`､ `Face` を生成します｡
+- `Face` インスタンスを作成すると､その顔が絵文字に対応づけられます｡
+- 対応づけられた絵文字を確認するには､`mojiicon` を印刷します。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-Now if you run the script it should:
+スクリプトを実行すると､以下のことが起こります｡
 
-- Pass the provided image through the Face API and calculate the emotion.
-- Match emotions to emojis.
-- Print the emojis to the terminal.
+- 指定した画像が Face API を使って渡され、感情が計算されます｡
+- 感情が絵文字に対応づけられます｡
+- 端末に絵文字が印刷されます。
 
-Like so:
+次に例を示します。
 
 ```bash
 node bin/mojify.js <path-to-image>

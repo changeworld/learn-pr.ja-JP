@@ -8,12 +8,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 2f5fb45a0178d43c667cc522bbab697febe20aed
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 458ad6aa856d2a81682b6e70d3c8f16e5fb039ee
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44232435"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45759521"
 title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
 summary: 1 つのアプリケーションを構成するコンポーネントがそれぞれ異なるコンピューター、サーバー、およびモバイル デバイスで実行されているときは、これらのコンポーネント間での通信の信頼性を維持することが難しくなる可能性があります。 Azure では、通信の信頼性を高めるためにさまざまなテクノロジが提供されており、たとえばストレージ キュー、Event Hubs、Event Grid、Service Bus などを使用できます。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を説明します。
 abstract: >
@@ -29,7 +29,7 @@ abstract: >
 
   - アプリケーションのメッセージング テクノロジとして Service Bus が最適なシナリオを特定します。
 prerequisites: なし
-iconUrl: http://via.placeholder.com/120x120
+iconUrl: /learn/achievements/choose-a-messaging-model-in-azure-to-connect-your-services.svg
 levels:
 - beginner
 roles:
@@ -43,8 +43,7 @@ units:
 - learn.choose-messaging-model.1-introduction
 - learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
 - learn.choose-messaging-model.3-choose-azure-storage-queues
-- learn.choose-messaging-model.4-exercise-create-a-storage-queue
-- learn.choose-messaging-model.5-choose-event-grid
-- learn.choose-messaging-model.6-choose-azure-event-hubs
-- learn.choose-messaging-model.7-summary
+- learn.choose-messaging-model.4-choose-event-grid
+- learn.choose-messaging-model.5-choose-azure-event-hubs
+- learn.choose-messaging-model.6-summary
 achievement: learn.choose-messaging-model.badge

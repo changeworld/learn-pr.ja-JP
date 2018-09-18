@@ -9,11 +9,11 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 91e2799b0b08abb372135a13c9c7b17b1f2589a2
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 305e6abdc79e0d984595d98f56d0931462dd4c48
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44240226"
-durationInMinutes: 5
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45759606"
+durationInMinutes: 10
 content: '[!include[](includes/4-choosing-premium-storage.md)]'

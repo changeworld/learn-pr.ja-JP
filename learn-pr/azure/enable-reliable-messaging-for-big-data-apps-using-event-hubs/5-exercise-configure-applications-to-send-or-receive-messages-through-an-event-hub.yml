@@ -9,11 +9,13 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e80e64b5b76a501e334bb018a08e9e9e30b17bc9
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: de40d61e225340c649c9efec1ac10093508b9459
+  ms.sourcegitcommit: bfff31db64f2c8831293efda430f58470b5e2617
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44248301"
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45994777"
+interactive: bash
+azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-configure-applications-to-send-or-receive-messages-through-an-event-hub.md)]'

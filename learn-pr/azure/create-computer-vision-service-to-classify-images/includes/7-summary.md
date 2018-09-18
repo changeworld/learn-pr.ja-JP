@@ -1,7 +1,7 @@
-## Summary
+## <a name="summary"></a>まとめ
 
-In this module, you have learned how to analyze images with the Computer Vision API service.
+このモジュールでは、Computer Vision API サービスを使用して画像を分析する方法を学習しました。
 
-You analyzed images to know what they are, as well as generated thumbnails. Then, you performed Optical Character Recognition (OCR) on printed text and converted handwriting into printed characters.
+画像を分析してそれが何かを認識し、サムネイルを生成しました。 次に、印刷されたテキストに対して光学式文字認識 (OCR) を実行し、手書き文字を印刷された文字に変換しました。
 
-This module provides the basis for integrating visual Cognitive Services within an application written in any language.
+このモジュールでは、任意の言語で記述されたアプリケーション内にビジュアル Cognitive Services を統合するための基礎を提供します。

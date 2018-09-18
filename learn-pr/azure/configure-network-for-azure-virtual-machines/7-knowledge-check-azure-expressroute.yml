@@ -1,20 +1,25 @@
 ### YamlMime:ModuleUnit
 uid: learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
-title: Knowledge check
+title: 知識チェック
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: 知識チェック
+  description: 知識チェック
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 20350945337278c188ce8748f28f46a9a1ce02e7
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230162"
 durationInMinutes: 3
 quiz:
-  title: 'Knowledge check - Azure ExpressRoute'
+  title: 知識チェック - Azure ExpressRoute
   questions:
-  - content: 'Which of the following protocols provides dynamic routing for Azure ExpressRoute?'
+  - content: 次のプロトコルのうち、Azure ExpressRoute の動的ルーティングを提供するものはどれですか。
     choices:
     - content: IPVPN
       isCorrect: false
@@ -22,55 +27,15 @@ quiz:
       isCorrect: false
     - content: IPsec
       isCorrect: false
-    - content: "BCP"
+    - content: BCP
       isCorrect: true
-    - content: "S-key"
+    - content: S-key
       isCorrect: false
-  # - content: 'Which of the following are Azure ExpressRoute circuits? Select three answers.'
-  #   choices:
-  #   - content: "Azure public"
-  #     isCorrect: true
-  #   - content: "Microsoft public"
-  #     isCorrect: false
-  #   - content: "Azure private"
-  #     isCorrect: true
-  #   - content: "Microsoft private"
-  #     isCorrect: false
-  #   - content: "Microsoft"
-  #     isCorrect: true
-  # - content: 'Which of the following are methods for connecting to Azure ExpressRoute? Select three answers.'
-  #   choices:
-  #   - content: IP VPN network
-  #     isCorrect: true
-  #   - content: Site-to-site VPN
-  #     isCorrect: false
-  #   - content: Virtual cross-connection through an Ethernet exchange
-  #     isCorrect: true
-  #   - content: Managed Layer 3 point-to-site connection
-  #     isCorrect: false
-  #   - content: Point-to-point Ethernet connection
-  #     isCorrect: true
-  # - content: 'Which of the following are supported ExpressRoute bandwidths? Select five answers.'
-  #   choices:
-  #   - content: 50 Mbps
-  #     isCorrect: true
-  #   - content: 100 Mbps
-  #     isCorrect: true
-  #   - content: 250 Mbps
-  #     isCorrect: false
-  #   - content: 500 Mbps
-  #     isCorrect: true
-  #   - content: 1 Gbps
-  #     isCorrect: true
-  #   - content: 1.25 Gbps
-  #     isCorrect: false
-  #   - content: 2 Gbps
-  #     isCorrect: true
-  - content: 'Which peering type supports connections to cloud-based SaaS offerings?'
+  - content: 次のピアリングの種類のうち、クラウドベースの SaaS オファリングへの接続をサポートしているものはどれですか。
     choices:
-    - content: Azure private
+    - content: Azure プライベート
       isCorrect: false
-    - content: Azure public
+    - content: Azure パブリック
       isCorrect: false
     - content: Microsoft
       isCorrect: true

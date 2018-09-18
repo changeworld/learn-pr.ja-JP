@@ -1,124 +1,124 @@
-You are a solution architect. Your organization, Lamna Healthcare has moved its workloads to the cloud. Recently, the bill for these resources and workflows has increased more than Lamna had anticipated. You have been asked to determine whether the increase is natural, efficient growth, or whether the cost can be reduced by being more efficient with the organization's cloud resources.
+ここでは、皆さんはソリューション アーキテクトです。 所属組織である Lamna Healthcare では、ワークロードがクラウドに移行されました。 最近、これらのリソースやワークフローに対する課金が Lamna で予想した以上に増加しています。 この増加が自然な効率的成長を示すものかどうか、あるいは組織のクラウド リソースをより効率的に利用することでコストを削減できるかどうかを判断するように依頼されました。
 
-## How the cloud changes your expenses
+## <a name="how-the-cloud-changes-your-expenses"></a>クラウドで経費を変更する方法
 
-One of the differences between the public cloud and on-premises infrastructure is how you pay for the services you use. In an on-premises datacenter, hardware procurement time is long, hardware is sized for maximum capacity, and some of the costs, such as power and space, can be hidden from the business unit consuming the resources. Purchasing physical infrastructure ties up investments in long-term assets, hindering your ability to be agile with your resources.
+パブリック クラウドとオンプレミス インフラストラクチャとの違いの 1 つは、使用するサービスに対する支払い方法です。 オンプレミス データセンターでは、ハードウェアの調達時間が長く、ハードウェアのサイズは最大容量に対して設定されており、電力やスペースなどの一部のコストはリソースを消費する部署からは確認できません。 物理インフラストラクチャの購入は、長期的な資産への投資と関連付けられており、迅速なリソースの使用の妨げとなります。
 
-Shifting to the cloud introduces a pay-for-what-you-use cost model. You no longer need to tie up investments in assets, and if your resource requirements change, you can respond by adding, moving, or removing resources. Workloads vary between and within services, demand can be unpredictable, and your growth patterns shift over time. Since you only pay for what you use in the cloud, your cost structure can move in sync with the changes in resources.
+クラウドに移行することで、使用した分だけ支払うというコスト モデルが導入されます。 資産への投資に関連付ける必要はなくなり、リソース要件が変更された場合、リソースを追加、移行、あるいは削除することで対応できます。 ワークロードはサービス間やサービス内で異なり、需要が予測不能となる可能性があり、成長パターンは時間の経過と共に変わります。 クラウドで使用した分だけ支払うため、コスト構造をリソースの変更と同期して移行することができます。
 
-Cloud infrastructure can handle fluctuating resource usage scenarios. Resources that have significant periods of inactivity can be shut down when not in use and not incur any cost at all. Resources can grow with a successful service as it grows, rather than having to wait for the next procurement cycle. More resources can be dynamically added and removed to respond to predictable and unpredictable bursts of demand. The following illustration shows why the on-premises infrastructure cannot handle all these fluctuating scenarios.
+クラウド インフラストラクチャは、リソース使用量が変動するシナリオを処理できます。 非常に長い期間、非アクティブな状態にあるリソースについては、使用されておらず、コストがまったく発生していない場合、シャットダウンすることができます。 正常なサービスの成長に伴い、リソースが増加する可能性があります。次の調達サイクルを待つ必要はありません。 さらにリソースの動的な追加や削除を行うことで、予測可能および予測不可能な需要の急激な変化に対応できます。 次の図では、オンプレミスのインフラストラクチャがこのような変動するシナリオのすべてを処理できない理由を示します。
 
-![An illustration showing disadvantages of using on-premises infrastructure.](../media/cloudcomputingpatterns.png)
+![オンプレミスのインフラストラクチャを使用する欠点を示す図。](../media/cloudcomputingpatterns.png)
 
-In an efficient architecture, provisioned resources match the demand for those resources. If a virtual machine is less than 10% utilized the majority of the time, you are wasting resources, both in compute and cost. Conversely, a virtual machine that is running 90% utilized is using the majority of the available resources and is an efficient use of money. Running a system to 100% utilization runs the risk of introducing performance issues. It is important to ensure that maximizing efficiency doesn't negatively impact the performance of your system. Demand is rarely constant, so adjusting resources when possible to match demand is important to ensure efficiency.
+効率的なアーキテクチャでは、プロビジョニングされたリソースとこれらのリソースに対する需要が一致します。 仮想マシンの多くの時間の使用率が 10% 未満の場合、コンピューティングとコストの両方においてリソースの無駄となります。 逆に、90% の使用率で実行されている仮想マシンでは利用可能なリソースの大部分が使用され、経費は効率的に使われています。 使用率が 100% になるまでシステムを実行することは、パフォーマンスの問題を発生させる危険性があります。 効率を最大化した場合にシステムのパフォーマンスに悪影響を与えないようにすることが重要です。 需要が一定になることはほとんどないため、効率性を確保するためにできるだけ需要に合わせてリソースを調整することが重要です。
 
-## Track your cloud spend
+## <a name="track-your-cloud-spend"></a>クラウド支出を追跡する
 
-In order to make intelligent decisions, you need data. By looking at where your money is going, you can start comparing that to utilization to uncover where you may have waste within your environment.
+賢明な判断を行うには、データが必要です。 コストのかかる場所を調べることで、その場所と使用率の比較を開始し、環境内で浪費している可能性がある場所を見つけることができます。
 
-An export of your billing data is available at any time. Using your billing data, you can track where your costs are going and how they're allocated across your resources. The challenge is that the billing data shows cost but not utilization. You'll have data that indicates you're paying for that large VM, but how much are you actually using it?
+いつでも課金データをエクスポートすることができます。 課金データを使用することで、コストのかかる場所とリソース全体にコストがどのように割り当てられているかを追跡できます。 課題は、課金データにコストは表示されますが、使用率は表示されないことです。 大規模な VM に対して料金を支払っていることを示すデータは得られますが、実際にはどれくらい使用しているのでしょうか?
 
-Azure Cost Management gives you insights where your spend is going, as well as underutilized resources. Azure Cost Management tracks your total spend, cost by service, and cost over time. You can drill down into resource types and instances. You can also break down your costs by organization or cost center by tagging resources with those categories.
+Azure Cost Management では、コストのかかる場所と使用率の低いリソースを把握できます。 Azure Cost Management では、総支出、サービスごとのコスト、経時的なコストが追跡されます。 リソースの種類とインスタンスの詳細を確認することができます。 また、リソースにカテゴリでタグ付けすることで、組織やコスト センターごとにコストの詳細を確認できます。
 
-Azure Advisor also has a cost component. It recommends VM resizing, buying reserved instances when more cost effective than pay-as-you-go instances. It identifies unused ExpressRoute circuits and idle virtual network gateways. Advisor makes additional recommendations in the areas of performance, high availability, and security.
+Azure Advisor にはコスト コンポーネントもあります。 Azure Advisor では、従量課金制インスタンスよりもコスト効率が高い場合は予約インスタンスを購入し、VM のサイズを変更することが推奨されます。 また、未使用の ExpressRoute 回線とアイドル状態の仮想ネットワーク ゲートウェイが識別されます。 Advisor によって、パフォーマンス、高可用性、セキュリティの領域において追加の推奨事項が示されます。
 
-The important part is to take time to review your spend and evaluate where your money is going. Identify areas of inefficiency to ensure you're operating as efficiently as possible.
+時間をかけて、支出を確認し、コストのかかる場所を評価することが重要です。 非効率な領域を識別し、できるだけ効率的に運用するようにします。
 
-## Organize to optimize
+## <a name="organize-to-optimize"></a>最適化のために整理する
 
-Putting some organization to your resources can help track where some of your costs are going. There are ways to group resources together, establishing a relationship so you know where your costs are related. From a billing perspective, resources can be easily grouped by:
+一部の組織をリソースに配置することは、一部のコストがかかる場所を追跡するのに役立ちます。 リソースをまとめて、関係を確立し、コストが関連する場所を把握する方法はいくつかあります。 課金の観点から、次のようにしてリソースを簡単にグループ化することができます。
 
-- Assigning resources to different subscriptions.
-- Assigning resources to different resource groups.
-- Applying tags to resources.
+- リソースをさまざまなサブスクリプションに割り当てる。
+- リソースをさまざまなリソース グループに割り当てる。
+- タグをリソースに適用する。
 
-Using subscriptions and resource groups to organize resources is an easy way to logically group resources and can be leveraged when going through billing data. Tags come into play when resource relationships span the boundaries of subscriptions and resource groups. Tags are key/value pairs that can be added to any resource, and are exposed in billing data, allowing you to associate a department or cost center with your resource. Tags improve your ability to report on cost, as well as giving each department in your organization accountability for their own costs. The following illustration shows how you can apply the same tag to resources in different resource groups and even in different subscriptions.
+サブスクリプションとリソース グループを使用してリソースを整理することは、論理的にリソースをグループ化する簡単な方法であり、課金データを調べる際に活用できます。 リソースの関係がサブスクリプションとリソース グループの境界にまたがる場合は、タグが役立ちます。 タグはキーと値のペアであり、任意のリソースに追加でき、課金データで公開され、部署やコスト センターをリソースに関連付けることができます。 タグを使用することで、コストについてより適切にレポートできるだけでなく、組織内の各部署に独自のコストに対する責任を与えることができます。 次の図では、異なるリソース グループ内のリソースに、さらには異なるサブスクリプション内のリソースにでも、同じタグを適用できる方法を示します。
 
-![An illustration showing resources organized using tags, resource groups, and subscriptions.](../media/tagging.png)
+![タグ、リソース グループ、およびサブスクリプションを使用して整理されているリソースを示す図。](../media/tagging.png)
 
-Adding some organization to your resources can go a long way and can really aid in your ability to understand where your costs are going. Now let's take a look at some ways to optimize costs.
+一部の組織をリソースに追加することは非常に役立ち、コストのかかる場所を把握するのにとても役立ちます。 ここで、コストを最適化するための方法をいくつか見てましょう。
 
-## Optimizing IaaS costs
+## <a name="optimizing-iaas-costs"></a>IaaS コストの最適化
 
-For organizations using virtual machines, the cost associated with virtual machines is often the biggest portion of spend. The compute costs are typically the biggest piece, followed by storage. Taking time to optimize pay-for-what-you-use resources can have a large impact on the size of your monthly bill.
+仮想マシンを使用する組織では、多くの場合、仮想マシンに関連するコストが支出の最も大きな部分となります。 一般に、コンピューティング コストが最も大きな部分であり、その次に大きいのがストレージです。 時間をかけてリソースを使用した分だけ支払う方法を最適化することは、月々の請求額に大きく影響する可能性があります。
 
-Let's take a look at best practices to reduce your compute and storage costs.
+コンピューティング コストとストレージ コストを削減するためのベスト プラクティスを見てみましょう。
 
-### Compute
+### <a name="compute"></a>コンピューティング
 
-There are different options available to achieve cost savings for virtual machines.
+仮想マシンのコスト削減を実現するために使用できるさまざまなオプションがあります。
 
-- Choose a smaller virtual machine instance size.
-- Reduce the number of hours a virtual machine runs.
-- Use discounts for the compute costs.
+- より小さい仮想マシン インスタンス サイズを選択します。
+- 仮想マシンが実行される時間数を減らします。
+- コンピューティング コストに対して割引を利用します。
 
-#### Right size virtual machines
+#### <a name="right-size-virtual-machines"></a>仮想マシンのサイズを適切に設定する
 
-Right sizing a virtual machine is the process of matching the virtual machine size with the resource demand required of the VM. If a VM is running 25% idle, reducing the size of the VM will immediately reduce your cost. Virtual machine costs are linear within an instance family; each next size larger will double your cost. Conversely, reducing a VM by a single instance size will reduce your cost in half. The following illustration shows a 50% savings achieved by moving one size down within the same series.
+仮想マシンのサイズを適切に設定することは、仮想マシンのサイズを VM に求められるリソース需要と一致させるプロセスです。 25% のアイドル率で VM が実行されている場合、その VM のサイズを減らすと、コストはすぐに削減されます。 インスタンス ファミリ内では仮想マシンのコストは線形であり、より大きい次のサイズではそれぞれコストが倍になります。 逆に、1 つのインスタンス サイズごとに VM を減らすと、コストが半分に削減されます。 次の図では、同じシリーズ内で 1 つサイズを下げたことで 50% の節約を達成しています。
 
-![An illustration to demonstrate savings achieved by downsizing an under-utilized virtual machine.](../media/vm-resize.png)
+![使用率の低い仮想マシンのサイズを下げることで節約を達成したことを示す図。](../media/vm-resize.png)
 
-Azure Advisor identifies which virtual machines are underutilized. Advisor monitors your virtual machine usage for 14 days and then identifies underutilized virtual machines. Virtual machines whose CPU utilization is 5 percent or less and network usage is 7 MB or less for four or more days are considered underutilized virtual machines.
+Azure Advisor によって、使用率の低い仮想マシンが識別されます。 Advisor では、仮想マシンの使用状況が 14 日間にわたって監視され、使用率が低い仮想マシンが識別されます。 CPU 使用率が 5% 以下で、ネットワーク使用量が 7 MB 以下である日が 4 日以上ある仮想マシンは、使用率が低い仮想マシンと見なされます。
 
-#### Implement shutdown schedules for virtual machines
+#### <a name="implement-shutdown-schedules-for-virtual-machines"></a>仮想マシン用のシャットダウン スケジュールを実装する
 
-If you have VM workloads that are only used periodically, but are running continuously, you're wasting money. These VMs can be shut down when not in use, and started back up on a schedule, saving you compute costs while the VM is deallocated. This is particularly applicable for development environments, where it's often the case that development happens only during business hours. You can deallocate these systems in the off-hours, stopping your compute costs from accruing.
+VM のワークロードが使用されるのは一定期間のみであるにもかかわらず、継続的に実行している場合、コストの無駄になります。 このような VM は、使用していないときにシャットダウンし、スケジュールに従ってバックアップを開始することができます。そうすれば、VM の割り当てが解除されている間、コンピューティング コストを節約できます。 これは特に、多くの場合、業務時間中にのみ開発が行われる開発環境に適用できます。 業務時間外にこれらのシステムの割り当てを解除し、コンピューティング コストが発生しないようにすることができます。
 
-Use Azure Automation to limit the periods your VMs run to only those times that your workloads require.
+Azure Automation を使用して、VM の実行期間をワークロードで必要な時間のみに制限します。
 
-You can also use the auto-shutdown feature on a virtual machine to schedule a one-off automated shutdown.
+仮想マシンで自動シャットダウン機能を使用して、1 回限りの自動シャットダウンのスケジュールを設定することもできます。
 
-#### Apply compute cost discounts
+#### <a name="apply-compute-cost-discounts"></a>コンピューティング コストの割引を適用する
 
-The Azure Hybrid Benefit allows you to further optimize your costs for both Windows Server and SQL Server by allowing you to use your on-premises Windows Server or SQL Server licenses with Software Assurance to be used as a discount toward the compute cost of these VMs, eliminating the costs for Windows and SQL Server on enabled instances.
+Azure ハイブリッド特典では、Windows Server と SQL Server の両方にかかるコストをさらに最適化することができます。その場合、これらの VM のコンピューティング コストに対する割引として使用されるソフトウェア アシュアランス付きのオンプレミスの Windows Server または SQL Server のライセンスを利用できるようにします。
 
-Some virtual machines need to be up and running all the time. Maybe you have a web application server farm for a production workload or maybe a domain controller supporting various servers on a virtual network. If you know with certainty that these virtual machines will run over the coming year or maybe longer, you can get further cost savings by purchasing a reserved instance. Azure Reserved Virtual Machine Instances can be purchased for one year or three years of compute capacity, at a discount compared to pay-as-you-go compute resources. Azure Reserved Virtual Machine Instances can significantly reduce your virtual machine costs, up to 72 percent on pay-as-you-go prices, with one-year or three-year upfront commitment. The following illustration shows savings achieved when you combine your on-premises license with the Azure Hybrid Benefit and when you combine your on-premises license with both Azure RI and the Azure Hybrid Benefit.
+一部の仮想マシンは常に稼働している必要があります。 運用ワークロード用の Web アプリケーション サーバー ファーム、または仮想ネットワーク上のさまざまなサーバーをサポートするドメイン コントローラーがある場合があります。 これらの仮想マシンが今後 1 年あるいはおそらくそれ以上実行されることが確実にわかっている場合、予約インスタンスを購入してコストをさらに節約できます。 Azure Reserved Virtual Machine Instances は 1 年間または 3 年間のコンピューティング容量を指定して購入することができ、従量課金制のコンピューティング リソースに比べて割安です。 Azure Reserved Virtual Machine Instances により、仮想マシンのコストを大幅に削減できます。割引率は、従量課金制の料金に対し、1 年間または 3 年間の前払い契約で最大 72% となります。 次の図では、オンプレミスのライセンスと Azure ハイブリッド特典を組み合わせたとき、およびオンプレミスのライセンスと Azure RI および Azure ハイブリッド特典の両方を組み合わせたときに、達成できる節約を示します。
 
-![An illustration showing the savings on Azure products when you have on-premises licenses with Software Assurance.](../media/ahub-save.png)
+![ソフトウェア アシュアランス付きオンプレミス ライセンスがある Azure 製品での節約を示す図。](../media/ahub-save.png)
 
-### Virtual machine disk storage cost optimization
+### <a name="virtual-machine-disk-storage-cost-optimization"></a>仮想マシン ディスク ストレージのコストの最適化
 
-For workloads that do not require high reliability and performance disks, you can use the reduced-cost standard storage. You might choose to use standard storage for development and test environments that are not required to be an identical match for a production workload.
+信頼性とパフォーマンスの高いディスクを必要としないワークロードでは、低コストの標準的なストレージを使用できます。 運用ワークロードに関して完全に一致する必要がない開発およびテスト環境では、標準的なストレージを使用することを選択できます。
 
-Ensure you don't have any orphaned disks remaining in your environment. Disks that aren't associated with a VM still incur storage costs. If you've removed a VM but not the disks, the orphaned disks may be a place to reduce your storage cost.
+環境内に孤立ディスクが残らないようにしてください。 VM に関連付けられていないディスクでは引き続きストレージ コストが発生します。 VM は削除したものの、ディスクは削除していない場合、孤立ディスクでストレージ コストを削減できる可能性があります。
 
-Similar to orphaned disks, if you have any orphaned snapshots lingering around, take some time to clean them up. Pricing for these is lower than the disks themselves, but it's still a good practice to eliminate costs of unnecessary resources.
+孤立ディスクと同様に、孤立スナップショットが残存している場合は、ある程度時間をかけてクリーンアップしてください。 これらの価格はディスク自体より低くなりますが、不要なリソースのコストをなくすことをお勧めします。
 
-## Optimizing PaaS costs
+## <a name="optimizing-paas-costs"></a>PaaS コストの最適化
 
-PaaS services are typically optimized for costs over IaaS services, but there are opportunities to identify waste and optimize for minimal costs. Let's take a look at ways to reduce Azure SQL Database and Azure Blob storage costs.
+PaaS サービスは通常、IaaS サービス経由でコストに合わせて最適化されますが、無駄を特定し、コストを最小限に抑えるために最適化する機会があります。 Azure SQL Database と Azure BLOB ストレージのコストを削減する方法を見ていきましょう。
 
-### Optimizing Azure SQL Database costs
+### <a name="optimizing-azure-sql-database-costs"></a>Azure SQL Database コストの最適化
 
-When creating an Azure SQL database, you have to select an Azure SQL Server and decide on a performance tier. Each tier provides a performance level either in database transaction units (DTUs) or virtual cores (vCores). For database loads that are steady, it's easy to optimize by selecting the properly sized tier for the needed performance. But what if your database has unpredictable bursts or spikes in activity? Elastic pools can reduce costs for unpredictable workloads.
+Azure SQL Database を作成するときに、Azure SQL Server を選択し、パフォーマンス レベルを決定する必要があります。 各レベルでは、データベース トランザクション ユニット (DTU) または仮想コア (vCore) におけるパフォーマンス レベルが提供されます。 データベースの負荷が一定の場合、必要なパフォーマンスに対して適切にサイズ設定されたレベルを選択することで、簡単に最適化できます。 しかし、データベースのアクティビティが予期せず急増した場合はどうでしょうか?  エラスティック プールにより、予期できないワークロードにかかるコストを削減できます。
 
-SQL Database elastic pools are a simple, cost-effective solution for managing and scaling several databases that have varying and unpredictable usage demands. The databases in an elastic pool are on a single Azure SQL Database server and share a set number of resources at a set price. Pools are well suited for a large number of databases with specific utilization patterns. For a given database, this pattern is characterized by low average utilization with relatively infrequent utilization spikes.
-The more databases you can add to a pool, the greater your savings become. The following illustration shows the capabilities of the three types of Elastic Database Pools: basic, standard, and premium.  Basic auto scales up to 5 eDTUs per DB, standard auto scales up to 100 eDTUs per DB, and Premium that auto scales up to 1000 eDTUs per DB.
+SQL Database のエラスティック プールは、予期できないいくつかの使用ニーズを持つ複数のデータベースを管理し、スケーリングするための、シンプルでコスト効率の高いソリューションです。 エラスティック プール内のデータベースは単一の Azure SQL Database サーバー上にあり、設定された数のリソースが設定価格で共有されます。 プールは、数多くのデータベースが特定の使用パターンで使用されている場合に適しています。 あるデータベースは、使用が急増することはあまりなく、平均使用量が低いパターンの特徴を持っています。
+プールに追加できるデータベースが多ければ多いほど、節約量も多くなります。 次の図では、3 種類 (Basic、Standard、Premium) のエラスティック データベース プールの機能を示します。  Basic は DB ごとに最大 5 eDTU まで、Standard は DB ごとに最大 100 eDTU まで、Premium は DB ごとに最大 1000 eDTU まで、自動的にスケールアップします。
 
-![An illustration showing auto-scaling capacity of different types of Elastic Database Pools.](../media/sqldb-elastic-pools.png)
+![異なる種類のエラスティック データベース プールの自動スケーリング容量を示す図。](../media/sqldb-elastic-pools.png)
 
-Elastic pools are a great way to spread costs across multiple databases and can make a significant impact on reducing your Azure SQL Database costs.
+エラスティック プールは複数のデータベース間でコストを分散する優れた方法であり、Azure SQL Database のコストの削減に大きく影響する場合があります。
 
-### Optimizing Blob storage costs
+### <a name="optimizing-blob-storage-costs"></a>BLOB ストレージ コストの最適化
 
-Blob storage is a cost-effective way to store data, but as the amount of data grows, your bill can benefit from optimizing how the data is stored.
+BLOB ストレージはデータを格納するためのコスト効率に優れた方法ですが、データ量が増えるにつれて、データの格納方法を最適化することによる利点が得られます。
 
-Let's return to Lamna Healthcare. You have a medical-imaging application that stores images in blob storage. Due to the quantity and size of the images, the storage ends up being a notable cost for the application. When an image has been taken for a patient, it's likely that in the first week, that image will be viewed several times, and the performance of image retrieval is expected to be high. Conversely, an image taken two years ago may be accessed infrequently and has a lower retrieval performance expectation. You can use storage tiering to optimize the cost of image retrieval, given the reduced performance required as the image ages.
+Lamna Healthcare に話を戻します。 BLOB ストレージに画像を格納する医用画像アプリケーションがあります。 画像の数量とサイズにより、ストレージでのアプリケーションにかかるコストは著しいものになります。 患者の画像が撮影されたとき、最初の週は、その画像が何度か表示される可能性が高いことから、画像検索に求められるパフォーマンスは高くなります。 逆に、2 年前に撮影された画像へのアクセス頻度は通常低く、検索にさほど高いパフォーマンスは求められません。 画像が古くなるにつれ、必要なパフォーマンスが低くなった場合は、ストレージ層を使用して画像検索のコストを最適化することができます。
 
-Azure Storage offers three storage tiers for blob object storage. The Azure hot storage tier is optimized for storing data that is accessed frequently. The Azure cool storage tier is optimized for storing data that is infrequently accessed and stored for at least 30 days. The Azure archive storage tier is optimized for storing data that is rarely accessed and stored for at least 180 days with flexible latency requirements.
+Azure Storage では、BLOB オブジェクト ストレージ用に 3 つのストレージ層が提供されています。 Azure ホット ストレージ層は、頻繁にアクセスされるデータを格納するために最適化されています。 Azure クール ストレージ層は、アクセスされる頻度は低いものの、30 日以上保管されるデータを格納するために最適化されています。 Azure アーカイブ ストレージ層は、ほとんどアクセスされず、180 日以上保管され、待ち時間の要件が柔軟であるデータを格納するために最適化されています。
 
-- **Hot access tier** - Highest storage costs but the lowest access costs.
-- **Cool access tier** - Lower storage costs and higher access costs compared to hot storage. This tier is intended for data that will stay in the cool tier for at least 30 days.
-- **Archive access tier** - Lowest storage cost and highest data retrieval costs compared to hot and cool storage. This tier is intended for data that can tolerate several hours of retrieval latency and will stay in the archive tier for at least 180 days.
+- **ホット アクセス層** - ストレージ コストは最も高くなりますが、アクセス コストは最も低くなります。
+- **クール アクセス層**- ストレージに比べてストレージ コストが低くなり、アクセス コストが高くなります。 この層は、30 日以上クール層に留まるデータを対象としています。
+- **アーカイブ アクセス層** - ストレージ コストが最も低く、ホット ストレージとクール ストレージに比べてデータ取得コストが最も高くなります。 この層は、数時間の取得待ち時間が許容され、180 日以上アーカイブ層に留まるデータを対象としています。
 
-For Lamna Healthcare, keeping new images on the hot access tier for a month makes sense, so that viewing the most recent images performs as fast as possible. You could then move images over one year old to the archive tier since it is likely that these images will not be retrieved. This would reduce their costs associated with storing these images.
+Lamna Healthcare では、1 か月間ホット アクセス層で新しい画像を保持するのが妥当であるため、最新画像の表示は可能な限り高速に行われます。 1 年が経過した画像は、検索されなくなる可能性があるため、アーカイブ層に移動することができます。 これで、これらの画像の格納に関連するコストが削減されます。
 
-## Cost optimization at Lamna Healthcare
+## <a name="cost-optimization-at-lamna-healthcare"></a>Lamna Healthcare でのコストの最適化
 
-Lamna Healthcare is making strides on reducing their costs. They have organized a monthly review of their costs, and each department has access to Azure Cost Management, where they can review their costs throughout the month. They've identified a number of places where reserved instances can be used and have purchased several to take advantage of this discount. They have implemented automated processes to stop development environments in off-hours, saving them additional costs during times when these resources were not being used. 
+Lamna Healthcare では、コストの削減が順調に進んでいます。 コストを月単位で確認するようにし、各部署から Azure Cost Management にアクセスできるようにしたため、月を通してコストを確認することができます。 予約インスタンスを使用できる多くの場所を特定し、この割引を活用するためにいくつか購入しました。 業務時間外に開発環境を停止するための自動プロセスを実装しました。これにより、リソースが使用されていない時間の追加コストを節約できます。 
 
-Along with the optimization of blob storage for their imaging storage, they've managed to drop their bill notably over the past couple of months.
+画像ストレージ用に BLOB ストレージを最適化すると同時に、特に過去数か月にわたり課金を減らすように管理しました。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Optimizing the cost of your cloud infrastructure involves tracking your spend and ensuring that your resource utilization matches the demands of your workloads. Using the right quality and performance tier for your resources further optimizes your cloud costs.
+クラウド インフラストラクチャのコストを最適化するには、支出を追跡し、リソース使用率がワークロードの需要と一致していることを確認する必要があります。 リソースに適した品質とパフォーマンス層を使用することで、クラウド コストをさらに最適化することができます。

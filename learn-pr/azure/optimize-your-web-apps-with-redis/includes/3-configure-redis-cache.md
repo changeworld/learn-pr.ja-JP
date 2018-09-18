@@ -1,78 +1,69 @@
-Your sports statistics development team has decided that caching could dramatically improve performance for recently requested data. Your next step is to create and configure an Azure Redis Cache instance.
+自社のスポーツ統計情報の開発チームにより、キャッシュが最近要求されたデータのパフォーマンスを大幅に向上させる可能性があると判断されました。 次の手順として、Azure Redis Cache インスタンスを作成および構成します。
 
-## Create and configure the Azure Redis Cache instance
+## <a name="create-and-configure-the-azure-redis-cache-instance"></a>Azure Redis Cache インスタンスの作成および構成
 
-You can create a Redis cache using the Azure portal, the Azure CLI, or Azure PowerShell. There are several parameters you will need to decide in order to configure the cache properly for your purposes.
+1. ブラウザーで [Azure portal](https://portal.azure.com/?azure-portal=true) を開きます。
 
-### Name
+1. **[リソースの作成]** をクリックします。
 
-The Redis cache will need a globally unique name. The name has to be unique within Azure because it is used to generate a public-facing URL to connect and communicate with the service.
+1. **[Redis Cache]** を検索します。
 
-The name must be between 1 and 63 characters, composed of numbers, letters, and the '-' character. The cache name can't start or end with the '-' character, and consecutive '-' characters aren't valid.
+1. **[作成]** をクリックします。
 
-### Resource Group
+1. Azure Redis Cache インスタンスは、Azure portal でデータベース リソースから追加することができます。
 
-The Azure Redis Cache is a managed resource and needs a _resource group_ owner. You can either create a new resource group, or use an existing one in a susbcription you are part of.
+1. グローバルに一意な名前を付けます。 この名前は、1 から 63 文字の文字列で、数字、英字、"-" 文字のみを使用する必要があります。 キャッシュ名の先頭と末尾には "-" 文字を使用できません。また、連続する "-" 文字は無効です。
 
-### Location
+1. この新しい Azure Redis Cache インスタンスが作成されるサブスクリプションを指定します。
 
-You will need to decide where the Redis cache will be physically located by selecting an Azure region. You should always place your cache instance and your application in the same region. Connecting to a cache in a different region can significantly increase latency and reduce reliability. If you are connecting to the cache outside of Azure, then select a location close to where the application consuming the data is running.
+1. キャッシュを作成するリソース グループに名前を付けます。 アプリのすべてのリソースを 1 つのグループ内に配置すると、それらをまとめて管理できるようになります。
 
-> [!IMPORTANT]
-> Put the Redis cache as close to the data _consumer_ as you can.
+1. キャッシュ インスタンスとアプリケーションは常に同じリージョン/場所に配置するようにしてください。 異なるリージョンのキャッシュに接続すると、待ち時間が大幅に増加し、信頼性が低下する可能性があります。 Azure の外部にあるキャッシュに接続する場合は、データを使用するアプリケーションが実行されている場所に近い場所を選択します。
 
-### Pricing tier
+    > [!IMPORTANT]
+    > キャッシュがデータ ストアよりもデータ コンシューマーに近いことが、はるかに重要です。
 
-As mentioned in the last unit, there are three pricing tiers available for an Azure Redis Cache.
+1. 価格レベルを選択します。 
+    - 運用システムでは、常に Standard レベルまたは Premium レベルを使用することをお勧めします。 Basic レベルは単一ノード システムであり、データ レプリケーション機能や SLA がありません。 また、C1 以上のキャッシュを使用してください。 C0 キャッシュは CPU コアが共有であり、メモリも非常に少量であるため、単純な開発/テスト シナリオにしか適していません。
 
-- **Basic**: Basic cache ideal for development/testing. Is limited to a single server, 53 GB of memory, and 20,000 connections. There is no SLA for this service tier.
-- **Standard**: Production cache which supports replication and includes an 99.99% SLA. It supports two servers (master/slave), and has the same memory/connection limits as the Basic tier.
-- **Premium**: Enterprise tier which builds on the Standard tier and includes persistence, clustering, and scale-out cache support. This is the highest performing tier with up to 530 GB of memory and 40,000 simultaneous connections.
+    - Premium レベルでは、ディザスター リカバリーを提供するために、次の 2 つの方法でデータを永続化できます。
 
-You can control the amount of cache memory available on each tier - this is selected by choosing a cache level from C0-C6 for Basic/Standard and P0-P4 for Premium. Check the [pricing page](https://azure.microsoft.com/en-us/pricing/details/cache/) for full details.
+        - RDB 永続化では、定期的にスナップショットが作成されます。エラーが発生した場合には、このスナップショットを使用してキャッシュを再構築できます。
 
-> [!TIP]
-> Microsoft recommends you always use Standard or Premium Tier for production systems. The Basic Tier is a single node system with no data replication and no SLA. Also, use at least a C1 cache. C0 caches are really meant for simple dev/test scenarios since they have a shared CPU core and very little memory.
+            ![新しい Redis Cache インスタンスでの RDB 永続化オプションを示す Azure portal のスクリーンショット。](../media/3-redis-persistence-1.png)
 
-The Premium tier allows you to persist data in two ways to provide disaster recovery:
+        - AOF 永続化では、すべての書き込み操作がログに最低 1 秒に一度保存されます。 これでは、ファイル サイズが RDB よりも大きくなるものの、データの損失は少なくなります。
 
-1. RDB persistence takes a periodic snapshot and can rebuild the cache using the snapshot in case of failure.
+            ![新しい Redis Cache インスタンスでの AOF 永続化オプションを示す Azure portal のスクリーンショット。](../media/3-redis-persistence-2.png)
 
-    ![Screenshot of the Azure portal showing the RDB persistence options on a new Redis cache instance.](../media/3-redis-persistence-1.png)
+    - 仮想ネットワークを使用して、キャッシュをセキュリティ保護します。
+      Premium レベルの Redis Cache がある場合、クラウドの仮想ネットワークにそれをデプロイします。 キャッシュは同じ仮想ネットワーク内の他の仮想マシンやアプリケーションのみが使用できます。
 
-2. AOF persistence saves every write operation to a log that is saved at least once per second. This creates bigger files than RDB but has less data loss.
+    - クラスタリングでキャッシュを分散します。
+      Premium レベルの Redis Cache では、クラスタリングを実装して、複数のノードに自動的にデータセットが分割されるようにできます。 クラスタリングを実装するには、シャードの数を最大の 10 に指定します。 発生するコストは、元のノードのコストにシャード数を掛けたものです。
 
-    ![Screenshot of the Azure portal showing the AOF persistence options on a new Redis cache instance.](../media/3-redis-persistence-2.png)
+    - Azure Managed Cache Service から移行します。
+      Azure Managed Cache Service を使用するアプリケーションの Azure Redis Cache への移行は、使用されている Managed Cache Service の機能によっては、最小限の変更をアプリケーションに対して行うだけで実現できます。 API は正確には同じではありませんが、類似しています。 Managed Cache Service を使用してキャッシュにアクセスする既存のコードの多くは、最小限の変更で再利用することができます。
 
-There are several other settings which are only available to the **Premium** tier.
+## <a name="accessing-the-redis-instance"></a>Redis インスタンスへのアクセス
 
-### Virtual Network support
+Redis は、[既知のコマンド](https://redis.io/commands)のセットをサポートしています。 コマンドは、通常、`COMMAND parameter1 parameter2 parameter3` として発行されます。
 
-If you create a premium tier Redis cache, you can deploy it to a virtual network in the cloud. Your cache will be available to only other virtual machines and applications in the same virtual network. This provides a higher level of security when your service and cache are both hosted in Azure, or are connected through an Azure virtual network VPN.
+使用できるいくつかの一般的なコマンドを次に示します。
 
-### Clustering support
-
-With a premium tier Redis cache, you can implement clustering to automatically split your dataset among multiple nodes. To implement clustering, you specify the number of shards to a maximum of 10. The cost incurred is the cost of the original node, multiplied by the number of shards.
-
-## Accessing the Redis instance
-
-Redis supports a set of [known commands](https://redis.io/commands). A command is typically issued as `COMMAND parameter1 parameter2 parameter3`.
-
-Here are some common commands you can use:
-
-| Command | Description |
+| コマンド | 説明 |
 |---------|-------------|
-| `ping` | Ping the server. Returns "PONG". |
-| `set [key] [value]` | Sets a key/value in the cache. Returns "OK" on success. |
-| `get [key]` | Gets a value from the cache. |
-| `exists [key]` | Returns '1' if the **key** exists in the cache, '0' if it doesn't. |
-| `type [key]` | Returns the type associated to the value for the given **key**. |
-| `incr [key]` | Increment the given value associated with **key** by '1'. The value must be an integer or double value. This returns the new value. |
-| `incrby [key] [amount]` | Increment the given value associated with **key** by the specified amount. The value must be an integer or double value. This returns the new value. |
-| `del [key]` | Deletes the value associated with the **key**. |
-| `flushdb` | Delete _all_ keys and values in the database. |
+| `ping` | サーバーへの ping を実行します。 "PONG" を返します。 |
+| `set [key] [value]` | キャッシュのキー/値を設定します。 成功したら "OK" を返します。 |
+| `get [key]` | キャッシュから値を取得します。 |
+| `exists [key]` | **キー**がキャッシュに存在する場合は "1"、存在しない場合は "0" を返します。 |
+| `type [key]` | 指定された**キー**の値に関連付けられている型を返します。 |
+| `incr [key]` | **キー**に関連付けられている指定された値を "1" だけ増分します。 値は整数または倍精度値にする必要があります。 新しい値を返します。 |
+| `incrby [key] [amount]` | **キー**に関連付けられている指定された値を、指定された量だけ増分します。 値は整数または倍精度値にする必要があります。 新しい値を返します。 |
+| `del [key]` | **キー**に関連付けられている値を削除します。 |
+| `flushdb` | データベース内の "_すべての_" キーと値を削除します。 |
 
-Redis has a command-line tool (**redis-cli**) you can use to experiment directly with these commands. Here are some examples.
+Redis には、これらのコマンドを直接試すために使用できるコマンドライン ツール (**redis-cli**) が用意されています。 次に例をいくつか示します。
 
 ```output
 > set somekey somevalue
@@ -87,7 +78,7 @@ OK
 (string) 0
 ```
 
-Here's an example of working with the `INCR` commands. These are convenient because they provide atomic increments _across multiple applications_ that are using the cache.
+以下に、`INCR` コマンドの操作例を示します。 これらは、キャッシュを使用している "_複数のアプリケーションにわたる_" アトミック増分を提供するので便利です。
 
 ```output
 > set counter 100
@@ -100,17 +91,17 @@ OK
 (integer)
 ```
 
-### Adding an expiration time to values
+### <a name="adding-an-expiration-time-to-values"></a>値への有効期限の追加
 
-Caching is important because it allows us to store commonly used values in memory. However, we also need a way to expire values when they are stale. In Redis this is done by applying a _time to live_ (TTL) to a key.
+キャッシュは、よく使用される値をメモリに格納することができるため、重要です。 ただし、値が古くなったときに期限切れにする手段も必要です。 Redis では、キーに _Time to Live_ (TTL) を適用することによって、それが行われます。
 
-When the TTL elapses, the key is automatically deleted, exactly as if the DEL command were issued. Here are some notes on TTL expirations.
+TTL が経過すると、DEL コマンドが発行されたかのように、キーが自動的に削除されます。 TTL の有効期限には、以下の注意事項があります。
 
-- Expirations can be set using seconds or milliseconds precision.
-- The expire time resolution is always 1 millisecond.
-- Information about expires are replicated and persisted on disk, the time virtually passes when your Redis server remains stopped (this means that Redis saves the date at which a key will expire).
+- 有効期限は、秒またはミリ秒の精度で設定することができます。
+- 有効期限切れの時刻の精度は、常に 1 ミリ秒です。
+- 期限切れに関する情報は、ディスクに複製され、永続的に保管されます。Redis サーバーが停止しているときは、時間は仮想的に経過します (つまり、キーが期限切れになる日付が Redis によって保存されます)。
 
-Here is an example of an expiration:
+次に、有効期間の例を示します。
 
 ```output
 > set counter 100
@@ -124,13 +115,13 @@ OK
 (nil)
 ```
 
-## Accessing a Redis cache from a client
+## <a name="accessing-a-redis-cache-from-a-client"></a>クライアントから Redis キャッシュへのアクセス
 
-When connecting to an Azure Redis Cache instance, clients need the host name, port, and an access key for the cache. You can retrieve this information in the Azure portal through the **Settings > Access Keys** page. 
+Azure Redis Cache のインスタンスに接続するとき、クライアントにはキャッシュのホスト名、ポート、およびアクセス キーが必要です。 この情報は、Azure portal の **[設定] > [アクセス キー]** ページで取得することができます。 
 
-- The host name is the public Internet address of your cache, which was created using the name of the cache. For example `sportsresults.redis.cache.windows.net`.
+- ホスト名は、キャッシュのパブリック インターネット アドレスです。このアドレスは、キャッシュの名前を使用して作成されたものです。 たとえば、`sportsresults.redis.cache.windows.net` のようなものです。
 
-- The access key acts as a password for your cache. There are two keys created: primary and secondary. You can use either key, two are provided in case you need to change the primary key. You can switch all of your clients to the secondary key, and regenerate the primary key. This would block any applications using the original primary key. Microsoft recommends periodically regenerating the keys - much like you would your personal passwords.
+- アクセス キーは、キャッシュのパスワードとして動作します。 プライマリとセカンダリの 2 つのキーが作成されます。 どちらのキーも使用できますが、2 つ用意されているのは、プライマリ キーを変更する必要があるときのためです。 すべてのクライアントをセカンダリ キーに切り替えて、プライマリ キーを再生成することができます。 こうすると、元のプライマリ キーを使用しているすべてのアプリケーションがブロックされます。 Microsoft では、個人用のパスワードと同じように、定期的にキーを再生成することを推奨しています。
 
 > [!WARNING]
-> Your access keys should be considered confidential information, treat them like you would a password. Anyone who has an access key can perform any operation on your cache!
+> アクセス キーは機密情報であると見なして、パスワードと同じように取り扱う必要があります。 アクセス キーを入手した人は、キャッシュに対して任意の操作を実行できてしまいます。

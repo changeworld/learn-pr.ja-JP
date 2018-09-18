@@ -1,11 +1,11 @@
-You saw two ways to meet demand using Virtual Machines. If your load is predictable you can use the portal or scripts to manually resize your VMs. For unpredictable demand patterns, a better approach is to use scale sets with autoscale to automatically add and remove instances as demand changes. Multiple VMs have the added benefit of increasing the availability of your system since a failed VM will not disrupt your service.
+仮想マシンを使用して需要を満たす 2 つの方法について説明しました。 負荷を予測できる場合は、ポータルまたはスクリプトを使用して、手動で VM のサイズを変更することができます。 需要パターンを予測できない場合、より良いアプローチは、自動スケーリングを行うスケール セットを使用して、需要の変化に応じてインスタンスを自動的に追加および削除することです。 複数の VM を使用すると、VM に障害が発生してもサービスが中断されないため、システムの可用性が向上するという利点もあります。
 
-## Cleanup
+## <a name="cleanup"></a>クリーンアップ
 
-While a VM is provisioned and running, it incurs costs against your subscription. Because you create all the VMs in the same resource group, the easiest way to clean up your Azure subscription is to remove the resource group, which will remove all its contents. Please run the following PowerShell cmdlet when you are finished with the exercise:
+VM がプロビジョニングされて実行されていると、サブスクリプションに対してコストが発生します。 すべての VM を同じリソース グループ内で作成したので、Azure サブスクリプションをクリーンアップする最も簡単な方法は、リソース グループを削除することです。これにより、そのすべてのコンテンツが削除されます。 演習が終了したら、次の PowerShell コマンドレットを実行してください。
 
    ```powershell
    Remove-AzureRmResourceGroup -Name ExerciseRG
    ```
 
-When you are asked to confirm the delete, answer **Yes**. The command may take several minutes to complete as resources are deleted.
+削除の確認を求められたら、**[はい]** と答えます。 リソースが削除済みとなってコマンドが完了するまで、数分かかる場合があります。

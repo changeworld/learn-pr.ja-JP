@@ -1,36 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: Knowledge check
+title: 知識チェック
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: 知識チェック
+  description: 知識チェック
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 54ce7dfa4c2f3a2d7b7d2d4c112f79aad7d2eb9c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44236469"
 durationInMinutes: 3
 quiz:
-  title: 'Azure Virtual Machine'
+  title: Azure 仮想マシン
   questions:
-  - content: 'Suppose you want to run a network appliance on a virtual machine. Which workload option will you choose?'
+  - content: 仮想マシンでネットワーク アプライアンスを実行するとします。 どのワークロード オプションを選択しますか。
     choices:
-    - content: General purpose
+    - content: 汎用
       isCorrect: false
-    - content: Compute optimized
+    - content: コンピューティング最適化
       isCorrect: true
-    - content: Memory optimized
+    - content: メモリ最適化
       isCorrect: false
-    - content: Storage optimized
+    - content: ストレージ最適化
       isCorrect: false
-  - content: 'Assume you want to deploy a copy of an existing Azure virtual machine. Which option will you choose to complete the job?'
+  - content: 既存の Azure 仮想マシンのコピーをデプロイするとします。 このジョブを完了するためにどのオプションを選択しますか?
     choices:
     - content: PowerShell
       isCorrect: false
-    - content: Resource Manager Templates
+    - content: Resource Manager テンプレート
       isCorrect: true
     - content: Azure CLI
       isCorrect: false
-    - content: Azure Client SDK
+    - content: Azure クライアント SDK
       isCorrect: false

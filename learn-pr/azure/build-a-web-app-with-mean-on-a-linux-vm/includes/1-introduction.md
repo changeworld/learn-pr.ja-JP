@@ -3,6 +3,7 @@
 このモジュールでは、Azure でホストされている Linux 仮想マシン上で、MEAN (MongoDB、Express、AngularJS、Node.js) Web アプリケーション スタック ホストを作成します。
 
 ## <a name="learning-objectives"></a>学習の目的
+
 このモジュールでは、次のことを行います。
 
 - MEAN Web スタックが自分に適しているかどうかを判断する
