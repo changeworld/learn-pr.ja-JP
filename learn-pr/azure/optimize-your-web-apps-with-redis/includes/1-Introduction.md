@@ -1,17 +1,17 @@
-You work at a company that tracks professional sports statistics and provides an API to query results. It helps fans track and review games and scores, both live and historical. Users can also request team statistics using a natural language search, such as, "How many times has John Smith hit a home run against a left-handed pitcher?"
+あなたはプロスポーツの統計情報を記録し、結果を問い合わせるための API を提供する会社に勤務しています｡ ライブと過去の両方について、ファンが試合や得点を記録し､確認するのに役立っています｡ 利用者は｢John Smith は左腕投手からホームランを何本打っているか?｣ などの自然言語の検索でチームの統計情報を問うこともできます。
 
-During times of peak demand, such as during playoffs, response time of your service slows down because the back-end service doesn't have the capacity to meet demand. You want to improve performance for your users and reduce the workload on your back-end and data storage services. Your metrics show that 50% to 80% of the data returned is for read-only or recently requested values. Implementing a cache of commonly used data could improve performance and reduce latency.
+バックエンド サービスに需要を満たすだけの容量が与えられていないため、プレイオフなどの需要のピーク時には、サービスの応答時間が遅くなります。 あなたは利用者のためにパフォーマンスを改善し、バックエンド サービスとデータ ストレージ サービスのワークロードを軽減したいと考えています。 数字を見ると、返されるデータの 50% から 80% は読み取り専用か、最近要求された値です。 頻繁に利用されるデータをキャッシュすれば、パフォーマンスが上がり、待ち時間が短くなる可能性があります。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Describe what a Redis cache is and how you can use it for your business needs
-- Create a design and plan to use a Redis cache
-- Provision a Redis cache in Azure
-- Connect an application to the cache
+- Redis キャッシュとは何であり､どのようにしてそのキャッシュをビジネス ニーズに活用できるかについて説明します
+- Redis キャッシュを活用するための設計計画を作成します。
+- Azure で Redis キャッシュをプロビジョニングします。
+- キャッシュにアプリケーションを接続します。
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-- Experience with app development
-- Experience using data in apps
+- アプリの開発経験
+- アプリでデータを使用した経験

@@ -1,28 +1,41 @@
 ### YamlMime:Module
 uid: learn.make-your-virtual-machines-highly-available
 metadata:
-  title: Make your virtual machines highly available
-  description: Use Azure Load Balancer as a public load balancer to distribute public inbound traffic across multiple Azure virtual machines. Understand the purpose of a load balancer. Work with Azure Load Balancer in the portal, identify a VM scale set to route traffic to, and monitor your traffic.
+  title: 仮想マシンの可用性を高める
+  description: パブリックなロード バランサーとして Azure Load Balancer を利用することで､複数の Azure 仮想マシンにパブリックな受信トラフィックを分散します｡ ロード バランサーの用途を理解します。 ポータルで Azure Load Balancer を操作して、 トラフィックの送り先の VM スケールセットを指定し､トラフィックを監視します｡
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Make your virtual machines highly available
-summary: Distribute public inbound traffic across multiple virtual machines with Load Balancer.
-abstract: |
-  In this module, you will:
-  - Decide when to use a load balancer
-  - Identify the differences between the basic and standard load balancer editions
-  - Create a new load balancer
-  - Create virtual networks associated with a load balancer
-  - Configure load balancer rules
-  - Configure a load balancer health probe
-prerequisites: |
-  - Experience administering Azure resources using the Azure portal
-  - Experience with Azure Virtual Machines
-  - Some knowledge of virtual-machine networking and public IP addresses
+  ms.openlocfilehash: 44610f9c9a3f6e1b651d68d1dbfa52cfb5e29c5f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232175"
+title: 仮想マシンの可用性を高める
+summary: ロード バランサーを使用してパブリックな受信トラフィックを複数の仮想マシンに分散します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - ロード バランサーを使用するタイミングを決定する
+
+  - Basic エディションと Standard エディションのバランサー の違いを理解する
+
+  - 新しいロード バランサーを作成する
+
+  - ロード バランサーに関連付けた仮想ネットワークを作成する
+
+  - ロード バランサーの規則を構成する
+
+  - ロード バランサーの正常性プローブを構成する
+prerequisites: >
+  - Azure portal を使用した Azure リソースの管理を経験する
+
+  - Azure Virtual Machines の使用の体験
+
+  - 仮想マシンのネットワークとパブリック IP アドレスに関するある程度の知識
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

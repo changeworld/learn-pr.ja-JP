@@ -1,14 +1,14 @@
-Every system, architecture, and application needs to be designed with security in mind. A denial of service attack prevents you from doing business. Defacement of your website damages your reputation. And a data breach is perhaps worst of all. It can ruin hard-earned trust and cause significant personal and financial harm. As administrators, developers, and IT management, we all must work to guarantee the security of our systems. 
+あらゆるシステム、あらゆるアーキテクチャ、そしてあらゆるアプリケーションは､セキュリティを念頭に設計する必要があります｡ サービス妨害 (DoS) 攻撃によって､業務の遂行は不可能になります｡ Web サイトが汚されると､会社の評判が落ちます｡ おそらく､なかでも最悪なことはデータ侵害です｡ やっと得た信頼が毀損し､個人および財務面で重大な痛手を被る可能性があります｡ 管理者、開発者、あるいは IT 幹部として､私たちは一体となってシステムのセキュリティを保証する必要があります｡ 
 
-Let's say you work for shipping and logistics company Contoso Shipping. Contoso Shipping is in the process of moving a lot of their infrastructure to the cloud. Several physical servers in their datacenter are moving over to Azure virtual machines. The current plans involve a hybrid solution, with some of the servers remaining on-premises, but they will need a secure, high-quality connection between the new virtual machines and the existing network.
+たとえば､あなたが Contoso Shipping という運送・物流会社で働いていると仮定しましょう｡ 現在、Contoso は多数のインフラストラクチャをクラウドに移行させる過程中です。 データ センターにある何台かの物理サーバーは Azure 仮想マシンに移されています｡ 現在の計画はハイブリッド ソリューションであり、一部サーバーをオンプレミスに残しますが､新しい仮想マシンと既存のネットワークとの間には安全で高品質な接続が必要になります｡
 
-Additionally, Contoso Shipping has some out-of-network devices that are part of its operations. They are using network-enabled sensors in their trucks that send data to Azure Event Hubs. And delivery drivers use mobile apps to get route maps and record signatures for receipt of shipments. These devices and apps must be securely authenticated before data can be sent to or from them.
+また Contoso Shipping には、一部 の運用を担う、ネットワーク外のデバイスも何台かあります｡ トラックにネットワーク対応のセンサーを利用して､Azure Event Hub にデータを送信しています｡ そして､配送ドライバーはモバイル アプリを使用してルート マップを取得し､荷物受領時にサインを記録します｡ これらデバイスおよびアプリがデータをやりとりする際には､しっかりと認証されていなければなりません｡
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを学びます｡
 
-- Learn how security responsibility is shared with Azure
-- Learn how identity management provides protection, even outside your network
-- Learn how encryption capabilities built in to Azure can protect your data
-- Learn how to protect your network and virtual networks
+- Azure とのセキュリティの責任の分担方法
+- ID 管理によるネットワーク外でのデータ保護方法
+- Azure に組み込まれている暗号化機能によるデータ保護の実現方法
+- ネットワークおよび仮想ネットワークの保護方法

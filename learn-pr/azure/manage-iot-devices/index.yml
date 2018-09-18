@@ -1,29 +1,32 @@
 ### YamlMime:Module
 uid: learn.manage-iot-devices
 metadata:
-  title: Learn how to manage IoT devices as an IT Admin
-  description: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
+  title: IT 管理者が IoT デバイスを管理する方法について学びます｡
+  description: IoT 採用が拡大する中､Microsoft が提供するどのような運用ツールが､いわゆる多大のデバイスのデプロイや管理、保護に役立つのかについて学びます｡
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Learn how to manage IoT devices as an IT Admin
-summary: With IoT adoption on the rise, learn what tools Microsoft offers Operations to help deploy, manage and secure said plethora of devices.
-abstract: | 
- In this module, you will:
-  - TBD
-  - TBD
-# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
+  ms.openlocfilehash: 56a1028a077962887b146684c62319921269b401
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258162"
+title: IT 管理者が IoT デバイスを管理する方法について学びます｡
+summary: IoT 採用が拡大する中､Microsoft が提供するどのような運用ツールが､いわゆる多大のデバイスのデプロイや管理、保護に役立つのかについて学びます｡
+abstract: >
+  このモジュールでは、次のことを行います。
+   - TBD
+   - TBD
 iconUrl: http://via.placeholder.com/120x120
-# Review the Docs Contributor Guide for level, role, and product options
-levels: 
+levels:
 - beginner
-roles: 
+roles:
 - administrator
-products: 
+products:
 - azure
-# Listing of all of the unit uids, in the order they should be displayed to the user in
 units:
 - learn.manage-iot-devices.1-intro-to-ops-in-iot
 - learn.manage-iot-devices.2-raspberry-pi-emulator

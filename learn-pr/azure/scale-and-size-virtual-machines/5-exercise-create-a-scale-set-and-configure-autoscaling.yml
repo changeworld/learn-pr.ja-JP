@@ -1,9 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.5-exercise-create-a-scale-set-and-configure-autoscaling
-title: Exercise - Create a scale set and configure autoscaling
+title: 課題 - スケール セットの作成と自動スケールの構成
 metadata:
-  title: Exercise - Create a scale set and configure autoscaling
-  description: Exercise - Create a scale set and configure autoscaling
+  title: 課題 - スケール セットの作成と自動スケールの構成
+  description: 課題 - スケール セットの作成と自動スケールの構成
+  ms.openlocfilehash: ca265df828582f0b74003b36a4e33b824a111290
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255384"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-exercise-create-a-scale-set-and-configure-autoscaling.md)]
+content: '[!include[](includes/5-exercise-create-a-scale-set-and-configure-autoscaling.md)]'
