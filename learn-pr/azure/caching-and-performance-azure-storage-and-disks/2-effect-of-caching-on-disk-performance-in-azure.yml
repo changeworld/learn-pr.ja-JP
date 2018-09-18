@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.caching-and-performance-azure-storage-and-disks.2-effect-of-caching-on-disk-performance-in-azure
+title: <span data-ttu-id="4e24a-101">Azure 内のディスク パフォーマンスに対するキャッシュの影響</span><span class="sxs-lookup"><span data-stu-id="4e24a-101">Effect of caching on disk performace in Azure</span></span>
+metadata:
+  title: <span data-ttu-id="4e24a-102">Azure 内のディスク パフォーマンスに対するキャッシュの影響</span><span class="sxs-lookup"><span data-stu-id="4e24a-102">Effect of caching on disk performace in Azure</span></span>
+  description: <span data-ttu-id="4e24a-103">Azure 内のディスク パフォーマンスに対するキャッシュの影響</span><span class="sxs-lookup"><span data-stu-id="4e24a-103">Effect of caching on disk performace in Azure</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cd148a84cc01637faf0514ed1d1267ff499ac01d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244170"
+durationInMinutes: 10
+content: '[!include[](includes/2-effect-of-caching-on-disk-performance-in-azure.md)]'

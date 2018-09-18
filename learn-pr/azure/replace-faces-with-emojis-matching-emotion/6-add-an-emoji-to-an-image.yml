@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.the-mojifier.6-add-an-emoji-to-an-image
+metadata:
+  title: <span data-ttu-id="ddb07-101">絵文字を画像に追加する</span><span class="sxs-lookup"><span data-stu-id="ddb07-101">Add an emoji to an image</span></span>
+  description: <span data-ttu-id="ddb07-102">`Jimp` ライブラリを使用して画像を操作する方法、具体的には、絵文字を顔に重ねて、その画像をディスクに保存する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ddb07-102">Learn how to use the `Jimp` library to manipulate images and specifically to learn how to layer an emoji over a face and save that image back out to disk.</span></span>
+  ms.openlocfilehash: 440db17fcf70494acf0f463816f531aaac2fd9c5
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255511"
+title: <span data-ttu-id="ddb07-103">絵文字を画像に追加する</span><span class="sxs-lookup"><span data-stu-id="ddb07-103">Add an emoji to an image</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/6-add-an-emoji-to-an-image.md)]'

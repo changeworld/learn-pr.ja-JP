@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
+title: <span data-ttu-id="7c6a9-101">Azure portal を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="7c6a9-101">Create an Azure Database for PostgreSQL Server using Azure Portal</span></span>
+metadata:
+  title: <span data-ttu-id="7c6a9-102">Azure portal を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="7c6a9-102">Create an Azure Database for PostgreSQL Server using Azure Portal</span></span>
+  description: <span data-ttu-id="7c6a9-103">このラボでは、Azure portal を使用して、Azure Database for PostgreSQL サーバーを作成します。</span><span class="sxs-lookup"><span data-stu-id="7c6a9-103">In this lab, you will use the Azure Portal to create an Azure Database for PostgreSQL server.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9f57d22adeae3323b32859711ab5d2a20443f42d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232712"
+durationInMinutes: 10
+content: '[!include[](includes/4-create-postgresql-db-server-via-azure-portal.md)]'

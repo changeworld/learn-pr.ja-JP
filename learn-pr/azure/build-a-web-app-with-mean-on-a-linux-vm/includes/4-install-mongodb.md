@@ -1,0 +1,18 @@
+<span data-ttu-id="5412b-101">ほとんどのアプリケーションにはデータ ストアが必要です。</span><span class="sxs-lookup"><span data-stu-id="5412b-101">Most applications need a data store.</span></span> <span data-ttu-id="5412b-102">MongoDB (MEAN スタックの "M") は、最も人気のある NoSQL データ ストア ソリューションの 1 つであり、無料のオープン ソースです。</span><span class="sxs-lookup"><span data-stu-id="5412b-102">MongoDB, the "M" in the MEAN stack, is one of the most popular NoSQL data store solutions, and it's free and open source.</span></span> <span data-ttu-id="5412b-103">NoSQL データ ストアの場合、SQL Server や MySQL などのリレーショナル データベースのように、事前に定義された方法でデータを構築する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="5412b-103">A NoSQL data store doesn't require data to be structured in a pre-defined way as it would with a relational database like SQL Server or MySQL.</span></span>
+
+<span data-ttu-id="5412b-104">MongoDB では、厳格なデータ構造を必要としない JSON に似たドキュメントにデータが格納されます。</span><span class="sxs-lookup"><span data-stu-id="5412b-104">MongoDB stores its data in JSON-like documents that don't require rigid data structures.</span></span> <span data-ttu-id="5412b-105">その後、JavaScript Object Notation (JSON) として送信されるクエリとコマンドを使用して、MongoDB とやりとりします。</span><span class="sxs-lookup"><span data-stu-id="5412b-105">We then interact with MongoDB using queries and commands sent as JavaScript Object Notation (JSON).</span></span>
+
+## <a name="mongodb-versions"></a><span data-ttu-id="5412b-106">MongoDB バージョン</span><span class="sxs-lookup"><span data-stu-id="5412b-106">MongoDB versions</span></span>
+
+<span data-ttu-id="5412b-107">利用可能な MongoDB のバージョンには次の 2 つがあります。</span><span class="sxs-lookup"><span data-stu-id="5412b-107">There are two versions of MongoDB available:</span></span>
+
+- <span data-ttu-id="5412b-108">MongoDB Community Server</span><span class="sxs-lookup"><span data-stu-id="5412b-108">MongoDB Community Server</span></span>
+- <span data-ttu-id="5412b-109">MongoDB Enterprise Server</span><span class="sxs-lookup"><span data-stu-id="5412b-109">MongoDB Enterprise Server</span></span>
+
+<span data-ttu-id="5412b-110">このモジュールでは、Web アプリケーション データ ストアとして MongoDB Community Server (執筆時点ではバージョン 3.6) を使用します。</span><span class="sxs-lookup"><span data-stu-id="5412b-110">In this module, we're going to use MongoDB Community Server, version 3.6 at the time of this writing, for our web application data store.</span></span>
+
+## <a name="how-to-install-mongodb"></a><span data-ttu-id="5412b-111">MongoDB をインストールする方法</span><span class="sxs-lookup"><span data-stu-id="5412b-111">How to install MongoDB</span></span>
+
+<span data-ttu-id="5412b-112">MongoDB は Linux、macOS、Windows にインストールできます。</span><span class="sxs-lookup"><span data-stu-id="5412b-112">MongoDB can be installed on Linux, macOS, and Windows.</span></span> <span data-ttu-id="5412b-113">このモジュールでは Ubuntu Linux VM 上にインストールしますが、推奨されるパッケージ マネージャーは OS とディストリビューションによって異なります。</span><span class="sxs-lookup"><span data-stu-id="5412b-113">We will be installing it on our Ubuntu Linux VM for this module, but the recommended package manager differs by OS and distribution.</span></span> <span data-ttu-id="5412b-114">すべてのオペレーティング システムのインストール プロセスについては、[MongoDB のインストール ドキュメント](https://docs.mongodb.com/manual/administration/install-community/)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="5412b-114">The installation process for all operating systems is well-documented in the [MongoDB install documentation](https://docs.mongodb.com/manual/administration/install-community/).</span></span>
+
+<span data-ttu-id="5412b-115">ここでは、Ubuntu VM にインストールするために **apt-get** パッケージ マネージャーを使用します。</span><span class="sxs-lookup"><span data-stu-id="5412b-115">To install on our Ubuntu VM, we will use the **apt-get** package manager.</span></span>

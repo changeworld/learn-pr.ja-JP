@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: learn.top-5-security-items-to-consider
+metadata:
+  title: 運用環境に移行する前にセキュリティ面で考慮すべき項目上位 5
+  description: あらゆる規模の組織は、システムとアプリケーションの信頼性がビジネスにとってどれほど重要であるかを認識し始めました。 また、市場の要求に応えるスピードで反復開発を行いながら信頼性を維持することがどれほど難しいかを学びました。 Site Reliability Engineering (SRE) は、この課題に対して実績のあるアプローチです。 このモジュールでは、SRE とその重要性について理解します。
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 990f2db8fae4ecc6c1780c71ff5522a8432018cd
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255510"
+title: 運用環境に移行する前にセキュリティ面で考慮すべき項目上位 5
+summary: このモジュールでは、Azure で Web アプリケーションのセキュリティを確保する方法、そして、最も一般的で危険な Web アプリケーション攻撃からアプリを守る方法を学びます。
+abstract: >
+  このモジュールでは、次のことを行います。
+   - Azure Security Center を使用する
+   - アプリケーションの入出力を確認する
+   - シークレットを Key Vault に格納する
+   - 最新バージョンのフレームワークとセキュリティ機能を使っていることを確認する
+   - プログラムの依存関係やライブラリが安全に使用できることを確認する
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+- intermediate
+roles:
+- administrator
+products:
+- azure
+units:
+- learn.top-5-security-items-to-consider.1-introduction
+- learn.top-5-security-items-to-consider.2-azure-security-center
+- learn.top-5-security-items-to-consider.3-inputs-and-outputs
+- learn.top-5-security-items-to-consider.4-secrets-in-key-vault
+- learn.top-5-security-items-to-consider.5-framework-updates
+- learn.top-5-security-items-to-consider.6-safe-dependencies
+- learn.top-5-security-items-to-consider.7-conclusion
+achievement: learn.top-5-security-items-to-consider.badge

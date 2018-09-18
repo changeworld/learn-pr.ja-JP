@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.caching-and-performance-azure-storage-and-disks.4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
+title: <span data-ttu-id="704a8-101">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="704a8-101">Exericse - Enable and configure Azure VM disk cache by using the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="704a8-102">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="704a8-102">Exericse - Enable and configure Azure VM disk cache by using the Azure portal</span></span>
+  description: <span data-ttu-id="704a8-103">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="704a8-103">Exericse - Enable and configure Azure VM disk cache by using the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1c1727360758d4bf4b9835de212fe5775cb9a5db
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233120"
+durationInMinutes: 10
+content: '[!include[](includes/4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal.md)]'

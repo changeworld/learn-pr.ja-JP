@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.2-create-service
+interactive: bash
+title: <span data-ttu-id="e304c-101">Computer Vision サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="e304c-101">Creating a Computer Vision service</span></span>
+metadata:
+  title: <span data-ttu-id="e304c-102">Computer Vision サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="e304c-102">Creating a Computer Vision service</span></span>
+  description: <span data-ttu-id="e304c-103">Computer Vision サービスを作成する</span><span class="sxs-lookup"><span data-stu-id="e304c-103">Creating a Computer Vision service</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f7d53b14f4bce79ad8800fde070e5f5777ef3e64
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241328"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-service.md)]'

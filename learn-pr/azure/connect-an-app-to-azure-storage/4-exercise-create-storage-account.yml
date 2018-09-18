@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.4-exercise-create-storage-account
+title: <span data-ttu-id="32775-101">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="32775-101">Create an Azure storage account</span></span>
+metadata:
+  title: <span data-ttu-id="32775-102">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="32775-102">Create an Azure storage account</span></span>
+  description: <span data-ttu-id="32775-103">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="32775-103">Create an Azure storage account</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c94356af773e33f5bc235655d1e329aeb6231dfa
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231013"
+interactive: bash
+durationInMinutes: 5
+content: '[!include[](includes/4-exercise-create-storage-account.md)]'

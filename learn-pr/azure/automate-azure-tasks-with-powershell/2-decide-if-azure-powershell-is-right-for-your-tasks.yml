@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.2-decide-if-azure-powershell-is-right-for-your-tasks
+title: <span data-ttu-id="ef678-101">Azure PowerShell がタスクに合っているかどうかを判断する</span><span class="sxs-lookup"><span data-stu-id="ef678-101">Decide if Azure PowerShell is right for your tasks</span></span>
+metadata:
+  title: <span data-ttu-id="ef678-102">Azure PowerShell がタスクに合っているかどうかを判断する</span><span class="sxs-lookup"><span data-stu-id="ef678-102">Decide if Azure PowerShell is right for your tasks</span></span>
+  description: <span data-ttu-id="ef678-103">Azure PowerShell がタスクに合っているかどうかを判断する</span><span class="sxs-lookup"><span data-stu-id="ef678-103">Decide if Azure PowerShell is right for your tasks</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4a4c741df02a75255ae6b5a7969457a316eec7a8
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44248619"
+durationInMinutes: 5
+content: '[!include[](includes/2-decide-if-azure-powershell-is-right-for-your-tasks.md)]'

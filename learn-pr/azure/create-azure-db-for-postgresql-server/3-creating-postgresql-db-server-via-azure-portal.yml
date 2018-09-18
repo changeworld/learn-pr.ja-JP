@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-portal
+title: <span data-ttu-id="447a8-101">Azure portal を使用した Azure Database PostgreSQL サーバーの作成</span><span class="sxs-lookup"><span data-stu-id="447a8-101">Creating an Azure Database PostgreSQL Server using the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="447a8-102">Azure portal を使用した Azure Database PostgreSQL サーバーの作成</span><span class="sxs-lookup"><span data-stu-id="447a8-102">Creating an Azure Database PostgreSQL Server using the Azure portal</span></span>
+  description: <span data-ttu-id="447a8-103">Azure portal を使用すると、PostgreSQL データベース サーバーの実行、管理およびスケーリングを行うことができます。</span><span class="sxs-lookup"><span data-stu-id="447a8-103">The Azure portal allows you to run, manage and scale PostgreSQL database servers.</span></span> <span data-ttu-id="447a8-104">このようなサービスの構成方法を知ることが、PostgreSQL データベース展開を成功させるための鍵です。</span><span class="sxs-lookup"><span data-stu-id="447a8-104">Knowing how to configure such a service, is key to a successful PostgreSQL database rollout.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c923062329d6e75d22354a1e4a9589b9a0fa9e82
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232746"
+durationInMinutes: 7
+content: '[!include[](includes/3-creating-postgresql-db-server-via-azure-portal.md)]'

@@ -1,0 +1,46 @@
+### YamlMime:Module
+uid: learn.introduction-to-azure-virtual-machines
+metadata:
+  title: Azure Virtual Machines の概要
+  description: VM を作成する前に行う決定、VM を作成および管理するためのオプション、VM を管理するために使用する拡張機能とサービスについて学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 149a21c1ab2e9278a6cf454a9b2b5ea13e819134
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241943"
+title: Azure Virtual Machines の概要
+summary: VM を作成する前に行う決定、VM を作成および管理するためのオプション、VM を管理するために使用する拡張機能とサービスについて学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 仮想マシンの作成についてのチェックリストを作る
+
+  - 仮想マシンを作成および管理するためのオプションについて説明する
+
+  - 仮想マシンを管理するために使用できる追加サービスについて説明する
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- beginner
+roles:
+- administrator
+- developer
+- solution-architect
+products:
+- azure
+units:
+- learn.introduction-to-azure-virtual-machines.1-introduction
+- learn.introduction-to-azure-virtual-machines.2-compile-a-checklist-for-creating-a-vm
+- learn.introduction-to-azure-virtual-machines.3-create-a-vm
+- learn.introduction-to-azure-virtual-machines.4-describe-other-create-vm-options
+- learn.introduction-to-azure-virtual-machines.5-high-availability
+- learn.introduction-to-azure-virtual-machines.6-backup-services
+- learn.introduction-to-azure-virtual-machines.7-knowledge-check
+- learn.introduction-to-azure-virtual-machines.8-summary
+achievement: learn.introduction-to-azure-virtual-machines.badge

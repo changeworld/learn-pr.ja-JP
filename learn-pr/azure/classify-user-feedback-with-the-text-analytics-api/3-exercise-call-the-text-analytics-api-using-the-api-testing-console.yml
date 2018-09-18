@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.3-exercise-call-the-text-analytics-api-using-the-api-testing-console
+metadata:
+  title: <span data-ttu-id="c5260-101">演習 - オンライン テスト コンソールから Text Analytics API を呼び出す</span><span class="sxs-lookup"><span data-stu-id="c5260-101">Exercise - Call the Text Analytics API from the online testing console</span></span>
+  description: <span data-ttu-id="c5260-102">このユニットでは、オンライン API テスト コンソールを利用して、コードを 1 行も記述せずに、Text Analytics API のセンチメント エンドポイントを実際に呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c5260-102">In this unit, we'll make real calls to the sentiment endpoint of the Text Analytics API without writing a line of code, thanks to the online API testing console.</span></span>
+  displayType: two-column
+  ms.openlocfilehash: 9d3a1052df26d0a8906d995bf0aabfbf608ebdfc
+  ms.sourcegitcommit: 46c8d35790efaafa6a4637f7688482e3a754d7f3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44258146"
+title: <span data-ttu-id="c5260-103">演習 - オンライン テスト コンソールから Text Analytics API を呼び出す</span><span class="sxs-lookup"><span data-stu-id="c5260-103">Exercise - Call the Text Analytics API from the online testing console</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-call-the-text-analytics-api-using-the-api-testing-console.md)]'

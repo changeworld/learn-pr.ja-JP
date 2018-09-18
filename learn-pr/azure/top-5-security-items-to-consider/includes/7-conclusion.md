@@ -1,0 +1,12 @@
+<span data-ttu-id="3cdc4-101">このモジュールでは、一般的な攻撃から Azure 内のアプリケーションを保護する方法について説明しました。</span><span class="sxs-lookup"><span data-stu-id="3cdc4-101">In this module, you learned how to safeguard your applications in Azure against common attacks.</span></span>
+
+<span data-ttu-id="3cdc4-102">このモジュールでは、セキュリティに関する重要なヒントをいくつか紹介しました。</span><span class="sxs-lookup"><span data-stu-id="3cdc4-102">In this module, we looked at several key security tips:</span></span>
+
+> [!div class="checklist"]
+> * <span data-ttu-id="3cdc4-103">Azure Security Center を使用する</span><span class="sxs-lookup"><span data-stu-id="3cdc4-103">Use Azure Security Center</span></span>
+> * <span data-ttu-id="3cdc4-104">アプリケーションの入出力を確認する</span><span class="sxs-lookup"><span data-stu-id="3cdc4-104">Verify your application inputs and outputs</span></span>
+> * <span data-ttu-id="3cdc4-105">シークレットを Key Vault に格納する</span><span class="sxs-lookup"><span data-stu-id="3cdc4-105">Store your secrets into Key Vault</span></span>
+> * <span data-ttu-id="3cdc4-106">最新バージョンのフレームワークとそのセキュリティ機能を使用していることを確認する</span><span class="sxs-lookup"><span data-stu-id="3cdc4-106">Ensure you are using the latest version of your framework, and using its security features</span></span>
+> * <span data-ttu-id="3cdc4-107">プログラムの依存関係やライブラリが安全に使用できることを確認する</span><span class="sxs-lookup"><span data-stu-id="3cdc4-107">Verify your program dependencies and libraries are safe to use</span></span>
+
+<span data-ttu-id="3cdc4-108">このリストの 5 つの項目に従うことで、アプリケーションが安全であること、また将来も安全であり続けることの保証に向けて飛躍し、前進したことになります。</span><span class="sxs-lookup"><span data-stu-id="3cdc4-108">By following the five items in this list, you will have taken leaps and strides towards ensuring that your applications are safe and that they remain that way.</span></span>

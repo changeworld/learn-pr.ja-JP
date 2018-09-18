@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.introduction
+title: <span data-ttu-id="94cc7-101">Azure Database for PostgreSQL の概要</span><span class="sxs-lookup"><span data-stu-id="94cc7-101">Introduction to Azure Databases for PostgreSQL</span></span>
+metadata:
+  title: <span data-ttu-id="94cc7-102">Azure Database for PostgreSQL の概要</span><span class="sxs-lookup"><span data-stu-id="94cc7-102">Introduction to Azure Databases for PostgreSQL</span></span>
+  description: <span data-ttu-id="94cc7-103">Azure Database for PostgreSQL の概要</span><span class="sxs-lookup"><span data-stu-id="94cc7-103">Introduction to Azure Databases for PostgreSQL</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fedc3b37a50392a6582a55de756d2b600c3865d9
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44235619"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'
