@@ -1,0 +1,17 @@
+<span data-ttu-id="b9dc3-101">あなたはプロスポーツの統計情報を記録し、結果を問い合わせるための API を提供する会社に勤務しています｡</span><span class="sxs-lookup"><span data-stu-id="b9dc3-101">You work at a company that tracks professional sports statistics and provides an API to query results.</span></span> <span data-ttu-id="b9dc3-102">ライブと過去の両方について、ファンが試合や得点を記録し､確認するのに役立っています｡</span><span class="sxs-lookup"><span data-stu-id="b9dc3-102">It helps fans track and review games and scores, both live and historical.</span></span> <span data-ttu-id="b9dc3-103">利用者は｢John Smith は左腕投手からホームランを何本打っているか?｣ などの自然言語の検索でチームの統計情報を問うこともできます。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-103">Users can also request team statistics using a natural language search, such as, "How many times has John Smith hit a home run against a left-handed pitcher?"</span></span>
+
+<span data-ttu-id="b9dc3-104">バックエンド サービスに需要を満たすだけの容量が与えられていないため、プレイオフなどの需要のピーク時には、サービスの応答時間が遅くなります。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-104">During times of peak demand, such as during playoffs, response time of your service slows down because the back-end service doesn't have the capacity to meet demand.</span></span> <span data-ttu-id="b9dc3-105">あなたは利用者のためにパフォーマンスを改善し、バックエンド サービスとデータ ストレージ サービスのワークロードを軽減したいと考えています。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-105">You want to improve performance for your users and reduce the workload on your back-end and data storage services.</span></span> <span data-ttu-id="b9dc3-106">数字を見ると、返されるデータの 50% から 80% は読み取り専用か、最近要求された値です。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-106">Your metrics show that 50% to 80% of the data returned is for read-only or recently requested values.</span></span> <span data-ttu-id="b9dc3-107">頻繁に利用されるデータをキャッシュすれば、パフォーマンスが上がり、待ち時間が短くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-107">Implementing a cache of commonly used data could improve performance and reduce latency.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="b9dc3-108">学習の目的</span><span class="sxs-lookup"><span data-stu-id="b9dc3-108">Learning objectives</span></span>
+
+<span data-ttu-id="b9dc3-109">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="b9dc3-110">Redis キャッシュとは何であり､どのようにしてそのキャッシュをビジネス ニーズに活用できるかについて説明します</span><span class="sxs-lookup"><span data-stu-id="b9dc3-110">Describe what a Redis cache is and how you can use it for your business needs</span></span>
+- <span data-ttu-id="b9dc3-111">Redis キャッシュを活用するための設計計画を作成します。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-111">Create a design and plan to use a Redis cache</span></span>
+- <span data-ttu-id="b9dc3-112">Azure で Redis キャッシュをプロビジョニングします。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-112">Provision a Redis cache in Azure</span></span>
+- <span data-ttu-id="b9dc3-113">キャッシュにアプリケーションを接続します。</span><span class="sxs-lookup"><span data-stu-id="b9dc3-113">Connect an application to the cache</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="b9dc3-114">前提条件</span><span class="sxs-lookup"><span data-stu-id="b9dc3-114">Prerequisites</span></span>
+
+- <span data-ttu-id="b9dc3-115">アプリの開発経験</span><span class="sxs-lookup"><span data-stu-id="b9dc3-115">Experience with app development</span></span>
+- <span data-ttu-id="b9dc3-116">アプリでデータを使用した経験</span><span class="sxs-lookup"><span data-stu-id="b9dc3-116">Experience using data in apps</span></span>

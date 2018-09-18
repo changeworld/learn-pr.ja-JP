@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.6-safe-dependencies
+title: <span data-ttu-id="d55dc-101">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d55dc-101">Safe Dependencies</span></span>
+metadata:
+  title: <span data-ttu-id="d55dc-102">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d55dc-102">Safe Dependencies</span></span>
+  description: <span data-ttu-id="d55dc-103">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d55dc-103">Safe Dependencies</span></span>
+  ms.openlocfilehash: 2632ebbabed79ef97ff9fd8ab819664d7a55fe0e
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255577"
+durationInMinutes: 10
+content: '[!include[](includes/6-safe-dependencies.md)]'

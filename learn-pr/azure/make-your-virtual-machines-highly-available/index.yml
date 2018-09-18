@@ -1,0 +1,54 @@
+### YamlMime:Module
+uid: learn.make-your-virtual-machines-highly-available
+metadata:
+  title: 仮想マシンの可用性を高める
+  description: パブリックなロード バランサーとして Azure Load Balancer を利用することで､複数の Azure 仮想マシンにパブリックな受信トラフィックを分散します｡ ロード バランサーの用途を理解します。 ポータルで Azure Load Balancer を操作して、 トラフィックの送り先の VM スケールセットを指定し､トラフィックを監視します｡
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 44610f9c9a3f6e1b651d68d1dbfa52cfb5e29c5f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232175"
+title: 仮想マシンの可用性を高める
+summary: ロード バランサーを使用してパブリックな受信トラフィックを複数の仮想マシンに分散します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - ロード バランサーを使用するタイミングを決定する
+
+  - Basic エディションと Standard エディションのバランサー の違いを理解する
+
+  - 新しいロード バランサーを作成する
+
+  - ロード バランサーに関連付けた仮想ネットワークを作成する
+
+  - ロード バランサーの規則を構成する
+
+  - ロード バランサーの正常性プローブを構成する
+prerequisites: >
+  - Azure portal を使用した Azure リソースの管理を経験する
+
+  - Azure Virtual Machines の使用の体験
+
+  - 仮想マシンのネットワークとパブリック IP アドレスに関するある程度の知識
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-virtual-machines
+units:
+- learn.make-your-virtual-machines-highly-available.1-introduction
+- learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+- learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
+- learn.make-your-virtual-machines-highly-available.4-configure-a-load-balancer-in-azure
+- learn.make-your-virtual-machines-highly-available.5-exercise–configure-a-load-balancer-in-azure
+- learn.make-your-virtual-machines-highly-available.6-summary
+achievement: learn.make-your-virtual-machines-highly-available.badge

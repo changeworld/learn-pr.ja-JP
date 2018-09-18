@@ -1,0 +1,44 @@
+### YamlMime:Module
+uid: learn.configure-the-network-for-your-virtual-machines
+metadata:
+  title: 仮想マシン用のネットワークを構成する
+  description: インターネットまたはプライベート専用接続を使用して、外部サービスが仮想マシンとその他 Azure リソースと通信する方法を学びます｡ また､仮想ネットワークや VPNゲートウェイ、Azure ExpressRoute を使用してローカルのオンプレミス ネットワークを Azure に接続する方法についても学びます｡
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 78f61bb9e823074c2508689547ea12ccea3cbe9d
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243598"
+title: 仮想マシン用のネットワークを構成する
+summary: Azure 仮想マシン用ネットワークを安全な方法で構成する方法を説明します｡
+abstract: >
+  このモジュールでは、次のことを説明します｡
+
+  - Azure Virtual Network
+
+  - Azure VPN Gateway
+
+  - Azure ExpressRoute
+prerequisites: なし
+iconUrl: http://via.placeholder.com/120x120
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+units:
+- learn.configure-the-network-for-your-virtual-machines.1-introduction
+- learn.configure-the-network-for-your-virtual-machines.2-describe-azure-virtual-networking
+- learn.configure-the-network-for-your-virtual-machines.3-exercise-create-azure-virtual-network
+- learn.configure-the-network-for-your-virtual-machines.4-explore-azure-vpn-gateway
+- learn.configure-the-network-for-your-virtual-machines.5-exercise-create-azure-vpn-gateway
+- learn.configure-the-network-for-your-virtual-machines.6-describe-azure-expressroute
+- learn.configure-the-network-for-your-virtual-machines.7-knowledge-check-azure-expressroute
+- learn.configure-the-network-for-your-virtual-machines.8-summary
+achievement: learn.configure-the-network-for-your-virtual-machines.badge
