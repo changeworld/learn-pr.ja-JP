@@ -10,10 +10,10 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ff3b711c5d58bf5ccc7bc1317a48fc4fc025f800
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44243303"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45771472"
 durationInMinutes: 5
 content: '[!include[](includes/4-work-with-the-cli.md)]'

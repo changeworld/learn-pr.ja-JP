@@ -8,14 +8,14 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e304ba65bbe39c289f95bc5bb300256a6554bdb1
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 158d9901df403024605a22e8d45cb6c857e6ce8d
+  ms.sourcegitcommit: 5130ac6e16956e1cd182c3d5f2721b881a186c63
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44246533"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44503072"
 title: まとめ
-durationInMinutes: 10
+durationInMinutes: 5
 content: >
   [!include[](includes/6-summary.md)]
 quiz:

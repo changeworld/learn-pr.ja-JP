@@ -1,28 +1,28 @@
 
-In the previous exercise, we performed the following tasks using the Azure portal:
+前回の演習では、Azure portal を使用して以下のタスクを実行しました。
 
-- View OS disk cache status
-- Change the cache settings of the OS disk
-- Add a data disk to the VM
-- Change caching type on a new data disk
+- OS ディスクのキャッシュ状態を表示する
+- OS ディスクのキャッシュ設定を変更する
+- VM にデータ ディスクを追加する
+- 新しいデータ ディスク上のキャッシュの種類を変更する
 
-Let's practice these operations using Azure PowerShell. We're going to use the VM we created in the previous exercise. The operations in this lab assume:
+Azure PowerShell を使用してこれらの操作を練習してみましょう。 ここでは、これまでの演習で作成した VM を使用します。 このラボの操作では、以下のことを前提としています。
 
-- Our VM exists and is called **fotoshareVM**
-- Our VM lives in a resource group called **fotoshare-rg**
+- VM は存在し、**fotoshareVM** という名前です
+- VM は、**fotoshare-rg** というリソース グループ内に存在します。
 
-If you've gone with a different set of names, just replace these values with yours. 
+これらの値は異なる名前を使用した場合は、これらの値を実際の名前で置き換えてください。 
 
-Here's the current state of our VM disks from the last exercise:
+前回の演習の VM ディスクは、次のような状態です。 
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/disks-final-config-portal.PNG)
+![OS ディスクとデータ ディスクのスクリーンショットでは、どちらも読み取り専用キャッシュに設定されています。](../media-draft/disks-final-config-portal.PNG)
 
-We used the portal to set the **HOST CACHING** field for both the OS and data disks. Keep this initial state in mind as we work through the following steps. 
+ポータルを使用して、OS ディスクとデータ ディスクの両方に ***[ホスト キャッシュ]** フィールドを設定しています。 以下の手順を行う際には、この初期状態を念頭に置いてください。 
 
-### Set up some variables
-First, let's  store some resource names so we can use them later.
+### <a name="set-up-some-variables"></a>変数をいくつか設定する
+まず、後で使用できるように、いくつかのリソース名を用意しておきましょう。
 
-Use the Azure Cloud Shell terminal on the right to run the following PowerShell commands:
+右側の Azure Cloud Shell のターミナルを使用して、次の PowerShell コマンドを実行します。 
 
 ```powershell
 $myRgName = "fotoshare-rg"
@@ -30,114 +30,114 @@ $myVMName = "fotoshareVM"
 ```
 
 > [!TIP]
-> You'll have to set these variables again if your Cloud Shell session times out. So, if possible, work through this entire lab in a single session. 
+> Cloud Shell セッションがタイムアウトした場合は、これらの変数を再度設定する必要があります。そのため、可能であれば、単一のセッションでこのラボ全体を実行します。 
 
-### Get info about our VM
+### <a name="get-info-about-our-vm"></a>VM に関する情報を取得する
 
-Run the following command to get back the properties of our VM:
+次のコマンドを実行して、VM のプロパティを取得します。
  
 ```powershell
 $myVM = Get-AzureRmVM -ResourceGroupName $myRgName -VMName $myVMName
 ```
-We store the response in our `$myVM` variable. We can run the following command to just show us the properties we specify here:
+`$myVM` 変数に応答を保存します。 次のコマンドを実行すると、ここで指定したプロパティを表示できます。
 
 ```powershell
 $myVM | select-object -property ResourceGroupName, Name, Type, Location
 ```
 
-As the following screenshot shows, this VM is indeed the VM we're after. So, let's move on. 
+次のスクリーンショットが示すように、この VM が目的の VM です。 それでは次に進みましょう。 
 
-![PowerShell console showing results of last 4 commands that we ran.](../media-draft/ps-commands-1.PNG)
+![最後に実行した 4 つのコマンドの結果を表示する PowerShell コンソール。](../media-draft/ps-commands-1.PNG)
 
-### View OS disk cache status
+### <a name="view-os-disk-cache-status"></a>OS ディスクのキャッシュ状態を表示する
 
-We can check the caching  setting through  the `StorageProfile` object, as follows:
+次のように、`StorageProfile` オブジェクトを介してキャッシュの設定を確認することができます。
 
 ```powershell
 $myVM.StorageProfile.OsDisk.Caching
 ```
-In this example, the current value is `None`. Let's change it back to the default for an OS disk.
+この例では、現在の値は **None** です。 これを OS ディスクの既定に戻してみましょう。
 
-![PowerShell console showing our OS disk having a caching value of "None".](../media-draft/ps-oscaching-none.PNG)
+![キャッシュ値が "None" の OS ディスクが表示されている PowerShell コンソール。](../media-draft/ps-oscaching-none.PNG)
 
-### Change the cache settings of the OS disk
+### <a name="change-the-cache-settings-of-the-os-disk"></a>OS ディスクのキャッシュ設定を変更する
 
-We can set the value for the cache type using the same `StorageProfile` object, as follows:
+次のように、同じ StorageProfile オブジェクトを使用してキャッシュの種類の値を設定できます。
  
 ```powershell
 $myVM.StorageProfile.OsDisk.Caching = "ReadWrite"
 ```
 
-This command runs fast, which should tell you it's doing something locally. The command just changes the property on the `myVM` object. As the following screenshot shows, if you refresh the `$myVM` variable,  the caching value won't have changed on the VM:
+このコマンドは高速で実行されます。ローカルで何らかの処理が実行されていることがわかります。 このコマンドを実行すると、単に myVM オブジェクトのプロパティが変更されます。 次のスクリーンショットが示すように、`$myVM` 変数を更新しても、VM 上のキャッシュ値は変更されません。
 
-![PowerShell console showing that refreshing our "myVM" object resets the caching to "none" because we didn't actually update the VM.](../media-draft/ps-commands-2.PNG)
+![実際には VM を更新しなかったため、"myVM" オブジェクトを更新すると、キャッシュが "none" にリセットされることを示す PowerShell コンソール。](../media-draft/ps-commands-2.PNG)
 
-To  make the change on the VM itself, call `Update-AzureRmVM`, as follows:
+VM 自体を変更するには、次のように `Update-AzureRmVM` を呼び出します。
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Notice that this call takes a while to complete. That's because we're updating the actual VM, and Azure restarts the VM  to make the change.
+この呼び出しが完了するまでには時間がかかります。 これは、実際の VM を更新しており、変更を反映するために、Azure は VM を再起動するためです。
 
-![PowerShell console showing our OS disk having a caching value of "None".](../media-draft/ps-oscaching-rw.PNG)
+![キャッシュ値が "None" の OS ディスクが表示されている PowerShell コンソール。](../media-draft/ps-oscaching-rw.PNG)
 
-If you refresh the `$myVM` variable again, you'll see the change on the object. Looking at the disk in the portal, you'd also see the change there. Let's move on to creating a new data disk.  
+`$myVM` 変数を再度更新すると、オブジェクトの変更が表示されます。 ポータルでディスクを表示して変更を確認することもできます。 それでは、新しいデータ ディスクの作成に進みましょう。  
 
-### List data disk info
+### <a name="list-data-disk-info"></a>データ ディスク情報を一覧表示する
 
-To see what data disks we have on our VM, run the following command: 
+VM 上にあるデータ ディスクを確認するには、次のコマンドを実行します。 
 
 ```powershell
 $myVM.StorageProfile.DataDisks
 ```
 
-We have only one data disk at the moment. The `Lun` field is important. It's the unique **L**ogical **U**nit **N**umber. When we add another data disk, we'll give it a unique `Lun` value. 
+現在、データ ディスクは 1 つしかありません。 `Lun` フィールドは重要です。 これは一意の論理ユニット番号 (**L****U****N**) です。 別のデータ ディスクを追加する場合は、一意の `Lun` 値を付けます。 
 
-### Add a new data disk to our VM 
+### <a name="add-a-new-data-disk-to-our-vm"></a>VM に新しいデータ ディスクを追加する 
 
-For convenience, we'll store our new disk name:
+便宜的に、新しいディスク名を用意します。
 
 ```powershell
 $newDiskName = "fotoshareVM-data2"
 ```
 
-Run the following `Add-AzureRmVMDataDisk` command to define a new disk:
+次の `Add-AzureRmVMDataDisk` コマンドを実行して、新しいディスクを定義します。 
 
 ```powershell
 Add-AzureRmVMDataDisk -VM $myVM -Name $newDiskName  -LUN 1  -DiskSizeinGB 1 -CreateOption Empty
 ```
 
-We've given this disk a `Lun` value of `1` because it's not taken. We defined the disk we want to create, so it's time to run `Update-AzureRmVM` to make the actual change: 
+1 の Lun 値は使用されていないため、このディスクに使用しました。 作成するディスクを定義したので、次は `Update-AzureRmVM` を実行して実際に変更してみましょう。 
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Let's look at our data disk info again:
+データ ディスク情報をもう一度見てみましょう。
 
 ```powershell
 $myVM.StorageProfile.DataDisks
 ```
 
-![PowerShell console showing our two data disks.](../media-draft/2-data-disks-part1.png)
+![2 つのデータ ディスクが表示されている PowerShell コンソール。](../media-draft/2-data-disks-part1.png)
 
-We now have two disks. Our new disk has a `Lun` of `1` and the default value for `Caching` is `None`. Let's change that value.
+これで 2 つのディスクができました。 新しいディスクの **Lun** 値は 1 で、**Caching** の既定値は **None** です。 この値を変更してみましょう。
 
-### Change cache settings of new data disk
+### <a name="change-cache-settings-of-new-data-disk"></a>新しいデータ ディスクのキャッシュ設定を変更する
 
-We modify properties of a virtual machine data disk with the `Set-AzureRmVMDataDisk` cmdlet, as follows:
+次のように、`Set-AzureRmVMDataDisk` コマンドレットを使用して仮想マシン データ ディスクのプロパティを変更します。
 
 ```powershell
 Set-AzureRmVMDataDisk -Lun "1" -Caching ReadWrite
 ```
 
-As always, commit the changes with `Update-AzureRmVM`:
+いつものように、`Update-AzureRmVM` を使用して変更をコミットします。
 
 ```powershell
 Update-AzureRmVM -ResourceGroupName $myRGName -VM $myVM
 ```
 
-Here's a view from the portal of what we've accomplished in this exercise. Our VM now has two data disks, and we've adjusted all **HOST CACHING** settings. We did all of that with just a few commands. That's the power of Azure PowerShell.
+この演習で実行した結果のポータルのビューを次に示します。 VM には 2 つのデータ ディスクがあり、すべての **[ホスト キャッシュ]** の設定を調整しました。 そのすべてをいくつかのコマンドだけで実行しました。 これが Azure PowerShell の機能です。
 
-![Azure portal showing our two data disks.](../media-draft/disks-final-config-portal2.png)
+![2 つのデータ ディスクが表示されている PowerShell コンソール。](../media-draft/disks-final-config-portal2.png)

@@ -1,25 +1,33 @@
 ### YamlMime:Module
 uid: learn.predict-costs-and-optimize-spending
 metadata:
-  title: Predict costs and optimize spending for Azure
-  description: Cost is one of the most important aspects of the cloud and can have a massive impact on your business. Azure has several tools available to help you get a better understanding of cloud spend and some best practices that you can leverage to help you save money.
+  title: Azure のコストを予測して支出を最適化する
+  description: コストは、クラウドの特に重要な要素で、ビジネスに大きな影響を与える場合があります。 Azure では、クラウド支出をさらに把握するために役立つツールや、コストの節約のために利用できるベスト プラクティスがいくつか用意されています。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Predict costs and optimize spending for Azure 
-summary: Cost is one of the most important aspects of the cloud and can have a massive impact on your business. Azure has several tools available to help you get a better understanding of cloud spend and some best practices that you can leverage to help you save money.
-abstract: |
-  In this module, you will:
-  - Use the Azure pricing calculator to estimate your costs
-  - Identify tools you can use to predict and optimize your costs on Azure
-  - Identify best practices for reducing your infrastructure costs
-  - Identify best practices for reducing your licensing costs
-prerequisites: |
-  - An understanding of your options within Azure infrastructure components
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 41c18c5daf5b3f8c7efd64f40f1a261b11864c20
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247570"
+title: Azure のコストを予測して支出を最適化する
+summary: コストは、クラウドの特に重要な要素で、ビジネスに大きな影響を与える場合があります。 Azure では、クラウド支出をさらに把握するために役立つツールや、コストの節約のために利用できるベスト プラクティスがいくつか用意されています。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure 料金計算ツールを使用して、コストを見積もります
+
+  - Azure でのコストの予測と最適化に使用できるツールを特定します
+
+  - インフラストラクチャのコストを削減するためのベスト プラクティスを特定します
+
+  - ライセンスのコストを削減するためのベスト プラクティスを明らかにします
+prerequisites: >
+  - Azure インフラストラクチャ コンポーネント内のオプションを理解しておくこと
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

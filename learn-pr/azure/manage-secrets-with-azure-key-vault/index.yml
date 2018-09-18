@@ -1,24 +1,32 @@
 ### YamlMime:Module
 uid: learn.manage-secrets-with-azure-key-vault
 metadata:
-  title: Manage secrets in your server apps with Azure Key Vault
-  description: In this module, you’ll learn how to create a Key Vault and store a secret in it. You’ll see how to configure a web application to use a managed identity to enable secure access to the vault without any configuration, and finally you’ll implement an ASP.NET Core web application that retrieves secrets from the vault.
+  title: Azure Key Vault を使用してサーバー アプリのシークレットを管理する
+  description: このモジュールでは、Key Vault を作成し、そこにシークレットを格納する方法を学習します。 構成を行わなくても、コンテナーに安全にアクセスできるようにするため、マネージド ID を使用するように Web アプリケーションを構成する方法について説明します。最後に、そのコンテナーからシークレットを取得する ASP.NET Core Web アプリケーションを実装します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Manage secrets in your server apps with Azure Key Vault
-summary: Your application requires service passwords, connection strings, and other secret configuration values to do its job. Storing and handling secret values is risky, and every usage introduces the possibility of leakage. Azure Key Vault, in combination with managed identities for Azure resources, enables your Azure web app to access secret configuration values easily and securely without needing to store any secrets in your source control or configuration.
-abstract:  | 
-  In this module, you will:
-  - Explore what types of information can be stored in Azure Key Vault
-  - Create an Azure Key Vault and use it to store secret configuration values
-  - Enable secure access to the vault from an Azure App Service web app with managed identities for Azure resources
-  - Implement a web application that retrieves secrets from the vault
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 09479b5de53cbca771d9e0b2c69e35e5224d8f05
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246907"
+title: Azure Key Vault を使用してサーバー アプリのシークレットを管理する
+summary: アプリケーションがジョブを実行するには、サービスのパスワード、接続文字列、その他のシークレット構成値が必要です。 シークレット値の保存と取り扱いはリスクが高く、使用のたびに漏えいの可能性が生じます。 Azure Key Vault を Azure リソースのマネージド ID の機能と組み合わせることで、ソース管理や構成にシークレットを格納しなくても、ご使用の Azure Web アプリがシークレット構成値に簡単かつ安全にアクセスできるようになります。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure Key Vault に格納できる情報の種類を調べる
+
+  - Azure キー コンテナーを作成し、それを使用してシークレット構成値を格納する
+
+  - Azure リソースに対するマネージド ID を使用して Azure App Service Web アプリからコンテナーへのセキュリティで保護されたアクセスを有効にする
+
+  - コンテナーからシークレットを取得する Web アプリケーションを実装する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

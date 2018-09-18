@@ -1,17 +1,17 @@
-The MEAN stack is a development stack for building and hosting web applications. MEAN is an acronym for MongoDB, Express, AngularJS, and Node.js, the component pieces of this development stack.
+MEAN スタックは、Web アプリケーションを構築してホストするための開発スタックです。 MEAN は、MongoDB、Express、AngularJS、および Node.js の頭字語で、この開発スタックのコンポーネントの要素です。
 
-## Why would I pick MEAN?
+## <a name="why-would-i-pick-mean"></a>MEAN を選択する理由
 
-All of the components of the MEAN stack are reliable, well-understood, and open source, but so are many other development stacks. 
+MEAN スタックのすべてのコンポーネントがオープン ソースで、信頼性が高く、よく知られていますが、他の多くの開発スタックも同様です。 
 
-One of the biggest reasons to pick the MEAN stack for web development is if you're familiar with JavaScript. All of the individual components are developed using JavaScript, from the dev-ops tasks of the web hosting runtime and database configuration to developer tasks of web application code and client-side scripting.
+Web 開発で MEAN スタックを選択する大きな理由の 1 つが、JavaScript に精通している場合です。 個々のコンポーネントはすべて Web ホスティングのランタイムやデータベース構成の開発運用タスクから、Web アプリケーション コードやクライアント側スクリプトの開発者タスクまで、JavaScript を使用して開発されています。
 
-Additionally, the components of the MEAN stack are all popular right now. Up-to-date documentation and tutorials for developing with MongoDB, Express, AngularJS, and Node.js are easy to find. The components of the MEAN stack are compatible with modern operating systems, including Windows, macOS, and Linux. 
+さらに、MEAN スタックのコンポーネントは今やすべてが一般的になりました。 MongoDB、Express、AngularJS、および Node.js で開発するための最新のドキュメントとチュートリアルが簡単に見つかります。 MEAN スタックのコンポーネントは、Windows、macOS、Linux を含む最新のオペレーティング システムと互換性があります。 
 
-## Why might MEAN not be right for me?
+## <a name="why-might-mean-not-be-right-for-me"></a>MEAN が適していない場合
 
-If your data is highly normalized, you might still benefit from putting your data in MySQL or SQL Server, where the relational database architecture will match your data needs well.
+データが高度に正規化されている場合は、リレーショナル データベースのアーキテクチャがデータのニーズに一致する MySQL または SQL Server にデータを置いてもメリットが得られる場合があります。
 
-If JavaScript is not your strongest skill, other frameworks and runtimes can serve you well. An alternative like the LAMP stack, which consists of Linux, Apache, MySQL, and PHP (sometimes with Perl or Python instead), might allow you to make more progress with a programming language more familiar to you. This variety of technologies will restrict your JavaScript development to the web application's client-side code.
+JavaScript が最強のスキルではないという方は、他のフレームワークやランタイムでも利用できます。 Linux、Apache、MySQL、PHP (Perl や Python の場合もあります) から成る LAMP スタックのような代替の、より使い慣れたプログラミング言語の方が作業がはかどることもあります。 こうしたさまざまなテクノロジでは、JavaScript の開発を Web アプリケーションのクライアント側のコードに制限されます。
 
-You want to pick a development and hosting stack that works well for your skills and the skills of your development and dev-ops team.
+自分のスキルや、開発/開発運用チームのスキルに合った開発とホスティング スタックを選択することができます。

@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.3-identity-management
-title: Identity management
+title: ID 管理
 metadata:
-  title: Identity management
-  description: In this unit we'll discuss how to protect your identities
+  title: ID 管理
+  description: このユニットでは、ご利用の ID を保護する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 1a89d586446a028b7544c5a974b94057a6ee1b24
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232479"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/3-identity-management.md)]
 quiz:
-  title: 'Knowledge Check - Identity management'
+  title: 知識チェック - ID 管理
   questions:
-  - content: 'Which of the following is not a factor in multi-factor authentication?'
+  - content: 次のうち、多要素認証の要素とならないものはどれですか?
     choices:
-    - content: 'A thumbprint scanner on a mobile device'
+    - content: モバイル デバイスのサムプリント スキャナー
       isCorrect: false
-      incorrectExplanation: 'Biometric elements such as thumbprint scans can be used as factors in multi-factor authentication.'
-    - content: 'A token generated from the Azure Authenticator application'
+      incorrectExplanation: サムプリント スキャンなどの生体認証要素は、多要素認証の要素として使用できます。
+    - content: Azure Authenticator アプリケーションで生成されたトークン
       isCorrect: false
-      incorrectExplanation: 'Tokens generated from applications and keyfobs can be used as factors in multi-factor authentication.'
-    - content: 'A password'
+      incorrectExplanation: アプリケーションで生成されたトークンと keyfobs は、多要素認証の要素として使用できます。
+    - content: パスワード
       isCorrect: false
-      incorrectExplanation: 'Passwords can be used as factors in multi-factor authentication.'
-    - content: 'Your shoe size'
+      incorrectExplanation: パスワードは、多要素認証の要素として使用できます。
+    - content: ご自分の靴のサイズ
       isCorrect: true
-      correctExplanation: 'Your shoe size is not something that can be used in multi-factor authentication.'
-  - content: 'Which of the following is NOT a benefit SSO provides?'
+      correctExplanation: ご自分の靴のサイズは、多要素認証に使用できるものではありません。
+  - content: 次のうち、SSO による利点ではないのはどれですか?
     choices:
-    - content: 'Increased complexity assigning permissions to users'
+    - content: ユーザーへのアクセス許可の割り当てが複雑になる
       isCorrect: true
-      correctExplanation: 'SSO can reduce the complexity needed to assign permissions to users.'
-    - content: 'Fewer IDs and passwords for users to remember'
+      correctExplanation: SSO により、ユーザーに権限を割り当てるために必要な複雑さを軽減できます。
+    - content: ユーザーが記憶すべき ID とパスワードの数が減る
       isCorrect: false
-      incorrectExplanation: 'Fewer IDs and passwords for users to remember is a key benefit of SSO.'
-    - content: 'Lower adminmistration effort when users change roles or leave an organization'
+      incorrectExplanation: ユーザーが記憶すべき ID とパスワードの数が減るのは、SSO の主な利点です。
+    - content: ユーザーのロールが変わったときや組織を離れるときの管理作業が減る
       isCorrect: false
-      incorrectExplanation: 'SSO reduces the amount of administration required to update or disable access when users change roles or leave an organization. This is a key benefit of SSO.'
-    - content: 'Ensures a consistent password policy across applications'
+      incorrectExplanation: SSO により、ユーザーの役割が変わったときや組織を離れたときに、アクセスを更新したり無効にしたりするために必要な管理作業の量が減ります。 これは SSO の主な利点です。
+    - content: すべてのアプリケーションでパスワード ポリシーの一貫性を確保する
       isCorrect: false
-      incorrectExplanation: 'By using SSO, users have a single password policy for all accounts. This is a key benefit of SSO.'
+      incorrectExplanation: SSO を使用することで、ユーザーはすべてのアカウントに対して 1 つのパスワード ポリシーを持ちます。 これは SSO の主な利点です。

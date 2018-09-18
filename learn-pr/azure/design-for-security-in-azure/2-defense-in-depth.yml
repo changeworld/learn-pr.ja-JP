@@ -1,40 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.2-defense-in-depth
-title: Defense in depth
+title: 多層防御
 metadata:
-  title: Defense in depth
-  description: In this unit we'll discuss how to practice defense in depth
+  title: 多層防御
+  description: このユニットでは、多層防御を実践する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 577b11fddc545e411822c986a2da706bb8701025
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240685"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/2-defense-in-depth.md)]
 quiz:
-  title: 'Knowledge Check - Defense in depth'
+  title: 知識チェック - 多層防御
   questions:
-  - content: 'Which of the following would be an appropriate tactic to apply to a defense in depth security strategy?'
+  - content: 次のうち、多層防御セキュリティ戦略を使用するのが適切な戦術はどれですか?
     choices:
-    - content: 'Deallocating virtual machines when not in use'
+    - content: 使用していない仮想マシンの割り当てを解除する
       isCorrect: false
-      incorrectExplanation: 'This can be an effective tactic to reduce costs, but it not a tactic for a security strategy.'
-    - content: 'Setting up alerts for CPU percentage exceeds 90%'
+      incorrectExplanation: コストを削減するには効果的な戦術かもしれませんが、セキュリティ戦略のための戦術ではありません。
+    - content: CPU の割合が 90% を超過した場合に警告されるように設定する
       isCorrect: false
-      incorrectExplanation: 'This may be a valuable monitoring metric to identify performance issues in your application, but is not a tactic in a security strategy.'
-    - content: 'Storing connection strings in a configuration file'
+      incorrectExplanation: アプリケーションのパフォーマンスの問題を特定するための重要な監視メトリックですが、セキュリティ戦略の戦術ではありません。
+    - content: 構成ファイルに接続文字列を保存する
       isCorrect: false
-      incorrectExplanation: 'Storing connection strings in a configuration file is a security risk and is not a tactic in a security strategy.'
-    - content: 'Enforcing MFA for all administrative level accounts'
+      incorrectExplanation: 構成ファイルに接続文字列を保存することはセキュリティ リスクであり、セキュリティ戦略の戦術ではありません。
+    - content: すべての管理者レベルのアカウントに MFA を強制する
       isCorrect: true
-      correctExplanation: 'Enforcing MFA for all administrative level accounts adds an extra layer of protection for highly privliged accounts and is an effective tactic as part of a defense in depth security strategy.'
-  - content: 'By moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider.'
+      correctExplanation: すべての管理者レベルのアカウントに MFA を強制すると、高度な特権を持つアカウントに対する保護層が追加され、セキュリティ戦略の多層防御の一環として効果的な戦術です。
+  - content: クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。
     choices:
-    - content: 'True'
+    - content: ○
       isCorrect: false
-      incorrectExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
-    - content: 'False'
+      incorrectExplanation: クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。
+    - content: ×
       isCorrect: true
-      correctExplanation: 'Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.'
+      correctExplanation: クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。

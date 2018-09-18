@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.7-manage-vm
-title: Azure 仮想マシンのネットワークとセキュリティの設定
+title: ネットワークとセキュリティの設定
 metadata:
-  title: Azure 仮想マシンのネットワークとセキュリティの設定
-  description: Azure 仮想マシンのネットワークとセキュリティの設定
-  ms.openlocfilehash: 07dcd3a8b707ddfec57f5c20a04d8736196c32c4
-  ms.sourcegitcommit: 314b617e66d461bd6bf5aa076aacdc150b773606
+  title: ネットワークとセキュリティの設定
+  description: ネットワークとセキュリティの設定
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f26102d6c216f544c299d251c278b8eec751aa37
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/06/2018
-  ms.locfileid: "43833806"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44247536"
 durationInMinutes: 10
 content: '[!include[](includes/7-manage-vm.md)]'

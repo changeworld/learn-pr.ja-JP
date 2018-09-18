@@ -1,52 +1,41 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.11-knowledge-check
-title: Knowledge check
+title: 知識チェック
 metadata:
-  title: Knowledge check
-  description: Knowledge check
+  title: 知識チェック
+  description: 知識チェック
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 85d3e79ced74d9544ea61e835ae361f979129721
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240838"
 durationInMinutes: 3
 quiz:
-  title: "Connecting to Azure Storage"
+  title: Azure Storage に接続する
   questions:
-
-  - content: "How many access keys are provided for accessing your Azure storage account?"
+  - content: Azure ストレージ アカウントにアクセスするためにアクセス キーはいくつ提供されますか?
     choices:
     - content: "1"
       isCorrect: false
     - content: "2"
       isCorrect: true
-      correctExplanation: "Each storage account has two access keys. This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime."
     - content: "3"
       isCorrect: false
     - content: "4"
       isCorrect: false
-
-  - content: "You can use either the REST API or the Azure client library to programmatically access a storage account. What is the primary advantage of using the client library?"
+  - content: 通常、Azure Storage 接続文字列はアプリ内のどこに保存されますか。
     choices:
-    - content: "Cost"
+    - content: アプリケーション コードにハードコード
       isCorrect: false
-    - content: "Availability"
-      isCorrect: false
-    - content: "Localization"
-      isCorrect: false
-    - content: "Convenience"
+    - content: 構成ファイル、環境変数、データベースなど、構成システム内
       isCorrect: true
-      correctExplanation: "Code that uses the client library is generally much shorter and simpler than code that uses the REST API. The client library handles assembling requests and parsing responses for you."
-
-  - content: "Which of the following is a good analogy for the access keys of a storage account?"
-    choices:
-    - content: "IP Address"
+    - content: 実行時にアプリに入力
       isCorrect: false
-    - content: "REST Endpoint"
-      isCorrect: false
-    - content: "Username and password"
-      isCorrect: true
-      correctExplanation: "Possession of an access key identifies the account and grants you access. This is very similar to login credentials like a username and password."
-    - content: "Cryptographic algorithm"
+    - content: リソース ファイルとしてコンパイルされ、アプリ アセンブリに組み込まれる
       isCorrect: false

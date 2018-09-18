@@ -1,17 +1,17 @@
-新興企業の財務管理アプリケーションを開発しているものとします。 顧客のすべてのデータが保護されるようにするため、このアプリケーションをホストするサーバー上のすべての OS ディスクとデータ ディスクに ADE を実装することにしました。 コンプライアンス要件の一部として、独自の暗号化キーの管理も自分で行う必要があります。
+新興企業の財務管理アプリケーションを開発しているものとします。 顧客のすべてのデータが保護されるようにするため、このアプリケーションをホストするサーバー上のすべての OS ディスクとデータ ディスクに Azure Disk Encryption (ADE) を実装することにしました。 コンプライアンス要件の一部として、独自の暗号化キーの管理も自分で行う必要があります。
 
 このユニットでは、既存の Windows VM 上のディスクを暗号化し、独自の Azure キー コンテナーを使用して暗号化キーを管理します。
 
 > [!IMPORTANT] 
-> この演習では、Azure PowerShell がお使いのコンピューターにインストールされていてるものとします。Azure PowerShell をインストールする方法については、「[PowerShellGet を使用した Windows への Azure PowerShell のインストール](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0)」をご覧ください。
+> この演習では、Azure PowerShell がコンピューターにインストールされていることを前提としています。 Azure PowerShell をインストールする方法については、「[PowerShellGet を使用した Windows への Azure PowerShell のインストール](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.7.0)」をご覧ください。
 
 ## <a name="prepare-the-environment"></a>環境を準備する
 
-最初に、Windows VM を新しいリソース グループに展開した後、VM にデータ ディスクを追加します。
+最初に、Windows VM を新しいリソース グループにデプロイした後、VM にデータ ディスクを追加します。
 
-### <a name="deploy-windows-vm-using-azure-portal"></a>Azure portal を使用して Windows VM を展開する
+### <a name="deploy-windows-vm-using-the-azure-portal"></a>Azure portal を使用して Windows VM をデプロイする
 
-ここでは、Azure portal を使用して Windows VM を作成および展開します。 最初に、VM の基本的な情報を定義します。
+ここでは、Azure portal を使用して Windows VM を作成およびデプロイします。 最初に、VM の基本的な情報を定義します。
 
 1. ブラウザーで [Azure portal](http://portal.azure.com) に移動し、通常の資格情報でサインインします。
 
@@ -29,20 +29,20 @@
 
 1. **[サブスクリプション]** ボックスで Azure サブスクリプションを選択します。
 
-1. **[リソース グループ]** で **[新規作成]** を選択し、ボックスに「**moneyapprg**」と入力します。
+1. **[リソース グループ]** で **[新規作成]** を選択します。 ボックスに「**moneyapprg**」と入力します。
 
 1. **[場所]** ドロップダウン リストで、近くのリージョンを選択します。
 
 1. **[OK]** をクリックします。
 
-### <a name="choose-a-size-for-the-vm-and-start-the-deployment"></a>VM のサイズを選択して展開を開始する
+### <a name="choose-a-size-for-the-vm-and-start-the-deployment"></a>VM のサイズを選択してデプロイを開始する
 
 > [!IMPORTANT]
-> Basic レベルの VM は、ADE をサポートしていないことを思い出してください
+> Basic レベルの VM は、ADE をサポートしていないことを思い出してください。
 
-1. **[サイズの選択]** ブレードで、**[B1s]** などの **[Standard]** を選択してから、**[選択]** をクリックします。
+1. **[サイズの選択]** ブレードで、**[B1s]** などの **[Standard]** を選択します。 次に **[選択]** をクリックします。
 
-1. **[設定]** ブレードの **[パブリック受信ポートを選択]** の一覧で **[RDP]** をクリックし、下にスクロールして **[OK]** をクリックします。
+1. **[設定]** ブレードの **[パブリック受信ポートを選択]** の一覧で **[RDP]** をクリックします。 下にスクロールして **[OK]** をクリックします。
 
 1. **[作成]** ブレードで、**[作成]** をクリックします。
 
@@ -66,9 +66,9 @@
 
 1. ディスクが作成されるまで待ってから、次に進みます。
 
-1. **[ディスク]** ブレードで、**[保存]** をクリックします。 データ ディスクの暗号化の状態が現在は **_[有効になっていません]_** であることに注意してください。
+1. **[ディスク]** ブレードで、**[保存]** をクリックします。 データ ディスクの暗号化の状態が現在は **[有効になっていません]** であることに注意してください。
 
-## <a name="configure-disk-encryption-pre-requisites"></a>ディスク暗号化の前提条件を構成する
+## <a name="configure-disk-encryption-prerequisites"></a>ディスク暗号化の前提条件を構成する
 
 次に、Azure Disk Encryption の前提条件構成スクリプトを使用して、ディスク暗号化のすべての前提条件を構成します。 このスクリプトは、VM と同じリージョンにキー コンテナーを作成して準備します。
 
@@ -130,9 +130,9 @@
 
 1. PowerShell ISE で **[ファイル]** をクリックし、**[実行]** をクリックします。
 
-1. コンソール ウィンドウの **[resourceGroupName:]** というプロンプトで、「**moneyapprg**」と入力して、**Enter** キーを押します。
+1. コンソール ウィンドウの **[resourceGroupName:]** というプロンプトで、「**moneyapprg**」と入力します。 次に、**Enter** キーを押します。
 
-1. コンソール ウィンドウの **[keyVaultName:]** というプロンプトで、「**moneyappkv**」と入力して、**Enter** キーを押します。
+1. コンソール ウィンドウの **[keyVaultName:]** というプロンプトで、「**moneyappkv**」と入力します。 次に、**Enter** キーを押します。
 
 1. コンソール ウィンドウの **[location:]** というプロンプトで、VM の作成時に使用した場所を入力します。
 
@@ -142,7 +142,7 @@
 
 1. **Enter** キーを押して続行します。
 
-1. コンソール ウィンドウの **[aadAppName:]** というプロンプトで、「**moneyapp**」と入力して、**Enter** キーを押します。
+1. コンソール ウィンドウの **[aadAppName:]** というプロンプトで、「**moneyapp**」と入力します。 次に、**Enter** キーを押します。
 
 1. **moneyapp** Azure AD アプリケーションが作成されます。 これが完了したら、(緑色の) 概要テキストを選択し、メモ帳にコピーします。
 
@@ -152,7 +152,7 @@
 
 OS ディスクとデータ ディスクの暗号化の状態を確認します。
 
-1. PowerShell ISE コンソール ウィンドウで、次のコマンドを入力して、Enter キーを押します。
+1. PowerShell ISE コンソール ウィンドウで、次のコマンドを入力して、**Enter** キーを押します。
 
     ```powershell
     $vmName = 'moneyappsvr01'
@@ -161,17 +161,17 @@ OS ディスクとデータ ディスクの暗号化の状態を確認します�
     > [!NOTE]
     > VM 名は、一重引用符で囲む必要があります。
 
-1. PowerShell ISE スクリプト ウィンドウで、次のコマンドを入力して、Enter キーを押します。
+1. PowerShell ISE スクリプト ウィンドウで、次のコマンドを入力して、**Enter** キーを押します。
 
     ```powershell
     Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $resourceGroupName -VMName $vmName -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $diskEncryptionKeyVaultUrl -DiskEncryptionKeyVaultId $keyVaultResourceId -VolumeType All
     ```
 
-1. **[Enable AzureDiskEncryption on the VM]\(VM で AzureDiskEncryption を有効にする\)** ダイアログ ボックスで **[はい]** をクリックし、暗号化が完了するまでに 10 ～ 15 分かかる場合があることを示すメッセージを確認します。
+1. **[Enable AzureDiskEncryption on the VM]\(VM で AzureDiskEncryption を有効にする\)** ダイアログ ボックスで **[はい]** をクリックし、暗号化が完了するまでに 10 分から 15 分かかる場合があることを示すメッセージを確認します。
 
 >[!IMPORTANT]
 > コマンドが完了するまで待ってから、この演習を続けます。
 
 ### <a name="verify-the-encryption-status-of-your-vm-disks"></a>VM ディスクの暗号化の状態を確認する
 
-Azure portal に切り替えて、**moneyappsvr01** の **[ディスク]** ブレードで、OS ディスクとデータ ディスクのディスク暗号化の状態が **[有効]** になっていることを確認します。
+Azure portal に切り替えます。 **moneyappsvr01** の **[ディスク]** ブレードで、OS ディスクとデータ ディスクのディスク暗号化の状態が **[有効]** になっていることを確認します。

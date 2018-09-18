@@ -1,154 +1,154 @@
-In this exercise, let's assume your company runs a Simple Mail Transfer Protocol (SMTP) email server. You want to migrate this server into Azure. You want the SMTP server to store incoming messages for your own domain in a folder called "Drop" on a dedicated VHD.
+この演習では、会社で簡易メール転送プロトコル (SMTP) メール サーバーを実行していると想定します。 このサーバーを Azure に移行したいと考えています。 また、SMTP サーバーで、自社ドメインの受信メッセージを、専用の VHD 上にある "Drop" というフォルダーに保存したいと考えています。
 
-The goal of the exercise is to create a Windows virtual machine (VM) and attach a new virtual hard disk (VHD) called "Incoming" to store the "Drop" directory.
+この演習の目標は、Windows 仮想マシン (VM) を作成し、"Drop" ディレクトリを保存する "Incoming" という新しい仮想ハード ディスク (VHD) を接続することです。
 
-## Sign in to Azure
+## <a name="sign-in-to-azure"></a>Azure へのサインイン
 <!---TODO: Need update for sanbox?--->
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-## Create a Windows VM in the Azure portal
+## <a name="create-a-windows-vm-in-the-azure-portal"></a>Azure portal で Windows VM を作成する
 
-To create a VM to host the SMTP server with its data drives, follow these steps:
+データ ドライブで SMTP サーバーをホストする VM を作成するには、次の手順を行います。
 
-1. Choose **Create a resource** in the upper left corner of the Azure portal.
+1. Azure portal の左上にある **[リソースの作成]** を選択します。
 
-1. In the search box above the list of Azure Marketplace resources, search for and select **Windows Server 2016 Datacenter**, and then choose **Create**.
+1. Azure Marketplace リソースの一覧の上にある検索ボックスで **Windows Server 2016 Datacenter** を検索して選択し、**[作成]** を選択します。
 
-1. In the **Basics** pane that opens to the right, enter the following property values. 
+1. 右側に表示される **[Basics]** ウィンドウで、次のプロパティ値を入力します。 
 
 
-|Property  |Value  |Notes  |
+|プロパティ  |値  |メモ  |
 |---------|---------|---------|
-|Name     |   **MailSenderVM**      |         |
-|VM disk type     |  **Standard HDD**       |   Select this value from the dropdown.      |
-|User name     |  **mailmaster**       |         |
-|Password     |  The password must be at least 12 characters long and meet the [defined complexity requirements](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm).       | Make sure to remember this user name and password because we'll use them throughout the module.         |
-|Subscription     |  Choose your subscription.       |  Select this value from the dropdown.       |
-|Resource group     |  Select **Create new**, and then type **MailInfrastructure**.       |  We'll gather all resource used in this module into one resource group.       |
-|Location     |   A location near you.      | Select this value from the dropdown.        |
+|名前     |   **MailSenderVM**      |         |
+|VM ディスクの種類     |  **Standard HDD**       |   ドロップダウン リストからこの値を選択します。      |
+|ユーザー名     |  **mailmaster**       |         |
+|パスワード     |  パスワードは 12 文字以上で、[定義された複雑さの要件](https://docs.microsoft.com/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm)を満たす必要があります。       | このユーザー名とパスワードはモジュール全体で使用するため、記憶しておいてください。         |
+|サブスクリプション     |  サブスクリプションを選択します。       |  ドロップダウン リストからこの値を選択します。       |
+|リソース グループ     |  **[新規作成]** を選択して、「**MailInfrastructure**」と入力します。       |  このモジュールで使用されるすべてのリソースを 1 つのリソース グループに集めます。       |
+|場所     |   お近くの場所を選択します。      | ドロップダウン リストからこの値を選択します。        |
 
-4. Select **OK** at the bottom of the **Basics** page to continue to the **Size** configuration pane.
+4. **[Basics]** ページの下部にある **[OK]** を選択して、**[サイズ]** 構成パネルに進みます。
 
-1. In the **Size** configuration pane, search for and select **B1ms**, and then click **Select**.
+1. **[サイズ]** 構成ウィンドウで、**B1ms** を検索して選択し、**[選択]** をクリックします。
 
-1. In the **Settings** pane, under **Use managed disks**, click **No**. We'll discuss managed disks later in this module.
+1. **[設定]** ウィンドウの **[マネージド ディスクの使用]** で **[いいえ]** をクリックします。 マネージド ディスクについては、このモジュールで後述します。
 
-1. In the **Select public inbound ports** dropdown list, select **RDP (3389)**. We'll use this port to remote into our VM after it's created.
+1. **[パブリック受信ポートを選択]** で **[RDP (3389)]** を選択します。 作成後、このポートを使用して VM にリモート接続します。
 
-1. Leave all the other settings at their default, and then click **OK**.
+1. 他のすべての設定を既定値のままにして、**[OK]** をクリックします。
 
-1. In the **Create** pane, review the configuration.
+1. **[作成]** ウィンドウで、構成を確認します。
 
-1. When you have reviewed the configuration,  select **Create**. Azure creates and starts the new VM.
+1. 構成を確認したら、**[作成]** を選択します。 Azure で新しい VM を作成して起動します。
 
 > [!TIP]
-> Creating your VM and deploying it in Azure can take a few minutes. You can watch the progress in the **Notifications** hub. Azure will display a notification dialog when it finishes.
+> VM を作成して Azure にデプロイするには、数分かかることがあります。 進行状況は、**[通知]** ハブで見ることができます。 Azure では、終了時に通知ダイアログが表示されます。
 
-## Add an empty data disk to our VM
+## <a name="add-an-empty-data-disk-to-our-vm"></a>空のデータ ディスクを VM に追加する
 
-We're going to name the disk stores the "Drop" directory for your SMTP server "Incoming". Let's add a new empty disk to the server using the following steps:
+SMTP サーバーの "受信" 用のディスク ストアに "Drop" ディレクトリと名前を付けます。 次の手順で新しい空のディスクをサーバーに追加してみましょう。
 
-1. In the navigation on the left, under **FAVORITES**, select **Virtual machines**.
+1. 左側のナビゲーションの **[お気に入り]** で、**[Virtual Machines]** を選択します。
 
-1. In the list of VMs, select **MailSenderVM**.
+1. VM の一覧で、**[MailSenderVM]** を選択します。
 
-1. Under **SETTINGS** of the **MailSenderVM** configuration menu on the left, select **Disks**.
+1. 左側の **[MailSenderVM]** 構成メニューの **[設定]** で、**[ディスク]** を選択します。
 
-1. Under **Data disks**, select **Add data disk**.
+1. **[データ ディスク]** で、**[データ ディスクの追加]** を選択します。
 
-1. In the **Attach unmanaged disks** pane, set the following properties.
+1. **[アンマネージド ディスクの接続]** ウィンドウで、次のプロパティを設定します。
 
 
-|Property  |Value  |Notes  |
+|プロパティ  |値  |メモ  |
 |---------|---------|---------|
-|Name     |   **MailSenderVMIncoming**      |         |
-|Source type     |  **New (empty disk)**       |   Select this value from the dropdown.       |
-|Account type     |  **Standard HDD**       |  Select this value from the dropdown.        |
+|名前     |   **MailSenderVMIncoming**      |         |
+|ソースの種類     |  **新規 (空のディスク)**       |   ドロップダウン リストからこの値を選択します。       |
+|アカウントの種類     |  **Standard HDD**       |  ドロップダウン リストからこの値を選択します。        |
 
 
-6. To the left of the **Storage container** field, select **Browse**.
+6. **[ストレージ コンテナー]** フィールドの左で、**[参照]** を選択します。
 
-1. In the list of storage accounts, search for the storage account whose name begins with **mailinfrastructure** and select it.
+1. ストレージ アカウントの一覧で、**mailinfrastructure** から始まる名前のストレージ アカウントを検索して選択します。
 
-1. In the list of containers, click **vhds** and then choose **Select**.
+1. コンテナーの一覧で **[vhd]** をクリックし、**[選択]** を選択します。
 
-1. Back on the **Attach unmanaged disk** screen, select **OK**.
+1. **[アンマネージド ディスクの接続]** 画面に戻り、**[OK]** を選択します。
 
-1. Back on the **MailSenderVM - Disks** screen, select **Save**.
+1. **[MailSenderVM - ディスク]** 画面に戻り、**[保存]** を選択します。
 
-We've now defined a disk called **MainSenderVMIncoming**. To use the disk, we'll first need to partition and format it when we log into the VM. 
+ここでは、**MainSenderVMIncoming** というディスクを定義しました。 ディスクを使用するには、まず VM にログインするときにディスクをパーティション分割してフォーマットする必要があります。 
 
-## Partition and format a data disk
+## <a name="partition-and-format-a-data-disk"></a>データ ディスクのパーティション分割とフォーマット
 
-As with physical disks, initiate and format a partition on a VHD before it can be used.
+物理ディスクと同様に、使用する前に VHD 上のパーティションを初期化してフォーマットします。
 
-### Log into our Windows VM using RDP
+### <a name="log-into-our-windows-vm-using-rdp"></a>RDP を使用して Windows VM にログインする
 
-1. In the **MailSenderVM** virtual machine main screen, select **Overview**.
+1. **MailSenderVM** 仮想マシンのメイン画面で、**[概要]** を選択します。
 
-1. Select **Connect** from the top left of the overview screen.
+1. 概要画面の左上から **[接続]** を選択します。
 
-1. In the **Connect to virtual machine** dialog that opens on the right, select **Download to RDP File**.
+1. 右側に表示される **[仮想マシンに接続する]** ダイアログで、**[Download to RDP File]\(RDP ファイルにダウンロード\)** を選択します。
 
-   ![Screenshot of the "Connect to virtual machine" dialog with the "Download RDP file" button highlighted.](../media-draft/download-rdp.png)
+   ![[Download to RDP File]\(RDP ファイルにダウンロード\) ボタンが強調表示された [仮想マシンに接続する] ダイアログのスクリーンショット。](../media-draft/download-rdp.png)
 
-4. A file called **MailSenderVM.rdp** is downloaded to your local `Downloads` folder. This file is the remote desktop configuration file for the MailSenderVM virtual machine. Open the file to start the connection process.
+4. **MailSenderVM.rdp** というファイルがローカルの `Downloads` フォルダーにダウンロードされます。 このファイルは、MailSenderVM 仮想マシンのリモート デスクトップ構成ファイルです。 ファイルを開き、接続プロセスを開始します。
 
-1. In the **Remote Desktop Connection** dialog, click **Connect**.
+1. **[リモート デスクトップ接続]** ダイアログで、**[接続]** をクリックします。
 
-1. In the **Windows Security** dialog, click **Use another account**.
+1. **[Windows セキュリティ]** ダイアログで、**[別のアカウントを使用]** をクリックします。
 
-1. In the **Username** textbox, type **mailmaster**.
+1. **[ユーザー名]** ボックスに、「**mailmaster**」と入力します。
 
-1. In the **Password** textbox, type the password you entered for this user name in this exercise. 
+1. **[パスワード]** ボックスに、この演習でこのユーザー名に入力したパスワードを入力します。 
 
-1. In the **Remote Desktop Connection** dialog, click **Yes**.
+1. **[リモート デスクトップ接続]** ダイアログで、**[はい]** をクリックします。
 
-A remote desktop session to the virtual machine is now started. It might take a few moments to sign in for the first time. When sign-in is finished, the **Server Manager** tool will be displayed on the screen.
+仮想マシンへのリモート デスクトップ セッションが開始されます。 初めてサインインするには数分かかる場合があります。 サインインが完了すると、**サーバー マネージャー** ツールが画面に表示されます。
 
-### Partition and format our data disk using Server Manager
+### <a name="partition-and-format-our-data-disk-using-server-manager"></a>サーバー マネージャーを使用してデータ ディスクをパーティション分割してフォーマットする
 
-1. When **Server Manager** is displayed, select **File and Storage Services** in the navigation on the left.
+1. **サーバー マネージャー**が表示されたら、左側のナビゲーションで **[ファイル サービスと記憶域サービス]** を選択します。
 
-1. Under **Volumes**, select **Disks**.
+1. **[ボリューム]** で **[ディスク]** を選択します。
 
-1. In the list of disks, disk **0** is the operating system disk and disk **1** is the temporary disk. Select disk **2**, which is the new VHD you just added.
+1. ディスクの一覧で、ディスク **0** はオペレーティング システムのディスク、ディスク **1** は一時ディスクです。 追加したばかりの新しい VHD であるディスク **2** を選択します。
 
-1. At the top of the **VOLUMES** pane, select **TASKS** followed by **New Volume...**. The menu is in the top right of the screen as follows.
+1. **[ボリューム]** ウィンドウの上部で、**[タスク]**、**[新しいボリューム]** の順に選択します。次のように、メニューは画面の右上に表示されます。
 
-   ![Screenshot of "TASKS" menu expanded to reveal three menu items. They are "New Volume...", "Rescan Storage", and "Refresh".](../media-draft/tasks-menu.png)
+   ![展開され、3 つのメニュー項目が表示された [タスク] メニューのスクリーンショット。 [新しいボリューム]、[記憶域の再スキャン]、[更新] という項目があります。](../media-draft/tasks-menu.png)
 
 
-1. In the **New Volume** wizard, click **Next**.
+1. **[新しいボリューム]** ウィザードで **[次へ]** をクリックします。
 
-1. In the **Select server and disk** page, select **MailSenderVM** and **Disk 2**, and then click **Next**.
+1. **[サーバーとディスクの選択]** ページで **[MailSenderVM]** と **[ディスク 2]** を選択し、**[次へ]** をクリックします。
 
-1. In the **Offline or Uninitiated Disk** dialog, click **OK**.
+1. **[オフラインまたは未初期化のディスク]** ダイアログで **[OK]** をクリックします。
 
-1. In the **Specify the size of the volume** page, click **Next**.
+1. **[ボリュームのサイズの指定]** ページで、**[次へ]** をクリックします。
 
-1. In the **Assign a drive letter** page, select **F:** followed by **Next**.
+1. **[ドライブ文字を割り当てる]** ページで **[F:]**、**[次へ]** の順に選択します。
 
-1. In the **Select file system settings** page, in the **Volume label** textbox, type **Incoming** and then select **Next**.
+1. **[ファイル システム形式の選択]** ページで、**[ボリューム ラベル]** ボックスに「**Incoming**」と入力し、**[次へ]** を選択します。
 
-1. In the **Confirm selections** page, select **Create**. Windows initiates the disk and formats the new partition.
+1. **[選択内容の確認]** ページで、**[作成]** を選択します。 Windows でディスクを初期化し、新しいパーティションをフォーマットします。
 
-1. In the **Completion** page, select **Close**.
+1. **[完了]** ページで **[閉じる]** を選択します。
 
-Let's have a look at our new disk volume in File Explorer. 
-1. Open **File Explorer**.
+エクスプローラーで新しいディスク ボリュームを見てみましょう。 
+1. **エクスプローラー**を開きます。
 
-1. In the navigation in the left, click **This PC** and then double-click **Incoming (F:)**.
+1. 左側のナビゲーションで **[PC]** をクリックし、**[Incoming (F:)]** をダブル クリックします。
 
-1. Select **Home**, and then **New Folder**.
+1. **[ホーム]** を選択し、**[新しいフォルダー]** を選択します。
 
-1. Type **Drop** and then press Enter.
+1. 「**Drop**」と入力し、Enter キーを押します。
 
-We now have a new volume created on our VHD called **Incoming**, and we've created a folder called **Drop** on that volume.  
+VHD 上に **Incoming** という新しいボリュームが作成され、そのボリュームに **Drop** という名前のフォルダーが作成されました。  
 
-1. Close Windows Explorer.
+1. Windows のエクスプローラーを閉じます。
 
-1. On the **Task Bar**, click the **Start** button, click the **Power** button, and then click **Disconnect**.
+1. **タスク バー** の **[スタート]** ボタンをクリックし、**[電源]** ボタンをクリックして **[切断]** をクリックします。
 
-Congratulations! You've successfully created a Windows VM, attached a new VHD, created a volume on that VHD and added a folder to that volume. If you recall, the disk type we used for the new VHD was a **Standard HDD**. In the next unit, we'll learn the differences between standard and premium storage. 
+お疲れさまでした。 Windows VM を作成し、新しい VHD を接続し、その VHD にボリュームを作成し、そのボリュームにフォルダーを追加しました。 前述のように、新しい VHD に使用したディスクの種類は **Standard HDD** でした。 次のユニットでは、Standard Storage と Premium Storage の違いについて学習します。 

@@ -1,6 +1,7 @@
 Xamarin および Azure 関数と Twilio バインディングを使用してクロスプラットフォーム モバイル アプリを正しく作成できました。
 
-## <a name="clean-up-resources"></a>リソースのクリーンアップ
+## <a name="clean-up"></a>クリーンアップ
+<!---TODO: Update for sandbox?--->
 
 この Azure Functions アプリケーションの作業が終わったら、チュートリアルの間に作成したすべてのリソースを、Azure portal を使用して削除できます。
 
@@ -25,6 +26,7 @@ Xamarin および Azure 関数と Twilio バインディングを使用してク
 ## <a name="summary"></a>まとめ
 
 このモジュールでは、次の方法を説明しました。
+
 - Xamarin.Essentials を使用するクロスプラットフォームの Xamarin.Forms アプリを作成しました。
 - ViewModel のアプリケーション ロジックを含む XAML を使用してクロスプラットフォームの UI を作成し、UI に ViewModel のプロパティをバインドしました。
 - ユーザーの場所を検出しました。

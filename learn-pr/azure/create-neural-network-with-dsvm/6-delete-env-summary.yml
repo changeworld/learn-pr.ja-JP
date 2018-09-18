@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3da26d441ba50b12067e9603733dfe79ad57df7d
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531244"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45786840"
 labId: 45996
 durationInMinutes: 5
 content: '[!include[](includes/6-delete-env-summary.md)]'

@@ -42,7 +42,10 @@ Azure Virtual Machines の SQL Server では、Azure ハイブリッド特典は
 
 ## <a name="use-devtest-subscription-offers"></a>Dev/Test サブスクリプション オファーを使用する
 
-[Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) および[開発テスト用の従量課金制プラン](https://azure.microsoft.com/offers/ms-azr-0023p/) オファーは、非運用環境でコストを節約するために利用できる特典です。 この特典ではいくつかの割引が適用されます。特に Windows ワークロードの場合、ライセンス料金が不要となり、仮想マシン用の Linux 料金でのみ課金されます。 これは SQL Server や、Visual Studio サブスクリプション (旧 MSDN) の対象となるその他の Microsoft ソフトウェアにも適用されます。 この特典に関する要件がいくつかあります。1 つは非運用ワークロード専用であること、もう 1 つはこれらの環境のすべてのユーザー (テスト担当者を除く) は Visual Studio サブスクリプションの対象でなければならないということです。 つまり、非運用ワークロードの場合、Windows、SQL Server、およびその他の Microsoft 仮想マシンのワークロードにかかるコストを節約できます。
+[Enterprise Dev/Test](https://azure.microsoft.com/offers/ms-azr-0148p/) および[開発テスト用の従量課金制プラン](https://azure.microsoft.com/offers/ms-azr-0023p/) オファーは、非運用環境でコストを節約するために利用できる特典です。 この特典ではいくつかの割引が適用されます。特に Windows ワークロードの場合、ライセンス料金が不要となり、仮想マシン用の Linux 料金でのみ課金されます。 これは SQL Server や、Visual Studio サブスクリプション (旧 MSDN) の対象となるその他の Microsoft ソフトウェアにも適用されます。 
+
+この特典に関する要件がいくつかあります。1 つは非運用ワークロード専用であること、もう 1 つはこれらの環境のすべてのユーザー (テスト担当者を除く) は Visual Studio サブスクリプションの対象でなければならないということです。 つまり、非運用ワークロードの場合、Windows、SQL Server、およびその他の Microsoft 仮想マシンのワークロードにかかるコストを節約できます。
+
 以下に各オファーの詳細を示します。 Enterprise Agreement のお客様の場合、Enterprise Dev/Test オファーを活用します。Enterprise Agreement をご利用でないお客様で、代わりに PAYG アカウントを使用する場合は、開発テスト用の従量課金制プラン オファーを活用します。
 
 ## <a name="bring-your-own-sql-server-license"></a>SQL Server ライセンスを持ち込む

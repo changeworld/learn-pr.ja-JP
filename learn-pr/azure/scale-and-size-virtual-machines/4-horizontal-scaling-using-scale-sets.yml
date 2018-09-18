@@ -4,11 +4,17 @@ title: スケール セットを使用した水平スケーリング
 metadata:
   title: スケール セットを使用した水平スケーリング
   description: スケール セットを使用した水平スケーリング
-  ms.openlocfilehash: 529f5c9b7497fd4c347d387163442c7afe25caa9
-  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 83e0122eff34812a5bf01062e8489595de9b2da5
+  ms.sourcegitcommit: f2840ec28bdc67f6f74d74d7f28f1d6dc13169fb
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44256201"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45966114"
+azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/4-horizontal-scaling-using-scale-sets.md)]'

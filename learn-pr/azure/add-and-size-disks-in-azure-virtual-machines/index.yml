@@ -1,23 +1,32 @@
 ### YamlMime:Module
 uid: learn.add-and-size-disks-in-azure-virtual-machines
 metadata:
-  title: Add and size disks in Azure virtual machines
-  description: Selecting the right storage for your VMs is important. You have to choose between standard and premium storage, managed and unmanaged disks, disk size and other parameters. In this module, we'll explore our options and practice working with disks (VHD files).
+  title: Azure Virtual Machines でのディスクの追加とサイズ
+  description: VM に適切なストレージを選択することが重要です。 Standard Storage または Premium Storage、マネージド ディスクまたはアンマネージド ディスク、ディスクのサイズおよびその他のパラメーターを選択する必要があります。 このモジュールでは、ディスク (VHD ファイル) 使用のオプションとプラクティスについて学習します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Add and size disks in Azure virtual machines
-summary: Understand and create the different types of disk storage available to Azure virtual machines (VMs).
-abstract: |
-  In this module, you will:
-  - Create a Windows virtual machine (VM)
-  - Configure and attach virtual hard drives (VHDs) to an existing VM
-  - Add premium storage to an existing VM
-  - Migrate disks in a VM to managed disks
-prerequisites: None
+  ms.openlocfilehash: 0c9ba50e2692df1fe33d763f741dbe4d24d5affd
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240262"
+title: Azure Virtual Machines でのディスクの追加とサイズ
+summary: Azure Virtual Machines (VM) で使用可能なさまざまな種類のディスク ストレージを理解して作成します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Windows 仮想マシン (VM) を作成する
+
+  - 既存の VM に仮想ハード ドライブ (VHD) を構成してアタッチする
+
+  - 既存の VM に Premium Storage を追加する
+
+  - VM のディスクをマネージド ディスクに移行する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1d410e26b11d205996db301ee6daa93cab8f417c
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45530648"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45785055"
 title: RBAC の変更のアクティビティ ログを表示する
 labId: 45985
 durationInMinutes: 5

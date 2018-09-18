@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 45b2e1a2bd7f8f66be6ea63e1159378a33e11c5b
-  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/14/2018
-  ms.locfileid: "45621190"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45775382"
 title: Azure Container Instances の概要
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

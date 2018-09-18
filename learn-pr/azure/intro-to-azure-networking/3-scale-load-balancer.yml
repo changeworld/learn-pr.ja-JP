@@ -4,12 +4,17 @@ title: Azure Load Balancer を使用したスケーリング
 metadata:
   title: Azure Load Balancer を使用したスケーリング
   description: Azure Load Balancer が地理的リージョン内のスケーリングと回復性の実現にどのように役立つかについて学習します。
-  ms.openlocfilehash: 6174280c8013e6c2ca5cec461cc6352734f0f6a5
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: da1339478d3292b0624a9386fe0ca70059399d21
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477768"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44246516"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-scale-load-balancer.md)]

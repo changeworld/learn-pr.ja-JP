@@ -102,11 +102,12 @@ Azure キー コンテナーを作成し、そこに 2 つのシークレット�
 
 ```azurecli
 az container create \
-    --resource-group myResourceGroup \
+    --resource-group <rgn>[Sandbox resource group name]</rgn> \
     --name acr-build \
     --image $ACR_NAME.azurecr.io/helloacrbuild:v1 \
     --registry-login-server $ACR_NAME.azurecr.io \
     --ip-address Public \
+    --location eastus \
     --registry-username $(az keyvault secret show --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --query value -o tsv) \
     --registry-password $(az keyvault secret show --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --query value -o tsv)
 ```

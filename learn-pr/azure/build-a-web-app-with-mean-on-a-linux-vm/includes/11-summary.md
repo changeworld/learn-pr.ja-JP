@@ -6,3 +6,5 @@
 - Node.js (サーバー側 Web アプリケーション機能用)。
 
 MEAN スタック環境を整えた後、簡単な書籍在庫 Web アプリケーションを作成して、Linux VM 上で動作するアプリケーションを実行しました。
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

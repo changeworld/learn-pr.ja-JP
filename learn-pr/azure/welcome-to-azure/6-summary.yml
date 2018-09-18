@@ -10,10 +10,10 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
-  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.sourcegitcommit: f218500bf1cea3a82c8de62a5a1617e1b938108a
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44495166"
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45999629"
 durationInMinutes: 1
 content: '[!include[](includes/6-summary.md)]'

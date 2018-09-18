@@ -76,7 +76,8 @@ PowerShell を起動し、スクリプト ファイルを保存してあるデ�
 
 スクリプトが終了するまでに数分かかる場合があります。 スクリプトが終了したら、正常に実行されたことを確認します。
 
-1. ブラウザー内で、Azure Portal にサインインします。
+<!---TODO: Update for sandbox?--->
+1. ブラウザー内で、[Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
 1. 左側のナビゲーションで、**[リソース グループ]** をクリックします。
 

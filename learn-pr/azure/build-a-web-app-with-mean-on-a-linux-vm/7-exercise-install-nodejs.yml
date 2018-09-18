@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: db21bdc10a89856f29105a3e6b8edf6b806ec347
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531583"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45779700"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

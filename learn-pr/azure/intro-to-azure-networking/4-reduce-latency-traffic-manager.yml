@@ -1,15 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
-title: Traffic Manager を使用して待ち時間を短縮する
+title: Azure Traffic Manager を使用して待ち時間を短縮する
 metadata:
-  title: Traffic Manager を使用して待ち時間を短縮する
-  description: Traffic Manager を使用することで、どのように待ち時間を短縮し、地理的リージョン全体での回復性を高められるかを学習します。
-  ms.openlocfilehash: fa64f6d6e7bfe0f991bf15002f24690a2c02f0fd
-  ms.sourcegitcommit: 40481ae733648a8b13402bf276d7acfd4da440f6
+  title: Azure Traffic Manager を使用して待ち時間を短縮する
+  description: Traffic Manager を使用することで待ち時間を短縮し、地理的リージョン全体での回復性を高めるしくみを学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2854e558ad14d17c96555168509524cd58c8c14c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/03/2018
-  ms.locfileid: "43477816"
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44241768"
 durationInMinutes: 7
 content: >
   [!include[](includes/4-reduce-latency-traffic-manager.md)]

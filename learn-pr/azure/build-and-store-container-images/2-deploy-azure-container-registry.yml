@@ -8,14 +8,14 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 34422aa18a9293b82c78d1e5d2eacb0364ea163a
-  ms.sourcegitcommit: 8213d1af6ad9da967a5e195f0b40b00265cb192c
+  ms.openlocfilehash: 813daa5b1173ddbd1c7e58f2254fab2cffafbd53
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/10/2018
-  ms.locfileid: "44307284"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45770078"
 title: Azure Container Registry をデプロイする
-durationInMinutes: 10
+durationInMinutes: 2
 interactive: bash
 azureSandbox: true
 content: '[!include[](includes/2-deploy-acr.md)]'

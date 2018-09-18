@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: df367adfb0e9d78cca9ceb817e3c47bd4e4d1079
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45530835"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45786432"
 labId: 45996
 durationInMinutes: 20
 content: '[!include[](includes/4-create-client-app.md)]'

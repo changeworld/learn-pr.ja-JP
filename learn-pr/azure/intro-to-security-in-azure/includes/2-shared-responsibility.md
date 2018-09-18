@@ -1,81 +1,81 @@
-As computing environments move from customer-controlled datacenters to cloud datacenters, the responsibility of security also shifts. Security is now a concern shared both by cloud providers and customers. For every application and solution, it's important to understand what your responsibility is and what Azure will handle for you. 
+お客様によって管理されているデータセンターからクラウド データセンターへのコンピューティング環境の移行時に、セキュリティの責任も移行されます。 現在、セキュリティはクラウド プロバイダーとお客様の両方に共通の懸念事項です。 すべてのアプリケーションとソリューションにおいて、お客様が負う責任と、お客様に代わって Azure 側で処理される内容を理解しておくことが重要です。 
 
-## Share security responsibility with Azure
+## <a name="share-security-responsibility-with-azure"></a>セキュリティの責任を Azure と共有する
 
-The first shift is from on-premises datacenters to infrastructure as a service (IaaS). With IaaS, you are leveraging the lowest-level service and asking Azure to create virtual machines (VMs) and virtual networks. At this level, it's still your responsibility to patch and secure your operating systems and software, as well as configure your network to be secure. Contoso Shipping is taking advantage of IaaS when they start using Azure VMs instead of their on-premises physical servers. In addition to the operational advantages, they receive the security advantage of having outsourced concern over protecting the physical parts of the network.
+最初の移行は、オンプレミスのデータ センターからサービスとしてのインフラストラクチャ (IaaS) への移行です。 IaaS の場合は、最下位レベルのサービスを利用します。そして Azure で仮想マシン (VM) と仮想ネットワークを作成します。 このレベルでは、オペレーティング システムおよびソフトウェアに対してパッチを適用すること、これらをセキュリティで保護すること、さらにセキュリティで保護されるようにネットワークを構成することはお客様側の責任です。 Contoso Shipping では、自社のオンプレミスの物理サーバーに代えて Azure VM の使用を開始するときから、IaaS を活用しています。 運用上の利点に加えて、ネットワークの物理的な部分の保護に対する懸念を外部委託できるというセキュリティ上の利点があります。
 
-Moving to platform as a service (PaaS) outsources a lot of security concerns. At this level, Azure is taking care of the operating system and of most foundational software like database management systems. Everything is updated with the latest security patches and can be integrated with Azure Active Directory for access controls. PaaS also comes with a lot of operational advantages. Rather than building whole infrastructures and subnets for your environments by hand, you can "point and click" within the Azure portal or run automated scripts to bring complex, secured systems up and down, and scale them as needed. Contoso Shipping uses Azure Event Hubs for ingesting telemetry data from their trucks. They also use a web app with an Azure Cosmos DB back end with their mobile apps. Those services are all examples of PaaS.
+サービスとしてのプラットフォーム (PaaS) への移行によって、セキュリティ上の懸念事項の多くが外部に委託されます。 このレベルでは、オペレーティング システムおよび最も基本的なソフトウェア (データベース管理システムなど) に対応します。 すべてが最新のセキュリティ パッチで更新されます。また、すべてを Active Directory に統合してアクセス制御を行うことができます。 PaaS には、数多くの運用上の利点があります。 ご利用の環境に合わせてインフラストラクチャおよびサブネット全体を手動で構築するのではなく、Azure portal 内で "ポイントしてクリック" するか、または自動化されたスクリプトを実行することで、セキュリティで保護された複雑なシステムをアップまたはダウン状態にしたり、必要に応じてそれらのシステムをスケーリングしたりすることができます。 Contoso では、トラックの利用統計情報を取り込むためにイベント ハブを使用しています。 CosmosDb バック エンドとモバイル アプリを備えた Web アプリを使用しています。 これらのサービスはすべて PaaS の例です。
 
-With software as a service (SaaS), you outsource almost everything. SaaS is software that runs with an internet infrastructure. The code is controlled by the vendor, but configured to be used by the customer. Like so many companies, Contoso Shipping uses Office 365, which is a great example of SaaS!
+サービスとしてのソフトウェア (SaaS) の場合は、ほぼすべてを外部委託できます。 SaaS はインターネット インフラストラクチャで実行されるソフトウェアです。そのコードはベンダーによって管理されますが、お客様が使用できるように構成されます。 多くの企業と同様に Contoso でも、SaaS の良い例である Office 365 を使用しています。
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![shared_responsibility.png](../media-COPIED-FROM-DESIGNFORSECURITY/shared_responsibilities.png)
 
-## A layered approach to security
+## <a name="a-layered-approach-to-security"></a>セキュリティへの階層型アプローチ
 
-*Defense in depth* is a strategy that employs a series of mechanisms to slow the advance of an attack aimed at acquiring unauthorized access to information. Each layer provides protection so that if one layer is breached, a subsequent layer is already in place to prevent further exposure. Microsoft applies a layered approach to security, both in our physical datacenters and across Azure services. The objective of defense in depth is to protect and prevent information from being stolen by individuals who are not authorized to access it.
+*多層防御*は、情報への不正なアクセスを目的とする攻撃の進行を遅らせる一連のメカニズムを採用する戦略です。 各層で保護が提供されるため、1 つの層が破られた場合、後続の層は既に備えができており、さらなる露出を防ぐことができます。 Microsoft では、自社の物理データセンター内と Azure サービス間の両方でのセキュリティに階層型アプローチを適用しています。 多層防御の目的は、情報を保護し、情報へのアクセスが許可されていない個人から盗まれないようにすることです。
 
-Defense in depth can be visualized as a set of concentric rings, with the data to be secured at the center. Each ring adds an additional layer of security around the data. This approach removes reliance on any single layer of protection and acts to slow down an attack and provide alert telemetry that can be acted upon, either automatically or manually. Let's take a look at each of the layers.
+多層防御は、同心円状の輪のセットとして視覚化でき、データは中央でセキュリティ保護されます。 各輪では、データに関するセキュリティ層が追加されます。 このアプローチでは、単一の保護層に依存する必要がなくなり、攻撃速度を落とすことができます。また、自動または手動によるアラート テレメトリが提供されます。 それでは各層を見ていきましょう。
 
 <!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Defense in depth](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
+![多層防御](../media-COPIED-FROM-DESIGNFORSECURITY/defense_in_depth_layers_small.PNG)
 
-### Data
+### <a name="data"></a>データ
 
-In almost all cases, attackers are after data:
+ほとんどすべての場合、攻撃者は次のようなデータを狙っています。
 
-- Data stored in a database
-- Data stored on disk inside virtual machines
-- Data stored on an SaaS application such as Office 365
-- Data stored in cloud storage
+- データベースに格納されたデータ
+- 仮想マシン内のディスク上に格納されたデータ
+- Office 365 などの SaaS アプリケーションに格納されたデータ
+- クラウド ストレージに格納されたデータ
 
-It's the responsibility of those storing and controlling access to data to ensure that it's properly secured. Often, there are regulatory requirements that dictate the controls and processes that must be in place to ensure the confidentiality, integrity, and availability of the data.
+適切にセキュリティで保護されるように、データを格納し、データへのアクセスを制御する必要があります。 多くの場合、データの機密性、整合性、可用性を確保するために適用する必要がある制御とプロセスを示す規制上の要件があります。
 
-### Application
+### <a name="applications"></a>アプリケーション
 
-- Ensure applications are secure and free of vulnerabilities.
-- Store sensitive application secrets in a secure storage medium.
-- Make security a design requirement for all application development.
+- アプリケーションがセキュリティで保護されており、脆弱性がないようにします
+- 機密性の高いアプリケーション シークレットをセキュリティで保護されたストレージ メディアに格納します
+- すべてのアプリケーション開発に関する設計要件を安全なものにします
 
-Integrating security into the application development life cycle will help reduce the number of vulnerabilities introduced in code. Encourage all development teams to ensure their applications are secure by default, and that they're making security requirements non-negotiable.
+アプリケーション開発のライフ サイクルにセキュリティを統合することは、コードにおける脆弱性の数を減らすのに役立ちます。 すべての開発チームが既定でアプリケーションをセキュリティで保護するようにし、セキュリティ要件を交渉の余地のないものにします。
 
-### Compute
+### <a name="compute"></a>コンピューティング
 
-- Secure access to virtual machines.
-- Implement endpoint protection and keep systems patched and current.
+- 仮想マシンへのアクセスをセキュリティで保護します
+- エンドポイント保護を実装し、システムにパッチを適用して最新の状態に保ちます
 
-Malware, unpatched systems, and improperly secured systems open your environment to attacks. The focus in this layer is on making sure your compute resources are secure, and that you have the proper controls in place to minimize security issues.
+マルウェア、パッチが適用されていないシステム、適切にセキュリティ保護されていないシステムのために、環境が攻撃を受けやすくなってしまいます。 この層では、ご利用のコンピューティング リソースが安全であり、セキュリティの問題を最小限に抑えるために適切に制御していることを確認することに重点を置きます。
 
-### Networking
+### <a name="networking"></a>ネットワーク
 
-- Limit communication between resources.
-- Deny by default.
-- Restrict inbound internet access and limit outbound, where appropriate.
-- Implement secure connectivity to on-premises networks.
+- リソース間の通信を制限します
+- 既定で拒否します
+- 必要に応じて、インバウンド インターネット アクセスを限定し、アウトバウンドを制限します
+- オンプレミス ネットワークへのセキュリティで保護された接続を実装します
 
-At this layer, the focus is on limiting the network connectivity across all your resources to allow only what is required. By limiting this communication, you reduce the risk of lateral movement throughout your network.
+この層では、すべてのリソース間でのネットワーク接続を制限し、必要なもののみを許可することに重点を置きます。 この通信を制限することで、ネットワーク全体の侵入拡大のリスクを軽減することができます。
 
-### Perimeter
+### <a name="perimeter"></a>境界
 
-- Use distributed denial of service (DDoS) protection to filter large-scale attacks before they can cause a denial of service for end users.
-- Use perimeter firewalls to identify and alert on malicious attacks against your network.
+- 分散型サービス拒否 (DDoS) 保護を使用して、エンド ユーザーに対するサービス拒否が発生する前に大規模な攻撃をフィルター処理します
+- 境界ファイアウォールを使用して、ネットワークに対する悪意のある攻撃を識別し、警告します
 
-At the network perimeter, it's about protecting from network-based attacks against your resources. Identifying these attacks, eliminating their impact, and alerting on them is important to keep your network secure.
+ネットワーク境界で、リソースに対するネットワークベースの攻撃から保護する目的があります。 これらの攻撃を識別し、影響を排除し、警告することは、ネットワークを安全に保つために重要なことです。
 
-### Policies & access
+### <a name="policies--access"></a>ポリシーとアクセス
 
-- Control access to infrastructure and change control.
-- Use single sign-on and multi-factor authentication.
-- Audit events and changes.
+- インフラストラクチャへのアクセスを制御し、変更を制御します
+- シングル サインオンと多要素認証を使用します
+- イベントと変更を監査します
 
-The policy and access layer is all about ensuring identities are secure, access granted is only what is needed, and changes are logged.
+ポリシーとアクセス層では、ID がセキュリティで保護されていることと、付与されたアクセス権のみが必要であることと、変更がログに記録されていることを確認することに集中します。
 
-### Physical security
+### <a name="physical-security"></a>物理的なセキュリティ
 
-- Physical building security and controlling access to computing hardware within the datacenter is the first line of defense.
+- 物理的なセキュリティを構築し、データ センター内のコンピューティング ハードウェアへのアクセスを制御することが、防御の最前線となります。
 
-With physical security, the intent is to provide physical safeguards against access to assets. This ensures that other layers can't be bypassed, and loss or theft is handled appropriately.
+物理的なセキュリティの目的は、資産へのアクセスに対する物理的な保護措置を講じることです。 これにより、他の層をバイパスできなくなり、損失や盗難が適切に処理されるようになります。
 
-We've seen here that Azure helps a lot with your security concerns. But security is still a **shared responsibility**. How much of that responsibility falls on us depends on which model we use with Azure.
+ここでは、セキュリティに関するお客様の懸念事項の解消に Azure が大いに役立っていることを見てきました。 しかし、セキュリティは引き続き、**共有する責任**となります。 背負う必要がある責任の程度は、Azure で使用するモデルの種類によって異なります。
 
-We use the *defense in depth* rings as a guideline for considering what protections are adequate for our data and environments.
+データや環境に適切な保護を検討するためのガイドラインとして、"*多層防御*" リングを使用します。

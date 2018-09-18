@@ -1,114 +1,114 @@
-Suppose you run a photo sharing site, with data stored on Azure virtual machines (VMs) running SQL Server and custom applications. You want to make the following adjustments:
+あなたは、写真共有サイトを運営しているとします。データは Azure Virtual Machines (VM) に格納され、SQL Server とカスタム アプリケーションを実行しています。 あなたは次の調整を行いたいと思っています。
 
-- You need to change the disk cache settings on a VM.
-- You want to add a new data disk to the VM with caching enabled.
+- VM でディスク キャッシュ設定を変更する必要がある
+- キャッシュを有効にして新しいデータ ディスクを VM に追加したい
 
-You've decided to make these changes through the Azure portal.
+あなたは、Azure portal でこれらの変更を行うことにしました。
 
-In this exercise, we'll walk through making the changes to a VM that we described above. First, let's sign in to the portal and create a VM.
+この演習では、先に説明した VM に実際に変更を加えます。 まず、ポータルにサインインして、VM を作成しましょう。
 
-## Sign in to the Azure portal
+## <a name="sign-in-to-the-azure-portal"></a>Azure portal にサインインする
 <!---TODO: Update for sandbox?--->
 
-1. Sign in to the [Azure portal](https://portal.azure.com/?azure-portal=true).
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) にサインインします。
 
-## Create a virtual machine
+## <a name="create-a-virtual-machine"></a>仮想マシンの作成
 
-In this step, we're going to create a VM with the following properties:
+この手順では、次のプロパティを持つ VM を作成します。
 
-|Property  |Value  |
+|プロパティ  |値  |
 |---------|---------|
-|Image     |   **Windows Server 2016 Datacenter**      |
-|Name     |   **fotoshareVM**     |
-|Resource group     |   **fotoshare-rg**      |
+|イメージ     |   **Windows Server 2016 Datacenter**      |
+|名前     |   **fotoshareVM**     |
+|リソース グループ     |   **fotoshare-rg**      |
 
 
-1. In the left menu of the portal, select **Virtual machines**.
+1. ポータルの左側のメニューで **[Virtual Machines]** を選択します。
 
-1. Now select **+ Add** in the top left of the **Virtual machines** screen. This action starts the creation process.
+1. 次に、**[Virtual Machines]** 画面の左上の **[+ 追加]** を選択します。 これにより作成プロセスが開始します。
 
-1. On the **Compute** panel that lists available VM images, type *Windows Server 2016 Datacenter* into the search box.
+1. 使用可能な VM イメージを一覧表示する [コンピューティング] パネルで、検索ボックスに「*Windows Server 2016 Datacenter*」と入力します。
 
-1. Select **Windows Server 2016 Datacenter** from the search results, and then select **Create** to start the VM creation process.
+1. 検索結果から **[Windows Server 2016 Datacenter]** を選択し、**[作成]** を選択して VM の作成プロセスを開始します。
 
-1. In the **Basics** panel, in the **Name** box, enter **fotoshareVM**.
+1. **[基本]** パネルの **[名前]** ボックスに、「**fotoshareVM**」と入力します。
 
-1. In the **Username** and **Password**  boxes, enter a name and password for an administrator account on this server.
+1. **[ユーザー名]** ボックスと **[パスワード]** ボックスに、このサーバーの管理者アカウントの名前とパスワードを入力します。
 
-1. In the **Subscription** drop-down list, select your Azure subscription.
+1. **[サブスクリプション]** ドロップダウンでご自分の Azure サブスクリプションを選択します。
 
-1. Under **Resource Group**, select **Create new**, and in the box, type **fotoshare-rg**.
+1. **[リソース グループ]** で **[新規作成]** を選択し、ボックスに「**fotoshare-rg**」と入力します。
 
-1. In the **Location** drop-down list, select a region near you.
+1. **[場所]** ドロップダウン リストで、近くのリージョンを選択します。
 
-    The following is an example of what the **Basics** configuration looks like when filled out:
+次に、入力後の **[基本]** 構成の例を示します。
 
-    ![Screenshot of VM Basics config filled out.](../media-draft/vm-basics-settings.PNG)
+![VM の入力後の基本構成のスクリーンショット。](../media-draft/vm-basics-settings.PNG)
 
-1. Select **OK** to move on to the next step.
+1. **[OK]** を選択して、次のステップに進みます。
 
-You now need to choose a size for the VM, and then start the deployment:
-
-> [!IMPORTANT]
-> Remember that disk caching can't be changed for L-Series and B-series virtual machines. We'll select a different size.
-
-1. In the **Choose a size** section, select a **Standard** SKU, such as **F1s**, and then choose **Select**.
-
-1. Scroll down the **Settings** pane and observe that there is no option to configure disk caching. Let's accept the defaults on this step and choose **OK** at the bottom of the pane.
-
-1. On the **Create** panel, review the summary, and then choose **Create**.
-
-1. VM creation can take a while. Wait until the VM has deployed before continuing with the exercise. You'll get a message in the notification hub when the process is complete.
+次は、VM のサイズを選択して、デプロイを開始する必要があります。
 
 > [!IMPORTANT]
-> We'll use this VM in the next lesson, so keep it around for a while!
+> L シリーズと B シリーズの仮想マシンのディスク キャッシュは変更できないことに注意してください。 別のサイズを選択します。
 
-## View OS disk cache status in the portal
+1. **[サイズの選択]** セクションで、**[F1s]** などの **[Standard]** SKU を選択してから、**[選択]** を選択します。
 
-Once our VM is deployed, we can confirm the caching status of the OS disk using the following steps:
+1. **[設定]** ウィンドウを下にスクロールして、ディスク キャッシュを構成するオプションがないことを確認します。 この手順では既定値をそのまま使用して、ウィンドウの下部で **[OK]** を選択します。
 
-1. In the left menu, click **All resources**, and then select your VM,  **fotoshareVM**.
+1. **[作成]** パネルで、概要を確認してから、**[作成]** を選択します。
 
-1. On the **Virtual machine** screen, under **SETTINGS**, select **Disks**.
+1. VM の作成にはしばらく時間がかかることがあります。 VM がデプロイされるまで待ってから、演習を続けます。 プロセスが完了すると、Notification Hub にメッセージが表示されます。
 
-1. On the **Disks** pane, the VM has one disk, the OS disk. Its cache type is currently set to the default value of **Read/write**.
+> [!IMPORTANT]
+> この VM は次のレッスンで使用するため、しばらくの間このままにしておきます。
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/os-disk-rw.PNG)
+## <a name="view-os-disk-cache-status-in-the-portal"></a>ポータルで OS ディスク キャッシュの状態を表示する
 
-## Change the cache settings of the OS disk in the portal
+VM をデプロイすると、次の手順を使用して、OS ディスクのキャッシュ状態を確認できます。
 
-1. On the **Disks** pane, select **Edit** in the upper left of the screen.
+1. 左側のメニューで、**[すべてのリソース]** をクリックし、ご自分の VM **[fotoshareVM]** を選択します。
 
-1. Change the **HOST CACHING** value for the OS disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
+1. **[仮想マシン]** 画面の **[設定]** で、**[ディスク]** を選択します。
 
-1. This update takes a while. The reason is that changing the cache setting of an Azure disk detaches and reattaches the target disk. If it's the operating system disk, the VM is also restarted. You'll get a message similar to the following notification when the update has finished:
+1. **[ディスク]** ウィンドウでは、VM に 1 つのディスク (OS ディスク) があります。 そのキャッシュの種類は現在、既定値の **[読み取り/書き込み]** に設定されています。
 
-    ![Example of notification you receive when the cache setting update has completed.](../media-draft/vm-disk-update-complete.PNG)
+![OS ディスクとデータ ディスクのスクリーンショットでは、どちらも読み取り専用キャッシュに設定されています。](../media-draft/os-disk-rw.PNG)
 
-4. Once complete, the OS disk cache type is set to **Read-only**.
+## <a name="change-the-cache-settings-of-the-os-disk-in-the-portal"></a>ポータルで OS ディスクのキャッシュ設定を変更する
 
-Let's move on to data disk cache configuration. To configure a disk, we'll need to first create one.
+1. **[ディスク]** ウィンドウで、画面の左上の **[編集]** を選択します。
 
-## Add a data disk to the VM and set caching type
+1. OS ディスクの **[ホスト キャッシュ]** 値をドロップダウンを使用して **[読み取り専用]** に変更してから、画面の左上で **[保存]** を選択します。
 
-1. Back on the **Disks** view of our VM in the portal, go ahead and select **Add data disk**. An error immediately appears in the **Name** field, telling us that the field can't be empty. We don't have a data disk yet, so let's create one.
+1. この更新にはしばらく時間がかかります。 この理由は、Azure ディスクのキャッシュ設定を変更すると、対象となるディスクがデタッチされ再アタッチされるからです。 オペレーティング システム ディスクの場合は、VM も再起動されます。 更新が完了すると、次の通知のようなメッセージが表示されます。
 
-1. Click in the **Name** list, and then click **Create disk**.
+![キャッシュ設定の更新が完了したときに表示される通知の例。](../media-draft/vm-disk-update-complete.PNG)
 
-1. In the **Create managed disk** pane, in the **Name** box, type **fotosharesVM-data**.
+4. 完了すると、OS ディスクのキャッシュの種類が**読み取り専用**に設定されます。
 
-1. Under **Resource Group**, select **Use existing**, and select **fotoshare-rg** from the drop-down menu.
+データ ディスクのキャッシュの構成に進みましょう。 ディスクを構成するには、まずディスクを作成する必要があります。
 
-1. Select **Create** at the bottom of the screen.
+## <a name="add-a-data-disk-to-the-vm-and-set-caching-type"></a>データ ディスクを VM に追加してキャッシュの種類を設定する
 
-1. Wait until the disk has been created before continuing.
+1. ポータルでご自分の VM の **[ディスク]** ビューに戻り、**[データ ディスクの追加]** を選択します。 **[名前]** フィールドには、このフィールドを空にできないことを示すエラーがすぐに表示されます。 データ ディスクがまだないので、1 つ作成しましょう。
 
-1. Change the **HOST CACHING** value for our new data disk to **Read-only** using the drop-down list, and then select **Save** in the upper left of the screen.
+1. **[名前]** ボックスの一覧をクリックして、**[ディスクの作成]** をクリックします。
 
-1. Wait for the VM to update. Updating takes a while because Azure detaches and reattaches the data disk to change this setting.
+1. **[マネージド ディスクの作成]** ウィンドウで、**[名前]** ボックスに「**fotosharesVM-data**」と入力します。
 
-1. Once complete, the data disk cache type is set to **Read-only**.
+1. **[リソース グループ]** で **[既存のものを使用]** を選択し、ドロップダウン メニューから **[fotoshare rg]** を選択します。
 
-In this exercise, we used the Azure portal to configure caching on a new VM, change cache settings on an existing disk, and configure caching on a new data disk. The following screenshot shows the final configuration: 
+1. 画面の下部にある **[作成]** を選択します。
 
-![Screenshot of our OS and data disks, both set to Read-only caching.](../media-draft/disks-final-config-portal.PNG)
+1. ディスクが作成されるまで待ってから、次に進みます。
+
+1. 新しいデータ ディスクの **[ホスト キャッシュ]** 値をドロップダウンを使用して **[読み取り専用]** に変更してから、画面の左上で **[保存]** を選択します。
+
+1. VM が更新されるまで待ちます。 この設定を変更するため、Azure でデータ ディスクのデタッチと再アタッチが行われるため、更新にはしばらく時間がかかります。
+
+1. 完了すると、データ ディスクのキャッシュの種類が**読み取り専用**に設定されます。
+
+この演習では、Azure portal を使用して、新しい VM でキャッシュを構成し、既存ディスクのキャッシュ設定を変更し、新しいデータ ディスクでキャッシュを構成しました。 次のスクリーンショットは最終的な構成を示しています。 
+
+![OS ディスクとデータ ディスクのスクリーンショットでは、どちらも読み取り専用キャッシュに設定されています。](../media-draft/disks-final-config-portal.PNG)

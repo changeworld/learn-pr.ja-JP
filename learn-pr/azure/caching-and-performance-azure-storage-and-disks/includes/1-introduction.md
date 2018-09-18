@@ -1,14 +1,14 @@
-You manage your corporate database infrastructure of SQL Server VMs running in Azure. Times are good, and you need to scale up your operation, while still managing costs. Some database operations involve many reads of existing data. The regular invoice and reporting runs are write-heavy operations. You'd like to find a way to optimize your infrastructure to handle all operation types. Before investing in infrastructure improvements, you decide to explore VM disk caching options first.
+あなたは、Azure で実行されている SQL Server VM の会社のデータベース インフラストラクチャを管理しています。 業績はよく、コストを管理しながら業務を拡大する必要があります。 一部のデータベース操作には、多くの既存データの読み取りが必要です。 通常の請求書とレポートの実行は、書き込み負荷の高い操作です。 あなたは、あらゆる種類の操作を処理するために、インフラストラクチャを最適化する方法を見つけたいと思っています。 インフラストラクチャの改善に投資する前に、あなたはまず VM ディスクのキャッシュ オプションを調べることにしました。
 
-Caching is a common approach to speeding up computing resources. Azure supports a range of caching technologies to help optimize data access across the Azure landscape, including specific cache options for the Azure storage and disks used by Azure virtual machines (VMs).
+キャッシュは、コンピューティング リソースを高速化する一般的なアプローチです。 Azure では、Azure ランドスケープ全体のデータ アクセスの最適化に役立つさまざまなキャッシュ テクノロジをサポートしています。これには、Azure Storage と Azure Virtual Machines (VM) で使用されるディスクの固有のキャッシュ オプションが含まれます。
 
-We're going to explore all disk caching options in Azure, and manage disk caching with the portal and PowerShell.
+Azure のすべてのディスク キャッシュ オプションを確認し、ポータルおよび PowerShell を使用してディスク キャッシュを管理します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Describe the key considerations around disk performance in Azure (IOPS)
-- Describe the effects of caching on disk performance in Azure
-- Enable and manage cache settings with the Azure portal
-- Enable and manage cache settings with PowerShell
+- Azure (IOPS) のディスク パフォーマンスに関する重要な考慮事項について説明する
+- Azure のディスク パフォーマンスに対するキャッシュの影響を説明する
+- Azure portal でキャッシュ設定を有効化して管理する
+- PowerShell でキャッシュ設定を有効化して管理する

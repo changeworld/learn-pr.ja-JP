@@ -9,11 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 1710466fa1380a8ba5f0ca6d759409ecf5dd9571
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  zone_pivot_groups: platform-windows-mac
+  ms.openlocfilehash: 985c57299e63d92546669bdf5b6328b9259cb81d
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44244206"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45752245"
 durationInMinutes: 10
 content: '[!include[](includes/5-exercise-publish-an-asp.net-app-from-visual-studio.md)]'

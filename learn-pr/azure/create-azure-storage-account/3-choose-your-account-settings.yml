@@ -9,11 +9,11 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 78eb3c50e696cd1e6badd052fd1782d0f8b1c9fc
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 86463780f25a2aa164342d6539d35ec5586984af
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44236520"
-durationInMinutes: 7
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45753994"
+durationInMinutes: 5
 content: '[!include[](includes/3-choose-your-account-settings.md)]'

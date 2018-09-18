@@ -1,6 +1,6 @@
 直前のユニットでは、あらかじめ作成されているコンテナー イメージを使用して、基本的な Docker 操作をいくつか実行しました。 このユニットでは、カスタム コンテナー イメージを作成し、それらのイメージをパブリック コンテナー レジストリにプッシュし、それらのイメージからコンテナーを実行します。
 
-コンテナー イメージは手動で作成することも、いわゆる Dockerfile を使用してその作成プロセスを自動化することもできます。 お勧めするのは Dockerfile を使用した方法ですが、このユニットでは両方の方法を説明します。 手動プロセスを理解することで、Dockerfile を使用して自動化を行う場合に何が行われているのかをよく理解できるようにすることを意図しています。
+コンテナー イメージは手動で作成することも、いわゆる Dockerfile を使用してその作成プロセスを自動化することもできます。 お勧めするのは Dockerfile を使用した方法ですが、このユニットでは両方の方法を説明します。 手動プロセスを理解することで、Dockerfile を使用して自動化を行う場合に何が行われているのかをよく理解できます。
 
 ## <a name="manual-image-creation"></a>手動でのイメージの作成
 
@@ -11,7 +11,7 @@
 - ソフトウェアのインストールおよび構成の変更を行うことにより、コンテナーを変更します。
 - `docker capture` コマンドを使用して、コンテナーを新しいイメージに取り込みます。
 
-この最初の例では、Python を実行しているコンテナーのインスタンスを起動し、hello world アプリケーションを作成してから、コンテナーを新しいイメージに取り込みます。
+この最初の例では、Python を実行しているコンテナーのインスタンスを起動し、'Hello World' アプリケーションを作成してから、コンテナーを新しいイメージに取り込みます。
 
 まず、NGINX イメージからコンテナーを実行します。 このコマンドは、前のユニット実行したコマンドとは少し異なります。 実行中のコンテナーとのターミナル セッションを確立するので、`-t` および `-i` 引数を指定します。 これらの引数の組み合わせによって、実行状態のままで保持される疑似ターミナルを割り当てるように Docker は指示されます。 つまり、`-t` および `-i` 引数によって、実行中のコンテナーとの対話型セッションが作成されます。
 
@@ -23,11 +23,11 @@ docker run --name python-demo -ti python bash
 
 コマンドの実行後、ターミナル セッションはコンテナーの擬似ターミナルに切り替えられるはずです。 これはターミナルのプロンプトで確認できます。プロンプトが次に示すような内容に変化しているはずです。
 
-```bash
+```output
 root@d8ccada9c61e:/#
 ```
 
-この時点では、コンテナー内で作業しています。 コンテナー内での作業は、仮想システムまたは物理システム内での作業によく似ていることがわかります。 たとえば、ファイルの一覧表示、作成、および削除、ソフトウェアのインストール、構成の変更を行うことができます。 この簡単な例では、Python ベースの hello world スクリプトが作成されます。 これを行うには、次のコマンドを使用します。
+この時点では、コンテナー内で作業しています。 コンテナー内での作業は、仮想システムまたは物理システム内での作業によく似ていることがわかります。 たとえば、ファイルの一覧表示、作成、削除、ソフトウェアのインストール、構成の変更を行うことができます。 この簡単な例では、Python ベースの 'Hello World' スクリプトが作成されます。 これを行うには、次のコマンドを使用します。
 
 ```bash
 echo 'print("Hello World!")' > hello.py
@@ -41,7 +41,7 @@ python hello.py
 
 これにより、次の出力が作成されます。
 
-```bash
+```output
 Hello World!
 ```
 
@@ -59,7 +59,7 @@ docker ps
 
 何も実行されていないことに注目してください。 実行中のコンテナー内で `exit` を入力すると、Bash プロセスが完了し、これによりコンテナーが停止されました。 これは予期した動作であり、問題ありません。
 
-```bash
+```output
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
@@ -71,7 +71,7 @@ docker ps -a
 
 *python-demo* という名前を持つコンテナーの状態が *Exited* であることに注目してください。 このコンテナーは、終了したばかりのコンテナーの停止状態にあるインスタンスです。
 
-```bash
+```output
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
 cf6ac8e06fd9        python              "bash"              27 seconds ago      Exited (0) 12 seconds ago                       python-demo
 ```
@@ -84,7 +84,7 @@ docker commit python-demo python-custom
 
 コマンドが完了すると、次のような出力が表示されます。
 
-```bash
+```output
 sha256:91a0cf9aa9857bebcd7ebec3418970f97f043e31987fd4a257c8ac8c8418dc38
 ```
 
@@ -96,7 +96,7 @@ docker images
 
 これで Python のカスタム イメージが表示されます。
 
-```bash
+```output
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 python-custom       latest              1f231e7127a1        6 seconds ago       922MB
 python              latest              638817465c7d        24 hours ago        922MB
@@ -110,9 +110,9 @@ alpine              latest              11cd0b38bc3c        2 weeks ago         
 docker run python-custom python hello.py
 ```
 
-コンテナーが起動し、コンテナーから hello world メッセージが出力されます。 次に Python プロセスが完了し、コンテナーが停止します。
+コンテナーが起動し、コンテナーから 'Hello World' メッセージが出力されます。 次に Python プロセスが完了し、コンテナーが停止します。
 
-```bash
+```output
 Hello World!
 ```
 
@@ -142,7 +142,7 @@ docker build -t python-dockerfile .
 
 次のような出力が表示されます。
 
-```bash
+```output
 Sending build context to Docker daemon  2.048kB
 Step 1/4 : FROM python
  ---> 638817465c7d
@@ -170,7 +170,7 @@ docker images
 
 これで、カスタム イメージが表示されます。
 
-```bash
+```output
 REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
 python-dockerfile   latest              98c39b91770f        About a minute ago   922MB
 python              latest              638817465c7d        26 hours ago         922MB
@@ -187,7 +187,7 @@ docker run python-dockerfile
 
 コマンドを実行した後に、コンテナーの出力が表示されます。
 
-```bash
+```output
 Hello World!
 ```
 
@@ -217,7 +217,7 @@ docker push <account name>/python-dockerfile
 
 コンテナー イメージが Docker Hub にアップロードされている間、次のような出力が表示されます。
 
-```bash
+```output
 The push refers to repository [docker.io/account/python-dockerfile]
 f39073ca4d5a: Pushed
 9dfcec2738a9: Pushed

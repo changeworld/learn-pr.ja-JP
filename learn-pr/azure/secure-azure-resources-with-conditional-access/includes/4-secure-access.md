@@ -1,6 +1,6 @@
-前の演習では、試用版ライセンスを有効にし、ソリューションをテストするためにディレクトリの作成、ユーザーの作成、グループの作成を行いました。 この演習では、Azure portal に対して Azure Multi-Factor Authentication を必須にする条件付きアクセス規則を作成します。
+前の演習では、試用版ライセンスを有効にし、ソリューションをテストするためにディレクトリの作成、ユーザーの作成、グループの作成を行いました。 このユニットでは、Azure portal に対して Azure Multi-Factor Authentication を必須にする条件付きアクセス規則を作成します。
 
-## <a name="enable-conditional-access-based-multi-factor-authentication"></a>条件付きアクセスベースの Multi-Factor Authentication を有効にする
+## <a name="enable-conditional-access-based-multi-factor-authentication"></a>条件付きアクセスベースの多要素認証を有効にする
 
 条件付きアクセスを使用すると、管理者は、何かを発生させたい場合と発生させたくない場合を構成することができます。 複数の規則を同時に使用して、リソースへのアクセスを許可または拒否することができます。 作成する必要がある規則は次のとおりです。
 

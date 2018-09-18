@@ -1,123 +1,123 @@
-Let's assume that you're currently using an on-premise PostgreSQL relational database using flexible data types and geospatial support. Your company is looking at expanding, requiring the database to scale. As an alternative to investing in additional hardware, you are tasked with finding an optimal cloud-hosted database offering and you have decided to use an Azure Database for PostgreSQL server.
+柔軟なデータ型および地理空間のサポートによるオンプレミスの PostgreSQL リレーショナル データベースを現在使用しているとします。 会社はデータベースをスケーリングする必要があり、拡張を考えています。 追加のハードウェアに投資する代わりに、あなたは最適なクラウド ホスト型データベース サービスを探す任務を負い、Azure Database for PostgreSQL サーバーを使用することに決めました。
 
-## What is an Azure Database for PostgreSQL server?
+## <a name="what-is-an-azure-database-for-postgresql-server"></a>Azure Database for PostgreSQL サーバーとは
 
-The PostgreSQL server is a central administration point for one or more databases. The PostgreSQL service in Azure is a managed resource that provides performance guarantees, and provides access and features at the server level.
+PostgreSQL サーバーは、1 つ以上のデータベースの中央管理ポイントです。 Azure の PostgreSQL サービスは、パフォーマンスを保証する管理対象リソースであり、アクセスと機能をサーバー レベルで提供します。
 
-An **Azure Database for PostgreSQL** server is the parent _resource_ for a database. A _resource_ is a manageable item that is available through Azure. Creating this resource allows you to configure your server instance.
+**Azure Database for PostgreSQL** サーバーは、データベースの親_リソース_です。 _リソース_は、Azure を通じて管理できる要素です。 このリソースを作成すると、サーバー インスタンスを構成できます。
 
-### What is an Azure Database for PostgreSQL server resource?
+### <a name="what-is-an-azure-database-for-postgresql-server-resource"></a>Azure Database for PostgreSQL サーバー リソースとは
 
-An Azure Database for PostgreSQL server resource is a container with strong lifetime implications for your server and databases. If the server resource is deleted, all databases are also deleted. Keep in mind that all resources belonging to the parent are hosted in the same region.
+Azure Database for PostgreSQL サーバー リソースは、その存続期間を通してサーバーとデータベースに強力な影響を与えるコンテナーです。 サーバー リソースが削除されると、データベースもすべて削除されます。 親に属しているすべてのリソースが同じリージョンでホストされていることに留意してください。
 
-The server resource name is used to define the server endpoint name. For example, if the resource name is **mypgsqlserver** then the server name becomes **mypgsqlserver.postgres.database.azure.com**
+サーバー リソース名は、サーバー エンドポイント名の定義に使用されます。 たとえば、リソース名が **mypgsqlserver** の場合、サーバー名は **mypgsqlserver.postgres.database.azure.com** になります。
 
-The server resource also provides the __connection scope__ for management policies that apply to its database. For example, login, firewall, users, roles, and configuration.
+また、サーバー リソースは、データベースに適用される管理ポリシーの__接続スコープ__も提供します。 たとえば、ログイン、ファイアウォール、ユーザー、ロール、構成などです。
 
-Just like the open-source version of PostgreSQL, the server is available in several versions and allows for the installation of extensions. You'll choose which server version to install.
-
-> [!NOTE]
-> Extensions allow for bundling multiple SQL objects together in a single package that can be loaded or removed with a single command. An example of >an extension is ```chkpass```, which provides a data type for auto-encrypted passwords.
-
-## Pricing tiers
-
-The Azure Database for PostgreSQL provides you with the option to choose from three pricing tiers based on parameters such as compute power and storage.
-
-### Basic
-
-The **Basic** tier is ideal for workloads that requires light compute and I/O performance. In this tier, you have access to the following hardware:
-
-- Compute Gen 4 CPUs base on Intel E5-2673 v3 (Haswell) 2.4-GHz processors available as either a 1 or 2 vCore configuration
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available as either a 1 or 2 vCore configuration
-- Storage up to 1 TB
-- Locally redundant backup
-
-You'll use a specific pricing tier setting to illustrate support of a specific scenario when you create an example server later. Keep in mind that for production servers, you'll choose a pricing tier to match your environment.
-
-### General Purpose
-
-The **General Purpose** tier is ideal for most business workloads requiring balanced compute and memory with scalable I/O throughput. In this tier, you have access to the following hardware:
-
-- Compute Gen 4 CPUs base on Intel E5-2673 v3 (Haswell) 2.4-GHz processors available in 2, 4, 8, 18, 32 vCore configurations
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available in 2, 4, 8, 18, 32 vCore configurations
-- Storage up to 4 TB
-- Locally redundant backup
-- Geographically redundant backup
-
-### Memory Optimized
-
-The **Memory Optimized** tier is ideal for high-performance database workloads requiring in-memory performance for faster transaction processing and higher concurrency. In this tier, you have access to the following hardware:
-
-- Compute Gen 5 CPUs base on Intel E5-2673 v4 (Broadwell) 2.3-GHz processors available in 2, 4, 8, 16 vCore configurations
-- Storage up to 4 TB
-- Locally redundant backup
-- Geographically redundant backup
-
-## Steps to create an Azure Database for PostgreSQL server
-
-You'll typically create an Azure Database for PostgreSQL server using the Azure portal. Let's look at the steps you'll take.
-
-First you'll sign into the Azure portal, and then you'll click **Create a resource**.
-
-You'll select **Databases** and **Azure Database for PostgreSQL**. You can also use the Search functionality to find this category.
-
-The portal will display a PostgreSQL server configuration screen, also called a blade, you make your selection.
-
-![Screenshot of the Azure portal showing the creation blade for a new PostgreSQL database.](../media-draft/4-create-blade.png)
-
-You'll need to give a value to all the items in the blade, so let's have a look at each.
-
-### Server name
-
-Recall, earlier we mentioned that you'll create a server resource. The server name is the item that specifies this resource. As a result, you'll have to choose a unique name for the server. The server name must be all lowercase and can have numbers and hyphens.
-
-Let's say you want to name the server _Adventure Works Tracking_. You would then set up the name as ```adventure-works-tracking```. If you try to create a server with the same name that already exists, you'll get an error to that effect.
-
-### Subscription
-
-The subscription field is used for billing. You'll pick a specific subscription in case you have more than one subscription available.
-
-### Resource group
-
-You'll use a resource group to manage all the resources related to your server. You can create a new resource group or reuse an existing resource group.
-
-### Source
-
-You can create a server either from scratch by choosing the _Blank_ default option or from an existing backup. The Backup option will give the opportunity restore a geo-backup of an existing Azure Database for PostgreSQL server.
-
-### Server admin login name
-
-You create the server admin user. Choose a login name to use as an administrator login for the new server. The admin login name can't be azure_superuser, azure_pg_admin, admin, administrator, root, guest, or public. It can't start with pg_. Remember or write down this name for future use.
-
-### Password
-
-You choose a password to use with the above administrator login name. Your password must include characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.). Remember or write down this password for future use.
-
-### Confirm password
-
-Retype the password as confirmation.
-
-### Location
-
-The location option allows you to specify where the server is created physically. Choose the geographical location closest to you. In a real-world scenario, the location should be the location closest to the majority of your users.
-
-### Version
-
-You can specify the version of PostgreSQL to use. Microsoft aims to support the current version and two previous versions of PostgreSQL. You'll choose a version that matches your production environment.
+PostgreSQL のオープン ソース バージョンと同様に、このサーバーはいくつかのバージョンが用意されていて、拡張機能のインストールが可能です。 インストールするサーバー バージョンを選択します。
 
 > [!NOTE]
-> For more information, see the following sources:
-> - [Supported PostgreSQL Database Versions](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions)
-> - [Versioning Policy](https://www.postgresql.org/support/versioning/)
+> 拡張機能により、複数の SQL オブジェクトを 1 つのパッケージにまとめて、1 つのコマンドで読み込んだり削除したりすることができます。 拡張機能の例としては、自動暗号化パスワードのデータ型を提供する ```chkpass``` があります。
 
-### Pricing tier
+## <a name="pricing-tiers"></a>価格レベル
 
-You'll choose a pricing tier that will support your server's workload. Recall, you have three tiers to choose from. As we saw earlier, each of these tiers allows you to configure the compute and storage options. For example, here is an example with the Basic price tier selected, a Gen 5 compute and a 25-day backup retention period.
+Azure Database for PostgreSQL では、コンピューティング能力やストレージなどのパラメーターに基づいて 3 つの価格レベルから選択できます。
 
-![Screenshot of the Azure portal showing the database pricing tier for a new PostgreSQL database.](../media-draft/4-azure-db-pricing-tier.png)
+### <a name="basic"></a>Basic
 
-All that is left now is to review the values you entered, make any notes you may need for later, and click the create button to create the server.
+**Basic** レベルは、低負荷なコンピューティングと I/O パフォーマンスを必要とするワークロードに最適です。 このレベルでは、次のハードウェアにアクセスできます。
 
-Deploying the server takes a couple of minutes. You'll receive a notification when the deployment is complete. From the notification, you can navigate to the newly created server.
+- 1 つまたは 2 つの仮想コアの構成が可能な 2673-Intel E5 v3 (Haswell) 2.4 GHz プロセッサを基盤とする、Gen 4 コンピューティング CPU
+- 1 つまたは 2 つの仮想コアの構成が可能な Intel E5-2673 v4 (Broadwell) 2.3-GHz プロセッサを基盤とする、Gen 5 コンピューティング CPU
+- 1 TB までのストレージ
+- ローカル冗長バックアップ
 
-You've now seen the steps you take to create an Azure Database for PostgreSQL. In the next unit, you'll have to opportunity to create your own Azure Database for PostgreSQL server.
+後でサンプル サーバーを作成するときに、特定のシナリオのサポートを示すために特定の価格レベル設定を使用します。 ただし、運用サーバーでは環境に合わせて価格レベルを選択します。
+
+### <a name="general-purpose"></a>汎用
+
+**汎用**レベルは、負荷分散されたコンピューティング、メモリ、スケーラブルな I/O スループットを必要とする大部分のビジネス ワークロードに最適です。 このレベルでは、次のハードウェアにアクセスできます。
+
+- 2、4、8、18、32 個の仮想コアの構成が可能な 2673-Intel E5 v3 (Haswell) 2.4 GHz プロセッサを基盤とする、Gen 4 コンピューティング CPU
+- 2、4、8、18、32 個の仮想コアの構成が可能な Intel E5-2673 v4 (Broadwell) 2.3-GHz プロセッサを基盤とする、Gen 5 コンピューティング CPU
+- 4 TB までのストレージ
+- ローカル冗長バックアップ
+- 地理冗長バックアップ
+
+### <a name="memory-optimized"></a>メモリ最適化
+
+**メモリ最適化**レベルは、高速トランザクション処理と高い同時実行性を実現するためのインメモリ パフォーマンスを必要とする、高パフォーマンス データベース ワークロードに最適です。 このレベルでは、次のハードウェアにアクセスできます。
+
+- 2、4、8、16 個の仮想コアの構成が可能な Intel E5-2673 v4 (Broadwell) 2.3-GHz プロセッサを基盤とする、Gen 5 コンピューティング CPU
+- 4 TB までのストレージ
+- ローカル冗長バックアップ
+- 地理冗長バックアップ
+
+## <a name="steps-to-create-an-azure-database-for-postgresql-server"></a>Azure Database for PostgreSQL サーバーを作成する手順
+
+通常、Azure Database for PostgreSQL サーバーは Azure portal を使用して作成します。 それぞれの手順を見ていきましょう。
+
+まず Azure portal にサインインし、**[リソースの作成]** をクリックします。
+
+**[データベース]** と **[Azure Database for PostgreSQL]** を選択します。 検索機能を使用してこのカテゴリを検索することもできます。
+
+ポータルに、ブレードとも呼ばれる PostgreSQL サーバー構成画面が表示されるので、ここで選択を行います。
+
+![Azure portal での PostgreSQL サーバー作成用のユーザー インターフェイス ブレード](../media-draft/4-create-blade.png)
+
+ブレード内のすべての項目に値を指定する必要があります。では、それぞれ見ていきましょう。
+
+### <a name="server-name"></a>サーバー名
+
+先ほど、サーバー リソースを作成することに言及しました。 サーバー名は、このリソースを指定する項目です。 そのため、サーバーには一意の名前を選択する必要があります。 サーバー名はすべて小文字とする必要があり、数字とハイフンを含めることができます。
+
+たとえば、サーバーに _Adventure Works Tracking_ という名前を付けるとします。 その場合は、名前を ```adventure-works-tracking``` に設定します。 既に存在する名前と同じ名前のサーバーを作成しようとすると、それに対応するエラーが表示されます。
+
+### <a name="subscription"></a>サブスクリプション
+
+サブスクリプション フィールドは課金に使用します。 使用可能なサブスクリプションが複数ある場合は、特定のサブスクリプションを選択します。
+
+### <a name="resource-group"></a>リソース グループ
+
+リソース グループは、サーバーに関連するすべてのリソースを管理するために使用します。 新しいリソース グループを作成するか、既存のリソース グループを再使用できます。
+
+### <a name="source"></a>ソース
+
+既定の _[空白]_ オプションを選択してサーバーを最初から作成するか、または既存のバックアップから作成することができます。 [バックアップ] オプションでは、既存の Azure Database for PostgreSQL サーバーの geo バックアップを復元できます。
+
+### <a name="server-admin-login-name"></a>サーバー管理者ログイン名
+
+サーバー管理者ユーザーを作成します。 新しいサーバー用の管理者ログインとして使用するログイン名を選択します。 管理者のログイン名に azure_superuser、azure_pg_admin、admin、administrator、root、guest、または public は使用できません。 pg_ で始めることはできません。 今後の使用に備えてこの名前を覚えておくか、書き留めておきます。
+
+### <a name="password"></a>パスワード
+
+上記の管理者ログイン名と一緒に使用するパスワードを選択します。 パスワードには、英大文字、英小文字、数字 (0 から 9)、英数字以外の文字 (!、$、#、% など) のうち、3 種類の文字が含まれている必要があります。 今後の使用に備えてこのパスワードを覚えておくか、書き留めておきます。
+
+### <a name="confirm-password"></a>パスワードの確認
+
+確認のためにパスワードを再入力します。
+
+### <a name="location"></a>場所
+
+場所のオプションを使用すると、サーバーが物理的に作成される場所を指定できます。 自分が住んでいる場所に最も近い地域を選択します。 実際のシナリオでは、大部分のユーザーに最も近い場所にする必要があります。
+
+### <a name="version"></a>バージョン
+
+使用する PostgreSQL のバージョンを指定できます。 Microsoft では、基本的には PostgreSQL の現在のバージョンとそれより前の 2 つのバージョンがサポートされています。 運用環境に一致するバージョンを選択します。
+
+> [!NOTE]
+> 詳細については、次の資料を参照してください。
+> - [サポートされている PostgreSQL Database バージョン](https://docs.microsoft.com/azure/postgresql/concepts-supported-versions)
+> - [Versioning Policy (バージョン管理ポリシー)](https://www.postgresql.org/support/versioning/)
+
+### <a name="pricing-tier"></a>価格レベル
+
+サーバーのワークロードをサポートする価格レベルを選択します。 選択できるレベルは 3 つあります。 前述のように、これらの各レベルを使用して、コンピューティングとストレージのオプションを構成できます。 ここでは、Basic 価格レベルが選択されていて、Gen 5 コンピューティングを使用し、バックアップ保有期間が 25 日である例が示されています。
+
+![価格レベル](../media-draft/4-azure-db-pricing-tier.png)
+
+あとは、入力した値を確認し、後で必要となる可能性のあるすべての項目を書き留め、作成ボタンをクリックしてサーバーを作成するだけです。
+
+サーバーをデプロイするには数分かかります。 デプロイが完了すると、通知を受け取ります。 通知から、新しく作成したサーバーに移動できます。
+
+ここまでは、Azure Database for PostgreSQL を作成する手順を説明しました。 次の演習では、独自の Azure Database for PostgreSQL サーバーを作成してみます。

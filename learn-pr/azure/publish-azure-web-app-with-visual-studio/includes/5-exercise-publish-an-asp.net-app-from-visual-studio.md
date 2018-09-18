@@ -11,7 +11,7 @@
 > [!NOTE]
 > アプリをデプロイするときに、新しい App Service プランを作成するか、または引き続き既存のプランにアプリを追加することができます。 この演習では、新しい **Azure App Service** を作成します。
 
-### <a name="visual-studio-mac"></a>Visual Studio for Mac
+### <a name="visual-studio-mac"></a>Visual Studio Mac
 
 1. ソリューション エクスプローラーでプロジェクトを右クリックします。
 
@@ -60,7 +60,7 @@
 
     ![発行の結果](../media-draft/5-PublishResult.png)
 
-1. お疲れさまでした。ASP.NET Core Web アプリケーションが発行されライブになりました。 ビルド出力と、Visual Studio の発行ページでも、自分のサイトの最終的な URL が確認できるようになります。
+1. お疲れさまでした。ASP.NET Core Web アプリケーションが発行され、動作を始めました。 ビルド出力に加えて Visual Studio の発行ページでも、自分のサイトの最終的な URL が確認できるようになります。
 
     ![発行の結果](../media-draft/5-PublishPage.png)
 

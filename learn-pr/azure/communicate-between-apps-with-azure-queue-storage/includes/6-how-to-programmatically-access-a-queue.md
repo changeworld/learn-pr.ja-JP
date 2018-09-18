@@ -1,26 +1,26 @@
-Queues hold messages - packets of data whose shape is known to the sender application and receiver application. The sender creates the queue and adds a message. The receiver retrieves a message, processes it, and then deletes the message from the queue. The following illustration shows a typical flow of this process.
+Queues にはメッセージが保持されています。メッセージは、送信者アプリケーションと受信者アプリケーションがその形状を把握しているデータのパケットです。 キューは送信者によって作成され、メッセージが追加されます。 受信者はメッセージを受け取り、それを処理して、キューからそのメッセージを削除します。 次の図は、このプロセスの典型的なフローを示しています。
 
-![An illustration showing a typical message flow through the Azure Queue.](../media/6-message-flow.png)
+![Azure Queue におけるメッセージの典型的なフロー図。](../media/6-message-flow.png)
 
-Notice that `get` and `delete` are separate operations. This arrangement handles potential failures in the receiver and implements a concept called _at-least-once delivery_. After the receiver gets a message, that message remains in the queue but is invisible for 30 seconds. If the receiver crashes or experiences a power failure during processing, then it will never delete the message from the queue. After 30 seconds, the message will reappear in the queue and another instance of the receiver can process it to completion.
+`get` と `delete` は別の操作であることに注意してください。 この取り合わせは、受信側で可能性のあるエラーを処理し、_at-least-once delivery_ と呼ばれる概念を実装します。 受信者がメッセージを受け取ると、メッセージはキューに残りますが、30 秒間は表示されません。 受信者に処理時のクラッシュや電源障害があった場合は、キューからメッセージは削除されません。 このメッセージは、30 秒後にキューに再表示され、受信者の別のインスタンスがそれを完了まで処理します。
 
-## The Azure Storage Client Library for .NET
+## <a name="the-azure-storage-client-library-for-net"></a>.NET 用 Azure Storage クライアント ライブラリ
 
-The **Azure Storage Client Library for .NET** provides types to represent each of the objects you need to interact with:
+**.NET 用 Azure Storage クライアント ライブラリ**には、やりとりをする必要がある各オブジェクトを表す型があります。
 
-- `CloudStorageAccount` represents your Azure storage account.
-- `CloudQueueClient` represents Azure Queue storage.
-- `CloudQueue` represents one of your queue instances.
-- `CloudQueueMessage` represents a message.
+- `CloudStorageAccount` は、ご使用の Azure ストレージ アカウントを表します。
+- `CloudQueueClient` は、Azure Queue Storage を表します。
+- `CloudQueue` は、ご使用のキュー インスタンスの 1 つを表します。
+- `CloudQueueMessage` は、メッセージを表します。
 
-You will use these classes to get programmatic access to your queue. The library has both synchronous and asynchronous methods; you should prefer to use the asynchronous versions to avoid blocking the client app.
+これらのクラスを使用すると、キューにプログラムを使用してアクセスできます。 このライブラリには、同期メソッドと非同期メソッドの両方があります。クライアント アプリがブロックされるのを防ぐには、非同期バージョンを使用する必要があります。
 
 > [!NOTE]
-> The Azure Storage Client Library for .NET is available in the **WindowsAzure.Storage** NuGet package. You can install it through an IDE, Azure CLI, or through PowerShell `Install-Package WindowsAzure.Storage`.
+> .NET 用 Azure Storage クライアント ライブラリは、**WindowsAzure.Storage** NuGet パッケージにあります。 これは、IDE、Azure CLI または PowerShell `Install-Package WindowsAzure.Storage` を使用してインストールできます。
 
-## How to connect to a queue
+## <a name="how-to-connect-to-a-queue"></a>キューへの接続方法
 
-To connect to a queue, you first create a `CloudStorageAccount` with your connection string. The resulting object can then create a `CloudQueueClient`, which in turn can open a `CloudQueue` instance. The basic code flow is shown below.
+キューに接続するには、まず接続文字列を使用して `CloudStorageAccount` を作成します。 結果のオブジェクトにより、`CloudQueueClient` が作成され、代わりに `CloudQueue` インスタンスを開くことができるようになります。 基本のコード フローは次のとおりです。
 
 ```csharp
 CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
@@ -30,15 +30,15 @@ CloudQueueClient client = account.CreateCloudQueueClient();
 CloudQueue queue = client.GetQueueReference("myqueue");
 ```
 
-Creating a `CloudQueue` doesn't necessarily mean the _actual_ storage queue exists. However, you can use this object to create, delete, and check for an existing queue. As mentioned above, all methods support both synchronous and asynchronous versions, but we will only be using the `Task`-based asynchronous versions.
+`CloudQueue` を作成しても、必ずしも_実際_にストレージ キューが存在することは意味しません。 ただし、このオブジェクトを使用すると、既存のキューを作成、削除、チェックすることができます。 前述のとおり、すべてのメソッドで同期バージョンと非同期バージョンがサポートされていますが、ここでは、`Task` ベースの非同期バージョンのみを使用します。
 
-## How to create a queue
+## <a name="how-to-create-a-queue"></a>キューの作成方法
 
-You will use a common pattern for queue creation: the sender application should always be responsible for creating the queue. This keeps your application more self-contained and less dependent on administrative set-up. 
+キューは、送信者のアプリケーションが常にキューを作成する責任を負う、一般的な方法で作成します。 これにより、アプリケーションはより自己完結的となり、管理セットアップへの依存性が低くなります。 
 
-To make the creation simple, the client library exposes a `CreateIfNotExistsAsync` method that will create the queue if necessary, or return `false` if the queue already exists. 
+クライアント ライブラリでは、作成がシンプルになるように、必要に応じてキューが作成されたり、またはキューが既に存在する場合に `false` が返されたりする `CreateIfNotExistsAsync` メソッドが公開されています。 
 
-Typical code is shown below.
+典型的なコードは次のとおりです。
 
 ```csharp
 CloudQueue queue;
@@ -48,13 +48,13 @@ await queue.CreateIfNotExistsAsync();
 ```
 
 > [!NOTE]
-> You must have `Write` or `Create` permissions for the storage account to use this API. This is always true if you use the **Access Key** security model, but you can lock down permissions to the account with other approaches that will only allow read operations against the queue.
+> この API を使用するには、ストレージ アカウントに対する `Write` または `Create` のアクセス許可が必要です。 **アクセス キー** セキュリティ モデルを使用していても、常に、キューに対する読み取り操作のみを許可するその他のアプローチを持つアカウントへのアクセス許可をロックダウンすることができます。
 
-## How to send a message
+## <a name="how-to-send-a-message"></a>メッセージの送信方法
 
-To send a message, you instantiate a `CloudQueueMessage` object. The class has a few overloaded constructors that load your data into the message. We will use the constructor that takes a `string`. After creating the message, you use a `CloudQueue` object to send it.
+メッセージを送信するには、`CloudQueueMessage` オブジェクトをインスタンス化します。 このクラスには、メッセージにデータを読み込むいくつかのオーバーロードされたコンストラクターがあります。 ここでは、`string` を受け取るコンストラクターを使用します。 メッセージを作成したら、それの送信に `CloudQueue` オブジェクトを使用します。
 
-Here's a typical example:
+典型的な例を次に表します。
 
 ```csharp
 var message = new CloudQueueMessage("your message here");
@@ -66,11 +66,11 @@ await queue.AddMessageAsync(message);
 ```
 
 > [!NOTE]
-> While the total queue size can be up to 500 TB, the individual messages in it can only be up to 64 KB in size (48 KB when using Base64 encoding). If you need a larger payload you can combine queues and blobs – passing the URL to the actual data (stored as a Blob) in the message. This approach would allow you to enqueue up to 200 GB for a single item.
+> キューの合計サイズとしては、最大 500 TB が可能ですが、その中の個々のメッセージの最大サイズは 64 KB です (Base64 のエンコードを使用する場合は 48 KB)。 大きなペイロードが必要な場合、URL をメッセージ内の実際のデータ (Blob として格納) に渡し、キューと blob を結合できます。 このアプローチによりは、最大 200 GB の 1 つの項目をキューに追加できます。
 
-## How to receive and delete a message
+## <a name="how-to-receive-and-delete-a-message"></a>メッセージの受信および削除方法
 
-In the receiver, you get the next message, process it, and then delete it after processing succeeds. Here's a simple example:
+受信側で、次のメッセージを受け取り、処理し、処理の完了後それを削除します。 シンプルな例を次に表します。
 
 ```C#
 CloudQueue queue;
@@ -87,4 +87,4 @@ if (message != null)
 }
 ```
 
-Let's now apply this new knowledge to our application!
+では、この知識をアプリケーションに応用してみましょう。

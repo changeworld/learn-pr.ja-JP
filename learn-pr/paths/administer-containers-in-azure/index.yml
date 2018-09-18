@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 068543566bde1d9d8b74ec56d87b2a0505839205
-  ms.sourcegitcommit: 85169b96f980f61cf8558e3df6f32527973bfde4
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45554882"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45758110"
 title: Azure でコンテナーを管理する
 summary: Azure Container Instances は、Azure でコンテナーを実行する方法として最も簡単で迅速な方法です。 このラーニング パスでは、コンテナーを作成して管理する方法、ACI を利用して Kubernetes に柔軟なスケールを与える方法を紹介します。
 prerequisites: なし

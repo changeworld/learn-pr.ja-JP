@@ -9,13 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 6c04f4ea23d1f9661bebd88c1057d3cda68e87e7
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.openlocfilehash: 0e5485e3e3308ecc119938b527ea5696d925622d
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531227"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45778979"
 labId: 45996
-azureSandbox: true
 durationInMinutes: 5
 content: '[!include[](includes/2-connect-to-dsvm.md)]'

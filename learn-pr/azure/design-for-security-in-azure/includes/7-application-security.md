@@ -55,7 +55,7 @@ Microsoft の[セキュリティ開発ライフサイクル](https://www.microso
 
 ![セキュリティ開発ライフサイクル](../media/sdl.png)
 
-SDL は、ツールのセットやプロセスであると同時に文化的側面でもあります。 セキュリティがアプリケーション開発の主な焦点および要件であるという文化を築くことで、セキュリティに関する組織の能力を高めることに大きく前進できます。
+SDL は、ツールのセットやプロセスであると同時に文化的側面もあります。 セキュリティがアプリケーション開発の主な焦点および要件であるという文化を築くことで、セキュリティに関する組織の能力を高めることに大きく前進できます。
 
 <!-- Bear in mind that the migration of un-modified applications (especially COTS procured software systems) will not be able to perform many of the steps listed above.
  -->

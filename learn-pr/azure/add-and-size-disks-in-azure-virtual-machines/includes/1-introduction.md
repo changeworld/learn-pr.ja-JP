@@ -1,12 +1,12 @@
-You're the system architect for a law firm. The firm has asked you to migrate key systems to Azure. Systems include the database of case histories, currently hosted by an on-premises SQL server and accessed from a desktop application. The SQL server also runs some custom in-house services to perform database maintenance. You've decided that a solution based on Azure virtual machines (VMs) will allow you to host your SQL server and continue using your custom services. You'll create an Azure virtual hard disk based on the contents of your existing on-premises server to ease migration.
+あなたは、法律事務所のシステム アーキテクトです。 あなたは事務所から、主要なシステムを Azure に移行するよう依頼されています。 システムには、訴訟履歴のデータベースが含まれています。このデータベースは、現在、オンプレミスの SQL Server でホストされ、デスクトップ アプリケーションからアクセスされています。 SQL Server では、データベースのメンテナンスを実行するいくつかのカスタムの社内サービスも実行されています。 あなたは、Azure Virtual Machines (VM) ベースのソリューションにすれば、SQL Server をホストし、カスタム サービスを使用し続けられると判断しました。 移行を容易にするため、既存のオンプレミス サーバーのコンテンツに基づいて、Azure 仮想ハード ディスクを作成します。
 
-In this module, you'll learn how to architect the optimal disk configuration for the VMs you create in Azure. You'll create virtual hard disks through the Azure portal and add them to VMs to create fully functional compute resources.
+このモジュールでは、Azure で作成する VM に最適なディスク構成を設計する方法を学習します。 Azure portal を使用して仮想ハード ディスクを作成し、それらを VM に追加して、完全に機能するコンピューティング リソースを作成します。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Create a VM in the Azure portal
-- Create operating system disks and data disks in Azure VMs
-- Choose between and create standard and premium disks
-- Choose between and create unmanaged and managed disks
+- Azure portal で VM を作成する
+- Azure VM でオペレーティング システム ディスクとデータ ディスクを作成する
+- Standard ディスクまたは Premium ディスクを選んで作成する
+- アンマネージド ディスクまたはマネージド ディスクを選んで作成する

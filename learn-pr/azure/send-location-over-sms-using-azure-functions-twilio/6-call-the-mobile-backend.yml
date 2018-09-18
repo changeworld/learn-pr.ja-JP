@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 62839b0997544a87ca2313ea1f5480aa115ac976
-  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44495281"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45768395"
 labId: 45999
 durationInMinutes: 7
 content: '[!include[](includes/6-call-the-mobile-backend.md)]'

@@ -1,69 +1,69 @@
-Let's start by taking a quick look at Azure storage services, data styles, and accounts. 
+まずは、Azure ストレージ サービス、データ スタイル、アカウントについて簡単に確認してみましょう。 
 
-Microsoft Azure Storage is a managed service that provides durable, secure, and scalable storage in the cloud. Let's break those terms down.
+Microsoft Azure Storage は、クラウド内で耐久性がありセキュリティで保護されたスケーラブルなストレージを提供するマネージド サービスです。 これらの用語をわかりやすく説明します。
 
 | | |
 |-|-|
-| **Durable** | Redundancy ensures that your data is safe in the event of transient hardware failures. You can also replicate data across datacenters or geographical regions for additional protection from local catastrophe or natural disaster. Data replicated in this way remains highly available in the event of an unexpected outage. |
-| **Secure** | All data written to Azure Storage is encrypted by the service. Azure Storage provides you with fine-grained control over who has access to your data. |
-| **Scalable** | Azure Storage is designed to be massively scalable to meet the data storage and performance needs of today's applications. |
-| **Managed** | Microsoft Azure handles maintenance and any critical problems for you. |
+| **耐久性** | 冗長性により、一時的なハードウェア障害が発生した場合でも、ご利用のデータは必ず安全に保たれます。 地域的な災害または自然災害から保護するために、データセンターまたは地理的リージョン間でデータをレプリケートすることもできます。 この方法でレプリケートされたデータは、予期しない停止が発生した場合でも高可用性が維持されます。 |
+| **セキュリティ保護** | Azure Storage に書き込まれるデータはすべて、このサービスによって暗号化されます。 Azure Storage では、ご利用のデータにアクセスできるユーザーをきめ細かく制御できます。 |
+| **スケーラブル** | Azure Storage には、今日のアプリケーションのデータ ストレージとパフォーマンスに関するニーズを満たすために、高度にスケーラブルな設計が採用されています。 |
+| **マネージド** | メンテナンスや重大な問題は、Microsoft Azure がお客様に代わって処理します。 |
 
-A single Azure subscription can host up to 200 storage accounts, each of which can hold 500 TB of data. If you have a business case, you can talk to the Azure Storage team and get approval for up to 250 storage accounts in a subscription which pushes your max storage up to 125 Petabytes!
+単一の Azure サブスクリプションでは最大で 200 個のストレージ アカウントをホストすることができます。それぞれのストレージ アカウントでは 500 TB のデータを保持できます。 ビジネス ケースをお持ちの場合は、Azure Storage チームに連絡して、1 つのサブスクリプションで最大 250 個のストレージ アカウントの承認を得ることができます。この場合、最大ストレージは 125 ペタバイトまで拡大できます。
 
-## Azure data services
+## <a name="azure-data-services"></a>Azure データ サービス
 
-Azure storage includes four types of data.
+Azure Storage には、次の 4 種類のデータがあります。
 
-- **Blobs**: A massively scalable object store for text and binary data.
-- **Files**: Managed file shares for cloud or on-premises deployments.
-- **Queues**: A messaging store for reliable messaging between application components.
-- **Tables**: A NoSQL store for schemaless storage of structured data. This service has been replaced by Cosmos DB and will not discussed here.
+- **BLOB**: テキストとバイナリ データのための高度にスケーラブルなオブジェクト ストア。
+- **Files**: クラウド デプロイ用またはオンプレミスのデプロイ用のマネージド ファイル共有。
+- **Queues**: アプリケーション コンポーネント間の信頼性の高いメッセージングのためのメッセージング ストア。
+- **Tables**: 構造化データのスキーマレス ストレージのための NoSQL ストア。 このサービスは Cosmos DB によって置き換えられているので、ここで説明しません。
 
-All of these data types in Azure Storage are accessible from anywhere in the world over HTTP or HTTPS. Microsoft provides SDKs for Azure Storage in a variety of languages, as well as a REST API. You can also visually explore your data right in the Azure portal.
+Azure Storage 内のこのような種類のデータすべてに、世界中のどこからでも HTTP または HTTPS 経由でアクセスできます。 Microsoft では、さまざまな言語による Azure Storage 用 SDK に加えて、REST API も提供しています。 Azure portal ではすぐにデータを視覚的に確認できます。
 
-### Blob storage
-Azure Blob storage is an object storage solution optimized for storing massive amounts of unstructured data, such as text or binary data. Blob storage is ideal for:
+### <a name="blob-storage"></a>BLOB ストレージ
+Azure BLOB ストレージは、テキスト データやバイナリ データなどの大量の非構造化データを格納するために最適化されたオブジェクト ストレージ ソリューションです。 BLOB ストレージは、次の目的に最適です。
 
-- Serving images or documents directly to a browser, including full static websites.
-- Storing files for distributed access.
-- Streaming video and audio.
-- Storing data for backup and restore, disaster recovery, and archiving.
-- Storing data for analysis by an on-premises or Azure-hosted service.
+- 画像またはドキュメントをブラウザーに直接配信する (完全に静的な Web サイト)。
+- 分散アクセス用にファイルを格納する。
+- ビデオおよびオーディオをストリーミング配信する。
+- バックアップと復元、ディザスター リカバリー、アーカイブのためのデータを格納する。
+- オンプレミス サービスまたは Azure ホステッド サービスで分析するデータを格納する。
 
-Azure Storage supports three kinds of blobs:
+Azure Storage でサポートされている 3 種類の BLOB:
 
-| Blob type | Description |
+| BLOB の種類 | 説明 |
 |-----------|-------------|
-| **Block blobs** | Block blobs are used to hold text or binary files up to ~5 TB (50,000 blocks of 100 MB) in size. The primary use case for block blobs is the storage of files that are read from beginning to end, such as media files or image files for websites. They are named block blobs because files larger than 100 MB must be uploaded as small blocks, which are then consolidated (or committed) into the final blob. |
-| **Page blobs** | Page blobs are used to hold random-access files up to 8 TB in size. Page blobs are used primarily as the backing storage for the VHDs used to provide durable disks for Azure Virtual Machines (Azure VMs). They are named page blobs because they provide random read/write access to 512-byte pages. |
-| **Append blobs** | Append blobs are made up of blocks like block blobs, but they are optimized for append operations. These are frequently used for logging information from one or more sources into the same blob. For example, you might write all of your trace logging to the same append blob for an application running on multiple VMs. A single append blob can be up to 195 GB. |
+| **ブロック BLOB** | ブロック BLOB は、最大 5 TB (100 MB のブロックが 50,000 個) のテキスト ファイルまたはバイナリ ファイルの保存に使用されます。 ブロック BLOB は主に、始めから終わりまで読み込まれるファイルの保存に使用されます。メディア ファイルや Web サイトの画像ファイルなどです。 100 MB を超えるファイルは小さなブロックとしてアップロードされた上で、連結 (またはコミット) されて最終的な BLOB になるため、ブロック BLOB という名前が付けられました。 |
+| **ページ BLOB** | ページ BLOB は最大 8 TB のランダム アクセス ファイルの保存に使用されます。 ページ BLOB は主に、Azure Virtual Machines (Azure VM) に耐久性のあるディスクを提供するための VHD 用のバッキング ストレージとして使用されます。 512 バイト ページを読み書きするランダム アクセスを提供するため、ページ BLOB という名前が付いています。 |
+| **追加 BLOB** | 追加 BLOB は、ブロック BLOB と同様にブロックで構成されますが、追加操作に最適化されています。 多くの場合は、1 つまたは複数のソースから同じ BLOB に情報を記録するために使用されます。 たとえば、複数の VM 上で実行されているアプリケーションの場合は、すべてのトレース ログを同じ追加 BLOB に書き込みます。 1 つの追加 BLOB は最大 195 GB です。 |
 
-### Files
-Azure Files enables you to set up highly available network file shares that can be accessed by using the standard Server Message Block (SMB) protocol. That means that multiple VMs can share the same files with both read and write access. You can also read the files using the REST interface or the storage client libraries. You can also associate a unique URL to any file to allow fine-grained access to a private file for a set period of time. File shares can be used for many common scenarios:
+### <a name="files"></a>Files
+Azure Files では、標準的なサーバー メッセージ ブロック (SMB) プロトコルを使用してアクセスできる可用性の高いネットワーク ファイル共有を設定することができます。 つまり、複数の VM が、読み取りアクセス権と書き込みアクセス権の両方を使用して同じファイルを共有できます。 また、REST インターフェイスまたはストレージ クライアント ライブラリを使用してファイルを読み取ることもできます。 また、任意のファイルに一意の URL を関連付けることで、設定した期間、プライベート ファイルへの細かに制御されたアクセスを許可することができます。 ファイル共有は、多くの一般的なシナリオで使用できます。
 
-- Storing shared configuration files for VMs, tools, or utilities so that everyone is using the same version.
-- Log files such as diagnostics, metrics, and crash dumps.
-- Shared data between on-premises applications and Azure VMs to allow migration of apps to the cloud over a period of time.
+- すべてのユーザーが同じバージョンを使用するように、VM、ツール、またはユーティリティに対して共有される構成ファイルの格納。
+- 診断、メトリック、クラッシュ ダンプなどのログ ファイル。
+- 一定の期間にわたるクラウドへのアプリの移行を可能にするため、オンプレミスのアプリケーションと Azure VM との間で共有されるデータ。
 
-### Queues
-The Azure Queue service is used to store and retrieve messages. Queue messages can be up to 64 KB in size, and a queue can contain millions of messages. Queues are generally used to store lists of messages to be processed asynchronously.
+### <a name="queues"></a>Queues
+Azure Queue サービスは、メッセージの格納と取得に使用します。 キューに許容されるメッセージ サイズは最大 64 KB で、1 つのキューに数百万件のメッセージを格納することができます。 一般に、非同期的に処理するメッセージのリストを格納するのが Queues の用途となります。
 
-You can use queues to loosely connect different parts of your application together. For example, we could perform image processing on the photos uploaded by our users. Perhaps we want to provide some sort of face detection, or tagging capability so people can search through all the images they have stored in our service. We could use queues to pass messages to our image processing service to let it know that new images have been uploaded and are ready for processing. This sort of architecture would allow you to develop and update each part of the service independently.
+キューを使用することで、ご利用のアプリケーションのさまざまな部分をゆるく接続することができます。 たとえば、ユーザーによってアップロードされた写真上でイメージ処理を実行することが可能です。 ユーザーが Microsoft のサービスで格納したすべてのイメージを対象にして検索を行えるように、ある種の顔検出またはタグ付け機能を提供することが多分必要です。 キューを使用すれば Microsoft のイメージ処理サービスにメッセージを渡すことができます。これにより、新しいイメージがアップロードされ、処理可能な状態にあることをそのサービスに知らせることができます。 この種のアーキテクチャを使用すれば、サービスの各部分を個別に開発したり更新したりすることができます。
 
-## Azure storage accounts
+## <a name="azure-storage-accounts"></a>Azure ストレージ アカウント
 
-To access any of these services from an application, you have to create a _storage account_. The storage account provides a unique namespace in Azure to store and access your data objects. A storage account contains any blobs, files, queues, tables, and VM disks that you create under that account.
+アプリケーションからこのようなサービスのいずれかにアクセスするには、_ストレージ アカウント_を作成する必要があります。 ストレージ アカウントには、ご自分のデータ オブジェクトを格納してそれにアクセスするために一意の名前空間が用意されています。 ストレージ アカウントには、このアカウントの下で作成する BLOB、Files、キュー、テーブル、VM ディスクが含まれます。
 
-### Creating a storage account
+### <a name="creating-a-storage-account"></a>ストレージ アカウントの作成
 
-You can create an Azure storage account using the Azure portal, Azure PowerShell, or Azure CLI. Azure Storage provides three distinct account options, with different pricing and features supported.
+Azure ストレージ アカウントは、Azure portal、Azure PowerShell、または Azure CLI を使用して作成できます。 Azure Storage は、3 種類のアカウントから選択できるようになっています。3 つのアカウントはそれぞれ料金体系が異なり、サポートされている機能も異なります。
 
 > [!div class="mx-tableFixed"]
-> | Account type | Description |
+> | アカウントの種類 | 説明 |
 > |--------------|-------------|
-> | **General-purpose v2 (GPv2)** | General-purpose v2 (GPv2) accounts are storage accounts that support all of the latest features for blobs, files, queues, and tables. Pricing for GPv2 accounts has been designed to deliver the lowest per gigabyte prices. |
-> | **General-purpose v1 (GPv1)** | General-purpose v1 (GPv1) accounts provide access to all Azure Storage services, but may not have the latest features or the lowest per gigabyte pricing. For example, cool storage and archive storage are not supported in GPv1. Pricing is lower for GPv1 transactions, so workloads with high churn or high read rates may benefit from this account type. |
-> | **Blob storage accounts** | A legacy account type, blob storage accounts support all the same block blob features as GPv2, but are limited to supporting only block and append blobs. Pricing is broadly similar to pricing for general-purpose v2 accounts. |
+> | **汎用 v2 (GPv2)** | 汎用 v2 (GPv2) アカウントは、BLOB、Files、キュー、テーブルの最新機能すべてをサポートするストレージ アカウントです。 GPv2 アカウントの料金体系は、GB 単価の最安値の実現を目指して設定されています。 |
+> | **汎用 v1 (GPv1)** | 汎用 v1 (GPv1) アカウントでは、すべての Azure Storage サービスにアクセスできますが、最新の機能が利用できない場合があるほか、GB 単価もやや高いことがあります。 たとえば、GPv1 では、クール ストレージとアーカイブ ストレージがサポートされません。 この種類のアカウントは、GPv1 トランザクションの料金が比較的低いため、変更頻度が高いワークロードや読み取り速度が速いワークロードでメリットが得られることがあります。 |
+> | **BLOB ストレージ アカウント** | 従来のアカウント型である BLOB ストレージ アカウントは、GPv2 とまったく同じブロック BLOB 機能を備えていますが、サポートされるのはブロック BLOB と追加 BLOB だけです。 価格については、汎用 v2 アカウントと大きな違いはありません。 |
     
-If you are interested in learning more about creating storage accounts, make sure to go through the **Create an Azure storage account** module in the learning portal.
+ストレージ アカウントの作成について詳しく学ぶことに関心がある場合は、学習ポータル内の「**Azure ストレージ アカウントの作成**」モジュールを参照してください。
