@@ -10,11 +10,15 @@ Azure Container Registry Build を使用してコンテナー イメージの作
 
 この例では、新しい Dockerfile を使用します。 
 
-最初の手順として、`Dockerfile` という名前の新しいファイルを作成します。 任意のテキスト エディターを使用して、ファイルを編集することができます。 この例では、Visual Studio Code を使用します。
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+最初の手順として、`Dockerfile` という名前の新しいファイルを作成します。 任意のテキスト エディターを使用して、ファイルを編集することができます。 この例では、Cloud Shell エディターを使用します。 コマンドを
 
 ```bash
-code Dockerfile
+code
 ```
+Cloud Shell ウィンドウに入力してエディターを開きます。 
 
 次のコンテンツを新しい Dockerfile にコピーします。 必ずファイルをセキュリティで保護します。 
 
@@ -26,6 +30,8 @@ RUN     npm install
 EXPOSE  80
 CMD     ["node", "server.js"]
 ```
+
+キーの組み合わせを使用して、`ctrl+s` で保存します。 メッセージが表示されたら、ファイルに `Dockerfile` の名前を付けます。
 
 この構成では、Node.js アプリケーションが `node:9-alpine` イメージに追加されます。 次に、ポート 80 上で *EXPOSE* 命令を介してアプリケーションを提供できるようにコンテナーを構成します。
 

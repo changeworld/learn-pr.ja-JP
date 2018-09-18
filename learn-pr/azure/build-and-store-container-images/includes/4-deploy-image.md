@@ -1,26 +1,21 @@
-Azure Container Registry や、Azure Container Instances、Azure Kubernetes Registry、Docker for Windows/Mac などの多くのコンテナー管理プラットフォームから、コンテナー イメージをプルできます。 Azure Container Registry からコンテナー イメージを実行するときは、認証資格情報が必要になる場合があります。 Container Registry での認証には、Azure サービス プリンシパルを使用することをお勧めします。 さらに、Azure Key Vault で Azure サービス プリンシパルの資格情報をセキュリティ保護することも勧めします。
+Azure Container Registry や、Azure Container Instances、Azure Kubernetes Registry、Docker for Windows/Mac などの多くのコンテナー管理プラットフォームから、コンテナー イメージをプルできます。 Azure Container Registry からコンテナー イメージを実行するときは、認証資格情報が必要になる場合があります。 
 
-このユニットでは、Azure Container Registry 用のサービス プリンシパルを作成し、それを Azure Key Vault に格納してから、サービス プリンシパルの資格情報を使用して Azure Container Instances にコンテナーを展開します。
+Container Registry での認証には、Azure サービス プリンシパルを使用することをお勧めします。 さらに、Azure Key Vault で Azure サービス プリンシパルの資格情報をセキュリティ保護することもお勧めします。 このアプローチをお勧めするため、このユニットではこのアプローチがどのように行われるかを見ていきます。
 
-## <a name="configure-registry-authentication"></a>レジストリの認証を構成する
+ただし、実際の演習では、すべての Azure コンテナー レジストリで有効にできる組み込みの管理アカウントを使用します。 この管理者アカウントは、Microsoft の無料のサンドボックス リソースで動作します。
 
-すべての運用シナリオでは、サービス プリンシパルを使用して Azure コンテナー レジストリにアクセスします。 サービス プリンシパルを使用すると、コンテナー イメージにロールベースのアクセス制御 (RBAC) を提供できます。 たとえば、レジストリに対するプルのみのアクセス権を持つサービス プリンシパルを構成できます。
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Azure Key Vault にコンテナーがまだない場合は、Azure CLI の次のコマンドを使用して作成します。
-
-最初に、コンテナー レジストリの名前で変数を作成します。 この変数は、このユニット全体で使われます。
+最初に、小文字のコンテナー レジストリ名を含む変数を作成します (たとえば、"MyContainer" ではなく "mycontainer" の値で)。 この変数は、このユニット全体で使われます。
 
 ```azurecli
 ACR_NAME=<acrName>
 ```
 
-`az keyvault create` コマンドで Azure キー コンテナーを作成します。
+### <a name="service-principal"></a>サービス プリンシパル
 
-```azurecli
-az keyvault create --resource-group myResourceGroup --name $ACR_NAME-keyvault
-```
-
-次に、サービス プリンシパルを作成し、その資格情報をキー コンテナーに格納する必要があります。
+ここで、実稼働アプリケーションのためにサービス プリンシパルを作成します。 **これは、サンドボックス環境では動作しません**が、ご自身のシステムではベスト プラクティスです。 実際には、下記の管理者アカウントの手順を使用します。
 
 サービス プリンシパルを作成するには、`az ad sp create-for-rbac` コマンドを使用します。 `--role` 引数により、*reader* ロールを持つサービス プリンシパルが構成され、レジストリに対するプルのみのアクセス権が付与されます。 プッシュ アクセス権とプル アクセス権の両方を付与するには、`--role` 引数を *contributor* に変更します。
 
@@ -28,7 +23,7 @@ az keyvault create --resource-group myResourceGroup --name $ACR_NAME-keyvault
 az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --output tsv) --role reader
 ```
 
-サービス プリンシパルの作成の出力は次のようになります。 `appId` と `password` の値を書き留めておきます。 これらは Azure キー コンテナーに格納されます。
+サービス プリンシパルの作成の出力は次のようになります。 `appId` と `password` の値を書き留めておきます。 これらは Azure キー コンテナーに格納されるはずです。
 
 ```output
 {
@@ -40,13 +35,53 @@ az ad sp create-for-rbac --scopes $(az acr show --name $ACR_NAME --query id --ou
 }
 ```
 
-次に、`az keyvault secret set` コマンドを使用して、サービス プリンシパルの *appId* をコンテナーに格納します。 `<appId>` は、サービス プリンシパルの `appId` に置き換えます。
+### <a name="admin-account"></a>管理者アカウント
 
+Azure コンテナー レジストリには、組み込みの管理者アカウントが付属しています。 これは Azure AD またはロールベースのアクセス制御とは関連付けられていないため、**テストのみで使用する必要があります**。 
+
+最初に、管理者アカウントを有効にする必要があります
 ```azurecli
-az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --value <appId>
+  az acr update -n $ACR_NAME --admin-enabled true
 ```
 
-次に、`az keyvault secret set` コマンドを使用して、サービス プリンシパルの *password* をコンテナーに格納します。 `<password>` は、サービス プリンシパルの `password` に置き換えます。
+自動生成されたユーザー名とパスワードを取得するクエリを実行します
+
+```azurecli
+  az acr credential show --name $ACR_NAME
+```
+
+次のように出力されます。 `username` と、`name` "password" とペアになっている `value` を書き留めます。 これらをキー コンテナーに保存します。
+
+```output
+{  "passwords": [
+    {
+      "name": "password",
+      "value": "aaaaa"
+    },
+    {
+      "name": "password2",
+      "value": "bbbbb"
+    }
+  ],
+  "username": "ccccc"
+}
+```
+
+### <a name="save-the-username-and-password-to-keyvault"></a>ユーザー名とパスワードをキー コンテナーに保存します
+
+`az keyvault create` コマンドで Azure キー コンテナーを作成します。
+
+```azurecli
+az keyvault create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
+```
+
+次に、`az keyvault secret set` コマンドを使用して、ACR のユーザー名をコンテナーに格納します。 サービス プリンシパルを使用していた場合は、この値の appId を使用します。 今度は管理者アカウントを使用しているため、上記のクエリのユーザー名を保存します。 次のコマンドを発行します。`<username>` は忘れずに置き換えてください。
+
+```azurecli
+az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-usr --value <username>
+```
+
+次に、`az keyvault secret set` コマンドを使用して、*password* をコンテナーに格納します。 `<password>` は、上記のクエリの `password` に置き換えます。
 
 ```azurecli
 az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd --value <password>
@@ -54,8 +89,8 @@ az keyvault secret set --vault-name $ACR_NAME-keyvault --name $ACR_NAME-pull-pwd
 
 Azure キー コンテナーを作成し、そこに 2 つのシークレットを格納しました。
 
-* `$ACR_NAME-pull-usr`: サービス プリンシパルの ID。コンテナー レジストリの**ユーザー名**として使用します。
-* `$ACR_NAME-pull-pwd`: サービス プリンシパルのパスワード。コンテナー レジストリの**パスワード**として使用します。
+* `$ACR_NAME-pull-usr`: コンテナー レジストリの**ユーザー名**。
+* `$ACR_NAME-pull-pwd`: コンテナー レジストリの**パスワード**。
 
 これらのシークレットは、ユーザーまたはアプリケーションやサービスがレジストリからイメージをプルするときに名前で参照できます。
 
@@ -79,7 +114,7 @@ az container create \
 Azure コンテナー インスタンスの IP アドレスを取得します。
 
 ```azurecli
-az container show --resource-group myResourceGroup --name acr-build --query ipAddress.ip --output table
+az container show --resource-group  <rgn>[Sandbox resource group name]</rgn> --name acr-build --query ipAddress.ip --output table
 ```
 
 ブラウザーを開き、コンテナーの IP アドレスに移動します。 すべてが正しく構成されている場合、次の結果が表示されるはずです。

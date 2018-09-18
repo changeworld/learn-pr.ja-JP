@@ -9,12 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b1f1fd5afaa153340eee740bd0071fc8295c63e6
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 2de603cd1ad3f12b84e27c922d0f04aab19fce07
+  ms.sourcegitcommit: b7b4489eb7352bcc722ed6c2ff27b70dd212e9c5
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44245717"
+  ms.lasthandoff: 09/14/2018
+  ms.locfileid: "45621836"
 durationInMinutes: 10
 content: >
   [!include[](includes/3-design-for-security.md)]
@@ -29,23 +29,23 @@ quiz:
     - content: 事業運営を支える財務データ
       isCorrect: false
       incorrectExplanation: このデータの適切なセキュリティ保護を提供することは重要ですが、これだけが正解ではありません。
-    - content: 知的財産を含むデータ
+    - content: 知的財産権
       isCorrect: false
       incorrectExplanation: このデータの適切なセキュリティ保護を提供することは重要ですが、これだけが正解ではありません。
     - content: 上記のすべてにセキュリティ保護が必要な場合があります
       isCorrect: true
       correctExplanation: 上記のすべてが、追加のセキュリティ保護の恩恵を受ける場合があります。
-  - content: 次のうち、境界層で発生する可能性がある攻撃の例はどれですか?
+  - content: 次のうち、ポリシーとアクセスの層で発生する可能性がある攻撃の例はどれですか?
     choices:
     - content: 漏洩した資格情報のインターネットへの投稿
-      isCorrect: false
-      incorrectExplanation: 資格情報の漏洩は組織にとって巨大なリスクですが、境界層の攻撃ではありません。
-    - content: SYN フラッド攻撃
       isCorrect: true
-      correctExplanation: SYN フラッド攻撃は、一般的にネットワーク境界で発生するサービス拒否攻撃の一種です。
-    - content: データセンターへのドア ドラフティング
+      correctExplanation: 資格情報の漏洩は、組織にとって大きなリスクであり、ポリシーとアクセスの層に適用されます。
+    - content: SYN フラッド攻撃
       isCorrect: false
-      incorrectExplanation: ドア ドラフティングは物理層の攻撃です。
+      incorrectExplanation: SYN フラッド攻撃は、一般的にネットワーク境界で発生するサービス拒否攻撃の一種です。
+    - content: 資格情報の提示なしで従業員をデータセンターに誘導すること
+      isCorrect: false
+      incorrectExplanation: データセンターへの従業員の誘導は物理層の攻撃です。
     - content: 仮想マシンのディスクを暗号化するランサムウェア
       isCorrect: false
       incorrectExplanation: ランサムウェア攻撃は VM/コンピューティング層の攻撃です。
