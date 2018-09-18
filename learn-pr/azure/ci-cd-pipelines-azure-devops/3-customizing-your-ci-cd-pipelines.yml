@@ -1,14 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.ci-cd-pipelines-azure-devops.3-customizing-your-ci-cd-pipelines
-title: <span data-ttu-id="0c064-101">CI/CD パイプラインをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="0c064-101">Customize your CI/CD pipelines</span></span>
+title: <span data-ttu-id="f0971-101">CI/CD パイプラインをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="f0971-101">Customize your CI/CD pipelines</span></span>
 metadata:
-  title: <span data-ttu-id="0c064-102">CI/CD パイプラインをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="0c064-102">Customize your CI/CD pipelines</span></span>
-  description: <span data-ttu-id="0c064-103">Azure DevOps プロジェクトの既製の CI/CD パイプラインを変更して、カスタマイズされた CI/CD パイプライン エクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="0c064-103">Modify the out of the box CI/CD pipelines from an Azure DevOps project to create a customized CI/CD pipeline experience.</span></span>
-  ms.openlocfilehash: 8585e0fcd84c1d0a7e7c097e9192d33c9ca3eb42
-  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  title: <span data-ttu-id="f0971-102">CI/CD パイプラインをカスタマイズする</span><span class="sxs-lookup"><span data-stu-id="f0971-102">Customize your CI/CD pipelines</span></span>
+  description: <span data-ttu-id="f0971-103">Azure DevOps プロジェクトの既製の CI/CD パイプラインを変更して、カスタマイズされた CI/CD パイプライン エクスペリエンスを作成します。</span><span class="sxs-lookup"><span data-stu-id="f0971-103">Modify the out of the box CI/CD pipelines from an Azure DevOps project to create a customized CI/CD pipeline experience.</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0162c420703c4dd962970f11f5cb829194eba673
+  ms.sourcegitcommit: f8715b69ba1130191c26bceaaf5ff2b43e045b3b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44256232"
-durationInMinutes: 10
+  ms.lasthandoff: 09/18/2018
+  ms.locfileid: "45988873"
+durationInMinutes: 15
 content: '[!include[](includes/3-customizing-your-ci-cd-pipelines.md)]'
