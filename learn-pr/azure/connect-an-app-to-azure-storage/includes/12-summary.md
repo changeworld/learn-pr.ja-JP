@@ -1,17 +1,17 @@
-You have learned the basics of creating and connecting to an Azure storage account. You wrote a simple application to connect to a storage account and create a blob container. Other modules in this Learning Path will build on that knowledge to show you how to use Blob Storage and Queues to store data and connect apps together.
+Azure Storage アカウントを作成し、そのアカウントに接続する方法の基本を学習しました。 単純なアプリケーションを作成して、ストレージ アカウントに接続し、BLOB コンテナーを作成しました。 このラーニング パスの他のモジュールでは、その知識に基づいて、Blob Storage とキューを使用してデータを格納し、アプリどうしを接続する方法を示します。
 
-We only used examples of JavaScript and C#, but Azure supports a variety of other languages. Check the official [SDK Tools documentation page](https://docs.microsoft.com/azure/#pivot=sdkstools) to find the official list of links to the client libraries for all the currently supported languages.
+ここでは JavaScript と C# の例のみを使用していますが、Azure ではさまざまな言語がサポートされます。 現在サポートされている全言語のクライアント ライブラリへの公式のリンク一覧については、公式の [SDK Tools ドキュメント ページ](https://docs.microsoft.com/azure/#pivot=sdkstools)を参照してください。
 
-## Additional resources
+## <a name="additional-resources"></a>その他のリソース
 
-- [Azure Storage Services REST API Reference](https://docs.microsoft.com/rest/api/storageservices/)
-- [Using shared access signatures to provide limited access to a storage account](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
-- [Manage secrets with Azure Key Vault](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
-- [Using Azure Key Vault Storage Account Keys with server apps](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
-- [Source code for the .NET Azure SDKs](https://github.com/Azure/azure-sdk-for-net)
-- [Azure Storage Client Library for JavaScript](https://github.com/Azure/azure-storage-node#azure-storage-javascript-client-library-for-browsers)
+- [Azure Storage サービスの REST API リファレンス](https://docs.microsoft.com/rest/api/storageservices/)
+- [共有アクセス署名を使用してストレージ アカウントへの制限付きアクセスを提供する](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
+- [Azure Key Vault を使用してシークレットを管理する](https://docs.microsoft.com/learn/modules/manage-secrets-with-azure-key-vault/)
+- [Azure Key Vault ストレージ アカウント キーをサーバー アプリで使用する](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-storage-keys)
+- [.NET Azure SDK のソース コード](https://github.com/Azure/azure-sdk-for-net)
+- [JavaScript 用 Azure Storage クライアント ライブラリ](https://github.com/Azure/azure-storage-node#azure-storage-javascript-client-library-for-browsers)
 
-## Clean up
+## <a name="clean-up"></a>クリーンアップ
 <!---TODO: Update for sandbox?--->
 
-It's a good idea to cleanup your resources in Azure when you are finished with them. If you are using the free sandbox, you don't have to do this step - but in your own subscriptions you'll want to delete unused resources to avoid unnecessary charges. The easiest way to do this is to delete the Resource Group you placed all the resources into. This can be done through the Azure portal, or on the command line.
+Azure のリソースが不要になったらクリーンアップすることをお勧めします。 無料のサンドボックスを使用している場合は、この手順を実行する必要はありません。ただし、保有しているサブスクリプションでは、使用していないリソースを削除して不必要な課金を回避することをお勧めします。 これを行うための最も簡単な方法は、すべてのリソースを配置したリソース グループを削除することです。 これは、Azure portal またはコマンド ラインで行うことができます。
