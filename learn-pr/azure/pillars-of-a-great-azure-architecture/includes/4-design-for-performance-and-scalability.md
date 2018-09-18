@@ -1,40 +1,40 @@
-Imagine a news story has just been published covering your organization's breakthrough cancer treatment. This is a terrific milestone, and will undoubtedly bring a large influx of traffic to your website. Will the website handle this traffic increase, or will the load cause the site to be slow or unresponsive?
+自分の会社が開発した画期的ながん治療法が、第一面のニュースになっているところを想像してみてください。 これはすばらしいマイルストーンであり、会社の Web サイトには間違いなくアクセスが殺到するでしょう。 その Web サイトは、このアクセスの増加に対応できるでしょうか。サイトの反応が低下したり応答しなくなったりするおそれはないでしょうか。
 
-Here, we'll look at some of the basic principles of ensuring outstanding application performance using scaling and optimization principles.
+ここでは、スケーリングと最適化の原則を使用して優れたアプリケーション パフォーマンスを確保する基本原理を見ていきます。
 
-## What is scaling and performance optimization?
+## <a name="what-is-scaling-and-performance-optimization"></a>スケーリングとパフォーマンスの最適化とは何ですか。
 
-Scaling and performance optimization are about matching the resources available to an application with the demand it is receiving. Performance optimization includes scaling resources, identifying and optimizing potential bottlenecks, and optimizing your application code for peak performance.
+スケーリングとパフォーマンスの最適化とは、利用可能なリソースを受信要求を持つアプリケーションに適合させることです。 パフォーマンスの最適化には、リソースをスケーリングすること、潜在的なボトルネックを識別して最適化すること、最高のパフォーマンスが得られるようアプリケーション コードを最適化することが含まれています。
 
-### Scaling
+### <a name="scaling"></a>スケーリング
 
-Compute resources can be scaled in two different directions:
+コンピューティング リソースは、2 つの方向にスケーリングできます。
 
-* Scaling *up* is the action of adding more resources to a single instance.
-* Scaling *out* is the addition of instances.
+* スケーリング "*アップ*" は他のリソースを 1 つのインスタンスに追加する操作です。
+* スケーリング "*アウト*" とはインスタンスの追加です。
 
-![Scale up and scale out](../media-draft/scale-up-scale-out.png)
+![スケールアップとスケールアウト](../media-draft/scale-up-scale-out.png)
 
-Scaling up is concerned with adding more resources, such as CPU or memory, to a single instance. This instance could be a virtual machine or a PaaS service. The act of adding more capacity to the instance increases the resources available to your application, but it does come with a limit. Virtual machines are limited to the capacity of the host they run on, and hosts themselves have physical limitations. Eventually, when you scale up an instance, you can run into these limits, restricting your ability to add further resources to the instance.
+スケールアップでは CPU やメモリなどの他のリソースを 1 つのインスタンスに追加します。 このインスタンスは、仮想マシンまたは PaaS サービスである場合があります。 インスタンスへより多くの容量を追加する機能により、アプリケーションで使用できるリソースが向上しますが、上限があります。 仮想マシンは実行中のホストの容量までに限られ、ホスト自体に物理的な制限があります。 最終的には、インスタンスのスケール アップを行う時に、これらの上限に達して、インスタンスにさらにリソースを追加する機能は制約を受けます。
 
-Scaling out is concerned with adding additional instances to a service. These can be virtual machines or PaaS services, but instead of adding more capacity by making a single instance more powerful, we add capacity by increasing the overall total number of instances. The advantage of scaling out is that you can conceivably scale out forever if you have more machines to add to the architecture. Scaling out requires some type of load distribution. This could be in the form of a load balancer distributing requests across available servers, or a service discovery mechanism for identifying active servers to send requests to.
+スケール アウトは、サービスに追加のインスタンスを付加することが関係しています。 これらの追加のインスタンスは仮想マシンや PaaS サービスでもかまいませんが、1 つのインスタンスを強化することで容量を追加するのではなく、インスタンスの合計数を増やすことで容量を増加させます。 スケール アウトのメリットは、アーキテクチャに複数のマシンを追加すれば、想定上は永久にスケール アウトが可能である点です。 スケール アウトには、何らかの種類の負荷分散が必要です。 利用可能な複数のサーバー間に要求を分散させるロード バランサーや、要求の送信先となるアクティブなサーバーを識別するためのサービス検出メカニズムが考えられます。
 
-In both cases, resources can be reduced, bringing cost optimization into the picture.
+どちらの場合も、リソースを削減し、コストの最適化を実現できます。
 
-### Performance optimization
+### <a name="performance-optimization"></a>パフォーマンスの最適化
 
-When optimizing for performance, you'll look at network and storage to ensure performance is acceptable. Both can impact the response time of your application. Selecting the right networking and storage technologies for your architecture will help you ensure you're providing the best experience for your consumers.
+パフォーマンスを最適化するときは、ネットワークとストレージで許容できるパフォーマンスレベルを確保してください。 どちらもアプリケーションの応答時間に影響を与える可能性があります。 実際のアーキテクチャに合った適切なネットワーク テクノロジとストレージ テクノロジを選択することが、最上級のエクスペリエンスをコンシューマーに提供することにつながります。
 
-Performance optimization will also include understanding how the applications themselves are performing. Errors, poorly performing code, and bottlenecks in dependent systems can all be uncovered through an application performance management tool. Often, these issues may be hidden or obfuscated for end users, developers, and administrators, but can have adverse impact on the overall performance of your application.
+パフォーマンスの最適化には、アプリケーション自体がどのように実行されているかを理解することも含まれます。 依存システム内でのエラー、不具合のあるコード、ボトルネックはすべて、アプリケーション パフォーマンス管理ツールで明らかになります。 たいていの場合、これらの問題はエンドユーザーや開発者、管理者には見えなかったり、わかりにくかったりしますが、アプリケーションの全体的なパフォーマンスには悪影響があります。
 
-## Scalability and performance best practices
+## <a name="scalability-and-performance-best-practices"></a>拡張性とパフォーマンスのベスト プラクティス
 
-Look across all layers of your application and identify and remediate performance bottlenecks in your application. These bottlenecks could be poor memory handling in your application, or even the process of adding indexes into your database. It can be an iterative process, as you may relieve one bottleneck and then uncover another that you were unaware of.
+アプリケーションのすべての階層を確認して、アプリケーションでのパフォーマンスのボトルネックを識別して修復します。 お使いのアプリケーションで、または、データベースにインデックスを追加するプロセスでも、これらのボトルネックが低いメモリ処理を行っている可能性があります。 1 つのボトルネックを解決すると、今まで気が付かなかった別のボトルネックが発覚することがあるため、これは反復的なプロセスとなることが考えられます。
 
-Using caching in your architecture can help improve performance. Caching is a mechanism to store frequently used data or assets (web pages, images) for faster retrieval. Caching can be used at different layers of your application. You can use caching between your application servers and a database, to decrease data retrieval times. You could also use caching between your end users and your web servers, placing static content closer to the user and decreasing the time it takes to return web pages to the end user. This also has a secondary effect of offloading requests from your database or web servers, increasing the performance for other requests.
+アーキテクチャでキャッシュを使用すると、パフォーマンスを向上させることができます。 キャッシュは、使用頻繁の高いデータや資産 (Web ページ、画像) を、より高速に取得できるように格納するメカニズムです。 アプリケーションのさまざまなレイヤーで、キャッシュを使用できます。 アプリケーション サーバーとデータベース間でキャッシュを使用でき、データ取得時間を短縮することができます。 エンドユーザーと Web サーバーとの間にキャッシュを使用することもできます。静的なコンテンツをユーザーの近くに配置することで、エンドユーザーに Web ページを返すのにかかる時間を短縮することができます。 これには、データベース サーバーや Web サーバーから要求の負荷をオフロードし、他の要求のパフォーマンスを高めるという二次的な効果もあります。
 
-It's not uncommon to see legacy applications built as one large application to do multiple tasks. These architectures are often limited to only scaling up, and are incapable of scaling out. In these types of architectures, look to modernize your application and decouple services from each other. Decoupling is the act of breaking apart the major functions of an application into separate applications. Once separated, each service could then be scaled-out and scaled-in as needed, independently of each other.
+いくつものタスクを実行する 1 つの大規模なアプリケーションとして構築されたレガシー アプリケーションは珍しくありません。 このアーキテクチャは、スケールアップのみに限定されていることが多く、スケール アウトに対応していません。このようなタイプのアーキテクチャでは、アプリケーションを最新化し、サービス間の分離度を高めます。 分離とは、アプリケーションの主要な機能を別のアプリケーションに切り離す作業です。 分離後は、必要に応じて各サービスを個別にスケール アウトまたはスケール インすることができます、
 
-Along with decoupling, adding a messaging layer in between services can have a benefit to performance. Adding a messaging layer creates a buffer for requests between the services so that requests can continue to flow in without error if the application can’t keep up. As the application works through the requests, they will be answered in the order in which they were received.
+分離と合わせて、サービスとサービスの間にメッセージング レイヤーを追加することで、パフォーマンスが向上する場合があります。 メッセージング レイヤーを追加することで、サービス間に要求のバッファーが形成され、アプリケーションの処理が追い付かなくなった場合でも、エラーが生じることなく要求のフローが維持されるようになります。 アプリケーションによって絶えず要求が処理されるので、受信した順序で応答が返されます。
 
-Depending on the architecture, there's a wide array of places to look to optimize the performance of your application. You will need to evaluate the performance of your application, and look for areas that may not be performing optimally.
+アプリケーションのパフォーマンスを最適化するために注意を払うべき領域は、アーキテクチャによってさまざまです。 実際のアプリケーションのパフォーマンスを評価し、最適に実行できていない領域をご自身で見つける必要があります。

@@ -1,13 +1,13 @@
-Imagine you work for a healthcare provider. How do you instill confidence in your customers that their data is secure? Can your architecture handle a spike in traffic if a media report goes viral? Can your architecture handle the failure of one or more critical components? Are you using resources in the most efficient manner possible?
+医療機関に勤務している自分を想像してみてください。 データが安全であるという確信を患者に与えるにはどうすればよいでしょうか。 アーキテクチャは、メディア報道が過熱した場合のトラフィック急増に耐えられますか。 アーキテクチャは、クリティカル コンポーネントの障害に対処できますか。 考えられる範囲で最も効率的な方法でリソースを使用していますか。
 
-A great architecture helps guide you to design, build, and continuously improve a secure, reliable, and efficient application. In this module, we'll introduce you to the pillars and principles that are essential to a great Azure architecture.
+優れたアーキテクチャは、安全で、信頼性が高く、効率的なアプリケーションの設計、構築、および継続的な改善を促進します。 このモジュールでは、優れた Azure アーキテクチャに不可欠な中心要素および原則について説明します。
 
 > [!NOTE]
-> The concepts discussed in this module are not all-inclusive, but represent some of the important considerations when building a solution on the cloud. Microsoft publishes a broad set of patterns, guidelines, and examples on designing applications on Azure. It is highly recommended that you look through the content in the [Azure Architecture Center](https://docs.microsoft.com/azure/architecture/) as you start planning and designing your architecture.
+> このモジュールで説明する概念は包括的なものではありませんが、クラウドでソリューションを構築する際の重要な考慮事項がいくつか示されています。 Microsoft では、Azure でのアプリケーションの設計に関する幅広い一連のパターン、ガイドライン、例を公開しています。 アーキテクチャの計画と設計を開始する際に、[Azure アーキテクチャ センター](https://docs.microsoft.com/azure/architecture/)でその内容に目を通すことを強くお勧めします。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-- Identify key pillars for architecting a solution in the cloud
-- Apply key principles for creating a solid architectural foundation
+- クラウドでソリューションを設計するための重要な要素を識別する
+- 強固なアーキテクチャ基盤を構築するための重要原則を適用する

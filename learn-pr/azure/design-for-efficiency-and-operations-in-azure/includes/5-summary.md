@@ -1,20 +1,20 @@
-We started out by talking about how to ensure you are in control of your consumption as well as optimize it. Here are some of the key aspects that were covered:
+まず、使用量を管理しており、それを最適化していることを確認する方法について説明します。 ここでは次の重要な側面についていくつか説明します。
 
-- Tracking cloud spend: the importance of gathering and looking at cloud consumption data to understand your cloud spend.
-- Organizing to optimize: the relevance of a subscription and resource group hierarchy and how tags can further help provide various dimensions.
-- There are several possibilities to optimize IaaS costs: right-sizing, reducing runtime hours, and compute cost discounts.
-- Some examples were shown to optimize PaaS costs: for example, using Azure SQL Database elastics pools to optimize Azure SQL costs or Azure Blob storage tiering to optimize Azure Storage costs.
+- クラウド支出の追跡: クラウド支出を把握するためにクラウド使用量データを収集して調べることの重要性。
+- 最適化のための整理: サブスクリプションとリソース グループ階層の関連性とさまざまなディメンションを提供するのにいかにタグが役立つか。
+- laaS コストを最適化する方法として、適切なサイズ設定、実行時間の削減、コンピューティング コストの割引などが考えられます。
+- PaaS コストを最適化するためにいくつかの例を示しました。たとえば、Azure SQL Database エラスティック プールを使用する Azure SQL コストの最適化、Azure BLOB ストレージ階層を使用する Azure Storage コストの最適化です。
 
-Next, we covered the operational insights you could gain from understanding and implementing monitoring and analytics. We determined that there are various levels on which we can apply monitoring.
+次に、運用に関する分析情報について説明ししました。この情報は、監視と分析を理解し、実装することで得られます。 監視を適用できるさまざなレベルがあることがわかりました。
 
-- Monitoring is the act of collecting and analyzing data to determine the performance, health, and availability of your business application and the resources that it depends on.
-- There are various depths of monitoring. Core monitoring covers aspects close to the Azure platform such as activity logging, cloud services health, and metrics and diagnostics.
-- Deep infrastructure monitoring allows you to gather information besides what the Azure fabric can provide. For typical IaaS workloads, we can monitor at the network or operating system level.
-- Deep application monitoring takes it even further by gathering metrics and diagnostics information close to the application, allowing you to identity performance issues, usage trends, and overall availability information.
+- 監視とは、ビジネス アプリケーションやそのアプリケーションで使用されるリソースのパフォーマンス、正常性、可用性を見極めるために、データを収集し、分析することを指します。
+- 監視の深さはさまざまです。 コアな監視では、アクティビティ ログ、クラウド サービスの正常性、メトリックと診断など、Azure プラットフォームに近い側面が対象となります。
+- 詳細なインフラストラクチャ監視では、Azure ファブリックで提供できるもの以外の情報を収集できます。 一般的な IaaS ワークロードでは、ネットワークまたはオペレーティング システム レベルで監視することができます。
+- 詳細なアプリケーション監視ではさらにアプリケーションに近いメトリックと診断情報を収集し、パフォーマンスの問題、使用傾向、全体的な可用性情報を識別することができます。
 
-We wrapped up by discussing that there are various ways to automate tasks to improve your operational capabilities. Here are some of the key things we covered:
+最後に運用機能を高めるためにタスクを自動化するさまざまな方法があることを説明しました。 ここでは重要な点についていくつか説明します。
 
-- **Automating the deployment of resources can take two different approaches:** imperative (scripting) or declarative (templates).
-- **After the VM is deployed, we can look at how to customize it.** Either by using custom images and thus remove the need for customization in the first place. Or by running a script post deployment.
-- **Automation of Azure tasks:** Azure Automation can help with installing updates or shutting down virtual machines on a schedule.
-- **Automation lab environments:** Azure DevTest Labs takes automation one step further by providing an easy-to-use interface that allows you to use various automation capabilities like images or shutting down VMs without having to worry about the actual implementation of those tasks.
+- **リソースのデプロイを自動化するには、命令型 (スクリプト) と宣言型 (テンプレート) の 2 種類の方法**があります。
+- **VM がデプロイされたら、そのカスタマイズ方法を確認できます。** カスタム イメージを使用して、最初にカスタマイズしなくてすむようにします。 あるいはデプロイ後のスクリプトを実行します。
+- **Azure タスクの自動化**: Azure Automation は、更新プログラムをインストールする場合やスケジュールに従って仮想マシンをシャットダウンする場合に役立ちます。
+- **Automation ラボ環境**: Azure DevTest Labs では一歩先に進んで Automation を使用します。その場合、イメージなどのさまざまな自動化機能を利用できる使いやすいインターフェイスが提供されます。あるいはこれらのタスクの実際の実装について気にすることなく VM をシャットダウンします。

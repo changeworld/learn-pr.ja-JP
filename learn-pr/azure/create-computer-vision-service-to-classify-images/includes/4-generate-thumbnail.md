@@ -1,37 +1,37 @@
-In this unit, you will generate thumbnails from a source image with the Computer Vision API service that we created previously.
+このユニットでは、前に作成した Computer Vision API サービスを使用してソース画像からサムネイルを生成します。
 
-# Generate a thumbnail from an image with Computer Vision API
+# <a name="generate-a-thumbnail-from-an-image-with-computer-vision-api"></a>Computer Vision API で画像からサムネイルを生成する
 
-Execute the `az cognitiveservices account keys list` command to retrieve a key used to authenticate against the API. Store the output of that command within the `key` variable.
+`az cognitiveservices account keys list` コマンドを実行して、API に対する認証に使用されるキーを取得します。 そのコマンドの出力を `key` 変数に格納します。
 
-```output
+```azurecli
 key=$(az cognitiveservices account keys list -g ComputerVisionRG --name ComputerVisionService --query key1 -o tsv)
 ```
 
-Execute a `curl` command to do an HTTP request against the Computer Vision API and reuse the previously declared variable `key`.
+`curl` コマンドを実行して、Computer Vision API に対して HTTP 要求を行い、以前に宣言した `key` 変数を再利用します。
 
-Different parameters can be provided to the API to generate the proper thumbnail for your needs. `width` and `height` are required and will tell the API which size you need for a specific image. Finally, the `smartCropping` parameter generates smarter cropping by analyzing the region of interest in your image to keep it within the thumbnail. As an example, with smart cropping enabled, a cropped profile picture would keep someone's face within the picture frame even when the picture isn't in the same ratio as the one that we asked.
+異なるパラメーターを API に提供し、ニーズに応じた適切なサムネイルを生成できます。 `width` と `height` は必須であり、特定の画像に必要なサイズを API に通知します。 最後に、`smartCropping` パラメーターを指定すると、画像内の関心領域を分析してサムネイル内にそれらを維持することで、よりスマートなトリミングが生成されます。 たとえば、スマート トリミングを有効にすると、画像が要求したものと同じ比率ではない場合でも、トリミングされたプロフィール画像では、画像フレーム内の人の顔が保たれます。
 
-```bash
-curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/media/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
+```azurecli
+curl -H "Ocp-Apim-Subscription-Key: $key" -H "Content-Type: application/json" "https://westus2.api.cognitive.microsoft.com/vision/v1.0/generateThumbnail?width=100&height=100&smartCropping=true" -d "{\"url\":\"https://docs.microsoft.com/en-us/learn/modules/create-computer-vision-service/mountains.jpg\"}" -o clouddrive/thumbnail.jpg
 ```
 
-# Downloading the thumbnail
+# <a name="downloading-the-thumbnail"></a>サムネイルのダウンロード
 
-The generated thumbnail will be found in your Azure Cloud Shell storage account within a resource group named `cloud-shell-storage-<region>`.
+生成されたサムネイルは、`cloud-shell-storage-<region>` という名前のリソース グループ内の Azure Cloud Shell ストレージ アカウントにあります。
 
-1. Get into the automatically generated storage account.
+1. 自動的に生成されたストレージ アカウントに移動します。
 
-    ![Screenshot of the generated storage account](../media/4-storage-account.png)
+![画像](../images/storage-account.png)
 
-2. Click on the files section.
+2. ファイル セクションをクリックします。
 
-    ![Screenshot of the storage account with the files section circled](../media/4-storage-account-click-on-files.png)
+![画像](../images/storage-account-click-on-files.png)
 
-3. You will find the thumbnail at the root of the container.
+3. コンテナーのルートにサムネイルが表示されます。
 
-    ![Screenshot of the storage account with the thumbnail circled](../media/4-storage-account-thumbnail.png)
+![画像](../images/storage-account-thumbnail.png)
 
-4. Click on the file, and then download it.
+4. ファイルをクリックしてダウンロードします。
 
-From within your download folder, you can open the `100x100`-pixels image with any image viewer.
+ダウンロード フォルダーから、画像ビューアーで `100x100` ピクセルの画像を開くことができます。

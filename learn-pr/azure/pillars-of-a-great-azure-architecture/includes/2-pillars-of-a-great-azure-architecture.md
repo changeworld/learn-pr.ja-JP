@@ -1,50 +1,50 @@
-The cloud has changed the way organizations solve their business challenges, and how applications and systems are designed. The role of a solution architect is not only to deliver business value through the functional requirements of the application, but to ensure the solution is designed in ways that are scalable, resilient, efficient and secure. Solution architecture is concerned with the planning, design, implementation, and ongoing improvement of a technology system. The architecture of a system must balance and align the business requirements with the technical capabilities needed to execute those requirements. It includes an evaluation of risk, cost, and capability throughout the system and its components.
+クラウドにより、組織がビジネスの課題を解決する方法や、アプリケーションとシステムの設計方法が変わりました。 ソリューション アーキテクトの役割は、アプリケーションの機能要件を通じてビジネス価値を提供するだけでなく、拡張性、回復性、効率に優れた安全な方法でソリューションが設計されるようにすることです。 ソリューション アーキテクチャはテクノロジ システムの計画、設計、実装、および継続的な改善に関係しています。 システムのアーキテクチャは、ビジネスの要件と、それらの要件を満たすために必要な技術的能力のバランスを取り、調整する必要があります。 これには、システムとそのコンポーネントの全体にわたるリスク、コスト、および能力の評価が含まれます。
 
-While there is no one-size-fits-all approach to designing an architecture, there are some universal concepts that will apply regardless of the architecture, technology, or cloud provider. While these are not all-inclusive, focusing on these concepts will help you build a reliable, secure, and flexible foundation for your application.
+アーキテクチャの設計には万能のアプローチはありませんが、アーキテクチャ、テクノロジ、またはクラウド プロバイダーにかかわらず当てはまる普遍的な概念がいくつかあります。 包括的なものではありませんが、これらの概念に重点を置けば、信頼性が高く、安全で、柔軟性のあるアプリケーション基盤を構築しやすくなります。
 
-A great architecture starts with a solid foundation built on four pillars:
+優れたアーキテクチャの出発点は、次の 4 本の柱に基づいた強固な基盤です。
 
-* Security
-* Performance and scalability
-* Availability and recoverability
-* Efficiency and operations
+* セキュリティ
+* パフォーマンスと拡張性
+* 可用性と回復性
+* 効率性と運用
 
-![Pillars of a great architecture](../media-draft/pillars.png)
+![優れたアーキテクチャの柱](../media-draft/pillars.png)
 
-## Security
+## <a name="security"></a>セキュリティ
 
-Data in various forms is the most valuable piece of your organization's technical footprint. In this pillar, you'll be focused on securing access to your architecture through authentication and protecting your application and data from network vulnerabilities. The integrity of your data should be protected as well, using tools like encryption.
+さまざまな形式のデータは、組織の技術的フットプリントで最も価値のある部分です。 この柱では、認証によってアーキテクチャへのアクセスをセキュリティで保護し、アプリケーションやデータをネットワークの脆弱性から保護することに重点を置きます。 暗号化などのツールを使用して、データの整合性を保護する必要もあります。
 
-You must think about security throughout the entire lifecycle of your application, from design and implementation to deployment and operations. The cloud provides protections against a variety of threats, such as network intrusion and DDoS attacks, but you still need to build security into your application, processes, and organizational culture.
+設計と実装から、デプロイと運用まで、アプリケーションのライフ サイクル全体を通してセキュリティを考える必要があります。 クラウドは、ネットワークへの侵入や DDoS 攻撃などのさまざまな脅威に対する保護を提供しますが、アプリケーション、プロセス、組織の文化にセキュリティを構築する必要があります。
 
-![Types of attacks](../media-draft/security.png)
+![攻撃の種類](../media-draft/security.png)
 
-## Performance and scalability
+## <a name="performance-and-scalability"></a>パフォーマンスと拡張性
 
-For an architecture to perform well and be scalable, it should properly match resource capacity to demand. Traditionally, cloud architectures do so by scaling applications dynamically based off activity in the application. Demand for services change, so it's important for your architecture to have the ability to adjust to demand as well. By designing your architecture with performance and scalability in mind, you'll provide a great experience for your customers while being cost-effective.
+パフォーマンスが高くスケーラブルなアーキテクチャは、リソースの容量を適切に需要と一致させる必要があります。 従来のクラウド アーキテクチャでは、アプリケーションのアクティビティに基づいてアプリケーションを動的にスケーリングすることによってそれを実現しています。 サービスの需要は変動するため、需要に応じた調整能力がアーキテクチャ側にも備わっていることが重要です。 パフォーマンスとスケーラビリティを念頭に置いてアーキテクチャを設計することで、コスト効率を維持しつつ、優れたエクスペリエンスを顧客に提供します。
 
-![Graphic depicting large influx of data or requests](../media-draft/performance-demand.png))
+![データまたは要求の大量流入を表した図](../media-draft/performance-demand.png))
 
-## Availability and recoverability
+## <a name="availability-and-recoverability"></a>可用性と回復性
 
-Every architect’s worst fear is having your architecture go down with no way to recover it. A successful cloud environment is designed in a way that anticipates failure at all levels. Part of anticipating these failures is designing a system that can recover from the failure, within the time required by your stakeholders and customers.
+すべてのアーキテクトが最も恐れる事態は、復旧手段がない状態でアーキテクチャがダウンすることです。 成功するクラウド環境は、すべてのレベルで障害を予測するように設計されています。 利害関係者や顧客が要求する時間内に障害から復旧できるシステムを設計することも、これらの障害予測に含まれます。
 
-![System failure](../media-draft/system-failure.png)
+![システム障害](../media-draft/system-failure.png)
 
-## Efficiency and operations
+## <a name="efficiency-and-operations"></a>効率性と運用
 
-You will want to design your cloud environment so that it's cost-effective to operate and develop against. Inefficiency and waste in cloud spending should be identified to ensure you're spending money where we can make the greatest use of it. You need to have a good monitoring architecture in place so that you can detect failures and problems before they happen or, at a minimum, before your customers notice. You also need to have some visibility in to how your application is using its available resources, through a robust monitoring framework.
+運用と開発のコスト効率に優れたクラウド環境を設計する必要があります。 最も効果が大きい部分に予算を投入できるよう、非効率的で無駄なクラウド支出を識別する必要があります。 障害や問題が発生する前に、または遅くとも顧客が気付く前に検出できるよう、優れた監視アーキテクチャを整備する必要があります。 利用可能なリソースをアプリケーションがどのように使用しているかを、堅牢な監視フレームワークによってある程度可視化する必要もあります。
 
-![Efficiency](../media-draft/efficiency.png)
+![効率性](../media-draft/efficiency.png)
 
-## Shared responsibility
+## <a name="shared-responsibility"></a>共同責任
 
-Moving to the cloud introduces a model of shared responsibility. In this model, your cloud provider will manage certain aspects of your application, leaving you with the remaining responsibility. In an on-premises environment you are responsible for everything. As you move to infrastructure as a service (IaaS), then to platform as a service (PaaS) and software as a service (SaaS), your cloud provider will take on more of this responsibility. This shared responsibility will play a role in your architectural decisions, as they can have implications on cost, operational capabilities, security, and the technical capabilities of your application. By shifting these responsibilities to your provider you can focus on brining value to your business and move away from activities that aren't a core business function.
+クラウドに移行すると、共同責任のモデルが導入されます。 このモデルでは、クラウド プロバイダーがアプリケーションの特定の側面を管理し、残りの部分についてはお客様が責任を負います。 オンプレミス環境では、すべてがお客様の責任です。 サービスとしてのインフラストラクチャ (IaaS)、さらにサービスとしてのプラットフォーム (PaaS) やサービスとしてのソフトウェア (SaaS) に移行すると、クラウド プロバイダーが責任を負う範囲が増えます。 この共同責任は、コスト、運用上の機能、セキュリティ、アプリケーションの技術的な機能に影響を及ぼすので、アーキテクチャの決定で役割を果たします。 これらの責任をプロバイダーにシフトすることで、ビジネスに価値をもたらすことに集中し、コア ビジネス機能ではないアクティビティから離れることができます。
 
-![Cloud service models](../media-draft/cloud-responsibility-model.png)
+![クラウド サービス モデル](../media-draft/cloud-responsibility-model.png)
 
-## Design choices
+## <a name="design-choices"></a>設計の選択肢
 
-In an ideal architecture, we would build the most secure, high performance, highly available, and efficient environment possible. However, as with everything, there are trade-offs. To build an environment with the highest level of all these pillars, there is a cost. That cost may be in actual money, time to deliver, or operational agility. Every organization will have different priorities that will impact the design choices made in each pillar. As you design your architecture, you will need to determine what trade-offs are acceptable and which are not.
+理想的なアーキテクチャでは、できる限り安全で、パフォーマンスと可用性が高く、効率的な環境を構築します。 ただし、何事もそうですが、トレードオフがあります。 以上の柱のすべてを最高水準で達成した環境を構築するには、コストがかかります。 そのコストとは、実際の費用を指す場合もあれば、構築の所要時間、あるいは運用の俊敏性を指す場合もあります。 それぞれの柱でなされる設計上の選択に影響を及ぼす優先順位は、すべての組織で異なります。 アーキテクチャを設計する際は、どのようなトレードオフが許容され、どのようなトレードオフが許容されないかを確認する必要があります。
 
-When building an Azure architecture, there are many considerations to keep in mind. You want your architecture to be secure, scalable, available, and recoverable. To make that possible, you'll have to make decisions based on cost, organizational priorities, and risk.
+Azure アーキテクチャの構築にあたって、留意すべき考慮事項は多々あります。 アーキテクチャに望まれるのは、安全で、スケーラブルで、可用性が高く、回復可能であることです。 それを可能にするには、コスト面、各組織の優先事項、リスクに基づいて決定を下す必要があります。

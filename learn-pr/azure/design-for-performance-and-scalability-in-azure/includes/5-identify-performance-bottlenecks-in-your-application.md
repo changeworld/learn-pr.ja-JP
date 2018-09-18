@@ -1,82 +1,82 @@
-End users are expecting more from their applications. They want to have a great user experience and not be impacted by performance issues. How do you integrate performance bottleneck identification into your architecture? In this unit, we will look at both processes and tools that can help ensure that your application performs well, and help you track down why if it doesn't.
+エンド ユーザーは、より多くのことをアプリケーションに期待しています。 優れたユーザー エクスペリエンスを望み、パフォーマンスの問題によって影響されないことを希望します。 パフォーマンスのボトルネックを特定する機能をどのようにしてアーキテクチャに統合しますか。 ＠このユニットでは、アプリケーションが確実に効率的に実行されるようにするのに役立ち、また、実行されていない場合はその原因を追跡するのに役立つプロセスとツールの両方について見ていきます。
 
-## Importance of requirements
+## <a name="importance-of-requirements"></a>要件の重要性
 
-Before we talk about performance, it's important to talk about requirements. In theory, we could keep improving scalability and performance further and further without end. At some point, however, more improvement is prohibitively expensive, difficult, and doesn't have enough business impact to be worthwhile. 
+パフォーマンスについて説明する前に重要なこととして、要件について説明します。 理論的には、スケーラビリティとパフォーマンスの向上を際限なく続けることが可能です。 しかし、ある時点で、改善するにはコストが高すぎる、困難である、または価値を認めるだけの十分なビジネス上の効果がないという状態になります。 
 
-Our **non-functional requirements** help us find that point. These particular requirements don't tell us what our app must *do*. Instead, they tell us what quality levels it must meet. As examples, we can define these non-functional requirements to tell us:
+その特定の時点を見つけるために役立つのが、**機能以外の要件**です。 これらの特定の要件は、アプリで "*実行する*" 必要があることを示すものではありません。 そうではなく、どのような品質レベルを満たす必要があるかを示します。 たとえば、次のような機能以外の要件を定義することができます。
 
-- How fast a transaction must return under a given load.
-- How many simultaneous connections we need to support before we start returning errors.
-- In the event of server failure, what is the maximum amount of time our application is allowed be down before a back-up is online.
+- 特定の負荷がかかっている状態で、どれだけ速くトランザクションから戻る必要があるか。
+- エラーを返し始める前に、どれだけの数の同時接続をサポートする必要があるか。
+- サーバー障害の発生時、バックアップをオンラインにする前に、アプリケーションに許可される最長ダウン時間。
 
-Defining these requirements in advance of building your solution is critical to ensure that the application meets expectations but doesn't require more effort or expend more money than necessary. We can also plan our monitoring and operations rules around these non-functional requirements. 
+アプリケーションで確実に要求事項が満たされ、かつ、追加作業や追加費用が必要以上に発生することのないように、ソリューションを構築する前に、これらの要件をあらかじめ定義することが重要です。 このような機能以外の要件に関する監視と運用のルールを計画することもできます。 
 
-Discuss requirements with your stakeholders or customers, document them, and communicate them broadly to ensure that everyone agrees on what "good performance" means.
+利害関係者や顧客と要件について話し合い、話し合った内容を文書化して周知し、"良好なパフォーマンス" が何を意味するかについて全員が確実に同意するようにします。
 
-## DevOps and application performance
+## <a name="devops-and-application-performance"></a>DevOps とアプリケーションのパフォーマンス
 
-The idea behind DevOps is that we don't have development and infrastructure silos in our organization. Instead, they work together to effectively build, deploy, monitor, and maintain apps in streamlined process.
+DevOps の背後にある考え方は、組織に開発とインフラストラクチャの分断が存在しないということです。 そうではなく、両者が連携して効率的に、合理化されたプロセスに従ってアプリのビルド、デプロイ、監視、メンテナンスを行います。
 
-The planning, development, testing, and monitoring is carried out in an iterative approach. Performance and quality of our application become a part of our software development life cycle, rather than an afterthought as we deploy into a live environment. The following illustration shows where opportunities for collaboration exist in the software development lifecycle.
+計画、デプロイ、テスト、監視は反復型アプローチに従って実施されます。 アプリケーションのパフォーマンスと品質は、ライブ環境にデプロイするときになって、後から思い付くのではなく、ソフトウェア ライフ サイクルに組み入れられます。 次の図では、ソフトウェア開発ライフサイクルにおいて共同作業の機会が存在する場所を示します。
 
-![An illustration showing the steps of a software lifecycle arranged into a loop to show how each stage feeds into the next.](../media/5-devops-cycle.png)
+![各ステージが次のステージにフィードする方法を示すようにループに配置されたソフトウェア ライフサイクルの手順を示す図。](../media/5-devops-cycle.png)
 
-This approach aligns with a DevOps concept called "shifting left". In other words, bring your quality control checks earlier into your deployment and release process. This allows you to catch end-user impacting issues earlier in the process. As we operate in a continuous cycle, we limit the amount of manual interaction and automate as much as possible. 
+このアプローチは、"シフト レフト" と呼ばれる DevOps の概念に沿ったものです。 つまり、品質管理チェックを前倒しにしてデプロイ プロセスとリリース プロセスに組み込みます。 これにより、エンド ユーザーに影響する問題をプロセスの早い段階で検出することができます。 継続的なサイクルで運用しながら、手動操作の量を制限し、可能な限り自動化します。 
 
-One way we make performance part of our DevOps process is to carry out performance or load tests to validate that the application meets the non-functional requirements prior to a deployment into production.
+DevOps プロセスのパフォーマンスの部分を組み立てる 1 つの方法は、運用環境へのデプロイの前に、あらかじめパフォーマンス テストまたはロード テストを実行して、アプリケーションが機能以外の要件を満たしているかを検証することです。
 
-Ideally, we could carry out performance and load tests in an environment that is exactly like production while not impacting our actual production servers. When leveraging the cloud, you fully have this ability. You can automate the creation of a production-like environment, perform testing, and then destroy the environment to minimize cost. This approach to automation can provide reassurance that your application can handle the scale you require now, as well as respond to future growth.
+運用環境とまったく同様の環境で、実際の運用サーバーに影響を与えることなく、パフォーマンス テストとロード テストを実行できることが理想です。 クラウドを活用すると、これが完全に可能になります。 運用環境に似た環境の作成を自動化し、テストを実行した後、コストを最小限にするためにその環境を破棄できます。 自動化に対するこのアプローチにより、アプリケーションでは確実に、現時点で必要なスケールを処理することができ、また、将来の成長に対応できるようになります。
 
-Application performance monitoring becomes a core part of this. If we're running performance and load tests on our application or want to keep our production performance in check, we want to understand what parts of our application may be performing non-optimally. Let's take a look at some ways to do this.
+この中核になるのが、アプリケーションのパフォーマンス監視です。 アプリケーションでパフォーマンス テストとロード テストを実行しているときや、運用環境のパフォーマンスを管理するときは、アプリケーションのどの部分が最適に実行されていないかを把握する必要があります。 これを行うための方法をいくつか見てみましょう。
 
-## Performance monitoring options in Azure
+## <a name="performance-monitoring-options-in-azure"></a>Azure のパフォーマンス監視オプション
 
-Monitoring is the act of collecting and analyzing data to determine the performance, health, and availability of your business application and associated resources.
+監視とは、ビジネス アプリケーションや関連するリソースのパフォーマンス、正常性、可用性を見極めるために、データを収集し、分析することを指します。
 
-We want to be kept informed that our application is running smoothly. Proactive notifications can be used to inform about critical issues that arise. There are many layers of monitoring to consider, mainly the infrastructure layer and the application layer.
+アプリケーションがスムーズに実行されているかどうかについて、常に最新情報を受け取る必要があります。 プロアクティブな通知を使用して、発生した重要な問題について知らせることができます。 考慮すべき多くの監視レイヤーがあります。主なレイヤーは、インフラストラクチャ レイヤーとアプリケーション レイヤーです。
 
-### Azure Monitor
+### <a name="azure-monitor"></a>Azure Monitor
 
-Azure Monitor provides a single management point for infrastructure-level logs and monitoring for most of your Azure services. It collects metrics, activity logs, and diagnostic logs and more. Azure Monitor provides us with a range of features including:
+Azure Monitor では、大部分の Azure サービスを対象とした、インフラストラクチャ レベルのログと監視のための単一管理ポイントが提供されます。 メトリック、アクティビティ ログ、診断ログなどが収集されます。 Azure Monitor には、次のようなさまざまな機能があります。
 
-- Azure alerts to proactively notify or take action on any breaches to metrics or activities arising.
-- Use Azure Dashboards to combine many monitoring sources into one view of our application.
+- ＠メトリックに対する違反をプロアクティブに通知するため、または発生したアクティビティに対処するための、Azure アラート。
+- Azure ダッシュボードを使用して多くの監視ソースを 1 つのアプリケーション ビューに統合します。
 
-Azure Monitor is the place to start for all your near real-time resource metric insights. Many Azure resources will start outputting metrics automatically once deployed. For example, Azure Web App instances will output compute and application request metrics. Metrics from Application Insights are also collated here in addition to VM host diagnostic metrics. VM guest diagnostic metrics will also appear once you opt in.
+Azure Monitor は、ほぼリアルタイムのリソース メトリック分析情報を得るための開始点です。 多くの Azure リソースが、デプロイ後は自動的にメトリックを出力し始めます。 たとえば、Azure Web App インスタンスは計算およびアプリケーション要求のメトリックを出力します。 Application Insights のメトリックも、VM ホスト診断メトリックに加えて、ここに＠まとめられます。 VM ゲストの診断メトリックも、オプトインすると表示されます。
 
-### Log Analytics
+### <a name="log-analytics"></a>Log Analytics
 
-Centralized logging can help you uncover hidden issues that may be difficult to track down. With Log Analytics you can query and aggregate data across logs. This cross-source correlation can help you identify issues or performance problems that may not be evident when looking at logs or metrics individually. The following illustration shows how Log Analytics acts as a central hub for monitoring data. Log Analytics receives monitoring data from your Azure resources and makes it available to consumers for analysis or visualization.
+ログの一元化により、追跡することが困難な隠れた問題を明らかにすることができます。 Log Analytics では、ログ全体に対してクエリを実行でき、ログ全体でデータを集計できます。 このソース間の相関は、ログやメトリックを個別に見ている限り明らかになりにくい懸念事項やパフォーマンスの問題を特定するのに役立ちます。 次の図では、Log Analytics がデータを監視するための中央ハブとして機能する方法を示します。 Log Analytics は、Azure リソースから監視データを受け取り、コンシューマーが分析や視覚化に利用できるようにします。
 
-![An illustration showing the role of Log Analytics in resource monitoring.](../media/5-log-analytics.png)
+![リソースの監視での Log Analytics の役割を示す図。](../media/5-log-analytics.png)
 
-You can collate a wide range of data sources, security logs, Azure activity logs, server, network, and application logs. You can also push on-premises System Center Operations Manager data to Log Analytics in hybrid deployment scenarios and have Azure SQL Database send diagnostic information directly into Log Analytics for detailed performance monitoring.
+さまざまなデータ ソース、セキュリティ ログ、Azure アクティビティ ログ、サーバー、ネットワーク、およびアプリケーションのログを照合することができます。 また、ハイブリッド デプロイ シナリオにおいてオンプレミスの System Center Operations Manager データを Log Analytics にプッシュし、詳細なパフォーマンス監視を行うために Azure SQL Database から Log Analytics に診断情報を直接送信できます。
 
-Centralized logging can be massively beneficial for troubleshooting all types of scenarios, including performance issues. It's a key part of a good monitoring strategy for any architecture.
+ログの一元化は、パフォーマンスの問題を含むあらゆる種類のシナリオについてトラブルシューティングを行うときに、大きなメリットをもたらす可能性があります。 それは、どのアーキテクチャが対象であっても、適切な監視戦略の重要な部分になります。
 
-## Application performance management
+## <a name="application-performance-management"></a>アプリケーション パフォーマンス管理
 
-Deep application issues are often tricky to track down. This is where integrating telemetry into an application by using an application performance management solution (APM) to track down low-level application performance and behavior can be beneficial. This telemetry can include individual page request times, exceptions within your application, and even custom metrics to track business logic. This telemetry can provide a wealth of insight into what is going on within your application.
+多くの場合、詳細なアプリケーションの問題の追跡には注意が必要です。 これは、アプリケーション パフォーマンス管理ソリューション (APM) を使用してテレメトリをアプリケーションに統合し、低レベルのアプリケーション パフォーマンスと動作を追跡することが有益な場所です。 このテレメトリには、個々のページ要求の回数やアプリケーション内の例外のほか、ビジネス ロジックを追跡するカスタム メトリックも含めることができます。 このテレメトリから、アプリケーション内で何が起こっているかについて、豊富な分析情報を得ることができます。
 
-On Azure, Application Insights is a service that provides this deep application performance management. You install a small instrumentation package in your application, and set up an Application Insights resource in the Microsoft Azure portal. The instrumentation monitors your app and sends telemetry data to the portal.
+Azure では、Application Insights というサービスにより、この詳細なアプリケーション パフォーマンス管理機能が提供されます。 小さなインストルメンテーション パッケージをアプリケーションにインストールし、Application Insights リソースを Microsoft Azure portal に設定します。 このインストルメンテーションでアプリが監視され、テレメトリ データがポータルに送信されます。
 
-Telemetry from the host environments, such as performance counters, Azure diagnostics, and Docker logs, can be ingested. You can also set up web tests that periodically send synthetic requests to your web service. You could even configure your application to send custom events and metrics that you write yourself in the client or server code. For example, application-specific events such as items sold or games won.
+パフォーマンス カウンター、Azure 診断、Docker のログなど、ホスト環境からテレメトリを取り込むことができます。 定期的に Web サービスに＠人工的な要求を送信する Web テストを設定することもできます。 クライアントまたはサーバー コードで自分が作成したカスタム イベントとメトリックを送信するようにアプリケーションを構成することもできます。 たとえば、販売した品目や勝った試合など、アプリケーション固有のイベントです。
 
-Application Insights stores its data in a common repository, and metrics are shared with Azure Monitor. It can take advantage of shared functionality such as alerts, dashboards, and deep analysis with the Log Analytics query language.
+＠Application Insights ではデータが共通のリポジトリに保存され、メトリックが Azure Monitor と共有されます。 アラート、ダッシュボード、Log Analytics クエリ言語を使用した詳細分析などの共有機能を活用できます。
 
-A common pattern used in determining the availability of a web application is the health endpoint monitoring pattern. This pattern is used to monitor web applications and associated back-end services, to ensure that they're available and performing correctly. The pattern is implemented by querying a particular uri. The endpoint checks on the status of many components, including the back-end services that the app depends on, rather than just the availability of the front end itself. This acts as a service-level health check that returns an indication of the overall health of the service.
+Web アプリケーションの可用性の決定に使用される一般的なパターンは、正常性エンドポイント監視パターンです。 このパターンを使用して Web アプリケーションと関連バックエンド サービスを監視し、それらが確実に利用可能で正しく実行されるようにします。 パターンは特定の URI のクエリを実行することによって実装されます。 エンドポイントでは、フロント エンド自体の可用性だけではなく、アプリが依存しているバックエンド サービスを含む、多くのコンポーネントの状態が確認されます。 これはサービス レベルの正常性チェックとして機能し、サービスの全体的な正常性を示す値を返します。
 
-Use an APM solution such as Application Insights to gain a deep understanding of your application and correlate activity across your application. This can help you understand how a specific action works in the client browser, on the server, and through to downstream services. It will also provide insight into trends, provide notifications when there is a problem, and help identify where the problem is and how to fix it, before your users are aware.
+Application Insights などの APM ソリューションを使用して、アプリケーションについて詳細に理解し、アプリケーション全体でアクティビティを関連付けます。 これは、特定のアクションがクライアント ブラウザー内、サーバー上、ダウンストリーム サービスに至るまでどのように機能するかを理解するのに役立ちます。 また、傾向についての分析情報を取得して、問題がある場合は通知し、ユーザーが気付く前に問題が存在する場所と問題の修正方法を特定できます。
 
-## Performance monitoring at Lamna Healthcare
+## <a name="performance-monitoring-at-lamna-healthcare"></a>Lamna Healthcare でのパフォーマンス監視
 
-Lamna Healthcare has implemented a web-based patient booking system using virtual machines and an Azure SQL database across two Azure regions. They've decided to use the VM Agent and Log Analytics to monitor the performance of the underlying front-end virtual machines.
+Lamna Healthcare では、＠2 つの Azure リージョンにまたがる、仮想マシンと Azure SQL データベースを使用して、Web ベースの患者予約システムを実装しました。 VM エージェントと Log Analytics を使用して、基盤となるフロントエンド仮想マシンのパフォーマンスを監視することを決定しました。
 
-They use Azure Monitor to understand the performance of their Azure SQL databases and capture key performance metrics including CPU % and deadlocks.
+Azure Monitor を使用して Azure SQL データベースのパフォーマンスを把握し、CPU % やデッドロックなどの主要なパフォーマンス メトリックをキャプチャします。
 
-Application Insights has been configured to capture availability and telemetry information. The team has changed their new booking functionality to send custom event telemetry to Application Insights. The team now has an approach to understanding the volume of business-related events taking place, and they can get much better insight into what's going on within their application.
+可用性とテレメトリ情報をキャプチャするために、Application Insights が構成されています。 チームは、カスタム イベント テレメトリを Application Insights に送信するように新しい予約機能を変更しました。 現在、チームは発生したビジネス関連イベントの数量を把握する＠ためのアプローチを行っており、アプリケーション内で何が起きているかについて、はるかに明確な分析情報を得ることができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-We've taken a look at some processes, tools, and best practices to help you track down performance issues and ensure that your application is performing at its best. Let's wrap up what we've learned throughout this module.
+パフォーマンスの問題を追跡し、アプリケーションが最適な状態で実行されていることを確認するために役立つ、いくつかのプロセス、ツール、ベスト プラクティスを見てきました。 このモジュールで学習した内容をまとめましょう。
