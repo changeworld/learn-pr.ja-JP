@@ -1,7 +1,7 @@
-You have now learned the basics of working with containers. You have installed Docker, which lets you create and run images on your local Windows, MacOS, or Linux computer. Then you learned some basic Docker commands. And finally, you created your own images and learned how to store them in Docker Hub.
+コンテナーの基本的な操作方法を学習しました。 ローカルの Windows、macOS、または Linux コンピューターでイメージを作成して実行できる Docker をインストールしました。 次に、基本的な Docker コマンドを学習しました。 最後に、独自のイメージを作成し、Docker Hub に保存する方法を学習しました。
 
-## Additional resources
+## <a name="additional-resources"></a>その他のリソース
 
-- [Learn more about Docker](https://www.docker.com/)
-- [Learn about Docker for Azure](https://docs.docker.com/docker-for-azure/)
-- [Learn more about Docker Hub](https://hub.docker.com/)
+- [Docker の詳細](https://www.docker.com/)
+- [Docker for Azure の詳細](https://docs.docker.com/docker-for-azure/)
+- [Docker Hub の詳細](https://hub.docker.com/)

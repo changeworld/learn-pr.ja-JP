@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.3-exercise-preparing-to-use-the-azure-load-balancer
-title: Exercise - Preparing to use Azure Load Balancer
+title: 演習 - Azure Load Balancer を使用する準備
 metadata:
-  title: Exercise - Preparing to use Azure Load Balancer
-  description: Exercise - Preparing to use Azure Load Balancer
+  title: 演習 - Azure Load Balancer を使用する準備
+  description: 演習 - Azure Load Balancer を使用する準備
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9f55cd6129288a5c38a9178b04a98bfe6fd98d40
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233851"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-exercise-preparing-to-use-the-azure-load-balancer.md)]
+content: '[!include[](includes/3-exercise-preparing-to-use-the-azure-load-balancer.md)]'

@@ -1,59 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
-title: Inputs and Outputs
+title: 入力と出力
 metadata:
-  title: Inputs and Outputs
-  description: Inputs and Outputs
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: 入力と出力
+  description: 入力と出力
+  ms.openlocfilehash: b62b6ddb246526294e0b8bdb7a9e825dc2150889
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255353"
 durationInMinutes: 10
-content: |
-  [!include[](includes/3-inputs-and-outputs.md)]
-quiz:
-  title: 'Knowledge Check - Azure Security center'
-  questions:
-  - content: 'Which of the following data sources need to be sanitized?'
-    choices:
-    - content: 'Data from a 3rd party API.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data from the URL parameter.'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Data collected from the user via an input field.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'All of the above'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-  - content: 'Which of the following data needs to be output encoded?'
-    choices:
-    - content: 'Data saved to the database'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data to be output to the screen'
-      isCorrect: true
-      correctExplanation: 'TBD.'
-    - content: 'Data sent to a 3rd party API'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Data in the URL parameters'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-  - content: 'Parameterized queries (stored procedures in SQL) are always a more secure choice for talking to the database because:'
-    choices:
-    - content: 'They are more organized than inline database commands, and therefore less confusing for users.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'There is a clear outline of the script in the stored procedure, ensuring better visibility.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Hackers don’t understand how to program in SQL.'
-      isCorrect: false
-      incorrectExplanation: 'TBD.'
-    - content: 'Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.'
-      isCorrect: true
-      correctExplanation: 'TBD.'
+content: '[!include[](includes/3-inputs-and-outputs.md)]'

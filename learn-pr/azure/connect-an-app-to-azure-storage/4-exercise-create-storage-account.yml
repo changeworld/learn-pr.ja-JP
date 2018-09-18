@@ -1,17 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.4-exercise-create-storage-account
-title: Create an Azure storage account
+title: Azure ストレージ アカウントの作成
 metadata:
-  title: Create an Azure storage account
-  description: Create an Azure storage account
+  title: Azure ストレージ アカウントの作成
+  description: Azure ストレージ アカウントの作成
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: c94356af773e33f5bc235655d1e329aeb6231dfa
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231013"
 interactive: bash
-azureSandbox: true
 durationInMinutes: 5
-content: |
-  [!include[](includes/4-exercise-create-storage-account.md)]
+content: '[!include[](includes/4-exercise-create-storage-account.md)]'

@@ -1,14 +1,14 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.5-framework-updates
-title: Framework Updates
+title: フレームワークの更新
 metadata:
-  title: Framework Updates
-  description: Framework Updates
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  title: フレームワークの更新
+  description: フレームワークの更新
+  ms.openlocfilehash: a4c069910276fb72680a921d514bad3e3f6b2505
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255439"
 durationInMinutes: 10
-content: |
-  [!include[](includes/5-framework-updates.md)]
+content: '[!include[](includes/5-framework-updates.md)]'

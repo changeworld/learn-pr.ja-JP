@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.6-exercise-manage-cache-settings-with-powershell
-title: Exercise - Manage cache settings with PowerShell
+title: 演習 - PowerShell でキャッシュ設定を管理する
 metadata:
-  title: Exercise - Manage cache settings with PowerShell
-  description: Exercise - Manage cache settings with PowerShell
+  title: 演習 - PowerShell でキャッシュ設定を管理する
+  description: 演習 - PowerShell でキャッシュ設定を管理する
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 9ef6bdfc2fd168245857ba74e86667e790bb4e0b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231233"
 durationInMinutes: 10
-content: |
-  [!include[](includes/6-exercise-manage-cache-settings-with-powershell.md)]
+content: '[!include[](includes/6-exercise-manage-cache-settings-with-powershell.md)]'

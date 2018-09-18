@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.connecting-to-postgresql-db-server
-title: Connect to an Azure Database for PostgreSQL server
+title: PostgreSQL DB サーバーへの接続
 metadata:
-  title: Connect to an Azure Database for PostgreSQL server
-  description: In this lab, you'll connect to an Azure Database for PostgreSQL server using the `psql` command.
+  title: PostgreSQL DB サーバーへの接続
+  description: このラボでは、`psql` を使用して、Azure Database for PostgreSQL サーバーに接続します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 8dc0f38cf1cfdc09604d02c56fdf32c717c9d2b5
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231663"
 durationInMinutes: 10
-content: |
-  [!include[](includes/8-connecting-to-postgresql-db-server.md)]
+content: '[!include[](includes/8-connecting-to-postgresql-db-server.md)]'

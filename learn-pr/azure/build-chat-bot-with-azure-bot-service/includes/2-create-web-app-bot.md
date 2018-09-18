@@ -1,22 +1,22 @@
-The first step in creating a bot is to provide a location for the bot to be hosted in Azure. The [Web Apps](https://azure.microsoft.com/services/app-service/web/) feature of Azure App Service is perfect for hosting bot applications, and the Azure Bot Service is designed to provision them for you. In this unit, you will use the Azure portal to provision an Azure web app bot.
+ボットを作成する最初のステップは、ボットが Azure でホストされる場所を指定することです。 Azure App Service の [Web Apps](https://azure.microsoft.com/services/app-service/web/) 機能はボット アプリケーションをホストするのに最適であり、Azure Bot Service はそれを自動的にプロビジョニングするように設計されています。 この演習では、Azure portal を使用して Azure Web アプリ ボットをプロビジョニングします。
 
 <!---TODO: Update for sandbox?--->
-1. Open the [Azure portal](https://portal.azure.com/?azure-portal=true) in your browser. If you are asked to sign in, do so using your Microsoft account.
+1. ブラウザーで [Azure portal](https://portal.azure.com/?azure-portal=true) を開きます。 サインインを求められたら、Microsoft アカウントを使用してサインインします。
 
-1. Click **+ Create a resource**, followed by **AI + Machine Learning**, and then **Web App Bot**.
+1. **[+ リソースの作成]**、**[AI + Machine Learning]**、**[Web App Bot]** の順にクリックします。
 
-    ![Screenshot of the Azure portal showing the Create a resource blade with the Web App Bot resource type highlighted.](../media/2-new-bot-service.png)
+    ![Web App Bot リソースの種類が強調表示されている [リソースの作成] ブレードを示す Azure portal のスクリーンショット。](../media/2-new-bot-service.png)
 
-1. Enter a name, such as "qa-factbot", into the **App name** box. *This name must be unique within Azure, so make sure a green check mark appears next to it.* Select **Create new** under **Resource group** and enter the resource group name "factbot-rg." Select the location nearest you and select the free **F0** pricing tier. Then, click **Bot template**.
+1. **[アプリ名]** ボックスに "qa-factbot" などの名前を入力します。 "*この名前は Azure 内で一意である必要があるため、名前の横に緑色のチェック マークが表示されることを確認してください。*" **[リソース グループ]** の **[新規作成]** を選択し、リソース グループ名として「factbot-rg」 と入力します。 最寄りの場所を選択し、無料の **F0** 価格レベルを選択します。 次に、**[Bot template]\(ボット テンプレート\)** をクリックします。
 
-1. Select **Node.js** as the SDK language and **Question and Answer** as the template type. Then, click **Select** at the bottom of the blade.
+1. SDK 言語として **[Node.js]** を選択し、テンプレートの種類として **[Question and Answer]\(質問と回答\)** を選択します。 次に、ブレードの下部にある **[選択]** をクリックします。
 
-    ![Screenshot of the Azure portal showing the Bot template blade of the bot creation process with the Node.js SDK language and Question and Answer template options highlighted.](../media/2-portal-select-template.png)
+    ![Node.js SDK 言語と質問と回答のテンプレート オプションが強調表示されている、ボット作成プロセスの [Bot template]\(ボット テンプレート\) ブレードを示す Azure portal のスクリーンショット。](../media/2-portal-select-template.png)
 
-1. Now, click **App service plan/Location**, followed by **Create New**, and then create an App Service plan named "qa-factbot-service-plan" or something similar in the same region that you selected in Step 3. Once that's done, click **Create** at the bottom of the "Web App Bot" blade to start the deployment.
+1. **[App Service プラン/場所]**、**[新規作成]** の順にクリックし、手順 3 で選択したのと同じリージョンに "qa-factbot-service-plan" のような名前で App Service プランを作成します。 終わったら、[Web App Bot] ブレードの下部にある **[作成]** をクリックして展開を開始します。
 
-    ![Screenshot of the Azure portal showing a sample configuration blade for a new Web App Bot.](../media/2-portal-start-bot-creation.png)
+    ![新しい Web App Bot のサンプル構成ブレードを示す Azure portal のスクリーンショット。](../media/2-portal-start-bot-creation.png)
 
-1. Click **Resource groups** in the ribbon on the left side of the portal. Then, click **factbot-rg** to open the resource group created for the Azure web app bot. Wait until "Deploying" changes to "Succeeded" at the top of the blade, which indicates that the Azure web app bot was successfully deployed. Deployment generally requires two minutes or less. Periodically click **Refresh** at the top of the blade to refresh the deployment status.
+1. ポータルの左側のリボンで **[リソース グループ]** をクリックします。 **factbot-rg** をクリックして、Azure Web アプリ ボット用に作成したリソース グループを開きます。 ブレードの上部の "デプロイ中" が、Azure Web アプリ ボットが正常にデプロイされたことを示す "成功" に変わるまで待ちます。 通常、デプロイに必要な時間は 2 分以内です。 ブレードの上部にある **[更新]** をときどきクリックして、デプロイの状態を更新します。
 
-Behind the scenes, a lot happened when the Azure web app bot was deployed. A bot was created and registered, an [Azure web app](https://azure.microsoft.com/services/app-service/web/) was created to host it, and the bot was configured to work with [Microsoft QnA Maker](https://www.qnamaker.ai/). The next step is to use QnA Maker to create a knowledge base of questions and answers to infuse the bot with intelligence.
+Azure Web アプリ ボットをデプロイするときは、見えないところで多くのことが行われています。 ボットが作成されて登録され、それをホストする [Azure Web App](https://azure.microsoft.com/services/app-service/web/) が作成されて、[Microsoft QnA Maker](https://www.qnamaker.ai/) で動作するようにボットが構成されました。 次の手順では、QnA Maker を使用して、ボットにインテリジェンスを取り入れるための質問と回答のナレッジ ベースを作成します。

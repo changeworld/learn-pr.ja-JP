@@ -1,22 +1,28 @@
 ### YamlMime:Module
 uid: learn.top-5-security-items-to-consider
 metadata:
-  title: Top 5 Security Items To Consider Before Pushing To Production
-  description: Organizations big and small have started to realize just how crucial system and application reliability is to their business. They’ve also learned just how difficult it is to maintain that reliability while iterating at the speed demanded by the marketplace. Site Reliability Engineering (SRE) is a proven approach to this challenge. In this module you will gain an understanding of SRE and why it matters.
+  title: 運用環境に移行する前にセキュリティ面で考慮すべき項目上位 5
+  description: あらゆる規模の組織は、システムとアプリケーションの信頼性がビジネスにとってどれほど重要であるかを認識し始めました。 また、市場の要求に応えるスピードで反復開発を行いながら信頼性を維持することがどれほど難しいかを学びました。 Site Reliability Engineering (SRE) は、この課題に対して実績のあるアプローチです。 このモジュールでは、SRE とその重要性について理解します。
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Top 5 Security Items To Consider Before Pushing To Production
-summary: In this module you will learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
-abstract: | 
- In this module, you will:
-  - Use Azure Security Center
-  - Verify your application's inputs and outputs
-  - Store your secrets into Key Vault
-  - Ensure you are using the latest version of your framework, and its security features
-  - Validate that your program dependencies and libraries are safe to use
+  ms.openlocfilehash: 990f2db8fae4ecc6c1780c71ff5522a8432018cd
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255510"
+title: 運用環境に移行する前にセキュリティ面で考慮すべき項目上位 5
+summary: このモジュールでは、Azure で Web アプリケーションのセキュリティを確保する方法、そして、最も一般的で危険な Web アプリケーション攻撃からアプリを守る方法を学びます。
+abstract: >
+  このモジュールでは、次のことを行います。
+   - Azure Security Center を使用する
+   - アプリケーションの入出力を確認する
+   - シークレットを Key Vault に格納する
+   - 最新バージョンのフレームワークとセキュリティ機能を使っていることを確認する
+   - プログラムの依存関係やライブラリが安全に使用できることを確認する
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - beginner

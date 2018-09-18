@@ -1,16 +1,16 @@
-You’ve successfully completed the end-to-end scenario of connecting a remote coffee machine to Azure IoT Central to monitor and manage the machine as maintenance issues arise.
+詳しいシナリオに従って、マシンにメンテナンスの問題が発生したときに監視や管理を行うために、リモートのコーヒー マシンを Azure IoT Central に接続したところです。
 
-## Next steps
+## <a name="next-steps"></a>次の手順
 
-In this tutorial, you learned how to:
+このチュートリアルで学習した内容は次のとおりです。
 > [!div class="checklist"]
-> * Create an Azure IoT Central custom application
-> * Create and define your device template
-> * Connect your coffee machine to the application
-> * Validate your connection and data flow
-> * Configure rules for maintenance notifications
+> * Azure IoT Central カスタム アプリケーションを作成する
+> * デバイス テンプレートを作成して定義する
+> * アプリケーションにコーヒー マシンを接続する
+> * 接続とデータ フローを検証する
+> * メンテナンス通知の規則を構成する
 
-To learn more about Azure IoT Central: 
+Azure IoT Central について詳しくは次を参照してください。 
 
 > [!div class="nextstepaction"]
-> [Azure IoT Central Documentation](https://docs.microsoft.com/en-us/azure/iot-central/)
+> [Azure IoT Central のドキュメント](https://docs.microsoft.com/en-us/azure/iot-central/)

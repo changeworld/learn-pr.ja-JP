@@ -1,78 +1,71 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
 metadata:
-# Search engine metadata  
-  title: Knowledge check 
-  description: This is a knowledge check of the Azure IoT Central tutorial
+  title: 知識チェック
+  description: これは Azure IoT Central チュートリアルの知識チェックです。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Knowledge check of the Azure IoT Central tutorial
+  ms.openlocfilehash: 5ce0369f1953aa5cde23ae268c69653acff17acf
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44232814"
+title: Azure IoT Central チュートリアルの知識チェック
 durationInMinutes: 11
-content: |
+content: >
   [!include[](includes/6-knowledge-check.md)]
 quiz:
-  title: 'Knowledge check for the Azure IoT Central tutorial'
+  title: Azure IoT Central チュートリアルの知識チェック
   questions:
-  - content: Where do you define telemetry in IoT Central?
+  - content: IoT Central ではどこでテレメトリを定義しますか?
     choices:
-    - content: Settings
+    - content: 設定
       isCorrect: false
-    - content: Properties
+    - content: プロパティ
       isCorrect: false
-    - content: Measurements
+    - content: 測定
       isCorrect: true
-    - content: Dashboard
+    - content: ダッシュボード
       isCorrect: false
-    - content: Rules
+    - content: ルール
       isCorrect: false
-
-  - content: What are the actions available when configuring rules?
+  - content: ルールを構成するときに使用可能なアクションは何ですか?
     choices:
-    - content: Email
+    - content: 電子メール
       isCorrect: false
     - content: Microsoft Flow
       isCorrect: false
     - content: Webhook
       isCorrect: false
-    - content: All of the above
+    - content: 上記のすべて
       isCorrect: true
-    - content: None of the above 
+    - content: 上記以外
       isCorrect: false
-
-  - content: Where do you add the firmware of your device?
+  - content: デバイスのファームウェアを追加する場所はどこですか?
     choices:
-    - content: Measurements
+    - content: 測定
       isCorrect: false
-    - content: Settings
+    - content: 設定
       isCorrect: false
-    - content: Properties
+    - content: プロパティ
       isCorrect: true
-    - content: Rules
+    - content: ルール
       isCorrect: false
-    - content: Dashboard 
+    - content: ダッシュボード
       isCorrect: false
-
-  - content: How do you obtain the connection string to connect your device to IoT Central?
+  - content: デバイスを IoT Central に接続するための接続文字列はどうやって取得しますか?
     choices:
-    - content: By adding a device in IoT Central
+    - content: IoT Central にデバイスを追加
       isCorrect: true
-    - content: By providing the firmware MAC address
+    - content: ファームウェアの MAC アドレスを指定
       isCorrect: false
-    - content: Customizing it on your own and registering it with IoT Central
+    - content: 自分でカスタマイズして IoT Central に登録
       isCorrect: false
-    - content: All of the above
+    - content: 上記のすべて
       isCorrect: false
-    - content: None of the above
+    - content: 上記以外
       isCorrect: false
-
-
-
-
-
-
-
-

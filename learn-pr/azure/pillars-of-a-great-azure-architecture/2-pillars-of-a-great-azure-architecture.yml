@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
-title: Pillars of a great Azure Architecture
+title: 優れた Azure アーキテクチャの中心要素
 metadata:
-  title: Pillars of a great Azure Architecture
-  description: Pillars of a great Azure Architecture
+  title: 優れた Azure アーキテクチャの中心要素
+  description: 優れた Azure アーキテクチャの中心要素
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: c5737d681d5fcdd8997435c2bfe41b633bca1254
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44231420"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
 quiz:
-  title: 'Knowledge Check - Pillars of a great Azure architecture'
+  title: 知識チェック - 優れた Azure アーキテクチャの中心要素
   questions:
-  - content: 'Which of the following would be an example of something you might address in the security pillar?'
+  - content: セキュリティの中心要素として取り組むべき内容に当てはまるのは、次のどれですか。
     choices:
-    - content: 'Defining a policy for virtual machine backup'
+    - content: 仮想マシン バックアップのポリシーの定義
       isCorrect: false
-      incorrectExplanation: 'The backup policy for virtual machines is important, but does not fall within the security pillar.'
-    - content: 'Enabling multi-factor authentication for all administrative accounts'
+      incorrectExplanation: 仮想マシンのバックアップ ポリシーは重要ですが、セキュリティの中心要素には該当しません。
+    - content: すべての管理アカウントの多要素認証の有効化
       isCorrect: true
-      correctExplanation: 'Enabling multi-factor authentication is a great example of something you might address as part of the security pillar.'
-    - content: 'Evaluating your cloud spend to identify areas of cost savings'
+      correctExplanation: 多要素認証の有効化は、セキュリティの中心要素として取り組むべき事柄のよい例です。
+    - content: コスト削減の分野を識別するためのクラウド支出の評価
       isCorrect: false
-      incorrectExplanation: 'It is important to identify areas where you can reduce cost, but this does not fall within the security pillar.'
-    - content: 'Moving to an autoscaling service to dynamically handle fluctuations in load'
+      incorrectExplanation: コストを削減できる分野を識別することは重要ですが、これはセキュリティの中心要素ではありません。
+    - content: 負荷の変動を動的に処理するための自動スケール サービスへの移行
       isCorrect: false
-      incorrectExplanation: 'Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the security pillar.'
-  - content: 'Which of the following would be an example of something you might address in the availability & recoverability pillar?'
+      incorrectExplanation: 負荷の変動を処理するために自動スケールを使用するのは、優れた方法ですが、セキュリティの中心要素ではありません。
+  - content: 可用性と回復性の中心要素として取り組むべき内容に当てはまるのは、次のどれですか。
     choices:
-    - content: 'Defining a policy for virtual machine backup'
+    - content: 仮想マシン バックアップのポリシーの定義
       isCorrect: true
-      correctExplanation: 'Defining a policy for VM backup is an activity focused on recoverability, so it does fall within this pillar.'
-    - content: 'Enabling multi-factor authentication for all administrative accounts'
+      correctExplanation: VM バックアップのポリシーの定義は、回復性に特化した活動です。したがって、この要素に該当します。
+    - content: すべての管理アカウントの多要素認証の有効化
       isCorrect: false
-      incorrectExplanation: 'Enabling multi-factor authentication is a great example of something you might address as part of the security pillar, but it does not apply to the availability & recoverability pillar.'
-    - content: 'Evaluating your cloud spend to identify areas of cost savings'
+      incorrectExplanation: 多要素認証の有効化は、セキュリティの中心要素として取り組むべき事柄のよい例ではありますが、可用性と回復性の中心要素ではありません。
+    - content: コスト削減の分野を識別するためのクラウド支出の評価
       isCorrect: false
-      incorrectExplanation: 'It is important to identify areas where you can reduce cost, but this does not fall within the availability & recoverability pillar.'
-    - content: 'Moving to an autoscaling service to dynamically handle fluctuations in load'
+      incorrectExplanation: コストを削減できる分野を識別することは重要ですが、これは可用性と回復性の中心要素ではありません。
+    - content: 負荷の変動を動的に処理するための自動スケール サービスへの移行
       isCorrect: false
-      incorrectExplanation: 'Using autoscaling to handle fluctuations in load is a great capability to leverage, but does not fall within the availability & recoverability pillar.'
+      incorrectExplanation: 負荷の変動を処理するために自動スケールを使用するのは、優れた方法ですが、可用性と回復性の中心要素ではありません。

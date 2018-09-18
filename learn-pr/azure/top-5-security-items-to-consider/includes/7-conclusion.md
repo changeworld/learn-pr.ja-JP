@@ -1,12 +1,12 @@
-In this module, you learned how to safeguard your applications in Azure against common attacks.
+このモジュールでは、一般的な攻撃から Azure 内のアプリケーションを保護する方法について説明しました。
 
-In this module, we looked at several key security tips:
+このモジュールでは、セキュリティに関する重要なヒントをいくつか紹介しました。
 
 > [!div class="checklist"]
-> * Use Azure Security Center
-> * Verify your application inputs and outputs
-> * Store your secrets into Key Vault
-> * Ensure you are using the latest version of your framework, and using its security features
-> * Verify your program dependencies and libraries are safe to use
+> * Azure Security Center を使用する
+> * アプリケーションの入出力を確認する
+> * シークレットを Key Vault に格納する
+> * 最新バージョンのフレームワークとそのセキュリティ機能を使用していることを確認する
+> * プログラムの依存関係やライブラリが安全に使用できることを確認する
 
-By following the five items in this list, you will have taken leaps and strides towards ensuring that your applications are safe and that they remain that way.
+このリストの 5 つの項目に従うことで、アプリケーションが安全であること、また将来も安全であり続けることの保証に向けて飛躍し、前進したことになります。

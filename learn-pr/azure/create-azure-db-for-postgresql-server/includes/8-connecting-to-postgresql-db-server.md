@@ -1,66 +1,68 @@
-Lets' assume you're using an on-premises PostgreSQL database. You're managing all security aspects and locked down all access to your servers using the standard PostgreSQL server level firewall rules. You now have a good understanding of how to configure the same server level firewall rules in Azure.
+オンプレミスの PostgreSQL データベースを使用しているとします。 セキュリティのあらゆる面を管理していて、標準的な PostgreSQL サーバー レベルのファイアウォール規則を使用してサーバーへのすべてのアクセスをロック ダウンしました。 ここまでの説明で、Azure で同一のサーバー レベルのファイアウォール規則を構成する方法について理解を深めることができました。
 
-You now have the chance to connect to one of the previous Azure Databases for PostgreSQL servers you created using `psql`.
+ここでは、以前に `psql` を使用して作成した Azure Database for PostgreSQL サーバーの 1 つに接続してみます。
 
-## Allow Azure service access
+## <a name="allow-azure-service-access"></a>Azure サービスへのアクセス許可
 
-Before we begin. You'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall, that you can allow access in two ways.
+作業を開始する前に、次のことを行います。 サーバーに接続するのに PowerShell および `psql` を使用する場合は、Azure サービスへのアクセスを許可する必要があります。 アクセスを許可するには 2 つの方法があります。
 
-Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+1 つ目の方法では、**[Azure サービスへのアクセスを許可]** をオンにします。 アクセスを許可すると、作成したカスタム規則の一覧に規則が入力されていない場合でも、ファイアウォール規則が作成されます。
 
-Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+2 つ目の方法では、すべての IP アドレスへのアクセスを許可するファイアウォール規則を作成します。 この規則には、`psql` の実行に使用する、PowerShell を実行しているクライアントの IP アドレスが含まれます。
 
-You also need to disable the **Enforce SSL connection**.
+**[SSL 接続を強制する]** を無効にする必要もあります。
 
-Let's begin.
+早速始めましょう。
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). Navigate to the server resource for which you would like to create a firewall rule.
+[Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 ファイアウォール規則を作成する対象のサーバー リソースに移動します。
 
-Select the **Connection Security** option to open the connection security blade to the right.
+**[接続のセキュリティ]** オプションを選択して、右側の接続のセキュリティ ブレードを開きます。
 
-![Screenshot of the Azure portal showing the Connection security section of the PostgreSQL database resource blade.](../media-draft/7-db-security-settings.png)
+![PostgreSQL データベースのセキュリティ設定](../media-draft/7-db-security-settings.png)
 
-Recall, you want to allow access to PowerShell clients running `psql`.
+`psql` を実行している PowerShell クライアントへのアクセスを許可する必要があります。
 
-You can choose to either:
+次のいずれかを選択できます。
 
-- Set **Allow access to Azure services** to **ON**
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- **[Azure サービスへのアクセスを許可]** を **[オン]** に設定します。
+- **[SSL 接続を強制する]** を **[無効]** に設定します。
+- **[保存]** をクリックして、変更を保存します。
 
-Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+または、すべての IP アドレスへのアクセスを許可するファイアウォール規則を追加します。 次の値を使用します。
 
-- Rule Name: `AllowAll`
-- Start IP: `0.0.0.0`
-- End IP: `255.255.255.255`
-- Set **Enforce SSL connection** to **DISABLED**
-- Click the **Save** button to save your changes
+- 規則名: `AllowAll`
+- 開始 IP: `0.0.0.0`
+- 終了 IP: `255.255.255.255`
+- **[SSL 接続を強制する]** を **[無効]** に設定します。
+- **[保存]** をクリックして、変更を保存します。
 
 > [!Warning]
-> Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients will not be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications. In production environments, you'll only allow access to specific client IP addresses.
+> このファイアウォール規則を作成すると、インターネット上のすべての IP アドレスがサーバーへの接続を試みることができます。 クライアントがユーザー名とパスワードなしではサーバーにアクセスできない場合でも、セキュリティへの影響を確実に理解したうえで、慎重にこの規則を有効にします。 運用環境では、特定のクライアント IP アドレスへのアクセスのみを許可します。
 
-For the next steps, you'll start an Azure Cloud Shell session. This lab uses `bash` as the command-line environment.
+次の手順では、Azure Cloud Shell セッションを開始します。 このラボでは、コマンドライン環境として `bash` を使用します。
 
-- Open the Cloud Shell from the Azure portal. Go to [Azure portal](https://portal.azure.com?azure-portal=true) and click the Open Cloud Shell button:
+- Azure portal から Cloud Shell を開きます。 [Azure portal](https://portal.azure.com?azure-portal=true) に移動し、[Open Cloud Shell]\(Cloud Shell を開く\) ボタンをクリックします。
 
-- In case you have several subscriptions, check to make sure you're using the correct subscription when asked. You can also run the following command to set the active subscription. Remember to replace the zeros with your subscription identifier.
+  ![Cloud Shell ボタン](../media-draft/cloud-shell-button.png)
+
+- 複数のサブスクリプションがある場合は、適切なサブスクリプションを使用していることを確認します。 次のコマンドを実行して、アクティブなサブスクリプションを設定することもできます。 0 をサブスクリプション ID に置き換えます。
 
    ```bash
    az account set --subscription 00000000-0000-0000-0000-000000000000
    ```
 
-- Connect psql to your server using the following command:
+- 次のコマンドを使用して、psql をサーバーに接続します。
 
   ```bash
   psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
   ```
 
-   Recall, `server-name`, and `admin-user` are the values you chose for the administrator account when you created the server. `postgres` is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
+   `server-name` および `admin-user` は、サーバーの作成時に管理者アカウントに対して選択した値です。 `postgres` は、すべての PostgreSQL サーバーの作成に使用される既定の管理データベースです。 サーバーの作成時に指定したパスワードを入力するよう求めるプロンプトが表示されます。
 
-- Once successfully connected, execute the `\l` command to list all databases.
+- 正常に接続されたら、`\l` コマンドを実行してすべてのデータベースを一覧表示します。
 
-   This command will result in two or more default databases returned from.
+   このコマンドにより、2 つ以上の既定のデータベースが返されます。
 
-- When you're finished executing psql operations on your server, execute the command `\q` to quit `psql`.
+- サーバー上で psql 演算の実行が完了したら、コマンド `\q` を実行して `psql` を終了します。
 
-- Finally, to exit Cloud Shell, execute the command `exit`.
+- 最後に、Cloud Shell を終了するには、`exit` コマンドを実行します。

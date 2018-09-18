@@ -27,7 +27,7 @@ Azure Blob Storage 内にメッセージを格納する受信側アプリケー�
 
 ## <a name="the-azure-cli-commands-for-creating-a-general-purpose-standard-storage-account"></a>汎用の Standard ストレージ アカウントを作成するための Azure CLI コマンド
 
-1. ご利用のリソース グループ内で、およびそのリソース グループを作成するときに使用したのと同じ Azure データセンターの場所内で、ストレージ アカウントを作成します (汎用 V2)。
+1. ご利用のリソース グループ内で、およびそのリソース グループを作成するときに使用したのと同じ Azure データセンターの場所内で、汎用 V2 ストレージ アカウントを作成します。
 
     ```azurecli
     az storage account create --name <storage account name> --resource-group <resource group name> --location <location> --sku Standard_RAGRS --encryption blob
@@ -57,7 +57,7 @@ Azure Blob Storage 内にメッセージを格納する受信側アプリケー�
 
 ## <a name="shell-command-for-cloning-an-application-github-repository"></a>アプリケーションの GitHub リポジトリを複製するためのシェル コマンド
 
-Git は分散型バージョン管理モデルを使用するコラボレーション ツールであり、ソフトウェア プロジェクトやドキュメント プロジェクトでの共同作業向けに設計されています。 Windows を含む複数のプラットフォームで Git クライアントを利用することができ、Git コマンドラインは Azure Bash Cloud Shell に含まれています。 GitHub は Git リポジトリに対する Web ベースの ホスティング サービスです。 
+Git は分散型バージョン管理モデルを使用するコラボレーション ツールであり、ソフトウェア プロジェクトやドキュメント プロジェクトでの共同作業向けに設計されています。 Windows を含む複数のプラットフォームで Git クライアントを利用することができ、Git コマンドラインは Azure Bash Cloud Shell に含まれています。 GitHub は Git リポジトリに対する Web ベースのホスティング サービスです。 
 
 GitHub 内でプロジェクトとしてホストされているアプリケーションがある場合は、**git clone** コマンドを使用してプロジェクトのリポジトリを複製することにより、プロジェクトのローカル コピーを作成することができます。
 

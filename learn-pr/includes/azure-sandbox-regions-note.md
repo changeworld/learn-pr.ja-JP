@@ -1,5 +1,5 @@
-Pick from one of these locations available to the Azure Sandbox:
+Azure サンドボックスで使用可能な次の場所のいずれかを選択します。
 
-- Region A
-- Region B
-- Region C
+- リージョン A
+- リージョン B
+- リージョン C

@@ -1,26 +1,26 @@
-The MEAN stack of components requires a server. It could be a Linux machine or virtual machine running in your own server room, or it can be configured on a cloud-based virtual machine. In this module, we will set up the stack to run on an Ubuntu Linux virtual machine running on Azure.
+コンポーネントの MEAN スタックには、サーバーが必要です。 これは、ご使用のサーバー ルームで実行している Linux マシンや仮想マシンでも、それをクラウドベースの仮想マシンに構成するのでもかまいません。 このモジュールでは、Azure で実行されている Ubuntu Linux 仮想マシンで実行するスタックを設定します。
 
-In this unit, you will be creating a new Ubuntu Linux virtual machine hosted on Azure. You could also install your MEAN stack components on an existing virtual machine or physical host machine. By creating a new one with this exercise, you can tie together all the components into an Azure resource group for easier management and clean-up after you complete the exercises.
+このユニットでは、Azure にホストされる、新しい Ubuntu Linux 仮想マシンを作成します。 MEAN スタック コンポーネントは、既存の仮想マシンや物理ホスト マシンにインストールすることも可能です。 この演習では新しいものを作成することにより、すべてのコンポーネントを Azure リソース グループにまとめて、演習の完了後の管理とクリーンアップを簡単にすることができます。
 
-We will use the Cloud Shell command line that's integrated into the Azure portal to create the Linux VM.
+Linux VM は、Azure portal に統合されている Cloud Shell コマンドラインを使用して作成します。
 
-## Provision an Ubuntu Linux VM
+## <a name="provision-an-ubuntu-linux-vm"></a>Ubuntu Linux VM をプロビジョニングする
 
-1. Go to the [Azure portal](https://portal.azure.com?azure-portal=true).
+1. [Azure portal](https://portal.azure.com?azure-portal=true) にアクセスします。
 
-1. Open Cloud Shell from the angle bracket (>_) icon in the Azure portal toolbar.
+1. Azure portal のツールバーの山かっこ (>_) アイコンから Cloud Shell を開きます。
 
 <!---TODO: Update for sandbox--->
-1. In Cloud Shell, execute the command to create an Azure resource group, which will include our VM. Substitute your own resource group name for `<resource-group-name>` and your desired Azure location for `<resource-group-location>` (`westus`, for example).
+1. Cloud Shell でコマンドを実行し、使用する VM が含まれる Azure リソース グループを作成します。 `<resource-group-name>` をご自分のリソース グループ名に、また `<resource-group-location>` をご希望の Azure の場所 (`westus` など) に置き換えます。
 
 
     ```bash
     az group create --name <resource-group-name> --location <resource-group-location>
     ```
 
-    Remember your resource group name, as we will use it in other commands.
+    ご自分のリソース グループ名は、その他のコマンドでも使用するので覚えておきます。
 
-1. In Cloud Shell, run the following command to create a new Ubuntu Linux VM. Substitute your own resource group name for `<resource-group-name>` and your preferred admin username and password for `<vm-admin-username>` and `<vm-admin-password>`.
+1. Cloud Shell で次のコマンドを実行して、新しい Ubuntu Linux VM を作成します。 `<resource-group-name>` をご自分のリソース グループ名に、また `<vm-admin-username>` と `<vm-admin-password>` をご希望の管理ユーザー名とパスワードに置き換えます。
 
     ```bash
     az vm create \
@@ -32,9 +32,9 @@ We will use the Cloud Shell command line that's integrated into the Azure portal
         --generate-ssh-keys
     ```
 
-    Take note of your admin username and password to allow you to connect to this VM later.
+    この VM に後で接続できるよう、管理者名とパスワードをメモしておきます。
 
-    This command takes about two minutes to complete. When the command finishes, the resulting output will look similar to this.
+    このコマンドの完了には約 2 分かかります。 コマンドの完了の結果の出力は次のようになります。
 
     ```json
     {
@@ -50,30 +50,30 @@ We will use the Cloud Shell command line that's integrated into the Azure portal
     }
     ```
 
-    You will also want to save the public IP address of the newly created VM in order to connect to the VM.
+    VM に接続するには、新たに作成した VM のパブリック IP アドレスも保存したおいた方がよいでしょう。
 
-1. Try connecting to your new VM.
+1. ご利用の新しい VM への接続を試します。
 
-    Open a command prompt/terminal window and run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+    コマンド プロンプトまたはターミナル ウィンドウを開き、次のコマンドを実行します。 `<vm-admin-username>` と `<vm-public-ip>` のプレースホルダーを、管理者ユーザー名とご利用の VM のパブリック IP アドレスに置き換えます。
 
     ```bash
     ssh <vm-admin-username>@<vm-public-ip>
     ```
 
-    The first time you connect to the machine, you'll be asked if you trust the remote machine. By answering `yes`, the machine's ECDSA key fingerprint will be saved locally, so subsequent connections will be trusted.
+    マシンに最初に接続したとき、そのリモート マシンを信頼するかたずねられます。 `yes` と回答すると、マシンの ECDSA キー フィンガープリントがローカルに保存されるので、それ以降の接続は信頼されるものとなります。
 
-    If everything looks fine, type `exit` to close the SSH session.
+    すべてに問題がないようであれば、`exit` と入力し、SSH セッションを閉じます。
 
-1. Open port 80 to allow incoming HTTP traffic to the new web application that you will create.
+1. ポート 80 を開き、作成する新しい Web アプリケーションへの受信 HTTP トラフィックを許可します。
 
-    Go back to Cloud Shell on the Azure portal. Issue the following command using your original resource group name for `<resource-group-name>`.
+    Azure portal 上で、Cloud Shell に戻ります。 `<resource-group-name>` の元のリソース グループ名を使用して、次のコマンドを発行します。
 
     ``` bash
     az vm open-port --port 80 --resource-group <resource-group-name> --name MeanDemo
     ```
 
-    This command will open up the HTTP port on your VM that was named "MeanDemo" when it was created.
+    このコマンドにより、作成時に "MeanDemo" と命名された HTTP ポートがご利用の VM で開きます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-With your new Ubuntu Linux VM ready to go, we can now connect to it to start installing the various components of the MEAN stack.
+新しい Ubuntu Linux VM の準備が完了したら、それに接続して、MEAN スタックのさまざまなコンポーネントのインストールを開始できます。

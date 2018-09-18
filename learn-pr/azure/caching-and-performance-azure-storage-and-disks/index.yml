@@ -1,23 +1,32 @@
 ### YamlMime:Module
 uid: learn.caching-and-performance-azure-storage-and-disks
 metadata:
-  title: Caching and performance in Azure storage disks
-  description: Learn about disk performance in Azure, and how caching can help optimize read and write access to storage. Compare the types of Azure storage caching, and learn how to enable caching to help optimize the performance of Azure VM disks.
+  title: Azure Storage ディスクのキャッシュとパフォーマンス
+  description: Azure でのディスク パフォーマンスについて、およびキャッシュを最適化することがストレージへの読み取りおよび書き込みアクセスにどのように役立つかについて学習します。 Azure Storage のキャッシュの種類を比較して、Azure VM ディスクのパフォーマンスを最適化するためにキャッシュを有効化する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Caching and performance in Azure storage disks
-summary: Moving data as fast as possible is good for business. Here, you'll learn about disk performance in Azure, and how caching can help optimize read and write access to storage. Compare the types of Azure storage caching, and learn how to enable caching to help optimize the performance of Azure VM disks.
-abstract: |
-  In this module, you will:
-  - Describe the key considerations around disk performance in Azure (IOPS)
-  - Describe the effects of caching on disk performance in Azure
-  - Enable and manage cache settings with the Azure portal
-  - Enable and manage cache settings with PowerShell
-prerequisites: None
+  ms.openlocfilehash: 5f99121d523bfa3481a3ada294b9a28a64ca9eed
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44233681"
+title: Azure Storage ディスクのキャッシュとパフォーマンス
+summary: 可能な限り高速にデータを移動することは、ビジネスに役立ちます。 ここでは、Azure でのディスク パフォーマンスについて、およびキャッシュを最適化することがストレージへの読み取りおよび書き込みアクセスにどのように役立つかについて学習します。 Azure Storage のキャッシュの種類を比較して、Azure VM ディスクのパフォーマンスを最適化するためにキャッシュを有効化する方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure (IOPS) のディスク パフォーマンスに関する重要な考慮事項について説明する
+
+  - Azure のディスク パフォーマンスに対するキャッシュの影響を説明する
+
+  - Azure portal でキャッシュ設定を有効化して管理する
+
+  - PowerShell でキャッシュ設定を有効化して管理する
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

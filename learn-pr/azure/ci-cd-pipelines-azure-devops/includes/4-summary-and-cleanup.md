@@ -1,27 +1,27 @@
-You've successfully created a CI/CD pipeline for your custom application using Azure DevOps projects. 
+Azure DevOps プロジェクトを使用してカスタム アプリケーション用の CI/CD パイプラインを正しく作成しました。 
 
-## Clean up resources
+## <a name="clean-up-resources"></a>リソースのクリーンアップ
 
-When you're done working with this CI/CD pipeline, you can delete all resources created during the tutorial.
+この CI/CD パイプラインの作業が終わったら、チュートリアルの間に作成したすべてのリソースを削除できます。
 
-1. From the Azure portal, browse to `Resource Groups` and click on `VstsResourceGroup-LearnCluster-xxxx` where xxx is random groups of letters and numbers  
+1. Azure portal から [`Resource Groups`] を参照して `VstsResourceGroup-LearnCluster-xxxx` をクリックします。xxx はアルファベットと数字のランダムなグループです。  
 ![LearnClusterRG](/media-draft/4-learnclusterrg.png)
 
-2. Click on the DevOps project named `Learn`  
-![Learn Link](/media-draft/4-learnlink.png)
+2. `Learn` という名前の DevOps プロジェクトをクリックします。  
+![Learn のリンク](/media-draft/4-learnlink.png)
 
-3. Click on `Delete`  
-![Delete](/media-draft/4-deleteproj.png)
+3. [`Delete`] をクリックします。  
+![削除](/media-draft/4-deleteproj.png)
 
-4. Click on `Yes`  
-![Yes](/media-draft/4-yes.png)
+4. [`Yes`] をクリックします。  
+![はい](/media-draft/4-yes.png)
 
-This will delete all resource created in Azure.
+これにより、Azure で作成されたすべてのリソースが削除されます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this tutorial, you learned how to:
+このチュートリアルで学習した内容は次のとおりです。
 > [!div class="checklist"]
-> * Create an Azure DevOps project
-> * Replace the sample app in the Azure DevOps project with your own
-> * Customize the Buld and Release pipelines
+> * Azure DevOps プロジェクトを作成する
+> * Azure DevOps プロジェクトのサンプル アプリを独自のものと置き換える
+> * ビルドとリリースのパイプラインをカスタマイズする

@@ -1,24 +1,24 @@
-You've successfully created a full-featured, serverless application using Azure services.
+Azure サービスを使用して、多彩な機能を備えたサーバーレス アプリケーションを作成できました。
 
-## Clean up
+## <a name="clean-up"></a>クリーンアップ
 <!---TODO: Update for sandbox--->
 
-When you are done working with this application, you can use the following command to delete all resources created during the tutorial:
+このアプリケーションの作業が完了したら、次のコマンドを使用して、このチュートリアルで作成したすべてのリソースを削除できます。
 
 ```azurecli
 az group delete --name first-serverless-app
 ```
 
-Type `y` when prompted.  
+プロンプトが表示されたら 「`y`」と入力します。  
 
-## Next steps
+## <a name="next-steps"></a>次の手順
 
-In this module, you learned how to:
-  - Configure Azure Blob storage to host a static website and uploaded images.
-  - Upload images to Azure Blob storage using Azure Functions.
-  - Resize images using Azure Functions.
-  - Store image metadata in Azure Cosmos DB. 
-  - Use the Cognitive Services Computer Vision API to auto-generate image captions.
-  - Use Azure Active Directory to secure the web app by authenticating users.
+このモジュールでは、次の方法を説明しました。
+  - 静的な Web サイトとアップロードされた画像がホストされるように Azure Blob Storage を構成します。
+  - Azure Functions を使用して、画像を Azure Blob Storage にアップロードします。
+  - Azure Functions を使用して、画像のサイズを変更します。
+  - 画像のメタデータを Azure Cosmos DB に格納します。 
+  - Cognitive Services Computer Vision API を使用して、画像のキャプションを自動生成します。
+  - Azure Active Directory を使用してユーザーを認証することにより、Web アプリをセキュリティで保護します。
 
-To learn how to connect even more services to Functions, continue to the [Functions with Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) tutorial.
+さらに多くのサービスを Functions に接続する方法については、[Functions と Logic Apps](https://docs.microsoft.com/azure/azure-functions/functions-twitter-email) に関するチュートリアルに進んでください。

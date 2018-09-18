@@ -1,14 +1,13 @@
-Suppose you work for a company that processes fitness tracker data for runners. Your company tracks the runners' routes and performance using a relational database hosted on an on-premise server.
+ランナーに対するフィットネス追跡ツールのデータを処理する会社に勤務しているとします。 会社では、オンプレミス サーバー上でホストされているリレーショナル データベースを使用して、ランナーの走行順路とパフォーマンスを追跡します。
 
-The company wants to expand by tracking additional fitness tracking models and types and do that it will need to scale its database, both for capacity and performance. You want to move away from your current on-premise databases servers without compromising security.
+会社では、追加のフィットネスを追跡することによって、追跡モデルとその種類を拡張したいと考えています。そのためには、容量とパフォーマンスの両方について、そのデータベースのスケーリングを実行する必要があります。 あなたは、セキュリティを損なうことなく、現在ご利用のオンプレミスのデータベース サーバーから離れた場所に移動する必要があります。
 
-When you consider cloud hosted database offerings, some of the questions that you may have might be aspects such as availability, scalability, and security. Azure Database for PostgreSQL allows you to take advantage of built-in security, fault tolerance, and data protection that you otherwise have to buy or design separately, build, and manage.
+クラウドでホストされるデータベース オファリングを検討するとき、生じるいくつかの質問として、可用性、スケーラビリティ、セキュリティなどの要素が挙げられるのではないでしょうか。 Azure Database for PostgreSQL を使用すると、組み込みのセキュリティ、フォールト トレランス、データ保護を利用できます。これらは、本来なら自身で別々に購入または設計し、構築、管理する必要があります。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-By the end of this module, you will:
-
-- Create an Azure Database for PostgreSQL using the Azure portal
-- Create an Azure Database for PostgreSQL using Azure CLI
-- Configure a PostgreSQL server-level firewall rule
-- Connect to the PostgreSQL server using _psql_ in Azure Cloud Shell
+このモジュールを完了するまでに、次のことを行います。
+- Azure portal を使用して Azure Database for PostgreSQL を作成する
+- Azure CLI を使用した Azure Database for PostgreSQL を作成する
+- PostgreSQL サーバー レベルのファイアウォール規則を構成する
+- Azure Cloud Shell で _psql_ を使用して PostgreSQL サーバーに接続する

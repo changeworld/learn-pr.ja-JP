@@ -1,67 +1,66 @@
-The Azure portal allows you to manage, and scale PostgreSQL database servers. You decide to create an Azure Database for PostgreSQL server to store runner performance data. Based on historic captured data volumes, you know your server storage requirements should be set at 10 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you typically store backups for 25 days.
+Azure portal を使用すると、PostgreSQL データベース サーバーの管理およびスケーリングを行うことができます。 あなたは、ランナーのパフォーマンス データを格納するために Azure Database for PostgreSQL サーバーを作成することに決めました。 取得されたデータ ボリュームの履歴から、サーバー ストレージの要件を 10 GB に設定する必要があることがわかっています。 ご自分の処理要件をサポートするには、仮想コアを 1 個備えたコンピューティング世代 Gen 5 のサポートが必要です。 また、通常、25 日間のバックアップを格納していることもわかっています。
 
 > [!TIP]
-> All of the exercises you do in Microsoft Learn are free, but once you start exploring on your own, you will need an Azure subscription. If you don't have one yet, take a couple of minutes and create a [free account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+> Microsoft Learn で行う演習はすべて無料ですが、自分で始めるときは、Azure サブスクリプションが必要になります。 サブスクリプションをお持ちでない場合、[無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)を作成してください。これは数分で作成できます。
 
-Sign in to [the Azure portal](https://portal.azure.com?azure-portal=true). You'll see Azure resource creation and management menu on your left and the dashboard filling the rest of the screen.
+[Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 左側には Azure リソースの作成と管理のメニューが表示されます。画面の残りの部分はダッシュボードになっています。
 
-## Create an Azure Database for PostgreSQL server
+## <a name="create-an-azure-database-for-postgresql-server"></a>Azure Database for PostgreSQL サーバーの作成
 
-Once signed in you'll see the default Dashboard displayed. You have a couple of options available to you to create an Azure Database for PostgreSQL server. From the Dashboard, you can either:
+サインインすると、既定のダッシュ ボードが表示されるのを確認できます。 Azure Database for PostgreSQL サーバーの作成に使用可能なオプションがいくつかあります。 ダッシュボードからは、次のいずれかの操作を行うことができます。
 
-- Select the **All services** option and then search for the **Azure Database for PostgreSQL server** option. This screen will display any configured servers already in your account. From here, you select **Add**, which will take you to the new server creation blade.
+- **[すべてのサービス]** オプションを選択し、次に **[Azure Database for PostgreSQL サーバー]** オプションを選択します。 ご自分のアカウントで既に構成されているサーバーがあれば、この画面に表示されます。 ここでは、**[追加]** を選択して、新しいサーバーを作成するためのブレードに移動します。
 
-or
+または
 
-- Select the **Create a resource** option, which will present you with Azure Marketplace resource options. From here, you select the Databases option and choose **Azure Database for PostgreSQL**.
+- **[リソースの作成]** オプションを選択します。これにより、Azure Marketplace リソース オプションが表示されます。 ここでは、[データベース] オプション、**[Azure Database for PostgreSQL]** の順に選択します。
 
-### Configure the server
+### <a name="configure-the-server"></a>サーバーの構成
 
-You'll now see the PostgreSQL server create blade, similar to the following illustration.
+ここで、次の図に示すような PostgreSQL サーバーの作成ブレードが表示されます。
 
-![Screenshot of the Azure portal showing the creation blade for a new PostgreSQL database.](../media-draft/4-create-blade.png)
+![Azure portal での PostgreSQL サーバー作成用のユーザー インターフェイス ブレード](../media-draft/4-create-blade.png)
 
 > [!NOTE]
-> You'll need to remember or write down some details as you create the PostgreSQL server. For example the username and password to access the server. You'll use this information to connect to your server later.
+> PostgreSQL サーバーを作成する場合は、いくつかの詳細情報を覚えておくか書き留める必要があります。 たとえば、サーバーにアクセスするためのユーザー名とパスワードがあります。 この情報は、後でご自分のサーバーに接続するときに使用します。
 
-1. Choose a unique name for the server. Recall, that then name must be all lowercase and can have numbers and hyphens.
+1. サーバーの一意の名前を選択します。 名前はすべて小文字とする必要があり、名前には数字とハイフンを含めることができることを思い出してください。
 
-1. Select a subscription, check to be sure this field is set to the subscription you want to use.
+1. サブスクリプションを選択してから、次のフィールドが使用するサブスクリプションに設定されていることを必ず確認します。
 
-1. You now have the option to create or reuse an existing resource. To create a new resource, select the **Create new** radio button and enter a name for the new resource group. You'll use this group for the rest of this module. Name the resource something descriptive so that it's easy to delete the resource later.
+1. これで、リソースを作成または既存のリソースを再利用するオプションを使用できるようになりました。 新しいリソースを作成するには、**[新規作成]** ラジオ ボタンをクリックし、新しいリソース グループの名前を入力します。 このモジュールの残りの部分には、このグループを使用します。 後でリソースを削除しやすくするために、リソースにはわかりやすい名前を付けます。
 
-1. Select the source of your new server. For this lab, you'll leave the option at _Blank_. Recall, you can change the option to _Back up_ if you want to restore and existing server backup.
+1. ご自分の新しいサーバーのソースを選択します。 このラボでは、このオプションを _[空白]_ のままとします。 既存のサーバーのバックアップを復元する場合は、オプションを _[バックアップ]_ に変更できることを思い出してください。
 
-1. Choose a login name to use as an administrator login for the new server. Recall, the admin login name can't be azure_superuser, azure_pg_admin, admin, administrator, root, guest, or public. It can't start with pg_. Remember or write down the name for future use.
+1. 新しいサーバー用の管理者ログインとして使用するログイン名を選択します。 管理者のログイン名に azure_superuser、azure_pg_admin、admin、administrator、root、guest、または public は使用できないことを思い出してください。 pg_ で始めることはできません。 今後の使用に備えて名前を覚えておくか書き留めます。
 
-1. Choose a password to use with the above administrator login name. Recall, our password must include characters from three of the following categories: English uppercase letters, English lowercase letters, numbers (0 through 9), and non-alphanumeric characters (!, $, #, %, etc.). Remember or write down the password for future use.
+1. 上記の管理者ログイン名と一緒に使用するパスワードを選択します。 パスワードには、英大文字、英小文字、数字 (0 から 9)、英数字以外の文字 (!、$、#、% など) のうち、3 種類の文字が含まれている必要があることを思い出してください。 今後の使用に備えてパスワードを覚えておくか書き留めます。
 
-1. Retype the password to confirm your password.
+1. パスワードをもう一度入力して、そのパスワードを確定します。
 
-1. Choose a location for your server. You'll want to choose a location closest to you.
+1. ご自分のサーバーの場所を選択します。 ご自分が住んでいる場所に最も近い場所を選択します。
 
-1. You'll now select the version of for your server. Select the latest version of PostgreSQL.
+1. 次にそのサーバーのバージョンを選択します。 PostgreSQL の最新バージョンを選択します。
 
-1. As the second last step, select the **Pricing tier** option.
+1. 最後から 2 番目の手順として、**[価格レベル]** オプションを選択します。
 
-    Recall that you need to configure your server with specific storage and compute options.
+    特定のストレージ オプションとコンピューティング オプションを使用してご自分のサーバーを構成する必要があることを思い出してください。
 
-    - 10 GB of disc storage
-    - Compute Generation 5 support
-    - Retention period of 25 days
+    - 10 GB のディスク ストレージ
+    - コンピューティング世代 Gen 5 のサポート
+    - 保有期間 25 日
 
-    Click **Pricing tier** to access the pricing tier blade and make the following changes.
+    **[価格レベル]** をクリックして価格レベル ブレードにアクセスし、次の変更を行います: ![[価格レベル] ボタン](../media-draft/4-azure-db-pricing-tier-button.png)
 
-    - Choose the **Basic** option tab.
-    - Choose the **Gen 5 Computation Generation** option.
-    - Choose 1 vCore from the **vCore** slider. Notice how the changes in the slider affect the **Price Summary**.
-    - Choose 10 GB from the **Storage** slider. If you're having trouble sliding to exactly 10 GB, you can use your keyboard's left and right cursor keys to get a precise value.
-    - Choose 25 Days from the **Backup Retention Period** slider.
+    - **[Basic]** オプション タブを選択します。
+    - **[Gen 5 Computation Generation]\(コンピューティング世代 Gen 5\)** オプションを選択します。
+    - **[仮想コア]** スライダーから [1 個の仮想コア] を選択します。 スライダーを変更した結果、**[価格の概要]** にどのような影響があったかを注目してください。
+    - **[ストレージ]** スライダーから 10 GB を選択します。 10 GB に正確にスライドするのが難しい場合は、キーボードの左方向キーと右方向キーを使用して正確な値を取得することができます。
+    - **[バックアップの保有期間]** スライダーから 25 日を選択します。
 
-        ![Screenshot of the Azure portal showing the database pricing tier for a new PostgreSQL database.](../media-draft/4-azure-db-pricing-tier.png)
+    ![価格レベル](../media-draft/4-azure-db-pricing-tier.png)
+    - 選択が完了して選択内容をコミットしたら **[OK]** をクリックして価格レベルのオプションを閉じます。
 
-    - Click **OK** once you're satisfied with your selection to commit your selections and close the pricing tier options.
+1. 残りの作業は、入力した値を確認して **[作成]** をクリックするだけとなりました。 作成には数分かかる場合があります。 Azure portal 画面の上部にある通知アイコン (ベル) を選択すると、進行状況を監視できます。
 
-1. All that is left now, is to review the values you entered and click **Create**. Creation can take several minutes. You can select the Notifications icon (a bell) at the top of the Azure portal screen to monitor progress.
-
-You now have a PostgreSQL server available. In the next unit, you'll see how to create the same server using the Azure CLI.
+これで PostgreSQL サーバーが使用できるようになりました。 次のユニットでは、Azure CLI を使用して、上記と同じサーバーを作成する方法について説明します。

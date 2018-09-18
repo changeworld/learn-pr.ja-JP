@@ -1,19 +1,19 @@
-In this unit, you're going to create a simple AngularJS application hosted in Node.js and use Express for routing. On the back end, MongoDB will serve as your data store. The application is a book database, where you will be able to list, add, and delete books.
+このユニットでは、Node.js でホストされるシンプルな AngularJS アプリケーションを作成します。ルーティングには Express を使用します。 バック エンドでは、MongoDB がデータ ストアとして機能します。 アプリケーションは書籍データベースです。本を一覧表示したり、追加したり、削除したりできます。
 
 > [!Important]
-> This is a simple application. Its purpose is to test the newly installed MEAN stack. This application is not sufficiently secure or ready for production use.
+> これは単純なアプリケーションです。 目的は、新たにインストールした MEAN スタックをテストすることです。 このアプリケーションは安全性が不十分であり、運用環境での使用に適していません。
 
-## Connect to the VM
+## <a name="connect-to-the-vm"></a>VM に接続する
 
-If you aren't still connected to your VM, run the following command. Substitute your admin username and your VM's public IP address from above for the `<vm-admin-username>` and `<vm-public-ip>` placeholders.
+まだ VM に接続していない場合は、次のコマンドを実行します。 `<vm-admin-username>` と `<vm-public-ip>` のプレースホルダーを、管理者ユーザー名とご自分の VM のパブリック IP アドレスに置き換えます。
 
 ```bash
 ssh <vm-admin-username>@<vm-public-ip>
 ```
 
-## Create the back end
+## <a name="create-the-back-end"></a>バック エンドを作成する
 
-1. Create a folder structure for your new sample application with the following command.
+1. 次のコマンドで新しいサンプル アプリケーションのためのフォルダー構造を作成します。
 
     ```bash
     mkdir ~/Books
@@ -21,52 +21,52 @@ ssh <vm-admin-username>@<vm-public-ip>
     mkdir ~/Books/public
     ```
 
-    In your admin user's home location, you created a folder called "Books" to contain your project's app and its dependencies. Within that folder, you created an "app" folder to contain all your application resources and scripts. Finally, we will also create a "public" folder to hold all of the client-side files that will be served up directly to appropriate HTTP requests.
+    管理者ユーザーのホームで、プロジェクトのアプリとその依存関係を格納する目的で "Books" という名前のフォルダーを作成しました。 そのフォルダー内で、アプリケーションのすべてのソースとスクリプトを格納する目的で "アプリ" フォルダーを作成しました。 最後になりますが、妥当な HTTP 要求に直接提供する、クライアント側のすべてのファイルを保持するための "パブリック" フォルダーも作成します。
 
-1. Install **Express** to handle routing of your HTTP requests, to decide what content to return to a user of your web application.
+1. 自分の Web アプリケーションの利用者に返すコンテンツを決定するには、HTTP 要求のルーティングを処理するために **Express** をインストールします。
 
-    Run the following command to add Express as a package for your web application to use.
+    次のコマンドを実行し、自分の Web アプリケーションが使用するパッケージとして Express を追加します。
 
       ```bash
       npm install express
       ```
 
-1. Install **Mongoose** to help relay your book data between MongoDB and the HTTP request routing.
+1. MongoDB と HTTP 要求ルーティングの間で書籍データをリレーするために **Mongoose** をインストールします。
 
-    The book information will be queried via REST API requests. To simplify the transfer of data in and out of MongoDB to our API, we will use Mongoose. Mongoose is a schema-based system for modeling data. We will be using it in our sample application to keep our data models consistent through the various GET, POST, and DELETE HTTP requests.
+    書籍情報の問い合わせは REST API 要求経由で行われます。 API と MongoDB の間のデータ転送を簡単にするために、Mongoose を使用します。 Mongoose はデータをモデル化するためのスキーマベースのシステムです。 さまざまな GET、POST、DELETE HTTP 要求でデータ モデルの一貫性を維持するために、サンプル アプリケーションでは Mongoose を使用します。
 
-    Run the following command to add Mongoose as a package for your web application to use.
+    次のコマンドを実行し、自分の Web アプリケーションが使用するパッケージとして Mongoose を追加します。
 
       ```bash
       npm install mongoose
       ```
 
-1. Install **body-parser** to pre-process JSON request data for use in our Express routing.
+1. Express ルーティングで使用するための JSON 要求データを事前処理するために **body-parser** をインストールします。
 
-    On the back end, `body-parser` will serve as a middleware between Node.js and Express for parsing incoming JSON request data.
+    バック エンドでは、`body-parser` は Node.js と Express の間で、入ってくる JSON 要求データを解析するためのミドルウェアとして機能します。
 
-    Run the following command to add `body-parser` as a package for your web application to use.
+    次のコマンドを実行し、自分の Web アプリケーションが使用するパッケージとして `body-parser` を追加します。
 
       ```bash
       npm install body-parser
       ```
 
     > [!TIP]
-    > When installing multiple npm packages, you can include them all in a single command such as this:
+    > 複数の npm パッケージをインストールするとき、このように 1 つのコマンドに全部含めることができます。
     >
     > ```bash
     > npm install express mongoose body-parser
     > ```
 
-1. Create the data model back end for your books web application using Mongoose.
+1. Mongoose を使用し、書籍 Web アプリケーション用のデータ モデル バック エンドを作成します。
 
-    1. In the **app** folder within your **Books** application folder, create a new JavaScript file called **model.js** to contain your book's Mongoose-based data model.
+    1. **Books** アプリケーション フォルダー内の**アプリ** フォルダーに、書籍の Mongoose ベースのデータ モデルを含める目的で **model.js** という名前の新しい JavaScript ファイルを作成します。
 
         ```bash
         nano ~/Books/app/model.js
         ```
 
-    1. Paste the following code into this new file to create our book schema using Mongoose.
+    1. この新しいファイルに次のコードを貼り付け、Mongoose を使用して書籍スキーマを作成します。
 
         ```javascript
         var mongoose = require('mongoose');
@@ -85,19 +85,19 @@ ssh <vm-admin-username>@<vm-public-ip>
         ```
 
         > [!TIP]
-        > To save the current file in **nano**, you need to press **Ctrl**+**O**. To exit **nano**, you need to press **Ctrl**+**X**.
+        > **nano** に現在のファイルを保存するには、**Ctrl**+**O** キーを押す必要があります。 **nano** を終了するには、**Ctrl**+**X** キーを押す必要があります。
 
-        This code is connecting to a database called "Books" on the local VM's MongoDB server. It then creates a database document called "Book" with the schema defined by the `bookSchema` variable.
+        このコードは、ローカル VM の MongoDB サーバー上にある、"Books" という名前のデータベースに接続します。 次に、`bookSchema` 変数で定義されたスキーマを利用し、"Book" という名前のデータベース ドキュメントが作成されます。
 
-1. Create the Express routes for the application to handle the various HTTP requests.
+1. さまざまな HTTP 要求を処理するためにアプリケーションの Express ルートを作成します。
 
-    1. Within the **app** folder, create a new JavaScript file called **routes.js**.
+    1. **アプリ** フォルダー内で、**routes.js** という名前の新しい JavaScript ファイルを作成します。
 
         ```bash
         nano ~/Books/app/routes.js
         ```
 
-    1. Paste the following code into this new file to establish the routes using Express.
+    1. この新しいファイルに次のコードを貼り付け、Express を使用してルートを確立します。
 
         ```javascript
         var path = require('path');
@@ -140,19 +140,19 @@ ssh <vm-admin-username>@<vm-public-ip>
         module.exports = routes;
         ```
 
-        This code will create four routes for our application. The first three specify what to do when someone sends an API GET, POST, or DELETE request to the `/book` resource. The last one is a catch-all route to send the requester to the index page.
+        このコードにより、アプリケーションに 4 つのルートが作成されます。 最初の 3 つによって、誰かが API GET、POST、DELETE 要求を `/book` リソースに送信したときの動作が指定されます。 最後の 1 つは、要求元をインデックス ページに送信する包括的なルートです。
 
-        Express can serve up HTTP responses directly in the route handling code, or it can serve up static content from files. We are doing both in this sample web application. We respond with JSON data for book API requests and with HTML data direct from the index.html file.
+        Express では、ルート処理コードで HTTP 応答を直接提供できます。あるいは、ファイルから静的コンテンツを提供できます。 このサンプル Web アプリケーションでは両方を行っています。 書籍 API 要求の JSON データを使用して、および index.html ファイルから直接 HTML データを使用して応答します。
 
-1. Create a **server.js** file in the **Books** folder to configure the Node.js hosting (using the Express routes).
+1. **Books** フォルダーで **server.js** ファイルを作成し、(Express ルートを使用し) Node.js ホスティングを構成します。
 
-    1. Back in the application root **Books** folder, create a new JavaScript file called **server.js**.
+    1. アプリケーション ルート **Books** フォルダーで、**server.js** という名前の新しい JavaScript ファイルを作成します。
 
         ```bash
         nano ~/Books/server.js
         ```
 
-    1. Paste the following code into this new file to configure your web application and start listening to the default HTTP port.
+    1. この新しいファイルに次のコードを貼り付け、Web アプリケーションを構成し、既定の HTTP ポートの待ち受けを開始します。
 
         ```javascript
         var express = require('express');
@@ -167,17 +167,17 @@ ssh <vm-admin-username>@<vm-public-ip>
         });
         ```
 
-        This code creates the web application itself. It will serve static files from a folder named **public** (created next) and will use the routes defined in the previous step.
+        このコードでは、Web アプリケーション自体が作成されます。 **public** という名前のフォルダー (次に作成) から静的ファイルを提供し、前の手順で定義したルートを使用します。
 
-1. Create the front-end HTML and client-side JavaScript application.
+1. フロントエンド HTML を作成し、クライアント側 JavaScript アプリケーションを作成します。
 
-    1. Within the **public** content folder, create a new JavaScript file called **script.js**.
+    1. **public** コンテンツ フォルダー内で、**script.js** という名前の新しい JavaScript ファイルを作成します。
 
         ```bash
         nano ~/Books/public/script.js
         ```
 
-    1. Paste the following code into this new file to configure your client-side web application to handle communicating with your web server.
+    1. この新しいファイルに次のコードを貼り付け、Web サーバーとの通信を処理するようにクライアント側の Web アプリケーションを構成します。
 
         ```javascript
         var app = angular.module('myApp', []);
@@ -224,15 +224,15 @@ ssh <vm-admin-username>@<vm-public-ip>
         });
         ```
 
-        This client-side AngularJS code creates a new angular application `myApp` containing one controller `myCtrl`. When the application is run in the viewer's browser, it will issue an HTTP GET request to retrieve the list of books in the database.
+        このクライアント側の AngularJS コードにより、コントローラー `myCtrl` を 1 つ含む新しい Angular アプリケーション `myApp` が作成されます。 ビューアーのブラウザーでアプリケーションが実行されると、データベースにある書籍一覧を取得する HTTP GET 要求が発行されます。
 
-    1. Also within the **public** content folder, create a new HTML file called **index.html**.
+    1. また、**public** コンテンツ フォルダー内で、**index.html** という名前の新しい HTML ファイルを作成します。
 
         ```bash
         nano ~/Books/public/index.html
         ```
 
-    1. Paste the following markup into this new file to set up your web application's HTML user interface.
+    1. この新しいファイルに次のマークアップを貼り付け、Web アプリケーションの HTML ユーザー インターフェイスを設定します。
 
         ```html
         <!doctype html>
@@ -285,31 +285,31 @@ ssh <vm-admin-username>@<vm-public-ip>
         </html>
         ```
 
-        This code will create a simple HTML form with four fields to submit new book data and a table to display all the books already stored in the database. The various `ng-` HTML attributes will wire up the AngularJS code to the UI.
+        このコードにより、新しい書籍データを送信し、データベースに既に保存されている全書籍を表示するための 4 つのフィールドを含むシンプルな HTML フォームが作成されます。 さまざまな `ng-` HTML 属性により、AngularJS コードが UI に接続されます。
 
-1. Test the full books web application.
+1. 完全な書籍 Web アプリケーションをテストします。
 
-    1. Start the application with Node.js with the following command.
+    1. 次のコマンドを使用し、Node.js でアプリケーションを起動します。
 
         ```bash
         sudo node ~/Books/server.js
         ```
 
-        This will start the back end of our application, which will then start listening on port 80 for incoming HTTP requests.
+        これによりアプリケーションのバック エンドが起動し、ポート 80 で入ってくる HTTP 要求に対する待ち受けが開始されます。
 
-    1. Test the application functionality.
+    1. アプリケーションの機能をテストします。
 
-        Open your preferred browser, and navigate to the public IP address of your Azure VM as the URL.
+        任意のブラウザーを開き、Azure VM のパブリック IP アドレスを URL として指定し、そこに移動します。
 
         ```bash
         http://<vm-public-ip>
         ```
 
-        If everything is in order, you should see a screen similar to this:
+        問題なければ、次のような画面が表示されるはずです。
 
-        The following screenshot displays the user interface to submit book details for storage in the MongoDB database.
+        次は、MongoDB データベースに保管する書籍詳細を送信するためのユーザー インターフェイスのスクリーンショットです。
 
 
-        ![Screenshot of a web browser showing the data-entry form to add a book.](../media-draft/10-book-page.png)
+        ![Web ブラウザーのスクリーンショット。書籍を追加するためのデータ入力フォームを確認できます。](../media-draft/10-book-page.png)
 
-    You should now be able to submit books to save to the MongoDB database. As well, you can see the full list of books loaded from the database.
+    これで書籍を送信し、MongoDB データベースに保存できます。 同様に、データベースから読み込んだ書籍一覧をすべて表示できます。

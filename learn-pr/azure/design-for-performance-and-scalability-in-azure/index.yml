@@ -1,23 +1,30 @@
 ### YamlMime:Module
 uid: learn.design-for-performance-and-scalability
 metadata:
-  title: Design for performance and scalability in Azure
-  description: Whether you're running a public facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks and optimizing your storage performance are important to ensure your users have the best experience. In this module we'll talk through how to make your application perform at its best.
+  title: Azure でのパフォーマンスとスケーラビリティを高める設計
+  description: 膨大な量のトラフィック処理が必要な、一般公開されているアプリケーションを実行しているか、内部システム用の重要なデータを処理する内部ビジネス API を実行しているかにかかわらず、ユーザーはパフォーマンスの高いシステムを期待します。 ユーザーに最良のエクスペリエンスを確実に提供するには、負荷を処理できるようにシステムをスケーリングすること、ネットワークのボトルネックを特定すること、ストレージのパフォーマンスを最適化することが重要です。 このモジュールでは、アプリケーションに最良のパフォーマンスを発揮させる方法を説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Design for performance and scalability in your cloud infrastructure
-summary: Whether you're running a public facing application that has to handle massive amounts of traffic or an internal business API that handles critical data for internal systems, your users expect a system that performs well. Scaling your system to handle load, identifying network bottlenecks and optimizing your storage performance are important to ensure your users have the best experience. In this module we'll talk through how to make your application perform at its best.
-abstract:  | 
-  In this module, you will:
-  - Learn how scaling up and scaling out allows you to dynamically adjust capacity to your workload
-  - Learn how to optimize network performance
-  - Learn how to optimize storage and database performance
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: 99cc9dde2b01f25d01162a94b6591f9b644bb5e0
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44240651"
+title: クラウド インフラストラクチャでのパフォーマンスとスケーラビリティを高める設計
+summary: 膨大な量のトラフィック処理が必要な、一般公開されているアプリケーションを実行しているか、内部システム用の重要なデータを処理する内部ビジネス API を実行しているかにかかわらず、ユーザーはパフォーマンスの高いシステムを期待します。 ユーザーに最良のエクスペリエンスを確実に提供するには、負荷を処理できるようにシステムをスケーリングすること、ネットワークのボトルネックを特定すること、ストレージのパフォーマンスを最適化することが重要です。 このモジュールでは、アプリケーションに最良のパフォーマンスを発揮させる方法を説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - スケールアップとスケールアウトにより、ワークロードに合わせてキャパシティを動的に調整する方法の説明
+
+  - ネットワーク パフォーマンスを最適化する方法の説明
+
+  - ストレージとデータベースのパフォーマンスを最適化する方法の説明
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

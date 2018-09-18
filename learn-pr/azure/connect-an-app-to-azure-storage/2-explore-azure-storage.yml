@@ -1,15 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.2-explore-azure-storage
-title: Explore Azure storage services
+title: Azure ストレージ サービスについて
 metadata:
-  title: Explore Azure storage services
-  description: Explore Azure storage services
+  title: Azure ストレージ サービスについて
+  description: Azure ストレージ サービスについて
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: dabeb5a2b710685de6ff14362a6730e5255a6a95
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44230689"
 durationInMinutes: 5
-content: |
-  [!include[](includes/2-explore-azure-storage.md)]
+content: '[!include[](includes/2-explore-azure-storage.md)]'

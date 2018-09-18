@@ -8,7 +8,7 @@ Visual Studio 2017 には、Web サイトを作成し、発行して、Azure に
 
 - ASP.NET と Web 開発
 
-Visual Studio 2017 の Web 開発ワークロードは、ASP.NET と HTML や JavaScript のような標準ベースのテクノロジを使用した Web アプリケーション開発の生産性が最大になるように設計されています。
+Visual Studio 2017 の Web 開発ワークロードは、ASP.NET と HTML や JavaScript のような標準ベースのテクノロジを使用した Web アプリケーション開発での生産性が最大になるように設計されています。
 
 - Azure の開発
 

@@ -1,46 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
-title: Design for performance and scalability
+title: パフォーマンスとスケーラビリティを高める設計
 metadata:
-  title: Design for performance and scalability
-  description: Design for performance and scalability
+  title: パフォーマンスとスケーラビリティを高める設計
+  description: パフォーマンスとスケーラビリティを高める設計
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 3c4260d45a4175e57f423e569558192cb06bf68f
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44243660"
 durationInMinutes: 15
-content: |
+content: >
   [!include[](includes/4-design-for-performance-and-scalability.md)]
 quiz:
-  title: 'Knowledge check - Design for performance and scalability'
+  title: 知識チェック - パフォーマンスとスケーラビリティを高める設計
   questions:
-  - content: 'Which of the following is an example of scaling up?'
+  - content: スケーリングアップの例を以下から選んでください。
     choices:
-    - content: 'Updating your application to use a queuing service'
+    - content: キュー サービスを使用するようにアプリケーションを更新する
       isCorrect: false
-      incorrectExplanation: 'Including a queuing service in your application can be a smart architecual decision, but is not an example of scaling up.'
-    - content: 'Adding more web servers into a web farm'
+      incorrectExplanation: アプリケーションにキュー サービスを含めることは、アーキテクチャ上の賢明な選択ですが、スケーリングアップの例ではありません。
+    - content: Web ファームにさらに Web サーバーを追加する
       isCorrect: false
-      incorrectExplanation: 'Adding more web servers into a web farm is an example of scaling out.'
-    - content: 'Adding another virtual machine into a database cluster'
+      incorrectExplanation: Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。
+    - content: データベース クラスターに別の仮想マシンを追加する
       isCorrect: false
-      incorrectExplanation: 'Adding another virtual machine into a database cluster is not an example of scaling up.'
-    - content: 'Updating a virtual machine to a larger size'
+      incorrectExplanation: データベース クラスターに別の仮想マシンを追加することは、スケーリングアップの例ではありません。
+    - content: より大きなサイズに仮想マシンを更新する
       isCorrect: true
-      correctExplanation: 'Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.'
-  - content: 'Which of the following is an example of scaling out?'
+      correctExplanation: より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。
+  - content: スケーリングアウトの例を以下から選んでください。
     choices:
-    - content: 'Updating a virtual machine to a larger size'
+    - content: より大きなサイズに仮想マシンを更新する
       isCorrect: false
-      incorrectExplanation: 'Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.'
-    - content: 'Adding more storage to a virtual machine'
+      incorrectExplanation: より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。
+    - content: 仮想マシンにさらにストレージを追加する
       isCorrect: false
-      incorrectExplanation: 'Adding more storage to a virtual machine is not an example of scaling out.'
-    - content: 'Adding more web servers into a web farm'
+      incorrectExplanation: 仮想マシンにさらにストレージを追加することは、スケーリングアウトの例ではありません。
+    - content: Web ファームにさらに Web サーバーを追加する
       isCorrect: true
-      correctExplanation: 'Adding more web servers into a web farm is an example of scaling out.'
-    - content: 'Replicating backups to another region'
+      correctExplanation: Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。
+    - content: 他のリージョンにバックアップを複製する
       isCorrect: false
-      incorrectExplanation: 'Replicating backups to another region is not applicable to scaling of resources.'
+      incorrectExplanation: 他のリージョンにバックアップを複製することは、リソースのスケーリングには対応していません。
