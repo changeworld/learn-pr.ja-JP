@@ -1,60 +1,60 @@
-In our last exercise, we implemented a scenario to look up bookmarks in an Azure Cosmos DB database. We configured an input binding to read data from our bookmarks collection. But just reading data is boring, so let's do more. Let's expand the scenario to include writing. Consider the following flowchart.
+前回の演習では、Azure Cosmos DB データベース内のブックマークを検索するシナリオを実装しました。 このブックマークのコレクションからデータを読み取ることができるように入力バインディングを構成しました。 しかし、データを読み取るだけではつまらないので、もっと他のこともやってみましょう。 書き込みも行うシナリオに拡張しましょう。 次のフローチャートについて考えてみましょう。
 
-![Flow diagram showing process of adding a bookmark in our Cosmos DB back-end](../media-draft/add-bookmark-flow-small.png)
+![この Cosmos DB バックエンドにブックマークを追加するプロセスを示すフロー図](../media-draft/add-bookmark-flow-small.png)
 
-In this scenario, we'll receive requests to add bookmarks to our list. The requests pass in the desired key, or ID, along with the bookmark URL. As you can see in the flow chart, we'll respond with an error if the key already exists in our back-end.
+このシナリオでは、リストへのブックマークの追加を求める要求を受信します。 この要求によって目的のキーまたは ID が、ブックマーク URL と共に渡されます。 フロー チャート内で確認できるように、そのキーがバックエンド内に既に存在する場合はエラーで応答します。
 
-If the key that was passed to us is *not* found, we'll add the new bookmark to our database. We could stop there, but let's do a little more.
+渡されたキーが*見つからない*場合は、新しいブックマークをデータベースに追加します。 それで終わりにしてもかまいませんが、もう少しやってみましょう。
 
-Notice another step in the flowchart? So far we haven't done much with the data that we receive in terms of processing. We move what we receive into a database. However, in a real solution, it is possible that we'd probably process the data in some fashion. We can decide to do all processing in the same function, but in this lab we'll show a pattern that offloads further processing to another component or piece of business logic.
+フローチャート内の別の手順に気付きましたか。 これまで、処理の観点から受信したデータに対して大したことは行っていません。 受信した内容をデータベースに移動します。 ただし、実際のソリューションでは、おそらくそのデータを何らかの方法で処理することが可能です。 同じ関数ですべての処理を実行することもできますが、このラボでは、追加の処理を別のコンポーネントまたはビジネス ロジックの一部にオフロードするパターンを示します。
 
-What might be a good example of this offloading of work in our bookmarks scenario? Well what if we send the new bookmark to a QR code generation service? That service would, in turn, generate a QR code for the URL, store the image in blob storage, and add the address of the qr image back into the entry in our bookmarks collection. Calling a service to generate a qr image is time consuming so, rather than wait for the result, we hand it off to a function and let it take care of this asynchronously.
+このブックマーク シナリオでのこの作業のオフロードの良い例として、どのようなことが考えられるでしょうか。 では、新しいブックマークを QR コード生成サービスに送信するというのはどうでしょうか。 そのサービスの場合は、さらに、URL の QR コードが生成され、イメージが BLOB ストレージに格納され、qr イメージのアドレスがブックマーク コレクション内のエントリに再び追加されます。 qr イメージを生成するサービスの呼び出しには時間がかかります。そのため、結果を待つのでなく、関数にサービスを渡して、その関数で非同期的に対処するようにします。
 
-Just as Azure Functions supports input bindings for different integration sources, it also has a set of output bindings templates to make it easy for you to write data to data sources. Output bindings are also configured in the *function.json* file.  As we'll see in this exercise, we can configure our function to work with multiple data sources and services.
+Azure Functions では、さまざまな統合ソースに対して入力バインディングがサポートされているのと同様に、出力バインディング用のテンプレートのセットも用意されています。そのため、お客様はデータ ソースへのデータの書き込みを容易に行うことができます。 出力バインディングはまた、*function.json* ファイルでも構成されています。  この演習で示すように、複数のデータ ソースおよびサービスを操作するように関数を構成できます。
 
 
 > [!IMPORTANT]
-> This exercise builds on the exercise in the last unit, namely, it uses the same Azure Cosmos DB database and input binding. If you haven't worked through that unit, we recommend doing so before proceeding  with this lab.
+> この演習は、前回のユニットでの演習を基に作成されています、具体的には、前回と同じ Azure Cosmos DB データベースと入力バインディングが使用されます。 そのユニットを終えていない場合は、それを行ってからこのラボに進むことをお勧めします。
 
-## Create an HTTP_triggered Function
+## <a name="create-an-httptriggered-function"></a>HTTP によってトリガーされる関数を作成する
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with the same Azure account you've used throughout this module.
+1. このモジュールで使用したのと同じ Azure アカウントによって Azure portal ([https://portal.azure.com](https://portal.azure.com?azure-portal=true)) にサインインしていることを確認します。
 
-2. In the Azure portal, navigate to the function app you created in this module.
+2. Azure portal で、このモジュールで作成した関数アプリに移動します。
 
-3. Expand your function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+3. ご利用の関数アプリを展開し、関数のコレクションをポイントし、**[関数]** の横にある [追加] (**+**) ボタンを選択します。 この操作により関数作成プロセスが開始されます。 次のアニメーションで、この操作を示します。
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![ユーザーが [関数] メニュー項目をポイントしたときにプラス記号が表示されるというアニメーション。](../media-draft/func-app-plus-hover-small.gif)
 
-4. The page shows us the current set of supported triggers. Select **HTTP trigger**, which is the first entry in the following screenshot.
+4. ページのサポートされているトリガーの現在のセットが表示されます。 **[HTTP トリガー]** (次のスクリーン ショットの最初のエントリ) を選択します。
 
-![Screenshot of part of the trigger template selection UI, with the TTP trigger displayed first, in the top left of the image.](../media-draft/trigger-templates-small.PNG)
+![トリガー テンプレートの選択 UI の一部を示すスクリーン ショット。イメージの左上に TTP トリガーが最初に表示されている。](../media-draft/trigger-templates-small.PNG)
 
-5. Fill out the **New Function** dialog that appears to the right  using the following values.
+5. 右側に表示された **[新しい関数]** ダイアログに、次の値を使用して入力します。
 
-|Field  |Value  |
+|フィールド  |値  |
 |---------|---------|
-|Language     | **JavaScript**        |
-|Name     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
-| Authorization level | **Function** |
+|言語     | **JavaScript**        |
+|名前     |   [!INCLUDE [func-name-add](./func-name-add.md)]     |
+| 承認レベル | **関数** |
 
-5. Select **Create** to create our function, which opens the index.js file in the code editor and displays a default implementation of the HTTP-triggered function.
+5. **[作成]** を選択して関数を作成します。これにより、コード エディターで index.js ファイルが開き、HTTP によってトリガーされる関数の既定の実装が表示されます。
 
-In this exercise, we'll speed up things by using the *code* and *configuration* from the previous unit as a starting point.
+この演習では、出発点で前回のユニットからの*コード*および*構成*を使用することによりスピードアップを図ります。
 
-6. Replace all code in index.js with the code from the following snippet and click **Save** to save this change. 
+6. index.js 内のすべてのコードを次のスニペットからのコードに置換します。**[保存]** をクリックして、この変更を保存します。 
 
 [!code-javascript[](../code/find-bookmark-single.js)]
 
-If this code looks familiar, that's because it's the implementation of our [!INCLUDE [func-name-find](./func-name-find.md)] function. As you would expect, the function won't work until we define the same bindings.  
+このコードに馴染みがある場合、それはご提供している [!INCLUDE [func-name-find](./func-name-find.md)] 関数の実装だからです。 予想されるとおり、同じバインディングが定義されるまで、関数は機能しません。  
 
-7. Open the *function.json* file from the [!INCLUDE [func-name-find](./func-name-find.md)] function. You'll find it by opening the **View files** menu to the right of the code editor.
+7. [!INCLUDE [func-name-find](./func-name-find.md)] 関数から *function.json* ファイルを開きます。 そのファイルを見つけるには、コード エディターの右側にある **[ファイルの表示]** メニューを開きます。
 
-8. Copy the entire contents of this file.
+8. このファイルの内容全体をコピーします。
 
-9. Open the *function.json* file from the [!INCLUDE [func-name-add](./func-name-add.md)] function.
+9. [!INCLUDE [func-name-add](./func-name-add.md)] 関数から *function.json* ファイルを開きます。
 
-10. Replace the contents of this file with the content you copied from the *function.json* file associated with the [!INCLUDE [func-name-find](./func-name-find.md)] function. When you're done, your function.json should contain the following JSON.
+10. このファイルの内容を、[!INCLUDE [func-name-find](./func-name-find.md)] 関数に関連付けられた *function.json* ファイルからコピーした内容に置換します。 完了したら、ご自分の function.json に次の JSON が含まれている必要があります。
 
 ```json
 {
@@ -84,119 +84,119 @@ If this code looks familiar, that's because it's the implementation of our [!INC
 }
 ```
 
-11. Make sure to **Save** all changes.
+11. 必ず **[保存]** を選択してすべての変更を保存します。
 
-In the preceding steps, we configured bindings for our new function by copying binding definitions from another. We could, of course, created a new binding through the UI, but it is good to understand that this alternative is available to you.
+前の手順では、新しい関数のバインディングを、別の関数からバインディング定義をコピーすることによって構成しました。 もちろん、UI を介して新しいバインディングを作成することもできました。しかし、上記の方法をご利用いただけるということを理解することが重要です。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-1. As usual, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy** to copy the function's URL.
+1. 通常は、右上の **[</> 関数の URL の取得]** をクリックし、**[既定値 (関数キー)]** を選択して、**[コピー]** をクリックすることで、関数の URL をコピーします。
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&id=docs` to the end of this URL and press the `Enter` key on your keyboard to execute the request. All going well, you should see a response that includes a URL to that resource.
+2. コピーした関数 URL をご利用のブラウザーのアドレス バーに貼り付けます。 この URL の末尾にクエリ文字列 `&id=docs` を追加し、キーボードで `Enter` キーを押して要求を実行します。 すべて順調であれば、そのリソースへの URL を含む応答が表示されます。
 
-So, where are we at? Well, so far we've really just replicated what we did in the previous lab. But that's ok. We're copying what we did in the last lab to serve as a starting point for this one. We'll work on the new stuff next, namely, writing to our database. For that, we'll need an *output binding*.
+さて、どこまできたでしょうか。 これまで、実際には前回のラボで作成した内容をレプリケートしただけでした。 しかし、それは問題ありません。 前回のラボでの処理内容をコピーして、このラボの出発点として活用します。 次に新しい機能を操作します。具体的には、データベースへの書き込みです。 そのため、*出力バインディング*が必要です。
 
-## Define Azure Cosmos DB output binding
+## <a name="define-azure-cosmos-db-output-binding"></a>Azure Cosmos DB の出力バインディングを定義する
 
-Rather than define a new output binding by going through the user interface, we'll create this binding by updating the configuration file, *function.json*, by hand. 
+ユーザー インターフェイスを経由して新しい出力バインディングを定義するのでなく、構成ファイル *function.json* を手動で更新してこのバインディングを作成します。 
 
-1. Open the **function.json** file for this function in the editor by selecting it in the **View files** list.
+1. エディター内でこの関数用の **function.json** ファイルを開くには **[ファイルの表示]** リストでそれを選択します。
 
-2. Copy the binding with the name `bookmark` in that file.
+2. `bookmark` という名前のバインディングをそのファイルにコピーします。
 
-3. Place your cursor directly after the closing curly bracket, right before the closing square bracket. Add a comma `,` and then paste the copy of the binding here. Your *function.json* config should now look like the following.
+3. 閉じ中かっこのすぐ後、閉じ角かっこの直前にカーソルを置きます。 コンマ `,` を追加し、バインディングのコピーをここに貼り付けます。 ご利用の *function.json* 構成ファイルは次のようになります。
 
 [!code-json[](../code/config-new-entry.json?highlight=22-31)]
 
-4. Edit the binding we pasted, with the following changes.
+4. 貼り付けたバインディングを編集して、次の変更を加えます。
 
 
-|Property   |Old value  |New value  |
+|プロパティ   |古い値  |新しい値  |
 |---------|---------|---------|
 |name     |   bookmark      |  **newbookmark**       |
 |direction     |   in      |   **out**      |
-|id     |      {id}   |   **delete this property. It does not exist for the output binding.**      |
+|id     |      {id}   |   **このプロパティを削除します。それは出力バインディングには存在しません。**      |
 
-When you make these changes, you end up with a file that looks like the following JSON.
+そのような変更を行った場合、次の JSON のようなファイルができあがります。
 
 [!code-json[](../code/config-q-complete.json?highlight=22-30)]
 
-That was just a demo of how you can also create bindings directly in the configuration file. In this example, it makes sense because we are reusing the properties from another binding, namely, the `databaseName`, `collectionName` and `connection` that we already configured for our Cosmos DB input binding.
+それは、どうすれば構成ファイルでもバインディングを直接作成することができるかを示すデモにすぎませんでした。 この例では、別のバインディングからのプロパティを再利用しているので、それは理にかなっています。具体的には、Cosmos DB 入力バインディング用に既に構成してある `databaseName`、`collectionName`、および `connection` です。
 
 > [!NOTE]
-> The actual value of `connection` in the preceding JSON file will be whatever name your connection was given when it was created.
+> 上記の JSON ファイル内の `connection` の実際の値は、その接続が作成されたときそれに付けられた任意の名前となります。
 
-Before we update our code, let's add one more binding that will enable us to post messages to a queue.
+コードを更新する前に、キューにメッセージを投稿できるようにするもう 1 つのバインディングを追加してみましょう。
 
-## Define Azure Queue Storage output binding
+## <a name="define-azure-queue-storage-output-binding"></a>Azure Queue Storage 出力バインディングを定義する
 
-Azure Queue storage is a service for storing messages that can be accessed from anywhere in the world. A single message can be up to 64 KB and a queue can contain millions of messages up to the total capacity limit of the storage account in which it is defined. The following diagram shows at a high level how a queue will be used in our scenario.
+Azure Queue Storage は、世界中のどこからでもアクセスできるメッセージを格納するためのサービスです。 1 つのメッセージの最大サイズは 64 KB です。1 つのキューには、ストレージ アカウントの合計容量の上限に達するまで、数百万のメッセージを格納できます。合計容量の合計はストレージ アカウントで定義されています。 次の図に、このシナリオでのキューの使用方法の概要を示します。
 
-![Diagram showing concept of a storage queue and two functions pushing and popping messages onto the queue.](../media-draft/q-logical-small.png)
+![ストレージ キューの概念と、キューにメッセージをプッシュおよびポップする 2 つの関数を示す図。](../media-draft/q-logical-small.png)
 
-Here we can see that our new function, [!INCLUDE [func-name-add](./func-name-add.md)], adds messages to a queue. Another function, for example a fictitious function called *gen-qr-code*, will pop messages from the same queue and process the request.  Since we write, or *push*, messages to the queue from [!INCLUDE [func-name-add](./func-name-add.md)], we'll add a new  output binding to our solution. Let's create the binding through the UI this time.
+ここで、新しい関数 [!INCLUDE [func-name-add](./func-name-add.md)] によってキューにメッセージが追加されることを確認できます。 別の関数 (例えば、*gen-qr-code* と呼ばれる架空関数) では、同じキューからメッセージがポップされ、要求が処理されます。  [!INCLUDE [func-name-add](./func-name-add.md)] からメッセージをキューに書き込みまたは*プッシュ*するので、このソリューションに新しい出力バインディングを追加します。 今度は UI を通してバインディングを作成してみましょう。
 
-1. Select **Integrate** in the function menu on the left to open the integration tab.
+1. 左側にある関数メニューで **[統合]** を選択して、[統合] タブを開きます。
 
-2. Select **+ New Output** under the **Outputs** column. A list of all possible output binding types is displayed.
+2. **[出力]** 列で **[+ 新しい出力]** を選択します。 使用可能なすべての種類の出力バインディングが一覧表示されます。
 
-3. Click on **Azure Queue Storage** from the list and then the **Select** button. This action opens the Azure Queue Storage output configuration page.
+3. リストから **[Azure Queue Storage]** をクリックし、**[選択]** ボタンをクリックします。 この操作によって、Azure Queue Storage 出力構成ページが開きます。
 
-Next, we'll set up a storage account connection. This is where our queue will be hosted.
+次に、ストレージ アカウント接続を設定します。 これはキューがホストされる場所です。
 
-4. In the field named **Storage account connection** on this page, click on *new* to the right of the empty field. This action opens the **Storage Account** selection dialog. 
+4. このページの **[ストレージ アカウント接続]** という名前のフィールドで、空のフィールドの右側にある *[新規]* をクリックします。 この操作により、**[ストレージ アカウント]** 選択ダイアログが開きます。 
 
-5. When we started this module and created our function app, a storage account was also created at that time. It will be listed in this dialog, so go ahead and select it. The **Storage account connection** field is populated with the name of a connection. If you want to see the connection string value, click on **show value**.
+5. このモジュールを開始して関数アプリを作成したとき、ストレージ アカウントも同時に作成されました。 そのストレージ アカウントはこのダイアログに表示されるので、先に進んでそれを選択します。 **[ストレージ アカウント接続]** フィールドには、接続の名前が表示されます。 接続文字列の値を表示したい場合は、**[値の表示]** をクリックします。
 
-6. Although we could leave all other fields on this page with their default values, let's change the following to lend more meaning to the properties.
+6. このページ上の他のフィールドはすべて既定値のままとしておくことができますが、プロパティに意味を加えるために次のように変更してみましょう。
 
 
-|Property  |Old value  |New value  | Description |
+|プロパティ  |古い値  |新しい値  | 説明 |
 |---------|---------|---------|---------|
-|Queue name     |    outqueue     |  **bookmarks-post-process**      | This is the name of the queue we are using to place bookmarks into so that they can be processed further by another function. |
-| Message parameter name    |  outputQueueItem       |   **newmessage**      | This is the binding property we'll use in code. |
+|キュー名     |    outqueue     |  **bookmarks-post-process**      | これは、使用しているキューの中で、ブックマークを別の関数でも処理できるようにブックマークの配置先とするキューの名前です。 |
+| メッセージ パラメーター名    |  outputQueueItem       |   **newmessage**      | これはコードで使用するバインディング プロパティです。 |
 
 
-7. Remember to click **Save** to save your changes.
+7. **[保存]** をクリックして変更を保存することを忘れないでください。
 
-## Update function implementation
+## <a name="update-function-implementation"></a>関数の実装を更新する
 
-We now have all our bindings set up for the [!INCLUDE [func-name-add](./func-name-add.md)] function. It's time to use them in our function.
+これで、[!INCLUDE [func-name-add](./func-name-add.md)] 関数に対するバインディングがすべて設定されました。 設定したバインディングをこの関数で使ってみましょう。
 
-1.  Click on our function, [!INCLUDE [func-name-add](./func-name-add.md)], to open up *index.js* in the code editor.
+1.  関数 [!INCLUDE [func-name-add](./func-name-add.md)] をクリックして、*index.js* をコード エディターで開きます。
 
-2. Replace all code in index.js with the code from the following snippet.
+2. index.js 内のすべてのコードを次のスニペットのコードに置換します。
 
 [!code-javascript[](../code/add-bookmark.js)]
 
-Let's breakdown what this code does.
+このコードで何が行われるのかを分析してみましょう。
 
-* Since this function changes our data, we expect the HTTP request to be a POST and the bookmark data to be part of the request body.
-* Our Cosmos DB input binding attempts to retrieve a document, or bookmark, using the `id` that we receive. If it finds an entry, the `bookmark` object will be set. The `if(bookmark)` condition checks whether an entry was found.
-* Adding to the database is a simple as setting the `context.bindings.newbookmark` binding parameter to the new bookmark entry, which we have created as a JSON string.
-* Posting a message to our queue is as simple as setting the  `context.bindings.newmessage parameter`.
+* この関数によってデータが変更されるので、HTTP 要求が POST になり、ブックマーク データが要求本文の一部になると想定しています。
+* Cosmos DB の入力バインディングでは、受信している `id` を使用してドキュメントまたはブックマークの取得が試みられます。 エントリが見つかると、`bookmark` オブジェクトが設定されます。 `if(bookmark)` 条件では、エントリが見つかったかどうかが確認されます。
+* データベースへの追加は、`context.bindings.newbookmark` バインディング パラメーターを、JSON 文字列として作成した新しいブックマーク エントリに設定するだけで、簡単に行えます。
+* キューへのメッセージの投稿は、`context.bindings.newmessage parameter` を設定するだけで簡単に行えます。
 
 > [!NOTE]
-> The only task we performed was to create a queue binding. We never created the queue explicitly. You are witnessing the power of bindings! As the following callout says, the queue is automatically created for you if it doesn't exist!
+> 行ったタスクは、キュー バインディングを作成することだけでした。 キューの作成は明示的に行っていません。 バインディングの機能をご確認ください。 次のコールアウトで示すように、キューは存在しない場合、自動的に作成されます。
 
-![Screenshot calling out that the queue will be auto-created.](../media-draft/q-auto-create-small.png)
+![キューが自動的に作成されることを示すコールアウトのスクリーンショット。](../media-draft/q-auto-create-small.png)
 
-So, that's it - let's see our work in action in the next section.
+これで終了です。次のセクションで作業内容の動作を確認してみましょう。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-Now that we have multiple output bindings, our testing becomes a little trickier. Whereas in previous labs we were content to test by sending an HTTP request and a query string, we'll want to perform an HTTP Post this time. We also need to check whether messages are making it into a queue.
+出力バインディングが複数あるので、テストはやや複雑になります。 前のラボでは HTTP 要求とクエリ文字列を送信してテストを行っても問題なかったので、今度は HTTP Post を実行することにします。 また、メッセージがキューに入っているかどうかを確認する必要があります。
 
-1.  With our function, [!INCLUDE [func-name-add](./func-name-add.md)], selected in the Function Apps portal, click on the Test menu item on the far left to expand it.
+1.  Function Apps ポータルで関数 [!INCLUDE [func-name-add](./func-name-add.md)] が選択された状態で、左端にある [テスト] メニュー項目をクリックして関数を展開します。
 
-2. Select the **Test** menu item and verify that you have the test panel open. The following screenshot shows what it should look like. 
+2. **[テスト]** メニュー項目を選択し、テスト パネルが開いていることを確認します。 次のスクリーンショットでテスト パネルがどのように表示されるかを示します。 
 
-![Screenshot showing the function Test Panel expanded.](../media-draft/test-panel-open-small.png)
+![展開された関数のテスト パネルを示すスクリーン ショット](../media-draft/test-panel-open-small.png)
 
 > [!IMPORTANT]
-> Make sure **POST** is selected in the HTTP method dropdown.
+> HTTP メソッドのドロップダウンで、**[POST]** が選択されていることを確認します。
 
-3. Replace the content of the request body with the following JSON payload.
+3. 要求本文の内容を次の JSON ペイロードに置換します。
 
 ```json
   {
@@ -205,13 +205,13 @@ Now that we have multiple output bindings, our testing becomes a little trickier
   }
   ```
 
-4. Click **Run** at the bottom of the test panel. 
+4. テスト パネルの下部にある **[実行]** をクリックします。 
 
-5. Verify that the *Output* window displays the "Bookmark already exists." message as shown in the following diagram. 
+5. *[出力]* ウィンドウに、次の図に示すような "ブックマークは既に存在します"  というメッセージが表示されていることを確認します。 
 
-![Screenshot showing Test Panel and result of a failed test.](../media-draft/test-exists-small.png)
+![テスト パネルと失敗したテストの結果を示すスクリーン ショット。](../media-draft/test-exists-small.png)
 
-6. Now replace the Request body with the following payload. 
+6. ここで、要求本文を次のペイロードに置き換えます。 
 
 ```json
   {
@@ -219,34 +219,34 @@ Now that we have multiple output bindings, our testing becomes a little trickier
       "URL": "https://www.github.com"
   }
   ```
-7. Click **Run** at the bottom of the test panel.
+7. テスト パネルの下部にある **[実行]** をクリックします。
 
-8. Verify the that *Output* box displays the "bookmark added" message as shown in the following diagram.
+8. *[出力]* ボックスに、次の図に示すような "ブックマークが追加されました" というメッセージが表示されていることを確認します。
 
-![Screenshot showing Test Panel and result of a successful test.](../media-draft/test-success-small.png)
+![テスト パネルと成功したテストの結果を示すスクリーン ショット。](../media-draft/test-success-small.png)
 
-Congratulations! The [!INCLUDE [func-name-add](./func-name-add.md)] works as designed, but what about that queue operation we had in the code? Well, let's go see if something was written to a queue.
+お疲れさまでした。 [!INCLUDE [func-name-add](./func-name-add.md)] は設計どおりに機能しますが、コード内に含めたクエリ動作についてはどうでしょうか。 キューに何か書き込まれたかどうかを確認してみましょう。
 
-### Verify that a message is written to our queue
+### <a name="verify-that-a-message-is-written-to-our-queue"></a>キューにメッセージが書き込まれたことを確認する
 
-Azure Queue Storage queues are hosted in a storage account. You selected the storage account in this exercise  already when creating the output binding. 
+Azure Queue Storage キューは、ストレージ アカウントでホストされています。 この演習では、出力バインディングの作成時に既にストレージ アカウントを選択しています。 
 
-1. In the main search box in the Azure portal, type *storage accounts* and in the search results select **Storage accounts** under the *Services* category. This is illustrated in the following screenshot. 
+1. Azure portal 内のメインの検索ボックスに、「*ストレージ アカウント*」と入力し、検索結果で **[サービス]** カテゴリの下にある *[ストレージ アカウント]* を選択します。 次のスクリーンショットにこれを示します。 
 
-![Screenshot showing search results for Storage Account in the main search box.](../media-draft/search-for-sa-small.png)
+![メインの検索ボックスでの「ストレージ アカウント」に対する検索結果を示すスクリーンショット。](../media-draft/search-for-sa-small.png)
 
-2. In the list of storage accounts that are returned, select the storage account you used to create the **newmessage** output binding. The storage account settings are displayed in the main window the portal.
+2. 返されたストレージ アカウントのリスト内で、**newmessage** 出力バインディングを作成するために使用したストレージ アカウントを選択します。 ストレージ アカウントの設定はポータルのメイン ウィンドウに表示されます。
 
-3. Select the **Queues** item from the Services list. This displays a list of queues hosted by this storage account. Verify that the **bookmarks-post-process** queue exists, as shown in the following screenshot.
+3. サービス リストから **[キュー]** 項目を選択します。 これによって、このストレージ アカウントでホストされているキューの一覧が表示されます。 次のスクリーン ショットに示すように、**bookmarks-post-process** キューが存在することを確認します。
 
-![Screenshot showing our queue in the list of queues hosted by this storage account](../media-draft/q-in-list-small.png)
+![このストレージ アカウントでホストされているキューのリストに、キューが表示されていることを示すスクリーン ショット](../media-draft/q-in-list-small.png)
 
-4. Click on **bookmarks-post-process** to open the queue. The messages that are in the queue are displayed in a list. If all went according to plan, the message we posted when we added a bookmark to our database should be in the queue and will look like the following entry. 
+4. **[bookmarks-post-process]** をクリックしてキューを開きます。 キュー内にあるメッセージがリストに表示されます。 すべてが計画どおりに進んでいれば、ブックマークをデータベースに追加したときに投稿したメッセージは、キュー内に存在するはずであり、次のエントリのようになります。 
 
-![Screenshot showing our message in the queue](../media-draft/message-in-q-small.png)
+![キュー内のメッセージを示すスクリーン ショット](../media-draft/message-in-q-small.png)
 
-In this example, you can see that the message was given a unique ID and the **MESSAGE TEXT** field displays our bookmark in JSON string format.
+この例では、メッセージに一意の ID が付与されており、**MESSAGE TEXT** フィールドに、使用しているブックマークが JSON 文字列の形式で表示されていることを確認できます。
 
-5. You can test the function further by changing the request body in the Test panel with new id/url sets and running the function. Watch this queue to see more messages arrive. You can also look at the database to verify new entries have been added. 
+5. 関数はさらにテストすることができます。それには、テスト パネル内で、新しい id/url を設定することで要求本文を変更し、関数を実行します。 このキューを見ると、さらなるメッセージが届いているのがわかります。 また、データベースを参照することで、新しいエントリが追加されていることを確認できます。 
 
-In this lab, we expanded our knowledge of bindings to output bindings, writing data to our Azure Cosmos DB. We went further and added another output binding to post messages to an Azure queue. This demonstrates the true power of bindings to help you shape and move data from incoming sources to a variety of destinations. We haven't written any database code or had to manage connection strings ourselves. Instead, we configured bindings declaratively and let the platform take care of securing connections, scaling our function and scaling our connections.
+このラボでは、バインディングに関する知識を出力バインディング (Azure Cosmos DB へのデータの書き込み) にまで広げました。 さらに先に進めて、Azure キューにメッセージを投稿するための別の出力バインディングを追加しました。 これにより、データを成形してそれを受信ソースからさまざまな宛先に移動するのに役立つバインディングの真のパワーが実証されました。 データベース コードの作成は行いませんでした。また、接続文字列の管理を自分たちで行う必要もありませんでした。 代わりに、バインディングを宣言によって構成し、接続のセキュリティ保護、関数のスケーリング、および接続のスケーリングをプラットフォームで対処しました。

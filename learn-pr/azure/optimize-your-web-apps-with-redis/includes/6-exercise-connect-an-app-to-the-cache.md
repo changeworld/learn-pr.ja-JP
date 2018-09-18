@@ -1,37 +1,37 @@
-Now that we have a Redis cache created in Azure, let's create an application to use it. Make sure you have your connection string information from the Azure portal.
+Azure で Redis Cache を作成したので、それを使用するアプリケーションを作成しましょう。 Azure portal から取得した接続文字列情報があることを確認します。
 
 > [!NOTE]
-> The integrated Cloud Shell is available on the right. You can use that command prompt to create and run the example code we are building here, or perform these steps locally if you have a development environment setup. If you decide to use the Cloud Shell, please select the Bash shell if you are prompted for a selection.
+> 統合された Cloud Shell は右側に用意されています。 そのコマンド プロンプトを使用して、ここでビルドするサンプル コードを作成し、実行できます。また、開発環境をセットアップしている場合は、以下の手順をローカルで実行できます。 Cloud Shell を使用する場合は、選択を求めるメッセージが表示されたら Bash シェルを選択してください。
 
-## Create a Console Application
+## <a name="create-a-console-application"></a>コンソール アプリケーションを作成する
 
-We'll use a simple Console Application so we can focus on the Redis implementation.
+Redis 実装に集中できるように、簡単なコンソール アプリケーションを使用します。
 
-1. In the Cloud Shell, create a new .NET Core Console Application, name it "SportsStatsTracker"
+1. Cloud Shell で、新しい .NET Core コンソール アプリケーションを作成し、"SportsStatsTracker" という名前を付けます。
 
     ```bash
     dotnet new console --name SportsStatsTracker
     ```
     
-1. This will create a folder for the project, go ahead and change the current directory.
+1. これにより、プロジェクトのフォルダーが作成され、現在のディレクトリが変更されます。
 
     ```bash
     cd SportsStatsTracker
     ```
     
-## Add the connection string
+## <a name="add-the-connection-string"></a>接続文字列を追加する
 
-Let's add the connection string we got from the Azure portal into the code. Never store credentials like this in your source code. To keep this sample simple, we're going to use a configuration file. A better approach for a server-side application in Azure would be to use Azure Key Vault with certificates.
+Azure portal から取得した接続文字列をコードに追加しましょう。 このような資格情報は、ソース コードに保存しないでください。 このサンプルをシンプルにするために、構成ファイルを使用します。 Azure のサーバー側アプリケーションに適した方法は、Azure Key Vault と証明書を使用することです。
 
-1. Create a new **appsettings.json** file to add to the project.
+1. 新しい **appsettings.json** ファイルを作成してプロジェクトに追加します。
 
     ```bash
     touch appsettings.json
     ```
 
-1. Open the code editor by typing `code .` in the project folder. If you are working locally, we recommend using **Visual Studio Code**. The steps here will mostly align with it's usage.
+1. プロジェクト フォルダーで「`code .`」と入力してコード エディターを開きます。 ローカルで作業している場合は、**Visual Studio Code** を使用することをお勧めします。 ほとんどの場合、ここでの手順は Visual Studio Code でも使用できます。
 
-1. Select the **appsettings.json** file in the editor and add the following text. Paste your connection string into the **value** of the setting.
+1. エディターで **appsettings.json** ファイルを選択し、次のテキストを追加します。 接続文字列を設定の**値**に貼り付けます。
 
     ```json
     {
@@ -39,9 +39,9 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     }
     ```
 
-1. Save the file - in the online editor, there is a menu in the top right corner which has common file operations.
+1. ファイルを保存します。オンライン エディターでは、ページの右上に一般的なファイル操作を含むメニューがあります。
 
-1. Add the following configuration block to include the new file in the project and copy it to the output folder. This ensures that the app configuration file is placed in the output directory when the app is compiled/built.
+1. 次の構成ブロックを追加してプロジェクトに新しいファイルを含め、それを出力フォルダーにコピーします。 これにより、アプリをコンパイル/ビルドしたときに、アプリ構成ファイルが出力ディレクトリに配置されます。
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -54,32 +54,32 @@ Let's add the connection string we got from the Azure portal into the code. Neve
     </Project>
     ```
 
-1. Save the file. (Make sure you do this or you will lose the change when you add the package below!)
+1. ファイルを保存します  (これを必ず行ってください。そうしないと、下記のパッケージを追加したときに変更内容が失われます)。
 
-## Add support to read a JSON configuration file
+## <a name="add-support-to-read-a-json-configuration-file"></a>JSON 構成ファイルを読み取るためのサポートを追加する
 
-A .NET Core application requires additional NuGet packages to read a JSON configuration file.
+.NET Core アプリケーションには、JSON 構成ファイルを読み取るための追加の NuGet パッケージが必要です。
 
-1. In the command prompt section of the window, add a reference to the  **Microsoft.Extensions.Configuration.Json** NuGet package.
+1. ウィンドウのコマンド プロンプト セクションで、**Microsoft.Extensions.Configuration.Json** NuGet パッケージへの参照を追加します。
 
     ```bash
     dotnet add package Microsoft.Extensions.Configuration.Json
     ```
 
-## Add code to read the configuration file
+## <a name="add-code-to-read-the-configuration-file"></a>構成ファイルを読み取るコードを追加する
 
-Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our console application.
+構成の読み取りを有効にするために必要なライブラリが追加されたので、コンソール アプリケーション内でその機能を有効にする必要があります。
 
-1. Select **Program.cs** in the editor.
+1. エディターで **Program.cs** を選択します。
 
-1. At the top of the file, a **using System;** line is present. Underneath that line, add the following lines of code:
+1. ファイルの先頭に **using System;** 行があります。 その行の下に次のコード行を追加します。
 
     ```csharp
     using Microsoft.Extensions.Configuration;
     using System.IO;
     ```
 
-1. Replace the contents of the **Main** method with the following code. This code initializes the configuration system to read from the **appsettings.json** file.
+1. **Main** メソッドの内容を次のコードに置き換えます。 このコードにより、**appsettings.json** ファイルから読み取る構成システムが初期化されます。
 
     ```csharp
     var config = new ConfigurationBuilder()
@@ -88,7 +88,7 @@ Now that we have added the required libraries to enable reading configuration, w
         .Build();
     ```
 
-Your **Program.cs** file should now look like the following:
+**Program.cs** ファイルは次のようになります。
 
 ```csharp
 using System;
@@ -110,42 +110,42 @@ namespace SportsStatsTracker
 }
 ```
 
-## Get the connection string from configuration
+## <a name="get-the-connection-string-from-configuration"></a>構成から接続文字列を取得する
 
-1. In **Program.cs**, at the end of the **Main** method, use the new **config** variable to retrieve the connection string and store it in a new variable named **connectionString**.
-    - The **config** variable has an indexer where you can pass in a string to retrieve from your **appSettings.json** file.
+1. **Program.cs** の **Main** メソッドの末尾で、新しい **config** 変数を使用して接続文字列を取得し、**connectionString** という名前の新しい変数に格納します。
+    - **config** 変数には、**appSettings.json** ファイルから取得する文字列を渡すことができるインデクサーが含まれています。
 
     ```csharp
     string connectionString = config["CacheConnection"];
     ```
     
-## Add support for the Redis cache .NET client
+## <a name="add-support-for-the-redis-cache-net-client"></a>Redis Cache .NET クライアントのサポートを追加する
 
-Next, let's configure the console application to use the **StackExchange.Redis** client for .NET.
+次に、.NET 用の **StackExchange.Redis** クライアントを使用するようにコンソール アプリケーションを構成しましょう。
 
-1. Add the **StackExchange.Redis** NuGet package to the project using the command prompt at the bottom of the Cloud Shell editor.
+1. Cloud Shell エディターの下部にあるコマンド プロンプトを使用して、**StackExchange.Redis** NuGet パッケージをプロジェクトに追加します。
 
     ```bash
     dotnet add package StackExchange.Redis
     ```
 
-1. Select **Program.cs** in the editor and add a `using` for the namespace **StackExchange.Redis**
+1. エディターで **Program.cs** を選択し、**StackExchange.Redis** 名前空間の `using` を追加します。
 
     ```csharp
     using StackExchange.Redis;
     ```
     
-Once the installation is completed, the Redis cache client is available to use with your project.
+インストールが完了すると、Redis Cache クライアントをプロジェクトで使用できるようになります。
 
-## Connect to the cache
+## <a name="connect-to-the-cache"></a>キャッシュに接続する
 
-Let's add the code to connect to the cache.
+キャッシュに接続するコードを追加しましょう。
 
-1. Select **Program.cs** in the editor.
+1. エディターで **Program.cs** を選択します。
 
-1. Create a `ConnectionMultiplexer` using `ConnectionMultiplexer.Connect` by passing it your connection string. Name the returned value **cache**.
+1. `ConnectionMultiplexer.Connect` を使用し、これに接続文字列を渡して `ConnectionMultiplexer` を作成します。 戻り値に **cache** という名前を付けます。
 
-1. Since the created connection is _disposable_, wrap it in a `using` block. Your code should look something like:
+1. 作成された接続は "_破棄可能_" であるため、`using` ブロックにラップします。 コードは次のような内容になります。
 
     ```csharp
     string connectionString = config["CacheConnection"];
@@ -157,36 +157,36 @@ Let's add the code to connect to the cache.
     ```
 
 > [!NOTE] 
-> The connection to Azure Redis Cache is managed by the `ConnectionMultiplexer` class. This class should be shared and reused throughout your client application. We do _not_ want to create a new connection for each operation. Instead, we want to store it off as a field in our class and reuse it for each operation. Here we are only going to use it in the **Main** method, but in a production application, it should be stored in a class field, or a singleton.
+> Azure Redis Cache への接続は、`ConnectionMultiplexer` クラスによって管理されます。 このクラスは、クライアント アプリケーション全体で共有して再利用する必要があります。 操作ごとに新しい接続を作成するのは望ましく_ありません_。 代わりに、接続をクラスのフィールドとして保存し、各操作で再利用します。 ここでは、**Main** メソッドでのみ使用しますが、実稼働アプリケーションでは、クラス フィールド (シングルトン) に格納する必要があります。
 
-## Add a value to the cache
+## <a name="add-a-value-to-the-cache"></a>キャッシュに値を追加する
 
-Now that we have the connection, let's add a value to the cache.
+接続が作成されたので、キャッシュに値を追加しましょう。
 
-1. Inside the `using` block after the connection has been created, use the `GetDatabase` method to retrieve an `IDatabase` instance.
+1. 接続が作成された後の `using` ブロック内で、`GetDatabase` メソッドを使用して `IDatabase` インスタンスを取得します。
 
-1. Call `StringSet` on the `IDatabase` object to set the key "test:key" to the value "some value".
-    - the return value from `StringSet` is a `bool` indicating whether the key was added.
+1. `IDatabase` オブジェクトに対して `StringSet` を呼び出して、キー "test:key" を値 "some value" に設定します。
+    - `StringSet` からの戻り値は、キーが追加されたかどうかを示す `bool` です。
 
-1. Display the return value from `StringSet` onto the console.
+1. `StringSet` からの戻り値をコンソールに表示します。
 
     ```csharp
     bool setValue = db.StringSet("test:key", "some value");
     Console.WriteLine($"SET: {setValue}");
     ```
     
-## Get a value from the cache
+## <a name="get-a-value-from-the-cache"></a>キャッシュから値を取得する
 
-1. Next, retrieve the value using `StringGet`. This takes the key to retrieve and returns the value.
+1. 次に、`StringGet` を使用して値を取得します。 これはキーを取得して値を返します。
 
-1. Output the returned value.
+1. 戻り値を出力します。
 
     ```csharp
     string getValue = db.StringGet("test:key");
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Your code should look like this:
+1. コードは次のようになります。
 
     ```csharp
     using System;
@@ -222,25 +222,25 @@ Now that we have the connection, let's add a value to the cache.
     }
     ```
     
-1. Run the application to see the result. Type `dotnet run` into the terminal window below the editor. Make sure you are in the project folder or it won't find your code to build and run.
+1. アプリケーションを実行して結果を確認します。 エディターの下のターミナル ウィンドウに「`dotnet run`」と入力します。 必ずプロジェクト フォルダーに移動してください。そうしないと、ビルドして実行するコードを見つけることはできません。
     
     ```bash
     dotnet run
     ```
     
-## Use the async versions of the methods
+## <a name="use-the-async-versions-of-the-methods"></a>メソッドの非同期バージョンを使用する
 
-We have been able to get and set values from the cache, but we are using the older synchronous versions. In server-side applications, these are not an efficient use of our threads. Instead, we want to use the _asynchronous_ versions of the methods. You can easily spot them - they all end in **Async**.
+キャッシュから値を取得および設定できましたが、古い同期バージョンを使用しています。 サーバー側アプリケーションでは、同期バージョンを使用すると、スレッドを効率的に使用できません。 代わりに、メソッドの_非同期_バージョンを使用します。 非同期バージョンはすべて末尾が **Async** であるため、簡単に見分けることができます。
 
-To make these methods easy to work with, we can use the C# `async` and `await` keywords. However, we will need to be using _at least_ C# 7.1 to be able to apply these keywords to our **Main** method.
+これらのメソッドを操作しやすくするために、C# の `async` および `await` キーワードを使用できます。 ただし、これらのキーワードを **Main** メソッドに適用するには、C# 7.1 "_以上_" を使用する必要があります。
 
-### Switch to C# 7.1
+### <a name="switch-to-c-71"></a>C# 7.1 に切り替える
 
-C#'s `async` and `await` keywords were not valid keywords in **Main** methods until C# 7.1. We can easily switch to that compiler through a flag in the **.csproj** file.
+C# 7.1 より前では、C# の `async` および `await` キーワードは **Main** メソッドで有効なキーワードではありませんでした。 **.csproj** ファイルでフラグを使用することで、そのコンパイラに簡単に切り替えることができます。
 
-1. Open the **SportsStatsTracker.csproj** file in the editor.
+1. エディターで **SportsStatsTracker.csproj** ファイルを開きます。
 
-1. Add `<LangVersion>7.1</LangVersion>` into the first `PropertyGroup` in the build file. It should look like the following when you are finished.
+1. ビルド ファイル内の最初の `PropertyGroup` に `<LangVersion>7.1</LangVersion>` を追加します。 完了すると、次のようになります。
     
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -253,13 +253,13 @@ C#'s `async` and `await` keywords were not valid keywords in **Main** methods un
     ...
     ```
     
-### Apply the async keyword
+### <a name="apply-the-async-keyword"></a>async キーワードを適用する
 
-Next, apply the `async` keyword to the **Main** method. We will have to do three things.
+次に、`async` キーワードを **Main** メソッドに適用します。 次の 3 つのことを行う必要があります。
 
-1. Add the `async` keyword onto the **Main** method signature.
-1. Change the return type from `void` to `Task`.
-1. Add a `using` statement to include `System.Threading.Tasks`.
+1. `async` キーワードを **Main** メソッド シグネチャに追加します。
+1. 戻り値の型を `void` から `Task` に変更します。
+1. `System.Threading.Tasks` を含めるための `using` ステートメントを追加します。
 
 ```csharp
 using System;
@@ -277,13 +277,13 @@ namespace SportsStatsTracker
         ...
 ```
 
-### Get and set values asynchronously
+### <a name="get-and-set-values-asynchronously"></a>値を非同期に取得および設定する
 
-1. Use the `StringSetAsync` and `StringGetAsync` methods to set and retrieve a key named "counter". Set the value to "100".
+1. `StringSetAsync` メソッドと `StringGetAsync` メソッドを使用して、"counter" という名前のキーを設定および取得します。 値を "100" に設定します。
 
-1. Apply the `await` keyword to get the results from each method.
+1. `await` キーワードを適用して、各メソッドから結果を取得します。
 
-1. Output the results to the console window - just as you did with the synchronous versions.
+1. 同期バージョンで行ったように、コンソール ウィンドウに結果を出力します。
 
     ```csharp
     // Simple get and put of integral data types into the cache
@@ -294,27 +294,27 @@ namespace SportsStatsTracker
     Console.WriteLine($"GET: {getValue}");
     ```
     
-1. Run the application again - it should still work and now have two values.
+1. アプリケーションをもう一度実行します。アプリケーションは引き続き動作し、2 つの値を取得します。
 
-#### Increment the value
+#### <a name="increment-the-value"></a>値を増分する
 
-1. Use the `StringIncrementAsync` method to increment your **counter** value. Pass the number **50** to add to the counter.
-    - Notice that the method takes the key _and_ either a `long` or `double`.
-    - Depending on the parameters passed, it either returns a `long` or `double`.
+1. `StringIncrementAsync` メソッドを使用して **counter** 値を増分します。 カウンターに追加する数値 **50** を渡します。
+    - このメソッドは、キー_と_ `long` または `double` を取得することに注意してください。
+    - 渡されたパラメーターに応じて、`long` または `double` が返されます。
 
-1. Output the results of the method to the console.
+1. メソッドの結果をコンソールに出力します。
 
     ```csharp
     long newValue = await db.StringIncrementAsync("counter", 50);
     Console.WriteLine($"INCR new value = {newValue}");
     ```
     
-## Other operations
+## <a name="other-operations"></a>その他の操作
 
-Finally, let's try executing a few additional methods with the `ExecuteAsync` support.
+最後に、`ExecuteAsync` をサポートするその他のメソッドをいくつか実行してみましょう。
 
-1. Execute "PING" to test the server connection. It should respond with "PONG".
-1. Execute "FLUSHDB" to clear the database values. It should respond with "OK".
+1. サーバー接続をテストするには、"PING" を実行します。 このメソッドは "PONG" で応答します。
+1. データベース値をクリアするには、"FLUSHDB" を実行します。 このメソッドは "OK" で応答します。
 
 ```csharp
 var result = await db.ExecuteAsync("ping");
@@ -324,14 +324,14 @@ result = await db.ExecuteAsync("flushdb");
 Console.WriteLine($"FLUSHDB = {result.Type} : {result}");
 ```
 
-## Challenge
+## <a name="challenge"></a>チャレンジ
 
-As a challenge, try serializing an object type to the cache. Here are the basic steps.
+チャレンジとして、オブジェクト型をシリアル化してキャッシュに格納してみてください。 基本的な手順は次のとおりです。
 
-1. Create a new `class` with some public properties. You can invent one of your own ("Person" or "Car" are popular), or use the "GameStats" example given in the previous unit.
-1. Add support for the **Newtonsoft.Json** NuGet package using `dotnet add package`.
-1. Add a `using` for the `Newtonsoft.Json` namespace.
-1. Create one of your objects.
-1. Serialize it with `JsonConvert.SerializeObject` and use `StringSetAsync` to push it into the cache.
-1. Get it back from the cache with `StringGetAsync` and then deserialize it with `JsonConvert.DeserializeObject<T>`.
+1. いくつかのパブリック プロパティを持つ新しい `class` を作成します。 独自のクラス ("Person" や "Car" が一般的) を作成することも、前のユニットで提供された "GameStats" の例を使用することもできます。
+1. `dotnet add package` を使用して、**Newtonsoft.Json** NuGet パッケージのサポートを追加します。
+1. `Newtonsoft.Json` 名前空間の `using` を追加します。
+1. オブジェクトのいずれかを作成します。
+1. `JsonConvert.SerializeObject` を使用してオブジェクトをシリアル化し、`StringSetAsync` を使用してキャッシュにプッシュします。
+1. `StringGetAsync` を使用してオブジェクトをキャッシュから取り出し、`JsonConvert.DeserializeObject<T>` を使用して逆シリアル化します。
 

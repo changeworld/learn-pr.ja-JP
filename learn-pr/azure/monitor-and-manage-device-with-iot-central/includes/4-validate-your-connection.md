@@ -1,54 +1,53 @@
-You’ve now worked with both the Azure IoT Central application and connected the coffee machine to Azure IoT Central. You are well on your way to begin to monitor and manage your remote coffee machine. In this unit, you take a moment to validate your setup and connection by using the Connected Coffee Maker template that you defined earlier. You update the optimal temperature in settings, run commands to check for the state of your machine, and view your connected coffee machine in the dashboard. 
+Azure IoT Central アプリケーションを使用し、コーヒー マシンを Azure IoT Central に接続しました。 リモート コーヒー マシンの監視と管理を開始するまでの手順を順調に進んでいます。 このユニットでは、少し時間を取って、先ほど定義した接続されているコーヒー メーカー テンプレートを使用して、セットアップと接続を検証します。 設定の最適温度を更新し、コマンドを実行してマシンの状態を確認し、ダッシュボードで接続されているコーヒー マシンを表示します。 
 
-## Update settings to sync your application with the coffee machine
+## <a name="update-settings-to-sync-your-application-with-the-coffee-machine"></a>設定を更新してアプリケーションとコーヒー マシンを同期させる
 
-On the Settings page, you send configuration data to the coffee machine from your application. 
+[設定] ページで、アプリケーションからコーヒー マシンに構成データを送信します。 
 
-In this scenario, change the optimal temperature and choose **Update**. 
- When the setting is changed, the setting is marked as pending in the UI until the coffee machine acknowledges that it has responded to the setting change. 
+このシナリオでは、最適温度を変更して、**[更新]** を選択します。 設定が変更されると、コーヒー マシンで設定変更に対する応答が確認されるまで、設定は UI で保留中としてマークされます。 
 
 > [!NOTE]
-> Successful updates in the setting indicate data flow and validate your  connection. The telemetry measurements will respond to the update in Optimal  Temperature. You can observe the change on the Measurements page. 
+> 設定が正常に更新されると、データ フローが示され、接続が検証されます。 テレメトリ測定で最適温度の更新に応答します。 [測定] ページで変更を確認できます。 
 
-## Run commands on the coffee machine 
-Navigate to the **Commands** page for the following exercise. To validate the commands setup, you remotely run commands on the coffee machine from IoT Central. If successful, confirmation messages are sent from the coffee machine.
+## <a name="run-commands-on-the-coffee-machine"></a>コーヒー マシンに対してコマンドを実行する 
+次の演習では、**[コマンド]** ページに移動します。 コマンドのセットアップを検証するには、IoT Central からコーヒー マシンに対してリモートでコマンドを実行します。 正常に実行された場合は、コーヒー マシンから確認メッセージが送信されます。
 
-1. Start Brewing remotely by choosing **Run**. 
+1. **[実行]** を選択し、リモートで抽出を開始します。 
     
-    The coffee machine will start if these three conditions are satisfied:
-    - Cup detected
-    - Not in maintenance
-    - Not brewing already  
+    次の 3 つの条件が満たされている場合、コーヒー マシンが起動します。
+    - カップが検出された
+    - メンテナンス中ではない
+    - まだ抽出していなし  
 
     > [!NOTE]
-    > When you've successfully started brewing, the state of the machine changes to yellow as indicated in Measurements > State. 
+    > 抽出が正常に開始されると、[測定] > [状態] で示されるマシンの状態が黄色に変わります。 
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    コーヒー マシンのコンソール ログで確認メッセージを探します。 
 
-    ![Run commands](../images/4-commands-brewing.png)
+    ![コマンドを実行する](../images/4-commands-brewing.png)
 
-1. Set Maintenance Mode by choosing **Run**. The coffee machine will set to maintenance if it's *not* already in maintenance.
+1. **[実行]** を選択して、メンテナンス モードを設定します。 まだメンテナンスになって "*いない*" 場合は、コーヒー マシンがメンテナンスに設定されます。
     
-    Look for confirmation messages in the console log on the coffee machine. 
+    コーヒー マシンのコンソール ログで確認メッセージを探します。 
 
     > [!NOTE]
-    > As in real life when the technician takes the machine offline to perform necessary repairs before switching it back online, the coffee machine continues to stay in the maintenance mode until you reboot the client code.
+    > 実際に技術者がマシンをオフラインにして必要な修理を行ってからオンラインに戻すのと同じように、クライアント コードを再起動するまで、コーヒー マシンはメンテナンス モードのままになっています。
 
-    ![Run commands](../images/4-commands-maintenance.png)
+    ![コマンドを実行する](../images/4-commands-maintenance.png)
 
-1. It's recommended that you run the Node.js application no more than 60 minutes or so to prevent the application from sending you unwanted notifications/emails. Stopping the application when you're not working on the tutorial also prevents you from exhausting the daily message quota.
+1. Node.js アプリケーションを 60 分を超えない程度で実行し、アプリケーションから不要な通知や電子メールが送信されないようにすることをお勧めします。 チュートリアルで操作していない場合はアプリケーションを停止することで、一日のメッセージ クォータを使い切ることもなくなります。
 
-## View the coffee machine in the dashboard
-Navigate to the **Dashboard** page where you can collectively see the relevant information about your coffee machine. For the following exercise, turn on **Design Mode** to configure your dashboard. Whenever you are finished, choose **Save**.
+## <a name="view-the-coffee-machine-in-the-dashboard"></a>ダッシュボードでコーヒー マシンを表示する
+コーヒー マシンに関する情報をまとめて見ることができる **[ダッシュボード]** ページに移動します。 次の演習では、**[デザイン モード]** をオンにしてダッシュボードを構成します。 完了するたびに、**[保存]** を選択します。
 
-1. Choose **Line Chart** and enter the title as Telemetry to see the telemetry measurements. Choose **Past 30 minutes** for **Time Range**.
+1. **[折れ線グラフ]** を選択し、タイトルを「テレメトリ」と入力してテレメトリ測定を表示します。 **[時間範囲]** で **[過去 30 分]** を選択します。
 
-    ![Viewing the dashboard](../images/4-dashboard-a.png)
+    ![ダッシュボードの表示](../images/4-dashboard-a.png)
 
-1. Choose **Settings and Properties** and enter the title as Device Properties. In **Add/Remove**, choose Coffee Makers Max Temperature, Coffee Makers Min Temperature, Device Warranty Expired. 
+1. **[Settings and Properties]\(設定とプロパティ\)** を選択して、タイトルに「デバイスのプロパティ」と入力します。 **[追加/削除]** で、コーヒー メーカー最高温度、コーヒー メーカー最低温度、デバイスの保証期限切れを選択します。 
 
-1. Choose **Settings and Properties** and enter the title as Optimal Temperature. In **Add/Remove**, choose Optimal  Temperature. 
+1. **[Settings and Properties]\(設定とプロパティ\)** を選択して、タイトルに「最適温度」と入力します。 **[追加/削除]** で、[最適温度] を選択します。 
 
-## Summary
+## <a name="summary"></a>まとめ
 
-In this unit, you spent some time to validate the connection between the coffee machine and Azure IoT Central. You achieved validation by updating the optimal temperature, running the commands. Finally you set up the dashboard to monitor your machine in one place by defining the information you'd like to see about your coffee machine. These validation steps are necessary before moving on to other tasks in the next unit. 
+このユニットでは、少し時間を取ってコーヒー マシンと Azure IoT Central の間の接続を検証しました。 コマンドを実行し、最適温度を更新することで検証を行いました。 最後に、コーヒー マシンに関して見たい情報を定義することで、マシンを 1 か所で監視するようにダッシュボードを設定しました。 これらの検証手順は、次のユニットの他のタスクに進む前に必要です。 

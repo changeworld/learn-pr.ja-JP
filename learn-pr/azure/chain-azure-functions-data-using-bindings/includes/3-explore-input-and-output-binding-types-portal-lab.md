@@ -1,76 +1,76 @@
-The following is a high-level illustration of what we're going to build in this exercise.
+この演習で作成するデモの概要図を次に示します。
 
-![Visual representation of default HTTP trigger, showing HTTP request and response as well as respective req and res binding parameters.](../media-draft/default-http-trigger-visual-small.PNG)
+![HTTP 要求と HTTP 応答、およびそれぞれの req バインディング パラメーターと res バインディング パラメーターを示す、既定の HTTP トリガーの視覚的な表現。](../media-draft/default-http-trigger-visual-small.PNG)
 
-We'll create a function that will start when it receives an HTTP request and will respond to each request by sending back a message. The parameters `req` and `res` are the trigger binding and output binding respectively. Let's get going!
+HTTP 要求を受信すると起動し、メッセージを送信することで各要求に応答する関数を作成します。 パラメーター `req` と `res` は、それぞれトリガー バインディングと出力バインディングです。 さあ、始めましょう。
 
-Sign in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+Azure アカウントで Azure portal ([https://portal.azure.com](https://portal.azure.com?azure-portal=true)) にサインインします。
 
-### Create a function app
+### <a name="create-a-function-app"></a>関数アプリを作成する
 
-Let's create a function app that we'll use throughout this entire module. A function app lets you group functions as a logical unit for easier management, deployment, and sharing of resources.
+このモジュール全体で使用する関数アプリを作成しましょう。 関数アプリを使用すると、リソースの管理、デプロイ、および共有を容易にするための論理ユニットとして関数をグループ化できます。
 
 [!INCLUDE [resource-group-note](./rg-notice.md)]
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute** > **Function App**.
-1. Set the function app properties as follows:
+1. Azure portal の左上隅にある **[リソースの作成]** ボタンを選択し、**[コンピューティング]** > **[Function App]** の順に選択します。
+1. 関数アプリのプロパティを次のように設定します。
 
 
-    | Property      | Suggested value  | Description                                        |
+    | プロパティ      | 推奨値  | 説明                                        |
     | ------------ |  ------- | -------------------------------------------------- |
-    | **App name** | Globally unique name | Name that identifies your new function app. Valid characters are `a-z`, `0-9`, and `-`.  | 
-    | **Subscription** | Your subscription | The subscription under which this new function app is created. | 
-    | **Resource Group**|  [!INCLUDE [resource-group-name](./rg-name.md)] | Name for the new resource group in which to create your function app. | 
-    | **OS** | Windows | The operating system that hosts the function app.  |
-    | **Hosting** |   Consumption plan | Hosting plan that defines how resources are allocated to your function app. In the default **Consumption Plan**, resources are added dynamically as required by your functions. In this [serverless](https://azure.microsoft.com/overview/serverless-computing/) hosting, you only pay for the time your functions run.   |
-    | **Location** | West Europe | Choose a [region](https://azure.microsoft.com/regions/) near you or near other services your functions access. |
-    | **Storage account** |  Globally unique name |  Name of the new storage account used by your function app. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. This dialog populates the field with a unique name that is derived from the name you gave the app. However, feel free to use a different name or even an existing account. |
+    | **アプリ名** | グローバルに一意の名前 | 新しい関数アプリを識別する名前。 有効な文字は、`a-z`、`0-9`、および `-` です。  | 
+    | **サブスクリプション** | ご利用のサブスクリプション | この新しい関数アプリが作成されるサブスクリプション。 | 
+    | **リソース グループ**|  [!INCLUDE [resource-group-name](./rg-name.md)] | 関数アプリを作成するための新しいリソース グループの名前。 | 
+    | **OS** | Windows | 関数アプリをホストするオペレーティング システム。  |
+    | **ホスティング** |   従量課金プラン | Function App にどのようにリソースが割り当てられるかを定義するホスティング プラン。 既定の **[従量課金プラン]** では、リソースは関数の必要に応じて動的に追加されます。 この[サーバーなしの](https://azure.microsoft.com/overview/serverless-computing/)ホスティングでは、関数が実行された時間にのみ課金されます。   |
+    | **場所** | 西ヨーロッパ | ユーザーに近い[リージョン](https://azure.microsoft.com/regions/)、または関数がアクセスする他のサービスの近くのリージョンを選択します。 |
+    | **ストレージ アカウント** |  グローバルに一意の名前 |  関数アプリによって使用される新しいストレージ アカウントの名前。 ストレージ アカウント名の長さは 3 - 24 文字で、数字と小文字のみを使用できます。 このダイアログ ボックスでは、アプリに指定した名前から派生した一意の名前がフィールドに入力されます。 ただし、別の名前や既存のアカウントも自由に使用できます。 |
 
 
-3. Select **Create** to provision and deploy the function app.
+3. **[作成]** を選択して、関数アプリをプロビジョニングし、デプロイします。
 
-4. Select the Notification icon in the upper-right corner of the portal and watch for a **Deployment in progress** message similar to the following message.
+4. ポータルの右上隅の通知アイコンを選択し、"**デプロイが進行中**" であることを示す次のようなメッセージが表示されるまで待ちます。
 
-![Notification that function app deployment is in progress](../media-draft/func-app-deploy-progress-small.PNG)
+![関数アプリのデプロイが進行中であることを示す通知](../media-draft/func-app-deploy-progress-small.PNG)
 
-5. Deployment can take some time. So, stay in the notification hub and  watch for a **Deployment succeeded** message similar to the following message.
+5. デプロイには時間がかかることがあります。 そのため、通知ハブを表示した状態で、"**デプロイに成功**" したことを示す次のようなメッセージが表示されるまで待ちます。
 
-![Notification that function app deployment has completed](../media-draft/func-app-deploy-success-small.PNG)
+![関数アプリのデプロイが完了したことを示す通知](../media-draft/func-app-deploy-success-small.PNG)
 
-6. Congratulations! You've created and deployed your function app. Select **Go to resource** to view your new function app.
+6. お疲れさまでした。 関数アプリを作成し、デプロイしました。 **[リソースに移動]** を選択して、新しい関数アプリを確認します。
 
 >[!TIP]
->If you are having trouble finding your function apps in the portal, find out how to [add Function Apps to your favorites in the portal](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
+>目的の関数アプリがポータルに見つからない場合は、[ポータル内のお気に入りに Function App を追加する](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite)方法を参照してください。
 
-### Create a function
+### <a name="create-a-function"></a>関数を作成する
 
-Now that we have a function app, it's time to create a function. A function is activated through a trigger. In this module, we'll use an HTTP trigger.
+関数アプリを用意できたので、ここでは関数を作成しましょう。 関数はトリガーによってアクティブ化されます。 このモジュールでは、HTTP トリガーを使用します。
 
-1. Expand your new function app, then hover over the functions collection and select the Add (**+**) button next to **Functions**. This action starts the function creation process. The following animation illustrates this action.
+1. 新しい関数アプリを展開し、関数のコレクションをポイントして、**[関数]** の横にある [追加] (**+**) ボタンを選択します。 この操作により関数作成プロセスが開始されます。 次のアニメーションで、この操作を示します。
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![ユーザーが [関数] メニュー項目をポイントしたときにプラス記号が表示されるというアニメーション。](../media-draft/func-app-plus-hover-small.gif)
 
-2. In the **Get started quickly** page, select **WebHook + API**, select a language for your function, and click **Create this function**.
+2. **[関数への早道]** ページで、**[WebHook + API]** を選択し、関数の言語を選択して、**[この関数を作成する]** をクリックします。
 
-3. A function is created in your chosen language using the template for an HTTP triggered function. In this exercise, we'll create a JavaScript function.
+3. HTTP によってトリガーされる関数のテンプレートを使用して、選択した言語で関数が作成されます。 この演習では、JavaScript 関数を作成します。
 
-### Try it out
+### <a name="try-it-out"></a>試してみる
 
-Let's test what we have so far by doing the following:
+次の手順に従って、これまでに行った作業をテストしてみましょう。
 
-1. In your new function, click **</> Get function URL** at the top right, select **default (Function key)**, and then click **Copy**.
+1. 新しい関数で、右上の **[</> 関数の URL の取得]** をクリックし、**[既定値 (関数キー)]** を選択して、**[コピー]** をクリックします。
 
-2. Paste the function URL you copied into your browser's address bar. Add the query string value `&name=<yourname>` to the end of this URL and press the `Enter` key on your keyboard to execute the request. You should see a response similar to the following response returned by the function displayed in your browser.  
+2. コピーした関数 URL をご利用のブラウザーのアドレス バーに貼り付けます。 この URL の末尾にクエリ文字列 `&name=<yourname>` を追加し、キーボードで `Enter` キーを押して要求を実行します。 次のような応答が関数によって返され、ブラウザーに表示されます。  
 
-Nice work! You have now added a HTTP-triggered function to your function app and tested to make sure it is working as expected!
+お疲れさまでした。 HTTP によってトリガーされる関数を関数アプリに追加し、想定どおりに動作することを確認するためにテストしました。
 
-![Screenshot of response message of a successful call to our function.](../media-draft/default-http-trigger-response-small.PNG)
+![関数の呼び出しが成功したことを示す応答メッセージのスクリーンショット。](../media-draft/default-http-trigger-response-small.PNG)
 
-As you can see from this exercise so far, you have to select a trigger type when creating a function. Every function has one, and only one trigger. In this example, we're using an HTTP trigger, which means our function starts when it receives an HTTP request. The default implementation, shown in the following screenshot in JavaScript, responds with the value of a parameter *name* it received in the query string  or body of the request. If no string was provided, the function responds with a message asking whoever is calling to supply a name value.
+これまでの演習からわかるように、関数を作成するときはトリガーの種類を選択する必要があります。 各関数には、トリガーが 1 つだけあります。 この例では HTTP トリガーを使用しています。つまり、この関数は HTTP 要求を受信すると起動します。 次の JavaScript のスクリーンショットに示すように、既定の実装は、クエリ文字列または要求の本文で受信したパラメーター*名*の値を返します。 文字列が指定されていない場合、関数は呼び出し元のユーザーに対して、名前値を指定するよう求めるメッセージを返します。
 
-![Screenshot of default JavaScript implementation of a HTTP-triggered Azure function.](../media-draft/default-http-trigger-implementation-small.PNG)
+![HTTP によってトリガーされる Azure 関数の既定の JavaScript 実装のスクリーンショット。](../media-draft/default-http-trigger-implementation-small.PNG)
 
-All of this code is in the *index.js* file in this function's folder. Let's look briefly at the function's other file, the *function.json* config file. This configuration data is shown in the following JSON listing.
+このすべてのコードは、この関数のフォルダー内の *index.js* ファイルに格納されています。 では、関数のもう 1 つのファイルである *function.json* 構成ファイルを簡単に見てみましょう。 次の JSON の一覧に、この構成データが示されています。
 
 ```json
 {
@@ -91,40 +91,40 @@ All of this code is in the *index.js* file in this function's folder. Let's look
 }
 ```
 
-As you can see, this function has a trigger binding named **req** of type `httpTrigger` and an output binding named **res**  of type `HTTP`. In the preceding code for our function, we saw how we accessed the payload of the incoming HTTP request through our **req** parameter. Similarly, we sent an HTTP response simply by setting our **res** parameter. Bindings really do take care of some of the heavy lifting for us!
+ご覧のように、この関数には、`httpTrigger` 型の **req** という名前のトリガー バインディングと、`HTTP` 型の **res** という名前の出力バインディングが含まれています。 この関数の前述のコードでは、**req** パラメーターを使用して着信 HTTP 要求のペイロードにアクセスする方法を確認しました。 同様に、**res** パラメーターを設定するだけで HTTP 応答を送信しました。 このようにバインディングを使用すると、面倒な作業の一部が自動的に行われます。
 
 >[!TIP]
->You can see index.js and function.json by expanding the **View Files** menu on the right of the function panel in the Azure portal.  
+>Azure portal で関数パネルの右側にある **[ファイルの表示]** メニューを展開すると、index.js と function.json を確認できます。  
 
-### Explore binding types
+### <a name="explore-binding-types"></a>バインディングの種類を確認する
 
-1. Notice under the function entry there is a set of menu items as shown in the following screenshot.
+1. 関数エントリの下には、次のスクリーンショットに示す一連のメニュー項目があります。
 
-![Screenshot showing menu items under a function in the Function Apps blade.](../media-draft/func-menu-small.PNG)
+![[Function App] ブレードの関数の下にあるメニュー項目を示すスクリーンショット。](../media-draft/func-menu-small.PNG)
 
-2. Select the Integrate menu item to open the integration tab for our function. If you have been following along with this unit, the integrate tab should look very similar to the following screenshot.
+2. [統合] メニュー項目を選択して、関数の統合タブを開きます。 このユニットの手順に従うと、統合タブは次のスクリーンショットのようになるはずです。
 
-![Screenshot showing integrate UI or tab.](../media-draft/func-integrate-tab-small.PNG)
+![統合の UI またはタブを示すスクリーンショット。](../media-draft/func-integrate-tab-small.PNG)
 
-Notice that we have already defined a trigger and an output binding as shown in this screenshot. You can also see that we can't add more than one trigger. In fact, to change the trigger for our function we would have to first delete the trigger and create a new one.
+このスクリーンショットに示すように、トリガー バインディングと出力バインディングを既に定義しています。 また、複数のトリガーを追加できないこともわかります。 実際、この関数のトリガーを変更するには、まずトリガーを削除してから、新しいトリガーを作成する必要があります。
 
-On the other hand, the **Inputs** and **Outputs** sections of this form display a plus `+` sign to add more bindings.
+一方、このフォームの **[入力]** セクションと **[出力]** セクションには、さらにバインディングを追加するためのプラス `+` 記号が表示されます。
 
-3. Select **+ New Input** under the **Inputs** column. A list of all possible input binding types is displayed as shown in the following screenshot.
+3. **[入力]** 列の下にある **[+ 新しい入力]** を選択します。 次のスクリーンショットに示すように、入力バインディングとして考えられる全種類の一覧が表示されます。
 
-![Screenshot showing the list of possible input bindings.](../media-draft/func-input-bindings-selector-small.PNG)
+![考えられる入力バインディングの一覧を示すスクリーンショット。](../media-draft/func-input-bindings-selector-small.PNG)
 
-Take a moment to consider each of these input bindings and how you might use them in a solution. There are a lot to choose from. This list may even have changed by the time you read this module as we continue to support more data sources.
+これらの各入力バインディングについて、およびそれらをソリューションでどのように使用できるかについて、よく検討してみましょう。 選択肢は多数あります。 弊社がサポートするデータ ソースは常に増えているので、このモジュールを読むときには、この一覧の情報が既に古くなっている可能性もあります。
 
-4. Select **Cancel** to dismiss this list.
+4. **[キャンセル]** を選択してこの一覧を閉じます。
 
-5. Select **+ New Output** under the **Outputs** column. A list of all possible output binding types is displayed as shown in the following screenshot.
+5. **[出力]** 列で **[+ 新しい出力]** を選択します。 次のスクリーンショットに示すように、出力バインディングとして考えられる全種類の一覧が表示されます。
 
-![Screenshot showing the list of possible output bindings.](../media-draft/func-output-bindings-selector-small.PNG)
+![考えられる出力バインディングの一覧を示すスクリーンショット。](../media-draft/func-output-bindings-selector-small.PNG)
 
-Again, you have lots of options here, as shown by the need for a scroll bar to the right in this screenshot.
+この場合も多数のオプションがあるため、スクリーンショットに示すように、右側のスクロール バーを使用する必要があります。
 
 >[!TIP]
->To learn more details about the bindings that are supported, check out the [list of supported bindings](https://docs.microsoft.com/azure/azure-functions/functions-versions) in the Azure Functions documentation.
+>サポートされているバインディングの詳細については、Azure Functions ドキュメント内の[サポートされるバインディングの一覧](https://docs.microsoft.com/azure/azure-functions/functions-versions)を参照してください。
 
-So far we've learned how to create a function app and add a function to it. We've seen a simple function in action that runs when an HTTP request is made to it. We've also explored the portal UI and types of input and output binding that are available to our functions. In the next unit, we'll use an input binding to read text from a a database.
+ここまで、関数アプリを作成し、関数を追加する方法を学習しました。 HTTP 要求が行われると実行される、単純な関数の動作を見てきました。 また、ポータル UI、および関数に使用できる入力バインディングと出力バインディングの種類も確認しました。 次のユニットでは、入力バインディングを使用してデータベースからテキストを読み取ります。

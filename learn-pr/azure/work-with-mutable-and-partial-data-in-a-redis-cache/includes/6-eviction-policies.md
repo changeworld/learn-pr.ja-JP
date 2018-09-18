@@ -1,29 +1,29 @@
-Memory is the most critical resource for Redis because it's an in-memory database. You can run into problems when you begin adding data that exceeds the amount of memory available. Redis supports eviction policies, which indicate how data should be handled when you run out of memory.
+Redis はメモリ内データベースであるため、メモリは Redis の最も重要なリソースです。 使用可能なメモリの量を超えるデータを追加しようとすると、問題が発生する可能性があります。 Redis では、メモリが不足した場合のデータの処理方法を示す削除ポリシーがサポートされています。
 
-Here, you'll set an eviction policy to determine what your data should do when you exceed the maximum amount of memory.
+ここでは、メモリの最大量を超えた場合のデータの処理方法を決定するために、削除ポリシーを設定します。
 
-## What is an eviction policy?
+## <a name="what-is-an-eviction-policy"></a>削除ポリシーとは
 
-An eviction policy is a plan that determines how your data should be managed when you exceed the maximum amount of memory available. For example, using an eviction policy, you could tell Redis to delete a random key to make room for the new data being inserted.
+削除ポリシーは、使用可能なメモリの最大量を超えた場合にどのようにデータを管理するかを決定する計画です。 削除ポリシーを使用すると、たとえば、新たに挿入するデータ用にスペースを確保するためにランダム キーを削除するよう、Redis に指示することができます。
 
-### Types of eviction policies
+### <a name="types-of-eviction-policies"></a>削除ポリシーの種類
 
-There are six different eviction policies provided by Redis. All of these values perform an action when you attempt to insert data when you're out of memory.
+Redis で提供される削除ポリシーには 6 つの異なる種類があります。 メモリが不足しているときにデータを挿入しようとすると、次のすべての値によってアクションが実行されます。
 
-* **noeviction:** No eviction policy. Returns an error message if you attempt to insert data.
+* **noeviction:** 削除ポリシーはありません。 データを挿入しようとすると、エラー メッセージが返されます。
 
-* **allkeys-lru:** Removes the least recently used key.
+* **allkeys-lru:** 最も長く使われていないキーを削除します。
 
-* **allkeys-random:** Removes a random key.
+* **allkeys-random:** ランダム キーを削除します。
 
-* **volatile-lru:** Removes the least recently used key out of all the keys with an expiration set.
+* **volatile-lru:** 有効期限が指定されたすべてのキーの中で、最も長く使われていないキーを削除します。
 
-* **volatile-ttl:** Removes the key with the shortest time to live based on the expiration set for it.
+* **volatile ttl:** 設定された有効期限に基づいて、存続時間が最短のキーを削除します。
 
-* **volatile-random:** Removes a random key that has an expiration set.
+* **volatile-random:** 有効期限が設定されたランダム キーを削除します。
 
-## How to set an eviction policy
+## <a name="how-to-set-an-eviction-policy"></a>削除ポリシーを設定する方法
 
-Azure provides a simple drop-down menu to set the eviction policy for a Redis Cache. Select **Advanced Settings** and use the **maxmemory-policy** drop-down menu.
+Azure では、Redis Cache の削除ポリシーを設定するための簡単なドロップダウン メニューが提供されています。 **[詳細設定]** を選択し、**[maxmemory-policy]** ドロップダウン メニューを使用します。
 
-Since memory is critical to a Redis cache, there is support for eviction policies. An eviction policy determines what should be done with existing data when you're out of memory and attempt to insert new data.
+メモリは Redis Cache にとって重要であるため、削除ポリシーがサポートされています。 メモリが不足している場合に新しいデータを挿入しようとすると、削除ポリシーにより、既存のデータをどのように処理するかが決定されます。

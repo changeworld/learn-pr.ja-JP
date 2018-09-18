@@ -1,178 +1,178 @@
-Next, let's look at how to create and modify dashboards using the Azure Portal, and by editing the underlying JSON file directly.
+次に、Azure Portal を使用し、基になっている JSON ファイルを直接編集することによって、ダッシュボードを作成および変更する方法を見てみましょう。
 
-## What is a dashboard?
+## <a name="what-is-a-dashboard"></a>ダッシュボードとは
 
-A _dashboard_ is a customizable collection of UI tiles displayed in the Azure portal. You add, remove, and position tiles to create the exact view you want, and then save that view as a dashboard. Multiple dashboards are supported, and you can switch between them as needed. You can even share your dashboards with other team members.
+"_ダッシュボード_" とは、Azure portal に表示される UI タイルのカスタマイズ可能なコレクションです。 タイルを追加、削除、配置して必要なビューを正確に作成してから、そのビューをダッシュボードとして保存します。 複数のダッシュボードがサポートされており、必要に応じてそれらを切り替えることができます。 自分のダッシュボードを他のチーム メンバーと共有することもできます。
 
-Dashboards give you considerable flexibility regarding how you manage Azure. For example, you can create dashboards for specific roles within the organization, and then use role-based access control (RBAC) to control who can access that dashboard. Hence, your database administrator would have a dashboard that contains views of the SQL database service, whereas your Azure Active Directory administrator would have views of the users and groups within Azure AD. You can even customize the portal between your production and development environments within the portal - creating a specific dashboard for each environment you are managing.
+ダッシュボードを使用すると、Azure を非常に柔軟に管理できます。 たとえば、組織内の特定のロール用のダッシュボードを作成した後、ロールベースのアクセス制御 (RBAC) を使用して、そのダッシュボードにアクセスできるユーザーを制御できます。 したがって、データベース管理者は SQL Database サービスのビューを含むダッシュボードを使用し、Azure Active Directory 管理者は Azure AD 内のユーザーとグループのビューを使用します。 ポータル内の運用環境と開発環境の間でポータルをカスタマイズし、管理している環境ごとに特定のダッシュボードを作成することもできます。
 
-Dashboards are stored as JavaScript Object Notation (JSON) files. This means they can be uploaded and downloaded to other computers, or shared with members of the Azure directory. Azure stores dashboards within resource groups, just like virtual machines or storage accounts that you can manage within the portal.
+ダッシュボードは、JavaScript Object Notation (JSON) ファイルとして保存されます。 つまり、他のコンピューターとの間でアップロードまたはダウンロードしたり、Azure ディレクトリのメンバーと共有したりできます。 Azure では、ポータルで管理できる仮想マシンやストレージ アカウントと同様に、ダッシュボードはリソース グループ内に格納されます。
 
 > [!TIP]
-> Because dashboards are JSON files, you can also [customize them programmatically](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically), making them compelling administrative tools. Also, some tile types can be query-based, so they update automatically when the source data changes.
+> ダッシュボードは JSON ファイルであるため、[プログラムでカスタマイズする](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically)こともできるので、魅力的な管理ツールとなっています。 さらに、一部のタイルの種類はクエリ ベースにすることができるので、ソース データが変更されたときに自動的に更新されます。
 
-## Explore the default dashboard
+## <a name="explore-the-default-dashboard"></a>既定のダッシュボードを探索する
 
-The default dashboard is named "Dashboard". When you log into the portal, you are presented with this dashboard containing five web parts.
+既定のダッシュボードには、"ダッシュボード" という名前が付けられています。 ポータルにログインすると、5 つの Web パーツを含むこのダッシュボードが表示されます。
 
-![Default Web Parts](../media-draft/8-dashboard-default-webparts.png)
+![既定の Web パーツ](../media-draft/8-dashboard-default-webparts.png)
 
-These default web parts are
+既定の Web パーツは次のとおりです
 
-1. All resources
+1. すべてのリソース
 
-1. Azure Getting Started
+1. Azure の概要
 
-1. Quickstarts + tutorials
+1. クイック スタートとチュートリアル
 
 1. Marketplace
 
 1. Service Health
 
-## Creating and managing dashboards
+## <a name="creating-and-managing-dashboards"></a>ダッシュボードの作成と管理
 
-Along the top of the dashboard are the controls that enable you to create, upload, download, edit, and share a dashboard. You can also switch a dashboard to full screen, clone it, or delete it.
+ダッシュボードの上部にあるコントロールを使用すると、ダッシュボードの作成、アップロード、ダウンロード、編集、共有を行うことができます。 また、ダッシュボードの全画面表示への切り替え、複製、または削除もできます。
 
-![Customize dashboard controls](../media-draft/8-customise-dashboard-controls.png)
+![ダッシュボードのコントロールをカスタマイズする](../media-draft/8-customise-dashboard-controls.png)
 
-- [Select dashboard](#select-dashboard)
-- [Create a new dashboard](#create-new)
-- [Upload and Download](#upload-download)
-- [Edit](#edit-dashboard)
-- [Share](#share-dashboard)
-- [Full screen](#full-screen)
-- [Clone](#clone-dashboard)
-- [Delete](#delete-dashboard)
+- [ダッシュボードを選択する](#select-dashboard)
+- [新しいダッシュボードを作成する](#create-new)
+- [アップロードとダウンロード](#upload-download)
+- [編集](#edit-dashboard)
+- [共有](#share-dashboard)
+- [全画面表示](#full-screen)
+- [複製](#clone-dashboard)
+- [削除](#delete-dashboard)
 
 <a name="select-dashboard"></a>
 
-## Select dashboard
+## <a name="select-dashboard"></a>ダッシュボードを選択する
 
-To the far left of the toolbar is the **Select Dashboard** drop-down control. Clicking this control enables you to select from dashboards that you have already defined for your account. This control makes it simple for you to define multiple dashboards for different purposes and then switch from one to another and back again, depending on what you are trying to do at the time.
+ツール バーの左端に、**[ダッシュボードの選択]** ドロップダウン コントロールがあります。 このコントロールをクリックすると、お使いのアカウントで既に定義されているダッシュボードの中から選択できます。 このコントロールにより、目的の異なる複数のダッシュボードを簡単に定義し、その時に行おうとしていることに応じてダッシュボードを簡単に切り替えることができます。
 
-Note that any dashboards that you create will initially be private; that is, only you can see them. To make a dashboard available across your enterprise, you need to share it. We'll look at that option shortly.
+作成したダッシュボードはすべて最初は非公開であることに注意してください。つまり、作成者だけが表示できます。 ダッシュボードを企業全体で使用できるようにするには、ダッシュボードを共有する必要があります。 そのオプションについては後ほど説明します。
 
 <a name="create-new"></a>
 
-## Create a new dashboard
+## <a name="create-a-new-dashboard"></a>新しいダッシュボードを作成する
 
-To create a new dashboard, click **New dashboard**. The dashboard workspace appears, with no tiles present. You can then add, remove and adjust tiles however you like. When you are finished customizing the dashboard, click **Done customizing** to save and switch to that dashboard.
+新しいダッシュボードを作成するには、**[新しいダッシュボード]** をクリックします。 タイルが含まれないダッシュボード ワークスペースが表示されます。 タイルを好きなように追加、削除、調整することができます。 ダッシュボードのカスタマイズが完了したら、**[カスタマイズ完了]** をクリックして保存し、そのダッシュボードに切り替えます。
 
 <a name="upload-download"></a>
 
-## Upload and Download
+## <a name="upload-and-download"></a>アップロードとダウンロード
 
-The **Upload** and **Download** buttons enable you to download your current dashboard as a JSON file, customize it, and then distribute it and upload it or have someone else upload that file back to the Azure portal, thereby replacing their current dashboard.
+**[アップロード]** および **[ダウンロード]** ボタンを使うと、現在のダッシュボードを JSON ファイルとしてダウンロードし、カスタマイズしてから配布およびアップロードするか、他のユーザーにそのファイルをアップロードさせて Azure portal に戻し、現在のダッシュボードを置き換えることができます。
 
-If you click **Download**, the current dashboard downloads into your default Downloads folder. Opening the downloaded file then shows the JSON code.
+**[ダウンロード]** をクリックすると、現在のダッシュボードが既定のダウンロード フォルダーにダウンロードされます。 ダウンロードしたファイルを開いて、JSON コードを表示します。
 
-![Dashboard JSON code](../media-draft/8-dashboard-json-code.png)
+![ダッシュボードの JSON コード](../media-draft/8-dashboard-json-code.png)
 
-You can then edit that code manually (for example, by changing tile sizes) and then upload it back to Azure by clicking the **Upload** button.
+そのコードを手動で編集し (たとえば、タイルのサイズを変更)、**[アップロード]** ボタンをクリックして Azure に再びアップロードします。
 
 <a name="edit-dashboard"></a>
 
-### Edit a dashboard
+### <a name="edit-a-dashboard"></a>ダッシュボードを編集する
 
-Although you can edit a dashboard by downloading the JSON file, changing values in the file, and uploading the file back to Azure, that approach isn't intuitive for designing a user interface. To use the GUI to configure your current dashboard you can enter edit mode in several ways:
+JSON ファイルをダウンロードし、ファイル内の値を変更して、ファイルを Azure に アップロードすることによってダッシュボードを編集できますが、ユーザー インターフェイスをデザインする場合、この方法は直感的ではありません。 GUI を使用して現在のダッシュボードを構成するには、いくつかの方法で編集モードにします。
 
-1. Click the **Edit** button
-1. Right-click on the dashboard and click **Edit**. 
-1. Hover over a tile on the dashboard - a `...` menu will appear on the top/right corner with edit options.
+1. **[編集]** ボタンをクリックします。
+1. ダッシュボードを右クリックし、**[編集]** をクリックします。 
+1. ダッシュボードのタイルをポイントします。編集オプションと共に右上隅に `...` メニューが表示されます。
 
-The dashboard switches to edit mode.
+ダッシュボードが編集モードに切り替わります。
 
-![Edit dashboard](../media-draft/8-edit-dashboard.png)
+![ダッシュボードを編集する](../media-draft/8-edit-dashboard.png)
 
-On the left-hand side appears the Tile Gallery, with several possible tiles. You can filter the Tile Gallery by category and resource type:
+左側のタイル ギャラリーにいくつかのタイルが表示されます。 カテゴリとリソース別に、タイル ギャラリーをフィルター処理することができます。
 
-![Tile Gallery](../media-draft/8-tile-gallery.png)
+![タイル ギャラリー](../media-draft/8-tile-gallery.png)
 
-Adding tiles is as easy as selecting the tile from the list on the left and then dragging it to the work area. You can then move each tile about, resize it, or change the data that it displays.
+左側の一覧でタイルを選択し、作業領域にドラッグするだけで、タイルを簡単に追加できます。 その後は、各タイルを移動したり、サイズを変更したり、タイルに表示されるデータを変更したりできます。
 
 > [!TIP]
-> One cool feature a lot of people are unaware of is that you can take elements on child blades and put them on your dashboard. Just hover over the item and look for the `...` tile edit menu - this will have a "Pin to Dashboard" option which lets you quickly grab a tile from a service and put it onto the dashboard.
+> 多くのユーザーが気づいていない便利な機能の 1 つとして、子ブレード上の要素を取得し、ダッシュボードに配置できます。 項目をポイントし、`...` タイル編集メニューを探します。このメニューに含まれている [ダッシュボードにピン留めする] を使用すると、サービスからタイルをすばやく取得し、ダッシュボードに配置できます。
 
-The work area in edit mode is divided into squares. Each tile must occupy at least one square, and tiles will snap to the nearest largest set of tile dividers. Any overlapping tiles are moved out of the way. When you make a tile smaller, the surrounding tiles will move back up against it.
+編集モードの作業領域は、正方形に分割されています。 各タイルは少なくとも 1 つの正方形を占める必要があり、タイルは最も近くて最大のタイル区分線セットにスナップされます。 重なったタイルは邪魔にならないように移動されます。 タイルを小さくすると、周辺のタイルは再び近くに移動されます。
 
-#### Change tile sizes
+#### <a name="change-tile-sizes"></a>タイルのサイズを変更する
 
-Some tiles have a set size, and you can edit their size only programmatically. However, you can edit tiles with a gray bottom right-hand corner by dragging the corner indicator.
+一部のタイルには設定されたサイズがあり、プログラムによってのみサイズを編集できます。 ただし、右下隅に灰色のボタンがあるタイルは、そのコーナー インジケーターをドラッグすることによって編集できます。
 
-![Resizable tile](../media-draft/8-resizable-tile.png)
+![サイズ変更可能なタイル](../media-draft/8-resizable-tile.png)
 
-Alternatively, right-click the context menu and specify the size you want.
+または、コンテキスト メニューを右クリックし、希望のサイズを指定します。
 
-![Tile size](../media-draft/8-tile-size.png)
+![タイルのサイズ](../media-draft/8-tile-size.png)
 
-To create your dashboard, pull tiles from the Tile Gallery onto the workspace and then rearrange them.
+ダッシュボードを作成するには、タイル ギャラリーからワークスペースにタイルを取得し、それらを再配置します。
 
-#### Change tile settings
+#### <a name="change-tile-settings"></a>タイルの設定を変更する
 
-Some tiles have editable settings. For example, with the clock tile, when you drag it onto the workspace, it opens the **Edit clock** tile. You can then set the time zone, which it displays, and also set whether it displays in 12- or 24-hour format.
+一部のタイルには編集可能な設定があります。 たとえば、時計タイルの場合、ワークスペースにドラッグすると、**[時計の編集]** タイルが開きます。 表示するタイム ゾーンと、12 時間または 24 時間のどちらの形式で表示するかを設定できます。
 
-![Edit clock](../media-draft/8-edit-clock.png)
+![時計を編集する](../media-draft/8-edit-clock.png)
 
-For multi-national or transcontinental companies, you can add clocks, each in a different time zone.
+多国籍企業や大陸横断企業の場合、異なるタイム ゾーンごとにさらに時計を追加できます。
 
-#### Accepting your edits
+#### <a name="accepting-your-edits"></a>編集内容の受け入れ
 
-When you have arranged the tiles as you want them, either click **Done customizing**, or right-click and then click **Done customizing**.
+必要に応じてタイルを調整した後は、**[カスタマイズ完了]** をクリックするか、または右クリックして **[カスタマイズ完了]** をクリックします。
 
-## Edit a dashboard by changing the JSON file
+## <a name="edit-a-dashboard-by-changing-the-json-file"></a>JSON ファイルを変更することでダッシュボードを編集する
 
-You can also edit a dashboard by changing the JSON file. This approach provides more options for changing settings, but you cannot see the changes until you upload the file back into Azure.
+JSON ファイルを変更することで、ダッシュボードを編集することもできます。 この方法の方がより多くの設定変更オプションがありますが、Azure にファイルをアップロードして戻すまで、変更内容を見ることができません。
 
-![JSON settings](../media-draft/8-json-code.png)
+![JSON の設定](../media-draft/8-json-code.png)
 
-In the example above, to change the size of the tile, edit the **colSpan** and **rowSpan** variables, then save the file and upload it back to Azure. You can also distribute the file to other users.
+上の例では、タイルのサイズを変更するには、**colSpan** 変数と **rowSpan** 変数を編集した後、ファイルを保存し、それを Azure にアップロードします。 ファイルを他のユーザーに配布することもできます。
 
-## Reset a dashboard
+## <a name="reset-a-dashboard"></a>ダッシュボードをリセットする
 
-You can reset any dashboard to the default style. In edit mode, right-click and select **Reset to default state**. A dialog box will ask you to confirm that you want to reset that dashboard.
+ダッシュボードを既定のスタイルにリセットできます。 編集モードで右クリックして、**[既定の状態にリセット]** を選択します。 ダイアログ ボックスで、そのダッシュボードのリセットの確認を求められます。
 
 <a name="share-dashboard"></a>
 
-## Share or unshare a dashboard
+## <a name="share-or-unshare-a-dashboard"></a>ダッシュボードを共有または共有解除する
 
-When you define a new dashboard, it is private and visible only to your account. To make it visible to others, you need to share a dashboard. However, as with any other Azure resource, you need to specify a resource group (or use an existing resource group) to store shared dashboards in. If you do not have an existing resource group, Azure will create a *dashboards* resource group in whichever location you specify. If you have existing resource groups, you can specify that resource group to store the dashboards.
+新しく定義したダッシュボードはプライベートであり、自分のアカウントでのみ表示されます。 他のユーザーも表示できるようにするには、ダッシュボードを共有する必要があります。 ただし、他の Azure リソースと同様に、共有ダッシュボードを格納するリソース グループを指定する必要があります (または既存のリソース グループを使用します)。 既存のリソース グループがない場合は、ユーザーが指定した場所に Azure によって *dashboards* リソース グループが作成されます。 既存のリソース グループがある場合は、そのリソース グループを指定してダッシュボードを格納できます。
 
-![Sharing and access control 1](../media-draft/8-share-dashboards-default.png)
+![共有 + アクセス制御 1](../media-draft/8-share-dashboards-default.png)
 
-When you have shared the template, you will see a second **Sharing + access control** blade.
+テンプレートを共有すると、2 つ目の **[共有 + アクセス制御]** ブレードが表示されます。
 
-![Sharing and access control 2](../media-draft/8-share-dashboards-access-control.png)
+![共有 + アクセス制御 2](../media-draft/8-share-dashboards-access-control.png)
 
-You can then click **Manage users** to specify the users who have access to that dashboard.
+**[ユーザーの管理]** をクリックして、そのダッシュボードにアクセスできるユーザーを指定できます。
 
-### Switching to a shared dashboard
+### <a name="switching-to-a-shared-dashboard"></a>共有ダッシュボードへの切り替え
 
-To switch to a shared dashboard, you click on the list of dashboards, and then click **Browse all dashboards**.
+共有ダッシュボードに切り替えるには、ダッシュボードの一覧をクリックして、**[すべてのダッシュボードを参照]** をクリックします。
 
-![Browse all dashboards](../media-draft/8-browse-dashboards.png)
+![すべてのダッシュボードを参照](../media-draft/8-browse-dashboards.png)
 
-You will now see the **All dashboards** blade, with the names of any shared dashboards displayed. Just click on a dashboard to apply it to the Azure portal.
+**[すべてのダッシュボード]** ブレードに共有ダッシュボードの名前が表示されます。 ダッシュボードをクリックするだけで、Azure portal に適用されます。
 
-![Shared dashboards](../media-draft/8-select-shared-dashboard.png)
+![共有ダッシュボード](../media-draft/8-select-shared-dashboard.png)
 
 <a name="full-screen"></a>
 
-## Display a dashboard as a full screen
+## <a name="display-a-dashboard-as-a-full-screen"></a>ダッシュボードを全画面で表示する
 
-If you want the largest dashboard real estate, click the **Full screen** button to display your current dashboard without any browser menus. If you have any tiles outside the boundaries of your screen display, slider bars will appear at the right and bottom of your screen.
+ダッシュボードを最大サイズで表示する場合は、**[全画面表示]** ボタンをクリックすると、ブラウザーのメニューなしで現在のダッシュボードが表示されます。 画面の境界の外側に表示されているタイルがある場合は、画面の右側と下部にスライダー バーが表示されます。
 
-When you have finished working in full-screen mode, press the ESC key or click **Exit Full Screen** next to the Dashboard name at the top of the screen.
+全画面表示モードでの作業が終わったら、Esc キーを押すか、画面上部のダッシュボード名の横にある **[全画面表示を終了]** をクリックします。
 
 <a name="clone-dashboard"></a>
 
-## Clone a dashboard
+## <a name="clone-a-dashboard"></a>ダッシュボードを複製する
 
-Cloning a dashboard creates an instant copy called "Clone of \<dashboard name>" and switches to that copy as the current dashboard. Cloning is also an easy way to create dashboards before sharing them. For example, if you have a dashboard that is almost as you want it, clone it, make the changes that you need, and then share it.
+ダッシュボードを複製すると、"\<ダッシュボード名> の複製" という名前のインスタント コピーが作成され、現在のダッシュボードとしてそのコピーに切り替わります。 複製により、共有する前にダッシュボードを簡単に作成することもできます。 たとえば、ほぼ望みどおりのダッシュボードがある場合は、それを複製し、必要な変更を行ってから共有します。
 
 <a name="delete-dashboard"></a>
 
-## Delete a dashboard
+## <a name="delete-a-dashboard"></a>ダッシュボードを削除する
 
-Deleting a dashboard removes it from your list of available dashboards. You are prompted to confirm that you want to delete the dashboard, but there is no facility to recover a dashboard that has been deleted.
+ダッシュボードを削除すると、使用可能なダッシュボードの一覧から削除されます。 ダッシュボードの削除の確認を求められますが、削除されたダッシュボードを回復する機能はありません。
 
-Let's try out some of these options by creating a new dashboard.
+新しいダッシュボードを作成して、これらのオプションを使ってみましょう。

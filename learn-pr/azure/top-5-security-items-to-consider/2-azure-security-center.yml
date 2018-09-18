@@ -4,28 +4,11 @@ title: Azure Security Center
 metadata:
   title: Azure Security Center
   description: Azure Security Center
-  author: lnyswonger
-  ms.date: 09/24/2018
-  ms.author: luken
-  ms.topic: interactive-tutorial
-  ms.prod: learning-azure
+  ms.openlocfilehash: 6cdd4a1ec258cd593ceaf6d5fd2bb3de4770d65f
+  ms.sourcegitcommit: 4d2d6d8c52fa24ae1c5c06cf4cb3afa09d8c8363
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44255385"
 durationInMinutes: 10
-content: |
-  [!include[](includes/2-azure-security-center.md)]
-quiz:
-  title: 'Knowledge Check - Azure Security center'
-  questions:
-  - content: 'Which one of the items below is not an Azure Security Center feature?'
-    choices:
-    - content: 'Actionable Recommendations'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Mitigation Reporting'
-      isCorrect: true
-      incorrectExplanation: 'TBD.'
-    - content: 'Just-In-Time access control'
-      isCorrect: false
-      correctExplanation: 'TBD.'
-    - content: 'Threat Protection'
-      isCorrect: false
-      correctExplanation: 'TBD.'
+content: '[!include[](includes/2-azure-security-center.md)]'

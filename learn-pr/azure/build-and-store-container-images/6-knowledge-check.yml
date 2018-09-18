@@ -1,52 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.knowledge-check
-title: Knowledge check
+title: 知識チェック
 metadata:
-  title: Knowledge check
-  description: Azure Container Registry knowledge check.
+  title: 知識チェック
+  description: Azure Container Registry 知識チェック。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: bccb45bd020a40f3e4c0246668630a6a150fc81b
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44244646"
 durationInMinutes: 5
 quiz:
-  title: 'Knowledge check'
+  title: 知識チェック
   questions:
-  - content: 'Which of the following is not a benefit of using Azure Container Registry?'
+  - content: 次のうち、Azure Container Registry の利点ではないのはどれですか。
     choices:
-    - content: Replicate container images to many Azure datacenters.
-      incorrectExplanation: The Azure Container Registry geo-replication feature enables this.
+    - content: 多くの Azure データセンターにコンテナー イメージをレプリケートします。
+      incorrectExplanation: これは Azure Container Registry の geo レプリケーション機能によって可能になります。
       isCorrect: false
-    - content: Pull container images from Container Registry using any Docker container-related technology.
+    - content: Docker コンテナーに関連するテクノロジを使用して、Container Registry からコンテナー イメージをプルします。
       isCorrect: false
-      incorrectExplanation: Container Registry can be used with all Docker-related technology.
-    - content: Make container images publicly available for pull operations.
+      incorrectExplanation: Container Registry は、Docker に関連するすべてのテクノロジで使用できます。
+    - content: コンテナー イメージをプル操作に使用できるようにします。
       isCorrect: true
-      correctExplanation: Container Registry is a private registry. Images stored in Container Registry cannot be accessed without authentication.
-    - content: Build container images without the need for locally installed Docker tools.
+      correctExplanation: Container Registry はプライベート レジストリです。 Container Registry に格納されているイメージにアクセスするには認証が必要です。
+    - content: ローカルにインストールされた Docker ツールを使用せずにコンテナー イメージをビルドします。
       isCorrect: false
-      incorrectExplanation: Container images can be built in the cloud using Azure Container Registry Build.
-  - content: 'What is the recommended authentication method for Azure Container Registry?'
+      incorrectExplanation: コンテナー イメージは、Azure Container Registry Build を使用してクラウドでビルドできます。
+  - content: Azure Container Registry に推奨される認証方法は何ですか?
     choices:
-    - content: Admin account.
-      incorrectExplanation: Although an admin account can be created for Azure Container Registry, this is not the recommended authentication method.
+    - content: 管理者アカウント。
+      incorrectExplanation: Azure Container Registry 用の管理者アカウントを作成できますが、これは推奨される認証方法ではありません。
       isCorrect: false
-    - content: User name and password.
-      incorrectExplanation: An Azure container registry can be admin-account enabled, which provides a user name and password. However, this is not the recommended authentication method.
+    - content: ユーザー名とパスワード。
+      incorrectExplanation: Azure コンテナー レジストリでは管理者アカウントを有効にすることができます。これにより、ユーザー名とパスワードが提供されます。 ただし、これは推奨される認証方法ではありません。
       isCorrect: false
-    - content: Azure service principal.
+    - content: Azure サービス プリンシパル。
       isCorrect: true
-      correctExplanation: Azure service principals provide granular access to container images in Azure Container Registry. Using a service principal, read-only and full access can be provided to the container registry.
-    - content: No authentication.
-      incorrectExplanation: Azure Container Registry is a private registry and cannot be accessed without authentication..
+      correctExplanation: Azure サービス プリンシパルは、Azure Container Registry 内のコンテナー イメージへのきめ細かいアクセスを提供します。 サービス プリンシパルを使用すると、読み取り専用アクセスとフル アクセスをコンテナー レジストリに提供できます。
+    - content: 認証なし。
+      incorrectExplanation: Azure Container Registry はプライベート レジストリであり、アクセスするには認証が必要です。
       isCorrect: false
-  - content: 'Geo-replication is available in the Container Registry Standard SKU.'
+  - content: geo レプリケーションは、Container Registry Standard SKU で使用できます。
     choices:
-    - content: True.
-      incorrectExplanation: Geo-replication is only available in the Premium SKU.
+    - content: True。
+      incorrectExplanation: geo レプリケーションは、Premium SKU でのみ使用できます。
       isCorrect: false
-    - content: False.
+    - content: False。
       isCorrect: true
-      correctExplanation: Geo-replication is only available in the Premium SKU.
+      correctExplanation: geo レプリケーションは、Premium SKU でのみ使用できます。

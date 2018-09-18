@@ -1,12 +1,22 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.5-scale-up
-title: Scale up
+title: スケールアップ
 metadata:
-  title: Scale up
-  description: Scale up your VM to give it more compute power and memory.
+  title: スケールアップ
+  description: 仮想マシンをスケールアップして、コンピューティング能力とメモリを増やします。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
   zone_pivot_groups: platform-cloud
-interactive: powershell
+  ms.openlocfilehash: aa7caac00d4c09756ecbc1e4319c10fe08f5f3a5
+  ms.sourcegitcommit: ad17bb250e03f76b1e355f923ed7f0836497b66e
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44495184"
+interactive: bash
 azureSandbox: true
 durationInMinutes: 7
-content: |
-  [!include[](includes/5-scale-up.md)]
+content: '[!include[](includes/5-scale-up.md)]'

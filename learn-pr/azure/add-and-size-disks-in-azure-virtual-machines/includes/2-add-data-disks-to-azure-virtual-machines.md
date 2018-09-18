@@ -1,46 +1,46 @@
-Just like any other computer, virtual machines in Azure use disks as a place to store an operating system, applications, and data. These disks are called virtual hard disks (VHDs).
+Azure の仮想マシンでは、他のコンピューターと同じように、オペレーティング システム、アプリケーション、およびデータを格納する場所としてディスクが使用されます。 これらのディスクは、仮想ハード ディスク (VHD) と呼ばれます。
 
-Suppose you have created a virtual machine (VM) in Azure, which will host the database of case histories that your law firm relies on. A well-designed disk configuration is fundamental to good performance and resilience for SQL Server.
+Azure で仮想マシン (VM) を作成し、その VM で法律事務所が使用している案件履歴データベースをホストするとします。 SQL Server で良好なパフォーマンスと回復力を実現するための基盤となるのは、適切なディスク構成です。
 
-In this unit, you'll learn how to choose the right configuration values for your disks and how to attach those disks to a VM.
+このユニットでは、ご利用のディスクに対して適切な構成値を選択する方法と、それらのディスクを VM に接続する方法について説明します。
 
-## How disks are used by VMs
+## <a name="how-disks-are-used-by-vms"></a>VM でのディスクの使用方法
 
-VMs use disks for three different purposes:
+VM では、3 つの異なる目的でディスクが使用されます。
 
-- **Operating system storage**. Every VM includes one disk that stores the operating system. This drive is registered as a SATA drive and labeled as the C: drive in Windows and mounted at "/" in Unix-like operating systems. It has a maximum capacity of 2048 gigabytes (GB), and its content is taken from the VM image you used to create the VM.
-- **Temporary storage**. Every VM also includes a temporary VHD that is used for page and swap files. Data on this drive may be lost during a maintenance event or redeployment. The drive is labeled as D: on a Windows VM by default. Do not use this drive to store important data that you do not want to lose.
-- **Data storage**. A data disk is any other disk attached to a VM. You use data disks to store files, databases, and any other data that you need to persist across reboots. Some VM images include data disks by default. You can also add your own data disks up to the maximum number specified by the size of the VM. Each data disk is registered as a SCSI drive and has a max capacity of 4095 GB. You can choose drive letters or mount points for your data drives.
+- **オペレーティング システム ストレージ**。 すべての VM に 1 つ含まれるディスクで、ここにはオペレーティング システムが格納されています。 このドライブは SATA ドライブとして登録され、Windows では C: ドライブとしてラベル付けされます。また、Unix 系オペレーティング システムでは "/" としてマウントされます。 最大容量は 2,048 ギガバイト (GB) で、そのコンテンツは、VM を作成するときに使用した VM イメージから取得されます。
+- **一時ストレージ**。 各 VM には、ページ ファイルおよびスワップ ファイルに使用される一時 VHD も含まれています。 このドライブのデータは、メンテナンス イベントまたは再デプロイ中に失われる可能性があります。 このドライブは、Windows VM では既定で D: のラベルが付けられます。 失いたくない重要データは、このドライブに格納しないでください。
+- **データ ストレージ**。 VM に接続されている他のディスクはすべて、データ ディスクです。 データ ディスクを使用して、再起動後も保持する必要があるファイル、データベース、およびその他のデータを格納します。 一部の VM イメージには、既定でデータ ディスクが含まれています。 独自のデータ ディスクを、VM のサイズで指定された最大数まで追加することもできます。 各データ ディスクは SCSI ドライブとして登録され、最大容量は 4,095 GB です。 ご使用のデータ ドライブ用にドライブ文字またはマウント ポイントを選択できます。
 
-## Storing VHD files
+## <a name="storing-vhd-files"></a>VHD ファイルの格納
 
-In Azure, VHDs are stored in an Azure storage account as **page blobs**.
+Azure では、Azure ストレージ アカウントに VHD が**ページ BLOB** として格納されます。
 
-This table shows the various kinds of storage accounts and which objects can be used with each.
+次の表は、各種ストレージ アカウントと、それぞれのストレージ アカウントで使用できるオブジェクトを示しています。
 
-|**Type of storage account**|**General-purpose standard**|**General-purpose premium**|**Blob storage, hot and cool access tiers**|
+|**ストレージ アカウントの種類**|**汎用 (Standard)**|**汎用 (Premium)**|**Blob Storage (ホット アクセス層とクール アクセス層)**|
 |-----|-----|-----|-----|
-|**Services supported**| Azure Blob storage, Azure Files, Azure Queue storage | Blob storage | Blob storage|
-|**Types of blobs supported**|Block blobs, page blobs, and append blobs | Page blobs | Block blobs and append blobs|
+|**サポートされるサービス**| Azure Blob Storage、Azure Files、Azure Queue Storage | Blob Storage | Blob Storage|
+|**サポートされる BLOB の種類**|ブロック BLOB、ページ BLOB、追加 BLOB | ページ BLOB | ブロック BLOB と追加 BLOB|
 
-Because VHDs are stored as page blobs, and only standard storage supports page blobs, you need a standard storage account to store VHDs.
+VHD はページ BLOB として格納され、ページ BLOB をサポートするのは Standard Storage だけであるため、VHD を格納するには、Standard Storage アカウントが必要です。
 
-## Attach data disks to VMs
+## <a name="attach-data-disks-to-vms"></a>データ ディスクを VM に接続する
 
-You can add data disks to a virtual machine at any time by attaching them to the VM. Attaching a disk associates the VHD file with the VM. 
+データ ディスクは仮想マシンに接続することで、いつでも VM に追加できます。 ディスクを接続すると、VHD ファイルが VM に関連付けられます。 
 
-The VHD can't be deleted from storage while it's attached.
+VHD が接続されている間は、その VHD をストレージから削除することはできません。
 
-### Attach an existing data disk to an Azure VM
+### <a name="attach-an-existing-data-disk-to-an-azure-vm"></a>既存のデータ ディスクを Azure VM に接続する
 
-You may already have a VHD that stores the data you want to use in your Azure VM. In our law firm scenario, for example,  perhaps you've already converted your physical disks to VHDs locally. In this case, you can use the PowerShell `Add-AzureRmVhd` cmdlet to upload it to the storage account. This cmdlet is optimized for transferring VHD files and may complete the upload faster than other methods. The transfer is completed by using multiple threads for best performance. Once the VHD has been uploaded, attach it to an existing VM as a data disk. This approach an excellent way to deploy data of all types to Azure VMs. The data is automatically present in the VM, and there's no need to partition or format the new disk.
+Azure VM で使用したいデータが格納されている VHD が、既に存在する場合があります。 法律事務所のシナリオでは、たとえば、お使いの物理ディスクをローカルで既に VHD に変換していることがあります。 この場合は、PowerShell `Add-AzureRmVhd` コマンドレットを使用して、それをストレージ アカウントにアップロードできます。 このコマンドレットは、VHD ファイルの転送用に最適化されており、他の方法よりも迅速にアップロードを完了できます。 この転送で最適なパフォーマンスを実現するには、複数のスレッドを使用します。 VHD のアップロードが完了したら、それをデータ ディスクとして既存の VM に接続します。 このアプローチは、あらゆる種類のデータを Azure VM にデプロイするために使用できる優れた方法です。 データは VM に自動的に存在します。新しいディスクをパーティション分割したりフォーマットしたりする必要はありません。
 
-### Attach a new data disk to an Azure VM
+### <a name="attach-a-new-data-disk-to-an-azure-vm"></a>新しいデータ ディスクを Azure VM に接続する
 
-You can use the Azure portal to add a new, empty data disk to a VM. 
+Azure portal を使用すると、新しい空のデータ ディスクを VM に追加できます。 
 
-It will create a **.vhd** file as a page blob in the storage account that you specify, and it attaches that .vhd file as a data disk to the VM. 
+これにより **.vhd** ファイルが、指定したストレージ アカウントにページ BLOB として作成され、その .vhd ファイルはデータ ディスクとして VM に接続されます。 
 
-Before you can use the new VHD to store data, you have to initialize, partition, and format the new disk. We'll practice these steps in the next exercise.
+新しい VHD を使用してデータを格納するには、新しいディスクを初期化、パーティション分割、およびフォーマットしておく必要があります。 これらの手順は、次の演習で練習します。
 
-In physical on-premises servers, you store data on physical hard disks. You store data in an Azure virtual machine (VM) on virtual hard disks (VHDs). These VHDs are stored as page blobs in Azure storage accounts. For example, when you migrate your law firm's database of case histories to Azure, you must create VHDs where the database files will be saved.
+物理的なオンプレミス サーバーでは、物理ハード ディスクにデータを格納します。 Azure 仮想マシン (VM) のデータは、仮想ハード ディスク (VHD) に格納します。 これらの VHD は、Azure ストレージ アカウントにページ BLOB として格納されます。 たとえば、法律事務所の案件履歴のデータベースを Azure に移行する場合は、データベース ファイルが保存される VHD を作成する必要があります。

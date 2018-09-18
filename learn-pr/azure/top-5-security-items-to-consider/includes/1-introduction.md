@@ -1,18 +1,18 @@
-Security is currently top-of-mind for most people working in IT, and this is especially true when it comes to software. It seems we are constantly hearing about companies and governments that we entrusted our private data to, being compromised. When this happens - either maliciously or accidentally, it costs them customers and, ultimately money.
+IT 関連の仕事をしている人のほとんどが、現在最も意識しているもの、それがセキュリティです。ソフトウェアについては、特にこれが当てはまります。 プライベート データを委ねていた企業や政府機関が侵害されている、という話は絶えないように思われます。 故意であれ事故であれ侵害が発生すれば、顧客を失い、最終的にはコストがかかります。
 
-Did you know that the most common cause of data breaches is poor security in software? It's true.  This means that the pressure is on for software developers to be more diligent than ever. But where do they start? This module is the start of your journey into the world of application security, with the top five defenses for web applications. Learn how to secure your web applications on Azure and protect your apps against the most common and dangerous web application attacks.
+データ侵害の最も一般的な原因が、ソフトウェアのセキュリティ不備であることはご存知でしたか。 これは事実です。  つまり、これまで以上にセキュリティに力を入れなければならない、というプレッシャーがソフトウェア開発者にのしかかっているのです。 では、どこから始めればよいのでしょうか。 まずは、このモジュールから、アプリケーション セキュリティの世界への旅に踏み出しましょう。この旅では、Web アプリケーションを対象とした防御策トップ 5 を紹介します。 Azure でご自身の Web アプリケーションのセキュリティを確保する方法、そして、ご自身のアプリを最も一般的で危険な Web アプリケーション攻撃から守る方法をご確認ください。
 
-## Learning objectives
+## <a name="learning-objectives"></a>学習の目的
 
-In this module, you will:
+このモジュールでは、次のことを行います。
 
-* Use Azure Security Center
-* Verify your application's inputs and outputs
-* Store your secrets into Key Vault
-* Ensure you are using the latest version of your framework, and its security features
-* Validate that your program dependencies and libraries are safe to use
+* Azure Security Center を使用する
+* ご自身のアプリケーションの入出力を確認する
+* ご自身のシークレットを Key Vault に格納する
+* 最新バージョンのフレームワークとセキュリティ機能を使っていることを確認する
+* お使いのプログラムの依存関係やライブラリが安全に使用できることを確認する
 
-## Prerequisites
+## <a name="prerequisites"></a>前提条件
 
-* Learners should be experienced web developers.
-* Learners should have access to Azure.
+* 豊富な Web 開発経験。
+* Azure へのアクセス権。

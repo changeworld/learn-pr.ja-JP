@@ -1,18 +1,32 @@
 ### YamlMime:Module
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache
 metadata:
-  title: Work with mutable and partial data in a Redis cache
-  description: Learn how to create transactions, manage memory, and use the cache-aside pattern with Azure Redis Cache
+  title: Redis Cache 内の変更可能なデータおよび部分的なデータを操作する
+  description: トランザクションを作成し、メモリを管理し、Azure Redis Cache でキャッシュ アサイド パターンを使用する方法について説明する
   ms.date: 09/24/2018
-title: Work with mutable and partial data in a Redis cache
-summary: Use Azure Redis Cache to store frequently accessed data. Learn how to create transactions, manage memory, and use the cache-aside pattern.
-abstract: |
-  In this module, you will:
-  - Group multiple operations into a transaction
-  - Set an expiration time on your data
-  - Manage out of memory conditions
-  - Use the cache-aside pattern
-cardDescription: Working with mutable and partial data in a Redis cache
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 12b49365381f657f69efc85ff791aea6e373080e
+  ms.sourcegitcommit: 7de323416e472639edcff135bfc7d47bd5715256
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44371014"
+title: Redis Cache 内の変更可能なデータおよび部分的なデータを操作する
+summary: Azure Redis Cache を使用して頻繁にアクセスするデータを格納する。 トランザクションを作成し、メモリを管理し、キャッシュ アサイド パターンを使用する方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 複数の操作をトランザクションにグループ化する
+
+  - ご利用のデータの有効期限を設定する
+
+  - メモリ不足状態を管理する
+
+  - キャッシュ アサイド パターンを使用する
+cardDescription: Redis cache で変更可能なデータおよび部分的なデータを使用する
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate
@@ -31,4 +45,3 @@ units:
 - learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-cache-aside-pattern
 - learn.work-with-mutable-and-partial-data-in-a-redis-cache.9-summary
 achievement: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
-

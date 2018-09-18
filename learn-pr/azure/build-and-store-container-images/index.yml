@@ -1,24 +1,28 @@
 ### YamlMime:Module
 uid: learn.azure-container-registry
 metadata:
-  title: Build and store container images with Azure Container Registry
-  description: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments. Learn how to build and store container images with Azure Container Registry.
+  title: Azure Container Registry を使用してコンテナー イメージをビルドして保存する
+  description: Azure Container Registry は、オープンソースの Docker Registry 2.0 に基づくマネージド Docker レジストリ サービスです。 Container Registry は Azure でプライベートにホストされており、あらゆる種類のコンテナー展開用にイメージをビルド、格納、管理できます。 Azure Container Registry を使用してコンテナー イメージをビルドして保存する方法について説明します。
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-title: Build and store container images with Azure Container Registry
-summary: Azure Container Registry is a managed Docker registry service based on the open-source Docker Registry 2.0. Container Registry is private, hosted in Azure, and allows you to build, store, and manage images for all types of container deployments. Learn how to build and store container images with Azure Container Registry.
-abstract: |
-  In this module, you will:
-    - Deploy an Azure container registry
-    - Build a container image using Azure Container Registry Build
-    - Deploy this container to an Azure container instance
-    - Replicate the container image to multiple Azure datacenters
-prerequisites: None
-#TODO: Update icon URL with real image 
+  ms.openlocfilehash: af942a254ca4eb0ea8e7de79655ac2a6f5f5429c
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44237642"
+title: Azure Container Registry を使用してコンテナー イメージをビルドして保存する
+summary: Azure Container Registry は、オープンソースの Docker Registry 2.0 に基づくマネージド Docker レジストリ サービスです。 Container Registry は Azure でプライベートにホストされており、あらゆる種類のコンテナー展開用にイメージをビルド、格納、管理できます。 Azure Container Registry を使用してコンテナー イメージをビルドして保存する方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - Azure コンテナー レジストリを展開する
+    - Azure Container Registry Build を使用してコンテナー イメージをビルドする
+    - このコンテナーを Azure コンテナー インスタンスに展開する
+    - コンテナー イメージを複数の Azure データセンターにレプリケートする
+prerequisites: なし
 iconUrl: http://via.placeholder.com/120x120
 levels:
 - intermediate

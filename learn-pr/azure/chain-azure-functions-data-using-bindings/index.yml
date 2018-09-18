@@ -1,31 +1,39 @@
 ### YamlMime:Module
-# Module uids are manually created by the content author and should follow the format (repo).(module-short-name). Keep it easy on yourself and keep the module-short-name the same as the module folder name.
 uid: learn.chain-azure-functions-data-using-input-output-bindings
 metadata:
-  title: Integrate data sources with your Azure Functions serverless logic using bindings.
-  description: In this module, we'll learn how to integrate your Azure Function with various data sources using bindings. 
-title: Integrate data sources with your Azure Functions serverless logic using bindings.
-summary: Azure Functions makes it easy for your function code to integrate with data and services. Through the power of bindings, you just declare the data sources to read and write, and let Azure Functions take care of the rest.
-abstract: |
-  In this module, you will:
-  - Explore what types of data sources can be accessed through bindings
-  - Read data from Azure Cosmos DB using Azure Functions
-  - Store data in Azure Cosmos DB using Azure Functions
-  - Send messages to Azure Queue Storage using Azure Functions
-cardDescription: Integrate data sources with your Azure Functions serverless logic using bindings.
-# iconUrl is the image file that will be shown on the module card and the achievement badge granted at user completion of this module
+  title: 入力バインドと出力バインドを使用して Azure 関数を連結する
+  description: このモジュールでは、バインドを使用してさまざまなデータ ソースと Azure 関数を統合する方法を学習します。
+  ms.date: 09/24/2018
+  author: andrewjbyrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f803730eb737c9d92e81e9e951fb0faa8aacc29b
+  ms.sourcegitcommit: c99f7e4ac79611b51dfb48196b4f3d810e4ed2c6
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44387031"
+title: 入力バインドと出力バインドを使用して Azure 関数を連結する
+summary: Azure Functions を使用すると、関数のコードをデータやサービスと簡単に統合できます。 バインドの機能により、読み書きするデータ ソースを宣言するだけで、残りの処理は Azure Functions が行ってくれます。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - バインディングによってアクセスできるデータ ソースの種類を確認する
+
+  - Azure Functions を使用して Azure Cosmos DB からデータを読み取る
+
+  - Azure Functions を使用して Azure Cosmos DB にデータを格納する
+
+  - Azure Functions を使用して Azure Queue Storage にメッセージを送信する
+cardDescription: バインドを使用して Azure Functions のサーバーレス ロジックとデータ ソースを統合する
 iconUrl: http://via.placeholder.com/120x120
-# `iconUrl` is the badge image 
-levels: 
+levels:
 - beginner
-# `beginner`, `intermediate`, `advanced`; multiple values accepted
-roles: 
+roles:
 - developer
-# `developer`, `administrator`, `solutionsArchitect`, `businessUser`, `businessAnalyst`; multiple values accepted
-products: 
+products:
 - azure
-# `azure`; multiple values accepted
-# Listing of all of the unit uids, in the order they should be displayed to the user in
 units:
 - learn.chain-azure-functions-data-using-input-output-bindings.1-introduction
 - learn.chain-azure-functions-data-using-input-output-bindings.2-explore-input-and-output-binding-types-portal-lesson
@@ -36,4 +44,3 @@ units:
 - learn.chain-azure-functions-data-using-input-output-bindings.7-write-data-with-output-bindings-portal-lab
 - learn.chain-azure-functions-data-using-input-output-bindings.8-summary
 achievement: learn.placeholder.badge
-# `achievement` is the `uid` for the badge

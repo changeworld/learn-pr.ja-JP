@@ -1,14 +1,14 @@
-You've heard buzzwords about the cloud &mdash; _scale_, _elasticity_, _microservices_. Perhaps you've seen other companies be successful with the cloud and wondered how it might impact your career. Did you know that 90% of the Fortune 500 run on Azure?
+クラウドについて、_スケール_、_弾力性_、_マイクロサービス_などの専門用語を耳にしたことがあると思います。 もしかしたら、クラウドで成功した他の企業を見て、ご自分のキャリアにクラウドがどのような影響を及ぼすかを考えたことがあるかもしれません。 フォーチュン 500 の企業の 90% が Azure を利用しているのをご存知でしたか。
 
-The cloud helps power your everyday life, and it’s often present in ways you don't even realize. To keep up with today's ever-changing digital world, you need to understand what the cloud is and how you can make the most of it. Understanding cloud technology can help align your career to this exciting revolution.
+クラウドは、日常生活に役立ち、その存在にすら気付かない場合もよくあります。 現在の変化の激しいデジタル世界についていくには、クラウドについて、およびそれを最大限に利用する方法を理解する必要があります。 クラウド テクノロジを理解することで、この刺激的な変革に合ったキャリアを磨くことができます。
 
-Spend part of your lunch hour with us. You'll create your first virtual machine on Azure and configure it to run a basic web site.
+ランチを食べる時間よりも短い時間で、Azure で最初の仮想マシンを作成し、基本的な Web サイトを実行するように構成します。
 
-To begin your cloud journey, you'll:
+クラウド体験を開始する前に、次のことを行います。
 
-* Learn what Microsoft Azure is and how it relates to cloud computing.
-* Use Azure Cloud Shell to launch a Windows or Linux virtual machine.
-* Configure your virtual machine to run a basic web server.
-* Scale up your server to give you more compute power.
+* Microsoft Azure とはどのようなもので、クラウド コンピューティングにどのように関係するのかについて学習します。
+* Azure Cloud Shell を使用して、Windows または Linux 仮想マシンを起動します。
+* 基本的な Web サーバーを実行する仮想マシンを構成します。
+* コンピューティング能力を高めるためにサーバーをスケールアップします。
 
-Let's start with a brief look at cloud computing on Azure.
+Azure におけるクラウド コンピューティングについて簡単な説明から始めましょう。

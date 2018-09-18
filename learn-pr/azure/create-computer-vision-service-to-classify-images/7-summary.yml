@@ -1,48 +1,53 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.7-summary
-title: Summary and knowledge check
+title: 概要と知識チェック
 metadata:
-  title: Summary and knowledge check
-  description: Summary and knowledge check
+  title: 概要と知識チェック
+  description: 概要と知識チェック
   ms.date: 09/24/2018
-  #TODO: Update with real author name.
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: 4bfc9a1aa36edd1bc613b0fdaef7f89d2e2c35fc
+  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/09/2018
+  ms.locfileid: "44238067"
 durationInMinutes: 10
-content: |
+content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: 'Computer Vision quiz'
+  title: Computer Vision テスト
   questions:
-  - content: "What kind of famous images won't be identified with Computer Vision?"
+  - content: Computer Vision で識別されないのは、どのような種類のよく知られた画像ですか。
     choices:
-    - content: 'Landmarks '
+    - content: 'ランドマーク '
       isCorrect: false
-    - content: 'Celebrities'
+    - content: 有名人
       isCorrect: false
-    - content: 'Movies'
+    - content: ムービー
       isCorrect: true
-  - content: 'Which visual features can we elect to receive when analyzing images?'
+  - content: 画像を分析するとき、どのビジュアル機能を受信するように選択できますか。
     choices:
-    - content: 'Shapes'
+    - content: 図形
       isCorrect: true
-    - content: 'Image categorization'
+    - content: 画像カテゴリ
       isCorrect: false
-    - content: 'Tags'
+    - content: タグ
       isCorrect: false
-    - content: 'Textual description'
+    - content: 説明テキスト
       isCorrect: false
-    - content: 'Faces'
+    - content: 顔
       isCorrect: false
-    - content: 'Colors'
+    - content: 色
       isCorrect: false
-    - content: 'Adult and suggestive content'
+    - content: 成人向けや際どいコンテンツ
       isCorrect: false
-  - content: 'What does smart cropping do?'
+  - content: スマート トリミングでは何を行うことができすか。
     choices:
-    - content: 'Crops pictures from the top left'
+    - content: 左上から画像をトリミング
       isCorrect: false
-    - content: 'Crops pictures based on regions of interest (faces, objects in focus, others)'
+    - content: 必要な領域に基づいた画像のトリミング (顔、目的のオブジェクト、その他)
       isCorrect: true

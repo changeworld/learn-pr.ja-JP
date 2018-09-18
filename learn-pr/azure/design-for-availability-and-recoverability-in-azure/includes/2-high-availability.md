@@ -1,90 +1,90 @@
-High availability (HA) ensures your architecture can handle failures. Imagine you're responsible for a system that must be always fully operational. Failures can and will happen, so how do you ensure that your system can remain online when something goes wrong? How do you handle maintenance events? 
+高可用性 (HA) では、アーキテクチャによって障害に確実に対処することができます。 常に完全な動作状態になければならないシステムを担当しているとします。 障害はいつか発生する可能性があります。したがって、何か問題が発生しても、システムが確実にオンライン状態に維持されるようにするにはどうすればよいでしょうか。 メンテナンス イベントの処理方法
 
-Here, you'll learn the need for high availability, evaluate application high availability requirements, and learn how the Azure platform accommodates and provides solutions to meet your availability goals.
+ここでは、高可用性の必要性を説明し、アプリケーションの高可用性の要件を評価し、さらに設定した可用性の目標を満たすソリューションに、Azure プラットフォームによって対応し、それを実現する方法について説明します。
 
-## What is high availability?
+## <a name="what-is-high-availability"></a>高可用性とは
 
-A highly available service is an application that absorbs fluctuations in availability, load, and temporary failures in dependent services and hardware. The application remains online and available (or maintains the appearance of it) while performing acceptably. This availability is often defined by business requirements or application service-level agreements.
+高可用性サービスは、依存型のサービスおよびハードウェアでの可用性および負荷の変動と、一時的な障害を緩和するアプリケーションです。 アプリケーションは良好なパフォーマンスで動作しながら、オンラインのまま利用可能な状態 (またはその外観) が維持されます。 この可用性は、多くの場合、ビジネス要件またはアプリケーションのサービス レベル アグリーメントによって定義されます。
 
-High availability is ultimately about the ability to handle the loss or severe degradation of a component of a system. This might be due to a virtual machine that's hosting an application going offline because the host failed. It could be due to planned maintenance for a system upgrade. It could even be caused by the failure of a service in the cloud. Identifying the places where your system can fail, and building in the capabilities to handle those failures, will ensure that the services you offer to your customers can stay online.
+高可用性は、最終的には、システムのコンポーネントの損失または大幅なパフォーマンス低下に対処する機能に関するものです。 このような状況になる原因としては、ホストで障害が発生したためにアプリケーションをホストしている仮想マシンがオフラインになることが考えられます。 システム アップグレードのための計画メンテナンスが原因となる可能性があります。 クラウド内でのサービスの障害によって発生する場合もあります。 システムで障害が発生していると考えられる場所を特定し、それらの障害に対処する機能を組み込むことで、顧客に提供しているサービスが確実にオンラインに維持されるようにすることができます。
 
-High availability of a service typically requires high availability of the components that make up the service. Think of a website that offers an online marketplace to purchase items. The service that's offered to your customers is the ability to list, buy, and sell items online. To provide this service, you'll have multiple components: a database, web servers, application servers, and so on. Each of these components could fail, so you have to identify how and where  your failure points are, and determine how to address these failure points in your architecture.
+通常、サービスの高可用性を実現するには、サービスを構成するコンポーネントの高可用性が必要です。 アイテムを購入するためのオンライン マーケットプ レースを提供する Web サイトについて考えてみましょう。 顧客に提供しているサービスには、アイテムをオンラインで一覧表示、購入、および販売する機能が用意されています。 このサービスを提供するために、データベース、Web サーバー、アプリケーション サーバーなど複数のコンポーネントを備えることになります。 このような各コンポーネントでは障害が発生する可能性があるため、障害点がどこにどのように存在するかを識別し、アーキテクチャ内でそれらの障害点に対処する方法を決める必要があります。
 
-## Evaluate high availability for your architecture
+## <a name="evaluate-high-availability-for-your-architecture"></a>ご利用のアーキテクチャの高可用性を評価する
 
-There are three steps to evaluating an application for high availability: 
+アプリケーションの高可用性を評価するには 3 つの手順があります。
 
-1. Determine the service-level agreement of your application
-1. Evaluate the HA capabilities of the application
-1. Evaluate the HA capabilities of dependent applications
+1. ご利用のアプリケーションのサービス レベル アグリーメントを特定する
+1. アプリケーションの HA 機能を評価する
+1. 依存するアプリケーションの HA 機能を評価する
 
-Let's explore these steps in detail.
+これらの手順を詳しく見ていきましょう。
 
-### Determine the service-level agreement of your application
+### <a name="determine-the-service-level-agreement-of-your-application"></a>ご利用のアプリケーションのサービス レベル アグリーメントを特定する
 
-A service-level agreement (SLA) is an agreement between a service provider and a service consumer in which the service provider commits to a standard of service based on measurable metrics and defined responsibilities. SLAs can be strict, legally bound, contractual agreements, or assumed expectations of availability by customers. Service metrics typically focus on service throughput, capacity, and availability, all of which can be measured in various ways. Regardless of the specific metrics that make up the SLA, failure to meet the SLA can have serious financial ramifications for the service provider. A common component of service agreements is guaranteed financial reimbursement for missed SLAs.
+サービス レベル アグリーメント (SLA) は、サービス プロバイダーとサービス コンシューマーとの間で結ばれる契約であり、その中でサービス プロバイダーは、測定可能なメトリックと定義された責任に基づいてサービスの標準をコミットします。 SLA は、法律に従った厳密な契約上の合意であり、顧客による可用性の期待とみなすことができます。 サービスのメトリックでは、通常、サービスのスループット、容量、および可用性に重点が置かれ、そのすべてをさまざまな方法で測定することができます。 SLA を構成する特定のメトリックに関係なく、SLA を達成する過程で発生する障害は、サービス プロバイダーに対して財務的に深刻な影響を与えます。 サービス契約の一般的なコンポーネントでは、SLA が達成されなかった場合、財務的な払戻しが保証されます。
 
-![SLA handshake](../media-draft/SLAHandshake.png)
+![SLA のハンドシェイク](../media-draft/SLAHandshake.png)
 
-Identifying SLAs is an important first step when determining the high availability capabilities that your architecture will require. These will help shape the methods you'll use to make your application highly available.
+ご利用のアーキテクチャで必要となる高可用性機能を決める場合は、SLA を明らかにすることが重要な第一ステップとなります。 これらの機能は、ご利用のアプリケーションを高可用性にするために使用する手法を形成するのに役立ちます。
 
-### Evaluate the HA capabilities of the application
+### <a name="evaluate-the-ha-capabilities-of-the-application"></a>アプリケーションの HA 機能を評価する
 
-To evaluate the HA capabilities of your application, perform a failure analysis. Focus on single points of failure and critical components that would have a large impact on the application if they were unreachable, misconfigured, or started behaving unexpectedly. For areas that do have redundancy, determine whether the application is capable of detecting error conditions and self-healing.
+使用するアプリケーションの HA 機能を評価するには、障害解析を実行します。 重点を置くのは、単一障害と重要なコンポーネント (これらに到達不可能な場合、構成が正しくない場合、または予期しない動作を開始した場合にアプリケーションに大きな影響を与える) です。 冗長性がある領域については、アプリケーションがエラー状態を検出して、自己復旧できるかどうかを判断します。
 
-You'll need to carefully evaluate all components of your application, including the pieces designed to provide HA functionality, such as load balancers. Single points of failure will either need to be modified to have HA capabilities integrated, or will need to be replaced with services that can provide HA capabilities.
+ご利用のアプリケーションのすべてのコンポーネントについて、慎重に評価する必要があります。たとえば、ロード バランサーなどの HA 機能を提供するように設計されている部分があります。 単一障害点は、HA 機能を統合するように変更するか、または HA 機能を提供できるサービスに置換する必要があります。
 
-### Evaluate the HA capabilities of dependent applications
+### <a name="evaluate-the-ha-capabilities-of-dependent-applications"></a>依存するアプリケーションの HA 機能を評価する
 
-You'll need to understand not only your application's SLA requirements to your consumer, but also the provided SLAs of any resource that your application may depend on. If you are committing an uptime to your customers of 99.9%, but a service your application depends on only has an SLA of 99%, this could put you at risk of not meeting your SLA to your customers. If a dependent service is unable to provide a sufficient SLA, you may need to modify your own SLA, replace the dependency with an alternative, or find ways to meet your SLA while the dependency is unavailable. Depending on the scenario and the nature of the dependency, failing dependencies can be temporarily worked around with solutions like caches and work queues.
+コンシューマーに対するご利用のアプリケーションの SLA 要件だけでなく、ご利用のアプリケーションが依存する場合がある任意のリソースの指定された SLA も理解する必要があります。 顧客に対して 99.9% のアップタイムをコミットしているが、ご利用のアプリケーションが依存しているサービスの SLA が 99% しかない場合、顧客に対して SLA を満足できないリスクが発生する可能性があります。 依存サービスによって十分な SLA を提供することができない場合は、独自の SLA を変更するか、依存関係を別のものに置換するか、または依存関係が利用できない間に SLA を満たす方法を見つけることが必要な場合があります。 シナリオとの依存関係の性質によっては、キャッシュや作業キューなどのソリューションを使用して、失敗した依存関係を一時的に回避することができます。
 
-## Azure's highly available platform
+## <a name="azures-highly-available-platform"></a>Azure の可用性の高いプラットフォーム
 
-The Azure cloud platform has been designed to provide high availability throughout all its services. Like any system, applications may be affected by both hardware and software platform events. The need to design your application architecture to handle failures is critical, and the Azure cloud platform provides you with the tools and capabilities to make your application highly available. There are several core concepts when considering HA for your architecture on Azure:
+Azure クラウド プラットフォームは、そのすべてのサービスを通して高可用性を実現できるように設計されています。 システムの場合と同様に、アプリケーションもハードウェアとソフトウェアの両方のプラットフォーム イベントの影響を受ける場合があります。 障害に対処できるようにアプリケーション アーキテクチャを設計することの必要性は重要です。Azure クラウド プラットフォームには、アプリケーションの可用性を高めるためのツールおよび機能が用意されています。 Azure 上でご利用のアーキテクチャ用の HA を検討する場合は、いくつかの主要な概念を把握しておく必要があります。
 
-* Availability sets
-* Availability zones
-* Load balancing
-* Platform as a service (PaaS) HA capabilities
+* 可用性セット
+* 可用性ゾーン
+* 負荷分散
+* PaaS HA 機能
 
-### Availability sets
+### <a name="availability-sets"></a>可用性セット
 
-Availability sets are a way for you to inform Azure that VMs that belong to the same application workload should be distributed to prevent simultaneous impact from hardware failure and scheduled maintenance. Availability sets are made up of *update domains* and *fault domains*.
+可用性セットは、同じアプリケーション ワークロードに属する VM を分散することでハードウェア障害および予定メンテナンスから同時に影響を受けるのを防ぐ必要があることを Azure に通知する方法です。 可用性セットは、*更新ドメイン*と*障害ドメイン*で構成されています。
 
-![Availability sets](../media-draft/AzAvailSets.png)
+![可用性セット](../media-draft/AzAvailSets.png)
 
-Update domains ensure that a subset of your application's servers always remain running when the virtual machine hosts in an Azure datacenter require downtime for maintenance. Most updates can be performed with no impact to the VMs running on them, but there are times when this isn't possible. To ensure that updates don't happen to a whole datacenter at once, the Azure datacenter is logically sectioned into update domains (UD). When a maintenance event, such as a performance update and critical security patch that needs to be applied to the host, the update is sequenced through update domains. The use of sequencing updates using update domains ensures that the whole datacenter isn't unavailable during platform updates and patching.
+Azure データ センター内の仮想マシン ホストがメンテナンスのためにダウンタイムを必要とする場合でも、更新ドメインにより、ご利用のアプリケーションのサブセットは常に実行状態を確実に維持します。 ほとんどの更新プログラムは、それらに対して稼働している VM に影響を及ぼさずに実行することができますが、このことが不可能な場合があります。 更新プログラムがデータ センターに対して一度に実行されないようにするために、Azure データ センターは論理的に更新ドメイン (UD) に区分されています。 パフォーマンス更新プログラムや重要なセキュリティ パッチなどのメンテナンス イベントをホストに適用する必要がある場合、更新プログラムは更新ドメインを経由してシーケンス処理されます。 更新ドメインを使用して更新プログラムをシーケンス処理することにより、プラットフォームの更新中およびパッチ適用中もデータセンター全体が利用不可能になることはありません。
 
-While update domains represent a logical section of the datacenter, fault domains (FD) represent physical sections of the datacenter and ensure rack diversity of servers in an availability set. Fault domains align to the physical separation of shared hardware in the datacenter. This includes power, cooling, and network hardware that supports the physical servers located in server racks. In the event the hardware that supports a server rack has become unavailable, only that rack of servers would be affected by the outage.
+更新ドメインがデータ センターの論理セクションを表す一方で、障害ドメイン (FD) はデータ センターの物理的なセクションを表し、これにより可用性セット内でのサーバーのラック多様性が確保されます。 障害ドメインは、データ センター内の共有ハードウェアの物理的な分離に合わせて整列されます。 これには、サーバー ラック内に設置された物理サーバーをサポートする電源、冷却装置、およびネットワーク ハードウェアが含まれます。 サーバー ラックをサポートするハードウェアが利用できなくなった場合は、そのサーバー ラックのみが障害の影響を受けます。
 
-With availability sets, you can ensure your application remains online if a high-impact maintenance event is required or hardware failures occur.
+可用性セットを使用すると、影響の大きいメンテナンス イベントが必要とされる場合やハードウェア障害が発生した場合でも、ご利用のアプリケーションがオンライン状態で確実に維持されるようにすることができます。
 
-### Availability zones
+### <a name="availability-zones"></a>可用性ゾーン
 
-Availability zones are independent physical datacenter locations within a region that include their own power, cooling, and networking. By taking availability zones into account when deploying resources, you can protect workloads from datacenter outages while retaining presence in a particular region. Services like virtual machines are *zonal services* and allow you to deploy them to specific zones within a region. Other services are *zone-redundant services* and will replicate across the availability zones in the specific Azure region. Both types ensure that within an Azure region there are no single points of failure.
+可用性ゾーンは、独自の電源、冷却装置、およびネットワークを備えた、リージョン内にある独立した物理的なデータ センターの場所です。 リソースをデプロイする際に可用性ゾーンを考慮に入れることにより、特定のリージョンでのプレゼンスを維持しながら、データ センターの障害からワークロードを保護することができます。 仮想マシンのようなサービスは、*ゾーン サービス*です。これらは、リージョン内の特定のゾーンにデプロイすることができます。 他のサービスは*ゾーン冗長サービス*であり、特定の Azure リージョン内の複数の可用性ゾーンにわたってレプリケートされます。 両方の種類のサービスにより、Azure リージョン内では単一障害点が発生することはありません。
 
-![Availability zones](../media-draft/AzAvailZones.png)
+![可用性ゾーン](../media-draft/AzAvailZones.png)
 
-Supported regions contain a minimum of three availability zones. When creating zonal service resources in those regions, you'll have the ability to select the zone in which the resource should be created. This will allow you to design your application to withstand a zonal outage and continue to operate in an Azure region before having to evacuate your application to another Azure region.
+サポートされているリージョンには、最低でも 3 つの可用性ゾーンが含まれています。 それらのリージョン内にゾーン サービス リソースを作成する場合は、リソースを作成する必要があるゾーンを選択することができます。 これにより、アプリケーションを別の Azure リージョンに退避させなくても済むように、ゾーンの障害に耐え、Azure リージョン内で引き続き動作可能なようにアプリケーションを設計することができます。
 
-Availability zones are a newer high availability configuration service for Azure regions and are currently available for certain regions. It's important to check the availability of this service in the region that you're planning to deploy your application if you want to consider this functionality. Availability zones are supported when using virtual machines, as well as several PaaS services. Availability zones replace availability sets in supported regions.
+可用性ゾーンは、Azure リージョン向けのより新しい高可用性構成サービスであり、現時点では特定のリージョンで使用することができます。 この機能を検討する場合は、アプリケーションのデプロイ先に予定しているリージョン内で、このサービスの可用性を確認することが重要です。 可用性ゾーンは、仮想マシンを使用する場合のほか、いくつかの PaaS サービスを使用する場合もサポートされます。 サポートされているリージョンでは、可用性セットが可用性ゾーンがに置き換えられます。
 
-### Load balancing
+### <a name="load-balancing"></a>負荷分散
 
-Load balancers manage how network traffic is distributed across an application. Load balancers are essential in keeping your application resilient to individual component failures and to ensure your application is available to process requests. For applications that don't have service discovery built in, load balancing is required for both availability sets and availability zones.
+ロード バランサーでは、ネットワーク トラフィックをアプリケーション全体に分散する方法が管理されます。 ロード バランサーは、個々のコンポーネントでの障害に対するご利用のアプリケーションの回復力を維持する上で、また要求の処理でご利用のアプリケーションを確実に使用できるようにする上で不可欠です。 サービス検出が組み込まれていないアプリケーションの場合は、可用性セットと可用性ゾーンの両方に対して負荷分散が必要です。
 
-Azure possesses three load balancing technology services that are distinct in their abilities to route network traffic:
+Azure には 3 つの負荷分散テクノロジ サービスがあります。これらは、ネットワーク トラフィックをルーティングする機能で区別されます。
 
-* **Azure Traffic Manager** provides global DNS load balancing. You would consider using Traffic Manager to provide load balancing of DNS endpoints within or across Azure regions.
-* **Azure Application Gateway** provides Layer 7 load-balancing capabilities, such as round-robin distribution of incoming traffic, cookie-based session affinity, URL path-based routing, and the ability to host multiple websites behind a single application gateway.
-* **Azure Load Balancer** is a layer 4 load balancer. You can configure public and internal load-balanced endpoints and define rules to map inbound connections to back-end pool destinations by using TCP and HTTP health-probing options to manage service availability.
+* **Azure Traffic Manager** は、グローバルな DNS 負荷分散機能を備えています。 Traffic Manager を使用して Azure リージョン内または Azure リージョン間での DNS エンドポイントの負荷分散を行うことを検討します。
+* **Azure Application Gateway** では、着信トラフィックのラウンド ロビン分散、Cookie ベースのセッション アフィニティ、URL パス ベースのルーティング、および単一のアプリケーション ゲートウェイの背後で複数の Web サイトをホストする機能など、レイヤー 7 の負荷分散機能が用意されています。
+* **Azure Load Balancer** は、レイヤー 4 のロード バランサーです。 負荷分散されるパブリックおよび内部のエンドポイントを構成したり、TCP を使用して受信接続をバックエンド プールの送信先にマッピングする規則や、サービスの可用性を管理するための HTTP の正常性プローブ オプションを定義したりできます。
 
-One or a combination of all three Azure load-balancing technologies can ensure you have the necessary options available to architect a highly available solution to route network traffic through your application.
+この 3 つの Azure 負荷分散テクノロジのいずれか 1 つまたは 3 つすべての組み合わせにより、ご利用のアプリケーションを介してネットワーク トラフィックをルーティングする高可用性のソリューションを構築する場合に必要なオプションを確実に利用できるようにすることができます。
 
-![Azure load balancing options](../media-draft/AzLBOptions.png)
+![スクリーンショット](../media-draft/AzLBOptions.png)
 
-### PaaS HA capabilities
+### <a name="paas-ha-capabilities"></a>PaaS HA 機能
 
-PaaS services come with high availability built in. Services such as Azure SQL Database, Azure App Service, and Azure Service Bus include high availability features and ensure that failures of an individual component of the service will be seamless to your application. Using PaaS services is one of the best ways to ensure that your architecture is highly available.
+高可用性が組み込まれた PaaS サービス。 Azure SQL Database、Azure App Service、および Azure Service Bus などのサービスには、高可用性機能が含まれています。これにより、サービスの個々のコンポーネントの障害は、アプリケーションに対して確実にシームレスになります。 PaaS サービスを使用することは、ご利用のアーキテクチャが確実に高可用性になるようにするための最善の方法の 1 つです。
 
-When architecting for high availability, you'll want to understand the SLA that you're committing to your customers. Then evaluate both the HA capabilities that your application has, and the HA capabilities and SLAs of dependent systems. After those have been established, use Azure features, such as availability sets, availability zones, and various load-balancing technologies, to add HA capabilities to your application. Any PaaS services you should choose to use will have HA capabilities built in.
+高可用性のための設計を行う場合は、顧客にコミットする SLA を理解することが必要です。 ご利用のアプリケーションで用意されている HA 機能と、依存システムの HA 機能および SLA をいずれも評価します。 それらが確定されたら、可用性セット、可用性ゾーン、およびさまざまな負荷分散テクノロジを使用して、ご利用のアプリケーションに HA 機能を追加します。 任意の PaaS サービスを使用するように選択すると、HA 機能が組み込まれます。

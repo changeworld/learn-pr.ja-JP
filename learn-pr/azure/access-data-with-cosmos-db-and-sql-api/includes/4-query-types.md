@@ -13,7 +13,7 @@ SAS クエリの形式は次のとおりです。
 
 ## <a name="select-clause"></a>SELECT 句
 
-SELECT 句は、クエリの実行時に生成される値の種類を決定します。 値 `SELECT *` は、JSON ドキュメント全体が返されることを示します。
+SELECT 句では、クエリの実行時に生成される値の種類を決定します。 値 `SELECT *` は、JSON ドキュメント全体が返されることを示します。
 
 **クエリ**
 ```
@@ -31,6 +31,7 @@ WHERE p.id ="1"
         "category": "Women's Clothing",
         "manufacturer": "Contoso Sport",
         "description": "Quick dry crew neck t-shirt",
+        "price": "14.99",
         "shipping": {
             "weight": 1,
             "dimensions": {
@@ -39,11 +40,11 @@ WHERE p.id ="1"
                 "depth": 1
             }
         },
-        "_rid": "glAZAJFm0VsBAAAAAAAAAA==",
-        "_self": "dbs/glAZAA==/colls/glAZAJFm0Vs=/docs/glAZAJFm0VsBAAAAAAAAAA==/",
-        "_etag": "\"00006000-0000-0000-0000-5b71be760000\"",
+        "_rid": "iAEeANrzNAAJAAAAAAAAAA==",
+        "_self": "dbs/iAEeAA==/colls/iAEeANrzNAA=/docs/iAEeANrzNAAJAAAAAAAAAA==/",
+        "_etag": "\"00003a02-0000-0000-0000-5b9208440000\"",
         "_attachments": "attachments/",
-        "_ts": 1534180982
+        "_ts": 1536297028
     }
 ]
 ```
@@ -77,7 +78,7 @@ FROM 句では、クエリの動作の対象となるデータ ソースを指�
 
 `SELECT * FROM Products` のようなクエリは、Products コレクション全体がクエリの列挙の対象となるソースであることを示します。
 
-コレクションは、`SELECT p.id FROM Products AS p` または単に `SELECT p.id FROM Products p` のように、エイリアス化することができます。`p` は `Products` と同じことです。 `AS` は識別子をエイリアス化するための省略可能なキーワードです。
+コレクションは、`SELECT p.id FROM Products AS p` または単に `SELECT p.id FROM Products p` のように、エイリアスにすることができます。`p` は `Products` と同じことです。 `AS` は識別子をエイリアスにするためのオプションのキーワードです。
 
 エイリアス化すると、元のソースをバインドすることはできなくなります。 たとえば、`SELECT Products.id FROM Products p` は、識別子 "Products" をそれ以上解決できないため、構文的に無効です。
 
@@ -96,22 +97,22 @@ FROM Products.shipping
 
 ```
 [
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
+    {
+        "weight": 1,
+        "dimensions": {
+            "width": 6,
+            "height": 8,
+            "depth": 1
+        }
+    },
+    {
+        "weight": 2,
+        "dimensions": {
+            "width": 8,
+            "height": 11,
+            "depth": 3
+        }
     }
-},
-{
-    "weight": 1,
-    "dimensions": {
-        "width": 6,
-        "height": 8,
-        "depth": 1
-    }
-}
 ]
 ```
 

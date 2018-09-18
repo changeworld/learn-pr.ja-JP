@@ -4,6 +4,8 @@
 
 現在、ご自分に割り当てられているロールを確認するには、次の手順に従います。
 
+1. [Azure portal](https://portal.azure.com/?azure-portal=true) に移動します。
+
 1. ナビゲーション リストで、**[Azure Active Directory]** をクリックします。
 
 1. **[ユーザー]** をクリックして、**[すべてのユーザー]** を開きます。

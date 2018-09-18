@@ -1,20 +1,19 @@
-In this module, you've seen what Azure Database for PostgreSQL offering looks like. You saw how to create an Azure Database for PostgreSQL using the Azure portal as well as Azure CLI.
+このモジュールでは、Azure Database for PostgreSQL サービスの外観について説明しました。 Azure portal および Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する方法も紹介しました。
 
-You looked at the configuration options available to configure a PostgreSQL server-level firewall rule and enforce SSL connections. Finally, you saw how to connect to an Azure Database for PostgreSQL server using _psql_ in Azure Cloud Shell
+PostgreSQL のサーバー レベル ファイアウォール規則の構成と、SSL 接続の適用に使用できる構成オプションも確認しました。 最後に、Azure Cloud Shell で _psql_ を使って、Azure Database for PostgreSQL サーバーに接続する方法を説明しました
 
-## Clean up
-
+## <a name="clean-up"></a>クリーンアップ
 <!---TODO: Update for sandbox?--->
 
-All that is left now is for you to clean up the resources you created in the labs. Remember the server will generate a monthly charge even though you may not use it. If you create resources for testing purposes, an easy way to get rid of them all is to delete the Resource Group they are part of.
+後は、ラボで作成したリソースをクリーンアップするだけです。 サーバーを使用していなくても、月額料金が発生することを忘れないでください。 テスト目的でリソースを作成した場合、そのリソースを簡単に削除するには、そのリソースが含まれるリソース グループを削除します。
 
 > [!NOTE]
-> Recall, a resource group is a collection of resources that share the same lifecycle, permissions, and policies. These actions will delete all resources allocated within this resource group, including all data you may have added to the databases on the server you created.
+> リソース グループとは、同じライフサイクル、アクセス許可、ポリシーを共有するリソースの集まりであることを思い出してください。 これらのアクションにより、作成したサーバー上のデータベースに追加したデータを含め、このリソース グループ内に割り当てられているすべてのリソースが削除されます。
 
-- Sign in to the [Azure portal](https://portal.azure.com?azure-portal=true).
+- [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。
 
-- In the left menu, select **Resource groups** to view all resource groups currently in use for your account.
+- 左側のメニューで、**[リソース グループ]** を選択して、アカウントで現在使用されているすべてのリソース グループを表示します。
 
-- Click on the name of the resource group you created and click on the **Delete resource group** button in the toolbar near the top.
+- 作成したリソース グループの名前をクリックし、上部近くにあるツール バーの **[リソース グループの削除]** をクリックします。
 
-- You'll a dialog box titled **Are you sure you want to delete `<resource_group_name>`** prompting you to type in the name of the resource group to confirm deletion. Confirm the resource group name and click the Delete button at the bottom.
+- **[Are you sure you want to delete `<resource_group_name>`]\(<resource_group_name> を削除しますか\)** というダイアログ ボックスで、リソース グループの名前を入力して削除を確認するよう求められます。 リソース グループ名を確認して、下部にある [削除] をクリックします。

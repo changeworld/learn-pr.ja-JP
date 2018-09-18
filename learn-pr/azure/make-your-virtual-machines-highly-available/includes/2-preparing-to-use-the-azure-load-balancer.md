@@ -1,99 +1,99 @@
-Suppose your company wants to see if Azure Load Balancer will support your Enterprise Resource Planning (ERP) application. Your application has a web interface for users and runs on multiple servers. Each server has a local copy of the ERP database, which is synced across all servers.
+Azure Load Balancer がエンタープライズ リソース プラニング (ERP) に対応しているかどうかを、あなたが所属している会社が知りたいとします。 アプリケーションにはユーザーのための Web インターフェイスがあり、複数のサーバーで実行されます。 各サーバーには ERP データベースのローカル コピーが含まれます。ERP データベースはすべてのサーバーの間で同期されています。
 
-Here, you will look at how a load balancer can help provide high availability of services. You will identify the difference between the basic and standard load balancer options and see how to create a load balancer for Azure Virtual Machines.
+ここで、サービスの高可用性に対してロード バランサーがどのように貢献できるか確認します。 ロード バランサー オプションの基本と標準の違いを特定し、Azure Virtual Machines 向けのロード バランサーを作成する方法を確認します。
 
-## What is load balancing?
+## <a name="what-is-load-balancing"></a>負荷分散とは
 
-_Load balancing_ describes various techniques for distributing workloads across multiple devices, such as compute, storage, and networking devices. The goal of load balancing is to optimize the use of multiple resources, to make the most efficient use of these resources as an infrastructure is scaled out, and to ensure services are maintained if some components are unavailable.
+_負荷分散_とは、計算、保管、ネットワークなどの作業負荷を複数のデバイスに分散するさまざまな手法を言い表したものです。 負荷分散の目的は、さまざまなリソースを最適な方法で活用すること、インフラストラクチャの拡張に合わせ、リソースを最も効率的に活用すること、一部の構成要素が利用不可になった場合でもサービスを維持することです。
 
-Here, we'll look at Azure's load balancing support for virtual machines (VMs).
+ここでは、仮想マシン (VM) 向けの Azure の負荷分散サポートを確認します。
 
-### What is high availability?
+### <a name="what-is-high-availability"></a>高可用性とは
 
-High availability (HA) measures the ability of an application or service to remain accessible despite a failure in any system component. Ideally, there will be not be any noticeable loss of service.
+高可用性 (HA) とは、システムの一部の構成要素に故障が発生しても、アプリケーションまたはサービスを引き続き利用できる能力を計る指標です。 サービスの停止が目に付かないことが理想です。
 
-Load balancing is fundamental to the delivery of HA because it allows multiple VMs to act as a pool of servers. The pool can continue to service requests even if some VMs crash or are taken offline for maintenance.
+負荷分散は複数の VM がサーバー プールとして機能するため、HA 実現の基礎となります。 一部の VM がクラッシュしたり、保守管理のためにオンラインになったりしても、このプールは引き続き要求に応答できます。
 
-## What is Azure Load Balancer?
+## <a name="what-is-the-azure-load-balancer"></a>Azure Load Balancer とは
 
-**Azure Load Balancer** is an Azure service that distributes incoming requests across multiple VMs in a pool. It distributes incoming network traffic across a set of healthy VMs and avoids any VM that is not able to respond.
+**Azure Load Balancer** とは、あるプールに含まれる複数の VM 間で受信した要求を分散する Azure サービスです。 入ってくるネットワーク トラフィックを正常な一連の VM 間で分散し、応答できない VM があれば、その VM を回避します。
 
- Azure Load Balancer operates at Layer-4 (TCP, UDP) of the OSI 7-layer model. It can be configured to support TCP and UDP application scenarios where the traffic is inbound to Azure VMs, as well as outbound scenarios where other Azure services are passing TCP and UDP traffic out through Azure VMs to external endpoints.
+Azure Load Balancer は OSI 7 層モデルの Layer-4 (TCP、UDP) で動作します。 トラフィックが Azure VM に入ってくる TCP/UDP アプリケーション シナリオと、他の Azure サービスにより、Azure VM 経由で外部エンドポイントに TCP/UDP トラフィックが渡されるアウトバウンド シナリオをサポートするように構成できます。
 
-## Public vs. internal load balancers
+## <a name="public-vs-internal-load-balancers"></a>パブリック ロード バランサーと内部ロード バランサー
 
-An Azure Load Balancer can be either _public_ or _internal_ depending on the source of incoming requests.
+Azure Load Balancer は、入ってくる要求の源に基づき、_パブリック_または_内部_になります。
 
-A **public load balancer** handles client requests from outside of your Azure infrastructure. The public IP address of the load balancer is automatically configured as the load balancer's front end when you create the public IP and the load balancer resource. The following illustration shows a public load balancer.
+**パブリック ロード バランサー**では、Azure インフラストラクチャの外から入ってきたクライアント要求が処理されます。 パブリック IP とロード バランサー リソースを作成するとき、ロード バランサーのパブリック IP アドレスはロード バランサーのフロント エンドとして自動的に構成されます。 パブリック ロード バランサーを次の図に示します。
 
-![An illustration showing a public load balancer distributing client requests from the internet to three VMs on a virtual network.](../media-draft/2-public-load-balancer.png)
+![パブリック ロード バランサーが内部から仮想ネットワーク上の 3 つの VM にクライアント要求を分散する図。](../media-draft/2-public-load-balancer.png)
 
-An **internal load balancer** processes requests from within a virtual network (or through a VPN). It distributes requests to resources within that virtual network. The load balancer, front-end IP addresses, and virtual networks are not directly accessible from the internet. The following illustration shows an architecture containing both a public and internal load balancer. The public load balancer handles external requests while the internal load balancer forwards the requests to the internal VMs and databases for processing.
+**内部ロード バランサー**では、仮想ネットワーク内からの要求が処理されます (あるいは VPN を介して)。 その vNet 内でリソースに要求が分散されます。 ロード バランサー、フロント エンド IP アドレス、仮想ネットワークにはインターネットから直接アクセスできません。 次は、パブリック ロード バランサーと内部ロード バランサーの両方を含むアーキテクチャの図です。 パブリック ロード バランサーでは外部要求が処理されますが、内部ロード バランサーでは処理のために内部の VM とデータベースに要求が転送されます。
 
-![An illustration showing a public load balancer forwarding client requests to an internal load balancer. The internal load balancer then distributes requests to a web tier subnet or database tier subnet based on the type of the request. Both the web tier subnet and the database tier subnet have multiple servers to handle requests.](../media-draft/2-internal-load-balancer.png)
+![パブリック ロード バランサーがクライアント要求を内部ロード バランサーに転送する図。 次に、内部ロード バランサーが要求の種類に基づき、Web 層サブネットまたはデータベース層サブネットに要求を分配します。 Web 層サブネットとデータベース層サブネットの両方に複数のサーバーが与えられ、要求が処理されます。](../media-draft/2-internal-load-balancer.png)
 
-## How does Azure Load Balancer work?
+## <a name="how-does-the-azure-load-balancer-work"></a>Azure Load Balancer のしくみとは
 
-Azure Load Balancer uses information configured in **rules** and **health probes** to determine how new inbound traffic that is received on a load balancer's **front end** is distributed to VM instances in a **back-end pool**.
+Azure Load Balancer では**規則**と**正常性プローブ**に構成されている情報が使用され、ロード バランサーの**フロントエンド**で受信されたインバウンド トラフィックを**バックエンド プール**の VM インスタンスに分散する方法が決定されます。
 
-### Front end
+### <a name="frontend"></a>フロントエンド
 
-The load balancer front end is an IP configuration, containing one or more public IP addresses, that enables access to the load balancer and its applications over the Internet.
+ロード バランサー フロントエンドは IP 構成であり、パブリック IP アドレスが 1 つまたは複数含まれ、インターネットを経由してロード バランサーとそのアプリケーションにアクセスできます。
 
-### Back end address pool
+### <a name="backend-address-pool"></a>バックエンド アドレス プール
 
-Virtual machines connect to a load balancer using their virtual network interface card (vNIC). The back-end address pool contains the IP addresses of the vNICs that are connected to the load balancer. If you place all your VMs in an availability set, you can use this to easily add your VMs to a back-end pool when you're configuring the load balancer.
+仮想マシンは、仮想ネットワーク インターフェイス カード (vNIC) を使用してロード バランサーに接続されます。 バックエンド アドレス プールには、ロード バランサーに接続される vNIC の IP アドレスが含まれます。 可用性セットにすべての VM を配置した場合、これを利用し、ロード バランサーの構成時、バックエンド プールに VM を簡単に追加できます。
 
-### Health probe
+### <a name="health-probe"></a>正常性プローブ
 
-Load balancers use _health probes_ to determine which virtual machines can service requests. The load balancer will only distribute traffic to VMs that are available and operational. 
+ロード バランサーでは_正常性プローブ_が使用され、要求に対応する仮想マシンが決定されます。 ロード バランサーでは、作動中で利用可能な VM にのみトラフィックが分配されます。 
 
-A health probe monitors specific ports on each VM. You can define what type of response corresponds to "health"; for example, you might require an `HTTP 200 Available` response from a web application. By default, a VM will be marked as "unavailable" after two consecutive failures at 15-second intervals.
+正常性プローブによって、各 VM の特定のポートが監視されます。 どのような種類の応答が "正常" に相当するか定義できます。たとえば、Web アプリケーションから `HTTP 200 Available` 応答を要求することがあります。 VM では既定で、15 秒の間隔をおいて 2 回連続で失敗すると "利用不可" と見なされます。
 
-### Load balancer rules
+### <a name="load-balancer-rules"></a>ロード バランサーの規則
 
-Load balancer _rules_ define how traffic is distributed to backend VMs. The goal is to distribute requests fairly across the healthy VMs in the back-end pool.
+ロード バランサーの_規則_により、バックエンド VM にトラフィックを分配する方法が定義されます。 その目的は、バックエンド プールにある正常な VM 間で等しく要求を分配することにあります。
 
-Azure Load Balancer uses a hash-based algorithm to rewrite the headers of inbound packets. By default, Load Balancer creates a hash from:
+Azure Load Balancer では、ハッシュベースのアルゴリズムが使用され、インバウンド パケットのヘッダーが書き換えられます。 ロード バランサーでは既定で、以下からハッシュが作成されます。
 
-- Source IP addresses
-- Source ports
-- Destination IP addresses
-- Destination ports
-- IP protocol numbers
+- 発信元 IP アドレス
+- 送信元ポート
+- 送信先 IP アドレス
+- 送信先ポート
+- IP プロトコル番号
 
-This mechanism ensures that all packets within a packet client flow are sent to the same backend VM instance. A new flow from a client will use a different randomly allocated source port. This mean that the hash will change, and the load balancer may send this flow to a different back-end endpoint.
+このメカニズムにより、あるパケット クライアント フロー内のすべてのパケットが同じバックエンド VM インスタンスに送信されます。 クライアントからの新しいフローではランダムに割り当てられた別の送信元ポートが使用されます。そのため、ハッシュが変わり、ロード バランサーでは、このフローが別のバックエンド エンドポイントに送信されることがあります。
 
-## Basic vs. Standard Load Balancer SKUs
+## <a name="basic-vs-standard-load-balancer-skus"></a>Basic とStandard のロード バランサー SKU
 
-There are two versions of Azure Load Balancer: **Basic** and **Standard**. They differ in scale, features, and pricing. For example:
+Azure Load Balancer には **Basic** と **Standard** という 2 つの種類があります。 両者の間には、スケール、機能、料金の違いがあります。 例:
 
-- Standard supports HTTPS while Basic does not
-- Pool size can be much larger in Standard
-- Basic is no-cost while Standard is charged based on rules and throughput.
+- Standard では HTTPS に対応していますが、Basic では対応していません。
+- プール サイズは Standard の方がはるかに大きくなります。
+- Basic は無料ですが、Standard の場合、規則とスループットに基づいて課金されます。
 
-Standard is a superset of Basic, so any scenario suitable for Basic should also work on Standard. The Basic SKU is generally intended for prototyping and testing while Standard is recommended for production.
+Standard は Basic の上位集合です。そのため、Basic に適したシナリオは Standard でも機能します。 Basic SKU は一般的に試作品の作成と試験に利用され、運用には Standard が推奨されます。
 
-## Start the deployment of a basic public load balancer
+## <a name="start-the-deployment-of-a-basic-public-load-balancer"></a>Basic Public Load Balancer のデプロイを始める
 
-To create a load-balanced VM system, you need to create the load balancer itself, create a virtual network to contain your virtual machines, and then add VMs to the virtual network.
+負荷分散された VM システムを構築するには、ロード バランサー自体を構築し、VM を含める仮想ネットワークを構築し、仮想ネットワークに VM を追加する必要があります。
 
-To create the load balancer using the Azure portal, you define the following:
+Azure Portal を使用してロード バランサーを構築するには、以下を定義します。
 
-- Load balancer name
-- Type: public or internal
-- SKU: Basic or Standard
-- Public IP address: dynamic or static
-- Resource group and location
+- ロード バランサー名
+- 種類: パブリックまたは内部
+- SKU: Basic または Standard
+- パブリック IP アドレス: 動的または静的
+- リソース グループと場所
 
-Your back-end VMs will all be connected to the same virtual network, so you need to configure this resource next:
+バックエンド VM はすべて同じ仮想ネットワーク (vNET) に接続されます。そのため、次にこのリソースを構成する必要があります。
 
-- Virtual network name
-- Address space to use, such as 172.20.0.0/16
-- Resource group
-- Name for the subnet to use
-- Address space for the subnet (must be within the main space), such as 172.20.0.0/24
+- VNet 名
+- 172.20.0.0/16 など、使用するアドレス空間
+- リソース グループ
+- 使用するサブネットの名前
+- 172.20.0.0/24 など、サブネットのアドレス空間 (メイン空間内に存在する必要があります)
 
-You then need to create and deploy your backend VMs and configure them to use your virtual network. You should also place your VMs into the same availability set. Availability sets define the level of fault tolerance across a group of VMs, but for load balancing, they also help you assign your VMs to back-end pools.
+次に、バックエンド VM を構築してデプロイし、vNET を使用するように構成する必要があります。 また、同じ可用性セットに VM を配置してください。 可用性セットにより、VM のグループ全体でフォールト トレランスのレベルが定義されます。ただし、負荷分散については、VM をバックエンド プールに割り当てる際にも役立ちます。
 
-You have now seen how to use Azure Load Balancer as part of a high-availability solution. Next, you will use these steps to deploy your own load balancer.
+今回、高可用性ソリューションの一部として Azure Load Balancer を使用する方法をご覧いただきました。 次はここで学習した手順で独自のロード バランサーをデプロイします。

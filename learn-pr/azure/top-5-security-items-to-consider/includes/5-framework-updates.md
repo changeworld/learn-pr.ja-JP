@@ -1,55 +1,55 @@
-Many developers consider the frameworks and libraries they use to build their software with to be primarily decided by features or personal preference. However, the framework that you choose is an important decision, not only from a design and functionality perspective but also from a _security_ perspective. Choosing a framework with modern security features and keeping it up to date is one of the best ways to ensure your apps are secure.
+開発者の多くが、ソフトウェアの構築に使用するフレームワークとライブラリは、主に機能または個人的な好みによって決まると考えています。 しかし、フレームワークの選択は、設計や機能性の視点だけでなく、"_セキュリティ_" の視点からも重要な決定となります。 最新のセキュリティ機能を備えたフレームワークを選択し、そのフレームワークを常に最新の状態にしておくことは、アプリのセキュリティを確保するための最善の方法の 1 つです。
 
-## Choose your framework carefully
+## <a name="choose-your-framework-carefully"></a>フレームワークを慎重に選択する
 
-The most important factor regarding security when choosing a framework is how well supported it is. The best frameworks have stated security arrangements and are supported by large communities who improve and test the framework. No software is 100% bug-free or totally secure, but when a vulnerability is identified, we want to be certain that it will be closed or have a workaround provided quickly.
+フレームワークを選択するときにセキュリティに関して最も重要な要素は、そのフレームワークが十分にサポートされているかどうかです。 優れたフレームワークではセキュリティに関する取り決めが明示されており、フレームワークの改善やテストに取り組む大規模なコミュニティによってサポートされています。 バグがまったくない、あるいは 100% 安全なソフトウェアはありませんが、脆弱性が特定されたときに、確実に穴が塞がれるか、迅速に回避策が提供されることを望むものです。
 
-Often "well supported" is synonymous with "modern". Older frameworks tend to either be replaced or eventually fade in popularity. Even if you have significant experience with or or many apps written in an older framework, you'll be better off choosing a modern library that has the features you need. Modern frameworks tend to build on the lessons learned by earlier iterations which makes choosing them for new apps a form of threat surface reduction. You will have one less app to worry about if a vulnerability is discovered in the older framework that your legacy applications are written in.
+"十分にサポートされている" という言葉は、多くの場合、"最新" と同じ意味になります。 古いフレームワークは他に取って代わられる、あるいは最終的には人気が衰えていく傾向にあります。 古いフレームワークでの経験が豊富にある、あるいはそのフレームワークで多くのアプリを作成していたとしても、必要な機能を備えた最新のライブラリを選択することをお勧めします。 多くの最新フレームワークは、新しいアプリを作成する際に最新フレームワークを選択することが、脅威にさらされる面を減らすための 1 つの形式となっているという過去の繰り返しから得られた教訓に基づいて構築されています。 レガシー アプリケーションを作成した古いフレームワークで脆弱性が発見された場合、心配しなければならないアプリが 1 つ少なくなります。
 
 <!-- TODO: add link; Should we be pointing to other modules? -->
 <!--
 For more information on secure design and reducing threat surface, please see [Design For Security in Azure](../../design-for-security-in-azure/index.yml).
 -->
 
-## Keep your framework updated
+## <a name="keep-your-framework-updated"></a>お使いのフレームワークを最新の状態に保つ
 
-Software development frameworks, such as Java Spring and .NET Core release updates and new versions regularly. These updates include new features, removal of old features, and often security fixes or improvements. When we allow our frameworks to become out of date, it creates "technical debt". The further out of date we get, the harder and riskier it will be to bring our code up to the latest version. In addition, much like the initial framework choice, staying on older versions of the framework open you up to more security threats which have been fixed in newer releases of the framework.
+Java Spring、.NET Core などのソフトウェア開発フレームワークでは、更新プログラムおよび新しいバージョンが定期的にリリースされます。 これらの更新プログラムには、新機能が追加されたり古い機能が削除されたりするほか、多くの場合、セキュリティの修正プログラムや機能強化が含まれています。 フレームワークを古いまま放置すると、"技術的負債" が発生します。 古くなればなるほど、コードを最新バージョンに更新するのが大変になり、リスクが高くなります。 また、初期フレームワークを選択した場合と同様に、古いバージョンのフレームワークを使い続けると、新しいリリースのフレームワークでは対処済みのセキュリティ脅威にさらされることが増えます。
 
-As an example, from 2016-2017, [over 30 vulnerabilities](https://www.cvedetails.com/product/6117/Apache-Struts.html?vendor_id=45) were found in the Apache Struts framework. These were quickly addressed by the development team, but some companies didn't apply the patches and [paid the price in the form of a data breach](https://www.zdnet.com/article/equifax-confirms-apache-struts-flaw-it-failed-to-patch-was-to-blame-for-data-breach/). **Make sure to keep your frameworks and libraries up to date**.
+たとえば、2016 から 2017 年の間に、[30 を超えるの脆弱性](https://www.cvedetails.com/product/6117/Apache-Struts.html?vendor_id=45)が Apache Struts フレームワークで見つかりました。 これらは開発チームによってすぐに対処されましたが、一部の企業では修正プログラムを適用しなかったため、[データ侵害という形で代償を支払うことになりました](https://www.zdnet.com/article/equifax-confirms-apache-struts-flaw-it-failed-to-patch-was-to-blame-for-data-breach/)。 **お使いのフレームワークとライブラリは必ず最新の状態に保ってください**。
 
-### How do I update my framework?
+### <a name="how-do-i-update-my-framework"></a>使用しているフレームワークの更新方法
 
-Some frameworks, like Java or .NET, require an install and tend to release on a known cadence. It's a good idea to watch for new releases and plan to make a branch of your code to try it out when it's released. As an example, .NET Core maintains a [release notes page](https://github.com/dotnet/core/tree/master/release-notes) which you can check to find the latest versions available.
+Java、.NET など、一部のフレームワークにはインストールが必要であり、既知の周期でリリースされる傾向があります。 新しいリリースがないか注意して、リリースされている場合は、お使いのコードの分岐を作成して試してみることをお勧めします。 たとえば、.NET Core には[リリース ノート ページ](https://github.com/dotnet/core/tree/master/release-notes)があり、このページでは使用可能な最新バージョンがないか確認できます。
 
-More specialized libraries such as JavaScript frameworks, or .NET components can be updated through a package manager. **NPM** and **Bower** are popular choices for web projects and are supported by most IDEs or build tools. In .NET, we use **NuGet** to manage our component dependencies. Much like updating the core framework, branching your code, updating the components and testing is a good technique to validate a new version of a dependency.
+JavaScript フレームワークなどのより特殊なライブラリや、.NET コンポーネントは、パッケージ マネージャーを使用して更新できます。 **NPM** および **Bower** は Web プロジェクトでは人気のある選択肢で、ほとんどの IDE またはビルド ツールでサポートされています。 .NET では、**NuGet** を使用して、コンポーネントの依存関係を管理します。 コア フレームワークの更新、コードの分岐、コンポーネントの更新、およびテストは、新しいバージョンの依存関係を検証する手法として優れています。
 
 > [!NOTE]
-> The `dotnet` command-line tool has an `add package` and `remove package` option to add or remove NuGet packages but doesn't have a corresponding `update package` command. However, it turns out you can run `dotnet add package <package-name>` in your project and it will automatically _upgrade_ the package to the latest version. This is an easy way to update dependencies without having to open the IDE.
+> `dotnet` コマンドライン ツールには、NuGet パッケージを追加または削除するための `add package` および `remove package` オプションが含まれていますが、対応する `update package` コマンドはありません。 ただし、プロジェクトで `dotnet add package <package-name>` を実行できるため、パッケージが自動的に最新バージョンに "_アップグレード_" されます。 これにより、IDE を開かずに簡単に依存関係を更新できます。
 
-## Take advantage of built-in security
+## <a name="take-advantage-of-built-in-security"></a>組み込みのセキュリティを活用する
 
-Always check to see what security features your frameworks offer. **Never** roll your own security if there's a standard technique or capability built in. In addition, rely on proven algorithms and workflows because these have often been scrutinized by a lot of experts, critiqued and strengthened so you can be assured that they are reliable and secure.
+お使いのフレームワークが提供しているセキュリティ機能を常に確認するようにしてください。 標準的な手法や機能が組み込まれている場合は、独自のセキュリティは**決して展開しないでください**。 また、実績のあるアルゴリズムとワークフローを使用してください。こうしたアルゴリズムやワークフローは、ほとんどの場合、多くの専門家によって精査されており、さらに、批評および強化されているため、その信頼性と安全性が保証されているからです。
 
-The .NET Core framework has countless security features, here are a few core starting places in the documentation.
-* [Authentication -Identity Management](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/index?view=aspnetcore-2.1)
-* [Authorization](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/index?view=aspnetcore-2.1)
-* [Data Protection](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/index?view=aspnetcore-2.1)
-* [Secure Configuration](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/index?view=aspnetcore-2.1)
-* [Security Extensibility APIs](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/index?view=aspnetcore-2.1)
+.NET Core フレームワークは数え切れないほど多くのセキュリティ機能を備えています。このドキュメントでは、まず基本的な機能をいくつか紹介します。
+* [認証 - ID 管理](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/index?view=aspnetcore-2.1)
+* [承認](https://docs.microsoft.com/en-us/aspnet/core/security/authorization/index?view=aspnetcore-2.1)
+* [データ保護](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/index?view=aspnetcore-2.1)
+* [安全な構成](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/index?view=aspnetcore-2.1)
+* [セキュリティ拡張 API](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/index?view=aspnetcore-2.1)
 
-Each one of these features was written by experts in their field, and then battered with tests to ensure that it works as intended, and only as intended. Other frameworks offer similar features - check with the vendor that provides the framework to find out what they have in each category.
+これらの機能はそれぞれその分野の専門家によって記述され、意図したとおりに確実に動作するように、また意図したとおりにしか動作しないように徹底的にテストされています。 同様の機能を提供するフレームワークは他にもあります。フレームワークを提供しているベンダーに問いあわせて、カテゴリごとに機能を確認してください。
 
 > [!WARNING]
-> Writing your own security code, instead of using those provided by your framework, is not only wasting time, it's less secure.
+> フレームワークによって提供されている機能を使用せずに、ご自身でセキュリティ コードを記述することは、時間の無駄であるだけでなく、セキュリティの低下にもつながります。
 
 
-## Azure Security Center
+## <a name="azure-security-center"></a>Azure Security Center
 
-When using Azure to host your web applications Security Center will warn you if your frameworks are out of date as part of the recommendations tab.  Don't forget to look there from time to time to see if there are any warnings related to your apps.
+Azure を使用して Web アプリケーションをホストしているとき、お使いのフレームワークが古くなっている場合、Security Center によって推奨タブに警告が表示されます。お使いのアプリに関する警告がタブに表示されていないかどうかを、折を見て確認するのを忘れないでください。
 
-![Azure Security Center recommending a framework upgrade.](../media-draft/ASCFramework.png)
+![フレームワークのアップグレードを推奨している Azure Security Center。](../media-draft/ASCFramework.png)
 
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Whenever possible, choose a modern framework to build your apps, always use the built-in security features, and make sure you keep it up to date. These simple rules will help to ensure your application starts on a solid foundation.
+可能な限りご自身のアプリを構築する際は最新のフレームワークを選択し、必ず組み込みのセキュリティ機能を使用して、フレームワークを確実に最新の状態を保つようにしてください。 これらの簡単なルールによって、確実に強固な基盤の上にアプリケーションを開始できるようになります。

@@ -1,84 +1,80 @@
-Your web server is up and running, but you realize you need more computing power to make the experience great for your users. How can you make your VM run faster?
+Web サーバーは稼働するようになりましたが、エクスペリエンスをユーザーの役に立つものにするにはさらにコンピューティング能力が必要です。 どうすれば VM をもっと速く実行させることができますか。
 
-In your data center, you might move your web server to more powerful hardware to solve performance problems. The problem is you need to buy, rack, and power your new system. With Azure, the answer is much simpler.
+自社のデータ センターであれば、Web サーバーをいっそう強力なハードウェアに移動することで、パフォーマンスの問題を解決できるかもしれません。 問題は、新しいシステムを購入し、ラックに格納し、電源を供給する必要があることです。 Azure なら答えははるかに簡単です。
 
-Now you'll scale up your VM to a more powerful size. Before you change your VM's size, you must shut it down, or deallocate it.
+そのような場合は、より強力なサイズに VM をスケールアップします。 VM のサイズを変更する前に、VM をシャットダウンするか、または割り当て解除する必要があります。
 
-First, let's define what scale means and what happens when you deallocate your VM.
+最初に、スケーリングの意味を定義し、VM の割り当てを解除するとどうなるかを説明します。
 
-## What is scale?
+## <a name="what-is-scale"></a>スケーリングとは
 
-_Scale_ refers to adding network bandwidth, memory, storage, or compute power to achieve better performance.  
+"_スケーリング_" とは、よりよいパフォーマンスを実現するために、ネットワーク帯域幅、メモリ、ストレージ、またはコンピューティング能力を追加することです。  
 
-You may have heard the terms _scale up_ and _scale out_.
+"_スケールアップ_" や "_スケールアウト_" という用語を聞いたことがあるかもしれません。
 
-Scaling up, or vertical scaling, means to increase the memory, storage, or compute power on an existing virtual machine. For example, you can add additional memory to a web or database server to make it run faster.
+スケールアップまたは垂直スケーリングとは、既存の仮想マシンのメモリ、ストレージ、またはコンピューティング能力を増やすことです。 たとえば、Web サーバーやデータベース サーバーにメモリを追加して、さらに高速で実行させることができます。
 
 > [!TIP]
-> You can also _scale down_ your system if you needed to scale up only temporarily.
+> また、スケールアップが一時的にのみ必要であった場合は、システムを "_スケールダウン_" することもできます。
 
-Scaling out, or horizontal scaling, means to additional virtual machines to power your application. For example, you might create many virtual machines configured in exactly the same way and use a load balancer to distribute work across them.
+スケールアウトまたは水平スケーリングとは、仮想マシンを追加してアプリケーションの能力を高めることです。 たとえば、まったく同じ構成方法で多数の仮想マシンを作成し、ロード バランサーを使用してそれらの間に処理を分散させることができます。
 
-## What is deallocation?
+## <a name="what-is-deallocation"></a>割り当て解除とは
 
-Deallocation is the process that shuts down your VM and releases its compute resources.
+割り当て解除とは、VM をシャットダウンし、そのコンピューティング リソースを解放するプロセスです。
 
-When you shut down your PC at work or at home, the operating system closes your programs and then notifies the power management hardware to turn off power.
+職場や家庭の PC をシャットダウンすると、オペレーティング システムによってプログラムが終了され、電源をオフにするよう電源管理ハードウェアに通知されます。
 
-Deallocating a virtual machine is similar. After your VM shuts down, Azure reclaims the hardware used to power it. Your data disks and storage remain intact. When you start your VM back up, you'll pick up where you left off, just like with your PC.
+仮想マシンの割り当て解除もそれと似ています。 VM がシャットダウンすると、Azure はその VM が使用していたハードウェアを再利用します。 データ ディスクとストレージはそのまま残ります。 VM を再び起動すると、PC と同様に中断したところから再開します。
 
-When deallocated, you are not billed for the compute and network resources that your virtual machine uses. You still pay for any associated disks to sit in storage, but the overall cost is much lower than it would be if the VM were running.
+割り当てを解除すると、仮想マシンが使用するコンピューティング リソースとネットワーク リソースは課金されなくなります。 ストレージに関連するディスクに対してはやはり課金されますが、全体的なコストは VM が実行されている場合よりはるかに低くなります。
 
-Here, you'll deallocate your VM briefly so that you can resize it. But you can also deallocate your VMs for a longer period to save cost. Say you have a bank of VMs that you use for testing during work hours. You can schedule your VMs to be automatically deallocated on nights and weekends. If you need to stay late, you can manually restart them.
+ここでは、サイズを変更できるように、VM の割り当てを短時間解除します。 ただし、コストを節約するため VM の割り当てを長期間解除することもできます。 営業時間中にテストのために使用する VM のバンクがあるものとします。 夜間と週末には自動的に割り当てが解除されるように、VM をスケジュールすることができます。 遅くまで使用する必要がある場合は、手動で再起動できます。
 
-## Scale up your VM
+## <a name="scale-up-your-vm"></a>VM をスケールアップする
 
-Recall that you specified the size **Standard_DS2_v2** when you created your VM. Your VM currently has two virtual CPUs and 7 GB of memory.
+VM を作成するときに、サイズ **Standard_DS2_v2** を指定したことを思い出してください。 現在、VM は 2 つの仮想 CPU と 7 GB のメモリを備えています。
 
-Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four virtual CPUs and 14 GB of memory.
+1 つ上のサイズ **Standard_DS3_v2** に増強してみましょう。 VM は 4 つの仮想 CPU と 14 GB のメモリを備えるようになります。
 
 ::: zone pivot="windows-cloud"
 
-1. From Cloud Shell, deallocate your VM.
+1. Cloud Shell から `az vm deallocate` を実行し、VM の割り当てを解除するか、または VM を停止します。
 
-    ```powershell
-    Stop-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM" `
-      -Force
+    ```azurecli
+    az vm deallocate \
+      --resource-group myResourceGroup \
+      --name myWindowsVM
     ```
-    The process takes a couple minutes to complete.
-1. Run these commands to specify your VM's new size.
-    ```powershell
-    $vm = Get-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -VMName "myVM"
-    $vm.HardwareProfile.VmSize = "Standard_DS3_v2"
-    Update-AzureRmVM `
-      -VM $vm `
-      -ResourceGroupName "myResourceGroup"
-    ```
-    The update process takes about a minute.
-1. Restart your VM.
+    プロセスが完了するまでに数分かかります。
+1. `az vm resize` を実行して、VM のサイズを **Standard_DS3_v2** に上げます。
 
-    ```powershell
-    Start-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -Name "myVM"
+    ```azurecli
+    az vm resize \
+      --resource-group myResourceGroup \
+      --name myWindowsVM \
+      --size Standard_DS3_v2
     ```
-    The process takes about a minute.
-1. Verify that your VM is running the new size.
+    更新プロセスには約 1 分かかります。
+1. `az vm start` を実行して VM を再起動します。
 
-    ```powershell
-    $vm = Get-AzureRmVM `
-      -ResourceGroupName "myResourceGroup" `
-      -VMName "myVM"
-    $vm.HardwareProfile
+    ```azurecli
+    az vm start \
+      --resource-group myResourceGroup \
+      --name myWindowsVM
     ```
-    You see your new VM size, **Standard_DS3_v2**.
+    プロセスには約 1 分かかります。
+1. `az vm show` を実行し、VM が新しいサイズで実行されていることを確認します。
+
+    ```azurecli
+    az vm show \
+      --resource-group myResourceGroup \
+      --name myWindowsVM \
+      --query "hardwareProfile" \
+      --output tsv
+    ```
+    新しい VM サイズ **Standard_DS3_v2** が表示されます。
     ```console
-    VmSize
-    ------
     Standard_DS3_v2
     ```
 
@@ -86,30 +82,41 @@ Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four
 
 ::: zone pivot="linux-cloud"
 
-1. From Cloud Shell, run `az vm deallocate` to deallocate, or stop, your VM.
+1. Cloud Shell から `az vm deallocate` を実行し、VM の割り当てを解除するか、または VM を停止します。
 
     ```azurecli
-    az vm deallocate --resource-group myResourceGroup --name myVM
+    az vm deallocate \
+      --resource-group myResourceGroup \
+      --name myLinuxVM
     ```
-    The process takes a couple of minutes to complete.
-1. Run `az vm resize` to increase your VM's size to **Standard_DS3_v2**.
+    プロセスが完了するまでに数分かかります。
+1. `az vm resize` を実行して、VM のサイズを **Standard_DS3_v2** に上げます。
 
     ```azurecli
-    az vm resize --resource-group myResourceGroup --name myVM --size Standard_DS3_v2
+    az vm resize \
+      --resource-group myResourceGroup \
+      --name myLinuxVM \
+      --size Standard_DS3_v2
     ```
-    The update process takes about a minute.
-1. Run `az vm start` to restart your VM.
+    更新プロセスには約 1 分かかります。
+1. `az vm start` を実行して VM を再起動します。
 
     ```azurecli
-    az vm start --resource-group myResourceGroup --name myVM
+    az vm start \
+      --resource-group myResourceGroup \
+      --name myLinuxVM
     ```
-    The process takes about a minute.
-1. Run `az vm show` to verify that your VM is running the new size.
+    プロセスには約 1 分かかります。
+1. `az vm show` を実行し、VM が新しいサイズで実行されていることを確認します。
 
     ```azurecli
-    az vm show -n myVM -g myResourceGroup --query "hardwareProfile" -o tsv
+    az vm show \
+      --resource-group myResourceGroup \
+      --name myLinuxVM \
+      --query "hardwareProfile" \
+      --output tsv
     ```
-    You see your new VM size, **Standard_DS3_v2**.
+    新しい VM サイズ **Standard_DS3_v2** が表示されます。
     ```console
     Standard_DS3_v2
     ```
@@ -117,12 +124,12 @@ Let's bump up to the next size, **Standard_DS3_v2**. Your VM will then have four
 ::: zone-end
 
 > [!NOTE]
-> By default, Azure assigns a new public IP address to your VM when you stop and restart it. This is OK for learning purposes. In practice, you can reserve a public IP address that stays with your VM even when your VM is restarted.
+> 既定では、VM を停止して再起動すると、Azure によって VM に新しいパブリック IP アドレスが割り当てられます。 学習目的の場合はこれで問題ありません。 実際には、VM を再起動しても VM のパブリック IP アドレスが変わらないように予約しておくことができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Nice job! With just a few commands, your VM is now twice as powerful.
+ごくろうさま。 ほんの数コマンドで、VM の能力が 2 倍になりました。
 
-Scaling up and scaling out are two ways to increase performance. Here you scaled up your VM to increase its compute power.
+スケールアップとスケールアウトは、パフォーマンスを向上させる 2 つの方法です。 ここでは、VM をスケールアップしてそのコンピューティング能力を増強しました。
 
-You deallocate a VM before you can resize it. You can also deallocate your VMs when they're not in use to save costs.
+サイズを変更する前に、VM の割り当てを解除します。 コストを節約するために使用しなくなった VM の割り当てを解除することもできます。

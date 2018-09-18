@@ -1,20 +1,20 @@
-Recall that we are working on a photo-sharing application that will use Azure Storage to manage pictures and other bits of data we store on behalf of our users.
+保管した写真やその他のデータをユーザーの代わりに Azure Storage で管理する写真共有アプリケーションについて学習していることを思い出してください。
 
 ::: zone pivot="csharp"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new .NET Core Console application. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Storage API に集中できるようにシナリオを簡単にする目的で、新しい .NET Core Console アプリケーションを作成します。 また、ネットワークに常時接続できるものと想定します。 ただし、ネットワークの故障が利用者に影響を与えないように、アプリケーション自体の失敗につながらないように、常にアプリを強固にしてください。
 
-## Create a .NET Core application
+## <a name="create-a-net-core-application"></a>.NET Core アプリケーションの作成
 
-.NET Core is a cross-platform version of .NET that runs on macOS, Windows, and Linux. You can install the tools locally, or use the Cloud Shell on the right side of the window to execute the below steps. 
+.NET Core は .NET のクロスプラットフォーム版であり、macOS、Windows、Linux で動作します。 ツールをローカルでインストールしたり、ウィンドウの右側にある Cloud Shell を使用して下の手順を実行したりできます。 
 
-1. Sign into the Cloud Shell or open a command line session and create a new .NET Core Console application with the name "PhotoSharingApp". You can add the `-o` or `--output` flag to create the app in a specific folder.
+1. Cloud Shell にサインインするか、コマンド ライン セッションを開き、"PhotoSharingApp" という名前で新しい .NET Core Console アプリケーションを作成します。 `-o` または `--output` フラグを追加し、特定のフォルダーでアプリを作成できます。
 
     ```bash
     dotnet new console --name PhotoSharingApp
     ```
 
-1. Run the app to make sure it builds and executes correctly. It should display "Hello, World!" to the console.
+1. アプリを実行し、正しくビルドされ、実行されることを確認します。 "Hello, World!" と コンソールに表示されるはずです。
 
     ```bash
     cd PhotoSharingApp
@@ -25,36 +25,36 @@ To simplify our scenario so that we can focus on the Storage APIs, we will creat
 
 ::: zone pivot="javascript"
 
-To simplify our scenario so that we can focus on the Storage APIs, we will create a new Node.js application that can run from the console. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+Storage API に集中できるようにシナリオを簡単にする目的で、コンソールから実行できる新しい Node.js アプリケーションを作成します。 また、ネットワークに常時接続できるものと想定します。 ただし、ネットワークの故障が利用者に影響を与えないように、アプリケーション自体の失敗につながらないように、常にアプリを強固にしてください。
 
-## Create a Node.js application
+## <a name="create-a-nodejs-application"></a>Node.js アプリケーションを作成する
 
-Node.js is a popular framework for running JavaScript apps. It is most commonly used for web apps, but you can use it to run logic from the command line as well. If you have the tools installed locally, you can run the following steps from a command line. Alternatively, you can use the Cloud Shell on the right side of the window to execute the below steps.
+Node.js は JavaScript アプリの実行に利用される人気のフレームワークです。 一般的には Web アプリで使用されることが多いですが、コマンド ラインからロジックを実行するために使用することもできます。 ツールをローカルでインストールした場合、コマンド ラインから次の手順を実行できます。 あるいは、ウィンドウの右側にある Cloud Shell を使用して下の手順を実行できます。
 
-1. Sign into the Cloud Shell or open a command line session and create a new folder named "PhotoSharingApp".
+1. Cloud Shell にサインインするか、コマンド ライン セッションを開き、"PhotoSharingApp" という名前で新しいフォルダーを作成します。
 
     ```bash
     mkdir PhotoSharingApp
     ```
 
-1. Change into the new folder and create a **package.json** file with the Node Package Manager (NPM) that will describe our new app.
-    - Name it "PhotoSharingApp".
-    - You can take defaults for all the other prompts.
+1. 新しいフォルダーに移動し、Node Package Manager (NPM) を利用し、新しいアプリを説明する **package.json** ファイルを作成します。
+    - それに "PhotoSharingApp" という名前を付けます。
+    - その他のプロンプトには既定値を選択してかまいません。
 
     ```bash
     cd PhotoSharingApp
     npm init
     ```
 
-1. Create a new source file **index.js** which will be where our code will go.
+1. 新しいソース ファイルとして **index.js** を作成します。コードはこのファイルに置かれます。
 
     ```bash
     touch index.js
     ```
 
-1. Open the **index.js** file with an editor. If you are using the Cloud Shell, you can type `code .` to open an editor.
+1. エディターで **index.js** ファイルを開きます。 Cloud Shell を使用する場合、`code .` と入力してエディターを開くことができます。
 
-1. Put the following program into the **index.js** file.
+1. **index.js** ファイルに次のプログラムを置きます。
 
     ```javascript
     #!/usr/bin/env node
@@ -65,9 +65,9 @@ Node.js is a popular framework for running JavaScript apps. It is most commonly 
     
     main();
     ```
-1. Save the file - you can use the "..." menu on the top right corner of the Cloud Shell editor.
+1. ファイルを保存します。Cloud Shell エディターの右上隅にある "..." メニューを使用できます。
 
-1. Run the app to make sure it executes correctly. It should display "Hello, World!" to the console.
+1. アプリを実行し、正しく実行されることを確認します。 "Hello, World!" と コンソールに表示されるはずです。
 
     ```bash
     node index.js

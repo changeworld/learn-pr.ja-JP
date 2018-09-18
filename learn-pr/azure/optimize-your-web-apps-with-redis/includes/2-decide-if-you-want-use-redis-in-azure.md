@@ -1,69 +1,69 @@
-Behind your sports website is a database, which returns data by executing queries. However, performance slows down when the load is high, particularly during large sporting events. In hosted environments, increased resource usage translates into higher costs. Caching data ensures your website will perform well and run economically.
+あなたのスポーツ Web サイトの背後にはデータベースがあり、クエリを実行することでデータが返されます。 しかし、特に大規模なスポーツ イベント中など、負荷が高くなると、パフォーマンスが低下します。 ホスト環境では、リソース使用量の増加はコストの増加につながります。 データをキャッシュすることで、Web サイトが適切かつ経済的に実行されるようになります。
 
-## What is caching?
+## <a name="what-is-caching"></a>キャッシュとは
 
-Caching is the act of storing frequently-accessed data in memory that is very close to the application that consumes the data. Caching is used to increase performance and reduce the load on your servers. We use Redis to create an in-memory cache that can provide excellent latency and potentially improve performance.
+キャッシュは、データを使用するアプリケーションに非常に近いメモリに、アクセス頻度の高いデータを格納する機能です。 キャッシュを使用すると、パフォーマンスが向上し、サーバーの負荷が軽減されます。 Redis を使用して、メモリ内キャッシュを作成します。メモリ内キャッシュにより、待機時間を短縮することができ、パフォーマンスが向上する可能性があります。
 
-## What is a Redis cache?
+## <a name="what-is-a-redis-cache"></a>Redis Cache とは
 
-Redis (**RE**mote **DI**ctionary **S**erver) cache is an open-source, in-memory key value pair store. It's popular because it's fast and can store and manipulate common data types such as strings, hashes, and sets. It's also considered developer friendly as it supports multiple languages such as Python, C, C++, C#, Java, and JavaScript among others.
+Redis (**RE**mote **DI**ctionary **S**erver) Cache は、オープン ソースのメモリ内キー/値ペア ストアです。 Redis Cache は高速であり、文字列、ハッシュ、セットなどの一般的なデータ型を格納および操作できるため、一般に普及しています。 また、Python、C、C++、C#、Java、JavaScript などの複数の言語をサポートしているので、開発者フレンドリと見なされています。
 
-## What is Azure Redis Cache?
+## <a name="what-is-azure-redis-cache"></a>Azure Redis Cache とは
 
-Microsoft Azure Redis Cache is based on the popular open-source Redis cache. It gives you access to a secure, dedicated Redis cache, managed by Microsoft. A cache created using Azure Redis Cache is accessible from any application within Microsoft Azure. Azure Redis Cache is typically used to improve the performance of systems that rely heavily on back-end data stores.
+Microsoft Azure Redis Cache は、広く支持されているオープン ソースの Redis キャッシュがベースとなっています。 マイクロソフトによって管理されている、セキュリティで保護された専用の Redis キャッシュにアクセスすることができます。 Azure Redis Cache を使用して作成されたキャッシュには、Microsoft Azure 内のあらゆるアプリケーションからアクセスすることができます。 Azure Redis Cache は通常、バックエンドのデータストアに大きく依存するシステムのパフォーマンスを向上させるために使用されます。
 
-Your cached data is located in-memory on an Azure server running the Redis cache as opposed to being loaded from disk by a database. Your cache is also highly scalable. You can alter the size and pricing tier at any time.
+キャッシュされたデータは、データベースによってディスクから読み込まれるのではなく、Redis キャッシュを実行している Azure サーバーのメモリ内に配置されます。 キャッシュには高い拡張性もあります。 サイズと価格レベルはいつでも変更できます。
 
-## What type of data can be stored in the cache?
+## <a name="what-type-of-data-can-be-stored-in-the-cache"></a>キャッシュに格納できるデータ型
 
-Redis supports a variety of data types all oriented around _binary safe_ strings. This means that you can use any binary sequence for a value, from a string like "i-love-rocky-road" to the contents of an image file. An empty string is also a valid value.
+Redis では、"_バイナリ セーフな_" 文字列を中心としてさまざまなデータ型がサポートされています。 つまり、"i-love-rocky-road" のような文字列から画像ファイルの内容まで、値に任意のバイナリ シーケンスを使用できます。 空の文字列も有効な値です。
 
-- Binary-safe strings (most common)
-- Lists of strings
-- Unordered sets of strings
-- Hashes
-- Sorted sets of strings
-- Maps of strings
+- バイナリ セーフな文字列 (最も一般的)
+- 文字列のリスト
+- 順序付けられていない文字列セット
+- ハッシュ
+- 並べ替えられた文字列セット
+- 文字列のマップ
 
-Each data value is associated to a _key_ which can be used to lookup the value from the cache. Redis works best with smaller values (100k or less), so consider chopping up bigger data into multiple keys. Storing larger values is possible (up to 500 MB), but increases network latency and can cause caching and out-of-memory issues if the cache isn't configured to expire old values.
+各データ値は、キャッシュから値を検索する際に使用できる_キー_に関連付けられています。 値が小さいほど (100 K 以下) Redis のパフォーマンスが向上するため、大きなデータは複数のキーに分割することを検討してください。 大きな値 (最大 500 MB) を格納することは可能ですが、ネットワーク待ち時間が増加します。また、キャッシュが古い値を期限切れにするように構成されていない場合、キャッシュとメモリ不足の問題が発生する可能性があります。
 
-## What is a Redis key?
-Redis keys are also binary safe strings. Here are some guidelines for choosing keys:
+## <a name="what-is-a-redis-key"></a>Redis キーとは
+Redis キーもバイナリ セーフな文字列です。 キーの選択に関するガイドラインを次に示します。
 
-- Avoid long keys. They take up more memory and require longer lookup times because they have to be compared byte-by-byte. If you want to use a binary blob as the key, generate a unique hash and use that as the key instead. The maximum size of a key is 512 MB, but you should _never_ use a key that size.
-- Use keys which can identify the data. For example, "sport:football;date:2008-02-02" would be a better key than "fb:8-2-2". The former is more readable and the extra size is negligible. Find the balance between size and readability.
-- Use a convention. A good one is "object:id", as in "sport:football". 
+- 長いキーは避けます。 長いキーはバイト単位で比較する必要があるため、メモリの消費量が増え、必要な検索時間も長くなります。 バイナリ BLOB をキーとして使用する場合は、一意のハッシュを生成し、それをキーとして代わりに使用します。 キーの最大サイズは 512 MB ですが、このサイズのキーを_使用しないでください_。
+- データを識別できるキーを使用します。 たとえば、"sport:football;date:2008-02-02" は "fb:8-2-2" よりも優れたキーと言えます。 前者の方が読みやすく、余分なサイズはごくわずかです。 サイズと読みやすさのバランスを取ります。
+- 規則を使用します。 "sport:football" のように、"object:id" という規則をお勧めします。 
 
-## How is data stored in a Redis cache?
+## <a name="how-is-data-stored-in-a-redis-cache"></a>Redis Cache にデータが格納されるしくみ
 
-Data in Redis is stored in _**nodes**_ and _**clusters**_.
+Redis のデータは、_**ノード**_ と_**クラスター**_ に格納されます。
 
-**Nodes** are a space in Redis where your data is stored.
+**ノード**は、データが格納されている Redis 内の領域です。
 
-**Clusters** are sets of three or more nodes your dataset is split across. Clusters are useful because your operations will continue if a node fails or is unable to communicate to the rest of the cluster.
+**クラスター**は、データセットが分割される 3 つ以上のノードのセットです。 クラスターは、ノードに障害が発生した場合、またはノードがクラスターの残りの部分と通信できない場合に操作を続行できるため、有用です。
 
-## What are Redis caching architectures?
+## <a name="what-are-redis-caching-architectures"></a>Redis キャッシュ アーキテクチャとは
 
-Redis caching architecture is how we distribute our data in the cache. Redis distributes data in three major ways:
+Redis キャッシュ アーキテクチャは、データをキャッシュ内に分散させる方法です。 Redis では、3 つの主要な方法でデータを分散させます。
 
-1. **Single node**
-1. **Multiple node**
-1. **Clustered**
+1. **単一ノード**
+1. **複数ノード**
+1. **クラスター化**
 
-Redis caching architectures are split across Azure by tiers:
+Redis キャッシュ アーキテクチャは、階層によって Azure 全体に分割されます。
 
-### Basic cache
+### <a name="basic-cache"></a>Basic キャッシュ
 
-A basic cache provides you with a _**single node**_ Redis cache. The complete dataset will be stored in a single node. This tier is ideal for development, testing, and non-critical workloads.
+Basic キャッシュでは、_**単一ノード**_ の Redis キャッシュが提供されます。 すべてのデータセットが 1 つのノードに格納されます。 この階層は、開発、テスト、および重要ではないワークロードに最適です。
 
-### Standard cache
+### <a name="standard-cache"></a>Standard キャッシュ
 
-The standard cache creates _**multiple node**_ architectures. Redis replicates a cache in a two-node primary/secondary configuration. Azure manages the replication between the two nodes. This is a production-ready cache with master/slave replication.
+Standard キャッシュでは、_**複数ノード**_ アーキテクチャが作成されます。 Redis によって、2 ノード プライマリ/セカンダリの構成でキャッシュがレプリケートされます。 2 つのノード間のレプリケーションは、Azure によって管理されます。 これは、マスター/スレーブ レプリケーションで運用可能なキャッシュです。
 
-### Premium tier
+### <a name="premium-tier"></a>Premium レベル
 
-The premium tier includes the features of the standard tier but adds the ability to persist data, take snapshots, and back up data. With this tier, you can create a Redis cluster that shards data across multiple Redis nodes to increase available memory. The premium tier also supports an Azure Virtual Network to give you complete control over your connections, subnets, IP addressing, and network isolation. This tier also includes geo-replication, so you can ensure your data is close to the app that's consuming it.
+Premium レベルには、Standard レベルの機能に加え、データの永続化、スナップショットの作成、およびデータのバックアップ機能が含まれます。 このレベルでは、データを複数の Redis ノードにシャード化する Redis クラスターを作成して、使用可能なメモリを増やすことができます。 Premium レベルでは、接続、サブネット、IP アドレス指定、およびネットワークの分離を完全に制御するための Azure Virtual Network もサポートしています。 このレベルには、geo レプリケーションも含まれているため、データをそれを使用するアプリの近くに確実に配置することができます。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-A database is great for storing large amounts of data, but there is an inherent latency when looking up data. You send a query. The server interprets the query, looks up the data, and returns it. Servers also have capacity limits for handling requests. If too many requests are made, data retrieval will likely slow down. Caching will store frequently requested data in memory that can be returned faster than querying a database, which should lower latency and increase performance. Azure Redis Cache gives you access to a secure, dedicated, and scalable Redis cache, hosted in Azure, and managed by Microsoft.
+データベースは大量のデータを格納するには適していますが、データの検索時に固有の待機時間があります。 クエリを送信すると、 サーバーはそのクエリを解釈して、データを検索して結果を返します。 サーバーには、要求を処理するための容量制限もあります。 要求が多すぎると、データの取得速度が低下する可能性があります。 キャッシュすると、頻繁に要求されるデータがメモリに格納されます。これにより、データベースのクエリを実行するよりも速くデータを返すことができるため、待機時間が短くなり、パフォーマンスが向上します。 Azure Redis Cache を使用すると、セキュリティで保護され、スケーラブルな専用 Redis Cache にアクセスできます。これは Microsoft が管理し、Azure でホストされています。

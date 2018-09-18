@@ -1,47 +1,47 @@
-Some applications place greater demands on data storage than others. For example, Microsoft Exchange servers and SharePoint servers need high-performance disks to run at their best.
+一部のアプリケーションでは、データ ストレージに対する要求が他よりも厳しくなります。 たとえば、Microsoft Exchange サーバーや SharePoint サーバーを最適な状態で実行するには、高パフォーマンスのディスクが必要です。
 
-Let's revisit the scenario of migrating the case histories database for your law firm into Azure. You want to make sure that your lawyers and other staff can access case details as fast as possible. The firm is growing,  and you want your database to handle increased demand.
+法律事務所の案件履歴データベースを Azure に移行するシナリオをもう一度見てみましょう。 弁護士やその他のスタッフが、案件の詳細情報にできるだけ迅速にアクセスできるようにする必要があります。 事務所の業績が拡大しており、データベースで需要増大に対応できるようにしたいと考えています。
 
-One way you can  maximize the performance of virtual machines (VMs) in Azure is to use premium storage for virtual hard drives (VHDs). Premium storage delivers faster input and output (IO) than standard storage. Faster disk IO results in better performance for disk-intensive applications.
+Azure で仮想マシン (VM) のパフォーマンスを最大化する方法の 1 つが、仮想ハード ドライブ (VHD) に Premium Storage を使用することです。 Premium Storage では Standard Storage よりも入出力 (IO) が高速です。 ディスク IO が高速なほど、ディスク使用率の高いアプリケーションのパフォーマンスが向上します。
 
-Let's compare the performance tiers for storage and learn more about premium storage accounts.
+ストレージのパフォーマンス レベルを比較し、Premium Storage アカウントの詳細を確認してみましょう。
 
-## How premium storage differs from standard storage
+## <a name="how-premium-storage-differs-from-standard-storage"></a>Premium Storage と Standard Storage の違い
 
-In Azure, premium storage is implemented on solid-state drives (SSDs). SSDs have higher IO performance than hard disk drives (HDDs) and can be more reliable because they have no moving parts. A read or write head doesn't have to move to the correct location on a disk to find the data requested. 
+Azure では、Premium Storage は、ソリッドステート ドライブ (SSD) に実装されます。 SSD はハード ディスク ドライブ (HDD) よりも IO パフォーマンスが高く、可動部分がないため信頼性にも優れています。 要求されたデータを見つけるために、読み取りまたは書き込みヘッドが、ディスク上の正しい場所に移動するがありません。 
 
-Standard storage is implemented on HDDs. Standard storage a billed at a lower rate. Choose standard storage to control costs, and choose premium storage when fast IO performance is required.
+Standard Storage は HDD に実装されます。 Standard Storage は、低いレートで課金されます。 コストを抑えるには Standard Storage を、高い IO パフォーマンスが必要な場合は Premium Storage を選択します。
 
-You can also choose to use a mix of standard and premium storage per disk in a single VM.
+1 つの VM でディスクごとに Standard Storage と Premium Storage を混在させることもできます。
 
 > [!NOTE]
-> If you're using managed disks, you have a third option: standard SSDs. Standard SSDs are intermediate in both performance and price between standard HDDs and premium SSDs but are not available for unmanaged disks. You will learn more about standard SSDs later in this module.
+> マネージド ディスクを使用している場合は、3 つ目のオプションとして Standard SSD を選択できます。 Standard SSD は、パフォーマンスと価格の両方の面で、Standard HDD と Premium SSD の中間に位置付けられており、アンマネージド ディスクでは使用できません。 このモジュールでは、Standard SSD について後で詳しく説明します。
 
-## Premium storage accounts
+## <a name="premium-storage-accounts"></a>Premium Storage アカウント
 
-VHDs are stored in Azure general-purpose storage accounts as page blobs. To use premium storage for your VHDs, you must store VHDs in a **premium storage account**. You choose the performance tier of a storage account when you create it, and you cannot change this setting later.
+Azure の汎用ストレージ アカウントには VHD がページ BLOB として格納されます。 お使いの VHD に Premium Storage を使用するには、VHD を **Premium Storage アカウント**に格納する必要があります。 ストレージ アカウントのパフォーマンス レベルは、そのアカウントを作成するときに選択します。この設定は、後から変更できません。
 
 > [!IMPORTANT]
-> Premium storage may not be available in all Azure regions. To check the availability in your region, see [Products available by region](https://azure.microsoft.com/en-us/global-infrastructure/services/).
+> Premium Storage は、すべてのAzure リージョンで利用できるわけではありません。 ご自身のリージョンで利用できるかどうかについては、「[リージョン別の利用可能な製品](https://azure.microsoft.com/en-us/global-infrastructure/services/)」をご覧ください。
 
-### Data replication and premium storage accounts
+### <a name="data-replication-and-premium-storage-accounts"></a>データ レプリケーションと Premium Storage アカウント
 
-The data in your Microsoft Azure storage account is always replicated to ensure durability and high availability. Azure Storage replication copies your data so that it's protected from planned and unplanned events like transient hardware failures, network or power outages, massive natural disasters, and so on. You can choose to replicate your data within the same data center, across zonal data centers within the same region, and even across regions. There are four types of replication:
+Microsoft Azure ストレージ アカウント内のデータは、持続性と高可用性を保証するため、常にレプリケートされています。 Azure Storage のレプリケーションでは、計画されたイベントや計画外のイベント (一時的なハードウェア障害、ネットワークの停止または停電、大規模な自然災害など) からデータが保護されるようにデータがコピーされます。 同じデータ センター内、同じリージョンのゾーンのデータ センター間、さらにはリージョン間でデータをレプリケートすることもできます。 レプリケーションには、次の 4 種類があります。
 
-- **Locally redundant storage (LRS)** - Azure replicates the data within the same Azure data center. The data remains available if a node fails. However, if an entire data center fails, data may be unavailable.
-- **Geo-redundant storage (GRS)** - Azure replicates your data to a secondary region that is hundreds of miles away from the primary region. If your storage account has GRS enabled, then your data is durable even if there's a complete regional outage or a disaster in which the primary region isn't recoverable.
-- **Read-access geo-redundant storage (RA-GRS)** - Azure provides read-only access to the data in the secondary location, and geo-replication across two regions. If a data center fails, the data remains readable but can't be modified.
-- **Zone-redundant storage (ZRS)** - Azure replicates your data synchronously across three storage clusters in a single region. Each storage cluster is physically separated from the others and resides in its own availability zone (AZ). With this type of replication, you can still access and manage your data in the event that a zone becomes unavailable.
+- **ローカル冗長ストレージ (LRS)** - 同じ Azure データ センター内でデータがレプリケートされます。 ノードで障害が発生しても、データは引き続き使用できます。 ただし、データ センター全体で障害が発生すると、データが使用できなくなる場合があります。
+- **geo 冗長ストレージ (GRS)** - プライマリ リージョンから数百マイル離れたセカンダリ リージョンにデータがレプリケートされます。 お使いのストレージ アカウントで GRS が有効になっている場合、地域的な停電やプライマリ リージョンが復旧できない災害が発生しても、データは保持されます。
+- **読み取りアクセス geo 冗長ストレージ (RA-GRS)** - セカンダリ ロケーションにあるデータに対する読み取り専用アクセス、および 2 つのリージョンにまたがる geo レプリケーションが提供されます。 データ センターで障害が発生しても、データは引き続き読み取り可能ですが、変更できなくなります。
+- **ゾーン冗長ストレージ (ZRS)** - 1 つのリージョン内の 3 つのストレージ クラスターにデータが同期的にレプリケートされます。 各ストレージ クラスターは物理的に他のストレージ クラスターと分離されており、それぞれの可用性ゾーン (AZ) 内にあります。 この種類のレプリケーションでは、ゾーンが使用できなくなっても、お使いのデータには引き続きアクセスし、管理することができます。
 
-Standard storage accounts support all replication types, but premium storage accounts only support locally redundant storage (LRS). Since VMs themselves run in a single region, this restriction isn't normally an issue for VHD storage.
+Standard Storage アカウントでは、すべてのレプリケーションの種類がサポートされますが、Premium Storage アカウントでサポートされるのはローカル冗長ストレージ (LRS) のみです。 VM 自体が 1 つのリージョンで実行されているため、通常、この制限が VHD ストレージにとって問題になることはありません。
 
-## Migrating from standard storage to premium storage
+## <a name="migrating-from-standard-storage-to-premium-storage"></a>Standard Storage から Premium Storage への移行
 
-It's best to create VHDs in the correct type of storage account in the first place. However, sometimes requirements change, demands increase, or you realize that you chose the wrong type. Consider a move to premium storage in these situations.
+最初から適切な種類のストレージ アカウントに VHD を作成することをお勧めします。 しかし、要件が変わったり、需要が増えたり、あるいは間違った種類を選択したことに後から気付くこともあります。 このような場合は、Premium Storage への移行を検討してください。
 
-Before starting a migration, consider that it will involve some downtime during which the VM will be unavailable to users.
+移行を開始する前に、ユーザーがVM を利用できなくなるダウンタイムがある程度の発生することを考慮してください。
 
 > [!NOTE]
-> For full details of the migration from standard to premium storage, see [Migrating to Azure Premium Storage (Unmanaged Disks)](https://docs.microsoft.com/azure/storage/common/storage-migration-to-premium-storage).
+> Standard Storage から Premium Storage への移行の詳細については、「[Azure Premium Storage への移行 (非管理対象ディスク)](https://docs.microsoft.com/azure/storage/common/storage-migration-to-premium-storage)」を参照してください。
 
-When you create a VM in Azure, you need to find the right balance between cost and performance. Premium storage is a good choice for disk-intensive applications such as databases because it supports faster IO than standard storage.
+Azure で VM を作成する際は、コストとパフォーマンスの間で適切なバランスをとる必要があります。 データベースなど、ディスク使用率の高いアプリケーションについては、Standard Storage よりも IO 速度が速い Premium Storage が適しています。

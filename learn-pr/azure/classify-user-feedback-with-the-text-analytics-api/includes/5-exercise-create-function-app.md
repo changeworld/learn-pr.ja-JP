@@ -1,87 +1,87 @@
-To build our solution, we'll need to host some code.  An Azure Functions function app is a good place to host our logic. 
+ソリューションをビルドするには、コードをホストする必要があります。  Azure Functions の関数アプリは、ロジックをホストするのに適しています。 
 
-## Create a Function App to host our function
+## <a name="create-a-function-app-to-host-our-function"></a>関数をホストする関数アプリを作成する
 
 [!INCLUDE [resource-group-note](./rg-notice.md)]
 
-1. Make sure you are signed in to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true) with your Azure account.
+1. Azure アカウントを使用して Azure portal ([https://portal.azure.com](https://portal.azure.com?azure-portal=true)) にサインインしていることを確認します。
 
-1. Select the **Create a resource** button found on the upper left-hand corner of the Azure portal, then select **Compute** > **Function App**.
+1. Azure portal の左上隅にある **[リソースの作成]** ボタンをクリックし、**[コンピューティング]** > **[Function App]** を選択します。
 
-1. Enter the function app settings as specified in the following table.
+1. 次の表に示す関数アプリの設定を入力します。
 
 
-    | Setting      | Suggested value  | Description                                        |
+    | 設定      | 推奨値  | 説明                                        |
     | ------------ |  ------- | -------------------------------------------------- |
-    | **App name** | Globally unique name | Name that identifies your new function app. Valid characters are `a-z`, `0-9`, and `-`.  | 
-    | **Subscription** | Your subscription | The subscription under which this new function app is created. | 
-    | **Resource Group**|  [!INCLUDE [resource-group-name](./rg-name.md)] | Name for the  resource group in which to create your function app.<br/><br/>Make sure to select **Use existing** and use the resource group that we created in the last exercise. That way, all resource we made in this module are kept together. | 
-    | **OS** | Windows | The operating system that hosts the function app.  |
-    | **Hosting** |   Consumption plan | Hosting plan that defines how resources are allocated to your function app. In the default **Consumption Plan**, resources are added dynamically as required by your functions. In this [serverless](https://azure.microsoft.com/overview/serverless-computing/) hosting, you only pay for the time your functions run.   |
-    | **Location** | West US | Choose a [region](https://azure.microsoft.com/regions/) near you or near other services your functions access.<br/><br/>Select the same region that you used when creating the Text Analytics API account in the last exercise. |
-    | **Storage account** |  Globally unique name |  Name of the new storage account used by your function app. Storage account names must be between 3 and 24 characters in length and may contain numbers and lowercase letters only. This dialog populates the field with a unique name that is derived from the name you gave the app. However, feel free to use a different name or even an existing account. |
+    | **アプリ名** | グローバルに一意の名前 | 新しい関数アプリを識別する名前。 有効な文字は、`a-z`、`0-9`、および `-` です。  | 
+    | **サブスクリプション** | お使いのサブスクリプション | この新しい関数アプリが作成されるサブスクリプション。 | 
+    | **リソース グループ**|  [!INCLUDE [resource-group-name](./rg-name.md)] | 関数アプリを作成するリソース グループの名前。<br/><br/>必ず **[既存のものを使用]** を選択し、前回の演習で作成したリソース グループを使用します。 これにより、このモジュールで作成したすべてのリソースがまとめられます。 | 
+    | **OS** | Windows | 関数アプリをホストするオペレーティング システム。  |
+    | **ホスティング** |   従量課金プラン | Function App にどのようにリソースが割り当てられるかを定義するホスティング プラン。 既定の**従量課金プラン**では、関数での必要に応じてリソースが動的に追加されます。 この[サーバーレス](https://azure.microsoft.com/overview/serverless-computing/) ホスティングでは、関数が実行された時間にのみ課金されます。   |
+    | **場所** | 米国西部 | ユーザーの最寄りの[リージョン](https://azure.microsoft.com/regions/)、または関数がアクセスする他のサービスの近くのリージョンを選択します。<br/><br/>前回の演習で Text Analytics API アカウントを作成したときに使用したリージョンを選択します。 |
+    | **ストレージ アカウント** |  グローバルに一意の名前 |  関数アプリによって使用される新しいストレージ アカウントの名前。 ストレージ アカウント名の長さは 3 から 24 文字である必要があり、数字と小文字のみを使用できます。 このダイアログでは、アプリに指定した名前から派生した一意の名前がこのフィールドに入力されます。 ただし、別の名前や既存のアカウントを自由に使用できます。 |
 
-3. Select **Create** to provision and deploy the function app.
+3. **[作成]** を選択して、関数アプリをプロビジョニングし、デプロイします。
 
-4. Select the Notification icon in the upper-right corner of the portal and watch for a **Deployment in progress** message similar to the following message.
+4. ポータルの右上隅の通知アイコンを選択し、**デプロイが進行中**であることを示す次のようなメッセージが表示されるまで待ちます。
 
-![Notification that function app deployment is in progress](../media-draft/func-app-deploy-progress-small.PNG)
+![関数アプリのデプロイが進行中であることを示す通知](../media-draft/func-app-deploy-progress-small.PNG)
 
-5. Deployment can take some time. So, stay in the notification hub and  watch for a **Deployment succeeded** message similar to the following message.
+5. デプロイには時間がかかることがあります。 そのため、通知ハブを表示した状態で、**デプロイに成功**したことを示す次のようなメッセージが表示されるまで待ちます。
 
-![Notification that function app deployment has completed](../media-draft/func-app-text-analytics-deploy-success.png)
+![関数アプリのデプロイが完了したことを示す通知](../media-draft/func-app-text-analytics-deploy-success.png)
 
-6. Congratulations! You've created and deployed your function app. Select **Go to resource** to view your new function app.
+6. お疲れさまでした。 関数アプリを作成し、デプロイしました。 **[リソースに移動]** を選択して、新しい関数アプリを確認します。
 
 >[!TIP]
->Having trouble finding your function apps in the portal, try [adding Function Apps to your favorites in the Azure portal](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite).
+>ポータルで目的の関数アプリが見つからない場合は、[Azure portal でお気に入りに Function App を追加](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#favorite)してみてください。
 
-## Create a function to hold our logic
+## <a name="create-a-function-to-hold-our-logic"></a>ロジックを保持する関数を作成する
 
-Now that we have a function app, it's time to create a function. A function is activated through a trigger. In this module, we'll use a Queue trigger. The runtime will poll a queue and start this function to process a new message.
+関数アプリを用意できたので、次に関数を作成します。 関数はトリガーによってアクティブ化されます。 このモジュールでは、キュー トリガーを使用します。 ランタイムによってキューがポーリングされ、新しいメッセージを処理するためにこの関数が起動されます。
 
-1. Expand your new function app, then hover over the **Functions** collection. Select the Add (**+**) button when it appears to start the function creation process.
+1. 新しい関数アプリを展開し、**[関数]** コレクションをポイントします。 表示された追加 (**+**) ボタンをクリックして、関数作成プロセスを開始します。
 
-![Animation of the plus sign appearing when the user hovers over the functions menu item.](../media-draft/func-app-plus-hover-small.gif)
+![ユーザーが [関数] メニュー項目をポイントするとプラス記号が表示されることを示すアニメーション。](../media-draft/func-app-plus-hover-small.gif)
 
-2. In the **Get started quickly** page that now appears, select **Custom function**, which loads the list of available function templates. 
+2. 表示された **[Get started quickly]\(すぐに使用を開始する\)** ページで、**[カスタム関数]** を選択します。これにより、使用可能な関数テンプレートのリストが読み込まれます。 
 
-1. Select **JavaScript** on the **Queue trigger** template list entry.
+1. **[キュー トリガー]** テンプレート リスト エントリで **[JavaScript]** を選択します。
 
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/quickstart-select-queue-trigger.png)
+![[キュー トリガー] エントリで選択した JavaScript を使用した Azure Functions テンプレートのスクリーンショット。](../media-draft/quickstart-select-queue-trigger.png)
 
-1. In the **New Function** dialog that appears, enter the following values.
+1. 表示された **[新しい関数]** ダイアログに次の値を入力します。
 
 
-|Property  |Value  |
+|プロパティ  |値  |
 |---------|---------|
-|Language     |   **JavaScript**      |
-|Name     |   **discover-sentiment-function**      |
-|Queue name     |   **new-feedback-q**      |
-|Storage account connection        |  **AzureWebJobsDashboard**       |
+|言語     |   **JavaScript**      |
+|名前     |   **discover-sentiment-function**      |
+|キュー名     |   **new-feedback-q**      |
+|ストレージ アカウント接続        |  **AzureWebJobsDashboard**       |
 
-![Screenshot of Azure Functions templates with JavaScript selected on the Queue trigger entry.](../media-draft/new-function-dialog.png)
+![[キュー トリガー] エントリで選択した JavaScript を使用した Azure Functions テンプレートのスクリーンショット。](../media-draft/new-function-dialog.png)
 
-5. Select **Create** to begin the function creation process.
+5. **[作成]** を選択して、関数作成プロセスを開始します。
 
-1. A function is created in your chosen language using the Queue Trigger function template. While we'll implement the function in JavaScript in this module, you can create a function in any [supported language](https://docs.microsoft.com/azure/azure-functions/supported-languages).
+1. キュー トリガー関数テンプレートを使用して、選択した言語で関数が作成されます。 このモジュールでは JavaScript で関数を実装しますが、[サポートされている任意の言語](https://docs.microsoft.com/azure/azure-functions/supported-languages)で関数を作成できます。
 
-When the create process is complete, the code editor opens in the portal and loads the *index.js* page. This file is the code file where we write our function logic.
+作成プロセスが完了すると、ポータルでコード エディターが開き、*index.js* ページが読み込まれます。 このファイルは、関数ロジックを記述するコード ファイルです。
 
-## Try it out
+## <a name="try-it-out"></a>試してみる
 
-Let's test what we have so far. We haven't written any code yet, so this test is to make sure what we've configured so far, runs.
+これまでの内容をテストしてみましょう。 コードはまだ記述していないので、このテストは、これまでに構成した内容を確認するために実行します。
 
-1. Click **Run** at the top of the code editor.
+1. コード エディターの上部にある **[実行]** をクリックします。
 
-2. Observe the **Logs** tab that opens at the bottom of the screen. If everything works as planned, you'll see a message similar to the following message.
-![Screenshot of response message of a successful call to our function.](../media-draft/func-default-run.PNG)
+2. 画面の下部に表示される **[ログ]** タブを確認します。 すべてが計画どおりに動作していれば、次のようなメッセージが表示されます。
+![関数の呼び出しが成功したことを示す応答メッセージのスクリーンショット。](../media-draft/func-default-run.PNG)
 
-The **Run** button started our function and passed *sample queue data*, the default text from the **Test** request window to our function.
+**[実行]** ボタンによって関数が起動され、*[テスト]* 要求ウィンドウから関数に、既定のテキストである**サンプル キュー データ**が渡されました。
 
-Nice work! You've successfully added a Queue-triggered function to your function app and tested to make sure it's working as expected! We'll add more functionality to the function in the next exercise.
+お疲れさまでした。 キューによってトリガーされる関数を関数アプリに正常に追加し、テストを実行して想定どおりに動作することを確認しました。 次の演習では、関数にさらに多くの機能を追加します。
 
- Let's look briefly at the function's other file, the *function.json* config file. The configuration data from this file is shown in the following JSON listing.
+ では、関数のもう 1 つのファイルである *function.json* 構成ファイルを簡単に見てみましょう。 次の JSON リストに、このファイルの構成データが示されています。
 
 ```json
 {
@@ -98,11 +98,11 @@ Nice work! You've successfully added a Queue-triggered function to your function
 }
 ```
 
-As you can see, this function has a trigger binding named **myQueueItem** of type `queueTrigger`. When a new message arrives in the queue we've named **new-feedback-q**, our function is called. We reference the new message through the myQueueItem binding parameter. Bindings really do take care of some of the heavy lifting for us!
+ご覧のように、この関数には `queueTrigger` 型の **myQueueItem** という名前のトリガー バインディングがあります。 **new-feedback-q** という名前のキューに新しいメッセージが到着すると、関数が呼び出されます。 myQueueItem バインディング パラメーターを使用して、新しいメッセージを参照します。 このようにバインディングを使用すると、面倒な作業の一部が自動的に行われます。
 
-In the next step, we'll add code to call the Text Analytics API service.
+次の手順では、Text Analytics API サービスを呼び出すコードを追加します。
 
 >[!TIP]
->You can see index.js and function.json by expanding the **View Files** menu on the right of the function panel in the Azure portal. 
+>Azure portal で関数パネルの右側にある **[ファイルの表示]** メニューを展開すると、index.js と function.json を確認できます。 
 
-This exercise was all about getting our Azure Functions infrastructure in place. We have a working function hosted in a function app that runs when a new message arrives in our queue that we've named [!INCLUDE [input-q](./q-name-input.md)]. The real fun begins in the next exercise, when we add code to call a Microsoft Cognitive Service to do sentiment analysis.
+この演習では、Azure Functions のインフラストラクチャを整えました。 [!INCLUDE [input-q](./q-name-input.md)] という名前を付けたキューに新しいメッセージが到着したときに実行される、関数アプリでホストされる作業関数を作成しました。 本当に楽しくなるのは、次の演習で Microsoft Cognitive Service を呼び出して感情分析を実行するコードを追加してからです。

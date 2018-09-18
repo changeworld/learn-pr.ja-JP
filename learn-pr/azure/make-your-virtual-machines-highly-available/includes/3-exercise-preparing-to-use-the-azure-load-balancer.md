@@ -1,126 +1,126 @@
-In this exercise, you will create a load balancer, a virtual network, and multiple virtual machines using the Azure portal.
+この演習では、Azure portal を使用してロード バランサー、仮想ネットワーク、および複数の仮想マシンを作成します。
 
-Suppose you work for Woodgrove Bank, a startup that is about to launch online banking services. This sector is highly competitive, so you need to guarantee of a minimum of 99.99% service availability. You have determined that Azure Load Balancer with a pool of three virtual machines will meet this goal.
+あなたは、オンライン銀行サービスを立ち上げようとしているスタートアップ企業である Woodgrove Bank で働いているものとします。 このセクターは競争が激しいので、99.99% 以上のサービス可用性を保証する必要があります。 あなたは、3 つの仮想マシンを含むプールを使用する Azure Load Balancer でこの目標が達成されると判断しました。
 
-## Create a public load balancer
+## <a name="create-a-public-load-balancer"></a>パブリック ロード バランサーを作成する
 
-1. In a browser, navigate to the [Azure portal](https://portal.azure.com/?azure-portal=true) and sign in to your account.
+1. ブラウザーで [Azure portal](https://portal.azure.com/?azure-portal=true) に移動し、自分のアカウントにサインインします。
 
-1. In the sidebar, click **Create a resource**. Then, in the **New** blade, click **Networking**, and then click **Load Balancer**.
+1. サイドバーで **[リソースの作成]** をクリックし、**[新規]** ブレードで **[ネットワーキング]** をクリックして、**[ロード バランサー]** をクリックします。
 
-1. In the **Create load balancer** blade, enter or select the following information:
-    - Name: **woodgrove-LB**
-    - Type: **Public**
+1. [ロード バランサーの作成] ブレードで次の情報を入力または選択します。
+    - 名前: **woodgrove-LB**
+    - 種類: **パブリック**
     - SKU: **Basic**
-    - Public IP address: Select **Create new**. In the text box, type **woodgrove-LB-ip**. Leave the Assignment as **Dynamic**.
-    - Resource group: Select **Create new**, and in the box, type **woodgrove-RG**.
-    - Location: Select a region near you.
+    - パブリック IP アドレス: **[新規作成]** を選択し、とテキスト ボックスに「**woodgrove-LB-ip**」と入力して、[割り当て] は **[動的]** のままにします
+    - リソース グループ: **[新規作成]** を選択し、ボックスに「**woodgrove-RG**」と入力します
+    - 場所: 近くのリージョンを選択します
 
-1. Click **Create**.
+1. **[作成]** をクリックします。
 
-1. Wait until the load balancer has deployed before continuing with the exercise.
+1. ロード バランサーが展開されるまで待ってから、演習を続けます。
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>仮想ネットワークを作成する
 
-1. In the left menu, click **Create a resource**. In the **New** blade, click **Networking**, and then click **Virtual network**.
+1. 左側のメニューで **[リソースの作成]** をクリックし、**[新規]** ブレードで **[ネットワーキング]** をクリックして、**[仮想ネットワーク]** をクリックします。
 
-1. In the **Create virtual network** blade, enter or select the following information:
-    - Name: **woodgrove-VNET**
-    - Address space: **172.20.0.0/16**
-    - Resource group: Select **Use existing**, and then select **woodgrove-RG**.
-    - Subnet: **backendSubnet**
-    - Address space: **172.20.0.0/24**
-    - DDoS protection: **Basic**
-    - Service endpoints: **Disabled**
+1. **[仮想ネットワークの作成]** ブレードで次の情報を入力または選択します。
+    - 名前: **woodgrove-VNET**
+    - アドレス空間: **172.20.0.0/16**
+    - リソース グループ: **[既存のものを使用]** を選択し、**woodgrove-RG** を選択します。
+    - サブネット: **backendSubnet**
+    - アドレス空間: **172.20.0.0/24**
+    - DDoS protection: **Basic (基本)**
+    - サービス エンドポイント: **無効**
 
-1. Click **Create**.
+1. **[作成]** をクリックします。
 
-1. Wait until the virtual network has deployed before continuing with the exercise.
+1. 仮想ネットワークが展開されるまで待ってから、演習を続けます。
 
-## Create a VM template
+## <a name="create-a-vm-template"></a>VM テンプレートを作成する
 
-Start by defining the basic VM information:
+最初に、VM の基本的な情報を定義します。
 
-1. In the Azure portal, in the left menu, click **Virtual machines**, and then click **Create virtual machine**.
+1. Azure portal の左側のメニューで **[Virtual Machines]** をクリックし、**[仮想マシンの作成]** をクリックします。
 
-1. On the **Compute** blade, in the **Recommended** section, click **Windows Server**.
+1. [Compute] ブレードの **[お勧め]** セクションで、**[Windows Server]** をクリックします。
 
-1. In the **Windows Server** blade, click **Windows Server 2016 Datacenter**.
+1. **[Windows Server]** ブレードで、**[Windows Server 2016 Datacenter]** をクリックします。
 
-1. In the **Windows Server 2016 Datacenter** blade, click **Create**.
+1. **[Windows Server 2016 Datacenter]** ブレードで、**[作成]** をクリックします。
 
-1. In the **Basics** blade, in the **Name** box, type **woodgrove-SVR01**.
+1. **[基本]** ブレードで、**[名前]** ボックスに「**woodgrove-SVR01**」と入力します。
 
-1. In the **Username** and **Password boxes**, type a secure name and password for an administrator account on this server.
+1. **[ユーザー名]** ボックスと **[パスワード]** ボックスに、このサーバーの管理者アカウントの安全な名前とパスワードを入力します。
 
-1. In the **Subscription** box, select your Azure subscription.
+1. **[サブスクリプション]** ボックスで Azure サブスクリプションを選択します。
 
-1. Under **Resource group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. **[リソース グループ]** で **[既存のものを使用]** を選択し、一覧で **woodgrove-RG** を選択します。
 
-1. In the **Location** drop-down list, select a region near you.
+1. **[場所]** ドロップダウン リストで、近くのリージョンを選択します
 
-1. Click **OK**.
+1. **[OK]** をクリックします。
 
-Choose a size for the VM, and then configure the settings:
+VM のサイズを選択し、設定を構成します。
 
-1. On the **Choose a size** blade, select a **Standard** SKU, such as **D2s_v3**. Then click **Select**.
+1. **[サイズの選択]** ブレードで、**[D2s_v3]** などの **[Standard]** を選択してから、**[選択]** をクリックします。
 
-1. On the **Settings** blade, click **Availability set**.
+1. **[設定]** ブレードで **[可用性セット]** をクリックします。
 
-1. On the **Change availability set** blade, click **Create new**.
+1. **[可用性セットの変更]** ブレードで、**[新規作成]** をクリックします。
 
-1. On the **Create new** blade, in the **Name** box, type **woodgrove-AS**, and then click **OK**.
+1. **[新規作成]** ブレードで、**[名前]** ボックスに「**woodgrove-AS**」と入力して、**[OK]** をクリックします。
 
-1. On the **Settings** blade, under **Network Security Group**, click **Advanced**, and then click **(new) woodgrove-SVR01-nsg**.
+1. **[設定]** ブレードで、**[ネットワーク セキュリティ グループ]** の **[詳細設定]** をクリックして、**(新規) woodgrove-SVR01 nsg** をクリックします。
 
-1. On the **Create network Security group** blade, in the **Name** box, change the name to **woodgrove-NSG**, and then click **OK**.
+1. **[ネットワーク セキュリティ グループの作成]** ブレードの **[名前]** ボックスで、名前を「**woodgrove-NSG**」に変更して、**[OK]** をクリックします。
 
-1. On the **Settings** blade, click **OK**.
+1. **[設定]** ブレードで **[OK]** をクリックします。
 
-Save the settings to a template, so that you can easily deploy multiple VMs.
+設定をテンプレートに保存し、複数の VM を簡単に展開できるようにします。
 
-1. On the **Create** blade, click **Download template and parameters**.
+1. **[作成]** ブレードで、**[テンプレートとパラメーターのダウンロード]** をクリックします。
 
-1. On the **Template** blade, click **Add to library**.
+1. **[テンプレート]** ブレードで、**[ライブラリに追加]** をクリックします。
 
-1. On the **Save template** blade, in the **Name** and **Description** boxes, type **woodgrove-server-template**. Then click **Save**.
+1. **[テンプレートの保存]** ブレードで、**[名前]** ボックスと **[説明]** ボックスに「**woodgrove-server-template**」と入力して、**[保存]** をクリックします。
 
 > [!NOTE]
-> If you need to find this template, click **All services** in the left menu, type **template** in the filter box, and then click **Templates (PREVIEW)**.
+> このテンプレートを探す必要がある場合は、左側のメニューで **[すべてのサービス]** をクリックし、フィルター ボックスに「**テンプレート**」と入力して、**[Templates (PREVIEW)]\(テンプレート (プレビュー)\)** をクリックします。
 
-## Use the template to provision the first VM
+## <a name="use-the-template-to-provision-the-first-vm"></a>テンプレートを使用して最初の VM をプロビジョニングする
 
-1. On the **Template** blade, click **Deploy**.
+1. **[テンプレート]** ブレードで、**[デプロイ]** をクリックします。
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. **[カスタム デプロイ]** ブレードの **[リソース グループ]** で **[既存のものを使用]** を選択し、一覧で **woodgrove-RG** を選択します。
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. **[カスタム デプロイ]** ブレードの **[管理パスワード]** ボックスに、以前に使用したものと同じパスワードを入力します。
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. **[カスタム デプロイ]** ブレードで、**[上記のご契約条件に同意します]** チェック ボックスをオンにし、**[購入]** をクリックします (コストは通常の Azure コンピューティング料金であり、VM の価格レベルに依存します)。
 
-1. Wait until the VM has deployed before continuing with the exercise. This is so you can be sure that the template is correctly configured before you use it to provision additional VMs, and that all the associated resources have been created.
+1. VM が展開されるまで待ってから、演習を続行します。これにより、他の VM のプロビジョニングに使用する前にテンプレートが正しく構成されていることを確認でき、関連するすべてのリソースが作成されます。
 
-## Use the template to provision two additional VMs
+## <a name="use-the-template-to-provision-two-additional-vms"></a>テンプレートを使用して他の 2 つの VM をプロビジョニングする
 
-1. In the Azure portal, on the **Template** blade, click **Deploy**.
+1. Azure portal の **[テンプレート]** ブレードで、**[デプロイ]** をクリックします。
 
-1. On the **Custom deployment** blade, under **Resource Group**, select **Use existing**. In the list, select **woodgrove-RG**.
+1. **[カスタム デプロイ]** ブレードの **[リソース グループ]** で **[既存のものを使用]** を選択し、一覧で **woodgrove-RG** を選択します。
 
-1. On the **Custom deployment** blade, in the **Virtual Machine Name** box, change the name to **woodgrove-SVR02**.
+1. **[カスタム デプロイ]** ブレードで、**[仮想マシン名]** ボックスの名前を「**woodgrove-SVR02**」に変更します。
 
-1. On the **Custom deployment** blade, in the **Network Interface Name** box, change the name to **woodgrovesvr02222**.
+1. **[カスタム デプロイ]** ブレードで、**[Network Interface Name]\(ネットワーク インターフェイス名\)** ボックスの名前を「**woodgrovesvr02222**」に変更します。
 
-1. On the **Custom deployment** blade, in the **Admin password** box, type the same password that you used previously.
+1. **[カスタム デプロイ]** ブレードの **[管理パスワード]** ボックスに、以前に使用したものと同じパスワードを入力します。
 
-1. On the **Custom deployment** blade, in the **Public Ip Address Name** box, change the name to **woodgrove-SVR02-ip**.
+1. **[カスタム デプロイ]** ブレードで、**[パブリック IP アドレス名]** ボックスの名前を「**woodgrove-SVR02-ip**」に変更します。
 
-1. On the **Custom deployment** blade, select the **I agree to the terms and conditions** check box, and then click **Purchase** (the cost is the regular Azure compute charge, which depends on the VM pricing tier).
+1. **[カスタム デプロイ]** ブレードで、**[上記のご契約条件に同意します]** チェック ボックスをオンにし、**[購入]** をクリックします (コストは通常の Azure コンピューティング料金であり、VM の価格レベルに依存します)。
 
-1. Repeat steps 1 - 7, using the following information:
-    - Virtual machine name: **woodgrove-SVR03**
-    - Network interface name: **woodgrovesvr03333**
-    - Public IP address name: **woodgrove-SVRr03-ip**
+1. 次の情報を使用して、手順 1 - 7 を繰り返します。
+    - 仮想マシン名: **woodgrove-SVR03**
+    - Network Interface Name (ネットワーク インターフェイス名): **woodgrovesvr03333**
+    - パブリック IP アドレス名: **woodgrove-SVRr03-ip**
 
-1. Wait until the VMs have deployed before continuing with the exercise.
+1. VM が展開されるまで待ってから、演習を続けます。
 
-You now have a public load balancer ready to configure, and three VMs ready to use with this load balancer.
+パブリック ロード バランサーを構成できる状態になり、このロード バランサーで 3 つの VM を使用する準備ができました。

@@ -1,28 +1,28 @@
-Before the load balancer will function correctly, you must configure settings that control the load balancer's behavior. Here, you will look at configuring the network, health probe, security rules, load-balancing rules, and server pool.
+ロード バランサーを正常に機能させるには、ロード バランサーの動作を制御する設定を構成しておく必要があります。 ここでは、ネットワーク、正常性プローブ、セキュリティ規則、負荷分散規則、およびサーバー プールの構成について説明します。
 
-## Steps for configuring a basic public load balancer
+## <a name="steps-to-configure-a-basic-public-load-balancer"></a>パブリック Basic Load Balancer の構成手順
 
-The following is an overview of the main configuration steps for a basic public load balancer. The steps for a standard load balancer and for an internal load balancer will be similar.
+パブリック Basic Load balancer の主な構成手順の概要を次に示します。Standard Load Balancer および内部 Load Balancer については、同様の手順で構成できます。
 
-### Backend servers
+### <a name="backend-servers"></a>バックエンド サーバー
 
-First, you need to configure your backend VM pool. The VMs should be in the same availability set and have their own public IP address (although this will not actually be used by your public endpoints).
+最初に、バックエンド VM プールを構成する必要があります。 VM の可用性セットは同じでなければなりません。また、VM 独自のパブリック IP アドレスが必要です (ただし、これはご自身のパブリック エンドポイントでは実際には使用されません)。
 
-You must create a new virtual network and define a subnet for the VM pool to use.
+新しい仮想ネットワーク (vNet) を作成し、使用する VM プールに対してサブネットを定義する必要があります。
 
- When you have multiple VMs providing the same services, you should use a **network security group (NSG)** to ensure that the same firewall rules are in place across the VM pool (although this is not part of the actual load-balancing process). For example, for VMs hosting web applications, you will need to create inbound security rules on port 80 for HTTP or port 8080 for HTTPS.
+負荷分散に直接は含まれませんが、同じサービスを提供する VM が複数ある場合は、VM プール全体で同じファイアウォール規則が適用されるように、**ネットワーク セキュリティ グループ (NSG)** を使用します。 たとえば、Web アプリケーションをホストする VM については、ポート 80 (HTTP の場合) またはポート 8080 (HTTPS の場合) で受信セキュリティ規則を作成する必要があります。
 
-### Public IP address
+### <a name="public-ip-address"></a>パブリック IP アドレス
 
-When you create a public basic load balancer using the portal, the **public IP address** is automatically configured as the load balancer's front end.
+ポータルを使用してパブリック Basic ロード バランサーを作成する場合、**パブリック IP アドレス**はロード バランサーのフロント エンドとして自動的に構成されます。
 
-Part of the configuration of the load balancer is the **back-end address pool**, containing the IP addresses of each VM's virtual NICs that are connected to the load balancer and used to distribute traffic to the VMs. 
+ロード バランサーの構成には**バックエンド アドレス プール**が含まれています。このプールには、そのロード バランサーに接続され、VM へのトラフィック分散に使用される各 VM の仮想 NIC の IP アドレスが含まれています。 
 
-### Health probe
+### <a name="health-probe"></a>正常性プローブ
 
-The health probe dynamically adds or removes VMs from the load balancer rotation based on their response to health checks.
-By default, there are 15 seconds between probe attempts. After two consecutive probe failures, a VM is considered unhealthy.
+正常性プローブでは、正常性チェックへの VM の応答に基づき、ロード バランサーのローテーションに対して VM が動的に追加または削除されます。
+既定では、プローブの試行の間隔は 15 秒で、プローブが連続して 2 回失敗すると、VM が異常と見なされます。
 
-### Rules
+### <a name="rules"></a>ルール
 
-The load balancer rule specifies the port that the front end is listening on, and the port used to send traffic to the backend.
+ロード バランサーの規則では、フロントエンドがリッスンしているポートと、バックエンドへのトラフィック送信に使用されるポートが指定されます。

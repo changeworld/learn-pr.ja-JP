@@ -1,4 +1,4 @@
-Visual Studio Code は、Azure 用アプリケーションの開発によく使用されます。 統合開発環境 (IDE) は軽量で、一部の IDE は数ギガバイトの記憶域を占有するものがあるのに対して、これは数メガバイトしか占有しません。 VS Code はクロス プラットフォームで、Windows、Linux、macOS で動作します。 柔軟性も備えています。 Visual Studio Code を使用すると、Azure CLI または Azure App Service を介して、または Docker コンテナー イメージを使用して、アプリをデプロイできます。 Azure Functions とサーバーレス アプローチを使用して、アプリをデプロイすることもできます。 
+Visual Studio Code は、Azure 用アプリケーションの開発によく使用されます。 統合開発環境 (IDE) は軽量で、一部の IDE は数ギガバイトの記憶域を占有するものがあるのに対して、これは数メガバイトしか占有しません。 VS Code はクロス プラットフォームで、Windows、Linux、macOS で動作します。
 
 ## <a name="visual-studio-code"></a>Visual Studio Code
 
@@ -12,19 +12,19 @@ Git ソース管理マネージャー (SCM) を使用すると、ソース管理
 
 VS Code の最も強力な機能の 1 つが、拡張機能モデルです。 これによりサード パーティの機能を VS Code IDE の統合の一部として実行することができ、考えられるほとんどの方法で IDE の機能を拡張できます。
 
-拡張機能は、JavaScript または TypeScript のいずれかで記述されます。また、VS Code 自体でも開発できます。 Yeoman を使用して、拡張機能をスキャフォールディングすることができます。 これらすべてで IntelliSense、コード ナビゲーション、および完全なデバッグ エクスペリエンスをサポートしています。
+拡張機能は、JavaScript または TypeScript で記述されます。 Yeoman を使用して、拡張機能をスキャフォールディングすることができます。 これらすべてで IntelliSense、コード ナビゲーション、完全なデバッグ エクスペリエンスをサポートしています。
 
-VS Code の拡張機能の一般的なカテゴリには、拡張機能、言語サーバー、デバッガーの 3 つがあります。 後者の 2 つのカテゴリには、エディターの言語全体に、またはデバッグ エクスペリエンスに接続するために特化された機能を提供できるようにする追加のプロトコルがあります。
+VS Code の拡張機能の一般的なカテゴリには、拡張機能、言語サーバー、デバッガーの 3 つがあります。 後者の 2 つのカテゴリには、特化された機能を提供できるようにする追加のプロトコルがあります。
 
-Extension Marketplace で入手できる拡張機能には、Python、Go、C++ などのさまざまな言語サポートが含まれます。 拡張機能には、リンターなどのコードの書式設定ツール、Azure などのクラウド接続用のツール、新しいテーマ、コード フォーマッタ、およびスニペット ライブラリなども含まれます。 これらの拡張機能はすべて、[VS Code Marketplace](https://marketplace.visualstudio.com/) で入手できます。
+Extension Marketplace で入手できる拡張機能には、Python、Go、C++ などのさまざまな言語サポートが含まれます。 拡張機能には、リンターなどのコードの書式設定ツール、Azure などのクラウド接続用のツール、新しいテーマ、コード フォーマッタ、スニペット ライブラリなども含まれます。 これらの拡張機能はすべて、[VS Code Marketplace](https://marketplace.visualstudio.com/) で入手できます。
 
 ## <a name="azure-extensions"></a>Azure 拡張機能
 
-拡張機能の多くが Azure の機能と製品をターゲットとしており、常に追加されています。 これらは Docker サポート、サブスクリプション管理、Azure CLI のツール、データベース アクセス、Azure Storage API の統合、および一般的な Azure 拡張機能などの領域をターゲットとしています。
+拡張機能の多くが Azure の機能と製品をターゲットとしており、常に追加されています。 これらは Docker サポート、サブスクリプション管理、Azure CLI のツール、データベース アクセス、Azure Storage API の統合、一般的な Azure 拡張機能などの領域をターゲットとしています。
 
 Azure 拡張機能ごとに、Azure 統合ポイントを使用した開発をより簡単かつ効率的にする VS Code の一連の機能が追加されます。
 
-## <a name="getting-vs-code-and-preparing-for-azure-development"></a>VS Code を取得してAzure 開発の準備をする
+## <a name="getting-vs-code-and-preparing-for-azure-development"></a>VS Code を取得して Azure 開発の準備をする
 
 VS Code は、Windows、macOS、Linux の 3 つの異なるプラットフォームでサポートされています。 これらはすべてダウンロード可能なファイルからインストールされますが、セットアップが異なります。
 
@@ -32,7 +32,7 @@ Windows で実行されている VS Code を取得するには、Windows のご�
 
 macOS の場合も、ファイルをダウンロードしてコンテンツを展開します。 LaunchPad と Dock に VS Code を追加することをお勧めします。
 
-Linux は、選択したディストリビューションによっては少し複雑になります。 VS Code をダウンロードして Debian と Ubuntu にインストールするか、RHEL、Fedora、CentOS、openSUSE、または SLE で Yum リポジトリを使用する必要があります。 その他のディストリビューションでは、サポートされる範囲が少々狭いコミュニティ エディションも使用できる場合があります。
+Linux の方が少し複雑で、インストール手順は、使用しているディストリビューションによって異なります。 Debian と Ubuntu では、VS Code を自分でダウンロードしてインストールする必要があります。 RHEL、Fedora、CentOS、openSUSE、および SLE に対しては、Microsoft は Yum リポジトリを提供しています。 その他のディストリビューションでは、サポートされる範囲が少々狭いコミュニティ エディションも使用できる場合があります。
 
 任意のプラットフォームで Azure 開発用に VS Code を準備するには、Extension Marketplace を使用して必要な Azure 拡張機能をインストールします。 App Service を使用している場合は、App Service の拡張機能を使用します。 Node.js を使用する場合は、Azure 用の Node Pack が必要です。
 

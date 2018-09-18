@@ -32,7 +32,9 @@
 
 1. ユーザー名が **Isabella Simonsen** という名前のユーザー名を作成します。
 
-   * `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+   `Isabella@firstupconsultants<XXXX>.onmicrosoft.com`
+
+   @ の後のドメインを、前述の「*ディレクトリを作成する*」セクションで作成したドメインと一致させます。
 
 1. このユーザーの **[パスワードを表示]** チェック ボックスをオンにします。 後でテストするときに使用できるように、パスワードをメモします。
 

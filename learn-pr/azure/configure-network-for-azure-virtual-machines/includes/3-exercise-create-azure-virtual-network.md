@@ -1,111 +1,105 @@
-In this exercise, you will create a virtual network in Microsoft Azure. You will then create two virtual machines and use the virtual network to connect the virtual machines to each other and to the Internet.
+この演習では、Microsoft Azure で仮想ネットワークを作成します。 2 つの仮想マシンを作成し、仮想ネットワークを使用して、仮想マシンを相互に、またインターネットに接続します。
 
-Before you begin this unit, you will need to log into [Azure Cloud Shell](https://shell.azure.com) with your trial subscription credentials. We will use Azure CLI via Azure Cloud Shell to create the resource groups, virtual networks, and virtual machines.
+このユニットを開始する前に、試用版サブスクリプション資格情報を使用して [Azure Cloud Shell](https://shell.azure.com) にログインする必要があります。 Azure Cloud Shell を使用して、リソース グループ、仮想ネットワーク、仮想マシンを作成します。
 
-## Create a resource group
+## <a name="create-a-resource-group"></a>リソース グループの作成
 
-1. In the **Welcome to Azure Cloud Shell** window, click **Bash (Linux)**.
+1. **[Azure Cloud Shell へようこそ]** ウィンドウで **[PowerShell (Linux)]** をクリックします。
 
-1. In the **you have no storage mounted** window, click **Create Storage**.
+1. **[ストレージがマウントされていません]** ウィンドウで、**[ストレージの作成]** をクリックします。
 
-1. In the Azure PowerShell command-line prompt, type the following code and press Enter. Replace the `<myResourceGroup>` value with a descriptive name to make it easy to remember when you clean up any resources created later. You'll use this name through the reset of this lab.
+1. Azure PowerShell コマンド ラインのプロンプトで、次のコードを入力し、Enter キーを押します。
 
-    ```bash
-    az group create --name <myResourceGroup> --location eastus
+    ```PowerShell
+    az group create --name myResourceGroup --location eastus
     ```
 
-## Create a virtual network
+## <a name="create-a-virtual-network"></a>仮想ネットワークを作成する
 
-1. To create a virtual network, enter the following command and press Enter. Replace the `<myVirtualNetwork>` value with a descriptive name to make it easy to remember
+1. 仮想ネットワークを作成するには、次のコマンドを入力し、Enter キーを押します。
 
-    ```bash
-    az network vnet create --name <myVirtualNetwork> --resource-group <myResourceGroup> --subnet-name default
+    ```PowerShell
+    az network vnet create --name myVirtualNetwork --resource-group myResourceGroup --subnet-name default
     ```
 
-## Create two virtual machines
+## <a name="create-two-virtual-machines"></a>2 つの仮想マシンの作成
 
-1. To create the first virtual machine, execute the following command to create a Windows VM with a public IP address that is accessible over port 3389 (Remote Desktop). Name the VM `dataProcStage1`:
+1. 最初の仮想マシンを作成するには、次のコマンドを実行して、ポート 3389 (リモート デスクトップ) 経由でアクセスできるパブリック IP アドレスを持つ Windows VM を作成します。
 
-    ```bash
-    az vm create --name dataProcStage1 --resource-group <myResourceGroup> --admin-username "DataAdmin" --image Win2016Datacenter
+    ``` PowerShell
+    az vm create --name dataProcessingStage1 --resource-group MyResourceGroup --admin-username "DataAdmin"--image Win2016Datacenter
     ```
 
-1. Supply values for your password at the prompts. Remeber to write this password down as you'll need it later to access the server.
+1. プロンプトで、パスワードの値を指定します。
 
-1. You'll now create the second VM. This VM will not have a public IP adderss. Execute the following command to create a Windows VM **without** a public IP address using an empty string. Name the VM `dataProcStage2`:
+1. パブリック IP アドレスがない Windows VM を作成するには次のコマンドを実行します。
 
-    ```bash
-    az vm create -n dataProcStage2 -g <myResourceGroup> --public-ip-address "" --admin-username "DataAdmin" --image Win2016Datacenter
+    ```PowerShell
+    az vm create -n dataProcessingStage2 -g MyResourceGroup --public-ip-address '' --admin-username "DataAdmin"--image Win2016Datacenter
     ```
 
-1. When completed, the output from the second command will return a value for publicIpAddress.  
+1. 完了すると、2 番目のコマンドからの出力で publicIpAddress の値が返されます。
 
-## Connect to dataProcStage1 using Remote Desktop
+## <a name="connect-to-dataprocessingstage1-using-remote-desktop"></a>リモート デスクトップを使用して dataProcessingStage1 に接続する
 
-1. On your client computer, press the Windows key and type RDP.
+1. クライアント コンピューターで、Windows キーを押し、「RDP」と入力します。
 
-1. Ensure that **Remote Desktop Connection** app is selected, and then press Enter.
+1. **リモート デスクトップ接続**アプリが選択されていることを確認し、Enter キーを押します。
 
-1. In the **Remote Desktop Connection** dialog box, in the **Computer** field, enter the value of `dataProcStage1`'s PublicIPAddress, and then click **Connect**.
-    
-    Instructions to get remote ip if not written down
+1. **[リモート デスクトップ接続]** ダイアログ ボックスの **[コンピューター]** フィールドで、dataProcessingStage1PublicIPAddress の値を入力してから、**[接続]** をクリックします。
 
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
+1. **[Do you trust this remote connection?]\(このリモート接続を信頼しますか?\)** ダイアログ ボックスで、**[接続]** をクリックします。
 
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage1`. 
+1. **[Windows セキュリティ]** ダイアログ ボックスで、dataProcessingStage1 の作成時に使用したユーザー名とパスワードを入力します。
 
-    Have to change profiles here
+1. **[リモート デスクトップ接続]** ダイアログ ボックスで、**[OK]** をクリックします。
 
-1. In the **Remote Desktop Connection** dialog box, click **OK**.
+1. Azure 内でリモート コンピューターにサインインします。
 
-1. Sign in to the remote computer in Azure.
+1. "**ネットワーク**" というメッセージが表示されたら、**[いいえ]** をクリックします。
 
-1. When the **Networks** message appears, click **No**.
+1. サーバー マネージャーを閉じます。
 
-1. Close Server Manager.
+1. リモート セッションで Windows キーを右クリックし、**[コマンド プロンプト]** をクリックします。
 
-1. In the remote session, right-click the Windows key and click **Command Prompt**.
-
-1. In the command prompt window, type the following command and press Enter.
+1. コマンド プロンプト ウィンドウで、次のコマンドを入力し、Enter キーを押します。
 
     ```cmd
-    ping dataProcStage2 -4
+    ping dataProcessingStage2 -4
     ```
 
-1. There should be no response from `dataProcStage2`. This is because by default, Windows Firewall prevents ICMP responses on `dataProcStage2`.
+1. リモート コンピューターからの応答はありません。 これは、既定では Windows ファイアウォールが ICMP 応答を阻止するからです。
 
-## Connect to dataProcStage2 using Remote Desktop
+## <a name="connect-to-dataprocessingstage2-using-remote-desktop"></a>リモート デスクトップを使用して dataProcessingStage2 に接続する
 
-You'll configure the Windows Firewall on `dataProcStage2` using a new remote desktop seesion. However, you'll not able to access `dataProcStage2` from your desktop. Recall, `dataProcStage2` does not have a public IP address. You will using remote desktop from `dataProcStage1` to connect to `dataProcStage2`.
+1. クライアント コンピューターで、Windows キーを押し、「**RDP**」と入力します。 **[リモート デスクトップ接続]** アプリを選択し、Enter キーを押します。
 
-1. On `dataProcStage1`, press the Windows key and type **RDP**. Select the **Remote Desktop Connection** app and press Enter.
+1. **[コンピューター]** フィールドで、dataProcessingStage2PublicIPAddress の値を入力してから、**[接続]** をクリックします。
 
-1. In the **Computer** field, enter `dataProcStage2`, and then click **Connect**. Based on the default network configuration`dataProcStage1` is able to resolve the address for `dataProcStage2` using the computer name.
+1. **[Do you trust this remote connection?]\(このリモート接続を信頼しますか?\)** ダイアログ ボックスで、**[接続]** をクリックします。
 
-1. In the **Do you trust this remote connection?** dialog box, click **Connect**.
+1. **[Windows セキュリティ]** ダイアログ ボックスで、dataProcessingStage2 の作成時に使用したユーザー名とパスワードを入力します。
 
-1. In the **Windows Security** dialog box, enter the user name and password you used when you created `dataProcStage2`.
+1. **[リモート デスクトップ接続]** ダイアログ ボックスで、**[OK]** をクリックします。 ここで、Azure 内でリモート コンピューターにサインインします。
 
-1. In the **Remote Desktop Connection** dialog box, click **OK**. You now sign in to the remote computer in Azure.
+1. "**ネットワーク**" というメッセージが表示されたら、**[いいえ]** をクリックします。
 
-1. When the **Networks** message appears, click **No**.
+1. サーバー マネージャーを閉じます。
 
-1. Close Server Manager.
+1. dataProcessingStage2 で、Windows キーを押して「**ファイアウォール**」と入力し、Enter キーを押します。 「**セキュリティが強化された Windows ファイアウォール**」コンソールが表示されます。
 
-1. On `dataProcStage2`, press the Windows key, type **Firewall**, and press Enter. The **Windows Firewall with Advanced Security** console appears.
+1. 左側のウィンドウで、**[受信規則]** をクリックします。
 
-1. In the left-hand pane, click **Inbound Rules**.
+1. 右側のウィンドウで下にスクロールし、**[ファイルとプリンターの共有 (エコー要求 - ICMPv4 受信)]** を右クリックし、**[規則の有効化]** をクリックします。
 
-1. In the right-hand pane, scroll down and right-click **File and Printer Sharing (Echo Request - ICMPv4-In)**, and then click **Enable Rule**.
-
-1. Switch back to the `dataProcStage1` console and in the command prompt window, type the following command and press Enter.
+1. dataProcessingStage1 コンソールに戻り、コマンド プロンプト ウィンドウで、次のコマンドを入力し、Enter キーを押します。
 
     ```cmd
-    ping dataProcStage2 -4
+    ping dataProcessingStage2 -4
     ```
 
-1. `dataProcStage2` responds with four replies, demonstrating connectivity between the two VMs.
+1. dataProcessingStage2 は、4 つの返信で応答し、2 つの VM 間の接続を示します。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-You have successfully created a virtual network, created two VMs that are attached to that virtual network, connected to one of the VMs and shown network connectivity to the other VM within the same virtual network. You can use Azure Virtual Network to connect resources within the Azure network. However, those resources need to be within the same resource group and subscription. Next, we will look at VPN gateways, which enable you to connect virtual network in different resource groups, subscriptions, and even geographical regions.
+仮想ネットワークを正常に作成し、その仮想ネットワークに接続される 2 つの VM を作成し、一方の VM に接続して、同じ仮想ネットワーク内の他の VM へのネットワーク接続を表示しました。 Azure Virtual Network を使用して、Azure ネットワーク内のリソースを接続できます。 ただし、これらのリソースは、同じリソース グループとサブスクリプションに含まれる必要があります。 次に、VPN ゲートウェイを参照します。これにより、別のリソース グループ、サブスクリプション、地理的リージョン内の仮想ネットワークを接続できます。

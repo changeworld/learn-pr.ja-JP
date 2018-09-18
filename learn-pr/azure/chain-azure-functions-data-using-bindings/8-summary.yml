@@ -1,62 +1,67 @@
 ### YamlMime:ModuleUnit
 uid: learn.chain-azure-functions-data-using-input-output-bindings.8-summary
-title: Summary
+title: まとめ
 metadata:
-  title: What we've learned
-  description: Summary
+  title: 学習内容
+  description: まとめ
   ms.date: 09/24/2018
   author: andrewjbyrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
+  ms.openlocfilehash: aca3406207930fbb8788713dc64f1c9a97b6f7a0
+  ms.sourcegitcommit: 4605f6af0037078761ef50cac6879711c7319635
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/11/2018
+  ms.locfileid: "44350628"
 durationInMinutes: 5
-content: |
+content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: 'Knowledge check: Azure Functions and IO bindings'
+  title: '知識チェック: Azure Functions と IO バインディング'
   questions:
-  - content: Which of the following is the correct name of the file that contains function configuration data?
-    choices: 
+  - content: 次のうち、関数構成データを格納するファイルの正しい名前はどれですか。
+    choices:
     - content: config.txt
       isCorrect: false
-      incorrectExplanation: hint - the file stores JSON data.
+      incorrectExplanation: ヒント - ファイルは JSON データを格納します。
     - content: config.json
       isCorrect: false
-      incorrectExplanation: hint - the .json file extension is correct.
-    - content: function.json 
+      incorrectExplanation: ヒント - .json ファイルの拡張子は正しいです。
+    - content: function.json
       isCorrect: true
-      correctExplanation: The configuration is named `function.json`, which contains JSON configuration data such as binding declarations.
-  - content: Which two of the following are supported input binding types?
-    choices: 
+      correctExplanation: 構成の名前は `function.json` で、バインディング宣言などの JSON 構成データを格納します。
+  - content: 次のうち、サポートされている入力バインディングの種類はどれですか。2 つ選んでください。
+    choices:
     - content: Cosmos DB
       isCorrect: true
-      correctExplanation: The Azure Cosmos DB input binding uses the SQL API to retrieve one or more Azure Cosmos DB documents and passes them to the input parameter of the function.
+      correctExplanation: Azure Cosmos DB 入力バインディングでは、SQL API を使用して 1 つ以上の Azure Cosmos DB ドキュメントを取得して関数の入力パラメーターに渡します。
     - content: SendGrid
       isCorrect: false
-      incorrectExplanation: SendGrid supports only output binding, to send email.
+      incorrectExplanation: SendGrid では、電子メールを送信するために出力バインディングのみがサポートされています。
     - content: Service Bus
       isCorrect: false
-      incorrectExplanation: Service Bus supports only output binding, to send queue or topic messages on Service Bus.
-  - content: How many triggers must a function have?
-    choices: 
-    - content: zero
+      incorrectExplanation: Service Bus では、Service Bus でキューまたはトピック メッセージを送信するために出力バインディングのみがサポートされています。
+  - content: 関数にはトリガーがいくつ必要ですか。
+    choices:
+    - content: "0"
       isCorrect: false
-      incorrectExplanation: If a function doesn't have a trigger, it can't start. 
-    - content: one
+      incorrectExplanation: トリガーがない場合、関数は起動できません。
+    - content: "1"
       isCorrect: true
-      correctExplanation: A function must have exactly one trigger.
-    - content: two
+      correctExplanation: 1 つの関数には 1 つのトリガーしか含められません。
+    - content: "2"
       isCorrect: false
-      incorrectExplanation: A function must have exactly one trigger.
-  - content: Which of the following lines of JavaScript writes "hello bindings" to an Azure Queue Storage queue using a function parameter called **myQueueItem**
-    choices: 
+      incorrectExplanation: 1 つの関数には 1 つのトリガーしか含められません。
+  - content: 次のうち、**myQueueItem** という名前の関数パラメーターを使用して、Azure Queue Storage キューに "hello bindings" と書き込む JavaScript の行はどれですか。
+    choices:
     - content: context.myQueueItem = "hello bindings";
       isCorrect: false
-      incorrectExplanation: This uses the correct function parameter name, myQueueItem, but won't write to the queue.
+      incorrectExplanation: この場合は正しい関数パラメーター名 myQueueItem を使用していますが、キューへの書き込みは行われません。
     - content: context.bindings.myQueueItem = "hello bindings";
       isCorrect: true
-      correctExplanation: context.bindings returns a named object that contains all your input and output data. 
+      correctExplanation: context.bindings は、すべての入力データと出力データを含む名前付きオブジェクトを返します。
     - content: myQueueItem = "hello bindings";
       isCorrect: false
-      incorrectExplanation: This uses the correct function parameter name, myQueueItem, but won't write to the queue.
- 
+      incorrectExplanation: この場合は正しい関数パラメーター名 myQueueItem を使用していますが、キューへの書き込みは行われません。

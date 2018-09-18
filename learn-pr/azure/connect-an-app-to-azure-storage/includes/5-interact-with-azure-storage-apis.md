@@ -1,21 +1,21 @@
-Azure Storage provides a Representational State Transfer (REST) based web API to work with the containers and data stored in each account. There are independent APIs available to work with each type of data you can store. Recall that we have four specific data types:
+Azure Storage には、Representational State Transfer (REST) ベースの Web API があります。これはコンテナーと各アカウントに格納されているデータと連動します。 格納できる各種データと連動する独立 API を利用できます。 データの種類には次の 4 つがあることを思い出してください。
 
-- **Blobs** for unstructured data such as binary and text files.
-- **Queues** for persistent messaging.
-- **Tables** for structured storage of key/values.
-- **Files** for traditional SMB file shares.
+- **BLOB** はバイナリやテキスト ファイルなど、非構造化データに使用されます。
+- **キュー**は固定のメッセージングに使用されます。
+- **テーブル**はキー/値の構造化ストレージに使用されます。
+- **ファイル**は従来の SMB ファイル共有に使用されます。
 
-## Using the REST API
+## <a name="using-the-rest-api"></a>REST API の使用
 
-The Storage REST APIs are accessible from services running in Azure over a virtual network, or over the Internet from any application that can send an HTTP/HTTPS request and receive an HTTP/HTTPS response.
+Storage REST API には、Azure で実行されているサービスから仮想ネットワーク経由でアクセスするか、HTTP/HTTPS 要求を送信し、HTTP/HTTPS 応答を受信できるあらゆるアプリケーションからインターネット経由でアクセスできます。
 
-For example, if you wanted to list all the blobs in a container, you would send something like:
+たとえば、あるコンテナーに含まれるすべての BLOB を一覧表示する場合、次のようなものを送信できます。
 
 ```http
 GET https://[url-for-service-account]/?comp=list&include=metadata
 ```
 
-This would return an XML block with data specific to the account:
+この場合、アカウントに固有のデータを含む XML ブロックが返されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>  
@@ -65,27 +65,20 @@ This would return an XML block with data specific to the account:
 </EnumerationResults>  
 ```
 
-However, this approach requires a lot of manual parsing and creation of HTTP packets to work with each API. For this reason, Azure provides pre-built _client libraries_ that make working with the service easier for common languages and frameworks.
+ただし、この手法では、各 API と連動させるために、大量の HTTP パケットを手動で解析し、作成する必要があります。 このような理由から、Azure には_クライアント ライブラリ_が事前に組み込まれており、一般的な言語やフレームワークでサービスとの連動が簡単になっています。
 
-## Using a client library
+## <a name="using-a-client-library"></a>クライアント ライブラリを使用する
 
-Client libraries can save a significant amount of work for application developers because the API is tested and it often provides nicer wrappers around the data models sent and received by the REST API.
+クライアント ライブラリでは、アプリケーション開発者のために大量の作業を保存できます。これは、API が試験され、API が多くの場合、REST API で送受信されるデータ モデルを効果的にラップするためです。
 
 :::row:::
     :::column:::
-        Microsoft has Azure client libraries that support a number of languages and frameworks including:
-        - .NET
-        - Java
-        - Python
-        - Node.js
-        - Go
-    :::column-end::::
-    :::column:::
-        <br> ![Sample logos of supported frameworks you can use with Azure](../media/4-common-tools.png)
+        Microsoft の Azure クライアント ライブラリは、.NET、Java、Python、Node.js、Go :::column-end::: など、さまざまな言語とフレームワークに対応しています。 :::column:::
+        <br> ![サポートされており、Azure で使用できるフレームワークのサンプル ロゴ](../media/4-common-tools.png)
     :::column-end:::
 :::row-end:::
 
-For example, to retrieve the same list of blobs in C#, we could use the following code snippet:
+たとえば、C# で BLOB の同じ一覧を取得するには、次のコード スニペットを使用できます。
 
 ```csharp
 CloudBlobDirectory directory = ...;
@@ -97,7 +90,7 @@ foreach (IEnumerable<IListBlobItem> blob in directory.ListBlobs(
 }
 ```
 
-Or in JavaScript:
+あるいは、JavaScript で:
 
 ```javascript
 const containerName = "...";
@@ -113,6 +106,6 @@ blobService.listBlobsSegmented(containerName, null, function (error, results) {
 ```
 
 > [!NOTE]
-> The client libraries are just thin _wrappers_ over the REST API. They are doing exactly what you would do if you used the web services directly. These libraries are also open source making them very transparent. Look for them on GitHub.
+> クライアント ライブラリは、REST API に対する Thin _ラッパー_に過ぎません。 Web サービスを直接使用するとき、ユーザーの操作どおりのことを行います。 これらのライブラリはオープン ソースでもあり、非常に透過的になります。 GitHub でお探しください。
 
-Let's add the client library support for our application.
+それでは、アプリケーションにクライアント ライブラリ サポートを追加しましょう。

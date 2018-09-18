@@ -2,25 +2,19 @@
 
 ## <a name="create-a-console-app"></a>コンソール アプリを作成する
 
-1. 作業するフォルダーを作成します。
-
-1. コマンド プロンプトを起動し、そのフォルダーに移動します。
-
-1. 新しい .NET Core コンソール アプリケーションを作成します
-
-```bash
-dotnet new console 
-```
-
 1. Visual Studio Code を開き、**[ファイル]** > **[フォルダーを開く]** の順に選択します。
 
 1. 新しい C# プロジェクトとなる新しいフォルダーを作成し、**[フォルダーの選択]** をクリックします。
 
-1. [ファイル] メニューをクリックし、自動保存がオンになってない場合はオンにして、ファイルの自動保存を確実に有効にします。
+1. [ファイル] メニューをクリックし、**[自動保存]** がオンになってない場合はオンにして、ファイルの自動保存を確実に有効にします。
 
-1. Visual Studio Code で、メイン メニューから **[表示]** > **[統合ターミナル]** の順に選択して統合ターミナルを開きます。
+1. Visual Studio Code で、メイン メニューから **[表示]** > **[ターミナル]** の順に選択して統合ターミナルを開きます。
 
-1. ターミナル ウィンドウで、「**dotnet new console**」と入力します。
+1. ターミナル ウィンドウで次のコマンドを入力します。
+
+    ```
+    dotnet new console
+    ```
 
     このコマンドにより、フォルダーに **learning-module.csproj** という名前の C# プロジェクト ファイルとともに、シンプルな "Hello World" プログラムが既に記述されている **Program.cs** ファイルが作成されます。
 
@@ -38,7 +32,7 @@ dotnet new console
 
     プロンプトに従って、Web ブラウザーで提供されるコードをコピーして貼り付けます。これにより、Visual Studio Code セッションが認証されます。
 
-1. 左側のメニューの ![[エクスプローラー] アイコン](../media/2-setup/visual-studio-code-explorer-icon.png) **[エクスプローラー]** アイコンをクリックし、**[Azure Cosmos DB]** を展開します。
+1. 左側のメニューで ![Azure アイコン](../media/2-setup/visual-studio-code-explorer-icon.png) **Azure** をクリックし、**[Azure Cosmos DB]** を展開します。
 
 1. Azure サブスクリプション、Azure Cosmos DB アカウントの順に展開します。 前のモジュールで **Products** データベースと **Clothing** コレクションを作成した場合は、拡張機能でそれらが表示されます。
 
@@ -46,11 +40,11 @@ dotnet new console
 
 1. 次は、顧客用の新しいデータベースとコレクションを作成します。
 
-    エクスプローラー ウィンドウで、アカウントを右クリックし、**[データベースの作成]** をクリックします。 
+    Azure ウィンドウで、アカウントを右クリックし、**[データベースの作成]** をクリックします。
     
-    画面の上部にあるテキスト ボックスで、データベース名として「**Users**」を入力 > **Enter**  > コレクション名として「**WebCustomers**」 を入力 > **Enter** >  パーティション キーとして「**userId**」を入力 > **Enter** > 初期スループット容量として「**1000**」を入力 > **Enter** の順に進みます。
+    画面の上部にあるテキスト ボックスで、データベース名に「**Users**」と入力して **Enter** キーを押し、コレクション名に「**WebCustomers**」と入力して **Enter** キーを押し、パーティション キーに「**userId**」と入力して **Enter** キーを押し、初期スループット容量に「**1000**」と入力して **Enter** キーを押します。
 
-    ![Azure Cosmos DB の Visual Studio Code 拡張機能](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) <!--Retake on fresh machine without the other subscriptions showing-->
+    ![Azure Cosmos DB の Visual Studio Code 拡張機能](../media/2-setup/vs-code-azure-cosmos-db-extension.gif) 
 
     新しい Users データベースと WebCustomers コレクションがエクスプローラー ウィンドウに表示されます。
 
@@ -95,8 +89,6 @@ dotnet new console
     ```
 
 1. learning-module アカウントを右クリックし、**[Copy Connection String]\(接続文字列のコピー\)** をクリックして、Azure Cosmos DB 拡張機能から接続文字列をコピーします。
-
-    ![Azure Cosmos DB の Visual Studio Code 拡張機能](../media/2-setup/vs-code-copy-connection-string.gif) 
 
 1. 接続文字列をテキスト ファイルに貼り付け、そのテキスト ファイルから **AccountEndpoint** 部分を App.config 内の **accountEndpoint** にコピーします。
 

@@ -1,55 +1,55 @@
-In real life, it's assumed that you will connect Azure IoT Central to a real device or in this case, a real coffee machine. But for the purpose of this unit, you connect a Node.js application, representing a physical/real coffee machine, to the Azure IoT Central application. As a result of this connection, telemetry measurements from the coffee machine is sent to IoT Central for monitoring and analysis.
+現実の環境では、Azure IoT Central を実際のデバイス (この例でいえば実際のコーヒー マシン) に接続するものと考えられます。 しかし、このユニットでは、物理的な/実際のコーヒー マシンを表す Node.js アプリケーションと Azure IoT Central アプリケーションを接続します。 この接続の結果として、コーヒー マシンからのテレメトリの測定は、監視と分析のために IoT Central に送信されます。
 
-![Coffee machine](../images/3-coffee-machine.png) 
+![コーヒー マシン](../images/3-coffee-machine.png) 
 
-## Add the coffee machine in IoT Central 
-To add your coffee machine to your application, you use the **Connected Coffee Maker** device template you created in the previous unit.
+## <a name="add-the-coffee-machine-in-iot-central"></a>IoT Central でコーヒー マシンを追加する 
+コーヒー マシンをアプリケーションに追加するには、前のユニットで作成した **Connected Coffee Maker** デバイス テンプレートを使用します。
 
-1. To add a new device, choose **Device Explorer** in the left navigation menu.
+1. 新しいデバイスを追加するには、左側のナビゲーション メニューで **[Device Explorer]** を選択します。
 
-	To start connecting your coffee machine, choose **+ New**, then **Real**. When you're finished, you see a list of devices you've created using the same Connected Coffee Maker template.
+    コーヒー マシンの接続を開始するには、**[+ 新規]**、**[Real]\(リアル\)** の順に選択します。 完了すると、同じ接続されているコーヒー メーカーのテンプレートを使用して作成したデバイスの一覧が表示されます。
    
-    *	The Connected Coffee Maker is added to the list when you choose + New, then Real. 
-    *	The Connected Coffee Maker (Simulate) is automatically created by IoT Central for testing purposes. 
+    *   接続されているコーヒー メーカーは、[+ 新規]、[Real]\(リアル\) の順に選択すると一覧に追加されます。 
+    *   接続されているコーヒー メーカー (シミュレート) は、テスト目的で IoT Central によって自動的に作成されます。 
 
-1.	Optionally, you can differentiate the newly added coffee machine by appending the word “Real” in its name. To rename your new device, choose the device and edit the name in the name field. 
+1.  必要に応じて、名前に "Real" を追加することで、新しく追加されたコーヒー マシンを区別できます。 新しいデバイスの名前を変更するには、デバイスを選択し、[名前] フィールドの名前を編集します。 
 
-    ![Coffee machine](../images/3-connect-device-a.png) 
+    ![コーヒー マシン](../images/3-connect-device-a.png) 
 
-    Note the location of **Connect this device** for connecting your coffee machine in the next section. For now the screen displays "Missing Data", this is because you haven't connected to the coffee machine. The real telemetry begins to populate the screen once the connection is made. 
+    次のセクションでお使いのコーヒー マシンを接続するために、**[Connect this device]\(このデバイスを接続する\)** の場所を書き留めてください。 以降、画面には、"データが見つかりません" と表示されます。これは、コーヒー マシンに接続していないためです。 接続が確立されると、画面に実際のテレメトリが設定されます。 
  
-## Get connection string for the coffee machine from your application
-You embed the connection string for your real coffee machine in the code that runs on the device. The connection string enables the coffee machine to connect securely to your Azure IoT Central application. Every device instance has a unique connection string. Here is how to find the connection string for a device instance in your application:
+## <a name="get-connection-string-for-the-coffee-machine-from-your-application"></a>アプリケーションからコーヒー マシンに対する接続文字列を取得する
+実際のコーヒー マシンに対する接続文字列を、デバイス上で実行されるコードに埋め込みます。 接続文字列により、コーヒー マシンが Azure IoT Central アプリケーションに安全に接続できます。 どのデバイス インスタンスにも一意の接続文字列があります。 ここでは、アプリケーションのデバイス インスタンスの接続文字列を見つける方法を示します。
 
-1.	On the device screen for your Connected Coffee Machine Real, choose **Connect this device**.
+1.  実際に接続されたコーヒー マシンのデバイス画面で、**[Connect this device]\(このデバイスを接続する\)** を選択します。
 
-1.	On the **Connect** page, copy the **Primary connection string**, and save it. You use this value in the client application that runs on the device.
+1.  **[接続]** ページで、**[プライマリ接続文字列]** をコピーして保存します。 デバイス上で実行されるクライアント アプリケーションで、この値を使用します。
 
-## Create a Node.js application
-The following steps show you how to create a client application that implements the coffee machine you added to the application.
-1. Install [Node.js](https://nodejs.org/) version 4.0.x or later on your machine. Node.js is available for a wide variety of operating systems.
+## <a name="create-a-nodejs-application"></a>Node.js アプリケーションを作成する
+次の手順では、アプリケーションに追加したコーヒー マシンを実装するクライアント アプリケーションを作成する方法を示します。
+1. マシンに [Node.js](https://nodejs.org/) バージョン 4.0.x 以降をインストールします。 Node.js は、さまざまなオペレーティング システムで使用できます。
 
-1. Create a folder called coffee-maker on your machine. Navigate to that folder in your command-line environment.
+1. マシン上に coffee-maker という名前のフォルダーを作成します。 コマンドライン環境でそのフォルダーに移動します。
 
-1. To initialize your Node.js project, run the following commands:
+1. Node.js プロジェクトを初期化するには、次のコマンドを実行します。
     ```cmd/sh
     npm init
     ```
     > [!NOTE]
-    > The init script prompts you to enter project properties. For this exercise, using the default values is sufficient and recommended. 
-1. To install the necessary packages, run the following command:
+    > init スクリプトで、プロジェクトのプロパティを入力するように求められます。 この演習では、既定値の使用で十分であり、これをお勧めします。 
+1. 必要なパッケージをインストールするには、次のコマンドを実行します。
     ```cmd/sh
     npm install azure-iot-device azure-iot-device-mqtt --save
     ```
 
-1. Using a text editor, create a file called coffeeMaker.js in the coffee-maker folder.
+1. テキスト エディターを使用して、coffee-maker フォルダーに coffeeMaker.js という名前のファイルを作成します。
 
-1. Copy and paste the code into your coffeeMaker.js file and **Save**.
+1. コードをコピーして coffeeMaker.js ファイルに貼り付け、**[保存]** を選択します。
 
-    The code, representing the real coffee machine in this unit, is written in Node.js. You begin by establishing connection with the application, then you send initial properties to Azure IoT Central, synchronize the settings, register two command handlers for Maintenance and Brewing, and finally start the timer for sending the telemetry information every second.
+    このユニットで実際のコーヒー マシンを表すコードが、Node.js に書き込まれます。 最初にアプリケーションとの接続を確立し、初期プロパティを Azure IoT Central に送信し、設定を同期し、Maintenance と Brewing の 2 つのコマンド ハンドラーを登録し、最後に 1 秒ごとにテレメトリ情報を送信するためのタイマーを開始します。
 
     > [!NOTE]
-    > Update the placeholder `{your device connection string}`. 
+    > プレース ホルダー `{your device connection string}` を更新します。 
 
 
     ```js
@@ -81,7 +81,7 @@ The following steps show you how to create a client application that implements 
 
     // Send device simulated telemetry measurements
     function sendTelemetry() 
-    {	
+    {   
         // Simulate the telemetry values
         var temperature = optimalTemperature + (Math.random() * 4) - 2;
         var humidity = 20 + (Math.random() * 80);
@@ -324,12 +324,12 @@ The following steps show you how to create a client application that implements 
 
     ```
 
-1.  Update the placeholder {your device connection string} with your device connection string. You copied this value from the connection details page when you added your real device. 
+1.  プレースホルダー {your device connection string} を、デバイスの接続文字列に更新します。 この値は、実際のデバイスを追加したときに接続の詳細ページからコピーしたものです。 
 
-## Run your Node.js application
+## <a name="run-your-nodejs-application"></a>Node.js アプリケーションを実行する
 ```cmd/sh
 node coffeeMaker.js
 ```
 
-## Summary
-In this unit, you connected your coffee machine to Azure IoT Central and began sending data for monitoring and analysis. You achieved the connectivity by first acquiring a connection string from IoT Central, followed by configuring the string in the coffee machine.
+## <a name="summary"></a>まとめ
+このユニットでは、接続されたコーヒー マシンを Azure IoT Central に接続し、監視と分析のためのデータの送信を開始しました。 最初に IoT Central から接続文字列を取得した後、コーヒー マシンで文字列を構成することによって、接続を実現しました。

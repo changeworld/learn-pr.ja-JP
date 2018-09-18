@@ -1,13 +1,13 @@
-As a PostgreSQL user, you may already know the benefits of PostgreSQL. You plan to use **Azure Database for PostgreSQL** and you want to make sure you'll have access to the same benefits as your on-premise server before moving to the cloud.
+PostgreSQL ユーザーであれば、PostgreSQL の長所を既に知っていることでしょう。 **Azure Database for PostgreSQL** を使用する予定であり、クラウドに移行する前に、オンプレミス サーバーと同じ長所が与えられることを確認するとします。
 
-Azure Database for PostgreSQL is a relational database service in the Microsoft cloud. The server software is based on the community version of the open-source PostgreSQL database engine. Your familiarity with tools and expertise with PostgreSQL is applicable when using Azure Database for PostgreSQL.
+Azure Database for PostgreSQL は Microsoft クラウドのリレーショナル データベース サービスです。 このサーバー ソフトウェアは、オープンソースの PostgreSQL データベース エンジンのコミュニティ版を基盤とします。 Azure Database for PostgreSQL を使用するとき、PostgreSQL 関連のツールや専門知識が役立ちます。
 
-Moreover, Azure Database for PostgreSQL delivers the following benefits:
+また、Azure Database for PostgreSQL には次のような長所があります。
 
-- Built-in high availability compared to on-premises resources. There is no additional configuration, replication, or cost required to make sure your applications are always available.
-- Simple and flexible pricing. You have predictable performance based on a selected pricing tier choice that includes software patching, automatic backups, monitoring, and security.
-- Scale up or down as needed within seconds. You can scale compute or storage independently as needed to make sure you adapt your service to match usage.
-- Adjustable automatic backups and point-in-time-restore for up to 35 days.
-- Enterprise-grade security and compliance to protect sensitive data at-rest and in-motion that covers data encryption on disk and SSL encryption between client and server communication.
+- オンプレミス リソースと比べて高い可用性。 アプリケーションが常に利用できるようにするための追加の構成、複製、コストは必要ありません。
+- わかりやすく柔軟な価格設定。 ソフトウェア パッチ、自動バックアップ、監視、セキュリティなど、選択した価格レベルに基づいてパフォーマンスを予測できます。
+- 必要に応じて、数秒以内でスケールアップ/スケールダウン。 必要に応じて計算処理能力やストレージを他に依存せずに拡大/縮小し、用途に合わせてサービスを調整できます。
+- 調整可能な自動バックアップと最大 35 日間のポイントインタイム リストア。
+- 取り扱いに慎重を要するデータを保存または送信するとき、企業レベルのセキュリティとコンプライアンスで保護します。たとえば、ディスク内のデータを暗号化したり、クライアントとサーバーの間の通信に SSL 暗号化を実施したりします。
 
-These benefits should help make your decision to go from om-premise PostgeSQL to Azure Database for PostgreSQL simple.
+以上の長所を考慮すれば、オンプレミス PostgeSQL から Azure Database for PostgreSQL への移行を即決できるはずです。

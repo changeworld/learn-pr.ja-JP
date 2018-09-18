@@ -1,89 +1,89 @@
-Data is an organization’s most valuable and irreplaceable asset, and encryption serves as the last and strongest line of defense in a layered security strategy. Being a healthcare provider, Lamna Healthcare stores large amounts of sensitive data. They recently experienced a breach that exposed the unencrypted sensitive data of patients, and are now fully aware that they have gaps in their data protection capabilities. They want to understand how they could have better used encryption to protect themselves and their patients from this type of incident. Here, we'll take a look at what encryption is, how to approach the encryption of data, and what encryption capabilities are available on Azure.
+データは組織の最も重要なかけがえのない財産であり、暗号化は階層型セキュリティ戦略における最新かつ最強の防御線として機能します。 医療機関である、Lamna Healthcare では大量の機密データを格納しています。 最近、セキュリティ違反が発生し、患者の暗号化されていない機密データが漏えいしました。現在はデータ保護機能にギャップがあることを十分認識しています。 自身と患者をこの種のインシデントから保護するために暗号化をもっとうまく活用できる方法を理解する必要があります。 ここでは、暗号化とは何であるか、データを暗号化する方法、Azure で利用できる暗号化機能を確認します。
 
-## What is encryption?
+## <a name="what-is-encryption"></a>暗号化とは
 
-Encryption is the process of making data unreadable and unusable. To use or read the encrypted data, it must be *decrypted*, which requires the use of a secret key. There are two top-level types of encryption: **Symmetric** and **Asymmetric**.
+暗号化は、データを読み取れなくし、使用できなくするためのプロセスです。 暗号化されたデータを使用または読み取るには、*復号化*する必要があります。その場合、秘密鍵を使用する必要があります。 暗号化には、**対称**と**非対称**という最上位レベルの 2 つの種類があります。
 
-Symmetric encryption uses the same key to encrypt and decrypt the data. Consider a desktop password manager application. You enter your passwords and they are encrypted with your own personal key (your key is often derived from your master password). When the data needs to be retrieved, the same key is used and the data is decrypted.
+対称暗号化では、データの暗号化と復号化で同じキーが使用されます。 たとえば、デスクトップのパスワード マネージャー アプリケーションがあるとします。 パスワードを入力すると、そのパスワードは自分の個人キーで暗号化されます (多くの場合、キーはマスター キーワードから派生します)。 データを取得する必要がある場合、同じキーが使用され、データが復号化されます。
 
-Asymmetric encryption uses a public key and private key pair. Either key can encrypt but cannot decrypt it's own encrypted data. To decrypt, you need the paired key. Asymmetric encryption is used for things like TLS (used in https), and data signing.
+非対称暗号化では公開鍵と秘密鍵のペアが使用されます。 どちらのキーでも暗号化できますが、独自の暗号化されたデータを復号化することはできません。 復号化するには、ペアになっているキーが必要です。 非対称暗号化は、TLS (https で使用) やデータの署名などで使用されます。
 
-Both symmetric and asymmetric encryption play a role in properly securing your data. 
+対称と非対称の両方の暗号化は、データを適切に保護する役割を果たします。 
 
-Encryption is typically approached in two ways: encryption at rest and encryption in transit.
+暗号化は通常、保存時の暗号化と転送中の暗号化という 2 つの方法で行われます。
 
-### Encryption at rest
+### <a name="encryption-at-rest"></a>保存時の暗号化
 
-Data at rest is the data that has been stored on a physical medium. This could be data stored on the disk of a server, data stored in a database, or data stored in a storage account. Regardless of the storage mechanism, encryption of data at rest ensures that the stored data is unreadable without the keys and secrets needed to decrypt it. If an attacker was to obtain a hard drive with encrypted data and did not have access to the encryption keys, the attacker would not compromise the data without great difficulty. In such a scenario, an attacker would have to attempt attacks against encrypted data, which are much more complex and resource consuming than accessing unencrypted data on a hard drive.
+保存データは、物理メディアに格納されているデータです。 サーバーのディスク上に格納されているデータ、データベース内に格納されているデータ、ストレージ アカウントに格納されているデータなどがあります。 ストレージ メカニズムに関係なく、保存データの暗号化により、復号化に必要なキーとシークレットなしでは格納されているデータを読み取れなくなります。 攻撃者は、暗号化されたデータが保存されているハード ドライブにアクセスできても、暗号化キーにはアクセスできなかった場合、データを侵害することが難しくなります。 このようなシナリオでは、暗号化されたデータを攻撃する必要があり、ハード ドライブ上の暗号化されていないデータにアクセスするよりもはるかに複雑となり、多くのリソースを費やすことになります。
 
-The actual data that is encrypted could vary in its content, usage, and importance to the organization. This could be financial information critical to the business, intellectual property that has been developed by the business, personal data that the business stores about customers or employees, and even the keys and secrets used for the encryption of the data itself.
+暗号化されている実際のデータは、その内容、使用状況、組織での重要性によって異なる場合があります。 企業に欠かせない財務情報、企業が発展させた知的財産、企業で格納されている顧客や従業員に関する個人データ、さらにはデータ自体の暗号化に使用されるキーやシークレットである場合があります。
 
-![Encryption at rest](../media-draft/encryption-at-rest.png)
+![保存時の暗号化](../media-draft/encryption-at-rest.png)
 
-### Encryption in transit
+### <a name="encryption-in-transit"></a>転送中の暗号化
 
-Data in transit is the data actively moving from one location to another, such as across the internet or through a private network. Secure transfer can be handled by encrypting the data prior to sending it over a network, or setting up a secure channel to transmit unencrypted data between two systems. Encrypting data in transit protects the data from outside observers and provides a mechanism to transmit data while limiting risk of exposure. 
+転送中のデータとは、インターネット上やプライベート ネットワーク経由などで、ある場所から別の場所に頻繁に移動されるデータのことです。 ネットワーク経由で送信する前にデータを暗号化するか、2 つのシステムの間で暗号化されていないデータを転送するためにセキュリティで保護されたチャネルを設定することで、安全に転送することができます。 転送中のデータを暗号化することで、外部のオブザーバーからデータが保護され、露出のリスクを制限しながらデータを転送するためのメカニズムが提供されます。 
 
-![Encryption in transit](../media-draft/encryption-in-transit.png)
+![転送中の暗号化](../media-draft/encryption-in-transit.png)
 
-## Identify and classify data
+## <a name="identify-and-classify-data"></a>データを特定して分類する
 
-Let's revisit the problem Lamna Healthcare is attempting to solve. They have had previous incidents that exposed sensitive data, so there's a gap between what they are encrypting and what they should be encrypting. They need to start by identifying and classifying the types of data they are storing, and align this with the business and regulatory requirements surrounding the storage of data. It's beneficial to classify this data as it relates to the impact of exposure to the organization, its customers, or partners. An example classification could be as follows:
+Lamna Healthcare が解決しようとしている問題を再検討しましょう。 以前、機密データが漏えいするというインシデントが発生したため、暗号化している内容と、暗号化する必要がある内容の間にはギャップがあります。 まず、格納するデータの種類を特定し、分類してから、データのストレージに関するビジネスおよび規制上の要件に合わせて調整する必要があります。 このデータを分類することをお勧めします。このデータは組織、その顧客、あるいはパートナーへの露出の影響に関連するためです。 分類例を以下に示します。
 
-|Data classification|Explanation|
+|データ分類|説明|
 |---|---|
-|Restricted|Data classified as restricted poses significant risk if exposed, altered, or deleted. Strong levels of protection are required for this data. |
-|Private| Data classified as private poses moderate risk if exposed, altered, or deleted. Reasonable levels of protection are required for this data. Data that is not classified as restricted or public will be classified as private.  |
-|Public| Data classified as public poses no risk if exposed, altered, or deleted. No protection is required for this data. |
+|制限付き|制限付きとして分類されたデータには、漏えい、変更、削除された場合に重大なリスクがあります。 このデータには、強力なレベルの保護が必要です。 |
+|プライベート| プライベートとして分類されたデータには、漏えい、変更、削除された場合に中程度のリスクがあります。 このデータには、適切なレベルの保護が必要です。 制限付きまたはパブリックとして分類されていないデータは、プライベートとして分類されます。  |
+|パブリック| パブリックとして分類されたデータには、漏えい、変更、削除された場合のリスクはありません。 このデータには保護は必要ありません。 |
 
-By taking an inventory of the types of data being stored, they can get a better picture of where sensitive data may be stored and where existing encryption may or may not be happening.
+格納されるデータの種類のインベントリを作成することで、機密データが格納される可能性のある場所や、既存の暗号化が発生する、または発生しない可能性のある場所をより明確に把握できます。
 
-A thorough understanding of the regulatory and business requirements that apply to data the organization stores is also important. The regulatory requirements an organization must adhere to will often drive a large part of the data encryption requirements. For Lamna Healthcare, they are storing sensitive data that falls under the Health Insurance Portability and Accountability Act (HIPAA), which contains requirements on how to handle and store patient data. Other industries may fall under different regulatory requirements. A financial institution may store account information that falls within Payment Card Industry (PCI) standards. An organization doing business in the EU may fall under the General Data Protection Regulation (GDPR), which defines the handling of personal data in the EU. Business requirements may also dictate that any data that could put the organization at financial risk containing competitive information needs to be encrypted.
+組織で格納されるデータに適用する規制上およびビジネスの要件を十分理解することも重要です。 組織が満たす必要のある規制上の要件は、多くの場合、データ暗号化の要件の大部分に影響します。 Lamna Healthcare では、HIPAA (医療保険の携行性と責任に関する法律) に従う機密データを格納しています。HIPAA には、患者のデータの処理および格納方法に関する要件が含まれます。 他の業界では異なる規制上の要件に従う場合があります。 金融機関では、PCI (Payment Card Industry) 標準に従う口座情報が格納される場合があります。 EU でビジネスを行う組織では、GDPR (一般データ保護規則) に従う場合があります。GDPR では、EU での個人データの処理が定義されています。 ビジネス要件では、競合情報を含む、組織を財務リスクにさらす可能性のあるデータを暗号化する必要があると示される場合があります。
 
-Once you have the data classified and your requirements defined, you can then take advantage of various tools and technologies to implement and enforce encryption in your architecture.
+データを分類し、要件を定義したら、さまざまなツールやテクノロジを利用して、アーキテクチャで暗号化を実装し、適用することができます。
 
-## Encryption on Azure
+## <a name="encryption-on-azure"></a>Azure での暗号化
 
-Let's take a look at some ways that Azure enables you to encrypt data across services.
+Azure で複数のサービスにまたがるデータを暗号化できる方法をいくつか見ていきましょう。
 
-### Encrypting raw storage
+### <a name="encrypting-raw-storage"></a>ロー ストレージの暗号化
 
-Azure Storage Service Encryption for data at rest helps you protect your data to meet your organizational security and compliance commitments. With this feature, the Azure storage platform automatically encrypts your data before persisting it to Azure Managed Disks, Azure Blob storage, Azure Files, or Azure Queue storage, and decrypts the data before retrieval. The handling of encryption, encryption at rest, decryption, and key management in Storage Service Encryption is transparent to applications using the services.
+保存データ用の Azure Storage Service Encryption は、組織のセキュリティとコンプライアンス コミットメントを満たすためにデータを保護するのに役立ちます。 この機能を使用すると、Azure Storage プラットフォームではデータが Azure Managed Disks、Azure Blob Storage、Azure Files、または Azure Queue Storage に保存される前に自動的に暗号化され、データは取得される前に復号化されます。 Storage Service Encryption での暗号化、保存時の暗号化、キー管理の処理は、サービスを使用するアプリケーションに対して透過的に行われます。
 
-For Lamna Healthcare, this means that whenever they are using services that support storage service encryption, their data is encrypted on the physical medium of storage. In the highly unlikely event that access to the physical disk is obtained, data will be unreadable since it has been encrypted as written to the physical disk.
+Lamna Healthcare の場合、これは、Storage Service Encryption　をサポートするサービスを使用するたびに、ストレージの物理メディアでデータが暗号化されることを意味します。 物理ディスクにアクセスされることがほとんどない場合、物理ディスクに書き込まれたデータは暗号化されているため、読み取ることはできません。
 
-### Encrypting virtual machines
+### <a name="encrypting-virtual-machines"></a>仮想マシンの暗号化
 
-Storage Service encryption provides low-level encryption protection for data written to physical disk, but how do you protect the virtual hard disks (VHD) of virtual machines? If a malicious attacker gained access to your Azure subscription and exfiltrated the VHDs of your virtual machines, how would you ensure they would be unable to access data stored on the VHD?
+Storage Service Encryption では、物理ディスクに書き込まれたデータに対する低レベルの暗号化保護が提供されますが、仮想マシンの仮想ハード ディスク (VHD) はどのように保護するのでしょうか。 悪意のある攻撃者が Azure サブスクリプションアクセスし、仮想マシンの VHD を抜き取った場合、VHD に格納されているデータにアクセスできないようにするにはどうすればよいでしょうか。
 
-Azure Disk Encryption (ADE) is a capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. ADE leverages the industry standard BitLocker feature of Windows and the DM-Crypt feature of Linux to provide volume encryption for the OS and data disks. The solution is integrated with Azure Key Vault to help you control and manage the disk-encryption keys and secrets (and you can use Managed Service Identities for accessing key vault).
+ADE (Azure Disk Encryption) は、Windows と Linux の IaaS 仮想マシン ディスクを暗号化するのに役立つ機能です。 ADE では、OS およびデータ ディスクのボリュームを暗号化するために、Windows の業界標準である BitLocker 機能と Linux の DM-Crypt 機能が使用されます。 このソリューションは Azure Key Vault と統合されており、ディスクの暗号化キーとシークレットを制御および管理するのに役立ちます (また、Key Vault へのアクセスに Managed Service Identities を使用することができます)。
 
- Lamna Healthcare can apply ADE to their virtual machines to be sure any data stored on VHDs is secured to their organizational and compliance requirements. Because boot disks are also encrypted, they can control and audit usage.
+ Lamna Healthcare では ADE を仮想マシンに適用することで、VHD 上に格納されているデータを確実に組織およびコンプライアンスの要件に準拠させることができます。 ブート ディスクも暗号化されるため、使用状況を制御し、監査することができます。
 
-### Encrypting databases
+### <a name="encrypting-databases"></a>データベースの暗号化
 
-Lamna Healthcare has several databases deployed that store data that needs additional protection. They've moved many databases to Azure SQL Database and want to ensure that their data is encrypted within their database. If the data files, log files, or backup files were stolen, they want to ensure they are unreadable without access to the encryption keys.
+Lamna Healthcare では、追加の保護が必要となるデータを格納するいくつかのデータベースがデプロイされています。 Azure SQL Database に多くのデータベースが移行されており、データベース内でデータが確実に暗号化されるようにする必要があります。 データ ファイル、ログ ファイル、またはバックアップ ファイルが盗まれた場合、暗号化キーへのアクセスなしでは読み取れないようにする必要があります。
 
-Transparent data encryption (TDE) helps protect Azure SQL Database and Azure Data Warehouse against the threat of malicious activity. It performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. By default, TDE is enabled for all newly deployed Azure SQL Databases.
+透過的なデータ暗号化 (TDE) は、悪意のあるアクティビティの脅威から Azure SQL Database と Azure Data Warehouse を保護するのに役立ちます。 アプリケーションに変更を加えることなく、データベース、関連付けられているバックアップ、保存されているトランザクション ログ ファイルがリアルタイムに暗号化および復号化されます。 既定では、新しくデプロイされるすべての Azure SQL Database で TDE が有効になります。
 
-TDE encrypts the storage of an entire database by using a symmetric key called the database encryption key. By default Azure provides a unique encryption key per logical SQL Server and handles all the details. Bring-your-own-key is also supported with keys stored in Azure Key Vault.
+TDE では、データベース暗号化キーと呼ばれる対称キーを使用して、データベース全体のストレージが暗号化されます。 既定では、Azure で論理 SQL Server ごとに一意の暗号化キーが提供され、すべての詳細が処理されます。 Azure Key Vault に格納されているキーと共に、Bring Your Own Key もサポートされます。
 
-Since TDE is enabled by default, Lamna Healthcare can be confident they have the proper protections in place for data stored in their databases.
+TDE は既定で有効になるため、Lamna Healthcare では、データベース内に格納されているデータに適切な保護を確実に適用することができます。
 
-### Encrypting secrets
+### <a name="encrypting-secrets"></a>シークレットの暗号化
 
-We've seen that the encryption services all use keys to encrypt and decrypt data, so how do we ensure that the keys themselves are secure? Lamna Healthcare may also have passwords, connection strings, or other sensitive pieces of information that they need to securely store.
+暗号化サービスではすべてキーを使用してデータの暗号化と復号化が行われることがわかりましたが、キー自体を安全なものにするにはどうすればよいのでしょうか。 Lamna Healthcare には、パスワード、接続文字列、または安全に格納する必要があるその他の機密情報がいくつか存在する可能性もあります。
 
-Azure Key Vault is a cloud service that works as a secure secrets store. Key Vault allows you to create multiple secure containers, called vaults. These vaults are backed by hardware security modules (HSMs). Vaults help reduce the chances of accidental loss of security information by centralizing the storage of application secrets. Key Vaults also control and log the access to anything stored in them. Azure Key Vault can handle requesting and renewing Transport Layer Security (TLS) certificates, providing the features required for a robust certificate lifecycle management solution. Key Vault is designed to support any type of secret. These secrets could be passwords, database credentials, API keys and, certificates.
+Azure Key Vault は、セキュリティで保護されたシークレット ストアとして機能するクラウド サービスです。 Key Vault を使用すると、コンテナーと呼ばれるセキュリティで保護されたコンテナーを複数作成できます。 これらのコンテナーは、ハードウェア セキュリティ モジュール (HSM) によってサポートされています。 コンテナーでは、アプリケーション シークレットを一元的に保管することで、セキュリティ情報が過って失われる可能性が低くなります。 また、Key Vault では、その中に格納されているすべての情報へのアクセスを制御し、記録します。 Azure Key Vault では、トランスポート層セキュリティ (TLS) 証明書の要求と更新を処理でき、堅牢な証明書ライフサイクル管理ソリューションに必要な機能が提供されます。 Key vault は、あらゆる種類のシークレットをサポートするよう設計されています。 これらのシークレットには、パスワード、データベース資格情報、API キー、証明書などがあります。
 
-Because Azure AD identities can be granted access to use Azure Key Vault secrets, applications with MSI enabled can automatically and seamlessly acquire the secrets they need.
+Azure AD の ID には Azure Key Vault のシークレットを使用するためのアクセス許可が付与されているため、MSI が有効なアプリケーションでは必要なシークレットを自動的にシームレスに取得することができます。
 
-Lamna Healthcare can use Key Vault for the storage of all their sensitive application information, including the TLS certificates they use to secure communication between systems.
+Lamna Healthcare では、システム間の通信をセキュリティで保護するために使用する TLS 証明書を含む、機密性の高いすべてのアプリケーション情報のストレージに Key Vault を使用することができます。
 
-## Encryption at Lamna Healthcare
+## <a name="encryption-at-lamna-healthcare"></a>Lamna Healthcare での暗号化
 
-Lamna Healthcare has gone through the identification and classification process for all the data they are storing. They've aligned these classifications with the regulatory and business requirements, and realized they have far more data they have to encrypt. They have encrypted all virtual machines that are storing sensitive data, and are encrypting all sensitive patient information they are storing on blob storage. TDE is enabled on all of their databases, so their relational databases meet their encryption requirements regardless of classification. They have also worked across the organization use Key Vault to store all certificates and credential information that applications may need for operation.
+Lamna Healthcare では、格納するすべてのデータに関する識別および分類プロセスが完了しました。 これらの分類を規制上およびビジネスの要件に合わせて調整し、暗号化を必要とするはるかに多くのデータが存在することを認識しました。 機密データを格納する仮想マシンをすべて暗号化しました。BLOB ストレージ上に格納する患者の機密情報はすべて暗号化しています。 すべてのデータベースに対して TDE が有効になっているため、リレーショナル データベースでは、分類に関係なく、暗号化要件が満たされています。 組織全体で Key Vault を使用して、アプリケーションを操作するために必要になる可能性のあるすべての証明書および資格情報を格納するようにしました。
 
-## Summary
+## <a name="summary"></a>まとめ
 
-Encryption is often the last layer of defense from attackers, and is an important piece of a layered approach to securing your architecture. Azure provides built in capabilities and services to encrypt and protect data from unintended exposure. Protection of customer data stored within Azure Services is of paramount importance to Microsoft and should be included in any architecture design. Foundational services such as Azure Storage, Azure Virtual Machines, Azure SQL Database, and Azure Key Vault can help secure your environment through encryption.
+暗号化は、多くの場合、攻撃者からの防御の最後の層であり、アーキテクチャをセキュリティで保護するための階層型アプローチの重要な部分です。 Azure では、データを暗号化し、意図しない露出からデータを保護するための組み込みの機能とサービスが提供されます。 Azure サービス内に格納される顧客データの保護は、Microsoft にとってきわめて重要であり、アーキテクチャの設計に組み込む必要があります。 Azure Storage、Azure Virtual Machines、Azure SQL Database、Azure Key Vault などの基礎となるサービスは、暗号化を使用して環境をセキュリティで保護するのに役立ちます。
