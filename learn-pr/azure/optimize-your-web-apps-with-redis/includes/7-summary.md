@@ -1,4 +1,0 @@
-<span data-ttu-id="4cf99-101">Redis Cache により、データベースに大きく依存するシステムのパフォーマンスやスケーラビリティを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="4cf99-101">Redis cache can improve the performance and scalability of systems that rely heavily on databases.</span></span> <span data-ttu-id="4cf99-102">アプリケーションに近い場所にある高速ストレージに、アクセス頻度が高いデータを一時的にコピーすることでパフォーマンスが向上します。</span><span class="sxs-lookup"><span data-stu-id="4cf99-102">Performance is improved by temporarily copying frequently accessed data to fast storage located close to the application.</span></span> <span data-ttu-id="4cf99-103">Redis Cache を使用すると、この高速ストレージは、データベースによってディスクから読み込まれずに、Redis Cache を利用したメモリ内に配置されます。</span><span class="sxs-lookup"><span data-stu-id="4cf99-103">With Redis cache, this fast storage is located in-memory with Redis cache instead of being loaded from disk by a database.</span></span>
-
-<!-- Cleanup sandbox -->
-[!include[](../../../includes/azure-sandbox-cleanup.md)]
