@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.provision-azure-sql-db.2-plan-your-database
+title: <span data-ttu-id="8e40d-101">Azure SQL Database を計画する</span><span class="sxs-lookup"><span data-stu-id="8e40d-101">Plan your Azure SQL database</span></span>
+metadata:
+  title: <span data-ttu-id="8e40d-102">Azure SQL Database を計画する</span><span class="sxs-lookup"><span data-stu-id="8e40d-102">Plan your Azure SQL database</span></span>
+  description: <span data-ttu-id="8e40d-103">Azure SQL Database を計画する</span><span class="sxs-lookup"><span data-stu-id="8e40d-103">Plan your Azure SQL database</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e49e4639feaa403c0eaa0dfb0ff70ab1cd29145d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347319"
+durationInMinutes: 7
+content: '[!include[](includes/2-plan-your-database.md)]'

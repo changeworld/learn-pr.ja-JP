@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.9-install-angularjs
+title: <span data-ttu-id="2cd17-101">AngularJS をインストールする</span><span class="sxs-lookup"><span data-stu-id="2cd17-101">Install AngularJS</span></span>
+metadata:
+  title: <span data-ttu-id="2cd17-102">AngularJS をインストールする</span><span class="sxs-lookup"><span data-stu-id="2cd17-102">Install AngularJS</span></span>
+  description: <span data-ttu-id="2cd17-103">AngularJS をインストールする</span><span class="sxs-lookup"><span data-stu-id="2cd17-103">Install AngularJS</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 677963c42329e847c6b1bf2692f8d0beda237e6a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349143"
+durationInMinutes: 5
+content: '[!include[](includes/9-install-angularjs.md)]'

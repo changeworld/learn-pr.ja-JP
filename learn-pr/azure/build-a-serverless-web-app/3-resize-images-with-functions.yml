@@ -1,0 +1,22 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.3-resize-images-with-functions
+title: <span data-ttu-id="ecfaf-101">Azure Functions を使用して画像のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="ecfaf-101">Resize images with Azure Functions</span></span>
+metadata:
+  title: <span data-ttu-id="ecfaf-102">Azure Functions を使用して画像のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="ecfaf-102">Resize images with Azure Functions</span></span>
+  description: <span data-ttu-id="ecfaf-103">Azure Functions を使用して画像のサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="ecfaf-103">Resize images with Azure Functions</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: 12800959e99d133bc8e0df538dab90a3cafaaee2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346413"
+durationInMinutes: 11
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/3-resize-images-with-functions.md)]'

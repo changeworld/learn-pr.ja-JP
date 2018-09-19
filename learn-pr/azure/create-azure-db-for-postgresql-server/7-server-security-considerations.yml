@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.server-security-considerations
+title: <span data-ttu-id="4ea6d-101">サーバーのセキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="4ea6d-101">Server security considerations</span></span>
+metadata:
+  title: <span data-ttu-id="4ea6d-102">サーバーのセキュリティに関する考慮事項</span><span class="sxs-lookup"><span data-stu-id="4ea6d-102">Server security considerations</span></span>
+  description: <span data-ttu-id="4ea6d-103">Azure Database for PostgreSQL サーバーとデータベースへのアクセスを制限するには、多くのオプションがあります。</span><span class="sxs-lookup"><span data-stu-id="4ea6d-103">You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases.</span></span> <span data-ttu-id="4ea6d-104">Azure Database for PostgreSQL 接続のセキュリティ設定を構成する方法を確認しましょう。</span><span class="sxs-lookup"><span data-stu-id="4ea6d-104">See how to configure the Azure Database for PostgreSQL connection security settings.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 75c4edccc24756954e6c7a7338b2aeae63633b55
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347093"
+durationInMinutes: 7
+content: '[!include[](includes/7-server-security-considerations.md)]'

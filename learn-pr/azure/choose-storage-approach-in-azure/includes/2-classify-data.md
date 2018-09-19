@@ -1,0 +1,72 @@
+<span data-ttu-id="c7ff4-101">オンライン小売り業では、さまざまな種類のデータがあります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-101">An online retail business has different types of data.</span></span> <span data-ttu-id="c7ff4-102">データの種類ごとに、メリットのあるストレージ ソリューションが異なる場合があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-102">Each type of data may benefit from a different storage solution.</span></span> 
+
+<span data-ttu-id="c7ff4-103">アプリケーション データは、構造化、半構造化、および非構造化の 3 つの方法のいずれかに分類できます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-103">Application data can be classified in one of three ways: structured, semi-structured, and unstructured.</span></span> <span data-ttu-id="c7ff4-104">ここでは、適切なストレージ ソリューションを選択できるように、データを分類する方法について学習します。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-104">Here, you'll learn how to classify your data so that you can choose the appropriate storage solution.</span></span>
+
+#### <a name="approaches-to-storing-data-in-the-cloud"></a><span data-ttu-id="c7ff4-105">クラウドにデータを格納する方法</span><span class="sxs-lookup"><span data-stu-id="c7ff4-105">Approaches to storing data in the cloud</span></span>
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEuY]
+
+## <a name="structured-data"></a><span data-ttu-id="c7ff4-106">構造化データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-106">Structured data</span></span>
+
+<span data-ttu-id="c7ff4-107">構造化データとはスキーマに準拠したデータであり、すべてのデータが同じフィールドとプロパティを持っています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-107">Structured data is data that adheres to a schema, so all of the data has the same fields or properties.</span></span> <span data-ttu-id="c7ff4-108">構造化データは、行と列から成るデータベース テーブルに格納できます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-108">Structured data can be stored in a database table with rows and columns.</span></span> <span data-ttu-id="c7ff4-109">構造化データでは、キーを利用して、あるテーブル内の 1 つの行が、別のテーブルの別の行のデータに関連付けられる方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-109">Structured data relies on keys to indicate how one row in a table relates to data in another row of another table.</span></span> <span data-ttu-id="c7ff4-110">データのスキーマでは、データのテーブルとテーブル内のフィールドおよびこれら 2 つの間の明確なリレーションシップが定義されているので、構造化データはリレーショナル データとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-110">Structured data is also referred to as relational data, as the data's schema defines the table of data, the fields in the table, and the clear relationship between the two.</span></span>
+
+<span data-ttu-id="c7ff4-111">構造化データは、入力、クエリ、分析が簡単であるという点で単純です。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-111">Structured data is straightforward in that it's easy to enter, query, and analyze.</span></span> <span data-ttu-id="c7ff4-112">すべてのデータが同じ形式に従います。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-112">All of the data follows the same format.</span></span>
+
+<span data-ttu-id="c7ff4-113">構造化データには次のような例があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-113">Examples of structured data include:</span></span>
+
+- <span data-ttu-id="c7ff4-114">センサー データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-114">Sensor data</span></span>
+- <span data-ttu-id="c7ff4-115">財務データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-115">Financial data</span></span>
+
+## <a name="semi-structured-data"></a><span data-ttu-id="c7ff4-116">半構造化データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-116">Semi-structured data</span></span>
+
+<span data-ttu-id="c7ff4-117">半構造化データは、構造化データほど整理されておらず、フィールドがテーブル、行、列にぴったり当てはまらないので、リレーショナル形式では格納されません。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-117">Semi-structured data is less organized than structured data, and is not stored in a relational format, as the fields do not neatly fit into tables, rows, and columns.</span></span> <span data-ttu-id="c7ff4-118">半構造化データには、データの編成と階層を明らかにするタグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-118">Semi-structured data contains tags that make the organization and hierarchy of the data apparent.</span></span> <span data-ttu-id="c7ff4-119">半構造化データは、非リレーショナル データまたは NoSQL データとも呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-119">Semi-structured data is also referred to as non-relational or NoSQL data.</span></span>
+
+#### <a name="what-is-nosql"></a><span data-ttu-id="c7ff4-120">NoSQL とは</span><span class="sxs-lookup"><span data-stu-id="c7ff4-120">What is NoSQL?</span></span>
+
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE2yEvd]
+
+<span data-ttu-id="c7ff4-121">半構造化データには次のような例があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-121">Examples of semi-structured data include:</span></span>
+
+- <span data-ttu-id="c7ff4-122">キー/値のペア</span><span class="sxs-lookup"><span data-stu-id="c7ff4-122">Key / Value pairs</span></span>
+- <span data-ttu-id="c7ff4-123">グラフ データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-123">Graph data</span></span>
+- <span data-ttu-id="c7ff4-124">JSON ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-124">JSON files</span></span>
+- <span data-ttu-id="c7ff4-125">XML ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-125">XML files</span></span>
+
+## <a name="unstructured-data"></a><span data-ttu-id="c7ff4-126">非構造化データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-126">Unstructured data</span></span>
+
+<span data-ttu-id="c7ff4-127">非構造化データの編成は、一般にあいまいです。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-127">The organization of unstructured data is generally ambiguous.</span></span> <span data-ttu-id="c7ff4-128">多くの場合、非構造化データは写真やビデオのようにファイルで提供されます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-128">Unstructured data is often delivered in files, such as photos or videos.</span></span> <span data-ttu-id="c7ff4-129">ビデオ ファイル自体は全体的な構造を持ち、半構造化のメタデータを含む場合がありますが、ビデオ自体を構成するデータは構造化されていません。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-129">The video file itself may have an overall structure and come with semi-structured metadata, but the data that comprises the video itself is unstructured.</span></span> <span data-ttu-id="c7ff4-130">写真やビデオおよび他の類似ファイルは非構造化データとして分類されます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-130">Therefore, photos, videos, and other similar files are classified as unstructured data.</span></span>
+
+<span data-ttu-id="c7ff4-131">非構造化データには次のような例があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-131">Examples of unstructured data include:</span></span>
+
+- <span data-ttu-id="c7ff4-132">写真、ビデオ、オーディオ ファイルなどのメディア ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-132">Media files, such as photos, videos, and audio files</span></span>
+- <span data-ttu-id="c7ff4-133">Word 文書などの Office ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-133">Office files, such as Word documents</span></span>
+- <span data-ttu-id="c7ff4-134">テキスト ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-134">Text files</span></span>
+- <span data-ttu-id="c7ff4-135">ログ ファイル</span><span class="sxs-lookup"><span data-stu-id="c7ff4-135">Log files</span></span>
+
+<span data-ttu-id="c7ff4-136">データの種類ごとの違いがわかったので、オンライン小売り業で使用されているデータ セットを調べて、分類してみましょう。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-136">Now that you know the differences between each kind of data, let's look at the data sets used in an online retail business, and classify them.</span></span>
+
+## <a name="product-catalog-data"></a><span data-ttu-id="c7ff4-137">製品カタログ データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-137">Product catalog data</span></span>
+
+<span data-ttu-id="c7ff4-138">オンライン小売り業の製品カタログ データは、各製品が製品 SKU、説明、数量、価格、サイズ オプション、色オプション、写真、場合によってはビデオを持っているため、本質的に非常に構造化されています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-138">Product catalog data for an online retail business is fairly structured in nature, as each product has a product SKU, a description, a quantity, a price, size options, color options, a photo, and possibly a video.</span></span> <span data-ttu-id="c7ff4-139">そのため、このデータは、すべてが同じ構造を持ち、最初はリレーショナルであるように見えます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-139">So, this data appears relational to start with, as it all has the same structure.</span></span> <span data-ttu-id="c7ff4-140">しかし、時間が経過して新しい製品や別の種類の製品が加わると、異なるフィールドの追加が必要になることがあります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-140">However, as you introduce new products or different kinds of products, you may want to add different fields as time goes on.</span></span> <span data-ttu-id="c7ff4-141">たとえば、あなたのお店で新しく取り扱うテニス シューズは Bluetooth に対応しており、シューズからユーザーのスマートフォンのフィットネス アプリにセンサー データを中継できます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-141">For example, new tennis shoes you're carrying are Bluetooth-enabled, to relay sensor data from the shoe to a fitness app on the user’s phone.</span></span> <span data-ttu-id="c7ff4-142">このトレンドは成長すると思われるため、あなたは将来的に顧客が "Bluetooth 対応" でシューズを検索できるようにしたいと考えています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-142">This appears to be a growing trend, and you want to enable customers to filter on "Bluetooth-enabled" shoes in the future.</span></span> <span data-ttu-id="c7ff4-143">既存のシューズ データすべてを更新して Bluetooth 対応プロパティを追加するようなことはしたくないので、新しいシューズにだけプロパティを追加するだけで済ませたいと考えています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-143">You don't want to go back and update all your existing shoe data with a Bluetooth-enabled property, you simply want to add it to new shoes.</span></span>
+
+<span data-ttu-id="c7ff4-144">Bluetooth 対応プロパティを追加すると、スキーマに相違がもたらされるので、シューズ データはもはや同種ではなくなります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-144">With the addition of the Bluetooth-enabled property, your shoe data is no longer homogenous, as you've introduced differences in the schema.</span></span> <span data-ttu-id="c7ff4-145">発生する例外はこれだけであると考えられる場合は、構造化されたリレーショナル編成を維持するために、すべての製品に "Bluetooth 対応" フィールドが含まれるように、既存のデータを正規化することができます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-145">If this is the only exception you expect to encounter, you can go back and normalize the existing data so that all products included a "Bluetooth-enabled" field to maintain a structured, relational organization.</span></span> <span data-ttu-id="c7ff4-146">ただし、これが将来的にサポートすることを想定している多くの特別なフィールドの 1 つに過ぎない場合は、データの分類は半構造化にします。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-146">However, if this is just one of many specialty fields that you envision supporting in the future, then the classification of the data is semi-structured.</span></span> <span data-ttu-id="c7ff4-147">データはタグによって編成されますが、カタログ内の各商品には固有のフィールドを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-147">The data is organized by tags, but each product in the catalog can contain unique fields.</span></span>
+
+<span data-ttu-id="c7ff4-148">データの分類: **半構造化**</span><span class="sxs-lookup"><span data-stu-id="c7ff4-148">Data classification: **Semi-structured**</span></span>
+
+## <a name="photos-and-videos"></a><span data-ttu-id="c7ff4-149">写真とビデオ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-149">Photos and videos</span></span>
+
+<span data-ttu-id="c7ff4-150">製品ページに表示される写真やビデオは、非構造化データです。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-150">The photos and videos displayed on product pages are unstructured data.</span></span> <span data-ttu-id="c7ff4-151">メディア ファイルはメタ データを含む場合がありますが、メディア ファイルの本体は構造化されていません。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-151">Although the media file may contain metadata, the body of the media file is unstructured.</span></span>
+
+<span data-ttu-id="c7ff4-152">データの分類: **非構造化**</span><span class="sxs-lookup"><span data-stu-id="c7ff4-152">Data classification: **Unstructured**</span></span>
+
+## <a name="business-data"></a><span data-ttu-id="c7ff4-153">ビジネス データ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-153">Business data</span></span>
+
+<span data-ttu-id="c7ff4-154">ビジネス アナリストは、ビジネス インテリジェンスを実装して、在庫パイプライン評価と売上データ レビューを実行しようと考えています。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-154">Business analysts want to implement business intelligence to perform inventory pipeline evaluations and sales data reviews.</span></span> <span data-ttu-id="c7ff4-155">これらの操作を実行するには、複数の月のデータを集計してから、クエリを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-155">In order to perform these operations, data from multiple months needs to be aggregated together, and then queried.</span></span> <span data-ttu-id="c7ff4-156">同様のデータを集計する必要があるため、ある月を次の月と比較できるようにこのデータを構造化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-156">Because of the need to aggregate similar data, this data must be structured, so that one month can be compared against the next.</span></span>
+
+<span data-ttu-id="c7ff4-157">データの分類: **構造化**</span><span class="sxs-lookup"><span data-stu-id="c7ff4-157">Data classification: **Structured**</span></span>
+
+## <a name="summary"></a><span data-ttu-id="c7ff4-158">まとめ</span><span class="sxs-lookup"><span data-stu-id="c7ff4-158">Summary</span></span>
+
+<span data-ttu-id="c7ff4-159">データは、構造化、半構造化、および非構造化の 3 つの方法のいずれかに分類できます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-159">Data may be classified in one of three ways: structured, semi-structured, and unstructured.</span></span> <span data-ttu-id="c7ff4-160">独自のデータを分類できるように違いを理解することで、適切なストレージ ソリューションの選択に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-160">Understanding the differences so that you can classify your own data will help you choose the correct storage solution.</span></span> 
+
+<span data-ttu-id="c7ff4-161">要約すると、構造化データは、テーブルの行と列にきちんと収まるように編成されたデータです。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-161">To recap, structured data is organized data that neatly fits into rows and columns in tables.</span></span> <span data-ttu-id="c7ff4-162">半構造化データは、やはり編成されており、明確なプロパティと値を持ちますが、データに多様性があります。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-162">Semi-structured data is still organized and has clear properties and values, but there's variety to the data.</span></span> <span data-ttu-id="c7ff4-163">非構造化データは、テーブルにきちんと収まらず、スキーマも備えていません。</span><span class="sxs-lookup"><span data-stu-id="c7ff4-163">Unstructured data doesn't fit neatly into tables, nor does it have a schema.</span></span>

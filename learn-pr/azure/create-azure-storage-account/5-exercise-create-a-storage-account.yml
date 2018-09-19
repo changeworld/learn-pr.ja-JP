@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-storage-account.5-exercise-create-a-storage-account
+title: <span data-ttu-id="57b68-101">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="57b68-101">Create a storage account using the Azure portal</span></span>
+metadata:
+  title: <span data-ttu-id="57b68-102">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="57b68-102">Create a storage account using the Azure portal</span></span>
+  description: <span data-ttu-id="57b68-103">Azure portal を使用してストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="57b68-103">Create a storage account using the Azure portal</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d9668ff449ad2ed619121afac59c102a2935ad5d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350831"
+azureSandbox: true
+durationInMinutes: 7
+content: '[!include[](includes/5-exercise-create-a-storage-account.md)]'

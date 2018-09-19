@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.3-exercise-implement-a-service-bus-topic-and-queue
+title: <span data-ttu-id="a8640-101">演習 - Service Bus のトピックとキューを実装する</span><span class="sxs-lookup"><span data-stu-id="a8640-101">Exercise - Implement a Service Bus topic and queue</span></span>
+metadata:
+  title: <span data-ttu-id="a8640-102">演習 - Service Bus のトピックとキューを実装する</span><span class="sxs-lookup"><span data-stu-id="a8640-102">Exercise - Implement a Service Bus topic and queue</span></span>
+  description: <span data-ttu-id="a8640-103">演習 - Service Bus のトピックとキューを実装する</span><span class="sxs-lookup"><span data-stu-id="a8640-103">Exercise - Implement a Service Bus topic and queue</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5339866c5234548d9f82b8a05efcf3f56ef09acb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348119"
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/3-exercise-implement-a-service-bus-topic-and-queue.md)]'

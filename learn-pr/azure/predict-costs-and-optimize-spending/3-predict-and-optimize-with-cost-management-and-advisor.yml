@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.3-predict-and-optimize-with-cost-management-and-advisor
+title: <span data-ttu-id="9e8d5-101">Cost Management と Azure Advisor で予測および最適化する</span><span class="sxs-lookup"><span data-stu-id="9e8d5-101">Predict and optimize with Cost Management and Azure Advisor</span></span>
+metadata:
+  title: <span data-ttu-id="9e8d5-102">Cost Management と Azure Advisor で予測および最適化する</span><span class="sxs-lookup"><span data-stu-id="9e8d5-102">Predict and optimize with Cost Management and Azure Advisor</span></span>
+  description: <span data-ttu-id="9e8d5-103">このユニットでは、Cost Management と Azure Advisor を使用して予測および最適化する方法を説明します</span><span class="sxs-lookup"><span data-stu-id="9e8d5-103">In this unit, we'll discuss how to predict and optimize with Cost Management and Azure Advisor</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 48ccc42636b10326007e475e7d37e24aefc58f5e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347052"
+durationInMinutes: 15
+content: >
+  [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
+quiz:
+  title: <span data-ttu-id="9e8d5-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="9e8d5-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="9e8d5-105">正誤問題: Azure Advisor では、コストについての推奨事項だけが提供されます。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-105">True or false: Azure Advisor provides recommendations on cost only.</span></span>'
+    choices:
+    - content: <span data-ttu-id="9e8d5-106">○</span><span class="sxs-lookup"><span data-stu-id="9e8d5-106">True</span></span>
+      incorrectExplanation: <span data-ttu-id="9e8d5-107">Azure Advisor では、高可用性、セキュリティ、パフォーマンス、コストについての推奨事項が示されます。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-107">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="9e8d5-108">False</span><span class="sxs-lookup"><span data-stu-id="9e8d5-108">False</span></span>
+      correctExplanation: <span data-ttu-id="9e8d5-109">Azure Advisor では、高可用性、セキュリティ、パフォーマンス、コストについての推奨事項が示されます。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-109">Azure Advisor provides recommendations on high availability, security, performance, and cost.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="9e8d5-110">Azure Cost Management では、_________ことができます。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-110">Azure Cost Management allows you to _________.</span></span>
+    choices:
+    - content: <span data-ttu-id="9e8d5-111">料金が支払われているサービスのこれまでの内訳を確認する</span><span class="sxs-lookup"><span data-stu-id="9e8d5-111">See historical breakdowns of what services you are spending your money on.</span></span>
+      correctExplanation: <span data-ttu-id="9e8d5-112">これまでに支払われた料金の明細を分析し、設定されている予算との差異を追跡する</span><span class="sxs-lookup"><span data-stu-id="9e8d5-112">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="9e8d5-113">変更を行った場合のサービスのコストの見積もりを確認する</span><span class="sxs-lookup"><span data-stu-id="9e8d5-113">See estimates of what your services might cost if you make a change.</span></span>
+      incorrectExplanation: <span data-ttu-id="9e8d5-114">コストを見積もるには、Azure 料金計算ツールを使用します。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-114">To see cost estimates, you use the Azure pricing calculator.</span></span> <span data-ttu-id="9e8d5-115">Cost Management により、これまでに支払われた料金の明細が分析され、設定されている予算との差異が追跡されます。</span><span class="sxs-lookup"><span data-stu-id="9e8d5-115">Cost Management analyzes where you are historically spending your money and can track it against budgets you have set.</span></span>
+      isCorrect: false

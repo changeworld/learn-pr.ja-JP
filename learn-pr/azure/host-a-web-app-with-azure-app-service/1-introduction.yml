@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.host-a-web-application-with-azure-web-apps.1-introduction
+title: <span data-ttu-id="d795f-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="d795f-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="d795f-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="d795f-102">Introduction</span></span>
+  description: <span data-ttu-id="d795f-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="d795f-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d098ad85124dee31a221ef840e0e0c3367435bb5
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348687"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

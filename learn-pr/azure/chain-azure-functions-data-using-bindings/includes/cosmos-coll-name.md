@@ -1,0 +1,1 @@
+<span data-ttu-id="21d60-101">**ブックマーク**</span><span class="sxs-lookup"><span data-stu-id="21d60-101">**Bookmarks**</span></span>

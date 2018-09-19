@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.2-maximize-efficiency-of-cloud-spend
+title: <span data-ttu-id="fa895-101">クラウド支出の効率を最大化する</span><span class="sxs-lookup"><span data-stu-id="fa895-101">Maximize efficiency of cloud spend</span></span>
+metadata:
+  title: <span data-ttu-id="fa895-102">クラウド支出の効率を最大化する</span><span class="sxs-lookup"><span data-stu-id="fa895-102">Maximize efficiency of cloud spend</span></span>
+  description: <span data-ttu-id="fa895-103">このユニットでは、ご利用のクラウド支出の効率を最大化する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="fa895-103">In this unit, we'll discuss how to maximize the efficiency of your cloud expenditures</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea453333ad187c43baaf352c74e346a77405d8b4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349264"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-maximize-efficiency-of-cloud-spend.md)]
+quiz:
+  title: <span data-ttu-id="fa895-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="fa895-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="fa895-105">次のうち、予約インスタンスに最適な候補はどれですか?</span><span class="sxs-lookup"><span data-stu-id="fa895-105">Which of the following is the best candidate for a reserved instance?</span></span>
+    choices:
+    - content: <span data-ttu-id="fa895-106">Azure App Service にデプロイされた Web アプリケーション。</span><span class="sxs-lookup"><span data-stu-id="fa895-106">A web application deployed on Azure App Service.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fa895-107">Azure App Service は PaaS サービスであり、予約インスタンスは仮想マシンにのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="fa895-107">Azure App Service is a PaaS service, reserved instances can only be used for virtual machines.</span></span>
+    - content: <span data-ttu-id="fa895-108">使用されていないときに業務時間外に自動的にシャットダウンされる非運用仮想マシン。</span><span class="sxs-lookup"><span data-stu-id="fa895-108">A non-production virtual machine that is automatically shut down in off-hours when not in use.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fa895-109">この仮想マシンは多くの時間は実行されないため、インスタンスの予約を完全には有効活用せず、予約インスタンスに適した候補ではありません。</span><span class="sxs-lookup"><span data-stu-id="fa895-109">Since this virtual machine will not be running the majority of the time it will not fully utilize the instance reservation, and is not a good candidate for a reserved instance.</span></span>
+    - content: <span data-ttu-id="fa895-110">Azure SQL Database インスタンス。</span><span class="sxs-lookup"><span data-stu-id="fa895-110">An Azure SQL database instance.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fa895-111">Azure SQL Database は PaaS サービスです。予約インスタンスは仮想マシンにのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="fa895-111">Azure SQL database is a PaaS service, reserved instances can only be used for virtual machines.</span></span>
+    - content: <span data-ttu-id="fa895-112">グローバル企業向け HR システム用のデータベース サーバー。</span><span class="sxs-lookup"><span data-stu-id="fa895-112">A database server for an HR system for a global business.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fa895-113">このシステムは、その重要性とグローバルな性質のため、ほとんどの時間は実行している可能性があり、予約インスタンスに適した候補です。</span><span class="sxs-lookup"><span data-stu-id="fa895-113">Because of the criticality and global nature of this system, it is likely that it would be running the majority of the time, making it a great candidate for a reserved instance.</span></span>
+  - content: <span data-ttu-id="fa895-114">VM に関連するコンピューティング コストが発生しなくなる場合</span><span class="sxs-lookup"><span data-stu-id="fa895-114">When do compute costs associated with a VM stop accruing?</span></span>
+    choices:
+    - content: <span data-ttu-id="fa895-115">OS 内から仮想マシンをシャットダウンした場合。</span><span class="sxs-lookup"><span data-stu-id="fa895-115">When you shut down the virtual machine from inside the OS.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fa895-116">仮想マシンの OS をシャットダウンした場合でも、それは Azure プラットフォーム上でまだ割り当てられており、コンピューティング コストが発生し続けます。</span><span class="sxs-lookup"><span data-stu-id="fa895-116">If you shut down the OS of the virtual machine, it is still allocated on the Azure platform and will continue to accrue compute costs.</span></span>
+    - content: <span data-ttu-id="fa895-117">Azure portal で [停止] ボタンをクリックした場合。</span><span class="sxs-lookup"><span data-stu-id="fa895-117">When you click the Stop button in the Azure portal.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fa895-118">[停止] ボタンをクリックすると仮想マシンは Azure プラットフォームから割り当て解除され、コンピューティング コストはかからなくなります。</span><span class="sxs-lookup"><span data-stu-id="fa895-118">Clicking the Stop button will deallocate the virtual machine from the Azure platform and it will no longer accrue compute costs.</span></span>

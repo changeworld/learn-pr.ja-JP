@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.7-summary
+metadata:
+  title: <span data-ttu-id="cda02-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-101">Summary</span></span>
+  description: <span data-ttu-id="cda02-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-102">Summary</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348888"
+title: <span data-ttu-id="cda02-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-103">Summary</span></span>
+durationInMinutes: 3
+content: '[!include[](includes/7-summary.md)]'

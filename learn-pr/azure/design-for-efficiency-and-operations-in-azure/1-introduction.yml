@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.1-introduction
+title: <span data-ttu-id="20717-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="20717-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="20717-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="20717-102">Introduction</span></span>
+  description: <span data-ttu-id="20717-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="20717-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f4248bb39aca0422c823cdfdce8870077cc22cca
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349199"
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-storage-account.1-introduction
+title: <span data-ttu-id="b4797-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="b4797-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="b4797-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="b4797-102">Introduction</span></span>
+  description: <span data-ttu-id="b4797-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="b4797-103">Introduction</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6915481f3b4d1032ec54ec53641c3420b2074c85
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348471"
+durationInMinutes: 1
+content: '[!include[](includes/1-introduction.md)]'

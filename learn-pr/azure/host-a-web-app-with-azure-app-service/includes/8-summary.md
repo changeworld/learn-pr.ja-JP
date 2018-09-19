@@ -1,0 +1,5 @@
+<span data-ttu-id="ce64f-101">Azure App Service にフル機能の Web アプリケーションを問題なく作成してデプロイしました。</span><span class="sxs-lookup"><span data-stu-id="ce64f-101">You've successfully created and deployed a full-featured web application to Azure App Service.</span></span>
+
+<span data-ttu-id="ce64f-102">App Service を使用すると、従来のホスティング オプションと比べて、Web アプリの管理と制御が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="ce64f-102">App Service simplifies managing and controlling your web app in comparison to traditional hosting options.</span></span> <span data-ttu-id="ce64f-103">App Service により、Web アプリの実行と管理に費やす時間と労力が減り、自動スケーリングや Git 統合などの高度なクラウド機能が提供されます。</span><span class="sxs-lookup"><span data-stu-id="ce64f-103">App Service can help you reduce the time and effort spent running and managing your web app, and provide advanced cloud features such as auto scaling and Git integration.</span></span>
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

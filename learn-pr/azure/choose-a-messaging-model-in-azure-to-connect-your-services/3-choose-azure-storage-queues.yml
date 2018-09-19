@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-messaging-model.3-choose-azure-storage-queues
+title: <span data-ttu-id="87a57-101">キューを使用するメッセージベースの配信を選択する</span><span class="sxs-lookup"><span data-stu-id="87a57-101">Choose a message-based delivery with queues</span></span>
+metadata:
+  title: <span data-ttu-id="87a57-102">キューを使用するメッセージベースの配信を選択する</span><span class="sxs-lookup"><span data-stu-id="87a57-102">Choose a message-based delivery with queues</span></span>
+  description: <span data-ttu-id="87a57-103">キューを使用するメッセージベースの配信を選択する</span><span class="sxs-lookup"><span data-stu-id="87a57-103">Choose a message-based delivery with queues</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9cbd32d26c9dce0db8d048986479e62924e5f39c
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350000"
+durationInMinutes: 10
+content: '[!include[](includes/3-choose-azure-storage-queues.md)]'

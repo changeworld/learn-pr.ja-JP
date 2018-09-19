@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.4-iaas
+title: <span data-ttu-id="4f96d-101">サービスとしてのインフラストラクチャ</span><span class="sxs-lookup"><span data-stu-id="4f96d-101">Infrastructure as a service</span></span>
+metadata:
+  title: <span data-ttu-id="4f96d-102">IaaS</span><span class="sxs-lookup"><span data-stu-id="4f96d-102">IaaS</span></span>
+  description: <span data-ttu-id="4f96d-103">サービスとしてのインフラストラクチャについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します</span><span class="sxs-lookup"><span data-stu-id="4f96d-103">Learn about infrastructure as a service and if it might be the right choice for your application</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0f818f6267b09023977aaffd541fa2d29be4494d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349671"
+durationInMinutes: 4
+content: '[!include[](includes/4-iaas.md)]'

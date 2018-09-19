@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.predict-costs-and-optimize-spending.4-save-on-infrastructure-costs
+title: <span data-ttu-id="d5dd9-101">インフラストラクチャ コストを節約する</span><span class="sxs-lookup"><span data-stu-id="d5dd9-101">Save on infrastructure costs</span></span>
+metadata:
+  title: <span data-ttu-id="d5dd9-102">インフラストラクチャ コストを節約する</span><span class="sxs-lookup"><span data-stu-id="d5dd9-102">Save on infrastructure costs</span></span>
+  description: <span data-ttu-id="d5dd9-103">このユニットでは、インフラストラクチャ コストを節約する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="d5dd9-103">In this unit, we'll discuss how to save on infrastructure costs</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 94f37d9b74bc6b3b3e5bfed8f97300b5fc5eff1e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347023"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-save-on-infrastructure-costs.md)]
+quiz:
+  title: <span data-ttu-id="d5dd9-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="d5dd9-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="d5dd9-105">コスト節約のソリューションでは*ない*のはどれでしょうか?</span><span class="sxs-lookup"><span data-stu-id="d5dd9-105">Which one of these is *not* a cost-saving solution?</span></span>
+    choices:
+    - content: <span data-ttu-id="d5dd9-106">業務時間外に仮想マシンの割り当てを解除する。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-106">Deallocate virtual machines in off hours.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d5dd9-107">これによりアカウントに課金される使用量が減り、コストが削減されます。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-107">This will reduce the amount of usage billed to your account and save costs.</span></span>
+    - content: <span data-ttu-id="d5dd9-108">Azure Reserved Virtual Machine Instances を使用する。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-108">Use Azure Reserved Virtual Machine Instances.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d5dd9-109">VM に恒常的なワークロードがあり、長期的なサービス契約にコミットできる場合、これは従量課金制よりも安価です。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-109">This is less expensive than pay-as-you-go when you have consistent workloads for your VMs and can commit to a longer-term service agreement.</span></span>
+    - content: <span data-ttu-id="d5dd9-110">受信メッセージに対して仮想マシンを負荷分散する。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-110">Load balance your virtual machines for incoming messages.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d5dd9-111">負荷分散は、コストの削減ではなく、パフォーマンスの最適化のために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-111">Load balancing is used for performance optimization not cost savings.</span></span>
+    - content: <span data-ttu-id="d5dd9-112">使用率が低い仮想マシンのサイズを適切に設定する。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-112">Right-size underutilized virtual machines.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d5dd9-113">VM をスケールダウンすると、そのコストが削減されます。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-113">Scaling down a VM will reduce its cost.</span></span>
+  - content: '<span data-ttu-id="d5dd9-114">正誤問題: PaaS の場合は一般に IaaS よりも安価です。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-114">True or false: PaaS is generally less expensive than IaaS.</span></span>'
+    choices:
+    - content: <span data-ttu-id="d5dd9-115">○</span><span class="sxs-lookup"><span data-stu-id="d5dd9-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d5dd9-116">IaaS では、Azure をリソース専用にする必要がありますが、PaaS では サービスの配信方法において Azure により柔軟性が与えられます。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-116">IaaS requires Azure to dedicate resources while PaaS give Azure more flexibility in how services are delivered.</span></span> <span data-ttu-id="d5dd9-117">つまり、Azure によりハードウェアを効率的に運用できるため、PaaS サービスを IaaS よりも低コストで提供できます。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-117">This means Azure can fill and operate hardware efficiently and therefore offer PaaS services at a savings over IaaS.</span></span>
+    - content: <span data-ttu-id="d5dd9-118">×</span><span class="sxs-lookup"><span data-stu-id="d5dd9-118">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d5dd9-119">通常、PaaS サービスの契約は、IaaS リソースよりも安価です。</span><span class="sxs-lookup"><span data-stu-id="d5dd9-119">Generally, contracting for a PaaS service is less expensive than IaaS resources.</span></span>

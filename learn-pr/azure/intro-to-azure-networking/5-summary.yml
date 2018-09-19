@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.5-summary
+title: <span data-ttu-id="3b9c7-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="3b9c7-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="3b9c7-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="3b9c7-102">Summary</span></span>
+  description: <span data-ttu-id="3b9c7-103">学習したことを確認し、さらなる学習方法を見つけます。</span><span class="sxs-lookup"><span data-stu-id="3b9c7-103">Review what you've learned and discover how to learn more.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 36f46e8db7ffc5e2bae852f7eeecc3cdfbf998dc
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347592"
+durationInMinutes: 1
+content: '[!include[](includes/5-summary.md)]'

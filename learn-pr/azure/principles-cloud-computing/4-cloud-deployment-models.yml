@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.principles-cloud-computing.4-cloud-deployment-models
+title: <span data-ttu-id="aa5f9-101">クラウド デプロイ モデル</span><span class="sxs-lookup"><span data-stu-id="aa5f9-101">Cloud deployment models</span></span>
+metadata:
+  title: <span data-ttu-id="aa5f9-102">クラウド デプロイ モデル</span><span class="sxs-lookup"><span data-stu-id="aa5f9-102">Cloud deployment models</span></span>
+  description: <span data-ttu-id="aa5f9-103">クラウド デプロイ モデル</span><span class="sxs-lookup"><span data-stu-id="aa5f9-103">Cloud deployment models</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 80c9a95833f8fb5be1e0e89b4729b0c5de07a7d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346892"
+durationInMinutes: 10
+content: '[!include[](includes/4-cloud-deployment-models.md)]'

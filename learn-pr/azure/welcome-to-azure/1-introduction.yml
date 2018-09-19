@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.1-introduction
+title: <span data-ttu-id="2a333-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="2a333-101">Introduction</span></span>
+metadata:
+  title: <span data-ttu-id="2a333-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="2a333-102">Introduction</span></span>
+  description: <span data-ttu-id="2a333-103">クラウドへの移行を開始し、ご自分のキャリアをこの魅力的な革命に組み入れます。</span><span class="sxs-lookup"><span data-stu-id="2a333-103">Begin your cloud journey and align your career to this exciting revolution.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d7d0b1b2d5a3653835986f068cd7346972629a48
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352380"
+durationInMinutes: 1
+content: '[!include[](includes/1-introduction.md)]'

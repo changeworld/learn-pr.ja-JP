@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: <span data-ttu-id="6b2dd-101">概要と知識チェック</span><span class="sxs-lookup"><span data-stu-id="6b2dd-101">Summary and knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="6b2dd-102">概要と知識チェック</span><span class="sxs-lookup"><span data-stu-id="6b2dd-102">Summary and knowledge check</span></span>
+  description: <span data-ttu-id="6b2dd-103">概要と知識チェック</span><span class="sxs-lookup"><span data-stu-id="6b2dd-103">Summary and knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348056"
+durationInMinutes: 5
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="6b2dd-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="6b2dd-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="6b2dd-105">Computer Vision API を使用して画像を分析するときに、返すビジュアル フィーチャー型を指定できます。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-105">When analyzing an image using the Computer Vision API, you can specify visual feature types to return.</span></span>  <span data-ttu-id="6b2dd-106">'分析' 操作を呼び出すときに有効なビジュアル フィーチャー型は、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-106">Which of the following is a valid visual feature type when calling the 'analyze' operation?</span></span>
+    choices:
+    - content: '<span data-ttu-id="6b2dd-107">ムービー</span><span class="sxs-lookup"><span data-stu-id="6b2dd-107">Movies</span></span> '
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b2dd-108">ムービーは有効なビジュアル フィーチャー型ではありません。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-108">Movies is not a valid visual feature type.</span></span>
+    - content: <span data-ttu-id="6b2dd-109">動物</span><span class="sxs-lookup"><span data-stu-id="6b2dd-109">Animals</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b2dd-110">動物は有効なビジュアル フィーチャー型ではありません。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-110">Animals is not a valid visual feature type.</span></span>
+    - content: <span data-ttu-id="6b2dd-111">有名人</span><span class="sxs-lookup"><span data-stu-id="6b2dd-111">Celebrities</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6b2dd-112">指定できる 2 つのビジュアル フィーチャー型は、有名人とランドマークです。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-112">The two visual feature types you can specify are Celebrities and Landmarks.</span></span>
+  - content: <span data-ttu-id="6b2dd-113">`generateThumbnail` 操作でサムネイルを生成するときに、*スマート トリミング*で行われることについて説明しているのは、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-113">Which of the following describes what *smart cropping* does when generating a thumbnail with the `generateThumbnail` operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="6b2dd-114">左上から画像をトリミングします。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-114">It crops images from the top left.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b2dd-115">左上から画像をトリミングすると、画像の重要な部分 (関心領域とも呼ばれます) が削除される結果になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-115">Cropping an image from the top left may result in you removing a significant part of the image, also known as the region of interest.</span></span>
+    - content: <span data-ttu-id="6b2dd-116">サムネイルを "関心領域" の中央に配置します。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-116">It centers the thumbnail on the "region of interest".</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6b2dd-117">パラメーター 'smartCropping' が true の場合、API によってスマート トリミングが適用され、サムネイルが '関心領域' の中央に配置されます。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-117">If the parameter 'smartCropping' is true, the API applies smart cropping to center the thumbnail on the 'region of interest'.</span></span> <span data-ttu-id="6b2dd-118">それ以外の場合は、中央がトリミングされます。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-118">Otherwise, it crops to the center.</span></span>
+  - content: <span data-ttu-id="6b2dd-119">Computer Vision API を、ご自分のソリューションに統合しています。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-119">You're integrating the Computer Vision API into your solution.</span></span> <span data-ttu-id="6b2dd-120">eastus リージョンで、Computer Vision サービス用に Cognitive Services アカウントを作成しました。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-120">You created a cognitive services account for the Computer Vision service in the eastus region.</span></span> <span data-ttu-id="6b2dd-121">`ocr` 操作にアクセスするための正しいアドレスは、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-121">Which of the following is the correct address for you to access the `ocr` operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="6b2dd-122">eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr</span><span class="sxs-lookup"><span data-stu-id="6b2dd-122">eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b2dd-123">このリージョンから要求するためのアクセス キーにサインアップしていません。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-123">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="6b2dd-124">エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されることを覚えておいてください。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-124">Remember, the endpoint specifies the region you chose during sign up, the service URL, and a resource used on the request.</span></span>
+    - content: <span data-ttu-id="6b2dd-125">eastus.api.cognitive.microsoft.com/vision/v2.0/describe</span><span class="sxs-lookup"><span data-stu-id="6b2dd-125">eastus.api.cognitive.microsoft.com/vision/v2.0/describe</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="6b2dd-126">このアドレスは、エンティティのリソースに要求を送信します。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-126">This address sends a request to the entities resource.</span></span>
+    - content: <span data-ttu-id="6b2dd-127">eastus.api.cognitive.microsoft.com/vision/v2.0/ocr</span><span class="sxs-lookup"><span data-stu-id="6b2dd-127">eastus.api.cognitive.microsoft.com/vision/v2.0/ocr</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="6b2dd-128">エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。</span><span class="sxs-lookup"><span data-stu-id="6b2dd-128">The endpoint specifies the region you chose during sign up, the service URL, and a resource used on the request.</span></span>

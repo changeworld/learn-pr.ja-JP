@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.4-creating-and-executing-an-azure-function
+title: <span data-ttu-id="8a934-101">Azure 関数の作成と実行</span><span class="sxs-lookup"><span data-stu-id="8a934-101">Creating and executing an Azure Function</span></span>
+metadata:
+  title: <span data-ttu-id="8a934-102">Azure 関数の作成と実行</span><span class="sxs-lookup"><span data-stu-id="8a934-102">Creating and executing an Azure Function</span></span>
+  description: <span data-ttu-id="8a934-103">Azure 関数の作成と実行</span><span class="sxs-lookup"><span data-stu-id="8a934-103">Creating and executing an Azure Function</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e94bd0f1d3f8cc3ff18396e12a58a0f0fc09a47d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349672"
+durationInMinutes: 10
+content: '[!include[](includes/4-creating-and-executing-an-azure-function.md)]'

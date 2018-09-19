@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-performance-and-scalability.3-optimize-network-performance
+title: <span data-ttu-id="5e2ab-101">ネットワークのパフォーマンスを最適化する</span><span class="sxs-lookup"><span data-stu-id="5e2ab-101">Optimize network performance</span></span>
+metadata:
+  title: <span data-ttu-id="5e2ab-102">ネットワークのパフォーマンスを最適化する</span><span class="sxs-lookup"><span data-stu-id="5e2ab-102">Optimize network performance</span></span>
+  description: <span data-ttu-id="5e2ab-103">このユニットでは、アーキテクチャのネットワーク パフォーマンスを最適化する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="5e2ab-103">In this unit we'll discuss how to optimize network performance for your architecture</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4cb23a0d62bc62d7dea8842fa6110b1932694feb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348103"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-optimize-network-performance.md)]
+quiz:
+  title: <span data-ttu-id="5e2ab-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="5e2ab-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="5e2ab-105">ネットワーク待ち時間という用語の定義は次のどれですか?</span><span class="sxs-lookup"><span data-stu-id="5e2ab-105">which of the following is the definition of the term network latency?</span></span>
+    choices:
+    - content: <span data-ttu-id="5e2ab-106">ネットワーク上で利用できるスループットの量</span><span class="sxs-lookup"><span data-stu-id="5e2ab-106">The amount of throughput available on the network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-107">ネットワーク スループットは、ネットワーク容量の測定基準です。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-107">Network throughput is a measure of network capacity.</span></span>
+    - content: <span data-ttu-id="5e2ab-108">送信元から宛先に情報を送信するための所要時間</span><span class="sxs-lookup"><span data-stu-id="5e2ab-108">The amount of time it takes for information to be sent from a source to a destination</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="5e2ab-109">待ち時間は、ネットワーク転送時間の測定基準です。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-109">Latency is a measure of network transit time.</span></span>
+    - content: <span data-ttu-id="5e2ab-110">コンテンツ配信ネットワーク内の資産の TTL</span><span class="sxs-lookup"><span data-stu-id="5e2ab-110">The TTL of an asset in a content delivery network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-111">コンテンツ配信ネットワーク上の資産の TTL は、元のソースから更新される頻度に関係しています。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-111">The TTL of an asseet on a content delivery network relates to how often it is refreshed from the original source.</span></span>
+    - content: <span data-ttu-id="5e2ab-112">オンプレミス ネットワークと Azure 間の専用回線</span><span class="sxs-lookup"><span data-stu-id="5e2ab-112">A private circuit between an on-premises network and Azure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-113">ExpressRoute は、オンプレミス ネットワークと Azure 間の専用回線です。ExpressRoute により待ち時間を短縮できますが、この用語の定義ではありません。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-113">ExpressRoute is a private circuit between an on-premises network and Azure, and while it can improve latency, it is not a defintion of the term.</span></span>
+  - content: <span data-ttu-id="5e2ab-114">Web アプリケーションが米国東部でホストされていると仮定します。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-114">Suppose your web application is hosted in East US.</span></span> <span data-ttu-id="5e2ab-115">世界中のユーザーのネットワーク待ち時間を最もコスト効率よく最適化するものは次のどれですか?</span><span class="sxs-lookup"><span data-stu-id="5e2ab-115">Which of the following would be the most cost-effective way to optimize network latency for users around the world?</span></span>
+    choices:
+    - content: <span data-ttu-id="5e2ab-116">ユーザーごとに ExpressRoute をデプロイする</span><span class="sxs-lookup"><span data-stu-id="5e2ab-116">Deploy ExpressRoute to each of your users</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-117">ExpressRoute は、ユーザーごとではなく、ネットワークの場所に対してプロビジョニングされます。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-117">ExpressRoute is provisioned for a network location, not per user.</span></span>
+    - content: <span data-ttu-id="5e2ab-118">コンテンツ配信ネットワークを使用して、資産とコンテンツをユーザーに近い場所に配置する</span><span class="sxs-lookup"><span data-stu-id="5e2ab-118">Use a content delivery network to place assets and content closer to your users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="5e2ab-119">コンテンツ配信ネットワークを使用すると、エンド ユーザーに物理的に近い場所に資産がキャッシュされるので、資産の読み込み時間が短縮されます。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-119">By using a content delivery network, assets are cached at locations that are physically closer to end users and will reduce the amount of time to load them.</span></span> <span data-ttu-id="5e2ab-120">これにより、世界中のユーザーのネットワーク待ち時間がコスト効率よく短縮されます。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-120">This will cost-effectively improve network latency for users around the globe.</span></span>
+    - content: <span data-ttu-id="5e2ab-121">Traffic Manager をパフォーマンス ルーティング モードで使用する</span><span class="sxs-lookup"><span data-stu-id="5e2ab-121">Use Traffic Manager in performance routing mode</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-122">Traffic Manager は、リソースへの接続に要する時間を短縮するのに役立つ DNS ロード バランサーですが、Web サービスを複数の場所に配置する必要があるので、この問題に対処する最もコスト効率の良い方法ではありません。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-122">Traffic Manager is a DNS load balancer that can help improve the time to connect to resources, but would also require locating web services in multiple locations and is not the most cost-effective way to address this problem.</span></span>
+    - content: <span data-ttu-id="5e2ab-123">余分なユーザー負荷に対応するために、米国東部に追加のインスタンスをデプロイする</span><span class="sxs-lookup"><span data-stu-id="5e2ab-123">Deploy more instances in East US to server the extra user load</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="5e2ab-124">インスタンスを追加すると、米国東部のサービスが処理できる負荷量が増加しますが、世界中に分散したユーザーのネットワーク待ち時間に対処するわけではありません。</span><span class="sxs-lookup"><span data-stu-id="5e2ab-124">Adding more instances will increase the amount of load the service in East US can handle, but will not address the network latency for users distributed globally.</span></span>

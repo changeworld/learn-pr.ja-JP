@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.4-work-with-the-cli
+title: <span data-ttu-id="f5997-101">Azure CLI を使用する</span><span class="sxs-lookup"><span data-stu-id="f5997-101">Work with the Azure CLI</span></span>
+metadata:
+  title: <span data-ttu-id="f5997-102">Azure CLI を使用する</span><span class="sxs-lookup"><span data-stu-id="f5997-102">Work with the Azure CLI</span></span>
+  description: <span data-ttu-id="f5997-103">コマンドの構造と、Azure CLI を使用するための構文について説明します</span><span class="sxs-lookup"><span data-stu-id="f5997-103">Learn the command structure and syntax to work with the Azure CLI</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ff3b711c5d58bf5ccc7bc1317a48fc4fc025f800
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351631"
+durationInMinutes: 5
+content: '[!include[](includes/4-work-with-the-cli.md)]'
