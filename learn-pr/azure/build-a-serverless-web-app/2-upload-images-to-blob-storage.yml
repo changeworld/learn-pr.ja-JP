@@ -1,0 +1,22 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.2-upload-images-to-blob-storage
+title: Azure Functions を使用して BLOB ストレージに画像をアップロードする
+metadata:
+  title: Azure Functions を使用して BLOB ストレージに画像をアップロードする
+  description: Azure Functions を使用して BLOB ストレージに画像をアップロードする
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: 7ae0243bd58c894f7a068a180ee4cbf7d96ff5b6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347623"
+durationInMinutes: 15
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/2-upload-images-to-blob-storage.md)]'

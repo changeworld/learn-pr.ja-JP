@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-cache-aside-pattern
+title: キャッシュ アサイド パターン
+metadata:
+  title: キャッシュ アサイド パターン
+  description: キャッシュ アサイド パターン
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a91272b6fd5ab07b58a5c33a19a2a72f5c8ecf2d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349368"
+durationInMinutes: 10
+content: '[!include[](includes/7-cache-aside-pattern.md)]'

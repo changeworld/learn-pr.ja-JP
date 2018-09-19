@@ -1,0 +1,22 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.4-store-image-metadata-with-cosmos
+title: Azure Cosmos DB を使用して画像のメタデータを格納する
+metadata:
+  title: Azure Cosmos DB を使用して画像のメタデータを格納する
+  description: Azure Cosmos DB を使用して画像のメタデータを格納する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: bebb6a64d20eeb9611e2b345ab60d05a241662b6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346682"
+durationInMinutes: 15
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/4-store-image-metadata-with-cosmos.md)]'

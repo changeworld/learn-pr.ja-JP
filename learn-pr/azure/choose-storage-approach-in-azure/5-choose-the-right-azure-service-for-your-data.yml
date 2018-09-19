@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.5-choose-the-right-azure-service-for-your-data
+metadata:
+  title: Azure 上のストレージ ソリューションを選択する
+  description: Azure 上のストレージ ソリューションを選択する
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 876fd01b6b8bae7be183b10ba667c229884282eb
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351079"
+title: Azure 上のストレージ ソリューションを選択する
+durationInMinutes: 7
+content: '[!include[](includes/5-choose-the-right-azure-service-for-your-data.md)]'

@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.8-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350735"
+durationInMinutes: 3
+azureSandbox: true
+content: '[!include[](includes/8-summary.md)]'

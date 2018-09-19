@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
+title: ネットワーク設定の構成
+metadata:
+  title: ネットワーク設定の構成
+  description: ネットワーク設定の構成
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a3771c30a5fed38346c6207968aca042d7ecda4a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350007"
+durationInMinutes: 10
+azureSandbox: true
+content: '[!include[](includes/8-exercise-manage-vm.md)]'

@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
+title: Azure での構成、展開、実行
+metadata:
+  title: Azure での構成、展開、実行
+  description: Azure での構成、展開、実行
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c821587b542dde7521edab678b43097232763181
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347791"
+durationInMinutes: 12
+interactive: bash
+azureSandbox: true
+content: '[!include[](includes/6-configure-deploy-run-azure.md)]'

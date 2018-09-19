@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.principles-cloud-computing.5-types-of-cloud-services
+title: クラウド サービスの種類
+metadata:
+  title: クラウド サービスの種類
+  description: クラウド サービスの種類
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 343fda4ed580f5e5c12ba9a251875d45e3ac5553
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351287"
+durationInMinutes: 10
+content: '[!include[](includes/5-types-of-cloud-services.md)]'

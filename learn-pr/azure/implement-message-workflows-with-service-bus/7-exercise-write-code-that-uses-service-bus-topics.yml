@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.implement-message-workflows-with-service-bus.7-exercise-write-code-that-uses-service-bus-topics
+title: 演習 - Service Bus トピックを使用するコードを記述する
+metadata:
+  title: 演習 - Service Bus トピックを使用するコードを記述する
+  description: 演習 - Service Bus トピックを使用するコードを記述する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 44860e57a6c6dce04d64e2177d6ef3e600d9c452
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348111"
+interactive: bash-editor
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/7-exercise-write-code-that-uses-service-bus-topics.md)]'

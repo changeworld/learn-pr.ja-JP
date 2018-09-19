@@ -1,0 +1,31 @@
+### YamlMime:ModuleUnit
+uid: learn.welcome-to-azure.3-create-a-vm
+title: 仮想マシンの作成
+metadata:
+  title: 仮想マシンの作成
+  description: 興味のある分野に関係なく、初めての仮想マシンを作成してクラウドを使い始めます。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform-cloud
+  ms.openlocfilehash: 9d69aad8a411847d6b534b252019b6a986aa229a
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347808"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 7
+content: >
+  [!include[](includes/3-create-a-vm.md)]
+tasks:
+- action: exists
+  environment: azure
+  azure:
+    resource:
+      type: Microsoft.Compute/virtualMachines
+      name: myVM
+  hint: 仮想マシンを作成するには、次のように `az vm create` コマンドを実行します。

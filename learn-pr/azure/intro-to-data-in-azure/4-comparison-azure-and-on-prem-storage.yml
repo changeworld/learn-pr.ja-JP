@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.4-comparison-azure-and-on-prem-storage
+title: Azure データ ストレージとオンプレミス ストレージの比較
+metadata:
+  title: Azure データ ストレージとオンプレミス ストレージの比較
+  description: Azure データ ストレージとオンプレミス ストレージの比較
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6f81624a70afcbdd524898dace845d761fa66280
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351720"
+durationInMinutes: 4
+content: '[!include[](includes/4-comparison-azure-and-on-prem-storage.md)]'

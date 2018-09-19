@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
+title: Azure で Linux 仮想マシンを作成する
+metadata:
+  title: Azure で Linux 仮想マシンを作成する
+  description: Azure で Linux 仮想マシンを作成する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fd2819e83035bed0463dd7bceb6d084d48957fad
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350848"
+durationInMinutes: 10
+content: '[!include[](includes/2-create-a-linux-virtual-machine.md)]'

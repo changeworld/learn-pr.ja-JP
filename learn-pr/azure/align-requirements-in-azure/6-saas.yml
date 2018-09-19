@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.6-saas
+title: サービスとしてのソフトウェア
+metadata:
+  title: SaaS
+  description: サービスとしてのソフトウェアについて、およびそれが自分のアプリケーションにとって適切な選択かどうかを学習します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f939c648eb04d8ea1e56249ed75d7bcddd85941b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348504"
+durationInMinutes: 4
+content: '[!include[](includes/6-saas.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-data-in-azure.2-benefits-of-using-azure-to-store-data
+title: Azure を使用してデータを格納する利点
+metadata:
+  title: Azure を使用してデータを格納する利点
+  description: Azure を使用してデータを格納する利点
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a6d508b28d2f0af8f213c2e4d5c42b4bded57a8c
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347280"
+durationInMinutes: 5
+content: '[!include[](includes/2-benefits-of-using-azure-to-store-data.md)]'

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
+title: 削除ポリシー
+metadata:
+  title: 削除ポリシー
+  description: 削除ポリシー
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d19ca55c2770fbb5ca16a91943fbbcdbc80f6939
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352459"
+durationInMinutes: 5
+content: '[!include[](includes/6-eviction-policies.md)]'

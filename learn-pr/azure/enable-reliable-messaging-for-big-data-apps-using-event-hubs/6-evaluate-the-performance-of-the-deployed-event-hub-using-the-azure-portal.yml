@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.6-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal
+title: Azure Portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する
+metadata:
+  title: Azure Portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する
+  description: Azure Portal を使用してデプロイされたイベント ハブのパフォーマンスを評価する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7253e6d7fb86b394847630868a490c8cb3758d4f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350400"
+durationInMinutes: 5
+content: '[!include[](includes/6-evaluate-the-performance-of-the-deployed-event-hub-using-the-azure-portal.md)]'

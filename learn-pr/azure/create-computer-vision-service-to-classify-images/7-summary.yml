@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.create-computer-vision-service.7-summary
+title: 概要と知識チェック
+metadata:
+  title: 概要と知識チェック
+  description: 概要と知識チェック
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: marouill
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348056"
+durationInMinutes: 5
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Computer Vision API を使用して画像を分析するときに、返すビジュアル フィーチャー型を指定できます。  '分析' 操作を呼び出すときに有効なビジュアル フィーチャー型は、次のうちどれですか。
+    choices:
+    - content: 'ムービー '
+      isCorrect: false
+      incorrectExplanation: ムービーは有効なビジュアル フィーチャー型ではありません。
+    - content: 動物
+      isCorrect: false
+      incorrectExplanation: 動物は有効なビジュアル フィーチャー型ではありません。
+    - content: 有名人
+      isCorrect: true
+      correctExplanation: 指定できる 2 つのビジュアル フィーチャー型は、有名人とランドマークです。
+  - content: '`generateThumbnail` 操作でサムネイルを生成するときに、*スマート トリミング*で行われることについて説明しているのは、次のうちどれですか。'
+    choices:
+    - content: 左上から画像をトリミングします。
+      isCorrect: false
+      incorrectExplanation: 左上から画像をトリミングすると、画像の重要な部分 (関心領域とも呼ばれます) が削除される結果になる場合があります。
+    - content: サムネイルを "関心領域" の中央に配置します。
+      isCorrect: true
+      correctExplanation: パラメーター 'smartCropping' が true の場合、API によってスマート トリミングが適用され、サムネイルが '関心領域' の中央に配置されます。 それ以外の場合は、中央がトリミングされます。
+  - content: Computer Vision API を、ご自分のソリューションに統合しています。 eastus リージョンで、Computer Vision サービス用に Cognitive Services アカウントを作成しました。 `ocr` 操作にアクセスするための正しいアドレスは、次のうちどれですか。
+    choices:
+    - content: eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: false
+      incorrectExplanation: このリージョンから要求するためのアクセス キーにサインアップしていません。 エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されることを覚えておいてください。
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/describe
+      isCorrect: false
+      incorrectExplanation: このアドレスは、エンティティのリソースに要求を送信します。
+    - content: eastus.api.cognitive.microsoft.com/vision/v2.0/ocr
+      isCorrect: true
+      correctExplanation: エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。

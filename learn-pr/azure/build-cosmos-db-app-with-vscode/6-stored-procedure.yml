@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.cosmos-db-app-with-vscode.6-stored-procedure
+metadata:
+  title: アプリからストアド プロシージャを作成して実行する
+  description: アプリからストアド プロシージャを作成して実行する
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a8e4df205d7146a82684db25e32eea6c8b77d36f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350232"
+title: アプリからストアド プロシージャを作成して実行する
+durationInMinutes: 7
+content: '[!include[](includes/6-stored-procedure.md)]'

@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.7-blob-uploads-and-downloads
+title: BLOB のアップロードとダウンロード
+metadata:
+  title: BLOB のアップロードとダウンロード
+  description: BLOB のアップロードとダウンロード
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 66dbb0e600ddef6afa15268440fa88349944eb96
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348192"
+durationInMinutes: 10
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/7-blob-uploads-and-downloads.md)]'

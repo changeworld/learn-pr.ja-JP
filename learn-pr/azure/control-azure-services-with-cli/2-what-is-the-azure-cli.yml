@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.2-what-is-the-azure-cli
+title: Azure CLI とは
+metadata:
+  title: Azure CLI とは
+  description: Azure CLI について、および各プラットフォーム上への Azure CLI のインストールの基礎について説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e61e47e143d32de5f047b145d106c1d6e8792c51
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350719"
+durationInMinutes: 3
+content: '[!include[](includes/2-what-is-the-azure-cli.md)]'

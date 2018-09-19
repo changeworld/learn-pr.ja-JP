@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.azure-container-registry.introduction
+metadata:
+  title: Azure Container Registry の概要
+  description: Azure Container Registry の概要
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 780c53ddb5197a14366724cde428a2a502951982
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351615"
+title: Azure Container Registry の概要
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

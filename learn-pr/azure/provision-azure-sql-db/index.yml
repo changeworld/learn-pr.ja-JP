@@ -1,0 +1,45 @@
+### YamlMime:Module
+uid: learn.provision-azure-sql-db
+metadata:
+  title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
+  description: Azure portal と Cloud Shell を使用して、Azure SQL Database をプロビジョニング、接続、および管理します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1a68135f9a06dbb32e16bc52fefdaf7e2082d8a6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352470"
+title: アプリケーション データを格納する Azure SQL Database をプロビジョニングする
+summary: Azure portal と Cloud Shell を使用して、Azure SQL Database をプロビジョニング、接続、および管理します。
+abstract: >
+  このモジュールでは、次のことを学習します。
+
+  - リレーショナル データベースを運用するときに Azure SQL Database が選ばれる理由
+
+  - お使いの Azure SQL Database で利用できる構成と価格オプション
+
+  - ポータルから Azure SQL Database を作成する方法
+
+  - Azure Cloud Shell を使用して Azure SQL Database に接続し、テーブルを追加し、データを操作する方法
+prerequisites: なし
+iconUrl: /learn/achievements/provision-azure-sql-db.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-sql-database
+- azure-cloud-shell
+units:
+- learn.provision-azure-sql-db.1-introduction
+- learn.provision-azure-sql-db.2-plan-your-database
+- learn.provision-azure-sql-db.3-create-your-database
+- learn.provision-azure-sql-db.4-connect-add-data
+- learn.provision-azure-sql-db.5-summary
+achievement: learn.provision-azure-sql-db.badge

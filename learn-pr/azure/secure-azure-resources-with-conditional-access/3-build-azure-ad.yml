@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+metadata:
+  title: ディレクトリを作成する
+  description: ディレクトリを作成し、一時的なライセンスを取得する方法を学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 863b5c78b8e8d49db8499dc4ba6a7833864106a1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346583"
+title: ディレクトリを作成する
+labId: 46071
+durationInMinutes: 5
+content: '[!include[](includes/3-build-azure-ad.md)]'

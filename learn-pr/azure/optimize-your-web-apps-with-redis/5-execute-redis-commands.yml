@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.optimize-web-app-with-redis.5-execute-redis-commands
+title: Redis と対話するためのクライアント API を調べる
+metadata:
+  title: Redis と対話するためのクライアント API を調べる
+  description: Redis と対話するための StackExchange.Redis API を調べる
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b7a0713a9aa82a4b01833ca5d2362ab38c0785e4
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349767"
+durationInMinutes: 10
+content: '[!include[](includes/5-execute-redis-commands.md)]'

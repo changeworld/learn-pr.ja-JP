@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.control-azure-services-with-cli.5-exercise-create-website-using-the-cli
+title: CLI を使用して Azure Web サイトを作成する
+metadata:
+  title: CLI を使用して Azure Web サイトを作成する
+  description: Azure CLI を操作して新しい PHP Web サイトを作成する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bc07336d55a425150bb7f4007a6f2c1749fec68b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350744"
+durationInMinutes: 10
+interactive: bash
+azureSandbox: true
+content: '[!include[](includes/5-exercise-create-website-using-the-cli.md)]'

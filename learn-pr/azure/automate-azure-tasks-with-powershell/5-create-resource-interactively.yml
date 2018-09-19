@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.automate-azure-tasks-with-powershell.5-create-resource-interactively
+title: Azure PowerShell でスクリプトを使用して Azure リソースを作成する
+metadata:
+  title: Azure PowerShell でスクリプトを使用して Azure リソースを作成する
+  description: Azure PowerShell でスクリプトを使用して Azure リソースを作成する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform
+  ms.openlocfilehash: 6411e4ba53d88d94ccdd501a70830d8647ba46f2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349063"
+durationInMinutes: 5
+content: '[!include[](includes/5-create-resource-interactively.md)]'

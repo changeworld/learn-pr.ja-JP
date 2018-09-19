@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.principles-cloud-computing.1-motivation
+title: はじめに
+metadata:
+  title: はじめに
+  description: はじめに
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 34592e67fd3c39fab0b4322fbc3e096f6b8fd516
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350424"
+durationInMinutes: 4
+content: '[!include[](includes/1-introduction.md)]'

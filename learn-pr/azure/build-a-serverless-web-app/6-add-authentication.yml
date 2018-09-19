@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.build-a-serverless-web-app.6-add-authentication
+title: 認証を追加する
+metadata:
+  title: 認証を追加する
+  description: 認証を追加する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 581076c653079313242c143edec7a79ed89288a9
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346412"
+durationInMinutes: 8
+interactive: bash-editor
+azureSandbox: true
+content: '[!include[](includes/6-add-authentication.md)]'

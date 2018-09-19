@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.6-safe-dependencies
+title: 安全な依存関係
+metadata:
+  title: 安全な依存関係
+  description: 安全な依存関係
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f7e554ad0f8369b7e0c154aa6baa83b2b0f8d530
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351423"
+durationInMinutes: 5
+content: '[!include[](includes/6-safe-dependencies.md)]'

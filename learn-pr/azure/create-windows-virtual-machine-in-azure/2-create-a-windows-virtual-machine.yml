@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
+title: Azure での Windows 仮想マシン
+metadata:
+  title: Azure での Windows 仮想マシン
+  description: Azure での Windows 仮想マシン
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3d97d747f0ac23c328448b84a19518e80770ef80
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349512"
+durationInMinutes: 5
+content: '[!include[](includes/2-create-a-windows-virtual-machine.md)]'
