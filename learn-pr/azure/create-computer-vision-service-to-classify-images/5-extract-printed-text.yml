@@ -9,14 +9,13 @@ metadata:
   ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fc800680d486c78f7279fb6d56e3747cc14ec13b
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.openlocfilehash: 00dcb00be209e892f93dc9b2361e436b6e04afed
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531177"
-labId: 45986
-durationInMinutes: 5
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45776062"
 interactive: bash
 azureSandbox: true
+durationInMinutes: 5
 content: '[!include[](includes/5-extract-printed-text.md)]'

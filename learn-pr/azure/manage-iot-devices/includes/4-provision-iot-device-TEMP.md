@@ -22,7 +22,7 @@ Device Provisioning Service による自動デバイス プロビジョニング
 
     - **[アクセス ポリシー]:** IoT ハブとのリンクを確立するために使用する資格情報として **[iothubowner]** を選択します。
 
-![ポータルでハブ名を DPS にリンクする](../media-draft/ee6e78754a1d39d86de71fb6872723f3.png)
+![ポータルでハブ名を DPS にリンクする](../media/ee6e78754a1d39d86de71fb6872723f3.png)
 
 ## <a name="set-the-allocation-policy-on-the-device-provisioning-service"></a>Device Provisioning Service で割り当てポリシーを設定する
 
@@ -36,7 +36,7 @@ Device Provisioning Service による自動デバイス プロビジョニング
 
 割り当てポリシーを設定するには、Device Provisioning Service ページで **[Manage allocation policy]\(割り当てポリシーの管理\)** をクリックします。 割り当てポリシーが **[Evenly weighted distribution]\(均等に重み付けされた分散\)** (既定値) に設定されていることを確認します。 設定を変更した場合は、作業が終わったら **[保存]** をクリックします。
 
-![割り当てポリシーを管理する](../media-draft/0c5fa5193156f17b4f5d64aab65a414d.png)
+![割り当てポリシーを管理する](../media/0c5fa5193156f17b4f5d64aab65a414d.png)
 
 ## <a name="enroll-the-device"></a>デバイスを登録する
 
@@ -48,19 +48,19 @@ TPM ベースのデバイスの場合、次のものが必要となります。
 
 - 名前空間/スコープ内でデバイスを一意に識別するために使用する "*登録 ID*"。 この ID はデバイス ID と同じである場合もあれば、異なる場合もあります。 この ID はすべてのデバイスで必須です。 TPM ベースのデバイスでは、登録 ID が TPM 自体から派生している場合があります (TPM 保証キーの SHA-256 ハッシュなど)。
 
-![ポータルに表示された TPM の登録情報](../media-draft/11db90b7128e1cf222a4da45de7cbac8.png)
+![ポータルに表示された TPM の登録情報](../media/11db90b7128e1cf222a4da45de7cbac8.png)
 
 X.509 ベースのデバイスの場合、次のものが必要となります。
 
 - *.pem* ファイルまたは *.cer* ファイルの形式で、[X.509 チップまたはシミュレーションに発行された証明書](https://docs.microsoft.com/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 個別登録では、X.509 システムのデバイスごとの "*署名者証明書*" を使用する必要があります。登録グループでは、"*ルート証明書*" を使用する必要があります。
 
-   ![X.509 構成証明の個々の登録をポータルで追加](../media-draft/8d56752f453f27e55dd15b7c894ae406.png)
+   ![X.509 構成証明の個々の登録をポータルで追加](../media/8d56752f453f27e55dd15b7c894ae406.png)
 
 デバイスを Device Provisioning Service に登録するには、次の 2 つの方法があります。
 
 - **Enrollment Groups\(登録グループ\)**: これは、特定の構成証明メカニズムを共有するデバイスのグループを表します。 必要な初期構成を共有する多数のデバイスがある場合や、すべてのデバイスが同じテナントに配置される場合は、登録グループを使用することをお勧めします。 登録グループの ID 構成証明の詳細については、[セキュリティ](https://docs.microsoft.com/azure/iot-dps/concepts-security#controlling-device-access-to-the-provisioning-service-with-x509-certificates)に関するページを参照してください。
 
-   ![X.509 構成証明のグループ登録をポータルで追加](../media-draft/4a9d9ea822887c70f1ff1e4b64b138f1.png)
+   ![X.509 構成証明のグループ登録をポータルで追加](../media/4a9d9ea822887c70f1ff1e4b64b138f1.png)
 
 - **個々の登録**: Device Provisioning Service に登録できる 1 つのデバイスのエントリを表します。 個々の登録では、構成証明メカニズムとして X.509 証明書または (実際の TPM または仮想 TPM の) SAS トークンを使用できます。 固有の初期構成を必要とするデバイスや、TPM または仮想 TPM を介した SAS トークンのみを構成証明メカニズムとして使用できるデバイスには、個別加入を使用することをお勧めします。 個別登録では、必要な IoT ハブ デバイス ID が指定されている場合があります。
 
@@ -72,7 +72,7 @@ X.509 ベースのデバイスの場合、次のものが必要となります�
 
 3. デバイスが正常に登録されると、ポータルに次のように表示されます。
 
-![ポータルで正常に完了した TPM 登録](../media-draft/cb277b2e5bc21cd02669775d536e89c0.png)
+![ポータルで正常に完了した TPM 登録](../media/cb277b2e5bc21cd02669775d536e89c0.png)
 
 登録後、プロビジョニング サービスは、デバイスが起動し、後でサービスに接続するまで待機します。 デバイスの初回起動時に、クライアント SDK ライブラリはチップと対話してデバイスからセキュリティ アーティファクトを抽出し、Device Provisioning Service への登録を確認します。
 
@@ -100,7 +100,7 @@ TPM と X.509 の両方の構成証明を使用する、シミュレートされ
 
 5. ハブに正常に接続されると、IoT ハブの **[IoT デバイス]** エクスプローラーにデバイスが表示されます。
 
-![ハブに正常に接続できたことがポータルに表示されます](../media-draft/12ea6da6eef9bf96be6bd80aa1721173.png)
+![ハブに正常に接続できたことがポータルに表示されます](../media/12ea6da6eef9bf96be6bd80aa1721173.png)
 
 <!--Reference links
 

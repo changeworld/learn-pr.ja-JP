@@ -21,7 +21,7 @@ RDP クライアントにこの情報を入力したり、事前に構成され�
 
 ### <a name="download-the-rdp-file"></a>RDP ファイルをダウンロードする
 
-1. [Azure portal](https://portal.azure.com?azure-portal=true) で、先ほど作成した仮想マシンの **[概要]** パネルが開いていることを確認します。 もしパネルを開く必要がある場合は、**すべてのリソース**下で VM を見つけることができます。 概要パネルには、VM に関する多くの情報があります。
+1. [Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) 内で、以前に作成した仮想マシンの**概要**パネルが開かれていることを確認します。 もしパネルを開く必要がある場合は、**すべてのリソース**下で VM を見つけることができます。 概要パネルには、VM に関する多くの情報があります。
 
     - VM が実行中かどうかを確認できます。
     - VM を停止または再起動します。
