@@ -1,22 +1,21 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.5-extract-printed-text
-title: <span data-ttu-id="ac25c-101">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="ac25c-101">Detect and extract printed text from an image</span></span>
+title: <span data-ttu-id="a1d9e-101">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="a1d9e-101">Detect and extract printed text from an image</span></span>
 metadata:
-  title: <span data-ttu-id="ac25c-102">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="ac25c-102">Detect and extract printed text from an image</span></span>
-  description: <span data-ttu-id="ac25c-103">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="ac25c-103">Detect and extract printed text from an image</span></span>
+  title: <span data-ttu-id="a1d9e-102">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="a1d9e-102">Detect and extract printed text from an image</span></span>
+  description: <span data-ttu-id="a1d9e-103">画像に含まれる印刷されたテキストの検出と抽出</span><span class="sxs-lookup"><span data-stu-id="a1d9e-103">Detect and extract printed text from an image</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: marouill
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: fc800680d486c78f7279fb6d56e3747cc14ec13b
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.openlocfilehash: 00dcb00be209e892f93dc9b2361e436b6e04afed
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45531177"
-labId: 45986
-durationInMinutes: 5
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45776062"
 interactive: bash
 azureSandbox: true
+durationInMinutes: 5
 content: '[!include[](includes/5-extract-printed-text.md)]'

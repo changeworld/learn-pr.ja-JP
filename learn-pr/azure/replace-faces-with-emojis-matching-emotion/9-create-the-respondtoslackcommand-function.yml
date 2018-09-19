@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.the-mojifier.9-create-the-respondtoslackcommand-function
 metadata:
-  title: <span data-ttu-id="667aa-101">RespondToSlackCommand を作成する</span><span class="sxs-lookup"><span data-stu-id="667aa-101">Create the RespondToSlackCommand</span></span>
-  description: <span data-ttu-id="667aa-102">`\mojify` コマンドが実行されるたびに Slack によって呼び出される 2 番目のエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="667aa-102">Create a second endpoint which slack will call everytime someone executes the `\mojify` command.</span></span>
+  title: <span data-ttu-id="32218-101">RespondToSlackCommand を作成する</span><span class="sxs-lookup"><span data-stu-id="32218-101">Create the RespondToSlackCommand</span></span>
+  description: <span data-ttu-id="32218-102">`\mojify` コマンドが実行されるたびに Slack によって呼び出される 2 番目のエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="32218-102">Create a second endpoint which slack will call everytime someone executes the `\mojify` command.</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c8a097a3f714a161b9726bac1877220a593c6d40
-  ms.sourcegitcommit: 699f55eb41bace5e084604e16d6768633771b23c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/13/2018
-  ms.locfileid: "45530971"
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45756835"
 labId: 45987
-title: <span data-ttu-id="667aa-103">RespondToSlackCommand を作成する</span><span class="sxs-lookup"><span data-stu-id="667aa-103">Create the RespondToSlackCommand</span></span>
+title: <span data-ttu-id="32218-103">RespondToSlackCommand を作成する</span><span class="sxs-lookup"><span data-stu-id="32218-103">Create the RespondToSlackCommand</span></span>
 durationInMinutes: 7
 content: '[!include[](includes/9-create-the-respondtoslackcommand-function.md)]'

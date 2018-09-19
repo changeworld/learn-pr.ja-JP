@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.the-mojifier.11-deploy-to-azure
 metadata:
-  title: <span data-ttu-id="ffcac-101">Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="ffcac-101">Deploy to Azure</span></span>
-  description: <span data-ttu-id="ffcac-102">Azure 関数をクラウドにデプロイし、コードの新しい運用バージョンを使用するように Slack の構成を更新します。</span><span class="sxs-lookup"><span data-stu-id="ffcac-102">Deploy our Azure Function to the cloud and update the slack configuration to use the new production version of our code.</span></span>
+  title: <span data-ttu-id="91393-101">Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="91393-101">Deploy to Azure</span></span>
+  description: <span data-ttu-id="91393-102">Azure 関数をクラウドにデプロイし、コードの新しい運用バージョンを使用するように Slack の構成を更新します。</span><span class="sxs-lookup"><span data-stu-id="91393-102">Deploy our Azure Function to the cloud and update the slack configuration to use the new production version of our code.</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dc38c56faeecdd40d35ee306de2d303c8186283f
-  ms.sourcegitcommit: 96d1655afede9f3ff768c180405e318bff2123f7
+  ms.openlocfilehash: a3d59093822ad43a9793f601c89a29fd705c1a2c
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44722539"
-title: <span data-ttu-id="ffcac-103">Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="ffcac-103">Deploy to Azure</span></span>
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45756852"
+labId: 45987
+title: <span data-ttu-id="91393-103">Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="91393-103">Deploy to Azure</span></span>
 durationInMinutes: 8
 content: '[!include[](includes/11-deploy-to-azure.md)]'

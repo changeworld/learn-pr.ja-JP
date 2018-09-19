@@ -1,19 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.make-your-virtual-machines-highly-available.5-exercise-configure-a-load-balancer-in-azure
-title: <span data-ttu-id="738d5-101">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="738d5-101">Exercise - Configure a load balancer in Azure</span></span>
+title: <span data-ttu-id="81ce3-101">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="81ce3-101">Exercise - Configure a load balancer in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="738d5-102">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="738d5-102">Exercise - Configure a load balancer in Azure</span></span>
-  description: <span data-ttu-id="738d5-103">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="738d5-103">Exercise - Configure a load balancer in Azure</span></span>
+  title: <span data-ttu-id="81ce3-102">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="81ce3-102">Exercise - Configure a load balancer in Azure</span></span>
+  description: <span data-ttu-id="81ce3-103">演習 - Azure でロード バランサーを構成する</span><span class="sxs-lookup"><span data-stu-id="81ce3-103">Exercise - Configure a load balancer in Azure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d5a6025caf153c009f67ea0da8184d39e96e9966
-  ms.sourcegitcommit: e1fed99e287d0b8c4e6d1297bcce949ce7c8a802
+  ms.openlocfilehash: 707508ce42b59332c47d86c0755088e2573826c9
+  ms.sourcegitcommit: b6f5aa15bae13cb0f53667fba1d404b7bec76f67
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/12/2018
-  ms.locfileid: "44701251"
-durationInMinutes: 20
+  ms.lasthandoff: 09/17/2018
+  ms.locfileid: "45757923"
+azureSandbox: true
+durationInMinutes: 15
 content: '[!include[](includes/5-exercise-configure-a-load-balancer-in-azure.md)]'
