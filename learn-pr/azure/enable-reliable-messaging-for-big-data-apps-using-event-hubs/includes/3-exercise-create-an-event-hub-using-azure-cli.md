@@ -4,25 +4,16 @@ Azure CLI を使用してイベント ハブを作成します。 この演習�
 
 ## <a name="create-an-event-hubs-namespace"></a>Event Hubs 名前空間の作成
 
-次の手順に従い、Azure Cloud Shell によってサポートされている Bash シェルを使用して、Event Hubs 名前空間を作成します。
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-1. Cloud Shell (Bash) にサインインします。  
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. 次のコマンドを使用して、Azure リソース グループを作成します。
-
-    ```azurecli
-        az group create --name <resource group name> --location <location>
-    ```
-
-    |パラメーター      |説明|
-    |---------------|-----------|
-    |--name (必須)      |新しいリソース グループの名前を入力します。|
-    |--location (必須)     |最も近い Azure データセンターの場所を入力します (例: westus)。|
+次の手順に従い、Azure Cloud Shell によってサポートされている bash シェルを使用して、Event Hubs 名前空間を作成します。
 
 1. 次のコマンドを使用して Event Hubs 名前空間を作成します。
 
     ```azurecli
-        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <resource group name> -l <location>
+        az eventhubs namespace create --name <Event Hubs namespace name> --resource-group <rgn>[Sandbox resource group name]</rgn> -l <location>
     ```
 
     |パラメーター      |説明|
@@ -34,7 +25,7 @@ Azure CLI を使用してイベント ハブを作成します。 この演習�
 1. 次のコマンドを使用して、Event Hubs 名前空間の接続文字列を取得します。 これは、イベント ハブを使用してメッセージを送受信するようにアプリケーションを構成するために必要となります。
 
     ```azurecli
-        az eventhubs namespace authorization-rule keys list --resource-group <resource group name> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
+        az eventhubs namespace authorization-rule keys list --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <EventHub namespace name> --name RootManageSharedAccessKey
     ```
 
     |パラメーター      |説明|
@@ -54,7 +45,7 @@ Azure CLI を使用してイベント ハブを作成します。 この演習�
 1. 次のコマンドを使用して新しいイベント ハブを作成します。
 
     ```azurecli
-        az eventhubs eventhub create --name <event hub name> --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name>
+        az eventhubs eventhub create --name <event hub name> --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name>
     ```
 
     |パラメーター      |説明|
@@ -66,7 +57,7 @@ Azure CLI を使用してイベント ハブを作成します。 この演習�
 1. 次のコードを使用して、イベント ハブの詳細を確認します。 
 
     ```azurecli
-        az eventhubs eventhub show --resource-group <Resource Group name> --namespace-name <Event Hubs namespace name> --name <event hub name>
+        az eventhubs eventhub show --resource-group <rgn>[Sandbox resource group name]</rgn> --namespace-name <Event Hubs namespace name> --name <event hub name>
     ```
 
     |パラメーター      |説明|

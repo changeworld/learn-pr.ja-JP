@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.4-generate-thumbnail
-title: サムネイルの生成
+title: サムネイルを生成する
 metadata:
-  title: サムネイルの生成
-  description: サムネイルの生成
+  title: サムネイルを生成する
+  description: サムネイルを生成する
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: marouill

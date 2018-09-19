@@ -2,7 +2,7 @@
 
 ## <a name="install-nodejs"></a>Node.js をインストールする
 
-1. **確信が持てないかどうかでも SSHed、前の演習から VM に**SSH でします。
+1. **前の演習で SSH で VM に接続していない場合は**、接続してください。
 
     ```bash
     ssh <vm-admin-username>@<vm-public-ip>

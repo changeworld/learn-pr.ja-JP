@@ -26,7 +26,7 @@ quiz:
       incorrectExplanation: コンテナーは、仮想システムまたは物理システムよりも大幅に速く起動することができます。
     - content: ホスト リソースの効率的な使用。
       isCorrect: false
-      incorrectExplanation: 共有のイメージのアーキテクチャのための複数のコンテナーは、ホストのリソースを効率的に活用して 1 つのホストで実行できます。
+      incorrectExplanation: イメージ アーキテクチャが共有されているため、ホスト リソースを効率的に利用しながら、単一のホスト上で複数のコンテナーを実行できます。
     - content: 組み込みのディザスター リカバリー。
       isCorrect: true
       correctExplanation: 本質的にコンテナーによってディザスター リカバリー手順は変更されません。
@@ -44,10 +44,10 @@ quiz:
     - content: docker ps -a
       isCorrect: true
       correctExplanation: このコマンドでは、実行中のコンテナーと停止状態のコンテナーがすべてリストされます。
-  - content: 'True または false: Dockerfile で運用環境でコンテナー イメージの作成を自動化する必要があります。'
+  - content: 'True または false: 運用環境では、Dockerfile を使用してコンテナー イメージの作成を自動化する必要があります。'
     choices:
-    - content: ○
+    - content: "True"
       isCorrect: true
-      correctExplanation: Automation は、迅速、簡単に反復可能かつエラーより手動のイメージの作成が生じやすいです。 ベスト プラクティスでは、automation を使用して、コンテナーの運用環境でお勧めします。
-    - content: ×
+      correctExplanation: イメージは手動で作成するより、自動化した方が速く、簡単に繰り返せて、間違いが減ります。 ベスト プラクティスとしては、コンテナーの運用環境では自動化をお勧めします。
+    - content: "False"
       isCorrect: false

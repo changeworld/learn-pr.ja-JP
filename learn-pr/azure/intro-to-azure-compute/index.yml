@@ -2,7 +2,7 @@
 uid: learn.intro-to-compute
 metadata:
   title: Azure コンピューティングの概要
-  description: Azure コンピューティング サービスを確認し、一般的なビジネス ニーズを解決できる方法を確認します。
+  description: Azure コンピューティング サービスの内容と、一般的なビジネス ニーズを解決するためにこれをどのように使用できるかを確認します。
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
@@ -15,13 +15,13 @@ metadata:
   ms.lasthandoff: 09/13/2018
   ms.locfileid: "45554448"
 title: Azure コンピューティングの概要
-summary: Azure コンピューティング サービスを確認し、一般的なビジネス ニーズを解決できる方法を確認します。
+summary: Azure コンピューティング サービスの内容と、一般的なビジネス ニーズを解決するためにこれをどのように使用できるかを確認します。
 abstract: >
   このモジュールでは、次のことを行います。
 
-  - Azure コンピューティングのオプションの確認
+  - Azure コンピューティングのオプションを確認します
 
-  - 特定のビジネス ニーズを解決するためのコンピューティング オプションを選択します。
+  - 特定のビジネス ニーズを解決するコンピューティング オプションを選択します
 prerequisites: なし
 iconUrl: /learn/achievements/intro-to-azure-compute.svg
 levels:

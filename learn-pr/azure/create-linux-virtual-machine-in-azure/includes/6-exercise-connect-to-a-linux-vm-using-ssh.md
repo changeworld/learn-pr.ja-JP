@@ -20,33 +20,17 @@ SSH クライアントを使って Azure VM に接続するには、次が必要
 
 1. **仮想マシンへの接続**ブレード内で、**IP アドレス**および**ポート番号**設定をメモします。 **SSH**タブ上で、VM に接続するためにローカルで実行する必要があるコマンドも表示されています。 これをクリップボードにコピーします。
 
-<!-- TODO: This will be necessary if we ever have inline portal integration. 
+## <a name="connect-with-ssh"></a>SSH を使用して接続する
 
-### Open Azure Cloud Shell
-
-Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally, you need to use your local session since the private key won't be in your storage account:
-
-1. Switch back to the **Dashboard** by clicking the **Dashboard** button in the Azure sidebar.
-
-1. Open Cloud Shell by clicking the **shell** button in the top toolbar.
-
-    ![Screenshot of the Azure portal top navigation bar with the Azure Cloud Shell button highlighted.](../media/6-cloud-shell.png)
-
-1. Select **Bash** as the shell type. PowerShell is also available if you are a Windows administrator.
-
--->
-
-## <a name="connect-with-ssh"></a>SSH を使用した接続
-
-1. Azure Cloud Shell に、[SSH] タブから取得したコマンドラインを貼り付けます。 この処理のようになりますただし、別の IP アドレスになります (おそらく、別のユーザー名を使用しなかった場合、 **jim**!)。
+1. [SSH] タブから取得したコマンド ラインを Azure Cloud Shell に貼り付けます。 次のようになります。ただし、IP アドレスは異なります (また、**jim** を使用しなかった場合はユーザー名もおそらく異なります)。
 
     ```bash
     ssh jim@137.117.101.249
     ```
 
-1. このコマンドは、Secure Shell 接続を開くし、Linux 用の従来のシェルのコマンド プロンプトで配置します。
+1. このコマンドを使用すると、Secure Shell 接続が開き、Linux 用の従来のシェル コマンド プロンプトに移動します。
 
-1. ここで Linux コマンドをいくつか実行して見てください。
+1. ここで Linux コマンドをいくつか実行してみてください。
     - `ls -la /` を使ってディスクのルートを表示します。
     - `ps -l` を使って実行中のプロセスをすべて表示します。
     - `dmesg` を使ってカーネル メッセージ一覧をすべて表示します。
@@ -56,16 +40,16 @@ Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally,
 
 ## <a name="initialize-data-disks"></a>データ ディスクの初期化
 
-最初から作成した追加のドライブはすべて、初期化して、フォーマットする必要があります。 これを行うためのプロセスは、物理ディスクと同じです。
+一から作成した追加ドライブは、初期化してフォーマットする必要があります。 これを行うためのプロセスは、物理ディスクと同じです。
 
-1. まず、ディスクを特定します。 これは上記で行いました。 使用することも`dmesg | grep SCSI`、これは、カーネルの SCSI デバイスからのすべてのメッセージを一覧表示します。
+1. 最初に、ディスクを特定します。 これは上で行いました。 `dmesg | grep SCSI` を使用して、SCSI デバイス用のカーネルからすべてのメッセージを一覧表示することもできます。
 
-1. 初期化が必要なドライブ（`sdc`）を特定したら、`fdisk` を使ってそれを行うことができます。 コマンドを実行する必要があります`sudo`パーティションを作成ディスクを指定します。
+1. 初期化する必要があるドライブ (`sdc`) がわかったら、`fdisk` を使用して行うことができます。 `sudo` でコマンドを実行し、パーティションを作成するディスクを指定する必要があります。
 
     ```bash
     sudo fdisk /dev/sdc
     ```
-1. `n` コマンドを使用して新しいパーティションを追加します。 この例でも選択**p**のプライマリ パーティションを作成し、残りの既定値をそのまま使用します。 出力は次の例のようになります。   
+1. `n` コマンドを使用して新しいパーティションを追加します。 この例では、プライマリ パーティション用の **p** も選択し、残りの既定値はそのまま使用します。 出力は次の例のようになります。   
 
     ```output
     Device does not contain a recognized partition table.
@@ -99,8 +83,8 @@ Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally,
 
 1. `w` コマンドを使って変更を書き込みます。 これによってツールが終了します。
 
-1. 次に、`mkfs` コマンドを使ってパーティションにファイル システムを書き込む必要があります。 先ほど取得したファイル システムの種類とデバイス名を指定する必要がありますが、`fdisk`出力。
-    - `-t ext4` を渡して_ext4_ ファイル システムを作成します。
+1. 次に、`mkfs` コマンドを使ってパーティションにファイル システムを書き込む必要があります。 ファイル システムの種類と、`fdisk` の出力から取得したデバイス名を指定する必要があります。
+    - `-t ext4` を渡して _ext4_ ファイル システムを作成します。
     - デバイス名は `/dev/sdc` です。
 
     ```bash
@@ -125,17 +109,17 @@ Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally,
     Writing superblocks and filesystem accounting information: done
     ```
 
-1. 次は、マウント ポイントとして使用してディレクトリを作成します。 仮定を`data`フォルダー。
+1. 次に、マウント ポイントとして使用するディレクトリを作成します。 `data` フォルダーを使用するものとします。
 
     ```bash
     sudo mkdir /data
     ```
-1. 最後に、使用して`mount`ディスク マウント ポイントを接続します。
+1. 最後に、`mount` を使用してディスクをマウント ポイントにアタッチします。
 
     ```bash
     sudo mount /dev/sdc1 /data
     ```
-    使用できる必要があります`lsblk`マウントされたドライブのように表示します。
+    `lsblk` を使用し、マウントされたドライブを表示できるはずです。
     
     ```output
     NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -152,7 +136,7 @@ Let's use Cloud Shell in the Azure portal. If you generated the SSH key locally,
 
 ### <a name="mounting-the-drive-automatically"></a>自動的にドライブをマウントする
 
-再起動後にドライブが確実に自動でマウントされるようにするには、そのドライブを `/etc/fstab` ファイルに追加する必要があります。 UUID (汎用一意識別子) が使用されることをも強くお勧め`/etc/fstab`デバイス名だけではなく、ドライブを参照する (など`/dev/sdc1`)。 UUID を使用すると、OS が起動中にディスク エラーを検出した場合に、間違ったディスクが特定の場所にマウントされるのを防ぐことができます。 その後、残りのデータ ディスクは、その同じデバイス ID に割り当てられます。 新しいドライブの UUID を確認するには、`blkid` ユーティリティを使用します。
+再起動後にドライブが確実に自動でマウントされるようにするには、そのドライブを `/etc/fstab` ファイルに追加する必要があります。 ドライブを参照するときは、デバイス名 (`/dev/sdc1` など) だけでなく、UUID (汎用一意識別子) を `/etc/fstab` で使用することも強くお勧めします。 UUID を使用すると、OS が起動中にディスク エラーを検出した場合に、間違ったディスクが特定の場所にマウントされるのを防ぐことができます。 その後、残りのデータ ディスクは、その同じデバイス ID に割り当てられます。 新しいドライブの UUID を確認するには、`blkid` ユーティリティを使用します。
 
 ```bash
 sudo -i blkid
@@ -166,7 +150,7 @@ sudo -i blkid
 /dev/sdc1: UUID="e311c905-e0d9-43ab-af63-7f4ee4ef108e" TYPE="ext4"
 ```
 
-1. UUID をコピー、`/dev/sdc1`ドライブし、開く、`/etc/fstab`ファイルをテキスト エディターで。
+1. `/dev/sdc1` ドライブの UUID をコピーし、`/etc/fstab` ファイルをテキスト エディターで開きます。
 
     ```bash
     sudo vi /etc/fstab
@@ -181,14 +165,14 @@ sudo -i blkid
 
 1. **End** キーを押して、行の末尾に移動します。 または、矢印キーを使うこともできます。 **ENTER** を押して新規行に移動します。
 
-1. エディタに以下のラインを入力してします。 複数の値は、スペースまたはタブで区切ることができます。 各列の詳細については、ドキュメントを確認します。
+1. エディタに以下のラインを入力してします。 複数の値は、スペースまたはタブで区切ることができます。 各列の詳細については、ドキュメントをご覧ください。
 
     ```output
     UUID=<uuid-goes-here>    /data    ext4    defaults,nofail    1    2
     ```
-1. **ESC** を押し、**:w!** と入力して ファイルの書き込みと **: q**エディターを終了します。
+1. **Esc** キーを押し、ファイルを書き込むには「**:w!**」と入力し、 エディターを終了するには「**:q**」と入力します。
 
-1. 最後に、マウント ポイントを更新する OS を要求することによって、エントリが正しいことを確認しましょう。
+1. 最後に、マウント ポイントの更新を OS に要求することによって、入力が正しいことを確認してみましょう。
 
     ```bash
     sudo mount -a
@@ -201,15 +185,17 @@ sudo -i blkid
 
 ## <a name="install-software-onto-the-vm"></a>VM 上にソフトウェアをインストールする
 
-VM 上にソフトウェアをインストールするに際して、いくつかの方法があります。 最初に、前に説明したように、`scp` を使用してお使いのコンピューターから VM にローカル ファイルをコピーできます。 これにより、データまたはを実行するカスタム アプリケーションをコピーできます。
+ご覧のとおり、SSH を使うことでローカルコンピューターと同様に Linux VM を操作できます。 他の Linux コンピューターと同じようにこの VM を管理することができ、ソフトウェアのインストール、ロールの構成、機能の調整、他の日常的なタスクを実行できます。 少しの間、ソフトウェアのインストールに集中しましょう。
 
-Secure Shell を使用してソフトウェアをインストールすることもできます。 Azure マシンは、既定では、インターネットに接続します。 標準のコマンドを使用して、標準的なリポジトリから人気のあるソフトウェア パッケージを直接インストールできます。 この方法を使って Apache をインストールしてみましょう。
+VM にソフトウェアをインストールするにはいくつかのオプションがあります。 最初に、前に説明したように、`scp` を使用してお使いのコンピューターから VM にローカル ファイルをコピーできます。 この方法では、データまたは実行するカスタム アプリケーションをコピーできます。
 
-### <a name="install-the-apache-web-server"></a>Apache web サーバーをインストールします。
+Secure Shell を使用してソフトウェアをインストールすることもできます。 Azure マシンは既定でインターネットに接続されています。 標準のコマンドを使用して、標準的なリポジトリから人気のあるソフトウェア パッケージを直接インストールできます。 この方法を使用して Apache をインストールしましょう。
 
-Apache は Ubuntu の既定のソフトウェア リポジトリ内で使用できる従来のパッケージ管理ツールを使用してインストールします。
+### <a name="install-the-apache-web-server"></a>Apache Web サーバーをインストールする
 
-1. 最新のアップ ストリームの変更を反映するように、ローカル パッケージのインデックスを更新することで開始します。
+Apache は Ubuntu の既定のソフトウェア リポジトリ内で使用できるので、従来のパッケージ管理ツールを使用してインストールします。
+
+1. 最初に、ローカル パッケージ インデックスを更新し、最新のアップストリームの変更を反映させます。
 
     ```bash
     sudo apt-get update
@@ -246,9 +232,9 @@ Apache は Ubuntu の既定のソフトウェア リポジトリ内で使用で�
     test-web-eus-vm1 apachectl[11129]: AH00558: apache2: Could not reliably determine the server's fully qua
     test-web-eus-vm1 systemd[1]: Started The Apache HTTP Server.
     ```
+    > [!NOTE]
+    > このようなコマンドを実行することはささいなことですが、それは手動プロセスです。常にインストールする必要があるソフトウェアがある場合は、スクリプトを使用してプロセスの自動化を検討します。
+    
+1. 最後に、パブリック IP アドレスを使用して既定ページの取得を試行できます。 ただし、Web サーバーを VM で実行している場合でも、有効な接続または応答は得られません。 それはなぜでしょうか。
 
-1. 最後に、パブリック IP アドレスを使用して既定のページを取得できます。 既定のページが返されるはずです。
-
-    ![新しい Linux VM の ip アドレスでホストされている Apache 既定の web ページを表示する web ブラウザーのスクリーン ショット。](../media/6-apache-works.png)
-
-ご覧のとおり、SSH を使うことでローカルコンピューターと同様に Linux VM を操作できます。 他の Linux コンピューターと同様、この VM を管理することができます。 ソフトウェアをインストールする、ロールの構成、機能、およびその他の日常的なタスクを調整します。 ただし、それは手動プロセスです。常にインストールする必要があるソフトウェアがある場合は、スクリプトを使用してプロセスの自動化を検討します。
+Web サーバーとやりとりするには、もう 1 つの手順を実行する必要があります。 今回の仮想ネットワークは受信要求をブロックしています。これは既定の動作です。 これを構成で変更できます。 これについては次で確認します。

@@ -2,12 +2,6 @@
 
 ここでは、Visual Studio を使用して Azure App Service プランに ASP.NET Core Web アプリケーションを発行する方法を説明します。
 
-## <a name="azure-subscription"></a>Azure サブスクリプション
-
-Azure に発行するには、Azure サブスクリプションが必要です。 Azure App Service の機能のテストに、[Azure の無料アカウント](https://azure.microsoft.com/free/)を使用できます。
-
-## <a name="what-is-azure-app-service"></a>Azure App Service とは
-
 ## <a name="what-is-web-apps"></a>Web Apps とは
 
 Azure App Service は、Web アプリケーション、REST API、モバイル バックエンドをホストするためのサービスです。 App Service では、.NET、.NET Core、Java、Ruby、Node.js、PHP、Python など、さまざまな言語で記述されたコードがサポートされます。 App Service は、ほとんどの Web サイト、特にホスティング インフラストラクチャを制御する必要があまりない Web サイトにとって最適です。
@@ -61,6 +55,8 @@ Premium サービス プランは、専用 (Isolated) プランによる追加�
 ## <a name="deploy-your-web-app-from-visual-studio"></a>Visual Studio から Web アプリをデプロイする
 
 アプリの Azure から Visual Studio への発行は、短時間で行えます。
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
 ### <a name="select-the-project"></a>プロジェクトを選択する
 

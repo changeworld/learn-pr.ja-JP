@@ -2,7 +2,7 @@
 
 ## <a name="install-mongodb"></a>MongoDB をインストールする
 
-1. Cloud Shell では、VM に ssh で接続します。
+1. Cloud Shell から SSH で VM に接続します。
 
     ```bash
     ssh <vm-admin-username>@<vm-public-ip>
@@ -31,7 +31,7 @@
     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.0.list
     ```
 
-1. パッケージの最新の情報はこれは、パッケージのデータベースを更新します。
+1. 最新のパッケージ情報が得られるように、パッケージ データベースを更新します。
 
     ```bash
     sudo apt-get update

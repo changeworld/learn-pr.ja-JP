@@ -9,57 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c889cacc6f9319be0f9f168b52a77b4b857813a5
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 254a32743ced2ea484e10f1a5c68b4ded5f4693c
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44238526"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44694779"
 durationInMinutes: 3
 content: >
   [!include[](includes/7-summary.md)]
 quiz:
   title: '知識チェック: Azure Key Vault'
   questions:
-  - content: 次のうち、Azure Key Vault の主な利点では**ない**のはどれですか?
+  - content: 次のうち、Azure Key Vault の利点では**ない**のはどれですか?
     choices:
     - content: ユーザーの個人情報を安全に格納します。
       isCorrect: true
       correctExplanation: Key Vault は、ユーザーのシークレットではなく、アプリケーション シークレットを格納することを目的としています。
     - content: アプリケーションの複数のインスタンスに対して、アプリケーション シークレットを同期します。
       isCorrect: false
-      incorrectExplanation: Key Vault では、中央にシークレットを格納し、アプリケーションの複数のインスタンスが同じシークレットに同時にアクセスすることを許可していません。
     - content: アプリケーションの開発者が、アプリケーション シークレットを直接処理する必要性が減ります。
       isCorrect: false
-      incorrectExplanation: Key Vault の主な利点は、シークレットの実際のやり取りが減ることであり、これによりセキュリティが高まります。
     - content: 割り当て可能なアクセス許可を使用して、アプリケーション シークレットへのアクセスを制御します。
       isCorrect: false
-      incorrectExplanation: Key Vault のアクセス制御ポリシーでは、シークレットへのアクセスを制限することで、シークレットのセキュリティを強化します。
-  - content: 次のうち、Key Vault の認証と承認プロセスの最も適切な説明はどれですか?
+  - content: 次のうち、Azure Key Vault の認証と承認プロセスの最も適切な説明はどれですか?
     choices:
     - content: アプリケーションでは、リード開発者のユーザー名とパスワードを使用して、コンテナーに認証を行います。これでは、コンテナーのすべてのシークレットに完全にアクセスすることができます。
       isCorrect: false
-      incorrectExplanation: Key Vault の認証では、ユーザー名とパスワードは使用されません。また、アプリケーションは、個人の ID ではなく、そのアプリケーションの ID で認証されます。
     - content: アプリケーションとユーザーは、Microsoft アカウントを使用してコンテナーに認証を行い、特定のシークレットにアクセスすることを承認されます。
       isCorrect: false
-      incorrectExplanation: Key Vault の認証では、Microsoft アカウントは使用されません。また、アクセス ポリシーでは、コンテナー内の個々のシークレットは制御されていません。
-    - content: アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットにさまざまなアクションを実行することを承認されます。
+    - content: アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットに対するアクションの実行を承認されます。
       isCorrect: true
-      correctExplanation: Key Vault のすべての認証で、Azure Active Directory の ID が使用され、アクセス ポリシーは、コンテナー内のすべてのシークレットに適用されるアクションに基づきます。
-    - content: アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに認証を行い、それらのユーザーが所有するシークレットへのアクセスが付与されます。
+      correctExplanation: Key Vault に対する認証では、Azure Active Directory の ID を使います。 コンテナー内のすべてのシークレットに適用されるアクションに対する承認を提供するには、アクセス ポリシーが使用されます。
+    - content: アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに対する認証を行い、そのユーザーが所有するシークレットへのアクセスが付与されます。
       isCorrect: false
-      incorrectExplanation: アプリのユーザーには、アプリケーションの Key Vault にアクセスする権限がなく、コンテナーはユーザーのシークレットの格納には使用されません。
-  - content: ご自分のアプリに読み込んだ後、Key Vault ではどのようにシークレットを保護しますか?
+  - content: アプリに読み込まれた後のシークレットは Azure Key Vault でどのように保護されますか?
     choices:
-    - content: Key Vault では、シークレットを読み込むたびに新しいシークレット値が自動生成されます。そのため、それらが再利用されることはありません。
+    - content: Azure Key Vault は、使用されるたびに新しいシークレットを自動的に生成します。
       isCorrect: false
-      incorrectExplanation: Key Vault では、新しいシークレット値は自動生成されません。
-    - content: Key Vault のクライアント ライブラリでは、ご使用のアプリケーションによって使用されるメモリ領域が保護されるので、シークレットが誤って公開されるのが防止されます。
+    - content: Azure Key Vault のクライアント ライブラリでは、シークレットが誤って公開されるのを防ぐため、アプリケーションによって使用されるメモリ領域が保護されます。
       isCorrect: false
-      incorrectExplanation: これは、Key Vault クライアント ライブラリの機能ではありません。
-    - content: Key Vault はシークレットを二重に暗号化するので、それが使用されるたびに、ご利用のアプリでローカルで復号化される必要があります。
+    - content: Azure Key Vault ではシークレットが二重に暗号化されており、シークレットを使用するたびにアプリでローカルに復号化する必要があります。
       isCorrect: false
-      incorrectExplanation: コンテナーからご使用のアプリに返されるシークレット値は暗号化されていません。
-    - content: 誤り。シークレットは、アプリケーションに読み込まれると保護解除されます。
+    - content: シークレットは保護されません。 シークレットは、アプリケーションによって読み込まれると保護されなくなります。
       isCorrect: true
-      correctExplanation: シークレットは、アプリが読み込まれると、保護解除されます。 アプリケーション コードで、これらが記録されたり、格納されたり、クライアントの応答で返されたりしないようにする必要があります。
+      correctExplanation: アプリによって読み込まれたシークレットは、保護されなくなります。 シークレットをログに記録したり、保存したり、クライアントの応答で返したりしないでください。

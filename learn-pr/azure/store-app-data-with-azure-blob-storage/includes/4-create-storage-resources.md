@@ -22,16 +22,16 @@ Azure Blob Storage を使用するコードを追加して、未完成の ASP.NE
 
 アプリのストレージ インフラストラクチャを設定してみましょう。
 
-### <a name="resource-group-and-storage-account"></a>リソース グループとストレージ アカウント
-<!---TODO: Update for sandbox?--->
+### <a name="storage-account"></a>ストレージ アカウント
 
-このユニットで使うすべてのリソースを格納するために、リソース グループを作成します。 最後にそれを削除して、作成したすべてのものをクリーンアップします。 また、BLOB を格納するためにアプリで使用するストレージ アカウントを作成します。
+[!include[](../../../includes/azure-sandbox-activate.md)]
 
-Azure Cloud Shell 端末を使用してリソース グループとストレージ アカウントを作成します。そのためには、次の Azure CLI コマンドを実行します。 ストレージ アカウントには一意の名前を付ける必要があります。後で必要になるため、名前をメモしておいてください。 場所に `eastus` を選択することは任意です。
+[!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
+
+ストレージ アカウントを作成するには、Azure Cloud Shell ターミナルを使用します。 ストレージ アカウントには一意の名前を付ける必要があります。後で必要になるため、名前をメモしておいてください。
 
 ```console
-az group create --name blob-exercise-group --location eastus
-az storage account create --name <your-unique-storage-account-name> --resource-group blob-exercise-group --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location-name> --kind StorageV2
 ```
 
 > [!NOTE]

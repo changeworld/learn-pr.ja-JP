@@ -1,16 +1,16 @@
-Azure IoT Hub が Raspberry Pi などの IoT デバイスからデータを収集する方法の理解になったようになりました転送もそのデータを送信するには、その他の IoT デバイスをプロビジョニングする移動できます。 小規模なプロジェクト (1 ~ 5 デバイス) での IoT デバイスのセットアップの完了は、1 対 1 とできます。 大規模な展開では、プロビジョニングするためより優れたメソッドを必要があります。
+Azure IoT Hub が Raspberry Pi などの IoT デバイスからデータを収集する方法について理解したので、他の IoT デバイスをプロビジョニングしてデータを送信する段階に進むことができます。 小規模なプロジェクト (1 - 5 台のデバイス) であれば、IoT デバイスのセットアップを 1 つずつ完了することもできます。 大規模なデプロイでは、プロビジョニングのためのより良い方法が必要になります。
 
-Azure IoT Hub Device Provisioning Service により、お客様は Azure IoT hub にゼロタッチのデバイスのプロビジョニングを構成して、時間のかかる時間での 1 つのプロセスは 1 回、クラウドのスケーラビリティが揃っています。 プロセスは、セキュリティで保護されたスケーラブルな方法で何百万というデバイスのプロビジョニングに必要なインフラストラクチャを提供することに注意してください、サプライ チェーンの課題に設計されています。
+Azure IoT Hub Device Provisioning Service により、顧客は Azure IoT Hub へのゼロタッチ デバイス プロビジョニングを構成できます。これは、従来は時間のかかる 1 台ずつの作業だったプロセスにクラウドのスケーラビリティをもたらします。 このプロセスはサプライ チェーンの課題を念頭に置いて設計されており、何百万台ものデバイスを安全かつスケーラブルな方法でプロビジョニングするために必要なインフラストラクチャを提供します。
 
-デバイスの自動プロビジョニングと Device Provisioning Service を今すぐには、IoT Hub でサポートされている HTTP、AMQP、MQTT、AMQP over websockets、および MQTT websocket 経由ですべてのプロトコル サポートしています。 このリリースは、デバイスとクライアントの両方の側の拡張 SDK の言語サポートにも対応します。
+Device Provisioning Service による自動デバイス プロビジョニングでは、HTTP、AMQP、MQTT、WebSocket 経由の AMQP、WebSocket 経由の MQTT など、IoT Hub がサポートするすべてのプロトコルがサポートされるようになりました。 このリリースは、デバイス側とクライアント側の両方での、拡張された SDK 言語のサポートにも対応しています。
 
 ## <a name="link-the-device-provisioning-service-to-an-iot-hub"></a>Device Provisioning Service を IoT ハブにリンクする
 
 次に、IoT Hub Device Provisioning Service と IoT ハブをリンクして、Device Provisioning Service がデバイスをそのハブに登録できるようにします。 Device Provisioning Service は、このサービスにリンクされている IoT ハブにのみデバイスをプロビジョニングできます。 次の手順に従います。
 
-1.  **すべてのリソース**Azure portal でのページで、以前に作成した Device Provisioning Service インスタンスをクリックします。
+1.  Azure portal の **[すべてのリソース]** ページで、先ほど作成した Device Provisioning Service インスタンスをクリックします。
 
-2.  Device Provisioning Service ページで、**[Linked IoT hubs]\(リンクされた IoT ハブ\)** をクリックします。
+2.  Device Provisioning Service ページで、**[リンク済み IoT Hub]** をクリックします。
 
 3.  **[追加]** をクリックします。
 
@@ -30,7 +30,7 @@ Azure IoT Hub Device Provisioning Service により、お客様は Azure IoT hub
 
 1. **Lowest latency\(最も短い待機時間\)**: デバイスに対する待機時間が最も短いハブに基づいて、デバイスを IoT ハブにプロビジョニングします。
 
-2. **Evenly weighted distribution\(均等に重み付けされた分散\)** (既定値): リンクされた各 IoT ハブにデバイスが同程度にプロビジョニングされます。 これは、既定の設定です。 デバイスを 1 つの IoT ハブにのみプロビジョニングする場合は、この設定のままでかまいません。
+2. **加重が均等に分布** (既定値): リンクされた各 IoT ハブにデバイスが同程度にプロビジョニングされます。 これは既定の設定です。 デバイスを 1 つの IoT ハブにのみプロビジョニングする場合は、この設定のままでかまいません。
 
 3. **Static configuration via the enrollment list\(登録リストによる静的構成\)**: 登録リストの目的の IoT ハブの仕様が、Device Provisioning Service レベルの割り当てポリシーよりも優先されます。
 
@@ -46,29 +46,29 @@ TPM ベースのデバイスの場合、次のものが必要となります。
 
 - 各 TPM チップまたはシミュレーションに固有の "*保証キー*"。保証キーは TPM チップの製造元から取得します。 詳細については、「[TPM 保証キーとは](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/component-updates/tpm-key-attestation#terminology)」をご覧ください。
 
-- 名前空間/スコープ内でデバイスを一意に識別するために使用する "*登録 ID*"。 この ID は、デバイス ID と同じである場合もあれば、異なる場合もあります。 この ID はすべてのデバイスで必須です。 TPM ベースのデバイスでは、登録 ID が TPM 自体から派生している場合があります (TPM 保証キーの SHA-256 ハッシュなど)。
+- 名前空間/スコープ内でデバイスを一意に識別するために使用する "*登録 ID*"。 この ID はデバイス ID と同じである場合もあれば、異なる場合もあります。 この ID はすべてのデバイスで必須です。 TPM ベースのデバイスでは、登録 ID が TPM 自体から派生している場合があります (TPM 保証キーの SHA-256 ハッシュなど)。
 
 ![ポータルに表示された TPM の登録情報](../media-draft/11db90b7128e1cf222a4da45de7cbac8.png)
 
 X.509 ベースのデバイスの場合、次のものが必要となります。
 
-- *.pem* ファイルまたは *.cer* ファイルの形式で、[X.509 チップまたはシミュレーションに発行された証明書](https://docs.microsoft.com/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 個別登録でのデバイスを使用する必要があります。*署名者証明書*、X.509 システムの登録グループを使用する必要、*ルート証明書*します。
+- *.pem* ファイルまたは *.cer* ファイルの形式で、[X.509 チップまたはシミュレーションに発行された証明書](https://docs.microsoft.com/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 個別登録では、X.509 システムのデバイスごとの "*署名者証明書*" を使用する必要があります。登録グループでは、"*ルート証明書*" を使用する必要があります。
 
-   ![ポータルで X.509 構成証明の個々 の登録を追加します。](../media-draft/8d56752f453f27e55dd15b7c894ae406.png)
+   ![X.509 構成証明の個々の登録をポータルで追加](../media-draft/8d56752f453f27e55dd15b7c894ae406.png)
 
 デバイスを Device Provisioning Service に登録するには、次の 2 つの方法があります。
 
 - **Enrollment Groups\(登録グループ\)**: これは、特定の構成証明メカニズムを共有するデバイスのグループを表します。 必要な初期構成を共有する多数のデバイスがある場合や、すべてのデバイスが同じテナントに配置される場合は、登録グループを使用することをお勧めします。 登録グループの ID 構成証明の詳細については、[セキュリティ](https://docs.microsoft.com/azure/iot-dps/concepts-security#controlling-device-access-to-the-provisioning-service-with-x509-certificates)に関するページを参照してください。
 
-   ![X.509 構成証明のグループ登録ポータルで追加します。](../media-draft/4a9d9ea822887c70f1ff1e4b64b138f1.png)
+   ![X.509 構成証明のグループ登録をポータルで追加](../media-draft/4a9d9ea822887c70f1ff1e4b64b138f1.png)
 
-- **Individual Enrollments\(個別登録\)**: Device Provisioning Service に登録できる 1 つのデバイスのエントリを表します。 個別登録では、構成証明メカニズムとして X.509 証明書または (実際の TPM または仮想 TPM の) SAS トークンを使用できます。 固有の初期構成を必要とするデバイスや、TPM または仮想 TPM を介した SAS トークンのみを構成証明メカニズムとして使用できるデバイスには、個別加入を使用することをお勧めします。 個別登録では、必要な IoT ハブ デバイス ID が指定されている場合があります。
+- **個々の登録**: Device Provisioning Service に登録できる 1 つのデバイスのエントリを表します。 個々の登録では、構成証明メカニズムとして X.509 証明書または (実際の TPM または仮想 TPM の) SAS トークンを使用できます。 固有の初期構成を必要とするデバイスや、TPM または仮想 TPM を介した SAS トークンのみを構成証明メカニズムとして使用できるデバイスには、個別加入を使用することをお勧めします。 個別登録では、必要な IoT ハブ デバイス ID が指定されている場合があります。
 
-今度は、デバイスの構成証明メカニズムに基づく必要なセキュリティ アーティファクトを使って、Device Provisioning Service インスタンスにデバイスを登録します。
+今度は、デバイスの構成証明メカニズムに基づく必要なセキュリティ アーティファクトを使用し、Device Provisioning Service インスタンスにデバイスを登録します。
 
-1. Azure Portal にサインインし、左側のメニューの **[すべてのリソース]** をクリックして、Device Provisioning Service を開きます。
+1. Azure portal にサインインし、左側のメニューの **[すべてのリソース]** をクリックして Device Provisioning Service を開きます。
 
-2. Device Provisioning Service の概要ブレードで、**[Manage enrollments]\(登録の管理\)** を選択します。 デバイスの設定に従って、**[Individual Enrollments]/(個別登録\)** タブまたは **[Enrollment Groups]\(登録グループ\)** タブを選択します。 上部にある **[追加]** をクリックします。 選択**TPM**または**X.509** id 構成証明として*メカニズム*、既に説明したとおりに適切なセキュリティ アーティファクトを入力します。 新しい **IoT ハブ デバイス ID** を入力できます。 作業が完了したら、**[保存]** をクリックします。
+2. Device Provisioning Service の概要ブレードで、**[登録を管理します]** を選択します。 デバイスの設定に従って、**[Individual Enrollments]/(個別登録\)** タブまたは **[Enrollment Groups]\(登録グループ\)** タブを選択します。 上部にある **[追加]** をクリックします。 ID 構成証明 "*メカニズム*" として **[TPM]** または **[X.509]** を選択し、前述の適切なセキュリティ アーティファクトを入力します。 新しい **IoT Hub デバイス ID** を入力できます。 作業が完了したら、**[保存]** をクリックします。
 
 3. デバイスが正常に登録されると、ポータルに次のように表示されます。
 
@@ -80,7 +80,7 @@ X.509 ベースのデバイスの場合、次のものが必要となります�
 
 IoT デバイスは、実際のデバイスにすることも、シミュレートされたデバイスにすることもできます。 IoT デバイスが Device Provisioning Service インスタンスに登録されたため、デバイスを起動し、プロビジョニング サービスを呼び出して、構成証明メカニズムを使用して認識されるようにすることができます。 デバイスは、プロビジョニング サービスに認識されると、IoT ハブに割り当てられます。
 
-TPM および X.509 の両方の構成証明を使用して、シミュレートされたデバイスの例では、C、Java、C の\#Node.js、および Python。 たとえば、TPM と [Azure IoT C SDK](https://github.com/Azure/azure-iot-sdk-c) を使用するシミュレートされたデバイスは、「[デバイスの初回ブート シーケンスのシミュレーション](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device#simulate-first-boot-sequence-for-the-device)」セクションで説明されているプロセスに従います。 X.509 証明書構成証明を使用する同じデバイスの場合は、この[ブート シーケンス](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509#simulate-first-boot-sequence-for-the-device)についてのセクションを参照してください。
+TPM と X.509 の両方の構成証明を使用する、シミュレートされたデバイスの例として、C、Java、C\#、Node.js、Python などによるものがあります。 たとえば、TPM と [Azure IoT C SDK](https://github.com/Azure/azure-iot-sdk-c) を使用するシミュレートされたデバイスは、「[デバイスの初回ブート シーケンスのシミュレーション](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device#simulate-first-boot-sequence-for-the-device)」セクションで説明されているプロセスに従います。 X.509 証明書構成証明を使用する同じデバイスの場合は、この[ブート シーケンス](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509#simulate-first-boot-sequence-for-the-device)についてのセクションを参照してください。
 
 実際のデバイスの例については、[MXChip Iot DevKit のハウツー ガイド](https://docs.microsoft.com/azure/iot-dps/how-to-connect-mxchip-iot-devkit)を参照してください。
 
@@ -100,7 +100,7 @@ TPM および X.509 の両方の構成証明を使用して、シミュレート
 
 5. ハブに正常に接続されると、IoT ハブの **[IoT デバイス]** エクスプローラーにデバイスが表示されます。
 
-![ポータルに表示されたハブへの成功した接続](../media-draft/12ea6da6eef9bf96be6bd80aa1721173.png)
+![ハブに正常に接続できたことがポータルに表示されます](../media-draft/12ea6da6eef9bf96be6bd80aa1721173.png)
 
 <!--Reference links
 

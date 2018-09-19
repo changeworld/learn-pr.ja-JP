@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-computer-vision-service.5-extract-printed-text
-title: 検出し、イメージから印刷したテキストを抽出
+title: 画像に含まれる印刷されたテキストの検出と抽出
 metadata:
-  title: 検出し、イメージから印刷したテキストを抽出
-  description: 検出し、イメージから印刷したテキストを抽出
+  title: 画像に含まれる印刷されたテキストの検出と抽出
+  description: 画像に含まれる印刷されたテキストの検出と抽出
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: marouill

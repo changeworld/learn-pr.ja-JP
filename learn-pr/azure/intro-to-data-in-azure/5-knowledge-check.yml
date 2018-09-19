@@ -8,47 +8,32 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 3c9195a15df18b14e5b56b9e3dc5b5926224ebee
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 1a3dfbe5b015ec7674a1d7e364ee49ba66d0d976
+  ms.sourcegitcommit: c3e0eb63efe8e9e6bb3f76bbbf24930621da571e
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44233528"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44711396"
 title: 知識チェック
 durationInMinutes: 5
 quiz:
   title: 知識チェック
   questions:
-  - content: ご利用のオンライン ラーニング ポータルで、各ユーザーの物理アドレスおよびメール アドレスを保持する必要があります。 Azure のどの機能で、この情報を管理できますか?
+  - content: お客様は資金が限られたスタートアップ企業で働いているものとします。 オンプレミスのソリューションより Azure データ ストレージの方が好ましい場合があるのはなぜですか?
     choices:
-    - content: Azure Archive
+    - content: 特定のハードウェア ブランドを使用すると、そのハードウェア ベンダーとマーケティング パートナーシップを結ぶことができます。
       isCorrect: false
-      incorrectExplanation: Azure Archive は、データの古いバージョンを保存するのに最適です。これにより、監査やその他の頻繁にないアクティビティで必要になった場合にデータを取得できます。
-    - content: Azure SQL Database
+    - content: Azure の従量課金制の課金モデルを利用すると、高価なハードウェアを購入しなくて済みます。
       isCorrect: true
-      correctExplanation: 正解です。 Azure SQL Database では、リレーショナル データを保存したり、強力なクエリでデータを迅速に取得することができます。
-    - content: Azure Files
+      correctExplanation: Azure を利用する場合、大規模な先行設備投資 (CapEx) はありません。 月ごとに使用したサービスに対してのみ支払います (OpEx)。
+    - content: データ ストアの場所を厳密に制御できます。
       isCorrect: false
-      incorrectExplanation: Azure Files は、クラウドでのファイル共有で使用します。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
-  - content: 販売ラーニング ポータルで使用されるシミュレーション ファイルのサイズが、かなり大きくなる場合があります。 Azure では、これらのファイルはどのようにサポートされますか?
+  - content: オンプレミスのデータ ストアを Azure に移動することで最もメリットがあるのは、次のどの状況でしょうか?
     choices:
-    - content: Azure Blob Storage では、最大 8 TB までのファイル サイズがサポートされます
+    - content: 1 年を通じて何度も増えたり減ったりする、予測できないストレージ需要。
       isCorrect: true
-      correctExplanation: 正解です。 Azure Blob Storage では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
-    - content: Azure Files は、大きなファイルの格納およびストリーミングがサポートされます。
+      correctExplanation: Azure データ ストレージは柔軟です。 容量をすばやく簡単に増やしたり減らしたりできます。 負荷の急増を処理するためにパフォーマンスを上げたり、コスト削減のためにパフォーマンスを下げたりできます。 どのケースでも、支払いは使用した分だけです。
+    - content: 長期的に安定して増加するストレージ需要。
       isCorrect: false
-      incorrectExplanation: Azure Files は、クラウドでのファイル共有に使用されます。 Windows、Linux、macOS のクラウドまたはオンプレミスの展開で同時にマウントできます。
-    - content: Azure では、大きなファイルの格納およびストリーミングはサポートされていません。
+    - content: 一貫して変化しないストレージ需要。
       isCorrect: false
-      incorrectExplanation: Azure では、大きな動画や音声ファイルを格納したり、世界中の任意の場所からブラウザーに直接ストリーミングすることができます。
-  - content: Azure では、データの持続性と信頼性はどのようにサポートされますか?
-    choices:
-    - content: Azure のレプリケーション機能を使用してです。
-      isCorrect: true
-      correctExplanation: 正解です。 Azure には、自然災害からデータを保護するレプリケーション機能と、悪意のある攻撃からデータを保護する暗号化があります。
-    - content: データの暗号化および暗号化解除には、追加のプレミアム サポートが必要であり、信頼性はサード パーティのバックアップ機能によってサポートされています。
-      isCorrect: false
-      incorrectExplanation: 追加のサポートは不要です。Azure には、予期しないリスクや脅威からデータを保護する機能があります。
-    - content: Azure には、組み込みの冗長性や暗号化機能はありません。
-      isCorrect: false
-      incorrectExplanation: Azure には、リスクや脅威からデータを保護するための機能が組み込まれています。

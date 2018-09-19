@@ -2,7 +2,7 @@
 uid: learn.intro-to-data-in-azure
 metadata:
   title: Azure でのデータの概要
-  description: このモジュールで、オンプレミス ストレージと Azure データ ストレージの利点について説明します。
+  description: このモジュールでは、Azure データ ストレージとオンプレミス ストレージの利点を比較します。
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
@@ -15,15 +15,15 @@ metadata:
   ms.lasthandoff: 09/13/2018
   ms.locfileid: "45538143"
 title: Azure でのデータの概要
-summary: このモジュールで、オンプレミス ストレージと Azure データ ストレージの利点について説明します。
+summary: このモジュールでは、Azure データ ストレージとオンプレミス ストレージの利点を比較します。
 abstract: >
   このモジュールでは、次のことを行います。
 
-  - Azure でのデータ ストレージ オプションをアンケートします。
+  - Azure のデータ ストレージ オプションを確認する
 
-  - Azure のデータを探索ストレージは、ビジネスの要件を満たすことができます
+  - Azure データ ストレージでビジネス要件を満たすしくみを確認する
 
-  - Azure データ ストレージ、オンプレミス ストレージとの比較します。
+  - Azure データ ストレージとオンプレミス ストレージを比較する
 prerequisites: なし
 iconUrl: /learn/achievements/intro-to-data-in-azure.svg
 levels:
