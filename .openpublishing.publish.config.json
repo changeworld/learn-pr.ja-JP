@@ -9,15 +9,15 @@
     "xref_query_tags": [
       "/dotnet"
     ],
-      "open_to_public_contributors": false,
-      "type_mapping": {
+    "open_to_public_contributors": false,
+    "type_mapping": {
       "Achievements": "Toc",
       "LearningPath": "Content",
       "Module": "Content",
       "ModuleUnit": "Content",
       "ZonePivotGroups": "Toc"
     },
-      "build_entry_point": "docs",
+    "build_entry_point": "docs",
     "template_folder": "_themes",
     "customized_tasks": {
         "docset_postbuild": [
@@ -33,8 +33,8 @@
   ],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/learn.ja-jp",
   "git_repository_branch_open_to_public_contributors": "master",
-  "continue_with_document_error": false,
   "skip_source_output_uploading": false,
+  "continue_with_document_error": false,
   "need_preview_pull_request": true,
   "contribution_branch_mappings": {},
   "dependent_repositories": [
