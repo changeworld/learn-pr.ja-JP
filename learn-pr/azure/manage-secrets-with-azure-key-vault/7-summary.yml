@@ -1,65 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.7-summary
-title: <span data-ttu-id="baf74-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="baf74-101">Summary</span></span>
+title: <span data-ttu-id="97c98-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="97c98-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="baf74-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="baf74-102">Summary</span></span>
-  description: <span data-ttu-id="baf74-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="baf74-103">Summary</span></span>
+  title: <span data-ttu-id="97c98-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="97c98-102">Summary</span></span>
+  description: <span data-ttu-id="97c98-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="97c98-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: c889cacc6f9319be0f9f168b52a77b4b857813a5
-  ms.sourcegitcommit: f9023fdf01347b57619974b6961e1565cfc483d9
+  ms.openlocfilehash: 254a32743ced2ea484e10f1a5c68b4ded5f4693c
+  ms.sourcegitcommit: 4874636583f1286971bfaacaa70d0db7882bc4a2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/09/2018
-  ms.locfileid: "44238526"
+  ms.lasthandoff: 09/12/2018
+  ms.locfileid: "44694779"
 durationInMinutes: 3
 content: >
   [!include[](includes/7-summary.md)]
 quiz:
-  title: '<span data-ttu-id="baf74-104">知識チェック: Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="baf74-104">Knowledge check: Azure Key Vault</span></span>'
+  title: '<span data-ttu-id="97c98-104">知識チェック: Azure Key Vault</span><span class="sxs-lookup"><span data-stu-id="97c98-104">Knowledge check: Azure Key Vault</span></span>'
   questions:
-  - content: <span data-ttu-id="baf74-105">次のうち、Azure Key Vault の主な利点では**ない**のはどれですか?</span><span class="sxs-lookup"><span data-stu-id="baf74-105">Which of the following is **not** a primary benefit of Azure Key Vault?</span></span>
+  - content: <span data-ttu-id="97c98-105">次のうち、Azure Key Vault の利点では**ない**のはどれですか?</span><span class="sxs-lookup"><span data-stu-id="97c98-105">Which of the following is **not** a benefit of Azure Key Vault?</span></span>
     choices:
-    - content: <span data-ttu-id="baf74-106">ユーザーの個人情報を安全に格納します。</span><span class="sxs-lookup"><span data-stu-id="baf74-106">Secure storage of private user information.</span></span>
+    - content: <span data-ttu-id="97c98-106">ユーザーの個人情報を安全に格納します。</span><span class="sxs-lookup"><span data-stu-id="97c98-106">Secure storage of private user information.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="baf74-107">Key Vault は、ユーザーのシークレットではなく、アプリケーション シークレットを格納することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="baf74-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
-    - content: <span data-ttu-id="baf74-108">アプリケーションの複数のインスタンスに対して、アプリケーション シークレットを同期します。</span><span class="sxs-lookup"><span data-stu-id="baf74-108">Synchronizing application secrets among multiple instances of an application.</span></span>
+      correctExplanation: <span data-ttu-id="97c98-107">Key Vault は、ユーザーのシークレットではなく、アプリケーション シークレットを格納することを目的としています。</span><span class="sxs-lookup"><span data-stu-id="97c98-107">Key Vault is intended for storing application secrets, not user secrets.</span></span>
+    - content: <span data-ttu-id="97c98-108">アプリケーションの複数のインスタンスに対して、アプリケーション シークレットを同期します。</span><span class="sxs-lookup"><span data-stu-id="97c98-108">Synchronizing application secrets among multiple instances of an application.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-109">Key Vault では、中央にシークレットを格納し、アプリケーションの複数のインスタンスが同じシークレットに同時にアクセスすることを許可していません。</span><span class="sxs-lookup"><span data-stu-id="baf74-109">Key Vault does enable multiple instances of applications to access the same secrets by storing them centrally.</span></span>
-    - content: <span data-ttu-id="baf74-110">アプリケーションの開発者が、アプリケーション シークレットを直接処理する必要性が減ります。</span><span class="sxs-lookup"><span data-stu-id="baf74-110">Reducing the need for application developers to directly handle application secrets.</span></span>
+    - content: <span data-ttu-id="97c98-109">アプリケーションの開発者が、アプリケーション シークレットを直接処理する必要性が減ります。</span><span class="sxs-lookup"><span data-stu-id="97c98-109">Reducing the need for application developers to directly handle application secrets.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-111">Key Vault の主な利点は、シークレットの実際のやり取りが減ることであり、これによりセキュリティが高まります。</span><span class="sxs-lookup"><span data-stu-id="baf74-111">Reducing hands-on interaction with secrets is a primary benefit of Key Vault and increases security.</span></span>
-    - content: <span data-ttu-id="baf74-112">割り当て可能なアクセス許可を使用して、アプリケーション シークレットへのアクセスを制御します。</span><span class="sxs-lookup"><span data-stu-id="baf74-112">Controlling access to application secrets with assignable permissions.</span></span>
+    - content: <span data-ttu-id="97c98-110">割り当て可能なアクセス許可を使用して、アプリケーション シークレットへのアクセスを制御します。</span><span class="sxs-lookup"><span data-stu-id="97c98-110">Controlling access to application secrets with assignable permissions.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-113">Key Vault のアクセス制御ポリシーでは、シークレットへのアクセスを制限することで、シークレットのセキュリティを強化します。</span><span class="sxs-lookup"><span data-stu-id="baf74-113">Key Vault's access control policies increase secret security by limiting access to secrets.</span></span>
-  - content: <span data-ttu-id="baf74-114">次のうち、Key Vault の認証と承認プロセスの最も適切な説明はどれですか?</span><span class="sxs-lookup"><span data-stu-id="baf74-114">Which of these statements best describes Key Vault's authentication and authorization process?</span></span>
+  - content: <span data-ttu-id="97c98-111">次のうち、Azure Key Vault の認証と承認プロセスの最も適切な説明はどれですか?</span><span class="sxs-lookup"><span data-stu-id="97c98-111">Which of these statements best describes Azure Key Vault's authentication and authorization process?</span></span>
     choices:
-    - content: <span data-ttu-id="baf74-115">アプリケーションでは、リード開発者のユーザー名とパスワードを使用して、コンテナーに認証を行います。これでは、コンテナーのすべてのシークレットに完全にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="baf74-115">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
+    - content: <span data-ttu-id="97c98-112">アプリケーションでは、リード開発者のユーザー名とパスワードを使用して、コンテナーに認証を行います。これでは、コンテナーのすべてのシークレットに完全にアクセスすることができます。</span><span class="sxs-lookup"><span data-stu-id="97c98-112">Applications authenticate to a vault with the username and password of the lead developer and have full access to all secrets in the vault.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-116">Key Vault の認証では、ユーザー名とパスワードは使用されません。また、アプリケーションは、個人の ID ではなく、そのアプリケーションの ID で認証されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-116">Key Vault authentication does not use usernames and passwords, and applications should authenticate with their own identities, not the identity of a person.</span></span>
-    - content: <span data-ttu-id="baf74-117">アプリケーションとユーザーは、Microsoft アカウントを使用してコンテナーに認証を行い、特定のシークレットにアクセスすることを承認されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-117">Applications and users authenticate to a vault with a Microsoft Account and are authorized to access specific secrets.</span></span>
+    - content: <span data-ttu-id="97c98-113">アプリケーションとユーザーは、Microsoft アカウントを使用してコンテナーに認証を行い、特定のシークレットにアクセスすることを承認されます。</span><span class="sxs-lookup"><span data-stu-id="97c98-113">Applications and users authenticate to a vault with a Microsoft account and are authorized to access specific secrets.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-118">Key Vault の認証では、Microsoft アカウントは使用されません。また、アクセス ポリシーでは、コンテナー内の個々のシークレットは制御されていません。</span><span class="sxs-lookup"><span data-stu-id="baf74-118">Key Vault authentication does not use Microsoft Accounts, and access policies do not offer control over individual secrets in a vault.</span></span>
-    - content: <span data-ttu-id="baf74-119">アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットにさまざまなアクションを実行することを承認されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-119">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform different actions on all secrets in the vault.</span></span>
+    - content: <span data-ttu-id="97c98-114">アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットに対するアクションの実行を承認されます。</span><span class="sxs-lookup"><span data-stu-id="97c98-114">Applications and users authenticate to a vault with their Azure Active Directory identities and are authorized to perform actions on all secrets in the vault.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="baf74-120">Key Vault のすべての認証で、Azure Active Directory の ID が使用され、アクセス ポリシーは、コンテナー内のすべてのシークレットに適用されるアクションに基づきます。</span><span class="sxs-lookup"><span data-stu-id="baf74-120">All authentication to Key Vault uses Azure Active Directory identities, and access policies are based on actions that apply to every secret in the vault.</span></span>
-    - content: <span data-ttu-id="baf74-121">アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに認証を行い、それらのユーザーが所有するシークレットへのアクセスが付与されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-121">Applications authenticate to a vault using the usernames and passwords of users who sign in to the web app, and are granted access to secrets owned by those users.</span></span>
+      correctExplanation: <span data-ttu-id="97c98-115">Key Vault に対する認証では、Azure Active Directory の ID を使います。</span><span class="sxs-lookup"><span data-stu-id="97c98-115">Authentication to Key Vault uses Azure Active Directory identities.</span></span> <span data-ttu-id="97c98-116">コンテナー内のすべてのシークレットに適用されるアクションに対する承認を提供するには、アクセス ポリシーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="97c98-116">Access policies are used to provide authorization for actions that apply to every secret in the vault.</span></span>
+    - content: <span data-ttu-id="97c98-117">アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに対する認証を行い、そのユーザーが所有するシークレットへのアクセスが付与されます。</span><span class="sxs-lookup"><span data-stu-id="97c98-117">Applications authenticate to a vault with the username and password of a user that signs in to the web app, and is granted access to secrets owned by that user.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-122">アプリのユーザーには、アプリケーションの Key Vault にアクセスする権限がなく、コンテナーはユーザーのシークレットの格納には使用されません。</span><span class="sxs-lookup"><span data-stu-id="baf74-122">Users of an app should not have access to an application's Key Vault, and vaults should not be used to store user secrets.</span></span>
-  - content: <span data-ttu-id="baf74-123">ご自分のアプリに読み込んだ後、Key Vault ではどのようにシークレットを保護しますか?</span><span class="sxs-lookup"><span data-stu-id="baf74-123">How does Key Vault help protect your secrets after they have been loaded by your app?</span></span>
+  - content: <span data-ttu-id="97c98-118">アプリに読み込まれた後のシークレットは Azure Key Vault でどのように保護されますか?</span><span class="sxs-lookup"><span data-stu-id="97c98-118">How does Azure Key Vault help protect your secrets after they have been loaded by your app?</span></span>
     choices:
-    - content: <span data-ttu-id="baf74-124">Key Vault では、シークレットを読み込むたびに新しいシークレット値が自動生成されます。そのため、それらが再利用されることはありません。</span><span class="sxs-lookup"><span data-stu-id="baf74-124">Key Vault automatically generates new secret values each time you load a secret so they can never be reused.</span></span>
+    - content: <span data-ttu-id="97c98-119">Azure Key Vault は、使用されるたびに新しいシークレットを自動的に生成します。</span><span class="sxs-lookup"><span data-stu-id="97c98-119">Azure Key Vault automatically generates a new secret after every use.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-125">Key Vault では、新しいシークレット値は自動生成されません。</span><span class="sxs-lookup"><span data-stu-id="baf74-125">Key Vault does not automatically generate new secret values.</span></span>
-    - content: <span data-ttu-id="baf74-126">Key Vault のクライアント ライブラリでは、ご使用のアプリケーションによって使用されるメモリ領域が保護されるので、シークレットが誤って公開されるのが防止されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-126">The Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
+    - content: <span data-ttu-id="97c98-120">Azure Key Vault のクライアント ライブラリでは、シークレットが誤って公開されるのを防ぐため、アプリケーションによって使用されるメモリ領域が保護されます。</span><span class="sxs-lookup"><span data-stu-id="97c98-120">The Azure Key Vault client library protects regions of memory used by your application to prevent accidental secret exposure.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-127">これは、Key Vault クライアント ライブラリの機能ではありません。</span><span class="sxs-lookup"><span data-stu-id="baf74-127">This is not a feature of the Key Vault client library.</span></span>
-    - content: <span data-ttu-id="baf74-128">Key Vault はシークレットを二重に暗号化するので、それが使用されるたびに、ご利用のアプリでローカルで復号化される必要があります。</span><span class="sxs-lookup"><span data-stu-id="baf74-128">Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they are used.</span></span>
+    - content: <span data-ttu-id="97c98-121">Azure Key Vault ではシークレットが二重に暗号化されており、シークレットを使用するたびにアプリでローカルに復号化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="97c98-121">Azure Key Vault double-encrypts secrets, requiring your app to decrypt them locally every time they're used.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="baf74-129">コンテナーからご使用のアプリに返されるシークレット値は暗号化されていません。</span><span class="sxs-lookup"><span data-stu-id="baf74-129">Secret values returned to your app from a vault are not encrypted.</span></span>
-    - content: <span data-ttu-id="baf74-130">誤り。シークレットは、アプリケーションに読み込まれると保護解除されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-130">It doesn't &mdash; secrets are unprotected once they are loaded by your application.</span></span>
+    - content: <span data-ttu-id="97c98-122">シークレットは保護されません。</span><span class="sxs-lookup"><span data-stu-id="97c98-122">It doesn't protect your secrets.</span></span> <span data-ttu-id="97c98-123">シークレットは、アプリケーションによって読み込まれると保護されなくなります。</span><span class="sxs-lookup"><span data-stu-id="97c98-123">Secrets are unprotected once they're loaded by your application.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="baf74-131">シークレットは、アプリが読み込まれると、保護解除されます。</span><span class="sxs-lookup"><span data-stu-id="baf74-131">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="baf74-132">アプリケーション コードで、これらが記録されたり、格納されたり、クライアントの応答で返されたりしないようにする必要があります。</span><span class="sxs-lookup"><span data-stu-id="baf74-132">Take care not to log them, store them or return them in client responses in your application code.</span></span>
+      correctExplanation: <span data-ttu-id="97c98-124">アプリによって読み込まれたシークレットは、保護されなくなります。</span><span class="sxs-lookup"><span data-stu-id="97c98-124">Once secrets have been loaded by an app, they are unprotected.</span></span> <span data-ttu-id="97c98-125">シークレットをログに記録したり、保存したり、クライアントの応答で返したりしないでください。</span><span class="sxs-lookup"><span data-stu-id="97c98-125">Make sure to not log them, store them, or return them in client responses.</span></span>
