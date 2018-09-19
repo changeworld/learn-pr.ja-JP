@@ -1,3 +1,0 @@
-## <a name="activate-azure-sandbox"></a><span data-ttu-id="b2240-101">Azure サンドボックスのアクティブ化</span><span class="sxs-lookup"><span data-stu-id="b2240-101">Activate Azure Sandbox</span></span>
-
-<span data-ttu-id="b2240-102">このモジュールで演習を完了するための無料の Azure サンドボックスを設定しました。</span><span class="sxs-lookup"><span data-stu-id="b2240-102">We have setup a free Azure sandbox to complete the exercises in this module.</span></span> <span data-ttu-id="b2240-103">開始するには、**[Activate Azure sandbox]\(Azure サンドボックスのアクティブ化\)** をクリックします (まだ行っていない場合)。</span><span class="sxs-lookup"><span data-stu-id="b2240-103">To get started, click **Activate Azure sandbox** if you have not done so already.</span></span>
