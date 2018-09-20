@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.6-javascript-programming
+metadata:
+  title: <span data-ttu-id="1b831-101">データに対して複雑な操作を実行する</span><span class="sxs-lookup"><span data-stu-id="1b831-101">Run complex operations on your data</span></span>
+  description: <span data-ttu-id="1b831-102">Azure Portal でストアド プロシージャとユーザー定義関数 (UDF) を使用して、複雑な操作を実行する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="1b831-102">Learn how to perform complex operations by using stored procedures and user defined functions (UDFs) in the Azure portal.</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3ed02e4c60b93ce3aeed5afe9aee620f82de2254
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483808"
+azureSandbox: true
+title: <span data-ttu-id="1b831-103">データに対して複雑な操作を実行する</span><span class="sxs-lookup"><span data-stu-id="1b831-103">Run complex operations on your data</span></span>
+durationInMinutes: 10
+content: '[!include[](includes/6-javascript-programming.md)]'
