@@ -1,0 +1,20 @@
+<span data-ttu-id="98aa6-101">ストレージ アカウントを作成するツールはいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="98aa6-101">There are several tools that create a storage account.</span></span> <span data-ttu-id="98aa6-102">通常は、GUI を使用したいかどうか、および自動化する必要があるかどうかに基づいて選択します。</span><span class="sxs-lookup"><span data-stu-id="98aa6-102">Your choice is typically based on if you want a GUI and whether you need automation.</span></span>
+
+## <a name="available-tools"></a><span data-ttu-id="98aa6-103">使用可能なツール</span><span class="sxs-lookup"><span data-stu-id="98aa6-103">Available tools</span></span>
+
+<span data-ttu-id="98aa6-104">以下のツールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-104">The available tools are:</span></span>
+
+- <span data-ttu-id="98aa6-105">Azure portal</span><span class="sxs-lookup"><span data-stu-id="98aa6-105">Azure Portal</span></span>
+- <span data-ttu-id="98aa6-106">Azure CLI (コマンド ライン インターフェイス)</span><span class="sxs-lookup"><span data-stu-id="98aa6-106">Azure CLI (Command-line interface)</span></span>
+- <span data-ttu-id="98aa6-107">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="98aa6-107">Azure PowerShell</span></span>
+- <span data-ttu-id="98aa6-108">管理クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="98aa6-108">Management client libraries</span></span>
+
+<span data-ttu-id="98aa6-109">ポータルの GUI では、各設定の説明が表示されます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-109">The portal provides a GUI with explanations for each setting.</span></span> <span data-ttu-id="98aa6-110">これによって、ポータルの使い勝手がよくなり、オプションについて知ることができます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-110">This makes the portal easy to use and helpful for learning about the options.</span></span>
+
+<span data-ttu-id="98aa6-111">上述の一覧の他のツールはすべて自動化に対応しています。</span><span class="sxs-lookup"><span data-stu-id="98aa6-111">The other tools in the above list all support automation.</span></span> <span data-ttu-id="98aa6-112">Azure CLI と Azure PowerShell を使用すると、スクリプトを記述できます。管理ライブラリでは、作品をクライアント アプリに組み込むことができます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-112">The Azure CLI and Azure PowerShell let you write scripts, while the management libraries allow you to incorporate the creation into a client app.</span></span>
+
+## <a name="how-to-choose-a-tool"></a><span data-ttu-id="98aa6-113">ツールを選択する方法</span><span class="sxs-lookup"><span data-stu-id="98aa6-113">How to choose a tool</span></span>
+
+<span data-ttu-id="98aa6-114">ストレージ アカウントは通常はデータの分析に基づいているので、比較的安定している傾向があります。</span><span class="sxs-lookup"><span data-stu-id="98aa6-114">Storage accounts are typically based on an analysis of your data, so they tend to be relatively stable.</span></span> <span data-ttu-id="98aa6-115">その結果、ストレージ アカウントは、通常、プロジェクトの開始時に 1 回のみ操作すると作成されます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-115">As a result, storage-account creation is usually a one-time operation done at the start of a project.</span></span> <span data-ttu-id="98aa6-116">1 回限りのアクティビティの場合は、ポータルが最も一般的な選択肢です。</span><span class="sxs-lookup"><span data-stu-id="98aa6-116">For one-time activities, the portal is the most common choice.</span></span>
+
+<span data-ttu-id="98aa6-117">まれに自動化が必要な場合は、プログラミング可能な API かスクリプト ソリューションを選択します。</span><span class="sxs-lookup"><span data-stu-id="98aa6-117">In the rare cases where you need automation, the decision is between a programmatic API or a scripting solution.</span></span> <span data-ttu-id="98aa6-118">一般に、IDE、NuGet パッケージ、またはビルド ステップが必要ないため、スクリプトの方が短時間で作成でき、メンテナンス作業も少なくて済みます。</span><span class="sxs-lookup"><span data-stu-id="98aa6-118">Scripts are typically faster to create and less work to maintain because there is no need for an IDE, NuGet packages, or build steps.</span></span> <span data-ttu-id="98aa6-119">既存のクライアント アプリケーションがある場合は、管理ライブラリが有力な選択肢になる可能性があります。それ以外の場合、スクリプトの方が適切なオプションです。</span><span class="sxs-lookup"><span data-stu-id="98aa6-119">If you have an existing client application, the management libraries might be an attractive choice; otherwise, scripts will likely be a better option.</span></span>

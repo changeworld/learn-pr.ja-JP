@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.4-backup-and-restore
+title: <span data-ttu-id="f700c-101">ご利用のデータをバックアップと復元で保護する</span><span class="sxs-lookup"><span data-stu-id="f700c-101">Protect your data with backup and restore</span></span>
+metadata:
+  title: <span data-ttu-id="f700c-102">ご利用のデータをバックアップと復元で保護する</span><span class="sxs-lookup"><span data-stu-id="f700c-102">Protect your data with backup and restore</span></span>
+  description: <span data-ttu-id="f700c-103">ご利用のデータをバックアップと復元で保護する</span><span class="sxs-lookup"><span data-stu-id="f700c-103">Protect your data with backup and restore</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5e18a24fb15d47403353af4e7e7b466b6dc9c043
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346743"
+durationInMinutes: 15
+content: >
+  [!include[](includes/4-backup-and-restore.md)]
+quiz:
+  title: <span data-ttu-id="f700c-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="f700c-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="f700c-105">正誤問題: データの自動バックアップは、すべての Azure データ ストレージ オプションに含まれていますか?</span><span class="sxs-lookup"><span data-stu-id="f700c-105">True or false: all Azure data storage options include automatic backup of data?</span></span>'
+    choices:
+    - content: <span data-ttu-id="f700c-106">はい</span><span class="sxs-lookup"><span data-stu-id="f700c-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f700c-107">すべての Azure データ ストレージ製品に自動バックアップが含まれているわけではありません。たとえば、Azure BLOB には含まれません。</span><span class="sxs-lookup"><span data-stu-id="f700c-107">Not all Azure data storage products include automatic backup; for example, Azure Blobs do not.</span></span>
+    - content: <span data-ttu-id="f700c-108">いいえ</span><span class="sxs-lookup"><span data-stu-id="f700c-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f700c-109">ほとんどの Azure サービスが統合バックアップ機能を提供していますが、常に既定で有効になっているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="f700c-109">Most Azure services offer integrated backup functionality, but it is not always enabled by default.</span></span> <span data-ttu-id="f700c-110">確実にすべてのデータを保護するため、必要に応じて Azure Backup エージェントのようなサービスを追加することもできます。</span><span class="sxs-lookup"><span data-stu-id="f700c-110">You can also add services like Azure Backup Agent as needed to make sure all your data is protected.</span></span>
+  - content: <span data-ttu-id="f700c-111">復元を定期的にテストすることがなぜ重要なのですか?</span><span class="sxs-lookup"><span data-stu-id="f700c-111">Why is it important to test restores regularly?</span></span>
+    choices:
+    - content: <span data-ttu-id="f700c-112">ご利用のバックアップの整合性を検証するため。</span><span class="sxs-lookup"><span data-stu-id="f700c-112">To validate the integrity of your backups.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f700c-113">復元を定期的にテストすることでご利用のバックアップの整合性を検証することができますが、適切な選択肢はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="f700c-113">Testing restores regularly does allow you to validate the integrity of your backups, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="f700c-114">復元プロセスを理解するため。</span><span class="sxs-lookup"><span data-stu-id="f700c-114">To become familiar with the restoration process.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f700c-115">復元を定期的にテストすることで復元プロセスを理解することができますが、適切な選択肢はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="f700c-115">Testing restores regularly does allow you to become more familiar with the restoration process, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="f700c-116">バックアップ プロセスおよび復元プロセスでのギャップを識別するため。</span><span class="sxs-lookup"><span data-stu-id="f700c-116">To identify gaps in your backup and restore processes.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f700c-117">復元の定期的なテストは、バックアップ プロセスおよび復元プロセスでのギャップの識別に役立ちますが、適切な選択肢はこれだけではありません。</span><span class="sxs-lookup"><span data-stu-id="f700c-117">Testing restores regularly does help identify gaps in your backup and restore processes, but this is not the only correct choice.</span></span>
+    - content: <span data-ttu-id="f700c-118">上記のすべて。</span><span class="sxs-lookup"><span data-stu-id="f700c-118">All of the above.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f700c-119">すべてが復元プロセスの定期的なテストによる利点です。</span><span class="sxs-lookup"><span data-stu-id="f700c-119">All are benefits of regularly testing your restore process.</span></span>

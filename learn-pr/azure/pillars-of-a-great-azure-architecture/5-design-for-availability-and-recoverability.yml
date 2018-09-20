@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.5-design-for-availability-and-recoverability
+title: <span data-ttu-id="9f1f3-101">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="9f1f3-101">Design for availability and recoverability</span></span>
+metadata:
+  title: <span data-ttu-id="9f1f3-102">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="9f1f3-102">Design for availability and recoverability</span></span>
+  description: <span data-ttu-id="9f1f3-103">可用性と回復性のための設計</span><span class="sxs-lookup"><span data-stu-id="9f1f3-103">Design for availability and recoverability</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ce3457feab12a45bbc103e154affbcd13f4a3923
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348543"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-design-for-availability-and-recoverability.md)]
+quiz:
+  title: <span data-ttu-id="9f1f3-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="9f1f3-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="9f1f3-105">システムの可用性を上げ、お客様に対するサービス レベル アグリーメント (SLA) を向上させたいとします。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-105">Suppose you would like to increase the availability of your system to provide a better service-level agreement (SLA) to your customers.</span></span> <span data-ttu-id="9f1f3-106">次のうち、使用できる基本原則はどれですか?</span><span class="sxs-lookup"><span data-stu-id="9f1f3-106">Which of the following is a guiding principle you can use?</span></span>
+    choices:
+    - content: <span data-ttu-id="9f1f3-107">ターゲットからの許容可能なデータ損失を最大期間減らす</span><span class="sxs-lookup"><span data-stu-id="9f1f3-107">Reduce your target for maximum duration of acceptable data loss.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9f1f3-108">これでは回復性は向上しますが、可用性は向上しません。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-108">This can increase recoverability, not availability.</span></span>
+    - content: <span data-ttu-id="9f1f3-109">保存データをすべて暗号化する</span><span class="sxs-lookup"><span data-stu-id="9f1f3-109">Encrypt all data at rest</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9f1f3-110">これによってセキュリティは向上しますが、可用性は向上しません。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-110">This can increase security, not availability.</span></span>
+    - content: <span data-ttu-id="9f1f3-111">単一障害点を排除する</span><span class="sxs-lookup"><span data-stu-id="9f1f3-111">Eliminate single point of failure</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="9f1f3-112">可用性を考慮して設計する場合、一時的な状態や局所的な障害が発生した場合にもサービスを維持できることに焦点を当てます。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-112">Designing for availability focuses on maintaining service despite temporary conditions and localized failures.</span></span> <span data-ttu-id="9f1f3-113">単一障害点を排除するための冗長性の追加は、可用性を向上させるための中核的な戦略です。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-113">Adding redundancy to eliminate single points of failure is a core strategy for improving availability.</span></span>
+  - content: <span data-ttu-id="9f1f3-114">次のうち、定義された目標復旧時点 (RPO) の影響を受けるのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="9f1f3-114">Which of the following would be impacted by your defined Recovery Point Objective (RPO)?</span></span>
+    choices:
+    - content: <span data-ttu-id="9f1f3-115">データベース バックアップの頻度</span><span class="sxs-lookup"><span data-stu-id="9f1f3-115">The frequency of database backups</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="9f1f3-116">目標復旧時点 (RPO) は許容できるデータ損失の量に関係するため、バックアップの頻度はこの時間枠に収まっている必要があり、定義された RPO に直接影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-116">Since the recovery point objective is concerned with the amount of data loss that is tolerable, the frequency of backups needs to be within this time window and is directly impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="9f1f3-117">データのレプリケート先リージョンの数</span><span class="sxs-lookup"><span data-stu-id="9f1f3-117">The number of regions that data is replicated to</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9f1f3-118">データのレプリケート先リージョンの数は重要な考慮事項ですが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-118">The number of regions that data is replicated to is an important consideration, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="9f1f3-119">データベース クラスター内のインスタンス数</span><span class="sxs-lookup"><span data-stu-id="9f1f3-119">The number of instances in a database cluster</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9f1f3-120">データベース クラスター内のインスタンス数は重要な決定事項である可能性がありますが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-120">The number of instances in a database cluster can be an important decision, but is not impacted by your defined RPO.</span></span>
+    - content: <span data-ttu-id="9f1f3-121">アプリケーションで使用される負荷分散テクノロジの種類</span><span class="sxs-lookup"><span data-stu-id="9f1f3-121">The type of load-balancing technology used in your application</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="9f1f3-122">アプリケーションで使用される負荷分散テクノロジの種類は重要な決定事項である可能性がありますが、定義された RPO の影響は受けません。</span><span class="sxs-lookup"><span data-stu-id="9f1f3-122">The type of load-balancing technology used in your application can be an important decision, but is not impacted by your defined RPO.</span></span>

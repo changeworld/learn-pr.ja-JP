@@ -1,0 +1,7 @@
+<span data-ttu-id="a0240-101">このモジュールでは、仮想マシンを作成する前に行う必要があった意思決定を確認しました。</span><span class="sxs-lookup"><span data-stu-id="a0240-101">In this module, you looked at the decisions you need to make before creating a virtual machine.</span></span> <span data-ttu-id="a0240-102">これらの決定とは、VM のサイズ、使用するディスクの種類、選択したオペレーティング システムのイメージ、作成したリソースの種類などです。</span><span class="sxs-lookup"><span data-stu-id="a0240-102">These decisions include aspects such as the VM size, types of disks used, operating system image selected, and the types of resources created.</span></span>
+
+<span data-ttu-id="a0240-103">また、Azure で仮想マシンを作成および管理するオプションも確認しました。</span><span class="sxs-lookup"><span data-stu-id="a0240-103">You also looked at the options to create and manage virtual machines in Azure.</span></span> <span data-ttu-id="a0240-104">ポータルを使用した VM の作成と管理がどれだけ簡単か、また Resource Manager テンプレート、PowerShell、Azure CLI、Azure クライアント SDK をいつ使用するかがわかりました。</span><span class="sxs-lookup"><span data-stu-id="a0240-104">You saw how easy it is to create and manage VMs using the portal and when to use Resource Manager templates, PowerShell, the Azure CLI, and the Azure Client SDK.</span></span>
+
+<span data-ttu-id="a0240-105">最後に、VM をより簡単に管理するために利用可能な拡張機能とサービスを確認しました。</span><span class="sxs-lookup"><span data-stu-id="a0240-105">Finally, you looked at the extensions and services available to more easily administer your VMs.</span></span>
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
