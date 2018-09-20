@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 87634f7fe2239916c3988825ce31307de5a545a0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347488"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 次のうち、Azure Key Vault の利点では**ない**のはどれですか?
+    choices:
+    - content: ユーザーの個人情報を安全に格納します。
+      isCorrect: true
+      correctExplanation: Key Vault は、ユーザーのシークレットではなく、アプリケーション シークレットを格納することを目的としています。
+    - content: アプリケーションの複数のインスタンスに対して、アプリケーション シークレットを同期します。
+      isCorrect: false
+    - content: アプリケーションの開発者が、アプリケーション シークレットを直接処理する必要性が減ります。
+      isCorrect: false
+    - content: 割り当て可能なアクセス許可を使用して、アプリケーション シークレットへのアクセスを制御します。
+      isCorrect: false
+  - content: 次のうち、Azure Key Vault の認証と承認プロセスの最も適切な説明はどれですか?
+    choices:
+    - content: アプリケーションでは、リード開発者のユーザー名とパスワードを使用して、コンテナーに認証を行います。これでは、コンテナーのすべてのシークレットに完全にアクセスすることができます。
+      isCorrect: false
+    - content: アプリケーションとユーザーは、Microsoft アカウントを使用してコンテナーに認証を行い、特定のシークレットにアクセスすることを承認されます。
+      isCorrect: false
+    - content: アプリケーションとユーザーは、Azure Active Directory の ID を使用して、コンテナーに認証を行い、コンテナー内のすべてのシークレットに対するアクションの実行を承認されます。
+      isCorrect: true
+      correctExplanation: Key Vault に対する認証では、Azure Active Directory の ID を使います。 コンテナー内のすべてのシークレットに適用されるアクションに対する承認を提供するには、アクセス ポリシーが使用されます。
+    - content: アプリケーションは Web アプリにサインインするユーザーのユーザー名とパスワードを使用して、コンテナーに対する認証を行い、そのユーザーが所有するシークレットへのアクセスが付与されます。
+      isCorrect: false
+  - content: アプリに読み込まれた後のシークレットは Azure Key Vault でどのように保護されますか?
+    choices:
+    - content: Azure Key Vault は、使用されるたびに新しいシークレットを自動的に生成します。
+      isCorrect: false
+    - content: Azure Key Vault のクライアント ライブラリでは、シークレットが誤って公開されるのを防ぐため、アプリケーションによって使用されるメモリ領域が保護されます。
+      isCorrect: false
+    - content: Azure Key Vault ではシークレットが二重に暗号化されており、シークレットを使用するたびにアプリでローカルに復号化する必要があります。
+      isCorrect: false
+    - content: シークレットは保護されません。 シークレットは、アプリケーションによって読み込まれると保護されなくなります。
+      isCorrect: true
+      correctExplanation: アプリによって読み込まれたシークレットは、保護されなくなります。 シークレットをログに記録したり、保存したり、クライアントの応答で返したりしないでください。
