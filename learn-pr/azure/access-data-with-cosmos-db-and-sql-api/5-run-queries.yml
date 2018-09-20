@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.5-run-queries
+metadata:
+  title: Azure Portal でのクエリの実行
+  description: Azure Portal を使用することによって、Azure Cosmos DB 内のデータにクエリを実行する方法について説明します。
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bcb20101e640bdac533fa7ce5d63b3246c21094e
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483905"
+azureSandbox: true
+title: Azure Portal でのクエリの実行
+durationInMinutes: 5
+content: '[!include[](includes/5-run-queries.md)]'
