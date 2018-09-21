@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: <span data-ttu-id="bed8a-101">整合性レベルの選択</span><span class="sxs-lookup"><span data-stu-id="bed8a-101">Choose a consistency level</span></span>
+  description: <span data-ttu-id="bed8a-102">高可用性を最大化して待機時間を最小限に抑えるために Azure Cosmos DB の整合性レベルを使用し、アプリケーションにとって適切な整合性レベルを決定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="bed8a-102">Learn how consistency levels in Azure Cosmos DB can be used to maximize high-availability and minimize latency, and determine the correct consistency level for your application.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348864"
+title: <span data-ttu-id="bed8a-103">整合性レベルの選択</span><span class="sxs-lookup"><span data-stu-id="bed8a-103">Choose a consistency level</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: <span data-ttu-id="bed8a-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="bed8a-104">Knowledge check</span></span>
+  questions:
+  - content: <span data-ttu-id="bed8a-105">e コマース データベースのユーザー データには、どの整合性レベルが最適ですか?</span><span class="sxs-lookup"><span data-stu-id="bed8a-105">Which consistency level is most appropriate for the user data in an e-commerce database?</span></span> <span data-ttu-id="bed8a-106">ユーザーにとっては、買い物かごに入れたすべてのアイテムが確実に注文に含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-106">Users need to ensure that their orders contain all the items they placed in their basket.</span></span>
+    choices:
+    - content: <span data-ttu-id="bed8a-107">強固</span><span class="sxs-lookup"><span data-stu-id="bed8a-107">Strong</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bed8a-108">"強固" 整合性は、複数のリージョンにレプリケートされたデータベースには使用できません。</span><span class="sxs-lookup"><span data-stu-id="bed8a-108">Strong consistency is not available for databases replicated in multiple regions.</span></span>
+    - content: <span data-ttu-id="bed8a-109">有界整合性制約</span><span class="sxs-lookup"><span data-stu-id="bed8a-109">Bounded Staleness</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bed8a-110">"有界整合性制約" では、ユーザーのアイテムの一部しか買い物かごに表示されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-110">Bounded Staleness may result in only some of the users items being displayed in their basket.</span></span>
+    - content: <span data-ttu-id="bed8a-111">セッション</span><span class="sxs-lookup"><span data-stu-id="bed8a-111">Session</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bed8a-112">正解です。買い物かごの情報を含むユーザー データには、"セッション" が最適な整合性設定になります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-112">Correct, Session is the best consistency setting for user data that contains shopping basket information.</span></span> <span data-ttu-id="bed8a-113">"セッション" 整合性では、買い物かごを確認したときに、ユーザーが買い物かごに入れたすべてのアイテムが確実に表示されることを保証します。</span><span class="sxs-lookup"><span data-stu-id="bed8a-113">Session consistency will ensure that every item the user put in their basket is displayed when they review their basket.</span></span>
+    - content: <span data-ttu-id="bed8a-114">一貫性のあるプレフィックス</span><span class="sxs-lookup"><span data-stu-id="bed8a-114">Consistent Prefix</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bed8a-115">"一貫性のあるプレフィックス" では、ユーザー アイテムの一部しか買い物かごに表示されない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-115">Consistent Prefix could result in only some of the users items being displayed in their basket.</span></span>
+    - content: <span data-ttu-id="bed8a-116">最終的</span><span class="sxs-lookup"><span data-stu-id="bed8a-116">Eventual</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bed8a-117">"最終的" 整合性では、ユーザーが入れたすべてのアイテムが必ずしも買い物かごに表示されない状況が発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-117">Eventual consistency might result in a situation in which a shopping basket didn't display all the items the user had placed in it.</span></span>
+  - content: <span data-ttu-id="bed8a-118">操作ごとに使用される要求ユニット数が最も少ない整合性レベルはどれですか?</span><span class="sxs-lookup"><span data-stu-id="bed8a-118">Which consistency level consumes the least amount of request units per operation?</span></span>
+    choices:
+    - content: <span data-ttu-id="bed8a-119">強固</span><span class="sxs-lookup"><span data-stu-id="bed8a-119">Strong</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="bed8a-120">有界整合性制約</span><span class="sxs-lookup"><span data-stu-id="bed8a-120">Bounded Staleness</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="bed8a-121">セッション</span><span class="sxs-lookup"><span data-stu-id="bed8a-121">Session</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="bed8a-122">一貫性のあるプレフィックス</span><span class="sxs-lookup"><span data-stu-id="bed8a-122">Consistent Prefix</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="bed8a-123">最終的</span><span class="sxs-lookup"><span data-stu-id="bed8a-123">Eventual</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bed8a-124">"最終的" 整合性の読み取り操作のコストでは、秒単位で使用される要求ユニット数が最も少なくなります。</span><span class="sxs-lookup"><span data-stu-id="bed8a-124">The cost of a read operation with eventual consistency consumes the least number of request units per seconds.</span></span>

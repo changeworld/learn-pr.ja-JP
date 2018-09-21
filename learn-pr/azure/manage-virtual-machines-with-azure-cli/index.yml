@@ -1,0 +1,51 @@
+### YamlMime:Module
+uid: learn.manage-vms-with-azure-cli
+metadata:
+  title: Azure CLI を使用して仮想マシンを管理する
+  description: クロスプラットフォームの Azure CLI を使用して Azure 内の仮想マシンの作成、開始、停止や仮想マシン関連のその他の管理タスクを実行する方法を学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0256f4d1a33b4ab3d2f5d2f9fed61220fae46512
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348512"
+title: Azure CLI を使用して仮想マシンを管理する
+summary: クロスプラットフォームの Azure CLI を使用して Azure 内の仮想マシンの作成、開始、停止や仮想マシン関連のその他の管理タスクを実行する方法を学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure CLI を使用して仮想マシンを作成する
+
+  - Azure CLI を使用して仮想マシンのサイズを変更する
+
+  - Azure CLI を使用して基本的な管理タスクを実行する
+
+  - SSH と Azure CLI を使用して実行中の VM に接続する
+prerequisites: >
+  「**CLI を使用した Azure サービスの制御**」モジュールで得られる Azure CLI ツールに関する基本的な理解。
+iconUrl: /learn/achievements/manage-virtual-machines-with-azure-cli.svg
+levels:
+- beginner
+roles:
+- developer
+- administrator
+products:
+- azure
+- azure-virtual-machines
+- azure-clis
+units:
+- learn.manage-vms-with-azure-cli-data.1-what-is-the-cli
+- learn.manage-vms-with-azure-cli-data.2-create-a-vm
+- learn.manage-vms-with-azure-cli-data.3-testing-the-vm
+- learn.manage-vms-with-azure-cli-data.4-other-vm-images
+- learn.manage-vms-with-azure-cli-data.5-sizing-vms
+- learn.manage-vms-with-azure-cli-data.6-querying-vms
+- learn.manage-vms-with-azure-cli-data.7-managing-vms
+- learn.manage-vms-with-azure-cli-data.8-installing-software
+- learn.manage-vms-with-azure-cli-data.9-cleanup
+achievement: learn.manage-vms-with-azure-cli-data.badge
