@@ -1,0 +1,52 @@
+### YamlMime:ZonePivotGroups
+groups:
+- id: platform
+  title: プラットフォーム
+  prompt: プラットフォームを選択する
+  pivots:
+  - id: linux
+    title: Linux
+  - id: macos
+    title: Mac
+  - id: windows
+    title: Windows
+- id: platform-windows-mac
+  title: プラットフォーム
+  prompt: プラットフォームを選択する
+  pivots:
+  - id: macos
+    title: Mac
+  - id: windows
+    title: Windows
+- id: azure-interface
+  title: Shell
+  prompt: シェルを選択する
+  pivots:
+  - id: bash
+    title: Bash
+  - id: powershell
+    title: PowerShell
+  - id: portal
+    title: Azure Portal
+- id: dev-lang-csharp-javascript
+  title: 開発言語
+  prompt: 開発言語を選択する
+  pivots:
+  - id: csharp
+    title: C#
+  - id: javascript
+    title: JavaScript
+- id: platform-cloud
+  title: プラットフォーム
+  prompt: クラウドで実行するプラットフォームを選択する
+  pivots:
+  - id: windows-cloud
+    title: Windows
+  - id: linux-cloud
+    title: Linux
+ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
+ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46351488"

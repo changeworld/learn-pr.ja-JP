@@ -1,0 +1,15 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.1-introduction
+metadata:
+  title: はじめに
+  description: Azure Cosmos DB を使用してデータをグローバルに分散する方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: 91b7f0f62eee21ec1363ce40c10bae1d1cb273f8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348672"
+title: はじめに
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

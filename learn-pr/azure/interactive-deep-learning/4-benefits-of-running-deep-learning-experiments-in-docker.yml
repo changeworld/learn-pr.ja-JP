@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4-benefits-of-running-deep-learning-experiments-in-docker
+title: Docker でディープ ラーニング実験を行うことの利点
+metadata:
+  title: Docker でディープ ラーニング実験を行うことの利点
+  description: Docker でディープ ラーニング実験を行うことの利点
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b0d0b7120b424946d307ec3760f8b05b2020c33d
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484062"
+durationInMinutes: 2
+content: '[!include[](includes/4-benefits-of-running-deep-learning-experiments-in-docker.md)]'

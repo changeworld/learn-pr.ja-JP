@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.7-summary-and-knowledge-check
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a6f770fc032421778d9b8865ddc2324b1b481e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46484038"
+durationInMinutes: 1
+content: >
+  [!include[](includes/7-summary-and-knowledge-check.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '次のうち、ディープ ラーニングに DSVM を使用する場合に直面する依存関係の課題について最も適切に説明しているのはどれですか? '
+    choices:
+    - content: DSVM はサンドボックス化されており、新しいパッケージをインストールするための直接的なサポートは提供しません。
+      isCorrect: false
+      incorrectExplanation: DSVM は仮想マシンです。 これには、データ サイエンスと AI プロジェクトに役立つ多くのソフトウェアがプレインストールされていますが、ユーザーが自由に必要なものをインストールできます。
+    - content: DSVM は、CNTK と Cognitive Service の依存関係のみをサポートします。
+      incorrectExplanation: DSVM はそのままで、PyTorch、Chainer、Tensorflow など、多くの一般的なフレームワークをサポートしています。
+      isCorrect: false
+    - content: 一部のディープ ラーニング フレームワークやパッケージでは、異なる環境、GPU ドライバー、およびバイナリ パッケージが必要です
+      isCorrect: true
+      correctExplanation: ディープ ラーニングに使用しているすべてのフレームワーク間で依存関係を管理するのは難しい場合があります。 Docker コンテナーを実行してこれらの依存関係をグループ化および分離することで、この課題の役に立つことがあります。
+  - content: 'Docker コンテナー内でディープ ラーニングを試しているとします。 ご使用の DSVM は Linux 仮想マシン上で実行されており、ここには GPU も備わっています。 GPU 上でのコードの実行に必要なコンポーネントを含むコンテナーをプロビジョニングするために実行するコマンドは、次のうちどれですか? '
+    choices:
+    - content: docker run --useGPU
+      isCorrect: false
+      incorrectExplanation: docker run コマンドに、--useGPU というパラメーターはありません
+    - content: nvidia-docker run
+      isCorrect: true
+      correctExplanation: このコマンドを使用すると、GPU を使用するコンテナーを実行できます。
+    - content: docker-nvidia run
+      isCorrect: false
+      incorrectExplanation: このコマンドは存在しません。

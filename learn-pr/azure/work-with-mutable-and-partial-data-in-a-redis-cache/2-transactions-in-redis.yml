@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
+title: Azure Redis Cache のトランザクション
+metadata:
+  title: Azure Redis Cache のトランザクション
+  description: Azure Redis Cache のトランザクション
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2f99e3f7d78725710f0e2a11bf825256fe607626
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354250"
+durationInMinutes: 10
+content: '[!include[](includes/2-transactions-in-redis.md)]'
