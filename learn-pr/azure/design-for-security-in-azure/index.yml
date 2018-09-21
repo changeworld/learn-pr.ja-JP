@@ -1,0 +1,50 @@
+### YamlMime:Module
+uid: learn.design-for-security
+metadata:
+  title: Azure でのセキュリティのための設計
+  description: アーキテクチャ設計にセキュリティを組み込む方法と、アーキテクチャの全層で安全な環境を構築するために役立つ Azure ツールについて説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4adcea550809e51006a4eee0bd570afc8a7b1e91
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353249"
+title: Azure でのセキュリティのための設計
+summary: アーキテクチャ設計にセキュリティを組み込む方法と、アーキテクチャの全層で安全な環境を構築するために役立つ Azure ツールについて説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - アーキテクチャを保護するために多層防御を採用する方法について学習する
+
+  - ID を保護する方法について学習する
+
+  - Azure インフラストラクチャの保護に使用できるテクノロジについて学習する
+
+  - データを保護するための暗号化を使用する方法と場所について学習する
+
+  - ネットワーク レベルでアーキテクチャを保護する方法について学習する
+
+  - アプリケーションのセキュリティのベスト プラクティスを利用してセキュリティをアプリケーションに統合する方法について学習する
+prerequisites: なし
+iconUrl: /learn/achievements/design-for-security-in-azure.svg
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+- azure-active-directory
+units:
+- learn.design-for-security.1-introduction
+- learn.design-for-security.2-defense-in-depth
+- learn.design-for-security.3-identity-management
+- learn.design-for-security.4-infrastructure-protection
+- learn.design-for-security.5-encryption
+- learn.design-for-security.6-network-security
+- learn.design-for-security.8-summary
+achievement: learn.design-for-security.badge

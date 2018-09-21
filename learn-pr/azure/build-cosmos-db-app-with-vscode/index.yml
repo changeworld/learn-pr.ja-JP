@@ -1,0 +1,51 @@
+### YamlMime:Module
+uid: learn.cosmos-db-app-with-vscode
+metadata:
+  title: Visual Studio Code で Azure Cosmos DB 向けの .NET Core アプリを構築する
+  description: Visual Studio Code を使用して Azure Cosmos DB でデータの格納とクエリを行う .NET Core アプリケーションを作成する方法について説明します。
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ffd45cdc7df99994d5420dc3f2972cd5d87d81a3
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46353120"
+title: Visual Studio Code で Azure Cosmos DB 向けの .NET Core アプリを構築する
+summary: Visual Studio Code を使用して Azure Cosmos DB でデータの格納とクエリを行うデータベース アプリを構築する方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure Cosmos DB でデータの格納とクエリを行うアプリケーションを作成する
+
+  - Visual Studio Code で統合ターミナルを使用してコンソール アプリケーションを簡単に作成する
+
+  - Visual Studio Code 用 Azure Cosmos DB 拡張機能を利用して Azure Cosmos DB の機能を追加する
+prerequisites: >
+  - [Visual Studio Code](https://code.visualstudio.com/) をインストールしている必要があります
+
+  - [.NET Core 2.1](https://www.microsoft.com/net/download) がインストールされている必要があります
+
+  - [Azure アカウント](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account)拡張機能がインストールされている必要があります
+iconUrl: /learn/achievements/build-cosmos-db-app-with-vscode.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-cosmos-db
+- vs
+- vs-code
+units:
+- learn.cosmos-db-app-with-vscode.1-introduction
+- learn.cosmos-db-app-with-vscode.2-setup-cosmosdb
+- learn.cosmos-db-app-with-vscode.3-setup
+- learn.cosmos-db-app-with-vscode.4-crud-operations
+- learn.cosmos-db-app-with-vscode.5-query
+- learn.cosmos-db-app-with-vscode.6-stored-procedure
+- learn.cosmos-db-app-with-vscode.7-summary
+achievement: learn.cosmos-db-app-with-vscode.badge

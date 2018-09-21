@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.caching-and-performance-azure-storage-and-disks.7-summary
+title: <span data-ttu-id="50c74-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="50c74-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="50c74-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="50c74-102">Summary</span></span>
+  description: <span data-ttu-id="50c74-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="50c74-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2a607f558758763e280a575a129795ff0900ece5
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349431"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="50c74-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="50c74-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="50c74-105">ログ ファイルの格納など、書き込み負荷の高い操作に最適なキャッシュ オプションはどれですか。</span><span class="sxs-lookup"><span data-stu-id="50c74-105">Which caching option is a good choice for write-heavy operations such as storing log files?</span></span>
+    choices:
+    - content: <span data-ttu-id="50c74-106">読み取り専用</span><span class="sxs-lookup"><span data-stu-id="50c74-106">Read-only</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="50c74-107">読み取り専用キャッシュは、TempDB データなどのデータ ディスクに適しています。</span><span class="sxs-lookup"><span data-stu-id="50c74-107">Read-only caching works well for data disks, including TempDB data.</span></span> <span data-ttu-id="50c74-108">ただし、書き込み負荷の高い操作のパフォーマンスが向上することはありません。場合によっては、パフォーマンスがわずかに低下することもあります。</span><span class="sxs-lookup"><span data-stu-id="50c74-108">However, it does not improve performance of write-heavy operations and may even cause a slight decrease in performance.</span></span>
+    - content: <span data-ttu-id="50c74-109">読み取り/書き込み</span><span class="sxs-lookup"><span data-stu-id="50c74-109">Read/write</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="50c74-110">このオプションは、アプリが、キャッシュ データの永続ディスクへの書き込みを必要に応じて適切に処理できる場合に適しています。</span><span class="sxs-lookup"><span data-stu-id="50c74-110">This is a good option if your app properly handles writing cached data to persistent disks when needed.</span></span>
+    - content: <span data-ttu-id="50c74-111">なし</span><span class="sxs-lookup"><span data-stu-id="50c74-111">None</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="50c74-112">通常、書き込み負荷の高い操作は、キャッシュによるメリットはありません。</span><span class="sxs-lookup"><span data-stu-id="50c74-112">Write-heavy operations generally do not benefit from caching.</span></span> <span data-ttu-id="50c74-113">ログ ファイル専用のディスクには、おそらく 'なし' が最適な選択です。</span><span class="sxs-lookup"><span data-stu-id="50c74-113">'None' is probably the best choice for a disk dedicated to log files.</span></span>
+  - content: <span data-ttu-id="50c74-114">キャッシュの種類を変更するために、Azure が VM を再起動するのは、どのディスクの種類ですか。</span><span class="sxs-lookup"><span data-stu-id="50c74-114">For which type of disk does Azure restart the VM in order to change caching type?</span></span>
+    choices:
+    - content: <span data-ttu-id="50c74-115">データ</span><span class="sxs-lookup"><span data-stu-id="50c74-115">Data</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="50c74-116">データ ディスクのキャッシュ設定を変更すると、対象となるディスクがデタッチされ再アタッチされますが、VM は再起動しません。</span><span class="sxs-lookup"><span data-stu-id="50c74-116">Changing the cache setting of a data disk detaches and reattaches the target disk but does not restart the VM.</span></span>
+    - content: <span data-ttu-id="50c74-117">オペレーティング システム (OS)</span><span class="sxs-lookup"><span data-stu-id="50c74-117">Operating system (OS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="50c74-118">OS ディスクのキャッシュ設定を変更するには、VM の再起動が必要です。</span><span class="sxs-lookup"><span data-stu-id="50c74-118">Changing the cache setting of the OS disk requires a VM restart.</span></span>
+    - content: <span data-ttu-id="50c74-119">一時</span><span class="sxs-lookup"><span data-stu-id="50c74-119">Temporary</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="50c74-120">一時ディスクでキャッシュ オプションを変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="50c74-120">You can't change caching options on a temporary disk.</span></span>
+    - content: <span data-ttu-id="50c74-121">ゾーン冗長ストレージ (ZRS)</span><span class="sxs-lookup"><span data-stu-id="50c74-121">Zone-redundant storage (ZRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="50c74-122">Premium Storage アカウントでは、ZRS をサポートしていません。</span><span class="sxs-lookup"><span data-stu-id="50c74-122">A premium storage account doesn't support ZRS.</span></span>
+  - content: <span data-ttu-id="50c74-123">あなたは、Azure PowerShell を使用して VM を管理しているとします。</span><span class="sxs-lookup"><span data-stu-id="50c74-123">Suppose you are using Azure PowerShell to manage a VM.</span></span> <span data-ttu-id="50c74-124">VM を表すローカル オブジェクトがあり、そのローカル オブジェクトに複数の更新を行いました。</span><span class="sxs-lookup"><span data-stu-id="50c74-124">You have a local object that represents the VM and you've made several updates to that local object.</span></span> <span data-ttu-id="50c74-125">実際の VM にこれらのローカルの変更を適用するには、どの PowerShell コマンドレットを使用しますか。</span><span class="sxs-lookup"><span data-stu-id="50c74-125">Which PowerShell cmdlet would you use to apply those local changes to the actual VM?</span></span>
+    choices:
+    - content: <span data-ttu-id="50c74-126">Update-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="50c74-126">Update-AzureRmVM</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="50c74-127">このコマンドレットは、Azure の仮想マシンの状態を仮想マシン オブジェクトの状態に更新します。</span><span class="sxs-lookup"><span data-stu-id="50c74-127">This cmdlet updates the state of an Azure virtual machine to the state of a virtual machine object.</span></span>
+    - content: <span data-ttu-id="50c74-128">Set-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="50c74-128">Set-AzureRmVM</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="50c74-129">New-AzureRmVM</span><span class="sxs-lookup"><span data-stu-id="50c74-129">New-AzureRmVM</span></span>
+      isCorrect: false
