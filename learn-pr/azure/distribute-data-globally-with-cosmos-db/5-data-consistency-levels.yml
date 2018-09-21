@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+metadata:
+  title: 整合性レベルの選択
+  description: 高可用性を最大化して待機時間を最小限に抑えるために Azure Cosmos DB の整合性レベルを使用し、アプリケーションにとって適切な整合性レベルを決定する方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348864"
+title: 整合性レベルの選択
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-data-consistency-levels.md)]
+quiz:
+  title: 知識チェック
+  questions:
+  - content: e コマース データベースのユーザー データには、どの整合性レベルが最適ですか? ユーザーにとっては、買い物かごに入れたすべてのアイテムが確実に注文に含まれている必要があります。
+    choices:
+    - content: 強固
+      isCorrect: false
+      incorrectExplanation: "\"強固\" 整合性は、複数のリージョンにレプリケートされたデータベースには使用できません。"
+    - content: 有界整合性制約
+      isCorrect: false
+      incorrectExplanation: "\"有界整合性制約\" では、ユーザーのアイテムの一部しか買い物かごに表示されない可能性があります。"
+    - content: セッション
+      isCorrect: true
+      correctExplanation: 正解です。買い物かごの情報を含むユーザー データには、"セッション" が最適な整合性設定になります。 "セッション" 整合性では、買い物かごを確認したときに、ユーザーが買い物かごに入れたすべてのアイテムが確実に表示されることを保証します。
+    - content: 一貫性のあるプレフィックス
+      isCorrect: false
+      incorrectExplanation: "\"一貫性のあるプレフィックス\" では、ユーザー アイテムの一部しか買い物かごに表示されない可能性があります。"
+    - content: 最終的
+      isCorrect: false
+      incorrectExplanation: "\"最終的\" 整合性では、ユーザーが入れたすべてのアイテムが必ずしも買い物かごに表示されない状況が発生する可能性があります。"
+  - content: 操作ごとに使用される要求ユニット数が最も少ない整合性レベルはどれですか?
+    choices:
+    - content: 強固
+      isCorrect: false
+    - content: 有界整合性制約
+      isCorrect: false
+    - content: セッション
+      isCorrect: false
+    - content: 一貫性のあるプレフィックス
+      isCorrect: false
+    - content: 最終的
+      isCorrect: true
+      correctExplanation: "\"最終的\" 整合性の読み取り操作のコストでは、秒単位で使用される要求ユニット数が最も少なくなります。"

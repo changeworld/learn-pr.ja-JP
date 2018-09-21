@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.chain-azure-functions-data-using-input-output-bindings.4-read-data-with-input-bindings-portal-lesson
+metadata:
+  title: 入力バインディングを使用してデータを読み取る
+  description: この実践的なユニットでは、Azure Cosmos DB 入力バインディングを使用して、Azure 関数で Azure Cosmos DB からデータを読み取ります。
+  ms.date: 09/24/2018
+  author: andrewjbyrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ca4d91323e6aa6b0df61127172592f371ec16cb9
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351383"
+title: 入力バインディングを使用してデータを読み取る
+durationInMinutes: 5
+content: '[!include[](includes/4-read-data-with-input-bindings-portal-lesson.md)]'
