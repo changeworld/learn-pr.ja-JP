@@ -15,6 +15,6 @@ metadata:
   ms.lasthandoff: 09/19/2018
   ms.locfileid: "46346583"
 title: ディレクトリを作成する
-labId: 46071
+labId: 46467
 durationInMinutes: 5
 content: '[!include[](includes/3-build-azure-ad.md)]'
