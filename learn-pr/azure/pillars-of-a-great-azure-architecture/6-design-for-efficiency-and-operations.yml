@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+title: 効率性と運用を考慮した設計
+metadata:
+  title: 効率性と運用を考慮した設計
+  description: 効率性と運用を考慮した設計
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2dd22be197c91e7692c385287aab3382b71b4e43
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351919"
+durationInMinutes: 10
+content: >
+  [!include[](includes/6-design-for-efficiency-and-operations.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: ご利用のアプリケーションを最近クラウドに移動したところ、月ごとの請求内容が予想よりも高くなっているように見えると仮定します。 ご利用の VM の使用率は十分に高く、ダウンサイズすることをためらっています。 非効率性を見つけるのに役立つ次のステップとして、どのようなステップを取るのが適切でしょうか?
+    choices:
+    - content: 1 か月待ってから請求書を再度確認する
+      isCorrect: false
+      incorrectExplanation: これによってコストがかかっている場所を知ることはできます。しかし、これは、ご利用のシステムのコンポーネントの効率性レベルを判断するのには役立ちません。
+    - content: 各リリースの前に行う、アプリケーションのテスト量を増やす
+      isCorrect: false
+      incorrectExplanation: これによってアプリケーションの品質は向上します。しかし、これは、一般にインフラストラクチャの非効率性を特定するのには役立ちません。
+    - content: 監視およびインストルメンテーションを追加する
+      isCorrect: true
+      correctExplanation: 継続的な監視により、コスト削減を模索するのに必要なデータを取得できます。 たとえば、需要には極端な幅があるので、現在使用している単一の大きな VM より、自動スケーリングを備えた小さな VM を複数使用する方がコストがかからない可能性があることがわかります。
+  - content: 運用効率を向上させる例は次のどれですか?
+    choices:
+    - content: インフラストラクチャのデプロイの自動化
+      isCorrect: true
+      correctExplanation: インフラストラクチャのデプロイの自動化は、運用効率性の向上が得られるよい例です。
+    - content: PaaS から IaaS へのサービスの移行
+      isCorrect: false
+      incorrectExplanation: PaaS サービスには、通常、運用コストの削減が伴うので、PaaS から IaaS へのサービスの移行は運用効率の面では後退となります。
+    - content: インフラストラクチャをデプロイするための手動による手順のドキュメント化
+      isCorrect: false
+      incorrectExplanation: どのアーキテクチャでもドキュメントは重要です。しかし、運用面の改善は、ドキュメントのシンプル化ではなく手動操作の自動化によってもたらされます。
+    - content: 複数のログ システムの維持
+      isCorrect: false
+      incorrectExplanation: 複数のログ システムを維持すると、運用上のオーバーヘッドが増大し、ログ システム間でのイベントとメトリックの関連付け機能が低下します。 単一のログ システムに一元化することで、運用効率が向上します。

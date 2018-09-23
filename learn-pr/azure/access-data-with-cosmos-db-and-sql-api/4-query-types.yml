@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
+metadata:
+  title: クエリの種類
+  description: ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7fc9ea37fb83060d26c5f9e7cf4ee76dab6180e7
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483858"
+title: クエリの種類
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-query-types.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: SQL クエリで唯一必須の句は何ですか?
+    choices:
+    - content: SELECT
+      isCorrect: true
+      correctExplanation: SELECT はクエリで唯一必須の句です。
+    - content: FROM
+      isCorrect: false
+      incorrectExplanation: FROM は SQL クエリで省略可能な句です。
+    - content: WHERE
+      isCorrect: false
+      incorrectExplanation: WHERE は SQL クエリで省略可能な句です。
+  - content: 先頭が最大の製品 ID で末尾が最小の製品 ID である、製品 ID と説明の順序付きリストが取得されるのはどのクエリですか?
+    choices:
+    - content: SELECT p.productId FROM Products p ORDER BY p.productId ASC
+      isCorrect: false
+      incorrectExplanation: このクエリでは、昇順の製品 ID のみが返されます。
+    - content: SELECT p.id FROM Products p ORDER BY p.productId DESC
+      isCorrect: false
+      incorrectExplanation: このクエリでは、降順の ID のみが返されます
+    - content: SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC
+      isCorrect: true
+      incorrectExplanation: このクエリでは、製品 ID と説明の両方が返されますが、昇順となります。

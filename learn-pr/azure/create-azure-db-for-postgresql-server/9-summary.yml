@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: モジュールで使用されるリソースに関する手順をまとめてクリーンアップします。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 268209b618c9d16d4c1ec66c5b11edcf766c5863
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350255"
+durationInMinutes: 3
+content: '[!include[](includes/9-summary.md)]'

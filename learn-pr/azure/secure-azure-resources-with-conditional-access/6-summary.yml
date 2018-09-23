@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d974b53f5c6b22b7a5b4a11fa588d59a38be2560
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349320"
+title: まとめ
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure AD は基本的に Azure で実行されている Active Directory Domain Services (AD DS) ドメイン コントローラーです。
+    choices:
+    - content: ○
+      isCorrect: false
+      incorrectExplanation: 従来の AD DS と同じ機能の多くが実行されますが、Azure AD はクラウドベースのマルチテナント、ディレクトリ、ID 管理サービスです。
+    - content: ×
+      isCorrect: true
+      correctExplanation: AD DS は Windows Server 上でサーバーの役割を果たします。 Azure AD はクラウドベースのマルチカスタマー パブリック ディレクトリ サービスです。
+  - content: 条件付きアクセス ポリシーが正常に機能するための 3 つの項目とは何ですか?
+    choices:
+    - content: ユーザーまたはグループ、アプリケーション、時刻
+      isCorrect: false
+      correctExplanation: 時刻は条件付きアクセス ルールの選択肢ではありません。
+    - content: ユーザーまたはグループ、アプリケーション、強制するコントロール
+      isCorrect: true
+      incorrectExplanation: これら 3 つの項目を選択すると、自己完結型の機能的条件付きアクセス ルールが作成されます。
+    - content: ユーザーまたはグループ、Linux OS、強制するコントロール
+      isCorrect: false
+      correctExplanation: 一部のデバイス プラットフォームを対象にできますが、Linux は現在のところサポートされていません。

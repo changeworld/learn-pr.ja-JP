@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: 入力と出力
+metadata:
+  title: 入力と出力
+  description: 入力と出力
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6549bf1ac4fb034b3d0e8a4720364725c36d1f12
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348943"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 検証の必要があるデータ ソースは次のどれでしょうか?
+    choices:
+    - content: サード パーティ製 API からのデータ
+      isCorrect: false
+      incorrectExplanation: これは検証が必要な多くのソースの 1 つにすぎません。
+    - content: URL パラメーターからのデータ
+      isCorrect: false
+      incorrectExplanation: これは検証が必要な多くのソースの 1 つにすぎません。
+    - content: 入力フィールドから収集されたユーザーのデータ
+      isCorrect: false
+      incorrectExplanation: これは検証が必要な多くのソースの 1 つにすぎません。
+    - content: 上記のすべて
+      isCorrect: true
+      correctExplanation: これらのデータ ソースをすべて検証する必要があります。 改ざんの可能性があるデータは絶対に信頼しないでください。
+  - content: パラメーター化クエリ (SQL ではストアド プロシージャ) は、次の理由から、データベースと通信する方法として安全です。
+    choices:
+    - content: インライン データベース コマンドよりも整理されており、ユーザーが混乱するケースが少なくなります。
+      isCorrect: false
+      incorrectExplanation: コードが整理されていることは、インライン SQL よりパラメーター化クエリが安全な理由ではありません。
+    - content: ストアド プロシージャでは、スクリプトの要点が整理されており、見やすくなっています。
+      isCorrect: false
+      incorrectExplanation: スクリプトの要点が整理されていることは、インライン SQL よりパラメーター化クエリが安全な理由ではありません。
+    - content: パラメーター化クエリでは、クエリの実行前に変数が置き換えられます。変数の代わりにコードが送信されるケースがなくなります。
+      isCorrect: true
+  - content: エンコードしてから出力する必要があるデータは次のどれでしょうか?
+    choices:
+    - content: データベースに保存するデータ
+      isCorrect: false
+      incorrectExplanation: データベースに保存するデータはデータが確実に正しいことを検証する必要がありますが、出力の場合はエンコードする必要はありません。
+    - content: 画面に出力するデータ
+      isCorrect: true
+      correctExplanation: 画面に送るデータは、コードとして解釈されることがないよう、エンコードしてから出力する必要があります。
+    - content: サード パーティ製 API に送信するデータ
+      isCorrect: false
+      incorrectExplanation: サード パーティ製 API に送信するデータはデータが確実に正しいことを検証する必要がありますが、出力の場合はエンコードする必要はありません。
+    - content: URL パラメーターのデータ
+      isCorrect: false
+      incorrectExplanation: URL パラメーターからのデータはアプリケーションで使用する前に検証する必要がありますが、出力の際、エンコードする必要はありません。
+      correctExplanation: パラメーター化クエリで使用されるパラメーター フィールドは、脆弱性 (インジェクション) 対策として、コードではなく、データとして取り扱われます。 パラメーター化クエリの実装方法に関する詳細については、「[OWASP Query Parameterization Cheat Sheet]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet)」 (OWASP クエリ パラメーター化チート シート) を参照してください。

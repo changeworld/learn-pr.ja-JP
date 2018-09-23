@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.principles-cloud-computing.6-knowledge-check
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 141d64bf7d566f1f6c6b31a0b6992a895ff27fc0
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350416"
+title: 知識チェック
+durationInMinutes: 3
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 2 種類のアプリケーションがあるとします。レガシ アプリケーションでは特殊なメインフレーム ハードウェアが必要であり、新しいアプリケーションは市販のハードウェアで実行できます。 どちらのクラウド デプロイ モデルが最適ですか?
+    choices:
+    - content: パブリック クラウド
+      isCorrect: false
+      incorrectExplanation: ハイブリッド クラウドは、パブリック クラウドとプライベート クラウドを組み合わせたものです。 パブリック クラウドから借りた市販のハードウェアで新しいアプリケーションを実行し、特殊なメインフレーム ハードウェアをオンプレミスで維持できます。
+    - content: プライベート クラウド
+      isCorrect: false
+      incorrectExplanation: ハイブリッド クラウドは、パブリック クラウドとプライベート クラウドを組み合わせたものです。 パブリック クラウドから借りた市販のハードウェアで新しいアプリケーションを実行し、特殊なメインフレーム ハードウェアをオンプレミスで維持できます。
+    - content: ハイブリッド クラウド
+      isCorrect: true
+      correctExplanation: ハイブリッド クラウドは、パブリック クラウドとプライベート クラウドを組み合わせたものです。 パブリック クラウドから借りた市販のハードウェアで新しいアプリケーションを実行し、特殊なメインフレーム ハードウェアをオンプレミスで維持できます。
+  - content: あなたはアプリケーションを開発していて、ビルド、テスト、デプロイに重点を置きたいと考えています。 基になるハードウェアまたはソフトウェアの管理について心配したくはありません。 どの種類のクラウド サービスが最適ですか?
+    choices:
+    - content: サービスとしてのインフラストラクチャ
+      isCorrect: false
+      incorrectExplanation: ここではサービスとしてのプラットフォームを選ぶのが最適です。PaaS サービスによって自動的に IT 管理タスクが処理されるため、コードの記述に集中できるためです。
+    - content: サービスとしてのプラットフォーム
+      isCorrect: true
+      correctExplanation: ここではサービスとしてのプラットフォームを選ぶのが最適です。PaaS サービスによって自動的に IT 管理タスクが処理されるため、コードの記述に集中できるためです。
+    - content: サービスとしてのソフトウェア
+      isCorrect: false
+      incorrectExplanation: ここではサービスとしてのプラットフォームを選ぶのが最適です。PaaS サービスによって自動的に IT 管理タスクが処理されるため、コードの記述に集中できるためです。

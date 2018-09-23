@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.4-infrastructure-protection
+title: インフラストラクチャの保護
+metadata:
+  title: インフラストラクチャの保護
+  description: このユニットでは、ご利用のインフラストラクチャへのアクセスを保護する方法について説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0a765eaf5c91cc055266d283760bf94f6ba1efa7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349271"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-infrastructure-protection.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure のロールに基づくアクセス制御は、1 つのスコープを除き、すべてに割り当てることができますが、その 1 つのスコープとは次のうちどれでしょうか?
+    choices:
+    - content: サブスクリプション
+      isCorrect: false
+      incorrectExplanation: ロールベースのアクセス制御は Azure リソースにのみ適用できます。
+    - content: リソース グループ
+      isCorrect: false
+      incorrectExplanation: ロールベースのアクセス制御は Azure リソースにのみ適用できます。
+    - content: Linux ファイルシステム
+      isCorrect: true
+      correctExplanation: ロールベースのアクセス制御は Azure リソースにのみ適用できます。
+    - content: リソース
+      isCorrect: false
+      incorrectExplanation: ロールベースのアクセス制御は Azure リソースにのみ適用できます。
+  - content: '正誤問題: 仮想マシンに Azure リソースのマネージド ID を割り当て、それにその他の仮想マシンを開始、停止する権限を付与できます。'
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。 この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。 この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。

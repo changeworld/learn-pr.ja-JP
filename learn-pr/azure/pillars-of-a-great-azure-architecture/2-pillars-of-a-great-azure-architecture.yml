@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.2-pillars-of-a-great-azure-architecture
+title: 優れた Azure アーキテクチャの中心要素
+metadata:
+  title: 優れた Azure アーキテクチャの中心要素
+  description: 優れた Azure アーキテクチャの中心要素
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: f902062b46eacfdebcfaca21df66f44fe3d5fcfc
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354119"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-pillars-of-a-great-azure-architecture.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: セキュリティの中心要素として取り組むべき内容に当てはまるのは、次のどれですか。
+    choices:
+    - content: 仮想マシン バックアップのポリシーの定義
+      isCorrect: false
+      incorrectExplanation: 仮想マシンのバックアップ ポリシーは重要ですが、セキュリティの中心要素には該当しません。
+    - content: すべての管理アカウントの多要素認証の有効化
+      isCorrect: true
+      correctExplanation: 多要素認証の有効化は、セキュリティの中心要素として取り組むべき事柄のよい例です。
+    - content: コスト削減の分野を識別するためのクラウド支出の評価
+      isCorrect: false
+      incorrectExplanation: コストを削減できる分野を識別することは重要ですが、これはセキュリティの中心要素ではありません。
+    - content: 負荷の変動を動的に処理するための自動スケール サービスへの移行
+      isCorrect: false
+      incorrectExplanation: 負荷の変動を処理するために自動スケールを使用するのは、優れた方法ですが、セキュリティの中心要素ではありません。
+  - content: 可用性と回復性の中心要素として取り組むべき内容に当てはまるのは、次のどれですか。
+    choices:
+    - content: 仮想マシン バックアップのポリシーの定義
+      isCorrect: true
+      correctExplanation: VM バックアップのポリシーの定義は、回復性に特化した活動です。したがって、この要素に該当します。
+    - content: すべての管理アカウントの多要素認証の有効化
+      isCorrect: false
+      incorrectExplanation: 多要素認証の有効化は、セキュリティの中心要素として取り組むべき事柄のよい例ではありますが、可用性と回復性の中心要素ではありません。
+    - content: コスト削減の分野を識別するためのクラウド支出の評価
+      isCorrect: false
+      incorrectExplanation: コストを削減できる分野を識別することは重要ですが、これは可用性と回復性の中心要素ではありません。
+    - content: 負荷の変動を動的に処理するための自動スケール サービスへの移行
+      isCorrect: false
+      incorrectExplanation: 負荷の変動を処理するために自動スケールを使用するのは、優れた方法ですが、可用性と回復性の中心要素ではありません。

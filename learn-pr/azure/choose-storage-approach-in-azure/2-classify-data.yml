@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a353b13f282c1a40b5650cdcb30470570e9f24d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354089"
+title: データを分類する
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: JSON ファイルはどのデータの種類の例ですか?
+    choices:
+    - content: 構造化
+      isCorrect: false
+      incorrectExplanation: 半構造化データには、データの編成と階層を明らかにするタグが含まれています。
+    - content: 半構造化
+      isCorrect: true
+      correctExplanation: 半構造化データには、データの編成と階層を明らかにするタグが含まれています。
+    - content: 非構造化
+      isCorrect: false
+      incorrectExplanation: 半構造化データには、データの編成と階層を明らかにするタグが含まれています。
+  - content: 動画はどのデータの種類の例ですか?
+    choices:
+    - content: 構造化
+      isCorrect: false
+      incorrectExplanation: 多くの場合、非構造化データはファイルで配信されます。 動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。
+    - content: 半構造化
+      isCorrect: false
+      incorrectExplanation: 多くの場合、非構造化データはファイルで配信されます。 動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。
+    - content: 非構造化
+      isCorrect: true
+      correctExplanation: 多くの場合、非構造化データはファイルで配信されます。 動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。

@@ -1,0 +1,42 @@
+### YamlMime:Module
+uid: learn.secure-access-azure-ad-multi-factor-authentication
+metadata:
+  title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+  description: セキュリティと簡単操作のどちらかを優先すると、もう一方の優先度が下がります。 Azure Active Directory の条件付きアクセス機能を使用すると、この 2 つのバランスを保つのに役立ちます。 これにより、特定の状況において追加されたセキュリティのために Azure Multi-Factor Authentication (MFA) のような代替制御が必要になります。 ここでは、Azure Active Directory を使用して条件付きアクセス ポリシーを実装する方法を確認します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7cd15f35aa3d15b525edd915b368f454520aa6f6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347311"
+title: 条件付きアクセスによる Azure リソースのセキュリティ保護
+summary: セキュリティと簡単操作のどちらかを優先すると、もう一方の優先度が下がります。 Azure Active Directory の条件付きアクセス機能を使用すると、この 2 つのバランスを保つのに役立ちます。 Azure Active Directory を使用して条件付きアクセス ポリシーを実装する方法について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - テスト ユーザーと使用グループを作成します。
+
+  - 多要素認証 (MFA) を要求する条件付きアクセス ポリシーを有効にします。
+prerequisites: >
+  - リソース グループやサブスクリプションなど、Azure の基本的な概念に関する知識
+iconUrl: /learn/achievements/secure-azure-resources-with-conditional-access.svg
+levels:
+- intermediate
+roles:
+- administrator
+products:
+- azure
+- azure-active-directory
+units:
+- learn.secure-access-azure-ad-multi-factor-authentication.1-introduction
+- learn.secure-access-azure-ad-multi-factor-authentication.2-azure-ad-overview
+- learn.secure-access-azure-ad-multi-factor-authentication.3-build-azure-ad
+- learn.secure-access-azure-ad-multi-factor-authentication.4-secure-access
+- learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
+- learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+achievement: learn.secure-access-azure-ad-multi-factor-authentication.badge

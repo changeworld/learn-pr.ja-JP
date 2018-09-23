@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-secrets-with-azure-key-vault.4-authentication-with-managed-identities-for-azure-resources
+title: Azure リソースのマネージド ID を使用したコンテナーの認証
+metadata:
+  title: Azure リソースのマネージド ID を使用したコンテナーの認証
+  description: Azure リソースのマネージド ID を使用したコンテナーの認証
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b51584d19c9a0caeac0aa28e994ef32c91a9cfd
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348935"
+durationInMinutes: 4
+content: >
+  [!include[](includes/4-authentication-with-managed-identities-for-azure-resources.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure リソースのマネージド ID を使用した場合、Azure Key Vault でのアプリの認証方法はどのように変わりますか?
+    choices:
+    - content: このアプリは、シークレットの代わりに証明書を使用して認証します。
+      isCorrect: false
+      incorrectExplanation: Web アプリでマネージド ID を有効にすると、自分のアプリで使用するための別個のトークン付与 REST サービスが Azure でアクティブになります。 アプリは Azure Active Directory ではなく、このサービスにトークンを要求します。
+    - content: アプリの利用者は全員、パスワードを入力する必要があります。
+      isCorrect: false
+      incorrectExplanation: Web アプリでマネージド ID を有効にすると、自分のアプリで使用するための別個のトークン付与 REST サービスが Azure でアクティブになります。 アプリは Azure Active Directory ではなく、このサービスにトークンを要求します。
+    - content: アプリは Azure Active Directory ではなく、トークン サービスからトークンを取得します。
+      isCorrect: true
+      correctExplanation: Web アプリでマネージド ID を有効にすると、自分のアプリで使用するための別個のトークン付与 REST サービスが Azure でアクティブになります。 アプリは Azure Active Directory ではなく、このサービスにトークンを要求します。
+    - content: マネージド ID は Azure Key Vault によって自動的に認識され、自動的に認証されます。
+      isCorrect: false
+      incorrectExplanation: Web アプリでマネージド ID を有効にすると、自分のアプリで使用するための別個のトークン付与 REST サービスが Azure でアクティブになります。 アプリは Azure Active Directory ではなく、このサービスにトークンを要求します。
+  - content: 次のうち、Azure リソースのマネージド ID を使用してアプリが Key Vault の認証を受ける場合の主な利点を説明している文はどれですか?
+    choices:
+    - content: マネージド ID を使用すると、アプリケーションのパフォーマンスが向上します。
+      isCorrect: false
+      incorrectExplanation: アプリは、実行時に環境変数に挿入されたシークレットを使用してマネージド ID トークン サービスの認証を受けます。 構成中、シークレットを保存する必要がなくなります。
+    - content: マネージド ID を使用することで、構成中、シークレットを処理する必要がなくなります。
+      isCorrect: true
+      correctExplanation: アプリは、実行時に環境変数に挿入されたシークレットを使用してマネージド ID トークン サービスの認証を受けます。 構成中、シークレットを保存する必要がなくなります。
+    - content: マネージド ID では、自動的に Azure Key Vault にアクセス許可を付与できます。
+      isCorrect: false
+      incorrectExplanation: アプリは、実行時に環境変数に挿入されたシークレットを使用してマネージド ID トークン サービスの認証を受けます。 構成中、シークレットを保存する必要がなくなります。

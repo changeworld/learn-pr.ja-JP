@@ -1,0 +1,37 @@
+### YamlMime:Module
+uid: learn.manage-iot-devices
+metadata:
+  title: IT 管理者が IoT デバイスを管理する方法について学びます｡
+  description: IoT 採用が拡大する中､Microsoft が提供するどのような運用ツールが､いわゆる多大のデバイスのデプロイや管理、保護に役立つのかについて学びます｡
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 833fbb8a52a3daf35a64e95d077d070687f39a16
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351336"
+title: IT 管理者が IoT デバイスを管理する方法について学びます｡
+summary: IoT 採用が拡大する中､Microsoft が提供するどのような運用ツールが､いわゆる多大のデバイスのデプロイや管理、保護に役立つのかについて学びます｡
+abstract: >
+  このモジュールでは、次のことを行います。
+   - IoT の概要を学習する
+   - Raspberry Pi シミュレーターを操作する
+   - データを取り込むように Azure IoT Hub を構成する
+prerequisites: なし
+iconUrl: /learn/achievements/manage-your-iot-devices.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+units:
+- learn.manage-iot-devices.1-intro-to-ops-in-iot
+- learn.manage-iot-devices.2-raspberry-pi-emulator
+- learn.manage-iot-devices.3-connect-device
+- learn.manage-iot-devices.4-summary
+achievement: learn.manage-iot-devices.badge

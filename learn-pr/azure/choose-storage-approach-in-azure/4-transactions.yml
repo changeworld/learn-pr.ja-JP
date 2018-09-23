@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.4-transactions
+metadata:
+  title: トランザクションで複数の操作をグループ化する
+  description: トランザクションで複数の操作をグループ化する
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 898422fb6f083d12691d5488ef3ea9b6ef596384
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351816"
+title: トランザクションで複数の操作をグループ化する
+durationInMinutes: 5
+content: >
+  [!include[](includes/4-transactions.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 製品のデータに最も適したトランザクション データベース システムの種類はどれですか?
+    choices:
+    - content: OLAP
+      isCorrect: false
+      incorrectExplanation: OLTP システムでは、大きなユーザー セットがサポートされ、速い応答時間が得られ、大量のデータが処理され、高可用性が得られます。小規模または比較的シンプルなトランザクションに最適です。
+    - content: OLTP
+      isCorrect: true
+      correctExplanation: OLTP システムでは、大きなユーザー セットがサポートされ、応答時間が速く、大量のデータが処理され、高可用性であり、小規模または比較的シンプルなトランザクションに最適です。
+  - content: 在庫更新と支払い処理の操作が同じトランザクション内にあるものとします。 ユーザーは全額を店のクレジットで支払おうとして、電話とラップトップから同時に厳密に同じ注文を送信します。 基になっているのは ACID 準拠のデータベースです。どうなるでしょうか?
+    choices:
+    - content: 両方の注文が処理され、その両方で店内クレジットが使用されます。
+      isCorrect: false
+      incorrectExplanation: 2 番目の注文では、店内クレジットが既に使用されていると判定されると、トランザクションがロールバックされます。
+    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は買い物かごの中の商品の在庫残を更新しますが、注文は完了しません。
+      isCorrect: false
+      incorrectExplanation: 2 番目の注文では、店内クレジットが既に使用されていると判定されると、トランザクションがロールバックされます。
+    - content: 一方の注文は処理されて店内クレジットを使用し、もう一方の注文は処理されません。
+      isCorrect: true
+      correctExplanation: 2 番目の注文では、店内クレジットが既に使用されていることを認識すると、トランザクションがロールバックされます。

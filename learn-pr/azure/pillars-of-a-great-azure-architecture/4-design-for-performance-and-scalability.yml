@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
+title: パフォーマンスとスケーラビリティを高める設計
+metadata:
+  title: パフォーマンスとスケーラビリティを高める設計
+  description: パフォーマンスとスケーラビリティを高める設計
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3a4e72716f92c8d1ee691b2306fb044a2f65f71f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349847"
+durationInMinutes: 10
+content: >
+  [!include[](includes/4-design-for-performance-and-scalability.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: スケーリングアップの例を以下から選んでください。
+    choices:
+    - content: キュー サービスを使用するようにアプリケーションを更新する
+      isCorrect: false
+      incorrectExplanation: アプリケーションにキュー サービスを含めることは、アーキテクチャ上の賢明な選択ですが、スケーリングアップの例ではありません。
+    - content: Web ファームにさらに Web サーバーを追加する
+      isCorrect: false
+      incorrectExplanation: Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。
+    - content: データベース クラスターに別の仮想マシンを追加する
+      isCorrect: false
+      incorrectExplanation: データベース クラスターに別の仮想マシンを追加することは、スケーリングアップの例ではありません。
+    - content: より大きなサイズに仮想マシンを更新する
+      isCorrect: true
+      correctExplanation: より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。
+  - content: スケーリングアウトの例を以下から選んでください。
+    choices:
+    - content: より大きなサイズに仮想マシンを更新する
+      isCorrect: false
+      incorrectExplanation: より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。
+    - content: 仮想マシンにさらにストレージを追加する
+      isCorrect: false
+      incorrectExplanation: 仮想マシンにさらにストレージを追加することは、スケーリングアウトの例ではありません。
+    - content: Web ファームにさらに Web サーバーを追加する
+      isCorrect: true
+      correctExplanation: Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。
+    - content: 他のリージョンにバックアップを複製する
+      isCorrect: false
+      incorrectExplanation: 他のリージョンにバックアップを複製することは、リソースのスケーリングには対応していません。

@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.2-public-private-hybrid
+title: パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション
+metadata:
+  title: パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション
+  description: パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bbea3817769d1592c24bbab4b03cf3dfcde3c267
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352980"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-public-private-hybrid.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 次の状況に最適なクラウド デプロイ モデルはどれですか? 短期プロジェクトのために、SQL Server データベースが必要です。 IT 部門には、データベースをデプロイするためのパフォーマンス要件を満たしている利用可能なハードウェアまたはリソースがありません。 プロジェクトは、次の週に始まります。 プロジェクトが終了すると、データベースは必要なくなります。
+    choices:
+    - content: パブリック クラウド
+      correctExplanation: 短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。
+      isCorrect: true
+    - content: プライベート クラウド
+      isCorrect: false
+      incorrectExplanation: 短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。
+    - content: ハイブリッド クラウド
+      isCorrect: false
+      incorrectExplanation: 短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。
+  - content: 次のシナリオで説明されているクラウド デプロイ モデルはどれですか。 クラウド内でいくつかの仮想マシンを作成します。 VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。 VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。 1 つの VM は、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。 画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。
+    choices:
+    - content: パブリック クラウド
+      isCorrect: false
+      incorrectExplanation: このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。 したがって、これはハイブリッド クラウドのデプロイになります。
+    - content: プライベート クラウド
+      isCorrect: false
+      incorrectExplanation: このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。 したがって、これはハイブリッド クラウドのデプロイになります。
+    - content: ハイブリッド クラウド
+      correctExplanation: このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。 したがって、これはハイブリッド クラウドのデプロイになります。
+      isCorrect: true
+  - content: 次のシナリオで説明されているクラウド デプロイ モデルはどれですか。 お客様の組織にはデータセンターが 2 か所あります。 一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。 もう一方のデータセンターからそのデータベースにアクセスする必要があります。 2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。
+    choices:
+    - content: パブリック クラウド
+      isCorrect: false
+      incorrectExplanation: VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。
+    - content: プライベート クラウド
+      correctExplanation: VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。
+      isCorrect: true
+    - content: ハイブリッド クラウド
+      isCorrect: false
+      incorrectExplanation: VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。

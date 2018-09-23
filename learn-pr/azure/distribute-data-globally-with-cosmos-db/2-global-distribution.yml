@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.2-global-distribution
+metadata:
+  title: データのグローバル分散
+  description: Azure Cosmos DB を使用して、世界各地の複数のリージョンにデータをレプリケートする方法について説明します。
+  displayType: one-column
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8e0c6fcd6657ee6547340203540d476145c64b2d
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350039"
+title: データのグローバル分散
+azureSandbox: true
+durationInMinutes: 8
+content: '[!include[](includes/2-global-distribution.md)]'

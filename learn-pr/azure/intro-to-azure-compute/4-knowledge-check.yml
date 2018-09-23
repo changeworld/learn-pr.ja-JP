@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 「Azure コンピューティングの概要」モジュールに関する知識チェック。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349744"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 天文学チームは、膨大な計算処理能力とメモリを必要とする画像処理アプリケーションを多数揃えています。 これらのアプリケーションを Azure に短期間で移行します。 次のどのオプションを選択する必要がありますか?
+    choices:
+    - content: Azure Kubernetes Service (AKS)
+      isCorrect: false
+      incorrectExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
+    - content: Service Fabric
+      isCorrect: false
+      incorrectExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
+    - content: App Service
+      isCorrect: true
+      correctExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
+  - content: 天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるような天文学の計算に直面しているものとします。 並列実行はあまり役に立たないようです。 次のどのオプションを選択する必要がありますか?
+    choices:
+    - content: Cloud Services
+      isCorrect: false
+      incorrectExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。
+    - content: Azure Batch
+      isCorrect: true
+      correctExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。
+    - content: Container Instances
+      isCorrect: false
+      incorrectExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。

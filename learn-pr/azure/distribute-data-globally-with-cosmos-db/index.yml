@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.distribute-data-globally-with-cosmos-db
+metadata:
+  title: Azure Cosmos DB を使用してデータをグローバルに分散させる
+  description: Azure Cosmos DB を使用してデータをグローバルに分散させる方法について学習します。
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b45ee8db884a8fb2414206464e65610f0753c148
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348463"
+title: Azure Cosmos DB を使用してデータをグローバルに分散させる
+summary: Azure Cosmos DB を使用してデータをグローバルに分散させる方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+    - 世界各地の複数のリージョンにデータの書き込みとレプリケーションを行うメリットについて学習する
+    - データが配置されているリージョンの読み取りおよび書き込み優先順位を変更する
+    - データベースの整合性設定を変更する
+cardDescription: Azure Cosmos DB を使用してデータをグローバルに分散させる
+prerequisites: なし
+iconUrl: /learn/achievements/distribute-data-globally-with-cosmos-db.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-cosmos-db
+- azure-clis
+- azure-portal
+units:
+- learn.distribute-data-globally-with-cosmos-db.1-introduction
+- learn.distribute-data-globally-with-cosmos-db.2-global-distribution
+- learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+- learn.distribute-data-globally-with-cosmos-db.4-change-priorities
+- learn.distribute-data-globally-with-cosmos-db.5-data-consistency-levels
+- learn.distribute-data-globally-with-cosmos-db.6-summary-cleanup
+achievement: learn.distribute-data-globally-with-cosmos-db.badge

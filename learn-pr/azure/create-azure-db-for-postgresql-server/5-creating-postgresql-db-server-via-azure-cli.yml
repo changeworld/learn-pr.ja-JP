@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
+title: Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する
+metadata:
+  title: Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する
+  description: Azure portal を使用して単一の Azure Database for PostgreSQL サーバーを作成するのは簡単です。 複数のデータベースの作成と継続的なメンテナンスをポータルのみを使用して行おうとすると、手間がかかる可能性があります。 管理タスクを自動化したいときは、Azure CLI を使用してください。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ef13f91bd2b6d6b97d2f0e553f7da7dd786bc0d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351095"
+durationInMinutes: 7
+content: '[!include[](includes/5-creating-postgresql-db-server-via-azure-cli.md)]'

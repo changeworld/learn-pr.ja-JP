@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
+title: ディザスター リカバリー戦略の策定
+metadata:
+  title: ディザスター リカバリー戦略の策定
+  description: ディザスター リカバリー戦略の策定
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3955af1f310742bdb6912d5da07f5004d40287f1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346942"
+durationInMinutes: 20
+content: >
+  [!include[](includes/3-disaster-recovery.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '次のうち、復旧計画において復旧手順から除外できるものはどれですか? '
+    choices:
+    - content: バックアップを復元する方法
+      isCorrect: false
+      incorrectExplanation: バックアップを復元するために必要な手順は、復旧計画の重要な部分です。
+    - content: レプリケートされたシステムにフェールオーバーする方法
+      isCorrect: false
+      incorrectExplanation: レプリケートされたシステムにフェールオーバーするプロセスは、復旧計画の重要な部分です。
+    - content: オンプレミスまたは外部ネットワークへのネットワーク接続を再確立する方法
+      isCorrect: false
+      incorrectExplanation: オンプレミスまたは外部ネットワークへのネットワーク接続は、インフラストラクチャにおいて重要な部分であることが多いです。 障害の発生後に再確立する手順は、復旧計画における重要な部分です。
+    - content: 上述のいずれも復旧計画から除外すべきではありません。
+      isCorrect: true
+      correctExplanation: 復旧計画においてこれらの手順はすべて重要です。
+  - content: '正誤問題: データ レプリケーションとデータ バックアップは、同じことです。'
+    choices:
+    - content: ○
+      isCorrect: false
+      incorrectExplanation: データ レプリケーションとデータ バックアップはどちらも、ご利用のデータのコピーを作成しますが、これらは異なる概念と見なされるため、コピーの頻度や使用状況はまったく異なります。
+    - content: ×
+      isCorrect: true
+      correctExplanation: レプリケーションでは、実行中のフェールオーバーに使用されるライブ データのリアル タイムまたはほぼリアルタイムのコピーを作成します。 バックアップでは、復旧に使用するデータの寿命の長い読み取り専用のスナップショットを作成します。

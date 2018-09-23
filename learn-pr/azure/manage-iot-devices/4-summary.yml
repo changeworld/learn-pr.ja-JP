@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: まとめ
+  description: まとめ
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 266c371394a46c9fc98e164e2a8700ae830e2ea7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351159"
+title: まとめ
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: IoT Hub は、保管や処理のために IoT デバイスから大量の利用統計情報をクラウドに取り込むことを可能にする Azure サービスです。
+    choices:
+    - content: ○
+      isCorrect: true
+    - content: ×
+      isCorrect: false
+  - content: 'F1: Free レベルは IoT Hub のセットアップに使用できますが、テスト目的でのみ使用することをお勧めします。'
+    choices:
+    - content: ○
+      isCorrect: true
+    - content: ×
+      isCorrect: false
+  - content: 既定で作成されない共有アクセス ポリシーは、次のうちどれですか。
+    choices:
+    - content: iothubowner
+      isCorrect: false
+      incorrectExplanation: このポリシーは既定で作成されます。
+    - content: service
+      isCorrect: false
+      incorrectExplanation: このポリシーは既定で作成されます。
+    - content: device
+      isCorrect: false
+      incorrectExplanation: このポリシーは既定で作成されます。
+    - content: registryWrite
+      isCorrect: true
+      correctExplanation: registryWrite のようなポリシーはありません。

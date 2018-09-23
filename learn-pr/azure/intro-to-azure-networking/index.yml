@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.intro-to-azure-networking
+metadata:
+  title: Azure のネットワークの概要
+  description: クラウドでアプリまたはサービスを実行するには、セキュリティで保護された高速なネットワークが必要です。 Azure のネットワークの基本についていくつか学習し、Azure のネットワークが回復性の向上と待ち時間の短縮にどのように役立つかについて学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 31c039ebaec8ca3b61fb9f8b71af794527645530
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349728"
+title: Azure のネットワークの概要
+summary: クラウドでアプリまたはサービスを実行するには、セキュリティで保護された高速なネットワークが必要です。 Azure のネットワークの基本についていくつか学習し、Azure のネットワークが回復性の向上と待ち時間の短縮にどのように役立つかについて学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 仮想ネットワークがネットワークとコンピューティング リソースを分離するのにどのように役立つかについて学習します。
+
+  - Azure Load Balancer が、回復性 (サービスがダウンしたときの復旧能力) の向上にどのように役立つかについて学習します。
+
+  - Traffic Manager が異なるエンドポイント (ユーザーにとって最も待ち時間が短いエンドポイントなど) にトラフィックをルーティングする方法について学習します。
+prerequisites: なし
+iconUrl: /learn/achievements/intro-to-azure-networking.svg
+levels:
+- beginner
+roles:
+- developer
+- administrator
+- solution-architect
+products:
+- azure
+units:
+- learn.intro-to-azure-networking.1-introduction
+- learn.intro-to-azure-networking.2-deploy-to-azure
+- learn.intro-to-azure-networking.3-scale-load-balancer
+- learn.intro-to-azure-networking.4-reduce-latency-traffic-manager
+- learn.intro-to-azure-networking.5-summary
+achievement: learn.intro-to-azure-networking.badge

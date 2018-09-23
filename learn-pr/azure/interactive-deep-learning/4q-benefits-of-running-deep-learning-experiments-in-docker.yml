@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
+title: 自分の知識をチェックする
+metadata:
+  title: 自分の知識をチェックする
+  description: 自分の知識をチェックする
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483863"
+durationInMinutes: 2
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: CUDA の説明は次のうちどれですか?
+    choices:
+    - content: CUDA は、並列コンピューティング プラットフォームおよび API です。
+      isCorrect: true
+      correctExplanation: CUDA は、NVIDIA によって作成された並列コンピューティング プラットフォームおよびアプリケーション プログラミング インターフェイス (API) モデルです。 CUDA プラットフォームは、計算カーネルを実行するために、GPU の仮想命令セットと並列コンピューティング要素への直接アクセスを提供するソフトウェア レイヤーです。
+    - content: 非常に強力な CPU です。
+      isCorrect: false
+      incorrectExplanation: CUDA はソフトウェア レイヤーであり、GPU 向けに設計されています。
+    - content: CUDA は、画像の分類に使用されるディープ ラーニング モデルです。
+      isCorrect: false
+      incorrectExplanation: CUDA 対応の GPU を使用すると、ニューラル ネットワークをトレーニングするときの計算能力が大きく向上しますが、それは用途の 1 つのすぎません。
+  - content: Docker の説明は次のうちどれですか?
+    choices:
+    - content: Docker は、ニューラル ネットワークのトレーニング用に特化したハードウェアの部分です。
+      isCorrect: false
+      incorrectExplanation: Docker は実際にはソフトウェアであり、"コンテナー化" とも呼ばれるオペレーティング システム レベルの仮想化を実行します。
+    - content: Docker は、分散アプリケーション用のオープン プラットフォームです。
+      isCorrect: true
+      correctExplanation: Docker は、ラップトップ、データ センター VM、またはクラウドのどこからでも、分散アプリケーションをビルド、出荷、および実行する開発者やシステム管理者向けのオープン プラットフォームです。 Docker はコンピューター プログラムであり、"コンテナー化" とも呼ばれるオペレーティング システム レベルの仮想化を実行します。
+    - content: Docker は、Web アプリ用のライブラリです。
+      isCorrect: false
+      incorrectExplanation: Docker はソフトウェア プラットフォームですが、Web アプリの作成を支援するライブラリではありません。
+  - content: NVIDIA Docker を使用する主な利点は何ですか?
+    choices:
+    - content: Windows 上で Docker コンテナーをビルドして実行できます。
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker は Linux 上でのみ動作します。
+    - content: NVIDIA GPU を利用する Docker コンテナーをビルドして実行できます。
+      isCorrect: true
+      correctExplanation: NVIDIA は nvidia-docker を、ドライバーに依存しない CUDA イメージをサポートするオープン ソース プロジェクトとして、および起動時に適切な GPU コンポーネントをコンテナーにマウントする方法を認識している Docker コマンド ライン ラッパーのラッパーとして、開発しています。
+    - content: CPU アクセラレータを使用するアプリケーションをコンテナー化できます。
+      isCorrect: false
+      incorrectExplanation: NVIDIA Docker では、GPU アクセラレータを使用するアプリをコンテナー化できます。

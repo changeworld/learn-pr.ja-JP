@@ -1,0 +1,49 @@
+### YamlMime:Module
+uid: learn.create-azure-db-for-postgresql
+metadata:
+  title: Azure Database for PostgreSQL サーバーの作成
+  description: Azure Database for PostgreSQL は、フル マネージド型のエンタープライズ対応コミュニティ PostgreSQL データベースをサービスとして提供します。 このサービスを作成およびデプロイし、アプリケーションに接続する方法について学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 17506fa1ee9b2aa01bd2cca12949975409f2babc
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351808"
+title: Azure Database for PostgreSQL サーバーの作成
+summary: Azure Database for PostgreSQL は、フル マネージド型のエンタープライズ対応コミュニティ PostgreSQL データベースをサービスとして提供します。 このサービスを作成およびデプロイし、アプリケーションに接続する方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure portal を使用して Azure Database for PostgreSQL を作成する
+
+  - Azure CLI を使用して Azure Database for PostgreSQL を作成する
+
+  - PostgreSQL サーバーレベルのファイアウォール規則を構成する
+
+  - Azure Cloud Shell で `psql` コマンドを使用して PostgreSQL サーバーに接続する
+prerequisites: なし
+iconUrl: /learn/achievements/create-azure-db-for-postgresql-server.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-clis
+- azure-cloud-shell
+units:
+- learn.create-azure-db-for-postgresql.introduction
+- learn.create-azure-db-for-postgresql.postgresql-decision
+- learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-portal
+- learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-portal
+- learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
+- learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-cli
+- learn.create-azure-db-for-postgresql.server-security-considerations
+- learn.create-azure-db-for-postgresql.connecting-to-postgresql-db-server
+- learn.create-azure-db-for-postgresql.summary
+achievement: learn.create-azure-db-for-postgresql.badge

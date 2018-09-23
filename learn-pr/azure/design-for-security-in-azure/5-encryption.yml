@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.5-encryption
+title: 暗号化
+metadata:
+  title: 暗号化
+  description: このユニットでは、暗号化を使用してアーキテクチャをセキュリティで保護する方法について説明します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 41ffa78955aa8c93dfb26a840bcdc01c0c8d8b17
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349231"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-encryption.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '正誤問題: Windows 仮想マシンでのみ Azure Disk Encryption を使用できます。'
+    choices:
+    - content: ○
+      isCorrect: false
+      incorrectExplanation: Azure Disk Encryption は、Windows と Linux の仮想マシンの両方で利用できます。
+    - content: ×
+      isCorrect: true
+      correctExplanation: Azure Disk Encryption は、Windows と Linux の仮想マシンの両方で利用できます。
+  - content: データを分類する場合、要因になるのは次のうちのどれですか?
+    choices:
+    - content: リスクにさらされている場合に顧客にもたらされるそのリスクのレベル
+      isCorrect: true
+      correctExplanation: 暗号化する必要のあるデータの分類は、それが公開されてしまった場合にお客様に与える影響が一般的に考慮されます。
+    - content: データ転送の方法
+      isCorrect: false
+      incorrectExplanation: 暗号化が必要なデータは一般的に、それが公開されてしまった場合にお客様に与える影響に基づいて分類されます。
+    - content: データを仮想マシン上と仮想マシン内のどちらに格納するか
+      isCorrect: false
+      incorrectExplanation: 暗号化が必要なデータは一般的に、それが公開されてしまった場合にお客様に与える影響に基づいて分類されます。
+    - content: 格納データの量
+      isCorrect: false
+      incorrectExplanation: 暗号化が必要なデータは一般的に、それが公開されてしまった場合にお客様に与える影響に基づいて分類されます。

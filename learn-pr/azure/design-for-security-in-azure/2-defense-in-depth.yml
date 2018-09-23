@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: 多層防御
+metadata:
+  title: 多層防御
+  description: このユニットでは、多層防御を実践する方法について説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 23e9c8c1afa4a2872c1131864cc228ad386dc57b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348183"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '正誤問題: "*多層防御*" とは、ユーザーの情報にアクセスしようとする攻撃からユーザーを保護することを目的とした戦略です。'
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: "\"*多層防御*\" は、不正アクセスからの保護を提供する多層システムです。 1 つの層が破られた場合でも、別の層が存在して、それ以上の露出を防ぎます。"
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: "\"*多層防御*\" は、不正アクセスからの保護を提供する多層システムです。 1 つの層が破られた場合でも、別の層が存在して、それ以上の露出を防ぎます。"
+  - content: '正誤問題: クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。'
+    choices:
+    - content: ○
+      isCorrect: false
+      incorrectExplanation: クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。
+    - content: ×
+      isCorrect: true
+      correctExplanation: クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。

@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.3-exercise-add-data-disks-to-azure-virtual-machines
+title: 演習 - データ ディスクを VM に追加する
+metadata:
+  title: 演習 - データ ディスクを VM に追加する
+  description: 演習 - データ ディスクを VM に追加する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c004c42f1f50f43c083d362064bddf6ce1c0768e
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351007"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 20
+content: '[!include[](includes/3-exercise-add-data-disks-to-azure-virtual-machines.md)]'

@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.6-network-security
+title: ネットワークのセキュリティ
+metadata:
+  title: ネットワークのセキュリティ
+  description: このユニットでは、ネットワーク インフラストラクチャをセキュリティで保護する方法について説明します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: cc35a096e064136f7d56fc05c4ce856fd1918641
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350920"
+durationInMinutes: 10
+content: >
+  [!include[](includes/6-network-security.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure ネットワーク セキュリティ グループを使用した場合、次のどの通信をセキュリティで保護できますか?
+    choices:
+    - content: 仮想マシンとインターネット
+      isCorrect: false
+      incorrectExplanation: ネットワーク セキュリティ グループは完全カスタマイズが可能であり、仮想マシンとやりとりされるネットワーク通信を完全にロックダウンできます。
+    - content: VNet 内の仮想マシン
+      isCorrect: false
+      incorrectExplanation: ネットワーク セキュリティ グループは完全カスタマイズが可能であり、仮想マシンとやりとりされるネットワーク通信を完全にロックダウンできます。
+    - content: オンプレミス ネットワークのシステム
+      isCorrect: false
+      incorrectExplanation: ネットワーク セキュリティ グループは完全カスタマイズが可能であり、仮想マシンとやりとりされるネットワーク通信を完全にロックダウンできます。
+    - content: 上記のすべて
+      isCorrect: true
+      correctExplanation: ネットワーク セキュリティ グループは完全カスタマイズが可能であり、仮想マシンとやりとりされるネットワーク通信を完全にロックダウンできます。
+  - content: 次のうち、インターネットに接続されているサービスをネットワーク攻撃から保護する方法でないのはどれですか?
+    choices:
+    - content: Azure DDoS
+      isCorrect: false
+      incorrectExplanation: Azure Disk Encryption は、仮想マシンの仮想ハード ディスクの露出を防ぎますが、ネットワーク経由の攻撃の防御にはなりません。
+    - content: Azure Application Gateway WAF
+      isCorrect: false
+      incorrectExplanation: Azure Disk Encryption は、仮想マシンの仮想ハード ディスクの露出を防ぎますが、ネットワーク経由の攻撃の防御にはなりません。
+    - content: Azure Disk Encryption
+      isCorrect: true
+      correctExplanation: Azure Disk Encryption は、仮想マシンの仮想ハード ディスクの露出を防ぎますが、ネットワーク経由の攻撃の防御にはなりません。
+    - content: ネットワーク仮想アプライアンス
+      isCorrect: false
+      incorrectExplanation: Azure Disk Encryption は、仮想マシンの仮想ハード ディスクの露出を防ぎますが、ネットワーク経由の攻撃の防御にはなりません。

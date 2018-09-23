@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 38c0ff8600be568ed7a37ff841cecaee2bb70fed
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352519"
+durationInMinutes: 3
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Redis トランザクション内のコマンドが失敗すると、どうなりますか?
+    choices:
+    - content: コマンドが正しくない構文でキューに登録されている場合、トランザクションの実行を試みると、それは自動的に破棄されます。 実行中にコマンドが失敗した場合、トランザクションは通常どおりに完了します。
+      isCorrect: true
+      correctExplanation: Redis では、実行中に失敗したコマンドによってトランザクションが停止されることはありません。 キューに登録されたコマンドの構文が正しくないと、トランザクションは実行されません。
+    - content: 失敗したコマンドより前のコマンドは引き続き実行されますが、失敗したコマンドより後のコマンドは実行されません。
+      isCorrect: false
+      incorrectExplanation: トランザクションでは、失敗したコマンドによって、そのコマンドより後のコマンドは実行が妨げられます。
+    - content: トランザクション全体はロールバックされます。
+      isCorrect: false
+      incorrectExplanation: Redis ではトランザクションのロールバックはサポートされていません。
+    - content: 接続は中止されます。
+      isCorrect: false
+      incorrectExplanation: コマンドが失敗しても、Redis の接続は中断されません。
+  - content: データの有効期限を管理する Redis コマンドは、次のうちのどれですか?
+    choices:
+    - content: DEL
+      isCorrect: false
+      incorrectExplanation: DEL はキーを削除するために使用されます。
+    - content: DISCARD
+      isCorrect: false
+      incorrectExplanation: DISCARD はトランザクションをその実行前にキャンセルするために使用されます。
+    - content: TIMEOUT
+      isCorrect: false
+      incorrectExplanation: TIMEOUT は有効な Redis コマンドではありません。
+    - content: EXPIRE
+      isCorrect: true
+      correctExplanation: EXPIRE はキーの期限切れのタイムアウトを秒単位で設定するのに使用されます。
+  - content: ご利用の Redis キャッシュは、**volatile-ttl** 削除ポリシーを使用して構成されます。 それがメモリ不足になったために、新しいキーの挿入を試みる場合、既存のキーのうちどれが削除されますか?
+    choices:
+    - content: 最も長く使われていないキーです。
+      isCorrect: false
+      incorrectExplanation: これは **allkeys-lru** 削除ポリシーの動作です。
+    - content: ランダム キーです。
+      isCorrect: false
+      incorrectExplanation: これは **alkeys-random** ポリシーの動作です。
+    - content: 次に期限切れになるキーです。
+      isCorrect: true
+      correctExplanation: '**volatile ttl:** では、存続時間が最短のキーが削除されます。'
+    - content: 有効期限が構成されているキーの中から選択された、ランダム キーです。
+      isCorrect: false
+      incorrectExplanation: これは **volatile-random** ポリシーの動作です。

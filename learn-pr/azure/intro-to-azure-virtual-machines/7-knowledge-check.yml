@@ -1,0 +1,43 @@
+### YamlMime:ModuleUnit
+uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: c3d74041711d08f746273cbeb87da9f272ca4453
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352939"
+durationInMinutes: 1
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 仮想マシン上でネットワーク アプライアンスを実行するとします。 どのワークロード オプションを選択する必要がありますか?
+    choices:
+    - content: 汎用
+      isCorrect: false
+      incorrectExplanation: コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。 トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。
+    - content: コンピューティング最適化
+      isCorrect: true
+      correctExplanation: コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。 トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。
+    - content: メモリ最適化
+      isCorrect: false
+      incorrectExplanation: コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。 トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。
+    - content: ストレージ最適化
+      isCorrect: false
+      incorrectExplanation: コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。 トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。
+  - content: '正誤問題: Resource Manager テンプレートは JSON ファイルですか?'
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。 このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。 このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。

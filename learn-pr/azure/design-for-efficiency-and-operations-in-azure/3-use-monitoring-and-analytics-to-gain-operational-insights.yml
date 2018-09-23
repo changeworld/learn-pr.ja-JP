@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.3-use-monitoring-and-analytics-to-gain-operational-insights
+title: 監視と分析を使用して運用に関する分析情報を得る
+metadata:
+  title: 監視と分析を使用して運用に関する分析情報を得る
+  description: このユニットでは、監視と分析を使用して運用に関する分析情報を得る方法について説明します
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 179155259aeae9379f6861a5f21b308a190c95c1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349288"
+durationInMinutes: 8
+content: >
+  [!include[](includes/3-use-monitoring-and-analytics-to-gain-operational-insights.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 次のうち、アプリケーションで API 呼び出しの実行に関するトラブルシューティングを行うために使用するものはどれですか?
+    choices:
+    - content: Service Health
+      isCorrect: false
+      incorrectExplanation: Azure Service Health では、Azure サービスの正常性に関する分析情報は提供されますが、アプリケーションに関する分析情報は提供されません。
+    - content: Network Watcher
+      isCorrect: false
+      incorrectExplanation: Azure Network Watcher は、ネットワークのパフォーマンスの問題のトラブルシューティングには役立ちますが、アプリケーションに関する分析情報は提供されません。
+    - content: アクティビティ ログ
+      isCorrect: false
+      incorrectExplanation: Azure アクティビティ ログでは、Azure プラットフォーム上のリソースで実行されたイベントがログに記録されますが、アプリケーションに関する分析情報は提供されません。
+    - content: Application Insights
+      isCorrect: true
+      correctExplanation: Application Insights は、問題を検出して診断し、Web アプリとサービスの使用状況、アプリケーションでの API 呼び出しを把握するのに役立ちます。
+  - content: 次のサービスのうち、仮想マシンを削除したユーザーを特定するのに使用するものはどれですか?
+    choices:
+    - content: Service Health
+      isCorrect: false
+      incorrectExplanation: Azure Service Health では、Azure サービスの正常性に関する分析情報は提供されますが、リソースで実行されたアクションに関する分析情報は提供されません。
+    - content: Network Watcher
+      isCorrect: false
+      incorrectExplanation: Azure Network Watcher は、ネットワークのパフォーマンスの問題のトラブルシューティングには役立ちますが、リソースで実行されたアクションに関する分析情報は提供されません。
+    - content: アクティビティ ログ
+      isCorrect: true
+      correctExplanation: Azure アクティビティ ログでは、リソースの削除を含む、Azure プラットフォーム上のリソースで実行されたあらゆるイベントが記録されます。
+    - content: Application Insights
+      isCorrect: false
+      incorrectExplanation: Application Insights は、問題を検出して診断し、Web アプリとサービスの使用状況を把握するのに役立ちますが、リソースで実行されたアクションに関する分析情報は提供されません。
