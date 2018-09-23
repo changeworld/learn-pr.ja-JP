@@ -1,0 +1,35 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+metadata:
+  title: 複数のリージョンへの書き込み
+  description: Azure Cosmos DB を使用して、同時に複数のリージョンにデータを書き込む方法について説明します。
+  displayType: one-column
+  ms.openlocfilehash: 516e1abccb14f0cb217689fd1d510c5060e86290
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350079"
+title: 複数のリージョンへの書き込み
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-multi-region-write.md)]
+quiz:
+  title: 知識チェック
+  questions:
+  - content: 「はい」または「いいえ」で答えてください。複数のリージョンへの書き込みの利点は、待機時間の短縮、潜在的に無制限のスケーリング、および可用性の向上である。
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: 複数のリージョンへの書き込みには、多くのパフォーマンス上の利点があります。 たとえば、書き込み操作の待機時間は、マルチ マスター以外のアカウントよりも短くなります。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: 複数のリージョンへの書き込みには、多くのパフォーマンス上の利点があります。 たとえば、書き込み操作の待機時間は、マルチ マスター以外のアカウントよりも短くなります。
+  - content: マルチ マスター アカウントの既定の競合解決ポリシーは何ですか?
+    choices:
+    - content: Last-Writer-Wins
+      isCorrect: true
+      correctExplanation: 競合解決は Cosmos DB に組み込まれており、データベース エンジン内部で、サーバー上で実行されます。 Last-Writer-Wins が既定のポリシーです。
+    - content: ユーザー定義のカスタム プロシージャ
+      isCorrect: false
+      incorrectExplanation: ユーザー定義のプロシージャはサポートされていますが、競合を処理するための既定のメカニズムではありません。

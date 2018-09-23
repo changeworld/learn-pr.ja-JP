@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.6-exercise-resize-disks
+title: 演習 - VM ディスクのサイズの変更
+metadata:
+  title: 演習 - VM ディスクのサイズの変更
+  description: 演習 - VM ディスクのサイズの変更
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1b0fdc5f34ca3a9e0135d43dac9da0bad86f48da
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349664"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/6-exercise-resize-disks.md)]'

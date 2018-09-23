@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
+title: クリーンアップと知識チェック
+metadata:
+  title: クリーンアップと知識チェック
+  description: クリーンアップと知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0eb6be9bb8639ff6bf16b0f313c0202e1d274f63
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350480"
+durationInMinutes: 2
+content: >
+  [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: アプリケーション用にストレージ アカウントと BLOB コンテナーを作成するための方法として適切なものは、次のうちどれですか?
+    choices:
+    - content: アプリケーションを展開する前に、Azure Storage アカウントとコンテナーを前もって作成します。
+      isCorrect: false
+      incorrectExplanation: Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。 また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。
+    - content: Azure Storage アカウントはアプリケーションで必要になったら作成しますが、アプリケーションで必要なコンテナーはすべて展開プロセスで事前に作成する必要があります。
+      isCorrect: false
+      incorrectExplanation: Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。 また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。
+    - content: Azure Storage アカウントはアプリを展開する前に事前に作成し、コンテナーは必要になったときにアプリケーションで作成します。
+      isCorrect: true
+      correctExplanation: Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。 また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。
+  - content: アプリケーション内の Blob Storage クライアント ライブラリを初期化するために一般的に使用される構成はどれですか?
+    choices:
+    - content: Azure ユーザー名とパスワード。
+      isCorrect: false
+      incorrectExplanation: ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。
+    - content: Azure Storage アカウントの接続文字列。
+      isCorrect: true
+      correctExplanation: ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。
+    - content: アプリケーションを表すグローバル一意識別子 (GUID)。
+      isCorrect: false
+      incorrectExplanation: ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。
+    - content: Azure Storage アカウントのデータ センターと場所の識別子。
+      isCorrect: false
+      incorrectExplanation: ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。
+  - content: BLOB の名前を使用して `GetBlockBlobReference` を呼び出すと、何が起こりますか?
+    choices:
+    - content: ストレージ内に新しいブロック BLOB が作成されます。
+      isCorrect: false
+      incorrectExplanation: BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。
+    - content: '`CloudBlockBlob` オブジェクトがローカルに作成されます。 ネットワーク呼び出しは行われません。'
+      isCorrect: true
+      correctExplanation: BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。
+    - content: ストレージ内に BLOB が存在しない場合、例外がスローされます。
+      isCorrect: false
+      incorrectExplanation: BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。
+    - content: 指定された BLOB の内容がダウンロードされます。
+      isCorrect: false
+      incorrectExplanation: BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。

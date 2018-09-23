@@ -1,0 +1,59 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46789dc6de38bbd51ee4545f692c015b41c0aa7f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352219"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 仮想ハード ドライブ ファイル (VHD) は、Azure Storage 内の次のどの種類の BLOB に格納されますか?
+    choices:
+    - content: ブロック BLOB
+      isCorrect: false
+      incorrectExplanation: VHD は、Azure Storage のページ BLOB によってサポートされます。 ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。 ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。
+    - content: 追加 BLOB
+      isCorrect: false
+      incorrectExplanation: VHD は、Azure Storage のページ BLOB によってサポートされます。 ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。 ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。
+    - content: ページ BLOB
+      isCorrect: true
+      correctExplanation: VHD は、Azure Storage のページ BLOB によってサポートされます。 ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。 ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。
+  - content: Premium Storage アカウントでサポートされている唯一のデータ レプリケーション戦略オプションは、次のうちどれですか?
+    choices:
+    - content: 読み取りアクセス geo 冗長ストレージ (RA-GRS)
+      isCorrect: false
+      incorrectExplanation: Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。 ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。 リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。 また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。
+    - content: ローカル冗長ストレージ (LRS)
+      isCorrect: true
+      correctExplanation: Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。 ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。 リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。 また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。
+    - content: geo 冗長ストレージ (GRS)
+      isCorrect: false
+      incorrectExplanation: Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。 ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。 リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。 また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。
+    - content: ゾーン冗長ストレージ (ZRS)
+      isCorrect: false
+      incorrectExplanation: Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。 ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。 リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。 また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。
+  - content: マネージド ディスクに対して使用できる唯一のディスクの種類は、次のうちどれですか?
+    choices:
+    - content: Standard ソリッド ステート ドライブ (SSD)
+      isCorrect: true
+      correctExplanation: マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。 このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。
+    - content: Standard ハード ディスク ドライブ (HDD)
+      isCorrect: false
+      incorrectExplanation: マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。 このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。
+    - content: Premium ソリッド ステート ドライブ (SSD)
+      isCorrect: false
+      incorrectExplanation: マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。 このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。

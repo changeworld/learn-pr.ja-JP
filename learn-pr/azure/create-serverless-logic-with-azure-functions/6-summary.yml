@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.create-serverless-logic-with-functions.6-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: aae90b81a478b5f1ece9708dc528bdae43b8748b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46347536"
+azureSandbox: true
+durationInMinutes: 3
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 次のうち、サーバーレス ロジックを最も適切に定義しているのはどれですか。
+    choices:
+    - content: サーバーで実行されない自分で記述したコード。
+      isCorrect: false
+      incorrectExplanation: サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。 代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。
+    - content: 自分が管理するサーバーで実行する自分で記述したコード。
+      isCorrect: false
+      incorrectExplanation: サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。 代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。
+    - content: クラウド プロバイダーが管理するサーバーで実行する自分で記述したコード。
+      isCorrect: true
+      correctExplanation: サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。 代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。
+  - content: リソースの管理、デプロイ、および共有を容易にするための論理ユニットとして関数をグループ化するコンテナーを何と呼びますか。
+    choices:
+    - content: リソース グループ
+      isCorrect: false
+      incorrectExplanation: 関数アプリは、関数を整理し、まとめて管理する方法です。 関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。 関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。
+    - content: 関数アプリ
+      isCorrect: true
+      correctExplanation: 関数アプリは、関数を整理し、まとめて管理する方法です。 関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。 関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。
+    - content: 関数コレクション
+      isCorrect: false
+      incorrectExplanation: 関数アプリは、関数を整理し、まとめて管理する方法です。 関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。 関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。
+  - content: 各呼び出しで関数固有の API キーが渡されるように要求することで、不明な HTTP 呼び出し元から関数をセキュリティで保護しました。 このキーを含める必要がある HTTTP 要求の名前ヘッダーは、次のうちどれですか。
+    choices:
+    - content: x-functions-key
+      isCorrect: true
+      correctExplanation: API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。
+    - content: x-requested-with
+      isCorrect: false
+      incorrectExplanation: API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。
+    - content: x-csrf-token
+      isCorrect: false
+      incorrectExplanation: API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。
