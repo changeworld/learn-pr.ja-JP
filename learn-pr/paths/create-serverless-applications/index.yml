@@ -34,5 +34,4 @@ products:
 modules:
 - learn.create-serverless-logic-with-functions
 - learn.chain-azure-functions-data-using-input-output-bindings
-- learn.build-a-serverless-web-app
 achievement: learn.create-serverless-applications.trophy
