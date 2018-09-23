@@ -1,0 +1,59 @@
+### YamlMime:ModuleUnit
+uid: learn.add-and-size-disks-in-azure-virtual-machines.7-summary
+title: <span data-ttu-id="74148-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="74148-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="74148-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="74148-102">Summary</span></span>
+  description: <span data-ttu-id="74148-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="74148-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 46789dc6de38bbd51ee4545f692c015b41c0aa7f
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352219"
+durationInMinutes: 3
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="74148-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="74148-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="74148-105">仮想ハード ドライブ ファイル (VHD) は、Azure Storage 内の次のどの種類の BLOB に格納されますか?</span><span class="sxs-lookup"><span data-stu-id="74148-105">Virtual hard drive files (VHDs) are stored in which of the following types of blobs in Azure Storage?</span></span>
+    choices:
+    - content: <span data-ttu-id="74148-106">ブロック BLOB</span><span class="sxs-lookup"><span data-stu-id="74148-106">Block Blobs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-107">VHD は、Azure Storage のページ BLOB によってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="74148-107">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="74148-108">ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。</span><span class="sxs-lookup"><span data-stu-id="74148-108">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="74148-109">ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。</span><span class="sxs-lookup"><span data-stu-id="74148-109">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+    - content: <span data-ttu-id="74148-110">追加 BLOB</span><span class="sxs-lookup"><span data-stu-id="74148-110">Append Blobs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-111">VHD は、Azure Storage のページ BLOB によってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="74148-111">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="74148-112">ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。</span><span class="sxs-lookup"><span data-stu-id="74148-112">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="74148-113">ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。</span><span class="sxs-lookup"><span data-stu-id="74148-113">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+    - content: <span data-ttu-id="74148-114">ページ BLOB</span><span class="sxs-lookup"><span data-stu-id="74148-114">Page Blobs</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74148-115">VHD は、Azure Storage のページ BLOB によってサポートされます。</span><span class="sxs-lookup"><span data-stu-id="74148-115">VHDs are backed by page blobs in Azure Storage.</span></span> <span data-ttu-id="74148-116">ページ BLOB が適しているのは、ランダムな読み取り/書き込み用に最適化された 512 バイト ページのコレクションであるためです。</span><span class="sxs-lookup"><span data-stu-id="74148-116">Page blobs are appropriate because they are a collection of 512-byte pages optimized for random read and write.</span></span> <span data-ttu-id="74148-117">ブロック BLOB も追加 BLOB も、VHD で一般的なランダムな読み取り/書き込み操作用に最適化されていません。</span><span class="sxs-lookup"><span data-stu-id="74148-117">Neither Block blobs nor Append blobs are optimized for the random read and write operations common with VHDs.</span></span>
+  - content: <span data-ttu-id="74148-118">Premium Storage アカウントでサポートされている唯一のデータ レプリケーション戦略オプションは、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="74148-118">Which of the following data-replication strategies is the only option supported by a premium storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="74148-119">読み取りアクセス geo 冗長ストレージ (RA-GRS)</span><span class="sxs-lookup"><span data-stu-id="74148-119">Read-access geo-redundant storage (RA-GRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-120">Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="74148-120">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="74148-121">ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。</span><span class="sxs-lookup"><span data-stu-id="74148-121">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="74148-122">リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="74148-122">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="74148-123">また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="74148-123">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="74148-124">ローカル冗長ストレージ (LRS)</span><span class="sxs-lookup"><span data-stu-id="74148-124">Locally redundant storage (LRS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74148-125">Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="74148-125">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="74148-126">ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。</span><span class="sxs-lookup"><span data-stu-id="74148-126">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="74148-127">リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="74148-127">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="74148-128">また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="74148-128">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="74148-129">geo 冗長ストレージ (GRS)</span><span class="sxs-lookup"><span data-stu-id="74148-129">Geo-redundant storage (GRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-130">Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="74148-130">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="74148-131">ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。</span><span class="sxs-lookup"><span data-stu-id="74148-131">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="74148-132">リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="74148-132">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="74148-133">また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="74148-133">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+    - content: <span data-ttu-id="74148-134">ゾーン冗長ストレージ (ZRS)</span><span class="sxs-lookup"><span data-stu-id="74148-134">Zone-redundant storage (ZRS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-135">Premium Storage アカウントでは、レプリケーション オプションとしてローカル冗長ストレージのみがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="74148-135">A premium storage account supports only locally redundant storage as the replication option.</span></span> <span data-ttu-id="74148-136">ローカル冗長ストレージでは、1 つのリージョン内にデータのコピーを 3 つ保持します。</span><span class="sxs-lookup"><span data-stu-id="74148-136">Locally redundant storage keeps three copies of the data within a single region.</span></span> <span data-ttu-id="74148-137">リージョンのディザスター リカバリーでは、Azure Backup を使用して VM ディスクを別のリージョンにバックアップする必要があります。</span><span class="sxs-lookup"><span data-stu-id="74148-137">For regional disaster recovery, you must back up your VM disks in a different region by using Azure Backup.</span></span> <span data-ttu-id="74148-138">また、バックアップ コンテナーとして geo 冗長ストレージ (GRS) アカウントを使用する必要もあります。</span><span class="sxs-lookup"><span data-stu-id="74148-138">You also must use a geo-redundant storage (GRS) account as the backup vault.</span></span>
+  - content: <span data-ttu-id="74148-139">マネージド ディスクに対して使用できる唯一のディスクの種類は、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="74148-139">Which of the following disk types is only available for managed disks?</span></span>
+    choices:
+    - content: <span data-ttu-id="74148-140">Standard ソリッド ステート ドライブ (SSD)</span><span class="sxs-lookup"><span data-stu-id="74148-140">Standard solid-state drives (SSDs)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="74148-141">マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。</span><span class="sxs-lookup"><span data-stu-id="74148-141">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="74148-142">このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。</span><span class="sxs-lookup"><span data-stu-id="74148-142">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>
+    - content: <span data-ttu-id="74148-143">Standard ハード ディスク ドライブ (HDD)</span><span class="sxs-lookup"><span data-stu-id="74148-143">Standard hard disk drives (HDDs)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-144">マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。</span><span class="sxs-lookup"><span data-stu-id="74148-144">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="74148-145">このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。</span><span class="sxs-lookup"><span data-stu-id="74148-145">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>
+    - content: <span data-ttu-id="74148-146">Premium ソリッド ステート ドライブ (SSD)</span><span class="sxs-lookup"><span data-stu-id="74148-146">Premium solid-state drives (SSDs)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="74148-147">マネージド ディスクを選択すると、Standard SSD を使用するオプションが有効になります。</span><span class="sxs-lookup"><span data-stu-id="74148-147">Choosing managed disks gives you the option of using standard SSDs.</span></span> <span data-ttu-id="74148-148">このディスクの種類は、パフォーマンスとコストの点で、Standard HDD と Premium SSD の間に位置します。</span><span class="sxs-lookup"><span data-stu-id="74148-148">This disk type is between standard HDDs and premium SSDs from a performance and cost perspective.</span></span>

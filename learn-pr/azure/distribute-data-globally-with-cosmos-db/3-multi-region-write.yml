@@ -1,0 +1,35 @@
+### YamlMime:ModuleUnit
+uid: learn.distribute-data-globally-with-cosmos-db.3-multi-region-write
+metadata:
+  title: <span data-ttu-id="d4c09-101">複数のリージョンへの書き込み</span><span class="sxs-lookup"><span data-stu-id="d4c09-101">Write to multiple regions</span></span>
+  description: <span data-ttu-id="d4c09-102">Azure Cosmos DB を使用して、同時に複数のリージョンにデータを書き込む方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d4c09-102">Learn how to use Azure Cosmos DB to write your data to multiple regions at the same time.</span></span>
+  displayType: one-column
+  ms.openlocfilehash: 516e1abccb14f0cb217689fd1d510c5060e86290
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350079"
+title: <span data-ttu-id="d4c09-103">複数のリージョンへの書き込み</span><span class="sxs-lookup"><span data-stu-id="d4c09-103">Write to multiple regions</span></span>
+durationInMinutes: 5
+content: >
+  [!include[](includes/3-multi-region-write.md)]
+quiz:
+  title: <span data-ttu-id="d4c09-104">知識チェック</span><span class="sxs-lookup"><span data-stu-id="d4c09-104">Knowledge check</span></span>
+  questions:
+  - content: '<span data-ttu-id="d4c09-105">「はい」または「いいえ」で答えてください。複数のリージョンへの書き込みの利点は、待機時間の短縮、潜在的に無制限のスケーリング、および可用性の向上である。</span><span class="sxs-lookup"><span data-stu-id="d4c09-105">True or false: the benefits of writing to multiple regions are decreased latency, unlimited scaling potential, and improved availability.</span></span>'
+    choices:
+    - content: <span data-ttu-id="d4c09-106">はい</span><span class="sxs-lookup"><span data-stu-id="d4c09-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d4c09-107">複数のリージョンへの書き込みには、多くのパフォーマンス上の利点があります。</span><span class="sxs-lookup"><span data-stu-id="d4c09-107">Writing to multiple regions has many peformance benefits.</span></span> <span data-ttu-id="d4c09-108">たとえば、書き込み操作の待機時間は、マルチ マスター以外のアカウントよりも短くなります。</span><span class="sxs-lookup"><span data-stu-id="d4c09-108">For example, the latency for write operations is less than in non-multi-master accounts.</span></span>
+    - content: <span data-ttu-id="d4c09-109">×</span><span class="sxs-lookup"><span data-stu-id="d4c09-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d4c09-110">複数のリージョンへの書き込みには、多くのパフォーマンス上の利点があります。</span><span class="sxs-lookup"><span data-stu-id="d4c09-110">Writing to multiple regions has many peformance benefits.</span></span> <span data-ttu-id="d4c09-111">たとえば、書き込み操作の待機時間は、マルチ マスター以外のアカウントよりも短くなります。</span><span class="sxs-lookup"><span data-stu-id="d4c09-111">For example, the latency for write operations is less than in non-multi-master accounts.</span></span>
+  - content: <span data-ttu-id="d4c09-112">マルチ マスター アカウントの既定の競合解決ポリシーは何ですか?</span><span class="sxs-lookup"><span data-stu-id="d4c09-112">What is the default conflict-resolution policy in a multi-master account?</span></span>
+    choices:
+    - content: <span data-ttu-id="d4c09-113">Last-Writer-Wins</span><span class="sxs-lookup"><span data-stu-id="d4c09-113">Last-Writer-Wins</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d4c09-114">競合解決は Cosmos DB に組み込まれており、データベース エンジン内部で、サーバー上で実行されます。</span><span class="sxs-lookup"><span data-stu-id="d4c09-114">Conflict resolution is built-in to Cosmos DB and is performed on the server, inside the database engine.</span></span> <span data-ttu-id="d4c09-115">Last-Writer-Wins が既定のポリシーです。</span><span class="sxs-lookup"><span data-stu-id="d4c09-115">Last-Writer-Wins is the default policy.</span></span>
+    - content: <span data-ttu-id="d4c09-116">ユーザー定義のカスタム プロシージャ</span><span class="sxs-lookup"><span data-stu-id="d4c09-116">A custom user-defined procedure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d4c09-117">ユーザー定義のプロシージャはサポートされていますが、競合を処理するための既定のメカニズムではありません。</span><span class="sxs-lookup"><span data-stu-id="d4c09-117">User-defined procedures are supported, but they are not the default mechanism for handling conflicts.</span></span>

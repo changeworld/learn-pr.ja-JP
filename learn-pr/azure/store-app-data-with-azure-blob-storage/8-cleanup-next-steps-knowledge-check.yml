@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.store-app-data-with-azure-blob-storage.8-cleanup-next-steps-knowledge-check
+title: <span data-ttu-id="99efc-101">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="99efc-101">Clean up and knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="99efc-102">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="99efc-102">Clean up and knowledge check</span></span>
+  description: <span data-ttu-id="99efc-103">クリーンアップと知識チェック</span><span class="sxs-lookup"><span data-stu-id="99efc-103">Clean up and knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 0eb6be9bb8639ff6bf16b0f313c0202e1d274f63
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350480"
+durationInMinutes: 2
+content: >
+  [!include[](includes/8-cleanup-next-steps-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="99efc-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="99efc-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="99efc-105">アプリケーション用にストレージ アカウントと BLOB コンテナーを作成するための方法として適切なものは、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="99efc-105">Which of the following describes a good strategy for creating storage accounts and blob containers for your application?</span></span>
+    choices:
+    - content: <span data-ttu-id="99efc-106">アプリケーションを展開する前に、Azure Storage アカウントとコンテナーを前もって作成します。</span><span class="sxs-lookup"><span data-stu-id="99efc-106">Create Azure Storage accounts and containers up front, before deploying your application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-107">Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="99efc-107">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="99efc-108">また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。</span><span class="sxs-lookup"><span data-stu-id="99efc-108">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+    - content: <span data-ttu-id="99efc-109">Azure Storage アカウントはアプリケーションで必要になったら作成しますが、アプリケーションで必要なコンテナーはすべて展開プロセスで事前に作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="99efc-109">Create Azure Storage accounts as your application needs them, but the deployment process should create all the containers your application needs up front.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-110">Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="99efc-110">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="99efc-111">また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。</span><span class="sxs-lookup"><span data-stu-id="99efc-111">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+    - content: <span data-ttu-id="99efc-112">Azure Storage アカウントはアプリを展開する前に事前に作成し、コンテナーは必要になったときにアプリケーションで作成します。</span><span class="sxs-lookup"><span data-stu-id="99efc-112">Create Azure Storage accounts up front, before deploying your app, and let your application create the containers as it needs them.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="99efc-113">Azure Storage アカウントの作成は管理アクティビティであり、アプリケーションを展開する前に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="99efc-113">Creating an Azure Storage account is an administrative activity and can be done prior to deploying an applciation.</span></span> <span data-ttu-id="99efc-114">また、コンテナーの作成は迅速かつ軽量であり、アプリケーションで行うのに適したアクティビティです。</span><span class="sxs-lookup"><span data-stu-id="99efc-114">Also, container creation is quick and lightweight which makes it a good activity for you to do in your application.</span></span>
+  - content: <span data-ttu-id="99efc-115">アプリケーション内の Blob Storage クライアント ライブラリを初期化するために一般的に使用される構成はどれですか?</span><span class="sxs-lookup"><span data-stu-id="99efc-115">What kind of configuration is typically used to initialize the Blob Storage client library within an application?</span></span>
+    choices:
+    - content: <span data-ttu-id="99efc-116">Azure ユーザー名とパスワード。</span><span class="sxs-lookup"><span data-stu-id="99efc-116">An Azure username and password.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-117">ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="99efc-117">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="99efc-118">Azure Storage アカウントの接続文字列。</span><span class="sxs-lookup"><span data-stu-id="99efc-118">The Azure Storage account connection string.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="99efc-119">ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="99efc-119">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="99efc-120">アプリケーションを表すグローバル一意識別子 (GUID)。</span><span class="sxs-lookup"><span data-stu-id="99efc-120">A globally-unique identifier (GUID) that represents the application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-121">ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="99efc-121">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+    - content: <span data-ttu-id="99efc-122">Azure Storage アカウントのデータ センターと場所の識別子。</span><span class="sxs-lookup"><span data-stu-id="99efc-122">The Azure Storage account datacenter and location identifiers.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-123">ストレージ アカウントの接続文字列には、アプリケーションが Blob Storage に接続するために必要なすべての情報が含まれています。最も重要なのが、アカウント名とアカウント キーです。</span><span class="sxs-lookup"><span data-stu-id="99efc-123">A storage account connection string contains all the information needed by an application to connect to Blob storage, most importantly the account name and the account key.</span></span>
+  - content: <span data-ttu-id="99efc-124">BLOB の名前を使用して `GetBlockBlobReference` を呼び出すと、何が起こりますか?</span><span class="sxs-lookup"><span data-stu-id="99efc-124">What happens when you call `GetBlockBlobReference` with the name of a blob?</span></span>
+    choices:
+    - content: <span data-ttu-id="99efc-125">ストレージ内に新しいブロック BLOB が作成されます。</span><span class="sxs-lookup"><span data-stu-id="99efc-125">A new block blob is created in storage.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-126">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。</span><span class="sxs-lookup"><span data-stu-id="99efc-126">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="99efc-127">`CloudBlockBlob` オブジェクトがローカルに作成されます。</span><span class="sxs-lookup"><span data-stu-id="99efc-127">A `CloudBlockBlob` object is created locally.</span></span> <span data-ttu-id="99efc-128">ネットワーク呼び出しは行われません。</span><span class="sxs-lookup"><span data-stu-id="99efc-128">No network calls are made.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="99efc-129">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。</span><span class="sxs-lookup"><span data-stu-id="99efc-129">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="99efc-130">ストレージ内に BLOB が存在しない場合、例外がスローされます。</span><span class="sxs-lookup"><span data-stu-id="99efc-130">An exception is thrown if the blob does not exist in storage.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-131">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。</span><span class="sxs-lookup"><span data-stu-id="99efc-131">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>
+    - content: <span data-ttu-id="99efc-132">指定された BLOB の内容がダウンロードされます。</span><span class="sxs-lookup"><span data-stu-id="99efc-132">The contents of the named blob are downloaded.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="99efc-133">BLOB 参照を取得しても Azure Storage への呼び出しは行われず、保存された BLOB を使用できるオブジェクトがローカルに作成されるだけです。</span><span class="sxs-lookup"><span data-stu-id="99efc-133">Getting a blob reference does not make any calls to Azure Storage, it simply creates an object locally that can work with a stored blob.</span></span>

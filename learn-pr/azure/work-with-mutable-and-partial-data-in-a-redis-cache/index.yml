@@ -1,0 +1,57 @@
+### YamlMime:Module
+uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache
+metadata:
+  title: Azure Redis Cache 内の変更可能なデータおよび部分的なデータを操作する
+  description: トランザクションを作成し、メモリを管理し、Azure Redis Cache でキャッシュ アサイド パターンを使用する方法について説明する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4d390d150d2319de71d636b1c7446ee274aec2f8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349719"
+title: Azure Redis Cache 内の変更可能なデータおよび部分的なデータを操作する
+summary: Azure Redis Cache を使用して頻繁にアクセスするデータを格納する。 トランザクションを作成し、メモリを管理し、キャッシュ アサイド パターンを使用する方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 複数の操作をトランザクションにグループ化する
+
+  - ご利用のデータの有効期限を設定する
+
+  - メモリ不足の状態を管理する
+
+  - キャッシュ アサイド パターンを使用する
+
+  - .NET Core コンソール アプリケーションで ServiceStack.Redis パッケージを使用する
+prerequisites: >
+  - アプリ開発を体験する
+
+  - アプリでデータを使用した経験
+
+  - Azure Redis Cache の基本的な理解
+
+  - .NET に関する基本的な知識
+iconUrl: /learn/achievements/work-with-mutable-and-partial-data-in-a-redis-cache.svg
+levels:
+- intermediate
+roles:
+- developer
+products:
+- azure
+- azure-redis-cache
+- azure-cloud-shell
+units:
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.2-transactions-in-redis
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.3-create-a-transaction
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.4-data-expiration
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.6-eviction-policies
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-cache-aside-pattern
+- learn.work-with-mutable-and-partial-data-in-a-redis-cache.8-summary
+achievement: learn.work-with-mutable-and-partial-data-in-a-redis-cache.badge
