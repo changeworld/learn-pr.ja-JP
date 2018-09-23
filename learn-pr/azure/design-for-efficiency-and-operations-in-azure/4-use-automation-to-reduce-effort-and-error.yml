@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-efficiency-and-operations.4-use-automation-to-reduce-effort-and-error
+title: <span data-ttu-id="831a8-101">Automation を使用して労力とエラーを減らす</span><span class="sxs-lookup"><span data-stu-id="831a8-101">Use automation to reduce effort and error</span></span>
+metadata:
+  title: <span data-ttu-id="831a8-102">Automation を使用して労力とエラーを減らす</span><span class="sxs-lookup"><span data-stu-id="831a8-102">Use automation to reduce effort and error</span></span>
+  description: <span data-ttu-id="831a8-103">このユニットでは、Automation を使用して労力とエラーを減らす方法について説明します</span><span class="sxs-lookup"><span data-stu-id="831a8-103">In this unit, we'll discuss how to use automation to reduce effort and error</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7332287c8f44c7779341680a81b8dec39dcfa603
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349223"
+durationInMinutes: 12
+content: >
+  [!include[](includes/4-use-automation-to-reduce-effort-and-error.md)]
+quiz:
+  title: <span data-ttu-id="831a8-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="831a8-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="831a8-105">次のうち、インフラストラクチャのデプロイを自動化するのに使用できないものはどれですか?</span><span class="sxs-lookup"><span data-stu-id="831a8-105">Which of the following cannot be used to automate infrastructure deployment?</span></span>
+    choices:
+    - content: <span data-ttu-id="831a8-106">Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="831a8-106">Azure PowerShell</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="831a8-107">Azure PowerShell では、スクリプトを作成してインフラストラクチャの展開を自動化できます。</span><span class="sxs-lookup"><span data-stu-id="831a8-107">With Azure PowerShell you can create scripts to automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="831a8-108">Azure CLI</span><span class="sxs-lookup"><span data-stu-id="831a8-108">The Azure CLI</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="831a8-109">Azure CLI では、スクリプトを作成してインフラストラクチャの展開を自動化できます。</span><span class="sxs-lookup"><span data-stu-id="831a8-109">With the Azure CLI you can create scripts to automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="831a8-110">Resource Manager テンプレート</span><span class="sxs-lookup"><span data-stu-id="831a8-110">Resource Manager templates</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="831a8-111">Resource Manager テンプレートでは、インフラストラクチャのデプロイを完全に自動化できます。</span><span class="sxs-lookup"><span data-stu-id="831a8-111">With Resource manager templates you can fully automate the deployment of infrastructure.</span></span>
+    - content: <span data-ttu-id="831a8-112">Application Insights</span><span class="sxs-lookup"><span data-stu-id="831a8-112">Application Insights</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="831a8-113">Application Insights はアプリケーションの監視と分析を支援しますが、自動化には対応していません。</span><span class="sxs-lookup"><span data-stu-id="831a8-113">Application Insights helps you monitor and analyze your application, it does not offer automation.</span></span>
+  - content: '<span data-ttu-id="831a8-114">○ または ×: Azure Automation を使用し、業務時間外での仮想マシンの開始/停止を自動化できます。</span><span class="sxs-lookup"><span data-stu-id="831a8-114">True of false: Azure Automation could be used to automate the start/stop of virtual machines in off-hours.</span></span>'
+    choices:
+    - content: <span data-ttu-id="831a8-115">○</span><span class="sxs-lookup"><span data-stu-id="831a8-115">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="831a8-116">Azure Automation は、業務時間外での仮想マシンの開始/停止を自動化するための優れた方法です。</span><span class="sxs-lookup"><span data-stu-id="831a8-116">Azure Automation is a great way to automate the start/stop of virtual machines in off-hours.</span></span>
+    - content: <span data-ttu-id="831a8-117">×</span><span class="sxs-lookup"><span data-stu-id="831a8-117">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="831a8-118">Azure Automation を使用すると、仮想マシンの定期的な開始/停止を自動化できます。</span><span class="sxs-lookup"><span data-stu-id="831a8-118">Azure Automation can automate the start/stop of virtual machines on a schedule.</span></span>

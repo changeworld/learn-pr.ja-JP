@@ -1,0 +1,43 @@
+### YamlMime:Module
+uid: learn.design-for-performance-and-scalability
+metadata:
+  title: Azure でのパフォーマンスとスケーラビリティを高める設計
+  description: ユーザーに最良のエクスペリエンスを確実に提供するには、負荷を処理できるようにシステムをスケーリングすること、ネットワークのボトルネックを特定すること、ストレージのパフォーマンスを最適化することが重要です。 このモジュールでは、アプリケーションに最良のパフォーマンスを発揮させる方法を説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 695f7f5ea4b568a2234ea5ec282d689dfc07f51c
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349192"
+title: Azure でのパフォーマンスとスケーラビリティを高める設計
+summary: ユーザーに最良のエクスペリエンスを確実に提供するには、負荷を処理できるようにシステムをスケーリングすること、ネットワークのボトルネックを特定すること、ストレージのパフォーマンスを最適化することが重要です。 アプリケーションに最良のパフォーマンスを発揮させる方法を説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - ワークロードに基づき、スケール アップとスケール アウトにより容量を調整する
+
+  - ネットワークのパフォーマンスを最適化する
+
+  - ストレージとデータベースのパフォーマンスを最適化する
+prerequisites: なし
+iconUrl: /learn/achievements/design-for-performance-and-scalability-in-azure.svg
+levels:
+- intermediate
+roles:
+- solution-architect
+products:
+- azure
+- azure-cdn
+units:
+- learn.design-for-performance-and-scalability.1-introduction
+- learn.design-for-performance-and-scalability.2-scaling-up-and-scaling-out
+- learn.design-for-performance-and-scalability.3-optimize-network-performance
+- learn.design-for-performance-and-scalability.4-optimize-storage-performance
+- learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
+- learn.design-for-performance-and-scalability.6-summary
+achievement: learn.design-for-performance-and-scalability.badge

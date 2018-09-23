@@ -1,0 +1,37 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.3-identity-management
+title: <span data-ttu-id="d7d3d-101">ID 管理</span><span class="sxs-lookup"><span data-stu-id="d7d3d-101">Identity management</span></span>
+metadata:
+  title: <span data-ttu-id="d7d3d-102">ID 管理</span><span class="sxs-lookup"><span data-stu-id="d7d3d-102">Identity management</span></span>
+  description: <span data-ttu-id="d7d3d-103">このユニットでは、ご利用の ID を保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="d7d3d-103">In this unit we'll discuss how to protect your identities</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6a814459cd2e9ebd92f3b49c7552143a1d5bb2e6
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348151"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-identity-management.md)]
+quiz:
+  title: <span data-ttu-id="d7d3d-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="d7d3d-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="d7d3d-105">次のうち、シングル サインオンの利点ではないのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="d7d3d-105">Which of the following is NOT a benefit of single sign-on?</span></span>
+    choices:
+    - content: <span data-ttu-id="d7d3d-106">ユーザーへのアクセス許可の割り当てが複雑になる</span><span class="sxs-lookup"><span data-stu-id="d7d3d-106">Increased complexity assigning permissions to users</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="d7d3d-107">シングル サインオンでは、管理する ID 数が減るので、ユーザーにアクセス許可を追加する場合の複雑さが低減します。</span><span class="sxs-lookup"><span data-stu-id="d7d3d-107">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="d7d3d-108">ユーザーが記憶すべき ID とパスワードの数が減る</span><span class="sxs-lookup"><span data-stu-id="d7d3d-108">Fewer IDs and passwords for users to remember</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d7d3d-109">シングル サインオンでは、管理する ID 数が減るので、ユーザーにアクセス許可を追加する場合の複雑さが低減します。</span><span class="sxs-lookup"><span data-stu-id="d7d3d-109">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="d7d3d-110">ユーザーのロールが変わったときや組織を離れるときの管理作業が減る</span><span class="sxs-lookup"><span data-stu-id="d7d3d-110">Lower administration effort when users change roles or leave an organization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d7d3d-111">シングル サインオンでは、管理する ID 数が減るので、ユーザーにアクセス許可を追加する場合の複雑さが低減します。</span><span class="sxs-lookup"><span data-stu-id="d7d3d-111">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>
+    - content: <span data-ttu-id="d7d3d-112">すべてのアプリケーションでパスワード ポリシーの一貫性を確保する</span><span class="sxs-lookup"><span data-stu-id="d7d3d-112">Ensures a consistent password policy across applications</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="d7d3d-113">シングル サインオンでは、管理する ID 数が減るので、ユーザーにアクセス許可を追加する場合の複雑さが低減します。</span><span class="sxs-lookup"><span data-stu-id="d7d3d-113">Single sign-on can reduce the complexity needed to assign permissions to users because there are less identities to manage.</span></span>

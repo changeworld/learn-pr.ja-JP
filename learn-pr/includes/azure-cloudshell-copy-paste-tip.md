@@ -1,0 +1,2 @@
+> [!TIP]
+> <span data-ttu-id="6eff4-101">**[コピー]** ボタンを使用すると、コマンドをクリップボードにコピーできます。</span><span class="sxs-lookup"><span data-stu-id="6eff4-101">You can use the **Copy** button to copy commands to the clipboard.</span></span> <span data-ttu-id="6eff4-102">貼り付けを行うには、Cloud Shell ウィンドウ内で新しい行を右クリックし、**[貼り付け]** を使用するか、または <kbd>Shift + Insert</kbd> キーボード ショートカットを使用します。</span><span class="sxs-lookup"><span data-stu-id="6eff4-102">To paste, right click on a new line in the Cloud Shell window and select **Paste** or use the <kbd>Shift+Insert</kbd> keyboard shortcut.</span></span>

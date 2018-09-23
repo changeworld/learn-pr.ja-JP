@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.4-summary
+metadata:
+  title: <span data-ttu-id="731fa-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="731fa-101">Summary</span></span>
+  description: <span data-ttu-id="731fa-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="731fa-102">Summary</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 266c371394a46c9fc98e164e2a8700ae830e2ea7
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351159"
+title: <span data-ttu-id="731fa-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="731fa-103">Summary</span></span>
+durationInMinutes: 7
+content: >
+  [!include[](includes/4-summary.md)]
+quiz:
+  title: <span data-ttu-id="731fa-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="731fa-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="731fa-105">IoT Hub は、保管や処理のために IoT デバイスから大量の利用統計情報をクラウドに取り込むことを可能にする Azure サービスです。</span><span class="sxs-lookup"><span data-stu-id="731fa-105">IoT Hub is an Azure service that enables you to ingest high volumes of telemetry from your IoT devices into the cloud for storage or processing.</span></span>
+    choices:
+    - content: <span data-ttu-id="731fa-106">○</span><span class="sxs-lookup"><span data-stu-id="731fa-106">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="731fa-107">×</span><span class="sxs-lookup"><span data-stu-id="731fa-107">False</span></span>
+      isCorrect: false
+  - content: '<span data-ttu-id="731fa-108">F1: Free レベルは IoT Hub のセットアップに使用できますが、テスト目的でのみ使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="731fa-108">You can use the F1: Free Tier to setup IoT Hub, however it is only recommended for testing.</span></span>'
+    choices:
+    - content: <span data-ttu-id="731fa-109">○</span><span class="sxs-lookup"><span data-stu-id="731fa-109">True</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="731fa-110">×</span><span class="sxs-lookup"><span data-stu-id="731fa-110">False</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="731fa-111">既定で作成されない共有アクセス ポリシーは、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="731fa-111">Which one of the shared access policies is not created by default?</span></span>
+    choices:
+    - content: <span data-ttu-id="731fa-112">iothubowner</span><span class="sxs-lookup"><span data-stu-id="731fa-112">iothubowner</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="731fa-113">このポリシーは既定で作成されます。</span><span class="sxs-lookup"><span data-stu-id="731fa-113">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="731fa-114">service</span><span class="sxs-lookup"><span data-stu-id="731fa-114">service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="731fa-115">このポリシーは既定で作成されます。</span><span class="sxs-lookup"><span data-stu-id="731fa-115">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="731fa-116">device</span><span class="sxs-lookup"><span data-stu-id="731fa-116">device</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="731fa-117">このポリシーは既定で作成されます。</span><span class="sxs-lookup"><span data-stu-id="731fa-117">This policy is created by default.</span></span>
+    - content: <span data-ttu-id="731fa-118">registryWrite</span><span class="sxs-lookup"><span data-stu-id="731fa-118">registryWrite</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="731fa-119">registryWrite のようなポリシーはありません。</span><span class="sxs-lookup"><span data-stu-id="731fa-119">There is no such policy as registryWrite.</span></span>

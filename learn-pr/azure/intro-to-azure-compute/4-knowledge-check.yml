@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-compute.4-knowledge-check
+title: <span data-ttu-id="80660-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80660-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="80660-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80660-102">Knowledge check</span></span>
+  description: <span data-ttu-id="80660-103">「Azure コンピューティングの概要」モジュールに関する知識チェック。</span><span class="sxs-lookup"><span data-stu-id="80660-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349744"
+durationInMinutes: 2
+content: >
+  [!include[](includes/4-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="80660-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="80660-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="80660-105">天文学チームは、膨大な計算処理能力とメモリを必要とする画像処理アプリケーションを多数揃えています。</span><span class="sxs-lookup"><span data-stu-id="80660-105">Your astronomy team has a number of image-processing applications that require lots of compute power and memory to run.</span></span> <span data-ttu-id="80660-106">これらのアプリケーションを Azure に短期間で移行します。</span><span class="sxs-lookup"><span data-stu-id="80660-106">You want to quickly migrate these applications to Azure.</span></span> <span data-ttu-id="80660-107">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="80660-107">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="80660-108">Azure Kubernetes Service (AKS)</span><span class="sxs-lookup"><span data-stu-id="80660-108">Azure Kubernetes Service (AKS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80660-109">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-109">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-110">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-110">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="80660-111">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="80660-111">Service Fabric</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80660-112">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-112">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-113">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-113">This allows your team to focus on what their good at, writing code.</span></span>
+    - content: <span data-ttu-id="80660-114">App Service</span><span class="sxs-lookup"><span data-stu-id="80660-114">App Service</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="80660-115">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-115">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-116">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-116">This allows your team to focus on what their good at, writing code.</span></span>
+  - content: <span data-ttu-id="80660-117">天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるような天文学の計算に直面しているものとします。</span><span class="sxs-lookup"><span data-stu-id="80660-117">Suppose your astronomy team has come up against astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="80660-118">並列実行はあまり役に立たないようです。</span><span class="sxs-lookup"><span data-stu-id="80660-118">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="80660-119">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="80660-119">Which of the following options should you choose?</span></span>
+    choices:
+    - content: <span data-ttu-id="80660-120">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="80660-120">Cloud Services</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80660-121">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-121">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="80660-122">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="80660-122">Azure Batch</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="80660-123">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-123">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+    - content: <span data-ttu-id="80660-124">Container Instances</span><span class="sxs-lookup"><span data-stu-id="80660-124">Container Instances</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="80660-125">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-125">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>

@@ -1,0 +1,39 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-security.2-defense-in-depth
+title: <span data-ttu-id="f4e20-101">多層防御</span><span class="sxs-lookup"><span data-stu-id="f4e20-101">Defense in depth</span></span>
+metadata:
+  title: <span data-ttu-id="f4e20-102">多層防御</span><span class="sxs-lookup"><span data-stu-id="f4e20-102">Defense in depth</span></span>
+  description: <span data-ttu-id="f4e20-103">このユニットでは、多層防御を実践する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f4e20-103">In this unit we'll discuss how to practice defense in depth</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 23e9c8c1afa4a2872c1131864cc228ad386dc57b
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348183"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-defense-in-depth.md)]
+quiz:
+  title: <span data-ttu-id="f4e20-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="f4e20-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="f4e20-105">正誤問題: "*多層防御*" とは、ユーザーの情報にアクセスしようとする攻撃からユーザーを保護することを目的とした戦略です。</span><span class="sxs-lookup"><span data-stu-id="f4e20-105">True or false: *defense in depth* is a strategy aimed to protect you against attacks attempting to gain access to your information?</span></span>'
+    choices:
+    - content: <span data-ttu-id="f4e20-106">○</span><span class="sxs-lookup"><span data-stu-id="f4e20-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f4e20-107">"*多層防御*" は、不正アクセスからの保護を提供する多層システムです。</span><span class="sxs-lookup"><span data-stu-id="f4e20-107">*Defense in depth* is a layered system that provides protection from unauthorized access.</span></span> <span data-ttu-id="f4e20-108">1 つの層が破られた場合でも、別の層が存在して、それ以上の露出を防ぎます。</span><span class="sxs-lookup"><span data-stu-id="f4e20-108">If one layer is breached, there is another layer in place to prevent further exposure.</span></span>
+    - content: <span data-ttu-id="f4e20-109">×</span><span class="sxs-lookup"><span data-stu-id="f4e20-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f4e20-110">"*多層防御*" は、不正アクセスからの保護を提供する多層システムです。</span><span class="sxs-lookup"><span data-stu-id="f4e20-110">*Defense in depth* is a layered system that provides protection from unauthorized access.</span></span> <span data-ttu-id="f4e20-111">1 つの層が破られた場合でも、別の層が存在して、それ以上の露出を防ぎます。</span><span class="sxs-lookup"><span data-stu-id="f4e20-111">If one layer is breached, there is another layer in place to prevent further exposure.</span></span>
+  - content: '<span data-ttu-id="f4e20-112">正誤問題: クラウドに移行すると、アーキテクチャは完全にセキュリティで保護されるようになるので、セキュリティ上の責任はすべてクラウド プロバイダーに移管できます。</span><span class="sxs-lookup"><span data-stu-id="f4e20-112">True or false: by moving to the cloud, my architecture is fully secure and I can hand off all security responsibilities to my cloud provider?</span></span>'
+    choices:
+    - content: <span data-ttu-id="f4e20-113">○</span><span class="sxs-lookup"><span data-stu-id="f4e20-113">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="f4e20-114">クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。</span><span class="sxs-lookup"><span data-stu-id="f4e20-114">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>
+    - content: <span data-ttu-id="f4e20-115">×</span><span class="sxs-lookup"><span data-stu-id="f4e20-115">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="f4e20-116">クラウドに移行すると、責任の一部はクラウド プロバイダーに移管されますが、共有責任のモデルにはまだ責任があります。</span><span class="sxs-lookup"><span data-stu-id="f4e20-116">Moving to the cloud does offload some responsibilities to the cloud provider, but a model of shared responsibility is still in effect.</span></span>

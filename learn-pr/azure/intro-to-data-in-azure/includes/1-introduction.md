@@ -1,0 +1,16 @@
+<span data-ttu-id="dc9bc-101">組織のためにオンライン販売の学習ポータルを管理しているものとします。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-101">Suppose you manage an online sales learning portal for your organization.</span></span> <span data-ttu-id="dc9bc-102">販売チームの多くは多くの場合は、さまざまな地域にいるため、オンライン学習ポータルは必須要件です。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-102">The majority of your sales team are often in different geographical areas, so the online learning portal is an essential requirement.</span></span> <span data-ttu-id="dc9bc-103">あなたの組織が販売スタッフの技能や知識の向上トレーニングを継続的に増やしているのであれば、より重要です。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-103">It's even more important as your organization continues to increase the skills and knowledge enhancement training for the sales staff.</span></span>
+
+![ストレージ ソリューションの必要性を表す、世界地図上の空のバッグ](../media/1-heading.png)
+
+<span data-ttu-id="dc9bc-105">あなたが使用するトレーニング データには高画質の動画、詳細な販売シミュレーション、生徒のデータと進捗状況を維持するための大型リポジトリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-105">Your training data includes high-quality video, detailed sales simulations, and large repositories for maintaining student data and progress.</span></span> <span data-ttu-id="dc9bc-106">現在、トレーニング コンテンツはすべて、ご利用のオンプレミスのストレージに格納されています。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-106">Currently, all the training content is stored in your on-premises storage.</span></span> <span data-ttu-id="dc9bc-107">新しいコースを追加するという積極的な計画があり、ローカル ストレージ容量を継続的に増大する必要性を回避したいと考えています。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-107">You have an aggressive plan to add new courses and would like to avoid the need to continuously increase the local storage capacity.</span></span>
+<span data-ttu-id="dc9bc-108">安全性、耐久性、拡張性に優れ、世界中から簡単にアクセスできるストレージ ソリューションを探しています。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-108">You're looking for a storage solution that is secure, durable, scalable, and easily accessible from across the globe.</span></span>
+
+<span data-ttu-id="dc9bc-109">Azure は、あらゆるビジネス ニーズを満たすストレージ機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-109">Azure provides storage features that will meet all of your business needs.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="dc9bc-110">学習の目的</span><span class="sxs-lookup"><span data-stu-id="dc9bc-110">Learning objectives</span></span>
+
+<span data-ttu-id="dc9bc-111">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="dc9bc-111">In this module, you will:</span></span>
+
+- <span data-ttu-id="dc9bc-112">Azure のデータ ストレージ オプションを確認する</span><span class="sxs-lookup"><span data-stu-id="dc9bc-112">Survey the data storage options in Azure</span></span>
+- <span data-ttu-id="dc9bc-113">Azure データ ストレージでビジネス ストレージ ニーズを満たすしくみを確認する</span><span class="sxs-lookup"><span data-stu-id="dc9bc-113">Discover how Azure data storage can meet your business demands</span></span>
+- <span data-ttu-id="dc9bc-114">Azure データ ストレージとオンプレミス ストレージを比較する</span><span class="sxs-lookup"><span data-stu-id="dc9bc-114">Compare Azure data storage with on-premises storage</span></span>

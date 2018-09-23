@@ -1,0 +1,34 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.3-scale-load-balancer
+title: <span data-ttu-id="35465-101">Azure Load Balancer を使用したスケーリング</span><span class="sxs-lookup"><span data-stu-id="35465-101">Scale with Azure Load Balancer</span></span>
+metadata:
+  title: <span data-ttu-id="35465-102">Azure Load Balancer を使用したスケーリング</span><span class="sxs-lookup"><span data-stu-id="35465-102">Scale with Azure Load Balancer</span></span>
+  description: <span data-ttu-id="35465-103">Azure Load Balancer が地理的リージョン内のスケーリングと回復性の実現にどのように役立つかについて学習します。</span><span class="sxs-lookup"><span data-stu-id="35465-103">Learn how Azure Load Balancer helps achieve scale and resiliency within a geographic region.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 749fae4e396cf551df9b15c3a7434e5bcbfdf640
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354009"
+durationInMinutes: 7
+content: >
+  [!include[](includes/3-scale-load-balancer.md)]
+quiz:
+  title: <span data-ttu-id="35465-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="35465-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="35465-105">Azure Load Balancer について正しいのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="35465-105">Which is true about Azure Load Balancer?</span></span>
+    choices:
+    - content: <span data-ttu-id="35465-106">Azure で実行されている仮想マシン間でトラフィックを分散する場合は、Azure Load Balancer を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="35465-106">You must use Azure Load Balancer if you want to distribute traffic among your virtual machines running in Azure.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="35465-107">1 つのシステムが使用不能になると、Azure Load Balancer ではそのシステムへのトラフィックの送信が停止されます。</span><span class="sxs-lookup"><span data-stu-id="35465-107">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="35465-108">そして応答しているサーバーのいずれかにトラフィックが送信されます。</span><span class="sxs-lookup"><span data-stu-id="35465-108">It then directs traffic to one of the responsive servers.</span></span>
+    - content: <span data-ttu-id="35465-109">Azure Load Balancer は、インターネットに接続するトラフィックでのみ動作します。</span><span class="sxs-lookup"><span data-stu-id="35465-109">Azure Load Balancer works with internet-facing traffic only.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="35465-110">1 つのシステムが使用不能になると、Azure Load Balancer ではそのシステムへのトラフィックの送信が停止されます。</span><span class="sxs-lookup"><span data-stu-id="35465-110">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="35465-111">そして応答しているサーバーのいずれかにトラフィックが送信されます。</span><span class="sxs-lookup"><span data-stu-id="35465-111">It then directs traffic to one of the responsive servers.</span></span>
+    - content: <span data-ttu-id="35465-112">Azure Load Balancer では、同様のシステム間でトラフィックが分散されて、サービスの可用性がさらに高まります。</span><span class="sxs-lookup"><span data-stu-id="35465-112">Azure Load Balancer distributes traffic among similar systems, making your services more highly available.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="35465-113">1 つのシステムが使用不能になると、Azure Load Balancer はそのシステムへのトラフィックの送信を停止します。</span><span class="sxs-lookup"><span data-stu-id="35465-113">If one system is unavailable, Azure Load Balancer stops sending traffic to it.</span></span> <span data-ttu-id="35465-114">そして応答しているサーバーのいずれかにトラフィックを送信します。</span><span class="sxs-lookup"><span data-stu-id="35465-114">It then directs traffic to one of the responsive servers.</span></span>

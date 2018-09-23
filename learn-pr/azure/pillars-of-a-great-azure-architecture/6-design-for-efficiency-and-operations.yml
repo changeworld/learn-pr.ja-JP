@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.pillars-of-a-great-azure-architecture.6-design-for-efficiency-and-operations
+title: <span data-ttu-id="4d94b-101">効率性と運用を考慮した設計</span><span class="sxs-lookup"><span data-stu-id="4d94b-101">Design for efficiency and operations</span></span>
+metadata:
+  title: <span data-ttu-id="4d94b-102">効率性と運用を考慮した設計</span><span class="sxs-lookup"><span data-stu-id="4d94b-102">Design for efficiency and operations</span></span>
+  description: <span data-ttu-id="4d94b-103">効率性と運用を考慮した設計</span><span class="sxs-lookup"><span data-stu-id="4d94b-103">Design for efficiency and operations</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2dd22be197c91e7692c385287aab3382b71b4e43
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351919"
+durationInMinutes: 10
+content: >
+  [!include[](includes/6-design-for-efficiency-and-operations.md)]
+quiz:
+  title: <span data-ttu-id="4d94b-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="4d94b-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="4d94b-105">ご利用のアプリケーションを最近クラウドに移動したところ、月ごとの請求内容が予想よりも高くなっているように見えると仮定します。</span><span class="sxs-lookup"><span data-stu-id="4d94b-105">Suppose you have recently moved your application to the cloud and your monthly bill seems higher than expected.</span></span> <span data-ttu-id="4d94b-106">ご利用の VM の使用率は十分に高く、ダウンサイズすることをためらっています。</span><span class="sxs-lookup"><span data-stu-id="4d94b-106">The utilization level of your VM is high enough that you are hesitant to downsize.</span></span> <span data-ttu-id="4d94b-107">非効率性を見つけるのに役立つ次のステップとして、どのようなステップを取るのが適切でしょうか?</span><span class="sxs-lookup"><span data-stu-id="4d94b-107">What might be a reasonable next step you could take to help you find inefficiencies?</span></span>
+    choices:
+    - content: <span data-ttu-id="4d94b-108">1 か月待ってから請求書を再度確認する</span><span class="sxs-lookup"><span data-stu-id="4d94b-108">Wait a month and recheck your bill</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4d94b-109">これによってコストがかかっている場所を知ることはできます。しかし、これは、ご利用のシステムのコンポーネントの効率性レベルを判断するのには役立ちません。</span><span class="sxs-lookup"><span data-stu-id="4d94b-109">This will tell you where you are spending money but will not help you determine the efficiency level of the components of your system.</span></span>
+    - content: <span data-ttu-id="4d94b-110">各リリースの前に行う、アプリケーションのテスト量を増やす</span><span class="sxs-lookup"><span data-stu-id="4d94b-110">Increase the amount of application testing you do before each release</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4d94b-111">これによってアプリケーションの品質は向上します。しかし、これは、一般にインフラストラクチャの非効率性を特定するのには役立ちません。</span><span class="sxs-lookup"><span data-stu-id="4d94b-111">This can improve the quality of your application, but generally would not help you identify infrastructure inefficiencies.</span></span>
+    - content: <span data-ttu-id="4d94b-112">監視およびインストルメンテーションを追加する</span><span class="sxs-lookup"><span data-stu-id="4d94b-112">Add monitoring and instrumentation</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4d94b-113">継続的な監視により、コスト削減を模索するのに必要なデータを取得できます。</span><span class="sxs-lookup"><span data-stu-id="4d94b-113">Continuous monitoring will give you the data you need to find cost savings.</span></span> <span data-ttu-id="4d94b-114">たとえば、需要には極端な幅があるので、現在使用している単一の大きな VM より、自動スケーリングを備えた小さな VM を複数使用する方がコストがかからない可能性があることがわかります。</span><span class="sxs-lookup"><span data-stu-id="4d94b-114">For example, you might find that demand is extremely variable and multiple small VMs with autoscale could cost less than the single large VM you currently use.</span></span>
+  - content: <span data-ttu-id="4d94b-115">運用効率を向上させる例は次のどれですか?</span><span class="sxs-lookup"><span data-stu-id="4d94b-115">Which of the following is an example of improving operational efficiency?</span></span>
+    choices:
+    - content: <span data-ttu-id="4d94b-116">インフラストラクチャのデプロイの自動化</span><span class="sxs-lookup"><span data-stu-id="4d94b-116">Automating the deployment of infrastructure</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4d94b-117">インフラストラクチャのデプロイの自動化は、運用効率性の向上が得られるよい例です。</span><span class="sxs-lookup"><span data-stu-id="4d94b-117">Automating the deployment of infrastructure is a great example of improving your operational efficiency.</span></span>
+    - content: <span data-ttu-id="4d94b-118">PaaS から IaaS へのサービスの移行</span><span class="sxs-lookup"><span data-stu-id="4d94b-118">Moving services from PaaS to IaaS</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4d94b-119">PaaS サービスには、通常、運用コストの削減が伴うので、PaaS から IaaS へのサービスの移行は運用効率の面では後退となります。</span><span class="sxs-lookup"><span data-stu-id="4d94b-119">Moving services from PaaS to IaaS is a step backwards in operational efficiency, as PaaS services typically come with reduced operational costs.</span></span>
+    - content: <span data-ttu-id="4d94b-120">インフラストラクチャをデプロイするための手動による手順のドキュメント化</span><span class="sxs-lookup"><span data-stu-id="4d94b-120">Documenting manual steps for the deployment of infrastructure</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4d94b-121">どのアーキテクチャでもドキュメントは重要です。しかし、運用面の改善は、ドキュメントのシンプル化ではなく手動操作の自動化によってもたらされます。</span><span class="sxs-lookup"><span data-stu-id="4d94b-121">Documentation is important with any architecture, but operational improvement comes with automating the manual activities as opposed to simply documenting them.</span></span>
+    - content: <span data-ttu-id="4d94b-122">複数のログ システムの維持</span><span class="sxs-lookup"><span data-stu-id="4d94b-122">Maintaining multiple logging systems</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4d94b-123">複数のログ システムを維持すると、運用上のオーバーヘッドが増大し、ログ システム間でのイベントとメトリックの関連付け機能が低下します。</span><span class="sxs-lookup"><span data-stu-id="4d94b-123">Maintaining multiple logging systems comes with increased operational overhead and a reduced ability to correlate events and metrics across the logging systems.</span></span> <span data-ttu-id="4d94b-124">単一のログ システムに一元化することで、運用効率が向上します。</span><span class="sxs-lookup"><span data-stu-id="4d94b-124">Centralizing on a single login system can improve operational efficiency.</span></span>

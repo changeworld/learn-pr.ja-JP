@@ -1,0 +1,29 @@
+<span data-ttu-id="f429e-101">Event Hubs を使用する場合は、ご自分のハブが想定どおりに動作していることを確認するために、ハブの監視が重要となります。</span><span class="sxs-lookup"><span data-stu-id="f429e-101">When using Event Hubs, it's crucial for you to monitor your hub to ensure that it's working and performing as expected.</span></span>
+
+<span data-ttu-id="f429e-102">引き続き銀行業務の例で、Azure Event Hubs をデプロイし、送信側アプリケーションと受信側アプリケーションを構成したと仮定します。</span><span class="sxs-lookup"><span data-stu-id="f429e-102">Continuing with the banking example, suppose that you've deployed Azure Event Hubs and configured sender and receiver applications.</span></span> <span data-ttu-id="f429e-103">そのアプリケーションでは、支払い処理ソリューションをテストする準備が整っています。</span><span class="sxs-lookup"><span data-stu-id="f429e-103">Your applications are ready for testing the payment processing solution.</span></span> <span data-ttu-id="f429e-104">送信側アプリケーションによって顧客のクレジット カード データが収集され、受信側アプリケーションによってクレジット カードが有効であることが確認されます。</span><span class="sxs-lookup"><span data-stu-id="f429e-104">The sender application collects customer's credit card data and the receiver application verifies that the credit card is valid.</span></span> <span data-ttu-id="f429e-105">あなたの雇用主の業務は機密性が高いため、利用する支払い処理は、それが一時的に使えなくなった場合でも対応できるように、堅牢性と信頼性を備えていることが重要です。</span><span class="sxs-lookup"><span data-stu-id="f429e-105">Due to the sensitive nature of your employer's business, it's essential that your payment processing is robust and reliable, even when it's temporarily unavailable.</span></span>
+
+<span data-ttu-id="f429e-106">データが想定どおりに処理されていることをテストすることによって、ご利用のイベント ハブを評価する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f429e-106">You must evaluate your Event Hub by testing that your Event Hub is processing data as expected.</span></span> <span data-ttu-id="f429e-107">Event Hubs で提供されているメトリックを使用すると、その正常な動作を確保することができます。</span><span class="sxs-lookup"><span data-stu-id="f429e-107">The metrics available in the Event Hubs allow you to ensure that it's working fine.</span></span>
+
+## <a name="how-do-you-use-the-azure-portal-to-view-your-event-hub-activity"></a><span data-ttu-id="f429e-108">Azure portal を使用してご利用のイベント ハブのアクティビティを表示する方法</span><span class="sxs-lookup"><span data-stu-id="f429e-108">How do you use the Azure portal to view your Event Hub activity?</span></span>
+
+<span data-ttu-id="f429e-109">Azure portal で、ご利用のイベント ハブの [概要] ページを選択すると、メッセージ数が表示されます。</span><span class="sxs-lookup"><span data-stu-id="f429e-109">The Azure portal > Overview page for your Event Hub shows message counts.</span></span> <span data-ttu-id="f429e-110">これらのメッセージ数は、イベント ハブによって送受信されたデータ (イベント) を表します。</span><span class="sxs-lookup"><span data-stu-id="f429e-110">These message counts represent the data (events) received and sent by the Event Hub.</span></span> <span data-ttu-id="f429e-111">これらのイベントを表示する場合はタイムスケールを選択できます。</span><span class="sxs-lookup"><span data-stu-id="f429e-111">You can choose the timescale for viewing these events.</span></span>
+
+![イベント ハブ名前空間とメッセージ数が表示されている Azure portal のスクリーン ショット。](../media/6-view-messages.png)
+
+## <a name="how-can-you-test-event-hub-resilience"></a><span data-ttu-id="f429e-113">イベント ハブの回復力をテストする方法</span><span class="sxs-lookup"><span data-stu-id="f429e-113">How can you test Event Hub resilience?</span></span>
+
+<span data-ttu-id="f429e-114">Azure Event Hubs では、それが利用できなくなった場合でも、送信側アプリケーションからのメッセージの受信は継続されます。</span><span class="sxs-lookup"><span data-stu-id="f429e-114">Azure Event Hubs keeps receiving messages from the sender application even when it's unavailable.</span></span> <span data-ttu-id="f429e-115">この期間中に受信したメッセージは、ハブが利用できるようになるとすぐに正常に送信されます。</span><span class="sxs-lookup"><span data-stu-id="f429e-115">The messages received during this period are transmitted successfully as soon as the hub becomes available.</span></span>
+
+<span data-ttu-id="f429e-116">この機能をテストするために、Azure portal を使用してご利用のイベント ハブを無効にすることができます。</span><span class="sxs-lookup"><span data-stu-id="f429e-116">To test this functionality, you can use the Azure portal to disable your Event Hub.</span></span>
+
+<span data-ttu-id="f429e-117">そのイベント ハブを再度有効にすると、ご利用の受信側アプリケーションを再度実行し、ご自分の名前空間に対する Event Hubs メトリックを使用して、送信側のメッセージがすべて正常に送信および受信されているかどうかを確認することができます。</span><span class="sxs-lookup"><span data-stu-id="f429e-117">When you re-enable your Event Hub, you can rerun your receiver application and use Event Hubs metrics for your namespace to check whether all sender messages have been successfully transmitted and received.</span></span>
+
+<span data-ttu-id="f429e-118">Event Hubs では、他にも次のような便利なメトリックを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f429e-118">Other useful metrics available in the Event Hubs include:</span></span>
+
+- <span data-ttu-id="f429e-119">調整された要求数: スループット ユニットの使用量を超えたため調整された要求の数。</span><span class="sxs-lookup"><span data-stu-id="f429e-119">Throttled Requests: The number of requests that were throttled because the throughput unit usage was exceeded.</span></span>
+- <span data-ttu-id="f429e-120">ActiveConnections: 名前空間またはイベント ハブに対するアクティブな接続の数。</span><span class="sxs-lookup"><span data-stu-id="f429e-120">ActiveConnections: The number of active connections on a namespace or Event Hub.</span></span>
+- <span data-ttu-id="f429e-121">受信/送信バイト数: 指定された期間にわたって Event Hubs サービスに送信/Event Hubs から受信したバイト数。</span><span class="sxs-lookup"><span data-stu-id="f429e-121">Incoming/Outgoing Bytes: The number of bytes sent to/received from the Event Hubs service over a specified period.</span></span>
+
+## <a name="summary"></a><span data-ttu-id="f429e-122">まとめ</span><span class="sxs-lookup"><span data-stu-id="f429e-122">Summary</span></span>
+
+<span data-ttu-id="f429e-123">Azure portal では、メッセージ数などのメトリックが提供されます。これらのメトリックは、ご利用の Event Hubs の正常性チェックで使用することができます。</span><span class="sxs-lookup"><span data-stu-id="f429e-123">The Azure portal provides message counts and other metrics that you can use as a health check for your Event Hubs.</span></span>

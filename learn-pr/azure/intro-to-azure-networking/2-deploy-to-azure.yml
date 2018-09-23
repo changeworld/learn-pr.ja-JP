@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-azure-networking.2-deploy-to-azure
+title: <span data-ttu-id="b9382-101">サイトを Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="b9382-101">Deploy your site to Azure</span></span>
+metadata:
+  title: <span data-ttu-id="b9382-102">サイトを Azure にデプロイする</span><span class="sxs-lookup"><span data-stu-id="b9382-102">Deploy your site to Azure</span></span>
+  description: <span data-ttu-id="b9382-103">Azure での基本的な 3 層アプリケーションがどのようなものかをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b9382-103">See what a basic three-tier application might look like on Azure.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3227e19468766eb256fcffb540b78e59dfc554ae
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351759"
+durationInMinutes: 12
+content: >
+  [!include[](includes/2-deploy-to-azure.md)]
+quiz:
+  title: <span data-ttu-id="b9382-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="b9382-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="b9382-105">Azure _リージョン_とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="b9382-105">What is an Azure _region_?</span></span>
+    choices:
+    - content: <span data-ttu-id="b9382-106">特定の地理的な場所内にある Azure データ センター。</span><span class="sxs-lookup"><span data-stu-id="b9382-106">An Azure data center within a specific geographic location.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b9382-107">Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b9382-107">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b9382-108">米国西部と北ヨーロッパはその例です。</span><span class="sxs-lookup"><span data-stu-id="b9382-108">West US and North Europe are examples.</span></span>
+    - content: <span data-ttu-id="b9382-109">ネットワークをより小さなネットワークに分割する方法です。</span><span class="sxs-lookup"><span data-stu-id="b9382-109">A way of breaking networks into smaller networks.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b9382-110">Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b9382-110">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b9382-111">米国西部と北ヨーロッパはその例です。</span><span class="sxs-lookup"><span data-stu-id="b9382-111">West US and North Europe are examples.</span></span>
+    - content: <span data-ttu-id="b9382-112">Azure に出入りできるトラフィックのフローを定義するファイアウォール規則。</span><span class="sxs-lookup"><span data-stu-id="b9382-112">Firewall rules which define the flow of traffic in and out of Azure.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b9382-113">Azure リージョンは、ユーザーに最も近い場所でアプリとサービスを提供するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="b9382-113">Azure regions help you deliver your apps and services closest to your users.</span></span> <span data-ttu-id="b9382-114">米国西部と北ヨーロッパはその例です。</span><span class="sxs-lookup"><span data-stu-id="b9382-114">West US and North Europe are examples.</span></span>
+  - content: <span data-ttu-id="b9382-115">仮想ネットワークについて正しいのは、次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="b9382-115">Which of the following is true about virtual networks?</span></span>
+    choices:
+    - content: <span data-ttu-id="b9382-116">仮想ネットワークは、ソフトウェアを介して構成します。</span><span class="sxs-lookup"><span data-stu-id="b9382-116">You configure virtual networks through software.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b9382-117">ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。</span><span class="sxs-lookup"><span data-stu-id="b9382-117">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b9382-118">物理ハードウェアは、Azure によってメンテナンスされます。</span><span class="sxs-lookup"><span data-stu-id="b9382-118">Azure maintains the physical hardware for you.</span></span>
+    - content: <span data-ttu-id="b9382-119">仮想ネットワークは、すべてのポートでネットワーク トラフィックを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="b9382-119">A virtual network accepts network traffic on all ports.</span></span> <span data-ttu-id="b9382-120">ファイアウォールは、仮想マシンを通じて構成します。</span><span class="sxs-lookup"><span data-stu-id="b9382-120">You configure the firewall through virtual machines.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b9382-121">ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。</span><span class="sxs-lookup"><span data-stu-id="b9382-121">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b9382-122">物理ハードウェアのメンテナンスは、ユーザーの代わりに、Azure によって行われます。</span><span class="sxs-lookup"><span data-stu-id="b9382-122">Azure maintains the physical hardware for you.</span></span>
+    - content: <span data-ttu-id="b9382-123">仮想ネットワークには常にインターネットからアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b9382-123">Virtual networks are always reachable from the internet.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b9382-124">ソフトウェアを使用することで、仮想ネットワークを独自のネットワークと同じように扱うことができます。</span><span class="sxs-lookup"><span data-stu-id="b9382-124">Software enables you to treat a virtual network just like your own network.</span></span> <span data-ttu-id="b9382-125">物理ハードウェアのメンテナンスは、ユーザーの代わりに、Azure によって行われます。</span><span class="sxs-lookup"><span data-stu-id="b9382-125">Azure maintains the physical hardware for you.</span></span>

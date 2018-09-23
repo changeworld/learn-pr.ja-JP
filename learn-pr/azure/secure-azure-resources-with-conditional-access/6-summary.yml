@@ -1,0 +1,42 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-access-azure-ad-multi-factor-authentication.6-summary
+metadata:
+  title: <span data-ttu-id="55710-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="55710-101">Summary</span></span>
+  description: <span data-ttu-id="55710-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="55710-102">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d974b53f5c6b22b7a5b4a11fa588d59a38be2560
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46349320"
+title: <span data-ttu-id="55710-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="55710-103">Summary</span></span>
+durationInMinutes: 5
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: <span data-ttu-id="55710-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="55710-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="55710-105">Azure AD は基本的に Azure で実行されている Active Directory Domain Services (AD DS) ドメイン コントローラーです。</span><span class="sxs-lookup"><span data-stu-id="55710-105">Azure AD is essentially an Active Directory Domain Services (AD DS) domain controller running in Azure.</span></span>
+    choices:
+    - content: <span data-ttu-id="55710-106">○</span><span class="sxs-lookup"><span data-stu-id="55710-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="55710-107">従来の AD DS と同じ機能の多くが実行されますが、Azure AD はクラウドベースのマルチテナント、ディレクトリ、ID 管理サービスです。</span><span class="sxs-lookup"><span data-stu-id="55710-107">While Azure AD performs many of the same functions as a traditional AD DS, it's a cloud-based multi-tenant, directory, and identity management service.</span></span>
+    - content: <span data-ttu-id="55710-108">×</span><span class="sxs-lookup"><span data-stu-id="55710-108">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="55710-109">AD DS は Windows Server 上でサーバーの役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="55710-109">AD DS is a server role on Windows Server.</span></span> <span data-ttu-id="55710-110">Azure AD はクラウドベースのマルチカスタマー パブリック ディレクトリ サービスです。</span><span class="sxs-lookup"><span data-stu-id="55710-110">Azure AD is a cloud-based multi-customer public directory service.</span></span>
+  - content: <span data-ttu-id="55710-111">条件付きアクセス ポリシーが正常に機能するための 3 つの項目とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="55710-111">What three items should exist in a successful conditional access policy?</span></span>
+    choices:
+    - content: <span data-ttu-id="55710-112">ユーザーまたはグループ、アプリケーション、時刻</span><span class="sxs-lookup"><span data-stu-id="55710-112">User or group, application, time of day</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="55710-113">時刻は条件付きアクセス ルールの選択肢ではありません。</span><span class="sxs-lookup"><span data-stu-id="55710-113">Time of day is not an option in conditional access rules.</span></span>
+    - content: <span data-ttu-id="55710-114">ユーザーまたはグループ、アプリケーション、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="55710-114">User or group, application, control to be enforced</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="55710-115">これら 3 つの項目を選択すると、自己完結型の機能的条件付きアクセス ルールが作成されます。</span><span class="sxs-lookup"><span data-stu-id="55710-115">Selecting these three items will create self-contained functional conditional access rules.</span></span>
+    - content: <span data-ttu-id="55710-116">ユーザーまたはグループ、Linux OS、強制するコントロール</span><span class="sxs-lookup"><span data-stu-id="55710-116">User or group, Linux OS, control to be enforced</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="55710-117">一部のデバイス プラットフォームを対象にできますが、Linux は現在のところサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="55710-117">While you can target some device platforms, Linux isn't currently supported.</span></span>

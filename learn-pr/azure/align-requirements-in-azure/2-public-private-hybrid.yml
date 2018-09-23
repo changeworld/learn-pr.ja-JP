@@ -1,0 +1,56 @@
+### YamlMime:ModuleUnit
+uid: learn.align-requirements-in-azure.2-public-private-hybrid
+title: <span data-ttu-id="ca20c-101">パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション</span><span class="sxs-lookup"><span data-stu-id="ca20c-101">Azure solutions for public, private, and hybrid cloud</span></span>
+metadata:
+  title: <span data-ttu-id="ca20c-102">パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション</span><span class="sxs-lookup"><span data-stu-id="ca20c-102">Azure solutions for public, private, and hybrid cloud</span></span>
+  description: <span data-ttu-id="ca20c-103">パブリック、プライベート、ハイブリッド クラウド向けの Azure ソリューション</span><span class="sxs-lookup"><span data-stu-id="ca20c-103">Azure solutions for public, private, and hybrid cloud</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bbea3817769d1592c24bbab4b03cf3dfcde3c267
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46352980"
+durationInMinutes: 15
+content: >
+  [!include[](includes/2-public-private-hybrid.md)]
+quiz:
+  title: <span data-ttu-id="ca20c-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="ca20c-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="ca20c-105">次の状況に最適なクラウド デプロイ モデルはどれですか?</span><span class="sxs-lookup"><span data-stu-id="ca20c-105">Which cloud deployment model would be the best match for the following situation?</span></span> <span data-ttu-id="ca20c-106">短期プロジェクトのために、SQL Server データベースが必要です。</span><span class="sxs-lookup"><span data-stu-id="ca20c-106">A SQL server database is needed for a short-term project.</span></span> <span data-ttu-id="ca20c-107">IT 部門には、データベースをデプロイするためのパフォーマンス要件を満たしている利用可能なハードウェアまたはリソースがありません。</span><span class="sxs-lookup"><span data-stu-id="ca20c-107">The IT department does not have available hardware that meets the performance requirements or resources to deploy it.</span></span> <span data-ttu-id="ca20c-108">プロジェクトは、次の週に始まります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-108">The project starts next week.</span></span> <span data-ttu-id="ca20c-109">プロジェクトが終了すると、データベースは必要なくなります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-109">Once the project is over, the database is no longer needed.</span></span>
+    choices:
+    - content: <span data-ttu-id="ca20c-110">パブリック クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-110">Public cloud</span></span>
+      correctExplanation: <span data-ttu-id="ca20c-111">短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-111">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="ca20c-112">プライベート クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-112">Private cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-113">短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-113">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+    - content: <span data-ttu-id="ca20c-114">ハイブリッド クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-114">Hybrid cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-115">短時間でのデプロイと、SQL データベースの短いライフサイクルが必要な場合は、パブリック クラウドが最適なオプションになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-115">The need for a quick deployment and the short lifecycle of the SQL database make public cloud the best option.</span></span>
+  - content: <span data-ttu-id="ca20c-116">次のシナリオで説明されているクラウド デプロイ モデルはどれですか。</span><span class="sxs-lookup"><span data-stu-id="ca20c-116">Which cloud deployment model is described in the following scenario?</span></span> <span data-ttu-id="ca20c-117">クラウド内でいくつかの仮想マシンを作成します。</span><span class="sxs-lookup"><span data-stu-id="ca20c-117">You create several virtual machines in the cloud.</span></span> <span data-ttu-id="ca20c-118">VM は仮想ネットワークを使用して、一緒にネットワークに接続されます。</span><span class="sxs-lookup"><span data-stu-id="ca20c-118">The VMs are networked together using a virtual network.</span></span> <span data-ttu-id="ca20c-119">VM からクラウド ストレージ内の X 線画像ファイルにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="ca20c-119">The VMs have access to x-ray image files in cloud storage.</span></span> <span data-ttu-id="ca20c-120">1 つの VM は、顧客がレコードにアクセスするためにインターネットに公開されている、Web サイトをホストする Web サーバーです。</span><span class="sxs-lookup"><span data-stu-id="ca20c-120">One of the VMs is a web server that host a website exposed to the Internet for customers to access their records.</span></span> <span data-ttu-id="ca20c-121">画像ファイルと共に表示するために、顧客情報用のオンプレミスのデータセンターにソリューションを接続する VPN があります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-121">There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.</span></span>
+    choices:
+    - content: <span data-ttu-id="ca20c-122">パブリック クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-122">Public cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-123">このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="ca20c-123">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="ca20c-124">したがって、これはハイブリッド クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-124">Therefore, it is a hybrid cloud deployment.</span></span>
+    - content: <span data-ttu-id="ca20c-125">プライベート クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-125">Private cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-126">このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="ca20c-126">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="ca20c-127">したがって、これはハイブリッド クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-127">Therefore, it is a hybrid cloud deployment.</span></span>
+    - content: <span data-ttu-id="ca20c-128">ハイブリッド クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-128">Hybrid cloud</span></span>
+      correctExplanation: <span data-ttu-id="ca20c-129">このシナリオでは、2 つの間が接続されているパブリックとプライベート両方のクラウドを使用しています。</span><span class="sxs-lookup"><span data-stu-id="ca20c-129">This scenario uses both public and private cloud with a connection between the two.</span></span> <span data-ttu-id="ca20c-130">したがって、これはハイブリッド クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-130">Therefore, it is a hybrid cloud deployment.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="ca20c-131">次のシナリオで説明されているクラウド デプロイ モデルはどれですか。</span><span class="sxs-lookup"><span data-stu-id="ca20c-131">Which cloud deployment model is described in the following scenario?</span></span> <span data-ttu-id="ca20c-132">お客様の組織にはデータセンターが 2 か所あります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-132">You have two datacenters in your organization.</span></span> <span data-ttu-id="ca20c-133">一方のデータセンターにデータベースがありますが、規制の要件のため、いずれかのデータセンターにしか存在させることができません。</span><span class="sxs-lookup"><span data-stu-id="ca20c-133">One datacenter has a database that can only reside in one of the datacenters because of a regulatory requirement.</span></span> <span data-ttu-id="ca20c-134">もう一方のデータセンターからそのデータベースにアクセスする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-134">You want to access the database from the other datacenter.</span></span> <span data-ttu-id="ca20c-135">2 か所のデータセンターに接続するために、クラウド プロバイダーを使用して VPN を作成します。</span><span class="sxs-lookup"><span data-stu-id="ca20c-135">You create a VPN using a cloud provider to connect the two datacenters.</span></span>
+    choices:
+    - content: <span data-ttu-id="ca20c-136">パブリック クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-136">Public cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-137">VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-137">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>
+    - content: <span data-ttu-id="ca20c-138">プライベート クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-138">Private cloud</span></span>
+      correctExplanation: <span data-ttu-id="ca20c-139">VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-139">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="ca20c-140">ハイブリッド クラウド</span><span class="sxs-lookup"><span data-stu-id="ca20c-140">Hybrid cloud</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="ca20c-141">VPN はパブリック クラウド リソースです。ただし、VPN は 2 つのプライベート データセンター間のプライベート接続であるため、これはプライベート クラウドのデプロイになります。</span><span class="sxs-lookup"><span data-stu-id="ca20c-141">The VPN is a public cloud resource; however, because the VPN is a private connection between two private datacenters, this is a private cloud deployment.</span></span>

@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.design-for-availability-and-recoverability.3-disaster-recovery
+title: <span data-ttu-id="b6f55-101">ディザスター リカバリー戦略の策定</span><span class="sxs-lookup"><span data-stu-id="b6f55-101">Develop a disaster recovery strategy</span></span>
+metadata:
+  title: <span data-ttu-id="b6f55-102">ディザスター リカバリー戦略の策定</span><span class="sxs-lookup"><span data-stu-id="b6f55-102">Develop a disaster recovery strategy</span></span>
+  description: <span data-ttu-id="b6f55-103">ディザスター リカバリー戦略の策定</span><span class="sxs-lookup"><span data-stu-id="b6f55-103">Develop a disaster recovery strategy</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 3955af1f310742bdb6912d5da07f5004d40287f1
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46346942"
+durationInMinutes: 20
+content: >
+  [!include[](includes/3-disaster-recovery.md)]
+quiz:
+  title: <span data-ttu-id="b6f55-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="b6f55-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="b6f55-105">次のうち、復旧計画において復旧手順から除外できるものはどれですか? </span><span class="sxs-lookup"><span data-stu-id="b6f55-105">Which of the following can be excluded from your recovery steps in your recovery plan?</span></span>
+    choices:
+    - content: <span data-ttu-id="b6f55-106">バックアップを復元する方法</span><span class="sxs-lookup"><span data-stu-id="b6f55-106">How to restore backups</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b6f55-107">バックアップを復元するために必要な手順は、復旧計画の重要な部分です。</span><span class="sxs-lookup"><span data-stu-id="b6f55-107">The steps needed to restore backups are a critical piece of a recovery plan.</span></span>
+    - content: <span data-ttu-id="b6f55-108">レプリケートされたシステムにフェールオーバーする方法</span><span class="sxs-lookup"><span data-stu-id="b6f55-108">How to fail over to replicated systems</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b6f55-109">レプリケートされたシステムにフェールオーバーするプロセスは、復旧計画の重要な部分です。</span><span class="sxs-lookup"><span data-stu-id="b6f55-109">The process to fail over to replicated systems is a critical piece of a recovery plan.</span></span>
+    - content: <span data-ttu-id="b6f55-110">オンプレミスまたは外部ネットワークへのネットワーク接続を再確立する方法</span><span class="sxs-lookup"><span data-stu-id="b6f55-110">How to reestablish network connectivity to on-premises or external networks</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b6f55-111">オンプレミスまたは外部ネットワークへのネットワーク接続は、インフラストラクチャにおいて重要な部分であることが多いです。</span><span class="sxs-lookup"><span data-stu-id="b6f55-111">Network connectivity to on-premises or external networks are often critical pieces of infrastructure.</span></span> <span data-ttu-id="b6f55-112">障害の発生後に再確立する手順は、復旧計画における重要な部分です。</span><span class="sxs-lookup"><span data-stu-id="b6f55-112">The steps to reestablish after failure are critical pieces of a recovery plan.</span></span>
+    - content: <span data-ttu-id="b6f55-113">上述のいずれも復旧計画から除外すべきではありません。</span><span class="sxs-lookup"><span data-stu-id="b6f55-113">None of the above should be excluded in a recovery plan.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b6f55-114">復旧計画においてこれらの手順はすべて重要です。</span><span class="sxs-lookup"><span data-stu-id="b6f55-114">All these procedures are necessary in a recovery plan.</span></span>
+  - content: '<span data-ttu-id="b6f55-115">正誤問題: データ レプリケーションとデータ バックアップは、同じことです。</span><span class="sxs-lookup"><span data-stu-id="b6f55-115">True or false: data replication and data backup are the same thing.</span></span>'
+    choices:
+    - content: <span data-ttu-id="b6f55-116">○</span><span class="sxs-lookup"><span data-stu-id="b6f55-116">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="b6f55-117">データ レプリケーションとデータ バックアップはどちらも、ご利用のデータのコピーを作成しますが、これらは異なる概念と見なされるため、コピーの頻度や使用状況はまったく異なります。</span><span class="sxs-lookup"><span data-stu-id="b6f55-117">Data replication and data backup both makes copies of your data, but the frequency and usage of the copies is so different that these are considered different concepts.</span></span>
+    - content: <span data-ttu-id="b6f55-118">×</span><span class="sxs-lookup"><span data-stu-id="b6f55-118">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="b6f55-119">レプリケーションでは、実行中のフェールオーバーに使用されるライブ データのリアル タイムまたはほぼリアルタイムのコピーを作成します。</span><span class="sxs-lookup"><span data-stu-id="b6f55-119">Replication creates real-time or near-real-time copies of live data for use in failover during execution.</span></span> <span data-ttu-id="b6f55-120">バックアップでは、復旧に使用するデータの寿命の長い読み取り専用のスナップショットを作成します。</span><span class="sxs-lookup"><span data-stu-id="b6f55-120">Backup creates long-lived, read-only snapshots of data for use in recovery,</span></span>

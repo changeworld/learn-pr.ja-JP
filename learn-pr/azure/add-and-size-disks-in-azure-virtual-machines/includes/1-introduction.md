@@ -1,0 +1,16 @@
+<span data-ttu-id="c7f9b-101">あなたは、法律事務所のシステム アーキテクトです。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-101">You're the system architect for a law firm.</span></span> <span data-ttu-id="c7f9b-102">事務所から重要なシステムを Azure に移行するよう依頼されています。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-102">The firm has asked you to migrate critical systems to Azure.</span></span> <span data-ttu-id="c7f9b-103">操作には、訴訟履歴のデータベースが含まれています。現在、このデータベースはオンプレミスの SQL Server でホストされ、デスクトップ アプリケーションからアクセスされています。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-103">Operations include the database of case histories, currently hosted by an on-premises SQL server and accessed from a desktop application.</span></span> <span data-ttu-id="c7f9b-104">SQL Server では、データベースのメンテナンスを実行するいくつかのカスタムの社内サービスも実行されています。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-104">The SQL server also runs some custom in-house services to perform database maintenance.</span></span> <span data-ttu-id="c7f9b-105">あなたは、Azure Virtual Machines (VM) ベースのソリューションにすれば、SQL Server をホストし、カスタム サービスを使用し続けられると判断しました。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-105">You've decided that a solution based on Azure virtual machines (VMs) will allow you to host your SQL server and continue using your custom services.</span></span> <span data-ttu-id="c7f9b-106">移行を容易にするため、既存のオンプレミス サーバーのコンテンツに基づいて、Azure 仮想ハード ディスクを作成します。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-106">You'll create an Azure virtual hard disk based on the contents of your existing on-premises server to ease migration.</span></span>
+
+<span data-ttu-id="c7f9b-107">このモジュールでは、Azure で作成する VM に最適なディスク構成を設計する方法を学習します。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-107">In this module, you'll learn how to architect the optimal disk configuration for the VMs you create in Azure.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="c7f9b-108">学習の目的</span><span class="sxs-lookup"><span data-stu-id="c7f9b-108">Learning objectives</span></span>
+
+<span data-ttu-id="c7f9b-109">このモジュールでは、次のことを行います。</span><span class="sxs-lookup"><span data-stu-id="c7f9b-109">In this module, you will:</span></span>
+
+- <span data-ttu-id="c7f9b-110">仮想マシン (VM) を作成する</span><span class="sxs-lookup"><span data-stu-id="c7f9b-110">Create a virtual machine (VM)</span></span>
+- <span data-ttu-id="c7f9b-111">既存の VM に仮想ハード ドライブ (VHD) を構成してアタッチする</span><span class="sxs-lookup"><span data-stu-id="c7f9b-111">Configure and attach virtual hard drives (VHDs) to an existing VM</span></span>
+- <span data-ttu-id="c7f9b-112">プレミアム ディスクが必要かどうかを決定する</span><span class="sxs-lookup"><span data-stu-id="c7f9b-112">Determine whether you need premium disks</span></span>
+- <span data-ttu-id="c7f9b-113">VM 用のディスクのサイズを変更する</span><span class="sxs-lookup"><span data-stu-id="c7f9b-113">Resize disks for a VM</span></span>
+
+## <a name="prerequisites"></a><span data-ttu-id="c7f9b-114">前提条件</span><span class="sxs-lookup"><span data-stu-id="c7f9b-114">Prerequisites</span></span>  
+
+<span data-ttu-id="c7f9b-115">なし</span><span class="sxs-lookup"><span data-stu-id="c7f9b-115">None</span></span>

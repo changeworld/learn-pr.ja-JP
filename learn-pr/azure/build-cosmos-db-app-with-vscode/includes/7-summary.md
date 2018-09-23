@@ -1,0 +1,3 @@
+<span data-ttu-id="df2d4-101">このモジュールで作成した .NET Core コンソール アプリケーションでは、ユーザー レコードを作成、更新、削除し、SQL と LINQ を使用してユーザーのクエリを行い、データベース内の項目に対してクエリを実行するストアド プロシージャを実行しました。</span><span class="sxs-lookup"><span data-stu-id="df2d4-101">In this module you've created a .NET Core console application that creates, updates, and deletes user records, queries the users by using SQL and LINQ, and runs a stored procedure to query items in the database.</span></span>
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]

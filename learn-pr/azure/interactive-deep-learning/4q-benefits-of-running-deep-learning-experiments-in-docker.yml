@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.interactive-deep-learning.4q-benefits-of-running-deep-learning-experiments-in-docker
+title: <span data-ttu-id="2b073-101">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2b073-101">Check your knowledge</span></span>
+metadata:
+  title: <span data-ttu-id="2b073-102">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2b073-102">Check your knowledge</span></span>
+  description: <span data-ttu-id="2b073-103">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2b073-103">Check your knowledge</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fab76bfb0f9de183a37f1d8aba022b434294ce85
+  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/20/2018
+  ms.locfileid: "46483863"
+durationInMinutes: 2
+quiz:
+  title: <span data-ttu-id="2b073-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2b073-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="2b073-105">CUDA の説明は次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="2b073-105">Which of the following describes CUDA?</span></span>
+    choices:
+    - content: <span data-ttu-id="2b073-106">CUDA は、並列コンピューティング プラットフォームおよび API です。</span><span class="sxs-lookup"><span data-stu-id="2b073-106">It's a parallel computing platform and API.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2b073-107">CUDA は、NVIDIA によって作成された並列コンピューティング プラットフォームおよびアプリケーション プログラミング インターフェイス (API) モデルです。</span><span class="sxs-lookup"><span data-stu-id="2b073-107">CUDA is a parallel computing platform and application programming interface (API) model created by NVIDIA.</span></span> <span data-ttu-id="2b073-108">CUDA プラットフォームは、計算カーネルを実行するために、GPU の仮想命令セットと並列コンピューティング要素への直接アクセスを提供するソフトウェア レイヤーです。</span><span class="sxs-lookup"><span data-stu-id="2b073-108">The CUDA platform is a software layer that gives direct access to the GPU's virtual instruction set and parallel computational elements, for the execution of compute kernels.</span></span>
+    - content: <span data-ttu-id="2b073-109">非常に強力な CPU です。</span><span class="sxs-lookup"><span data-stu-id="2b073-109">It's a super powerful CPU.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-110">CUDA はソフトウェア レイヤーであり、GPU 向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="2b073-110">CUDA is a software layer and is designed for GPUs.</span></span>
+    - content: <span data-ttu-id="2b073-111">CUDA は、画像の分類に使用されるディープ ラーニング モデルです。</span><span class="sxs-lookup"><span data-stu-id="2b073-111">It's a deep learning model used for image classification.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-112">CUDA 対応の GPU を使用すると、ニューラル ネットワークをトレーニングするときの計算能力が大きく向上しますが、それは用途の 1 つのすぎません。</span><span class="sxs-lookup"><span data-stu-id="2b073-112">CUDA-enabled GPUs can greatly improve compute performacne when training neural networks, but that is only one of its uses.</span></span>
+  - content: <span data-ttu-id="2b073-113">Docker の説明は次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="2b073-113">Which of the following describes Docker?</span></span>
+    choices:
+    - content: <span data-ttu-id="2b073-114">Docker は、ニューラル ネットワークのトレーニング用に特化したハードウェアの部分です。</span><span class="sxs-lookup"><span data-stu-id="2b073-114">Docker is a specialized piece of hardware for training neural networks.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-115">Docker は実際にはソフトウェアであり、"コンテナー化" とも呼ばれるオペレーティング システム レベルの仮想化を実行します。</span><span class="sxs-lookup"><span data-stu-id="2b073-115">Docker is actually software that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="2b073-116">Docker は、分散アプリケーション用のオープン プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="2b073-116">Docker is an open platform for distributed applications.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2b073-117">Docker は、ラップトップ、データ センター VM、またはクラウドのどこからでも、分散アプリケーションをビルド、出荷、および実行する開発者やシステム管理者向けのオープン プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="2b073-117">Docker is an open platform for developers and sysadmins to build, ship, and run distributed applications, whether on laptops, data center VMs, or the cloud.</span></span> <span data-ttu-id="2b073-118">Docker はコンピューター プログラムであり、"コンテナー化" とも呼ばれるオペレーティング システム レベルの仮想化を実行します。</span><span class="sxs-lookup"><span data-stu-id="2b073-118">It's a computer program that performs operating-system-level virtualization, also known as "containerization".</span></span>
+    - content: <span data-ttu-id="2b073-119">Docker は、Web アプリ用のライブラリです。</span><span class="sxs-lookup"><span data-stu-id="2b073-119">Docker is a library for web apps.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-120">Docker はソフトウェア プラットフォームですが、Web アプリの作成を支援するライブラリではありません。</span><span class="sxs-lookup"><span data-stu-id="2b073-120">Docker is a software platform, but it's not a library for helping you to create web apps.</span></span>
+  - content: <span data-ttu-id="2b073-121">NVIDIA Docker を使用する主な利点は何ですか?</span><span class="sxs-lookup"><span data-stu-id="2b073-121">What's the main benefit of using NVIDIA Docker?</span></span>
+    choices:
+    - content: <span data-ttu-id="2b073-122">Windows 上で Docker コンテナーをビルドして実行できます。</span><span class="sxs-lookup"><span data-stu-id="2b073-122">It allows you to build and run Docker containers on Windows.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-123">NVIDIA Docker は Linux 上でのみ動作します。</span><span class="sxs-lookup"><span data-stu-id="2b073-123">NVIDIA Docker only runs on Linux.</span></span>
+    - content: <span data-ttu-id="2b073-124">NVIDIA GPU を利用する Docker コンテナーをビルドして実行できます。</span><span class="sxs-lookup"><span data-stu-id="2b073-124">It allows you to build and run Docker containers that leverage NVIDIA GPUs.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2b073-125">NVIDIA は nvidia-docker を、ドライバーに依存しない CUDA イメージをサポートするオープン ソース プロジェクトとして、および起動時に適切な GPU コンポーネントをコンテナーにマウントする方法を認識している Docker コマンド ライン ラッパーのラッパーとして、開発しています。</span><span class="sxs-lookup"><span data-stu-id="2b073-125">NVIDIA developer nvidia-docker as an open-source project to support driver-agnostice CUDA image and as a wrapper around the Docker command-line wrapper that knows how to mount the right GPU components into the container at launch.</span></span>
+    - content: <span data-ttu-id="2b073-126">CPU アクセラレータを使用するアプリケーションをコンテナー化できます。</span><span class="sxs-lookup"><span data-stu-id="2b073-126">It allows you to containerize CPU-accelerated applications.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2b073-127">NVIDIA Docker では、GPU アクセラレータを使用するアプリをコンテナー化できます。</span><span class="sxs-lookup"><span data-stu-id="2b073-127">NVIDIA Docker allows you to containerize your GPU-accelerated apps.</span></span>

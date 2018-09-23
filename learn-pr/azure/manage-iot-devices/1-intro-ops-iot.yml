@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.manage-iot-devices.1-intro-to-ops-in-iot
+metadata:
+  title: <span data-ttu-id="bc4ef-101">Ops の IoT の概要</span><span class="sxs-lookup"><span data-stu-id="bc4ef-101">Introducing IoT for Ops</span></span>
+  description: <span data-ttu-id="bc4ef-102">IT 管理者向けの IoT の概要を示します</span><span class="sxs-lookup"><span data-stu-id="bc4ef-102">This is an introdcution to IoT for IT Admins</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d26b6031b6e90dbfffcee9505c0e24c0c7a36236
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46350071"
+title: <span data-ttu-id="bc4ef-103">Ops の IoT の概要</span><span class="sxs-lookup"><span data-stu-id="bc4ef-103">Introducing IoT for Ops</span></span>
+durationInMinutes: 2
+content: '[!include[](includes/1-intro-to-ops-in-iot.md)]'

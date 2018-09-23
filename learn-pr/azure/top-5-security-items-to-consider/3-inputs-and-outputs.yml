@@ -1,0 +1,62 @@
+### YamlMime:ModuleUnit
+uid: learn.top-5-security-items-to-consider.3-inputs-and-outputs
+title: <span data-ttu-id="11a22-101">入力と出力</span><span class="sxs-lookup"><span data-stu-id="11a22-101">Inputs and Outputs</span></span>
+metadata:
+  title: <span data-ttu-id="11a22-102">入力と出力</span><span class="sxs-lookup"><span data-stu-id="11a22-102">Inputs and Outputs</span></span>
+  description: <span data-ttu-id="11a22-103">入力と出力</span><span class="sxs-lookup"><span data-stu-id="11a22-103">Inputs and Outputs</span></span>
+  author: lnyswonger
+  ms.date: 09/24/2018
+  ms.author: luken
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 6549bf1ac4fb034b3d0e8a4720364725c36d1f12
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46348943"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-inputs-and-outputs.md)]
+quiz:
+  title: <span data-ttu-id="11a22-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="11a22-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="11a22-105">検証の必要があるデータ ソースは次のどれでしょうか?</span><span class="sxs-lookup"><span data-stu-id="11a22-105">Which of the following data sources need to be validated?</span></span>
+    choices:
+    - content: <span data-ttu-id="11a22-106">サード パーティ製 API からのデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-106">Data from a 3rd party API</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-107">これは検証が必要な多くのソースの 1 つにすぎません。</span><span class="sxs-lookup"><span data-stu-id="11a22-107">This is just one of many sources that needs to be validated.</span></span>
+    - content: <span data-ttu-id="11a22-108">URL パラメーターからのデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-108">Data from the URL parameter</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-109">これは検証が必要な多くのソースの 1 つにすぎません。</span><span class="sxs-lookup"><span data-stu-id="11a22-109">This is just one of many sources that needs to be validated</span></span>
+    - content: <span data-ttu-id="11a22-110">入力フィールドから収集されたユーザーのデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-110">Data collected from the user via an input field</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-111">これは検証が必要な多くのソースの 1 つにすぎません。</span><span class="sxs-lookup"><span data-stu-id="11a22-111">This is just one of many sources that needs to be validated.</span></span>
+    - content: <span data-ttu-id="11a22-112">上記のすべて</span><span class="sxs-lookup"><span data-stu-id="11a22-112">All of the above</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="11a22-113">これらのデータ ソースをすべて検証する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11a22-113">All these sources of data need to be validated.</span></span> <span data-ttu-id="11a22-114">改ざんの可能性があるデータは絶対に信頼しないでください。</span><span class="sxs-lookup"><span data-stu-id="11a22-114">Never trust any data that could have been modified.</span></span>
+  - content: <span data-ttu-id="11a22-115">パラメーター化クエリ (SQL ではストアド プロシージャ) は、次の理由から、データベースと通信する方法として安全です。</span><span class="sxs-lookup"><span data-stu-id="11a22-115">Parameterized queries (stored procedures in SQL) are a secure way to talk to the database because:</span></span>
+    choices:
+    - content: <span data-ttu-id="11a22-116">インライン データベース コマンドよりも整理されており、ユーザーが混乱するケースが少なくなります。</span><span class="sxs-lookup"><span data-stu-id="11a22-116">They are more organized than inline database commands, and therefore less confusing for users.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-117">コードが整理されていることは、インライン SQL よりパラメーター化クエリが安全な理由ではありません。</span><span class="sxs-lookup"><span data-stu-id="11a22-117">Organization of the code is not the reason that parameterized queries are more secure than inline SQL.</span></span>
+    - content: <span data-ttu-id="11a22-118">ストアド プロシージャでは、スクリプトの要点が整理されており、見やすくなっています。</span><span class="sxs-lookup"><span data-stu-id="11a22-118">There is a clear outline of the script in the stored procedure, ensuring better visibility.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-119">スクリプトの要点が整理されていることは、インライン SQL よりパラメーター化クエリが安全な理由ではありません。</span><span class="sxs-lookup"><span data-stu-id="11a22-119">Clear outline of the script is not the reason that parameterized queries are more secure than inline SQL.</span></span>
+    - content: <span data-ttu-id="11a22-120">パラメーター化クエリでは、クエリの実行前に変数が置き換えられます。変数の代わりにコードが送信されるケースがなくなります。</span><span class="sxs-lookup"><span data-stu-id="11a22-120">Parameterized queries substitute variables before running queries, meaning it avoids the opportunity for code to be submitted in place of a variable.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="11a22-121">エンコードしてから出力する必要があるデータは次のどれでしょうか?</span><span class="sxs-lookup"><span data-stu-id="11a22-121">Which of the following data needs to be output encoded?</span></span>
+    choices:
+    - content: <span data-ttu-id="11a22-122">データベースに保存するデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-122">Data saved to the database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-123">データベースに保存するデータはデータが確実に正しいことを検証する必要がありますが、出力の場合はエンコードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="11a22-123">Although data saved to the database needs to be validated to ensure the data is good, we do not need to encode it for output.</span></span>
+    - content: <span data-ttu-id="11a22-124">画面に出力するデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-124">Data to be output to the screen</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="11a22-125">画面に送るデータは、コードとして解釈されることがないよう、エンコードしてから出力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="11a22-125">Data sent to the screen needs to be output encoded to ensure it is never interpreted as code.</span></span>
+    - content: <span data-ttu-id="11a22-126">サード パーティ製 API に送信するデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-126">Data sent to a 3rd party API</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-127">サード パーティ製 API に送信するデータはデータが確実に正しいことを検証する必要がありますが、出力の場合はエンコードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="11a22-127">Although data sent to a 3rd party API needs to be validated to ensure the data is good, we do not need to encode it for output.</span></span>
+    - content: <span data-ttu-id="11a22-128">URL パラメーターのデータ</span><span class="sxs-lookup"><span data-stu-id="11a22-128">Data in the URL parameters</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="11a22-129">URL パラメーターからのデータはアプリケーションで使用する前に検証する必要がありますが、出力の際、エンコードする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="11a22-129">Although data from URL Parameters needs to be validated before it is used in our application, we do not need to encode it for output.</span></span>
+      correctExplanation: <span data-ttu-id="11a22-130">パラメーター化クエリで使用されるパラメーター フィールドは、脆弱性 (インジェクション) 対策として、コードではなく、データとして取り扱われます。</span><span class="sxs-lookup"><span data-stu-id="11a22-130">Parameter fields used in parameterized queries are treated as data, not code, protecting against injection vulnerabilities.</span></span> <span data-ttu-id="11a22-131">パラメーター化クエリの実装方法に関する詳細については、「[OWASP Query Parameterization Cheat Sheet]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet)」 (OWASP クエリ パラメーター化チート シート) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="11a22-131">For more information on how to implement parameterized queries please see the [OWASP Query Parameterization Cheat Sheet]( https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet).</span></span>

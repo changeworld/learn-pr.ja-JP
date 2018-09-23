@@ -1,0 +1,17 @@
+<span data-ttu-id="4a390-101">あなたは、スタートアップ企業で働き始めたばかりです。この企業は、シンプルなカスタマイズと手ごろな価格の月単位の定期購入により、ビタミン業界を根本的に揺るがしています。</span><span class="sxs-lookup"><span data-stu-id="4a390-101">You just started working at startup that's fundamentally disrupting the vitamin industry with simple customization and affordable monthly subscriptions.</span></span> <span data-ttu-id="4a390-102">eコマース サイトでビジネスが急成長している一方で、データ センターはユーザーの需要に対応するのが厳しくなってきています。</span><span class="sxs-lookup"><span data-stu-id="4a390-102">While business is booming on the e-commerce site, your data center is starting to struggle to keep up with user demand.</span></span> <span data-ttu-id="4a390-103">同時にログインするユーザーが多すぎると、サービスが停止し、予定されたメンテナンス期間と計画外のメンテナンス期間が想定以上に増えています。</span><span class="sxs-lookup"><span data-stu-id="4a390-103">Your service fails when too many users login at the same time, and you're facing more scheduled and unscheduled maintenance windows than you'd like.</span></span>
+
+![データ センター内の過負荷状態のサーバー](../media/1-heading.png)
+
+<span data-ttu-id="4a390-105">あなたの会社のサイトはシリコンバレーにベースを置いているため、ネットワークの遅延の問題もあります。特に、ヨーロッパやアジアなどの他のリージョンにいるユーザーに対しては、遅延が顕著になっています。</span><span class="sxs-lookup"><span data-stu-id="4a390-105">Your site is based in Silicon Valley, so you also find that a network delay is especially bad for users located in other regions, such as Europe and Asia.</span></span> 
+
+<span data-ttu-id="4a390-106">そのため、あなたはコストを節約するため、サイトをクラウドに移行することをチームに納得させます。</span><span class="sxs-lookup"><span data-stu-id="4a390-106">Therefore, you convince your team to move the site to the cloud to help save costs.</span></span> <span data-ttu-id="4a390-107">しかし、サイトをより効果的に実行するために、Azure は具体的にどのように役に立つのでしょうか?</span><span class="sxs-lookup"><span data-stu-id="4a390-107">But how can Azure, specifically, help your site run better?</span></span>
+
+<span data-ttu-id="4a390-108">結局のところ、Azure でネットワークを管理することは、オンプレミス ネットワークで管理するのとはまったく異なります。</span><span class="sxs-lookup"><span data-stu-id="4a390-108">As it turns out, managing networks on Azure isn't entirely different from managing on-premise networks.</span></span> <span data-ttu-id="4a390-109">その理由を探りましょう。</span><span class="sxs-lookup"><span data-stu-id="4a390-109">Let's discover why.</span></span>
+
+## <a name="learning-objectives"></a><span data-ttu-id="4a390-110">学習の目的</span><span class="sxs-lookup"><span data-stu-id="4a390-110">Learning objectives</span></span>
+
+<span data-ttu-id="4a390-111">このモジュールでは、次のことを学習します。</span><span class="sxs-lookup"><span data-stu-id="4a390-111">In this module, you will learn:</span></span>
+
+- <span data-ttu-id="4a390-112">Azure の仮想ネットワークにより、仮想マシンとその他のネットワークなどのリソース間にセキュリティで保護されたネットワーク通信がどのように提供されているかについて</span><span class="sxs-lookup"><span data-stu-id="4a390-112">How an Azure virtual network provides secure network communication among resources such as virtual machines and other networks</span></span>
+- <span data-ttu-id="4a390-113">高可用性と回復性の意味について、および Azure Load Balancer により 1 つの地理的リージョン内でどのように回復性が向上されるかについて</span><span class="sxs-lookup"><span data-stu-id="4a390-113">What high availability and resiliency mean and how Azure Load Balancer can increase resiliency within a single geographic region</span></span>
+- <span data-ttu-id="4a390-114">待ち時間について、および Traffic Manager がネットワークの待ち時間を短縮し、地理的な場所全体の回復性を提供するのに役立つかについて</span><span class="sxs-lookup"><span data-stu-id="4a390-114">What latency is and how Traffic Manager helps reduce network latency and provides resiliency across geographic locations</span></span>

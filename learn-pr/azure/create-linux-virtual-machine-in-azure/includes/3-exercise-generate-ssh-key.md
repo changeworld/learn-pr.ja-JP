@@ -1,0 +1,103 @@
+<span data-ttu-id="e7e71-101">Azure で Linux 仮想マシンを作成する前に、リモート アクセスについて考慮する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-101">Before we can create a Linux virtual machine in Azure, we will need to think about remote access.</span></span> <span data-ttu-id="e7e71-102">ここでは、Linux Web サーバーにサインインしてソフトウェアを構成し、メンテナンスを実行できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e7e71-102">We want to be able to sign in to our Linux web server to configure the software and perform maintenance.</span></span> <span data-ttu-id="e7e71-103">Azure でホストされている Linux VM を管理するための既定の方法は SSH です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-103">The default approach to administering Linux VMs hosted in Azure is SSH.</span></span>
+
+<!-- Activate the sandbox -->
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+## <a name="what-is-ssh"></a><span data-ttu-id="e7e71-104">SSH とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="e7e71-104">What is SSH?</span></span>
+
+<span data-ttu-id="e7e71-105">Secure Shell (SSH) は、セキュリティで保護されていない接続においてセキュリティで保護されたサインインを可能にする、暗号化された接続プロトコルです。</span><span class="sxs-lookup"><span data-stu-id="e7e71-105">Secure Shell (SSH) is an encrypted connection protocol that allows secure sign-ins over unsecured connections.</span></span> <span data-ttu-id="e7e71-106">SSH を使用すると、ネットワーク接続を使用して遠隔地からターミナル シェルに接続することができます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-106">SSH allows you to connect to a terminal shell from a remote location using a network connection.</span></span>
+
+<span data-ttu-id="e7e71-107">SSH 接続の認証に使用できる方法は 2 つあります。**ユーザー名とパスワード**、または **SSH キー ペア**です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-107">There are two approaches we can use to authenticate an SSH connection: **username and password**, or an **SSH key pair**.</span></span>
+
+> [!TIP]
+> <span data-ttu-id="e7e71-108">SSH は暗号化された接続を提供しますが、SSH 接続でパスワードを使用すると、VM はブルートフォース攻撃やパスワードに対して脆弱になります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-108">Although SSH provides an encrypted connection, using passwords with SSH connections leaves the VM vulnerable to brute-force attacks of passwords.</span></span> <span data-ttu-id="e7e71-109">SSH を使用して Linux VM に接続するためのより安全で推奨される方法は、公開キーと秘密キーのペア (SSH キーとも呼ばれます) です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-109">A more secure and preferred method of connecting to a Linux VM with SSH is a public-private key pair, also known as SSH keys.</span></span>
+
+<span data-ttu-id="e7e71-110">SSH キー ペアを使用すると、パスワードを使用せずに Linux ベースの Azure Virtual Machines にサインインすることができます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-110">With an SSH key pair, you can sign in to Linux-based Azure virtual machines without a password.</span></span> <span data-ttu-id="e7e71-111">VM へのサインインに使用するコンピューターが数台のみの予定の場合は、この方法の方が安全です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-111">This is a more secure approach if you only plan to sign in to the VM from a few computers.</span></span> <span data-ttu-id="e7e71-112">さまざまな場所から Linux VM にアクセスできるようにする必要がある場合、ユーザー名とパスワードの組み合わせの方が適している可能性があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-112">If you need to be able to access the Linux VM from a variety of locations, a username and password combination might be a better approach.</span></span> <span data-ttu-id="e7e71-113">SSH キー ペアには、公開キーと秘密キーという 2 つの部分があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-113">There are two parts to an SSH key pair: a public key and a private key.</span></span>
+
+* <span data-ttu-id="e7e71-114">公開キーは、Linux VM か、公開キー暗号化で使用する他のサービスに配置します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-114">The public key is placed on your Linux VM or any other service that you wish to use with public-key cryptography.</span></span> <span data-ttu-id="e7e71-115">これは誰とでも共有できます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-115">This can be shared with anyone.</span></span>
+
+* <span data-ttu-id="e7e71-116">**秘密キー**は、SSH 接続するときに、ご使用の Linux VM に対して本人確認のために示すものです。</span><span class="sxs-lookup"><span data-stu-id="e7e71-116">The **private key** is what you present to verify your identity to your Linux VM when you make an SSH connection.</span></span> <span data-ttu-id="e7e71-117">これは機密情報として扱い、パスワードやその他のプライベート データと同様に保護します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-117">Consider this confidential information and protect this like you would a password or any other private data.</span></span>
+
+<span data-ttu-id="e7e71-118">同じ単一の公開キーと秘密キーのペアを使用して、複数の Azure VM とサービスにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-118">You can use the same single public-private key pair to access multiple Azure VMs and services.</span></span>
+
+## <a name="create-the-ssh-key-pair"></a><span data-ttu-id="e7e71-119">SSH キー ペアを作成する</span><span class="sxs-lookup"><span data-stu-id="e7e71-119">Create the SSH key pair</span></span>
+
+<span data-ttu-id="e7e71-120">Linux、Windows 10、および macOS では、組み込みの `ssh-keygen` コマンドを使用して、SSH の公開キー ファイルと秘密キー ファイルを生成できます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-120">On Linux, Windows 10, and MacOS, you can use the built-in `ssh-keygen` command to generate the SSH public and private key files.</span></span>
+
+> [!TIP]
+> <span data-ttu-id="e7e71-121">Windows 10 の **Fall Creators Update** には、SSH クライアントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="e7e71-121">Windows 10 includes an SSH client with the **Fall Creators Update**.</span></span> <span data-ttu-id="e7e71-122">以前のバージョンの Windows では、SSH を使用するには追加のソフトウェアが必要です。[詳細についてはドキュメントを参照してください](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows)。</span><span class="sxs-lookup"><span data-stu-id="e7e71-122">Earlier versions of Windows require additional software to use SSH; [check the documentation for full details](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows).</span></span> <span data-ttu-id="e7e71-123">また、Windows 用の Linux サブシステムをインストールして、同様の機能を実現することもできます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-123">Alternatively, you can install the Linux subsystem for Windows and get the same functionality.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="e7e71-124">ここでは、生成されたキーを Azure のプライベート ストレージ アカウントに保存する Azure Cloud Shell を使用します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-124">We will use Azure Cloud Shell, which will store the generated keys in Azure in your private storage account.</span></span> <span data-ttu-id="e7e71-125">これらのコマンドは、必要に応じてローカルのシェルに直接入力することもできます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-125">You can also type these commands directly into your local shell if you prefer.</span></span> <span data-ttu-id="e7e71-126">この方法を採用する場合は、ローカルのセッションを反映するようにこのモジュール全体の手順を調整する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-126">You will need to adjust the instructions throughout this module to reflect a local session if you take this approach.</span></span>
+
+[!include[](../../../includes/azure-sandbox-activate.md)]
+
+<span data-ttu-id="e7e71-127">Azure VM のキー ペア生成に必要な最小限のコマンドを次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-127">Here is the minimum command necessary to generate the key pair for an Azure VM.</span></span> <span data-ttu-id="e7e71-128">これにより、2,048 ビット長 (最短) の SSH プロトコル 2 (SSH-2) RSA 公開キーと秘密キーのペアが作成されます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-128">This will create an SSH protocol 2 (SSH-2) RSA public-private key pair with a 2048-bit length (the minimum length).</span></span>
+
+<span data-ttu-id="e7e71-129">Cloud Shell に次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-129">Type this command into Cloud Shell:</span></span>
+
+```bash
+ssh-keygen -t rsa -b 2048
+```
+
+<span data-ttu-id="e7e71-130">このツールから、ファイル名と省略可能なパスフレーズの入力が求められます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-130">The tool will prompt for file names and an optional passphrase.</span></span> <span data-ttu-id="e7e71-131">既定値のままにします。</span><span class="sxs-lookup"><span data-stu-id="e7e71-131">Just take the defaults.</span></span> <span data-ttu-id="e7e71-132">`~/.ssh` ディレクトリに、`id_rsa` と `id_rsa.pub` という 2 つのファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-132">It will create two files: `id_rsa` and `id_rsa.pub` in the `~/.ssh` directory.</span></span> <span data-ttu-id="e7e71-133">ファイルが存在する場合は上書きされます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-133">The files will be overwritten if they exist.</span></span> <span data-ttu-id="e7e71-134">プロンプトが表示されないようにファイル名やパスフレーズを指定するには、さまざまな方法を利用できます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-134">There are various options you can use to provide the file name or a passphrase to avoid the prompt.</span></span>
+
+### <a name="private-key-passphrase"></a><span data-ttu-id="e7e71-135">秘密キーのパスフレーズ</span><span class="sxs-lookup"><span data-stu-id="e7e71-135">Private key passphrase</span></span>
+
+<span data-ttu-id="e7e71-136">必要に応じて、秘密キーを生成するときにパスフレーズを指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-136">You can optionally provide a passphrase while generating your private key.</span></span> <span data-ttu-id="e7e71-137">これは、キーの使用時に入力する必要があるパスワードです。</span><span class="sxs-lookup"><span data-stu-id="e7e71-137">This is a password you must enter when you use the key.</span></span> <span data-ttu-id="e7e71-138">このパスフレーズは、秘密 SSH キー ファイルへのアクセスに使用されます。ユーザー アカウントのパスワードではありません。</span><span class="sxs-lookup"><span data-stu-id="e7e71-138">This passphrase is used to access the private SSH key file and is not the user account password.</span></span>
+
+<span data-ttu-id="e7e71-139">SSH キーにパスフレーズを追加すると、128 ビット AES を使用して秘密キーが暗号化されるため、暗号化を解除するパスフレーズなしでは秘密キーを使用できなくなります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-139">When you add a passphrase to your SSH key, it encrypts the private key using 128-bit AES so that the private key is useless without the passphrase to decrypt it.</span></span>
+
+> [!IMPORTANT]
+> <span data-ttu-id="e7e71-140">パスフレーズを追加することを**強く**お勧めします。</span><span class="sxs-lookup"><span data-stu-id="e7e71-140">It is **strongly** recommended that you add a passphrase.</span></span> <span data-ttu-id="e7e71-141">攻撃者によって秘密キーが盗まれ、その秘密キーにパスフレーズがない場合は、その秘密キーが使用され、対応する公開キーを持つ任意のサーバーにログインされてしまいます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-141">If an attacker stole your private key and that key did not have a passphrase, they would be able to use that private key to log in to any servers that have the corresponding public key.</span></span> <span data-ttu-id="e7e71-142">パスフレーズで秘密キーを保護している場合は、攻撃者は秘密キーを使用できません。</span><span class="sxs-lookup"><span data-stu-id="e7e71-142">If a passphrase protects a private key, it cannot be used by that attacker.</span></span> <span data-ttu-id="e7e71-143">これにより、Azure 上のインフラストラクチャに追加のセキュリティ層が提供されます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-143">This provides an additional layer of security for your infrastructure on Azure.</span></span>
+
+<span data-ttu-id="e7e71-144">パスフレーズを設定する方法の例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-144">Here is an example showing how to set the passphrase.</span></span> <span data-ttu-id="e7e71-145">このコマンドを実行する必要はありません (ただし、必要な場合は実行できます)。</span><span class="sxs-lookup"><span data-stu-id="e7e71-145">You don't need to execute this command (although you can if you want to):</span></span>
+
+```bash
+ssh-keygen -t rsa -b 4096 \
+    -C "azureuser@myserver" \
+    -f ~/.ssh/mykeys/myprivatekey \
+    -N someReallySecurePhraseYouWillRemember
+```
+
+| <span data-ttu-id="e7e71-146">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e7e71-146">Parameter</span></span> | <span data-ttu-id="e7e71-147">実行内容</span><span class="sxs-lookup"><span data-stu-id="e7e71-147">What it does</span></span> |
+|-----------|--------------|
+| `-t` | <span data-ttu-id="e7e71-148">作成するキーの種類です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-148">Type of key to create.</span></span> <span data-ttu-id="e7e71-149">**rsa** にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-149">Must be **rsa**.</span></span> |
+| `-b` | <span data-ttu-id="e7e71-150">キーのビット数。</span><span class="sxs-lookup"><span data-stu-id="e7e71-150">Number of bits in the key.</span></span> <span data-ttu-id="e7e71-151">最短は 2048、最長は 4096 です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-151">Minimum length is 2048; maximum is 4096.</span></span> |
+| `-C` | <span data-ttu-id="e7e71-152">識別に使用できる公開キーに追加する省略可能なコメント。</span><span class="sxs-lookup"><span data-stu-id="e7e71-152">An optional comment to append to the public key that can be used to identify it.</span></span> <span data-ttu-id="e7e71-153">通常、これは電子メール アドレスですが、単純なテキストです。</span><span class="sxs-lookup"><span data-stu-id="e7e71-153">Normally, this is an email address, but it's simple text.</span></span> <span data-ttu-id="e7e71-154">その結果、希望する任意の識別方法を使用できます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-154">As a result, you can use whatever identification method you prefer.</span></span> |
+| `-f` | <span data-ttu-id="e7e71-155">秘密キー ファイルの場所とファイル名。</span><span class="sxs-lookup"><span data-stu-id="e7e71-155">The location and file name of the private key file.</span></span> <span data-ttu-id="e7e71-156">**.pub** が追加された対応する公開キー ファイルが、同じディレクトリに生成されます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-156">A corresponding public key file appended with **.pub** is generated in the same directory.</span></span> <span data-ttu-id="e7e71-157">ディレクトリは存在している必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-157">The directory must exist.</span></span> |
+| `-N` | <span data-ttu-id="e7e71-158">秘密キーの暗号化に使用されるパスフレーズ。</span><span class="sxs-lookup"><span data-stu-id="e7e71-158">The passphrase used to encrypt the private key.</span></span> |
+
+## <a name="use-the-ssh-key-pair-with-an-azure-linux-vm"></a><span data-ttu-id="e7e71-159">Azure Linux VM で SSH キー ペアを使用する</span><span class="sxs-lookup"><span data-stu-id="e7e71-159">Use the SSH key pair with an Azure Linux VM</span></span>
+
+<span data-ttu-id="e7e71-160">キー ペアを生成したら、それを Azure 内の Linux VM に使用できます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-160">Once you have the key pair generated, you can use it with a Linux VM in Azure.</span></span> <span data-ttu-id="e7e71-161">VM の作成時に公開キーを指定するか、VM の作成後に追加することができます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-161">You can supply the public key during the VM creation or add it after the VM has been created.</span></span>
+
+<span data-ttu-id="e7e71-162">Azure Cloud Shell でファイルの内容を表示するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-162">You can view the contents of the file in Azure Cloud Shell with the following command:</span></span>
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+<span data-ttu-id="e7e71-163">内容は次のように 1 行です。</span><span class="sxs-lookup"><span data-stu-id="e7e71-163">It will be a single line and look something like:</span></span>
+
+```output
+ssh-rsa XXXXXXXXXXc2EAAAADAXABAAABAXC5Am7+fGZ+5zXBGgXS6GUvmsXCLGc7tX7/rViXk3+eShZzaXnt75gUmT1I2f75zFn2hlAIDGKWf4g12KWcZxy81TniUOTjUsVlwPymXUXxESL/UfJKfbdstBhTOdy5EG9rYWA0K43SJmwPhH28BpoLfXXXXXGX/ilsXXXXXKgRLiJ2W19MzXHp8z3Lxw7r9wx3HaVlP4XiFv9U4hGcp8RMI1MP1nNesFlOBpG4pV2bJRBTXNXeY4l6F8WZ3C4kuf8XxOo08mXaTpvZ3T1841altmNTZCcPkXuMrBjYSJbA8npoXAXNwiivyoe3X2KMXXXXXdXXXXXXXXXXCXXXXX/ azureuser@myserver
+```
+
+<span data-ttu-id="e7e71-164">この値をコピーして、次の演習で使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e7e71-164">Copy this value, so you can use it in the next exercise.</span></span>
+
+### <a name="use-the-ssh-key-when-creating-a-linux-vm"></a><span data-ttu-id="e7e71-165">Linux VM の作成時に SSH キーを使用する</span><span class="sxs-lookup"><span data-stu-id="e7e71-165">Use the SSH key when creating a Linux VM</span></span>
+
+<span data-ttu-id="e7e71-166">新しい Linux VM の作成時に SSH キーを適用するには、公開キーの内容をコピーして、Azure portal で指定するか、"_または_"、Azure CLI または Azure PowerShell コマンドに公開キー ファイルを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e7e71-166">To apply the SSH key while creating a new Linux VM, you will need to copy the contents of the public key and supply it to the Azure portal, _or_ supply the public key file to the Azure CLI or Azure PowerShell command.</span></span> <span data-ttu-id="e7e71-167">この方法は、Linux VM を作成するときに使用します。</span><span class="sxs-lookup"><span data-stu-id="e7e71-167">We'll use this approach when we create our Linux VM.</span></span>
+
+### <a name="add-the-ssh-key-to-an-existing-linux-vm"></a><span data-ttu-id="e7e71-168">既存の Linux VM に SSH キーを追加する</span><span class="sxs-lookup"><span data-stu-id="e7e71-168">Add the SSH key to an existing Linux VM</span></span>
+
+<span data-ttu-id="e7e71-169">既に VM を作成済みの場合は、`ssh-copy-id` コマンドを使用して Linux VM に公開キーをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-169">If you have already created a VM, you can install the public key onto your Linux VM with the `ssh-copy-id` command.</span></span> <span data-ttu-id="e7e71-170">SSH 用のキーが承認されると、パスワードなしでのサーバーに対するアクセスが許可されます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-170">Once the key has been authorized for SSH, it grants access to the server without a password.</span></span>
+
+<span data-ttu-id="e7e71-171">それに公開キー ファイルとユーザー名を渡して、キーと関連付けます。</span><span class="sxs-lookup"><span data-stu-id="e7e71-171">Pass it the public key file and the username to associate with the key:</span></span>
+
+```bash
+ssh-copy-id -i ~/.ssh/id_rsa.pub azureuser@myserver
+```
+
+<span data-ttu-id="e7e71-172">公開キーを用意できたら、Azure portal に切り替えて Linux VM を作成しましょう。</span><span class="sxs-lookup"><span data-stu-id="e7e71-172">Now that we have our public key, let's switch to the Azure portal and create a Linux VM.</span></span>

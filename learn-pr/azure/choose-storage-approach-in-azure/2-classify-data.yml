@@ -1,0 +1,45 @@
+### YamlMime:ModuleUnit
+uid: learn.choose-storage-approach-in-azure.2-classify-data
+metadata:
+  title: <span data-ttu-id="28bbb-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="28bbb-101">Knowledge check</span></span>
+  description: <span data-ttu-id="28bbb-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="28bbb-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: mimig1
+  ms.author: mimig
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a353b13f282c1a40b5650cdcb30470570e9f24d2
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46354089"
+title: <span data-ttu-id="28bbb-103">データを分類する</span><span class="sxs-lookup"><span data-stu-id="28bbb-103">Classify your data</span></span>
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-classify-data.md)]
+quiz:
+  title: <span data-ttu-id="28bbb-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="28bbb-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="28bbb-105">JSON ファイルはどのデータの種類の例ですか?</span><span class="sxs-lookup"><span data-stu-id="28bbb-105">A JSON file is an example of which type of data?</span></span>
+    choices:
+    - content: <span data-ttu-id="28bbb-106">構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-106">Structured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="28bbb-107">半構造化データには、データの編成と階層を明らかにするタグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="28bbb-107">Semi-structured data contains tags that make the organization and hierarchy of the data apparent.</span></span>
+    - content: <span data-ttu-id="28bbb-108">半構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-108">Semi-structured</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="28bbb-109">半構造化データには、データの編成と階層を明らかにするタグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="28bbb-109">Semi-structured data contains tags that make the organization and hierarchy of the data apparent.</span></span>
+    - content: <span data-ttu-id="28bbb-110">非構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-110">Unstructured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="28bbb-111">半構造化データには、データの編成と階層を明らかにするタグが含まれています。</span><span class="sxs-lookup"><span data-stu-id="28bbb-111">Semi-structured data contains tags that make the organization and hierarchy of the data apparent.</span></span>
+  - content: <span data-ttu-id="28bbb-112">動画はどのデータの種類の例ですか?</span><span class="sxs-lookup"><span data-stu-id="28bbb-112">A video is an example of which type of data?</span></span>
+    choices:
+    - content: <span data-ttu-id="28bbb-113">構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-113">Structured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="28bbb-114">多くの場合、非構造化データはファイルで配信されます。</span><span class="sxs-lookup"><span data-stu-id="28bbb-114">Unstructured data is often delivered in files.</span></span> <span data-ttu-id="28bbb-115">動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。</span><span class="sxs-lookup"><span data-stu-id="28bbb-115">A video may have an overall structure but the data that comprises the video itself is unstructured.</span></span>
+    - content: <span data-ttu-id="28bbb-116">半構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-116">Semi-structured</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="28bbb-117">多くの場合、非構造化データはファイルで配信されます。</span><span class="sxs-lookup"><span data-stu-id="28bbb-117">Unstructured data is often delivered in files.</span></span> <span data-ttu-id="28bbb-118">動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。</span><span class="sxs-lookup"><span data-stu-id="28bbb-118">A video may have an overall structure but the data that comprises the video itself is unstructured.</span></span>
+    - content: <span data-ttu-id="28bbb-119">非構造化</span><span class="sxs-lookup"><span data-stu-id="28bbb-119">Unstructured</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="28bbb-120">多くの場合、非構造化データはファイルで配信されます。</span><span class="sxs-lookup"><span data-stu-id="28bbb-120">Unstructured data is often delivered in files.</span></span> <span data-ttu-id="28bbb-121">動画には全体的な構造が存在する場合がありますが、ビデオ自体を構成するデータは構造化されていません。</span><span class="sxs-lookup"><span data-stu-id="28bbb-121">A video may have an overall structure but the data that comprises the video itself is unstructured.</span></span>
