@@ -44,9 +44,10 @@ groups:
     title: Windows
   - id: linux-cloud
     title: Linux
-ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
-ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46351488"
+metadata:
+  ms.openlocfilehash: b7417f5c96bb8628028ac0ff399223c0d996c3c8
+  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/19/2018
+  ms.locfileid: "46351488"
