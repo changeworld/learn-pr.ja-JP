@@ -8,13 +8,13 @@ metadata:
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 33cd65ab88fcbc1111503fd0219829e3ed337e9e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 3256cdea30929faa1eddb397b90003f153c00e11
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349160"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567366"
 title: 演習 - 出力バインディングを使用してデータを書き込む
 azureSandbox: true
-durationInMinutes: 10
+durationInMinutes: 15
 content: '[!include[](includes/7-write-data-with-output-bindings-portal-lab.md)]'

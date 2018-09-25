@@ -11,13 +11,13 @@ Azure Cloud Shell で次を実行します。
 ```azurecli
 az appservice plan create \
     --name keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     --location eastus
 
 az webapp create \
     --name <your-unique-app-name> \
     --plan keyvault-exercise-plan \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 ## <a name="add-configuration-to-the-app"></a>アプリに構成を追加する
@@ -27,7 +27,7 @@ Azure へのデプロイでは、構成ファイルではなくアプリケー�
 ```azurecli
 az webapp config appsettings set \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --settings VaultName=<your-unique-vault-name>
 ```
 
@@ -38,7 +38,7 @@ az webapp config appsettings set \
 ```azurecli
 az webapp identity assign \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 JSON の出力結果から、**principalId** の値をコピーします。 principalId は、Azure Active Directory 内にある、アプリの新しい ID を表す一意の ID です。次の手順で使用します。
@@ -68,7 +68,7 @@ zip -j site.zip pub/*
 az webapp deployment source config-zip \
     --src site.zip \
     --name <your-unique-app-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 サイトがデプロイされたことを示す結果が表示されたら、`https://<your-unique-app-name>.azurewebsites.net/api/SecretTest` をブラウザーで開きます。 シークレットの値として **reindeer_flotilla** が表示されます。

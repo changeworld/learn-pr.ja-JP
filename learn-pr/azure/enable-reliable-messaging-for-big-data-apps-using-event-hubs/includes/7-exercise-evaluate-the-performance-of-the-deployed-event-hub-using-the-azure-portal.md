@@ -2,7 +2,7 @@
 
 ## <a name="view-event-hub-activity"></a>イベント ハブのアクティビティの確認
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. 検索バーでイベント ハブを検索して開きます。
 

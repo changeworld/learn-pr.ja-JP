@@ -33,7 +33,7 @@ Azure Cloud Shell と Azure CLI を使用してストレージ アカウント�
 次のコマンドを実行して、ストレージ アカウントを作成します。 
 
 ```azurecli
-az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[Sandbox resource group name]</rgn> --location eastus --kind StorageV2
+az storage account create --name <your-unique-storage-account-name> --resource-group <rgn>[sandbox resource group name]</rgn> --location eastus --kind StorageV2
 ```
 
 > [!NOTE]

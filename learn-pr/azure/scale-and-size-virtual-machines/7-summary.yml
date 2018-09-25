@@ -1,0 +1,14 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.openlocfilehash: 483ceba463a47bd5cd0bc4212d0a52c24fa3bc2c
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513125"
+durationInMinutes: 3
+content: '[!include[](includes/7-summary.md)]'

@@ -89,7 +89,7 @@ dotnet run -p performancemessagesender
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \
@@ -176,7 +176,7 @@ dotnet run -p performancemessagereceiver
 
 ```azurecli
 az servicebus topic subscription show \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --namespace-name <namespace-name> \
     --topic-name salesperformancemessages \
     --name Americas \

@@ -14,7 +14,7 @@
 
 ### <a name="create-a-firewall-rule"></a>ファイアウォール規則を作成する
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。 
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. ファイアウォール規則を作成する対象のサーバー リソースに移動します。
 
@@ -48,8 +48,8 @@
     ```bash
     psql --host=<server-name>.postgres.database.azure.com --username=<admin-user>@<server-name> --dbname=postgres
     ```
-    
-    `server-name` および `admin-user` に選択した値を使用します。 
+
+    `server-name` および `admin-user` に選択した値を使用します。
 
 1. **postgres** は、すべての PostgreSQL サーバーの作成に使用される既定の管理データベースです。 サーバーの作成時に指定したパスワードを入力するよう求めるプロンプトが表示されます。
 

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.1-introduction
+metadata:
+  title: 概要
+  description: Azure Container Instances の概要。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 45b2e1a2bd7f8f66be6ea63e1159378a33e11c5b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570710"
+title: Azure Container Instances の概要
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

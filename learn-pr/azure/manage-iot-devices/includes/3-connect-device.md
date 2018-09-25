@@ -9,7 +9,7 @@ Azure IoT Hub には、デバイスやバックエンドの開発者が堅牢な
 
 Raspberry Pi シミュレーターからのデータの収集を開始するには、まず IoT ハブを作成する必要があります。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 2. Azure portal の左上隅にある **[リソースの作成]** を選択します。
 
@@ -18,7 +18,7 @@ Raspberry Pi シミュレーターからのデータの収集を開始するに�
 ![Azure portal での IoT Hub へのナビゲーションのスクリーンショット](../media/fa40d1bc51bc4490f657e3c1a8371b5b.png)
 
 4. **[IoT Hub]** ウィンドウで、IoT Hub のために以下の情報を入力します。
-   
+
    - **[サブスクリプション]**: この例に対する既定のサブスクリプションを使用します。
    - **[リソース グループ]**: 既存のリソース グループを使用します。 関連するすべてのリソースを同じグループ内に配置することで、すべてを一緒に管理できます。 たとえば、リソース グループを削除すると、そのグループに含まれているすべてのリソースが削除されます。
    - **[名前]**: IoT ハブの一意の名前を作成します。 入力した名前が使用可能な場合は、緑色のチェック マークが表示されます。
@@ -28,7 +28,7 @@ Raspberry Pi シミュレーターからのデータの収集を開始するに�
 
     > [!IMPORTANT]
     > IoT ハブは DNS エンドポイントとして公開されます。そのため、名前を付けるときは機密情報を含めないようにしてください。
-    
+
     ![IoT Hub の基本ウィンドウ](./../media/dbb7319388673b8ee0e0b407536156c0.png)
 
 1. **[Next: Size and scale]\(次へ: サイズとスケール\)** を選択して、IoT ハブの作成を続けます。
@@ -61,7 +61,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 
     > [!IMPORTANT]
     > デバイス ID は、カスタマー サポートとトラブルシューティング目的で収集されたログに表示される場合があります。そのため、名前を付ける際は機密情報を含めないようにしてください。
-    
+
 3. **[保存]** をクリックします。
 4. デバイスが作成された後、**[IoT デバイス]** ウィンドウの一覧からデバイスを開きます。
 5. 後で使用するために **[接続文字列 --- 主キー]** をコピーします。
@@ -73,7 +73,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 1. [Raspberry Pi Azure IoT Simulator](https://azure-samples.github.io/raspberry-pi-web-simulator?azure-portal=true) を開きます。
 1. 15 行目のプレースホルダーを Azure IoT ハブ デバイスのコピーした接続文字列に置き換えます。
 1. [`Run`] ボタンをクリックするか、コンソール ウィンドウで「`npm start`」と入力して、アプリケーションを実行します。
-   
+
     ![デバイスの接続文字列を置き換える](../media/Line15.png)
 
 1. IoT ハブに送信されるセンサー データとメッセージを示す次の出力が表示されます。
@@ -82,7 +82,7 @@ Now that you have created an IoT hub, it's time to locate the important informat
 
 ## <a name="read-the-telemetry-from-your-hub"></a>ハブから利用統計情報を読み取る
 どうなるでしょうか。 IoT ハブは、シミュレートされたデバイスから送信されたデバイスとクラウドの間のメッセージを受信します。 それを確認するために、Azure IoT Hub が受信データを処理するようすを見てみます。 対象の IoT ハブで、**[監視]** の **[メトリック]** を選びます。 データが表示されるまで数分待ちます。
-   
+
 ![IoT ハブのメトリック](../media/HubMetrics.png)
 
 

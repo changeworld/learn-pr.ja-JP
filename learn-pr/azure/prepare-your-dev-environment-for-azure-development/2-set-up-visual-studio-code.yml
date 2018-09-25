@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
+title: Visual Studio Code の使用
+metadata:
+  title: Visual Studio Code の使用
+  description: Visual Studio Code の使用
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4acd62c2b33c9f766213c8716c1fbe83eb0542ea
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570470"
+durationInMinutes: 5
+content: '[!include[](includes/2-set-up-visual-studio-code.md)]'

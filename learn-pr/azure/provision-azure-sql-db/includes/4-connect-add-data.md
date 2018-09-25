@@ -33,7 +33,7 @@ Cloud Shell には、一般的なツールとテキスト エディターが含�
     `<server-name>` を Azure SQL 論理サーバーの名前に置き換えます。 ポータルにあるブレードによっては、FQDN (servername.database.windows.net) として表示されることがありますが、必要なのは .database.windows.net サフィックスを除く論理名だけです。
 
     ```azurecli
-    az configure --defaults group=<rgn>[Sandbox resource group name]</rgn> sql-server=<server-name>
+    az configure --defaults group=<rgn>[sandbox resource group name]</rgn> sql-server=<server-name>
     ```
 
 1. `az sql db list` を実行して、Azure SQL 論理サーバー上のすべてのデータベースを一覧表示します。

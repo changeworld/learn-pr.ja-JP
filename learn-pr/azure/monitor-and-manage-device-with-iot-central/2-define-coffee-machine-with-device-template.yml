@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.2-define-coffee-machine-with-device-template
+title: デバイス テンプレートでコーヒー メーカーを定義する
+metadata:
+  title: デバイス テンプレートでコーヒー メーカーを定義する
+  description: デバイス テンプレートでコーヒー メーカーを定義する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bfd00471ef1aca42955e10d68bf1d5d33db3eea7
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570467"
+durationInMinutes: 12
+content: '[!include[](includes/2-define-coffee-machine-with-device-template.md)]'

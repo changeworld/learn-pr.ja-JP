@@ -2,7 +2,7 @@
 
 ## <a name="create-a-staging-deployment-slot"></a>ステージング デプロイ スロットを作成する
 
-1. [Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) に戻ります。
+1. [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) に戻ります。
 
 1. 以前に作成した App Service リソース (Web アプリ) を開きます。 **[すべてのリソース]** でアプリを検索するか、**[リソース グループ]** でアプリが属するリソース グループを検索することでもう一度見つけることができます。
 

@@ -87,7 +87,7 @@ For ($i = 1; $i -le 3; $i++)
 1. スクリプトを実行します。
 
     ```powershell
-    .\ConferenceDailyReset.ps1 <rgn>[Sandbox resource group name]</rgn>
+    .\ConferenceDailyReset.ps1 <rgn>[sandbox resource group name]</rgn>
     ```
     
 このスクリプトは、完了までに数分かかります。 完了したら、ご使用のリソース グループ内にあるリソースを確認することで、スクリプトが正常に実行されたことを確認します。

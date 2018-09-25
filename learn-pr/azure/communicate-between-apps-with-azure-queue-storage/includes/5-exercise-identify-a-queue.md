@@ -30,7 +30,7 @@ Azure Portal のご自分のストレージ アカウントの **[設定] > [ア
 Azure CLI または PowerShell のツールから取得することもできます。 Azure CLI のコマンドを使用しましょう。 `<name>` はご自分で作成したストレージ アカウントの名前に置き換えてください。 確認が必要な場合は、`az storage account list` を使用できます。
 
 ```azurecli
-az storage account show-connection-string --name <name> --resource-group <rgn>[Sandbox resource group name]</rgn>
+az storage account show-connection-string --name <name> --resource-group <rgn>[sandbox resource group name]</rgn>
 ```
 
 このコマンドは、ご自分の接続文字列が含まれる JSON ブロックを返します。 ストレージ アカウント名とアカウント キーが含まれています。

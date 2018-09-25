@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+title: Azure Toolkit を使用して Eclipse を設定する
+metadata:
+  title: Azure Toolkit を使用して Eclipse を設定する
+  description: Azure Toolkit を使用して Eclipse を設定する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a91922116abc94dd4c89b6bbcba2406d67a27a03
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570486"
+durationInMinutes: 15
+content: '[!include[](includes/7-exercise-set-up-eclipse.md)]'

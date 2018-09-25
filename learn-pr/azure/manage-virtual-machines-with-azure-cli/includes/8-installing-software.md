@@ -31,7 +31,7 @@ Linux 仮想マシンでは組み込みのファイアウォールを経由し�
 1. Cloud Shell に次の内容を入力して、ポート 80 を開きます。
 
 ```azurecli
-az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM
+az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM
 ```
 
 ネットワーク ルールを追加し、ファイアウォールを介してポートを開く処理には、しばらく時間がかかります。 もう一度 `curl` を試みてください。 今回は、それによってデータが返されます。 ブラウザーで該当するページを表示することもできます。

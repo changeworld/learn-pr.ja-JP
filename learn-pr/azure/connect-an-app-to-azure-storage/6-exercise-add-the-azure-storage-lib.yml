@@ -1,0 +1,22 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
+title: アプリにストレージ クライアント ライブラリを追加する
+metadata:
+  title: アプリにストレージ クライアント ライブラリを追加する
+  description: アプリにストレージ クライアント ライブラリを追加する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: dev-lang-csharp-javascript
+  ms.openlocfilehash: 1aed24b2d9f780ed12116d8ceb7fc1b8808f3cf4
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512324"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 5
+content: '[!include[](includes/6-exercise-add-the-azure-storage-lib.md)]'

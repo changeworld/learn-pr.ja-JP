@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-virtual-machine-disks.6-exercise-automate-secure-vm-deployments-using-arm-templates
+title: 演習 - Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
+metadata:
+  title: 演習 - Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
+  description: 演習 - Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1f3bd0f030eaa532d3a9515bd9634404d13b4d10
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512831"
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/6-exercise-automate-secure-vm-deployments-using-arm-templates.md)]'

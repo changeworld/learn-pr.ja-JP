@@ -16,7 +16,7 @@ Computer Vision では最初に高品質のサムネイルを生成し、画像�
 
 ## <a name="generate-a-thumbnail"></a>サムネイルの生成
 
-この例では次の画像を使用しますが、同じコマンドを試すとき、他の画像の URL を自由に指定できます。 
+この例では次の画像を使用しますが、同じコマンドを試すとき、他の画像の URL を自由に指定できます。
 
 ![緑の芝生に白いかわいい犬が座っている写真。](../media/4-dog.png)
 
@@ -37,7 +37,7 @@ curl "https://<region>.api.cognitive.microsoft.com/vision/v2.0/generateThumbnail
 
 ## <a name="view-the-generated-thumbnail"></a>生成されたサムネイルを表示する
 
-生成されたサムネイルは、Azure Cloud Shell ストレージ アカウントに置かれます。 このファイルには **thumbnail.jpg** という名前を付けました。 
+生成されたサムネイルは、Azure Cloud Shell ストレージ アカウントに置かれます。 このファイルには **thumbnail.jpg** という名前を付けました。
 
 Microsoft Learn の Cloud Shell にはファイルをダウンロードする機能はありませんが、Azure portal からサムネイルをダウンロードするには、この手順に従ってください。
 
@@ -48,15 +48,15 @@ Microsoft Learn の Cloud Shell にはファイルをダウンロードする機
     ls -l
     ```
 
-    
+
 
 1. 次のコマンドを実行して、`thumbnail.jpg` を clouddrive フォルダーに移動します。
 
     ```azurecli
     mv ~/thumbnail.jpg ~/clouddrive
     ```
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
-1. ポータル ダッシュ ボードの **[すべてのリソース]** パネルで、 名前が `cloudshell` で始まるストレージ アカウントを選択します。 
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
+1. ポータル ダッシュ ボードの **[すべてのリソース]** パネルで、 名前が `cloudshell` で始まるストレージ アカウントを選択します。
 1. [ストレージ アカウント] パネルで、**[Storage Explorer]**、**[FILE SHARES]** を選択し、名前が **cloudshellfiles*** で始まるそのコレクション内の共有ファイルを選択します。
 1. *thunbnail.jpg* ファイルを選択し、上部メニューから**ダウンロード**して画像を参照します。
 

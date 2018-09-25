@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+title: Azure ツールでの Eclipse の使用
+metadata:
+  title: Azure ツールでの Eclipse の使用
+  description: Azure ツールでの Eclipse の使用
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 83a5b6c5d3ad0ba37f152dcb5ca128c94a11f236
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570630"
+durationInMinutes: 5
+content: '[!include[](includes/6-set-up-eclipse-ide-for-java-developers.md)]'
