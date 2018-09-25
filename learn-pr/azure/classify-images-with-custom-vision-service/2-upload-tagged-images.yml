@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-images-with-custom-vision-services.2-upload-tagged-images
+title: <span data-ttu-id="7e7f7-101">演習 - タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="7e7f7-101">Exercise - Upload tagged images</span></span>
+metadata:
+  title: <span data-ttu-id="7e7f7-102">演習 - タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="7e7f7-102">Exercise - Upload tagged images</span></span>
+  description: <span data-ttu-id="7e7f7-103">演習 - タグを付けた画像をアップロードする</span><span class="sxs-lookup"><span data-stu-id="7e7f7-103">Exercise - Upload tagged images</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 299ad7906544186999bf11a8a1c68c79db6b3051
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513172"
+durationInMinutes: 5
+content: '[!include[](includes/2-upload-tagged-images.md)]'

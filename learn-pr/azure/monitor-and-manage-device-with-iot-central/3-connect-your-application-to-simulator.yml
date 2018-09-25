@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.3-connect-your-application-to-simulator
+title: <span data-ttu-id="f27ec-101">シミュレートしたコーヒー マシンをアプリケーションに接続する</span><span class="sxs-lookup"><span data-stu-id="f27ec-101">Connect your simulated coffee machine to the application</span></span>
+metadata:
+  title: <span data-ttu-id="f27ec-102">シミュレートしたコーヒー マシンをアプリケーションに接続する</span><span class="sxs-lookup"><span data-stu-id="f27ec-102">Connect your simulated coffee machine to the application</span></span>
+  description: <span data-ttu-id="f27ec-103">シミュレートしたコーヒー マシンをアプリケーションに接続する</span><span class="sxs-lookup"><span data-stu-id="f27ec-103">Connect your simulated coffee machine to the application</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 92bb8af9f5ffdd6f1ebf9f8412ff3d64825a2547
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570662"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 15
+content: '[!include[](includes/3-connect-your-application-to-simulator.md)]'

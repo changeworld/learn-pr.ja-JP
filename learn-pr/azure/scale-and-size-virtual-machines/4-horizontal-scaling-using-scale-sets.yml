@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.scale-and-size-virtual-machines.4-horizontal-scaling-using-scale-sets
+title: <span data-ttu-id="675eb-101">スケール セットを使用した水平スケーリング</span><span class="sxs-lookup"><span data-stu-id="675eb-101">Horizontal scaling using scale sets</span></span>
+metadata:
+  title: <span data-ttu-id="675eb-102">スケール セットを使用した水平スケーリング</span><span class="sxs-lookup"><span data-stu-id="675eb-102">Horizontal scaling using scale sets</span></span>
+  description: <span data-ttu-id="675eb-103">スケール セットを使用した水平スケーリング</span><span class="sxs-lookup"><span data-stu-id="675eb-103">Horizontal scaling using scale sets</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fd98c0d6e3fb7d6f3492dcfd28a9cb5f4a58b8e3
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512319"
+durationInMinutes: 5
+content: '[!include[](includes/4-horizontal-scaling-using-scale-sets.md)]'

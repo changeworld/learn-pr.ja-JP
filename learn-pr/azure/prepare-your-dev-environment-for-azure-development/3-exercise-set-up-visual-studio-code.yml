@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+title: <span data-ttu-id="cdc47-101">Visual Studio Code および Azure App Service 拡張機能をインストールする</span><span class="sxs-lookup"><span data-stu-id="cdc47-101">Install Visual Studio Code and the Azure App Service extension</span></span>
+metadata:
+  title: <span data-ttu-id="cdc47-102">Visual Studio Code および Azure App Service 拡張機能をインストールする</span><span class="sxs-lookup"><span data-stu-id="cdc47-102">Install Visual Studio Code and the Azure App Service extension</span></span>
+  description: <span data-ttu-id="cdc47-103">Visual Studio Code および Azure App Service 拡張機能をインストールする</span><span class="sxs-lookup"><span data-stu-id="cdc47-103">Install Visual Studio Code and the Azure App Service extension</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  zone_pivot_groups: platform
+  ms.openlocfilehash: 3283b4b7f62ae6d6b1d9952dfd69039d0d1655eb
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570518"
+durationInMinutes: 15
+content: '[!include[](includes/3-exercise-set-up-visual-studio-code.md)]'

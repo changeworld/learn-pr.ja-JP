@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.5-use-data-volumes
+metadata:
+  title: <span data-ttu-id="39963-101">データ ボリュームを使用する</span><span class="sxs-lookup"><span data-stu-id="39963-101">Use data volumes</span></span>
+  description: <span data-ttu-id="39963-102">Azure Container Instances (ACI) でデータ ボリュームを使用します。</span><span class="sxs-lookup"><span data-stu-id="39963-102">Use data volumes with Azure Container Instances (ACI).</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 2470c218c0809747653a0732d854b85e7c90f3b4
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570579"
+title: <span data-ttu-id="39963-103">データ ボリュームを使用する</span><span class="sxs-lookup"><span data-stu-id="39963-103">Use data volumes</span></span>
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/5-use-data-volumes.md)]'

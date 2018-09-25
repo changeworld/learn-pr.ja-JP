@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.7-summary
+title: <span data-ttu-id="1f49c-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="1f49c-101">Summary</span></span>
+metadata:
+  title: <span data-ttu-id="1f49c-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="1f49c-102">Summary</span></span>
+  description: <span data-ttu-id="1f49c-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="1f49c-103">Summary</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 284b763dafa72c1655192da2b77e03c0566b2b74
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512235"
+durationInMinutes: 3
+content: '[!include[](includes/7-summary.md)]'

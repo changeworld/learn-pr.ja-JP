@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.4-use-environment-variables
+metadata:
+  title: <span data-ttu-id="46a91-101">環境変数の設定</span><span class="sxs-lookup"><span data-stu-id="46a91-101">Set environment variables</span></span>
+  description: <span data-ttu-id="46a91-102">Azure Container Instances で環境変数を設定します。</span><span class="sxs-lookup"><span data-stu-id="46a91-102">Set environment variables in Azure Container Instances.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 121d22c224c33875cf10038d9c63596882a3b1f4
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570598"
+title: <span data-ttu-id="46a91-103">環境変数の設定</span><span class="sxs-lookup"><span data-stu-id="46a91-103">Set environment variables</span></span>
+interactive: bash
+azureSandbox: true
+durationInMinutes: 10
+content: '[!include[](includes/4-use-environment-variables.md)]'

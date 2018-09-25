@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-your-azure-virtual-machine-disks.5-automate-secure-vm-deployments-using-arm-templates
+title: <span data-ttu-id="226db-101">Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化</span><span class="sxs-lookup"><span data-stu-id="226db-101">Automate secure VM deployments by adding encryption to Azure Resource Manager templates</span></span>
+metadata:
+  title: <span data-ttu-id="226db-102">Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化</span><span class="sxs-lookup"><span data-stu-id="226db-102">Automate secure VM deployments by adding encryption to Azure Resource Manager templates</span></span>
+  description: <span data-ttu-id="226db-103">Azure Resource Manager テンプレートへの暗号化の追加によるセキュアな VM デプロイの自動化</span><span class="sxs-lookup"><span data-stu-id="226db-103">Automate secure VM deployments by adding encryption to Azure Resource Manager templates</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a0a58f5c6c23892c8ec0c4d78493627a391bf0d3
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513803"
+durationInMinutes: 5
+content: '[!include[](includes/5-automate-secure-vm-deployments-using-arm-templates.md)]'

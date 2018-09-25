@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.classify-user-feedback-with-the-text-analytics-api.5-exercise-create-function-app
+metadata:
+  title: <span data-ttu-id="44179-101">演習 - ポータルから関数アプリを作成してビジネス ロジックをホストする</span><span class="sxs-lookup"><span data-stu-id="44179-101">Exercise - Create a function app from the portal to host our business logic</span></span>
+  description: <span data-ttu-id="44179-102">このハンズオン ラボでは、ロジックをホストするための関数アプリと関数を作成することによって、フィードバック並べ替えソリューションを準備します。</span><span class="sxs-lookup"><span data-stu-id="44179-102">In this hands-on lab, we'll prepare our feedback sorter solution by creating a function app and a function to host our logic.</span></span>
+  ms.date: 09/24/2018
+  author: AndrewJByrne
+  ms.author: anbyrne
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d329415777ba305a83bb22dcba994a75712d1e0d
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512355"
+title: <span data-ttu-id="44179-103">演習 - ポータルから関数アプリを作成してビジネス ロジックをホストする</span><span class="sxs-lookup"><span data-stu-id="44179-103">Exercise - Create a function app from the portal to host our business logic</span></span>
+azureSandbox: true
+durationInMinutes: 7
+content: '[!include[](includes/5-exercise-create-function-app.md)]'

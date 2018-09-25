@@ -1,0 +1,3 @@
+<span data-ttu-id="16a6d-101">ここでは、ソリューションの一部としてロード バランサーを使用して、Azure でホストされている仮想マシンで高可用性を実現する方法を学習しました。</span><span class="sxs-lookup"><span data-stu-id="16a6d-101">Here, you learned how to use a load balancer as part of a solution for delivering high availability for virtual machines hosted in Azure.</span></span> <span data-ttu-id="16a6d-102">これにはロード バランサー自体、関連する仮想ネットワーク、負荷分散アルゴリズムを制御するための規則、および正しく実行されている仮想マシンを特定する正常性プローブが含まれます。</span><span class="sxs-lookup"><span data-stu-id="16a6d-102">This included the load balancer itself, the associated virtual networks, rules to control the balancing algorithm, and health probes that identify which virtual machines are running correctly.</span></span>
+
+[!include[](../../../includes/azure-sandbox-cleanup.md)]
