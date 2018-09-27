@@ -11,7 +11,7 @@ Cloud Shell で Azure CLI 用の既定値をいくつか指定することから
 さらに Azure CLI に次のコマンドを入力し、場所を必ず、自分に近い場所に置き換えます。
 
 ```azurecli
-az configure --defaults group=<rgn>[Sandbox Resource Group]</rgn> location=westus2
+az configure --defaults group=<rgn>[sandbox Resource Group]</rgn> location=westus2
 ```
 
 ## <a name="create-an-event-hubs-namespace"></a>Event Hubs 名前空間を作成する
@@ -40,14 +40,14 @@ az configure --defaults group=<rgn>[Sandbox Resource Group]</rgn> location=westu
     az eventhubs namespace create --name $NS_NAME
     ```
 
-    > [!NOTE] 
+    > [!NOTE]
     > Azure では名前については非常に厳しくチェックされ、名前が既に存在しているか、または無効である場合、CLI から **[無効な要求]** が返されます。 別の名前を試してみるには、ご利用の環境変数を変更して、コマンドを再発行します。
 
 
 1. 次のコマンドを使用して、ご利用の Event Hubs 名前空間の接続文字列を取得します。 これは、ご利用のイベント ハブを使用してメッセージを送受信するようにアプリケーションを構成するために必要となります。
 
     ```azurecli
-    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME 
+    az eventhubs namespace authorization-rule keys list --name RootManageSharedAccessKey --namespace-name $NS_NAME
     ```
 
     > [!div class="mx-tableFixed"]
@@ -99,9 +99,9 @@ az configure --defaults group=<rgn>[Sandbox Resource Group]</rgn> location=westu
 
 ## <a name="view-the-event-hub-in-the-azure-portal"></a>Azure portal でイベント ハブを確認する
 
-次に、Azure portal でこれがどのように表示されるか見てみましょう。 
+次に、Azure portal でこれがどのように表示されるか見てみましょう。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. ポータルの上部にある検索バーを使用して、Event Hubs 名前空間を検索します。
 

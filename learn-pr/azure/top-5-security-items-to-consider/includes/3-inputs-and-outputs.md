@@ -51,7 +51,7 @@ SELECT *  FROM  [dbo].[users] WHERE userName = @UserName
 
 ビジュアルに、またはドキュメントのいずれかに出力を行う場合、必ずエンコードして、エスケープされる必要があります。 これにより、サニタイズの過程で何かが失われても身を守ることができます。さもないと、悪用される恐れがあるコードが誤って生成されてしまいます。 そうすることで､あらゆるものが_出力_として表示され､実行すべきものとして解釈されることがなくなります｡ これは、もう 1 つの非常に一般的な攻撃方法で "クロス サイト スクリプティング" (XSS) と呼ばれます。
 
-これは非常に一般的な要件であるため、ユーザーに代わって ASP.NET により自動的に実行されるもう 1 つの領域です。 既定では、[あらゆる出力が既にエンコードされています](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting?view=aspnetcore-2.1)。 別の web フレームワークを使用している場合は、[OWASP XSS Prevention Cheatsheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) で Web サイトでの出力エンコードに関するオプションを確認できます｡
+これは非常に一般的な要件であるため、ユーザーに代わって ASP.NET で実行されるもう 1 つの領域です。 既定では、すべての出力が既にエンコードされています。 別の Web フレームワークを使用している場合は、[OWASP XSS Prevention Cheatsheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) で Web サイトでの出力エンコードに関するオプションを確認できます。
 
 ## <a name="summary"></a>まとめ
 

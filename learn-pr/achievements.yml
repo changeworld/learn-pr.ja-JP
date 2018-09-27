@@ -1,10 +1,5 @@
 ### YamlMime:Achievements
 achievements:
-- uid: learn.build-a-serverless-web-app.badge
-  type: badge
-  title: サーバーレス Web アプリを構築する
-  summary: "\"サーバーレス Web アプリの構築\" モジュールのバッジ。"
-  iconUrl: /learn/achievements/build-a-serverless-web-app.svg
 - uid: learn.connect-app-to-azure-storage.badge
   type: badge
   title: Azure Storage へのアプリの接続
@@ -47,9 +42,9 @@ achievements:
   iconUrl: /learn/achievements/administer-infrastructure-resources-in-azure.svg
 - uid: learn.cloud-foundations.trophy
   type: trophy
-  title: クラウドの基礎のトロフィー
-  summary: "\"クラウドの基礎\" ラーニング パスのトロフィー。"
-  iconUrl: /learn/achievements/cloud-foundations.svg
+  title: Azure の基礎のトロフィー
+  summary: "'Azure の基礎' ラーニング パスのトロフィー"
+  iconUrl: /learn/achievements/azure-fundamentals.svg
 - uid: learn.connect-your-services-together.trophy
   type: trophy
   title: サービスの接続のトロフィー
@@ -426,9 +421,9 @@ achievements:
   summary: Azure Cosmos DB を使用してデータをグローバルに分散させる
   iconUrl: /learn/achievements/work-with-nosql-data-in-azure-cosmos-db.svg
 metadata:
-  ms.openlocfilehash: 7f1cf4e965ca83bb470aabaaa5cf5c2a8a7d38a3
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 681898238a6a8d4de8e91fba7c248831a01978a8
+  ms.sourcegitcommit: afe81bb2dc99ca5f6e2828779d8fca2a43a0e002
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346492"
+  ms.lasthandoff: 09/24/2018
+  ms.locfileid: "46711790"

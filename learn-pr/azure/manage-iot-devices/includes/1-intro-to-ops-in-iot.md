@@ -10,7 +10,7 @@ IT 部門にとって IoT の初歩的な機会はデータ セキュリティ�
 
  このモジュールの残りの部分では、IoT のこの基礎的な知識を活用し、それを実際のシナリオに適用します。 オンラインの Raspberry Pi シミュレーターを操作して、シミュレートされた気象データを Azure IoT Hub を介して取り込みます。
 
- ##<a name="learning-objectives"></a>学習の目的
+ ## <a name="learning-objectives"></a>学習の目的
  このモジュールでは、次のことを行います。
   - IoT の概要を学習する
   - Raspberry Pi シミュレーターを操作する

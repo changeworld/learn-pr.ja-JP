@@ -40,7 +40,7 @@ Cloud Shell で次のコマンドを実行し、コンテナーを作成しま�
 ```azurecli
 az keyvault create \
     --name <your-unique-vault-name> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --location eastus
 ```
 

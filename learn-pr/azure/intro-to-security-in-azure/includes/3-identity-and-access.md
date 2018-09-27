@@ -84,19 +84,17 @@ ID は、ロールに直接マップするか、グループ メンバーシッ�
 
 ロールは、サービス インスタンス レベルで個々に付与することもできますが、Azure Resource Manager の階層で下位にも伝送されます。 サブスクリプション全体など、より高いスコープに割り当てられているロールは、サービス インスタンスなどの子スコープへ継承されます。 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![管理グループ](../media/3-role-assignment-scope.png)
 
 :::row:::
   :::column:::
-    ![ID 検証を表すイメージ](../media/3-privileged-identity-management.png)
+    ![ID 検証を表す画像](../media/3-privileged-identity-management.png)
   :::column-end:::
     :::column span="3"::: **Privileged Identity Management**
 
 インフラストラクチャを包括的に管理する場合、Azure のリソースへのアクセスをロールベースのアクセス制御 (RBAC) を使用して管理することに加え、組織の変化や発展に伴い、ロールのメンバーを継続的に監査することも行われる必要があります。 追加の有料サービスに Azure AD Privileged Identity Management (PIM) があります。これを使用して、ロールの割り当て、セルフサービスやジャストインタイムでのロールのアクティブ化、Azure AD と Azure のリソースへのアクセス確認を監視できます。
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
-![Privileged identity management](../media/PIM_Dashboard.png)
+![Privileged Identity Management](../media/PIM_Dashboard.png)
 
   :::column-end:::
 :::row-end:::

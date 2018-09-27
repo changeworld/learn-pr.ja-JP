@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.run-docker-containers-aci.7-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 7a426d51049087dfa1f95baced2caf88ad49ebf8
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570819"
+durationInMinutes: 5
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: サービスが要求する実行時間の長いタスクに一般的に最適な再起動ポリシーは、次のうちどれですか。
+    choices:
+    - content: Always
+      isCorrect: true
+      correctExplanation: 再起動ポリシー **Always** は、再起動が必要な場合でも、必要なプロセスを引き続き使用できることを保証します。
+    - content: Never
+      isCorrect: false
+      incorrectExplanation: 再起動ポリシー **Always** は、再起動が必要な場合でも、必要なプロセスが引き続き確実に使用できるようにします。
+    - content: OnFailure
+      isCorrect: false
+      incorrectExplanation: 再起動ポリシー **Always** は、再起動が必要な場合でも、必要なプロセスが引き続き確実に使用できるようにします。
+  - content: '正誤問題: 既定では、環境変数の値は Azure portal と Azure CLI 出力で確認できます。'
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: 既定では、環境変数はセキュリティで保護されておらず、その値は Azure portal と Azure CLI 出力で確認できます。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: 既定では、環境変数はセキュリティで保護されておらず、その値は Azure portal と Azure CLI 出力で確認できます。
+  - content: コンテナー起動イベントを表示するのに使用できるのは、どのトラブルシューティング コマンドですか。
+    choices:
+    - content: az container logs
+      isCorrect: false
+      incorrectExplanation: '`az container logs` コマンドでは、コンテナー グループ内のコンテナーに対するログを確認します。'
+    - content: az container attach
+      isCorrect: true
+      correctExplanation: '`az container attach` コマンドでは、コンテナーのイベントとログが表示されます。 これに対し、`az container logs` ではログのみが表示され、起動イベントは表示されません。'
+    - content: az container exec
+      isCorrect: false
+      incorrectExplanation: '`az container exec` コマンドでは、コンテナー グループで実行中のコンテナー内からコマンドが実行されます。'

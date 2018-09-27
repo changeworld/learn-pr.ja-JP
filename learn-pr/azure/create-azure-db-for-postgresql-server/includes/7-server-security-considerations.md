@@ -20,8 +20,6 @@ Azure Database for PostgreSQL サーバーは、ネイティブ PostgreSQL 認�
 
 これらのサブネットを構成するには、仮想ネットワークを作成して、ネットワークをサブネットに再分割します。 Web アプリケーションはあるサブネット上で動作し、データベースは別のサブネット上で動作します。 各サブネットには、他のネットワークと通信するための独自の規則があります。 これらの規則によって、データベースから Web アプリケーションへのアクセスを制限できます。
 
-仮想ネットワークの作成はこのモジュールの範囲外です。 詳細については、仮想ネットワークに関する他の学習モジュールを調べてください。
-
 ### <a name="what-is-a-firewall"></a>ファイアウォールとは
 
 ファイアウォールとは、各要求の送信元 IP アドレスに基づいてサーバーへのアクセスを許可するサービスです。 IP アドレスの範囲を指定するファイアウォール規則を作成します。 これらの許可された IP アドレスからのクライアントのみが、サーバーへのアクセスを許可されます。 一般に、ファイアウォール規則には特定のネットワーク プロトコルとポート情報も含まれます。 たとえば、既定では、PostgreSQL サーバーはポート 5432 で TCP 要求をリッスンします。
@@ -34,13 +32,13 @@ Azure Database for PostgreSQL サーバーのファイアウォールは、ユ�
 
 ### <a name="azure-database-for-postgresql-server-ssl-connections"></a>Azure Database for PostgreSQL サーバーの SSL 接続
 
-Azure Database for PostgreSQL では、クライアント アプリケーションが PostgreSQL サービスに接続するときに、Secure Sockets Layer (SSL) を使用することが推奨されます。 データベース サーバーとクライアント アプリケーション間に SSL 接続を適用すると、サーバーとクライアント間のデータが暗号化されて、"中間者攻撃" などの攻撃から保護されます。 SSL を有効にすると、クライアントとサーバー間の接続が機能するためには、キーの交換と厳密な認証が必要になります。 SSL の使用に関する詳細については、この学習モジュールの範囲を超えています。 詳細については、SSL に関する他の学習モジュールを調べてください。
+Azure Database for PostgreSQL では、クライアント アプリケーションが PostgreSQL サービスに接続するときに、Secure Sockets Layer (SSL) を使用することが推奨されます。 データベース サーバーとクライアント アプリケーション間に SSL 接続を適用すると、サーバーとクライアント間のデータが暗号化されて、"中間者攻撃" などの攻撃から保護されます。 SSL を有効にすると、クライアントとサーバー間の接続が機能するためには、キーの交換と厳密な認証が必要になります。 SSL の使用については、この学習モジュールでは詳しく説明しません。
 
 ## <a name="configure-connection-security"></a>接続のセキュリティを構成する
 
 Azure Database for PostgreSQL サーバーのファイアウォールを構成するときの決定事項と手順を見ていきましょう。 前に作成したサーバーに接続する方法も確認します。
 
-サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。 ファイアウォール規則を作成する対象のサーバー リソースに移動します。
+サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。 ファイアウォール規則を作成する対象のサーバー リソースに移動します。
 
 次に、**[接続のセキュリティ]** オプションを選択して、右側に接続のセキュリティ ブレードを開きます。
 
@@ -92,7 +90,7 @@ Azure CLI で `az postgres server firewall-rule create` コマンドを使用し
 
 ```azurecli
 az postgres server firewall-rule create \
-  --resource-group <rgn>[Sandbox resource group name]</rgn> \
+  --resource-group <rgn>[sandbox resource group name]</rgn> \
   --server <server-name> \
   --name AllowAll \
   --start-ip-address 0.0.0.0 \
@@ -104,7 +102,7 @@ az postgres server firewall-rule create \
 ```azurecli
 az postgres server firewall-rule delete \
   --name AllowAll \
-  --resource-group <rgn>[Sandbox resource group name]</rgn> \
+  --resource-group <rgn>[sandbox resource group name]</rgn> \
   --server-name <server-name>
 ```
 
@@ -129,7 +127,7 @@ az postgres server firewall-rule delete \
 
 ```bash
 psql --host=<server-name>.postgres.database.azure.com
-      --username=<admin-user>@<server-name> 
+      --username=<admin-user>@<server-name>
       --dbname=<database>
 ```
 

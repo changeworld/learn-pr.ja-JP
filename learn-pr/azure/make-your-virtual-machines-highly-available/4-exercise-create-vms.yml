@@ -1,0 +1,21 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.4-exercise-create-vms
+title: 演習 - VM で可用性セットを作成する
+metadata:
+  title: 演習 - VM で可用性セットを作成する
+  description: 演習 - VM で可用性セットを作成する
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b5c51936eb8cec3b4a5869c7c6fe5388cc72f622
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513556"
+interactive: bash
+azureSandbox: true
+durationInMinutes: 15
+content: '[!include[](includes/4-exercise-create-vms.md)]'

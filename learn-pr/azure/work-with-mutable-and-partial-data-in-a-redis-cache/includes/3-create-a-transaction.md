@@ -33,7 +33,7 @@ Azure CLI を使用して Azure Redis Cache の作成から始めましょう。
 
     az redis create \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --location eastus \
         --vm-size C0 \
         --sku Basic \
@@ -85,7 +85,7 @@ Azure Redis Cache に接続するには、パスワードと URL を含む接続
 ```azurecli
 REDIS_KEY=$(az redis list-keys \
     --name "$REDIS_NAME" \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query primaryKey \
     --output tsv)
 
@@ -164,7 +164,7 @@ echo "$REDIS_KEY"@"$REDIS_NAME".redis.cache.windows.net:6380?ssl=true
     ```azcli
     az redis show \
         --name "$REDIS_NAME" \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --query provisioningState
     ```
 
@@ -180,7 +180,7 @@ echo "$REDIS_KEY"@"$REDIS_NAME".redis.cache.windows.net:6380?ssl=true
 
 完了するため、追加したデータが Azure Redis Cache にあることを確認しましょう。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. 左側のサイドバーで **[すべてのリソース]** を選択して Azure Redis Cache を見つけ、左のフィルター ボックスを使用して Azure Redis Cache インスタンスを選択します。 または、上部にある検索ボックスを使用して、キャッシュの名前を入力することもできます。
 

@@ -53,7 +53,7 @@ az vm list-sizes --location eastus --output table
 VM を作成したときにサイズを指定しなかったので、Azure によって `Standard_DS1_v2` の既定の汎用サイズが選択されました。 ただし、サイズは `vm create` コマンドの一部として `--size` パラメーターを使用して指定できます。 たとえば、次のコマンドを使用して 16 コアの仮想マシンを作成します。
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM2 \
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM2 \
   --image Debian --admin-username aldis --generate-ssh-keys --verbose \
   --size "Standard_DS5_v2"
 ```
@@ -65,7 +65,7 @@ az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name Sa
 ワークロードが変化した場合や、作成時に正しくサイズが設定されなかった場合にも、既存の VM のサイズを変更することができます。 サイズ変更を要求する前に、VM が属するクラスター内で目的のサイズが使用できるかどうかを確認する必要があります。 これを行うには、`vm list-vm-resize-options` コマンドを使用します。
 
 ```azurecli
-az vm list-vm-resize-options --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --output table
+az vm list-vm-resize-options --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --output table
 ```
 
 これにより、リソース グループ内で使用可能なすべてのサイズ構成のリストが返されます。 目的のサイズがクラスターでは使用できないものの、リージョンでは使用_できる_場合は、[VM を割り当て解除](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-deallocate)することができます。 このコマンドは、実行中の VM を停止し、リソースを失うことなく、現在のクラスターからその VM を削除します。 その後、VM のサイズを変更できます。これにより、そのサイズ構成が使用できる新しいクラスター内に VM が再作成されます。
@@ -76,7 +76,7 @@ az vm list-vm-resize-options --resource-group <rgn>[Sandbox resource group name]
 VM のサイズを変更するには、`vm resize` コマンドを使用します。 たとえば、多くの場合は、VM で実行したいタスクに対して、VM のパフォーマンスが不足していることがわかります。 そのレベルをいくつか上げて、DS3_v2 層にすることが可能です。この場合は、仮想コアが 4 個と 14 G のメモリが含まれます。 Cloud Shell に次のコマンドを入力します。
 
 ```azurecli
-az vm resize --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
+az vm resize --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --size Standard_DS3_v2
 ```
 
 このコマンドで VM のリソースを削減するには数分かかります。完了すると、新しい JSON 構成が返されます。

@@ -12,10 +12,10 @@ Azure PowerShell を使用してこれらの操作を練習してみましょう
 
 ここでは、これまでの演習で作成した VM を使用します。 このラボの操作では、以下のことを前提としています。
 
-- VM は存在し、**fotoshareVM** という名前です
-- この VM は **<rgn>[サンドボックス リソース グループ名]</rgn>** という名前のリソース グループに存在します。
+- VM は存在しており、**fotoshareVM** という名前です。
+- この VM は、**<rgn>[サンドボックス リソース グループ名]</rgn>** というリソース グループに存在します。
 
-これらの値は異なる名前を使用した場合は、これらの値を実際の名前で置き換えてください。
+異なる名前のセットを使用した場合は、これらの値を実際の名前で置き換えてください。
 
 前回の演習の VM ディスクは、次のような状態です。
 
@@ -33,7 +33,7 @@ Azure PowerShell を使用してこれらの操作を練習してみましょう
     > まだ行っていない場合は、コマンドを試す前に Cloud Shell セッションを **PowerShell** に切り替えます。
     
     ```powershell
-    $myRgName = "<rgn>[Sandbox resource group name]</rgn>"
+    $myRgName = "<rgn>[sandbox resource group name]</rgn>"
     $myVMName = "fotoshareVM"
     ```
     
@@ -59,7 +59,7 @@ Azure PowerShell を使用してこれらの操作を練習してみましょう
     ```output
     ResourceGroupName Name        Type                              Location
     ----------------- ----        ----                              --------
-    <rgn>[Sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
+    <rgn>[sandbox resource group name]</rgn> fotoshareVM Microsoft.Compute/virtualMachines eastus
     ```
     
 ### <a name="view-os-disk-cache-status"></a>OS ディスクのキャッシュ状態を表示する
@@ -148,7 +148,7 @@ Azure PowerShell を使用してこれらの操作を練習してみましょう
 
     ```output
     ResourceGroupName  : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx
-    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[Sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
+    Id                 : /subscriptions/xxxxxxxx-xxxx-xxxx-xxx-xxxxxxx/resourceGroups/<rgn>[sandbox resource group name]</rgn>/providers/Microsoft.Compute/virtualMachines/fotoshareVM
     VmId               : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx
     Name               : fotoshareVM
     Type               : Microsoft.Compute/virtualMachines

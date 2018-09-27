@@ -12,9 +12,9 @@
 
 前のユニットで説明したように、Azure には関数の作成を始めるのに役立つテンプレートが用意されています。 このユニットでは、`HttpTrigger` テンプレートを使用して、温度サービスを実装します。
 
-1. [Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
-1. 左側のメニューで **[すべてのリソース]** を選択し、**<rgn>[サンドボックス リソース グループ名]</rgn>** を選択して、最初の演習のリソース グループを選択します。
+1. 左側のメニューで **[すべてのリソース]** を選択し、"**<rgn>[サンドボックス リソース グループ名]</rgn>**" を選択し、最初の演習のリソース グループを選択します。
 
 1. グループのリソースが表示されます。 **escalator-functions-xxxxxxx** 項目 (稲妻の Function アイコンでも示されます) を選択することで、前の演習で作成した関数アプリの名前をクリックします。
 

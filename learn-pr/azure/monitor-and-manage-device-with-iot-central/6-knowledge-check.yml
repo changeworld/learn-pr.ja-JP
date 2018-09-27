@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570758"
+title: 自分の知識をチェックする
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: デバイス テンプレートの情報の説明として最も適切な文を選択してください。
+    choices:
+    - content: アプリケーションに接続されているデバイスのハードウェア仕様。
+      isCorrect: false
+      incorrectExplanation: デバイス テンプレートにハードウェアの詳細はキャプチャされません。
+    - content: デバイスがアプリケーションと交換できるデータとコマンド。
+      isCorrect: true
+      correctExplanation: テンプレートは、コードと物理デバイスの間で交換できる可能性があるすべての情報とコマンドをキャプチャする仕様です。
+    - content: デバイスとの通信に使用される通信プロトコル。
+      isCorrect: false
+      incorrectExplanation: 通信プロトコルはデバイス テンプレートの一部ではありません。
+  - content: '正誤問題: IoT Central アプリケーションのテストには物理デバイスが必要です。'
+    choices:
+    - content: ○
+      isCorrect: false
+      incorrectExplanation: テストにはシミュレートされたデバイスを使用できます。
+    - content: ×
+      isCorrect: true
+      correctExplanation: デバイス テンプレートを作成すると、シミュレートされたデバイスが IoT Central によって自動的に作成されます。 カスタム ソフトウェア シミュレーションのコードを書くこともできます。 このような方法を選択すると、物理デバイスを接続する前にアプリケーションを徹底的にテストできます。
+  - content: あなたは、IoT Central と通信している 5 台の物理デバイスを持っているとします。 接続文字列はいくつありますか。
+    choices:
+    - content: '1: 接続文字列は、接続されているすべてのデバイスで共有されます。'
+      isCorrect: false
+      incorrectExplanation: 共有された接続文字列では、IoT Central が各デバイスを一意に識別できません。
+    - content: '2: 1 つはアクティブに使用され、もう 1 つはプライマリが侵害された場合に備えたバックアップ。'
+      isCorrect: false
+      incorrectExplanation: 共有された接続文字列では、IoT Central が各デバイスを一意に識別できません。
+    - content: '5: すべてのデバイスに一意の接続文字列が必要です。'
+      isCorrect: true
+      correctExplanation: IoT Central では接続文字列によってデバイスが識別されるため、各デバイスに固有の接続文字列が必要です。

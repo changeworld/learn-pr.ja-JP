@@ -7,7 +7,7 @@
 
 Windows VM の作成は、Azure portal、Azure CLI、または Azure PowerShell で行うことができます。 最も簡単な方法は、ポータルを使用することです。そうすれば、VM の作成中に、必要な情報が順番に示され、ヒントと有用なメッセージが提供されます。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. Azure portal の左上隅にある **[リソースの作成]** をクリックします。
 
@@ -27,14 +27,14 @@ Windows VM の作成は、Azure portal、Azure CLI、または Azure PowerShell 
 
 ### <a name="configure-basic-vm-settings"></a>VM の基本設定を構成する
 
-> [!NOTE]  
+> [!NOTE]
 > 設定を変更してフリーテキスト フィールドから移動すると、各値が自動的に検証されて、問題がない場合は横に緑色のチェック マークが表示されます。 エラー インジケーターをポイントすると、検出された問題についての詳細が表示されます。
 
 1. VM 時間の請求対象である **[サブスクリプション]** を選択します。
 
-1. **[リソース グループ]** に **<rgn>[サンドボックス リソース グループ名]</rgn>** を選択します。
+1. **[リソース グループ]** に "**<rgn>[サンドボックス リソース グループ名]</rgn>**" を選択します。
 
-1. **[インスタンスの詳細]** セクションで、VM の名前を入力します (たとえば、Test Video Processor VM #2 を表す "**test-vp-vm2**")。
+1. **[インスタンスの詳細]** セクションで、VM の名前を入力します (たとえば、Test Video Processor VM #2 を表す **test-vp-vm2**)。
     - リソースの目的がすぐにわかるように、リソース名を標準化するのがベスト プラクティスです。 Windows VM の名前には制限があります。1 文字から 15 文字までの範囲で、非 ASCII 文字または特殊文字を含まず、現在のリソース グループ内で一意である必要があります。
 
 1. 以下の場所から、近くのリージョンを選択します。

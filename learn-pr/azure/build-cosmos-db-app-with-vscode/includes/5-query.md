@@ -53,7 +53,7 @@ LINQ は、計算処理をオブジェクトのストリームに対するクエ
     }
     ```
 
-1. 次のコードをコピーし、**BasicOperations** メソッドの `await this.DeleteUserDocument("Users", "WebCustomers", "1");` 行の前に貼り付けます。
+1. 次のコードをコピーし、**BasicOperations** メソッドの `await this.DeleteUserDocument("Users", "WebCustomers", yanhe);` 行の前に貼り付けます。
 
     ```csharp
     this.ExecuteSimpleQuery("Users", "WebCustomers");

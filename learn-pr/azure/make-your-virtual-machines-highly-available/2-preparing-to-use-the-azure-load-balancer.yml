@@ -1,0 +1,49 @@
+### YamlMime:ModuleUnit
+uid: learn.make-your-virtual-machines-highly-available.2-preparing-to-use-the-azure-load-balancer
+title: Azure Load Balancer を使用する準備
+metadata:
+  title: Azure Load Balancer を使用する準備
+  description: Azure Load Balancer を使用する準備
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d7aca1982234b34ec8ab8f293d5c15fb15e9c8d0
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46513239"
+durationInMinutes: 5
+content: >
+  [!include[](includes/2-preparing-to-use-the-azure-load-balancer.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 正誤問題。 Azure Load Balancer により、クライアントからのすべてのパケットが同じバックエンド VM インスタンスに確実に送信されます。
+    choices:
+    - content: ○
+      isCorrect: true
+      correctExplanation: Azure Load Balancer では、ハッシュを使用して、送信元および宛先の IP アドレスとポートからクライアントを識別します。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: Azure Load Balancer では、ハッシュを使用して、送信元および宛先の IP アドレスとポートからクライアントを識別します。
+  - content: Basic SKU 経由で Standard SKU を選択する理由として当てはまるのは、次のどれですか。
+    choices:
+    - content: Standard SKU では VM 可用性セットにトラフィックをダイレクトできますが、Basic SKU ではダイレクトできません。
+      isCorrect: false
+      incorrectExplanation: 可用性セットへのトラフィックのダイレクトは Basic SKU と Standard SKU の両方でサポートされていますが、Standard SKU では複数のダイレクトを使用できます。
+    - content: Standard SKU では、セキュリティで保護されたトラフィック (HTTPS) がサポートされています。
+      isCorrect: true
+      correctExplanation: Basic SKU では TCP トラフィックと HTTP トラフィックのみを保護でき、Standard SKU には HTTPS のサポートが追加されています。
+    - content: Standard SKU ではバックエンド VM サーバーの正常性プローブ監視がサポートされていますが、Basic SKU ではサポートされていません。
+      isCorrect: false
+      incorrectExplanation: 正常性プローブは両方の SKU で使用され、Azure Load Balancer のセットアップに必要です。
+  - content: 正誤問題。 Azure Load Balancer は、公開サービスに使用したり、VPN 経由で使用する内部 Azure サービスに使用したりできます。
+    choices:
+    - content: ○
+      isCorrect: true
+      incorrectExplanation: Azure Load Balancer では、パブリックと内部の両方の構成がサポートされています。
+    - content: ×
+      isCorrect: false

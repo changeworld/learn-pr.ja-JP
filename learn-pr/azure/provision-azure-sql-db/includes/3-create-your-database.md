@@ -65,7 +65,7 @@ SQL エラスティック プールは eDTU と関連があります。 SQL エ�
 
 時間が経って需要に対応するためにコンピューティング能力の増強が必要であるとわかった場合は、パフォーマンス オプションを調整することができ、DTU と仮想コアのパフォーマンス モデルを切り替えることさえできます。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. ポータルの左上隅にある **[リソースの作成]** をクリックします。 **[Databases]** を選択し、**[SQL Database]** を選択します。
 

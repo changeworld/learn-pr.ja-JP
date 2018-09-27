@@ -72,7 +72,7 @@ Azure コンテナー レジストリには、組み込みの管理者アカウ�
 1. `az keyvault create` コマンドで Azure Key Vault を作成します。
 
     ```azurecli
-    az keyvault create --resource-group <rgn>[Sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
+    az keyvault create --resource-group <rgn>[sandbox resource group name]</rgn> --name $ACR_NAME-keyvault
     ```
 
 1. `az keyvault secret set` コマンドを使用して、ACR のユーザー名をコンテナーに格納します。 サービス プリンシパルを使用していた場合は、この値の appId を使用します。 今度は管理者アカウントを使用するため、上記のクエリのユーザー名を保存します。 次のコマンドを入力します。`<username>` は忘れずに置き換えてください。
@@ -102,9 +102,9 @@ Azure コンテナー レジストリには、組み込みの管理者アカウ�
 
 ```azurecli
 az container create \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
-    --name acr-build \
-    --image $ACR_NAME.azurecr.io/helloacrbuild:v1 \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
+    --name acr-tasks \
+    --image $ACR_NAME.azurecr.io/helloacrtasks:v1 \
     --registry-login-server $ACR_NAME.azurecr.io \
     --ip-address Public \
     --location eastus \
@@ -115,7 +115,7 @@ az container create \
 Azure コンテナー インスタンスの IP アドレスを取得します。
 
 ```azurecli
-az container show --resource-group  <rgn>[Sandbox resource group name]</rgn> --name acr-build --query ipAddress.ip --output table
+az container show --resource-group  <rgn>[sandbox resource group name]</rgn> --name acr-tasks --query ipAddress.ip --output table
 ```
 
 ブラウザーを開き、コンテナーの IP アドレスに移動します。 すべてが正しく構成されている場合、次の結果が表示されるはずです。

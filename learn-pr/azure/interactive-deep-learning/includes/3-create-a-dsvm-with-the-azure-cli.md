@@ -63,7 +63,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 ## <a name="create-a-resource-group"></a>リソース グループを作成する 
 
 > [!IMPORTANT]
-> 通常は、選択したリージョン内にリソース グループを作成します。 ただし、今作業しているサンドボックス セッションでは、用意されているリソース グループを使用できます。 このセッションで使用するリソース グループは、**<rgn>[サンドボックス リソース グループ名]</rgn>** です。
+> 通常は、選択したリージョン内にリソース グループを作成します。 しかし、現在作業しているサンドボックス セッションでは、用意されているリソース グループを使用できます。 このセッションで使用するリソース グループは、**<rgn>[サンドボックス リソース グループ名]</rgn>** です。
 
 ## <a name="deploy-the-dsvm-to-your-resource-group"></a>リソース グループに DSVM をデプロイする
 
@@ -73,7 +73,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
     ```azurecli
     az group deployment create \
-    --resource-group  <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group  <rgn>[sandbox resource group name]</rgn> \
     --template-uri https://raw.githubusercontent.com/Azure/DataScienceVM/master/Scripts/CreateDSVM/Ubuntu/azuredeploy.json \
     --parameters parameter_file.json
     ```
@@ -90,7 +90,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
     ```azurecli
     az vm get-instance-view \
     --name <HOSTNAME> \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query instanceView.statuses[1] \
     --output table
     ```
@@ -107,7 +107,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 22 \
     --priority 900
@@ -123,7 +123,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
     ```azurecli
     az vm open-port \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --port 8888 \
     --priority 901
@@ -137,7 +137,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
     ```azurecli
     az vm list-ip-addresses \
-    -g <rgn>[Sandbox resource group name]</rgn> \
+    -g <rgn>[sandbox resource group name]</rgn> \
     -n <HOSTNAME> \
     --output table
     ```

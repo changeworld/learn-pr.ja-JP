@@ -21,7 +21,7 @@ az group create --name <resource-group-name> --location <resource-group-location
 
     ```azurecli
     az vm create \
-        --resource-group <rgn>[Sandbox resource group name]</rgn> \
+        --resource-group <rgn>[sandbox resource group name]</rgn> \
         --name MeanDemo \
         --image UbuntuLTS \
         --admin-username <vm-admin-username> \
@@ -42,7 +42,7 @@ az group create --name <resource-group-name> --location <resource-group-location
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "<the public IP address of the newly created machine>",
-        "resourceGroup": "<rgn>[Sandbox resource group name]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group name]</rgn>",
         "zones": ""
     }
     ```
@@ -63,8 +63,8 @@ az group create --name <resource-group-name> --location <resource-group-location
 
 1. VM でポート 80 を開き、作成する新しい Web アプリケーションへの受信 HTTP トラフィックを許可します。
 
-    ``` bash
-    az vm open-port --port 80 --resource-group <rgn>[Sandbox resource group name]</rgn> --name MeanDemo
+    ```azurecli
+    az vm open-port --port 80 --resource-group <rgn>[sandbox resource group name]</rgn> --name MeanDemo
     ```
 
     このコマンドにより、作成時に "MeanDemo" と命名された HTTP ポートがご利用の VM で開きます。

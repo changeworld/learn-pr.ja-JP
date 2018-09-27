@@ -11,11 +11,11 @@
 
 Azure CLI を使用して Web サーバーをホストする Linux VM を作成しましょう。
 
-1. まず、このセッションの既定値をいくつか設定します。 最初に、VM を配置する_場所_を決める必要があります。 理想的には、顧客に近い場所にします。 この場合は、Azure サンドボックスから使用できる場所から最も近いリージョンを選択します。
+1. まず、このセッションの既定値をいくつか設定します。 最初に、VM を配置する_場所_を決める必要があります。 これはクライアントに近い場所であることが理想的です。 この場合は、Azure サンドボックスで使用できる場所から最も近いリージョンを選択します。
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
-1. `az configure` コマンドを使用して、使用する既定の場所を設定します。 "eastus" をこの場所に置き換えます。
+1. `az configure` コマンドを使って、使用する既定の場所を設定します。 "eastus" をその場所に置き換えます。
 
     ```azurecli
     az configure --defaults location=eastus
@@ -23,10 +23,10 @@ Azure CLI を使用して Web サーバーをホストする Linux VM を作成�
 
     [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
 
-1. 既定のリソース グループ値を、Azure サンドボックス用に作成された事前構成済みリソース グループに設定します。**<rgn>[サンドボックス リソース グループ]</rgn>**
+1. 既定のリソース グループ値を、Azure サンドボックス用に作成された事前構成済みリソース グループ (**<rgn>[サンドボックス リソース グループ]</rgn>**) に設定します。
 
     ```azurecli
-    az configure --defaults group="<rgn>[Sandbox Resource Group]</rgn>"
+    az configure --defaults group="<rgn>[sandbox Resource Group]</rgn>"
     ```
 
 1. 次に、`vm create` コマンドを使用して新しい Ubuntu Linux VM を作成します。
@@ -51,13 +51,13 @@ Azure CLI を使用して Web サーバーをホストする Linux VM を作成�
     ```json
     {
         "fqdns": "",
-        "id": "/subscriptions/xxx/resourceGroups/<rgn>[Sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
+        "id": "/subscriptions/xxx/resourceGroups/<rgn>[sandbox resource group]</rgn>/providers/Microsoft.Compute/virtualMachines/support-web-vm01",
         "location": "eastus",
         "macAddress": "00-0D-3A-18-DE-B4",
         "powerState": "VM running",
         "privateIpAddress": "10.0.0.4",
         "publicIpAddress": "40.76.193.249",
-        "resourceGroup": "<rgn>[Sandbox resource group]</rgn>",
+        "resourceGroup": "<rgn>[sandbox resource group]</rgn>",
         "zones": ""
     }
     ```

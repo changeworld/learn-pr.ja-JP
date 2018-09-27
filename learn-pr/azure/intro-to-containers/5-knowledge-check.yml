@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.5-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: コンテナーの概要に関する知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 74497f66a4e10fa17f5b6eee5e8fdb31e6bf806b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570659"
+durationInMinutes: 2
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: コンテナーを導入する利点として、次の中で正しくないのはどれですか?
+    choices:
+    - content: 起動時間が速い。
+      isCorrect: false
+      incorrectExplanation: コンテナーは、仮想システムまたは物理システムよりも大幅に速く起動することができます。
+    - content: ホスト リソースの効率的な使用。
+      isCorrect: false
+      incorrectExplanation: イメージ アーキテクチャが共有されているため、ホスト リソースを効率的に利用しながら、単一のホスト上で複数のコンテナーを実行できます。
+    - content: 組み込みのディザスター リカバリー。
+      isCorrect: true
+      correctExplanation: 本質的にコンテナーによってディザスター リカバリー手順は変更されません。
+    - content: クラウドネイティブ アプリケーション アーキテクチャが使用できるようになる。
+      isCorrect: false
+      incorrectExplanation: コンテナーは最新のアーキテクチャまたはクラウドネイティブ アーキテクチャを使用したアプリケーションの開発に役立ちます。
+  - content: すべてのコンテナー インスタンス (停止状態および実行中) を表示するためのコマンドとは?
+    choices:
+    - content: docker ps
+      isCorrect: false
+      incorrectExplanation: このコマンドでは、実行中のコンテナーのみが表示されます。
+    - content: docker イメージ
+      isCorrect: false
+      incorrectExplanation: このコマンドではコンテナー イメージがリストされます。
+    - content: docker ps -a
+      isCorrect: true
+      correctExplanation: このコマンドでは、実行中のコンテナーと停止状態のコンテナーがすべてリストされます。
+  - content: 'True または false: 運用環境では、Dockerfile を使用してコンテナー イメージの作成を自動化する必要があります。'
+    choices:
+    - content: "True"
+      isCorrect: true
+      correctExplanation: イメージは手動で作成するより、自動化した方が速く、簡単に繰り返せて、間違いが減ります。 ベスト プラクティスとしては、コンテナーの運用環境では自動化をお勧めします。
+    - content: "False"
+      isCorrect: false

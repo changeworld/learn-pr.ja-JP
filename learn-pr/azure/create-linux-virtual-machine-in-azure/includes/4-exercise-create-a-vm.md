@@ -4,7 +4,7 @@
 
 Linux VM の作成は、Azure portal、Azure CLI、または Azure PowerShell で行うことができます。 Azure で始めるときの最も簡単な方法は、ポータルを使用することです。そうすれば、作成の間に、必要な情報が順番に示され、ヒントと有用なメッセージが提供されます。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. Azure portal の左上隅にある **[リソースの作成]** をクリックします。
 

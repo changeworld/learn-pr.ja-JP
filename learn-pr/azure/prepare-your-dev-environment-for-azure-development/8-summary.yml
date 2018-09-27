@@ -1,0 +1,51 @@
+### YamlMime:ModuleUnit
+uid: learn.prepare-azure-dev-environment.8-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 49eda8027510861e39be1d5297a68850c9f9e6e2
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570566"
+durationInMinutes: 5
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: '知識チェック: Azure 用の開発環境を準備する'
+  questions:
+  - content: Visual Studio Code は、どのオペレーティング システムをサポートしていますか。
+    choices:
+    - content: Linux
+      isCorrect: false
+      incorrectExplanation: Visual Studio Code はクロスプラットフォームであり、Linux、macOS、および Windows をサポートしています。
+    - content: macOS
+      isCorrect: false
+      incorrectExplanation: Visual Studio Code はクロスプラットフォームであり、Linux、macOS、および Windows をサポートしています。
+    - content: Windows
+      isCorrect: false
+      incorrectExplanation: Visual Studio Code はクロスプラットフォームであり、Linux、macOS、および Windows をサポートしています。
+    - content: 上記のすべて
+      isCorrect: true
+      correctExplanation: Visual Studio Code はクロスプラットフォームであり、Linux、macOS、および Windows をサポートしています。
+  - content: Microsoft は、次のどのエディター/IDE 向けに Azure 拡張を提供していますか。
+    choices:
+    - content: Eclipse
+      isCorrect: false
+      incorrectExplanation: Azure 開発に使用するツールはユーザーが選択します。Microsoft は、Eclipse、Visual Studio 2017、Visual Studio for Mac、Visual Studio Code 向けに Azure 統合を提供しています。
+    - content: Visual Studio
+      isCorrect: false
+      incorrectExplanation: Azure 開発に使用するツールはユーザーが選択します。Microsoft は、Eclipse、Visual Studio 2017、Visual Studio for Mac、Visual Studio Code 向けに Azure 統合を提供しています。
+    - content: Visual Studio Code
+      isCorrect: false
+      incorrectExplanation: Azure 開発に使用するツールはユーザーが選択します。Microsoft は、Eclipse、Visual Studio 2017、Visual Studio for Mac、Visual Studio Code 向けに Azure 統合を提供しています。
+    - content: 上記のすべて
+      isCorrect: true
+      correctExplanation: Azure 開発に使用するツールはユーザーが選択します。Microsoft は、Eclipse、Visual Studio 2017、Visual Studio for Mac、Visual Studio Code 向けに Azure 統合を提供しています。

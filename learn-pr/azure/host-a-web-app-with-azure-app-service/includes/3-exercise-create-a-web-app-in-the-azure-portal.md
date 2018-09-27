@@ -4,7 +4,7 @@
 
 ## <a name="create-a-web-app"></a>Web アプリを作成する
 
-サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. 左側のナビゲーションの上部にある **[リソースの作成]** リンクをクリックします。 Azure 上で作成するあらゆるものがリソースです。
 

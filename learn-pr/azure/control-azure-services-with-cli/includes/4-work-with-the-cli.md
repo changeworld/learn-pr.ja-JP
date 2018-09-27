@@ -49,7 +49,7 @@ az group create --name <name> --location <location>
 ```
 
 > [!IMPORTANT]
-> 無料の Azure Sandbox を使用する場合、リソース グループを作成する必要はありません。 代わりに、事前に作成したリソース グループを使用します。
+> 無料の Azure サンドボックスを使用する場合、リソース グループを作成する必要はありません。 代わりに、事前に作成したリソース グループを使用します。
 
 ### <a name="verify"></a>確認
 

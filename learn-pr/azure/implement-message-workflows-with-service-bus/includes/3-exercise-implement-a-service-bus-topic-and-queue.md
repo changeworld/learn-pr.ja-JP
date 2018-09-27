@@ -17,7 +17,7 @@ Azure Service Bus における名前空間とは、キュー、トピック、�
 
 Azure portal を使用して Service Bus 名前空間を作成するには、次の手順に従います。
 
-1. [Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. 左側のナビゲーションで、**[すべてのサービス]** をクリックします。
 

@@ -22,7 +22,6 @@ Contoso Shipping は、データがデータ センターからモバイル ア�
 
 転送中のデータを暗号化することで、外部のオブザーバーからデータが保護され、露出のリスクを制限しながらデータを転送するためのメカニズムが提供されます。 
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![転送中の暗号化](../media/encryption-in-transit.png)
 
 
@@ -32,7 +31,6 @@ Contoso Shipping は、データがデータ センターからモバイル ア�
 
 暗号化されている実際のデータは、その内容、使用状況、組織での重要性によって異なる場合があります。 企業に欠かせない財務情報、企業が発展させた知的財産、企業で格納されている顧客や従業員に関する個人データ、さらにはデータ自体の暗号化に使用されるキーやシークレットである場合があります。
 
-<!--TODO: replace with final media which was submitted for Design-for-security-in-azure -->
 ![保存時の暗号化](../media/encryption-at-rest.png)
 
 ## <a name="encryption-on-azure"></a>Azure での暗号化

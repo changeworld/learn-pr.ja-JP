@@ -47,7 +47,7 @@ Azure CLI には、Azure 内の仮想マシンを操作するための `vm` コ�
 新しい Linux 仮想マシンを作成してみます。 "米国西部" の場所に Debian Linux マシンを作成するには、Azure Cloud Shell で次のコマンドを実行します。 米国西部が近くではない場合は、場所を変更してください。
 
 ```azurecli
-az vm create --resource-group <rgn>[Sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
+az vm create --resource-group <rgn>[sandbox resource group name]</rgn> --name SampleVM --image Debian --admin-username aldis --generate-ssh-keys --location westus --verbose 
 ```
 
 [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]

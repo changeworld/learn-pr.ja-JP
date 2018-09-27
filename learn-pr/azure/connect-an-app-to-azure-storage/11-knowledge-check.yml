@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: 知識チェック
+metadata:
+  title: 知識チェック
+  description: 知識チェック
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512420"
+durationInMinutes: 3
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure ストレージ アカウントにアクセスするためにアクセス キーはいくつ提供されますか?
+    choices:
+    - content: "1"
+      isCorrect: false
+      incorrectExplanation: 各ストレージ アカウントには、アクセス キーが 2 つあります。 これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。
+    - content: "2"
+      isCorrect: true
+      correctExplanation: 各ストレージ アカウントには、アクセス キーが 2 つあります。 これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。
+    - content: "3"
+      isCorrect: false
+      incorrectExplanation: 各ストレージ アカウントには、アクセス キーが 2 つあります。 これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。
+    - content: "4"
+      isCorrect: false
+      incorrectExplanation: 各ストレージ アカウントには、アクセス キーが 2 つあります。 これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。
+  - content: ストレージ アカウントにプログラムを使用してアクセスするには、REST API または Azure クライアント ライブラリのいずれかを使用します。 クライアント ライブラリを使用する主な利点は何ですか?
+    choices:
+    - content: コスト
+      isCorrect: false
+      incorrectExplanation: クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。 クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。
+    - content: 可用性
+      isCorrect: false
+      incorrectExplanation: クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。 クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。
+    - content: ローカライズ
+      isCorrect: false
+      incorrectExplanation: クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。 クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。
+    - content: 利便性
+      isCorrect: true
+      correctExplanation: クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。 クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。
+  - content: ストレージ アカウントのアクセス キーの例えとして、より良いのは次のうちどちらでしょう?
+    choices:
+    - content: IP アドレス
+      isCorrect: false
+      incorrectExplanation: アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。 これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。
+    - content: REST エンドポイント
+      isCorrect: false
+      incorrectExplanation: アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。 これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。
+    - content: ユーザー名とパスワード
+      isCorrect: true
+      correctExplanation: アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。 これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。
+    - content: 暗号アルゴリズム
+      isCorrect: false
+      incorrectExplanation: アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。 これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。

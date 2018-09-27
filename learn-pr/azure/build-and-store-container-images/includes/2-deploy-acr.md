@@ -10,7 +10,7 @@
 この例では、Premium レジストリ SKU がデプロイされます。 Premium SKU は、geo レプリケーションに必要です。 次のコマンドを Cloud Shell エディターに貼り付けます。
 
 ```azurecli
-az acr create --resource-group <rgn>[Sandbox resource group name]</rgn> --name <acrName> --sku Premium
+az acr create --resource-group <rgn>[sandbox resource group name]</rgn> --name <acrName> --sku Premium
 ```
 
 新しい Azure コンテナー レジストリの出力例を次に示します。

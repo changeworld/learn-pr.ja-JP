@@ -34,7 +34,7 @@ az vm image list --publisher Microsoft --output table --all
 az vm image list --location eastus --output table
 ```
 
-その他の使用可能な Azure Sandbox の場所にあるイメージの一部をチェックするには、次を試行します。
+次の手順を行い、その他の使用可能な Azure サンドボックスの場所にあるイメージの一部をチェックしてみます。
 
 [!include[](../../../includes/azure-sandbox-regions-note.md)]
 

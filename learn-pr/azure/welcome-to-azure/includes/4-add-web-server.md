@@ -38,7 +38,7 @@ VM を構成するには、いくつかの選択肢があります。 直接接�
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name CustomScriptExtension \
       --publisher Microsoft.Compute \
@@ -46,7 +46,7 @@ VM を構成するには、いくつかの選択肢があります。 直接接�
       --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
     ```
 
-    Nginx を構成し、ホーム ページの内容を設定して、サービスを開始するプロセスは、完了するまでに数分かかります。
+    IIS を構成し、ホーム ページの内容を設定して、サービスを開始するプロセスは、完了するまでに数分かかります。
 
     それまで、別のブラウザー タブから、[PowerShell スクリプトを調べる](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-iis.ps1?azure-portal=true)こともできます。 このスクリプトにより、IIS がインストールされ、VM のコンピューター名 "myVM" と共にウェルカム メッセージを表示するようにホーム ページが構成されます。
 
@@ -55,7 +55,7 @@ VM を構成するには、いくつかの選択肢があります。 直接接�
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -68,7 +68,7 @@ VM を構成するには、いくつかの選択肢があります。 直接接�
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```
@@ -110,7 +110,7 @@ Nginx (発音は "エンジンエックス") は、UNIX、Linux、macOS、およ
 
     ```azurecli
     az vm extension set \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --vm-name myVM \
       --name customScript \
       --publisher Microsoft.Azure.Extensions \
@@ -118,7 +118,7 @@ Nginx (発音は "エンジンエックス") は、UNIX、Linux、macOS、およ
       --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
     ```
 
-    IIS を構成し、ホーム ページの内容を設定して、サービスを開始するプロセスは、完了するまでに数分かかります。
+    Nginx を構成し、ホーム ページの内容を設定して、サービスを開始するプロセスは、完了するまでに数分かかります。
 
     それまで、別のブラウザー タブから、[Bash スクリプトを調べる](https://gist.githubusercontent.com/tpetchel/26f9dab2628a80bf87a33caeed1b6ded/raw/69e5d9250b9dcd7e7eece4b0ea3c3a8cd1b4fcd7/configure-nginx.sh?azure-portal=true)こともできます。 このスクリプトにより、Nginx がインストールされ、VM のコンピューター名 "myVM" と共にウェルカム メッセージを表示するようにホーム ページが構成されます。
 
@@ -127,7 +127,7 @@ Nginx (発音は "エンジンエックス") は、UNIX、Linux、macOS、およ
     ```azurecli
     az vm open-port \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --port 80
     ```
 
@@ -140,7 +140,7 @@ Nginx (発音は "エンジンエックス") は、UNIX、Linux、macOS、およ
     ```azurecli
     az vm list-ip-addresses \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --query "[].virtualMachine.network.publicIpAddresses[0].ipAddress" \
       --output tsv
     ```

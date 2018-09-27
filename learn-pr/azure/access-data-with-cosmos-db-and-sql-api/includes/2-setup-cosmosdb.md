@@ -31,7 +31,7 @@ Azure サンドボックスでは既に Cloud Shell でお客様用のコンシ�
     ```
 ### <a name="setup-environment-variables"></a>環境変数を設定する
 
-1. いくつかの環境変数を設定すると、毎回共通の値を入力しないで済むようにできます。 まず、Azure Cosmos DB アカウントに名前を付けます。たとえば、「`export NAME="mycosmosdbaccount"`」とします。 このフィールドには小文字、数字、'-' 文字のみを含めることができます。文字数は 3 - 31 文字にする必要があります。
+1. いくつかの環境変数を設定すると、毎回共通の値を入力しないで済むようにできます。 まず、Azure Cosmos DB アカウントに名前を付けます。たとえば、「`export NAME="mycosmosdbaccount"`」とします。 このフィールドには小文字、数字、'-' 文字のみを含めることができます。文字数は 3 から 31 文字にする必要があります。
 
     ```azurecli
     export NAME="<Azure Cosmos DB account name>"
@@ -40,7 +40,7 @@ Azure サンドボックスでは既に Cloud Shell でお客様用のコンシ�
 1. 既存のサンドボックス リソース グループを使用するようにリソース グループを設定します。
 
     ```azurecli
-    export RESOURCE_GROUP="<rgn>[Sandbox resource group name]</rgn>"
+    export RESOURCE_GROUP="<rgn>[sandbox resource group name]</rgn>"
     ```
 
 1. 最も近いリージョンを選択し、`export LOCATION="EastUS"` など、環境変数を設定します。
@@ -62,7 +62,7 @@ Azure サンドボックスでは既に Cloud Shell でお客様用のコンシ�
 ご自分のサブスクリプションに Cosmos DB を作成する場合は、すべての関連リソースを保持するための新しいリソース グループを作成します。
 
 > [!IMPORTANT]
-> Microsoft Learn 提供の Azure サンドボックスを使用している場合は、この手順を実行する必要はありません。 代わりに、上の `RESOURCE_GROUP` 変数に **<rgn>[サンドボックス リソース グループ名]</rgn>** が設定されていることを確認します。
+> Microsoft Learn 提供の Azure サンドボックスを使用している場合は、この手順を行う必要はありません。 代わりに、上の `RESOURCE_GROUP` 変数に **<rgn>[サンドボックス リソース グループ名]</rgn>** が設定されていることを確認します。
 
 ご自分のサブスクリプションの場合は、次のコマンドを使用してリソース グループを作成します。 
 

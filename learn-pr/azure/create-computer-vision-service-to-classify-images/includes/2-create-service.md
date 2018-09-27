@@ -106,7 +106,7 @@ az cognitiveservices account create \
 --kind ComputerVision \
 --name ComputerVisionService \
 --sku S1 \
---resource-group <rgn>[Sandbox resource group name]</rgn> \
+--resource-group <rgn>[sandbox resource group name]</rgn> \
 --location [location]
 ```
 
@@ -126,7 +126,7 @@ az cognitiveservices account create \
     ```azurecli
     az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn>
+    --resource-group <rgn>[sandbox resource group name]</rgn>
     ```
     
     上のコマンドでは、特定のリソース グループによって所有されている **ComputerVisionService** という名前の Cognitive Services アカウントに関連付けられているキーが返されます。 2 つのキーが返されますが、1 つは予備のキーです。 キーは憶えにくいので、1 番目のキーを変数に格納し、API のすべての呼び出しにそれを使用します。
@@ -136,7 +136,7 @@ az cognitiveservices account create \
     ```azurecli
     key=$(az cognitiveservices account keys list \
     --name ComputerVisionService \
-    --resource-group <rgn>[Sandbox resource group name]</rgn> \
+    --resource-group <rgn>[sandbox resource group name]</rgn> \
     --query key1 -o tsv)
     ```
     

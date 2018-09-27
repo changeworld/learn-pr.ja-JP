@@ -5,7 +5,7 @@
 
 ## <a name="create-a-redis-cache-in-azure"></a>Azure で Redis Cache を作成する
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 1. **[リソースの作成]**、**[データベース]**、**[Redis Cache]** の順にクリックします。
 
@@ -23,10 +23,10 @@
 
 1. **リソース グループ:** リソース グループの <rgn>[サンドボックス リソース グループ名]</rgn> を選択します。
 
-1. **場所:** 通常は、顧客に近い場所 (この例では東海岸) を選択します。 ただし、Azure Sandbox では、リソースに対して特定のリージョンのみを選択できます。 次のいずれかの場所を選択してください。
-    
+1. **場所:** 通常は、顧客に近い場所 (この例では東海岸) を選択します。
+
     [!include[](../../../includes/azure-sandbox-regions-note-friendly.md)]
-        
+
 5. **価格レベル:** **[Basic C0]** を選択します。 これは使用できる最下位レベルです。 運用環境のアプリでは、より多くのデータを格納し、高いレベルを選択する必要があるクラスタリングなどの Premium 機能を利用する可能性があります。
 
 1. **[作成]** をクリックします。 Azure によって、自分の Redis Cache インスタンスが作成されデプロイされます。
@@ -49,32 +49,32 @@ Azure portal の**コンソール**機能を使用して、Redis Cache が作成
     ```console
     ping
     ```
-    
+
     ```output
     PONG
     ```
-    
+
     ```console
     set test one
     ```
-    
+
     ```output
     OK
     ```
-    
+
     ```console
     get test
     ```
-    
+
     ```output
     "one"
     ```
-    
+
 上部の階層リンク バーを使用するか、またはスクロールバーを使用してビューを左へスライドし、**[概要]** パネルに戻ります。
 
 ## <a name="retrieve-the-access-keys-and-host-name"></a>アクセス キーおよびホスト名を取得する
 
-1. **[設定]** > **[アクセス キー]** の順に選択します。 
+1. **[設定]** > **[アクセス キー]** の順に選択します。
 
 1. **プライマリ接続文字列 (StackExchange.Redis)** を安全な場所にコピーします。次の演習で必要になります。
 

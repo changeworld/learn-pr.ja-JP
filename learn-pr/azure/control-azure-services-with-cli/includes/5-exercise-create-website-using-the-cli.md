@@ -19,7 +19,7 @@
 1. Azure で開発を行っていると、複数のリソース グループができることがあります。 グループ リスト内に複数のアイテムがある場合は、`--query` オプションを追加することで、返される値をフィルター処理できます。 次のコマンドを試してください。
 
     ```azurecli
-    az group list --query "[?name == '<rgn>[Sandbox resource group name]</rgn>']"
+    az group list --query "[?name == '<rgn>[sandbox resource group name]</rgn>']"
     ```
 
     クエリは、JSON 要求のための標準クエリ言語である **JMESPath** を使用して書式設定されます。 この強力なフィルター言語の詳細については、<http://jmespath.org/> を参照してください。 **Azure CLI を使用した VM の管理**に関するモジュールでもクエリの詳細を説明しています。
@@ -38,7 +38,7 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note.md)]
 
     ```azurecli
-    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --location <location>
+    az appservice plan create --name popupappplan-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --location <location>
     ```
 
     このコマンドは、完了までに数分かかる場合があります。
@@ -56,7 +56,7 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
 1. Web アプリをプラン作成し、前に作成したプランの名前を指定します。 **プランと同じようにアプリ名も一意でなければならない**ので、名前がグローバルに一意となるように、`<unique>` マーカーを何らかのテキストに置換します。
 
     ```azurecli
-    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --plan popupappplan-<unique>
+    az webapp create --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --plan popupappplan-<unique>
     ```
 
 1. テーブルにご利用のすべてのアプリを一覧表示して、アプリが正常に作成されたことを確認します。
@@ -78,7 +78,7 @@ Azure App Service を使用して Web アプリを実行すると、アプリで
 1. 最後の手順では、GitHub リポジトリから Web アプリにコードをデプロイします。 Azure Samples Github リポジトリ内で提供されているシンプルな PHP ページを使用してみましょう。実行すると、 "HelloWorld!" と表示されます。 自分で作成した Web アプリ名を必ず使用します。
 
     ```azurecli
-    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[Sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
+    az webapp deployment source config --name popupwebapp-<unique> --resource-group <rgn>[sandbox resource group name]</rgn> --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
     ```
 
 1. デプロイされたら、ブラウザーまたは CURL でサイトを再表示します。

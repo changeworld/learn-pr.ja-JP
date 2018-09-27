@@ -1,8 +1,8 @@
-このユニットでは、Azure portal ユーザー インターフェイス (UI) のブレードの操作方法について学習します。 自分のアカウントを使用したり (アカウントをすでに所有しているか、アカウントを作成した場合)、無料の Azure Sandbox を使用したりすることができます。
+このユニットでは、Azure portal ユーザー インターフェイス (UI) のブレードの操作方法について学習します。 (アカウントを既に所有しているか、アカウントを作成した場合は) 自分のアカウントを使用したり、無料の Azure サンドボックスを使用したりすることができます。
 
-アカウントを所有している（または作成した）場合は、アカウントの資格情報を使用して [Azure portal](https://portal.azure.com?azure-portal=true) にサインインしてください
+アカウントを所有している (または作成した) 場合は、アカウントの資格情報を使用して [Azure portal](https://portal.azure.com?azure-portal=true) にサインインしてください
 
-それ以外の場合は、**上述の Azure Sandbox をアクティブ化**し、サンドボックスをアクティブ化したときと同じアカウントを使用して、[サンドボックスの Azure portal](https://portal.azure.com/triplecrownlabs.onmicrosoft.com?azure-portal=true) にサインインします。
+それ以外の場合は、**上述の Azure サンドボックスをアクティブ化**し、サンドボックスをアクティブ化したときと同じアカウントを使用して、[サンドボックスの Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
 
 ## <a name="working-with-blades"></a>ブレードの使用
 

@@ -96,7 +96,7 @@ Azure portal、Azure CLI、Azure PowerShell などの Azure 管理インター�
 
 通常は、まず、作成する必要があるすべてのものを保持する "_リソース グループ_" を作成します。 これにより、ソリューションを構成する VM、ディスク、ネットワーク インターフェイスなどのすべての要素を 1 つのユニットとして管理できます。 リソース グループは、Azure CLI で `az group create` コマンドを使用して作成できます。 このコマンドには、リソース グループにサブスクリプション内で一意の名前を付ける `--name` と、リソースを既定で配置する場所を Azure に指示する `--location` が必要です。
 
-ここでは無料の Azure サンドボックス環境を使用しているので、この手順を実行する必要はありません。代わりに、作成済みのリソース グループ **<rgn>[リソース グループ名]</rgn>**  を使用します。
+ここでは無料の Azure サンドボックス環境を使用しているので、この手順を行う必要はありません。代わりに、作成済みのリソース グループ **<rgn>[リソース グループ名]</rgn>** を使用します。
 
 ## <a name="choosing-a-location"></a>場所の選択
 
@@ -114,7 +114,7 @@ Windows VM を稼働させてみましょう。
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image Win2016Datacenter \
       --size Standard_DS2_v2 \
       --location eastus \
@@ -172,7 +172,7 @@ Linux VM を稼働させてみましょう。
     ```azurecli
     az vm create \
       --name myVM \
-      --resource-group <rgn>[Sandbox resource group name]</rgn> \
+      --resource-group <rgn>[sandbox resource group name]</rgn> \
       --image UbuntuLTS \
       --location eastus \
       --size Standard_DS2_v2 \
