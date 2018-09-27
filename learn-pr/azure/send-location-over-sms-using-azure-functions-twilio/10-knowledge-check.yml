@@ -1,0 +1,52 @@
+### YamlMime:ModuleUnit
+uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.10-knowledge-check
+title: <span data-ttu-id="c4018-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="c4018-101">Knowledge Check</span></span>
+metadata:
+  title: <span data-ttu-id="c4018-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="c4018-102">Summary and clean-up</span></span>
+  description: <span data-ttu-id="c4018-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="c4018-103">Knowledge Check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: fb8021f1b3e30929c1ed44ed71123eb31d660d90
+  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/23/2018
+  ms.locfileid: "46704476"
+durationInMinutes: 2
+content: >
+  [!include[](includes/10-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="c4018-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="c4018-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="c4018-105">どのような種類の Azure Functions トリガーを使用すれば、ご利用の関数を HTTP 要求によって呼び出すことができますか?</span><span class="sxs-lookup"><span data-stu-id="c4018-105">What type of Azure Functions trigger allows your function to be invoked by an HTTP request?</span></span>
+    choices:
+    - content: <span data-ttu-id="c4018-106">HTTP トリガー</span><span class="sxs-lookup"><span data-stu-id="c4018-106">HTTP Trigger</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c4018-107">HTTP 要求から関数を呼び出すには、HTTP トリガーを使用します。</span><span class="sxs-lookup"><span data-stu-id="c4018-107">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+    - content: <span data-ttu-id="c4018-108">イベント ハブ トリガー</span><span class="sxs-lookup"><span data-stu-id="c4018-108">Event Hub Trigger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c4018-109">HTTP 要求から関数を呼び出すには、HTTP トリガーを使用します。</span><span class="sxs-lookup"><span data-stu-id="c4018-109">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+    - content: <span data-ttu-id="c4018-110">キュー トリガー</span><span class="sxs-lookup"><span data-stu-id="c4018-110">Queue Trigger</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="c4018-111">HTTP 要求から関数を呼び出すには、HTTP トリガーを使用します。</span><span class="sxs-lookup"><span data-stu-id="c4018-111">HTTP triggers are used to invoke functions from HTTP requests.</span></span>
+  - content: <span data-ttu-id="c4018-112">ご利用の関数を Twilio にバインドして SMS メッセージを送信するにはどうすればよいですか?</span><span class="sxs-lookup"><span data-stu-id="c4018-112">How do you bind your function to Twilio to send SMS messages?</span></span>
+    choices:
+    - content: <span data-ttu-id="c4018-113">SMS メッセージを関数の戻り値として返す</span><span class="sxs-lookup"><span data-stu-id="c4018-113">By returning the SMS messages as the return value of the Function</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="c4018-114">関数のパラメーター</span><span class="sxs-lookup"><span data-stu-id="c4018-114">A function parameter</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c4018-115">`[TwilioSms]` 属性で修飾されたパラメーターとして関数に渡されるコレクションに SMS メッセージを追加します。</span><span class="sxs-lookup"><span data-stu-id="c4018-115">SMS messages are added to a collection passed to the function as a parameter decorated with the `[TwilioSms]` attribute.</span></span> <span data-ttu-id="c4018-116">関数から制御が戻ると、関数のランタイムによって Twilio にこれらのメッセージが送信されます。</span><span class="sxs-lookup"><span data-stu-id="c4018-116">The Function's runtime will send these messages to Twilio once the function returns.</span></span>
+    - content: <span data-ttu-id="c4018-117">Twilio API の直接呼び出し</span><span class="sxs-lookup"><span data-stu-id="c4018-117">Direct call to the Twilio API</span></span>
+      isCorrect: false
+  - content: <span data-ttu-id="c4018-118">ご利用の関数をローカルで実行する場合、ご自分の Twilio アカウント SID と認証トークンをどこで定義しますか?</span><span class="sxs-lookup"><span data-stu-id="c4018-118">Where do you define your Twilio Account SID and Auth token when running your function locally?</span></span>
+    choices:
+    - content: <span data-ttu-id="c4018-119">`local.settings.json` ファイル内。</span><span class="sxs-lookup"><span data-stu-id="c4018-119">In the `local.settings.json` file.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="c4018-120">Azure に発行する場合は使用されず、ローカルで実行する場合にのみ使用されるローカル設定を格納するには、`local.settings.json` ファイルが使用されます。</span><span class="sxs-lookup"><span data-stu-id="c4018-120">The `local.settings.json` file is used to store local settings that are only used when running locally, not when published to Azure.</span></span> <span data-ttu-id="c4018-121">そのファイルに秘密キーが含まれていて、ご利用のリポジトリがパブリックである場合は、そのファイルをソース コード管理にチェックインすることがないように気を付けてください。</span><span class="sxs-lookup"><span data-stu-id="c4018-121">Be careful to not check this into source code control if it contains private keys and your repo is public.</span></span>
+    - content: <span data-ttu-id="c4018-122">`[TwilioSms]` 属性内</span><span class="sxs-lookup"><span data-stu-id="c4018-122">In the `[TwilioSms]` attribute</span></span>
+      isCorrect: false
+    - content: <span data-ttu-id="c4018-123">Azure に発行されるアプリケーション設定</span><span class="sxs-lookup"><span data-stu-id="c4018-123">Application settings published to Azure</span></span>
+      isCorrect: false

@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.monitor-manage-device-with-iotcentral.6-knowledge-check
+metadata:
+  title: <span data-ttu-id="7a38e-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="7a38e-101">Knowledge check</span></span>
+  description: <span data-ttu-id="7a38e-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="7a38e-102">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 52f6c98fc185520a51d13dc2b059f4ce17b05c35
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570758"
+title: <span data-ttu-id="7a38e-103">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="7a38e-103">Check your knowledge</span></span>
+durationInMinutes: 11
+content: >
+  [!include[](includes/6-knowledge-check.md)]
+quiz:
+  title: <span data-ttu-id="7a38e-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="7a38e-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="7a38e-105">デバイス テンプレートの情報の説明として最も適切な文を選択してください。</span><span class="sxs-lookup"><span data-stu-id="7a38e-105">Which statement best describes the information in a device template?</span></span>
+    choices:
+    - content: <span data-ttu-id="7a38e-106">アプリケーションに接続されているデバイスのハードウェア仕様。</span><span class="sxs-lookup"><span data-stu-id="7a38e-106">The hardware specification of a device connected to your application.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a38e-107">デバイス テンプレートにハードウェアの詳細はキャプチャされません。</span><span class="sxs-lookup"><span data-stu-id="7a38e-107">Hardware details are not captured by a device template.</span></span>
+    - content: <span data-ttu-id="7a38e-108">デバイスがアプリケーションと交換できるデータとコマンド。</span><span class="sxs-lookup"><span data-stu-id="7a38e-108">The data and commands a device can exchange with your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a38e-109">テンプレートは、コードと物理デバイスの間で交換できる可能性があるすべての情報とコマンドをキャプチャする仕様です。</span><span class="sxs-lookup"><span data-stu-id="7a38e-109">The template is a specification that captures all the potential information and commands that can be exchanged between your code and the physical device.</span></span>
+    - content: <span data-ttu-id="7a38e-110">デバイスとの通信に使用される通信プロトコル。</span><span class="sxs-lookup"><span data-stu-id="7a38e-110">The over-the-wire protocol used to communicate with a device.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a38e-111">通信プロトコルはデバイス テンプレートの一部ではありません。</span><span class="sxs-lookup"><span data-stu-id="7a38e-111">The communication protocol is not part of a device template.</span></span>
+  - content: '<span data-ttu-id="7a38e-112">正誤問題: IoT Central アプリケーションのテストには物理デバイスが必要です。</span><span class="sxs-lookup"><span data-stu-id="7a38e-112">True or false: you must have a physical device to test your IoT Central application.</span></span>'
+    choices:
+    - content: <span data-ttu-id="7a38e-113">○</span><span class="sxs-lookup"><span data-stu-id="7a38e-113">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a38e-114">テストにはシミュレートされたデバイスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="7a38e-114">You can use simulated devices for testing.</span></span>
+    - content: <span data-ttu-id="7a38e-115">×</span><span class="sxs-lookup"><span data-stu-id="7a38e-115">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a38e-116">デバイス テンプレートを作成すると、シミュレートされたデバイスが IoT Central によって自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="7a38e-116">IoT Central automatically creates a simulated device for you when you create a device template.</span></span> <span data-ttu-id="7a38e-117">カスタム ソフトウェア シミュレーションのコードを書くこともできます。</span><span class="sxs-lookup"><span data-stu-id="7a38e-117">You can also code custom software simulations.</span></span> <span data-ttu-id="7a38e-118">このような方法を選択すると、物理デバイスを接続する前にアプリケーションを徹底的にテストできます。</span><span class="sxs-lookup"><span data-stu-id="7a38e-118">These options let you thoroughly test your application before connecting a physical device.</span></span>
+  - content: <span data-ttu-id="7a38e-119">あなたは、IoT Central と通信している 5 台の物理デバイスを持っているとします。</span><span class="sxs-lookup"><span data-stu-id="7a38e-119">Suppose you have five physical devices communicating with IoT Central.</span></span> <span data-ttu-id="7a38e-120">接続文字列はいくつありますか。</span><span class="sxs-lookup"><span data-stu-id="7a38e-120">How many connection strings would you have?</span></span>
+    choices:
+    - content: '<span data-ttu-id="7a38e-121">1: 接続文字列は、接続されているすべてのデバイスで共有されます。</span><span class="sxs-lookup"><span data-stu-id="7a38e-121">One: the connection string is shared by all connected devices.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a38e-122">共有された接続文字列では、IoT Central が各デバイスを一意に識別できません。</span><span class="sxs-lookup"><span data-stu-id="7a38e-122">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="7a38e-123">2: 1 つはアクティブに使用され、もう 1 つはプライマリが侵害された場合に備えたバックアップ。</span><span class="sxs-lookup"><span data-stu-id="7a38e-123">Two: one in active use and one backup in case the primary is compromised.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7a38e-124">共有された接続文字列では、IoT Central が各デバイスを一意に識別できません。</span><span class="sxs-lookup"><span data-stu-id="7a38e-124">Shared connection strings would not allow IoT Central to uniquely identify each device.</span></span>
+    - content: '<span data-ttu-id="7a38e-125">5: すべてのデバイスに一意の接続文字列が必要です。</span><span class="sxs-lookup"><span data-stu-id="7a38e-125">Five: every device needs a unique connection string.</span></span>'
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7a38e-126">IoT Central では接続文字列によってデバイスが識別されるため、各デバイスに固有の接続文字列が必要です。</span><span class="sxs-lookup"><span data-stu-id="7a38e-126">The connection string identifies the device to IoT Central, so each device needs its own.</span></span>

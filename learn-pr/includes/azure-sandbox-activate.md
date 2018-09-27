@@ -1,2 +1,2 @@
 > [!NOTE]
-> <span data-ttu-id="80b4f-101">必ず Sandbox を有効にしてからこれらの指示に進んでください。</span><span class="sxs-lookup"><span data-stu-id="80b4f-101">Make sure you have activated the Sandbox before proceeding with these instructions.</span></span>
+> <span data-ttu-id="57acc-101">必ずサンドボックスを有効にしてからこの指示を進めてください。</span><span class="sxs-lookup"><span data-stu-id="57acc-101">Make sure you have activated the sandbox before proceeding with these instructions.</span></span>

@@ -1,0 +1,53 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-containers.5-knowledge-check
+title: <span data-ttu-id="a7cf3-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="a7cf3-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="a7cf3-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="a7cf3-102">Knowledge check</span></span>
+  description: <span data-ttu-id="a7cf3-103">コンテナーの概要に関する知識チェック</span><span class="sxs-lookup"><span data-stu-id="a7cf3-103">Introduction to containers knowledge check.</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 74497f66a4e10fa17f5b6eee5e8fdb31e6bf806b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570659"
+durationInMinutes: 2
+quiz:
+  title: <span data-ttu-id="a7cf3-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="a7cf3-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="a7cf3-105">コンテナーを導入する利点として、次の中で正しくないのはどれですか?</span><span class="sxs-lookup"><span data-stu-id="a7cf3-105">Which of the following is not a benefit of container adoption?</span></span>
+    choices:
+    - content: <span data-ttu-id="a7cf3-106">起動時間が速い。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-106">Fast start times.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a7cf3-107">コンテナーは、仮想システムまたは物理システムよりも大幅に速く起動することができます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-107">Containers can start significantly faster than virtual or physical systems.</span></span>
+    - content: <span data-ttu-id="a7cf3-108">ホスト リソースの効率的な使用。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-108">Efficient use of host resource.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a7cf3-109">イメージ アーキテクチャが共有されているため、ホスト リソースを効率的に利用しながら、単一のホスト上で複数のコンテナーを実行できます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-109">Due to a shared image architecture, multiple containers can run on a single host, while efficiently utilizing host resources.</span></span>
+    - content: <span data-ttu-id="a7cf3-110">組み込みのディザスター リカバリー。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-110">Built-in disaster recovery.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a7cf3-111">本質的にコンテナーによってディザスター リカバリー手順は変更されません。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-111">Containers don't inherently change disaster recovery procedures.</span></span>
+    - content: <span data-ttu-id="a7cf3-112">クラウドネイティブ アプリケーション アーキテクチャが使用できるようになる。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-112">Enables cloud-native application architecture.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a7cf3-113">コンテナーは最新のアーキテクチャまたはクラウドネイティブ アーキテクチャを使用したアプリケーションの開発に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-113">Containers can help to develop applications with a modern or cloud-native architecture.</span></span>
+  - content: <span data-ttu-id="a7cf3-114">すべてのコンテナー インスタンス (停止状態および実行中) を表示するためのコマンドとは?</span><span class="sxs-lookup"><span data-stu-id="a7cf3-114">What command will show all container instances (stopped and running)?</span></span>
+    choices:
+    - content: <span data-ttu-id="a7cf3-115">docker ps</span><span class="sxs-lookup"><span data-stu-id="a7cf3-115">docker ps</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a7cf3-116">このコマンドでは、実行中のコンテナーのみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-116">This command will only show running containers.</span></span>
+    - content: <span data-ttu-id="a7cf3-117">docker イメージ</span><span class="sxs-lookup"><span data-stu-id="a7cf3-117">docker images</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a7cf3-118">このコマンドではコンテナー イメージがリストされます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-118">This command lists container images.</span></span>
+    - content: <span data-ttu-id="a7cf3-119">docker ps -a</span><span class="sxs-lookup"><span data-stu-id="a7cf3-119">docker ps -a</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a7cf3-120">このコマンドでは、実行中のコンテナーと停止状態のコンテナーがすべてリストされます。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-120">This command will list all running and stopped containers.</span></span>
+  - content: '<span data-ttu-id="a7cf3-121">True または false: 運用環境では、Dockerfile を使用してコンテナー イメージの作成を自動化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-121">True or false: in production environments, container image creation should be automated with a Dockerfile.</span></span>'
+    choices:
+    - content: <span data-ttu-id="a7cf3-122">True</span><span class="sxs-lookup"><span data-stu-id="a7cf3-122">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a7cf3-123">イメージは手動で作成するより、自動化した方が速く、簡単に繰り返せて、間違いが減ります。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-123">Automation is faster, easily repeatable, and less error prone than manual image creation.</span></span> <span data-ttu-id="a7cf3-124">ベスト プラクティスとしては、コンテナーの運用環境では自動化をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a7cf3-124">Best practice recommends using automation in production container environments.</span></span>
+    - content: <span data-ttu-id="a7cf3-125">False</span><span class="sxs-lookup"><span data-stu-id="a7cf3-125">False</span></span>
+      isCorrect: false

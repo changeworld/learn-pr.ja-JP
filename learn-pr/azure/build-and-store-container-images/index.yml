@@ -8,20 +8,20 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 05ad4bd74daca52f54c22b0e7f7f5930f08efd4a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 47da847927a7dfed757aca1ce0c9f3fa91bb9ab5
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350231"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567410"
 title: Azure Container Registry を使用してコンテナー イメージをビルドして保存する
 summary: Azure Container Registry は、オープンソースの Docker Registry 2.0 に基づくマネージド Docker レジストリ サービスです。 Container Registry は Azure でプライベートにホストされており、あらゆる種類のコンテナー展開用にイメージをビルド、格納、管理できます。 Azure Container Registry を使用してコンテナー イメージをビルドして保存する方法について説明します。
 abstract: >
   このモジュールでは、次のことを行います。
 
-  - Azure コンテナー レジストリを展開する
+  - Azure コンテナー レジストリをデプロイする
 
-  - Azure Container Registry Build を使用してコンテナー イメージをビルドする
+  - Azure Container Registry Tasks を使用してコンテナー イメージをビルドする
 
   - コンテナーを Azure コンテナー インスタンスにデプロイする
 

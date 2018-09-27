@@ -1,0 +1,63 @@
+### YamlMime:ModuleUnit
+uid: learn.connect-app-to-azure-storage.11-knowledge-check
+title: <span data-ttu-id="14eed-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="14eed-101">Knowledge check</span></span>
+metadata:
+  title: <span data-ttu-id="14eed-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="14eed-102">Knowledge check</span></span>
+  description: <span data-ttu-id="14eed-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="14eed-103">Knowledge check</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 02ccb3234d9a6b89ac6ddbc34f3e4e23b1d1d514
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512420"
+durationInMinutes: 3
+quiz:
+  title: <span data-ttu-id="14eed-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="14eed-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="14eed-105">Azure ストレージ アカウントにアクセスするためにアクセス キーはいくつ提供されますか?</span><span class="sxs-lookup"><span data-stu-id="14eed-105">How many access keys are provided for accessing your Azure storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="14eed-106">1</span><span class="sxs-lookup"><span data-stu-id="14eed-106">1</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-107">各ストレージ アカウントには、アクセス キーが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="14eed-107">Each storage account has two access keys.</span></span> <span data-ttu-id="14eed-108">これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="14eed-108">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="14eed-109">2</span><span class="sxs-lookup"><span data-stu-id="14eed-109">2</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="14eed-110">各ストレージ アカウントには、アクセス キーが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="14eed-110">Each storage account has two access keys.</span></span> <span data-ttu-id="14eed-111">これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="14eed-111">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="14eed-112">3</span><span class="sxs-lookup"><span data-stu-id="14eed-112">3</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-113">各ストレージ アカウントには、アクセス キーが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="14eed-113">Each storage account has two access keys.</span></span> <span data-ttu-id="14eed-114">これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="14eed-114">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+    - content: <span data-ttu-id="14eed-115">4</span><span class="sxs-lookup"><span data-stu-id="14eed-115">4</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-116">各ストレージ アカウントには、アクセス キーが 2 つあります。</span><span class="sxs-lookup"><span data-stu-id="14eed-116">Each storage account has two access keys.</span></span> <span data-ttu-id="14eed-117">これにより、ベスト プラクティスのガイドラインに従って、ダウンタイムを発生させずに、アプリケーションで使用されるキーを定期的に交換することが可能になります。</span><span class="sxs-lookup"><span data-stu-id="14eed-117">This lets you follow the best-practice guideline of periodically replacing the key used by your applications without incurring downtime.</span></span>
+  - content: <span data-ttu-id="14eed-118">ストレージ アカウントにプログラムを使用してアクセスするには、REST API または Azure クライアント ライブラリのいずれかを使用します。</span><span class="sxs-lookup"><span data-stu-id="14eed-118">You can use either the REST API or the Azure client library to programmatically access a storage account.</span></span> <span data-ttu-id="14eed-119">クライアント ライブラリを使用する主な利点は何ですか?</span><span class="sxs-lookup"><span data-stu-id="14eed-119">What is the primary advantage of using the client library?</span></span>
+    choices:
+    - content: <span data-ttu-id="14eed-120">コスト</span><span class="sxs-lookup"><span data-stu-id="14eed-120">Cost</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-121">クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。</span><span class="sxs-lookup"><span data-stu-id="14eed-121">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="14eed-122">クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。</span><span class="sxs-lookup"><span data-stu-id="14eed-122">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="14eed-123">可用性</span><span class="sxs-lookup"><span data-stu-id="14eed-123">Availability</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-124">クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。</span><span class="sxs-lookup"><span data-stu-id="14eed-124">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="14eed-125">クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。</span><span class="sxs-lookup"><span data-stu-id="14eed-125">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="14eed-126">ローカライズ</span><span class="sxs-lookup"><span data-stu-id="14eed-126">Localization</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-127">クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。</span><span class="sxs-lookup"><span data-stu-id="14eed-127">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="14eed-128">クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。</span><span class="sxs-lookup"><span data-stu-id="14eed-128">The client library handles assembling requests and parsing responses for you.</span></span>
+    - content: <span data-ttu-id="14eed-129">利便性</span><span class="sxs-lookup"><span data-stu-id="14eed-129">Convenience</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="14eed-130">クライアント ライブラリを使用するコードは、REST API を使用するコードよりも、一般的にはるかに短くシンプルです。</span><span class="sxs-lookup"><span data-stu-id="14eed-130">Code that uses the client library is generally much shorter and simpler than code that uses the REST API.</span></span> <span data-ttu-id="14eed-131">クライアント ライブラリは、ユーザーのために要求のアセンブルと応答の解析を実行します。</span><span class="sxs-lookup"><span data-stu-id="14eed-131">The client library handles assembling requests and parsing responses for you.</span></span>
+  - content: <span data-ttu-id="14eed-132">ストレージ アカウントのアクセス キーの例えとして、より良いのは次のうちどちらでしょう?</span><span class="sxs-lookup"><span data-stu-id="14eed-132">Which of the following is a good analogy for the access keys of a storage account?</span></span>
+    choices:
+    - content: <span data-ttu-id="14eed-133">IP アドレス</span><span class="sxs-lookup"><span data-stu-id="14eed-133">IP Address</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-134">アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。</span><span class="sxs-lookup"><span data-stu-id="14eed-134">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="14eed-135">これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。</span><span class="sxs-lookup"><span data-stu-id="14eed-135">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="14eed-136">REST エンドポイント</span><span class="sxs-lookup"><span data-stu-id="14eed-136">REST Endpoint</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-137">アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。</span><span class="sxs-lookup"><span data-stu-id="14eed-137">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="14eed-138">これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。</span><span class="sxs-lookup"><span data-stu-id="14eed-138">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="14eed-139">ユーザー名とパスワード</span><span class="sxs-lookup"><span data-stu-id="14eed-139">Username and password</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="14eed-140">アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。</span><span class="sxs-lookup"><span data-stu-id="14eed-140">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="14eed-141">これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。</span><span class="sxs-lookup"><span data-stu-id="14eed-141">This is very similar to login credentials like a username and password.</span></span>
+    - content: <span data-ttu-id="14eed-142">暗号アルゴリズム</span><span class="sxs-lookup"><span data-stu-id="14eed-142">Cryptographic algorithm</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="14eed-143">アクセス キーを保持していると、アカウントが識別され、アクセス許可がユーザーに付与されます。</span><span class="sxs-lookup"><span data-stu-id="14eed-143">Possession of an access key identifies the account and grants you access.</span></span> <span data-ttu-id="14eed-144">これは、ユーザー名やパスワードなどのログイン資格情報ととてもよく似ています。</span><span class="sxs-lookup"><span data-stu-id="14eed-144">This is very similar to login credentials like a username and password.</span></span>

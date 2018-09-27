@@ -9,12 +9,12 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: ea68e439f14baac1b274c1f235c5c2d317227a09
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.openlocfilehash: a8301134448063a316cce153377b039b557f1a81
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483168"
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46567383"
 title: Azure Cosmos DB の NoSQL データを扱う
 summary: NoSQL データは、リレーショナル SQL Database の要件に対応していない情報を格納する効率的な方法です。 Azure portal、Visual Studio Code 用の Azure Cosmos DB 拡張機能、および Azure Cosmos DB .NET Core SDK を使用して、目的の場所で NoSQL データを使用する方法、および世界のどこにいてもユーザーに高可用性を提供する方法について学習します。
 prerequisites: >

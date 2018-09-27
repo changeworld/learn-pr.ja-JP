@@ -1,0 +1,48 @@
+### YamlMime:Module
+uid: learn.prepare-azure-dev-environment
+metadata:
+  title: Azure 開発用の開発環境を準備する
+  description: いくつかの一般的な IDE を使用して、ローカル開発環境を設定します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9711da5b1f347ce5a24206f30e5d2a279182d81a
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570406"
+title: Azure 開発用の開発環境を準備する
+summary: いくつかの一般的な IDE を使用して、ローカル開発環境を設定します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Visual Studio Code を設定する
+
+  - Visual Studio を設定する
+
+  - Java 開発用に Eclipse を設定する
+
+  - Azure 開発用に IDE を準備する
+prerequisites: なし
+iconUrl: /learn/achievements/prepare-your-dev-environment-for-azure-development.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- vs-code
+- azure-sdks
+units:
+- learn.prepare-azure-dev-environment.1-introduction
+- learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.3-exercise-set-up-visual-studio-code
+- learn.prepare-azure-dev-environment.4-set-up-visual-studio
+- learn.prepare-azure-dev-environment.5-exercise-set-up-visual-studio
+- learn.prepare-azure-dev-environment.6-set-up-eclipse-ide-for-java-developers
+- learn.prepare-azure-dev-environment.7-exercise-set-up-eclipse
+- learn.prepare-azure-dev-environment.8-summary
+achievement: learn.prepare-azure-dev-environment.badge

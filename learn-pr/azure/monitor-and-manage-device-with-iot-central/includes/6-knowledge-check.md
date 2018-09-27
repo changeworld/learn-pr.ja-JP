@@ -1,0 +1,7 @@
+<span data-ttu-id="a9256-101">Azure IoT Central を使用すると、IoT ソリューションの接続、監視、および管理が簡単になります。</span><span class="sxs-lookup"><span data-stu-id="a9256-101">Azure IoT Central makes it easy to connect, monitor and manage your IoT solutions.</span></span> <span data-ttu-id="a9256-102">このモジュールでは、マシンにメンテナンスの問題が発生したときに監視や管理を行うために、リモートのコーヒー マシンを Azure IoT Central に接続するというエンドツーエンドのシナリオを作成しました。</span><span class="sxs-lookup"><span data-stu-id="a9256-102">In this module, you created an end-to-end scenario of connecting a remote coffee machine to Azure IoT Central to monitor and manage the machine as maintenance issues arise.</span></span>
+
+## <a name="further-reading"></a><span data-ttu-id="a9256-103">参考資料</span><span class="sxs-lookup"><span data-stu-id="a9256-103">Further reading</span></span>
+
+- [<span data-ttu-id="a9256-104">Azure IoT Central とは</span><span class="sxs-lookup"><span data-stu-id="a9256-104">What is Azure IoT Central?</span></span>](https://docs.microsoft.com/azure/iot-central/overview-iot-central)
+- [<span data-ttu-id="a9256-105">ツアー: Azure IoT Central の UI</span><span class="sxs-lookup"><span data-stu-id="a9256-105">Take a tour of the Azure IoT Central UI</span></span>](https://docs.microsoft.com/azure/iot-central/overview-iot-central-tour)
+- [<span data-ttu-id="a9256-106">Microsoft Flow 内で IoT Central コネクタを使用してワークフローを作成する</span><span class="sxs-lookup"><span data-stu-id="a9256-106">Build workflows with the IoT Central connector in Microsoft Flow</span></span>](https://docs.microsoft.com/azure/iot-central/howto-add-microsoft-flow)

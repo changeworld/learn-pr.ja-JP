@@ -1,0 +1,44 @@
+### YamlMime:Module
+uid: learn.intro-to-containers
+metadata:
+  title: コンテナーの概要
+  description: Docker コンテナーの作成および使用について説明します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 03b59331fb27812cd4f54e14b8ac5124a221995b
+  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/22/2018
+  ms.locfileid: "46570534"
+title: コンテナーの概要
+summary: Docker コンテナーの作成および使用について説明します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Docker コンテナーを実行している Web サーバーをホストする
+
+  - コンテナーを実行、一覧表示、および削除する一般的な方法を練習する
+
+  - 独自のコンテナー イメージを作成し、そのイメージを Docker Hub に発行する
+prerequisites: なし
+iconUrl: /learn/achievements/intro-to-containers.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-container-instances
+- azure-container-registry
+units:
+- learn.intro-to-containers.1-introduction
+- learn.intro-to-containers.2-create-a-container
+- learn.intro-to-containers.3-basic-operations
+- learn.intro-to-containers.4-container-images
+- learn.intro-to-containers.5-knowledge-check
+- learn.intro-to-containers.6-summary
+achievement: learn.intro-to-containers.badge

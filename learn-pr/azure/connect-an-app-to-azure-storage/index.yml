@@ -1,0 +1,50 @@
+### YamlMime:Module
+uid: learn.connect-app-to-azure-storage
+metadata:
+  title: Azure Storage へのアプリの接続
+  description: シンプルなアプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 031ad75cc74aced06988ddc392886cf22e1f757e
+  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/21/2018
+  ms.locfileid: "46512228"
+title: Azure Storage へのアプリの接続
+summary: シンプルなアプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - Azure ストレージ アカウントによってサポートされるデータ型とサービスを調べる。
+
+  - Azure portal を使用して新しい Azure ストレージ アカウントを作成する。
+
+  - 新しいアプリケーションを作成し、アプリを Azure Storage アカウントに接続する。
+prerequisites: C# や Javascript のいずれかのプログラミング経験が多少あること
+iconUrl: /learn/achievements/connect-an-app-to-azure-storage.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- azure-storage
+- azure-cloud-shell
+units:
+- learn.connect-app-to-azure-storage.1-introduction
+- learn.connect-app-to-azure-storage.2-explore-azure-storage
+- learn.connect-app-to-azure-storage.3-exercise-create-your-app
+- learn.connect-app-to-azure-storage.4-exercise-create-storage-account
+- learn.connect-app-to-azure-storage.5-interact-with-azure-storage-apis
+- learn.connect-app-to-azure-storage.6-exercise-add-the-azure-storage-lib
+- learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
+- learn.connect-app-to-azure-storage.8-exercise-add-azure-storage-configuration-to-your-app
+- learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
+- learn.connect-app-to-azure-storage.10-exercise-connect-with-your-azure-storage-configuration
+- learn.connect-app-to-azure-storage.11-knowledge-check
+- learn.connect-app-to-azure-storage.12-summary
+achievement: learn.connect-app-to-azure-storage.badge
