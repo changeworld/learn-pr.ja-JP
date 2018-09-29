@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-access-azure-ad-multi-factor-authentication.5-test-access
 metadata:
-  title: <span data-ttu-id="2e551-101">リソースへのアクセスをテストする</span><span class="sxs-lookup"><span data-stu-id="2e551-101">Test access to resources</span></span>
-  description: <span data-ttu-id="2e551-102">Azure portal と MyApps ポータルへのアクセスをテストして、必要なときに多要素認証が適用されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="2e551-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
+  title: <span data-ttu-id="d6807-101">リソースへのアクセスをテストする</span><span class="sxs-lookup"><span data-stu-id="d6807-101">Test access to resources</span></span>
+  description: <span data-ttu-id="d6807-102">Azure portal と MyApps ポータルへのアクセスをテストして、必要なときに多要素認証が適用されることを確認します。</span><span class="sxs-lookup"><span data-stu-id="d6807-102">Test access to the Azure portal and MyApps portal to ensure multi-factor authentication is enforced when expected.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 15efed02c887c888b89cac58e6a2ad50ebf09c86
-  ms.sourcegitcommit: f302dc1ca9a7e4a4e92c25e012d4bf7e55f71b00
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/24/2018
-  ms.locfileid: "47023327"
-title: <span data-ttu-id="2e551-103">リソースへのアクセスをテストする</span><span class="sxs-lookup"><span data-stu-id="2e551-103">Test access to resources</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138584"
+title: <span data-ttu-id="d6807-103">リソースへのアクセスをテストする</span><span class="sxs-lookup"><span data-stu-id="d6807-103">Test access to resources</span></span>
 labId: 46467
 labModal: true
 durationInMinutes: 3

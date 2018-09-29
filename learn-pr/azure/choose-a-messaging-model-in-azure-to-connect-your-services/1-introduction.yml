@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.1-introduction
-title: <span data-ttu-id="f312b-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="f312b-101">Introduction</span></span>
+title: <span data-ttu-id="3fa26-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="3fa26-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="f312b-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="f312b-102">Introduction</span></span>
-  description: <span data-ttu-id="f312b-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="f312b-103">Introduction</span></span>
+  title: <span data-ttu-id="3fa26-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="3fa26-102">Introduction</span></span>
+  description: <span data-ttu-id="3fa26-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="3fa26-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 75d2ea9d1afeff25273aa0ea8f632a608666bf4c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347855"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138645"
 durationInMinutes: 5
 content: '[!include[](includes/1-introduction.md)]'

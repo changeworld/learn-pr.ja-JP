@@ -1,56 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.8-summary
-title: <span data-ttu-id="12449-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="12449-101">Summary</span></span>
+title: <span data-ttu-id="bcc29-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcc29-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="12449-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="12449-102">Summary</span></span>
-  description: <span data-ttu-id="12449-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="12449-103">Summary</span></span>
+  title: <span data-ttu-id="bcc29-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcc29-102">Summary</span></span>
+  description: <span data-ttu-id="bcc29-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="bcc29-103">Summary</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: beddca2005b899f622f0368461a3a56016d6d830
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513004"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139032"
 durationInMinutes: 2
 content: >
   [!include[](includes/8-summary.md)]
 quiz:
-  title: <span data-ttu-id="12449-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="12449-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="bcc29-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="bcc29-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="12449-105">あなたは、Text Analytics API を、自分のソリューションに統合しています。</span><span class="sxs-lookup"><span data-stu-id="12449-105">You're integrating the Text Analytics API into your solution.</span></span> <span data-ttu-id="12449-106">ポータルにアクセスし、eastus リージョンのサブスクリプション キーにサインアップしました。</span><span class="sxs-lookup"><span data-stu-id="12449-106">You went to the portal and signed up for a subscription key in the eastus region.</span></span> <span data-ttu-id="12449-107">`sentiment` リソースにアクセスするための正しい要求 URL は、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="12449-107">Which of the following is the correct request URL for accessing the  `sentiment` resource?</span></span>
+  - content: <span data-ttu-id="bcc29-105">あなたは、Text Analytics API を、自分のソリューションに統合しています。</span><span class="sxs-lookup"><span data-stu-id="bcc29-105">You're integrating the Text Analytics API into your solution.</span></span> <span data-ttu-id="bcc29-106">ポータルにアクセスし、eastus リージョンのサブスクリプション キーにサインアップしました。</span><span class="sxs-lookup"><span data-stu-id="bcc29-106">You went to the portal and signed up for a subscription key in the eastus region.</span></span> <span data-ttu-id="bcc29-107">`sentiment` リソースにアクセスするための正しい要求 URL は、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="bcc29-107">Which of the following is the correct request URL for accessing the  `sentiment` resource?</span></span>
     choices:
-    - content: <span data-ttu-id="12449-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="12449-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
+    - content: <span data-ttu-id="bcc29-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="bcc29-108">eastus2.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-109">このリージョンから要求するためのアクセス キーにサインアップしていません。</span><span class="sxs-lookup"><span data-stu-id="12449-109">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="12449-110">エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。</span><span class="sxs-lookup"><span data-stu-id="12449-110">Remember, the endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
-    - content: <span data-ttu-id="12449-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span><span class="sxs-lookup"><span data-stu-id="12449-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-109">このリージョンから要求するためのアクセス キーにサインアップしていません。</span><span class="sxs-lookup"><span data-stu-id="bcc29-109">You did not sign up for an access key to make requests from this region.</span></span> <span data-ttu-id="bcc29-110">エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。</span><span class="sxs-lookup"><span data-stu-id="bcc29-110">Remember, the endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
+    - content: <span data-ttu-id="bcc29-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span><span class="sxs-lookup"><span data-stu-id="bcc29-111">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/entities</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-112">この URL により、エンティティ リソースに要求が送信されます。</span><span class="sxs-lookup"><span data-stu-id="12449-112">This URL sends a request to the entities resource.</span></span>
-    - content: <span data-ttu-id="12449-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="12449-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-112">この URL により、エンティティ リソースに要求が送信されます。</span><span class="sxs-lookup"><span data-stu-id="bcc29-112">This URL sends a request to the entities resource.</span></span>
+    - content: <span data-ttu-id="bcc29-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span><span class="sxs-lookup"><span data-stu-id="bcc29-113">eastus.api.cognitive.microsoft.com/text/analytics/v2.0/sentiment</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="12449-114">エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。</span><span class="sxs-lookup"><span data-stu-id="12449-114">The endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
-  - content: <span data-ttu-id="12449-115">キューにメッセージを送信するためのキュー バインド定義における正しい `direction` 設定は、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="12449-115">Which of the following is the correct `direction` setting on a queue binding definition in order to send messages to the queue?</span></span>
+      correctExplanation: <span data-ttu-id="bcc29-114">エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。</span><span class="sxs-lookup"><span data-stu-id="bcc29-114">The endpoint specifies the region you chose during sign-up, the service URL, and a resource used on the request.</span></span>
+  - content: <span data-ttu-id="bcc29-115">キューにメッセージを送信するためのキュー バインド定義における正しい `direction` 設定は、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="bcc29-115">Which of the following is the correct `direction` setting on a queue binding definition in order to send messages to the queue?</span></span>
     choices:
-    - content: <span data-ttu-id="12449-116">out</span><span class="sxs-lookup"><span data-stu-id="12449-116">out</span></span>
+    - content: <span data-ttu-id="bcc29-116">out</span><span class="sxs-lookup"><span data-stu-id="bcc29-116">out</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="12449-117">関数からキューにメッセージが出力される際の方向が out です。</span><span class="sxs-lookup"><span data-stu-id="12449-117">When the message is output from the function to the queue, the direction is out.</span></span>
-    - content: <span data-ttu-id="12449-118">in</span><span class="sxs-lookup"><span data-stu-id="12449-118">in</span></span>
+      correctExplanation: <span data-ttu-id="bcc29-117">関数からキューにメッセージが出力される際の方向が out です。</span><span class="sxs-lookup"><span data-stu-id="bcc29-117">When the message is output from the function to the queue, the direction is out.</span></span>
+    - content: <span data-ttu-id="bcc29-118">in</span><span class="sxs-lookup"><span data-stu-id="bcc29-118">in</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-119">関数が入力としてメッセージを受け取る際の方向が in です。</span><span class="sxs-lookup"><span data-stu-id="12449-119">When the function takes the message as an input, the direction is in.</span></span>
-    - content: <span data-ttu-id="12449-120">north</span><span class="sxs-lookup"><span data-stu-id="12449-120">north</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-119">関数が入力としてメッセージを受け取る際の方向が in です。</span><span class="sxs-lookup"><span data-stu-id="bcc29-119">When the function takes the message as an input, the direction is in.</span></span>
+    - content: <span data-ttu-id="bcc29-120">north</span><span class="sxs-lookup"><span data-stu-id="bcc29-120">north</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-121">バインディングの方向プロパティの値として、値 "north" は正しくありません。</span><span class="sxs-lookup"><span data-stu-id="12449-121">The value "north" is invalid for the direction property on a binding.</span></span>
-  - content: <span data-ttu-id="12449-122">Text Analytics API にいくつかのテキストと共に要求を投稿し、応答でセンチメント スコア 0.03 が示された場合、テキストの主要なセンチメントは何ですか。</span><span class="sxs-lookup"><span data-stu-id="12449-122">If I post a request to the Text Analytics API with some text and the response gives a sentiment score of 0.03, what is the dominant sentiment of the text?</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-121">バインディングの方向プロパティの値として、値 "north" は正しくありません。</span><span class="sxs-lookup"><span data-stu-id="bcc29-121">The value "north" is invalid for the direction property on a binding.</span></span>
+  - content: <span data-ttu-id="bcc29-122">Text Analytics API にいくつかのテキストと共に要求を投稿し、応答でセンチメント スコア 0.03 が示された場合、テキストの主要なセンチメントは何ですか。</span><span class="sxs-lookup"><span data-stu-id="bcc29-122">If I post a request to the Text Analytics API with some text and the response gives a sentiment score of 0.03, what is the dominant sentiment of the text?</span></span>
     choices:
-    - content: <span data-ttu-id="12449-123">中立</span><span class="sxs-lookup"><span data-stu-id="12449-123">neutral</span></span>
+    - content: <span data-ttu-id="bcc29-123">中立</span><span class="sxs-lookup"><span data-stu-id="bcc29-123">neutral</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-124">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="12449-124">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
-    - content: <span data-ttu-id="12449-125">否定的</span><span class="sxs-lookup"><span data-stu-id="12449-125">negative</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-124">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="bcc29-124">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
+    - content: <span data-ttu-id="bcc29-125">否定的</span><span class="sxs-lookup"><span data-stu-id="bcc29-125">negative</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="12449-126">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="12449-126">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span> <span data-ttu-id="12449-127">スコア 0.03 は 0 に近いので、否定的となります。</span><span class="sxs-lookup"><span data-stu-id="12449-127">The score of 0.03 is close to 0 and, therefore, negative.</span></span>
-    - content: <span data-ttu-id="12449-128">肯定的</span><span class="sxs-lookup"><span data-stu-id="12449-128">positive</span></span>
+      correctExplanation: <span data-ttu-id="bcc29-126">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="bcc29-126">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span> <span data-ttu-id="bcc29-127">スコア 0.03 は 0 に近いので、否定的となります。</span><span class="sxs-lookup"><span data-stu-id="bcc29-127">The score of 0.03 is close to 0 and, therefore, negative.</span></span>
+    - content: <span data-ttu-id="bcc29-128">肯定的</span><span class="sxs-lookup"><span data-stu-id="bcc29-128">positive</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="12449-129">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="12449-129">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>
+      incorrectExplanation: <span data-ttu-id="bcc29-129">API はドキュメントごとに 0 から 1 までのセンチメント スコアを返します。1 が最も肯定的となります。</span><span class="sxs-lookup"><span data-stu-id="bcc29-129">The API returns a sentiment score between 0 and 1 for each document, where 1 is the most positive.</span></span>

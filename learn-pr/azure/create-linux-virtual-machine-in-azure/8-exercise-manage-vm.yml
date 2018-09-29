@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.8-exercise-manage-vm
-title: <span data-ttu-id="5edac-101">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="5edac-101">Configure network settings</span></span>
+title: <span data-ttu-id="48099-101">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="48099-101">Configure network settings</span></span>
 metadata:
-  title: <span data-ttu-id="5edac-102">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="5edac-102">Configure network settings</span></span>
-  description: <span data-ttu-id="5edac-103">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="5edac-103">Configure network settings</span></span>
+  title: <span data-ttu-id="48099-102">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="48099-102">Configure network settings</span></span>
+  description: <span data-ttu-id="48099-103">ネットワーク設定の構成</span><span class="sxs-lookup"><span data-stu-id="48099-103">Configure network settings</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a3771c30a5fed38346c6207968aca042d7ecda4a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350007"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139173"
 durationInMinutes: 10
 azureSandbox: true
 content: '[!include[](includes/8-exercise-manage-vm.md)]'

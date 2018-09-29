@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.control-azure-services-with-cli.1-introduction
-title: <span data-ttu-id="ed390-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="ed390-101">Introduction</span></span>
+title: <span data-ttu-id="8dce6-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="8dce6-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="ed390-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="ed390-102">Introduction</span></span>
-  description: <span data-ttu-id="ed390-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="ed390-103">Introduction</span></span>
+  title: <span data-ttu-id="8dce6-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="8dce6-102">Introduction</span></span>
+  description: <span data-ttu-id="8dce6-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="8dce6-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ed105e3b094458bafcd95964d3949fcd076eda13
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353720"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139477"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

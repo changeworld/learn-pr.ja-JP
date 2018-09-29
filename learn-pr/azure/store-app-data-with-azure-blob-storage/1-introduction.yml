@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.1-introduction
-title: <span data-ttu-id="65cc0-101">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="65cc0-101">Introduction to Blob storage</span></span>
+title: <span data-ttu-id="8ff71-101">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="8ff71-101">Introduction to Blob storage</span></span>
 metadata:
-  title: <span data-ttu-id="65cc0-102">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="65cc0-102">Introduction to Blob storage</span></span>
-  description: <span data-ttu-id="65cc0-103">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="65cc0-103">Introduction to Blob storage</span></span>
+  title: <span data-ttu-id="8ff71-102">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="8ff71-102">Introduction to Blob storage</span></span>
+  description: <span data-ttu-id="8ff71-103">Blob Storage の概要</span><span class="sxs-lookup"><span data-stu-id="8ff71-103">Introduction to Blob storage</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: f218dfb9809ba0c16f80df4bcc2205ea5a2a4b57
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351775"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139149"
 durationInMinutes: 3
 content: '[!include[](includes/1-introduction.md)]'

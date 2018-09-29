@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.interactive-deep-learning.6-run-your-first-deep-learning-experiment-with-jupyter
-title: <span data-ttu-id="fc7a4-101">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="fc7a4-101">Exercise - Run your first deep learning experiment with Jupyter</span></span>
+title: <span data-ttu-id="40624-101">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="40624-101">Exercise - Run your first deep learning experiment with Jupyter</span></span>
 metadata:
-  title: <span data-ttu-id="fc7a4-102">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="fc7a4-102">Exercise - Run your first deep learning experiment with Jupyter</span></span>
-  description: <span data-ttu-id="fc7a4-103">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="fc7a4-103">Exercise - Run your first deep learning experiment with Jupyter</span></span>
+  title: <span data-ttu-id="40624-102">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="40624-102">Exercise - Run your first deep learning experiment with Jupyter</span></span>
+  description: <span data-ttu-id="40624-103">演習 - Jupyter を使用して最初のディープ ラーニング実験を実行する</span><span class="sxs-lookup"><span data-stu-id="40624-103">Exercise - Run your first deep learning experiment with Jupyter</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5d71b2584510dd4375ea7daf71e33deae4ccedf7
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483919"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139493"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 30
