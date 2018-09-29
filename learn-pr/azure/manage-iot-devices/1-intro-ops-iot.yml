@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d26b6031b6e90dbfffcee9505c0e24c0c7a36236
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350071"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137608"
 title: Ops の IoT の概要
 durationInMinutes: 2
 content: '[!include[](includes/1-intro-to-ops-in-iot.md)]'

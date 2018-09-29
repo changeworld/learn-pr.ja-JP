@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 070902844ea24a0a53c9a47990022b5bbda398ac
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353510"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137096"
 title: Azure サービスと機能のツアー
 summary: Azure アカウントを作成し、利用可能なサービスをご覧いただいてから、Portal をカスタマイズします。
 abstract: >

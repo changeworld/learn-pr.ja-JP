@@ -10,20 +10,20 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 48ccc42636b10326007e475e7d37e24aefc58f5e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347052"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136279"
 durationInMinutes: 15
 content: >
   [!include[](includes/3-predict-and-optimize-with-cost-management-and-advisor.md)]
 quiz:
   title: 自分の知識をチェックする
   questions:
-  - content: '正誤問題: Azure Advisor では、コストについての推奨事項だけが提供されます。'
+  - content: 'true または false: Azure Advisor では、コストについての推奨事項だけが提供されます。'
     choices:
-    - content: ○
+    - content: "True"
       incorrectExplanation: Azure Advisor では、高可用性、セキュリティ、パフォーマンス、コストについての推奨事項が示されます。
       isCorrect: false
     - content: "False"

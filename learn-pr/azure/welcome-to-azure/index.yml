@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 27e05266630f205e571db332c8942d7cb215d6c6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354150"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137269"
 title: Azure 入門
 summary: クラウドで初めての仮想マシンを作成し、構成して、Azure を使ってみましょう。
 abstract: "このモジュールでは、次のことを行います。\n- Microsoft Azure の概要と、クラウド コンピューティングとの関係について学ぶ。\n- 初めての仮想マシンの起動、Web サーバーの追加、さらに多くの処理能力が必要になったときのサーバーのスケールアップがいかに簡単かを確認する。\n- 世界を変えたり理想の仕事を見つけたりするために必要な基本的なスキルを身に付ける。 \n"

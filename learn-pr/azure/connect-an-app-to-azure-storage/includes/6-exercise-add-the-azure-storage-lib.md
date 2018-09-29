@@ -1,5 +1,4 @@
-::: zone pivot="csharp" 
-Azure Storage クライアント ライブラリを .NET Core コンソール アプリケーションに統合しましょう。
+::: zone pivot="csharp" Azure Storage クライアント ライブラリを .NET Core コンソール アプリケーションに統合しましょう。
 
 .NET 用 Azure Storage クライアント ライブラリは NuGet で配布されます。 **WindowsAzure.Storage** パッケージをご利用の .NET または .NET Core アプリケーションに追加する必要があります。
 

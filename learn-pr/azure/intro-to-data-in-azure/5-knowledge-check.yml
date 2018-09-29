@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e0cdcd2cc0ea3995d0c3d6eb90d920b61e498ab2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353409"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133694"
 title: 知識チェック
 durationInMinutes: 5
 quiz:

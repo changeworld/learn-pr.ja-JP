@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 74497f66a4e10fa17f5b6eee5e8fdb31e6bf806b
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570659"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135332"
 durationInMinutes: 2
 quiz:
   title: 自分の知識をチェックする

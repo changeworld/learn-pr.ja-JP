@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 33e6d3978f7c83dc2ad560f77eff081ccb359c8a
-  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/23/2018
-  ms.locfileid: "46704406"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134899"
 labId: 46464
 durationInMinutes: 12
 content: '[!include[](includes/8-publish-to-azure.md)]'

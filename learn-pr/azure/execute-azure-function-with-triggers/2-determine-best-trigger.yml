@@ -10,10 +10,10 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1e11b752a8122f908fc0d2d6d12b4abce099bd39
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512180"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137245"
 durationInMinutes: 4
 content: '[!include[](includes/2-determine-best-trigger.md)]'

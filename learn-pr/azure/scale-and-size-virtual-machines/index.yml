@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 97b9c3862727b4f1ba360c0d881f0b84b557a62d
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512432"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133021"
 title: 仮想マシンをスケーリングおよびサイズ設定する
 summary: 仮想マシンのコンピューティングとストレージのパワーを、手動で、または自動スケールを使用して調整します。
 abstract: >

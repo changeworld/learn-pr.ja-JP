@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 931c47e93c694b823427af0464937d07a5411945
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348056"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133748"
 durationInMinutes: 5
 content: >
   [!include[](includes/7-summary.md)]
@@ -40,14 +40,14 @@ quiz:
     - content: サムネイルを "関心領域" の中央に配置します。
       isCorrect: true
       correctExplanation: パラメーター 'smartCropping' が true の場合、API によってスマート トリミングが適用され、サムネイルが '関心領域' の中央に配置されます。 それ以外の場合は、中央がトリミングされます。
-  - content: Computer Vision API を、ご自分のソリューションに統合しています。 eastus リージョンで、Computer Vision サービス用に Cognitive Services アカウントを作成しました。 `ocr` 操作にアクセスするための正しいアドレスは、次のうちどれですか。
+  - content: あなたは、Computer Vision API を、自分のソリューションに統合しています。 eastus リージョンで、Computer Vision サービス用に Cognitive Services アカウントを作成しました。 `ocr` 操作にアクセスするための正しいアドレスは、次のうちどれですか。
     choices:
     - content: eastus2.api.cognitive.microsoft.com/vision/v2.0/ocr
       isCorrect: false
-      incorrectExplanation: このリージョンから要求するためのアクセス キーにサインアップしていません。 エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されることを覚えておいてください。
+      incorrectExplanation: このリージョンから要求するためのアクセス キーにサインアップしていません。 エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されることを覚えておいてください。
     - content: eastus.api.cognitive.microsoft.com/vision/v2.0/describe
       isCorrect: false
-      incorrectExplanation: このアドレスは、エンティティのリソースに要求を送信します。
+      incorrectExplanation: このアドレスは、エンティティ リソースに要求を送信します。
     - content: eastus.api.cognitive.microsoft.com/vision/v2.0/ocr
       isCorrect: true
-      correctExplanation: エンドポイントにより、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。
+      correctExplanation: エンドポイントで、サインアップ時に選択したリージョン、サービスの URL、要求で使用されるリソースが指定されます。

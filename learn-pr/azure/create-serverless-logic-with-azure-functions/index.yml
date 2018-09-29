@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 743d915aabda5eb1d696f6bfcc9076d06d869893
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349504"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136447"
 title: Azure Functions を使用したサーバーレス ロジックの作成
 summary: 開発者は Azure Functions を使用して、インフラストラクチャを管理またはプロビジョニングすることなく実行できるビジネス ロジックをホストできます。
 abstract: >

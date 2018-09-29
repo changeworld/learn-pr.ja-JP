@@ -18,11 +18,11 @@
 
 ## <a name="additional-resources"></a>その他のリソース
 
-このリストはすべての資料を網羅するものではありません｡以下はこのモジュールで取り上げられ､ユーザーに有用と思われるトピックに関係しているリソースです｡
+このリストはすべての資料を網羅するものではありません。以下はこのモジュールで取り上げられ、ユーザーに有用と思われるトピックに関係しているリソースです。
 
 * [Azure Functions のドキュメント](https://docs.microsoft.com/azure/azure-functions/)
-* [Azure Functions の課題](https://aka.ms/afc)
-* [Azure のサーバーレス コンピューティング クックブック](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
+* [Azure Functions Challenge](https://aka.ms/afc)
+* [Azure サーバーレス コンピューティング クックブック](https://azure.microsoft.com/resources/azure-serverless-computing-cookbook/)
 * [Node.js から Queue ストレージを使用する方法](https://docs.microsoft.com/azure/storage/queues/storage-nodejs-how-to-use-queues)
 * [Azure Cosmos DB の概要: SQL API](https://docs.microsoft.com/azure/cosmos-db/sql-api-introduction)
 * [Azure Cosmos DB の技術概要](https://azure.microsoft.com/blog/a-technical-overview-of-azure-cosmos-db/)

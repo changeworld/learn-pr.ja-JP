@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c075adcf2bcbf62ec6d60cfe1b4aacdd4b04523b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353139"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135404"
 title: Azure でのデータ ストレージ手法を選択する
 summary: ビジネス シナリオに対して Azure Storage、Azure SQL Database、Azure Cosmos DB を使用、またはこれらの組み合わせを使用することが、最もパフォーマンスの高いソリューションを得る上でいかに最適な方法であるかを説明します。
 abstract: "このモジュールでは、次のことを行います。\n- ご利用のデータを構造化、半構造化、または非構造化に分類する方法を学習する\n- ご利用のデータに対する操作ニーズ、待機時間要件、およびトランザクション要件を特定する方法について学習する\n- データにトランザクションが必要かどうかを決定する \n"

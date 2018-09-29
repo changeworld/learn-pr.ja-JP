@@ -5,11 +5,11 @@ metadata:
   description: 高可用性を最大化して待機時間を最小限に抑えるために Azure Cosmos DB の整合性レベルを使用し、アプリケーションにとって適切な整合性レベルを決定する方法について説明します。
   displayType: one-column
   ms.openlocfilehash: e90f3d4f444418309010d7c6443cfc1d8138ed93
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348864"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135433"
 title: 整合性レベルの選択
 durationInMinutes: 10
 content: >

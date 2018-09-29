@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 833fbb8a52a3daf35a64e95d077d070687f39a16
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351336"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137426"
 title: IT 管理者が IoT デバイスを管理する方法について学びます｡
 summary: IoT 採用が拡大する中､Microsoft が提供するどのような運用ツールが､いわゆる多大のデバイスのデプロイや管理、保護に役立つのかについて学びます｡
 abstract: >
