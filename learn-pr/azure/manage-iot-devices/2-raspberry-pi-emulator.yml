@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-iot-devices.2-raspberry-pi-emulator
 metadata:
-  title: <span data-ttu-id="2c5cc-101">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="2c5cc-101">Using the Raspberry Pi Simulator</span></span>
-  description: <span data-ttu-id="2c5cc-102">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="2c5cc-102">Using the Raspberry Pi Simulator</span></span>
+  title: <span data-ttu-id="441c8-101">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="441c8-101">Using the Raspberry Pi Simulator</span></span>
+  description: <span data-ttu-id="441c8-102">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="441c8-102">Using the Raspberry Pi Simulator</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: bf7836494794ce72c4b82b6da856d54bbf24cc20
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350064"
-title: <span data-ttu-id="2c5cc-103">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="2c5cc-103">Using the Raspberry Pi Simulator</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132772"
+title: <span data-ttu-id="441c8-103">Raspberry Pi エミュレーターの使用</span><span class="sxs-lookup"><span data-stu-id="441c8-103">Using the Raspberry Pi Simulator</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/2-raspberry-pi-emulator.md)]'

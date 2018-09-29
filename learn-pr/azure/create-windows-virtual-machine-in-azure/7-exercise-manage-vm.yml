@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.7-exercise-manage-vm
-title: <span data-ttu-id="cbfb3-101">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="cbfb3-101">Configure the virtual machine network settings</span></span>
+title: <span data-ttu-id="3abc4-101">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="3abc4-101">Configure the virtual machine network settings</span></span>
 metadata:
-  title: <span data-ttu-id="cbfb3-102">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="cbfb3-102">Configure the virtual machine network settings</span></span>
-  description: <span data-ttu-id="cbfb3-103">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="cbfb3-103">Configure the virtual machine network settings</span></span>
+  title: <span data-ttu-id="3abc4-102">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="3abc4-102">Configure the virtual machine network settings</span></span>
+  description: <span data-ttu-id="3abc4-103">仮想マシン ネットワーク設定を構成する</span><span class="sxs-lookup"><span data-stu-id="3abc4-103">Configure the virtual machine network settings</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 47e8b67ad041d8851c9f0c87c4986116db7dda37
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347192"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132865"
 durationInMinutes: 12
 azureSandbox: true
 content: '[!include[](includes/7-exercise-manage-vm.md)]'

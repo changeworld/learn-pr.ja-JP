@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.run-docker-containers-aci.2-run-aci
 metadata:
-  title: <span data-ttu-id="77811-101">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="77811-101">Run Azure Container Instances</span></span>
-  description: <span data-ttu-id="77811-102">Azure Container Instances を実行します。</span><span class="sxs-lookup"><span data-stu-id="77811-102">Run Azure Container Instances.</span></span>
+  title: <span data-ttu-id="7d99c-101">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="7d99c-101">Run Azure Container Instances</span></span>
+  description: <span data-ttu-id="7d99c-102">Azure Container Instances を実行します。</span><span class="sxs-lookup"><span data-stu-id="7d99c-102">Run Azure Container Instances.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 903660af51da93cb81ac9db5bba462e649d25ce8
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570419"
-title: <span data-ttu-id="77811-103">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="77811-103">Run Azure Container Instances</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133015"
+title: <span data-ttu-id="7d99c-103">Azure Container Instances を実行する</span><span class="sxs-lookup"><span data-stu-id="7d99c-103">Run Azure Container Instances</span></span>
 durationInMinutes: 5
 interactive: bash
 azureSandbox: true

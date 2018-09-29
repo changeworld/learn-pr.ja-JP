@@ -1,8 +1,8 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.2-global-distribution
 metadata:
-  title: <span data-ttu-id="ebe05-101">データのグローバル分散</span><span class="sxs-lookup"><span data-stu-id="ebe05-101">Distribute data globally</span></span>
-  description: <span data-ttu-id="ebe05-102">Azure Cosmos DB を使用して、世界各地の複数のリージョンにデータをレプリケートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ebe05-102">Learn how to use Azure Cosmos DB to replicate your data in multiple regions around the world.</span></span>
+  title: <span data-ttu-id="30f9c-101">データのグローバル分散</span><span class="sxs-lookup"><span data-stu-id="30f9c-101">Distribute data globally</span></span>
+  description: <span data-ttu-id="30f9c-102">Azure Cosmos DB を使用して、世界各地の複数のリージョンにデータをレプリケートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="30f9c-102">Learn how to use Azure Cosmos DB to replicate your data in multiple regions around the world.</span></span>
   displayType: one-column
   ms.date: 09/24/2018
   author: mimig1
@@ -10,12 +10,12 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8e0c6fcd6657ee6547340203540d476145c64b2d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350039"
-title: <span data-ttu-id="ebe05-103">データのグローバル分散</span><span class="sxs-lookup"><span data-stu-id="ebe05-103">Distribute data globally</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134851"
+title: <span data-ttu-id="30f9c-103">データのグローバル分散</span><span class="sxs-lookup"><span data-stu-id="30f9c-103">Distribute data globally</span></span>
 azureSandbox: true
 durationInMinutes: 8
 content: '[!include[](includes/2-global-distribution.md)]'

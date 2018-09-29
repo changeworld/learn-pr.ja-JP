@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.3-identity-and-access
-title: <span data-ttu-id="56a3b-101">ID とアクセス</span><span class="sxs-lookup"><span data-stu-id="56a3b-101">Identity and access</span></span>
+title: <span data-ttu-id="b9e48-101">ID とアクセス</span><span class="sxs-lookup"><span data-stu-id="b9e48-101">Identity and access</span></span>
 metadata:
-  title: <span data-ttu-id="56a3b-102">ID とアクセス</span><span class="sxs-lookup"><span data-stu-id="56a3b-102">Identity and access</span></span>
-  description: <span data-ttu-id="56a3b-103">このユニットでは、ID とロールベースの承認について説明します。</span><span class="sxs-lookup"><span data-stu-id="56a3b-103">In this unit, we'll discuss identities and role-based authorization.</span></span>
+  title: <span data-ttu-id="b9e48-102">ID とアクセス</span><span class="sxs-lookup"><span data-stu-id="b9e48-102">Identity and access</span></span>
+  description: <span data-ttu-id="b9e48-103">このユニットでは、ID とロールベースの承認について説明します。</span><span class="sxs-lookup"><span data-stu-id="b9e48-103">In this unit, we'll discuss identities and role-based authorization.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d18b884d69177e4e1969d765397c39b7b76c56a6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351728"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132225"
 durationInMinutes: 8
 content: '[!include[](includes/3-identity-and-access.md)]'

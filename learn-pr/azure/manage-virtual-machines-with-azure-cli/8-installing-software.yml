@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.8-installing-software
-title: <span data-ttu-id="4b5b9-101">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="4b5b9-101">Install software on your VM</span></span>
+title: <span data-ttu-id="cf981-101">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="cf981-101">Install software on your VM</span></span>
 metadata:
-  title: <span data-ttu-id="4b5b9-102">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="4b5b9-102">Install software on your VM</span></span>
-  description: <span data-ttu-id="4b5b9-103">Linux VM にソフトウェアをインストールして Web サーバーを実行する</span><span class="sxs-lookup"><span data-stu-id="4b5b9-103">Install software to run a web server on your Linux VM</span></span>
+  title: <span data-ttu-id="cf981-102">VM にソフトウェアをインストールする</span><span class="sxs-lookup"><span data-stu-id="cf981-102">Install software on your VM</span></span>
+  description: <span data-ttu-id="cf981-103">Linux VM にソフトウェアをインストールして Web サーバーを実行する</span><span class="sxs-lookup"><span data-stu-id="cf981-103">Install software to run a web server on your Linux VM</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0d6f73833b2df5356e7c3a6463d9e36503331aca
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352419"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137848"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

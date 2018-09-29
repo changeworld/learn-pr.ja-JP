@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.optimize-web-app-with-redis.2-decide-if-you-want-use-redis-in-azure
-title: <span data-ttu-id="f5477-101">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="f5477-101">Decide if you want to use Redis in Azure</span></span>
+title: <span data-ttu-id="dc81f-101">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="dc81f-101">Decide if you want to use Redis in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="f5477-102">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="f5477-102">Decide if you want to use Redis in Azure</span></span>
-  description: <span data-ttu-id="f5477-103">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="f5477-103">Decide if you want to use Redis in Azure</span></span>
+  title: <span data-ttu-id="dc81f-102">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="dc81f-102">Decide if you want to use Redis in Azure</span></span>
+  description: <span data-ttu-id="dc81f-103">Azure で Redis を使用するかを決定する</span><span class="sxs-lookup"><span data-stu-id="dc81f-103">Decide if you want to use Redis in Azure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: bd1060941a726399b55be14ba261c409fd77ca54
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346593"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137600"
 durationInMinutes: 5
 content: '[!include[](includes/2-decide-if-you-want-use-redis-in-azure.md)]'

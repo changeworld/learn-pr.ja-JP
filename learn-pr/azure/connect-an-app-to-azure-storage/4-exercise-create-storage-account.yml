@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.4-exercise-create-storage-account
-title: <span data-ttu-id="0d1c2-101">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="0d1c2-101">Create an Azure storage account</span></span>
+title: <span data-ttu-id="158ac-101">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="158ac-101">Create an Azure storage account</span></span>
 metadata:
-  title: <span data-ttu-id="0d1c2-102">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="0d1c2-102">Create an Azure storage account</span></span>
-  description: <span data-ttu-id="0d1c2-103">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="0d1c2-103">Create an Azure storage account</span></span>
+  title: <span data-ttu-id="158ac-102">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="158ac-102">Create an Azure storage account</span></span>
+  description: <span data-ttu-id="158ac-103">Azure ストレージ アカウントの作成</span><span class="sxs-lookup"><span data-stu-id="158ac-103">Create an Azure storage account</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d92afe3c88df956961617603e05ec2d8928f2028
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512175"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133850"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

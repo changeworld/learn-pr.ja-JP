@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-secrets-with-azure-key-vault.6-configure-deploy-run-azure
-title: <span data-ttu-id="1d94f-101">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="1d94f-101">Configure, deploy, and run in Azure</span></span>
+title: <span data-ttu-id="ce0a4-101">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="ce0a4-101">Configure, deploy, and run in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="1d94f-102">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="1d94f-102">Configure, deploy, and run in Azure</span></span>
-  description: <span data-ttu-id="1d94f-103">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="1d94f-103">Configure, deploy, and run in Azure</span></span>
+  title: <span data-ttu-id="ce0a4-102">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="ce0a4-102">Configure, deploy, and run in Azure</span></span>
+  description: <span data-ttu-id="ce0a4-103">Azure での構成、展開、実行</span><span class="sxs-lookup"><span data-stu-id="ce0a4-103">Configure, deploy, and run in Azure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c821587b542dde7521edab678b43097232763181
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347791"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131753"
 durationInMinutes: 12
 interactive: bash
 azureSandbox: true

@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b0b4a1951f2dbcfa12ffd0c726e9e8930b44259f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346643"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132041"
 title: Azure でクラウドの種類とサービス モデルに合わせて要件を調整する
 summary: Azure では、クラウド リソースのデプロイに対する 3 つのアプローチ (パブリック クラウド、プライベート クラウド、およびハイブリッド クラウド) がサポートされます。 3 つのどのクラウドを選択するかによって、Azure の利用を開始する際のサービスの複数の要因 (コスト、メンテナンス要件、セキュリティなど) が変わります。 このモジュールでは、3 種類のクラウドをすべて確認し、サービスに活用するクラウドに関して情報に基づく決定を行えるよう支援します。 また、Azure でサポートされるサービス モデルを簡単に確認します。これは、Azure のデプロイについて計画する際の最初のサービスを決定するために役立ちます。
 abstract: >

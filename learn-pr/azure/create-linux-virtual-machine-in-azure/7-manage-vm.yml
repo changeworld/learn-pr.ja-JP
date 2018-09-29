@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.7-manage-vm
-title: <span data-ttu-id="d5560-101">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="d5560-101">Networking and security settings</span></span>
+title: <span data-ttu-id="10447-101">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="10447-101">Networking and security settings</span></span>
 metadata:
-  title: <span data-ttu-id="d5560-102">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="d5560-102">Networking and security settings</span></span>
-  description: <span data-ttu-id="d5560-103">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="d5560-103">Networking and security settings</span></span>
+  title: <span data-ttu-id="10447-102">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="10447-102">Networking and security settings</span></span>
+  description: <span data-ttu-id="10447-103">ネットワークとセキュリティの設定</span><span class="sxs-lookup"><span data-stu-id="10447-103">Networking and security settings</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: f26102d6c216f544c299d251c278b8eec751aa37
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350031"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135746"
 durationInMinutes: 10
 content: '[!include[](includes/7-manage-vm.md)]'

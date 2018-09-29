@@ -1,31 +1,31 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.2-choose-whether-to-use-message-queues-or-events
-title: <span data-ttu-id="2a010-101">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="2a010-101">Choose whether to use messages or events</span></span>
+title: <span data-ttu-id="da9f3-101">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="da9f3-101">Choose whether to use messages or events</span></span>
 metadata:
-  title: <span data-ttu-id="2a010-102">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="2a010-102">Choose whether to use messages or events</span></span>
-  description: <span data-ttu-id="2a010-103">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="2a010-103">Choose whether to use messages or events</span></span>
+  title: <span data-ttu-id="da9f3-102">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="da9f3-102">Choose whether to use messages or events</span></span>
+  description: <span data-ttu-id="da9f3-103">メッセージやイベントを使用するかどうかを選択する</span><span class="sxs-lookup"><span data-stu-id="da9f3-103">Choose whether to use messages or events</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 048a3ce0646b3adf5d5124911c1c8093de2180d1
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350024"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136141"
 durationInMinutes: 10
 content: >
   [!include[](includes/2-choose-whether-to-use-message-queues-or-events.md)]
 quiz:
-  title: <span data-ttu-id="2a010-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2a010-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="da9f3-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="da9f3-104">Check your knowledge</span></span>
   questions:
-  - content: '<span data-ttu-id="2a010-105">ユーザーを認証する Web サービスがある分散アプリケーションがあるとします。</span><span class="sxs-lookup"><span data-stu-id="2a010-105">Suppose you have a distributed application with a web service that authenticates users.</span></span> <span data-ttu-id="2a010-106">ユーザーがログオンすると、Web サービスはすべてのクライアント アプリケーションと通信して、"オンライン" の状態を表示します。</span><span class="sxs-lookup"><span data-stu-id="2a010-106">When a user logs on, the web service communicates with all of the client applications to display the status of "Online".</span></span> <span data-ttu-id="2a010-107">true または false: これは分散アプリケーションのメッセージの例です。</span><span class="sxs-lookup"><span data-stu-id="2a010-107">True or false: This is an example of a message in a distributed application.</span></span>'
+  - content: '<span data-ttu-id="da9f3-105">ユーザーを認証する Web サービスがある分散アプリケーションがあるとします。</span><span class="sxs-lookup"><span data-stu-id="da9f3-105">Suppose you have a distributed application with a web service that authenticates users.</span></span> <span data-ttu-id="da9f3-106">ユーザーがログオンすると、Web サービスはすべてのクライアント アプリケーションと通信して、"オンライン" の状態を表示します。</span><span class="sxs-lookup"><span data-stu-id="da9f3-106">When a user logs on, the web service communicates with all of the client applications to display the status of "Online".</span></span> <span data-ttu-id="da9f3-107">true または false: これは分散アプリケーションのメッセージの例です。</span><span class="sxs-lookup"><span data-stu-id="da9f3-107">True or false: This is an example of a message in a distributed application.</span></span>'
     choices:
-    - content: <span data-ttu-id="2a010-108">○</span><span class="sxs-lookup"><span data-stu-id="2a010-108">True</span></span>
+    - content: <span data-ttu-id="da9f3-108">○</span><span class="sxs-lookup"><span data-stu-id="da9f3-108">True</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="2a010-109">通常、メッセージにはメディア ファイルなどの生データそのものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="2a010-109">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="2a010-110">このような状況で、ユーザーの状態を表す単純なデータを送信しています。</span><span class="sxs-lookup"><span data-stu-id="2a010-110">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="2a010-111">また、アクションに応えてデータを送信しており、これはイベントを使用するのに最適なケースです。</span><span class="sxs-lookup"><span data-stu-id="2a010-111">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
-    - content: <span data-ttu-id="2a010-112">×</span><span class="sxs-lookup"><span data-stu-id="2a010-112">False</span></span>
-      correctExplanation: <span data-ttu-id="2a010-113">通常、メッセージにはメディア ファイルなどの生データそのものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="2a010-113">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="2a010-114">このような状況で、ユーザーの状態を表す単純なデータを送信しています。</span><span class="sxs-lookup"><span data-stu-id="2a010-114">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="2a010-115">また、アクションに応えてデータを送信しており、これはイベントを使用するのに最適なケースです。</span><span class="sxs-lookup"><span data-stu-id="2a010-115">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
+      incorrectExplanation: <span data-ttu-id="da9f3-109">通常、メッセージにはメディア ファイルなどの生データそのものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da9f3-109">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="da9f3-110">このような状況で、ユーザーの状態を表す単純なデータを送信しています。</span><span class="sxs-lookup"><span data-stu-id="da9f3-110">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="da9f3-111">また、アクションに応えてデータを送信しており、これはイベントを使用するのに最適なケースです。</span><span class="sxs-lookup"><span data-stu-id="da9f3-111">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
+    - content: <span data-ttu-id="da9f3-112">×</span><span class="sxs-lookup"><span data-stu-id="da9f3-112">False</span></span>
+      correctExplanation: <span data-ttu-id="da9f3-113">通常、メッセージにはメディア ファイルなどの生データそのものが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da9f3-113">Messages typically contain the raw data itself, for example, a media file.</span></span> <span data-ttu-id="da9f3-114">このような状況で、ユーザーの状態を表す単純なデータを送信しています。</span><span class="sxs-lookup"><span data-stu-id="da9f3-114">In this situation, we're sending a simple piece of data that represents the status of a user.</span></span> <span data-ttu-id="da9f3-115">また、アクションに応えてデータを送信しており、これはイベントを使用するのに最適なケースです。</span><span class="sxs-lookup"><span data-stu-id="da9f3-115">Also, we're sending the data in response to an action, which is a perfect case for using an event.</span></span>
       isCorrect: true

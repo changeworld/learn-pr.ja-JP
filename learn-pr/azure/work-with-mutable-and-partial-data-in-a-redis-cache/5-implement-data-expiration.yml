@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.5-implement-data-expiration
-title: <span data-ttu-id="ed60a-101">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="ed60a-101">Implement data expiration</span></span>
+title: <span data-ttu-id="97440-101">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="97440-101">Implement data expiration</span></span>
 metadata:
-  title: <span data-ttu-id="ed60a-102">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="ed60a-102">Implement data expiration</span></span>
-  description: <span data-ttu-id="ed60a-103">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="ed60a-103">Implement data expiration</span></span>
+  title: <span data-ttu-id="97440-102">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="97440-102">Implement data expiration</span></span>
+  description: <span data-ttu-id="97440-103">データの有効期限を実装する</span><span class="sxs-lookup"><span data-stu-id="97440-103">Implement data expiration</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 842ffb57e0db894b608d9e10d090751dce0f3cb4
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352920"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133070"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

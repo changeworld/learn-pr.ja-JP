@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.4-create-storage-resources
-title: <span data-ttu-id="d11fa-101">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d11fa-101">Create Azure storage resources</span></span>
+title: <span data-ttu-id="d25df-101">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d25df-101">Create Azure storage resources</span></span>
 metadata:
-  title: <span data-ttu-id="d11fa-102">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d11fa-102">Create Azure storage resources</span></span>
-  description: <span data-ttu-id="d11fa-103">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d11fa-103">Create Azure storage resources</span></span>
+  title: <span data-ttu-id="d25df-102">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d25df-102">Create Azure storage resources</span></span>
+  description: <span data-ttu-id="d25df-103">Azure Storage リソースを作成する</span><span class="sxs-lookup"><span data-stu-id="d25df-103">Create Azure storage resources</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 59989550baaadea61a36428e8485d62eb228eca3
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349608"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133580"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

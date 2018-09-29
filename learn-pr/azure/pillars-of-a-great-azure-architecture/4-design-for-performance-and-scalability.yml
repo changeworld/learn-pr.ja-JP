@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.pillars-of-a-great-azure-architecture.4-design-for-performance-and-scalability
-title: <span data-ttu-id="37a22-101">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="37a22-101">Design for performance and scalability</span></span>
+title: <span data-ttu-id="ac82a-101">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="ac82a-101">Design for performance and scalability</span></span>
 metadata:
-  title: <span data-ttu-id="37a22-102">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="37a22-102">Design for performance and scalability</span></span>
-  description: <span data-ttu-id="37a22-103">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="37a22-103">Design for performance and scalability</span></span>
+  title: <span data-ttu-id="ac82a-102">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="ac82a-102">Design for performance and scalability</span></span>
+  description: <span data-ttu-id="ac82a-103">パフォーマンスとスケーラビリティを高める設計</span><span class="sxs-lookup"><span data-stu-id="ac82a-103">Design for performance and scalability</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3a4e72716f92c8d1ee691b2306fb044a2f65f71f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349847"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137621"
 durationInMinutes: 10
 content: >
   [!include[](includes/4-design-for-performance-and-scalability.md)]
 quiz:
-  title: <span data-ttu-id="37a22-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="37a22-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="ac82a-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="ac82a-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="37a22-105">スケーリングアップの例を以下から選んでください。</span><span class="sxs-lookup"><span data-stu-id="37a22-105">Which of the following is an example of scaling up?</span></span>
+  - content: <span data-ttu-id="ac82a-105">スケーリングアップの例を以下から選んでください。</span><span class="sxs-lookup"><span data-stu-id="ac82a-105">Which of the following is an example of scaling up?</span></span>
     choices:
-    - content: <span data-ttu-id="37a22-106">キュー サービスを使用するようにアプリケーションを更新する</span><span class="sxs-lookup"><span data-stu-id="37a22-106">Updating your application to use a queuing service</span></span>
+    - content: <span data-ttu-id="ac82a-106">キュー サービスを使用するようにアプリケーションを更新する</span><span class="sxs-lookup"><span data-stu-id="ac82a-106">Updating your application to use a queuing service</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-107">アプリケーションにキュー サービスを含めることは、アーキテクチャ上の賢明な選択ですが、スケーリングアップの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="37a22-107">Including a queuing service in your application can be a smart architecual decision, but is not an example of scaling up.</span></span>
-    - content: <span data-ttu-id="37a22-108">Web ファームにさらに Web サーバーを追加する</span><span class="sxs-lookup"><span data-stu-id="37a22-108">Adding more web servers into a web farm</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-107">アプリケーションにキュー サービスを含めることは、アーキテクチャ上の賢明な選択ですが、スケーリングアップの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="ac82a-107">Including a queuing service in your application can be a smart architecual decision, but is not an example of scaling up.</span></span>
+    - content: <span data-ttu-id="ac82a-108">Web ファームにさらに Web サーバーを追加する</span><span class="sxs-lookup"><span data-stu-id="ac82a-108">Adding more web servers into a web farm</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-109">Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。</span><span class="sxs-lookup"><span data-stu-id="37a22-109">Adding more web servers into a web farm is an example of scaling out.</span></span>
-    - content: <span data-ttu-id="37a22-110">データベース クラスターに別の仮想マシンを追加する</span><span class="sxs-lookup"><span data-stu-id="37a22-110">Adding another virtual machine into a database cluster</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-109">Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。</span><span class="sxs-lookup"><span data-stu-id="ac82a-109">Adding more web servers into a web farm is an example of scaling out.</span></span>
+    - content: <span data-ttu-id="ac82a-110">データベース クラスターに別の仮想マシンを追加する</span><span class="sxs-lookup"><span data-stu-id="ac82a-110">Adding another virtual machine into a database cluster</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-111">データベース クラスターに別の仮想マシンを追加することは、スケーリングアップの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="37a22-111">Adding another virtual machine into a database cluster is not an example of scaling up.</span></span>
-    - content: <span data-ttu-id="37a22-112">より大きなサイズに仮想マシンを更新する</span><span class="sxs-lookup"><span data-stu-id="37a22-112">Updating a virtual machine to a larger size</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-111">データベース クラスターに別の仮想マシンを追加することは、スケーリングアップの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="ac82a-111">Adding another virtual machine into a database cluster is not an example of scaling up.</span></span>
+    - content: <span data-ttu-id="ac82a-112">より大きなサイズに仮想マシンを更新する</span><span class="sxs-lookup"><span data-stu-id="ac82a-112">Updating a virtual machine to a larger size</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="37a22-113">より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。</span><span class="sxs-lookup"><span data-stu-id="37a22-113">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
-  - content: <span data-ttu-id="37a22-114">スケーリングアウトの例を以下から選んでください。</span><span class="sxs-lookup"><span data-stu-id="37a22-114">Which of the following is an example of scaling out?</span></span>
+      correctExplanation: <span data-ttu-id="ac82a-113">より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。</span><span class="sxs-lookup"><span data-stu-id="ac82a-113">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
+  - content: <span data-ttu-id="ac82a-114">スケーリングアウトの例を以下から選んでください。</span><span class="sxs-lookup"><span data-stu-id="ac82a-114">Which of the following is an example of scaling out?</span></span>
     choices:
-    - content: <span data-ttu-id="37a22-115">より大きなサイズに仮想マシンを更新する</span><span class="sxs-lookup"><span data-stu-id="37a22-115">Updating a virtual machine to a larger size</span></span>
+    - content: <span data-ttu-id="ac82a-115">より大きなサイズに仮想マシンを更新する</span><span class="sxs-lookup"><span data-stu-id="ac82a-115">Updating a virtual machine to a larger size</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-116">より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。</span><span class="sxs-lookup"><span data-stu-id="37a22-116">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
-    - content: <span data-ttu-id="37a22-117">仮想マシンにさらにストレージを追加する</span><span class="sxs-lookup"><span data-stu-id="37a22-117">Adding more storage to a virtual machine</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-116">より大きなサイズに仮想マシンを変更することは、インスタンスに利用可能なリソースを増加させる、スケーリングアップの例です。</span><span class="sxs-lookup"><span data-stu-id="ac82a-116">Channging a virtual machine to a larger size increases the resources available to the instance, and is an example of scaling up.</span></span>
+    - content: <span data-ttu-id="ac82a-117">仮想マシンにさらにストレージを追加する</span><span class="sxs-lookup"><span data-stu-id="ac82a-117">Adding more storage to a virtual machine</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-118">仮想マシンにさらにストレージを追加することは、スケーリングアウトの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="37a22-118">Adding more storage to a virtual machine is not an example of scaling out.</span></span>
-    - content: <span data-ttu-id="37a22-119">Web ファームにさらに Web サーバーを追加する</span><span class="sxs-lookup"><span data-stu-id="37a22-119">Adding more web servers into a web farm</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-118">仮想マシンにさらにストレージを追加することは、スケーリングアウトの例ではありません。</span><span class="sxs-lookup"><span data-stu-id="ac82a-118">Adding more storage to a virtual machine is not an example of scaling out.</span></span>
+    - content: <span data-ttu-id="ac82a-119">Web ファームにさらに Web サーバーを追加する</span><span class="sxs-lookup"><span data-stu-id="ac82a-119">Adding more web servers into a web farm</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="37a22-120">Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。</span><span class="sxs-lookup"><span data-stu-id="37a22-120">Adding more web servers into a web farm is an example of scaling out.</span></span>
-    - content: <span data-ttu-id="37a22-121">他のリージョンにバックアップを複製する</span><span class="sxs-lookup"><span data-stu-id="37a22-121">Replicating backups to another region</span></span>
+      correctExplanation: <span data-ttu-id="ac82a-120">Web ファームにさらに Web サーバーを追加することは、スケーリングアウトの例です。</span><span class="sxs-lookup"><span data-stu-id="ac82a-120">Adding more web servers into a web farm is an example of scaling out.</span></span>
+    - content: <span data-ttu-id="ac82a-121">他のリージョンにバックアップを複製する</span><span class="sxs-lookup"><span data-stu-id="ac82a-121">Replicating backups to another region</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="37a22-122">他のリージョンにバックアップを複製することは、リソースのスケーリングには対応していません。</span><span class="sxs-lookup"><span data-stu-id="37a22-122">Replicating backups to another region is not applicable to scaling of resources.</span></span>
+      incorrectExplanation: <span data-ttu-id="ac82a-122">他のリージョンにバックアップを複製することは、リソースのスケーリングには対応していません。</span><span class="sxs-lookup"><span data-stu-id="ac82a-122">Replicating backups to another region is not applicable to scaling of resources.</span></span>

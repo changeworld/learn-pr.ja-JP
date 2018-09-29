@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.1-introduction
-title: <span data-ttu-id="08ced-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="08ced-101">Introduction</span></span>
+title: <span data-ttu-id="96075-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="96075-101">Introduction</span></span>
 metadata:
-  title: <span data-ttu-id="08ced-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="08ced-102">Introduction</span></span>
-  description: <span data-ttu-id="08ced-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="08ced-103">Introduction</span></span>
+  title: <span data-ttu-id="96075-102">はじめに</span><span class="sxs-lookup"><span data-stu-id="96075-102">Introduction</span></span>
+  description: <span data-ttu-id="96075-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="96075-103">Introduction</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 9a61829386b276b5e92cb1196dbbf15db9d0d296
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346653"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132396"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

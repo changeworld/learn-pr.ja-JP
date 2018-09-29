@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.7-connect-to-your-azure-storage-account
-title: <span data-ttu-id="93af2-101">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="93af2-101">Connect to your Azure storage account</span></span>
+title: <span data-ttu-id="e92ec-101">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="e92ec-101">Connect to your Azure storage account</span></span>
 metadata:
-  title: <span data-ttu-id="93af2-102">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="93af2-102">Connect to your Azure storage account</span></span>
-  description: <span data-ttu-id="93af2-103">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="93af2-103">Connect to your Azure storage account</span></span>
+  title: <span data-ttu-id="e92ec-102">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="e92ec-102">Connect to your Azure storage account</span></span>
+  description: <span data-ttu-id="e92ec-103">Azure ストレージ アカウントに接続する</span><span class="sxs-lookup"><span data-stu-id="e92ec-103">Connect to your Azure storage account</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 105b098abf884b3dc78e55d58ad8bc1faf56e513
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512247"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131724"
 durationInMinutes: 10
 content: '[!include[](includes/7-connect-to-your-azure-storage-account.md)]'

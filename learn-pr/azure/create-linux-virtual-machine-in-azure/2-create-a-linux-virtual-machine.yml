@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.2-create-a-linux-virtual-machine
-title: <span data-ttu-id="cadb8-101">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="cadb8-101">Create a Linux virtual Machine in Azure</span></span>
+title: <span data-ttu-id="78659-101">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="78659-101">Create a Linux virtual Machine in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="cadb8-102">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="cadb8-102">Create a Linux virtual machine in Azure</span></span>
-  description: <span data-ttu-id="cadb8-103">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="cadb8-103">Create a Linux virtual machine in Azure</span></span>
+  title: <span data-ttu-id="78659-102">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="78659-102">Create a Linux virtual machine in Azure</span></span>
+  description: <span data-ttu-id="78659-103">Azure で Linux 仮想マシンを作成する</span><span class="sxs-lookup"><span data-stu-id="78659-103">Create a Linux virtual machine in Azure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: fd2819e83035bed0463dd7bceb6d084d48957fad
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350848"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135457"
 durationInMinutes: 10
 content: '[!include[](includes/2-create-a-linux-virtual-machine.md)]'

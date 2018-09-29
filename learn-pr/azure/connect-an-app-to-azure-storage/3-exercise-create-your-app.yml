@@ -1,9 +1,9 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.3-exercise-create-your-app
-title: <span data-ttu-id="384a7-101">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="384a7-101">Create a new app to work with Azure storage</span></span>
+title: <span data-ttu-id="a765f-101">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="a765f-101">Create a new app to work with Azure storage</span></span>
 metadata:
-  title: <span data-ttu-id="384a7-102">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="384a7-102">Create a new app to work with Azure storage</span></span>
-  description: <span data-ttu-id="384a7-103">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="384a7-103">Create a new app to work with Azure storage</span></span>
+  title: <span data-ttu-id="a765f-102">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="a765f-102">Create a new app to work with Azure storage</span></span>
+  description: <span data-ttu-id="a765f-103">Azure ストレージを使用するための新しいアプリを作成する</span><span class="sxs-lookup"><span data-stu-id="a765f-103">Create a new app to work with Azure storage</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
@@ -11,11 +11,11 @@ metadata:
   ms.prod: learning-azure
   zone_pivot_groups: dev-lang-csharp-javascript
   ms.openlocfilehash: 099e36729e9bd2ed9c2752caa9b678e664d66daf
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513340"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133826"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

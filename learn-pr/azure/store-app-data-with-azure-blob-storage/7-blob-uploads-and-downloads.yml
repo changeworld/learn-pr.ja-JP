@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.7-blob-uploads-and-downloads
-title: <span data-ttu-id="07c8e-101">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="07c8e-101">Blob uploads and downloads</span></span>
+title: <span data-ttu-id="d35e6-101">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="d35e6-101">Blob uploads and downloads</span></span>
 metadata:
-  title: <span data-ttu-id="07c8e-102">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="07c8e-102">Blob uploads and downloads</span></span>
-  description: <span data-ttu-id="07c8e-103">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="07c8e-103">Blob uploads and downloads</span></span>
+  title: <span data-ttu-id="d35e6-102">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="d35e6-102">Blob uploads and downloads</span></span>
+  description: <span data-ttu-id="d35e6-103">BLOB のアップロードとダウンロード</span><span class="sxs-lookup"><span data-stu-id="d35e6-103">Blob uploads and downloads</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 66dbb0e600ddef6afa15268440fa88349944eb96
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348192"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137420"
 durationInMinutes: 10
 interactive: bash-editor
 azureSandbox: true

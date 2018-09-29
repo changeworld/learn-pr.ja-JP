@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-user-feedback-with-the-text-analytics-api.4-design-a-feedback-sorter
 metadata:
-  title: <span data-ttu-id="b6ae5-101">フィードバック ソーターを設計する</span><span class="sxs-lookup"><span data-stu-id="b6ae5-101">Design a feedback sorter</span></span>
-  description: <span data-ttu-id="b6ae5-102">感情分析が役に立つような、実際のシナリオを考えてみましょう。</span><span class="sxs-lookup"><span data-stu-id="b6ae5-102">Let's consider a real-world scenario for times when sentiment analysis might come in handy.</span></span> <span data-ttu-id="b6ae5-103">ここでは、そのシナリオと、Azure Functions および Text Analytics API を使用してそれを実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b6ae5-103">Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.</span></span>
+  title: <span data-ttu-id="7882f-101">フィードバック ソーターを設計する</span><span class="sxs-lookup"><span data-stu-id="7882f-101">Design a feedback sorter</span></span>
+  description: <span data-ttu-id="7882f-102">感情分析が役に立つような、実際のシナリオを考えてみましょう。</span><span class="sxs-lookup"><span data-stu-id="7882f-102">Let's consider a real-world scenario for times when sentiment analysis might come in handy.</span></span> <span data-ttu-id="7882f-103">ここでは、そのシナリオと、Azure Functions および Text Analytics API を使用してそれを実装する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7882f-103">Here we talk about the scenario and how to implement it using Azure Functions and the Text Analytics API.</span></span>
   ms.date: 09/24/2018
   author: AndrewJByrne
   ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 22644a1f878df9ee12563c6032b8382357071188
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512379"
-title: <span data-ttu-id="b6ae5-104">フィードバック ソーターを設計する</span><span class="sxs-lookup"><span data-stu-id="b6ae5-104">Design a feedback sorter</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136034"
+title: <span data-ttu-id="7882f-104">フィードバック ソーターを設計する</span><span class="sxs-lookup"><span data-stu-id="7882f-104">Design a feedback sorter</span></span>
 durationInMinutes: 6
 content: '[!include[](includes/4-design-a-feedback-sorter.md)]'

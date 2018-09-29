@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.6-backup-services
-title: <span data-ttu-id="5a396-101">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5a396-101">Back up your virtual machines</span></span>
+title: <span data-ttu-id="5db5e-101">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5db5e-101">Back up your virtual machines</span></span>
 metadata:
-  title: <span data-ttu-id="5a396-102">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5a396-102">Back up your virtual machines</span></span>
-  description: <span data-ttu-id="5a396-103">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5a396-103">Back up your virtual machines</span></span>
+  title: <span data-ttu-id="5db5e-102">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5db5e-102">Back up your virtual machines</span></span>
+  description: <span data-ttu-id="5db5e-103">仮想マシンをバックアップする</span><span class="sxs-lookup"><span data-stu-id="5db5e-103">Back up your virtual machines</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b8435c04f0ce74562754b635deb42095814f89f0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346563"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138064"
 durationInMinutes: 7
 content: '[!include[](includes/6-backup-services.md)]'

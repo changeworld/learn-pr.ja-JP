@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-storage-account.4-choose-an-account-creation-tool
-title: <span data-ttu-id="830a1-101">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="830a1-101">Choose an account creation tool</span></span>
+title: <span data-ttu-id="40f80-101">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="40f80-101">Choose an account creation tool</span></span>
 metadata:
-  title: <span data-ttu-id="830a1-102">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="830a1-102">Choose an account creation tool</span></span>
-  description: <span data-ttu-id="830a1-103">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="830a1-103">Choose an account creation tool</span></span>
+  title: <span data-ttu-id="40f80-102">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="40f80-102">Choose an account creation tool</span></span>
+  description: <span data-ttu-id="40f80-103">アカウント作成ツールを選択する</span><span class="sxs-lookup"><span data-stu-id="40f80-103">Choose an account creation tool</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c9fac999d6d00a7ca2382e7bab976db4f1b9d55d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350839"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136238"
 durationInMinutes: 3
 content: '[!include[](includes/4-choose-an-account-creation-tool.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.build-and-run-a-web-application-with-the-mean-stack-on-an-azure-linux-vm.4-install-mongodb
-title: <span data-ttu-id="3d0e7-101">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="3d0e7-101">Install MongoDB</span></span>
+title: <span data-ttu-id="c7522-101">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="c7522-101">Install MongoDB</span></span>
 metadata:
-  title: <span data-ttu-id="3d0e7-102">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="3d0e7-102">Install MongoDB</span></span>
-  description: <span data-ttu-id="3d0e7-103">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="3d0e7-103">Install MongoDB</span></span>
+  title: <span data-ttu-id="c7522-102">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="c7522-102">Install MongoDB</span></span>
+  description: <span data-ttu-id="c7522-103">MongoDB をインストールする</span><span class="sxs-lookup"><span data-stu-id="c7522-103">Install MongoDB</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 9acda2fa587eeba995bc92a5fbd06b70cc2b82f2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350176"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133429"
 durationInMinutes: 5
 content: '[!include[](includes/4-install-mongodb.md)]'

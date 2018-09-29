@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 44780147341015bc13b6689e7da2d696e96168ef
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350471"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133214"
 title: クラウド データのセキュリティ保護
 summary: Azure はセキュリティとコンプライアンスを重視した設計になっています。 組み込みのサービスを活用してご利用の Web データを安全に格納することで、承認されたサービスおよびクライアントからしかそれらのデータにアクセスできないようにする方法について説明します。
 prerequisites: なし

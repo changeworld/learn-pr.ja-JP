@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.add-and-size-disks-in-azure-virtual-machines.6-exercise-resize-disks
-title: <span data-ttu-id="aad39-101">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="aad39-101">Exercise - Resize a VM disk</span></span>
+title: <span data-ttu-id="05f9e-101">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="05f9e-101">Exercise - Resize a VM disk</span></span>
 metadata:
-  title: <span data-ttu-id="aad39-102">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="aad39-102">Exercise - Resize a VM disk</span></span>
-  description: <span data-ttu-id="aad39-103">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="aad39-103">Exercise - Resize a VM disk</span></span>
+  title: <span data-ttu-id="05f9e-102">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="05f9e-102">Exercise - Resize a VM disk</span></span>
+  description: <span data-ttu-id="05f9e-103">演習 - VM ディスクのサイズの変更</span><span class="sxs-lookup"><span data-stu-id="05f9e-103">Exercise - Resize a VM disk</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1b0fdc5f34ca3a9e0135d43dac9da0bad86f48da
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349664"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135595"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10

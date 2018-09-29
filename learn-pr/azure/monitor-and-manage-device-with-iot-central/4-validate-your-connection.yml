@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.4-validate-your-connection
-title: <span data-ttu-id="53e6b-101">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="53e6b-101">Validate your connection and data flow</span></span>
+title: <span data-ttu-id="3bd4c-101">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="3bd4c-101">Validate your connection and data flow</span></span>
 metadata:
-  title: <span data-ttu-id="53e6b-102">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="53e6b-102">Validate your connection and data flow</span></span>
-  description: <span data-ttu-id="53e6b-103">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="53e6b-103">Validate your connection and data flow</span></span>
+  title: <span data-ttu-id="3bd4c-102">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="3bd4c-102">Validate your connection and data flow</span></span>
+  description: <span data-ttu-id="3bd4c-103">接続とデータ フローを検証する</span><span class="sxs-lookup"><span data-stu-id="3bd4c-103">Validate your connection and data flow</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a002831faa3c4075726bb4177bfb0f6f81419181
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570726"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133046"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 12

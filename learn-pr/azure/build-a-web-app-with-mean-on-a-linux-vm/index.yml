@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b9bacf7e1c4d9dd646e08ca3e02405449db76472
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352769"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132721"
 title: Azure Linux 仮想マシン上の MEAN スタックで Web アプリケーションを構築して実行する
 summary: Azure の新しい Linux 仮想マシンで MEAN ベースの Web アプリケーションを設定する方法について説明します。
 abstract: >

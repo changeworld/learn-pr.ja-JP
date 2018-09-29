@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.principles-cloud-computing.7-summary
-title: <span data-ttu-id="b5155-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="b5155-101">Summary</span></span>
+title: <span data-ttu-id="6308d-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="6308d-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="b5155-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="b5155-102">Summary</span></span>
-  description: <span data-ttu-id="b5155-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="b5155-103">Summary</span></span>
+  title: <span data-ttu-id="6308d-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="6308d-102">Summary</span></span>
+  description: <span data-ttu-id="6308d-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="6308d-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5c854b5b57ecf9f5e09d30f04bca42e671969d3f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352390"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138128"
 durationInMinutes: 3
 content: '[!include[](includes/7-summary.md)]'

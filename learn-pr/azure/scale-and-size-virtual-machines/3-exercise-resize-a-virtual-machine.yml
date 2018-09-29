@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.scale-and-size-virtual-machines.3-exercise-resize-a-virtual-machine
-title: <span data-ttu-id="790fd-101">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="790fd-101">Exercise - Resize a virtual machine</span></span>
+title: <span data-ttu-id="41894-101">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="41894-101">Exercise - Resize a virtual machine</span></span>
 metadata:
-  title: <span data-ttu-id="790fd-102">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="790fd-102">Exercise - Resize a virtual machine</span></span>
-  description: <span data-ttu-id="790fd-103">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="790fd-103">Exercise - Resize a virtual machine</span></span>
+  title: <span data-ttu-id="41894-102">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="41894-102">Exercise - Resize a virtual machine</span></span>
+  description: <span data-ttu-id="41894-103">演習 - 仮想マシンのサイズ変更</span><span class="sxs-lookup"><span data-stu-id="41894-103">Exercise - Resize a virtual machine</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 57245cfb48ac00d22d334bb04bc7133f90999b0e
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513760"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131692"
 interactive: powershell
 azureSandbox: true
 durationInMinutes: 15

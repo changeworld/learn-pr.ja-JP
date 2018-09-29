@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-messaging-model.5-choose-azure-event-hubs
-title: <span data-ttu-id="bbae9-101">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="bbae9-101">Choose Azure Event Hubs</span></span>
+title: <span data-ttu-id="0332d-101">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="0332d-101">Choose Azure Event Hubs</span></span>
 metadata:
-  title: <span data-ttu-id="bbae9-102">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="bbae9-102">Choose Azure Event Hubs</span></span>
-  description: <span data-ttu-id="bbae9-103">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="bbae9-103">Choose Azure Event Hubs</span></span>
+  title: <span data-ttu-id="0332d-102">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="0332d-102">Choose Azure Event Hubs</span></span>
+  description: <span data-ttu-id="0332d-103">Azure Event Hubs を選択する</span><span class="sxs-lookup"><span data-stu-id="0332d-103">Choose Azure Event Hubs</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0c80f9bd0d94af2a84d93d89fcfad2ffd12628a1
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346733"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136009"
 durationInMinutes: 10
 content: '[!include[](includes/5-choose-azure-event-hubs.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.postgresql-decision
-title: <span data-ttu-id="ff0bc-101">[Azure Database for PostgreSQL] サービス</span><span class="sxs-lookup"><span data-stu-id="ff0bc-101">The Azure Database for PostgreSQL offering</span></span>
+title: <span data-ttu-id="4318c-101">[Azure Database for PostgreSQL] サービス</span><span class="sxs-lookup"><span data-stu-id="4318c-101">The Azure Database for PostgreSQL offering</span></span>
 metadata:
-  title: <span data-ttu-id="ff0bc-102">[Azure Database for PostgreSQL] サービス</span><span class="sxs-lookup"><span data-stu-id="ff0bc-102">The Azure Database for PostgreSQL offering</span></span>
-  description: <span data-ttu-id="ff0bc-103">Azure Database for PostgreSQL は、あなたにとって適切なストレージオプションであるかどうかを判定します｡</span><span class="sxs-lookup"><span data-stu-id="ff0bc-103">Determine if Azure Database for PostgreSQL is the right storage option for you.</span></span>
+  title: <span data-ttu-id="4318c-102">[Azure Database for PostgreSQL] サービス</span><span class="sxs-lookup"><span data-stu-id="4318c-102">The Azure Database for PostgreSQL offering</span></span>
+  description: <span data-ttu-id="4318c-103">Azure Database for PostgreSQL は、あなたにとって適切なストレージオプションであるかどうかを判定します｡</span><span class="sxs-lookup"><span data-stu-id="4318c-103">Determine if Azure Database for PostgreSQL is the right storage option for you.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 9150cf171ba4bf84f13927bdb7a00ce21bb38844
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351312"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136280"
 durationInMinutes: 3
 content: '[!include[](includes/2-postgresql-decision.md)]'

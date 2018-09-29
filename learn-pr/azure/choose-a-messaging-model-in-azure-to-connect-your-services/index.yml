@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 458ad6aa856d2a81682b6e70d3c8f16e5fb039ee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354049"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138149"
 title: ご自分のサービスにゆるく接続するために Azure でメッセージング モデルを選ぶ
 summary: 1 つのアプリケーションを構成するコンポーネントがそれぞれ異なるコンピューター、サーバー、およびモバイル デバイスで実行されているときは、これらのコンポーネント間での通信の信頼性を維持することが難しくなる可能性があります。 Azure では、通信の信頼性を高めるためにさまざまなテクノロジが提供されており、たとえばストレージ キュー、Event Hubs、Event Grid、Service Bus などを使用できます。 このモジュールでは、通信タスクに最適なテクノロジを選ぶ方法を説明します。
 abstract: >

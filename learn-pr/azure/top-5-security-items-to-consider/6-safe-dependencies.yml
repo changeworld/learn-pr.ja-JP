@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.6-safe-dependencies
-title: <span data-ttu-id="d180b-101">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d180b-101">Safe Dependencies</span></span>
+title: <span data-ttu-id="bf8ef-101">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="bf8ef-101">Safe Dependencies</span></span>
 metadata:
-  title: <span data-ttu-id="d180b-102">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d180b-102">Safe Dependencies</span></span>
-  description: <span data-ttu-id="d180b-103">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="d180b-103">Safe Dependencies</span></span>
+  title: <span data-ttu-id="bf8ef-102">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="bf8ef-102">Safe Dependencies</span></span>
+  description: <span data-ttu-id="bf8ef-103">安全な依存関係</span><span class="sxs-lookup"><span data-stu-id="bf8ef-103">Safe Dependencies</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: f7e554ad0f8369b7e0c154aa6baa83b2b0f8d530
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351423"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137419"
 durationInMinutes: 5
 content: '[!include[](includes/6-safe-dependencies.md)]'

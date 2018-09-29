@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.4-encryption
-title: <span data-ttu-id="8beae-101">暗号化</span><span class="sxs-lookup"><span data-stu-id="8beae-101">Encryption</span></span>
+title: <span data-ttu-id="05c68-101">暗号化</span><span class="sxs-lookup"><span data-stu-id="05c68-101">Encryption</span></span>
 metadata:
-  title: <span data-ttu-id="8beae-102">暗号化</span><span class="sxs-lookup"><span data-stu-id="8beae-102">Encryption</span></span>
-  description: <span data-ttu-id="8beae-103">このユニットでは、暗号化を使用してデータをセキュリティで保護する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="8beae-103">In this unit, we'll discuss how to use encryption to secure your data.</span></span>
+  title: <span data-ttu-id="05c68-102">暗号化</span><span class="sxs-lookup"><span data-stu-id="05c68-102">Encryption</span></span>
+  description: <span data-ttu-id="05c68-103">このユニットでは、暗号化を使用してデータをセキュリティで保護する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="05c68-103">In this unit, we'll discuss how to use encryption to secure your data.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 199a92a1e365547f75cb7d1d556bab67691d6daf
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349600"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137120"
 durationInMinutes: 8
 content: '[!include[](includes/4-encryption.md)]'

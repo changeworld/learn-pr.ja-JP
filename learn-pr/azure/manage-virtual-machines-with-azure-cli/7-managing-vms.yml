@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.manage-vms-with-azure-cli-data.7-managing-vms
-title: <span data-ttu-id="1fb77-101">Azure CLI で VM を起動し、停止する</span><span class="sxs-lookup"><span data-stu-id="1fb77-101">Start and stop your VM with the Azure CLI</span></span>
+title: <span data-ttu-id="b11f3-101">Azure CLI で VM を起動し、停止する</span><span class="sxs-lookup"><span data-stu-id="b11f3-101">Start and stop your VM with the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="1fb77-102">Azure CLI で VM を起動し、停止する</span><span class="sxs-lookup"><span data-stu-id="1fb77-102">Start and stop your VM with the Azure CLI</span></span>
-  description: <span data-ttu-id="1fb77-103">Azure CLI を使用して仮想マシンを起動し、停止する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="1fb77-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
+  title: <span data-ttu-id="b11f3-102">Azure CLI で VM を起動し、停止する</span><span class="sxs-lookup"><span data-stu-id="b11f3-102">Start and stop your VM with the Azure CLI</span></span>
+  description: <span data-ttu-id="b11f3-103">Azure CLI を使用して仮想マシンを起動し、停止する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="b11f3-103">Learn how to use the Azure CLI to start and stop a virtual machine</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 691aaafbc17106c82a6e0551c7c17a04e12e2d1b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352420"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136574"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

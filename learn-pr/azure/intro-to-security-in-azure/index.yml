@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0f03734e8a51f80e30714f0c8888cd0c3ed26401
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352090"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134180"
 title: Azure のセキュリティの概要
 summary: クラウドで作業するときにインフラストラクチャとデータを保護するための基本的な概念について説明します。 自分で負う責任と、自分の代わりに Azure で対応してくれる処理について把握してください。
 abstract: >

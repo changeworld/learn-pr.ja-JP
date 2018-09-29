@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.work-with-mutable-and-partial-data-in-a-redis-cache.7-cache-aside-pattern
-title: <span data-ttu-id="eee91-101">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="eee91-101">Cache-aside pattern</span></span>
+title: <span data-ttu-id="6f6ae-101">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="6f6ae-101">Cache-aside pattern</span></span>
 metadata:
-  title: <span data-ttu-id="eee91-102">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="eee91-102">Cache-aside pattern</span></span>
-  description: <span data-ttu-id="eee91-103">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="eee91-103">Cache-aside pattern</span></span>
+  title: <span data-ttu-id="6f6ae-102">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="6f6ae-102">Cache-aside pattern</span></span>
+  description: <span data-ttu-id="6f6ae-103">キャッシュ アサイド パターン</span><span class="sxs-lookup"><span data-stu-id="6f6ae-103">Cache-aside pattern</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a91272b6fd5ab07b58a5c33a19a2a72f5c8ecf2d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349368"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133064"
 durationInMinutes: 10
 content: '[!include[](includes/7-cache-aside-pattern.md)]'

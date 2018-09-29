@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.3-add-data
 metadata:
-  title: <span data-ttu-id="80337-101">ポータルを使用してデータを追加する</span><span class="sxs-lookup"><span data-stu-id="80337-101">Add data using the portal</span></span>
-  description: <span data-ttu-id="80337-102">Azure portal を使用して Azure Cosmos DB にデータを追加する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="80337-102">Learn how to add data to Azure Cosmos DB by using the Azure portal</span></span>
+  title: <span data-ttu-id="5c7da-101">ポータルを使用してデータを追加する</span><span class="sxs-lookup"><span data-stu-id="5c7da-101">Add data using the portal</span></span>
+  description: <span data-ttu-id="5c7da-102">Azure portal を使用して Azure Cosmos DB にデータを追加する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="5c7da-102">Learn how to add data to Azure Cosmos DB by using the Azure portal</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 791f6e69aafd06c011beb88347176a66f442e602
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483989"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135200"
 azureSandbox: true
-title: <span data-ttu-id="80337-103">ポータルを使用してデータを追加する</span><span class="sxs-lookup"><span data-stu-id="80337-103">Add data using the portal</span></span>
+title: <span data-ttu-id="5c7da-103">ポータルを使用してデータを追加する</span><span class="sxs-lookup"><span data-stu-id="5c7da-103">Add data using the portal</span></span>
 durationInMinutes: 5
 content: '[!include[](includes/3-add-data.md)]'

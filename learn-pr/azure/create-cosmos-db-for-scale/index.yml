@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3e0eb03a0737fd9ba6bd938e4715fa17e33a3386
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46354100"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135422"
 title: スケーリングするようにビルドされた Azure Cosmos DB データベースを作成する
 summary: Azure Cosmos DB アカウントおよびデータベースの作成方法に加えて、アプリケーションの成長に合わせてスケーリングするようにビルドされたコレクションを作成する方法について説明します。
 abstract: >

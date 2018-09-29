@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.creating-postgresql-db-server-via-azure-cli
-title: <span data-ttu-id="dccd4-101">Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="dccd4-101">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+title: <span data-ttu-id="6bfea-101">Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="6bfea-101">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="dccd4-102">Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="dccd4-102">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
-  description: <span data-ttu-id="dccd4-103">Azure portal を使用して単一の Azure Database for PostgreSQL サーバーを作成するのは簡単です。</span><span class="sxs-lookup"><span data-stu-id="dccd4-103">Creating a single Azure Database for PostgreSQL server using the Azure portal is easy.</span></span> <span data-ttu-id="dccd4-104">複数のデータベースの作成と継続的なメンテナンスをポータルのみを使用して行おうとすると、手間がかかる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="dccd4-104">Creating multiple databases and running ongoing maintenance using only the portal may become tedious.</span></span> <span data-ttu-id="dccd4-105">管理タスクを自動化したいときは、Azure CLI を使用してください。</span><span class="sxs-lookup"><span data-stu-id="dccd4-105">You'll use the Azure CLI when you want to automate management tasks.</span></span>
+  title: <span data-ttu-id="6bfea-102">Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="6bfea-102">Create an Azure Database for PostgreSQL server using the Azure CLI</span></span>
+  description: <span data-ttu-id="6bfea-103">Azure portal を使用して単一の Azure Database for PostgreSQL サーバーを作成するのは簡単です。</span><span class="sxs-lookup"><span data-stu-id="6bfea-103">Creating a single Azure Database for PostgreSQL server using the Azure portal is easy.</span></span> <span data-ttu-id="6bfea-104">複数のデータベースの作成と継続的なメンテナンスをポータルのみを使用して行おうとすると、手間がかかる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="6bfea-104">Creating multiple databases and running ongoing maintenance using only the portal may become tedious.</span></span> <span data-ttu-id="6bfea-105">管理タスクを自動化したいときは、Azure CLI を使用してください。</span><span class="sxs-lookup"><span data-stu-id="6bfea-105">You'll use the Azure CLI when you want to automate management tasks.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ef13f91bd2b6d6b97d2f0e553f7da7dd786bc0d2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351095"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133417"
 durationInMinutes: 7
 content: '[!include[](includes/5-creating-postgresql-db-server-via-azure-cli.md)]'

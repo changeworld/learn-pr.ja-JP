@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.top-5-security-items-to-consider.5-framework-updates
-title: <span data-ttu-id="5abd5-101">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="5abd5-101">Framework Updates</span></span>
+title: <span data-ttu-id="faf3e-101">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="faf3e-101">Framework Updates</span></span>
 metadata:
-  title: <span data-ttu-id="5abd5-102">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="5abd5-102">Framework Updates</span></span>
-  description: <span data-ttu-id="5abd5-103">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="5abd5-103">Framework Updates</span></span>
+  title: <span data-ttu-id="faf3e-102">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="faf3e-102">Framework Updates</span></span>
+  description: <span data-ttu-id="faf3e-103">フレームワークの更新</span><span class="sxs-lookup"><span data-stu-id="faf3e-103">Framework Updates</span></span>
   author: lnyswonger
   ms.date: 09/24/2018
   ms.author: luken
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4e2da0cf41fcbe2ba55df4823970426931758960
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353369"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138205"
 durationInMinutes: 7
 content: '[!include[](includes/5-framework-updates.md)]'

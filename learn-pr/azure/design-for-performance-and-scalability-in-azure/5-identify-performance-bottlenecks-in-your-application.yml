@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-performance-and-scalability.5-identify-performance-bottlenecks-in-your-application
-title: <span data-ttu-id="3f74d-101">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="3f74d-101">Identify performance bottlenecks in your application</span></span>
+title: <span data-ttu-id="5d9dd-101">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="5d9dd-101">Identify performance bottlenecks in your application</span></span>
 metadata:
-  title: <span data-ttu-id="3f74d-102">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="3f74d-102">Identify performance bottlenecks in your application</span></span>
-  description: <span data-ttu-id="3f74d-103">このユニットでは、アプリケーションでのパフォーマンスのボトルネックを特定する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="3f74d-103">In this unit we'll discuss how to identify performance bottlenecks in your application</span></span>
+  title: <span data-ttu-id="5d9dd-102">アプリケーションでのパフォーマンスのボトルネックを特定する</span><span class="sxs-lookup"><span data-stu-id="5d9dd-102">Identify performance bottlenecks in your application</span></span>
+  description: <span data-ttu-id="5d9dd-103">このユニットでは、アプリケーションでのパフォーマンスのボトルネックを特定する方法について説明します</span><span class="sxs-lookup"><span data-stu-id="5d9dd-103">In this unit we'll discuss how to identify performance bottlenecks in your application</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c7d8f1f8564a139f58fb17efc300af92e96cf906
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348095"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134750"
 durationInMinutes: 9
 content: >
   [!include[](includes/5-identify-performance-bottlenecks-in-your-application.md)]
 quiz:
-  title: <span data-ttu-id="3f74d-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="3f74d-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="5d9dd-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="5d9dd-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="3f74d-105">次のうち、Application Insights の説明として最も適切なものはどれですか。</span><span class="sxs-lookup"><span data-stu-id="3f74d-105">Which of the following best describes Application Insights?</span></span>
+  - content: <span data-ttu-id="5d9dd-105">次のうち、Application Insights の説明として最も適切なものはどれですか。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-105">Which of the following best describes Application Insights?</span></span>
     choices:
-    - content: <span data-ttu-id="3f74d-106">Azure でのすべての監視ニーズに対応する単一のビュー</span><span class="sxs-lookup"><span data-stu-id="3f74d-106">A single view for all your monitoring needs in Azure</span></span>
+    - content: <span data-ttu-id="5d9dd-106">Azure でのすべての監視ニーズに対応する単一のビュー</span><span class="sxs-lookup"><span data-stu-id="5d9dd-106">A single view for all your monitoring needs in Azure</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="3f74d-107">Application Insights では、アプリケーションのパフォーマンスに関する豊富なデータが提供されますが、Azure の包括的監視ソリューションとは言えません。</span><span class="sxs-lookup"><span data-stu-id="3f74d-107">While Application Insights can provide a wealth of data on your application performance, is it not a comprehensive Azure monitoring solution.</span></span>
-    - content: <span data-ttu-id="3f74d-108">正常性エンドポイント監視パターンの実装</span><span class="sxs-lookup"><span data-stu-id="3f74d-108">An implementation of the health endpoint monitoring pattern</span></span>
+      incorrectExplanation: <span data-ttu-id="5d9dd-107">Application Insights では、アプリケーションのパフォーマンスに関する豊富なデータが提供されますが、Azure の包括的監視ソリューションとは言えません。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-107">While Application Insights can provide a wealth of data on your application performance, is it not a comprehensive Azure monitoring solution.</span></span>
+    - content: <span data-ttu-id="5d9dd-108">正常性エンドポイント監視パターンの実装</span><span class="sxs-lookup"><span data-stu-id="5d9dd-108">An implementation of the health endpoint monitoring pattern</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="3f74d-109">正常性エンドポイント監視パターンは、アプリケーションによって公開されるエンドポイントの全体的な正常性の監視に重点を置いています。</span><span class="sxs-lookup"><span data-stu-id="3f74d-109">The health endpoint monitoring pattern focuses on monitoring endpoints exposed by your application for overall health.</span></span>
-    - content: <span data-ttu-id="3f74d-110">インフラストラクチャ全体およびアプリケーション間でのログの収集を可能にするワークスペース</span><span class="sxs-lookup"><span data-stu-id="3f74d-110">A workspace to enable collection of logs across infrastructure and applications</span></span>
+      incorrectExplanation: <span data-ttu-id="5d9dd-109">正常性エンドポイント監視パターンは、アプリケーションによって公開されるエンドポイントの全体的な正常性の監視に重点を置いています。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-109">The health endpoint monitoring pattern focuses on monitoring endpoints exposed by your application for overall health.</span></span>
+    - content: <span data-ttu-id="5d9dd-110">インフラストラクチャ全体およびアプリケーション間でのログの収集を可能にするワークスペース</span><span class="sxs-lookup"><span data-stu-id="5d9dd-110">A workspace to enable collection of logs across infrastructure and applications</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="3f74d-111">Log Analytics は、インフラストラクチャ全体およびアプリケーションのログの収集を可能にするワークスペースです。</span><span class="sxs-lookup"><span data-stu-id="3f74d-111">Log Analytics is a workspace that enables the collection of logs across infrastructure and applications.</span></span>
-    - content: <span data-ttu-id="3f74d-112">Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービス</span><span class="sxs-lookup"><span data-stu-id="3f74d-112">A service to monitor availability, performance, and usage of web applications</span></span>
+      incorrectExplanation: <span data-ttu-id="5d9dd-111">Log Analytics は、インフラストラクチャ全体およびアプリケーションのログの収集を可能にするワークスペースです。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-111">Log Analytics is a workspace that enables the collection of logs across infrastructure and applications.</span></span>
+    - content: <span data-ttu-id="5d9dd-112">Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービス</span><span class="sxs-lookup"><span data-stu-id="5d9dd-112">A service to monitor availability, performance, and usage of web applications</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="3f74d-113">Application Insights は、Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービスです。</span><span class="sxs-lookup"><span data-stu-id="3f74d-113">Application Insights is a service to monitor availability, performance, and usage of web applications.</span></span>
-  - content: '<span data-ttu-id="3f74d-114">正誤問題: Log Analytics はカスタム ログとメトリックを追跡します。</span><span class="sxs-lookup"><span data-stu-id="3f74d-114">True or false: Log Analytics tracks custom logs and metrics.</span></span>'
+      correctExplanation: <span data-ttu-id="5d9dd-113">Application Insights は、Web アプリケーションの可用性、パフォーマンス、使用状況を監視するサービスです。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-113">Application Insights is a service to monitor availability, performance, and usage of web applications.</span></span>
+  - content: '<span data-ttu-id="5d9dd-114">正誤問題: Log Analytics はカスタム ログとメトリックを追跡します。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-114">True or false: Log Analytics tracks custom logs and metrics.</span></span>'
     choices:
-    - content: <span data-ttu-id="3f74d-115">○</span><span class="sxs-lookup"><span data-stu-id="3f74d-115">True</span></span>
+    - content: <span data-ttu-id="5d9dd-115">○</span><span class="sxs-lookup"><span data-stu-id="5d9dd-115">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="3f74d-116">カスタム ログおよびメトリックについては、HTTP データ コレクター API を使用して REST API クライアントから Log Analytics にデータを書き込んだり、Azure Logic Apps を使用してカスタム ワークフローからデータを書き込んだりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3f74d-116">For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.</span></span>
-    - content: <span data-ttu-id="3f74d-117">×</span><span class="sxs-lookup"><span data-stu-id="3f74d-117">False</span></span>
+      correctExplanation: <span data-ttu-id="5d9dd-116">カスタム ログおよびメトリックについては、HTTP データ コレクター API を使用して REST API クライアントから Log Analytics にデータを書き込んだり、Azure Logic Apps を使用してカスタム ワークフローからデータを書き込んだりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-116">For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.</span></span>
+    - content: <span data-ttu-id="5d9dd-117">×</span><span class="sxs-lookup"><span data-stu-id="5d9dd-117">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="3f74d-118">カスタム ログおよびメトリックについては、HTTP データ コレクター API を使用して REST API クライアントから Log Analytics にデータを書き込んだり、Azure Logic Apps を使用してカスタム ワークフローからデータを書き込んだりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="3f74d-118">For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.</span></span>
+      incorrectExplanation: <span data-ttu-id="5d9dd-118">カスタム ログおよびメトリックについては、HTTP データ コレクター API を使用して REST API クライアントから Log Analytics にデータを書き込んだり、Azure Logic Apps を使用してカスタム ワークフローからデータを書き込んだりすることもできます。</span><span class="sxs-lookup"><span data-stu-id="5d9dd-118">For custom logs and metrics, you can use the HTTP Data Collector API to write data to Log Analytics from any REST API client or an Azure Logic App to write data from a custom workflow.</span></span>

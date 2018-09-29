@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.send-location-over-sms-from-mobile-using-azure-functions-twilio.2-create-your-xamarin-forms-app-with-xamarin-essentials
-title: <span data-ttu-id="109d9-101">Xamarin.Essentials で Xamarin.Forms アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="109d9-101">Create your Xamarin.Forms app with Xamarin.Essentials</span></span>
+title: <span data-ttu-id="3f219-101">Xamarin.Essentials で Xamarin.Forms アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="3f219-101">Create your Xamarin.Forms app with Xamarin.Essentials</span></span>
 metadata:
-  title: <span data-ttu-id="109d9-102">Xamarin.Essentials で Xamarin.Forms アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="109d9-102">Create your Xamarin.Forms app with Xamarin.Essentials</span></span>
-  description: <span data-ttu-id="109d9-103">Xamarin.Essentials を使用してまったく新しい Xamarin.Forms アプリを作成します</span><span class="sxs-lookup"><span data-stu-id="109d9-103">Create a brand-new Xamarin.Forms app using Xamarin.Essentials</span></span>
+  title: <span data-ttu-id="3f219-102">Xamarin.Essentials で Xamarin.Forms アプリを作成する</span><span class="sxs-lookup"><span data-stu-id="3f219-102">Create your Xamarin.Forms app with Xamarin.Essentials</span></span>
+  description: <span data-ttu-id="3f219-103">Xamarin.Essentials を使用してまったく新しい Xamarin.Forms アプリを作成します</span><span class="sxs-lookup"><span data-stu-id="3f219-103">Create a brand-new Xamarin.Forms app using Xamarin.Essentials</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 83e2e51b6ace573755df9ae054214534b7e9c893
-  ms.sourcegitcommit: a8799fdd6ae2096cef12e66b142b138db8aba56d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/23/2018
-  ms.locfileid: "46704392"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137917"
 labId: 46464
 durationInMinutes: 5
 content: '[!include[](includes/2-create-your-xamarin-forms-app-with-xamarin-essentials.md)]'

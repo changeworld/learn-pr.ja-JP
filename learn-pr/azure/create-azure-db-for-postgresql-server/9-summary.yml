@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.summary
-title: <span data-ttu-id="76dea-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="76dea-101">Summary</span></span>
+title: <span data-ttu-id="103f9-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="103f9-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="76dea-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="76dea-102">Summary</span></span>
-  description: <span data-ttu-id="76dea-103">モジュールで使用されるリソースに関する手順をまとめてクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="76dea-103">Summary and clean up instructions for resources used in the module.</span></span>
+  title: <span data-ttu-id="103f9-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="103f9-102">Summary</span></span>
+  description: <span data-ttu-id="103f9-103">モジュールで使用されるリソースに関する手順をまとめてクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="103f9-103">Summary and clean up instructions for resources used in the module.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 268209b618c9d16d4c1ec66c5b11edcf766c5863
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350255"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136304"
 durationInMinutes: 3
 content: '[!include[](includes/9-summary.md)]'

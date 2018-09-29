@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.control-azure-services-with-cli.2-what-is-the-azure-cli
-title: <span data-ttu-id="fe101-101">Azure CLI とは</span><span class="sxs-lookup"><span data-stu-id="fe101-101">What is the Azure CLI?</span></span>
+title: <span data-ttu-id="2386b-101">Azure CLI とは</span><span class="sxs-lookup"><span data-stu-id="2386b-101">What is the Azure CLI?</span></span>
 metadata:
-  title: <span data-ttu-id="fe101-102">Azure CLI とは</span><span class="sxs-lookup"><span data-stu-id="fe101-102">What is the Azure CLI?</span></span>
-  description: <span data-ttu-id="fe101-103">Azure CLI について、および各プラットフォーム上への Azure CLI のインストールの基礎について説明します。</span><span class="sxs-lookup"><span data-stu-id="fe101-103">Learn about the Azure CLI and the basics of installing it on each platform.</span></span>
+  title: <span data-ttu-id="2386b-102">Azure CLI とは</span><span class="sxs-lookup"><span data-stu-id="2386b-102">What is the Azure CLI?</span></span>
+  description: <span data-ttu-id="2386b-103">Azure CLI について、および各プラットフォーム上への Azure CLI のインストールの基礎について説明します。</span><span class="sxs-lookup"><span data-stu-id="2386b-103">Learn about the Azure CLI and the basics of installing it on each platform.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e61e47e143d32de5f047b145d106c1d6e8792c51
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350719"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137869"
 durationInMinutes: 3
 content: '[!include[](includes/2-what-is-the-azure-cli.md)]'

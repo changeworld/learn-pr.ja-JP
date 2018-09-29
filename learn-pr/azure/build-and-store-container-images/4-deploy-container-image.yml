@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.azure-container-registry.deploy-image
 metadata:
-  title: <span data-ttu-id="b04c8-101">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="b04c8-101">Deploy images from Azure Container Registry</span></span>
-  description: <span data-ttu-id="b04c8-102">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="b04c8-102">Deploy images from Azure Container Registry</span></span>
+  title: <span data-ttu-id="2884b-101">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="2884b-101">Deploy images from Azure Container Registry</span></span>
+  description: <span data-ttu-id="2884b-102">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="2884b-102">Deploy images from Azure Container Registry</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 20db124f38eaa1dd0c14691142493df9c9f9c498
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352720"
-title: <span data-ttu-id="b04c8-103">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="b04c8-103">Deploy images from Azure Container Registry</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134984"
+title: <span data-ttu-id="2884b-103">Azure Container Registry からイメージをデプロイする</span><span class="sxs-lookup"><span data-stu-id="2884b-103">Deploy images from Azure Container Registry</span></span>
 durationInMinutes: 20
 interactive: bash
 azureSandbox: true

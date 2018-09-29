@@ -1,15 +1,15 @@
 ### YamlMime:ModuleUnit
 uid: learn.distribute-data-globally-with-cosmos-db.1-introduction
 metadata:
-  title: <span data-ttu-id="7bd9b-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="7bd9b-101">Introduction</span></span>
-  description: <span data-ttu-id="7bd9b-102">Azure Cosmos DB を使用してデータをグローバルに分散する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7bd9b-102">Learn how to distribute data globally with Azure Cosmos DB.</span></span>
+  title: <span data-ttu-id="b1781-101">はじめに</span><span class="sxs-lookup"><span data-stu-id="b1781-101">Introduction</span></span>
+  description: <span data-ttu-id="b1781-102">Azure Cosmos DB を使用してデータをグローバルに分散する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="b1781-102">Learn how to distribute data globally with Azure Cosmos DB.</span></span>
   displayType: one-column
   ms.openlocfilehash: 91b7f0f62eee21ec1363ce40c10bae1d1cb273f8
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348672"
-title: <span data-ttu-id="7bd9b-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="7bd9b-103">Introduction</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135379"
+title: <span data-ttu-id="b1781-103">はじめに</span><span class="sxs-lookup"><span data-stu-id="b1781-103">Introduction</span></span>
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

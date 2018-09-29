@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0721a558ff2b57a533930c93b838ae0f1c97fad7
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570675"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133981"
 title: Azure IoT Central でコーヒー販売機を監視管理する
 summary: Azure IoT Central アプリケーションを作成して IoT デバイスを監視および管理する方法について説明します。
 abstract: >

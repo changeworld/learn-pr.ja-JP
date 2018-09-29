@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.2-setup-cosmosdb
 metadata:
-  title: <span data-ttu-id="bdc8e-101">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="bdc8e-101">Setup your Azure Cosmos DB database and collection</span></span>
-  description: <span data-ttu-id="bdc8e-102">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="bdc8e-102">Setup your Azure Cosmos DB database and collection</span></span>
+  title: <span data-ttu-id="6a5fc-101">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="6a5fc-101">Setup your Azure Cosmos DB database and collection</span></span>
+  description: <span data-ttu-id="6a5fc-102">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="6a5fc-102">Setup your Azure Cosmos DB database and collection</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 48573a071ba20e31905efcec62871abbcab77155
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483813"
-title: <span data-ttu-id="bdc8e-103">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="bdc8e-103">Setup your Azure Cosmos DB database and collection</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136921"
+title: <span data-ttu-id="6a5fc-103">Azure Cosmos DB データベースとコレクションを設定する</span><span class="sxs-lookup"><span data-stu-id="6a5fc-103">Setup your Azure Cosmos DB database and collection</span></span>
 durationInMinutes: 5
 interactive: bash
 azureSandbox: true

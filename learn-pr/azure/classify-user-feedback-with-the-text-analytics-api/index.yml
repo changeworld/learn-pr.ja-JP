@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1201f847b8c229731aa04f41c04f554f69313707
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512276"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131740"
 title: Text Analytics API を使用してテキスト内のセンチメントを発見する
 summary: 顧客が送信したフィードバックから、商品やブランドについて実際に何を言っているかを知ることができます。 Azure Functions と Text Analytics API のインテリジェンスを使用してテキスト メッセージ内のセンチメントを発見するソリューションを作成します。
 abstract: >

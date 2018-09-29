@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.2-encryption-options-for-protecting-windows-and-linux-vms
-title: <span data-ttu-id="4f3cc-101">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="4f3cc-101">Encryption options for protecting Windows and Linux VMs</span></span>
+title: <span data-ttu-id="21ec1-101">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="21ec1-101">Encryption options for protecting Windows and Linux VMs</span></span>
 metadata:
-  title: <span data-ttu-id="4f3cc-102">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="4f3cc-102">Encryption options for protecting Windows and Linux VMs</span></span>
-  description: <span data-ttu-id="4f3cc-103">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="4f3cc-103">Encryption options for protecting Windows and Linux VMs</span></span>
+  title: <span data-ttu-id="21ec1-102">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="21ec1-102">Encryption options for protecting Windows and Linux VMs</span></span>
+  description: <span data-ttu-id="21ec1-103">Windows および Linux VM を保護するための暗号化オプション</span><span class="sxs-lookup"><span data-stu-id="21ec1-103">Encryption options for protecting Windows and Linux VMs</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c3925aaa7ef878f98bb61ba294156740ca598336
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513280"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135320"
 durationInMinutes: 8
 content: '[!include[](includes/2-encryption-options-for-protecting-windows-and-linux-vms.md)]'

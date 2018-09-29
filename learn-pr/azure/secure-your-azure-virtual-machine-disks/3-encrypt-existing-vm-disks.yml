@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.secure-your-azure-virtual-machine-disks.3-encrypt-existing-vm-disks
-title: <span data-ttu-id="091be-101">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="091be-101">Encrypt existing VM disks</span></span>
+title: <span data-ttu-id="a2d6b-101">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="a2d6b-101">Encrypt existing VM disks</span></span>
 metadata:
-  title: <span data-ttu-id="091be-102">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="091be-102">Encrypt existing VM disks</span></span>
-  description: <span data-ttu-id="091be-103">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="091be-103">Encrypt existing VM disks</span></span>
+  title: <span data-ttu-id="a2d6b-102">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="a2d6b-102">Encrypt existing VM disks</span></span>
+  description: <span data-ttu-id="a2d6b-103">既存の VM ディスクを暗号化する</span><span class="sxs-lookup"><span data-stu-id="a2d6b-103">Encrypt existing VM disks</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ddda32bf3576695c57d72358f4d09721dac7b8b5
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512168"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137893"
 durationInMinutes: 10
 content: '[!include[](includes/3-encrypt-existing-vm-disks.md)]'

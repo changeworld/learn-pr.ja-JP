@@ -1,51 +1,51 @@
 ### YamlMime:ModuleUnit
 uid: learn.store-app-data-with-azure-blob-storage.3-design-organization-strategy
-title: <span data-ttu-id="301f6-101">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="301f6-101">Design a storage organization strategy</span></span>
+title: <span data-ttu-id="4ed19-101">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="4ed19-101">Design a storage organization strategy</span></span>
 metadata:
-  title: <span data-ttu-id="301f6-102">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="301f6-102">Design a storage organization strategy</span></span>
-  description: <span data-ttu-id="301f6-103">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="301f6-103">Design a storage organization strategy</span></span>
+  title: <span data-ttu-id="4ed19-102">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="4ed19-102">Design a storage organization strategy</span></span>
+  description: <span data-ttu-id="4ed19-103">ストレージの組織の戦略を設計する</span><span class="sxs-lookup"><span data-stu-id="4ed19-103">Design a storage organization strategy</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8da3a8080f571b71fee0dab03a0b1cf2ac26f443
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347312"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133579"
 durationInMinutes: 7
 content: >
   [!include[](includes/3-design-organization-strategy.md)]
 quiz:
-  title: <span data-ttu-id="301f6-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="301f6-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="4ed19-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="4ed19-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="301f6-105">ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?</span><span class="sxs-lookup"><span data-stu-id="301f6-105">Which type of blob is best for most storage scenarios?</span></span>
+  - content: <span data-ttu-id="4ed19-105">ほとんどのストレージ シナリオに最適な BLOB の種類はどれですか?</span><span class="sxs-lookup"><span data-stu-id="4ed19-105">Which type of blob is best for most storage scenarios?</span></span>
     choices:
-    - content: <span data-ttu-id="301f6-106">バイト BLOB</span><span class="sxs-lookup"><span data-stu-id="301f6-106">Byte blobs</span></span>
+    - content: <span data-ttu-id="4ed19-106">バイト BLOB</span><span class="sxs-lookup"><span data-stu-id="4ed19-106">Byte blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-107">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="301f6-107">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
-    - content: <span data-ttu-id="301f6-108">ページ BLOB</span><span class="sxs-lookup"><span data-stu-id="301f6-108">Page blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-107">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-107">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
+    - content: <span data-ttu-id="4ed19-108">ページ BLOB</span><span class="sxs-lookup"><span data-stu-id="4ed19-108">Page blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-109">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="301f6-109">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
-    - content: <span data-ttu-id="301f6-110">ブロック BLOB</span><span class="sxs-lookup"><span data-stu-id="301f6-110">Block blobs</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-109">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-109">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
+    - content: <span data-ttu-id="4ed19-110">ブロック BLOB</span><span class="sxs-lookup"><span data-stu-id="4ed19-110">Block blobs</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="301f6-111">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="301f6-111">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
-    - content: <span data-ttu-id="301f6-112">追加 BLOB</span><span class="sxs-lookup"><span data-stu-id="301f6-112">Append blobs</span></span>
+      correctExplanation: <span data-ttu-id="4ed19-111">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-111">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
+    - content: <span data-ttu-id="4ed19-112">追加 BLOB</span><span class="sxs-lookup"><span data-stu-id="4ed19-112">Append blobs</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-113">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="301f6-113">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
-  - content: <span data-ttu-id="301f6-114">BLOB では、*非構造化*データ ストレージが提供されます。</span><span class="sxs-lookup"><span data-stu-id="301f6-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="301f6-115">*非構造化*が意味するものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="301f6-115">What does *unstructured* mean?</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-113">ブロック BLOB は、そのブロックベースの構造により、すばやくアップロードおよびダウンロードすることができます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-113">Block blobs can be uploaded and downloaded quickly due to their block-based structure.</span></span>
+  - content: <span data-ttu-id="4ed19-114">BLOB では、*非構造化*データ ストレージが提供されます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-114">Blobs provide *unstructured* data storage.</span></span> <span data-ttu-id="4ed19-115">*非構造化*が意味するものは何ですか?</span><span class="sxs-lookup"><span data-stu-id="4ed19-115">What does *unstructured* mean?</span></span>
     choices:
-    - content: <span data-ttu-id="301f6-116">BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="301f6-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
+    - content: <span data-ttu-id="4ed19-116">BLOB は単なるバイトのコレクションで、編成したり名前を付けたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="4ed19-116">Blobs can't be organized or named, they are only collections of bytes.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-117">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="301f6-117">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
-    - content: <span data-ttu-id="301f6-118">BLOB に格納できるデータの種類に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="301f6-118">There are no restrictions on the type of data you can store in blobs.</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-117">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-117">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
+    - content: <span data-ttu-id="4ed19-118">BLOB に格納できるデータの種類に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="4ed19-118">There are no restrictions on the type of data you can store in blobs.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="301f6-119">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="301f6-119">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
-    - content: <span data-ttu-id="301f6-120">BLOB には、JSON や XML などの構造化データを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="301f6-120">Blobs can't contain structured data, like JSON or XML.</span></span>
+      correctExplanation: <span data-ttu-id="4ed19-119">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-119">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
+    - content: <span data-ttu-id="4ed19-120">BLOB には、JSON や XML などの構造化データを含めることはできません。</span><span class="sxs-lookup"><span data-stu-id="4ed19-120">Blobs can't contain structured data, like JSON or XML.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-121">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="301f6-121">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
-    - content: <span data-ttu-id="301f6-122">BLOB からダウンロードしたデータは、ランダムに編成され、それを解析するにはクライアント ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="301f6-122">Data downloaded from blobs is organized randomly and requires a client library to parse it.</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-121">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-121">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
+    - content: <span data-ttu-id="4ed19-122">BLOB からダウンロードしたデータは、ランダムに編成され、それを解析するにはクライアント ライブラリが必要です。</span><span class="sxs-lookup"><span data-stu-id="4ed19-122">Data downloaded from blobs is organized randomly and requires a client library to parse it.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="301f6-123">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="301f6-123">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>
+      incorrectExplanation: <span data-ttu-id="4ed19-123">BLOB によってデータにいかなる構造も強制されることはありません。つまり、アプリケーションではあらゆる種類のデータを BLOB に保存できます。</span><span class="sxs-lookup"><span data-stu-id="4ed19-123">Blobs do not impose any structure on your data, meaning your application can store any type of data in a blob.</span></span>

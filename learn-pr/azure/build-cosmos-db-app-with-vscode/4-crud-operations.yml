@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.4-crud-operations
 metadata:
-  title: <span data-ttu-id="82b78-101">NoSQL データをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="82b78-101">Create, read, update, and delete NoSQL data programmatically</span></span>
-  description: <span data-ttu-id="82b78-102">ドキュメントをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="82b78-102">Create, read, update, and delete documents programmatically</span></span>
+  title: <span data-ttu-id="0620c-101">NoSQL データをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="0620c-101">Create, read, update, and delete NoSQL data programmatically</span></span>
+  description: <span data-ttu-id="0620c-102">ドキュメントをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="0620c-102">Create, read, update, and delete documents programmatically</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: cd95ca3f6199202c6862288d4cafd3e24a52600b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353209"
-title: <span data-ttu-id="82b78-103">NoSQL データをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="82b78-103">Create, read, update, and delete NoSQL data programmatically</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137925"
+title: <span data-ttu-id="0620c-103">NoSQL データをプログラムで作成、読み取り、更新、および削除する</span><span class="sxs-lookup"><span data-stu-id="0620c-103">Create, read, update, and delete NoSQL data programmatically</span></span>
 durationInMinutes: 10
 content: '[!include[](includes/4-crud-operations.md)]'

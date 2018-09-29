@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.3-exercise-create-the-azure-storage-infrastructure
-title: <span data-ttu-id="72fa8-101">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="72fa8-101">Create a storage account</span></span>
+title: <span data-ttu-id="797e1-101">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="797e1-101">Create a storage account</span></span>
 metadata:
-  title: <span data-ttu-id="72fa8-102">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="72fa8-102">Create a storage account</span></span>
-  description: <span data-ttu-id="72fa8-103">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="72fa8-103">Create a storage account</span></span>
+  title: <span data-ttu-id="797e1-102">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="797e1-102">Create a storage account</span></span>
+  description: <span data-ttu-id="797e1-103">ストレージ アカウントを作成する</span><span class="sxs-lookup"><span data-stu-id="797e1-103">Create a storage account</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 134c7fda74ac046a89ebc45f0706794f66ce0423
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346752"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135908"
 interactive: bash-editor
 azureSandbox: true
 durationInMinutes: 10

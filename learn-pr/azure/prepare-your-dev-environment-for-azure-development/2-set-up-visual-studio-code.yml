@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.prepare-azure-dev-environment.2-set-up-visual-studio-code
-title: <span data-ttu-id="95aa4-101">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="95aa4-101">Using Visual Studio Code</span></span>
+title: <span data-ttu-id="9d5f9-101">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="9d5f9-101">Using Visual Studio Code</span></span>
 metadata:
-  title: <span data-ttu-id="95aa4-102">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="95aa4-102">Using Visual Studio Code</span></span>
-  description: <span data-ttu-id="95aa4-103">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="95aa4-103">Using Visual Studio Code</span></span>
+  title: <span data-ttu-id="9d5f9-102">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="9d5f9-102">Using Visual Studio Code</span></span>
+  description: <span data-ttu-id="9d5f9-103">Visual Studio Code の使用</span><span class="sxs-lookup"><span data-stu-id="9d5f9-103">Using Visual Studio Code</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4acd62c2b33c9f766213c8716c1fbe83eb0542ea
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570470"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133003"
 durationInMinutes: 5
 content: '[!include[](includes/2-set-up-visual-studio-code.md)]'

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.classify-images-with-custom-vision-services.5-call-the-prediction-endpoint-curl
-title: <span data-ttu-id="1ecde-101">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="1ecde-101">Exercise - Call the model's prediction endpoint over HTTP</span></span>
+title: <span data-ttu-id="207e0-101">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="207e0-101">Exercise - Call the model's prediction endpoint over HTTP</span></span>
 metadata:
-  title: <span data-ttu-id="1ecde-102">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="1ecde-102">Exercise - Call the model's prediction endpoint over HTTP</span></span>
-  description: <span data-ttu-id="1ecde-103">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="1ecde-103">Exercise - Call the model's prediction endpoint over HTTP</span></span>
+  title: <span data-ttu-id="207e0-102">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="207e0-102">Exercise - Call the model's prediction endpoint over HTTP</span></span>
+  description: <span data-ttu-id="207e0-103">演習 - HTTP 経由でモデルの予測エンドポイントを呼び出す</span><span class="sxs-lookup"><span data-stu-id="207e0-103">Exercise - Call the model's prediction endpoint over HTTP</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 73c3d4a11693dd80dfc77e52c324ee5de32857a5
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513736"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137589"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 5

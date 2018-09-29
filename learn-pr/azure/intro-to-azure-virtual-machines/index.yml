@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 5f3681f939f6fb62c05d00cfce20a12c2b1d0709
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351727"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136801"
 title: Azure Virtual Machines の概要
 summary: 仮想マシンを作成する前に決定する事項、VM を作成および管理するためのオプション、ご利用の VM を管理する場合に使用する拡張機能とサービスについて説明します。
 abstract: >

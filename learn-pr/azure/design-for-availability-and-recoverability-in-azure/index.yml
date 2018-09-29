@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: e63afa0e4f48102e1e324ae7e96fa8e9cd9a3e63
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348047"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135985"
 title: Azure での可用性と回復性のための設計
 summary: アーキテクチャに可用性と回復性を作り込むことによって、インフラストラクチャとサービスの障害に対処し、データの損失を復旧し、災害から復旧する方法を学習します。
 abstract: >

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.connect-app-to-azure-storage.9-initialize-the-storage-account-model
-title: <span data-ttu-id="d2d86-101">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="d2d86-101">Initialize the storage account model</span></span>
+title: <span data-ttu-id="2a18d-101">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="2a18d-101">Initialize the storage account model</span></span>
 metadata:
-  title: <span data-ttu-id="d2d86-102">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="d2d86-102">Initialize the storage account model</span></span>
-  description: <span data-ttu-id="d2d86-103">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="d2d86-103">Initialize the storage account model</span></span>
+  title: <span data-ttu-id="2a18d-102">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="2a18d-102">Initialize the storage account model</span></span>
+  description: <span data-ttu-id="2a18d-103">ストレージ アカウントのモデルを初期化する</span><span class="sxs-lookup"><span data-stu-id="2a18d-103">Initialize the storage account model</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c8c77ddc9e15023aa6f253a477b6343c47d43f65
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513599"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135314"
 durationInMinutes: 10
 content: '[!include[](includes/9-initialize-the-storage-account-model.md)]'

@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.access-data-with-cosmos-db-and-sql-api.4-query-types
 metadata:
-  title: <span data-ttu-id="299b9-101">クエリの種類</span><span class="sxs-lookup"><span data-stu-id="299b9-101">Query types</span></span>
-  description: <span data-ttu-id="299b9-102">ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="299b9-102">Learn what kinds of queries you can use in Azure Cosmos DB to retrieve your data.</span></span>
+  title: <span data-ttu-id="d7497-101">クエリの種類</span><span class="sxs-lookup"><span data-stu-id="d7497-101">Query types</span></span>
+  description: <span data-ttu-id="d7497-102">ご自分のデータを取得するために、Azure Cosmos DB で使用できるクエリの種類について説明します。</span><span class="sxs-lookup"><span data-stu-id="d7497-102">Learn what kinds of queries you can use in Azure Cosmos DB to retrieve your data.</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7fc9ea37fb83060d26c5f9e7cf4ee76dab6180e7
-  ms.sourcegitcommit: 13f3e790ebb0807e6f2c670bbfffd87ab6dbabdb
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/20/2018
-  ms.locfileid: "46483858"
-title: <span data-ttu-id="299b9-103">クエリの種類</span><span class="sxs-lookup"><span data-stu-id="299b9-103">Query types</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134287"
+title: <span data-ttu-id="d7497-103">クエリの種類</span><span class="sxs-lookup"><span data-stu-id="d7497-103">Query types</span></span>
 durationInMinutes: 5
 content: >
   [!include[](includes/4-query-types.md)]
 quiz:
-  title: <span data-ttu-id="299b9-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="299b9-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="d7497-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="d7497-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="299b9-105">SQL クエリで唯一必須の句は何ですか?</span><span class="sxs-lookup"><span data-stu-id="299b9-105">What is the only required clause in a SQL query?</span></span>
+  - content: <span data-ttu-id="d7497-105">SQL クエリで唯一必須の句は何ですか?</span><span class="sxs-lookup"><span data-stu-id="d7497-105">What is the only required clause in a SQL query?</span></span>
     choices:
-    - content: <span data-ttu-id="299b9-106">SELECT</span><span class="sxs-lookup"><span data-stu-id="299b9-106">SELECT</span></span>
+    - content: <span data-ttu-id="d7497-106">SELECT</span><span class="sxs-lookup"><span data-stu-id="d7497-106">SELECT</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="299b9-107">SELECT はクエリで唯一必須の句です。</span><span class="sxs-lookup"><span data-stu-id="299b9-107">SELECT is the only required clause in a query.</span></span>
-    - content: <span data-ttu-id="299b9-108">FROM</span><span class="sxs-lookup"><span data-stu-id="299b9-108">FROM</span></span>
+      correctExplanation: <span data-ttu-id="d7497-107">SELECT はクエリで唯一必須の句です。</span><span class="sxs-lookup"><span data-stu-id="d7497-107">SELECT is the only required clause in a query.</span></span>
+    - content: <span data-ttu-id="d7497-108">FROM</span><span class="sxs-lookup"><span data-stu-id="d7497-108">FROM</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="299b9-109">FROM は SQL クエリで省略可能な句です。</span><span class="sxs-lookup"><span data-stu-id="299b9-109">FROM is an optional clause in a SQL query.</span></span>
-    - content: <span data-ttu-id="299b9-110">WHERE</span><span class="sxs-lookup"><span data-stu-id="299b9-110">WHERE</span></span>
+      incorrectExplanation: <span data-ttu-id="d7497-109">FROM は SQL クエリで省略可能な句です。</span><span class="sxs-lookup"><span data-stu-id="d7497-109">FROM is an optional clause in a SQL query.</span></span>
+    - content: <span data-ttu-id="d7497-110">WHERE</span><span class="sxs-lookup"><span data-stu-id="d7497-110">WHERE</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="299b9-111">WHERE は SQL クエリで省略可能な句です。</span><span class="sxs-lookup"><span data-stu-id="299b9-111">WHERE is an optional clause in a SQL query.</span></span>
-  - content: <span data-ttu-id="299b9-112">先頭が最大の製品 ID で末尾が最小の製品 ID である、製品 ID と説明の順序付きリストが取得されるのはどのクエリですか?</span><span class="sxs-lookup"><span data-stu-id="299b9-112">Which query will get an ordered list of product IDs and descriptions, starting with the largest product ID and ending with the smallest product ID?</span></span>
+      incorrectExplanation: <span data-ttu-id="d7497-111">WHERE は SQL クエリで省略可能な句です。</span><span class="sxs-lookup"><span data-stu-id="d7497-111">WHERE is an optional clause in a SQL query.</span></span>
+  - content: <span data-ttu-id="d7497-112">先頭が最大の製品 ID で末尾が最小の製品 ID である、製品 ID と説明の順序付きリストが取得されるのはどのクエリですか?</span><span class="sxs-lookup"><span data-stu-id="d7497-112">Which query will get an ordered list of product IDs and descriptions, starting with the largest product ID and ending with the smallest product ID?</span></span>
     choices:
-    - content: <span data-ttu-id="299b9-113">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span><span class="sxs-lookup"><span data-stu-id="299b9-113">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span></span>
+    - content: <span data-ttu-id="d7497-113">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span><span class="sxs-lookup"><span data-stu-id="d7497-113">SELECT p.productId FROM Products p ORDER BY p.productId ASC</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="299b9-114">このクエリでは、昇順の製品 ID のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="299b9-114">This would only return the product IDs in ascending order.</span></span>
-    - content: <span data-ttu-id="299b9-115">SELECT p.id FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="299b9-115">SELECT p.id FROM Products p ORDER BY p.productId DESC</span></span>
+      incorrectExplanation: <span data-ttu-id="d7497-114">このクエリでは、昇順の製品 ID のみが返されます。</span><span class="sxs-lookup"><span data-stu-id="d7497-114">This would only return the product IDs in ascending order.</span></span>
+    - content: <span data-ttu-id="d7497-115">SELECT p.id FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="d7497-115">SELECT p.id FROM Products p ORDER BY p.productId DESC</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="299b9-116">このクエリでは、降順の ID のみが返されます</span><span class="sxs-lookup"><span data-stu-id="299b9-116">This would only return the ID in descending order</span></span>
-    - content: <span data-ttu-id="299b9-117">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="299b9-117">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span></span>
+      incorrectExplanation: <span data-ttu-id="d7497-116">このクエリでは、降順の ID のみが返されます</span><span class="sxs-lookup"><span data-stu-id="d7497-116">This would only return the ID in descending order</span></span>
+    - content: <span data-ttu-id="d7497-117">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span><span class="sxs-lookup"><span data-stu-id="d7497-117">SELECT p.productId, p.description FROM Products p ORDER BY p.productId DESC</span></span>
       isCorrect: true
-      incorrectExplanation: <span data-ttu-id="299b9-118">このクエリでは、製品 ID と説明の両方が返されますが、昇順となります。</span><span class="sxs-lookup"><span data-stu-id="299b9-118">This would return both the product ID and description but in ascending order.</span></span>
+      incorrectExplanation: <span data-ttu-id="d7497-118">このクエリでは、製品 ID と説明の両方が返されますが、昇順となります。</span><span class="sxs-lookup"><span data-stu-id="d7497-118">This would return both the product ID and description but in ascending order.</span></span>

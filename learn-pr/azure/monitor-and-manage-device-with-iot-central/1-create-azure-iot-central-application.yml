@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.monitor-manage-device-with-iotcentral.1-create-azure-iot-central-application
-title: <span data-ttu-id="2c30a-101">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2c30a-101">Create an Azure IoT Central application</span></span>
+title: <span data-ttu-id="c325d-101">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="c325d-101">Create an Azure IoT Central application</span></span>
 metadata:
-  title: <span data-ttu-id="2c30a-102">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2c30a-102">Create an Azure IoT Central application</span></span>
-  description: <span data-ttu-id="2c30a-103">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="2c30a-103">Create an Azure IoT Central application</span></span>
+  title: <span data-ttu-id="c325d-102">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="c325d-102">Create an Azure IoT Central application</span></span>
+  description: <span data-ttu-id="c325d-103">Azure IoT Central アプリケーションを作成する</span><span class="sxs-lookup"><span data-stu-id="c325d-103">Create an Azure IoT Central application</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 98e9a83d594bc3611f3048909b7d238ea289901e
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46570454"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137824"
 durationInMinutes: 5
 content: '[!include[](includes/1-create-azure-iot-central-application.md)]'

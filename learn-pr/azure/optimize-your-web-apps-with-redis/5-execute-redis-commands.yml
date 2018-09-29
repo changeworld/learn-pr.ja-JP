@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.optimize-web-app-with-redis.5-execute-redis-commands
-title: <span data-ttu-id="becf5-101">Redis と対話するためのクライアント API を調べる</span><span class="sxs-lookup"><span data-stu-id="becf5-101">Explore the client API to interact with Redis</span></span>
+title: <span data-ttu-id="2c976-101">Redis と対話するためのクライアント API を調べる</span><span class="sxs-lookup"><span data-stu-id="2c976-101">Explore the client API to interact with Redis</span></span>
 metadata:
-  title: <span data-ttu-id="becf5-102">Redis と対話するためのクライアント API を調べる</span><span class="sxs-lookup"><span data-stu-id="becf5-102">Explore the client API to interact with Redis</span></span>
-  description: <span data-ttu-id="becf5-103">Redis と対話するための StackExchange.Redis API を調べる</span><span class="sxs-lookup"><span data-stu-id="becf5-103">Explore the StackExchange.Redis API to interact with Redis</span></span>
+  title: <span data-ttu-id="2c976-102">Redis と対話するためのクライアント API を調べる</span><span class="sxs-lookup"><span data-stu-id="2c976-102">Explore the client API to interact with Redis</span></span>
+  description: <span data-ttu-id="2c976-103">Redis と対話するための StackExchange.Redis API を調べる</span><span class="sxs-lookup"><span data-stu-id="2c976-103">Explore the StackExchange.Redis API to interact with Redis</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: b7a0713a9aa82a4b01833ca5d2362ab38c0785e4
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349767"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133340"
 durationInMinutes: 10
 content: '[!include[](includes/5-execute-redis-commands.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-a-windows-vm-in-azure.2-create-a-windows-virtual-machine
-title: <span data-ttu-id="6e1b8-101">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="6e1b8-101">Windows virtual machines in Azure</span></span>
+title: <span data-ttu-id="791fb-101">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="791fb-101">Windows virtual machines in Azure</span></span>
 metadata:
-  title: <span data-ttu-id="6e1b8-102">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="6e1b8-102">Windows virtual machines in Azure</span></span>
-  description: <span data-ttu-id="6e1b8-103">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="6e1b8-103">Windows virtual machines in Azure</span></span>
+  title: <span data-ttu-id="791fb-102">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="791fb-102">Windows virtual machines in Azure</span></span>
+  description: <span data-ttu-id="791fb-103">Azure での Windows 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="791fb-103">Windows virtual machines in Azure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 3d97d747f0ac23c328448b84a19518e80770ef80
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349512"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135247"
 durationInMinutes: 5
 content: '[!include[](includes/2-create-a-windows-virtual-machine.md)]'

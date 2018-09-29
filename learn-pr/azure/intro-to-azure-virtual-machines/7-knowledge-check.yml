@@ -1,43 +1,43 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-azure-virtual-machines.7-knowledge-check
-title: <span data-ttu-id="bfea4-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="bfea4-101">Knowledge check</span></span>
+title: <span data-ttu-id="56efb-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="56efb-101">Knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="bfea4-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="bfea4-102">Knowledge check</span></span>
-  description: <span data-ttu-id="bfea4-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="bfea4-103">Knowledge check</span></span>
+  title: <span data-ttu-id="56efb-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="56efb-102">Knowledge check</span></span>
+  description: <span data-ttu-id="56efb-103">知識チェック</span><span class="sxs-lookup"><span data-stu-id="56efb-103">Knowledge check</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: c3d74041711d08f746273cbeb87da9f272ca4453
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352939"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136040"
 durationInMinutes: 1
 quiz:
-  title: <span data-ttu-id="bfea4-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="bfea4-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="56efb-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="56efb-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="bfea4-105">仮想マシン上でネットワーク アプライアンスを実行するとします。</span><span class="sxs-lookup"><span data-stu-id="bfea4-105">Suppose you want to run a network appliance on a virtual machine.</span></span> <span data-ttu-id="bfea4-106">どのワークロード オプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="bfea4-106">Which workload option should you choose?</span></span>
+  - content: <span data-ttu-id="56efb-105">仮想マシン上でネットワーク アプライアンスを実行するとします。</span><span class="sxs-lookup"><span data-stu-id="56efb-105">Suppose you want to run a network appliance on a virtual machine.</span></span> <span data-ttu-id="56efb-106">どのワークロード オプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="56efb-106">Which workload option should you choose?</span></span>
     choices:
-    - content: <span data-ttu-id="bfea4-107">汎用</span><span class="sxs-lookup"><span data-stu-id="bfea4-107">General purpose</span></span>
+    - content: <span data-ttu-id="56efb-107">汎用</span><span class="sxs-lookup"><span data-stu-id="56efb-107">General purpose</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bfea4-108">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-108">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="bfea4-109">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-109">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
-    - content: <span data-ttu-id="bfea4-110">コンピューティング最適化</span><span class="sxs-lookup"><span data-stu-id="bfea4-110">Compute optimized</span></span>
+      incorrectExplanation: <span data-ttu-id="56efb-108">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="56efb-108">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="56efb-109">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="56efb-109">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
+    - content: <span data-ttu-id="56efb-110">コンピューティング最適化</span><span class="sxs-lookup"><span data-stu-id="56efb-110">Compute optimized</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="bfea4-111">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-111">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="bfea4-112">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-112">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
-    - content: <span data-ttu-id="bfea4-113">メモリ最適化</span><span class="sxs-lookup"><span data-stu-id="bfea4-113">Memory optimized</span></span>
+      correctExplanation: <span data-ttu-id="56efb-111">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="56efb-111">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="56efb-112">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="56efb-112">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
+    - content: <span data-ttu-id="56efb-113">メモリ最適化</span><span class="sxs-lookup"><span data-stu-id="56efb-113">Memory optimized</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bfea4-114">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-114">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="bfea4-115">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-115">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
-    - content: <span data-ttu-id="bfea4-116">ストレージ最適化</span><span class="sxs-lookup"><span data-stu-id="bfea4-116">Storage optimized</span></span>
+      incorrectExplanation: <span data-ttu-id="56efb-114">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="56efb-114">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="56efb-115">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="56efb-115">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
+    - content: <span data-ttu-id="56efb-116">ストレージ最適化</span><span class="sxs-lookup"><span data-stu-id="56efb-116">Storage optimized</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bfea4-117">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-117">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="bfea4-118">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="bfea4-118">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
-  - content: '<span data-ttu-id="bfea4-119">正誤問題: Resource Manager テンプレートは JSON ファイルですか?</span><span class="sxs-lookup"><span data-stu-id="bfea4-119">True or false: Resource Manager templates are JSON files?</span></span>'
+      incorrectExplanation: <span data-ttu-id="56efb-117">コンピューティング最適化仮想マシンは、高い CPU 対メモリ比を提供するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="56efb-117">Compute optimized virtual machines are designed to have a high CPU-to-memory ratio.</span></span> <span data-ttu-id="56efb-118">トラフィックが中程度の Web サーバー、ネットワーク アプライアンス、バッチ処理、アプリケーション サーバーに適しています。</span><span class="sxs-lookup"><span data-stu-id="56efb-118">Suitable for medium traffic web servers, network appliances, batch processes, and application servers.</span></span>
+  - content: '<span data-ttu-id="56efb-119">正誤問題: Resource Manager テンプレートは JSON ファイルですか?</span><span class="sxs-lookup"><span data-stu-id="56efb-119">True or false: Resource Manager templates are JSON files?</span></span>'
     choices:
-    - content: <span data-ttu-id="bfea4-120">○</span><span class="sxs-lookup"><span data-stu-id="bfea4-120">True</span></span>
+    - content: <span data-ttu-id="56efb-120">○</span><span class="sxs-lookup"><span data-stu-id="56efb-120">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="bfea4-121">Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。</span><span class="sxs-lookup"><span data-stu-id="bfea4-121">Resource Manager templates are JSON files that define the resources you need to deploy for your solution.</span></span> <span data-ttu-id="bfea4-122">このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。</span><span class="sxs-lookup"><span data-stu-id="bfea4-122">The template can then be used to easily re-create multiple versions of your infrastructure, such as staging and production.</span></span>
-    - content: <span data-ttu-id="bfea4-123">×</span><span class="sxs-lookup"><span data-stu-id="bfea4-123">False</span></span>
+      correctExplanation: <span data-ttu-id="56efb-121">Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。</span><span class="sxs-lookup"><span data-stu-id="56efb-121">Resource Manager templates are JSON files that define the resources you need to deploy for your solution.</span></span> <span data-ttu-id="56efb-122">このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。</span><span class="sxs-lookup"><span data-stu-id="56efb-122">The template can then be used to easily re-create multiple versions of your infrastructure, such as staging and production.</span></span>
+    - content: <span data-ttu-id="56efb-123">×</span><span class="sxs-lookup"><span data-stu-id="56efb-123">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="bfea4-124">Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。</span><span class="sxs-lookup"><span data-stu-id="bfea4-124">Resource Manager templates are JSON files that define the resources you need to deploy for your solution.</span></span> <span data-ttu-id="bfea4-125">このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。</span><span class="sxs-lookup"><span data-stu-id="bfea4-125">The template can then be used to easily re-create multiple versions of your infrastructure, such as staging and production.</span></span>
+      incorrectExplanation: <span data-ttu-id="56efb-124">Resource Manager テンプレートとは、ご利用のソリューションに対して配置が必要なリソースを定義した JSON ファイルのことをいいます。</span><span class="sxs-lookup"><span data-stu-id="56efb-124">Resource Manager templates are JSON files that define the resources you need to deploy for your solution.</span></span> <span data-ttu-id="56efb-125">このテンプレートを使用すれば、ご利用のインフラストラクチャの複数のバージョン (ステージングや運用など) を容易に再作成することができます。</span><span class="sxs-lookup"><span data-stu-id="56efb-125">The template can then be used to easily re-create multiple versions of your infrastructure, such as staging and production.</span></span>

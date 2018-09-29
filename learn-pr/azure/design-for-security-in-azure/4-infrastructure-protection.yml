@@ -1,45 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.design-for-security.4-infrastructure-protection
-title: <span data-ttu-id="be7f9-101">インフラストラクチャの保護</span><span class="sxs-lookup"><span data-stu-id="be7f9-101">Infrastructure protection</span></span>
+title: <span data-ttu-id="c9220-101">インフラストラクチャの保護</span><span class="sxs-lookup"><span data-stu-id="c9220-101">Infrastructure protection</span></span>
 metadata:
-  title: <span data-ttu-id="be7f9-102">インフラストラクチャの保護</span><span class="sxs-lookup"><span data-stu-id="be7f9-102">Infrastructure protection</span></span>
-  description: <span data-ttu-id="be7f9-103">このユニットでは、ご利用のインフラストラクチャへのアクセスを保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="be7f9-103">In this unit we'll discuss how to protect access to your infrastructure</span></span>
+  title: <span data-ttu-id="c9220-102">インフラストラクチャの保護</span><span class="sxs-lookup"><span data-stu-id="c9220-102">Infrastructure protection</span></span>
+  description: <span data-ttu-id="c9220-103">このユニットでは、ご利用のインフラストラクチャへのアクセスを保護する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c9220-103">In this unit we'll discuss how to protect access to your infrastructure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 0a765eaf5c91cc055266d283760bf94f6ba1efa7
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349271"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135128"
 durationInMinutes: 10
 content: >
   [!include[](includes/4-infrastructure-protection.md)]
 quiz:
-  title: <span data-ttu-id="be7f9-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="be7f9-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="c9220-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="c9220-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="be7f9-105">Azure のロールに基づくアクセス制御は、1 つのスコープを除き、すべてに割り当てることができますが、その 1 つのスコープとは次のうちどれでしょうか?</span><span class="sxs-lookup"><span data-stu-id="be7f9-105">Azure role-based access control can be applied to all but which of the following scopes?</span></span>
+  - content: <span data-ttu-id="c9220-105">Azure のロールに基づくアクセス制御は、1 つのスコープを除き、すべてに割り当てることができますが、その 1 つのスコープとは次のうちどれでしょうか?</span><span class="sxs-lookup"><span data-stu-id="c9220-105">Azure role-based access control can be applied to all but which of the following scopes?</span></span>
     choices:
-    - content: <span data-ttu-id="be7f9-106">サブスクリプション</span><span class="sxs-lookup"><span data-stu-id="be7f9-106">Subscription</span></span>
+    - content: <span data-ttu-id="c9220-106">サブスクリプション</span><span class="sxs-lookup"><span data-stu-id="c9220-106">Subscription</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="be7f9-107">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-107">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="be7f9-108">リソース グループ</span><span class="sxs-lookup"><span data-stu-id="be7f9-108">Resource group</span></span>
+      incorrectExplanation: <span data-ttu-id="c9220-107">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-107">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="c9220-108">リソース グループ</span><span class="sxs-lookup"><span data-stu-id="c9220-108">Resource group</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="be7f9-109">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-109">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="be7f9-110">Linux ファイルシステム</span><span class="sxs-lookup"><span data-stu-id="be7f9-110">Linux filesystem</span></span>
+      incorrectExplanation: <span data-ttu-id="c9220-109">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-109">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="c9220-110">Linux ファイルシステム</span><span class="sxs-lookup"><span data-stu-id="c9220-110">Linux filesystem</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="be7f9-111">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-111">Role-based access control can only be applied to Azure resources.</span></span>
-    - content: <span data-ttu-id="be7f9-112">リソース</span><span class="sxs-lookup"><span data-stu-id="be7f9-112">Resource</span></span>
+      correctExplanation: <span data-ttu-id="c9220-111">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-111">Role-based access control can only be applied to Azure resources.</span></span>
+    - content: <span data-ttu-id="c9220-112">リソース</span><span class="sxs-lookup"><span data-stu-id="c9220-112">Resource</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="be7f9-113">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-113">Role-based access control can only be applied to Azure resources.</span></span>
-  - content: '<span data-ttu-id="be7f9-114">正誤問題: 仮想マシンに Azure リソースのマネージド ID を割り当て、それにその他の仮想マシンを開始、停止する権限を付与できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-114">True or false: a managed identity for Azure resources could be assigned to a virtual machine to give it rights to start and stop other virtual machines.</span></span>'
+      incorrectExplanation: <span data-ttu-id="c9220-113">ロールベースのアクセス制御は Azure リソースにのみ適用できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-113">Role-based access control can only be applied to Azure resources.</span></span>
+  - content: '<span data-ttu-id="c9220-114">正誤問題: 仮想マシンに Azure リソースのマネージド ID を割り当て、それにその他の仮想マシンを開始、停止する権限を付与できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-114">True or false: a managed identity for Azure resources could be assigned to a virtual machine to give it rights to start and stop other virtual machines.</span></span>'
     choices:
-    - content: <span data-ttu-id="be7f9-115">○</span><span class="sxs-lookup"><span data-stu-id="be7f9-115">True</span></span>
+    - content: <span data-ttu-id="c9220-115">○</span><span class="sxs-lookup"><span data-stu-id="c9220-115">True</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="be7f9-116">Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="be7f9-116">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="be7f9-117">この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-117">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
-    - content: <span data-ttu-id="be7f9-118">×</span><span class="sxs-lookup"><span data-stu-id="be7f9-118">False</span></span>
+      correctExplanation: <span data-ttu-id="c9220-116">Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="c9220-116">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="c9220-117">この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-117">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
+    - content: <span data-ttu-id="c9220-118">×</span><span class="sxs-lookup"><span data-stu-id="c9220-118">False</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="be7f9-119">Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="be7f9-119">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="be7f9-120">この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。</span><span class="sxs-lookup"><span data-stu-id="be7f9-120">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>
+      incorrectExplanation: <span data-ttu-id="c9220-119">Azure リソースのマネージド ID はサービスに ID を割り当てる方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="c9220-119">Managed identities for Azure resources is a method of assigning an identity to services.</span></span> <span data-ttu-id="c9220-120">この割り当てによって、仮想マシンの起動や停止など、Azure サービスを管理するロールベースのアクセス制御を付与できます。</span><span class="sxs-lookup"><span data-stu-id="c9220-120">Through this assignment, role-based access control can be granted to manage Azure services, such as starting and stopping virtual machines?</span></span>

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.choose-storage-approach-in-azure.3-operations-and-latency
 metadata:
-  title: <span data-ttu-id="714d6-101">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="714d6-101">Determine operational needs</span></span>
-  description: <span data-ttu-id="714d6-102">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="714d6-102">Determine operational needs</span></span>
+  title: <span data-ttu-id="b6d84-101">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="b6d84-101">Determine operational needs</span></span>
+  description: <span data-ttu-id="b6d84-102">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="b6d84-102">Determine operational needs</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 82ca3a21cd7edec4c37c7a6f9af6e801b8c0103b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350015"
-title: <span data-ttu-id="714d6-103">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="714d6-103">Determine operational needs</span></span>
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131644"
+title: <span data-ttu-id="b6d84-103">操作ニーズを決定する</span><span class="sxs-lookup"><span data-stu-id="b6d84-103">Determine operational needs</span></span>
 durationInMinutes: 3
 content: '[!include[](includes/3-operations-and-latency.md)]'

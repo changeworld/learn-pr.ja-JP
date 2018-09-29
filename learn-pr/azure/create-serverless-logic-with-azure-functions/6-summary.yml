@@ -1,57 +1,57 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-serverless-logic-with-functions.6-summary
-title: <span data-ttu-id="21638-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="21638-101">Summary</span></span>
+title: <span data-ttu-id="e8084-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="e8084-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="21638-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="21638-102">Summary</span></span>
-  description: <span data-ttu-id="21638-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="21638-103">Summary</span></span>
+  title: <span data-ttu-id="e8084-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="e8084-102">Summary</span></span>
+  description: <span data-ttu-id="e8084-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="e8084-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: aae90b81a478b5f1ece9708dc528bdae43b8748b
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347536"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132926"
 azureSandbox: true
 durationInMinutes: 3
 content: >
   [!include[](includes/6-summary.md)]
 quiz:
-  title: <span data-ttu-id="21638-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="21638-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="e8084-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="e8084-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="21638-105">次のうち、サーバーレス ロジックを最も適切に定義しているのはどれですか。</span><span class="sxs-lookup"><span data-stu-id="21638-105">Which of the following best defines serverless logic?</span></span>
+  - content: <span data-ttu-id="e8084-105">次のうち、サーバーレス ロジックを最も適切に定義しているのはどれですか。</span><span class="sxs-lookup"><span data-stu-id="e8084-105">Which of the following best defines serverless logic?</span></span>
     choices:
-    - content: <span data-ttu-id="21638-106">サーバーで実行されない自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="21638-106">Code you write that doesn't run on servers.</span></span>
+    - content: <span data-ttu-id="e8084-106">サーバーで実行されない自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="e8084-106">Code you write that doesn't run on servers.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-107">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="21638-107">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="21638-108">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="21638-108">Instead, a cloud provider such as Azure, manages servers.</span></span>
-    - content: <span data-ttu-id="21638-109">自分が管理するサーバーで実行する自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="21638-109">Code you write that runs on servers you manage.</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-107">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="e8084-107">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="e8084-108">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="e8084-108">Instead, a cloud provider such as Azure, manages servers.</span></span>
+    - content: <span data-ttu-id="e8084-109">自分が管理するサーバーで実行する自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="e8084-109">Code you write that runs on servers you manage.</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-110">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="21638-110">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="21638-111">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="21638-111">Instead, a cloud provider such as Azure, manages servers.</span></span>
-    - content: <span data-ttu-id="21638-112">クラウド プロバイダーが管理するサーバーで実行する自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="21638-112">Code you write that runs on servers a cloud provider manages.</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-110">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="e8084-110">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="e8084-111">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="e8084-111">Instead, a cloud provider such as Azure, manages servers.</span></span>
+    - content: <span data-ttu-id="e8084-112">クラウド プロバイダーが管理するサーバーで実行する自分で記述したコード。</span><span class="sxs-lookup"><span data-stu-id="e8084-112">Code you write that runs on servers a cloud provider manages.</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="21638-113">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="21638-113">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="21638-114">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="21638-114">Instead, a cloud provider such as Azure, manages servers.</span></span>
-  - content: <span data-ttu-id="21638-115">リソースの管理、デプロイ、および共有を容易にするための論理ユニットとして関数をグループ化するコンテナーを何と呼びますか。</span><span class="sxs-lookup"><span data-stu-id="21638-115">The container that groups functions into a logical unit for easier management, deployment, and sharing of resources is called?</span></span>
+      correctExplanation: <span data-ttu-id="e8084-113">サーバーレスは、サーバーがないという意味ではなく、単に開発者がサーバーについて心配する必要がないという意味です。</span><span class="sxs-lookup"><span data-stu-id="e8084-113">Serverless doesn't mean there are no servers - it just means the developer doesn't have to worry about servers.</span></span> <span data-ttu-id="e8084-114">代わりに、Azure などのクラウド プロバイダーがサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="e8084-114">Instead, a cloud provider such as Azure, manages servers.</span></span>
+  - content: <span data-ttu-id="e8084-115">リソースの管理、デプロイ、および共有を容易にするための論理ユニットとして関数をグループ化するコンテナーを何と呼びますか。</span><span class="sxs-lookup"><span data-stu-id="e8084-115">The container that groups functions into a logical unit for easier management, deployment, and sharing of resources is called?</span></span>
     choices:
-    - content: <span data-ttu-id="21638-116">リソース グループ</span><span class="sxs-lookup"><span data-stu-id="21638-116">Resource group</span></span>
+    - content: <span data-ttu-id="e8084-116">リソース グループ</span><span class="sxs-lookup"><span data-stu-id="e8084-116">Resource group</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-117">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="21638-117">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="21638-118">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="21638-118">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="21638-119">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="21638-119">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
-    - content: <span data-ttu-id="21638-120">関数アプリ</span><span class="sxs-lookup"><span data-stu-id="21638-120">Function app</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-117">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="e8084-117">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="e8084-118">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="e8084-118">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="e8084-119">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="e8084-119">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
+    - content: <span data-ttu-id="e8084-120">関数アプリ</span><span class="sxs-lookup"><span data-stu-id="e8084-120">Function app</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="21638-121">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="21638-121">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="21638-122">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="21638-122">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="21638-123">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="21638-123">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
-    - content: <span data-ttu-id="21638-124">関数コレクション</span><span class="sxs-lookup"><span data-stu-id="21638-124">Function collection</span></span>
+      correctExplanation: <span data-ttu-id="e8084-121">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="e8084-121">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="e8084-122">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="e8084-122">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="e8084-123">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="e8084-123">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
+    - content: <span data-ttu-id="e8084-124">関数コレクション</span><span class="sxs-lookup"><span data-stu-id="e8084-124">Function collection</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-125">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="21638-125">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="21638-126">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="21638-126">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="21638-127">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="21638-127">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
-  - content: <span data-ttu-id="21638-128">各呼び出しで関数固有の API キーが渡されるように要求することで、不明な HTTP 呼び出し元から関数をセキュリティで保護しました。</span><span class="sxs-lookup"><span data-stu-id="21638-128">We secured our function against unknown HTTP callers by requiring a function-specific API key be passed with each call.</span></span> <span data-ttu-id="21638-129">このキーを含める必要がある HTTTP 要求の名前ヘッダーは、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="21638-129">Which of the following is the name header in the HTTTP requests that needs to contain this key?</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-125">関数アプリは、関数を整理し、まとめて管理する方法です。</span><span class="sxs-lookup"><span data-stu-id="e8084-125">A function app is a way to organize and collectively manage your functions.</span></span> <span data-ttu-id="e8084-126">関数アプリは、Azure App Service でまとめて管理される 1 つまたは複数の個々の関数で構成されます。</span><span class="sxs-lookup"><span data-stu-id="e8084-126">A function app is comprised of one or more individual functions that are managed together by Azure App Service.</span></span> <span data-ttu-id="e8084-127">関数アプリ内のすべての関数は、同じ料金プラン、継続的なデプロイ、およびランタイムのバージョンを共有します。</span><span class="sxs-lookup"><span data-stu-id="e8084-127">All the functions in a function app share the same pricing plan, continuous deployment and runtime version.</span></span>
+  - content: <span data-ttu-id="e8084-128">各呼び出しで関数固有の API キーが渡されるように要求することで、不明な HTTP 呼び出し元から関数をセキュリティで保護しました。</span><span class="sxs-lookup"><span data-stu-id="e8084-128">We secured our function against unknown HTTP callers by requiring a function-specific API key be passed with each call.</span></span> <span data-ttu-id="e8084-129">このキーを含める必要がある HTTTP 要求の名前ヘッダーは、次のうちどれですか。</span><span class="sxs-lookup"><span data-stu-id="e8084-129">Which of the following is the name header in the HTTTP requests that needs to contain this key?</span></span>
     choices:
-    - content: <span data-ttu-id="21638-130">x-functions-key</span><span class="sxs-lookup"><span data-stu-id="21638-130">x-functions-key</span></span>
+    - content: <span data-ttu-id="e8084-130">x-functions-key</span><span class="sxs-lookup"><span data-stu-id="e8084-130">x-functions-key</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="21638-131">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="21638-131">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>
-    - content: <span data-ttu-id="21638-132">x-requested-with</span><span class="sxs-lookup"><span data-stu-id="21638-132">x-requested-with</span></span>
+      correctExplanation: <span data-ttu-id="e8084-131">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="e8084-131">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>
+    - content: <span data-ttu-id="e8084-132">x-requested-with</span><span class="sxs-lookup"><span data-stu-id="e8084-132">x-requested-with</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-133">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="21638-133">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>
-    - content: <span data-ttu-id="21638-134">x-csrf-token</span><span class="sxs-lookup"><span data-stu-id="21638-134">x-csrf-token</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-133">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="e8084-133">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>
+    - content: <span data-ttu-id="e8084-134">x-csrf-token</span><span class="sxs-lookup"><span data-stu-id="e8084-134">x-csrf-token</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="21638-135">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="21638-135">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>
+      incorrectExplanation: <span data-ttu-id="e8084-135">API は、"code" という名前のクエリ文字列変数に含めることも、x-functions-key HTTP ヘッダーに含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="e8084-135">The API can be included in a query string variable named "code",  or it can be included in an x-functions-key HTTP header.</span></span>

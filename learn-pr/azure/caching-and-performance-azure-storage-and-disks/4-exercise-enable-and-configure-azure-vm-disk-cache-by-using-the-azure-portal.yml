@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.caching-and-performance-azure-storage-and-disks.4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal
-title: <span data-ttu-id="e7105-101">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="e7105-101">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
+title: <span data-ttu-id="c4dfe-101">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="c4dfe-101">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
 metadata:
-  title: <span data-ttu-id="e7105-102">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="e7105-102">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
-  description: <span data-ttu-id="e7105-103">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="e7105-103">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
+  title: <span data-ttu-id="c4dfe-102">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="c4dfe-102">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
+  description: <span data-ttu-id="c4dfe-103">演習 - Azure portal を使用して Azure VM ディスク キャッシュを有効化して構成する</span><span class="sxs-lookup"><span data-stu-id="c4dfe-103">Exercise - Enable and configure Azure VM disk cache with the Azure portal</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 85d7905334c09c828dea8329dcc00f3f72ffa6d3
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349399"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134947"
 azureSandbox: true
 durationInMinutes: 10
 content: '[!include[](includes/4-exercise-enable-and-configure-azure-vm-disk-cache-by-using-the-azure-portal.md)]'

@@ -1,19 +1,19 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.2-create-the-azure-storage-infrastructure
-title: <span data-ttu-id="9b9d2-101">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="9b9d2-101">Create the Azure storage infrastructure</span></span>
+title: <span data-ttu-id="7f524-101">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="7f524-101">Create the Azure storage infrastructure</span></span>
 metadata:
-  title: <span data-ttu-id="9b9d2-102">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="9b9d2-102">Create the Azure storage infrastructure</span></span>
-  description: <span data-ttu-id="9b9d2-103">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="9b9d2-103">Create the Azure storage infrastructure</span></span>
+  title: <span data-ttu-id="7f524-102">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="7f524-102">Create the Azure storage infrastructure</span></span>
+  description: <span data-ttu-id="7f524-103">Azure ストレージ インフラストラクチャを作成する</span><span class="sxs-lookup"><span data-stu-id="7f524-103">Create the Azure storage infrastructure</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 8555e3d4ed5d338a751675beb54dcbc8a79e380f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347936"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137437"
 durationInMinutes: 5
 content: '[!include[](includes/2-create-the-azure-storage-infrastructure.md)]'

@@ -1,20 +1,20 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-azure-db-for-postgresql.create-postgresql-db-server-via-azure-cli
-title: <span data-ttu-id="01156-101">演習 - Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="01156-101">Exercise - Create an Azure Database for PostgreSQL server via the Azure CLI</span></span>
+title: <span data-ttu-id="d933c-101">演習 - Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="d933c-101">Exercise - Create an Azure Database for PostgreSQL server via the Azure CLI</span></span>
 metadata:
-  title: <span data-ttu-id="01156-102">演習 - Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="01156-102">Exercise - Create an Azure Database for PostgreSQL server via the Azure CLI</span></span>
-  description: <span data-ttu-id="01156-103">このラボでは、Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成します。</span><span class="sxs-lookup"><span data-stu-id="01156-103">In this lab, you will use the Azure CLI to create an Azure Database for PostgreSQL server.</span></span>
+  title: <span data-ttu-id="d933c-102">演習 - Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成する</span><span class="sxs-lookup"><span data-stu-id="d933c-102">Exercise - Create an Azure Database for PostgreSQL server via the Azure CLI</span></span>
+  description: <span data-ttu-id="d933c-103">このラボでは、Azure CLI を使用して Azure Database for PostgreSQL サーバーを作成します。</span><span class="sxs-lookup"><span data-stu-id="d933c-103">In this lab, you will use the Azure CLI to create an Azure Database for PostgreSQL server.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: a492305ae1aceeb2e2f80c99fbf632b99d8a004c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351288"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47136286"
 interactive: bash
 azureSandbox: true
 durationInMinutes: 10
