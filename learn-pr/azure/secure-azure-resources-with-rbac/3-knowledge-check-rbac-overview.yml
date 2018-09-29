@@ -1,0 +1,57 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
+metadata:
+  title: 知識チェック - RBAC とは何ですか?
+  description: 知識チェック - RBAC とは何ですか?
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 9cfc2c5f009232811477fad2f9ae884a66ebbbef
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439214"
+title: 知識チェック - RBAC とは何ですか?
+durationInMinutes: 2
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 'true または false: Azure 内のロール定義はアクセス許可のコレクションです。'
+    choices:
+    - content: "True"
+      isCorrect: true
+      correctExplanation: Azure におけるロールは、ユーザー、グループ、またはアプリケーションに割り当てることができる名前付きのアクセス許可のコレクションです。
+    - content: ×
+      isCorrect: false
+      incorrectExplanation: Azure におけるロールは、ユーザー、グループ、またはアプリケーションに割り当てることができる名前付きのアクセス許可のコレクションです。
+  - content: '通常、ロールの割り当ては "誰"、"対象"、および "場所" で構成されます。 これらの 3 つの要素に対する正式名は何ですか? '
+    choices:
+    - content: ユーザー、グループ、およびアプリケーション
+      isCorrect: false
+      incorrectExplanation: ユーザー、グループ、およびアプリケーションは、セキュリティ プリンシパルです。
+    - content: セキュリティ プリンシパル、ロール、およびスコープ
+      isCorrect: true
+      correctExplanation: ロールの割り当ては、アクセス権を付与する目的のため、特定のスコープで、ロールをサービス プリンシパルにバインドするプロセスです。
+    - content: 管理グループ、サブスクリプション、およびリソース グループ
+      isCorrect: false
+      incorrectExplanation: 管理グループ、サブスクリプション、およびリソース グループは、Azure リソースを整理し、スコープを表す方法です。
+    - content: 所有者、共同作成者、および閲覧者
+      isCorrect: false
+      incorrectExplanation: 所有者、共同作成者、および閲覧者は、Azure の組み込みロールです。
+  - content: Azure でのスコープの継承の順序とは何ですか?
+    choices:
+    - content: 管理グループ、リソース グループ、サブスクリプション、リソース
+      isCorrect: false
+      incorrectExplanation: これは正しい順序ではありません。
+    - content: 管理グループ、サブスクリプション、リソース グループ、リソース
+      isCorrect: true
+      correctExplanation: 継承の順序は、最大から最小の要素のスケールに一致します。
+    - content: サブスクリプション、管理グループ、リソース グループ、リソース
+      isCorrect: false
+      incorrectExplanation: これは正しい順序ではありません。
+    - content: サブスクリプション、リソース グループ、管理グループ、リソース
+      isCorrect: false
+      incorrectExplanation: これは正しい順序ではありません。

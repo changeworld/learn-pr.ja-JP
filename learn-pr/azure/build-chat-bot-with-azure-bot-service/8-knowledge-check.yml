@@ -1,0 +1,54 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.8-knowledge-check
+title: 自分の知識をチェックする
+metadata:
+  title: 自分の知識をチェックする
+  description: "\"Azure Bot Service を使用してチャット ボットを作成する\" に関する知識チェック"
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 5b206ed0afc79f1f42efb0445f45bf7d8cbf9fa7
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439359"
+durationInMinutes: 5
+quiz:
+  title: "\"Azure Bot Service を使用してチャット ボットを作成する\" に関する知識チェック"
+  questions:
+  - content: 「はい」または「いいえ」で答えてください。*Web アプリ ボット* テンプレートは 1 つの *Web アプリ*と 1 つの*ボット*を作成する。
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: テンプレートは 1 つのボットと、そのボットをホストする 1 つの Azure Web アプリを作成します。 また、テンプレートは、QnA Maker のナレッジ ベースを使用するようにボットを構成します。 ナレッジ ベースを自分で作成して、ボットに接続する必要があります。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: テンプレート名が説明しているように、1 つの Web アプリと 1 つのボットを作成します。
+  - content: QnA Maker は何を作成するために使用されますか?
+    choices:
+    - content: ボットで使用できるナレッジ ベース。
+      isCorrect: true
+      correctExplanation: QnA Maker は質問と回答を取り込み、ボットが質問への回答に使用できる形式に処理します。
+    - content: ユーザーからのフィードバックを得るために、ボットに埋め込むことができるアンケート。
+      isCorrect: false
+      incorrectExplanation: QnA Maker は、アンケート サービスではありません。 ユーザーへの情報提供を支援し、ユーザーから情報を引き出そうとするものではありません。
+    - content: ボット
+      isCorrect: false
+      incorrectExplanation: QnA Maker はボットに関連付けることができますが、ボットを作成することはありません。
+  - content: QnA Maker にはどのような方法でデータを入力できますか?
+    choices:
+    - content: 手動。
+      isCorrect: false
+      incorrectExplanation: ナレッジ ベースを手動で入力することは可能ですが、他にも方法があります。
+    - content: テキスト ファイルをアップロードする。
+      isCorrect: false
+      incorrectExplanation: QnA Maker は、タブ区切りの値や Excel のスプレッドシートなど、さまざまな形式のテキスト ファイルをサポートします。 しかし、ナレッジ ベースに入力する方法は、テキスト ファイルだけではありません。
+    - content: FAQ ページの URL を指定する。
+      isCorrect: false
+      incorrectExplanation: QnA Maker では、さまざまな FAQ ページ形式から質問と回答を抽出できます。 しかし、ナレッジ ベースに入力する方法は、FAQ の URL 指定だけではありません。
+    - content: 上記のすべて。
+      isCorrect: true
+      correctExplanation: QnA Maker は柔軟性が高いため、テキスト ファイル、FAQ ページ、場合によっては製品マニュアルなど、最も一般的な複数の形式の入力データを処理できます。 目標は、再フォーマットを行わずにデータを入力できる利便性を確保することです。

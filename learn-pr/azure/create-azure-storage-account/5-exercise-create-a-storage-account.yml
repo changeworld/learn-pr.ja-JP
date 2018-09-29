@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: d9668ff449ad2ed619121afac59c102a2935ad5d
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350831"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139445"
 azureSandbox: true
 durationInMinutes: 7
 content: '[!include[](includes/5-exercise-create-a-storage-account.md)]'

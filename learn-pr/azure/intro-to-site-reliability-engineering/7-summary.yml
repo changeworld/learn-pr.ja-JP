@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.7-summary
+title: まとめ
+metadata:
+  title: まとめ
+  description: まとめ
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: e4ed5db8921c29b13f7c5923bfb608aeb93ca540
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439233"
+durationInMinutes: 2
+content: '[!include[](includes/7-summary.md)]'

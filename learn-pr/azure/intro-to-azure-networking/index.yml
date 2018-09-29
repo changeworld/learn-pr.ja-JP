@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 31c039ebaec8ca3b61fb9f8b71af794527645530
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349728"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47139013"
 title: Azure のネットワークの概要
 summary: クラウドでアプリまたはサービスを実行するには、セキュリティで保護された高速なネットワークが必要です。 Azure のネットワークの基本についていくつか学習し、Azure のネットワークが回復性の向上と待ち時間の短縮にどのように役立つかについて学習します。
 abstract: >

@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 77b9bb2b5709706c3b692c8e7d68e7487ee2cad2
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567349"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138877"
 title: Azure App Service を使用して Web サイトを Azure にデプロイする
 summary: Azure 内の Web アプリでは、基になるサーバー、ストレージ、またはネットワークの資産を使用することなく、簡単にご自分の Web サイトを発行および管理することができます。 代わりに、Web サイトの機能に集中することができ、堅牢な Azure プラットフォームを使用して、ご自分のサイトに対してセキュリティで保護されたアクセスを提供することができます。
 prerequisites: なし

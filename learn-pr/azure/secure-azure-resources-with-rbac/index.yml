@@ -1,0 +1,47 @@
+### YamlMime:Module
+uid: learn.secure-azure-resources-with-rbac
+metadata:
+  title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+  description: ロールベースのアクセス制御 (RBAC) は、Azure のリソースのアクセス権を詳細に管理できるシステムです。 RBAC を使用して、チーム内で職務を分離し、職務に必要なアクセス許可のみをユーザーに付与します。 このモジュールでは、RBAC を使用して Azure 内のリソースへのアクセスを管理する方法を示します。
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: b52748fdfa8c7d2aa5c92ece468cd5ffe6b2da1e
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439305"
+title: ロールベースのアクセス制御 (RBAC) で Azure リソースをセキュリティ保護する
+summary: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - 自分や他のユーザーのリソースへのアクセスを確認する
+
+  - リソースへのアクセス権を付与する
+
+  - RBAC の変更のアクティビティ ログを表示する
+prerequisites: >
+  - Azure portal やリソース グループなど、Azure の基本的な概念に関する知識
+iconUrl: /learn/achievements/secure-azure-resources-with-rbac.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+- azure-portal
+- azure-active-directory
+units:
+- learn.secure-azure-resources-with-rbac.1-introduction
+- learn.secure-azure-resources-with-rbac.2-rbac-overview
+- learn.secure-azure-resources-with-rbac.3-knowledge-check-rbac-overview
+- learn.secure-azure-resources-with-rbac.4-list-access
+- learn.secure-azure-resources-with-rbac.5-grant-access
+- learn.secure-azure-resources-with-rbac.6-view-activity-logs
+- learn.secure-azure-resources-with-rbac.7-knowledge-check-rbac
+- learn.secure-azure-resources-with-rbac.8-summary
+achievement: learn.secure-azure-resources-with-rbac.badge

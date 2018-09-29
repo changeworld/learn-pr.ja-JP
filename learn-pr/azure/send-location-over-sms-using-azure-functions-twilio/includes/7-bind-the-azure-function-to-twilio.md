@@ -10,9 +10,9 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
 
 1. ローカルの Azure Functions ランタイムが前の演習から引き続き実行されている場合は、これを停止します。
 
-1. `ImHere.Functions` プロジェクトに "Microsoft.Azure.WebJobs.Extensions.Twilio" NuGet パッケージ v3.0.0-rc1 を追加します。 **Twilio バインディングを使用した安定バージョンでのバグが原因で、バージョン 3.0.0 ではなく 3.0.0-rc1 を使用します**。 この NuGet パッケージには、バインディングに関連するクラスが含まれています。
+2. `ImHere.Functions` プロジェクトに "Microsoft.Azure.WebJobs.Extensions.Twilio" NuGet パッケージを追加します。 この NuGet パッケージには、バインディングに関連するクラスが含まれています。
 
-1. `messages` という名前の静的な `SendLocation` クラスで、静的な `Run` メソッドに新しいパラメーターを追加します。 このパラメーターの型は `ICollector<CreateMessageOptions>` となります。 `Twilio.Rest.Api.V2010.Account` 名前空間に対して `using` ディレクティブを追加する必要があります。
+3. `messages` という名前の静的な `SendLocation` クラスで、静的な `Run` メソッドに新しいパラメーターを追加します。 このパラメーターの型は `ICollector<CreateMessageOptions>` となります。 `Twilio.Rest.Api.V2010.Account` 名前空間に対して `using` ディレクティブを追加する必要があります。
 
     ```cs
     [FunctionName("SendLocation")]
@@ -21,7 +21,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
                                                 ILogger log)
     ```
 
-1. 次のように新しい `messages` パラメーターを `TwilioSms` 属性で修飾します。 
+4. 次のように新しい `messages` パラメーターを `TwilioSms` 属性で修飾します。 
 
       ```cs
     [TwilioSms(AccountSidSetting = "TwilioAccountSid",AuthTokenSetting = "TwilioAuthToken", From = "+1xxxxxxxxx")]ICollector<CreateMessageOptions> messages,
@@ -43,8 +43,7 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
     > [!IMPORTANT]
     > 電話番号から必ずすべての空白を削除してください。
 
-
-1. 関数アプリ設定は、`local.settings.json` ファイル内にローカルで構成できます。 `TwilioSMS` 属性に渡された設定名を使用して、この JSON ファイルに Twilio アカウント SID と認証トークンを追加します。
+5. 関数アプリ設定は、`local.settings.json` ファイル内にローカルで構成できます。 `TwilioSMS` 属性に渡された設定名を使用して、この JSON ファイルに Twilio アカウント SID と認証トークンを追加します。
 
     ```json
     {
@@ -63,9 +62,8 @@ Twilio を介して SMS メッセージを送信するには、アカウント �
     > [!NOTE]
     > これらのローカル設定は、ローカルでの実行だけを目的とします。 運用アプリでは、これらの値はローカル開発またはテスト アカウントの資格情報となります。 Azure 関数が Azure にデプロイされたら、運用時の値を構成できるようになります。
 
-     > [!NOTE]
+    > [!NOTE]
     > コードをソース管理にチェックインすると、これらのローカル アプリケーション設定値もチェックインされます。そのため、コードがオープン ソース、またはどのような形式でもパブリックである場合は、これらのファイル内の実際の値をチェックインしないようにしてください。
-    
 
 ## <a name="create-the-sms-messages"></a>SMS メッセージを作成する
 
