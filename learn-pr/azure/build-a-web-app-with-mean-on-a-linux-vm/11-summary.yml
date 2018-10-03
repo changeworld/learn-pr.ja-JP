@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 284d0a687dc09aa1fc36a74e31b27738b90b8188
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 49a23603aa990e203720d71cdb4b6be0ad2d0d9f
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350184"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437223"
 durationInMinutes: 3
-content: '[!include[](includes/11-summary.md)]'
+content: >
+  [!include[](includes/11-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 開発スタックとして MEAN を選択する妥当な理由はどれですか?
+    choices:
+    - content: 高度に構造化されたリレーショナル データを使用しています。
+      isCorrect: false
+      incorrectExplanation: MongoDB (MEAN スタックでは "M") は、NoSQL データベースです。 NoSQL データベースはリレーショナルではなく、SQL Server や他のリレーショナル データベースのようにデータを構造化する必要がないことを意味します。
+    - content: MEAN アプリは、他の開発スタックで作成されたアプリより高速で実行されます。
+      isCorrect: false
+      incorrectExplanation: 多くの開発スタックがあります。 どれをとっても、他のものより速かったり優れていたりすることは必ずしもありません。 いずれも、特定の種類のアプリと開発者のスキル セットを考慮して作成されました。
+    - content: 開発チームの全員が JavaScript のエキスパートです。
+      isCorrect: true
+      correctExplanation: MEAN スタックは、JavaScript に大きく依存します。 JavaScript は、Web アプリのクライアント側とサーバー側の両方に表示されます。
+  - content: NoSQL データベースとはどのようなものですか?
+    choices:
+    - content: すべての無料でオープン ソースのデータベース ソフトウェアを説明するために使用される用語です。
+      isCorrect: false
+      incorrectExplanation: 多くのデータベースは無料でオープン ソースですが、NoSQL はデータの構造について記述します。
+    - content: データを定義済みの方法で構造化する必要のないデータベースです。
+      isCorrect: true
+      correctExplanation: たとえば、MongoDB では、MySQL や他のリレーショナル データベースでは必要な厳格なデータ構造を必要としない、JSON に似たドキュメントにデータが格納されます。
+    - content: これはリレーショナル データベースの一種ですが、データのアクセスと操作に SQL 言語を使用しません。
+      isCorrect: false
+      incorrectExplanation: NoSQL データベースは非リレーショナルであり、データを事前に定義された方法で構造化する必要がないことを意味します。
+  - content: MEAN スタックでの AngularJS の役割は何ですか?
+    choices:
+    - content: AngularJS は、HTML および JavaScript のデータ バインディングを実装します。 たとえば、AngularJS を使用すると、データベースから項目を取得して、UI に表示することができます。
+      isCorrect: true
+      correctExplanation: データ バインディングは、HTML をクリーンで最小限に保つのに役立ちます。 AngularJS は、基になるデータが変更されたときに、更新をユーザーに対してすぐに表示します。
+    - content: ユーザーのコンピューターにインストールされるブラウザー プラグインです。
+      isCorrect: false
+      incorrectExplanation: 技術的には AngularJS をインストールすることはありません。AngularJS は、HTML ページ内のスクリプト タグから参照する JavaScript コードに過ぎません。
+    - content: サーバー側から Web アプリケーションを実行することができます。
+      isCorrect: false
+      incorrectExplanation: サーバー側から MEAN Web アプリをホストするのは、AngularJS ではなく Node.js です。

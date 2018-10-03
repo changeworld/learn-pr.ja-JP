@@ -8,12 +8,49 @@ metadata:
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: c68a68b3429b73a6831781a74c150d226d5bd659
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348888"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437801"
 title: まとめ
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure Cosmos DB にアクセスする .NET Core アプリケーションを開発するために Visual Studio Code を使用しているとします。 アプリケーション構成にデータベース用の接続文字列を含める必要があります。 プロジェクトにこの情報を取り込むための最も便利な方法は何ですか?
+    choices:
+    - content: Visual Studio Code から直接
+      isCorrect: true
+      correctExplanation: Azure Cosmos DB 拡張機能を利用すれば、Visual Studio Code 内から Azure Cosmos DB のアカウントとデータベースを管理して作成することができます。
+    - content: Azure portal から
+      isCorrect: false
+      incorrectExplanation: Azure portal でこの情報が提供されますが、Visual Studio Code を既に使用している場合、ポータルに移動することが最も適切であるとは思えません。
+    - content: Azure CLI の使用
+      isCorrect: false
+      incorrectExplanation: 特に Visual Studio Code には組み込みのターミナルがあるため、これは適した選択ですが、必須コマンドの知識が必要になります。 これは、Visual Studio Code 拡張機能ほど便利ではない可能性があります。
+  - content: Azure Cosmos DB の SQL API を操作している場合、CRUD 操作の実行に使用できるのは次のうちどれですか?
+    choices:
+    - content: LINQ
+      isCorrect: true
+      correctExplanation: LINQ と SQL は、SQL API をクエリするための有効なメソッドのうちの 2 つです。
+    - content: Apache Cassandra クライアント ライブラリ
+      isCorrect: false
+      incorrectExplanation: Apache Cassandra ライブラリで Azure Cosmos DB の Cassandra API を操作できますが、SQL API を操作することはできません。
+    - content: Azure Table Storage ライブラリ
+      isCorrect: false
+      incorrectExplanation: Azure Table Storage ライブラリで Azure Cosmos DB の Table API を操作できますが、SQL API を操作することはできません。
+  - content: Azure Cosmos DB クライアント SDK の DocumentClient クラスを操作する場合は、NOSQL モデルを使用します。 このクラスを使用して、ユーザー文書の FirstName フィールドをどのように 'Ann' から 'Fran' に変更しますか?
+    choices:
+    - content: FirstName=Fran で UpdateDocumentAsync を呼び出す
+      isCorrect: false
+      incorrectExplanation: DocumentClient クラスには UpdateDocumentAsync メソッドがありません。 単一のフィールドを更新することは、ドキュメント スタイルの NOSQL 手法と矛盾しています。
+    - content: 更新されたユーザー オブジェクトで UpsertDocumentAsync を呼び出す
+      isCorrect: false
+      incorrectExplanation: これは機能しますが、要件を満たすための最低限必要なアクセスではありません。 Upsert 操作では、そのキーが既に存在する場合はドキュメントが置き換えられ、存在しない場合は新しいドキュメントが追加されます。 ここでは新しいドキュメントを追加しないため、このメソッドを使用すると、バグの追跡が少し難しくなる危険性があります。
+    - content: 更新されたユーザー オブジェクトで ReplaceDocumentAsync を呼び出す
+      isCorrect: true
+      correctExplanation: ReplaceDocumentAsync では、既存のドキュメントが新しいものに置き換えられます。 この場合、古いものと新しいものが FirstName 以外は同じになるようにします。

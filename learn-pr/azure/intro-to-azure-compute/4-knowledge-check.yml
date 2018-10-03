@@ -9,37 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 95702ee9d30aead8db2074f0d12528edc3ae59fe
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349744"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437886"
 durationInMinutes: 2
 content: >
   [!include[](includes/4-knowledge-check.md)]
 quiz:
   title: 自分の知識をチェックする
   questions:
-  - content: 天文学チームは、膨大な計算処理能力とメモリを必要とする画像処理アプリケーションを多数揃えています。 これらのアプリケーションを Azure に短期間で移行します。 次のどのオプションを選択する必要がありますか?
+  - content: '独自のサーバー上でローカルで実行している既存のアプリケーションがあるとします。 容量を増やす必要がありますが、アップグレードされたオンプレミスのハードウェアを購入するのではなく、Azure に移行することを選びます。 ご利用のアプリケーションが Azure で実行されるように最も早くルーティングできるのは、どのコンピューティング オプションですか? '
     choices:
-    - content: Azure Kubernetes Service (AKS)
+    - content: サーバーレス コンピューティング
       isCorrect: false
-      incorrectExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
-    - content: Service Fabric
+      incorrectExplanation: サーバーレス コンピューティング モデルに変換すると、ご利用のアプリケーションをイベント ベースのアーキテクチャに再構成する必要がある可能性が高いです。
+    - content: コンテナー
       isCorrect: false
-      incorrectExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
-    - content: App Service
+      incorrectExplanation: コンテナーに変換すると、ご利用のアプリケーションを再パッケージ化する必要があります。 これは既存のアーキテクチャによってはあまり難しくない場合もありますが、時間がかかり、コンテナーに関するいくつかの専門知識が必要になります。
+    - content: 仮想マシン
       isCorrect: true
-      correctExplanation: App Service はフル マネージドであり、自動的に規模を変化させます。 これによりチームはその得意とするところ、コードの記述に集中できます。
-  - content: 天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるような天文学の計算に直面しているものとします。 並列実行はあまり役に立たないようです。 次のどのオプションを選択する必要がありますか?
+      correctExplanation: VM のセットアップをフル コントールできる権限があるため、ご利用のオンプレミス サーバーに合うように構成できます。 これにより、ご自分の既存のアプリケーションをほとんど変更せずに、Azure VM 上で実行することができます。
+  - content: '数百万のモバイル デバイス上で実行する写真共有アプリケーションを操作するとします。 ローカルまたは国内で多くのイベントが発生するたびに使用量が急増するため、需要は予想できません。 このワークロードに最適な Azure コンピューティング リソースはどれですか? '
     choices:
-    - content: Cloud Services
-      isCorrect: false
-      incorrectExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。
-    - content: Azure Batch
+    - content: サーバーレス コンピューティング
       isCorrect: true
-      correctExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。
-    - content: Container Instances
+      correctExplanation: 写真共有アプリはイベント駆動型であり、予測できない需要を処理する必要があります。 サーバーレス コンピューティングがこのアプリに最適です。これはイベント ベースであるため、トラフィックの急増を処理するためにすぐにスケーリングすることができます。 また、ユーザー データの処理中のみの計算時間を支払うことになるため、費用効果の高い選択肢でもあります。
+    - content: コンテナー
       isCorrect: false
-      incorrectExplanation: Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。
+      incorrectExplanation: 通常、コンテナー インスタンスの起動には数秒かかります。 これでは、需要の急増に対応するために、十分に早くスケーリングできない可能性があります。
+    - content: 仮想マシン
+      isCorrect: false
+      incorrectExplanation: VM は開始するのに数分かかります。 これでは、需要の急増に対応するために、十分に早くスケーリングできない可能性があります。
+  - content: 'コンピューティング オプションでは、ご自分のアプリケーションを実行する環境の構成においてさまざまなレベルが提供されます。 次のうち "ほとんどコントロール" から "最小限のコントロール" の順にコンピューティング オプションを並べているのはどれですか? '
+    choices:
+    - content: サーバーレス コンピューティング, コンテナー, 仮想マシン
+      isCorrect: false
+      incorrectExplanation: サーバーレス コンピューティングでは、最小限のコントロールが提供され、基になるホスティング環境は完全に抽象化されます。
+    - content: コンテナー, サーバーレス コンピューティング, 仮想マシン
+      isCorrect: false
+      incorrectExplanation: コンテナーでは、その環境に対する制限されたコントロールが提供されます。たとえば、基になるオペレーティング システムを選びます。
+    - content: 仮想マシン, コンテナー, サーバーレス コンピューティング
+      isCorrect: true
+      correctExplanation: 仮想マシンでは、その環境をフル コントールできる権限が与えられます。 コンテナーでは、制限付きのコントロールが与えられます。 サーバーレス コンピューティングでは、任意のインフラストラクチャの構成は許可されていません。

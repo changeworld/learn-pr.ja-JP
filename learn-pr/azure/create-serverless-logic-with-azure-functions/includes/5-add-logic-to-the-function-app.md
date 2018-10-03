@@ -18,68 +18,81 @@
 
 1. グループのリソースが表示されます。 **escalator-functions-xxxxxxx** 項目 (稲妻の Function アイコンでも示されます) を選択することで、前の演習で作成した関数アプリの名前をクリックします。
 
-  ![強調表示されている [すべてのリソース] ブレードと作成したエスカレーター関数アプリが示されている Azure portal のスクリーンショット。](../media/5-access-function-app.png)
+    ![強調表示されている [すべてのリソース] ブレードと作成したエスカレーター関数アプリが示されている Azure portal のスクリーンショット。](../media/5-access-function-app.png)
 
-1. 左側のメニューには、関数アプリ名と 3 項目 (*[関数]*、*[プロキシ]*、*[スロット]*) を含むサブメニューが表示されます。  初めての関数の作成を始めるには、**[Functions]** をクリックし、結果のページの上部にある **[新しい関数]** ボタンをクリックします。
+<!-- Start temporary fix for issue #2498. -->
+> [!IMPORTANT]
+> 現時点では、このモジュールの演習は Azure Functions V1 を使用して行います。 以下の手順に慎重に従って、関数アプリで V1 ランタイム バージョンが使用されていることを確認してください。 
 
-  ![関数アプリの Functions リストと強調表示された [Functions] メニュー項目および [新しい関数] ボタンが示されている Azure portal のスクリーンショット。](../media/5-function-add-button.png)
+1. **[Function Apps]** リストで、関数アプリを選択します。
+1. **[プラットフォーム機能]** を選択します。
+1. **[プラットフォーム機能]** 画面の **[全般設定]** で、**[Function App の設定]** を選択します。
+1. **[ランタイム バージョン]** で *[~1]* を選択します。
+1. **[Function App の設定]** を閉じます。
+
+これで、Azure Functions V1 ランタイムを使用するように関数アプリが構成されました。 最初の関数の作成を続行できます。
+<!-- End temporary fix for issue #2498. --> 
+
+1. 左側のメニューには、関数アプリ名と 3 つの項目 (*[関数]*、*[プロキシ]*、*[スロット]*) を含むサブメニューが表示されます。  
+
+1. 初めての関数の作成を始めるには、**[Functions]** をクリックし、結果のページの上部にある **[新しい関数]** ボタンをクリックします。
+
+    ![関数アプリの Functions リストと強調表示された [Functions] メニュー項目および [新しい関数] ボタンが示されている Azure portal のスクリーンショット。](../media/5-function-add-button.png)
 
 1. クイック スタート画面で、次のスクリーンショットで示されているように、**[関数を独自に作成する]** セクションの **[カスタム関数]** リンクを選択します。 [クイック スタート] 画面が表示されない場合は、ページの上部にある **[クイックスタートに移動します]** リンクをクリックします。
 
-  ![[関数を独自に作成する] セクションの [カスタム関数] ボタンが強調表示されている [クイック スタート] ブレードが示されている Azure portal のスクリーンショット。](../media/5-custom-function.png)
+    ![[関数を独自に作成する] セクションの [カスタム関数] ボタンが強調表示されている [クイック スタート] ブレードが示されている Azure portal のスクリーンショット。](../media/5-custom-function.png)
 
-1. 次のスクリーンショットに示すように、画面に表示されたテンプレートの一覧から、**HTTP トリガー** テンプレートでの **JavaScript** の実装を選択します。
+1. 次のスクリーンショットに示すように、画面に表示されたテンプレートのリストから、**[HTTP トリガー]** テンプレートを選択します。
 
-1. 表示された **[新しい関数]** ダイアログの名前フィールドに「**DriveGearTemperatureService**」と入力します。 認証レベルを "関数" のままにして **[作成]** ボタンを押し、関数を作成します。
+1. 表示された **[新しい関数]** ダイアログの名前フィールドに「**DriveGearTemperatureService**」と入力します。 承認レベルを "関数" のままにして **[作成]** ボタンを押し、関数を作成します。
 
-  ![言語フィールドが JavaScript に設定されて名前が DriveGearTemperatureService に設定された HTTP トリガー関数のオプションが示されている Azure portal のスクリーンショット。](../media/5-create-httptrigger-form.png)
+1. 関数の作成が完了すると、コード エディターが開き、*index.js* コード ファイルの内容が示されます。 テンプレートが生成された既定のコードは、次のスニペット内に一覧されます。
 
-1. 関数の作成が完了すると、コード エディターが *index.js* コード ファイルの内容と共に表示されます。 テンプレートが生成された既定のコードは、次のスニペット内に一覧されます。
+    ```javascript
+    module.exports = function (context, req) {
+        context.log('JavaScript HTTP trigger function processed a request.');
+    
+        if (req.query.name || (req.body && req.body.name)) {
+            context.res = {
+                // status: 200, /* Defaults to 200 */
+                body: "Hello " + (req.query.name || req.body.name)
+            };
+        }
+        else {
+            context.res = {
+                status: 400,
+                body: "Please pass a name on the query string or in the request body"
+            };
+        }
+        context.done();
+    };
+    ```
 
-```javascript
-module.exports = function (context, req) {
-    context.log('JavaScript HTTP trigger function processed a request.');
+    関数では、HTTP 要求のクエリ文字列から、または要求本文の一部として渡される名前が必要です。 この関数では、メッセージ "**Hello, {name}**" を返し、要求で送信された名前をエコー バックすることによって応答が行われます。
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
-    }
-    else {
-        context.res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-    context.done();
-};
-```
+    ソース ビューの右側にタブが 2 つ表示されます。 **[ファイルの表示]** タブでは、ご自分の関数におけるコードと構成ファイルが一覧されます。  **function.json** を選択すると、次のような外観の関数の構成が表示されます。
 
-関数では、HTTP 要求のクエリ文字列から、または要求本文の一部として渡される名前が必要です。 この関数では、メッセージ "**Hello, {name}**" を返し、要求で送信された名前をエコー バックすることによって応答が行われます。
-
-ソース ビューの右側にタブが 2 つ表示されます。 **[ファイルの表示]** タブでは、ご自分の関数におけるコードと構成ファイルが一覧されます。  **function.json** を選択すると、次のような外観の関数の構成が表示されます。
-
-```javascript
-{
-    "disabled": false,
-    "bindings": [
+    ```javascript
     {
-        "authLevel": "function",
-        "type": "httpTrigger",
-        "direction": "in",
-        "name": "req"
-    },
-    {
-        "type": "http",
-        "direction": "out",
-        "name": "res"
+        "disabled": false,
+        "bindings": [
+        {
+            "authLevel": "function",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req"
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        }
+        ]
     }
-    ]
-}
-```
+    ```
 
-この構成では、HTTP 要求を受け取ったときに実行する関数を宣言します。 出力バインディングでは、HTTP 応答として送信される応答を宣言します。
+    この構成では、HTTP 要求を受け取ったときに実行する関数を宣言します。 出力バインディングでは、HTTP 応答として送信される応答を宣言します。    
 
 ## <a name="test-the-function"></a>関数をテストする
 
@@ -103,7 +116,7 @@ Microsoft でこの関数を作成したときに [関数] を指定している
 
 1. 関数を展開して **[管理]** セクションを選択し、既定の関数キーを表示してクリップボードにコピーします。
 
-  ![公開された関数キーが強調表示されている関数の [管理] ブレードが示されている Azure portal のスクリーンショット。](../media/5-get-function-key.png)
+    ![公開された関数キーが強調表示されている関数の [管理] ブレードが示されている Azure portal のスクリーンショット。](../media/5-get-function-key.png)
 
 1. 次に、**cURL** ツールをインストールしたコマンド ラインから、関数の URL と関数キーを使用して cURL コマンドの書式を設定します。
 
@@ -116,7 +129,10 @@ Microsoft でこの関数を作成したときに [関数] を指定している
     curl --header "Content-Type: application/json" --header "x-functions-key: <your-function-key>" --request POST --data "{\"name\": \"Azure Function\"}" https://<your-url-here>/api/DriveGearTemperatureService
     ```
 
-関数は、`"Hello Azure Function"` というテキストで応答します。
+この関数では、`"Hello Azure Function"` というテキストで応答します。
+
+> [!CAUTION]
+> Windows を使用している場合は、コマンド プロンプトから `cURL` を実行してください。 PowerShell には *curl* コマンドがありますが、それは Invoke-WebRequest の別名であり、`cURL` と同じものではありません。
 
 > [!NOTE]
 > 選択した関数の横にある **[テスト]** タブで個々の関数のセクションからテストすることもできますが、関数キー システムはここでは必要ないので、それが動作していることを確認することはできません。 テスト インターフェイスで適切なヘッダー値とパラメーター値を追加し、**[実行]** ボタンをクリックしてテスト出力を表示します。
@@ -222,10 +238,10 @@ module.exports = function (context, req) {
 
 1. **[実行]** を選択して、出力ウィンドウに応答を表示します。 ログ メッセージを表示するには、ページの下部にあるポップアップで **[ログ]** タブを開きます。 次のスクリーンショットでは、出力ウィンドウに応答の例と **[ログ]** ウィンドウにメッセージが示されています。
 
-![[テスト] タブと [ログ] タブが表示されている関数エディター ブレードが示されている Azure portal のスクリーンショット。 関数からの応答のサンプルが、出力ウィンドウに表示されます。](../media/5-portal-testing.png)
+    ![[テスト] タブと [ログ] タブが表示されている関数エディター ブレードが示されている Azure portal のスクリーンショット。 関数からの応答のサンプルが、出力ウィンドウに表示されます。](../media/5-portal-testing.png)
 
-出力ウィンドウで、状態フィールドが各測定値に正しく追加されていることを確認できます。
+    出力ウィンドウで、状態フィールドが各測定値に正しく追加されていることを確認できます。
 
-**[監視]** ダッシュボードに移動すると、Application Insights に要求が記録されていることを確認することができます。
+    **[監視]** ダッシュボードに移動すると、Application Insights に要求が記録されていることを確認することができます。
 
-![関数の [監視] ダッシュボードに前のテストの成功結果が示されている Azure portal のスクリーンショット。](../media/5-app-insights.png)
+    ![関数の [監視] ダッシュボードに前のテストの成功結果が示されている Azure portal のスクリーンショット。](../media/5-app-insights.png)

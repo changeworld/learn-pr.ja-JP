@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f4d66dbb3493499cf95217b79a2f60a33e83eb90
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 3990a8784b49b701b130de6c7ea2bd4306858142
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350047"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437257"
 durationInMinutes: 2
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '正誤問題: Azure App Service は、トラフィックの需要に合わせて Web アプリケーションを自動的にスケーリングできます。'
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: Azure App Service には自動スケールのサポートが組み込まれており、需要に応じて、アプリを実行するために割り当てられるリソースを増やしたり減らしたりします。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: Azure App Service には自動スケールのサポートが組み込まれており、需要に応じて、アプリを実行するために割り当てられるリソースを増やしたり減らしたりします。
+  - content: 次のうち、有効な自動デプロイ ソースではないものはどれですか?
+    choices:
+    - content: GitHub
+      isCorrect: false
+      incorrectExplanation: 現在、Azure では、Visual Studio Team Services、GitHub、Bitbucket、OneDrive、Dropbox、および外部 Git リポジトリがサポートされています。
+    - content: Visual Studio Team Services
+      isCorrect: false
+      incorrectExplanation: 現在、Azure では、Visual Studio Team Services、GitHub、Bitbucket、OneDrive、Dropbox、および外部 Git リポジトリがサポートされています。
+    - content: SharePoint
+      isCorrect: true
+      correctExplanation: 現在、Azure では、Visual Studio Team Services、GitHub、Bitbucket、OneDrive、Dropbox、および外部 Git リポジトリがサポートされています。
+    - content: Dropbox
+      isCorrect: false
+      incorrectExplanation: 現在、Azure では、Visual Studio Team Services、GitHub、Bitbucket、OneDrive、Dropbox、および外部 Git リポジトリがサポートされています。
+  - content: '正誤問題: Web アプリケーションを更新するときのダウンタイムを最小限にしたい場合は、デプロイ スロットが役に立ちます。'
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: デプロイ スロットを使用すると、ステージング スロット内の Web アプリケーションのバージョンを変更した後、ダウンタイムなしで運用スロットにスワップできます。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: デプロイ スロットを使用すると、ステージング スロット内の Web アプリケーションのバージョンを変更した後、ダウンタイムなしで運用スロットにスワップできます。

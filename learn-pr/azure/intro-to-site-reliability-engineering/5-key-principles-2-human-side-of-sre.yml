@@ -1,0 +1,58 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+title: '重要な SRE 原則とプラクティス: SRE の人間的側面'
+metadata:
+  title: '重要な SRE 原則とプラクティス: SRE の人間的側面'
+  description: '重要な SRE 原則とプラクティス: SRE の人間的側面'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 18fe4f197d8a58ad6e6f2fc27e9e5a5a8b86db96
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439251"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-key-principles-2-human-side-of-sre.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '次のうち (SRE コンテキストでの) 骨折り仕事の特性で*ない*ものはどれですか?  '
+    choices:
+    - content: 作業が繰り返される
+      isCorrect: false
+      incorrectExplanation: 骨折り仕事は実際に繰り返されます。
+    - content: 作業がチケット システムで追跡される
+      isCorrect: true
+      correctExplanation: 作業の追跡方法は、骨折り仕事の特性ではありません。 骨折り仕事はこのように追跡されることが多いですが、チケット システムではより生産的な種類の作業であるその他を追跡するために使用できます。
+    - content: 作業では持続的な価値は提供されない
+      isCorrect: false
+      incorrectExplanation: 骨折り仕事である作業に永続的な価値はありません。
+    - content: 作業は事実上ほとんどが手動で、自動化されていない
+      isCorrect: false
+      incorrectExplanation: 骨折り仕事はほとんどの場合、自動化できる手動による作業です。
+  - content: '骨折り仕事になる SRE のリレーションシップとは何ですか? '
+    choices:
+    - content: SRE は最優先で骨折り仕事を取り除くために機能します。
+      isCorrect: false
+      incorrectExplanation: 可能なときはいつでも、SRE は骨折り仕事を取り除くために機能しますが、他の作業の優先順位が高い場合もあります。
+    - content: SRE では可能な限り、骨折り仕事を管理しようとします。
+      isCorrect: false
+      incorrectExplanation: 可能な限り、SRE では骨折り仕事を取り除きます。 よく管理された骨折り仕事でも、骨折り仕事です。
+    - content: SRE は、いつでもどこでも適切な場合は常に、骨折り仕事を取り除くように機能します。
+      isCorrect: true
+  - content: 'SRE が機能するために推奨される内訳とは? '
+    choices:
+    - content: 事後対応型の運用作業 80%/プロジェクト作業 20%
+      isCorrect: false
+      incorrectExplanation: SRE では、現在の必要性に対して準備をするだけでなく、システムの信頼性を改善するために機能するように中断されない時間が必要です。
+    - content: 事後対応型の運用作業 10%/プロジェクト作業 90%
+      isCorrect: false
+      incorrectExplanation: システムが必要とする運用負荷を選択できない場合があります。 一部のシステムではこのように低い運用負荷が設定される場合もありますが、適切な期待値ではない可能性があります。
+    - content: 事後対応型の運用作業 50%/プロジェクト作業 50%
+      isCorrect: true
+      correctExplanation: これが SRE で目指している通常のバランスです (50% は運用負荷で上限とみられます。さらに小さい方が望ましいです)。

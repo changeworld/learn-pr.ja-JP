@@ -4,7 +4,7 @@ Azure App Service では、Node.js、PHP、.NET Core などの好みの Web テ�
 
 ここでは、.NET コマンド ライン インターフェイス (CLI) を使用して ASP.NET Core アプリケーションを作成する方法を学習します。
 
-## <a name="what-is-aspnet-core"></a>ASP.Net Core とは
+## <a name="what-is-aspnet-core"></a>ASP.NET Core とは
 
 ASP.NET Core は Microsoft の一般的な ASP.NET Core Web フレームワークが進化した最新のものであり、最新のクラウド ベースのインターネット接続アプリケーションをビルドするためのクロスプラットフォームのオープン ソース フレームワークです。
 

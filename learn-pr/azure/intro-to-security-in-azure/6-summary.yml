@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9c20d9ad1268e27f22c1715e1897b92e5e291ae2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: d5fc2c22e727a2f272fa31b50b232f9865a23a6a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352719"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437342"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: クラウドのセキュリティは、お客様とクラウド プロバイダーの共同責任です。 お客様が最大限のセキュリティ作業を行う必要があるのは、クラウド サービスのどのカテゴリですか?
+    choices:
+    - content: サービスとしてのインフラストラクチャ (IaaS)
+      isCorrect: true
+      correctExplanation: このレベルでは、クラウド プロバイダーはコンピューティング リソースに物理的なセキュリティを提供します。 一方、オペレーティング システムおよびソフトウェアに対してパッチを適用すること、これらをセキュリティで保護すること、さらにセキュリティで保護されるようにネットワークを構成することは、お客様側の責任です。
+    - content: サービスとしてのプラットフォーム (PaaS)
+      isCorrect: false
+      incorrectExplanation: このレベルでは、クラウド プロバイダーが他のカテゴリより多くのセキュリティの問題を処理します。 これには、物理的なセキュリティの提供と、オペレーティング システムに修正プログラムを適用して最新の状態に維持することが含まれます。
+    - content: サービスとしてのソフトウェア (SaaS)
+      isCorrect: false
+      incorrectExplanation: このレベルでは、クラウド プロバイダーがほとんどのセキュリティの問題を処理します。 お客様の主な役割は、ソフトウェアへの適切なアクセス権を組織のユーザーに提供することです。
+  - content: 従業員が退職するとき、最も簡単にアカウントを無効にできるのは次のうちどれですか?
+    choices:
+    - content: 多要素認証 (MFA) を適用します
+      isCorrect: false
+      incorrectExplanation: MFA では、完全な認証のために 2 つ以上の要素を必須とすることでセキュリティが強化されますが、非アクティブなアカウントを無効にするのには役に立ちません。
+    - content: シングル サインオンの試行を監視します
+      isCorrect: false
+      incorrectExplanation: 監視はサービスのいずれかへの不正アクセスの試行を検出するのに役立ちますが、監視だけでは非アクティブなアカウントを無効にするのには役に立ちません。
+    - content: シングル サインオン (SSO) を有効にします
+      isCorrect: true
+      correctExplanation: SSO はユーザーの ID を一元化するので、1 つの手順で非アクティブなアカウントを無効にできます。
+  - content: 顧客の機密データを保護する "_最も強力な_" 方法は次のどれですか?
+    choices:
+    - content: データベースに格納されるデータを暗号化します
+      isCorrect: false
+      incorrectExplanation: データベースに格納されるデータを暗号化すること (保存時の暗号化) は重要ですが、システム間でネットワーク転送されるときにデータを他者に読み取られる可能性があります。
+    - content: ネットワーク経由で転送されるデータを暗号化する
+      isCorrect: false
+      incorrectExplanation: ネットワーク上を転送されるデータを暗号化すること (転送中の暗号化) は重要ですが、データベースに格納されているときのデータが脆弱になる可能性があります。
+    - content: データベース内の保存時とネットワーク上の転送中の両方でデータを暗号化します
+      isCorrect: true
+      correctExplanation: データベース内の保存時とネットワーク上の転送中の両方で常にデータを暗号化すると、攻撃者がプレーン テキストのデータにアクセスする機会を最小限に抑えられます。

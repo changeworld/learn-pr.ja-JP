@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+title: SRE の内容と重要な理由
+metadata:
+  title: SRE の内容と重要な理由
+  description: SRE の内容と重要な理由
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1e19e3256f43ac642814968c9b547e760aa09a64
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439126"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-what-is-sre-and-why-does-it-matter.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 'SRE で主にフォーカスするのはサービス、システム、または製品のどのプロパティですか? '
+    choices:
+    - content: セキュリティ
+      isCorrect: false
+      incorrectExplanation: セキュリティは SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。
+    - content: 実行にかかるコスト
+      isCorrect: false
+      incorrectExplanation: 経費とリソース使用量は SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。
+    - content: 信頼性
+      isCorrect: true
+      correctExplanation: SRE の主な焦点は、まさに信頼性にあります。
+    - content: 保守容易性
+      isCorrect: false
+      incorrectExplanation: 保守できるサービス、システム、または製品の作成は SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。
+  - content: 'ほぼすべてのサービス、システム、および製品で、SRE が目指す信頼性のレベルとは? '
+    choices:
+    - content: 100% が目標
+      isCorrect: false
+      incorrectExplanation: ほとんどのコンテキストで、100% の信頼性を達成することはできません。 たとえそうであったとしても、これはコストとリソースが膨大 (どちらも無駄) になります。
+    - content: できる限り信頼性がある必要がある
+      isCorrect: false
+      incorrectExplanation: その上、労力とリソースが無駄になるため、目標のために信頼性の適切なレベルを見つけることが重要です。 さらに、"できる限り" はあいまいすぎて使えません。
+    - content: 重要な関係者によって適切と確認された特定のレベル
+      isCorrect: true
+      correctExplanation: サービスに目標を設定することは、SRE、開発リソース、ビジネスの意思決定者との間での共同作業になります。
