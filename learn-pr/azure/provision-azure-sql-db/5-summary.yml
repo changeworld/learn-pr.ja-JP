@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.provision-azure-sql-db.5-summary
-title: <span data-ttu-id="d01bd-101">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="d01bd-101">Summary and cleanup</span></span>
+title: <span data-ttu-id="8ec36-101">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="8ec36-101">Summary and cleanup</span></span>
 metadata:
-  title: <span data-ttu-id="d01bd-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="d01bd-102">Summary and cleanup</span></span>
-  description: <span data-ttu-id="d01bd-103">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="d01bd-103">Summary and cleanup</span></span>
+  title: <span data-ttu-id="8ec36-102">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="8ec36-102">Summary and cleanup</span></span>
+  description: <span data-ttu-id="8ec36-103">概要とクリーンアップ</span><span class="sxs-lookup"><span data-stu-id="8ec36-103">Summary and cleanup</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 082f2ea2623a2ae161f0cc4ceee965a722a5fae1
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349815"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437274"
 durationInMinutes: 5
-content: '[!include[](includes/5-summary.md)]'
+content: >
+  [!include[](includes/5-summary.md)]
+quiz:
+  title: <span data-ttu-id="8ec36-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="8ec36-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="8ec36-105">お客様の Azure SQL データベースと基になる OS でソフトウェアの更新を実行する責任は誰が負いますか?</span><span class="sxs-lookup"><span data-stu-id="8ec36-105">Who's responsible for performing software updates on your Azure SQL databases and the underlying OS?</span></span>
+    choices:
+    - content: <span data-ttu-id="8ec36-106">お客様自身。</span><span class="sxs-lookup"><span data-stu-id="8ec36-106">You are.</span></span> <span data-ttu-id="8ec36-107">定期的にログインして最新のセキュリティ パッチと更新プログラムをインストールするのはお客様の責任です。</span><span class="sxs-lookup"><span data-stu-id="8ec36-107">It's up to you to periodically log in and install the latest security patches and updates.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-108">Azure SQL Database は PaaS (サービスとしてのプラットフォーム) です。つまり、自分で管理するメンテナンスがかなり少なくなります。</span><span class="sxs-lookup"><span data-stu-id="8ec36-108">Azure SQL databases are a Platform-as-a-Service (PaaS) offering, meaning much less maintenance to manage yourself.</span></span>
+    - content: <span data-ttu-id="8ec36-109">Microsoft Azure。</span><span class="sxs-lookup"><span data-stu-id="8ec36-109">Microsoft Azure.</span></span> <span data-ttu-id="8ec36-110">Azure は、お客様のためにハードウェア、ソフトウェア更新プログラム、OS の修正プログラムを管理します。</span><span class="sxs-lookup"><span data-stu-id="8ec36-110">Azure manages the hardware, software updates, and OS patches for you.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8ec36-111">Azure SQL Database は、PaaS (サービスとしてのプラットフォーム) のオファリングです。</span><span class="sxs-lookup"><span data-stu-id="8ec36-111">Azure SQL databases are a Platform-as-a-Service (PaaS) offering.</span></span> <span data-ttu-id="8ec36-112">Azure は、お客様のためにハードウェア、ソフトウェア更新プログラム、OS の修正プログラムを管理します。</span><span class="sxs-lookup"><span data-stu-id="8ec36-112">Azure manages the hardware, software updates, and OS patches for you.</span></span>
+    - content: <span data-ttu-id="8ec36-113">誰も行わない。</span><span class="sxs-lookup"><span data-stu-id="8ec36-113">No one.</span></span> <span data-ttu-id="8ec36-114">お客様のデータベースは元の OS とソフトウェア構成が維持されます。</span><span class="sxs-lookup"><span data-stu-id="8ec36-114">Your database stays with its original OS and software configuration.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-115">Azure SQL Database は、PaaS (サービスとしてのプラットフォーム) のオファリングです。</span><span class="sxs-lookup"><span data-stu-id="8ec36-115">Azure SQL databases are a Platform-as-a-Service (PaaS) offering.</span></span> <span data-ttu-id="8ec36-116">通常、クラウド プロバイダーがお客様のために PaaS サービスの管理と更新を行います。</span><span class="sxs-lookup"><span data-stu-id="8ec36-116">The cloud provider typically manages and updates PaaS services for you.</span></span>
+  - content: <span data-ttu-id="8ec36-117">"_Azure SQL 論理サーバー_" とは何ですか?</span><span class="sxs-lookup"><span data-stu-id="8ec36-117">What is an _Azure SQL logical server_?</span></span>
+    choices:
+    - content: <span data-ttu-id="8ec36-118">データベース用の管理コンテナー。</span><span class="sxs-lookup"><span data-stu-id="8ec36-118">An administrative container for your databases.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8ec36-119">論理サーバーを使用して、ログイン、ファイアウォール規則、セキュリティ ポリシーを制御できます。</span><span class="sxs-lookup"><span data-stu-id="8ec36-119">You can control logins, firewall rules, and security policies through the logical server.</span></span>
+    - content: <span data-ttu-id="8ec36-120">Azure SQL Database インスタンスの別の名前。</span><span class="sxs-lookup"><span data-stu-id="8ec36-120">Another name for an Azure SQL database instance.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-121">複数のデータベース インスタンスを使用できることを思い出してください。</span><span class="sxs-lookup"><span data-stu-id="8ec36-121">Remember that you can have multiple database instances.</span></span> <span data-ttu-id="8ec36-122">これらをまとめて管理する方法はありますか?</span><span class="sxs-lookup"><span data-stu-id="8ec36-122">Is there a way to administer them collectively?</span></span>
+    - content: <span data-ttu-id="8ec36-123">データの並べ替えと比較を行う論理規則を定義するサーバー。</span><span class="sxs-lookup"><span data-stu-id="8ec36-123">A server that defines the logical rules that sort and compare data.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-124">"_照合順序_" とは、データを並べ替えたり比較したりする規則のことです。</span><span class="sxs-lookup"><span data-stu-id="8ec36-124">_Collation_ refers to the rules that sort and compare data.</span></span>
+  - content: <span data-ttu-id="8ec36-125">Azure SQL データベースでは、十分なストレージとコンピューティング能力が提供されています。</span><span class="sxs-lookup"><span data-stu-id="8ec36-125">Your Azure SQL database provides adequate storage and compute power.</span></span> <span data-ttu-id="8ec36-126">しかし、IO スループットの追加が必要であることがわかりました。</span><span class="sxs-lookup"><span data-stu-id="8ec36-126">But you find that you need additional IO throughput.</span></span> <span data-ttu-id="8ec36-127">どのパフォーマンス モデルを使用しますか?</span><span class="sxs-lookup"><span data-stu-id="8ec36-127">Which performance model might you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="8ec36-128">DTU</span><span class="sxs-lookup"><span data-stu-id="8ec36-128">DTU</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-129">DTU つまりデータベース トランザクション ユニットは、シンプルな構成済みの購入オプションを提供します。</span><span class="sxs-lookup"><span data-stu-id="8ec36-129">DTU, or Database Transaction Unit, provides a simple, preconfigured purchase option.</span></span> <span data-ttu-id="8ec36-130">IO スループットを増やすには、増やす必要のないストレージとコンピューティング能力も増える上位の階層に移行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8ec36-130">To increase IO throughput, you would need to move to a higher tier that also increases your storage and compute power, things you don't need.</span></span>
+    - content: <span data-ttu-id="8ec36-131">仮想コア</span><span class="sxs-lookup"><span data-stu-id="8ec36-131">vCore</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8ec36-132">仮想コアでは、作成して支払うコンピューティング リソースとストレージ リソースをきめ細かく制御できます。</span><span class="sxs-lookup"><span data-stu-id="8ec36-132">vCore gives you greater control over what compute and storage resources you create and pay for.</span></span> <span data-ttu-id="8ec36-133">IO スループットを増やしても、コンピューティング能力とストレージは既存の量のままにすることができます。</span><span class="sxs-lookup"><span data-stu-id="8ec36-133">You can increase IO throughput but keep the existing amount of compute and storage.</span></span>
+    - content: <span data-ttu-id="8ec36-134">SQL エラスティック プール</span><span class="sxs-lookup"><span data-stu-id="8ec36-134">SQL elastic pool</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8ec36-135">SQL エラスティック プールでは、プール内のすべてのデータベース間で共有されるコンピューティング リソースとストレージ リソースのセットを購入できます。</span><span class="sxs-lookup"><span data-stu-id="8ec36-135">SQL elastic pools enable you to buy a set of compute and storage resources that are shared among all the databases in the pool.</span></span> <span data-ttu-id="8ec36-136">使用しているデータベースが 1 つだけなので、このオプションは IO パフォーマンスに役立ちません。</span><span class="sxs-lookup"><span data-stu-id="8ec36-136">This option won't help with IO performance because you're working with just one database.</span></span>

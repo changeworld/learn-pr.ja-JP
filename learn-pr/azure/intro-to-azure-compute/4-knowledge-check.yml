@@ -1,45 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.intro-to-compute.4-knowledge-check
-title: <span data-ttu-id="80660-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80660-101">Knowledge check</span></span>
+title: <span data-ttu-id="7d1aa-101">知識チェック</span><span class="sxs-lookup"><span data-stu-id="7d1aa-101">Knowledge check</span></span>
 metadata:
-  title: <span data-ttu-id="80660-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="80660-102">Knowledge check</span></span>
-  description: <span data-ttu-id="80660-103">「Azure コンピューティングの概要」モジュールに関する知識チェック。</span><span class="sxs-lookup"><span data-stu-id="80660-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
+  title: <span data-ttu-id="7d1aa-102">知識チェック</span><span class="sxs-lookup"><span data-stu-id="7d1aa-102">Knowledge check</span></span>
+  description: <span data-ttu-id="7d1aa-103">「Azure コンピューティングの概要」モジュールに関する知識チェック。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-103">Knowledge check for the 'Introduction to Azure compute' module.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8a56219bb221c4a1969598fb0a8e8836ae37d168
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 95702ee9d30aead8db2074f0d12528edc3ae59fe
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349744"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437886"
 durationInMinutes: 2
 content: >
   [!include[](includes/4-knowledge-check.md)]
 quiz:
-  title: <span data-ttu-id="80660-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="80660-104">Check your knowledge</span></span>
+  title: <span data-ttu-id="7d1aa-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="7d1aa-104">Check your knowledge</span></span>
   questions:
-  - content: <span data-ttu-id="80660-105">天文学チームは、膨大な計算処理能力とメモリを必要とする画像処理アプリケーションを多数揃えています。</span><span class="sxs-lookup"><span data-stu-id="80660-105">Your astronomy team has a number of image-processing applications that require lots of compute power and memory to run.</span></span> <span data-ttu-id="80660-106">これらのアプリケーションを Azure に短期間で移行します。</span><span class="sxs-lookup"><span data-stu-id="80660-106">You want to quickly migrate these applications to Azure.</span></span> <span data-ttu-id="80660-107">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="80660-107">Which of the following options should you choose?</span></span>
+  - content: <span data-ttu-id="7d1aa-105">独自のサーバー上でローカルで実行している既存のアプリケーションがあるとします。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-105">Suppose you have an existing application running locally on your own server.</span></span> <span data-ttu-id="7d1aa-106">容量を増やす必要がありますが、アップグレードされたオンプレミスのハードウェアを購入するのではなく、Azure に移行することを選びます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-106">You need additional capacity but prefer to move to Azure instead of buying upgraded on-premises hardware.</span></span> <span data-ttu-id="7d1aa-107">ご利用のアプリケーションが Azure で実行されるように最も早くルーティングできるのは、どのコンピューティング オプションですか? </span><span class="sxs-lookup"><span data-stu-id="7d1aa-107">Which compute option would likely give you the quickest route to getting your application running in Azure?</span></span>
     choices:
-    - content: <span data-ttu-id="80660-108">Azure Kubernetes Service (AKS)</span><span class="sxs-lookup"><span data-stu-id="80660-108">Azure Kubernetes Service (AKS)</span></span>
+    - content: <span data-ttu-id="7d1aa-108">サーバーレス コンピューティング</span><span class="sxs-lookup"><span data-stu-id="7d1aa-108">Serverless computing</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="80660-109">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-109">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-110">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-110">This allows your team to focus on what their good at, writing code.</span></span>
-    - content: <span data-ttu-id="80660-111">Service Fabric</span><span class="sxs-lookup"><span data-stu-id="80660-111">Service Fabric</span></span>
+      incorrectExplanation: <span data-ttu-id="7d1aa-109">サーバーレス コンピューティング モデルに変換すると、ご利用のアプリケーションをイベント ベースのアーキテクチャに再構成する必要がある可能性が高いです。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-109">Converting to a serverless computing model would likely require reorganizing your application to an event-based architecture.</span></span>
+    - content: <span data-ttu-id="7d1aa-110">コンテナー</span><span class="sxs-lookup"><span data-stu-id="7d1aa-110">Containers</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="80660-112">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-112">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-113">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-113">This allows your team to focus on what their good at, writing code.</span></span>
-    - content: <span data-ttu-id="80660-114">App Service</span><span class="sxs-lookup"><span data-stu-id="80660-114">App Service</span></span>
+      incorrectExplanation: <span data-ttu-id="7d1aa-111">コンテナーに変換すると、ご利用のアプリケーションを再パッケージ化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-111">Converting to containers would require you to repackage your application.</span></span> <span data-ttu-id="7d1aa-112">これは既存のアーキテクチャによってはあまり難しくない場合もありますが、時間がかかり、コンテナーに関するいくつかの専門知識が必要になります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-112">This might not be too difficult depending on your existing architecture, but it would take time and require some expertise with containers.</span></span>
+    - content: <span data-ttu-id="7d1aa-113">仮想マシン</span><span class="sxs-lookup"><span data-stu-id="7d1aa-113">Virtual machines</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="80660-115">App Service はフル マネージドであり、自動的に規模を変化させます。</span><span class="sxs-lookup"><span data-stu-id="80660-115">App Service is fully managed and scales automatically.</span></span> <span data-ttu-id="80660-116">これによりチームはその得意とするところ、コードの記述に集中できます。</span><span class="sxs-lookup"><span data-stu-id="80660-116">This allows your team to focus on what their good at, writing code.</span></span>
-  - content: <span data-ttu-id="80660-117">天文学チームは、完了するまでに何時間あるいは場合によっては何日もかかるような天文学の計算に直面しているものとします。</span><span class="sxs-lookup"><span data-stu-id="80660-117">Suppose your astronomy team has come up against astronomical calculations that are taking hours and even days to complete.</span></span> <span data-ttu-id="80660-118">並列実行はあまり役に立たないようです。</span><span class="sxs-lookup"><span data-stu-id="80660-118">Parallel execution does not seem to help much.</span></span> <span data-ttu-id="80660-119">次のどのオプションを選択する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="80660-119">Which of the following options should you choose?</span></span>
+      correctExplanation: <span data-ttu-id="7d1aa-114">VM のセットアップをフル コントールできる権限があるため、ご利用のオンプレミス サーバーに合うように構成できます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-114">You have full control over the VM setup, so you can configure it to match your on-premises server.</span></span> <span data-ttu-id="7d1aa-115">これにより、ご自分の既存のアプリケーションをほとんど変更せずに、Azure VM 上で実行することができます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-115">This will allow your existing application to run on the Azure VM with little or no change.</span></span>
+  - content: <span data-ttu-id="7d1aa-116">数百万のモバイル デバイス上で実行する写真共有アプリケーションを操作するとします。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-116">Imagine that you work on a photo-sharing application that runs on millions of mobile devices.</span></span> <span data-ttu-id="7d1aa-117">ローカルまたは国内で多くのイベントが発生するたびに使用量が急増するため、需要は予想できません。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-117">Demand is unpredictable because you see a spike in usage whenever a locally or nationally significant event occurs.</span></span> <span data-ttu-id="7d1aa-118">このワークロードに最適な Azure コンピューティング リソースはどれですか? </span><span class="sxs-lookup"><span data-stu-id="7d1aa-118">Which Azure compute resource is the best match for this workload?</span></span>
     choices:
-    - content: <span data-ttu-id="80660-120">Cloud Services</span><span class="sxs-lookup"><span data-stu-id="80660-120">Cloud Services</span></span>
-      isCorrect: false
-      incorrectExplanation: <span data-ttu-id="80660-121">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-121">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
-    - content: <span data-ttu-id="80660-122">Azure Batch</span><span class="sxs-lookup"><span data-stu-id="80660-122">Azure Batch</span></span>
+    - content: <span data-ttu-id="7d1aa-119">サーバーレス コンピューティング</span><span class="sxs-lookup"><span data-stu-id="7d1aa-119">Serverless computing</span></span>
       isCorrect: true
-      correctExplanation: <span data-ttu-id="80660-123">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-123">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
-    - content: <span data-ttu-id="80660-124">Container Instances</span><span class="sxs-lookup"><span data-stu-id="80660-124">Container Instances</span></span>
+      correctExplanation: <span data-ttu-id="7d1aa-120">写真共有アプリはイベント駆動型であり、予測できない需要を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-120">The photo-sharing app is event driven and needs to handle unpredictable demand.</span></span> <span data-ttu-id="7d1aa-121">サーバーレス コンピューティングがこのアプリに最適です。これはイベント ベースであるため、トラフィックの急増を処理するためにすぐにスケーリングすることができます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-121">Serverless computing is a good fit for this because it is event based and can scale instantly to process spikes in traffic.</span></span> <span data-ttu-id="7d1aa-122">また、ユーザー データの処理中のみの計算時間を支払うことになるため、費用効果の高い選択肢でもあります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-122">It should also be a cost-effective choice because you will pay for compute time only when processing user data.</span></span>
+    - content: <span data-ttu-id="7d1aa-123">コンテナー</span><span class="sxs-lookup"><span data-stu-id="7d1aa-123">Containers</span></span>
       isCorrect: false
-      incorrectExplanation: <span data-ttu-id="80660-125">Azure Batch では、何十、何百、または数千もの VM にスケーリングする機能を備えたクラウド規模のジョブ スケジューリングおよびコンピューティング管理が提供されます。</span><span class="sxs-lookup"><span data-stu-id="80660-125">Azure Batch provides cloud-scale job scheduling and compute management with the ability to scale to tens, hundreds, or thousands of VMs.</span></span>
+      incorrectExplanation: <span data-ttu-id="7d1aa-124">通常、コンテナー インスタンスの起動には数秒かかります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-124">The startup time for a container instance is typically a few seconds.</span></span> <span data-ttu-id="7d1aa-125">これでは、需要の急増に対応するために、十分に早くスケーリングできない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-125">This might not provide quick enough scaling to respond to a sharp spike in demand.</span></span>
+    - content: <span data-ttu-id="7d1aa-126">仮想マシン</span><span class="sxs-lookup"><span data-stu-id="7d1aa-126">Virtual machines</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7d1aa-127">VM は開始するのに数分かかります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-127">A VM can take a few minutes to start.</span></span> <span data-ttu-id="7d1aa-128">これでは、需要の急増に対応するために、十分に早くスケーリングできない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-128">This might not provide quick enough scaling to respond to a sharp spike in demand.</span></span>
+  - content: <span data-ttu-id="7d1aa-129">コンピューティング オプションでは、ご自分のアプリケーションを実行する環境の構成においてさまざまなレベルが提供されます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-129">The compute options give you different levels of control over the configuration of the environment in which your application runs.</span></span> <span data-ttu-id="7d1aa-130">次のうち "ほとんどコントロール" から "最小限のコントロール" の順にコンピューティング オプションを並べているのはどれですか? </span><span class="sxs-lookup"><span data-stu-id="7d1aa-130">Which of the following lists the compute options in order from "most control" to "least control"?</span></span>
+    choices:
+    - content: <span data-ttu-id="7d1aa-131">サーバーレス コンピューティング, コンテナー, 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="7d1aa-131">Serverless computing, containers, virtual machines</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7d1aa-132">サーバーレス コンピューティングでは、最小限のコントロールが提供され、基になるホスティング環境は完全に抽象化されます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-132">Serverless computing gives you the least control; it completely abstracts the underlying hosting environment.</span></span>
+    - content: <span data-ttu-id="7d1aa-133">コンテナー, サーバーレス コンピューティング, 仮想マシン</span><span class="sxs-lookup"><span data-stu-id="7d1aa-133">Containers, serverless computing, virtual machines</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7d1aa-134">コンテナーでは、その環境に対する制限されたコントロールが提供されます。たとえば、基になるオペレーティング システムを選びます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-134">Containers give you limited control over the environment; for example, you choose the underlying operating system.</span></span>
+    - content: <span data-ttu-id="7d1aa-135">仮想マシン, コンテナー, サーバーレス コンピューティング</span><span class="sxs-lookup"><span data-stu-id="7d1aa-135">Virtual machines, containers, serverless computing</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7d1aa-136">仮想マシンでは、その環境をフル コントールできる権限が与えられます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-136">Virtual machines give you full control over the environment.</span></span> <span data-ttu-id="7d1aa-137">コンテナーでは、制限付きのコントロールが与えられます。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-137">Containers give you limited control.</span></span> <span data-ttu-id="7d1aa-138">サーバーレス コンピューティングでは、任意のインフラストラクチャの構成は許可されていません。</span><span class="sxs-lookup"><span data-stu-id="7d1aa-138">Serverless computing does not allow you to do any infrastructure configuration.</span></span>

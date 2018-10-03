@@ -1,0 +1,58 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+title: '<span data-ttu-id="bf5bb-101">重要な SRE 原則とプラクティス: SRE の人間的側面</span><span class="sxs-lookup"><span data-stu-id="bf5bb-101">Key SRE principles and practices: The human side of SRE</span></span>'
+metadata:
+  title: '<span data-ttu-id="bf5bb-102">重要な SRE 原則とプラクティス: SRE の人間的側面</span><span class="sxs-lookup"><span data-stu-id="bf5bb-102">Key SRE principles and practices: The human side of SRE</span></span>'
+  description: '<span data-ttu-id="bf5bb-103">重要な SRE 原則とプラクティス: SRE の人間的側面</span><span class="sxs-lookup"><span data-stu-id="bf5bb-103">Key SRE principles and practices: The human side of SRE</span></span>'
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 18fe4f197d8a58ad6e6f2fc27e9e5a5a8b86db96
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439251"
+durationInMinutes: 10
+content: >
+  [!include[](includes/5-key-principles-2-human-side-of-sre.md)]
+quiz:
+  title: <span data-ttu-id="bf5bb-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="bf5bb-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="bf5bb-105">次のうち (SRE コンテキストでの) 骨折り仕事の特性で*ない*ものはどれですか? </span><span class="sxs-lookup"><span data-stu-id="bf5bb-105">Which of these things is *not* a characteristic of toil (in the SRE context)?</span></span> '
+    choices:
+    - content: <span data-ttu-id="bf5bb-106">作業が繰り返される</span><span class="sxs-lookup"><span data-stu-id="bf5bb-106">The work is repetitive</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-107">骨折り仕事は実際に繰り返されます。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-107">Toil is repetitive in nature.</span></span>
+    - content: <span data-ttu-id="bf5bb-108">作業がチケット システムで追跡される</span><span class="sxs-lookup"><span data-stu-id="bf5bb-108">The work is tracked in a ticket system</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bf5bb-109">作業の追跡方法は、骨折り仕事の特性ではありません。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-109">How the work is tracked is not a characteristic of toil.</span></span> <span data-ttu-id="bf5bb-110">骨折り仕事はこのように追跡されることが多いですが、チケット システムではより生産的な種類の作業であるその他を追跡するために使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-110">While toil is often tracked this way, ticket systems could be used to track other, more productive kinds of work.</span></span>
+    - content: <span data-ttu-id="bf5bb-111">作業では持続的な価値は提供されない</span><span class="sxs-lookup"><span data-stu-id="bf5bb-111">The work provides no lasting value</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-112">骨折り仕事である作業に永続的な価値はありません。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-112">Work that is toil has no enduring value.</span></span>
+    - content: <span data-ttu-id="bf5bb-113">作業は事実上ほとんどが手動で、自動化されていない</span><span class="sxs-lookup"><span data-stu-id="bf5bb-113">The work is largely manual in nature and not automated</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-114">骨折り仕事はほとんどの場合、自動化できる手動による作業です。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-114">Toil is almost always manual work that could be automated.</span></span>
+  - content: <span data-ttu-id="bf5bb-115">骨折り仕事になる SRE のリレーションシップとは何ですか? </span><span class="sxs-lookup"><span data-stu-id="bf5bb-115">What's an SRE's relationship to toil?</span></span>
+    choices:
+    - content: <span data-ttu-id="bf5bb-116">SRE は最優先で骨折り仕事を取り除くために機能します。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-116">SREs work to eliminate toil as their first priority.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-117">可能なときはいつでも、SRE は骨折り仕事を取り除くために機能しますが、他の作業の優先順位が高い場合もあります。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-117">Whenever possible, SREs work to eliminate toil, but sometimes other work has greater priority.</span></span>
+    - content: <span data-ttu-id="bf5bb-118">SRE では可能な限り、骨折り仕事を管理しようとします。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-118">SREs attempt to manage toil the best they can.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-119">可能な限り、SRE では骨折り仕事を取り除きます。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-119">SREs prefer to eliminate toil if possible.</span></span> <span data-ttu-id="bf5bb-120">よく管理された骨折り仕事でも、骨折り仕事です。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-120">Well-managed toil is still toil.</span></span>
+    - content: <span data-ttu-id="bf5bb-121">SRE は、いつでもどこでも適切な場合は常に、骨折り仕事を取り除くように機能します。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-121">SREs work to eliminate toil wherever and whenever it is appropriate</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="bf5bb-122">SRE が機能するために推奨される内訳とは? </span><span class="sxs-lookup"><span data-stu-id="bf5bb-122">What is a suggested breakdown of work for an SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="bf5bb-123">事後対応型の運用作業 80%/プロジェクト作業 20%</span><span class="sxs-lookup"><span data-stu-id="bf5bb-123">80% reactive ops work/20% project work</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-124">SRE では、現在の必要性に対して準備をするだけでなく、システムの信頼性を改善するために機能するように中断されない時間が必要です。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-124">An SRE needs uninterrupted time to work on improving the reliability of a system, not just tending to its current needs.</span></span>
+    - content: <span data-ttu-id="bf5bb-125">事後対応型の運用作業 10%/プロジェクト作業 90%</span><span class="sxs-lookup"><span data-stu-id="bf5bb-125">10% reactive ops work/90% project work</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="bf5bb-126">システムが必要とする運用負荷を選択できない場合があります。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-126">Sometimes we do not get a choice how much operational load a systems requires.</span></span> <span data-ttu-id="bf5bb-127">一部のシステムではこのように低い運用負荷が設定される場合もありますが、適切な期待値ではない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-127">While it may be the case that some systems have this low of an operational load, it is probably not a good expectation to have.</span></span>
+    - content: <span data-ttu-id="bf5bb-128">事後対応型の運用作業 50%/プロジェクト作業 50%</span><span class="sxs-lookup"><span data-stu-id="bf5bb-128">50% reactive ops work/50% project work</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="bf5bb-129">これが SRE で目指している通常のバランスです (50% は運用負荷で上限とみられます。さらに小さい方が望ましいです)。</span><span class="sxs-lookup"><span data-stu-id="bf5bb-129">This is the usual balance SREs strive for (50% is seen as an upper bound on operational load--smaller would be better).</span></span>

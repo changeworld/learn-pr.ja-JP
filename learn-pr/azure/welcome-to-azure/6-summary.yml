@@ -1,19 +1,45 @@
 ### YamlMime:ModuleUnit
 uid: learn.welcome-to-azure.6-summary
-title: <span data-ttu-id="7decd-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="7decd-101">Summary</span></span>
+title: <span data-ttu-id="a5e0a-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="a5e0a-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="7decd-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="7decd-102">Summary</span></span>
-  description: <span data-ttu-id="7decd-103">学習したことを確認し、クラウドの学習を続ける方法を見つけます。</span><span class="sxs-lookup"><span data-stu-id="7decd-103">Review what you've learned and discover how to continue your cloud journey.</span></span>
+  title: <span data-ttu-id="a5e0a-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="a5e0a-102">Summary</span></span>
+  description: <span data-ttu-id="a5e0a-103">学習したことを確認し、クラウドの学習を続ける方法を見つけます。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-103">Review what you've learned and discover how to continue your cloud journey.</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 11c2f56627006b6987a9a506ce2c6f1265ffc68d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346692"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437359"
 durationInMinutes: 1
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: <span data-ttu-id="a5e0a-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="a5e0a-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="a5e0a-105">Azure とは</span><span class="sxs-lookup"><span data-stu-id="a5e0a-105">What is Azure?</span></span>
+    choices:
+    - content: <span data-ttu-id="a5e0a-106">Microsoft のクラウド コンピューティング プラットフォーム。従量課金制の価格モデルを使用してインターネット経由でコンピューティングの性能、ストレージ、およびサービスを提供します。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-106">Microsoft's cloud computing platform, which provides compute power, storage, and services over the Internet using a pay-as-you-go pricing model.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a5e0a-107">Azure では、優れたコンピューティング性能やストレージを利用できると共に、インテリジェントなボットや複合現実などの新しいソフトウェア パラダイムを探索するのに役立つサービスへのアクセスが得られます。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-107">Azure provides raw compute power and storage, as well as services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+    - content: <span data-ttu-id="a5e0a-108">ワシントン州レドモンドにある 1 つのデータ センター。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-108">A single data center located in Redmond, Washington.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a5e0a-109">Azure は、世界中に分散するデータ センターによって構成されています。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-109">Azure is made up of data centers distributed throughout the world.</span></span>
+    - content: <span data-ttu-id="a5e0a-110">仮想マシン専用のホスティング環境</span><span class="sxs-lookup"><span data-stu-id="a5e0a-110">A hosting environment specifically for virtual machines</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a5e0a-111">Azure では、仮想マシンのような優れたコンピューティング性能を提供すると共に、インテリジェントなボットや複合現実などの新しいソフトウェア パラダイムを探索するのに役立つ多数のサービスも提供しています。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-111">While Azure provides raw compute power, such as virtual machines, it also provides many services to help you explore new software paradigms such as intelligent bots and mixed reality.</span></span>
+  - content: <span data-ttu-id="a5e0a-112">デプロイを "_スケールアウト_" する必要があるのは、どのような場合ですか?</span><span class="sxs-lookup"><span data-stu-id="a5e0a-112">When should you _scale out_ your deployment?</span></span>
+    choices:
+    - content: <span data-ttu-id="a5e0a-113">より高速で実行するために、アプリケーションまたはサービスの CPU やメモリを強化する必要が生じた場合。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-113">When your application or service requires a more powerful CPU or more memory to run faster.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a5e0a-114">この場合、アプリケーションやサービスをより高性能なハードウェアに移動することで、"_スケールアップ_" できます。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-114">In this case, you might _scale up_ by moving your application or service to more powerful hardware.</span></span>
+    - content: <span data-ttu-id="a5e0a-115">アプリケーションを高速化するために、仮想マシンを追加する必要がある場合。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-115">When you need additional virtual machines to speed up your application.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="a5e0a-116">スケールアウトは、仮想マシンなどのシステムが追加されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-116">Scaling out means adding additional systems, such as virtual machines.</span></span> <span data-ttu-id="a5e0a-117">たとえば、同じ構成方法で多数の仮想マシンを作成し、ロード バランサーを使用してそれらの間に処理を分散させることができます。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-117">For example, you might create many virtual machines configured in the same way and use a load balancer to distribute work across them.</span></span>
+    - content: <span data-ttu-id="a5e0a-118">必要のない余分な容量を使用している場合。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-118">When you're using excess capacity that you don't need.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="a5e0a-119">この場合、現在必要でないシステムを切り離して、_スケールイン_できます。</span><span class="sxs-lookup"><span data-stu-id="a5e0a-119">In this case, you might _scale in_ by tearing down systems you don't currently need.</span></span>

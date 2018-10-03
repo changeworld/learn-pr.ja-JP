@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.implement-message-workflows-with-service-bus.8-summary
-title: <span data-ttu-id="de4fc-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="de4fc-101">Summary</span></span>
+title: <span data-ttu-id="327e8-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="327e8-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="de4fc-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="de4fc-102">Summary</span></span>
-  description: <span data-ttu-id="de4fc-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="de4fc-103">Summary</span></span>
+  title: <span data-ttu-id="327e8-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="327e8-102">Summary</span></span>
+  description: <span data-ttu-id="327e8-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="327e8-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: f7df7347c4683d3aba486e4d8adacc636eb0e35f
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: e764042609fab1859baf263df0c42fe3d883778c
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350376"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437138"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="327e8-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="327e8-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="327e8-105">先入れ先出しの順序と、トランザクションのサポートが必要な場合、次のどのキューを使用する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="327e8-105">Which of the following queues should you use if you need first-in-first-out order and support for transactions?</span></span>
+    choices:
+    - content: <span data-ttu-id="327e8-106">Azure Service Bus キュー</span><span class="sxs-lookup"><span data-stu-id="327e8-106">Azure Service Bus queues</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="327e8-107">Azure Service Bus キューでは、メッセージは追加されたときと同じ順序で処理され、トランザクションもサポートされています。</span><span class="sxs-lookup"><span data-stu-id="327e8-107">Azure Service Bus queues handle messages in the same order they're added and also support transactions.</span></span> <span data-ttu-id="327e8-108">つまり、トランザクション内の 1 つのメッセージをキューに追加できなかった場合、トランザクション内のすべてのメッセージが追加されません。</span><span class="sxs-lookup"><span data-stu-id="327e8-108">This means that if one message in a transaction fails to be added to the queue, all messages in the transaction will not be added.</span></span>
+    - content: <span data-ttu-id="327e8-109">Azure Storage キュー</span><span class="sxs-lookup"><span data-stu-id="327e8-109">Azure Storage queues</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="327e8-110">キューが先入れ先出しのデータ構造であったとしても、Azure Storage キューではそれが保証されません。</span><span class="sxs-lookup"><span data-stu-id="327e8-110">Even though a queue is a first-in-first-out data structure, Azure Storage queues do not guarantee it.</span></span>
+  - content: <span data-ttu-id="327e8-111">Azure Service Bus でメッセージを送信し、複数のコンポーネントでメッセージを受信したいものとします。</span><span class="sxs-lookup"><span data-stu-id="327e8-111">Suppose you're sending a message with Azure Service Bus and you want multiple components to receive it.</span></span> <span data-ttu-id="327e8-112">Azure Service Bus のどの交換機能を使用する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="327e8-112">Which Azure Service Bus exchange feature should you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="327e8-113">キュー</span><span class="sxs-lookup"><span data-stu-id="327e8-113">Queue</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="327e8-114">キューは一度に 1 つの送信先コンポーネントしか持つことができず、これはキュー内の各メッセージは 1 人の受信者だけに配信されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="327e8-114">A queue can only have one destination component at a time, which means that each message in the queue is delivered to only one receiver.</span></span>
+    - content: <span data-ttu-id="327e8-115">トピック</span><span class="sxs-lookup"><span data-stu-id="327e8-115">Topic</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="327e8-116">トピックは、複数の送信先コンポーネントでサブスクライブできます。</span><span class="sxs-lookup"><span data-stu-id="327e8-116">A topic allows multiple destination components to subscribe.</span></span> <span data-ttu-id="327e8-117">つまり、各メッセージを複数の受信者に配信できます。</span><span class="sxs-lookup"><span data-stu-id="327e8-117">This means that each message can be delivered to multiple receivers.</span></span>
+    - content: <span data-ttu-id="327e8-118">リレー</span><span class="sxs-lookup"><span data-stu-id="327e8-118">Relay</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="327e8-119">リレーは双方向の通信に使用され、ネットワークの境界を越える双方向接続を提供します。</span><span class="sxs-lookup"><span data-stu-id="327e8-119">A relay is used for two-way communication and it provides bidirectional connections across network boundaries.</span></span>
+  - content: '<span data-ttu-id="327e8-120">正誤問題: サイズが 2 MB のメッセージを Azure Service Bus キューに追加できます。</span><span class="sxs-lookup"><span data-stu-id="327e8-120">True or false: you can add a message to an Azure Service Bus queue that is 2 MB in size.</span></span>'
+    choices:
+    - content: <span data-ttu-id="327e8-121">はい</span><span class="sxs-lookup"><span data-stu-id="327e8-121">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="327e8-122">Azure Service Bus キューのメッセージは、64 KB より大きく、256 KB より小さい必要があります。</span><span class="sxs-lookup"><span data-stu-id="327e8-122">An Azure Service Bus queue message must be larger than 64 KB but smaller than 256 KB.</span></span>
+    - content: <span data-ttu-id="327e8-123">いいえ</span><span class="sxs-lookup"><span data-stu-id="327e8-123">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="327e8-124">Azure Service Bus キューのメッセージは、64 KB より大きく、256 KB より小さい必要があります。</span><span class="sxs-lookup"><span data-stu-id="327e8-124">An Azure Service Bus queue message must be larger than 64 KB but smaller than 256 KB.</span></span>

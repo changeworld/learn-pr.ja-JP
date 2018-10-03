@@ -1,19 +1,59 @@
 ### YamlMime:ModuleUnit
 uid: learn.execute-azure-function-with-triggers.9-summary
-title: <span data-ttu-id="641ca-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="641ca-101">Summary</span></span>
+title: <span data-ttu-id="91de6-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="91de6-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="641ca-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="641ca-102">Summary</span></span>
-  description: <span data-ttu-id="641ca-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="641ca-103">Summary</span></span>
+  title: <span data-ttu-id="91de6-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="91de6-102">Summary</span></span>
+  description: <span data-ttu-id="91de6-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="91de6-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dbbed9c336f6aa4063d3c4a3ab22447b8cc97293
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.openlocfilehash: b5705b646b41e63ffe0d2bc45fb3d4417136b10b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512789"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47436764"
 durationInMinutes: 2
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="91de6-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="91de6-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="91de6-105">CRON 式は、一連の時間を表す 6 つのフィールドで構成される文字列です。</span><span class="sxs-lookup"><span data-stu-id="91de6-105">A CRON expression is a string that consists of six fields that represent a set of times.</span></span> <span data-ttu-id="91de6-106">Azure での、6 つのフィールドの順序は、{second} {minute} {hour} {day} {month} {day of week} です。</span><span class="sxs-lookup"><span data-stu-id="91de6-106">The order of the six fields in Azure is: {second} {minute} {hour} {day} {month} {day of the week}.</span></span> <span data-ttu-id="91de6-107">"毎日" を意味する CRON 式が必要な場合、{day of the week} の位置にはどのような特殊文字を挿入しますか?</span><span class="sxs-lookup"><span data-stu-id="91de6-107">Suppose you needed a CRON expression that meant "every day", what special character would you put in the {day of the week} position?</span></span>'
+    choices:
+    - content: <span data-ttu-id="91de6-108">'/'</span><span class="sxs-lookup"><span data-stu-id="91de6-108">'/'</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-109">スラッシュは増分を指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-109">A slash specifies an increment.</span></span> <span data-ttu-id="91de6-110">たとえば、{seconds} フィールドを \*/5 にすると 5 秒ごとを意味します。</span><span class="sxs-lookup"><span data-stu-id="91de6-110">For example, a \*/5 in the {seconds} field means every five seconds.</span></span>
+    - content: <span data-ttu-id="91de6-111">'\*'</span><span class="sxs-lookup"><span data-stu-id="91de6-111">'\*'</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="91de6-112">アスタリスクは、すべての可能な値を選択することを指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-112">An asterisk specifies that every possible value should be selected.</span></span> <span data-ttu-id="91de6-113">{day of the week} フィールドをアスタリスクにすると、毎日を選択することを意味します。</span><span class="sxs-lookup"><span data-stu-id="91de6-113">Having an asterisk in the {day of the week} field means that every day should be selected.</span></span>
+    - content: <span data-ttu-id="91de6-114">','</span><span class="sxs-lookup"><span data-stu-id="91de6-114">','</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-115">コンマはリスト内の項目を区切ります。</span><span class="sxs-lookup"><span data-stu-id="91de6-115">A comma separates items in a list.</span></span> <span data-ttu-id="91de6-116">たとえば、{month} フィールドを 1,2,3 にすると、1 月、2 月、3 月を選択することを意味します。</span><span class="sxs-lookup"><span data-stu-id="91de6-116">For example, a 1,2,3 in the {month} field means select January, February, and March.</span></span>
+    - content: <span data-ttu-id="91de6-117">'-'</span><span class="sxs-lookup"><span data-stu-id="91de6-117">'-'</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-118">ハイフンは範囲を指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-118">A hyphen specifies a range.</span></span> <span data-ttu-id="91de6-119">たとえば、{month} フィールドを 1-3 にすると、1 月、2 月、3 月を選択することを意味します。</span><span class="sxs-lookup"><span data-stu-id="91de6-119">For example, a 1-3 in the {month} field means select January, February, and March.</span></span>
+  - content: <span data-ttu-id="91de6-120">Azure 関数に BLOB トリガーが関連付けられていて、イメージがアップロードされたときにのみそれを実行したいものとします。</span><span class="sxs-lookup"><span data-stu-id="91de6-120">Suppose your Azure Function has a blob trigger associated with it and you want it to execute only when images are uploaded.</span></span> <span data-ttu-id="91de6-121">BLOB トリガー *Path* には次のどの値を使用する必要がありますか?</span><span class="sxs-lookup"><span data-stu-id="91de6-121">Which of the following blob trigger *Path* values should you use?</span></span>
+    choices:
+    - content: <span data-ttu-id="91de6-122">samples-workitems/{name}</span><span class="sxs-lookup"><span data-stu-id="91de6-122">samples-workitems/{name}</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-123">Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。</span><span class="sxs-lookup"><span data-stu-id="91de6-123">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="91de6-124">Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-124">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="91de6-125">samples-workitems/{name}/png</span><span class="sxs-lookup"><span data-stu-id="91de6-125">samples-workitems/{name}/png</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-126">Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。</span><span class="sxs-lookup"><span data-stu-id="91de6-126">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="91de6-127">Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-127">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="91de6-128">samples-workitems/{name}?png</span><span class="sxs-lookup"><span data-stu-id="91de6-128">samples-workitems/{name}?png</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-129">Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。</span><span class="sxs-lookup"><span data-stu-id="91de6-129">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="91de6-130">Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-130">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+    - content: <span data-ttu-id="91de6-131">samples-workitems/{name}.png</span><span class="sxs-lookup"><span data-stu-id="91de6-131">samples-workitems/{name}.png</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="91de6-132">Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。</span><span class="sxs-lookup"><span data-stu-id="91de6-132">The Path tells the blob trigger where it should monitor for changes, and if there are any filters applied.</span></span> <span data-ttu-id="91de6-133">Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。</span><span class="sxs-lookup"><span data-stu-id="91de6-133">Adding a file extension to the Path specifies that uploaded files must have that file extension in order for the trigger to invoke the function.</span></span>
+  - content: '<span data-ttu-id="91de6-134">正誤問題: 1 つの Azure 関数に複数のトリガーを関連付けることができますか?</span><span class="sxs-lookup"><span data-stu-id="91de6-134">True or false: an Azure Function can have multiple triggers associated with it?</span></span>'
+    choices:
+    - content: <span data-ttu-id="91de6-135">はい</span><span class="sxs-lookup"><span data-stu-id="91de6-135">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="91de6-136">すべての Azure 関数には、厳密に 1 つのトリガーが関連付けられている必要があります。</span><span class="sxs-lookup"><span data-stu-id="91de6-136">Every Azure Function must have exactly one trigger associated with it.</span></span> <span data-ttu-id="91de6-137">複数のトリガーを使用する場合は、複数の関数を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="91de6-137">If you want to use multiple triggers, you must create multiple functions.</span></span>
+    - content: <span data-ttu-id="91de6-138">いいえ</span><span class="sxs-lookup"><span data-stu-id="91de6-138">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="91de6-139">すべての Azure 関数には、厳密に 1 つのトリガーが関連付けられている必要があります。</span><span class="sxs-lookup"><span data-stu-id="91de6-139">Every Azure Function must have exactly one trigger associated with it.</span></span> <span data-ttu-id="91de6-140">複数のトリガーを使用する場合は、複数の関数を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="91de6-140">If you want to use multiple triggers, you must create multiple functions.</span></span>

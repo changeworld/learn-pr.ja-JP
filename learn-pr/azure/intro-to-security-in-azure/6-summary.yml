@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.introduction-to-security.6-summary
-title: <span data-ttu-id="a5a14-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="a5a14-101">Summary</span></span>
+title: <span data-ttu-id="8c345-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="8c345-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="a5a14-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="a5a14-102">Summary</span></span>
-  description: <span data-ttu-id="a5a14-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="a5a14-103">Summary</span></span>
+  title: <span data-ttu-id="8c345-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="8c345-102">Summary</span></span>
+  description: <span data-ttu-id="8c345-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="8c345-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9c20d9ad1268e27f22c1715e1897b92e5e291ae2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: d5fc2c22e727a2f272fa31b50b232f9865a23a6a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46352719"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437342"
 durationInMinutes: 3
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: <span data-ttu-id="8c345-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="8c345-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="8c345-105">クラウドのセキュリティは、お客様とクラウド プロバイダーの共同責任です。</span><span class="sxs-lookup"><span data-stu-id="8c345-105">Cloud security is a shared responsibility between you and your cloud provider.</span></span> <span data-ttu-id="8c345-106">お客様が最大限のセキュリティ作業を行う必要があるのは、クラウド サービスのどのカテゴリですか?</span><span class="sxs-lookup"><span data-stu-id="8c345-106">Which category of cloud services requires the greatest security effort on your part?</span></span>
+    choices:
+    - content: <span data-ttu-id="8c345-107">サービスとしてのインフラストラクチャ (IaaS)</span><span class="sxs-lookup"><span data-stu-id="8c345-107">Infrastructure as a service (IaaS)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8c345-108">このレベルでは、クラウド プロバイダーはコンピューティング リソースに物理的なセキュリティを提供します。</span><span class="sxs-lookup"><span data-stu-id="8c345-108">At this level, the cloud provider provides physical security to compute resources.</span></span> <span data-ttu-id="8c345-109">一方、オペレーティング システムおよびソフトウェアに対してパッチを適用すること、これらをセキュリティで保護すること、さらにセキュリティで保護されるようにネットワークを構成することは、お客様側の責任です。</span><span class="sxs-lookup"><span data-stu-id="8c345-109">However, it's your responsibility to patch and secure your operating systems and software, as well as configure your network to be secure.</span></span>
+    - content: <span data-ttu-id="8c345-110">サービスとしてのプラットフォーム (PaaS)</span><span class="sxs-lookup"><span data-stu-id="8c345-110">Platform as a service (PaaS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-111">このレベルでは、クラウド プロバイダーが他のカテゴリより多くのセキュリティの問題を処理します。</span><span class="sxs-lookup"><span data-stu-id="8c345-111">At this level, the cloud provider handles many security concerns, more than with other categories.</span></span> <span data-ttu-id="8c345-112">これには、物理的なセキュリティの提供と、オペレーティング システムに修正プログラムを適用して最新の状態に維持することが含まれます。</span><span class="sxs-lookup"><span data-stu-id="8c345-112">This includes providing physical security and keeping operating systems patched and up to date.</span></span>
+    - content: <span data-ttu-id="8c345-113">サービスとしてのソフトウェア (SaaS)</span><span class="sxs-lookup"><span data-stu-id="8c345-113">Software as a service (SaaS)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-114">このレベルでは、クラウド プロバイダーがほとんどのセキュリティの問題を処理します。</span><span class="sxs-lookup"><span data-stu-id="8c345-114">At this level, the cloud provider handles most security concerns for you.</span></span> <span data-ttu-id="8c345-115">お客様の主な役割は、ソフトウェアへの適切なアクセス権を組織のユーザーに提供することです。</span><span class="sxs-lookup"><span data-stu-id="8c345-115">Your main responsibility is to provide your organization's users with proper access to the software.</span></span>
+  - content: <span data-ttu-id="8c345-116">従業員が退職するとき、最も簡単にアカウントを無効にできるのは次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="8c345-116">Which of these helps you most easily disable an account when an employee leaves your company?</span></span>
+    choices:
+    - content: <span data-ttu-id="8c345-117">多要素認証 (MFA) を適用します</span><span class="sxs-lookup"><span data-stu-id="8c345-117">Enforce multi-factor authentication (MFA)</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-118">MFA では、完全な認証のために 2 つ以上の要素を必須とすることでセキュリティが強化されますが、非アクティブなアカウントを無効にするのには役に立ちません。</span><span class="sxs-lookup"><span data-stu-id="8c345-118">While MFA provides additional security by requiring two or more elements for full authentication, it doesn't help you disable inactive accounts.</span></span>
+    - content: <span data-ttu-id="8c345-119">シングル サインオンの試行を監視します</span><span class="sxs-lookup"><span data-stu-id="8c345-119">Monitor sign-on attempts</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-120">監視はサービスのいずれかへの不正アクセスの試行を検出するのに役立ちますが、監視だけでは非アクティブなアカウントを無効にするのには役に立ちません。</span><span class="sxs-lookup"><span data-stu-id="8c345-120">While monitoring can help you discover when someone attempts unauthorized access to one of your services, monitoring alone won't help you disable inactive accounts.</span></span>
+    - content: <span data-ttu-id="8c345-121">シングル サインオン (SSO) を有効にします</span><span class="sxs-lookup"><span data-stu-id="8c345-121">Enable single sign-on (SSO)</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8c345-122">SSO はユーザーの ID を一元化するので、1 つの手順で非アクティブなアカウントを無効にできます。</span><span class="sxs-lookup"><span data-stu-id="8c345-122">SSO centralizes user identity, so you can disable an inactive account in a single step.</span></span>
+  - content: <span data-ttu-id="8c345-123">顧客の機密データを保護する "_最も強力な_" 方法は次のどれですか?</span><span class="sxs-lookup"><span data-stu-id="8c345-123">Which of these is the _strongest_ way to protect sensitive customer data?</span></span>
+    choices:
+    - content: <span data-ttu-id="8c345-124">データベースに格納されるデータを暗号化します</span><span class="sxs-lookup"><span data-stu-id="8c345-124">Encrypt data as it sits in your database</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-125">データベースに格納されるデータを暗号化すること (保存時の暗号化) は重要ですが、システム間でネットワーク転送されるときにデータを他者に読み取られる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8c345-125">While encrypting your data as it sits in your database (encryption at rest) is important, your data may be read by others as it travels over the network between systems.</span></span>
+    - content: <span data-ttu-id="8c345-126">ネットワーク経由で転送されるデータを暗号化する</span><span class="sxs-lookup"><span data-stu-id="8c345-126">Encrypt data as it travels over the network</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="8c345-127">ネットワーク上を転送されるデータを暗号化すること (転送中の暗号化) は重要ですが、データベースに格納されているときのデータが脆弱になる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="8c345-127">While encrypting your data as it travels over the network (encryption in transit) is important, your data may be vulnerable as it sits in your database.</span></span>
+    - content: <span data-ttu-id="8c345-128">データベース内の保存時とネットワーク上の転送中の両方でデータを暗号化します</span><span class="sxs-lookup"><span data-stu-id="8c345-128">Encrypt data both as it sits in your database and as it travels over the network</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="8c345-129">データベース内の保存時とネットワーク上の転送中の両方で常にデータを暗号化すると、攻撃者がプレーン テキストのデータにアクセスする機会を最小限に抑えられます。</span><span class="sxs-lookup"><span data-stu-id="8c345-129">Encrypting your data at all times, both as it sits in your database and as it travels over the network, minimizes the opportunity for an attacker to access your data in plain text.</span></span>

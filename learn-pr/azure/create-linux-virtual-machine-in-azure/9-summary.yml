@@ -1,20 +1,54 @@
 ### YamlMime:ModuleUnit
 uid: learn.create-linux-vm-in-azure.9-summary
-title: <span data-ttu-id="7190b-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="7190b-101">Summary</span></span>
+title: <span data-ttu-id="fcb56-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="fcb56-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="7190b-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="7190b-102">Summary</span></span>
-  description: <span data-ttu-id="7190b-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="7190b-103">Summary</span></span>
+  title: <span data-ttu-id="fcb56-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="fcb56-102">Summary</span></span>
+  description: <span data-ttu-id="fcb56-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="fcb56-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 7e8f4e11d5652bcb4cf4ea95df8141eedbe8abea
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353119"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437104"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="fcb56-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="fcb56-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="fcb56-105">正誤問題: 新しい仮想マシンを作成するときは、セキュリティ上の理由から、公式の Azure Marketplace から入手したイメージを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="fcb56-105">True or false: for security reasons, you must use an image from the official Azure Marketplace when creating a new virtual machine.</span></span>'
+    choices:
+    - content: <span data-ttu-id="fcb56-106">はい</span><span class="sxs-lookup"><span data-stu-id="fcb56-106">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fcb56-107">Azure では、お客様が自分のニーズに合わせて仮想マシンを構成できます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-107">Azure lets you configure your virtual machines to meet your needs.</span></span> <span data-ttu-id="fcb56-108">これには、独自の VM イメージの使用のサポートが含まれます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-108">This includes support for using your own VM images.</span></span>
+    - content: <span data-ttu-id="fcb56-109">いいえ</span><span class="sxs-lookup"><span data-stu-id="fcb56-109">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fcb56-110">Azure では、お客様が自分のニーズに合わせて仮想マシンを構成できます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-110">Azure lets you configure your virtual machines to meet your needs.</span></span> <span data-ttu-id="fcb56-111">これには、独自の VM イメージの使用のサポートが含まれます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-111">This includes support for using your own VM images.</span></span>
+  - content: <span data-ttu-id="fcb56-112">新しい仮想マシンに対する既定のネットワーク セキュリティの設定にはどのような効果がありますか?</span><span class="sxs-lookup"><span data-stu-id="fcb56-112">What is the effect of the default network security settings for a new virtual machine?</span></span>
+    choices:
+    - content: <span data-ttu-id="fcb56-113">送信要求も受信要求も許可されません。</span><span class="sxs-lookup"><span data-stu-id="fcb56-113">Neither outbound nor inbound requests are allowed.</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fcb56-114">送信要求は低リスクと見なされるため、既定で許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-114">Outbound requests are considered low risk, so they are allowed by default.</span></span>
+    - content: <span data-ttu-id="fcb56-115">送信要求は許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-115">Outbound request are allowed.</span></span> <span data-ttu-id="fcb56-116">受信トラフィックは、仮想ネットワーク内からのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-116">Inbound traffic is only allowed from within the virtual network.</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fcb56-117">送信要求は低リスクと見なされるため、既定で許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-117">Outbound requests are considered low risk, so they are allowed by default.</span></span> <span data-ttu-id="fcb56-118">仮想ネットワーク内からの受信トラフィックは許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-118">Inbound traffic from within the virtual network is allowed.</span></span> <span data-ttu-id="fcb56-119">仮想ネットワーク内に VM を配置することで、VM の所有者は仮想ネットワーク内のリソース間の通信に暗黙的にオプトインします。</span><span class="sxs-lookup"><span data-stu-id="fcb56-119">By placing a VM in a virtual network, the VM owner is implicitly opting-in to communication among the resources in the virtual network.</span></span>
+    - content: '<span data-ttu-id="fcb56-120">制限はありません。すべての送信および受信要求が許可されます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-120">There are no restrictions: all outbound and inbound requests are allowed.</span></span>'
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fcb56-121">無制限の受信トラフィックは、既定の動作に対してリスクが高すぎます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-121">Unrestricted inbound traffic is too risky for the default behavior.</span></span>
+  - content: <span data-ttu-id="fcb56-122">Azure で複数の Linux 仮想マシンをホストしているものとします。</span><span class="sxs-lookup"><span data-stu-id="fcb56-122">Suppose you have several Linux virtual machines hosted in Azure.</span></span> <span data-ttu-id="fcb56-123">本社の 3 台の専用コンピューターから SSH 経由でこれらの VM をリモート管理します。</span><span class="sxs-lookup"><span data-stu-id="fcb56-123">You will administer these VMs remotely over SSH from three dedicated machines in your corporate headquarters.</span></span> <span data-ttu-id="fcb56-124">この状況で一般にベスト プラクティスと考えられる認証方法は次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="fcb56-124">Which of the following authentication methods would typically be considered best-practice for this situation?</span></span>
+    choices:
+    - content: <span data-ttu-id="fcb56-125">ユーザー名とパスワード</span><span class="sxs-lookup"><span data-stu-id="fcb56-125">Username and password</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fcb56-126">パスワードはブルート フォース攻撃に対して脆弱です。</span><span class="sxs-lookup"><span data-stu-id="fcb56-126">Passwords are vulnerable to brute-force attacks.</span></span> <span data-ttu-id="fcb56-127">この方法が推奨されるのは、さまざまな場所からリモート アクセスする必要がある場合のみです。</span><span class="sxs-lookup"><span data-stu-id="fcb56-127">This method is only recommended if you require remote access from a variety of locations.</span></span>
+    - content: <span data-ttu-id="fcb56-128">秘密キー</span><span class="sxs-lookup"><span data-stu-id="fcb56-128">Private key</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="fcb56-129">秘密キーによるアクセスはパスワードより安全であり、限られた数の場所からアクセスする必要があるときは適切なオプションです。</span><span class="sxs-lookup"><span data-stu-id="fcb56-129">Private-key access is more secure than a password and is a good option when you require access from a limited number of locations.</span></span> <span data-ttu-id="fcb56-130">しかし、攻撃者が秘密キーを取得した場合、それを使用して VM にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="fcb56-130">However, if an attacker acquires your private key, they can use it to access your VMs.</span></span>
+    - content: <span data-ttu-id="fcb56-131">秘密キーとパスフレーズ</span><span class="sxs-lookup"><span data-stu-id="fcb56-131">Private key with passphrase</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="fcb56-132">パスフレーズを使用する秘密キー アクセスが、最も安全なオプションです。</span><span class="sxs-lookup"><span data-stu-id="fcb56-132">Private key access with a passphrase is the most secure option.</span></span> <span data-ttu-id="fcb56-133">攻撃者が秘密キーを入手しても、パスフレーズなしでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="fcb56-133">Even if an attacker acquires your private key, they will be unable to use it without the passphrase.</span></span>

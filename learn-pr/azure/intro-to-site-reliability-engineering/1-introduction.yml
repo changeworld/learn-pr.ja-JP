@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.1-introduction
+title: <span data-ttu-id="ae384-101">サイト信頼性エンジニアリングの概要</span><span class="sxs-lookup"><span data-stu-id="ae384-101">Introduction to Site Reliability Engineering</span></span>
+metadata:
+  title: <span data-ttu-id="ae384-102">サイト信頼性エンジニアリングの概要</span><span class="sxs-lookup"><span data-stu-id="ae384-102">Introduction to Site Reliability Engineering</span></span>
+  description: <span data-ttu-id="ae384-103">サイト信頼性エンジニアリングの概要</span><span class="sxs-lookup"><span data-stu-id="ae384-103">Introduction to Site Reliability Engineering</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: db603deeb7407f905a87b61a26a7ecc7ddca4615
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439160"
+durationInMinutes: 3
+content: '[!include[](includes/1-introduction.md)]'

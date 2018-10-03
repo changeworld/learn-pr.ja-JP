@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.communicate-between-applications-with-azure-queue-storage.9-summary
-title: <span data-ttu-id="06d0e-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="06d0e-101">Summary</span></span>
+title: <span data-ttu-id="2a532-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="2a532-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="06d0e-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="06d0e-102">Summary</span></span>
-  description: <span data-ttu-id="06d0e-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="06d0e-103">Summary</span></span>
+  title: <span data-ttu-id="2a532-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="2a532-102">Summary</span></span>
+  description: <span data-ttu-id="2a532-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="2a532-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9b4e753dd959b77757eee376fa367513e9b62327
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 355fab15880ecc7d0d16f91e51f00a79531bb65d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350728"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437563"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: <span data-ttu-id="2a532-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="2a532-104">Check your knowledge</span></span>
+  questions:
+  - content: '<span data-ttu-id="2a532-105">高速道路システムの長期的な拡張を計画している政府機関に勤めているとします。</span><span class="sxs-lookup"><span data-stu-id="2a532-105">Suppose you work for a government agency that plans the long-term expansion of the highway system.</span></span> <span data-ttu-id="2a532-106">数千ものセンサーから交通データを受信し、分析して助言を行います。</span><span class="sxs-lookup"><span data-stu-id="2a532-106">You receive traffic data from thousands of sensors and analyze it to make your recommendations.</span></span> <span data-ttu-id="2a532-107">受信データの量は 1 日を通して変化します。たとえば、朝夕の通勤時間に急増します。</span><span class="sxs-lookup"><span data-stu-id="2a532-107">The amount of incoming data varies throughout the day; for example, it spikes during the morning and evening commuting hours.</span></span> <span data-ttu-id="2a532-108">正誤問題: 単一の仮想マシンに接続されている Azure キューで構成されるサーバー側のアーキテクチャを、このワークロードに対して選択するのは妥当ですか?</span><span class="sxs-lookup"><span data-stu-id="2a532-108">True or false: a server-side architecture consisting of an Azure Queue connected to a single virtual machine is a reasonable choice for this workload?</span></span>'
+    choices:
+    - content: <span data-ttu-id="2a532-109">はい</span><span class="sxs-lookup"><span data-stu-id="2a532-109">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2a532-110">キューでトラフィックの急増に対応し、データが失われないようにします。</span><span class="sxs-lookup"><span data-stu-id="2a532-110">The queue will handle spikes in traffic and ensure no data is lost.</span></span> <span data-ttu-id="2a532-111">VM で受信メッセージのフローに対応できない場合、トラフィックの少ない時間にメッセージのバックログが処理されます。</span><span class="sxs-lookup"><span data-stu-id="2a532-111">If the VM cannot keep up with the flow of incoming messages, it will process the message backlog during low-traffic times.</span></span>
+    - content: <span data-ttu-id="2a532-112">いいえ</span><span class="sxs-lookup"><span data-stu-id="2a532-112">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2a532-113">このデータは長期的な計画に使用されるため、リアルタイムで処理する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2a532-113">This data is used for long-term planning, so there is no need to process it in real time.</span></span> <span data-ttu-id="2a532-114">多くの場合、単一の VM に接続されているキューでワークロードが処理され、このキューはコスト効率の優れたソリューションとなります。</span><span class="sxs-lookup"><span data-stu-id="2a532-114">A queue connected to a single VM is likely to handle the workload and be a cost-efficient solution.</span></span>
+  - content: <span data-ttu-id="2a532-115">キューはどの情報で一意に識別されますか?</span><span class="sxs-lookup"><span data-stu-id="2a532-115">What information uniquely identifies a queue?</span></span>
+    choices:
+    - content: <span data-ttu-id="2a532-116">キュー名</span><span class="sxs-lookup"><span data-stu-id="2a532-116">Queue name</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2a532-117">キュー名はそれが含まれているストレージ アカウント内でのみ一意である必要があります。つまり、グローバルに一意である必要はありません。</span><span class="sxs-lookup"><span data-stu-id="2a532-117">Queue names must only be unique within their containing storage account; they do not need to be globally unique.</span></span>
+    - content: <span data-ttu-id="2a532-118">アカウント キー</span><span class="sxs-lookup"><span data-stu-id="2a532-118">Account key</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2a532-119">アカウント キーは、キューではなく、ストレージ アカウントに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="2a532-119">Account keys are associated with a storage account, not a queue.</span></span>
+    - content: <span data-ttu-id="2a532-120">ストレージ アカウント名とキュー名</span><span class="sxs-lookup"><span data-stu-id="2a532-120">Storage account name and queue name</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2a532-121">ストレージ アカウント名はグローバルに一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="2a532-121">Storage account names must be globally unique.</span></span> <span data-ttu-id="2a532-122">キュー名はそれが含まれているストレージ アカウント内で一意である必要があります。</span><span class="sxs-lookup"><span data-stu-id="2a532-122">Queue names must be unique within their containing storage account.</span></span> <span data-ttu-id="2a532-123">つまり、ストレージ アカウント名とキュー名の組み合わせによってキューが一意に識別されます。</span><span class="sxs-lookup"><span data-stu-id="2a532-123">This means the combination of storage account name and queue name uniquely identifies a queue.</span></span>
+  - content: '<span data-ttu-id="2a532-124">正誤問題: クライアントによりプログラムでキューからメッセージが取得された場合、メッセージはキューから自動的に削除されますか?</span><span class="sxs-lookup"><span data-stu-id="2a532-124">True or false: when a client programmatically retrieves a message from a queue, the message is automatically deleted from the queue?</span></span>'
+    choices:
+    - content: <span data-ttu-id="2a532-125">はい</span><span class="sxs-lookup"><span data-stu-id="2a532-125">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="2a532-126">メッセージの取得操作とメッセージの削除操作は別々に行われます。</span><span class="sxs-lookup"><span data-stu-id="2a532-126">The operations 'get message' and 'delete message' are separate.</span></span>
+    - content: <span data-ttu-id="2a532-127">いいえ</span><span class="sxs-lookup"><span data-stu-id="2a532-127">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="2a532-128">仕様により、メッセージは処理のために取得された後、キューから自動的に削除されません。</span><span class="sxs-lookup"><span data-stu-id="2a532-128">By design, messages are not automatically deleted from a queue after they are retrieved for processing.</span></span> <span data-ttu-id="2a532-129">これは、すべてのメッセージの処理を確実に完了させるのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="2a532-129">This helps ensure that every message is processed to completion.</span></span> <span data-ttu-id="2a532-130">処理中にコンシューマー アプリケーションがクラッシュした場合、メッセージはコンシューマー アプリの別のインスタンスで引き続き処理することができます。</span><span class="sxs-lookup"><span data-stu-id="2a532-130">If a consumer application crashes during processing, the message is still available to be processed by a different instance of the consumer app.</span></span>

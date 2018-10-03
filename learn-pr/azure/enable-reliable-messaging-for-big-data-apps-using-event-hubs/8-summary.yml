@@ -1,19 +1,50 @@
 ### YamlMime:ModuleUnit
 uid: learn.enable-reliable-messaging-for-big-data-applications-using-azure-event-hubs.8-summary
-title: <span data-ttu-id="21c71-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="21c71-101">Summary</span></span>
+title: <span data-ttu-id="7af1c-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="7af1c-101">Summary</span></span>
 metadata:
-  title: <span data-ttu-id="21c71-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="21c71-102">Summary</span></span>
-  description: <span data-ttu-id="21c71-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="21c71-103">Summary</span></span>
+  title: <span data-ttu-id="7af1c-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="7af1c-102">Summary</span></span>
+  description: <span data-ttu-id="7af1c-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="7af1c-103">Summary</span></span>
   ms.date: 09/24/2018
   author: markjulmar
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: bd38f364358426348e11ae5683b15c2000bb4e6c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: fec6012f991510d8b3dc5e9bf4fb1dc08a1c1811
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348487"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437529"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: <span data-ttu-id="7af1c-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="7af1c-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="7af1c-105">Azure Event Hub にメッセージを非常に頻繁に発行するアプリケーションでは、Advanced Message Queuing Protocol (AMQP) を使用することで最適なパフォーマンスが得られます。これは、永続的なソケットが確立されるためです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-105">Applications that publish messages to Azure Event Hub very frequently will get the best performance using Advanced Message Queuing Protocol (AMQP) because it establishes a persistent socket.</span></span>
+    choices:
+    - content: <span data-ttu-id="7af1c-106">はい</span><span class="sxs-lookup"><span data-stu-id="7af1c-106">True</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7af1c-107">パブリッシャーは HTTPS または AMQP を使用できます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-107">Publishers can use either HTTPS or AMQP.</span></span> <span data-ttu-id="7af1c-108">AMQP ではソケットが開かれ、そのソケットを介して複数のメッセージを送信することができます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-108">AMQP opens a socket and can send multiple messages over that socket.</span></span>
+    - content: <span data-ttu-id="7af1c-109">いいえ</span><span class="sxs-lookup"><span data-stu-id="7af1c-109">False</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7af1c-110">パブリッシャーは HTTPS または AMQP を使用できます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-110">Publishers can use either HTTPS or AMQP.</span></span> <span data-ttu-id="7af1c-111">頻繁に発行する場合、HTTP は理想的ではありません。これは、発行ごとに新しい接続が確立されるためです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-111">HTTP is not ideal for frequent publishing because it establishes a new connection for each publication.</span></span>
+  - content: <span data-ttu-id="7af1c-112">既定では、新しいイベント ハブにいくつのパーティションが含まれますか?</span><span class="sxs-lookup"><span data-stu-id="7af1c-112">By default, how many partitions will a new Event Hub have?</span></span>
+    choices:
+    - content: <span data-ttu-id="7af1c-113">1</span><span class="sxs-lookup"><span data-stu-id="7af1c-113">1</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7af1c-114">イベント ハブのパーティションの既定値は 4 です。</span><span class="sxs-lookup"><span data-stu-id="7af1c-114">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="7af1c-115">パーティションはイベント ハブ内のバケットです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-115">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="7af1c-116">発行ごとに含まれるパーティションは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-116">Each publication will go into only one partition.</span></span> <span data-ttu-id="7af1c-117">各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7af1c-117">Each consumer group may read from one or more than one partition.</span></span>
+    - content: <span data-ttu-id="7af1c-118">2</span><span class="sxs-lookup"><span data-stu-id="7af1c-118">2</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7af1c-119">イベント ハブのパーティションの既定値は 4 です。</span><span class="sxs-lookup"><span data-stu-id="7af1c-119">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="7af1c-120">パーティションはイベント ハブ内のバケットです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-120">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="7af1c-121">発行ごとに含まれるパーティションは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-121">Each publication will go into only one partition.</span></span> <span data-ttu-id="7af1c-122">各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7af1c-122">Each consumer group may read from one or more than one partition.</span></span>
+    - content: <span data-ttu-id="7af1c-123">4</span><span class="sxs-lookup"><span data-stu-id="7af1c-123">4</span></span>
+      isCorrect: true
+      incorrectExplanation: <span data-ttu-id="7af1c-124">イベント ハブのパーティションの既定値は 4 です。</span><span class="sxs-lookup"><span data-stu-id="7af1c-124">Event Hubs default to 4 partitions.</span></span> <span data-ttu-id="7af1c-125">パーティションはイベント ハブ内のバケットです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-125">Partitions are the buckets within an Event Hub.</span></span> <span data-ttu-id="7af1c-126">発行ごとに含まれるパーティションは 1 つのみです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-126">Each publication will go into only one partition.</span></span> <span data-ttu-id="7af1c-127">各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。</span><span class="sxs-lookup"><span data-stu-id="7af1c-127">Each consumer group may read from one or more than one partition.</span></span>
+  - content: <span data-ttu-id="7af1c-128">コンシューマー グループで保持されているイベントが処理される前にイベント ハブがオフラインになった場合、それらのイベントは失われます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-128">If an Event Hub goes offline before a consumer group can process the events it holds, those events will be lost.</span></span>
+    choices:
+    - content: <span data-ttu-id="7af1c-129">はい</span><span class="sxs-lookup"><span data-stu-id="7af1c-129">True</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="7af1c-130">イベントは永続的なものです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-130">Events are persistent.</span></span> <span data-ttu-id="7af1c-131">各コンシューマー グループには、パーティション内でのその位置を保持する独自のカーソルがあります。</span><span class="sxs-lookup"><span data-stu-id="7af1c-131">Each consumer group has its own cursor maintaining its position within the partition.</span></span> <span data-ttu-id="7af1c-132">イベント ハブが再び利用できるようになったときに、コンシューマー グループはそのカーソル位置で処理を再開することができます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-132">The consumer groups can resume processing at their cursor position when the Event Hub is again available.</span></span>
+    - content: <span data-ttu-id="7af1c-133">いいえ</span><span class="sxs-lookup"><span data-stu-id="7af1c-133">False</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="7af1c-134">イベントは永続的なものです。</span><span class="sxs-lookup"><span data-stu-id="7af1c-134">Events are persistent.</span></span> <span data-ttu-id="7af1c-135">各コンシューマー グループには、パーティション内でのその位置を保持する独自のカーソルがあります。</span><span class="sxs-lookup"><span data-stu-id="7af1c-135">Each consumer group has its own cursor maintaining its position within the partition.</span></span> <span data-ttu-id="7af1c-136">イベント ハブが再び利用できるようになったときに、コンシューマー グループはそのカーソル位置で処理を再開することができます。</span><span class="sxs-lookup"><span data-stu-id="7af1c-136">The consumer groups can resume processing at their cursor position when the Event Hub is again available.</span></span>

@@ -1,19 +1,56 @@
 ### YamlMime:ModuleUnit
 uid: learn.cosmos-db-app-with-vscode.7-summary
 metadata:
-  title: <span data-ttu-id="cda02-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-101">Summary</span></span>
-  description: <span data-ttu-id="cda02-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-102">Summary</span></span>
+  title: <span data-ttu-id="622d6-101">まとめ</span><span class="sxs-lookup"><span data-stu-id="622d6-101">Summary</span></span>
+  description: <span data-ttu-id="622d6-102">まとめ</span><span class="sxs-lookup"><span data-stu-id="622d6-102">Summary</span></span>
   ms.date: 09/24/2018
   author: mimig1
   ms.author: mimig
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 656c5dad59bcf4ae8b969b140d54fa08e0e4115a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: c68a68b3429b73a6831781a74c150d226d5bd659
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348888"
-title: <span data-ttu-id="cda02-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="cda02-103">Summary</span></span>
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437801"
+title: <span data-ttu-id="622d6-103">まとめ</span><span class="sxs-lookup"><span data-stu-id="622d6-103">Summary</span></span>
 durationInMinutes: 3
-content: '[!include[](includes/7-summary.md)]'
+content: >
+  [!include[](includes/7-summary.md)]
+quiz:
+  title: <span data-ttu-id="622d6-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="622d6-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="622d6-105">Azure Cosmos DB にアクセスする .NET Core アプリケーションを開発するために Visual Studio Code を使用しているとします。</span><span class="sxs-lookup"><span data-stu-id="622d6-105">Suppose you are using Visual Studio Code to develop a .NET Core application that accesses Azure Cosmos DB.</span></span> <span data-ttu-id="622d6-106">アプリケーション構成にデータベース用の接続文字列を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="622d6-106">You need to include the connection string for your database in your application configuration.</span></span> <span data-ttu-id="622d6-107">プロジェクトにこの情報を取り込むための最も便利な方法は何ですか?</span><span class="sxs-lookup"><span data-stu-id="622d6-107">What is the most convenient way to get this information into your project?</span></span>
+    choices:
+    - content: <span data-ttu-id="622d6-108">Visual Studio Code から直接</span><span class="sxs-lookup"><span data-stu-id="622d6-108">Directly from Visual Studio Code</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="622d6-109">Azure Cosmos DB 拡張機能を利用すれば、Visual Studio Code 内から Azure Cosmos DB のアカウントとデータベースを管理して作成することができます。</span><span class="sxs-lookup"><span data-stu-id="622d6-109">The Azure Cosmos DB extension lets you administer and create Azure Cosmos DB accounts and databases from within Visual Studio Code.</span></span>
+    - content: <span data-ttu-id="622d6-110">Azure portal から</span><span class="sxs-lookup"><span data-stu-id="622d6-110">From the Azure portal</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-111">Azure portal でこの情報が提供されますが、Visual Studio Code を既に使用している場合、ポータルに移動することが最も適切であるとは思えません。</span><span class="sxs-lookup"><span data-stu-id="622d6-111">The Azure portal does provide this information, but if you're already in Visual Studio Code, going to the portal is unlikely to be the most convenient choice.</span></span>
+    - content: <span data-ttu-id="622d6-112">Azure CLI の使用</span><span class="sxs-lookup"><span data-stu-id="622d6-112">Using the Azure CLI</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-113">特に Visual Studio Code には組み込みのターミナルがあるため、これは適した選択ですが、必須コマンドの知識が必要になります。</span><span class="sxs-lookup"><span data-stu-id="622d6-113">While this is a good choice, especially since Visual Studio Code has a built-in terminal, it does require knowledge of the required commands.</span></span> <span data-ttu-id="622d6-114">これは、Visual Studio Code 拡張機能ほど便利ではない可能性があります。</span><span class="sxs-lookup"><span data-stu-id="622d6-114">This may not be as convenient as the Visual Studio Code extension.</span></span>
+  - content: <span data-ttu-id="622d6-115">Azure Cosmos DB の SQL API を操作している場合、CRUD 操作の実行に使用できるのは次のうちどれですか?</span><span class="sxs-lookup"><span data-stu-id="622d6-115">When working with Azure Cosmos DB's SQL API, which of these can be used to perform CRUD operations?</span></span>
+    choices:
+    - content: <span data-ttu-id="622d6-116">LINQ</span><span class="sxs-lookup"><span data-stu-id="622d6-116">LINQ</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="622d6-117">LINQ と SQL は、SQL API をクエリするための有効なメソッドのうちの 2 つです。</span><span class="sxs-lookup"><span data-stu-id="622d6-117">LINQ and SQL are two of the valid methods for querying the SQL API.</span></span>
+    - content: <span data-ttu-id="622d6-118">Apache Cassandra クライアント ライブラリ</span><span class="sxs-lookup"><span data-stu-id="622d6-118">Apache Cassandra client libraries</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-119">Apache Cassandra ライブラリで Azure Cosmos DB の Cassandra API を操作できますが、SQL API を操作することはできません。</span><span class="sxs-lookup"><span data-stu-id="622d6-119">Apache Cassandra libraries can work with Azure Cosmos DB’s Cassandra API but not with the SQL API.</span></span>
+    - content: <span data-ttu-id="622d6-120">Azure Table Storage ライブラリ</span><span class="sxs-lookup"><span data-stu-id="622d6-120">Azure Table Storage libraries</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-121">Azure Table Storage ライブラリで Azure Cosmos DB の Table API を操作できますが、SQL API を操作することはできません。</span><span class="sxs-lookup"><span data-stu-id="622d6-121">Azure Table Storage libraries can work with Azure Cosmos DB's Table API but not with the SQL API.</span></span>
+  - content: <span data-ttu-id="622d6-122">Azure Cosmos DB クライアント SDK の DocumentClient クラスを操作する場合は、NOSQL モデルを使用します。</span><span class="sxs-lookup"><span data-stu-id="622d6-122">When working with the Azure Cosmos DB Client SDK's DocumentClient class, you use a NOSQL model.</span></span> <span data-ttu-id="622d6-123">このクラスを使用して、ユーザー文書の FirstName フィールドをどのように 'Ann' から 'Fran' に変更しますか?</span><span class="sxs-lookup"><span data-stu-id="622d6-123">How would you use this class to change the FirstName field of a Person Document from 'Ann' to 'Fran'?</span></span>
+    choices:
+    - content: <span data-ttu-id="622d6-124">FirstName=Fran で UpdateDocumentAsync を呼び出す</span><span class="sxs-lookup"><span data-stu-id="622d6-124">Call UpdateDocumentAsync with FirstName=Fran</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-125">DocumentClient クラスには UpdateDocumentAsync メソッドがありません。</span><span class="sxs-lookup"><span data-stu-id="622d6-125">The DocumentClient class doesn't have an UpdateDocumentAsync method.</span></span> <span data-ttu-id="622d6-126">単一のフィールドを更新することは、ドキュメント スタイルの NOSQL 手法と矛盾しています。</span><span class="sxs-lookup"><span data-stu-id="622d6-126">Updating a single field is not consistent with the document-style NOSQL approach.</span></span>
+    - content: <span data-ttu-id="622d6-127">更新されたユーザー オブジェクトで UpsertDocumentAsync を呼び出す</span><span class="sxs-lookup"><span data-stu-id="622d6-127">Call UpsertDocumentAsync with an updated Person object</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="622d6-128">これは機能しますが、要件を満たすための最低限必要なアクセスではありません。</span><span class="sxs-lookup"><span data-stu-id="622d6-128">While this would work, it isn't the minimum necessary access to meet our requirements.</span></span> <span data-ttu-id="622d6-129">Upsert 操作では、そのキーが既に存在する場合はドキュメントが置き換えられ、存在しない場合は新しいドキュメントが追加されます。</span><span class="sxs-lookup"><span data-stu-id="622d6-129">Upsert operations will replace a document if its key already exists or add a new document if not.</span></span> <span data-ttu-id="622d6-130">ここでは新しいドキュメントを追加しないため、このメソッドを使用すると、バグの追跡が少し難しくなる危険性があります。</span><span class="sxs-lookup"><span data-stu-id="622d6-130">We don't want to add a new one, so using this method risks introducing subtle, hard to track bugs.</span></span>
+    - content: <span data-ttu-id="622d6-131">更新されたユーザー オブジェクトで ReplaceDocumentAsync を呼び出す</span><span class="sxs-lookup"><span data-stu-id="622d6-131">Call ReplaceDocumentAsync with an updated Person object</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="622d6-132">ReplaceDocumentAsync では、既存のドキュメントが新しいものに置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="622d6-132">ReplaceDocumentAsync will replace the existing document with the new one.</span></span> <span data-ttu-id="622d6-133">この場合、古いものと新しいものが FirstName 以外は同じになるようにします。</span><span class="sxs-lookup"><span data-stu-id="622d6-133">In this case we'd intend the old and new to be the same other than FirstName.</span></span>

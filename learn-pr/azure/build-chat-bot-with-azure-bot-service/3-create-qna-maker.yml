@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.3-create-qna-maker
+title: <span data-ttu-id="9328d-101">Microsoft QnA Maker でナレッジ ベースを作成する</span><span class="sxs-lookup"><span data-stu-id="9328d-101">Create a knowledge base with Microsoft QnA Maker</span></span>
+metadata:
+  title: <span data-ttu-id="9328d-102">Microsoft QnA Maker でナレッジ ベースを作成する</span><span class="sxs-lookup"><span data-stu-id="9328d-102">Create a knowledge base with Microsoft QnA Maker</span></span>
+  description: <span data-ttu-id="9328d-103">Microsoft QnA Maker でナレッジ ベースを作成する</span><span class="sxs-lookup"><span data-stu-id="9328d-103">Create a knowledge base with Microsoft QnA Maker</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: bab2583c9551c86d9f82c4dc311bb6f49c740291
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439142"
+labId: 46466
+durationInMinutes: 20
+content: '[!include[](includes/3-create-qna-maker.md)]'

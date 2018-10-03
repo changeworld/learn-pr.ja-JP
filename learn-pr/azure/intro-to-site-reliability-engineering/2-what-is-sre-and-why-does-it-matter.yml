@@ -1,0 +1,48 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+title: <span data-ttu-id="4354c-101">SRE の内容と重要な理由</span><span class="sxs-lookup"><span data-stu-id="4354c-101">What is SRE and why does it matter?</span></span>
+metadata:
+  title: <span data-ttu-id="4354c-102">SRE の内容と重要な理由</span><span class="sxs-lookup"><span data-stu-id="4354c-102">What is SRE and why does it matter?</span></span>
+  description: <span data-ttu-id="4354c-103">SRE の内容と重要な理由</span><span class="sxs-lookup"><span data-stu-id="4354c-103">What is SRE and why does it matter?</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 1e19e3256f43ac642814968c9b547e760aa09a64
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439126"
+durationInMinutes: 10
+content: >
+  [!include[](includes/2-what-is-sre-and-why-does-it-matter.md)]
+quiz:
+  title: <span data-ttu-id="4354c-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="4354c-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="4354c-105">SRE で主にフォーカスするのはサービス、システム、または製品のどのプロパティですか? </span><span class="sxs-lookup"><span data-stu-id="4354c-105">Which property of a service, system or product does SRE primarily focus on?</span></span>
+    choices:
+    - content: <span data-ttu-id="4354c-106">セキュリティ</span><span class="sxs-lookup"><span data-stu-id="4354c-106">Security</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4354c-107">セキュリティは SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。</span><span class="sxs-lookup"><span data-stu-id="4354c-107">Security is definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+    - content: <span data-ttu-id="4354c-108">実行にかかるコスト</span><span class="sxs-lookup"><span data-stu-id="4354c-108">Cost to run</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4354c-109">経費とリソース使用量は SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。</span><span class="sxs-lookup"><span data-stu-id="4354c-109">Expenses and resource usage are definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+    - content: <span data-ttu-id="4354c-110">信頼性</span><span class="sxs-lookup"><span data-stu-id="4354c-110">Reliability</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4354c-111">SRE の主な焦点は、まさに信頼性にあります。</span><span class="sxs-lookup"><span data-stu-id="4354c-111">SRE's primary focus is indeed on reliability.</span></span>
+    - content: <span data-ttu-id="4354c-112">保守容易性</span><span class="sxs-lookup"><span data-stu-id="4354c-112">Maintainability</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4354c-113">保守できるサービス、システム、または製品の作成は SRE で確かに重要ですが、このエンジニアリング分野における主な焦点は信頼性です。</span><span class="sxs-lookup"><span data-stu-id="4354c-113">The creation of maintainable services, systems or products is definitely important in SRE, but reliability is the primary focus of this engineering discipline.</span></span>
+  - content: <span data-ttu-id="4354c-114">ほぼすべてのサービス、システム、および製品で、SRE が目指す信頼性のレベルとは? </span><span class="sxs-lookup"><span data-stu-id="4354c-114">For almost all services, systems and products, what level of reliability does an SRE strive for?</span></span>
+    choices:
+    - content: <span data-ttu-id="4354c-115">100% が目標</span><span class="sxs-lookup"><span data-stu-id="4354c-115">100% is the goal</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4354c-116">ほとんどのコンテキストで、100% の信頼性を達成することはできません。</span><span class="sxs-lookup"><span data-stu-id="4354c-116">For most contexts, it is not possible to hit 100% reliable.</span></span> <span data-ttu-id="4354c-117">たとえそうであったとしても、これはコストとリソースが膨大 (どちらも無駄) になります。</span><span class="sxs-lookup"><span data-stu-id="4354c-117">Even if it was, it would be cost and resource prohibitive (an as waste of both).</span></span>
+    - content: <span data-ttu-id="4354c-118">できる限り信頼性がある必要がある</span><span class="sxs-lookup"><span data-stu-id="4354c-118">It should be as reliable as possible</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="4354c-119">その上、労力とリソースが無駄になるため、目標のために信頼性の適切なレベルを見つけることが重要です。</span><span class="sxs-lookup"><span data-stu-id="4354c-119">It is important to find the appropriate level of reliability for a goal since efforts and resources beyond that are a waste.</span></span> <span data-ttu-id="4354c-120">さらに、"できる限り" はあいまいすぎて使えません。</span><span class="sxs-lookup"><span data-stu-id="4354c-120">Plus "as possible" is too vague to be useful.</span></span>
+    - content: <span data-ttu-id="4354c-121">重要な関係者によって適切と確認された特定のレベル</span><span class="sxs-lookup"><span data-stu-id="4354c-121">A specific level indentified as appropriate by the key stakeholders</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="4354c-122">サービスに目標を設定することは、SRE、開発リソース、ビジネスの意思決定者との間での共同作業になります。</span><span class="sxs-lookup"><span data-stu-id="4354c-122">Setting a goal for a service is a collaborative effort between SRE, development resources and the business decision makers.</span></span>
