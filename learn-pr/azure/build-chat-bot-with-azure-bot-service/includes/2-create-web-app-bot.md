@@ -1,0 +1,32 @@
+> [!NOTE]
+> <span data-ttu-id="b7396-101">VM の起動後、サインインするために必要なユーザー名とパスワードは、手順の横にある **[リソース]** タブに配置されます。</span><span class="sxs-lookup"><span data-stu-id="b7396-101">After launching the VM, the username and password you need to sign in with is located on the **Resources** tab next to the instructions.</span></span>
+
+<span data-ttu-id="b7396-102">ボットを作成する最初のステップは、ボットが Azure でホストされる場所を指定することです。</span><span class="sxs-lookup"><span data-stu-id="b7396-102">The first step in creating a bot is to provide a location for the bot to be hosted in Azure.</span></span> <span data-ttu-id="b7396-103">Azure App Service の Web Apps 機能はボット アプリケーションをホストするのに最適であり、Azure Bot Service はそれを自動的にプロビジョニングするように設計されています。</span><span class="sxs-lookup"><span data-stu-id="b7396-103">The Web Apps feature of Azure App Service is perfect for hosting bot applications, and the Azure Bot Service is designed to provision them for you.</span></span> <span data-ttu-id="b7396-104">この演習では、Azure portal を使用して Azure Web アプリ ボットをプロビジョニングします。</span><span class="sxs-lookup"><span data-stu-id="b7396-104">In this unit, you will use the Azure portal to provision an Azure web app bot.</span></span>
+
+1. <span data-ttu-id="b7396-105">VM ブラウザーで https://portal.azure.com を開いて Azure portal にサインインします。</span><span class="sxs-lookup"><span data-stu-id="b7396-105">Sign into the Azure portal by opening https://portal.azure.com in the VM browser.</span></span>
+
+1. <span data-ttu-id="b7396-106">**[+ リソースの作成]**、**[AI + Machine Learning]**、**[Web App Bot]** の順に選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-106">Select **+ Create a resource**, followed by **AI + Machine Learning**, then **Web App Bot**.</span></span>
+
+    ![Web App Bot リソースの種類が強調表示されている [リソースの作成] ブレードを示す Azure portal のスクリーンショット。](../media/2-new-bot-service.png)
+
+1. <span data-ttu-id="b7396-108">**[アプリ名]** ボックスに "qa-factbot" などの名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="b7396-108">Enter a name, such as "qa-factbot", into the **App name** box.</span></span> <span data-ttu-id="b7396-109">*この名前は Azure 内で一意である必要があるため、名前の横に緑色のチェック マークが表示されることを確認してください。*</span><span class="sxs-lookup"><span data-stu-id="b7396-109">*This name must be unique within Azure, so make sure a green check mark appears next to it.*</span></span>
+
+1. <span data-ttu-id="b7396-110">**[サブスクリプション]** と **[リソース グループ]** で、既存のリソースを選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-110">Under **Subscription** and **Resource group**, select the pre-existing resources.</span></span>
+
+1. <span data-ttu-id="b7396-111">最寄りの場所を選択し、**S1** 価格レベルを選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-111">Select the location nearest to you and select the **S1** pricing tier.</span></span>
+
+1. <span data-ttu-id="b7396-112">次に **[Bot template]\(ボット テンプレート\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-112">Then, select **Bot template**.</span></span> <span data-ttu-id="b7396-113">バージョンとして **[SDK v3]**、SDK 言語として **[Node.js]** を選択し、テンプレートの種類として **[Question and Answer]\(質問と回答\)** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-113">Select **SDK v3** as the version, **Node.js** as the SDK language, and **Question and Answer** as the template type.</span></span> <span data-ttu-id="b7396-114">次に、ブレードの下部にある **[選択]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-114">Then, select **Select** at the bottom of the blade.</span></span>
+
+    ![Node.js SDK 言語と質問と回答のテンプレート オプションが強調表示されている、ボット作成プロセスの [Bot template]\(ボット テンプレート\) ブレードを示す Azure portal のスクリーンショット。](../media/2-portal-select-template.png)
+
+1. <span data-ttu-id="b7396-116">**[App Service プラン/場所]**、**[新規作成]** の順に選択し、前の手順で選択したものと同じリージョンに "qa-factbot-service-plan" のような名前で App Service プランを作成します。</span><span class="sxs-lookup"><span data-stu-id="b7396-116">Now, select **App service plan/Location**, followed by **Create New**, then create an App Service plan named "qa-factbot-service-plan" or something similar in the same region that you selected in the prior step.</span></span> <span data-ttu-id="b7396-117">終わったら、[Web App Bot] ブレードの下部にある **[作成]** を選択してデプロイを開始します。</span><span class="sxs-lookup"><span data-stu-id="b7396-117">Once that's done, select **Create** at the bottom of the "Web App Bot" blade to start the deployment.</span></span>
+
+    ![新しい Web App Bot のサンプル構成ブレードを示す Azure portal のスクリーンショット。](../media/2-portal-start-bot-creation.png)
+
+    > [!NOTE]
+    > <span data-ttu-id="b7396-119">通常、デプロイに必要な時間は 2 分以内です。</span><span class="sxs-lookup"><span data-stu-id="b7396-119">Deployment generally requires two minutes or less.</span></span>
+
+1. <span data-ttu-id="b7396-120">デプロイが完了したら、ポータルの左側にあるリボンの **[リソース グループ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="b7396-120">After your deployment completes, select **Resource groups** in the ribbon on the left side of the portal.</span></span>
+1. <span data-ttu-id="b7396-121">このグループ用にあらかじめ作成したリソース グループを選択し、Azure Web アプリ ボットをデプロイしたリソース グループを開きます。</span><span class="sxs-lookup"><span data-stu-id="b7396-121">Select the resource group pre-created for this group to open the resource group where we deployed the Azure web app bot.</span></span>
+
+<span data-ttu-id="b7396-122">Azure Web アプリ ボット用に作成されたいくつかのリソースが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b7396-122">You should now see several resources created for your Azure web app bot.</span></span> <span data-ttu-id="b7396-123">Azure Web アプリ ボットをデプロイするときは、見えないところで多くのことが行われています。</span><span class="sxs-lookup"><span data-stu-id="b7396-123">Behind the scenes, a lot happened when the Azure web app bot was deployed.</span></span> <span data-ttu-id="b7396-124">ボットが作成されて登録され、それをホストする [Azure Web App](https://azure.microsoft.com/services/app-service/web/) が作成されて、[Microsoft QnA Maker](https://www.qnamaker.ai/) で動作するようにボットが構成されました。</span><span class="sxs-lookup"><span data-stu-id="b7396-124">A bot was created and registered, an [Azure web app](https://azure.microsoft.com/services/app-service/web/) was created to host it, and the bot was configured to work with [Microsoft QnA Maker](https://www.qnamaker.ai/).</span></span> <span data-ttu-id="b7396-125">次の手順では、QnA Maker を使用して、ボットにインテリジェンスを取り入れるための質問と回答のナレッジ ベースを作成します。</span><span class="sxs-lookup"><span data-stu-id="b7396-125">The next step is to use QnA Maker to create a knowledge base of questions and answers to infuse the bot with intelligence.</span></span>

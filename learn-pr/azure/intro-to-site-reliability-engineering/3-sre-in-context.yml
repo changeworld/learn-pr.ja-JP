@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: <span data-ttu-id="15a40-101">コンテキストの SRE</span><span class="sxs-lookup"><span data-stu-id="15a40-101">SRE in context</span></span>
+metadata:
+  title: <span data-ttu-id="15a40-102">コンテキストの SRE</span><span class="sxs-lookup"><span data-stu-id="15a40-102">SRE in context</span></span>
+  description: <span data-ttu-id="15a40-103">コンテキストの SRE</span><span class="sxs-lookup"><span data-stu-id="15a40-103">SRE in context</span></span>
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439438"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: <span data-ttu-id="15a40-104">自分の知識をチェックする</span><span class="sxs-lookup"><span data-stu-id="15a40-104">Check your knowledge</span></span>
+  questions:
+  - content: <span data-ttu-id="15a40-105">SRE の原点を考えると、どの手法の影響が最も大きいでしょうか。</span><span class="sxs-lookup"><span data-stu-id="15a40-105">Given the origin of SRE, which discipline has had the most impact on it?</span></span>
+    choices:
+    - content: <span data-ttu-id="15a40-106">お客様サポート サービス</span><span class="sxs-lookup"><span data-stu-id="15a40-106">Customer service</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-107">お客様中心の考え方で仕事に取り組むことは SRE にとって重要ですが、その原点にお客様サポート サービスは含まれていませんでした。</span><span class="sxs-lookup"><span data-stu-id="15a40-107">Approaching the work with a customer-centric mindset is crucial to SRE, but customer service was not part of its origin.</span></span>
+    - content: <span data-ttu-id="15a40-108">メインフレームの業務</span><span class="sxs-lookup"><span data-stu-id="15a40-108">Mainframe operations</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-109">他の業務の専門分野から学ぶことはありますが、SRE はそこから始まりませんでした。</span><span class="sxs-lookup"><span data-stu-id="15a40-109">Though we can learn from other operations specialties, SRE did not start with this one.</span></span>
+    - content: <span data-ttu-id="15a40-110">ソフトウェア エンジニアリング</span><span class="sxs-lookup"><span data-stu-id="15a40-110">Software engineering</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="15a40-111">SRE はソフトウェア エンジニアリングの考え方から始まりました。</span><span class="sxs-lookup"><span data-stu-id="15a40-111">SRE was started with software engineering mindset.</span></span>
+    - content: <span data-ttu-id="15a40-112">アーキテクチャ</span><span class="sxs-lookup"><span data-stu-id="15a40-112">Architecture</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-113">アーキテクチャ (特にソフトウェア アーキテクチャ) は確かに SRE 業務の一要素ですが、その原点には含まれていませんでした。</span><span class="sxs-lookup"><span data-stu-id="15a40-113">Architecture (especially software architecture) is definitely a component of SRE work, but it was not part of its origin.</span></span>
+  - content: <span data-ttu-id="15a40-114">DevOps と SRE はどちらが優先されるでしょうか。</span><span class="sxs-lookup"><span data-stu-id="15a40-114">Which came first, DevOps or SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="15a40-115">DevOps</span><span class="sxs-lookup"><span data-stu-id="15a40-115">DevOps</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-116">おおむね並行して開発されました。</span><span class="sxs-lookup"><span data-stu-id="15a40-116">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="15a40-117">SRE</span><span class="sxs-lookup"><span data-stu-id="15a40-117">SRE</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-118">おおむね並行して開発されました。</span><span class="sxs-lookup"><span data-stu-id="15a40-118">They developed roughly in parallel.</span></span>
+    - content: <span data-ttu-id="15a40-119">いずれも、おおむね並行して開発されませんでした。</span><span class="sxs-lookup"><span data-stu-id="15a40-119">Neither, they developed roughly in parallel.</span></span>
+      isCorrect: true
+  - content: <span data-ttu-id="15a40-120">SRE は DevOps の次の進化段階でしょうか。</span><span class="sxs-lookup"><span data-stu-id="15a40-120">Is SRE the next evolutionary step from DevOps?</span></span>
+    choices:
+    - content: <span data-ttu-id="15a40-121">はい、SRE は DevOps の未来です。</span><span class="sxs-lookup"><span data-stu-id="15a40-121">Yes, SRE is the future of DevOps.</span></span> <span data-ttu-id="15a40-122">DevOps 担当者は SRE になるべく努力する必要があります</span><span class="sxs-lookup"><span data-stu-id="15a40-122">DevOps personnel should strive to become SREs</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-123">DevOps と SRE は、同様の課題に対処するための別の業務です。</span><span class="sxs-lookup"><span data-stu-id="15a40-123">DevOps and SRE are separate operations practices that attempt to address similar challenges.</span></span>
+    - content: <span data-ttu-id="15a40-124">いいえ、SRE と DevOps は別の業務です</span><span class="sxs-lookup"><span data-stu-id="15a40-124">No, SRE and DevOps are separate operations practices</span></span>
+      isCorrect: true
+      correctExplanation: <span data-ttu-id="15a40-125">DevOps と SRE は、同様の課題に対処する場合でも、実際には独立しています。</span><span class="sxs-lookup"><span data-stu-id="15a40-125">DevOps and SRE are indeed separate even though they attempt to address similar challenges.</span></span>
+  - content: <span data-ttu-id="15a40-126">DevOps と SRE の両方にとって中心となる 2 つのベスト プラクティスは何ですか?</span><span class="sxs-lookup"><span data-stu-id="15a40-126">What are two best practices that are central to both DevOps and SRE?</span></span>
+    choices:
+    - content: <span data-ttu-id="15a40-127">オートメーションと監視/観測可能性</span><span class="sxs-lookup"><span data-stu-id="15a40-127">Automation and monitoring/observability</span></span>
+      isCorrect: true
+    - content: <span data-ttu-id="15a40-128">コーディングとチケット システム</span><span class="sxs-lookup"><span data-stu-id="15a40-128">Coding and ticket systems</span></span>
+      isCorrect: false
+      incorrectExplanation: <span data-ttu-id="15a40-129">コーディングは重要ですが (SRE の場合はさらに重要です)、チケット システムは SRE の中心ではありません。</span><span class="sxs-lookup"><span data-stu-id="15a40-129">While coding is important (more so in SRE), ticket systems are not central to SRE.</span></span>
+    - content: <span data-ttu-id="15a40-130">ヘルプ デスクのオートメーションとバグ追跡</span><span class="sxs-lookup"><span data-stu-id="15a40-130">Help desk automation and bug tracking</span></span>
+      isCorrect: false
+      correctExplanation: <span data-ttu-id="15a40-131">ヘルプ デスクは便利ですが、いずれの業務でも中心ではありません。</span><span class="sxs-lookup"><span data-stu-id="15a40-131">Though useful, help desk automation is not core to either operations practice.</span></span>

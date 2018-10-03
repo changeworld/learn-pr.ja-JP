@@ -1,0 +1,20 @@
+### YamlMime:ModuleUnit
+uid: learn.build-azure-bot-services-bot.5-debug-bot-locally
+title: <span data-ttu-id="701e5-101">ボットをローカルでデバッグする</span><span class="sxs-lookup"><span data-stu-id="701e5-101">Debug the bot locally</span></span>
+metadata:
+  title: <span data-ttu-id="701e5-102">ボットをローカルでデバッグする</span><span class="sxs-lookup"><span data-stu-id="701e5-102">Debug the bot locally</span></span>
+  description: <span data-ttu-id="701e5-103">ボットをローカルでデバッグする</span><span class="sxs-lookup"><span data-stu-id="701e5-103">Debug the bot locally</span></span>
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: eb3218c87d7f56bb44b9fc544ab00c103981b6cd
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439551"
+labId: 46466
+durationInMinutes: 20
+content: '[!include[](includes/5-debug-bot-locally.md)]'
