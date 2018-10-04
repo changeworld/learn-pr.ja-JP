@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 47e8b67ad041d8851c9f0c87c4986116db7dda37
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347192"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132865"
 durationInMinutes: 12
 azureSandbox: true
 content: '[!include[](includes/7-exercise-manage-vm.md)]'

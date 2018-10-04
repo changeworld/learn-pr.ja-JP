@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 9f29cd60cea73a1d0b1d475f5f7bb38e1c0f55f2
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350423"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137299"
 title: Azure Key Vault を使用してサーバー アプリのシークレットを管理する
 summary: アプリケーションがジョブを実行するには、サービスのパスワード、接続文字列、その他のシークレット構成値が必要です。 シークレット値の保存と取り扱いはリスクが高く、使用のたびに漏えいの可能性が生じます。 Azure Key Vault を Azure リソースのマネージド ID の機能と組み合わせることで、ソース管理や構成にシークレットを格納しなくても、ご使用の Azure Web アプリがシークレット構成値に簡単かつ安全にアクセスできるようになります。
 abstract: >

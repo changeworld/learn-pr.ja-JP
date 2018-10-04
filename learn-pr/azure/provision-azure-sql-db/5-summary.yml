@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e5bd4a690b6c92d6d8c0ef54553db4c523e0f1ab
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 082f2ea2623a2ae161f0cc4ceee965a722a5fae1
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349815"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437274"
 durationInMinutes: 5
-content: '[!include[](includes/5-summary.md)]'
+content: >
+  [!include[](includes/5-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: お客様の Azure SQL データベースと基になる OS でソフトウェアの更新を実行する責任は誰が負いますか?
+    choices:
+    - content: お客様自身。 定期的にログインして最新のセキュリティ パッチと更新プログラムをインストールするのはお客様の責任です。
+      isCorrect: false
+      incorrectExplanation: Azure SQL Database は PaaS (サービスとしてのプラットフォーム) です。つまり、自分で管理するメンテナンスがかなり少なくなります。
+    - content: Microsoft Azure。 Azure は、お客様のためにハードウェア、ソフトウェア更新プログラム、OS の修正プログラムを管理します。
+      isCorrect: true
+      correctExplanation: Azure SQL Database は、PaaS (サービスとしてのプラットフォーム) のオファリングです。 Azure は、お客様のためにハードウェア、ソフトウェア更新プログラム、OS の修正プログラムを管理します。
+    - content: 誰も行わない。 お客様のデータベースは元の OS とソフトウェア構成が維持されます。
+      isCorrect: false
+      incorrectExplanation: Azure SQL Database は、PaaS (サービスとしてのプラットフォーム) のオファリングです。 通常、クラウド プロバイダーがお客様のために PaaS サービスの管理と更新を行います。
+  - content: "\"_Azure SQL 論理サーバー_\" とは何ですか?"
+    choices:
+    - content: データベース用の管理コンテナー。
+      isCorrect: true
+      correctExplanation: 論理サーバーを使用して、ログイン、ファイアウォール規則、セキュリティ ポリシーを制御できます。
+    - content: Azure SQL Database インスタンスの別の名前。
+      isCorrect: false
+      incorrectExplanation: 複数のデータベース インスタンスを使用できることを思い出してください。 これらをまとめて管理する方法はありますか?
+    - content: データの並べ替えと比較を行う論理規則を定義するサーバー。
+      isCorrect: false
+      incorrectExplanation: "\"_照合順序_\" とは、データを並べ替えたり比較したりする規則のことです。"
+  - content: Azure SQL データベースでは、十分なストレージとコンピューティング能力が提供されています。 しかし、IO スループットの追加が必要であることがわかりました。 どのパフォーマンス モデルを使用しますか?
+    choices:
+    - content: DTU
+      isCorrect: false
+      incorrectExplanation: DTU つまりデータベース トランザクション ユニットは、シンプルな構成済みの購入オプションを提供します。 IO スループットを増やすには、増やす必要のないストレージとコンピューティング能力も増える上位の階層に移行する必要があります。
+    - content: 仮想コア
+      isCorrect: true
+      correctExplanation: 仮想コアでは、作成して支払うコンピューティング リソースとストレージ リソースをきめ細かく制御できます。 IO スループットを増やしても、コンピューティング能力とストレージは既存の量のままにすることができます。
+    - content: SQL エラスティック プール
+      isCorrect: false
+      incorrectExplanation: SQL エラスティック プールでは、プール内のすべてのデータベース間で共有されるコンピューティング リソースとストレージ リソースのセットを購入できます。 使用しているデータベースが 1 つだけなので、このオプションは IO パフォーマンスに役立ちません。

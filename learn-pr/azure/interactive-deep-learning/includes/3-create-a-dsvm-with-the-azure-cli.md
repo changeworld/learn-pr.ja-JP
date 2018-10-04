@@ -26,10 +26,10 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
 1. このユニットの右にある Azure Cloud Shell で次のコマンドを実行します。
 
-    ```bash
-    code parameter_file.json
+    ```azurecli
+    code .
     ```
-    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available -->このコマンドにより、`parameter_file.json` という空のファイルが組み込みエディターで開きます。 
+    <!-- TODO add a link to official doc that explains the built-in editor when it becomes available --> このコマンドにより、組み込みエディターで空のファイルが開きます。 
 
 1. 次の JSON スニペットをコード エディターの空のファイルに貼り付けます。
 
@@ -46,16 +46,16 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
     }
     ```
 
-1. エディター上で、貼り付けた JSON に含まれる次のパラメーターを更新します。
+1. エディターで、貼り付けた JSON に含まれる次のパラメーターを更新します。
 
     |パラメーター  |現在の値  |指定する値  |
     |---------|---------|---------|
     |adminUsername     |  `<USERNAME>`       |    この新しいマシンの管理者ユーザーの名前 (*azuser* など) を選択します。     |
     |adminPassword     |  `<PASSWORD>`       |   この管理者ユーザー アカウントのパスワードを選択します。 パスワードの要件の詳細については、「[Linux 仮想マシンについてのよく寄せられる質問](https://docs.microsoft.com/azure/virtual-machines/linux/faq?azure-portal=true)」を参照してください。     |
     |vmName     |   `<HOSTNAME>`      |  新しい仮想マシンの名前を選択します。 名前は文字で始め、小文字と数字のみで作成する必要があります。 ご自分のイニシャルと生まれた年を含めた名前など、一意の名前を選択するようにしてください。 |
-    |vmSize     |  Standard_DS2_v2       |  この VM サイズは、この演習用としては問題ありませんが、自由に変更できます。 使用可能な VM サイズの一覧は、「[Azure の Linux 仮想マシンのサイズ](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true)」で確認できます。       |
+    |vmSize     |  Standard_DS2_v2       |  この VM サイズは、この演習用としては問題ありませんが、自由に変更できます。 利用可能な VM サイズのリストは、「[Azure の Linux 仮想マシンのサイズ](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?azure-portal=true)」で確認できます。       |
 
-1. 変更を `parameter_file.json` に保存し、テキスト エディターを閉じます。
+1. エディターの右上にある省略記号 (**...**) を選択し、メニューから **[保存]** を選んでファイルを `parameter_file.json` として保存し、テキスト エディターを閉じます。
 
     > [!IMPORTANT]
     > adminUsername、adminPassword、vmName 用に選択した値を覚えておいてください。 この演習でもう一度使用します。
@@ -78,6 +78,8 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
     --parameters parameter_file.json
     ```
 
+    [!include[](../../../includes/azure-cloudshell-copy-paste-tip.md)]
+
     このコマンドにより、Resource Manager テンプレートと指定したパラメーターを使用して、リソース グループ内に仮想マシンを作成します。 
 
 2. 仮想マシンのデプロイが完了するまでに数分かかる場合があります。 コンソールに ` - Running ..` と表示され、操作が完了するまでそれ以外はあまり表示されません。 操作が終了すると、JSON の応答が画面に出力されます。 JSON の一番下までスクロールし、**"provisioningState"** フィールドに "*Succeeded*" という値が表示されていることを確認します。
@@ -88,14 +90,13 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 3. 次のコマンドを実行して VM についての情報を取得します。`<HOSTNAME>` は、ご利用の VM 用に定義したホスト名に置き換えてください。
 
     ```azurecli
-    az vm get-instance-view \
+    az vm show -d \
     --name <HOSTNAME> \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --query instanceView.statuses[1] \
     --output table
     ```
 
-    このコマンドにより、VM の状態が表示されます。 *VM running* と表示されるはずです。
+    このコマンドにより、VM の状態が表示されます。 **PowerState** フィールドには、*VM running* と表示されるはずです。 この演習の後半では、**PublicIps** フィールドで IP アドレスを使用して、VM に接続します。 **Fqdns** フィールドで、ここに表示される完全修飾ドメイン名 (FQDN) を使用して接続することもできます。
 
 お疲れさまでした。 DSVM イメージをベースにした Linux VM の作成とデプロイが完了しました。
 
@@ -103,7 +104,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
 既定では、この VM はどのポートも開かれていません。 ここでは、リモート接続を行い、Jupyter Notebook サーバーを起動して、マシン上で他のローカル コマンドを実行することが目的です。 Secure Shell (SSH) プロトコルを使用して VM にリモート接続するには、ポートを開く必要があります。 ポート 22 が ssh 用の既定のポートです。  
 
-1. Azure Cloud Shell で次のコマンドを実行します。`<HOSTNAME>` は、セットアップ時に指定した DSV 仮想マシンの名前に置き換えてください。 
+1. Azure Cloud Shell で次のコマンドを実行します。`<HOSTNAME>` は、セットアップ時に指定したご自分の仮想マシンの名前に置き換えてください。 
 
     ```azurecli
     az vm open-port \
@@ -205,7 +206,7 @@ Azure CLI には、Azure Resource Manager のデプロイを管理するため�
 
     ![Jupyter Notebook のダッシュボードのスクリーンショット。 ](../media/jupyter-in-browser.png)
 
-1. **notebooks/IntroToJupyterPython.ipynb** に移動し、それを選択します。 このノートブックを使ってみて、すべてが予想どおりに動作することを確認してください。
+1. **notebooks/IntroToJupyterPython.ipynb** に移動し、それを選択します。 このノートブックを使ってみて、すべてが期待どおりに動作することを確認してください。
 
     お疲れさまでした。 DSVM ベースの稼働する仮想マシンが実行されており、Jupyter をリモートで使用できるようになりました。 この演習では、VM 上にインストールされたソフトウェアを実行しています。 次の演習では、安心して実験できるようにソフトウェアを VM 上のコンテナーに分離します。
 

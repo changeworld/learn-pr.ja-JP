@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 47423e278d086c6baa1c6a96bd6b3161e765bfd1
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347648"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135103"
 title: PowerShell でスクリプトを使用して Azure タスクを自動化する
 summary: ローカルで Azure PowerShell をインストールし、それを使用して Azure リソースを管理します。
 abstract: >

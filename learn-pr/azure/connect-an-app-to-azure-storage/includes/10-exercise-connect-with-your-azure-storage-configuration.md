@@ -1,4 +1,5 @@
-::: zone pivot="csharp"
+::: zone pivot="csharp" 
+
 コードを追加して構成から接続文字列を取得し、その接続文字列を使用して Azure ストレージ アカウントに接続してみましょう。
 
 ## <a name="retrieve-the-connection-string"></a>接続文字列を取得する
@@ -140,7 +141,8 @@ C# 7.1 に、`Main` メソッドでの `async` と `await` のサポートが追
 
 ::: zone-end
 
-::: zone-pivot="javascript"
+::: zone-pivot="javascript" 
+
 格納された接続文字列を使用して Azure ストレージ アカウントに接続するコードを追加してみましょう。 Azure クライアント ライブラリでは、自動的に **AZURE_STORAGE_CONNECTION_STRING** 環境変数を使用して接続文字列が取得されます。
 
 ## <a name="create-a-blob-client"></a>BLOB クライアントを作成する

@@ -1,0 +1,51 @@
+### YamlMime:Module
+uid: learn.build-azure-bot-services-bot
+metadata:
+  title: Azure Bot Service を使用してチャット ボットを構築する
+  description: Azure Bot Service と Microsoft QnA Maker を組み合わせると、さまざまなサービスを使用してユーザーと自然に対話するインテリジェント ボットを構築して発行するために開発者が必要とするツールが提供されます。
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: 4f07d88c34e9514bd8ce653138ab195a6cb58c92
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439838"
+title: Azure Bot Service を使用してチャット ボットを構築する
+summary: Azure Bot Service と Microsoft QnA Maker を組み合わせると、さまざまなサービスを使用してユーザーと自然に対話するインテリジェント ボットを構築して発行するために開発者が必要とするツールが提供されます。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - ボットをホストするための Azure Web アプリ ボットを作成します
+
+  - ナレッジ ベースを作成し、データを設定して、ボットに接続します
+
+  - コードでボットを実装し、ビルドしたボットをデバッグします
+
+  - ボットを発行し、継続的インテグレーションを使用して最新の状態に維持します
+
+  - Visual Studio Code と Microsoft Bot Framework Emulator を使用してローカルでボットをデバッグします
+prerequisites: >
+  なし
+iconUrl: /learn/achievements/build-chat-bot-with-azure-bot-service.svg
+levels:
+- beginner
+roles:
+- developer
+products:
+- azure
+- vs
+- vs-code
+units:
+- learn.build-azure-bot-services-bot.1-introduction
+- learn.build-azure-bot-services-bot.2-create-web-app-bot
+- learn.build-azure-bot-services-bot.3-create-qna-maker
+- learn.build-azure-bot-services-bot.4-deploy-bot
+- learn.build-azure-bot-services-bot.5-debug-bot-locally
+- learn.build-azure-bot-services-bot.6-connect-to-knowledge-base
+- learn.build-azure-bot-services-bot.7-summary
+- learn.build-azure-bot-services-bot.8-knowledge-check
+achievement: learn.build-azure-bot-services-bot.badge

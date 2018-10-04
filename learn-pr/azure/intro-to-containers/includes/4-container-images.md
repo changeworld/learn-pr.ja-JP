@@ -320,13 +320,13 @@ Docker Hub は、Docker イメージを格納してダウンロードする場�
     1. この例では、Docker Hub から最新のイメージをプルします。
 
         ```bash
-        docker pull my_docker_account/python-dockerfile
+        docker pull $docker_account/python-dockerfile
         ```
 
     1. この例では、コンテナーを実行します。
 
         ```bash
-        docker run my_docker_account/python-dockerfile
+        docker run $docker_account/python-dockerfile
         ```
 
 1. ご使用のコンテナーをテストします。

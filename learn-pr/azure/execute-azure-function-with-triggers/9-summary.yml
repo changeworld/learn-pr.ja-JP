@@ -9,11 +9,51 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: dbbed9c336f6aa4063d3c4a3ab22447b8cc97293
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.openlocfilehash: b5705b646b41e63ffe0d2bc45fb3d4417136b10b
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512789"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47436764"
 durationInMinutes: 2
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: CRON 式は、一連の時間を表す 6 つのフィールドで構成される文字列です。 Azure での、6 つのフィールドの順序は、{second} {minute} {hour} {day} {month} {day of week} です。 "毎日" を意味する CRON 式が必要な場合、{day of the week} の位置にはどのような特殊文字を挿入しますか?
+    choices:
+    - content: "'/'"
+      isCorrect: false
+      incorrectExplanation: スラッシュは増分を指定します。 たとえば、{seconds} フィールドを */5 にすると 5 秒ごとを意味します。
+    - content: "'*'"
+      isCorrect: true
+      correctExplanation: アスタリスクは、すべての可能な値を選択することを指定します。 {day of the week} フィールドをアスタリスクにすると、毎日を選択することを意味します。
+    - content: "','"
+      isCorrect: false
+      incorrectExplanation: コンマはリスト内の項目を区切ります。 たとえば、{month} フィールドを 1,2,3 にすると、1 月、2 月、3 月を選択することを意味します。
+    - content: "'-'"
+      isCorrect: false
+      incorrectExplanation: ハイフンは範囲を指定します。 たとえば、{month} フィールドを 1-3 にすると、1 月、2 月、3 月を選択することを意味します。
+  - content: Azure 関数に BLOB トリガーが関連付けられていて、イメージがアップロードされたときにのみそれを実行したいものとします。 BLOB トリガー *Path* には次のどの値を使用する必要がありますか?
+    choices:
+    - content: samples-workitems/{name}
+      isCorrect: false
+      incorrectExplanation: Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。 Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。
+    - content: samples-workitems/{name}/png
+      isCorrect: false
+      incorrectExplanation: Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。 Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。
+    - content: samples-workitems/{name}?png
+      isCorrect: false
+      incorrectExplanation: Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。 Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。
+    - content: samples-workitems/{name}.png
+      isCorrect: true
+      correctExplanation: Path は、BLOB トリガーに対し、変更を監視する必要がある場所、およびフィルターが適用されているかどうかを指示します。 Path にファイル拡張子を追加すると、トリガーが関数を呼び出すためには、アップロードされたファイルにそのファイル拡張子が使用されている必要があることを指定します。
+  - content: '正誤問題: 1 つの Azure 関数に複数のトリガーを関連付けることができますか?'
+    choices:
+    - content: はい
+      isCorrect: false
+      incorrectExplanation: すべての Azure 関数には、厳密に 1 つのトリガーが関連付けられている必要があります。 複数のトリガーを使用する場合は、複数の関数を作成する必要があります。
+    - content: いいえ
+      isCorrect: true
+      correctExplanation: すべての Azure 関数には、厳密に 1 つのトリガーが関連付けられている必要があります。 複数のトリガーを使用する場合は、複数の関数を作成する必要があります。

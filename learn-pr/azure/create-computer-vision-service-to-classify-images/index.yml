@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 764c30034b5ff2f01c2c0650efc984204e2711c6
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346832"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47132252"
 title: Computer Vision サービスを使用した画像処理
 summary: Computer Vision API を使用して、分析情報を得るための画像の分析、画像からのテキストの抽出、質の高いサムネイルの生成を行います。
 abstract: >

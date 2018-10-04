@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 7cdebb206ecce0d0c91d7651bc95e7021398df61
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349152"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134887"
 title: 演習 - 入力バインディングを使用してデータを読み取る
 durationInMinutes: 20
 azureSandbox: true

@@ -19,7 +19,7 @@ Advisor では、次の領域でのコストに関する推奨事項を示しま
 
 ポータルで Azure Advisor を見つけることができる場所を見てみましょう。 
 
-1. Microsoft アカウントを使用して、 [Azure ポータル](https://portal.azure.com?azure-portal=true) にサインインします。 
+1. Microsoft アカウントを使用して、 [Azure portal](https://portal.azure.com?azure-portal=true) にサインインします。 
 
 1. **[すべてのサービス]** をクリックすると、**[管理ツール]** カテゴリに **[Advisor]** が表示されます。 フィルター ボックスに「`Advisor`」と入力して、そのサービスのみをフィルター処理することもできます。
 

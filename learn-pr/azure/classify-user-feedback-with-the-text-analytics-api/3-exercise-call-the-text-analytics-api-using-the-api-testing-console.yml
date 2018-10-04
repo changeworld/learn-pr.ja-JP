@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 33d03b80bc6bc5a4f39041ce543e425f00773584
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46512259"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135998"
 title: 演習 - オンライン テスト コンソールから Text Analytics API を呼び出す
 azureSandbox: true
 durationInMinutes: 10

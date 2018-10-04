@@ -9,11 +9,37 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: b0f04ff135762fc48358375b3b2d69b594bc675a
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 11c2f56627006b6987a9a506ce2c6f1265ffc68d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46346692"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437359"
 durationInMinutes: 1
-content: '[!include[](includes/6-summary.md)]'
+content: >
+  [!include[](includes/6-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure とは
+    choices:
+    - content: Microsoft のクラウド コンピューティング プラットフォーム。従量課金制の価格モデルを使用してインターネット経由でコンピューティングの性能、ストレージ、およびサービスを提供します。
+      isCorrect: true
+      correctExplanation: Azure では、優れたコンピューティング性能やストレージを利用できると共に、インテリジェントなボットや複合現実などの新しいソフトウェア パラダイムを探索するのに役立つサービスへのアクセスが得られます。
+    - content: ワシントン州レドモンドにある 1 つのデータ センター。
+      isCorrect: false
+      incorrectExplanation: Azure は、世界中に分散するデータ センターによって構成されています。
+    - content: 仮想マシン専用のホスティング環境
+      isCorrect: false
+      incorrectExplanation: Azure では、仮想マシンのような優れたコンピューティング性能を提供すると共に、インテリジェントなボットや複合現実などの新しいソフトウェア パラダイムを探索するのに役立つ多数のサービスも提供しています。
+  - content: デプロイを "_スケールアウト_" する必要があるのは、どのような場合ですか?
+    choices:
+    - content: より高速で実行するために、アプリケーションまたはサービスの CPU やメモリを強化する必要が生じた場合。
+      isCorrect: false
+      incorrectExplanation: この場合、アプリケーションやサービスをより高性能なハードウェアに移動することで、"_スケールアップ_" できます。
+    - content: アプリケーションを高速化するために、仮想マシンを追加する必要がある場合。
+      isCorrect: true
+      correctExplanation: スケールアウトは、仮想マシンなどのシステムが追加されることを意味します。 たとえば、同じ構成方法で多数の仮想マシンを作成し、ロード バランサーを使用してそれらの間に処理を分散させることができます。
+    - content: 必要のない余分な容量を使用している場合。
+      isCorrect: false
+      incorrectExplanation: この場合、現在必要でないシステムを切り離して、_スケールイン_できます。

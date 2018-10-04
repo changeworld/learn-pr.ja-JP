@@ -11,9 +11,9 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 1fff8eb1a35d9252dcf075b6fef01bc61f1be58d
-  ms.sourcegitcommit: 8a009788ee73c5d7caa6cd4f1105260c5cc9b846
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/22/2018
-  ms.locfileid: "46567281"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134114"
 content: '[!include[](includes/8-customize-the-dashboard.md)]'

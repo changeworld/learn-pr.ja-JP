@@ -9,12 +9,46 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: cf143961dad057732128d694543f4890f1bbefee
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 7e8f4e11d5652bcb4cf4ea95df8141eedbe8abea
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353119"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437104"
 azureSandbox: true
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '正誤問題: 新しい仮想マシンを作成するときは、セキュリティ上の理由から、公式の Azure Marketplace から入手したイメージを使用する必要があります。'
+    choices:
+    - content: はい
+      isCorrect: false
+      incorrectExplanation: Azure では、お客様が自分のニーズに合わせて仮想マシンを構成できます。 これには、独自の VM イメージの使用のサポートが含まれます。
+    - content: いいえ
+      isCorrect: true
+      correctExplanation: Azure では、お客様が自分のニーズに合わせて仮想マシンを構成できます。 これには、独自の VM イメージの使用のサポートが含まれます。
+  - content: 新しい仮想マシンに対する既定のネットワーク セキュリティの設定にはどのような効果がありますか?
+    choices:
+    - content: 送信要求も受信要求も許可されません。
+      isCorrect: false
+      incorrectExplanation: 送信要求は低リスクと見なされるため、既定で許可されます。
+    - content: 送信要求は許可されます。 受信トラフィックは、仮想ネットワーク内からのみ許可されます。
+      isCorrect: true
+      correctExplanation: 送信要求は低リスクと見なされるため、既定で許可されます。 仮想ネットワーク内からの受信トラフィックは許可されます。 仮想ネットワーク内に VM を配置することで、VM の所有者は仮想ネットワーク内のリソース間の通信に暗黙的にオプトインします。
+    - content: 制限はありません。すべての送信および受信要求が許可されます。
+      isCorrect: false
+      incorrectExplanation: 無制限の受信トラフィックは、既定の動作に対してリスクが高すぎます。
+  - content: Azure で複数の Linux 仮想マシンをホストしているものとします。 本社の 3 台の専用コンピューターから SSH 経由でこれらの VM をリモート管理します。 この状況で一般にベスト プラクティスと考えられる認証方法は次のうちどれですか?
+    choices:
+    - content: ユーザー名とパスワード
+      isCorrect: false
+      incorrectExplanation: パスワードはブルート フォース攻撃に対して脆弱です。 この方法が推奨されるのは、さまざまな場所からリモート アクセスする必要がある場合のみです。
+    - content: 秘密キー
+      isCorrect: false
+      incorrectExplanation: 秘密キーによるアクセスはパスワードより安全であり、限られた数の場所からアクセスする必要があるときは適切なオプションです。 しかし、攻撃者が秘密キーを取得した場合、それを使用して VM にアクセスできます。
+    - content: 秘密キーとパスフレーズ
+      isCorrect: true
+      correctExplanation: パスフレーズを使用する秘密キー アクセスが、最も安全なオプションです。 攻撃者が秘密キーを入手しても、パスフレーズなしでは使用できません。

@@ -18,9 +18,9 @@ Microsoft Azure によって提供される、このサービスとしてのプ�
 
 独自のアプリをホストするときは、Azure portal にアクセスし、**Web アプリ**を作成します。 Azure portal で **Web アプリ**を作成すると、実際には App Service で一連のホスティング リソースを作成しています。これは、ASP.NET Core、Node.js、PHP などのいずれであっても、Azure によってサポートされる任意の Web ベースのアプリケーションをホストするために使用できます。次の図は、アプリによって使用されるフレームワーク/言語を簡単に構成する方法を示しています。
 
-![Web アプリの設定](../media/2-web-app-settings.png)
+![Web アプリケーションを構成するアプリケーション設定のスクリーンショット](../media/2-web-app-settings.png)
 
-Azure portal では、Web アプリを作成するためのテンプレートが提供されています。 このテンプレートには、次のフィールドが必要です。
+Azure portal では、Web アプリを作成するためのテンプレートが提供されます。 このテンプレートには、次のフィールドが必要です。
 
 - **名前**: Web アプリの名前。
 - **サブスクリプション**: 有効でアクティブなサブスクリプション。
@@ -33,15 +33,15 @@ Azure portal では、多くの使用可能なツールからご自分のアプ�
 
 ### <a name="deployment-slots"></a>デプロイ スロット
 
-Azure portal を使用すると、簡単に**デプロイ スロット**を App Service Web アプリに追加できます。 たとえば、ご自分のコードをプッシュできる**ステージング**のデプロイ スロットを作成して、Azure 上でテストできます。 適切なコードになったら、ステージングのデプロイ スロットを運用スロットに簡単に**切り替える**ことができます。 Azure portal で単純なマウス クリックを数回行うだけで、すべての操作を行うことができます。
+Azure portal を使用すると、簡単に**デプロイ スロット**を App Service Web アプリに追加できます。 たとえば、ご自分のコードをプッシュできる**ステージング**のデプロイ スロットを作成して、Azure 上でテストできます。 適切なコードになったら、ステージングのデプロイ スロットを運用スロットに簡単に**切り替える**ことができます。 Azure portal では、数回のシンプルなマウス クリックですべての操作を行うことができます。
 
-![デプロイ スロット](../media/2-deployment-slots.png)
+![デプロイをテストするためのステージング デプロイ スロットのスクリーンショット](../media/2-deployment-slots.png)
 
 ### <a name="continuous-integrationdeployment-support"></a>継続的インテグレーション/デプロイのサポート
 
 Azure portal では、Visual Studio Team Services、GitHub、Bitbucket、Dropbox、OneDrive、または開発マシン上のローカルの Git リポジトリで、そのままで使用できる継続的インテグレーションおよびデプロイが提供されます。 上のソースのいずれかを使ってご自分の Web アプリに接続すると、App Service でコードとそのコードでの今後の変更が Web アプリに自動同期され、自動的に残りの作業が行われます。 さらに、Visual Studio Team Services では、独自のビルドとリリース プロセスを定義できます。これにより、コードをコミットするたびに、ご自分のソース コードのコンパイル、テストの実行、リリースのビルドが行われ、最後に Web アプリにリリースがプッシュされます。 ユーザーが介入する必要はなく、すべて暗黙的に行われます。
 
-![継続的インテグレーションを構成する](../media/2-continuous-integration.PNG)
+![デプロイ オプションを設定し、デプロイ ソース コード用のソースを選択する様子を示すスクリーンショット](../media/2-continuous-integration.PNG)
 
 ### <a name="integrated-visual-studio-publishing-and-ftp-publishing"></a>Visual Studio の発行と FTP の発行の統合
 

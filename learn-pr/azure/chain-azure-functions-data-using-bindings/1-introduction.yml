@@ -5,10 +5,10 @@ metadata:
   title: はじめに
   description: はじめに
   ms.openlocfilehash: d6dd59293e6cdb22c9753761a72a6ec9537af420
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350704"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47133934"
 durationInMinutes: 2
 content: '[!include[](includes/1-introduction.md)]'

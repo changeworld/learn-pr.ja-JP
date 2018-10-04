@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 4adcea550809e51006a4eee0bd570afc8a7b1e91
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46353249"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47131801"
 title: Azure でのセキュリティのための設計
 summary: アーキテクチャ設計にセキュリティを組み込む方法と、アーキテクチャの全層で安全な環境を構築するために役立つ Azure ツールについて説明します。
 abstract: >

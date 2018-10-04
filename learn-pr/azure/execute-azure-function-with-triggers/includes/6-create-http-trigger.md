@@ -4,15 +4,13 @@
 
 既存の Azure Functions アプリケーションを引き続き使用し、HTTP トリガーを追加してみましょう。
 
-1. サンドボックスをアクティブ化したときと同じアカウントを使用して、[Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインします。
+1. サンドボックスをアクティブ化したときと同じアカウントを使用して [Azure portal](https://portal.azure.com/learn.docs.microsoft.com?azure-portal=true) にサインインしていることを確認します。
 
 1. **[すべてのリソース]** 画面に移動し、関数アプリを選択します。
 
 1. **[関数]** をポイントし、プラス (+) アイコンを選択します。
 
 1. **[HTTP トリガー]** を選択します。
-
-1. 言語として **[C#]** を選択します。
 
 1. **[名前]** は既定値のままにします。
 

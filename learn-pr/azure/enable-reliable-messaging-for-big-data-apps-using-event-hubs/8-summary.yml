@@ -9,11 +9,42 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: bd38f364358426348e11ae5683b15c2000bb4e6c
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: fec6012f991510d8b3dc5e9bf4fb1dc08a1c1811
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348487"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437529"
 durationInMinutes: 3
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure Event Hub にメッセージを非常に頻繁に発行するアプリケーションでは、Advanced Message Queuing Protocol (AMQP) を使用することで最適なパフォーマンスが得られます。これは、永続的なソケットが確立されるためです。
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: パブリッシャーは HTTPS または AMQP を使用できます。 AMQP ではソケットが開かれ、そのソケットを介して複数のメッセージを送信することができます。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: パブリッシャーは HTTPS または AMQP を使用できます。 頻繁に発行する場合、HTTP は理想的ではありません。これは、発行ごとに新しい接続が確立されるためです。
+  - content: 既定では、新しいイベント ハブにいくつのパーティションが含まれますか?
+    choices:
+    - content: "1"
+      isCorrect: false
+      incorrectExplanation: イベント ハブのパーティションの既定値は 4 です。 パーティションはイベント ハブ内のバケットです。 発行ごとに含まれるパーティションは 1 つのみです。 各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。
+    - content: "2"
+      isCorrect: false
+      incorrectExplanation: イベント ハブのパーティションの既定値は 4 です。 パーティションはイベント ハブ内のバケットです。 発行ごとに含まれるパーティションは 1 つのみです。 各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。
+    - content: "4"
+      isCorrect: true
+      incorrectExplanation: イベント ハブのパーティションの既定値は 4 です。 パーティションはイベント ハブ内のバケットです。 発行ごとに含まれるパーティションは 1 つのみです。 各コンシューマー グループで 1 つまたは複数のパーティションから読み取られる場合があります。
+  - content: コンシューマー グループで保持されているイベントが処理される前にイベント ハブがオフラインになった場合、それらのイベントは失われます。
+    choices:
+    - content: はい
+      isCorrect: false
+      incorrectExplanation: イベントは永続的なものです。 各コンシューマー グループには、パーティション内でのその位置を保持する独自のカーソルがあります。 イベント ハブが再び利用できるようになったときに、コンシューマー グループはそのカーソル位置で処理を再開することができます。
+    - content: いいえ
+      isCorrect: true
+      correctExplanation: イベントは永続的なものです。 各コンシューマー グループには、パーティション内でのその位置を保持する独自のカーソルがあります。 イベント ハブが再び利用できるようになったときに、コンシューマー グループはそのカーソル位置で処理を再開することができます。

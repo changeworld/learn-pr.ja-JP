@@ -9,11 +9,42 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 9b4e753dd959b77757eee376fa367513e9b62327
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 355fab15880ecc7d0d16f91e51f00a79531bb65d
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350728"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437563"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '高速道路システムの長期的な拡張を計画している政府機関に勤めているとします。 数千ものセンサーから交通データを受信し、分析して助言を行います。 受信データの量は 1 日を通して変化します。たとえば、朝夕の通勤時間に急増します。 正誤問題: 単一の仮想マシンに接続されている Azure キューで構成されるサーバー側のアーキテクチャを、このワークロードに対して選択するのは妥当ですか?'
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: キューでトラフィックの急増に対応し、データが失われないようにします。 VM で受信メッセージのフローに対応できない場合、トラフィックの少ない時間にメッセージのバックログが処理されます。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: このデータは長期的な計画に使用されるため、リアルタイムで処理する必要はありません。 多くの場合、単一の VM に接続されているキューでワークロードが処理され、このキューはコスト効率の優れたソリューションとなります。
+  - content: キューはどの情報で一意に識別されますか?
+    choices:
+    - content: キュー名
+      isCorrect: false
+      incorrectExplanation: キュー名はそれが含まれているストレージ アカウント内でのみ一意である必要があります。つまり、グローバルに一意である必要はありません。
+    - content: アカウント キー
+      isCorrect: false
+      incorrectExplanation: アカウント キーは、キューではなく、ストレージ アカウントに関連付けられます。
+    - content: ストレージ アカウント名とキュー名
+      isCorrect: true
+      correctExplanation: ストレージ アカウント名はグローバルに一意である必要があります。 キュー名はそれが含まれているストレージ アカウント内で一意である必要があります。 つまり、ストレージ アカウント名とキュー名の組み合わせによってキューが一意に識別されます。
+  - content: '正誤問題: クライアントによりプログラムでキューからメッセージが取得された場合、メッセージはキューから自動的に削除されますか?'
+    choices:
+    - content: はい
+      isCorrect: false
+      incorrectExplanation: メッセージの取得操作とメッセージの削除操作は別々に行われます。
+    - content: いいえ
+      isCorrect: true
+      correctExplanation: 仕様により、メッセージは処理のために取得された後、キューから自動的に削除されません。 これは、すべてのメッセージの処理を確実に完了させるのに役立ちます。 処理中にコンシューマー アプリケーションがクラッシュした場合、メッセージはコンシューマー アプリの別のインスタンスで引き続き処理することができます。

@@ -9,12 +9,49 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 76203955ef10f22d7150561d906e30b12c064321
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 452dcc7255f6522b8ad790700323e9ac5b11bf1a
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46350735"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437818"
 durationInMinutes: 3
 azureSandbox: true
-content: '[!include[](includes/8-summary.md)]'
+content: >
+  [!include[](includes/8-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: 'Azure 内に Windows 仮想マシンを作成する場合、リモート デスクトップのアクセスを許可するために、受信ポートの規則を使用してどのポートを開きますか? '
+    choices:
+    - content: HTTPS
+      isCorrect: false
+      incorrectExplanation: リモート デスクトップ接続では、HTTPS プロトコルは使用されません。
+    - content: SSH (22)
+      isCorrect: false
+      incorrectExplanation: リモート デスクトップ接続では、SSH は使用されません。
+    - content: RDP (3389)
+      isCorrect: true
+      correctExplanation: リモート デスクトップ プロトコル (RDP) では、既定でポート 3389 が使用されます。そのため、これが、RDP クライアントを使用して Windows 仮想マシンを管理する場合に開く標準ポートになります。
+  - content: 'Azure 内の Windows 仮想マシンで実行されているアプリケーションがあるとします。 アプリでデータ ファイルを格納する必要がある場合、ベスト プラクティスのガイダンスとは? '
+    choices:
+    - content: OS ディスク (C:)
+      isCorrect: false
+      incorrectExplanation: データ ファイルは OS ディスクに格納できます。しかし、Premium SSD の種類を選択することで、OS パフォーマンスのためにそのディスクを最適化する必要がある可能性があります。これは、ご自分のデータを格納するには高価な方法かもしれません。
+    - content: 一時ディスク (D:)
+      isCorrect: false
+      incorrectExplanation: 一時ディスクは永続的ではありません。 重要なデータはこのディスクに書き込まないでください。
+    - content: 接続されたデータ ディスク
+      isCorrect: true
+      correctExplanation: 専用のデータ ディスクは一般的に、アプリケーション データ ファイルを格納するのに最適な場所であると考えられます。 これらは OS ディスクよりも大きい可能性があり、ご利用のデータにおける適切なコストとパフォーマンス特性に合わせて最適化できます。
+  - content: 'すべてのネットワーク セキュリティ グループに適用される最後の規則とは何ですか? '
+    choices:
+    - content: すべて許可
+      isCorrect: false
+      incorrectExplanation: これは、規則が正しく構成されていなければ、不要なトラフィックがアクセスできるようになることがあります。
+    - content: すべて拒否
+      isCorrect: true
+      correctExplanation: これを選択するのが安全です。 これによって、明確に許可していないトラフィックはすべてブロックされます。
+    - content: 必要に応じて最後の規則を構成する
+      isCorrect: false
+      incorrectExplanation: 最後の規則はセキュリティ グループが作成されたときに自動的に追加され、自分で変更することはできません。

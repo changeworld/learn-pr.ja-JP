@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ad546f24cecf3824b7e089f3341714f0e42e32d1
-  ms.sourcegitcommit: 58e9d7fbb111af9b27ed819e4b79ba4a4e6e8a9c
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/21/2018
-  ms.locfileid: "46513563"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134701"
 title: Azure 仮想マシンのディスクをセキュリティで保護する
 summary: Azure Disk Encryption (ADE) を使用して、既存の VM と新しい VM の OS ディスクとデータ ディスクを暗号化します。
 abstract: >

@@ -1,0 +1,19 @@
+### YamlMime:ModuleUnit
+uid: learn.secure-azure-resources-with-rbac.1-introduction
+metadata:
+  title: はじめに
+  description: RBAC を使用して Azure 内のリソースへのアクセスを管理する方法について学習します。
+  ms.date: 09/24/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: ea9e35d136d98752ec0920466b6bee129c521d91
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439375"
+title: はじめに
+durationInMinutes: 2
+content: '[!include[](includes/1-introduction.md)]'

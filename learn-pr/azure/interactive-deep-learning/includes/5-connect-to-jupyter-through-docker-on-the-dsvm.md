@@ -51,9 +51,16 @@ Jupyter Notebook がコンテナーで実行されると、次のようなメッ
 
 > *Copy/paste this URL into your browser when you connect for the first time, to login with a token: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken} (初めて接続するときは、この URL をコピーしてブラウザーに貼り付け、トークンを使用してログインします: http://(5b8783e7911d or 127.0.0.1):8888/?token={sometoken})*
 
-1. Replace the **http://(5b8783e7911d or 127.0.0.1)** part of the URL with `<HOSTNAME>.<REGION>.cloudapp.azure.com` or the IP address of the VM and navigate to the address  in a new a tab of your browser. (URL の http://(5b8783e7911d または 127.0.0.1) の部分を `&lt;HOSTNAME&gt;.&lt;REGION&gt;.cloudapp.azure.com` または VM の IP アドレスに置き換え、ブラウザーの新しいタブでアドレスに移動します。)
+1. Replace the **http://(5b8783e7911d or 127.0.0.1)** part of the URL with the Fully Qualified Domain Name (FQDN) or the IP address of the VM and navigate to the address in a new a tab of your browser. (URL の http://(5b8783e7911d または 127.0.0.1) の部分を完全修飾ドメイン名 (FQDN) または VM の IP アドレスに置き換え、ブラウザーの新しいタブでアドレスに移動します。)
 
     ![Jupyter Notebook のダッシュボードのスクリーンショット。 ](../media/notebook-in-docker.png)
+
+    > [!TIP]
+    > お使いの VM の FQDN と IP アドレスは、次のコマンドを使用して取得できます。
+    > 
+    > `az vm show -d --name <HOSTNAME> --resource-group <rgn>[sandbox resource group name]</rgn> --output table`
+    >
+    > `<HOSTNAME>` は VM に付けた名前に置き換えてください。 
     
     今度は、ノートブックが 1 つだけ表示されます。 今はコンテナー内にいて、このノートブックのみをコピーしたためです。 次の演習では、このノートブックを調べます。 
     

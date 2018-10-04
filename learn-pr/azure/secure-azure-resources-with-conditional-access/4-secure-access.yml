@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 6488e897cbd2afc41a7d974b917e9fa28740894a
-  ms.sourcegitcommit: f302dc1ca9a7e4a4e92c25e012d4bf7e55f71b00
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/24/2018
-  ms.locfileid: "47023894"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47138632"
 title: リソースへのアクセスをセキュリティで保護する
 labId: 46467
 labModal: true

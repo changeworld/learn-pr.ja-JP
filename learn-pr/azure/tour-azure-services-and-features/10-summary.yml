@@ -9,11 +9,48 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: d996ad10fbba1b00bad0fe7551077528683672a5
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: 44ad01166d54f18352430f3be5994e2eaf1f7513
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46351879"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437019"
 durationInMinutes: 3
-content: '[!include[](includes/10-summary.md)]'
+content: >
+  [!include[](includes/10-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: Azure コンピューティング サービスの例は次のうちどれですか?
+    choices:
+    - content: Azure Virtual Machine
+      isCorrect: true
+      correctExplanation: Azure Virtual Machines では、コンピューティング能力が提供され、Windows と Linux 両方のオペレーティング システムがサポートされます。
+    - content: Azure Load Balancer
+      isCorrect: false
+      incorrectExplanation: Azure Virtual Machines では、コンピューティング能力が提供され、Windows と Linux 両方のオペレーティング システムがサポートされます。
+    - content: Azure Table Storage
+      isCorrect: false
+      incorrectExplanation: Azure Virtual Machines では、コンピューティング能力が提供され、Windows と Linux 両方のオペレーティング システムがサポートされます。
+    - content: Azure Redis Cache
+      isCorrect: false
+      incorrectExplanation: Azure Virtual Machines では、コンピューティング能力が提供され、Windows と Linux 両方のオペレーティング システムがサポートされます。
+  - content: Azure ダッシュボードは、次のどの種類のファイルとして保存されますか?
+    choices:
+    - content: XML
+      isCorrect: false
+      incorrectExplanation: Azure ダッシュボードは JSON ファイルとして保存されるので、アップロードおよびダウンロードして Azure ディレクトリの他のメンバーと共有できます。
+    - content: JSON
+      isCorrect: true
+      correctExplanation: Azure ダッシュボードは JSON ファイルとして保存されるので、アップロードおよびダウンロードして Azure ディレクトリの他のメンバーと共有できます。
+    - content: PNG
+      isCorrect: false
+      incorrectExplanation: Azure ダッシュボードは JSON ファイルとして保存されるので、アップロードおよびダウンロードして Azure ディレクトリの他のメンバーと共有できます。
+  - content: '正誤問題: Azure Cloud Shell は、Azure リソースを管理するための、ブラウザーからアクセスできる対話型シェルです。'
+    choices:
+    - content: はい
+      isCorrect: true
+      correctExplanation: Azure Cloud Shell は、Azure リソースを管理するための対話型シェルです。 ポータルに組み込まれているコマンド ライン インターフェイスを使用して、現在のサブスクリプション内のすべての Azure リソースを制御および管理できます。
+    - content: いいえ
+      isCorrect: false
+      incorrectExplanation: Azure Cloud Shell は、Azure リソースを管理するための対話型シェルです。 ポータルに組み込まれているコマンド ライン インターフェイスを使用して、現在のサブスクリプション内のすべての Azure リソースを制御および管理できます。

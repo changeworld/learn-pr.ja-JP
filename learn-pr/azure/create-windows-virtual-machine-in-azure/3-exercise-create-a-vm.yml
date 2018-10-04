@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: ea8e976f43c8d5dd0dad7f15765bbfd051b19056
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46349575"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47135236"
 durationInMinutes: 10
 azureSandbox: true
 content: '[!include[](includes/3-exercise-create-a-vm.md)]'

@@ -1,0 +1,65 @@
+### YamlMime:ModuleUnit
+uid: learn.intro-to-site-reliability-engineering.3-sre-in-context
+title: コンテキストの SRE
+metadata:
+  title: コンテキストの SRE
+  description: コンテキストの SRE
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: a2f23a77d0cc6b9cd6028ec5fbbfb781319afa42
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439438"
+durationInMinutes: 10
+content: >
+  [!include[](includes/3-sre-in-context.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: SRE の原点を考えると、どの手法の影響が最も大きいでしょうか。
+    choices:
+    - content: お客様サポート サービス
+      isCorrect: false
+      incorrectExplanation: お客様中心の考え方で仕事に取り組むことは SRE にとって重要ですが、その原点にお客様サポート サービスは含まれていませんでした。
+    - content: メインフレームの業務
+      isCorrect: false
+      incorrectExplanation: 他の業務の専門分野から学ぶことはありますが、SRE はそこから始まりませんでした。
+    - content: ソフトウェア エンジニアリング
+      isCorrect: true
+      correctExplanation: SRE はソフトウェア エンジニアリングの考え方から始まりました。
+    - content: アーキテクチャ
+      isCorrect: false
+      incorrectExplanation: アーキテクチャ (特にソフトウェア アーキテクチャ) は確かに SRE 業務の一要素ですが、その原点には含まれていませんでした。
+  - content: DevOps と SRE はどちらが優先されるでしょうか。
+    choices:
+    - content: DevOps
+      isCorrect: false
+      incorrectExplanation: おおむね並行して開発されました。
+    - content: SRE
+      isCorrect: false
+      incorrectExplanation: おおむね並行して開発されました。
+    - content: いずれも、おおむね並行して開発されませんでした。
+      isCorrect: true
+  - content: SRE は DevOps の次の進化段階でしょうか。
+    choices:
+    - content: はい、SRE は DevOps の未来です。 DevOps 担当者は SRE になるべく努力する必要があります
+      isCorrect: false
+      incorrectExplanation: DevOps と SRE は、同様の課題に対処するための別の業務です。
+    - content: いいえ、SRE と DevOps は別の業務です
+      isCorrect: true
+      correctExplanation: DevOps と SRE は、同様の課題に対処する場合でも、実際には独立しています。
+  - content: DevOps と SRE の両方にとって中心となる 2 つのベスト プラクティスは何ですか?
+    choices:
+    - content: オートメーションと監視/観測可能性
+      isCorrect: true
+    - content: コーディングとチケット システム
+      isCorrect: false
+      incorrectExplanation: コーディングは重要ですが (SRE の場合はさらに重要です)、チケット システムは SRE の中心ではありません。
+    - content: ヘルプ デスクのオートメーションとバグ追跡
+      isCorrect: false
+      correctExplanation: ヘルプ デスクは便利ですが、いずれの業務でも中心ではありません。

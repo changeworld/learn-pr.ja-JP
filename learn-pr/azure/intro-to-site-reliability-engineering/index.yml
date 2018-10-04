@@ -1,0 +1,41 @@
+### YamlMime:Module
+uid: learn.intro-to-site-reliability-engineering
+metadata:
+  title: サイト リライアビリティ エンジニアリング (SRE) の概要
+  description: 大企業も中小企業もシステムとアプリケーションの信頼性がビジネスにとってどれほど重要であるかを認識し始めています。 また、市場の要求に応えるスピードで反復開発を行いながら信頼性を維持することがどれほど難しいかを学びました。 サイト リライアビリティ エンジニアリング (SRE) は、この課題に対して実績のあるアプローチです。
+  ms.date: 09/26/2018
+  author: markjulmar
+  ms.author: smmark
+  ms.topic: interactive-tutorial
+  ms.prod: learning-azure
+  ms.openlocfilehash: d8d65060da1f557776981cc0723f0d191ba1e504
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47439679"
+title: サイト リライアビリティ エンジニアリング (SRE) の概要
+summary: 大企業も中小企業もシステムとアプリケーションの信頼性がビジネスにとってどれほど重要であるかを認識し始めています。 また、市場の要求に応えるスピードで反復開発を行いながら信頼性を維持することがどれほど難しいかを学びました。 サイト リライアビリティ エンジニアリング (SRE) は、この課題に対して実績のあるアプローチです。
+abstract: >
+  このモジュールでは、次のことを行います。
+
+  - サイト リライアビリティ エンジニアリング (SRE) の基本について理解する
+
+  - この重要な運用手法を始める方法を学ぶ
+iconUrl: /learn/achievements/intro-to-site-reliability-engineering-sre.svg
+levels:
+- beginner
+roles:
+- administrator
+products:
+- azure
+prerequisites: なし
+units:
+- learn.intro-to-site-reliability-engineering.1-introduction
+- learn.intro-to-site-reliability-engineering.2-what-is-sre-and-why-does-it-matter
+- learn.intro-to-site-reliability-engineering.3-sre-in-context
+- learn.intro-to-site-reliability-engineering.4-key-principles-1-virtuous-cycles
+- learn.intro-to-site-reliability-engineering.5-key-principles-2-human-side-of-sre
+- learn.intro-to-site-reliability-engineering.6-getting-started
+- learn.intro-to-site-reliability-engineering.7-summary
+achievement: learn.intro-to-site-reliability-engineering.badge

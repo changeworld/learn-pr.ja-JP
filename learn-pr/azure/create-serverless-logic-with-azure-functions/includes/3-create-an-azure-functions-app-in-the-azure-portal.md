@@ -40,12 +40,11 @@ Azure portal で関数アプリを作成しましょう。
 
     [!include[](../../../includes/azure-sandbox-regions-first-mention-note-friendly.md)]
 
+1. **[ランタイム スタック]** では、ドロップダウン リストから JavaScript を選択します。この演習では、JavaScript を使用して関数の例を実装します。
+
 1. 新しいストレージ アカウントを作成します。 Azure では、アプリ名に基づいて名前が指定されます。 必要に応じて変更できますが、この名前も固有である必要があります。
 
 1. Azure Application Insights が **[オン]** になっていることを確認し、自分 (または顧客) から最も近いリージョンを選択します。
-  完了したら、構成は次のスクリーンショットにある構成のようになります。
-
-  ![前の手順に従ってすべてのフィールドが構成された Function App の [作成] ブレードを示す Azure portal のスクリーンショット。](../media/3-create-function-app-settings.png)
 
 1. **[作成]** を選択します。デプロイには数分かかります。 完了すると、通知を受け取ります。
 
@@ -53,10 +52,10 @@ Azure portal で関数アプリを作成しましょう。
 
 1. Azure portal の左側にあるメニューから、**[リソース グループ]** を選択します。 これで、使用可能なグループのリストに **<rgn>[サンドボックス リソース グループ名]</rgn>** という名前のリソース グループが表示されます。
 
-  ![[リソース グループ] メニュー項目と <rgn>[サンドボックス リソース グループ名]</rgn> リスト項目が強調表示されている [リソース グループ] ブレードを示す Azure portal のスクリーンショット。](../media/3-resource-group.png)
+    ![[リソース グループ] メニュー項目と <rgn>[サンドボックス リソース グループ名]</rgn> リスト項目が強調表示されている [リソース グループ] ブレードを示す Azure portal のスクリーンショット。](../media/3-resource-group.png)
 
 1. **<rgn>[サンドボックス リソース グループ名]</rgn>** というリソース グループを選択します。 これで、次のリストのようにリソース リストが表示されます。
 
-  ![App Service プラン、Storage アカウント、Application Insights リソースおよび App Service のエントリを含む、<rgn>[サンドボックス リソース グループ名]</rgn> グループ内のすべてのリソースを示す Azure portal のスクリーンショット。](../media/3-resource-list.png)
+    ![App Service プラン、Storage アカウント、Application Insights リソースおよび App Service のエントリを含む、<rgn>[サンドボックス リソース グループ名]</rgn> グループ内のすべてのリソースを示す Azure portal のスクリーンショット。](../media/3-resource-list.png)
 
 App Service としてリストされている稲妻関数アイコンの付いた項目は、新しい関数アプリです。 クリックして新しい関数の詳細を表示することができます。ここには、この関数アプリに割り当てられたパブリック URL があり、ブラウザーで開いた場合は、その Function App が実行されていることを示す既定の Web ページを取得します。

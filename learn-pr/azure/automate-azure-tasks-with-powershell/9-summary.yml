@@ -9,11 +9,45 @@ metadata:
   ms.author: smmark
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 4d91629775838b773937b42f3eb560a386276bb0
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.openlocfilehash: ba3042f85d59e09955c715f241f1620ceb22cfa5
+  ms.sourcegitcommit: 537334e6f8df2da7b9e5ec96a2b54a0e2038bc1b
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348959"
+  ms.lasthandoff: 09/28/2018
+  ms.locfileid: "47437444"
 durationInMinutes: 3
-content: '[!include[](includes/9-summary.md)]'
+content: >
+  [!include[](includes/9-summary.md)]
+quiz:
+  title: 自分の知識をチェックする
+  questions:
+  - content: '正誤問題: Azure portal、Azure CLI、Azure PowerShell では提供されるサービスが大きく異なるので、必要な操作がこれら 3 つすべてでサポートされていることはほとんどありません。'
+    choices:
+    - content: はい
+      isCorrect: false
+      incorrectExplanation: 3 つのツールは、ほとんど同じサービス セットを提供します。
+    - content: いいえ
+      isCorrect: true
+      correctExplanation: 3 つのツールは、ほとんど同じサービス セットを提供します。 通常、これはタスクに最適なツールを決定するときの要因ではありません。
+  - content: ユーザーが生成した動画コンテンツ用のオンライン ストレージを提供する動画編集アプリケーションを作成しているものとします。 Azure BLOB に動画を格納するので、BLOB 用の Azure ストレージ アカウントを作成する必要があります。 ストレージ アカウントを用意した後は、アカウントを削除または再作成するとユーザーの動画がすべて削除されるので、アカウントの削除や再作成を行う可能性はほとんどありません。 ストレージ アカウントを最も速く簡単に作成できると思われるのは、どのツールですか?
+    choices:
+    - content: Azure portal
+      isCorrect: true
+      correctExplanation: ポータルは、長期間維持されるストレージ アカウントの作成のような 1 回限りの操作に適しています。 ポータルには、ストレージ アカウントのすべてのプロパティを含む GUI と、ニーズに適したオプションを選択するのに役立つツール ヒントが用意されています。
+    - content: Azure CLI
+      isCorrect: false
+      incorrectExplanation: CLI を使うには、ストレージ アカウントの作成に使用するコマンドを調べる必要があります。 また、CLI をローカルにインストールするか、または Cloud Shell にログインする必要があります。 ストレージ アカウントの作成のような 1 回限りの操作の場合、Azure portal を使うより長くかかる可能性があります。
+    - content: Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Azure PowerShell を使うには、ストレージ アカウントの作成に使用するコマンドを調べる必要があります。 また、PowerShell と Azure PowerShell をローカルにインストールするか、または Cloud Shell にログインする必要があります。 ストレージ アカウントの作成のような 1 回限りの操作の場合、Azure portal を使うより長くかかる可能性があります。
+  - content: Azure PowerShell コマンドレットをローカルで実行するには、コンピューターに何がインストールされている必要がありますか?
+    choices:
+    - content: Azure Cloud Shell
+      isCorrect: false
+      incorrectExplanation: Cloud Shell では Azure コマンドレットを実行できます。ただし、ブラウザーで使用するので、コマンドはローカル コンピューターでは実行されません。
+    - content: 基本の PowerShell 製品と AzureRM モジュール
+      isCorrect: true
+      correctExplanation: 基本の PowerShell 製品と AzureRM モジュールの両方が必要です。 基本製品では、シェル自体、いくつかのコア コマンド、およびループや変数などのプログラミング構造が提供されます。AzureRM モジュールでは、Azure リソースの操作に必要なコマンドレットが追加されます。
+    - content: Azure CLI と Azure PowerShell
+      isCorrect: false
+      incorrectExplanation: Azure CLI は、代替のコマンド ラインおよびスクリプト ツールです。 Azure PowerShell を使用する場合は必要ありません。

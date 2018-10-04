@@ -106,7 +106,7 @@
 
 1. 仮想マシンのリモート デスクトップで Internet Explorer を開き、**[Internet Explorer の設定]** ダイアログ ボックスで **[OK]** をクリックします。
 
-1. **Internet Explorer** のアドレス バーに「**http://download.sysinternals.com/files/CPUSTRES.zip**」と入力して、<kbd>Enter</kbd> キーを押します。 **[Internet Explorer]** ダイアログ ボックスで、**[追加]** をクリックします。 **[信頼済みサイト]** ダイアログ ボックスで、**[追加]** をクリックし、**[閉じる]** をクリックします。
+1. **Internet Explorer** のアドレス バーに「 **http://download.sysinternals.com/files/CPUSTRES.zip** 」と入力して、<kbd>Enter</kbd> キーを押します。 **[Internet Explorer]** ダイアログ ボックスで、**[追加]** をクリックします。 **[信頼済みサイト]** ダイアログ ボックスで、**[追加]** をクリックし、**[閉じる]** をクリックします。
 
 1. ダウンロードのプロンプトが自動的に表示されない場合は、再度 URL を入力して、<kbd>Enter</kbd> キーを押します。 **[Internet Explorer]** ダイアログ ボックスで **[保存]** をクリックします。 ダウンロードが完了したら、**[フォルダーを開く]** をクリックします。
 

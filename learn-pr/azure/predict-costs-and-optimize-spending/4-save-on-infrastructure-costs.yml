@@ -10,11 +10,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 94f37d9b74bc6b3b3e5bfed8f97300b5fc5eff1e
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46347023"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47134162"
 durationInMinutes: 10
 content: >
   [!include[](includes/4-save-on-infrastructure-costs.md)]
@@ -35,11 +35,11 @@ quiz:
     - content: 使用率が低い仮想マシンのサイズを適切に設定する。
       isCorrect: false
       incorrectExplanation: VM をスケールダウンすると、そのコストが削減されます。
-  - content: '正誤問題: PaaS の場合は一般に IaaS よりも安価です。'
+  - content: 'true または false: PaaS の場合は一般に IaaS よりも安価です。'
     choices:
-    - content: ○
+    - content: "True"
       isCorrect: true
-      correctExplanation: IaaS では、Azure をリソース専用にする必要がありますが、PaaS では サービスの配信方法において Azure により柔軟性が与えられます。 つまり、Azure によりハードウェアを効率的に運用できるため、PaaS サービスを IaaS よりも低コストで提供できます。
-    - content: ×
+      correctExplanation: IaaS では、Azure をリソース専用にする必要がありますが、PaaS ではサービスの配信方法において Azure により柔軟性が与えられます。 つまり、Azure によりハードウェアを効率的に運用できるため、PaaS サービスを IaaS よりも低コストで提供できます。
+    - content: "False"
       isCorrect: false
       incorrectExplanation: 通常、PaaS サービスの契約は、IaaS リソースよりも安価です。

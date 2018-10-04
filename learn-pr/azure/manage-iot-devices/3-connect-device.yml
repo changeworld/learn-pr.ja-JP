@@ -9,11 +9,11 @@ metadata:
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
   ms.openlocfilehash: 75482c0f41a444035f60308c5415786a6b106c62
-  ms.sourcegitcommit: b21a4b22de591cfa776684ba2eab9ba27248c65d
+  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2018
-  ms.locfileid: "46348872"
+  ms.lasthandoff: 09/25/2018
+  ms.locfileid: "47137616"
 azureSandbox: true
 title: IoT Hub の設定と、最初のデバイスの接続
 durationInMinutes: 20
