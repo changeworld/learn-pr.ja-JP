@@ -95,7 +95,7 @@ jrcs/letsencrypt-nginx-proxy-companion   LetsEncrypt container to use with nginx
 bitnami/nginx                            Bitnami nginx Docker Image         58                                      [OK]
 ```
 
-イメージがローカルにない場合は、`docker run` などのコマンドによって、自動的にイメージがプルダウンされます。 しかし、イメージは使用する前にダウンロードするが一般的です。 これにより、確実に最新バージョンを使用できます。
+イメージがローカルにない場合は、`docker run` などのコマンドによって、自動的にイメージがプルダウンされます。 しかし、イメージは使用する前にダウンロードするのが一般的です。 これにより、確実に最新バージョンを使用できます。
 
 そのためには、`docker pull` コマンドを使用します。 次を実行すると、Docker Hub から最新の **nginx** イメージがプルされます。
 
