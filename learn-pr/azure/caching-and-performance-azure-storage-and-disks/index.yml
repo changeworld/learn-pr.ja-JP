@@ -4,16 +4,17 @@ metadata:
   title: Azure Storage ディスクのキャッシュとパフォーマンス
   description: Azure でのディスク パフォーマンスについて、およびキャッシュがストレージへの読み取りおよび書き込みアクセスの最適化にどのように役立つかについて学習します。 Azure Storage のキャッシュの種類を比較し、Azure VM ディスクのパフォーマンスを最適化するためにキャッシュを有効化する方法について説明します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: AndrewJByrne
+  ms.author: anbyrne
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: e2c7f3f112c4cde8b9d4081a90a25a89ed69810d
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.learn-contact: anbyrne
+  ms.openlocfilehash: edde756cb85661cb28818ba565c02d2177154f55
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47137613"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787272"
 title: Azure Storage ディスクのキャッシュとパフォーマンス
 summary: データを可能な限り速く転送できることはビジネスにとってよいことです。 Azure のディスク パフォーマンス、キャッシュを利用してストレージへの読み取り/書き込みアクセスを最適化する方法、キャッシュを有効にして Azure VM ディスクのパフォーマンスを最適化する方法について説明します。
 abstract: >
