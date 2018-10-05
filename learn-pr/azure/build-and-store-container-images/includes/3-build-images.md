@@ -58,4 +58,4 @@ Result
 helloacrtasks
 ```
 
-これで、`helloacrbuild` イメージが使用できる状態になりました。
+これで、`helloacrtasks` イメージが使用できる状態になりました。

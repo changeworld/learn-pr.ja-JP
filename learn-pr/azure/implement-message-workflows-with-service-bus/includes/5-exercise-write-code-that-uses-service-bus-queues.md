@@ -37,10 +37,10 @@ Service Bus 名前空間にアクセスしてキューを使用するには、�
     ```azurecli
     az servicebus namespace authorization-rule keys list \
         --resource-group <rgn>[sandbox resource group name]</rgn> \
-        --namespace-name <namespace-name> \
         --name RootManageSharedAccessKey \
         --query primaryConnectionString \
-        --output tsv
+        --output tsv \
+        --namespace-name <namespace-name>
     ```
 
     この接続文字列はこのモジュールを通して複数回必要になるため、すぐ使用できる場所に貼り付けてください。
@@ -132,9 +132,9 @@ dotnet run -p privatemessagesender
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 ## <a name="write-code-that-receives-a-message-from-the-queue"></a>キューからメッセージを受信するコードを記述する
@@ -152,7 +152,7 @@ az servicebus queue show \
 1. キュー クライアントを作成するには、その行を次のコードに置き換えます。
 
     ```C#
-    queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+    var queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
     ```
 
 1. `RegisterMessageHandler()` メソッドを検索します。
@@ -214,9 +214,9 @@ dotnet run -p privatemessagereceiver
 ```azurecli
 az servicebus queue show \
     --resource-group <rgn>[sandbox resource group name]</rgn> \
-    --namespace-name <namespace-name> \
     --name salesmessages \
-    --query messageCount
+    --query messageCount \
+    --namespace-name <namespace-name>
 ```
 
 すべてのメッセージが削除されている場合は、`0` が表示されます。

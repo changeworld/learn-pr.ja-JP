@@ -4,16 +4,16 @@ metadata:
   title: Azure Load Balancer を使用して VM の可用性を高める
   description: パブリックなロード バランサーとして Azure Load Balancer を利用することで、複数の Azure 仮想マシンにパブリックな受信トラフィックを分散します。 ロード バランサーの目的を理解します。 ポータルで Azure Load Balancer を操作して、トラフィックの送り先の VM スケールセットを指定し、トラフィックを監視します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: marktap
+  ms.author: matapar
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 5de95fb072eb09d9ba11abdbcb8ad92c53caa41f
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 515859f738fff301581e1877d3c227621e7e1673
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47135056"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786663"
 title: Azure Load Balancer を使用して VM の可用性を高める
 summary: ロード バランサーを使用してパブリックな受信トラフィックを複数の仮想マシンに分散します。
 abstract: >

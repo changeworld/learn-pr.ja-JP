@@ -4,16 +4,17 @@ metadata:
   title: Azure Storage へのアプリの接続
   description: シンプルなアプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: JesseDietrichson
+  ms.author: jediet
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 031ad75cc74aced06988ddc392886cf22e1f757e
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.learn-contact: jediet
+  ms.openlocfilehash: 7e9fca8ad49b90dc992be35655d62bd0e70e240c
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47135889"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48786919"
 title: Azure Storage へのアプリの接続
 summary: シンプルなアプリケーションを作成し、構成、クライアント ライブラリの参照、コードを追加して、Azure Storage に接続します。
 abstract: >

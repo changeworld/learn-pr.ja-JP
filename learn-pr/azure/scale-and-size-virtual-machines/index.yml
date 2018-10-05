@@ -4,16 +4,16 @@ metadata:
   title: 仮想マシンをスケーリングおよびサイズ設定する
   description: 仮想マシンの CPU およびメモリ リソースを必要に応じて変更して、需要に対応し、コストを制御することができます。 需要を予測できて変更頻度が低い場合は、手動の調整で対応できます。 ワークロードが予測できず、頻繁に変化する場合は、自動化されたソリューションの方が適しています。 ここでは、個々のサーバーのサイズを変更するか、使用できるマシンの数を変更して、仮想マシンのパワーを制御する方法を示しています。 この方法を、手動で行う場合と、スケール セットおよび自動スケールを使用する場合の両方で説明します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: marktap
+  ms.author: matapar
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 97b9c3862727b4f1ba360c0d881f0b84b557a62d
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 4bcabbfced76ab457429640e13853e4716abe049
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47133021"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787306"
 title: 仮想マシンをスケーリングおよびサイズ設定する
 summary: 仮想マシンのコンピューティングとストレージのパワーを、手動で、または自動スケールを使用して調整します。
 abstract: >

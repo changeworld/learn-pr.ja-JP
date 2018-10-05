@@ -4,16 +4,17 @@ metadata:
   title: Azure で Windows 仮想マシンを作成する
   description: Azure 仮想マシン (VM) では、専用のコンピューティング リソースを数分で作成でき、物理デスクトップやサーバー コンピューターと同様に使用できます。 仮想マシンが管理目的で接続するサーバーであるか、エンド ユーザー用の仮想ワークステーションであるかに関係なく、リモート デスクトップ プロトコル (RDP) では、ローカルの物理コンピューターのターミナルでの設定と同じエクスペリエンスが提供されます。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: JesseDietrichson
+  ms.author: jediet
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 8a8c3fc958b073b3e28367201627835a7d319d5a
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.learn-contact: jediet
+  ms.openlocfilehash: ecaeca0f60d6b7a03888f5a8adcf41322fb43a03
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47131764"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787068"
 title: Azure で Windows 仮想マシンを作成する
 summary: Azure Virtual Machines (VM) では、専用のコンピューティング リソースを数分で作成でき、物理デスクトップやサーバー コンピューターと同様に使用できます。
 abstract: >
