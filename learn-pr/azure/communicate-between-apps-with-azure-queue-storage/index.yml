@@ -4,16 +4,16 @@ metadata:
   title: アプリケーションと Azure Queue Storage の間で通信する
   description: Azure Queue Storage を使用して、クラウドにパブリッシュ サブスクライブ パターンを実装します。
   ms.date: 09/24/2018
-  author: markjulmar
-  ms.author: smmark
+  author: marktap
+  ms.author: matapar
   ms.topic: interactive-tutorial
   ms.prod: learning-azure
-  ms.openlocfilehash: 7250eeaa301db1dccc895256cd721b46ae82f9c4
-  ms.sourcegitcommit: c02f803ad02769c7185b7f20e04d64fee38d9931
+  ms.openlocfilehash: 4461ff126b1f5b80d207af31f61807e2c3545b0b
+  ms.sourcegitcommit: 04cba4eb84188dd50349e0efcf90629aadb7b397
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/25/2018
-  ms.locfileid: "47137984"
+  ms.lasthandoff: 10/04/2018
+  ms.locfileid: "48787323"
 title: アプリケーションと Azure Queue Storage の間で通信する
 summary: Azure Queue Storage を使用して、クラウドにパブリッシュ サブスクライブ パターンを実装します。
 abstract: >
